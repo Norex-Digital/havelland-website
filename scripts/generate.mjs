@@ -15,7 +15,13 @@ const FULL = !!process.env.FULL;
 // decEnt: dekodiert HTML-Entities (auch mehrfach geschachtelt) -> Klartext; plain: + Tags strippen; fixHtml: body_html reparieren
 const decEnt = s => { let p = String(s == null ? '' : s), c; do { c = p; p = p.replace(/&amp;/gi, '&').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&quot;/gi, '"').replace(/&#0*39;/gi, "'").replace(/&apos;/gi, "'").replace(/&nbsp;/gi, ' '); } while (p !== c); return p; };
 const plain = s => decEnt(s).replace(/<\/?[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-const fixHtml = s => { let p = String(s == null ? '' : s), c; do { c = p; p = p.replace(/&amp;(amp;|lt;|gt;|quot;|#0*39;|nbsp;)/gi, '&$1'); } while (p !== c); return p.replace(/<\/li><\/(strong|em|b|i)>/gi, '</$1></li>'); };
+const fixHtml = s => {
+  let p = String(s == null ? '' : s), c;
+  do { c = p; p = p.replace(/&amp;(amp;|lt;|gt;|quot;|#0*39;|nbsp;)/gi, '&$1'); } while (p !== c);
+  p = p.replace(/<\/li><\/(strong|em|b|i)>/gi, '</$1></li>');          // verschachteltes Inline-Tag nach </li>
+  do { c = p; p = p.replace(/<\/li>(\s*[^<\s][^<]*?)(<li|<\/ul)/gi, '$1</li>$2'); } while (p !== c); // Orphan-Text ins vorige <li>
+  return p;
+};
 const _pa = v => Array.isArray(v) ? v.map(plain) : (v != null ? plain(v) : v);
 function sanHub(h) { for (const k of ['title','meta','h1','h1_em','intro','definition','naehe','ablauf','garantie_text','ortsseite_lead']) if (h[k] != null) h[k] = plain(h[k]); if (h.sections) for (const s of h.sections) { s.h3 = plain(s.h3); s.body = plain(s.body); } if (h.faqs) for (const f of h.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return h; }
 function sanArch(a) { a.rahmen = _pa(a.rahmen); a.trust = _pa(a.trust); if (a.faqs) for (const f of a.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return a; }
@@ -51,6 +57,9 @@ const sj = v => String(v == null ? '' : decEnt(v)).replace(/\\/g, '\\\\').replac
 const leaf = cls => `<svg class="${cls}" viewBox="0 0 100 100"><path fill="currentColor" d="M90 10C38 12 10 42 10 92c32-2 52-15 63-35 2 15-3 27-3 27s20-23 20-54c0-10-2-21 0-20Z"/></svg>`;
 const tel = nap.phone_e164; const waHref = q => `https://wa.me/${tel.replace('+','')}?text=${encodeURIComponent(q)}`;
 const ctaA = '<a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung anfragen</a>';
+const ctaPrim = label => `<a class="btn btn-acc" href="/kontakt/">${label}</a>`;
+const CTA_ANGEBOT = 'Angebot für Ihr Objekt anfordern';
+const isB2Bonly = seg => Array.isArray(seg) && seg.includes('B2B') && !seg.includes('B2C') && !seg.includes('Ferien');
 
 // Token-Füllung für Archetyp-/Ortsseiten-Copy
 const fillTok = (t, o, oc) => (t == null ? '' : String(t))
@@ -144,7 +153,7 @@ function home() {
 <section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>
 <div class="vals"><div class="v rv d1"><h4><span class="n">01</span> Aus einer Hand</h4><p>Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles.</p></div><div class="v rv d2"><h4><span class="n">02</span> Nachweis statt Versprechen</h4><p>Foto-Dokumentation nach jedem Auftrag, direkt aufs Handy.</p></div><div class="v rv d3"><h4><span class="n">03</span> Festpreis</h4><p>Kostenlose Besichtigung, klarer Preis — kein Nachkommen.</p></div><div class="v rv d4"><h4><span class="n">04</span> Schnell erreichbar</h4><p>WhatsApp-Antwort in Stunden, nicht in Tagen.</p></div></div></div></section>
 <section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Was wir machen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Vom regelmäßigen Garten bis zum einmaligen Großeinsatz — koordiniert von einem festen Ansprechpartner.</p><div class="list">${items}</div></div></section>
-<section class="proof"><div class="grid"><div class="pic rv"><img src="/assets/img/terrasse.png" alt="Vorher / Nachher" width="700" height="500"><div class="tags"><span>Vorher</span><span class="acc">Nachher</span></div></div><div class="txt"><h2 class="serif rv">Nachweis, <em>nicht Versprechen.</em></h2><p class="rv d1">Nach jedem Auftrag bekommen Sie Vorher/Nachher-Fotos per WhatsApp. Sie sehen das Ergebnis — auch wenn Sie nicht dabei waren.</p><p class="q rv d2">„Wenn nach unserer Reinigung noch sichtbarer Moos- oder Algenbelag bleibt — wir kommen nochmal. Kostenlos."</p></div></div></section>
+<section class="proof"><div class="grid"><div class="pic rv"><img src="/assets/img/terrasse.png" alt="Beispiel eines gepflegten Außenbereichs im Havelland" width="700" height="500"><div class="tags">${(proof.vorher_nachher && proof.vorher_nachher.echt && proof.vorher_nachher.echt.length) ? '<span>Vorher</span><span class="acc">Nachher</span>' : `<span>${esc((proof.vorher_nachher && proof.vorher_nachher.platzhalter_label) || 'Beispielhafte Darstellung')}</span>`}</div></div><div class="txt"><h2 class="serif rv">Nachweis, <em>nicht Versprechen.</em></h2><p class="rv d1">Nach jedem Auftrag bekommen Sie Vorher/Nachher-Fotos per WhatsApp. Sie sehen das Ergebnis — auch wenn Sie nicht dabei waren.</p><p class="q rv d2">„Wenn nach unserer Reinigung noch sichtbarer Moos- oder Algenbelag bleibt — wir kommen nochmal. Kostenlos."</p></div></div></section>
 ${endBand}`;
   write('/', head(`${nap.name} — aus einer Hand`, mkMeta('Garten, Reinigung, Winterdienst und Entrümpelung im Havelland. Ein fester Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.'), '/', orgSchema()) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push('/');
@@ -173,9 +182,9 @@ function hub(s) {
 
   const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","provider":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
-<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div>
+<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim(isB2Bonly(s.segment) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div>
 <div class="shot rv in d2"><img class="main" src="/assets/img/hero-garten.png" alt="${esc(s.name)} im Havelland" width="640" height="480"><div class="badge"><span class="ic">${leaf('')}</span><span class="t">Foto-Nachweis<span>nach jedem Auftrag</span></span></div></div></div></section>
-<section class="sec"><div class="wrap"><div class="prose wide rv">${definition}${sektionenHtml}${naehe}${ablauf}<h3>Unsere Garantie</h3><p>${esc(garantieTxt)}</p></div></div></section>
+<section class="sec"><div class="wrap"><div class="prose wide rv">${definition}<h2>${esc(s.name)} im Havelland — was dazugehört</h2>${sektionenHtml}${naehe}${ablauf}<h3>Unsere Garantie</h3><p>${esc(garantieTxt)}</p></div></div></section>
 ${cardOrte.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div><div class="cards rv">${cards}</div></div></section>` : ''}
 ${faqBlock(c && c.faqs)}
 ${endBand}`;
@@ -209,16 +218,16 @@ function ortsseite(s, o) {
   const ortsteile = (o.ortsteile && o.ortsteile.length) ? `<p>Auch in ${esc(o.ortsteile.join(', '))} und Umgebung sind wir für Sie da.</p>` : '';
   const trust = trustTxt ? `<p>${esc(fillTok(trustTxt, o, oc))}</p>` : `<p>Kostenlose Besichtigung, danach ein Festpreis ohne Nachkommen — und nach dem Auftrag Vorher/Nachher-Fotos per WhatsApp.</p>`;
 
-  // FAQ: 2 Archetyp-FAQ (Pool, idx-rotiert, {ort}) + 2 Hub-FAQ (aus 5, versetzt) → variiert je Ort
+  // FAQ: 2 Archetyp-FAQ ({ort}-spezifisch) + 2 Hub-FAQ (idx-rotiert, je Ort andere) → ortspezifisch + Near-Dup-Marge
   const archFaqs = arch && arch.faqs ? rotate(arch.faqs, idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
-  const hubFaqs = c && c.faqs ? rotate(c.faqs, idx + 2, 2) : [];
+  const hubFaqs = c && c.faqs ? rotate(c.faqs, idx + 1, archFaqs.length ? 2 : 4) : [];
   const faqs = [...archFaqs, ...hubFaqs];
 
   const title = clampTitle(`${s.name} ${o.name}${(s.name.length + o.name.length) < 34 ? ' – Havelland' : ''}`);
   const meta = mkMeta(`${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`);
 
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/${s.slug}/">${esc(s.name)}</a><span class="sep">›</span>${esc(o.name)}</div>
-<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(o.name)}${o.plz?` · ${esc(o.plz)}`:''}</span><h1 class="rv in d1">${esc(s.name)} <em>in ${esc(o.name)}</em></h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref(`Hallo, ich brauche ${s.name} in ${o.name}.`)}">WhatsApp</a></div></div>
+<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(o.name)}${o.plz?` · ${esc(o.plz)}`:''}</span><h1 class="rv in d1">${esc(s.name)} <em>in ${esc(o.name)}</em></h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || isB2Bonly(o.typ)) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich brauche ${s.name} in ${o.name}.`)}">WhatsApp</a></div></div>
 <div class="shot rv in d2"><img class="main" src="/assets/img/hero-garten.png" alt="${esc(s.name)} in ${esc(o.name)}" width="640" height="480"><div class="badge"><span class="ic">${leaf('')}</span><span class="t">Vor Ort in ${esc(o.name)}<span>schnelle Reaktion</span></span></div></div></div></section>
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>Festpreis &amp; Foto-Nachweis</h3>${trust}</div></div></section>
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}${servicesForOrt(o).length>=3?`<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a>`:`<a class="card" href="/${s.slug}/"><h3>Mehr zu ${esc(s.name)}</h3><span class="go">Zur Leistung →</span></a>`}</div></div></section>
@@ -305,12 +314,33 @@ function basis() {
 <section class="end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Wir sind für Sie da.</h2><p class="rv d1">Rufen Sie an oder schreiben Sie — die Besichtigung ist kostenlos, der Festpreis danach verbindlich.</p><div class="cta-row rv d2"><a class="btn btn-acc" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-line" href="${waHref('Hallo, ich hätte gern eine kostenlose Besichtigung.')}">WhatsApp</a></div></div></section>`;
   write('/kontakt/', head(`Kontakt — ${nap.name}`, mkMeta(`Kontakt zum Haus- & Gartenservice Havelland in ${nap.city}: ${nap.phone_display}, WhatsApp, kostenlose Vor-Ort-Besichtigung mit Festpreis.`), '/kontakt/', `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Kontakt',url:'/kontakt/'}])}`) + header + kontaktMain + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push('/kontakt/');
-  for (const [slug, t] of [['impressum','Impressum'],['datenschutz','Datenschutz']]) {
-    const metaTxt = `${t} — ${nap.name}, ${nap.street}, ${nap.zip} ${nap.city}. Kleinunternehmer nach §19 UStG. Telefon ${nap.phone_display}.`;
-    const m = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${t}</div><section class="phero" style="padding-bottom:24px"><div class="wrap"><h1 class="rv in d1">${t}</h1></div></section><section class="sec" style="padding-top:24px"><div class="wrap"><div class="prose rv"><p><em>Platzhalter — Rechtstext folgt (§5 TMG / DSGVO). Kleinunternehmer §19 UStG.</em></p><p>${esc(nap.name)}<br>${esc(nap.street||'')}<br>${esc(nap.zip||'')} ${esc(nap.city)}<br>${esc(nap.phone_display)}</p></div></div></section>${endBand}`;
-    write(`/${slug}/`, head(`${t} — ${nap.name}`, mkMeta(metaTxt), `/${slug}/`, orgSchema()) + header + m + footer + SCTA_DEFAULT + revealJS + '</body></html>');
-    written.basis.push(`/${slug}/`);
-  }
+  const legalShell = (t, bodyHtml) => `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${t}</div><section class="phero" style="padding-bottom:24px"><div class="wrap"><h1 class="rv in d1">${t}</h1></div></section><section class="sec" style="padding-top:24px"><div class="wrap">${bodyHtml}</div></section>${endBand}`;
+  const impressumBody = `<div class="prose rv">
+<h2>Angaben gemäß § 5 TMG</h2>
+<p>${esc(nap.inhaber)}<br>${esc(nap.name)}<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}</p>
+<h2>Kontakt</h2>
+<p>Telefon: <a href="tel:${tel}">${esc(nap.phone_display)}</a>${nap.email ? `<br>E-Mail: <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>` : ''}</p>
+<h2>Umsatzsteuer</h2>
+<p>Kleinunternehmer gemäß § 19 UStG. Es wird keine Umsatzsteuer ausgewiesen.</p>
+<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+<p>${esc(nap.inhaber)}, Anschrift wie oben.</p>
+<h2>Streitbeilegung</h2>
+<p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr/" rel="nofollow">ec.europa.eu/consumers/odr</a>. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit.</p>
+${nap.email ? '' : '<p><em>Hinweis: Eine E-Mail-Adresse für die elektronische Kontaktaufnahme (§ 5 TMG) wird vor dem Launch ergänzt.</em></p>'}
+</div>`;
+  write('/impressum/', head(`Impressum — ${nap.name}`, mkMeta(`Impressum des Haus- & Gartenservice Havelland, ${nap.inhaber}, ${nap.street}, ${nap.zip} ${nap.city}. Kleinunternehmer nach § 19 UStG, Telefon ${nap.phone_display}.`), '/impressum/', orgSchema()) + header + legalShell('Impressum', impressumBody) + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  written.basis.push('/impressum/');
+  const datenschutzBody = `<div class="prose rv">
+<h2>Datenschutz auf einen Blick</h2>
+<p>Verantwortlich für die Datenverarbeitung auf dieser Website ist ${esc(nap.inhaber)}, ${esc(nap.name)}, ${esc(nap.street)}, ${esc(nap.zip)} ${esc(nap.city)}, Telefon ${esc(nap.phone_display)}.</p>
+<h2>Kontaktaufnahme</h2>
+<p>Wenn Sie uns per Telefon, WhatsApp oder über das Anfrageformular erreichen, verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage und für etwaige Anschlussfragen (Art. 6 Abs. 1 lit. b und f DSGVO). Eine Weitergabe an Dritte erfolgt nicht ohne Ihre Einwilligung.</p>
+<h2>Ihre Rechte</h2>
+<p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie ein Beschwerderecht bei der zuständigen Aufsichtsbehörde.</p>
+<p><em>Hinweis: Die vollständige Datenschutzerklärung (inkl. Hosting, Cookie-/Consent-Banner, Anfrageformular-Dienst, Web-Analyse und Schriftarten) wird vor dem Launch ergänzt und juristisch geprüft.</em></p>
+</div>`;
+  write('/datenschutz/', head(`Datenschutz — ${nap.name}`, mkMeta(`Datenschutzhinweise des Haus- & Gartenservice Havelland in ${nap.city}: Umgang mit Ihren Angaben bei Anfragen per Telefon, WhatsApp und Formular nach DSGVO.`), '/datenschutz/', orgSchema()) + header + legalShell('Datenschutz', datenschutzBody) + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  written.basis.push('/datenschutz/');
 }
 
 // ---------- SITEMAPS ----------
