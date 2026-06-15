@@ -7,28 +7,212 @@
     "ferien": "Ferien / Wassernähe — Havelseen, Ferienwohnungen und Wochenendgrundstücke, Fokus auf Übergabe-Qualität und Fern-Eigentümer."
   },
   "orte": {
-    "falkensee":          { "archetype": "brandenburg", "hook": "Falkensee ist die größte Stadt im Havelland und grenzt direkt an Berlin-Spandau — hier ist unser Betrieb zuhause, in der Darmstädter Straße. Viele Eigenheime mit Garten, kurze Wege.", "nachbarorte": ["Dallgow-Döberitz", "Brieselang", "Berlin-Spandau"] },
-    "dallgow-doeberitz":  { "archetype": "brandenburg", "hook": "Dallgow-Döberitz mit den Ortsteilen Seeburg und Rohrbeck liegt zwischen Falkensee und Berlin. Neubaugebiete mit jungen Gärten prägen den Ort — genau dafür sind wir gut aufgestellt.", "nachbarorte": ["Falkensee", "Wustermark", "Berlin-Spandau"] },
-    "brieselang":         { "archetype": "brandenburg", "hook": "Brieselang liegt am Brieselanger Forst, geprägt von Einfamilienhäusern und vielen Pendlern Richtung Berlin. Wir kennen die ruhigen Wohnstraßen und sind schnell vor Ort.", "nachbarorte": ["Falkensee", "Wustermark", "Nauen"] },
-    "schoenwalde-glien":  { "archetype": "brandenburg", "hook": "Schönwalde-Glien mit den Ortsteilen Pausin und Paaren ist ländlich geprägt, mit großen Grundstücken und langen Hecken. Hier zahlt sich ein fester Ansprechpartner für Garten und Haus besonders aus.", "nachbarorte": ["Falkensee", "Hennigsdorf", "Oberkrämer"] },
-    "wustermark":         { "archetype": "brandenburg", "hook": "Wustermark mit dem Ortsteil Elstal westlich von Berlin verbindet Wohngebiete mit Logistikstandorten. Vom Reihenhausgarten bis zur größeren Fläche — wir kümmern uns aus einer Hand.", "nachbarorte": ["Dallgow-Döberitz", "Brieselang", "Nauen"] },
-    "nauen":              { "archetype": "brandenburg", "hook": "Nauen ist die Kleinstadt im westlichen Havelland mit historischem Stadtkern, Wohngebieten und Höfen ringsum. Wir fahren die Strecke regelmäßig und planen Termine verlässlich.", "nachbarorte": ["Brieselang", "Wustermark", "Ketzin/Havel"] },
-    "ketzin":             { "archetype": "brandenburg", "hook": "Ketzin/Havel ist eine Hafenstadt an der Havel mit ruhigen Wohnlagen am Wasser. Gerade Grundstücke nah am Ufer brauchen regelmäßige Pflege — wir übernehmen das zuverlässig.", "nachbarorte": ["Nauen", "Wustermark", "Werder (Havel)"] },
-    "oberkraemer":        { "archetype": "brandenburg", "hook": "Oberkrämer fasst die Ortsteile Bötzow, Schwante, Vehlefanz und Eichstädt nördlich von Berlin zusammen. Für die verteilten Ortslagen planen wir die Anfahrt mit, damit der Festpreis steht.", "nachbarorte": ["Velten", "Hennigsdorf", "Kremmen"] },
-    "velten":             { "archetype": "brandenburg", "hook": "Velten, die alte Ofenstadt am Berliner Nordrand, mischt Wohn- und Gewerbelagen. Ob Privatgarten oder Hausverwaltung — wir sind der eine Ansprechpartner für beides.", "nachbarorte": ["Hennigsdorf", "Oberkrämer", "Hohen Neuendorf"] },
-    "glienicke-nordbahn": { "archetype": "brandenburg", "hook": "Glienicke/Nordbahn grenzt direkt an Berlin-Frohnau und ist dicht besiedelt. Auf den kompakten Grundstücken kommt es auf saubere, schnelle Arbeit an — dafür stehen wir.", "nachbarorte": ["Hohen Neuendorf", "Birkenwerder", "Hennigsdorf"] },
-    "lehnitz":            { "archetype": "brandenburg", "hook": "Lehnitz liegt am Lehnitzsee am Rand von Oranienburg — eine ruhige Wohnlage am Wasser. Wir pflegen Gärten und Häuser hier mit dem gleichen Festpreis-Prinzip wie überall.", "nachbarorte": ["Oranienburg", "Birkenwerder", "Leegebruch"] },
-    "leegebruch":         { "archetype": "brandenburg", "hook": "Leegebruch ist eine kompakte Wohngemeinde nördlich von Berlin mit vielen Reihenhäusern und kleinen Gärten. Kurze Wege, klare Absprachen — so arbeiten wir hier.", "nachbarorte": ["Oranienburg", "Velten", "Birkenwerder"] },
-    "kremmen":            { "archetype": "brandenburg", "hook": "Kremmen mit dem historischen Scheunenviertel und ländlicher Umgebung hat oft größere Grundstücke. Für Hecke, Rasen und Hof sind wir der verlässliche Partner aus der Region.", "nachbarorte": ["Oberkrämer", "Oranienburg", "Velten"] },
-    "oranienburg":        { "archetype": "brandenburg", "hook": "Oranienburg ist die Kreisstadt des Landkreises Oberhavel — Schloss und Schlosspark, dazu Wohnquartiere und Gewerbe. Wir bedienen hier sowohl Privathaushalte als auch Hausverwaltungen.", "nachbarorte": ["Lehnitz", "Leegebruch", "Birkenwerder"] },
-    "berlin-kladow":      { "archetype": "berlinrand", "hook": "Kladow ist ein gehobener Spandauer Ortsteil am Havelufer mit Villen und großzügigen Grundstücken. Hier zählen Sorgfalt, Diskretion und ein gepflegter Gesamteindruck — darauf richten wir uns ein.", "nachbarorte": ["Berlin-Gatow", "Groß Glienicke", "Berlin-Spandau"] },
-    "berlin-gatow":       { "archetype": "berlinrand", "hook": "Gatow ist ländlich-vornehm geprägt, mit Pferdehöfen und großen Gärten am Berliner Stadtrand. Größere Flächen pflegen wir im Turnus, sauber und termintreu.", "nachbarorte": ["Berlin-Kladow", "Berlin-Spandau", "Groß Glienicke"] },
-    "gross-glienicke":    { "archetype": "berlinrand", "hook": "Groß Glienicke liegt am Groß Glienicker See zwischen Berlin und Potsdam — eine gefragte Wohnlage mit gehobenen Einfamilienhäusern. Wir halten Garten und Haus hier dauerhaft in Form.", "nachbarorte": ["Berlin-Kladow", "Falkensee", "Potsdam"] },
-    "hohen-neuendorf":    { "archetype": "berlinrand", "hook": "Hohen Neuendorf ist eine waldreiche Wohnstadt nördlich von Berlin mit großen, oft baumbestandenen Grundstücken. Laub, Hecke und Dachrinne sind hier ein Dauerthema — wir nehmen es Ihnen ab.", "nachbarorte": ["Birkenwerder", "Glienicke/Nordbahn", "Velten"] },
-    "birkenwerder":       { "archetype": "berlinrand", "hook": "Birkenwerder am Briesetal ist eine grüne Wohngemeinde mit gepflegten Villengrundstücken. Wer Wert auf einen makellosen Garten legt, ist bei einem festen Ansprechpartner richtig.", "nachbarorte": ["Hohen Neuendorf", "Glienicke/Nordbahn", "Lehnitz"] },
-    "hennigsdorf":        { "archetype": "b2b", "hook": "Hennigsdorf an der Havel ist ein traditioneller Industrie- und Bahntechnik-Standort mit Gewerbegebieten und Wohnquartieren. Für Objekte und Hausverwaltungen sind wir der Dienstleister mit festem Turnus.", "nachbarorte": ["Velten", "Schönwalde-Glien", "Berlin-Spandau"] },
-    "berlin-spandau":     { "archetype": "b2b", "hook": "Spandau verbindet Altstadt, Gewerbehöfe und große Wohnanlagen im Berliner Westen. Hausverwaltungen und Gewerbe bekommen hier alles aus einer Hand — von Reinigung bis Hausmeisterdienst.", "nachbarorte": ["Falkensee", "Berlin-Kladow", "Berlin-Gatow"] },
-    "werder-havel":       { "archetype": "ferien", "hook": "Werder (Havel), die Blütenstadt auf den Havelinseln, ist voll von Ferienwohnungen und Wochenendgrundstücken am Wasser. Für Eigentümer, die nicht vor Ort wohnen, sichern wir die Übergabe per Foto-Nachweis.", "nachbarorte": ["Schwielowsee", "Ketzin/Havel", "Potsdam"] },
-    "schwielowsee":       { "archetype": "ferien", "hook": "Die Gemeinde Schwielowsee mit Caputh, Ferch und Geltow liegt rund um den Schwielowsee und lebt vom Tourismus. Ferienwohnungen brauchen pünktliche, gründliche Reinigung zwischen den Gästen — dafür sind wir da.", "nachbarorte": ["Werder (Havel)", "Potsdam", "Ketzin/Havel"] }
+    "falkensee": {
+      "archetype": "brandenburg",
+      "hook": "Falkensee ist die größte Stadt im Havelland und liegt direkt an der Grenze zu Berlin-Spandau, mit Brieselang und Dallgow-Döberitz als Nachbarn. Das Stadtbild prägen Eigenheime mit eigenem Garten: Reihen aus Einfamilienhäusern, dazu Hecken, Rasenflächen und gepflasterte Einfahrten, die übers Jahr ihre Arbeit machen. Genau hier ist unser Betrieb von der Darmstädter Straße aus zuhause, kennt die Gegend und die Wege zwischen den Wohnvierteln. Ein fester Ansprechpartner aus dem Ort spart das ständige Suchen nach Hilfe für einzelne Aufgaben. Wir übernehmen die Gartenpflege übers Jahr, schneiden Hecken in Form, reinigen Steinwege und Terrassen vor Moos und Schmutz, kümmern uns um Dachrinnen vor dem Herbstlaub und halten im Winter Gehwege frei. So bleibt das Grundstück gepflegt, ohne dass Sie jedes Wochenende selbst ran müssen.",
+      "nachbarorte": [
+        "Dallgow-Döberitz",
+        "Brieselang",
+        "Berlin-Spandau"
+      ]
+    },
+    "dallgow-doeberitz": {
+      "archetype": "brandenburg",
+      "hook": "Dallgow-Döberitz liegt direkt zwischen Falkensee und Berlin-Spandau, mit Wustermark als westlichem Nachbarn. Wer hier wohnt, lebt in einer Wohngemeinde, die in den letzten Jahren stark gewachsen ist: viele Neubaugebiete, dazu die Ortsteile Seeburg und Rohrbeck. Typisch sind frisch angelegte Grundstücke, bei denen junge Gärten, schmale Hecken und neue Beete noch in Form gebracht werden müssen. Genau dabei hilft ein fester Ansprechpartner aus der Region, der die kurzen Wege nach Falkensee und Spandau kennt und verlässlich vorbeikommt. Bei jungen Pflanzungen zahlt sich regelmäßige Pflege aus: rechtzeitiger Heckenschnitt, saubere Beete, gepflegter Rasen. Hinzu kommen Aufgaben rund ums Haus wie Fensterreinigung, freie Dachrinnen oder im Winter der zuverlässige Winterdienst auf Wegen und Einfahrten. So bleibt ein neues Zuhause in Dallgow-Döberitz dauerhaft in gutem Zustand.",
+      "nachbarorte": [
+        "Falkensee",
+        "Wustermark",
+        "Berlin-Spandau"
+      ]
+    },
+    "brieselang": {
+      "archetype": "brandenburg",
+      "hook": "Brieselang liegt zwischen Falkensee und Wustermark, nordwestlich von Berlin und am Rand des Brieselanger Forsts. Wer hier wohnt, kennt das ruhige Bild aus Einfamilienhäusern mit eigenem Grundstück, oft mit Garten zum Wald hin. Viele Bewohner pendeln täglich nach Berlin und kommen abends mit wenig Zeit für die Hausarbeiten heim. Genau dann zahlt sich ein fester Ansprechpartner aus der Region aus, der die Wege kennt und zuverlässig vor Ort ist. Die Waldnähe bringt eigene Aufgaben mit sich: Laub und herabfallende Äste setzen Dachrinnen und Wegen zu, Hecken und Sträucher wachsen kräftig und wollen regelmäßig in Form gehalten werden. Ob Heckenschnitt, Gartenpflege oder die Reinigung der Dachrinne nach dem Herbst, hier hilft jemand, der Falkensee, Wustermark und Nauen genauso gut kennt wie Brieselang selbst. So bleibt Ihr Grundstück gepflegt, ohne dass Sie Ihr Wochenende dafür opfern.",
+      "nachbarorte": [
+        "Falkensee",
+        "Wustermark",
+        "Nauen"
+      ]
+    },
+    "schoenwalde-glien": {
+      "archetype": "brandenburg",
+      "hook": "Schönwalde-Glien liegt nordöstlich von Falkensee und reicht mit seinen Ortsteilen Pausin und Paaren weit ins ländliche Havelland hinein, zwischen Hennigsdorf im Osten und Oberkrämer im Norden. Wer hier wohnt, hat meist viel Platz: große Grundstücke, lange Hecken und Außenflächen, die übers Jahr Arbeit machen. Genau das ist der Punkt, an dem ein fester Ansprechpartner aus der Region den Unterschied macht. Eine Hecke über mehrere Meter schneidet sich nicht nebenbei, und gerade bei weiten Wegen aufs Grundstück zahlt sich jemand aus, der die Gegend kennt und verlässlich vorbeikommt. Ob regelmäßige Gartenpflege, der Heckenschnitt vor dem Sommer oder im Winter ein zuverlässiger Räumdienst auf Zufahrt und Gehweg: In einer so ländlich geprägten Gemeinde wie Schönwalde-Glien lohnt sich ein Partner, der nicht erst aus der Stadt anrücken muss, sondern aus der Nachbarschaft.",
+      "nachbarorte": [
+        "Falkensee",
+        "Hennigsdorf",
+        "Oberkrämer"
+      ]
+    },
+    "wustermark": {
+      "archetype": "brandenburg",
+      "hook": "Wustermark liegt westlich von Berlin, gut erreichbar von Falkensee und an der Seite von Dallgow-Döberitz, Brieselang und Nauen. Die Gemeinde verbindet ruhige Wohngebiete mit großen Logistikstandorten, dazu kommt der Ortsteil Elstal mit dem Olympischen Dorf von 1936. Wer hier ein Haus mit Grundstück hat, kennt die Mischung aus weitläufigen Flächen am Ortsrand und kompakteren Lagen näher an der Bahn. Genau dafür braucht es jemanden aus der Region, der die Wege kurz hält und verlässlich wiederkommt. Auf den Grundstücken fallen über das Jahr viele Aufgaben an: Hecken in Form halten, Rasen und Beete pflegen, Wege und Pflaster von Moos befreien, im Herbst die Dachrinnen leeren und im Winter Zufahrten räumen. Als fester Ansprechpartner aus dem Havelland übernehmen wir das zuverlässig, damit Sie sich um nichts kümmern müssen.",
+      "nachbarorte": [
+        "Dallgow-Döberitz",
+        "Brieselang",
+        "Nauen"
+      ]
+    },
+    "nauen": {
+      "archetype": "brandenburg",
+      "hook": "Nauen liegt im westlichen Havelland, ein gutes Stück hinter Falkensee und Brieselang Richtung Westen, dort wo Stadt allmählich in Felder und Höfe übergeht. Die Kleinstadt mischt einen alten Stadtkern mit ruhigen Wohngebieten, und ringsum prägen Landwirtschaft und größere Grundstücke das Bild. Wer hier ein Haus mit Garten hat, kennt die Arbeit, die so eine Lage mit sich bringt: Hecken, die zweimal im Jahr in Form müssen, Rasenflächen, Steinwege und Einfahrten, die ihre Pflege brauchen, und im Winter geräumte Zugänge. Zwischen Nauen, Wustermark und Ketzin sind die Wege weit genug, dass ein verlässlicher Ansprechpartner aus der Region echten Unterschied macht. Statt wechselnder Kräfte kommt jemand, der die Gegend kennt, Termine hält und auch Dachrinne, Entrümpelung oder den laufenden Hausmeisterservice mit übernimmt. Bodenständig, planbar, nah dran.",
+      "nachbarorte": [
+        "Brieselang",
+        "Wustermark",
+        "Ketzin/Havel"
+      ]
+    },
+    "ketzin": {
+      "archetype": "brandenburg",
+      "hook": "Ketzin/Havel liegt westlich von Berlin, eine kleine Hafenstadt direkt an der Havel, nordwestlich von Werder und südlich von Nauen und Wustermark. Wer hier wohnt, kennt die ruhigen Lagen am Wasser und die Grundstücke, die sich oft bis nah ans Ufer ziehen. Genau solche Lagen bringen Arbeit mit: Hecken und Sträucher, die zur Wasserseite hin wuchern, Dachrinnen, die sich im Herbst füllen, Terrassen und Steinflächen, die durch die Feuchtigkeit schnell vergrünen. Für all das braucht es jemanden aus der Region, der die Wege kennt und verlässlich vorbeikommt, statt aus der Stadt anzureisen. Als fester Ansprechpartner kümmern wir uns um Gartenpflege, Heckenschnitt, Stein- und Fensterreinigung sowie die Dachrinne, im Winter auch um den Räumdienst. So bleibt Ihr Grundstück in Ketzin gepflegt, ohne dass Sie sich um jeden Handgriff selbst kümmern müssen.",
+      "nachbarorte": [
+        "Nauen",
+        "Wustermark",
+        "Werder (Havel)"
+      ]
+    },
+    "oberkraemer": {
+      "archetype": "brandenburg",
+      "hook": "Oberkrämer liegt nördlich von Berlin und ist keine geschlossene Stadt, sondern eine Streugemeinde aus mehreren verteilten Ortsteilen: Bötzow, Schwante, Vehlefanz und Eichstädt. Wer hier wohnt, kennt das dörfliche Bild mit Einfamilienhäusern, größeren Grundstücken und Gärten, die rundherum Pflege brauchen. Die Wege zwischen den Ortsteilen sind kurz, doch jeder Ort hat seinen eigenen Charakter, und zu Velten, Hennigsdorf und Kremmen ist es nicht weit. Gerade weil sich alles auf mehrere Lagen verteilt, hilft ein fester Ansprechpartner aus der Region, der die Gegend kennt und verlässlich vorbeikommt. Auf einem Grundstück dieser Größe fällt über das Jahr einiges an: Rasen mähen, Hecken in Form bringen, im Herbst die Dachrinne frei machen und im Winter Wege und Einfahrten räumen. Sie rufen an, wir kümmern uns darum.",
+      "nachbarorte": [
+        "Velten",
+        "Hennigsdorf",
+        "Kremmen"
+      ]
+    },
+    "velten": {
+      "archetype": "brandenburg",
+      "hook": "Velten liegt am nördlichen Rand Berlins, gut erreichbar zwischen Hennigsdorf, Hohen Neuendorf und der weiter westlich gelegenen Gemeinde Oberkrämer. Als frühere Ofenstadt trägt der Ort bis heute eine Mischung aus Wohnstraßen und Gewerbeflächen, was sich auch in den Grundstücken zeigt: gewachsene Einfamilienhäuser mit Garten stehen neben Betrieben und Hallen, die regelmäßig Pflege brauchen. Genau hier lohnt sich ein fester Ansprechpartner aus der Region, der die Wege kurz hält und planbar wiederkommt. Im Wohnbereich fallen Heckenschnitt, Rasen- und Gartenpflege sowie das Reinigen von Wegen und Einfahrten an, dazu Dachrinnen und Fenster. Gewerbeflächen profitieren von regelmäßiger Unterhaltsreinigung und einem zuverlässigen Hausmeisterservice, im Winter ergänzt durch den Räum- und Streudienst. So bleibt rund ums Haus alles in geordneten Bahnen, ohne dass Sie sich um jeden Termin selbst kümmern müssen.",
+      "nachbarorte": [
+        "Hennigsdorf",
+        "Oberkrämer",
+        "Hohen Neuendorf"
+      ]
+    },
+    "glienicke-nordbahn": {
+      "archetype": "brandenburg",
+      "hook": "Glienicke/Nordbahn liegt nördlich von Berlin und grenzt direkt an Berlin-Frohnau, was die Gemeinde fast zu einem Teil des Stadtgefüges macht. Hier wohnen die Menschen dicht beieinander, die Grundstücke fallen eher kompakt aus, und genau das prägt den Alltag rund ums Haus. Auf wenig Fläche zählt jeder Quadratmeter: Eine Hecke an der Grenze zum Nachbarn will sauber in Form gehalten werden, der schmale Vorgarten gepflegt, das Pflaster frei von Moos und Unkraut. Zwischen Hohen Neuendorf, Birkenwerder und Hennigsdorf gelegen, profitiert die Gemeinde von kurzen Wegen ins Umland und nach Falkensee. Wer hier einen festen Ansprechpartner aus der Region hat, spart sich das Suchen: Heckenschnitt, Steinreinigung oder im Winter der geräumte Gehweg lassen sich planbar erledigen. Bei kleinen Grundstücken kommt es auf Sorgfalt und kurze Anfahrt an, nicht auf große Maschinen. Diese Verlässlichkeit bieten wir Ihnen in Glienicke/Nordbahn.",
+      "nachbarorte": [
+        "Hohen Neuendorf",
+        "Birkenwerder",
+        "Hennigsdorf"
+      ]
+    },
+    "lehnitz": {
+      "archetype": "brandenburg",
+      "hook": "Lehnitz gehört als Ortslage zu Oranienburg und liegt nördlich von Berlin am Lehnitzsee, Richtung Birkenwerder und Leegebruch. Geprägt ist der Ort von einer ruhigen Wohnlage, teils direkt am Wasser, mit Einfamilienhäusern und Grundstücken, auf denen Garten und Außenbereich viel Raum einnehmen. Wer hier am See wohnt, kennt den Aufwand: Hecken wollen in Form bleiben, das Laub von größeren Bäumen sammelt sich, und feuchte Lagen setzen Terrassen, Wegen und Dachrinnen zu. Genau dafür braucht es einen festen Ansprechpartner aus der Region, der die Wege kurz hält und über die Jahre verlässlich bleibt, statt jedes Mal jemand Neuen zu suchen. Vom Heckenschnitt über die Steinreinigung bis zur Dachrinne und zum Winterdienst übernehmen wir die Aufgaben, die rund um ein Haus in Lehnitz regelmäßig anfallen, ordentlich und auf Zuruf.",
+      "nachbarorte": [
+        "Oranienburg",
+        "Birkenwerder",
+        "Leegebruch"
+      ]
+    },
+    "leegebruch": {
+      "archetype": "brandenburg",
+      "hook": "Leegebruch liegt nördlich von Berlin, zwischen Oranienburg, Velten und Birkenwerder, und prägt sich als kompakte Wohngemeinde aus. Reihenhäuser stehen hier dicht beieinander, die Gärten fallen entsprechend kleiner aus. Genau das verändert, was an Haus und Grundstück anfällt: Auf knappem Raum zählt jeder Quadratmeter, eine Hecke zur Nachbarseite will sauber in Form gehalten werden, und für aufwendige Geräte fehlt im schmalen Reihenhausgarten oft der Platz. Wer hier wohnt, braucht keinen Großbetrieb, sondern jemanden aus der Region, der die kurzen Wege kennt und verlässlich wiederkommt. Ein fester Ansprechpartner übernimmt Gartenpflege, Heckenschnitt und im Winter den Räumdienst auf Gehweg und Zufahrt, kümmert sich um die Dachrinne am Reihenhaus oder die Fensterreinigung. Das passt zu Leegebruch, wo Nähe und ein gepflegtes Gesamtbild der ganzen Zeile zugutekommen.",
+      "nachbarorte": [
+        "Oranienburg",
+        "Velten",
+        "Birkenwerder"
+      ]
+    },
+    "kremmen": {
+      "archetype": "brandenburg",
+      "hook": "Kremmen liegt nordöstlich von Falkensee, jenseits von Oranienburg und Velten, am ländlichen Rand des Berliner Umlands. Bekannt ist die Stadt für ihr historisches Scheunenviertel, das den dörflich-handwerklichen Charakter bis heute prägt. Drumherum erstreckt sich offenes Land, und die Wohnlage besteht oft aus größeren Grundstücken mit Haus, Hof und reichlich Grünfläche. Wer hier wohnt, hat meist mehr Garten zu betreuen, als sich nebenbei erledigen lässt: lange Hecken, weitläufiger Rasen, Bäume und Sträucher, die im Frühjahr und Herbst Arbeit machen. Auch Dachrinnen und Steinflächen sammeln auf solchen Anwesen schnell Laub und Schmutz. Gerade weil Kremmen mit Oberkrämer und den Nachbarorten eher abseits der größeren Zentren liegt, zahlt sich ein fester regionaler Ansprechpartner aus, der die Wege kennt und zuverlässig vor Ort ist, statt erst von weit her anreisen zu müssen.",
+      "nachbarorte": [
+        "Oberkrämer",
+        "Oranienburg",
+        "Velten"
+      ]
+    },
+    "oranienburg": {
+      "archetype": "brandenburg",
+      "hook": "Oranienburg ist die Kreisstadt von Oberhavel und liegt nördlich von Berlin, oberhalb von Birkenwerder und Leegebruch, mit Lehnitz als ruhigem Nachbarn vor den Toren der Stadt. Rund um Schloss und Schlosspark prägen gewachsene Wohnquartiere das Bild, während sich daneben Gewerbeflächen erstrecken. Diese Mischung sorgt dafür, dass hier sehr unterschiedliche Grundstücke gepflegt werden wollen: das Reihenhaus mit schmalem Vorgarten, das ältere Einfamilienhaus mit größerer Hecke, dazu Höfe und Flächen auf der gewerblichen Seite. Wer hier wohnt oder vermietet, schätzt einen festen Ansprechpartner aus der Region, der die Wege kurz hält und zuverlässig wiederkommt. Im Lauf des Jahres fallen Heckenschnitt, regelmäßige Gartenpflege, das Säubern verschmutzter Steinflächen und im Winter der Räumdienst vor Haustür und Einfahrt an. Für Gewerbeobjekte kommt die Unterhaltsreinigung dazu, sauber und planbar erledigt.",
+      "nachbarorte": [
+        "Lehnitz",
+        "Leegebruch",
+        "Birkenwerder"
+      ]
+    },
+    "berlin-kladow": {
+      "archetype": "berlinrand",
+      "hook": "Kladow liegt am westlichen Havelufer und gehört zu Spandau, doch der Charakter ist ein eigener: großzügige Grundstücke, Villen und viel Grün prägen das Bild bis hinüber nach Gatow und Groß Glienicke. Wer hier wohnt, legt Wert auf einen gepflegten Gesamteindruck, vom Vorgarten an der Straße bis zur Terrasse zum Wasser hin. Genau dafür braucht es jemanden, der regelmäßig kommt und das Grundstück über die Jahreszeiten kennt. Bei uns in Kladow heißt das im Sommer Rasen und Hecken in Form halten, im Herbst Laub und volle Dachrinnen abarbeiten und im Winter Wege frei und sicher schalten. Auch verwitterte Steinflächen oder Fenster, denen man die Lage nahe am Wasser ansieht, gehören dazu. Als fester Ansprechpartner aus der Region sind wir kurze Wege gewohnt und planen mit Ihnen verlässlich voraus.",
+      "nachbarorte": [
+        "Berlin-Gatow",
+        "Groß Glienicke",
+        "Berlin-Spandau"
+      ]
+    },
+    "berlin-gatow": {
+      "archetype": "berlinrand",
+      "hook": "Gatow liegt am westlichen Stadtrand von Berlin, im Bezirk Spandau, in Richtung Falkensee und unweit von Kladow und Groß Glienicke. Der Ortsteil hat seinen ländlichen Charakter bewahrt: Pferdehöfe prägen das Bild, dazu großzügige Grundstücke mit weitläufigen Gärten, die mehr Arbeit machen, als ein Wochenende hergibt. Wo Hecken Länge brauchen, Rasenflächen regelmäßig gemäht werden wollen und alter Baumbestand im Herbst die Dachrinnen füllt, lohnt ein fester Ansprechpartner aus der Region, der die Wege kennt und verlässlich wiederkommt. Wir übernehmen die laufende Gartenpflege, schneiden Hecken in Form, halten Steinwege und Einfahrten sauber und kümmern uns im Winter um geräumte Zugänge. So bleibt das große Grundstück gepflegt, ohne dass Sie jedes Mal selbst zur Heckenschere greifen müssen.",
+      "nachbarorte": [
+        "Berlin-Kladow",
+        "Berlin-Spandau",
+        "Groß Glienicke"
+      ]
+    },
+    "gross-glienicke": {
+      "archetype": "berlinrand",
+      "hook": "Groß Glienicke liegt am gleichnamigen See, eingebettet zwischen Berlin und Potsdam. Wer hier wohnt, schätzt die ruhige, grüne Wohnlage am Wasser, oft in gehobenen Einfamilienhäusern mit großzügig geschnittenen Grundstücken. Über die Stadtgrenze nach Berlin-Kladow ist es ein Katzensprung, Falkensee und Potsdam liegen ebenfalls in greifbarer Nähe. Genau diese gepflegten Anwesen bringen einen festen Pflegebedarf mit: Hecken, die in Form bleiben sollen, Rasenflächen über die Saison, Terrassen und Wege, die nach dem Winter wieder sauber werden müssen. Wer beruflich eingespannt ist oder die Immobilie als Zweitwohnsitz nutzt, braucht jemanden aus der Region, der zuverlässig vorbeikommt und das Grundstück im Blick behält. Als regionaler Ansprechpartner kennen wir die Wege im Havelland und sind schnell vor Ort, wenn in Groß Glienicke etwas anliegt.",
+      "nachbarorte": [
+        "Berlin-Kladow",
+        "Falkensee",
+        "Potsdam"
+      ]
+    },
+    "hohen-neuendorf": {
+      "archetype": "berlinrand",
+      "hook": "Hohen Neuendorf liegt nördlich von Berlin und gilt als waldreiche Wohnstadt, in der viele Grundstücke groß geschnitten und von altem Baumbestand geprägt sind. Wer hier wohnt, hat oft Birken, Kiefern und Laubbäume direkt am Haus, dazu Hecken, die zur Straße hin Sichtschutz geben. Der S-Bahn-Anschluss macht den Ort für Berlin-Pendler attraktiv, doch genau diese Pendler haben unter der Woche selten Zeit für Heckenschnitt, Laub im Herbst oder verstopfte Dachrinnen unter den Bäumen. Zwischen Birkenwerder, Glienicke/Nordbahn und Velten gelegen, bleibt vieles auf kurzen Wegen erreichbar, was einen festen regionalen Ansprechpartner praktisch macht. Wir kümmern uns um die laufende Gartenpflege auf solchen Baumgrundstücken, schneiden Hecken in Form, reinigen Dachrinnen vom Falllaub und übernehmen im Winter den Räumdienst auf Zufahrt und Gehweg. So bleibt Ihr Grundstück gepflegt, ohne dass Ihre Wochenenden draufgehen.",
+      "nachbarorte": [
+        "Birkenwerder",
+        "Glienicke/Nordbahn",
+        "Velten"
+      ]
+    },
+    "birkenwerder": {
+      "archetype": "berlinrand",
+      "hook": "Birkenwerder liegt nördlich von Berlin, eingebettet zwischen Hohen Neuendorf, Glienicke/Nordbahn und Lehnitz. Die grüne Wohngemeinde am Briesetal ist von gepflegten Villengrundstücken geprägt, auf denen Haus und Garten viel Aufmerksamkeit verlangen. Wer hier wohnt, kennt das: Große Heckenzüge wollen mehrfach im Jahr in Form gebracht werden, alte Baumbestände sorgen im Herbst für volle Dachrinnen, und gepflasterte Auffahrten setzen mit der Zeit Moos und Grünbelag an. Solche Aufgaben summieren sich, gerade wenn das Grundstück großzügig geschnitten ist. Ein fester regionaler Ansprechpartner aus dem benachbarten Falkensee kennt die Wege im Havelland und ist schnell vor Ort, statt von weit her anzureisen. Von der laufenden Gartenpflege über den Heckenschnitt bis zur Steinreinigung und der Dachrinnenreinigung bleibt so alles in einer Hand, verlässlich und zu festen Terminen.",
+      "nachbarorte": [
+        "Hohen Neuendorf",
+        "Glienicke/Nordbahn",
+        "Lehnitz"
+      ]
+    },
+    "hennigsdorf": {
+      "archetype": "b2b",
+      "hook": "Hennigsdorf liegt nördlich von Berlin an der Havel, gleich an der Stadtgrenze zu Berlin-Spandau und in Reichweite von Velten und Schönwalde-Glien. Der Ort ist seit jeher von Industrie und Bahntechnik geprägt, mit ausgedehnten Gewerbegebieten neben gewachsenen Wohnquartieren. Diese Mischung bringt einen breiten Bedarf mit sich: Hausverwaltungen betreuen hier Wohnanlagen, Betriebe brauchen verlässliche Gebäude- und Unterhaltsreinigung, und Eigentümer privater Häuser kümmern sich um Garten und Außenanlagen. Genau dafür ist ein fester Ansprechpartner aus der Region praktisch. Ob Heckenschnitt und Gartenpflege rund ums Eigenheim, die Reinigung von Fenstern und Dachrinnen an einem Mehrfamilienhaus oder im Winter ein zuverlässiger Räumdienst auf Zufahrten und Gehwegen: Wer in Hennigsdorf jemanden sucht, der die Wege kurz hält und auf Zuruf vorbeikommt, ist mit einem Betrieb aus dem Havelland gut beraten.",
+      "nachbarorte": [
+        "Velten",
+        "Schönwalde-Glien",
+        "Berlin-Spandau"
+      ]
+    },
+    "berlin-spandau": {
+      "archetype": "b2b",
+      "hook": "Spandau liegt am westlichen Rand Berlins, direkt an der Grenze zum Havelland und damit nah an Falkensee. Wer hier wohnt oder verwaltet, kennt das Nebeneinander von alter Spandauer Altstadt, gewachsenen Gewerbehöfen und größeren Wohnanlagen, die sich Richtung Kladow und Gatow ins Grüne ziehen. Genau diese Mischung sorgt für eine breite Aufgabenliste: Außenanlagen größerer Hausgemeinschaften wollen gepflegt, Hecken in Form gehalten, Steinflächen und Fenster sauber gehalten werden, und an den Höfen fällt regelmäßig Dachrinnenreinigung oder Entrümpelung an. Für Hausverwaltungen und Gewerbebetriebe zahlt sich ein fester Ansprechpartner aus der Region aus, der die kurzen Wege ins westliche Berlin und ins angrenzende Havelland kennt und zuverlässig vorbeikommt. So bleibt von der Gartenpflege bis zur Unterhaltsreinigung alles in einer Hand, ohne langes Suchen nach wechselnden Dienstleistern.",
+      "nachbarorte": [
+        "Falkensee",
+        "Berlin-Kladow",
+        "Berlin-Gatow"
+      ]
+    },
+    "werder-havel": {
+      "archetype": "ferien",
+      "hook": "Werder (Havel) liegt auf den Havelinseln westlich von Berlin, ein Stück südwestlich von Falkensee und gleich neben Potsdam, Schwielowsee und Ketzin/Havel. Die Blütenstadt am Wasser zieht viele Menschen an, die hier eine Ferienwohnung oder ein Wochenendgrundstück direkt an der Havel besitzen, selbst aber oft auswärts wohnen. Genau das macht einen festen regionalen Ansprechpartner sinnvoll: Wer nicht jedes Wochenende vor Ort ist, braucht jemanden in der Nähe, der nach dem Rechten sieht und anpackt, bevor etwas auflauft. Am Wasser gelegene Grundstücke fordern regelmäßige Gartenpflege, einen sauberen Heckenschnitt und freie Dachrinnen, dazu im Winter geräumte Wege. Für vermietete Ferienwohnungen kommt die Reinigung zwischen den Gästen hinzu. So bleibt das Haus auch aus der Ferne in verlässlichen Händen, ohne dass Eigentümer ständig selbst anreisen müssen.",
+      "nachbarorte": [
+        "Schwielowsee",
+        "Ketzin/Havel",
+        "Potsdam"
+      ]
+    },
+    "schwielowsee": {
+      "archetype": "ferien",
+      "hook": "Schwielowsee liegt südwestlich von Potsdam, dort wo sich der gleichnamige See zwischen die Ortsteile Caputh, Ferch und Geltow legt. Die Gemeinde lebt von Erholung und Tourismus, viele Häuser dienen als Ferienunterkunft oder Zweitwohnsitz, oft mit großzügigem Grundstück nah am Wasser. Genau hier zeigt sich, warum ein fester Ansprechpartner aus der Region den Unterschied macht: Wer seine Ferienwohnung am Schwielowsee vermietet, braucht zwischen den Buchungen jemanden, der zuverlässig die Reinigung übernimmt, die Hecke in Form hält und im Herbst das Laub vom Grundstück räumt. Auch Fenster, Dachrinnen und Terrassensteine verlangen am wassernahen Standort regelmäßige Pflege. Zwischen Werder an der Havel, Potsdam und Ketzin sind die Wege kurz, und gerade Eigentümer, die nicht dauerhaft vor Ort wohnen, schätzen einen verlässlichen Nachbarn, der nach dem Rechten sieht und anpackt, bevor aus Kleinigkeiten Arbeit wird.",
+      "nachbarorte": [
+        "Werder (Havel)",
+        "Potsdam",
+        "Ketzin/Havel"
+      ]
+    }
   }
 }

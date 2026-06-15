@@ -42,6 +42,8 @@ const PAGE_ORTS = [];
 for (const s of services) if (PAGE_SVC.has(s.slug)) for (const o of orteForService(s)) PAGE_ORTS.push([s.slug, o.slug]);
 const genOrts = new Set((FULL ? PAGE_ORTS : SAMPLE_ORTSSEITEN).map(([a, b]) => a + '|' + b));
 const hasOrt = (ss, os) => genOrts.has(ss + '|' + os);
+// per-Archetyp Ort-Index → gleichmäßige Pool-Verteilung (eindeutige rahmen/trust-Tupel statt Seed-Kollisionen)
+const archOrtIdx = {}; { const cnt = {}; for (const o of haupt) { const a = ((_orteCp && _orteCp.orte && _orteCp.orte[o.slug]) || {}).archetype || 'x'; archOrtIdx[o.slug] = (cnt[a] = (cnt[a] || 0) + 1) - 1; } }
 
 const esc = t => (t == null ? '' : String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 // sj: JSON-LD-String-Wert — rohes & (kein HTML-Escape), aber < -> < (kein </script>-Ausbruch) + JSON-escape
@@ -72,15 +74,18 @@ function faqBlock(faqs, alt) {
 // Title ≤60 / Meta 150–158 erzwingen — escape-aware (gemessen wird die gerenderte Länge mit &amp; etc.)
 const rlen = s => (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').length;
 function clampTitle(s) { s = (s || '').replace(/\s+/g, ' ').trim(); while (rlen(s) > 60) { const sp = s.lastIndexOf(' '); if (sp < 30) { s = s.slice(0, s.length - 1); continue; } s = s.slice(0, sp); } return s.replace(/[ ,;:–-]+$/, ''); }
-const META_TAIL = ' Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Auftrag, ein fester Ansprechpartner im Havelland. Jetzt kostenlos anfragen.';
+const META_TAIL = ' Ein fester Ansprechpartner im Havelland und Berliner Umland, telefonisch oder per WhatsApp erreichbar, mit kostenloser Vor-Ort-Besichtigung.';
 const DANGLE = /\s+(per|und|mit|nach|für|im|in|zu|von|der|die|das|ein|eine|einen|am|an|auf|bei|als|wie|oder|aus|über|unter|vor|jetzt|noch|so|dem|den)$/i;
 function mkMeta(s) {
   s = (s || '').replace(/\s+/g, ' ').trim();
   let t = rlen(s) < 150 ? s + META_TAIL : s;            // zu kurz → langen Tail anhängen
   while (rlen(t) > 158) { const sp = t.lastIndexOf(' '); if (sp < 110) break; t = t.slice(0, sp); }
+  // bevorzugt an Klausel-/Satz-Grenze (Komma/Punkt im hinteren Drittel) kürzen → sauberes Ende
+  const cl = Math.max(t.lastIndexOf(', '), t.lastIndexOf('. '));
+  if (cl >= 130) t = t.slice(0, cl);
   t = t.replace(/[ ,;:.–-]+$/, '');
-  while (DANGLE.test(t)) t = t.replace(DANGLE, '');      // unvollständiges Satzende vermeiden
-  return t.replace(/[ ,;:.–-]+$/, '') + '.';
+  while (DANGLE.test(t)) t = t.replace(DANGLE, '').replace(/[ ,;:.–-]+$/, '');
+  return t + '.';
 }
 // deterministische Rotation (Uniqueness ohne Zufall)
 const seedOf = s => { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; };
@@ -192,23 +197,25 @@ function ortsseite(s, o) {
   const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)} ${sj(o.name)}","serviceType":"${sj(s.name)}","provider":{"@id":"${DOMAIN}/#organization"},"areaServed":${place}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url:`/${s.slug}/`},{name:o.name,url}])}`;
 
   // Body aus Copy-Schicht (mit Fallback) — Archetyp-Bausteine aus POOLS per Seed (Near-Duplicate-Reduktion)
-  const pickPool = (arr, sd) => Array.isArray(arr) && arr.length ? arr[sd % arr.length] : (typeof arr === 'string' ? arr : '');
+  const pickPool = (arr, i) => Array.isArray(arr) && arr.length ? arr[((i % arr.length) + arr.length) % arr.length] : (typeof arr === 'string' ? arr : '');
+  const idx = archOrtIdx[o.slug] || 0;
+  const rLen = arch && Array.isArray(arch.rahmen) ? arch.rahmen.length : 1;
   const lead = c && c.ortsseite_lead ? fillTok(c.ortsseite_lead, o, oc) : `Ihr ${s.name} in ${o.name} — vom Haus- & Gartenservice Havelland.`;
   const hook = oc && oc.hook ? `<p>${esc(oc.hook)}</p>` : '';
-  const rahmenTxt = pickPool(arch && arch.rahmen, seed);
-  const trustTxt = pickPool(arch && arch.trust, ((seed >> 3) + 1) >>> 0);
+  const rahmenTxt = pickPool(arch && arch.rahmen, idx);                       // eindeutige Verteilung
+  const trustTxt = pickPool(arch && arch.trust, Math.floor(idx / rLen));      // -> (rahmen,trust)-Tupel eindeutig je Archetyp-Ort
   const rahmen = rahmenTxt ? `<p>${esc(fillTok(rahmenTxt, o, oc))}</p>` : '';
   const sektionen = (s.sektionen || []).map(x => `<li>${esc(x)}</li>`).join('');
   const ortsteile = (o.ortsteile && o.ortsteile.length) ? `<p>Auch in ${esc(o.ortsteile.join(', '))} und Umgebung sind wir für Sie da.</p>` : '';
   const trust = trustTxt ? `<p>${esc(fillTok(trustTxt, o, oc))}</p>` : `<p>Kostenlose Besichtigung, danach ein Festpreis ohne Nachkommen — und nach dem Auftrag Vorher/Nachher-Fotos per WhatsApp.</p>`;
 
-  // FAQ: 2 Archetyp-FAQ (aus Pool von 4, seed-rotiert, {ort}-gefüllt) + 2 Hub-FAQ (aus 5) → stark variiert je Ort
-  const archFaqs = arch && arch.faqs ? rotate(arch.faqs, seed, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
-  const hubFaqs = c && c.faqs ? rotate(c.faqs, ((seed / 3) | 0) + 1, 2) : [];
+  // FAQ: 2 Archetyp-FAQ (Pool, idx-rotiert, {ort}) + 2 Hub-FAQ (aus 5, versetzt) → variiert je Ort
+  const archFaqs = arch && arch.faqs ? rotate(arch.faqs, idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
+  const hubFaqs = c && c.faqs ? rotate(c.faqs, idx + 2, 2) : [];
   const faqs = [...archFaqs, ...hubFaqs];
 
   const title = clampTitle(`${s.name} ${o.name}${(s.name.length + o.name.length) < 34 ? ' – Havelland' : ''}`);
-  const meta = mkMeta(`${s.name} in ${o.name}${o.plz?` (${o.plz})`:''}: lokal, Festpreis nach kostenloser Besichtigung, Foto-Nachweis, ein fester Ansprechpartner.`);
+  const meta = mkMeta(`${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`);
 
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/${s.slug}/">${esc(s.name)}</a><span class="sep">›</span>${esc(o.name)}</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(o.name)}${o.plz?` · ${esc(o.plz)}`:''}</span><h1 class="rv in d1">${esc(s.name)} <em>in ${esc(o.name)}</em></h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref(`Hallo, ich brauche ${s.name} in ${o.name}.`)}">WhatsApp</a></div></div>
