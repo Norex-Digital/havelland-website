@@ -27,7 +27,7 @@ const visibleText = h => h.replace(/<script[^>]*>[\s\S]*?<\/script>/g,' ').repla
 // ---- Pro-Datei-Checks ----
 let brokenLinks=0; const brokenSamples=[];
 let imgNoAlt=0, imgNoDim=0; const titles=new Map(); const metas=new Map();
-const transRe = /\b(fuer|ueber|koennen|koennt|muessen|moechten?|moeglich|schoen|groesse|groesser|qualitaet|taetig|naehe|naehere|haeufig|haeufige|gruen|gruenflaeche|natuerlich|persoenlich|zuverlaessig|regelmaessig|raeumen|geraeumt|fruehjahr|fruehling|gebaeude|aufloesung|entruempelung|haushaltsaufloesung|oberflaeche|baeume|straeucher|waehrend|gemaess|spaeter|draussen|fuehren|massnahmen|grundstuecke?)\b/i;
+const transRe = /\b(fuer|ueber|koennen|koennt|muessen|moechten?|moeglich|schoen|groesse|groesser|qualitaet|taetig|naehe|naehere|haeufig|haeufige|gruen|gruenflaeche|natuerlich|persoenlich|zuverlaessig|regelmaessig|raeumen|geraeumt|fruehjahr|fruehling|gebaeude|aufloesung|entruempelung|haushaltsaufloesung|oberflaeche|baeume|straeucher|waehrend|gemaess|spaeter|draussen|fuehren|massnahmen|grundstuecke?|doeberitz|schoenwalde|oberkraemer|muehlenberge|phoeben)\b/i;
 const bodyByService = {}; // service -> [{url,shingles}]
 
 for(const f of files){
