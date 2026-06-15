@@ -26,7 +26,7 @@ const visibleText = h => h.replace(/<script[^>]*>[\s\S]*?<\/script>/g,' ').repla
 
 // ---- Pro-Datei-Checks ----
 let brokenLinks=0; const brokenSamples=[];
-let imgNoAlt=0, imgNoDim=0; const titles=new Map(); const metas=new Map();
+let imgNoAlt=0, imgNoDim=0, noScta=0, noHamb=0; const titles=new Map(); const metas=new Map();
 const transRe = /\b(fuer|ueber|koennen|koennt|muessen|moechten?|moeglich|schoen|groesse|groesser|qualitaet|taetig|naehe|naehere|haeufig|haeufige|gruen|gruenflaeche|natuerlich|persoenlich|zuverlaessig|regelmaessig|raeumen|geraeumt|fruehjahr|fruehling|gebaeude|aufloesung|entruempelung|haushaltsaufloesung|oberflaeche|baeume|straeucher|waehrend|gemaess|spaeter|draussen|fuehren|massnahmen|grundstuecke?|doeberitz|schoenwalde|oberkraemer|muehlenberge|phoeben)\b/i;
 const bodyByService = {}; // service -> [{url,shingles}]
 
@@ -63,6 +63,10 @@ for(const f of files){
   if(/"@type":"FAQPage"/.test(h)) FAIL('FAQPage', `${url} enthält FAQPage-JSON-LD`);
   if(/GTM-X|G-XXXX|G-XXXXX|WF3|TBD-P\d|TBD\b/.test(h)) FAIL('PlatzhalterID', `${url} enthält Platzhalter-ID`);
   if(/"item":"\/[a-z]/.test(h)) FAIL('SchemaRelURL', `${url} relative Schema-URL`);
+  if(/&amp;amp;/.test(h)) FAIL('DoppelEntity', `${url} enthält &amp;amp; (Doppel-Escape)`);
+  if(/&lt;\/?em&gt;/.test(h)) FAIL('EscapedEm', `${url} escaptes <em> als sichtbarer Text`);
+  if(!/class="scta"/.test(h)) noScta++;
+  if(!/class="hamb"/.test(h)) noHamb++;
 
   // ASCII-Transliteration im sichtbaren Text
   const vis = visibleText(h);
@@ -83,13 +87,15 @@ for(const f of files){
   if(can&&og&&can!==og) FAIL('CanonOG', `${url} canonical≠og:url`);
   if(can && can!==`${DOMAIN}${url}`) WARN('CanonSelf', `${url} canonical=${can}`);
 
-  // Near-Duplicate-Vorbereitung: Ortsseiten nach Service gruppieren
-  const om = url.match(/^\/([a-z-]+?)-([a-z-]+)\/$/);
-  if(om){ const svc=om[1];
-    // nur echte Service-Ort-Seiten (Service-slug bekannt)
-    const words = vis.toLowerCase().replace(/[^a-zäöüß ]/g,' ').split(/\s+/).filter(w=>w.length>2);
+  // Near-Duplicate: Ortsseiten nach Service gruppieren — gemessen NUR am Prose+FAQ-Body (nicht Chrome)
+  const om = url.match(/^\/([a-z]+(?:-[a-z]+)*?)-([a-z]+(?:-[a-z]+)*)\/$/);
+  if(om && /breadcrumb[^>]*>.*?›.*?›/s.test(h)){ const svc=om[1]; // 2 Breadcrumb-Trenner = Ortsseite
+    const pm = h.match(/<div class="prose wide[^"]*">([\s\S]*?)<\/div><\/div><\/section>/);
+    const fm = h.match(/<div class="faq rv">([\s\S]*?)<\/div><\/section>/);
+    const bodyText = (((pm?pm[1]:'')+' '+(fm?fm[1]:'')).replace(/<[^>]+>/g,' ') || vis);
+    const words = bodyText.toLowerCase().replace(/[^a-zäöüß ]/g,' ').split(/\s+/).filter(w=>w.length>2);
     const sh=new Set(); for(let i=0;i<words.length-2;i++) sh.add(words[i]+' '+words[i+1]+' '+words[i+2]);
-    (bodyByService[svc]=bodyByService[svc]||[]).push({url, sh});
+    if(sh.size>5) (bodyByService[svc]=bodyByService[svc]||[]).push({url, sh});
   }
 }
 
@@ -97,6 +103,9 @@ for(const f of files){
 if(brokenLinks===0) OK('Broken-Link = 0'); else FAIL('BrokenLink', `${brokenLinks} kaputte interne Links, z.B. ${brokenSamples.slice(0,8).join(' | ')}`);
 if(imgNoAlt===0) OK('alt≠"" auf allen <img>'); else FAIL('ImgAlt', `${imgNoAlt} <img> ohne alt`);
 if(imgNoDim===0) OK('width+height auf allen <img>'); else FAIL('ImgDim', `${imgNoDim} <img> ohne width/height`);
+if(noScta===0) OK('Sticky-Mobile-CTA (.scta) auf allen Seiten'); else FAIL('StickyCTA', `${noScta} Seiten ohne .scta`);
+if(noHamb===0) OK('Mobile-Hamburger (.hamb) auf allen Seiten'); else FAIL('Hamburger', `${noHamb} Seiten ohne .hamb`);
+{ const kf = files.find(f=>urlOf(f)==='/kontakt/'); if(kf && /<form id="anfrage"/.test(fs.readFileSync(kf,'utf8'))) OK('Kontakt-Formular vorhanden'); else FAIL('KontaktForm','/kontakt/ ohne Anfrage-Formular'); }
 
 // Title-Uniqueness
 const tvals=[...titles.values()]; const tdup=tvals.filter((v,i)=>tvals.indexOf(v)!==i);

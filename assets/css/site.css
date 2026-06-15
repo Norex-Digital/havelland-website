@@ -162,6 +162,35 @@ footer em{font-style:italic}
 .center{text-align:center}
 .section-alt{background:var(--paper)}
 
+/* mobile hamburger nav (CSS-only, komponenten-spec: Vollscreen-Overlay, alle Links als <a>) */
+.nvt{position:absolute;opacity:0;pointer-events:none}
+.hamb{display:none}
+.navmenu{display:none}
+@media(max-width:900px){
+  .nav .cta{display:none}
+  .hamb{display:flex;flex-direction:column;justify-content:center;gap:5px;width:48px;height:48px;cursor:pointer;flex:none}
+  .hamb span{display:block;width:25px;height:2px;background:var(--green-d);border-radius:2px;transition:transform .25s var(--ease),opacity .2s}
+  .navmenu{display:flex;position:fixed;left:0;right:0;top:80px;bottom:0;flex-direction:column;gap:2px;padding:22px 28px 40px;background:var(--cream);transform:translateX(100%);transition:transform .28s var(--ease);z-index:39;overflow-y:auto}
+  .navmenu a{padding:17px 2px;font-size:19px;font-weight:600;color:var(--green-d);border-bottom:1px solid var(--hair)}
+  .navmenu a.btn{margin-top:22px;justify-content:center;border-bottom:none;color:#3a2a06}
+  .nvt:checked ~ .navmenu{transform:none}
+  .nvt:checked ~ .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nvt:checked ~ .hamb span:nth-child(2){opacity:0}
+  .nvt:checked ~ .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+
+/* kontakt-formular */
+.kf{display:grid;gap:16px;max-width:36em;margin-top:8px}
+.kf label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14.5px;color:var(--green-d)}
+.kf input,.kf textarea{font:400 16px Inter;padding:13px 14px;border:1.5px solid var(--hair);border-radius:12px;background:#fff;color:var(--ink);min-height:50px}
+.kf input:focus,.kf textarea:focus{outline:none;border-color:var(--green)}
+.kf textarea{min-height:120px;resize:vertical}
+.kf .chk{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;font-size:13.5px;color:var(--muted)}
+.kf .chk input{min-height:auto;width:20px;height:20px;flex:none;margin-top:2px}
+.kf button{justify-self:start;margin-top:4px}
+.kf-alt{font-size:14.5px;color:var(--muted);margin-top:4px}
+.kf-alt a{color:var(--green);font-weight:600;border-bottom:1px solid var(--accent)}
+
 /* sticky mobile CTA (komponenten-spec: [Anrufen | WhatsApp], Touch ≥48px) */
 .scta{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;background:rgba(251,250,246,.96);backdrop-filter:blur(8px);border-top:1px solid var(--hair);box-shadow:0 -10px 30px -18px rgba(14,46,31,.55)}
 .scta a{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;min-height:56px;padding:12px 8px;font-family:Inter;font-weight:700;font-size:15.5px}
