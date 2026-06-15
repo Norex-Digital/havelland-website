@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# AI-Crawler erlaubt (AEO/GEO)
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://haus-und-gartenservice-havelland.de/sitemap.xml
