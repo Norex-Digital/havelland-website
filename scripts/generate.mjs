@@ -26,6 +26,13 @@ const segMatch = (s, o) => s.segment.some(x => o.typ.includes(x));
 const orteForService = s => haupt.filter(o => s.orte_fix ? s.orte_fix.includes(o.slug) : segMatch(s, o));
 const servicesForOrt = o => services.filter(s => PAGE_SVC.has(s.slug) && (s.orte_fix ? s.orte_fix.includes(o.slug) : segMatch(s, o)));
 
+// Welche Ortsseiten werden TATSÄCHLICH gerendert? (Manifest-First → Link-Graph geschlossen, keine 404)
+const SAMPLE_ORTSSEITEN = [['heckenschnitt','falkensee'],['gartenpflege','berlin-kladow'],['steinreinigung','dallgow-doeberitz'],['fensterreinigung','nauen'],['entruempelung','oranienburg'],['winterdienst','falkensee'],['hausmeisterservice','hennigsdorf'],['gebaeudereinigung','berlin-spandau'],['ferienwohnung-reinigung','werder-havel'],['dachrinnenreinigung','hohen-neuendorf']];
+const PAGE_ORTS = [];
+for (const s of services) if (PAGE_SVC.has(s.slug)) for (const o of orteForService(s)) PAGE_ORTS.push([s.slug, o.slug]);
+const genOrts = new Set((FULL ? PAGE_ORTS : SAMPLE_ORTSSEITEN).map(([a, b]) => a + '|' + b));
+const hasOrt = (ss, os) => genOrts.has(ss + '|' + os);
+
 const esc = t => (t == null ? '' : String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const leaf = cls => `<svg class="${cls}" viewBox="0 0 100 100"><path fill="currentColor" d="M90 10C38 12 10 42 10 92c32-2 52-15 63-35 2 15-3 27-3 27s20-23 20-54c0-10-2-21 0-20Z"/></svg>`;
 const tel = nap.phone_e164; const waHref = q => `https://wa.me/${tel.replace('+','')}?text=${encodeURIComponent(q)}`;
@@ -50,14 +57,15 @@ function faqBlock(faqs, alt) {
   const items = faqs.map(f => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('');
   return `<section class="sec${alt ? ' section-alt' : ''}"><div class="wrap"><h2 class="serif rv" style="text-align:center;max-width:18em;margin:0 auto 28px">Häufige Fragen</h2><div class="faq rv">${items}</div></div></section>`;
 }
-// Title ≤60 / Meta 150–158 erzwingen
-function clampTitle(s) { s = (s || '').replace(/\s+/g, ' ').trim(); if (s.length <= 60) return s; const cut = s.slice(0, 60); const sp = cut.lastIndexOf(' '); return (sp > 40 ? cut.slice(0, sp) : cut).trim(); }
-const META_FILL = [' Festpreis nach Besichtigung.', ' Foto-Nachweis nach jedem Auftrag.', ' Ein Ansprechpartner im Havelland.', ' Jetzt kostenlos anfragen.', ' Schnelle Antwort per WhatsApp.'];
+// Title ≤60 / Meta 150–158 erzwingen — escape-aware (gemessen wird die gerenderte Länge mit &amp; etc.)
+const rlen = s => (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').length;
+function clampTitle(s) { s = (s || '').replace(/\s+/g, ' ').trim(); while (rlen(s) > 60) { const sp = s.lastIndexOf(' '); if (sp < 30) { s = s.slice(0, s.length - 1); continue; } s = s.slice(0, sp); } return s.replace(/[ ,;:–-]+$/, ''); }
+const META_TAIL = ' Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Auftrag, ein fester Ansprechpartner im Havelland. Jetzt kostenlos anfragen.';
 function mkMeta(s) {
   s = (s || '').replace(/\s+/g, ' ').trim();
-  if (s.length > 158) { const cut = s.slice(0, 158); const sp = cut.lastIndexOf(' '); s = (sp > 120 ? cut.slice(0, sp) : cut).replace(/[.,;:]?$/, '').trim() + '.'; }
-  for (const f of META_FILL) { if (s.length >= 150) break; if ((s + f).length <= 158) s += f; }
-  return s;
+  let t = rlen(s) < 150 ? s + META_TAIL : s;            // zu kurz → langen Tail anhängen
+  while (rlen(t) > 158) { const sp = t.lastIndexOf(' '); if (sp < 110) break; t = t.slice(0, sp); }
+  return t.replace(/[ ,;:.–-]+$/, '') + '.';
 }
 // deterministische Rotation (Uniqueness ohne Zufall)
 const seedOf = s => { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; };
@@ -125,7 +133,8 @@ function hub(s) {
   const url = `/${s.slug}/`;
   const c = hubCopy[s.slug];
   const orteList = orteForService(s);
-  const cards = orteList.slice(0, FULL ? 999 : 12).map(o => `<a class="card" href="/${s.slug}-${o.slug}/"><h3>${esc(s.name)} ${esc(o.name)}</h3><p>${esc(s.name)} in ${esc(o.name)} — lokal, Festpreis, Foto-Nachweis.</p><span class="go">Mehr →</span></a>`).join('');
+  const cardOrte = orteList.filter(o => hasOrt(s.slug, o.slug)).slice(0, FULL ? 999 : 12);
+  const cards = cardOrte.map(o => `<a class="card" href="/${s.slug}-${o.slug}/"><h3>${esc(s.name)} ${esc(o.name)}</h3><p>${esc(s.name)} in ${esc(o.name)} — lokal, Festpreis, Foto-Nachweis.</p><span class="go">Mehr →</span></a>`).join('');
 
   const h1 = c ? emH1(c.h1, c.h1_em) : `${esc(s.name)} <em>im Havelland</em>`;
   const lead = c ? esc(c.intro) : esc(s.garantie || 'Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.');
@@ -145,7 +154,7 @@ function hub(s) {
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div>
 <div class="shot rv in d2"><img class="main" src="/assets/img/hero-garten.png" alt="${esc(s.name)} im Havelland" width="640" height="480"><div class="badge"><span class="ic">${leaf('')}</span><span class="t">Foto-Nachweis<span>nach jedem Auftrag</span></span></div></div></div></section>
 <section class="sec"><div class="wrap"><div class="prose wide rv">${definition}${sektionenHtml}${naehe}${ablauf}<h3>Unsere Garantie</h3><p>${esc(garantieTxt)}</p></div></div></section>
-${orteList.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div><div class="cards rv">${cards}</div></div></section>` : ''}
+${cardOrte.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div><div class="cards rv">${cards}</div></div></section>` : ''}
 ${faqBlock(c && c.faqs)}
 ${endBand}`;
   write(url, head(title, meta, url, schema) + header + main + footer + revealJS + '</body></html>');
@@ -159,7 +168,7 @@ function ortsseite(s, o) {
   const oc = orteCopy[o.slug];
   const arch = oc ? archCopy[oc.archetype] : null;
   const seed = seedOf(url);
-  const nachbarn = orteForService(s).filter(x => x.slug !== o.slug);
+  const nachbarn = orteForService(s).filter(x => x.slug !== o.slug && hasOrt(s.slug, x.slug));
   const nahCards = rotate(nachbarn, seed, 4);
 
   const place = `{"@type":"Place","name":"${esc(o.name)}"${o.plz?`,"address":{"@type":"PostalAddress","postalCode":"${esc(o.plz)}","addressLocality":"${esc(o.name)}","addressCountry":"DE"}`:''}}`;
@@ -186,7 +195,7 @@ function ortsseite(s, o) {
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(o.name)}${o.plz?` · ${esc(o.plz)}`:''}</span><h1 class="rv in d1">${esc(s.name)} <em>in ${esc(o.name)}</em></h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref(`Hallo, ich brauche ${s.name} in ${o.name}.`)}">WhatsApp</a></div></div>
 <div class="shot rv in d2"><img class="main" src="/assets/img/hero-garten.png" alt="${esc(s.name)} in ${esc(o.name)}" width="640" height="480"><div class="badge"><span class="ic">${leaf('')}</span><span class="t">Vor Ort in ${esc(o.name)}<span>schnelle Reaktion</span></span></div></div></div></section>
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${definition}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>Festpreis &amp; Foto-Nachweis</h3>${trust}</div></div></section>
-${nahCards.length?`<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a></div></div></section>`:''}
+<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a></div></div></section>
 ${faqBlock(faqs)}
 ${endBand}`;
   write(url, head(title, meta, url, schema) + header + main + footer + revealJS + '</body></html>');
@@ -200,7 +209,7 @@ function ortsHub(o) {
   const url = `/standorte/${o.slug}/`;
   const oc = orteCopy[o.slug];
   const teile = (ortsteileVon ? Object.entries(ortsteileVon).filter(([,p]) => p === o.name).map(([s]) => s) : []);
-  const cards = svcs.map((s,i) => `<a class="card" href="/${s.slug}-${o.slug}/"><span class="n">${String(i+1).padStart(2,'0')}</span><h3>${esc(s.name)}</h3><p>${esc(s.name)} in ${esc(o.name)}.</p><span class="go">Mehr →</span></a>`).join('');
+  const cards = svcs.map((s,i) => { const tgt = hasOrt(s.slug, o.slug) ? `/${s.slug}-${o.slug}/` : `/${s.slug}/`; return `<a class="card" href="${tgt}"><span class="n">${String(i+1).padStart(2,'0')}</span><h3>${esc(s.name)}</h3><p>${esc(s.name)} in ${esc(o.name)}.</p><span class="go">Mehr →</span></a>`; }).join('');
   const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Haus- & Gartenservice in ${esc(o.name)}","about":{"@id":"${DOMAIN}/#organization"}},${breadcrumb([{name:'Start',url:'/'},{name:'Standorte',url:'/standorte/'},{name:o.name,url}])}`;
   const intro = oc && oc.hook ? `<p class="lead rv in d2">${esc(oc.hook)}</p>` : `<p class="lead rv in d2">Alle Leistungen rund um Haus und Garten in ${esc(o.name)}${o.plz?` (${esc(o.plz)})`:''} — von einem festen Ansprechpartner.</p>`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/standorte/">Standorte</a><span class="sep">›</span>${esc(o.name)}</div>
@@ -280,7 +289,8 @@ function sitemaps() {
 }
 
 // ---------- RUN ----------
-const SAMPLE_ORTSSEITEN = [['heckenschnitt','falkensee'],['gartenpflege','berlin-kladow'],['steinreinigung','dallgow-doeberitz'],['fensterreinigung','nauen'],['entruempelung','oranienburg'],['winterdienst','falkensee'],['hausmeisterservice','hennigsdorf'],['gebaeudereinigung','berlin-spandau'],['ferienwohnung-reinigung','werder-havel'],['dachrinnenreinigung','hohen-neuendorf']];
+// sauberer Output, keine stale Seiten — Kinder einzeln entfernen (Windows-EPERM-sicher)
+if (fs.existsSync('website')) for (const e of fs.readdirSync('website')) { try { fs.rmSync(`website/${e}`, { recursive: true, force: true, maxRetries: 5, retryDelay: 120 }); } catch (err) { console.warn(`WARN wipe ${e}: ${err.code}`); } }
 home();
 services.forEach(hub);
 haupt.forEach(ortsHub);

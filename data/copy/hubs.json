@@ -1,0 +1,991 @@
+{
+ "_meta": "P4-Copy generiert via Workflow havelland-p4-copy (echte Skill-Kette). 2026-06-16.",
+ "hubs": [
+  {
+   "slug": "gartenpflege",
+   "title": "Gartenpflege Havelland – Haus- & Gartenservice",
+   "meta": "Gartenpflege im Havelland: Rasen, Grünschnitt, Laub und kleiner Baumschnitt aus einer Hand. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Termin.",
+   "h1": "Ihre regelmäßige Gartenpflege im Havelland – verlässlich und sauber",
+   "h1_em": "verlässlich",
+   "intro": "Der Haus- & Gartenservice Havelland übernimmt Ihre Gartenpflege in Falkensee und im gesamten Havelland: Rasen mähen, Grünschnitt, Laub entfernen und kleinen Baumschnitt – alles aus einer Hand, von einem festen Ansprechpartner. Sie melden sich per WhatsApp, wir kommen vorbei, schauen uns Ihren Garten an und nennen Ihnen einen Festpreis. Nach jedem Termin erhalten Sie Vorher-/Nachher-Fotos direkt aufs Handy. Wer regelmäßig Ordnung möchte, bucht die Pflege im 14-tägigen Rhythmus.",
+   "definition": "Gartenpflege ist die regelmäßige Instandhaltung eines Privatgartens – Rasen mähen und düngen, Hecken und Sträucher schneiden, Laub räumen und kleine Bäume in Form halten. Sie hält den Garten das ganze Jahr gepflegt und spart Ihnen die eigene Arbeit am Wochenende.",
+   "sections": [
+    {
+     "h3": "Rasenpflege",
+     "body": "Wir mähen Ihren Rasen, schneiden die Kanten sauber ab und nehmen das Schnittgut mit. Zur Saison gehören außerdem Vertikutieren gegen Moos und Filz, Nachsäen kahler Stellen und das Düngen für ein dichtes, grünes Grasbild. Im Frühjahr bringen wir Ihre Rasenfläche nach dem Winter wieder in Form. Als Abo im 14-tägigen Rhythmus bleibt der Schnitt gleichmäßig und das Gras kräftig – Sie müssen den Mäher nie wieder selbst herausholen."
+    },
+    {
+     "h3": "Grünschnitt",
+     "body": "Wir schneiden Hecken, Sträucher und Bodendecker in Form und kürzen wuchernde Triebe ein. Buchs, Liguster, Thuja oder Kirschlorbeer bringen wir auf die Höhe und Breite, die zu Ihrem Garten passt. Den Grünschnitt räumen wir zusammen und entsorgen ihn fachgerecht. Der beste Zeitpunkt liegt im Frühjahr und nach dem Hauptwuchs im Sommer. Auf Wunsch legen wir feste Schnitttermine in Ihren Pflegeplan, damit die Hecke das ganze Jahr ordentlich aussieht."
+    },
+    {
+     "h3": "Laubentfernung",
+     "body": "Wir sammeln Laub von Rasen, Wegen, Terrasse und aus Beeten und nehmen es mit. Liegt nasses Laub zu lange auf dem Rasen, erstickt das Gras und es bilden sich kahle Stellen – darum räumen wir regelmäßig, nicht erst, wenn alles braun ist. Auch Dachrinnen und Lichtschächte befreien wir auf Wunsch von Laub. Im Herbst lohnt sich ein fester Rhythmus; im Frühjahr räumen wir die letzten Reste des Vorjahres weg."
+    },
+    {
+     "h3": "Baumschnitt (klein)",
+     "body": "Wir schneiden kleine Bäume und Obstbäume bis zu einer Höhe, die wir sicher vom Boden oder von der Leiter aus erreichen. Dazu gehören das Auslichten der Krone, das Entfernen abgestorbener Äste und der Formschnitt junger Bäume. Bei Obstbäumen fördert ein sauberer Schnitt im späten Winter oder zeitigen Frühjahr den Ertrag. Größere Fällungen und Arbeiten in der Höhe gehören in die Hände einer Fachfirma mit Spezialausrüstung – das sagen wir Ihnen bei der Besichtigung ehrlich."
+    }
+   ],
+   "naehe": "Sie suchen Gartenpflege in der Nähe? Wir sitzen in Falkensee und sind im gesamten Havelland sowie im angrenzenden Berliner Umland für Sie unterwegs – von Nauen über Dallgow-Döberitz und Brieselang bis Spandau. Kurze Wege bedeuten kurze Reaktionszeiten: Auf Ihre WhatsApp antworten wir in Stunden, nicht in Tagen. Als regional verwurzelter Betrieb kennen wir Boden, Wetter und Pflanzen vor Ort und planen die Termine so, dass sie zu Ihrem Garten und der Saison passen.",
+   "ablauf": "So läuft es ab: Sie schildern uns per WhatsApp oder Telefon kurz, was ansteht. Wir kommen kostenlos vorbei und sehen uns Ihren Garten an. Danach erhalten Sie einen Festpreis – als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf, der Festpreis ist der Endpreis. Zum vereinbarten Termin führen wir die Arbeit sauber und pünktlich aus und räumen hinter uns auf. Zum Schluss bekommen Sie Vorher-/Nachher-Fotos direkt aufs Handy, damit Sie das Ergebnis sehen, auch wenn Sie nicht zu Hause waren.",
+   "faqs": [
+    {
+     "q": "Was gehört alles zur Gartenpflege?",
+     "a": "Zur Gartenpflege gehören Rasen mähen, düngen und vertikutieren, der Grünschnitt von Hecken und Sträuchern, das Entfernen von Laub sowie kleiner Baumschnitt. Beim Haus- & Gartenservice Havelland bekommen Sie all das von einem festen Ansprechpartner. Auf Wunsch übernehmen wir auch Beetpflege und Unkraut. Was genau ansteht, klären wir bei der kostenlosen Besichtigung vor Ort."
+    },
+    {
+     "q": "Wie oft sollte der Rasen gemäht werden?",
+     "a": "In der Wachstumszeit von April bis Oktober braucht ein Rasen alle ein bis zwei Wochen einen Schnitt, damit er dicht und kräftig bleibt. Deshalb bieten wir die Pflege im 14-tägigen Rhythmus als Abo an. So bleibt das Gras gleichmäßig, Sie haben keine Arbeit damit und müssen sich um keinen Termin selbst kümmern."
+    },
+    {
+     "q": "Wann ist der beste Zeitpunkt für Heckenschnitt und Baumschnitt?",
+     "a": "Hecken schneidet man am besten im Frühjahr vor dem Austrieb und noch einmal nach dem Hauptwuchs im Sommer. Kleine Obstbäume schneiden Sie im späten Winter oder zeitigen Frühjahr, das fördert den Ertrag. Wir planen die Schnitttermine passend zur Saison und tragen sie auf Wunsch fest in Ihren Pflegeplan ein."
+    },
+    {
+     "q": "Was kostet die Gartenpflege im Havelland?",
+     "a": "Einen festen Eurobetrag nennen wir erst nach der kostenlosen Besichtigung, weil der Preis von Gartengröße, Aufwand und Pflegerhythmus abhängt. Sie bekommen dann einen Festpreis, der auch der Endpreis ist – als Kleinunternehmer rechnen wir ohne Mehrwertsteuer. So wissen Sie vorher genau, was Sie zahlen, ohne Überraschungen auf der Rechnung."
+    },
+    {
+     "q": "Bieten Sie auch regelmäßige Gartenpflege im Abo an?",
+     "a": "Ja. Sie buchen die Pflege im festen 14-tägigen Rhythmus, dann kümmern wir uns laufend um Rasen, Hecken und Laub. Für den Winterdienst gibt es eigene Saisonverträge. Ein Abo spart Ihnen die Terminplanung und hält den Garten das ganze Jahr in Form. Sie haben weiterhin einen festen Ansprechpartner für alle Arbeiten rund ums Haus."
+    }
+   ],
+   "garantie_text": "Fällt ein vereinbarter Pflegetermin ohne Vorankündigung aus, ist Ihr nächster Termin kostenlos.",
+   "ortsseite_lead": "Ihre Gartenpflege in {ort} übernimmt der Haus- & Gartenservice Havelland – Rasen, Grünschnitt, Laub und kleiner Baumschnitt aus einer Hand. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Termin in {ort}.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "heckenschnitt",
+   "title": "Heckenschnitt Havelland | Festpreis vom Gartenservice",
+   "meta": "Heckenschnitt im Havelland vom Haus- & Gartenservice: kostenlose Besichtigung, Festpreis als Endpreis, Foto-Nachweis nach jedem Auftrag. Jetzt per WhatsApp anfragen.",
+   "h1": "Heckenschnitt im Havelland — sauber geschnitten, ordentlich abgefahren",
+   "h1_em": "sauber",
+   "intro": "Ihren Heckenschnitt im Havelland übernimmt der Haus- & Gartenservice Havelland aus Falkensee, Inhaber Noah Telo, als feste Leistung mit Festpreis. Sie bekommen einen Ansprechpartner für den ganzen Garten, eine kostenlose Vor-Ort-Besichtigung vorab und nach dem Auftrag eine Foto-Doku vom Vorher und Nachher direkt aufs Handy. Formschnitt, Radikalschnitt zur erlaubten Zeit und die komplette Abfuhr des Grünschnitts gehören dazu. Eine erste Rückmeldung erhalten Sie per WhatsApp meist innerhalb weniger Stunden.",
+   "definition": "Heckenschnitt ist das fachgerechte Kürzen und Formen von Gartenhecken, das die Pflanze dicht und gesund hält und die Grundstücksgrenze sauber abgrenzt. Dazu zählen der regelmäßige Formschnitt, der starke Verjüngungsschnitt im Winterhalbjahr und das Abfahren des anfallenden Grünschnitts.",
+   "sections": [
+    {
+     "h3": "Formschnitt für eine dichte, gerade Hecke",
+     "body": "Beim Formschnitt kürzen wir die Hecke gleichmäßig in Höhe und Breite, sodass sie dicht wächst und eine klare Kante behält. Wir arbeiten mit der leicht trapezförmigen Schnittform, unten breiter als oben, damit auch die unteren Triebe Licht bekommen und nicht verkahlen. Liguster, Thuja, Hainbuche, Eibe oder Kirschlorbeer behandeln wir nach Sorte. Der Formschnitt ist ganzjährig erlaubt, weil es sich um einen schonenden Pflegeschnitt handelt. Den anfallenden Grünschnitt nehmen wir gleich mit."
+    },
+    {
+     "h3": "Radikalschnitt von Oktober bis Februar",
+     "body": "Einen starken Rückschnitt oder Verjüngungsschnitt setzen wir im Winterhalbjahr zwischen Oktober und Februar an. In diesem Zeitraum lässt das Bundesnaturschutzgesetz den radikalen Schnitt zu, und die Hecke verträgt den Eingriff ohne Saft und ohne Belaubung am besten. Wir bauen verkahlte oder zu breit gewordene Hecken über einen oder mehrere Winter zurück und bringen sie wieder in Form. So treibt die Pflanze im Frühjahr kräftig und dicht aus, statt von unten kahl zu bleiben."
+    },
+    {
+     "h3": "Grünschnitt-Abfuhr inklusive",
+     "body": "Den gesamten Grünschnitt fahren wir nach dem Schnitt ab, Sie bleiben nicht auf Ästen und Laub sitzen. Wir laden alles auf, kehren die Fläche besenrein und entsorgen das Material ordnungsgemäß. Das ist Teil des Festpreises, den Sie nach der Besichtigung erhalten, ohne spätere Zusatzposten für die Entsorgung. Bleiben wider Erwarten doch Schnittreste liegen, kommen wir kostenlos nach. Das ist unsere Geradlinien-Garantie."
+    },
+    {
+     "h3": "Schnittzeiten und Naturschutz",
+     "body": "Das Bundesnaturschutzgesetz schützt brütende Vögel: Vom 1. März bis 30. September dürfen Hecken nur schonend in Form gehalten, aber nicht stark zurückgeschnitten oder auf den Stock gesetzt werden. Den Formschnitt führen wir deshalb ganzjährig aus, den Radikalschnitt planen wir gezielt für das Winterhalbjahr. Vor jedem stärkeren Eingriff prüfen wir die Hecke auf Nester. So bleibt Ihre Hecke gepflegt, und Sie sind auf der sicheren Seite. Der Nachfrage-Peak liegt im Februar, eine frühe Anfrage sichert Ihnen den Wunschtermin."
+    }
+   ],
+   "naehe": "Sie suchen einen Heckenschnitt in der Nähe? Wir sitzen in Falkensee und fahren das gesamte Havelland sowie das angrenzende Berliner Umland an, von Nauen über Dallgow-Döberitz und Brieselang bis Schönwalde und Spandau. Kurze Wege bedeuten kurze Reaktionszeiten und einen Ansprechpartner, der die Region kennt. Schreiben Sie uns Ihre Adresse per WhatsApp, dann stimmen wir die kostenlose Besichtigung vor Ort ab.",
+   "ablauf": "Sie fragen per WhatsApp oder Telefon an, wir kommen kostenlos zur Besichtigung vorbei und schauen uns Hecke, Höhe und Zugang an. Daraus erhalten Sie einen Festpreis, der als Kleinunternehmer ohne Mehrwertsteuer Ihr Endpreis bleibt. Zum vereinbarten Termin führen wir den Schnitt aus und fahren den Grünschnitt ab. Danach bekommen Sie die Foto-Doku vom Vorher und Nachher direkt aufs Handy.",
+   "faqs": [
+    {
+     "q": "Wann darf man eine Hecke schneiden?",
+     "a": "Den schonenden Formschnitt dürfen Sie das ganze Jahr über durchführen, um die Hecke in Form zu halten. Einen starken Rückschnitt oder das Auf-den-Stock-Setzen erlaubt das Bundesnaturschutzgesetz nur zwischen dem 1. Oktober und dem 28. Februar. Vom 1. März bis 30. September sind solche radikalen Eingriffe zum Schutz brütender Vögel untersagt. Wir planen jeden Schnitt passend zu diesen Fristen."
+    },
+    {
+     "q": "Wie oft sollte eine Hecke geschnitten werden?",
+     "a": "Die meisten Gartenhecken brauchen zweimal im Jahr einen Formschnitt, in der Regel im Frühsommer nach dem ersten Austrieb und ein zweites Mal gegen Ende des Sommers. Schnellwüchsige Arten wie Liguster vertragen einen dritten Schnitt. Über ein 14-tägiges Wartungsabo halten wir Ihre Hecke und den restlichen Garten dauerhaft in Form, ohne dass Sie an Termine denken müssen."
+    },
+    {
+     "q": "Was kostet ein Heckenschnitt im Havelland?",
+     "a": "Einen Pauschalpreis nennen wir nicht ins Blaue, weil Länge, Höhe, Heckenart und Zugang den Aufwand bestimmen. Sie erhalten nach einer kostenlosen Besichtigung vor Ort einen Festpreis, der inklusive Abfuhr des Grünschnitts Ihr Endpreis bleibt. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Nachträgliche Posten gibt es nicht, der vereinbarte Preis steht."
+    },
+    {
+     "q": "Fahren Sie den Grünschnitt nach dem Schnitt ab?",
+     "a": "Ja, die Abfuhr und Entsorgung des gesamten Grünschnitts gehört bei uns zum Festpreis. Wir laden Äste und Laub auf, kehren die Fläche besenrein und entsorgen das Material ordnungsgemäß. Sie bleiben auf nichts sitzen. Sollten doch Reste liegen bleiben, kommen wir im Rahmen unserer Geradlinien-Garantie kostenlos nach und räumen sie weg."
+    },
+    {
+     "q": "Wie schnell bekomme ich einen Termin für den Heckenschnitt?",
+     "a": "Eine erste Rückmeldung erhalten Sie nach Ihrer WhatsApp-Anfrage meist innerhalb weniger Stunden, nicht erst nach Tagen. Den Termin für die kostenlose Besichtigung stimmen wir kurzfristig ab. Im Februar ist die Nachfrage am höchsten, weil viele den Radikalschnitt noch vor dem Fristbeginn am 1. März erledigen wollen. Fragen Sie früh an, dann sichern Sie sich Ihren Wunschtermin."
+    }
+   ],
+   "garantie_text": "Geradlinien-Garantie: Bleiben nach dem Schnitt doch Grünschnitt-Reste auf Ihrem Grundstück liegen, kommen wir kostenlos nach und räumen sie weg.",
+   "ortsseite_lead": "Ihr Heckenschnitt in {ort} vom Haus- & Gartenservice Havelland: Formschnitt, Radikalschnitt zur erlaubten Zeit und die komplette Grünschnitt-Abfuhr zum Festpreis. Kostenlose Besichtigung vor Ort in {ort}, Foto-Nachweis nach dem Auftrag direkt aufs Handy.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "winterdienst",
+   "title": "Winterdienst Falkensee & Havelland | Festpreis",
+   "meta": "Winterdienst im Havelland: Schneeräumen und Streuen zum Festpreis, mit Reaktionszeit-Garantie und Foto-Nachweis je Einsatz. Jetzt Saisonvertrag sichern.",
+   "h1": "Ihr Winterdienst im Havelland — geräumt, bevor der Tag beginnt",
+   "h1_em": "geräumt",
+   "intro": "Der Haus- & Gartenservice Havelland aus Falkensee übernimmt Ihren Winterdienst im Havelland und im Berliner Umland: Schneeräumen, Streuen bei Glätte und die volle Räum- und Streupflicht für Privathaushalte, Gewerbe und Hausverwaltungen. Sie buchen einen Saisonvertrag zum Festpreis, wir räumen pünktlich und legen nach jedem Einsatz einen Foto-Nachweis auf Ihr Handy. Ein fester Ansprechpartner, eine klare Garantie, kein Papierkram am Morgen.",
+   "definition": "Winterdienst ist die regelmäßige Schnee- und Eisbeseitigung auf Gehwegen, Zufahrten und Stellplätzen, die Eigentümer und Anlieger gesetzlich verantworten. Dazu gehören das Schneeräumen nach Schneefall und das Streuen bei Glätte innerhalb fester Zeitfenster, damit niemand auf Ihrer Fläche zu Schaden kommt.",
+   "sections": [
+    {
+     "h3": "Schneeräumen",
+     "body": "Wir räumen Ihre Gehwege, Hauseingänge, Zufahrten und Stellplätze von Schnee frei, bevor der Berufsverkehr und die Fußgänger einsetzen. Bei anhaltendem Schneefall kommen wir mehrfach am Tag, damit die Flächen begehbar und befahrbar bleiben. Der geräumte Schnee landet dort, wo er niemanden behindert, nicht auf der Nachbarfläche oder im Rinnstein. Jede Räumung halten wir mit einem Vorher-Nachher-Foto fest, das Sie direkt aufs Handy bekommen."
+    },
+    {
+     "h3": "Streuen bei Glätte",
+     "body": "Bei Glatteis und überfrierender Nässe streuen wir Ihre Flächen abstumpfend ab, sodass Gehwege und Zufahrten griffig bleiben. Wir richten uns nach der Wetterlage und streuen auch dann, wenn kein Schnee liegt, aber der Boden gefriert. Welches Streumittel auf Ihre Fläche passt, klären wir vorab, denn auf vielen Gehwegen ist Streusalz ortsrechtlich eingeschränkt. Auch jeden Streueinsatz dokumentieren wir mit Foto und Uhrzeit."
+    },
+    {
+     "h3": "Räum- und Streupflicht",
+     "body": "Als Eigentümer oder Anlieger haften Sie dafür, dass auf Ihren Flächen niemand ausrutscht, an Werktagen meist von sieben bis zwanzig Uhr, sonntags etwas später. Verletzt sich jemand auf nicht geräumtem Boden, drohen Schadenersatz und Bußgelder. Mit unserem Winterdienst übertragen Sie diese Pflicht vertraglich an uns und sind abgesichert. Der Foto-Nachweis je Einsatz belegt im Streitfall, dass rechtzeitig geräumt und gestreut wurde."
+    },
+    {
+     "h3": "Saisonvertrag",
+     "body": "Den Winterdienst buchen Sie als Saisonvertrag für die kalte Jahreszeit, üblich von November bis März. Wir besichtigen Ihre Flächen kostenlos, halten Zeitfenster und Streumittel schriftlich fest und nennen Ihnen einen Festpreis für die gesamte Saison. So planen Sie sicher, ohne pro Einsatz nachzurechnen. Verträge schließen wir am besten im September bis November ab, damit Sie beim ersten Schnee bereits abgesichert sind."
+    }
+   ],
+   "naehe": "Den Winterdienst erledigen wir vor Ort im Havelland und im angrenzenden Berliner Umland. Von Falkensee aus erreichen wir Nauen, Dallgow-Döberitz, Brieselang, Wustermark, Schönwalde-Glien und die nahen Berliner Randbezirke kurzfristig, oft innerhalb derselben Stunde nach Schneefall. Kurze Wege bedeuten kurze Reaktionszeiten: Wir sitzen nicht im Stau quer durchs Land, sondern fahren die Strecke, die wir aus dem Alltag kennen. Sie haben einen Ansprechpartner aus der Region, den Sie über WhatsApp direkt erreichen.",
+   "ablauf": "Zuerst besichtigen wir Ihre Flächen kostenlos vor Ort und besprechen Zeitfenster, Streumittel und Ihre Räum- und Streupflicht. Danach erhalten Sie einen Festpreis für die gesamte Saison, der Festpreis ist der Endpreis, denn als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Mit Vertragsbeginn räumen und streuen wir Ihre Flächen pünktlich nach Wetterlage. Nach jedem Einsatz schicken wir Ihnen einen Foto-Nachweis mit Uhrzeit direkt aufs Handy.",
+   "faqs": [
+    {
+     "q": "Was kostet der Winterdienst im Havelland?",
+     "a": "Wir nennen Ihnen keinen Preis am Telefon, weil jede Fläche anders ist. Stattdessen besichtigen wir Ihre Gehwege und Zufahrten kostenlos vor Ort und geben Ihnen danach einen Festpreis für die gesamte Saison. Dieser Festpreis ist der Endpreis, denn als Kleinunternehmer nach Paragraf 19 schlagen wir keine Mehrwertsteuer obendrauf. So wissen Sie vorab genau, woran Sie sind."
+    },
+    {
+     "q": "Wann sollte ich den Saisonvertrag abschließen?",
+     "a": "Am besten zwischen September und November, also bevor der erste Schnee fällt. Wer früh bucht, ist beim ersten Wintereinbruch bereits abgesichert und steht nicht kurzfristig ohne Räumdienst da. Wir besichtigen Ihre Flächen im Herbst, halten alles schriftlich fest und übernehmen Ihre Räum- und Streupflicht für die ganze Saison von November bis März. Eine Anfrage über WhatsApp genügt."
+    },
+    {
+     "q": "Wie oft wird bei Schneefall geräumt?",
+     "a": "So oft, wie es die Wetterlage verlangt. Bei einmaligem Schneefall räumen wir vor dem morgendlichen Berufsverkehr und kontrollieren tagsüber nach. Bei anhaltendem Schneefall kommen wir mehrfach am Tag, damit Ihre Flächen durchgehend begehbar bleiben. Welche Zeitfenster gelten, hängt von Ihrer Räum- und Streupflicht ab und wird im Saisonvertrag festgehalten. Jeden Einsatz belegen wir mit Foto."
+    },
+    {
+     "q": "Übernehmen Sie die Haftung für meine Räum- und Streupflicht?",
+     "a": "Ja. Mit dem Saisonvertrag übertragen Sie die Räum- und Streupflicht für Ihre Flächen vertraglich an uns. Rutscht jemand aus, sind Sie als Anlieger abgesichert, weil wir die Verkehrssicherung übernehmen. Der Foto-Nachweis mit Uhrzeit je Einsatz belegt im Streitfall, dass rechtzeitig geräumt und gestreut wurde. Diese Dokumentation ist für Privathaushalte wie für Hausverwaltungen ein handfester Beleg."
+    },
+    {
+     "q": "Was passiert, wenn nicht rechtzeitig geräumt wird?",
+     "a": "Dann greift unsere Reaktionszeit-Garantie. Räumen oder streuen wir Ihre Fläche nicht innerhalb des vereinbarten Zeitfensters, erstatten wir Ihnen den Einsatz anteilig. Wir verstecken uns nicht hinter Kleingedrucktem, sondern stehen für die zugesagte Reaktionszeit gerade. Der Foto-Nachweis mit Uhrzeit macht jeden Einsatz nachprüfbar, sodass Sie und wir jederzeit sehen, wann geräumt wurde."
+    }
+   ],
+   "garantie_text": "Reaktionszeit-Garantie: Räumen oder streuen wir Ihre Fläche nicht innerhalb des vereinbarten Zeitfensters, erstatten wir Ihnen den Einsatz anteilig.",
+   "ortsseite_lead": "Ihr Winterdienst in {ort} vom Haus- & Gartenservice Havelland: Schneeräumen und Streuen zum Festpreis, mit Reaktionszeit-Garantie und Foto-Nachweis nach jedem Einsatz. Den Saisonvertrag für {ort} schließen Sie am besten im Herbst ab, damit Sie beim ersten Schnee abgesichert sind.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "steinreinigung",
+   "title": "Steinreinigung Falkensee & Havelland | Festpreis",
+   "meta": "Steinreinigung im Havelland: Moos, Algen und Grünbelag runter von Pflaster, Terrasse und Einfahrt. Festpreis nach Gratis-Besichtigung, Foto-Nachweis nach jedem Auftrag.",
+   "h1": "Steinreinigung im Havelland — Pflaster, Terrasse und Einfahrt wieder <em>sauber</em>",
+   "h1_em": "sauber",
+   "intro": "Der Haus- & Gartenservice Havelland aus Falkensee befreit Ihr Pflaster, Ihre Terrasse und Ihre Einfahrt von Moos, Algen und Grünbelag. Wir reinigen Stein für Stein im Havelland und im Berliner Umland, nennen Ihnen nach einer kostenlosen Besichtigung einen Festpreis und schicken Ihnen nach dem Auftrag Vorher-Nachher-Fotos aufs Handy. Ein fester Ansprechpartner, ein klarer Preis, ein sichtbares Ergebnis.",
+   "definition": "Steinreinigung ist das gründliche Säubern von Steinflächen wie Pflaster, Terrassenplatten, Einfahrten und Fassaden von Moos, Algen, Grünbelag und Verschmutzung. Sie macht rutschige, vergrünte Beläge wieder begehbar und ansehnlich und schützt die Fugen vor weiterem Bewuchs.",
+   "sections": [
+    {
+     "h3": "Pflasterreinigung",
+     "body": "Bei der Pflasterreinigung holen wir Moos, Algen und Grünbelag aus den Fugen und von der Steinoberfläche. Wir arbeiten die Flächen ab, spülen den gelösten Bewuchs heraus und prüfen jede Fuge. Auf Wunsch füllen wir ausgespülte Fugen wieder auf und versehen sie mit einem Fugen-Schutz, damit Moos langsamer nachwächst. So bleibt Ihr Pflaster im Hof oder am Hauseingang länger trittsicher und gepflegt."
+    },
+    {
+     "h3": "Terrassenreinigung",
+     "body": "Die Terrassenreinigung bringt Platten aus Beton, Naturstein oder Keramik zurück in Form. Grüner Belag und Algen setzen sich gern in der schattigen Ecke fest und werden bei Nässe glatt. Wir reinigen die Terrasse passend zum Material, lösen den Grünbelag und spülen ihn weg, ohne die Oberfläche aufzurauen. Ihre Sitzecke ist danach wieder sauber, sicher und einladend für die nächste Gartensaison."
+    },
+    {
+     "h3": "Einfahrt",
+     "body": "Ihre Einfahrt nimmt täglich Reifen, Regen und Laub auf, dadurch bildet sich schnell ein dunkler Grünschleier. Wir reinigen Pflaster- und Plattenflächen der Zufahrt von Moos, Algen und eingetretenem Schmutz, von der Garage bis zum Gehweg. Wo die Einfahrt an die Straße grenzt, arbeiten wir die Kanten sauber aus. Das Ergebnis: eine helle, rutschfeste Zufahrt, die Ihr Grundstück gleich aufgeräumter wirken lässt."
+    },
+    {
+     "h3": "Fassadenreinigung",
+     "body": "Bei der Fassadenreinigung entfernen wir Algen, Grünbelag und Verschmutzung von Mauerwerk, Sockeln und Steinfassaden. Gerade Nord- und Wetterseiten setzen mit der Zeit einen grünen Film an. Wir reinigen die Fläche materialschonend von unten nach oben und spülen den gelösten Belag ab. Hinweis: Wir reinigen die Fassade, Malerarbeiten gehören nicht zu unserem Angebot. Ihre Außenwände wirken danach wieder hell und gepflegt."
+    }
+   ],
+   "naehe": "Den Haus- & Gartenservice Havelland erreichen Sie vor Ort im ganzen Havelland und im angrenzenden Berliner Umland. Von unserem Sitz in Falkensee fahren wir Orte wie Nauen, Dallgow-Döberitz, Brieselang, Wustermark und die westlichen Berliner Randbezirke an. Weil wir hier zu Hause sind, kennen wir die Wege und sind schnell bei Ihnen. Schreiben Sie uns kurz per WhatsApp, und Sie hören meist innerhalb weniger Stunden von uns.",
+   "ablauf": "Zuerst schauen wir uns Ihre Steinflächen kostenlos vor Ort an und besprechen, was Sie sich wünschen. Danach erhalten Sie einen Festpreis. Der Festpreis ist der Endpreis, denn als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Zum vereinbarten Termin führen wir die Reinigung sauber und pünktlich aus. Zum Schluss bekommen Sie Vorher-Nachher-Fotos direkt aufs Handy, damit Sie das Ergebnis schwarz auf weiß haben.",
+   "faqs": [
+    {
+     "q": "Was bringt eine professionelle Steinreinigung?",
+     "a": "Eine professionelle Steinreinigung entfernt Moos, Algen und Grünbelag aus Fugen und von der Oberfläche, die mit Besen und Schrubber kaum vollständig weggehen. Das macht rutschige Pflaster, Terrassen und Einfahrten wieder trittsicher und ansehnlich. Der Haus- & Gartenservice Havelland reinigt materialschonend und schützt auf Wunsch die Fugen, damit der Bewuchs langsamer zurückkommt."
+    },
+    {
+     "q": "Wie läuft die Steinreinigung beim Haus- & Gartenservice Havelland ab?",
+     "a": "Wir besichtigen Ihre Flächen kostenlos vor Ort und nennen Ihnen danach einen Festpreis. Zum vereinbarten Termin reinigen wir Pflaster, Terrasse oder Einfahrt von Moos und Algen und spülen den Belag heraus. Nach dem Auftrag erhalten Sie Vorher-Nachher-Fotos aufs Handy. So sehen Sie das Ergebnis, auch wenn Sie nicht dabei waren."
+    },
+    {
+     "q": "Wann ist die beste Zeit für die Steinreinigung?",
+     "a": "Frühjahr und Spätsommer eignen sich am besten, weil das Wetter mild und trocken genug ist und Sie die Flächen danach wieder nutzen. Grundsätzlich reinigen wir im Havelland die ganze Saison über, solange kein Frost herrscht. Schreiben Sie uns per WhatsApp, dann finden wir gemeinsam einen passenden Termin und Sie hören meist innerhalb weniger Stunden von uns."
+    },
+    {
+     "q": "Wie oft sollte man Pflaster und Terrasse reinigen lassen?",
+     "a": "Einmal im Jahr reicht für die meisten Steinflächen, um Moos und Algen in Schach zu halten. Schattige, feuchte Ecken auf der Nordseite vergrünen schneller und brauchen oft eine zweite Runde. Mit einem Fugen-Schutz wächst der Belag langsamer nach. Auf Wunsch vereinbaren wir eine wiederkehrende Reinigung, damit Ihre Flächen dauerhaft gepflegt bleiben."
+    },
+    {
+     "q": "Was kostet eine Steinreinigung im Havelland?",
+     "a": "Den Preis nennen wir Ihnen erst nach einer kostenlosen Besichtigung vor Ort, weil Fläche, Verschmutzung und Material den Aufwand bestimmen. Sie bekommen dann einen Festpreis, und der Festpreis ist der Endpreis. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. So wissen Sie vorher genau, was die Reinigung kostet, ohne Überraschung auf der Rechnung."
+    }
+   ],
+   "garantie_text": "Bleibt nach unserer Reinigung Moos- oder Algenrest zurück, kommen wir kostenlos noch einmal vorbei, auf Wunsch gleich mit Fugen-Schutz.",
+   "ortsseite_lead": "Ihre Steinreinigung in {ort}: Der Haus- & Gartenservice Havelland befreit Pflaster, Terrasse und Einfahrt in {ort} von Moos, Algen und Grünbelag. Festpreis nach kostenloser Besichtigung, Foto-Nachweis inklusive.",
+   "skills_applied": [
+    "seo-web-copy.md (Title/Meta/H1/Keyword-Platzierung, Seitenstruktur, Scannability)",
+    "llm-optimisation.md (Antwort-zuerst, Definition-Block, eigenständige FAQ, Entity-Klarheit Falkensee/Havelland)",
+    "stop-slop/SKILL.md (deutsch übertragen: keine Floskel-Opener, aktiv statt passiv, Sie statt man, keine leeren Verstärker, variierte Satzlängen, keine erfundenen Zahlen)"
+   ]
+  },
+  {
+   "slug": "fensterreinigung",
+   "title": "Fensterreinigung Falkensee & Havelland — Festpreis",
+   "meta": "Fensterreinigung im Havelland: schlierenfrei, zum Festpreis nach kostenloser Besichtigung. Foto-Nachweis aufs Handy, WhatsApp-Reaktion in Stunden. Jetzt anfragen.",
+   "h1": "Streifenfreie Fenster, garantiert sauber",
+   "h1_em": "garantiert",
+   "intro": "Ihre Fensterreinigung im Havelland übernimmt der Haus- & Gartenservice Havelland aus Falkensee — Glas, Rahmen und Fensterbänke, innen wie außen, zum Festpreis nach kostenloser Vor-Ort-Besichtigung. Sie erreichen einen festen Ansprechpartner per WhatsApp und bekommen eine Reaktion in Stunden, nicht Tagen. Nach jedem Termin liegt der Vorher-Nachher-Nachweis als Foto auf Ihrem Handy. Bleiben Schlieren, kommen wir am selben Tag zurück. So sehen Sie schlierenfreies Glas und zahlen genau das, was vorher vereinbart war.",
+   "definition": "Fensterreinigung ist die fachgerechte Reinigung von Glasflächen samt Rahmen und Fensterbänken, damit Tageslicht ungehindert hereinkommt und das Glas streifenfrei klar bleibt. Beim Haus- & Gartenservice Havelland gehört dazu innen und außen, der Festpreis nach kostenloser Besichtigung und der Foto-Nachweis nach jedem Auftrag.",
+   "sections": [
+    {
+     "h3": "Fenster innen & außen",
+     "body": "Wir reinigen Ihre Fenster auf beiden Seiten und holen die Schlieren raus, die nach dem eigenen Putzen oft zurückbleiben. Außen liegt der Schmutz vom letzten Regen, von Pollen und Straßenstaub; innen sammeln sich Fingerabdrücke, Küchenfett und Kondensschleier. Wir arbeiten Scheibe für Scheibe mit klarem Wasser, Abzieher und fusselfreiem Tuch, bis das Glas im Gegenlicht streifenfrei bleibt. Schwer erreichbare oder hohe Fenster sprechen wir vorher bei der Besichtigung ab, damit der Festpreis stimmt und Sie keine Überraschung erleben."
+    },
+    {
+     "h3": "Rahmen & Bänke",
+     "body": "Saubere Scheiben wirken erst halb so gut, wenn der Rahmen grau ist — deshalb gehören Fensterrahmen und Fensterbänke bei uns dazu. Wir wischen die Rahmenprofile, die Gummidichtungen und die Falze aus, in denen sich Staub, Spinnweben und tote Insekten festsetzen. Die Fensterbänke innen und außen werden mitgereinigt, auch die Ablaufrillen, wo sich Moos und Schmutzwasser sammeln. Das verlängert die Lebensdauer der Dichtungen und Sie öffnen das Fenster wieder, ohne dass Krümel auf die Bank rieseln."
+    },
+    {
+     "h3": "Wintergarten & Glasflächen",
+     "body": "Große Glasflächen wie Wintergärten, Terrassentüren und Glasdächer reinigen wir streifenfrei bis in die Ecken. Gerade beim Wintergarten zählt jede Scheibe, denn Kalkschleier und Algen auf dem Dachglas schlucken Licht und Wärme. Wir arbeiten von oben nach unten, damit kein Schmutzwasser auf bereits gereinigte Flächen läuft, und nehmen die Sprossen und Profile mit. Schräge oder hohe Glasdächer klären wir vorab bei der Besichtigung, damit Aufwand und Festpreis von Anfang an feststehen."
+    },
+    {
+     "h3": "Halbjahres-Abo",
+     "body": "Mit dem Halbjahres-Abo bleiben Ihre Fenster dauerhaft klar, ohne dass Sie an den Termin denken müssen. Sie buchen zwei feste Reinigungen im Jahr — wir empfehlen einen Termin nach dem Winter und einen vor dem Herbst. Den ersten Termin legen wir bewusst nicht in den Maerz-Andrang, sondern stimmen ihn mit Ihnen ab, damit Sie nicht in der Hauptsaison warten. Sie melden sich einmal, der Rest läuft von selbst, und jeder Termin endet mit dem gewohnten Foto-Nachweis aufs Handy."
+    }
+   ],
+   "naehe": "Den Haus- & Gartenservice Havelland finden Sie direkt vor Ort in Falkensee. Wir reinigen Fenster im gesamten Havelland und im angrenzenden Berliner Umland — von Falkensee über Dallgow-Döberitz, Nauen und Brieselang bis Spandau. Kurze Wege bedeuten kurze Wartezeiten: Sie schreiben uns per WhatsApp, wir besichtigen vor Ort und nennen den Festpreis. Weil wir aus der Region kommen und hier zuhause sind, kennen wir die typischen Fenster im Havelland und die Sorte Schmutz, die Wind und Wetter hier hinterlassen.",
+   "ablauf": "Zuerst kommen wir kostenlos zu Ihnen und schauen uns Anzahl, Größe und Erreichbarkeit der Fenster an. Daraus machen wir einen Festpreis — der Festpreis ist der Endpreis, denn als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Zum vereinbarten Termin reinigen wir Glas, Rahmen und Bänke schlierenfrei. Zum Schluss erhalten Sie den Vorher-Nachher-Nachweis als Foto direkt aufs Handy. Bleiben Schlieren, kommen wir am selben Tag noch einmal vorbei.",
+   "faqs": [
+    {
+     "q": "Was kostet eine Fensterreinigung im Havelland?",
+     "a": "Das hängt von Anzahl, Größe und Erreichbarkeit Ihrer Fenster ab — pauschal lässt sich das nicht sagen. Deshalb kommen wir vom Haus- & Gartenservice Havelland kostenlos vorbei, schauen uns alles an und nennen Ihnen einen Festpreis. Dieser Festpreis ist der Endpreis. Als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf, Sie zahlen genau das Vereinbarte."
+    },
+    {
+     "q": "Wie oft sollte man die Fenster reinigen lassen?",
+     "a": "Für die meisten Privathaushalte reichen zwei Reinigungen im Jahr: eine nach dem Winter und eine vor dem Herbst. So bleibt das Glas dauerhaft klar, ohne dass Schmutz festbackt. Liegen Sie an einer viel befahrenen Straße oder haben einen Wintergarten, ist häufiger sinnvoll. Mit unserem Halbjahres-Abo legen wir die beiden Termine einmal fest und Sie müssen nicht mehr daran denken."
+    },
+    {
+     "q": "Reinigt ihr Fenster auch von außen und in der Höhe?",
+     "a": "Ja, wir reinigen innen und außen. Außenscheiben, Wintergartendächer und hoch gelegene Fenster gehören zum Standard. Wie wir an die höheren Flächen herankommen, klären wir bei der kostenlosen Besichtigung vor Ort — so steht der Aufwand vorher fest und fließt sauber in den Festpreis ein. Sie bekommen vor dem Termin Klarheit, was gemacht wird und was es kostet."
+    },
+    {
+     "q": "Was passiert, wenn nach der Reinigung Schlieren bleiben?",
+     "a": "Dann kommen wir am selben Tag noch einmal vorbei und ziehen die betroffenen Scheiben nach — ohne Zusatzkosten. Schlierenfreies Glas ist der Kern unserer Arbeit, deshalb prüfen wir jede Scheibe im Gegenlicht, bevor wir gehen. Sollte Ihnen später am Tag doch etwas auffallen, schreiben Sie uns per WhatsApp. Den Vorher-Nachher-Nachweis halten wir ohnehin als Foto fest."
+    },
+    {
+     "q": "Wie schnell bekomme ich einen Termin?",
+     "a": "Sie schreiben uns per WhatsApp und erhalten eine Reaktion in Stunden, nicht Tagen. Danach vereinbaren wir die kostenlose Besichtigung und den Reinigungstermin. Im März ist die Nachfrage am höchsten, weil viele nach dem Winter putzen lassen — wer früh anfragt oder das Halbjahres-Abo nutzt, bekommt schneller einen passenden Termin. Außerhalb des Andrangs geht es meist sehr zügig."
+    }
+   ],
+   "garantie_text": "Bleiben nach unserer Fensterreinigung Schlieren zurück, kommen wir am selben Tag noch einmal vorbei und ziehen die betroffenen Scheiben kostenlos nach.",
+   "ortsseite_lead": "Ihre Fensterreinigung in {ort} übernimmt der Haus- & Gartenservice Havelland — schlierenfrei, innen wie außen, zum Festpreis nach kostenloser Besichtigung. Per WhatsApp erreichen Sie uns in {ort} und bekommen nach jedem Termin den Foto-Nachweis aufs Handy.",
+   "skills_applied": [
+    "seo-web-copy.md (Keyword-Platzierung Title/H1/erste 100 W, Page-Struktur, Scannability, FAQ-für-Snippets)",
+    "llm-optimisation.md (Antwort-zuerst, Definition-Block, eigenständige FAQ 40-80 W, Entity-Klarheit Haus- & Gartenservice Havelland + Falkensee)",
+    "stop-slop/SKILL.md (deutsch übertragen: keine Floskel-Opener, keine Binär-Kontraste, Aktiv statt Passiv, Sie statt man, konkrete statt vager Aussagen, variierte Satzlängen, keine Gedankenstrich-Häufung)"
+   ]
+  },
+  {
+   "slug": "dachrinnenreinigung",
+   "title": "Dachrinnenreinigung Havelland – Festpreis & Foto",
+   "meta": "Dachrinnenreinigung im Havelland: Rinne und Fallrohr frei, Funktionsprüfung inklusive. Kostenlose Besichtigung, Festpreis als Endpreis, Foto-Nachweis aufs Handy.",
+   "h1": "Dachrinnenreinigung im Havelland – sauber, geprüft, sorgenfrei",
+   "h1_em": "sorgenfrei",
+   "intro": "Der Haus- & Gartenservice Havelland aus Falkensee reinigt Ihre Dachrinne und Fallrohre im gesamten Havelland und Berliner Umland. Wir holen Laub, Moos und Schmutz aus der Rinne, spülen die Fallrohre frei und prüfen den Wasserablauf. Sie bekommen einen Festpreis nach kostenloser Besichtigung und nach jedem Auftrag eine Foto-Doku (Vorher/Nachher) direkt aufs Handy. Ein fester Ansprechpartner, eine Rechnung, alles aus einer Hand.",
+   "definition": "Dachrinnenreinigung ist das Entfernen von Laub, Moos und Schmutz aus Dachrinne und Fallrohren, damit Regenwasser frei abläuft. Eine freie Rinne schützt Fassade, Mauerwerk und Fundament vor Feuchteschäden und beugt Überlauf bei Starkregen vor.",
+   "sections": [
+    {
+     "h3": "Rinne & Fallrohr: beides gehört zusammen",
+     "body": "Wir reinigen Rinne und Fallrohr in einem Durchgang. Erst räumen wir die Rinne von Hand und mit Sauger frei, dann spülen wir die Fallrohre durch, bis das Wasser unten sauber abläuft. Sitzt im Fallrohr ein Pfropf aus Laub und Schlamm, lösen wir ihn mit Spülung oder Reinigungsspirale. Eine saubere Rinne nützt wenig, wenn das Fallrohr verstopft bleibt. Deshalb prüfen wir immer den kompletten Weg vom Dach bis zum Ablauf."
+    },
+    {
+     "h3": "Laub & Verstopfung: warum die Rinne zugeht",
+     "body": "Laub, Moos, Nadeln und Dachsplitt sammeln sich über das Jahr in der Rinne und bilden mit Regen eine feste Schicht. Stehen Bäume nah am Haus, geht das schneller. Bleibt das Wasser stehen, läuft die Rinne bei Regen über, durchnässt die Fassade und friert im Winter zu Eiszapfen. Wir entfernen die Ablagerungen restlos und nehmen den Schmutz mit. Auf Wunsch montieren wir ein Laubschutzgitter, damit die Rinne länger frei bleibt."
+    },
+    {
+     "h3": "Funktionsprüfung: läuft das Wasser wirklich ab",
+     "body": "Nach der Reinigung testen wir den Ablauf mit Wasser und schauen, ob die Rinne das richtige Gefälle hat und nichts überläuft. Wir kontrollieren Rinnenhalter, Nahtstellen und Anschlüsse auf undichte Stellen und lockere Teile. Finden wir einen losen Halter oder eine undichte Naht, sagen wir Ihnen Bescheid und halten es in der Foto-Doku fest. So wissen Sie nach dem Termin genau, in welchem Zustand Ihre Dachentwässerung ist."
+    },
+    {
+     "h3": "Turnus: ein- bis zweimal im Jahr",
+     "body": "Für die meisten Häuser reicht eine Reinigung pro Jahr, am besten im Spätherbst nach dem Laubfall im Oktober und November. Stehen Laubbäume oder Nadelbäume direkt am Haus, empfehlen wir zweimal jährlich: einmal nach der Blüte im Frühsommer, einmal nach dem Herbstlaub. Wir merken uns Ihren Turnus und melden uns vor der nächsten Saison von selbst. Auf Wunsch läuft das als fester Wartungstermin, damit Sie nicht daran denken müssen."
+    }
+   ],
+   "naehe": "Sie suchen eine Dachrinnenreinigung in der Nähe? Wir sind im gesamten Havelland und im Berliner Umland vor Ort: Falkensee, Nauen, Dallgow-Döberitz, Brieselang, Wustermark, Schönwalde-Glien und die umliegenden Orte. Kurze Wege heißen schnelle Termine, oft schon in derselben Woche. Auf Ihre WhatsApp melden wir uns innerhalb von Stunden, nicht erst nach Tagen.",
+   "ablauf": "Sie schreiben uns kurz per WhatsApp oder rufen an. Wir kommen kostenlos vorbei, schauen uns Rinne, Fallrohre und Dachsituation an und nennen Ihnen einen Festpreis. Der Festpreis ist der Endpreis – als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Sie geben das Okay, wir machen den Termin und reinigen Rinne und Fallrohre. Zum Schluss bekommen Sie die Foto-Doku mit Vorher/Nachher direkt aufs Handy.",
+   "faqs": [
+    {
+     "q": "Was kostet eine Dachrinnenreinigung im Havelland?",
+     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung als Festpreis. Er hängt von der Länge der Rinne, der Höhe des Hauses, dem Verschmutzungsgrad und der Zugänglichkeit ab. Was wir Ihnen sagen, ist der Endpreis: Als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Keine versteckten Posten, keine Überraschung auf der Rechnung."
+    },
+    {
+     "q": "Wie oft sollte ich die Dachrinne reinigen lassen?",
+     "a": "Für die meisten Häuser reicht einmal pro Jahr, am besten im Spätherbst nach dem Laubfall. Stehen Laub- oder Nadelbäume direkt am Haus, sind zwei Reinigungen sinnvoll: eine im Frühsommer, eine nach dem Herbstlaub. Wir merken uns Ihren Turnus und melden uns vor der nächsten Saison, damit Sie nicht selbst daran denken müssen."
+    },
+    {
+     "q": "Wann ist die beste Zeit für die Dachrinnenreinigung?",
+     "a": "Der Spätherbst im Oktober und November ist ideal, weil dann das meiste Laub gefallen ist und die Rinne vor dem Winter frei sein sollte. So läuft Schmelzwasser im Winter ungehindert ab und es bilden sich keine Eiszapfen. In dieser Zeit sind wir am stärksten gefragt, fragen Sie Ihren Termin also früh an."
+    },
+    {
+     "q": "Was passiert, wenn die Dachrinne verstopft bleibt?",
+     "a": "Eine verstopfte Rinne läuft bei Regen über, das Wasser durchnässt Fassade und Mauerwerk und kann bis ins Fundament ziehen. Daraus entstehen Feuchteschäden, Schimmel und teure Reparaturen. Im Winter frieren stehende Reste zu Eis. Eine regelmäßige Reinigung kostet ein Vielfaches weniger als eine nasse Fassade und beugt diesen Schäden vor."
+    },
+    {
+     "q": "Prüfen Sie auch, ob die Dachrinne dicht ist?",
+     "a": "Ja. Nach der Reinigung testen wir den Wasserablauf und kontrollieren Rinnenhalter, Nahtstellen und Anschlüsse auf undichte oder lose Stellen. Finden wir einen Mangel, sagen wir Ihnen Bescheid und halten ihn in der Foto-Doku fest. Läuft die Rinne beim ersten Regen nach unserem Termin über, schauen wir kostenlos nach."
+    }
+   ],
+   "garantie_text": "Läuft Ihre Dachrinne beim ersten Regen nach unserem Termin über, kommen wir kostenlos vorbei und schauen nach.",
+   "ortsseite_lead": "Ihre Dachrinnenreinigung in {ort} vom Haus- & Gartenservice Havelland: Rinne und Fallrohre frei, Funktionsprüfung inklusive, Festpreis nach kostenloser Besichtigung. In {ort} und Umgebung melden wir uns auf Ihre WhatsApp innerhalb von Stunden.",
+   "skills_applied": [
+    "seo-web-copy.md (Title/Meta/H1-Hierarchie, Keyword-Platzierung in Title+H1+erste 100 Wörter, FAQ-Struktur, Scannability, E-E-A-T-Entity)",
+    "llm-optimisation.md (Antwort-zuerst pro Sektion, Definition-Block 'X ist …', eigenständige 40-80-Wort-FAQ als echte Nutzerfragen, Entity-Klarheit mit Firma+Ort, semantische Themenabdeckung)",
+    "stop-slop SKILL.md (deutsch übertragen: keine Floskel-Opener, keine Binär-Kontraste 'nicht X sondern Y', Aktiv statt Passiv, 'Sie' statt 'man', keine Adverb-Verstärker, variierte Satzlängen, keine Gedankenstrich-Häufung)"
+   ]
+  },
+  {
+   "slug": "photovoltaikreinigung",
+   "title": "Photovoltaikreinigung Havelland | Festpreis",
+   "meta": "Photovoltaikreinigung im Havelland vom Haus- & Gartenservice: schonende Modulreinigung, Festpreis nach kostenloser Besichtigung, Foto-Nachweis aufs Handy. Jetzt anfragen.",
+   "h1": "Saubere Module, mehr Ertrag: Ihre Photovoltaikreinigung im Havelland",
+   "h1_em": "mehr Ertrag",
+   "intro": "Ihre Photovoltaikreinigung übernimmt der Haus- & Gartenservice Havelland aus Falkensee. Wir reinigen Ihre Solarmodule schonend, entfernen Staub, Pollen, Vogelkot und Flechten und dokumentieren das Ergebnis vorher und nachher mit Foto direkt auf Ihr Handy. Den Preis nennen wir nach kostenloser Vor-Ort-Besichtigung als Festpreis. Ein fester Ansprechpartner für Ihren gesamten Haus- und Gartenbedarf, von der Anfrage per WhatsApp bis zur sauberen Anlage.",
+   "definition": "Photovoltaikreinigung ist die fachgerechte Säuberung der Solarmodule auf Ihrem Dach von Schmutz, der das Sonnenlicht abschirmt. Sie entfernt Staub, Pollen, Laub, Vogelkot und Flechten, damit die Module wieder die volle Lichtmenge aufnehmen und Ihre Anlage den vollen Stromertrag liefert.",
+   "sections": [
+    {
+     "h3": "Modulreinigung: was wir tun",
+     "body": "Bei der Modulreinigung lösen wir den Belag auf der Glasoberfläche und spülen ihn rückstandsfrei ab. Dazu gehören Staub und Sandfilm, Pollen und Blütenstaub im Frühjahr, Laub und Harz von nahen Bäumen sowie Vogelkot und Flechtenränder am unteren Modulrand. Wir reinigen die Glasflächen, prüfen dabei die Rahmen auf Moos und achten auf festsitzende Verkrustungen. Sichtbare Auffälligkeiten an Modulen oder Befestigungen melden wir Ihnen, sobald wir sie bemerken."
+    },
+    {
+     "h3": "Ertrags-Effekt: warum sich saubere Module rechnen",
+     "body": "Verschmutzte Module liefern weniger Strom, weil eine Schmutzschicht das Sonnenlicht abschirmt, bevor es die Zelle erreicht. Vogelkot und Flechten verschatten dabei einzelne Bereiche besonders stark. Saubere Glasflächen nehmen wieder die volle Lichtmenge auf, sodass Ihre Anlage den Ertrag liefert, für den Sie sie gebaut haben. Wie viel Sie zurückgewinnen, hängt vom Verschmutzungsgrad und der Dachneigung ab. Bei flachen Dächern setzt sich mehr ab als bei steilen."
+    },
+    {
+     "h3": "Schonende Verfahren: weiches Wasser, keine Kratzer",
+     "body": "Wir reinigen mit weichen Bürsten und entmineralisiertem Wasser, das streifenfrei abtrocknet. Scharfe Reiniger, Hochdruck und harte Bürsten kommen uns nicht auf Ihr Modulglas, weil sie die Antireflexschicht beschädigen und Kratzer hinterlassen. Diese schonende Arbeitsweise schützt die Oberfläche und hält die Module durchlässig für Licht. Genau darauf gibt Ihnen unsere Garantie die Sicherheit: keine Schlieren, keine Kratzer."
+    },
+    {
+     "h3": "Turnus: wie oft eine Reinigung sinnvoll ist",
+     "body": "Für die meisten Privatdächer im Havelland reicht eine Reinigung ein- bis zweimal im Jahr. Häufiger lohnt es sich, wenn Bäume in der Nähe stehen, Vögel regelmäßig auf dem Dach sitzen oder die Module flach liegen und Regen den Schmutz nicht abspült. Auf Wunsch tragen wir Ihren Reinigungstermin als feste Wartung ein, etwa einmal im Frühjahr nach der Pollenzeit, damit Sie sich um nichts kümmern müssen."
+    }
+   ],
+   "naehe": "Sie suchen Photovoltaikreinigung in der Nähe? Wir sitzen in Falkensee und arbeiten im gesamten Havelland sowie im angrenzenden Berliner Umland. Kurze Wege heißen: Wir sind schnell bei Ihnen, kennen die Region und melden uns per WhatsApp oft schon innerhalb weniger Stunden. Orte wie Falkensee, Nauen, Rathenow, Brieselang und Dallgow-Döberitz fahren wir regelmäßig an. Fragen Sie einfach an, wir sagen Ihnen, wann wir bei Ihnen vorbeikommen.",
+   "ablauf": "Sie melden sich per WhatsApp oder Telefon. Wir kommen kostenlos vorbei, sehen uns Dach, Modulanzahl und Verschmutzung an und nennen Ihnen einen Festpreis, der auch der Endpreis bleibt. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Nach Ihrer Zusage reinigen wir die Module zum vereinbarten Termin. Zum Abschluss erhalten Sie Vorher-Nachher-Fotos direkt auf Ihr Handy, sodass Sie das Ergebnis sehen, ohne aufs Dach zu steigen.",
+   "faqs": [
+    {
+     "q": "Was bringt eine Photovoltaikreinigung?",
+     "a": "Eine Photovoltaikreinigung entfernt Staub, Pollen, Vogelkot und Flechten von den Modulen, sodass wieder die volle Lichtmenge auf die Zellen trifft. Verschmutzte Module liefern weniger Strom, weil der Belag das Sonnenlicht abschirmt. Nach der Reinigung arbeitet Ihre Anlage wieder mit dem Ertrag, für den Sie sie gebaut haben. Wie viel Sie zurückgewinnen, hängt vom Verschmutzungsgrad und der Dachneigung ab."
+    },
+    {
+     "q": "Wie reinigen Sie die Solarmodule, ohne sie zu beschädigen?",
+     "a": "Wir reinigen mit weichen Bürsten und entmineralisiertem Wasser, das streifenfrei abtrocknet. Auf scharfe Reiniger, Hochdruck und harte Bürsten verzichten wir, weil sie die Antireflexschicht des Modulglases beschädigen und Kratzer hinterlassen. Diese schonende Arbeitsweise schützt die Oberfläche. Bleiben doch Schlieren oder Kratzer, kommen wir nochmal, ohne dass Sie dafür zahlen."
+    },
+    {
+     "q": "Wie oft sollte ich meine Photovoltaikanlage reinigen lassen?",
+     "a": "Für die meisten Privatdächer im Havelland reicht eine Reinigung ein- bis zweimal im Jahr. Häufiger ist sinnvoll, wenn Bäume in der Nähe stehen, Vögel oft auf dem Dach sitzen oder die Module flach liegen, weil Regen den Schmutz dann nicht abspült. Auf Wunsch tragen wir den Termin als feste Wartung ein, etwa einmal im Frühjahr nach der Pollenzeit."
+    },
+    {
+     "q": "Was kostet die Reinigung meiner Photovoltaikanlage?",
+     "a": "Den Preis nennen wir Ihnen nach einer kostenlosen Vor-Ort-Besichtigung als Festpreis. Vorher sehen wir uns Dach, Modulanzahl, Zugang und Verschmutzungsgrad an, denn diese Faktoren bestimmen den Aufwand. Der Festpreis ist der Endpreis. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. So wissen Sie vor der Zusage genau, woran Sie sind, ohne Überraschung auf der Rechnung."
+    },
+    {
+     "q": "Wann lohnt sich eine Photovoltaikreinigung besonders?",
+     "a": "Besonders lohnt sie sich, wenn sichtbarer Belag auf den Modulen liegt, viel Vogelkot oder Flechten am unteren Rand sitzen oder Ihr Ertrag spürbar zurückgeht. Auch flache Dächer und Standorte nahe an Bäumen oder Feldern sammeln viel Schmutz, den Regen allein nicht löst. Melden Sie sich, wir sehen uns die Anlage kostenlos an und sagen Ihnen ehrlich, ob sich eine Reinigung lohnt."
+    }
+   ],
+   "garantie_text": "Unsere Garantie: keine Schlieren, keine Kratzer auf Ihren Modulen. Bleibt nach der Reinigung etwas zurück, kommen wir nochmal, ohne dass Sie dafür zahlen.",
+   "ortsseite_lead": "Ihre Photovoltaikreinigung in {ort} übernimmt der Haus- & Gartenservice Havelland aus Falkensee: schonende Modulreinigung, Festpreis nach kostenloser Besichtigung und Foto-Nachweis aufs Handy. In {ort} und Umgebung sind wir mit kurzen Wegen schnell bei Ihnen.",
+   "skills_applied": [
+    "seo-web-copy.md (Keyword-Platzierung Title/H1/erste 100 W, Page-Struktur, FAQ-Snippets, E-E-A-T-Entity)",
+    "llm-optimisation.md (Antwort-zuerst, Definition-Block X ist Y, eigenständige FAQ, Entity-Klarheit Firma+Falkensee+Havelland, semantische Vollabdeckung)",
+    "stop-slop SKILL.md (keine Floskel-Opener, aktiv statt passiv, keine Binary-Contrasts, keine Em-Dashes, variierte Satzlängen, konkret statt vage)"
+   ]
+  },
+  {
+   "slug": "entruempelung",
+   "title": "Entrümpelung Falkensee & Havelland — Festpreis",
+   "meta": "Entrümpelung im Havelland vom Haus- & Gartenservice: Festpreis nach kostenloser Besichtigung, kein Aufpreis, Foto-Nachweis aufs Handy. Diskret. Jetzt anfragen.",
+   "h1": "Ihre Entrümpelung im Havelland — diskret und zum Festpreis",
+   "h1_em": "diskret",
+   "intro": "Der Haus- & Gartenservice Havelland entrümpelt Ihren Keller, Dachboden, Ihre Wohnung oder Ihr ganzes Haus in Falkensee und im gesamten Havelland. Sie bekommen einen festen Ansprechpartner, einen Festpreis nach kostenloser Vor-Ort-Besichtigung und nach jedem Auftrag eine Foto-Doku aufs Handy. Inhaber Noah Telo räumt aus, sortiert verwertbare Gegenstände und entsorgt den Rest fachgerecht. Diskret und ohne dass Sie selbst eine Kiste anfassen müssen.",
+   "definition": "Eine Entrümpelung ist das vollständige Ausräumen und Entsorgen von Gegenständen aus Räumen wie Keller, Dachboden, Wohnung oder Haus durch einen Dienstleister, der besenrein übergibt. Sie nimmt Ihnen das Sortieren, Tragen und die fachgerechte Entsorgung ab und schafft Platz, ohne dass Sie selbst anpacken.",
+   "sections": [
+    {
+     "h3": "Keller und Dachboden entrümpeln",
+     "body": "Keller und Dachboden gehören zu den häufigsten Entrümpelungen im Havelland, weil sich dort über Jahre alte Möbel, Kartons, Werkzeug, Fahrräder und Restmüll ansammeln. Wir tragen jeden Gegenstand selbst nach oben, auch durch enge Treppenhäuser, und übergeben den Raum besenrein. Verwertbares legen wir beiseite, der Rest wird fachgerecht getrennt und entsorgt. Den Aufwand für Zugang und Tragewege klären wir bei der kostenlosen Besichtigung, bevor Sie den Festpreis bekommen."
+    },
+    {
+     "h3": "Wohnung und Haus entrümpeln",
+     "body": "Wir entrümpeln einzelne Zimmer, komplette Wohnungen und ganze Häuser, etwa nach einem Umzug, bei Wohnungsauflösung oder vor einer Renovierung. Möbel, Hausrat, Teppiche, Elektrogeräte und Kleinkram räumen wir vollständig aus und übergeben die Räume besenrein, auf Wunsch übergabefertig für Vermieter oder Käufer. Sie nennen uns die Räume, wir besichtigen kostenlos vor Ort und halten den Umfang im Festpreis fest. Auch sensible Situationen behandeln wir diskret und ruhig."
+    },
+    {
+     "h3": "Sperrmüll und Entsorgung",
+     "body": "Den Abtransport und die Entsorgung übernehmen wir komplett, Sie müssen keine Sperrmüllkarte ziehen und nichts an die Straße stellen. Wir trennen nach Sperrmüll, Elektroschrott, Holz, Metall und Restmüll und bringen alles zur passenden Annahmestelle. Schadstoffe und Sondermüll behandeln wir fachgerecht. Die Entsorgungsart zählt zu den Preisfaktoren und steckt im Festpreis, den Sie nach der Besichtigung erhalten. Nachträgliche Gebühren für die Entsorgung gibt es bei uns nicht."
+    },
+    {
+     "h3": "Wertanrechnung",
+     "body": "Gut erhaltene Möbel, Elektrogeräte, Werkzeug oder Sammlerstücke prüfen wir auf ihren Wert und rechnen verwertbare Gegenstände auf Ihren Festpreis an, statt sie einfach zu entsorgen. Was sich noch verkaufen oder weitergeben lässt, senkt am Ende Ihre Kosten. Bei der kostenlosen Besichtigung schauen wir gemeinsam durch und sagen Ihnen ehrlich, was Anrechnung hat und was nicht. So zahlen Sie nur für den tatsächlichen Aufwand."
+    }
+   ],
+   "naehe": "Sie suchen eine Entrümpelung in der Nähe? Wir sitzen in Falkensee und sind im gesamten Havelland sowie im angrenzenden Berliner Umland vor Ort. Kurze Wege heißt: schnelle WhatsApp-Reaktion in Stunden, ein fester Ansprechpartner aus der Region und Termine, die sich nach Ihnen richten. Ob Falkensee, Nauen, Dallgow-Döberitz, Brieselang oder Berlin-Spandau, Sie erreichen denselben Menschen, der auch ausräumt und Ihnen am Ende die Fotos schickt.",
+   "ablauf": "Sie schreiben uns per WhatsApp oder rufen an, wir kommen kostenlos zur Vor-Ort-Besichtigung und schauen uns Menge, Zugang und Entsorgungsart an. Danach nennen wir Ihnen einen Festpreis, der der Endpreis bleibt. Sie stimmen zu, wir räumen aus, sortieren verwertbare Gegenstände und entsorgen den Rest fachgerecht. Nach getaner Arbeit übergeben wir besenrein und schicken Ihnen die Vorher-Nachher-Fotos direkt aufs Handy.",
+   "faqs": [
+    {
+     "q": "Was kostet eine Entrümpelung im Havelland?",
+     "a": "Den Preis nennen wir erst nach einer kostenlosen Vor-Ort-Besichtigung, weil er von Menge, Zugang, Entsorgungsart und verwertbaren Gegenständen abhängt. Sie bekommen einen Festpreis, der der Endpreis bleibt. Egal wie viel am Ende rausgeht, es kommt kein Aufpreis dazu. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf."
+    },
+    {
+     "q": "Wie läuft eine Entrümpelung bei Ihnen ab?",
+     "a": "Sie melden sich per WhatsApp oder telefonisch, wir besichtigen kostenlos vor Ort und nennen Ihnen einen Festpreis. Nach Ihrer Zusage räumen wir aus, sortieren Verwertbares, entsorgen den Rest fachgerecht und übergeben besenrein. Zum Schluss erhalten Sie Vorher-Nachher-Fotos aufs Handy. Sie selbst müssen nichts tragen und nichts vorbereiten."
+    },
+    {
+     "q": "Übernehmen Sie auch den Sperrmüll und die Entsorgung?",
+     "a": "Ja, wir transportieren alles ab und entsorgen es fachgerecht. Sie müssen keine Sperrmüllkarte ziehen und nichts an die Straße stellen. Wir trennen nach Sperrmüll, Elektroschrott, Holz, Metall und Restmüll und bringen jedes Teil zur passenden Annahmestelle. Die Entsorgung steckt komplett im Festpreis, nachträgliche Gebühren gibt es nicht."
+    },
+    {
+     "q": "Rechnen Sie verwertbare Gegenstände an?",
+     "a": "Ja, gut erhaltene Möbel, Elektrogeräte, Werkzeug oder Sammlerstücke prüfen wir und rechnen sie auf Ihren Festpreis an, statt sie zu entsorgen. Bei der kostenlosen Besichtigung sagen wir Ihnen ehrlich, was noch Wert hat. So senken verwertbare Dinge am Ende Ihre Kosten, und Sie zahlen nur für den tatsächlichen Aufwand."
+    },
+    {
+     "q": "Gehen Sie bei sensiblen Entrümpelungen diskret vor?",
+     "a": "Ja, wir arbeiten ruhig und diskret, gerade bei Wohnungsauflösungen oder persönlichen Situationen. Sie haben einen festen Ansprechpartner, der nichts kommentiert und nichts weiterträgt. Wir stimmen Termine so ab, dass es für Sie passt, und gehen mit Ihren Räumen und Gegenständen respektvoll um. Die Vorher-Nachher-Fotos erhalten ausschließlich Sie."
+    }
+   ],
+   "garantie_text": "Sie zahlen den Festpreis aus der Besichtigung als Endpreis, ohne Aufpreis, egal wie viel am Ende tatsächlich rausgeht.",
+   "ortsseite_lead": "Ihre Entrümpelung in {ort} vom Haus- & Gartenservice Havelland: Keller, Dachboden, Wohnung oder Haus, diskret ausgeräumt und besenrein übergeben. Festpreis nach kostenloser Besichtigung in {ort}, Foto-Nachweis inklusive.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "haushaltsaufloesung",
+   "title": "Haushaltsauflösung Havelland | Festpreis & Foto",
+   "meta": "Haushaltsauflösung im Havelland: leer und besenrein zum Festpreis nach kostenloser Besichtigung. Diskret bei Erb- und Pflegefall, mit Foto-Nachweis. Jetzt anfragen.",
+   "h1": "Ihre Haushaltsauflösung im Havelland — diskret und besenrein",
+   "h1_em": "diskret",
+   "intro": "Der Haus- & Gartenservice Havelland löst Ihren Haushalt in Falkensee und im gesamten Havelland vollständig auf — von der Wohnungsräumung über die fachgerechte Entsorgung bis zur besenreinen Übergabe. Sie haben einen festen Ansprechpartner, einen Festpreis nach kostenloser Besichtigung und einen Foto-Nachweis nach getaner Arbeit. Gerade bei einem Erb- oder Pflegefall arbeiten wir diskret: Wir sichern Dokumente, trennen Wertgegenstände und gehen behutsam mit allem um, was Ihnen wichtig ist.",
+   "definition": "Eine Haushaltsauflösung ist die vollständige Räumung einer Wohnung oder eines Hauses samt Möbeln, Hausrat und Unrat, mit anschließender fachgerechter Entsorgung und besenreiner Übergabe an Vermieter oder Käufer. Sie wird meist nach einem Umzug, Erbfall oder Umzug ins Pflegeheim nötig und nimmt Angehörigen die körperliche und organisatorische Last ab.",
+   "sections": [
+    {
+     "h3": "Haushaltsauflösung im Erb- oder Pflegefall",
+     "body": "Im Erb- oder Pflegefall arbeiten wir leise, gründlich und mit Respekt. Wir wissen, dass hinter jeder Wohnung eine Geschichte steht. Bevor etwas das Haus verlässt, sichern wir wichtige Dokumente wie Verträge, Ausweise, Sparbücher und Briefe und legen sie für Sie zur Seite. Wertgegenstände, Schmuck, Münzen und Erinnerungsstücke trennen wir vom restlichen Hausrat und übergeben sie an Sie. Sie müssen nicht vor Ort sein und nicht jeden Schrank selbst öffnen. Ein Ansprechpartner hält Sie auf dem Laufenden, per WhatsApp oder Telefon, in dem Tempo, das für Sie passt."
+    },
+    {
+     "h3": "Vollständige Auflösung aus einer Hand",
+     "body": "Wir räumen die komplette Wohnung oder das Haus, vom Keller über die Zimmer bis zum Dachboden, der Garage und dem Gartenhaus. Möbel, Hausrat, Elektrogeräte, Teppiche, Kleidung, Akten und Sperrmüll nehmen wir mit. Bei Bedarf demontieren wir Einbauküchen, Schränke und Regale und entfernen Lampen, Gardinen und Bodenbeläge. Weil Garten, Reinigung und Entrümpelung bei uns aus einer Hand kommen, brauchen Sie keine drei Firmen zu koordinieren. Sie sagen uns, was bleiben soll, den Rest übernehmen wir bis zur leeren Wohnung."
+    },
+    {
+     "h3": "Fachgerechte Entsorgung und Verwertung",
+     "body": "Jedes Stück wird dorthin gebracht, wo es hingehört. Wir trennen den Hausrat nach Verwertbarem, Wertstoffen und Restmüll und entsorgen alles über zugelassene Wege: Wertstoffhof, Recycling und Sondermüll für Farben, Batterien oder Elektrogeräte. Brauchbare Möbel und Geräte führen wir der Wiederverwendung zu, statt sie wegzuwerfen. So landet weniger auf der Deponie, und die Mengen, die kostenpflichtig entsorgt werden müssen, bleiben gering. Auf Wunsch erhalten Sie eine Übersicht, was wohin gegangen ist."
+    },
+    {
+     "h3": "Besenreine Übergabe zur vereinbarten Zeit",
+     "body": "Am Ende ist die Wohnung leer und besenrein, bereit für den Vermieter oder den Käufer. Böden sind gefegt, sichtbarer Staub und Schmutz sind entfernt, Klebereste und Haken kommen weg. Auf Wunsch reinigen wir zusätzlich Bäder, Küche und Fenster für eine übergabefertige Wohnung. Den Zustand halten wir per Foto fest und schicken Ihnen den Nachweis aufs Handy, auch wenn Sie nicht vor Ort sein können. So haben Sie schwarz auf weiß, dass alles erledigt ist."
+    }
+   ],
+   "naehe": "Sie suchen eine Haushaltsauflösung in Ihrer Nähe? Wir sind in Falkensee zuhause und im gesamten Havelland sowie im Berliner Umland für Sie vor Ort, von Nauen über Dallgow-Döberitz und Brieselang bis Schönwalde-Glien. Kurze Wege bedeuten kurze Reaktionszeiten: Auf Ihre WhatsApp-Anfrage melden wir uns in Stunden, nicht in Tagen, und kommen für die kostenlose Besichtigung vorbei. Als regional verwurzelter Betrieb kennen wir die Wertstoffhöfe und Übergabe-Gepflogenheiten vor Ort und sind nach getaner Arbeit weiter erreichbar.",
+   "ablauf": "So läuft Ihre Haushaltsauflösung ab. Erstens: kostenlose Besichtigung vor Ort, wir schauen uns Räume und Mengen an und besprechen, was gesichert und was geräumt wird. Zweitens: Sie erhalten einen Festpreis, der Ihr Endpreis bleibt, ohne Mehrwertsteuer obendrauf, weil wir als Kleinunternehmer nach §19 UStG arbeiten. Drittens: Wir führen die Räumung zum vereinbarten Termin aus, sichern Dokumente, trennen Wertgegenstände und entsorgen fachgerecht. Viertens: Sie bekommen den Foto-Nachweis der leeren, besenreinen Wohnung direkt aufs Handy.",
+   "faqs": [
+    {
+     "q": "Was kostet eine Haushaltsauflösung im Havelland?",
+     "a": "Den Preis nennen wir Ihnen nach einer kostenlosen Besichtigung vor Ort als Festpreis, der Ihr Endpreis bleibt. So vermeiden Sie Überraschungen. Die Kosten hängen von der Wohnungsgröße, der Menge an Hausrat, dem Aufwand für Demontagen und der zu entsorgenden Restmenge ab. Verwertbare Möbel senken die Entsorgungskosten. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf."
+    },
+    {
+     "q": "Wie läuft eine Haushaltsauflösung bei einem Erbfall ab?",
+     "a": "Zuerst besichtigen wir die Wohnung kostenlos und besprechen mit Ihnen, was gesichert werden soll. Vor der Räumung legen wir Dokumente wie Verträge, Sparbücher und Ausweise zur Seite und trennen Wertgegenstände vom übrigen Hausrat. Danach räumen wir vollständig, entsorgen fachgerecht und übergeben die Wohnung besenrein. Sie müssen nicht vor Ort sein und erhalten am Ende einen Foto-Nachweis."
+    },
+    {
+     "q": "Wie schnell können Sie eine Wohnung räumen?",
+     "a": "Auf Ihre WhatsApp-Anfrage reagieren wir in Stunden, nicht in Tagen, und vereinbaren zeitnah die kostenlose Besichtigung. Den Räumungstermin legen wir gemeinsam fest, abgestimmt auf Ihre Frist beim Vermieter oder Notar. Die Dauer der Räumung selbst richtet sich nach Wohnungsgröße und Menge. Zum vereinbarten Termin ist die Wohnung leer und besenrein, das garantieren wir."
+    },
+    {
+     "q": "Was bedeutet besenrein bei einer Haushaltsauflösung?",
+     "a": "Besenrein heißt: Die Wohnung ist vollständig leergeräumt, Böden sind gefegt, sichtbarer Schmutz und Staub sind entfernt, Klebereste und Haken kommen weg. Es ist der Zustand, den die meisten Mietverträge bei der Übergabe verlangen. Auf Wunsch reinigen wir zusätzlich Bäder, Küche und Fenster gründlicher. Den Endzustand halten wir per Foto fest und schicken ihn Ihnen aufs Handy."
+    },
+    {
+     "q": "Was passiert mit Wertgegenständen und Dokumenten?",
+     "a": "Wertgegenstände und Dokumente bleiben bei Ihnen. Bevor wir räumen, durchsuchen wir Schubladen, Schränke und Ablagen nach Wichtigem: Schmuck, Münzen, Bargeld, Sparbücher, Verträge, Ausweise und persönliche Briefe. Diese trennen wir vom restlichen Hausrat und übergeben sie an Sie. Wir arbeiten diskret und gehen behutsam mit allem um. Erst danach geht der übrige Hausrat in die fachgerechte Entsorgung oder Verwertung."
+    }
+   ],
+   "garantie_text": "Wir garantieren: Ihre Wohnung ist zur vereinbarten Zeit leer und besenrein. Schaffen wir das nicht, räumen wir am nächsten Tag kostenlos fertig.",
+   "ortsseite_lead": "Ihre Haushaltsauflösung in {ort} übernimmt der Haus- & Gartenservice Havelland aus einer Hand: vollständig geräumt, fachgerecht entsorgt und besenrein übergeben. Festpreis nach kostenloser Besichtigung, Foto-Nachweis inklusive, diskret im Erb- und Pflegefall.",
+   "skills_applied": [
+    "seo-web-copy.md (Keyword in Title+H1+erste 100 Wörter, Title 60 Zeichen, Meta mit Klickanreiz, scanbare H3-Sektionen, FAQ für PAA-Snippets, klarer CTA)",
+    "llm-optimisation.md (Antwort-zuerst pro Sektion/FAQ, Definition-Block X-ist-Y, Entity-Klarheit Haus- & Gartenservice Havelland + Falkensee, eigenständige 40-80-Wort-FAQ, fragenbasierte H3)",
+    "stop-slop.md (deutsch übertragen: keine Floskel-Opener, Aktiv statt Passiv, Sie statt man, keine Adverb-Crutches/Verstärker, keine Binär-Kontraste, keine Gedankenstriche im Fließtext, variierte Satzlängen, keine erfundenen Zahlen)"
+   ]
+  },
+  {
+   "slug": "grundreinigung",
+   "title": "Grundreinigung / Auszugsreinigung Havelland",
+   "meta": "Grundreinigung und Auszugsreinigung im Havelland vom Haus- & Gartenservice Havelland: Festpreis nach Besichtigung, Foto-Nachweis nach dem Auftrag, 24-h-Garantie.",
+   "h1": "Besenrein war gestern — Ihre Auszugsreinigung im Havelland",
+   "h1_em": "besenrein",
+   "intro": "Der Haus- & Gartenservice Havelland aus Falkensee übernimmt Ihre Grundreinigung und Auszugsreinigung im Havelland und im Berliner Umland. Sie ziehen aus, wir bringen die Wohnung in übergabefertigen Zustand: Küche, Bad, Böden, Fenster von innen, Heizkörper, Steckdosen. Ein fester Ansprechpartner kommt vorbei, besichtigt kostenlos und nennt Ihnen einen Festpreis. Nach getaner Arbeit erhalten Sie Vorher-Nachher-Fotos direkt aufs Handy. Beanstandet der Vermieter etwas, sind wir binnen 24 Stunden kostenlos zurück.",
+   "definition": "Eine Grundreinigung ist eine einmalige Intensivreinigung, die Schmutz, Fett und Kalk dort entfernt, wo die normale Unterhaltsreinigung nicht hinkommt. Bei einer Auszugsreinigung bringt sie eine leergeräumte Wohnung in den Zustand, den der Vermieter zur Übergabe erwartet.",
+   "sections": [
+    {
+     "h3": "Auszugs- und Übergabereinigung",
+     "body": "Die Auszugsreinigung bereitet Ihre leergeräumte Wohnung auf die Übergabe an den Vermieter vor. Wir reinigen Küche samt Fettablagerungen an Fronten und Dunstabzug, das Bad mit Kalk in Fugen und Armaturen, alle Böden, Fenster von innen, Fensterbänke, Heizkörper, Türen, Schalter und Steckdosen. Kalk, Klebereste und vergilbte Stellen gehören dazu. Sie bekommen eine Wohnung, die einer Vermieter-Abnahme standhält, und Vorher-Nachher-Fotos als Nachweis für Ihre Unterlagen."
+    },
+    {
+     "h3": "Bauschlussreinigung",
+     "body": "Die Bauschlussreinigung entfernt den Schmutz, den eine Renovierung oder ein Umbau hinterlässt. Wir holen Bau- und Schleifstaub von Böden, Fensterrahmen, Heizkörpern und Sockelleisten, beseitigen Mörtelspritzer, Silikonreste, Farbnebel und Aufkleber von Fenstern und Beschlägen und wischen jede Fläche nass nach. Danach ist der Raum bezugsfertig oder bereit für den Bodenleger. Malerarbeiten gehören nicht dazu — wir reinigen, wir streichen nicht."
+    },
+    {
+     "h3": "Intensiv- und Grundreinigung",
+     "body": "Die Intensiv- oder Grundreinigung lohnt sich, wenn die normale Reinigung an Grenzen stößt: festsitzendes Fett in der Küche, Kalk in der Dusche, vergilbte Fugen, eingelaufener Schmutz in Ecken und unter Möbeln. Wir reinigen einmalig und gründlich von oben nach unten, statt nur die Oberfläche aufzufrischen. Sinnvoll vor dem Einzug, nach längerer Vermietung, nach Krankheit im Haushalt oder einfach, wenn die Wohnung wieder von Grund auf sauber sein soll."
+    },
+    {
+     "h3": "Übergabe-Sicherheit",
+     "body": "Ihre Übergabe an den Vermieter sichern wir mit zwei Dingen ab: dem Foto-Nachweis und unserer Garantie. Vor und nach der Reinigung dokumentieren wir jeden Raum mit Fotos, die Sie aufs Handy bekommen — Ihr Beleg, in welchem Zustand Sie die Wohnung übergeben haben. Stellt der Vermieter bei der Abnahme einen Mangel aus unserem Auftrag fest, kommen wir binnen 24 Stunden kostenlos nach und bessern aus, bevor Streit um die Kaution entsteht."
+    }
+   ],
+   "naehe": "Sie suchen eine Grundreinigung in der Nähe? Wir sitzen in Falkensee und arbeiten im gesamten Havelland sowie im angrenzenden Berliner Umland — Nauen, Dallgow-Döberitz, Brieselang, Wustermark, Schönwalde-Glien und die Nachbarorte. Kurze Wege bedeuten, dass wir oft schon kurzfristig zur Besichtigung vorbeikommen. Ein Anruf oder eine WhatsApp genügt, und Sie haben einen festen Ansprechpartner aus der Region vor Ort, der die Wohnungen und die Vermieter hier kennt.",
+   "ablauf": "So läuft Ihre Auszugsreinigung ab: Sie melden sich per Telefon oder WhatsApp, wir kommen kostenlos zur Vor-Ort-Besichtigung und sehen uns Größe und Zustand der Wohnung an. Danach erhalten Sie einen Festpreis — der Festpreis ist der Endpreis, als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Zum vereinbarten Termin reinigen wir die Wohnung von Grund auf. Zum Schluss bekommen Sie die Vorher-Nachher-Fotos aufs Handy, fertig für Ihre Übergabe.",
+   "faqs": [
+    {
+     "q": "Was ist der Unterschied zwischen Grundreinigung und Unterhaltsreinigung?",
+     "a": "Die Unterhaltsreinigung ist die laufende Reinigung im Turnus, etwa wöchentlich, und hält den Alltagsschmutz in Schach. Die Grundreinigung ist eine einmalige Intensivreinigung, die festsitzendes Fett, Kalk und eingelaufenen Schmutz dort entfernt, wo die Unterhaltsreinigung nicht hinkommt. Bei einem Auszug brauchen Sie die Grundreinigung, damit die Wohnung übergabefertig wird."
+    },
+    {
+     "q": "Wie läuft eine Auszugsreinigung beim Haus- & Gartenservice Havelland ab?",
+     "a": "Sie melden sich per Telefon oder WhatsApp, wir kommen kostenlos zur Besichtigung und nennen Ihnen einen Festpreis. Am vereinbarten Termin reinigen wir die leergeräumte Wohnung von Grund auf: Küche, Bad, Böden, Fenster von innen, Heizkörper, Schalter. Zum Schluss erhalten Sie Vorher-Nachher-Fotos aufs Handy als Nachweis für die Übergabe an den Vermieter."
+    },
+    {
+     "q": "Was kostet eine Auszugsreinigung im Havelland?",
+     "a": "Einen Pauschalpreis nennen wir nicht aus der Ferne, weil Größe, Zustand und Aufwand jede Wohnung unterscheiden. Wir kommen kostenlos vorbei, sehen uns alles an und nennen Ihnen danach einen Festpreis. Dieser Festpreis ist der Endpreis: Als Kleinunternehmer nach §19 schlagen wir keine Mehrwertsteuer obendrauf. Keine Nachforderungen nach der Besichtigung."
+    },
+    {
+     "q": "Wie schnell bekomme ich einen Termin?",
+     "a": "Schreiben Sie uns per WhatsApp, antworten wir in der Regel innerhalb weniger Stunden, nicht erst nach Tagen. Wir sitzen in Falkensee und sind im Havelland kurzfristig vor Ort, oft schon für die Besichtigung in den nächsten Tagen. Den Reinigungstermin stimmen wir auf Ihren Übergabetermin ab, damit die Wohnung rechtzeitig fertig ist."
+    },
+    {
+     "q": "Was passiert, wenn der Vermieter bei der Übergabe etwas beanstandet?",
+     "a": "Stellt der Vermieter bei der Abnahme einen Mangel fest, der aus unserem Auftrag stammt, kommen wir binnen 24 Stunden kostenlos zurück und bessern aus. Zusätzlich haben Sie die Vorher-Nachher-Fotos als Beleg, in welchem Zustand Sie übergeben haben. So vermeiden Sie Streit um die Kaution und stehen bei der Übergabe auf der sicheren Seite."
+    }
+   ],
+   "garantie_text": "Beanstandet der Vermieter bei der Übergabe einen Mangel aus unserem Auftrag, kommen wir binnen 24 Stunden kostenlos nach und bessern aus.",
+   "ortsseite_lead": "Ihre Grundreinigung und Auszugsreinigung in {ort} übernimmt der Haus- & Gartenservice Havelland — übergabefertig, mit Foto-Nachweis und Festpreis nach kostenloser Besichtigung. In {ort} und Umgebung sind wir kurzfristig vor Ort.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "umzugshilfe",
+   "title": "Umzugshilfe Havelland & Falkensee | zum Festpreis",
+   "meta": "Umzugshilfe im Havelland: tragen, Möbel ab- und aufbauen, be- und entladen. Kostenlose Besichtigung, Festpreis als Endpreis, Foto-Nachweis aufs Handy.",
+   "h1": "Umzugshilfe mit <em>Sorgfalt</em> — Muskelkraft, die Ihre Möbel schont",
+   "h1_em": "Sorgfalt",
+   "intro": "Der Haus- & Gartenservice Havelland von Noah Telo aus Falkensee übernimmt Ihre Umzugshilfe im Havelland und im Berliner Umland: Wir tragen Kartons und Möbel, bauen Schränke und Betten ab und wieder auf und beladen Ihren Transporter sauber. Sie bekommen einen festen Ansprechpartner, einen Festpreis nach kostenloser Besichtigung und nach dem Auftrag die Foto-Doku direkt aufs Handy. Kein Konzern, sondern verlässliche Hände aus der Region.",
+   "definition": "Umzugshilfe ist die körperliche Unterstützung beim Wohnungs- oder Hauswechsel: Möbel und Kartons tragen, Möbel ab- und aufbauen sowie das Fahrzeug be- und entladen. Sie entlastet Privathaushalte, die selbst umziehen, aber Hände, Erfahrung und Sorgfalt für schwere und sperrige Stücke brauchen.",
+   "sections": [
+    {
+     "h3": "Tragen & Transport",
+     "body": "Wir tragen Kartons, Kisten, Möbel, Geräte und sperrige Einzelstücke aus der Wohnung zum Fahrzeug und am Zielort wieder hinein. Auch enge Treppenhäuser, Dachgeschosse ohne Aufzug und schmale Flure meistern wir mit Tragegurten und der richtigen Technik. Schränke, Waschmaschinen und Sofas gehen so durchs Treppenhaus, ohne dass Wände oder Ecken Schaden nehmen. Sie sagen uns, was wohin soll; wir setzen jedes Teil am vereinbarten Platz ab."
+    },
+    {
+     "h3": "Möbel ab- und aufbauen",
+     "body": "Wir demontieren Ihre Möbel vor dem Umzug und bauen sie am neuen Wohnort wieder auf: Kleiderschränke, Betten, Regale, Tische, Küchenschränke. Beschläge, Schrauben und Kleinteile sammeln wir beschriftet ein, damit beim Aufbau nichts fehlt. So passen die Stücke durch Türen und Treppenhäuser und stehen am Zielort fest und gerade. Bei Schwedenmöbeln und Eigenbauten arbeiten wir nach Ihrer Anleitung; was wir nicht sicher montieren können, sagen wir Ihnen vorher klar."
+    },
+    {
+     "h3": "Be- und Entladen",
+     "body": "Wir beladen Ihren Transporter oder Anhänger so, dass die Ladung kippsicher steht und auf der Fahrt nicht verrutscht: Schweres nach unten, Empfindliches gepolstert, Hohlräume gefüllt. Am Zielort entladen wir und tragen jedes Teil direkt in den richtigen Raum. Den Mietwagen oder Anhänger organisieren Sie selbst — wir packen ihn voll aus und wieder ein. Auf Wunsch stellen wir Möbeldecken und Spanngurte; bitte bei der Besichtigung ansprechen."
+    },
+    {
+     "h3": "Absicherung",
+     "body": "Wir polstern Kanten, Türrahmen und Böden ab, bevor wir tragen, und arbeiten zu zweit oder im Team, statt schwere Stücke allein zu zwingen. Empfindliche Oberflächen schützen wir mit Decken, Treppenhäuser bleiben sauber. Für Transportschäden an Ihren Möbeln gilt unsere schriftliche Kratzer-Haftung: Was wir beim Tragen oder Be- und Entladen verkratzen, halten wir schriftlich fest und regeln es mit Ihnen. So wissen Sie vorher, woran Sie sind."
+    }
+   ],
+   "naehe": "Sie suchen Umzugshilfe in der Nähe? Wir sind in Falkensee zu Hause und im ganzen Havelland sowie im angrenzenden Berliner Umland für Sie unterwegs — von Nauen über Dallgow-Döberitz und Brieselang bis an die Berliner Stadtgrenze. Kurze Wege bedeuten kurze Reaktionszeiten: Auf Ihre WhatsApp-Nachricht melden wir uns in Stunden, nicht erst nach Tagen. Weil wir aus der Region kommen, kennen wir die typischen Altbau-Treppenhäuser, Reihenhäuser und Dachwohnungen vor Ort und wissen, worauf es beim Tragen ankommt.",
+   "ablauf": "So läuft Ihre Umzugshilfe ab: Zuerst kommen wir kostenlos zur Vor-Ort-Besichtigung und schauen uns Wohnung, Möbel, Treppen und Zugänge an. Danach nennen wir Ihnen einen Festpreis — der Festpreis ist der Endpreis, denn als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Am vereinbarten Tag führen wir den Umzug mit Muskelkraft und Sorgfalt aus. Zum Schluss erhalten Sie die Foto-Doku mit Vorher/Nachher direkt aufs Handy.",
+   "faqs": [
+    {
+     "q": "Was umfasst eine Umzugshilfe für Privathaushalte?",
+     "a": "Eine Umzugshilfe umfasst das Tragen von Kartons und Möbeln, das Ab- und Aufbauen von Möbeln sowie das Be- und Entladen Ihres Transporters. Beim Haus- & Gartenservice Havelland packen wir mit an, demontieren und montieren Schränke, Betten und Regale und tragen jedes Teil in den richtigen Raum. Den Mietwagen organisieren Sie selbst, wir füllen ihn fachgerecht."
+    },
+    {
+     "q": "Wie läuft die Umzugshilfe im Havelland ab?",
+     "a": "Zuerst kommen wir kostenlos zur Besichtigung und schauen uns Möbel, Treppen und Zugänge an. Danach erhalten Sie einen Festpreis. Am vereinbarten Tag tragen, montieren und beladen wir mit Muskelkraft und Sorgfalt. Nach dem Auftrag bekommen Sie eine Foto-Doku aufs Handy. Einen festen Ansprechpartner haben Sie vom ersten Kontakt bis zum letzten Karton."
+    },
+    {
+     "q": "Wann sollte ich die Umzugshilfe anfragen?",
+     "a": "Fragen Sie früh an, besonders zwischen Juli und September. In diesen Monaten ziehen die meisten Haushalte um, und unsere Termine füllen sich schnell. Eine WhatsApp-Nachricht genügt für den ersten Kontakt; darauf reagieren wir in Stunden. Je eher die kostenlose Besichtigung steht, desto sicherer halten wir Ihren Wunschtermin frei, auch im Berliner Umland."
+    },
+    {
+     "q": "Was kostet eine Umzugshilfe?",
+     "a": "Wir nennen keinen Pauschalbetrag im Voraus, weil jeder Umzug anders ist. Den Preis bestimmen Menge und Gewicht der Möbel, Stockwerke ohne Aufzug, Wegstrecke und der Aufwand für Ab- und Aufbau. Nach der kostenlosen Besichtigung bekommen Sie einen Festpreis, und dieser Festpreis ist der Endpreis — als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf."
+    },
+    {
+     "q": "Was passiert, wenn beim Tragen ein Möbel verkratzt wird?",
+     "a": "Dafür gilt unsere schriftliche Kratzer-Haftung. Wenn wir beim Tragen oder Be- und Entladen ein Möbelstück verkratzen, halten wir den Schaden schriftlich fest und klären die Regelung mit Ihnen. Vorbeugend polstern wir Kanten und Böden ab und arbeiten im Team statt allein. Sie wissen vorher, woran Sie sind — und sehen den Zustand auf der Foto-Doku."
+    }
+   ],
+   "garantie_text": "Schriftliche Kratzer-Haftung: Verkratzen wir beim Tragen oder Be- und Entladen ein Möbelstück, halten wir den Schaden schriftlich fest und regeln ihn mit Ihnen.",
+   "ortsseite_lead": "Ihre Umzugshilfe in {ort} vom Haus- & Gartenservice Havelland: Wir tragen, bauen ab und auf und beladen Ihren Transporter — zum Festpreis nach kostenloser Besichtigung. In {ort} und Umgebung sind wir mit Muskelkraft und Sorgfalt für Sie da.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "renovierung",
+   "title": "Renovierung Falkensee & Havelland | Festpreis",
+   "meta": "Renovierung im Havelland: Kleinreparaturen, Boden, Demontage und Montage aus einer Hand. Kostenlose Besichtigung, Festpreis als Endpreis, Foto-Nachweis nach jedem Auftrag.",
+   "h1": "Renovierung im Havelland — handwerklich, sauber, zum Festpreis",
+   "h1_em": "handwerklich",
+   "intro": "Der Haus- & Gartenservice Havelland erledigt Ihre Renovierung in Falkensee und im ganzen Havelland: Kleinreparaturen, Boden- und Laminatverlegung, Demontage und Montage sowie vorbereitende Arbeiten. Sie bekommen einen festen Ansprechpartner für alle handwerklichen Kleinleistungen, eine kostenlose Besichtigung vor Ort und danach einen Festpreis, der Ihr Endpreis bleibt. Nach jedem Auftrag erhalten Sie eine Foto-Doku mit Vorher- und Nachher-Bildern direkt aufs Handy.",
+   "definition": "Renovierung umfasst handwerkliche Auffrischungs- und Instandsetzungsarbeiten in Wohnung und Haus, die den Zustand erhalten oder verbessern — etwa Kleinreparaturen, Bodenverlegung sowie Demontage und Montage. Bei uns deckt das die handwerklichen Kleinleistungen ab, nicht die Vollsanierung und keine Malerarbeiten.",
+   "sections": [
+    {
+     "h3": "Kleinreparaturen",
+     "body": "Kleinreparaturen erledigen die vielen kleinen Handgriffe, für die sich kein großer Betrieb anfahren lässt. Dazu gehören klemmende Türen und Fenster nachstellen, lockere Scharniere und Griffe festziehen, Silikonfugen in Bad und Küche erneuern, Dübellöcher und kleine Wandschäden verspachteln, undichte Armaturen und Siphons abdichten, Sockelleisten befestigen oder defekte Steckdosenrahmen tauschen. Sie sammeln Ihre Punkte auf einer Liste, wir arbeiten sie bei einem Termin ab. So sparen Sie sich mehrere Handwerker für lauter Kleinkram. Den Umfang sehen wir bei der kostenlosen Besichtigung, danach steht Ihr Festpreis."
+    },
+    {
+     "h3": "Boden und Laminat",
+     "body": "Boden- und Laminatarbeiten bringen einen neuen Belag sauber und gerade in Ihre Räume. Wir verlegen Laminat, Klick-Vinyl und Designböden, prüfen den Untergrund auf Ebenheit, bringen Trittschalldämmung und Dampfsperre ein, schneiden passgenau an Türzargen und Heizungsrohren zu und setzen Sockelleisten und Übergangsschienen. Alte Beläge bauen wir vorher heraus und entsorgen sie fachgerecht. Sie wählen das Material, wir kümmern uns um den Rest. Vor dem ersten Brett sehen wir uns Raum und Untergrund an und nennen Ihnen den Festpreis für Verlegung samt Vorarbeit."
+    },
+    {
+     "h3": "Demontage und Montage",
+     "body": "Demontage und Montage übernehmen den Auf- und Abbau, bei dem zwei sichere Hände und das richtige Werkzeug fehlen. Wir montieren Küchen und Einbauschränke, hängen Regale, Hängeschränke, Spiegel und Bilder dübelfest an die Wand, bauen Möbel nach Anleitung auf und befestigen Gardinenstangen, Markisen oder Vorhangschienen. Beim Auszug oder Umbau demontieren wir Möbel, Lampen und Anbauten und nehmen sie auf Wunsch gleich mit. Wir bringen Bohrmaschine, Dübel und Schrauben mit. Was montiert werden soll, klären wir bei der Besichtigung, danach erhalten Sie Ihren Festpreis."
+    },
+    {
+     "h3": "Vorbereitende Arbeiten",
+     "body": "Vorbereitende Arbeiten schaffen die saubere Grundlage, bevor der eigentliche Belag oder das neue Möbelstück kommt. Wir spachteln Wand- und Bodenlöcher, gleichen kleine Unebenheiten aus, entfernen alte Tapetenreste, Teppichkleber und lose Beläge, demontieren Leisten und Abdeckungen und reinigen die Fläche besenrein. Auch alten Bauschutt und Verschnitt räumen wir weg und entsorgen ihn. Damit ist Ihr Raum fertig für den nächsten Schritt — egal ob Sie ihn selbst weiterführen oder wir ihn für Sie übernehmen. Den Aufwand sehen wir vor Ort und halten ihn im Festpreis fest."
+    }
+   ],
+   "naehe": "Sie suchen einen Handwerker für Renovierungsarbeiten in der Nähe? Der Haus- & Gartenservice Havelland sitzt in Falkensee und arbeitet im gesamten Havelland sowie im angrenzenden Berliner Umland. Kurze Wege bedeuten kurze Reaktionszeiten: Auf Ihre WhatsApp-Nachricht melden wir uns in Stunden, nicht in Tagen. Als regional verwurzelter Betrieb kennen wir die typischen Altbauten, Reihenhäuser und Neubauwohnungen der Region und wissen, worauf es bei Boden, Türen und Montagen vor Ort ankommt.",
+   "ablauf": "Erst kommen wir kostenlos zur Besichtigung vorbei und schauen uns Ihre Renovierungspunkte an. Danach erhalten Sie einen Festpreis, der Ihr Endpreis bleibt — als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Stimmen Sie zu, führen wir die Arbeiten zum vereinbarten Termin sauber und pünktlich aus. Zum Abschluss bekommen Sie eine Foto-Doku mit Vorher- und Nachher-Bildern direkt aufs Handy.",
+   "faqs": [
+    {
+     "q": "Was gehört zur Renovierung beim Haus- & Gartenservice Havelland?",
+     "a": "Wir übernehmen handwerkliche Kleinleistungen: Kleinreparaturen wie klemmende Türen, Fugen und kleine Wandschäden, das Verlegen von Laminat und Vinyl samt Vorarbeit, die Demontage und Montage von Möbeln, Küchen und Regalen sowie vorbereitende Arbeiten wie Spachteln und Entsorgen. Eine Vollsanierung und Malerarbeiten gehören bewusst nicht dazu. So bleibt ein fester Ansprechpartner für alle kleinen Aufgaben in Haus und Wohnung."
+    },
+    {
+     "q": "Was kostet eine Renovierung im Havelland?",
+     "a": "Einen festen Betrag nennen wir erst nach der Besichtigung, weil jeder Raum, Untergrund und Materialwunsch anders ist. So läuft es: Wir kommen kostenlos vorbei, sehen uns den Umfang an und nennen Ihnen danach einen Festpreis. Dieser Festpreis ist Ihr Endpreis. Als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Sie wissen also vor Beginn genau, was die Arbeit kostet."
+    },
+    {
+     "q": "Wie läuft ein Renovierungsauftrag ab?",
+     "a": "In vier Schritten. Sie melden sich, am besten per WhatsApp, und wir reagieren in Stunden. Dann kommen wir kostenlos zur Vor-Ort-Besichtigung und nennen Ihnen einen Festpreis. Nach Ihrer Zusage führen wir die Arbeiten zum vereinbarten Termin aus. Zum Schluss erhalten Sie eine Foto-Doku mit Vorher- und Nachher-Bildern direkt aufs Handy, damit Sie das Ergebnis schwarz auf weiß haben."
+    },
+    {
+     "q": "Macht ihr auch Malerarbeiten oder eine Komplettsanierung?",
+     "a": "Nein. Wir konzentrieren uns auf handwerkliche Kleinleistungen wie Kleinreparaturen, Bodenverlegung, Demontage, Montage und vorbereitende Arbeiten. Malerarbeiten und eine Komplettsanierung bieten wir bewusst nicht an, damit wir das, was wir tun, sauber und zuverlässig erledigen. Für die Vorbereitung einer Wand spachteln und reinigen wir die Fläche gern, das Streichen selbst übernehmen Sie oder ein Malerbetrieb."
+    },
+    {
+     "q": "Wie schnell bekomme ich einen Termin für die Besichtigung?",
+     "a": "Schnell. Schreiben Sie uns über WhatsApp, melden wir uns in Stunden zurück, nicht in Tagen. Weil wir in Falkensee sitzen und im gesamten Havelland sowie im Berliner Umland arbeiten, sind die Wege kurz und ein Besichtigungstermin lässt sich meist zeitnah einrichten. Die Besichtigung ist kostenlos und unverbindlich. Erst danach entscheiden Sie auf Basis des Festpreises, ob wir loslegen."
+    }
+   ],
+   "garantie_text": "Keine festen Preise im Voraus: Wir kommen kostenlos zur Besichtigung, danach erhalten Sie einen Festpreis, der Ihr Endpreis bleibt — als Kleinunternehmer ohne Mehrwertsteuer obendrauf.",
+   "ortsseite_lead": "Ihre Renovierung in {ort} aus einer Hand: Kleinreparaturen, Bodenverlegung, Demontage und Montage vom Haus- & Gartenservice Havelland. Kostenlose Besichtigung in {ort}, danach ein Festpreis als Endpreis und nach dem Auftrag die Foto-Doku aufs Handy.",
+   "skills_applied": [
+    "seo-web-copy.md (Keyword-Platzierung Title/Meta/H1/erste 100 Wörter, Sektions-Struktur mit eigenständigen H3, FAQ für PAA-Capture, Scannability)",
+    "llm-optimisation.md (Antwort-zuerst je Sektion und FAQ, Definition-Block 'Renovierung ist …', Entity-Klarheit 'Haus- & Gartenservice Havelland in Falkensee', eigenständige 40–80-Wort-FAQ-Antworten, semantische Themenabdeckung)",
+    "stop-slop/SKILL.md (deutsch übertragen: keine Floskel-Opener, keine Binär-Kontraste 'nicht X, sondern Y', keine leeren Verstärker/Adverbien, Aktiv statt Passiv, 'Sie' statt 'man', variierte Satzlängen, keine Gedankenstrich-Inflation)"
+   ]
+  },
+  {
+   "slug": "hausmeisterservice",
+   "title": "Hausmeisterservice Havelland | Festpreis & Foto",
+   "meta": "Hausmeisterservice im Havelland: Grünpflege, Winterdienst, Kleinreparaturen, Kontrollgänge. Ein Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Einsatz.",
+   "h1": "Ihr Hausmeisterservice im Havelland – ein Ansprechpartner für <em>alles</em>",
+   "h1_em": "alles",
+   "intro": "Der Haus- & Gartenservice Havelland aus Falkensee übernimmt Ihren Hausmeisterservice im Havelland und Berliner Umland: Grünpflege, Winterdienst, Kleinreparaturen, Kontrollgänge und die Pflege von Treppenhaus und Außenanlagen. Sie haben einen festen Ansprechpartner für Privathaushalt, Gewerbe und Hausverwaltung. Den Preis legen wir nach einer kostenlosen Besichtigung als Festpreis fest. Nach jedem Einsatz erhalten Sie eine Foto-Dokumentation aufs Handy, damit Sie auch ohne eigenen Termin vor Ort sehen, was erledigt wurde.",
+   "definition": "Ein Hausmeisterservice ist ein laufender Betreuungsdienst, der wiederkehrende Aufgaben rund um ein Gebäude und Grundstück übernimmt: Grünpflege, Winterdienst, kleine Reparaturen, regelmäßige Kontrollgänge sowie die Reinigung von Treppenhaus und Außenanlagen. Für Eigentümer, Mieter und Verwaltungen ersetzt das viele einzelne Dienstleister durch einen festen Ansprechpartner.",
+   "sections": [
+    {
+     "h3": "Grünpflege & Winterdienst",
+     "body": "Wir halten Ihre Grünflächen das ganze Jahr in Form und Ihre Wege im Winter sicher. Zur Grünpflege gehören Rasen mähen, Hecken und Sträucher schneiden, Beete jäten, Laub entfernen und der Grünschnitt-Abtransport. Im Winterdienst räumen und streuen wir Gehwege, Hof- und Stellflächen vor der gesetzlichen Frist und dokumentieren jeden Einsatz für Ihre Räum- und Streupflicht. Für beides bieten wir feste Wartungsverträge an: Grünpflege im 14-tägigen Rhythmus, Winterdienst als Saisonvertrag. So sind Termine gesichert, ohne dass Sie jedes Mal neu anrufen."
+    },
+    {
+     "h3": "Kleinreparaturen",
+     "body": "Kleine Mängel beheben wir, bevor daraus teure Schäden werden. Dazu zählen tropfende Wasserhähne, klemmende Türen und Fenster, lose Fliesen, defekte Lichtschalter, ausgetauschte Leuchtmittel, nachgezogene Beschläge und Silikonfugen im Bad. Was wir im Rahmen einfacher Handwerksarbeiten erledigen dürfen, machen wir direkt beim Termin. Maler-, Elektro- und Gasarbeiten, die einem Fachbetrieb vorbehalten sind, übernehmen wir nicht, sagen Ihnen das aber klar und nennen den richtigen Ansprechpartner. So bleibt Ihre Mängelliste kurz."
+    },
+    {
+     "h3": "Kontrollgänge",
+     "body": "Bei regelmäßigen Kontrollgängen prüfen wir Ihr Objekt auf Schäden, Verschmutzung und Auffälligkeiten, bevor sie zum Problem werden. Wir kontrollieren Beleuchtung, Außenanlagen, Briefkästen, Mülltonnenstandplätze, Dachrinnen-Sichtbereich und melden Defekte oder Unregelmäßigkeiten sofort. Für Hausverwaltungen und Eigentümer ohne eigene Präsenz vor Ort ist das die Absicherung, dass jemand verlässlich nach dem Rechten sieht. Jeden Kontrollgang halten wir mit Foto fest, damit Sie den Zustand des Objekts jederzeit nachvollziehen können."
+    },
+    {
+     "h3": "Treppenhaus & Außenanlagen",
+     "body": "Treppenhaus und Außenanlagen halten wir im Turnus sauber und ordentlich. Im Innenbereich reinigen wir Treppen, Geländer, Fensterbänke, Briefkastenanlagen und Eingangsbereiche. Außen kümmern wir uns um Höfe, Zuwege, Stellplätze, Mülltonnenboxen und das Entfernen von Wildwuchs zwischen Pflastersteinen. Das gilt für Mehrfamilienhäuser, Gewerbeobjekte und gepflegte Privatgrundstücke gleichermaßen. Auch hier dokumentieren wir das Ergebnis mit Vorher-Nachher-Fotos, sodass Mieter und Eigentümer den gepflegten Zustand belegt bekommen."
+    }
+   ],
+   "naehe": "Sie suchen einen Hausmeisterservice in der Nähe? Wir sind in Falkensee zuhause und betreuen Objekte im gesamten Havelland und Berliner Umland: von Falkensee, Nauen und Rathenow bis Dallgow-Döberitz, Brieselang und an den westlichen Berliner Stadtrand. Kurze Wege bedeuten kurze Reaktionszeiten. Wenn etwas ansteht, schreiben Sie uns per WhatsApp, und Sie hören in Stunden von uns, nicht in Tagen. Als regional verwurzelter Betrieb kennen wir die Gegend, die Anbieter vor Ort und die Anforderungen an Räum- und Streupflicht in den Gemeinden.",
+   "ablauf": "So läuft Ihr Hausmeisterservice ab: Zuerst kommen wir zur kostenlosen Besichtigung vor Ort und nehmen den Umfang auf. Daraus erstellen wir einen Festpreis, bei dauerhafter Betreuung als Rahmenvertrag mit festen Leistungen und Terminen. Der Festpreis ist der Endpreis, denn als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Anschließend führen wir die vereinbarten Einsätze zuverlässig und pünktlich aus. Nach jedem Termin erhalten Sie eine Foto-Dokumentation aufs Handy.",
+   "faqs": [
+    {
+     "q": "Was umfasst ein Hausmeisterservice genau?",
+     "a": "Ein Hausmeisterservice umfasst die laufende Betreuung von Gebäude und Grundstück. Beim Haus- & Gartenservice Havelland gehören Grünpflege, Winterdienst, Kleinreparaturen, regelmäßige Kontrollgänge sowie die Reinigung von Treppenhaus und Außenanlagen dazu. Sie buchen einzelne Leistungen oder ein festes Paket. Statt mehrere Firmen zu koordinieren, haben Sie einen Ansprechpartner für Privathaushalt, Gewerbe oder Hausverwaltung."
+    },
+    {
+     "q": "Wie oft kommt der Hausmeister vorbei?",
+     "a": "Den Rhythmus legen Sie fest. Grünpflege bieten wir im 14-tägigen Turnus an, Kontrollgänge wöchentlich oder monatlich, den Winterdienst als Saisonvertrag mit Einsatz bei Schnee und Glätte. Bei einem Rahmenvertrag stehen die Termine fest, sodass Sie nicht jedes Mal neu anfragen. Einmalige Einsätze sind ebenso möglich, etwa eine Grundreinigung oder eine einzelne Reparatur."
+    },
+    {
+     "q": "Was kostet ein Hausmeisterservice im Havelland?",
+     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung als Festpreis, abhängig von Objektgröße, Leistungsumfang und Häufigkeit der Einsätze. Der Festpreis ist der Endpreis, weil wir als Kleinunternehmer nach §19 UStG keine Mehrwertsteuer berechnen. Bei laufender Betreuung erhalten Sie einen Rahmenvertrag mit gleichbleibenden Konditionen. So wissen Sie vorab genau, was Sie zahlen, ohne Überraschungen auf der Rechnung."
+    },
+    {
+     "q": "Übernehmen Sie auch Hausverwaltungen und Gewerbeobjekte?",
+     "a": "Ja. Wir betreuen Mehrfamilienhäuser, Gewerbeobjekte und Privatgrundstücke gleichermaßen. Für Hausverwaltungen ohne eigene Präsenz vor Ort übernehmen wir Kontrollgänge, Treppenhausreinigung, Winterdienst mit Nachweis und Kleinreparaturen über einen Rahmenvertrag. Sie erhalten nach jedem Einsatz eine Foto-Dokumentation, die Sie an Eigentümer und Mieter weitergeben können. Damit haben Sie einen verlässlichen Partner für mehrere Objekte im Havelland."
+    },
+    {
+     "q": "Wie schnell reagieren Sie auf eine Anfrage?",
+     "a": "Auf eine WhatsApp-Anfrage antworten wir in der Regel innerhalb weniger Stunden am selben Tag, nicht erst nach Tagen. Danach vereinbaren wir einen Termin für die kostenlose Besichtigung. Als regionaler Betrieb aus Falkensee haben wir kurze Wege ins gesamte Havelland und Berliner Umland, was schnelle Reaktionszeiten ermöglicht. Bei laufenden Verträgen erreichen Sie uns direkt über Ihren festen Ansprechpartner."
+    }
+   ],
+   "garantie_text": "Fällt ein vereinbarter Einsatz ohne Vorankündigung aus, ist der nächste Einsatz für Sie kostenlos.",
+   "ortsseite_lead": "Ihr Hausmeisterservice in {ort}: Der Haus- & Gartenservice Havelland übernimmt Grünpflege, Winterdienst, Kleinreparaturen und Treppenhausreinigung mit festem Ansprechpartner. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Einsatz in {ort}.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "gebaeudereinigung",
+   "title": "Gebäudereinigung Havelland – Service vom Nachbarn",
+   "meta": "Gebäudereinigung im Havelland: Treppenhaus, Büro, Bauendreinigung aus einer Hand. Festpreis nach Besichtigung, Foto-Nachweis nach jedem Turnus für Objekte.",
+   "h1": "Gebäudereinigung im Havelland, auf die sich Ihre Objekte verlassen",
+   "h1_em": "verlassen",
+   "intro": "Der Haus- & Gartenservice Havelland übernimmt Ihre Gebäudereinigung in Falkensee und im gesamten Havelland: Treppenhaus, Büro und Bauendreinigung aus einer Hand, mit einem festen Ansprechpartner statt wechselnder Reinigungskräfte. Hausverwaltungen und Gewerbe bekommen einen verbindlichen Turnus, eine WhatsApp-Erstreaktion in Stunden und nach jedem Einsatz eine Foto-Doku vorher/nachher direkt aufs Handy. Den Preis nennen wir nach einer kostenlosen Besichtigung als Festpreis. Fällt ein Turnus aus, holen wir ihn binnen 48 Stunden kostenlos nach.",
+   "definition": "Gebäudereinigung ist die regelmäßige und anlassbezogene Reinigung von Innen- und Außenbereichen eines Objekts, vom Treppenhaus über Büroflächen bis zur Bauendreinigung. Sie hält Mietobjekte, Gewerbeflächen und Gemeinschaftsbereiche sauber, sicher begehbar und werterhaltend.",
+   "sections": [
+    {
+     "h3": "Treppenhausreinigung",
+     "body": "Die Treppenhausreinigung hält Gemeinschaftsbereiche im Mehrfamilienhaus sauber und verkehrssicher. Wir wischen Treppenläufe, Podeste und Handläufe, reinigen Eingangsbereiche, Briefkastenanlagen und Aufzugkabinen, säubern Fenster und Glasflächen im Hausflur und entfernen Spinnweben in den Ecken. Auf Wunsch übernehmen wir Kellergänge, Waschküchen und Müllstandsplätze gleich mit. Hausverwaltungen erhalten einen festen Turnus, oft 14-tägig oder wöchentlich, und nach jedem Durchgang die Foto-Doku vorher/nachher. So weisen Sie gegenüber Eigentümern und Mietern jederzeit nach, dass das Haus gepflegt wird."
+    },
+    {
+     "h3": "Büroreinigung",
+     "body": "Die Büroreinigung hält Arbeitsplätze, Besprechungsräume und Sanitäranlagen hygienisch sauber, ohne Ihren Betrieb zu stören. Wir reinigen Schreibtische, Böden und Verkehrsflächen, leeren Papierkörbe, pflegen Küchen und Teeküchen und desinfizieren Sanitärbereiche samt Auffüllen von Seife und Papier. Termine legen wir in Randzeiten, früh, abends oder nach Feierabend, damit Ihre Mitarbeiter ungestört arbeiten. Ein fester Ansprechpartner kennt Ihre Räume, Ihre Zugänge und Ihre Schließregelung. Den Umfang halten wir nach der Besichtigung schriftlich fest, damit jeder Einsatz gleich gründlich abläuft."
+    },
+    {
+     "h3": "Bauendreinigung",
+     "body": "Die Bauendreinigung macht Neubauten, Sanierungen und Umbauten bezugsfertig. Wir entfernen Bauschmutz, Mörtel- und Farbreste, Klebereste von Folien und Aufklebern, Zementschleier sowie Staub von Fensterrahmen, Heizkörpern, Türen und Böden. Fenster und Glasflächen reinigen wir innen wie außen, Sanitär und Armaturen werden grundgereinigt. So übergeben Sie Ihren Mietern oder Käufern eine saubere Fläche. Malerarbeiten gehören nicht dazu, die feinarbeit nach dem Bau schon. Den Aufwand schätzen wir bei der Besichtigung ein und nennen Ihnen einen Festpreis für das fertige Ergebnis."
+    },
+    {
+     "h3": "Turnus & Vertretung",
+     "body": "Bei der Gebäudereinigung zählt Verlässlichkeit über Monate, nicht nur ein guter erster Einsatz. Sie bekommen einen festen Turnus, wöchentlich, 14-tägig oder monatlich, und einen festen Ansprechpartner, der Ihr Objekt kennt. Für Urlaub und Krankheit organisieren wir die Vertretung selbst, damit Ihr Treppenhaus oder Büro nicht plötzlich ungereinigt bleibt. Fällt ein Turnus trotzdem aus, holen wir ihn binnen 48 Stunden kostenlos nach. Als Wartungs- oder Abovertrag läuft alles ohne ständige Einzelbeauftragung, und die Foto-Doku belegt jeden erledigten Durchgang."
+    }
+   ],
+   "naehe": "Sie suchen eine Gebäudereinigung in der Nähe Ihres Objekts? Der Haus- & Gartenservice Havelland sitzt in Falkensee und ist im gesamten Havelland sowie im angrenzenden Berliner Umland vor Ort, von Falkensee über Nauen, Dallgow-Döberitz und Brieselang bis Wustermark. Kurze Wege bedeuten kurze Reaktionszeiten: Wir kommen zur kostenlosen Besichtigung, fahren feste Turnustermine zuverlässig an und sind bei Rückfragen per WhatsApp in Stunden erreichbar. Regional verwurzelt, ein fester Ansprechpartner, der Ihre Häuser und Flächen über die Jahre kennt.",
+   "ablauf": "Zuerst kommen wir zur kostenlosen Besichtigung Ihres Objekts und klären Flächen, Turnus und Zugänge. Danach erhalten Sie einen schriftlichen Festpreis, der Festpreis ist der Endpreis, denn als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Anschließend führen wir die Reinigung zu den vereinbarten Terminen aus, bei Ausfall durch Urlaub oder Krankheit mit organisierter Vertretung. Nach jedem Einsatz bekommen Sie eine Foto-Doku vorher/nachher direkt aufs Handy.",
+   "faqs": [
+    {
+     "q": "Was umfasst die Gebäudereinigung beim Haus- & Gartenservice Havelland?",
+     "a": "Wir übernehmen Treppenhausreinigung, Büroreinigung und Bauendreinigung im Havelland und Berliner Umland, dazu Gemeinschaftsflächen wie Keller, Waschküchen und Müllplätze. Den genauen Umfang halten wir nach der kostenlosen Besichtigung schriftlich fest, damit jeder Einsatz gleich gründlich abläuft. Sie haben einen festen Ansprechpartner für alles und bekommen nach jedem Durchgang eine Foto-Doku vorher/nachher aufs Handy."
+    },
+    {
+     "q": "Wie oft sollte ein Treppenhaus gereinigt werden?",
+     "a": "Der passende Turnus hängt von Lage, Nutzung und Anzahl der Parteien ab. Stark genutzte Mehrfamilienhäuser im Havelland reinigen wir oft wöchentlich, ruhigere Häuser 14-tägig oder monatlich. Wir empfehlen Ihnen bei der Besichtigung einen sinnvollen Rhythmus und legen ihn als festen Turnus an. Diesen passen wir an, wenn sich Belegung oder Anforderungen Ihres Objekts ändern."
+    },
+    {
+     "q": "Was passiert, wenn ein Reinigungstermin ausfällt?",
+     "a": "Fällt ein Turnus aus, holen wir ihn binnen 48 Stunden kostenlos nach. Für planbare Ausfälle durch Urlaub oder Krankheit organisieren wir vorab selbst eine Vertretung, damit Ihr Treppenhaus oder Büro nicht ungereinigt bleibt. Ihren festen Ansprechpartner erreichen Sie per WhatsApp mit einer Erstreaktion in Stunden, nicht in Tagen. Jeder erledigte Durchgang wird per Foto-Doku belegt."
+    },
+    {
+     "q": "Was kostet eine Gebäudereinigung für ein Objekt im Havelland?",
+     "a": "Einen Pauschalpreis gibt es nicht, weil Flächen, Turnus und Aufwand pro Objekt unterschiedlich sind. Wir besichtigen Ihr Gebäude kostenlos vor Ort und nennen Ihnen danach einen Festpreis. Dieser Festpreis ist der Endpreis: Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. So wissen Sie vor dem ersten Einsatz genau, woran Sie sind, ohne versteckte Zuschläge."
+    },
+    {
+     "q": "Bietet ihr Reinigung als laufenden Wartungsvertrag an?",
+     "a": "Ja. Für Hausverwaltungen und Gewerbe richten wir die Gebäudereinigung als Wartungs- oder Abovertrag ein, etwa Treppenhaus 14-tägig oder Büroreinigung wöchentlich. Sie sparen sich die ständige Einzelbeauftragung und bekommen einen verbindlichen Turnus mit fester Vertretungsregelung. Den Umfang vereinbaren wir nach der Besichtigung zum Festpreis, und die Foto-Doku dokumentiert jeden Termin nachvollziehbar für Eigentümer und Mieter."
+    }
+   ],
+   "garantie_text": "Fällt ein vereinbarter Turnus aus, holen wir ihn binnen 48 Stunden kostenlos nach.",
+   "ortsseite_lead": "Ihre Gebäudereinigung in {ort} vom Haus- & Gartenservice Havelland: Treppenhaus, Büro und Bauendreinigung aus einer Hand, mit festem Turnus und Foto-Nachweis. Wir besichtigen Ihr Objekt in {ort} kostenlos und nennen Ihnen danach einen Festpreis.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "unterhaltsreinigung",
+   "title": "Unterhaltsreinigung Havelland | Festpreis & Foto",
+   "meta": "Unterhaltsreinigung im Havelland für Gewerbe & Hausverwaltung: fester Turnus, Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Termin. Jetzt anfragen.",
+   "h1": "Laufende Unterhaltsreinigung für Gewerbe und Hausverwaltung im Havelland",
+   "h1_em": "laufende",
+   "intro": "Der Haus- & Gartenservice Havelland aus Falkensee übernimmt die Unterhaltsreinigung für Gewerbebetriebe und Hausverwaltungen im Havelland und im Berliner Umland. Sie bekommen einen festen Reinigungsturnus, einen Ansprechpartner und nach jedem Termin eine Foto-Doku aufs Handy. Den Preis legen wir nach einer kostenlosen Besichtigung als Festpreis fest. So wissen Sie vorher, was die regelmäßige Reinigung Ihrer Büros, Sanitärräume und Flächen kostet, ohne böse Überraschung am Monatsende.",
+   "definition": "Unterhaltsreinigung ist die regelmäßige, im festen Turnus wiederkehrende Reinigung von Geschäfts- und Gemeinschaftsflächen, die den sauberen Zustand laufend hält. Sie unterscheidet sich von der einmaligen Grundreinigung: Die Grundreinigung stellt einen Ausgangszustand her, die Unterhaltsreinigung sichert ihn Termin für Termin.",
+   "sections": [
+    {
+     "h3": "Regelmäßige Büroreinigung",
+     "body": "Die Büroreinigung hält Arbeitsplätze, Flure und Gemeinschaftsbereiche im vereinbarten Turnus sauber. Wir leeren Papierkörbe und tauschen Müllbeutel, wischen Schreibtische und freie Ablageflächen, reinigen Türklinken und Lichtschalter und saugen oder wischen die Böden. Auf Wunsch übernehmen wir auch Teeküchen und Empfangsbereiche. Was zum Umfang gehört, halten wir vor dem ersten Termin schriftlich fest, damit Ihr Team und unser Team dieselbe Liste vor Augen haben. Nach jedem Durchgang erhalten Sie eine Foto-Doku der gereinigten Bereiche."
+    },
+    {
+     "h3": "Sanitär- und Sozialräume",
+     "body": "Sanitär- und Sozialräume reinigen wir gründlich und mit Blick auf Hygiene. Dazu gehören Toiletten, Urinale, Waschbecken und Armaturen, Spiegel und Fliesen sowie das Nachfüllen von Seife, Papier und Handtüchern, wenn Sie das Material stellen. Sozialräume und Pausenküchen wischen wir feucht und desinfizieren die Kontaktflächen. Gerade in Sanitärbereichen zählt ein verlässlicher Turnus mehr als eine einmalige Aktion, deshalb arbeiten wir hier nach fester Frequenz und dokumentieren jeden Termin mit Foto."
+    },
+    {
+     "h3": "Flächen und Böden",
+     "body": "Flächen und Böden bestimmen den ersten Eindruck Ihrer Räume. Wir wischen und saugen die Böden je nach Belag, entfernen Flecken im Eingangsbereich und reinigen horizontale Flächen, Fensterbänke und Handläufe. Glatte Böden wie Fliesen, Vinyl oder Laminat behandeln wir mit dem passenden Reiniger, Teppichflächen saugen wir gründlich ab. Die Glasreinigung von Eingangstüren und Trennwänden in Greifhöhe gehört dazu. Wie oft welcher Bereich an der Reihe ist, steht im Reinigungsplan, den wir gemeinsam abstimmen."
+    },
+    {
+     "h3": "Turnus und Qualitätssicherung",
+     "body": "Der Turnus richtet sich nach Ihrer Nutzung: täglich, mehrmals pro Woche, wöchentlich oder 14-tägig. Wir halten ihn in einem festen Reinigungsplan fest und kommen verlässlich zum vereinbarten Zeitfenster. Zur Qualitätssicherung dokumentieren wir jeden Termin mit Vorher-Nachher-Fotos, die direkt auf Ihr Handy gehen, und Sie haben einen festen Ansprechpartner für Rückfragen oder Anpassungen. Fällt ein Turnus aus, holen wir ihn binnen 48 Stunden kostenlos nach. So bleibt der vereinbarte Standard messbar und nachvollziehbar."
+    }
+   ],
+   "naehe": "Sie suchen eine Unterhaltsreinigung in der Nähe? Wir sind in Falkensee zuhause und betreuen Gewerbe und Hausverwaltungen im gesamten Havelland sowie im angrenzenden Berliner Umland, etwa in Nauen, Dallgow-Döberitz, Brieselang und Wustermark. Kurze Wege bedeuten, dass wir zum vereinbarten Zeitfenster vor Ort sind und bei einem ausgefallenen Termin schnell nachkommen. Wir kennen die Region, arbeiten persönlich und sind über WhatsApp für Sie erreichbar.",
+   "ablauf": "So läuft es ab: Zuerst kommen wir kostenlos vor Ort vorbei und sehen uns Ihre Flächen, Sanitärräume und Ihren gewünschten Turnus an. Daraus erstellen wir einen Festpreis pro Reinigungsdurchgang oder pro Monat, der Ihr Endpreis bleibt. Nach Ihrer Freigabe starten wir die Reinigung zum vereinbarten Zeitfenster und im abgestimmten Plan. Nach jedem Termin erhalten Sie eine Foto-Doku der gereinigten Bereiche direkt auf Ihr Handy.",
+   "faqs": [
+    {
+     "q": "Was ist der Unterschied zwischen Unterhaltsreinigung und Grundreinigung?",
+     "a": "Die Unterhaltsreinigung läuft regelmäßig im festen Turnus und hält Ihre Räume dauerhaft sauber. Die Grundreinigung ist eine einmalige, intensive Reinigung, die einen Ausgangszustand herstellt, etwa nach einem Umbau oder beim Einzug. Beim Haus- & Gartenservice Havelland buchen Sie die Unterhaltsreinigung als laufende Leistung mit Reinigungsplan, festem Ansprechpartner und Foto-Doku nach jedem Termin."
+    },
+    {
+     "q": "Wie oft kommt die Reinigung bei einer Unterhaltsreinigung?",
+     "a": "Den Turnus legen Sie fest, passend zu Ihrer Nutzung: täglich, mehrmals pro Woche, wöchentlich oder 14-tägig. Wir halten die Frequenz in einem festen Reinigungsplan fest und kommen verlässlich zum vereinbarten Zeitfenster. Stark genutzte Bereiche wie Sanitärräume planen wir oft häufiger ein als reine Büroflächen. Den passenden Rhythmus stimmen wir bei der kostenlosen Besichtigung mit Ihnen ab."
+    },
+    {
+     "q": "Was kostet eine Unterhaltsreinigung im Havelland?",
+     "a": "Den Preis legen wir nach einer kostenlosen Besichtigung als Festpreis fest, pro Durchgang oder pro Monat. So wissen Sie vorher genau, was Sie zahlen. Der Festpreis ist Ihr Endpreis: Als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Den Preis bestimmen Faktoren wie Flächengröße, Turnus, Art der Räume und gewünschter Leistungsumfang."
+    },
+    {
+     "q": "Wie sichern Sie die Qualität bei laufender Reinigung?",
+     "a": "Nach jedem Termin dokumentieren wir die gereinigten Bereiche mit Vorher-Nachher-Fotos, die direkt auf Ihr Handy gehen. Sie haben einen festen Ansprechpartner für Rückfragen und Anpassungen, erreichbar über WhatsApp. Der vereinbarte Umfang steht schriftlich im Reinigungsplan. Fällt ein Turnus aus, holen wir ihn binnen 48 Stunden kostenlos nach, damit der Standard durchgängig bleibt."
+    },
+    {
+     "q": "Für wen eignet sich die Unterhaltsreinigung?",
+     "a": "Die Unterhaltsreinigung eignet sich für Gewerbebetriebe und Hausverwaltungen, die ihre Büros, Sanitärräume, Flächen und Böden dauerhaft sauber halten wollen, ohne sich selbst darum zu kümmern. Typisch sind Büros, Praxen, Kanzleien, Ladenflächen und Gemeinschaftsbereiche in verwalteten Objekten. Sie buchen die Reinigung als festen Turnus oder Wartungsvertrag mit einem Ansprechpartner für alles."
+    }
+   ],
+   "garantie_text": "Fällt ein vereinbarter Reinigungsturnus aus, holen wir ihn binnen 48 Stunden kostenlos für Sie nach.",
+   "ortsseite_lead": "Ihre Unterhaltsreinigung in {ort} übernimmt der Haus- & Gartenservice Havelland im festen Turnus, mit Festpreis nach kostenloser Besichtigung und Foto-Doku nach jedem Termin. Für Gewerbe und Hausverwaltungen in {ort} und Umgebung.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "objektbetreuung",
+   "title": "Objektbetreuung Havelland | Haus- & Gartenservice",
+   "meta": "Objektbetreuung im Havelland für Hausverwaltungen: technische Kontrolle, Außenanlagen, Kleininstandhaltung. Ein Ansprechpartner, Festpreis als Endpreis, Foto-Nachweis.",
+   "h1": "Objektbetreuung im Havelland — Ihr fester Ansprechpartner vor Ort",
+   "h1_em": "fester Ansprechpartner",
+   "intro": "Der Haus- & Gartenservice Havelland übernimmt für Hausverwaltungen und Gewerbe in Falkensee und im ganzen Havelland die laufende Objektbetreuung: technische Kontrolle, Pflege der Außenanlagen, Kleininstandhaltung und ein fester Ansprechpartner vor Ort. Sie koordinieren nicht mehr fünf Gewerke einzeln, sondern arbeiten mit einer Hand für das gesamte Objekt. Nach jedem Einsatz erhalten Sie eine Foto-Doku aufs Handy. Der Preis steht vorab als Festpreis fest, ohne Mehrwertsteuer obendrauf.",
+   "definition": "Objektbetreuung ist die laufende Betreuung von Wohn- und Gewerbeobjekten, bei der ein Dienstleister technische Kontrolle, Außenanlagen und kleine Reparaturen gebündelt übernimmt. Für Hausverwaltungen ersetzt sie die Koordination vieler Einzelgewerke durch einen festen Ansprechpartner, der den Zustand des Objekts kennt und dokumentiert.",
+   "sections": [
+    {
+     "h3": "Technische Kontrolle der Objekte",
+     "body": "Bei der technischen Kontrolle gehen wir Ihr Objekt nach einem festen Plan durch und melden, was auffällt. Dazu zählen Sichtkontrolle der Gemeinschaftsflächen, Treppenhäuser und Kellerräume, Prüfung von Beleuchtung und Notbeleuchtung, Kontrolle von Türen, Schließanlagen und Garagentoren sowie ein Blick auf Dachrinnen, Entwässerung und sichtbare Feuchtigkeitsschäden. Wir lesen Zählerstände ab, wenn Sie das wünschen, und behalten Wartungsfristen im Auge. Auffälligkeiten halten wir mit Foto fest, damit Sie als Verwaltung schnell entscheiden können, ob ein Fachbetrieb nötig ist oder wir die Sache direkt erledigen."
+    },
+    {
+     "h3": "Pflege der Außenanlagen",
+     "body": "Die Außenanlagen halten wir das ganze Jahr in Schuss, damit Mieter und Eigentümer ein gepflegtes Objekt vorfinden. Dazu gehören Rasen mähen, Hecken und Sträucher schneiden, Wege und Beete von Unkraut frei halten, Laub räumen und die Bepflanzung saisonal pflegen. Im Winter übernehmen wir den Winterdienst auf Gehwegen und Zufahrten und sichern damit Ihre Verkehrssicherungspflicht ab. Müllplätze und Stellflächen halten wir sauber. Für wiederkehrende Pflege bieten wir Wartungsverträge an, etwa eine 14-tägige Gartenpflege in der Saison, damit Sie nicht bei jedem Termin neu beauftragen müssen."
+    },
+    {
+     "h3": "Kleininstandhaltung am Objekt",
+     "body": "Kleine Reparaturen erledigen wir direkt, ohne dass Sie dafür einen separaten Handwerker bestellen. Wir tauschen Leuchtmittel, ziehen lockere Schrauben und Beschläge nach, befestigen Handläufe, dichten kleine Fugen ab, ölen klemmende Türen und Tore und bringen Hausnummern, Schilder oder Briefkästen wieder in Ordnung. Bei Schäden, die ein zugelassener Fachbetrieb übernehmen muss, etwa an Elektrik, Heizung oder Gas, halten wir die Grenze klar ein und melden den Bedarf mit Foto. So bleibt die Kleininstandhaltung sauber von echten Fachgewerken getrennt, und Sie behalten den Überblick."
+    },
+    {
+     "h3": "Fester Ansprechpartner vor Ort",
+     "body": "Sie haben einen Ansprechpartner für das gesamte Objekt: Inhaber Noah Telo aus Falkensee. Statt für Garten, Reinigung, Winterdienst und kleine Reparaturen vier Firmen zu koordinieren, geben Sie Ihre Anliegen an eine Stelle. Auf WhatsApp reagieren wir in Stunden, nicht in Tagen, und Sie sehen am Foto sofort, dass die Arbeit erledigt ist. Weil wir das Objekt regelmäßig betreuen, kennen wir seine Besonderheiten, melden Probleme früh und ersparen Ihnen Abstimmungsschleifen. Das hält Ihren Verwaltungsaufwand klein und die Wege kurz."
+    }
+   ],
+   "naehe": "Wir betreuen Objekte vor Ort im gesamten Havelland und im angrenzenden Berliner Umland — von Falkensee, Nauen und Rathenow bis Dallgow-Döberitz, Brieselang und Schönwalde-Glien. Als regional verwurzelter Betrieb sind wir nah an Ihren Objekten, kennen die örtlichen Gegebenheiten und sind schnell vor Ort, wenn etwas ansteht. Kurze Anfahrtswege bedeuten für Sie als Hausverwaltung verlässliche Termine und schnelle Reaktion bei kleinen Vorfällen.",
+   "ablauf": "Zuerst schauen wir uns Ihr Objekt bei einer kostenlosen Vor-Ort-Besichtigung an und klären den Umfang der Betreuung. Danach erhalten Sie einen Festpreis, der als Endpreis gilt — als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Anschließend führen wir die vereinbarten Leistungen aus, ob als einmaliger Auftrag oder im laufenden Wartungsvertrag. Nach jedem Einsatz bekommen Sie eine Foto-Doku mit Vorher-Nachher direkt aufs Handy, damit Sie den Zustand des Objekts ohne eigenen Vor-Ort-Termin nachvollziehen können.",
+   "faqs": [
+    {
+     "q": "Was umfasst die Objektbetreuung für Hausverwaltungen?",
+     "a": "Die Objektbetreuung bündelt technische Kontrolle, Pflege der Außenanlagen, Kleininstandhaltung und einen festen Ansprechpartner vor Ort. Wir kontrollieren Gemeinschaftsflächen, halten Garten und Wege in Schuss, übernehmen den Winterdienst und erledigen kleine Reparaturen. Größere Schäden an Elektrik, Heizung oder Gas melden wir mit Foto, statt sie selbst anzugehen. So koordinieren Sie ein Objekt über eine Stelle statt über mehrere Firmen."
+    },
+    {
+     "q": "Wie oft kontrollieren Sie ein betreutes Objekt?",
+     "a": "Den Kontrollrhythmus stimmen wir bei der Besichtigung auf Ihr Objekt ab. Üblich sind regelmäßige Rundgänge, etwa wöchentlich oder 14-tägig, ergänzt um saisonale Einsätze wie Laubräumung im Herbst und Winterdienst im Winter. Den vereinbarten Turnus halten wir im Wartungsvertrag fest, damit Sie sich auf feste Termine verlassen können und nicht jedes Mal neu beauftragen müssen."
+    },
+    {
+     "q": "Wie reagieren Sie, wenn am Objekt ein Schaden auffällt?",
+     "a": "Auffälligkeiten halten wir sofort mit Foto fest und melden sie Ihnen über WhatsApp, meist innerhalb von Stunden. Kleine Sachen wie ein defektes Leuchtmittel oder eine lockere Schraube erledigen wir direkt im Rahmen der Kleininstandhaltung. Bei Schäden, die ein zugelassener Fachbetrieb übernehmen muss, melden wir den Bedarf klar, damit Sie als Verwaltung entscheiden und beauftragen können."
+    },
+    {
+     "q": "Was kostet die Objektbetreuung im Havelland?",
+     "a": "Den Preis nennen wir nach einer kostenlosen Vor-Ort-Besichtigung als Festpreis, der als Endpreis gilt. Er hängt von der Größe des Objekts, dem Umfang der Außenanlagen und der gewünschten Kontrollhäufigkeit ab. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Für laufende Betreuung vereinbaren wir Wartungsverträge mit festen monatlichen Konditionen, damit Sie sicher kalkulieren können."
+    },
+    {
+     "q": "Bieten Sie auch laufende Verträge statt Einzelaufträge an?",
+     "a": "Ja, für die laufende Objektbetreuung schließen wir Wartungsverträge ab. Üblich sind eine 14-tägige Gartenpflege in der Saison und ein Winterdienst über die gesamte Saison, kombiniert mit regelmäßigen Kontrollrundgängen. So haben Sie feste Ansprechzeiten, planbare Kosten und müssen nicht jeden Einsatz einzeln beauftragen. Den Umfang legen wir gemeinsam fest und halten ihn schriftlich fest."
+    }
+   ],
+   "garantie_text": "Eine feste Garantie nennen wir hier nicht, dafür ein klares Preisversprechen: kostenlose Vor-Ort-Besichtigung, danach ein Festpreis, der als Endpreis gilt — ohne Mehrwertsteuer obendrauf.",
+   "ortsseite_lead": "Ihre Objektbetreuung in {ort} aus einer Hand: technische Kontrolle, Außenanlagen und Kleininstandhaltung, betreut von einem festen Ansprechpartner aus dem Havelland. Festpreis als Endpreis, Foto-Nachweis nach jedem Einsatz.",
+   "skills_applied": [
+    "seo-web-copy.md (Keyword-Platzierung: Objektbetreuung in Title vorn, H1, erste 100 Wörter; Struktur Title/Meta/H1/H2-Sektionen/FAQ/CTA; Scannability mit eigenständigen Subheadings)",
+    "llm-optimisation.md (Antwort-zuerst in Intro und jeder Sektion; Definition-Block X-ist-Y; eigenständige 40-80-Wort-FAQs als echte Nutzerfragen; Entity-Klarheit: Firma + Falkensee/Havelland konsistent benannt)",
+    "stop-slop.md (deutsch übertragen: keine Floskel-Opener, kein nicht-nur-sondern-auch, Aktiv statt Passiv, Sie statt man, konkrete Substantive, variierte Satzlängen, keine leeren Verstärker, keine Anglizismen, Umlaute korrekt)"
+   ]
+  },
+  {
+   "slug": "ferienwohnung-reinigung",
+   "title": "Ferienwohnung-Reinigung Werder & Schwielowsee",
+   "meta": "Ferienwohnung-Reinigung in Werder & Schwielowsee: Endreinigung zwischen Gästen, Wäsche, Schlüsselübergabe. Festpreis, Foto-Nachweis aufs Handy. Jetzt per WhatsApp anfragen.",
+   "h1": "Ihre Ferienwohnung in Werder & Schwielowsee — sauber zum nächsten <em>Check-in</em>",
+   "h1_em": "Check-in",
+   "intro": "Der Haus- & Gartenservice Havelland aus Falkensee übernimmt die Ferienwohnung-Reinigung in Werder (Havel) und am Schwielowsee. Sie buchen einen festen Ansprechpartner für die Endreinigung zwischen Gästen, frische Wäsche, die Schlüsselübergabe und einen Foto-Nachweis nach jedem Wechsel. Als Eigentümer wohnen Sie oft nicht vor Ort. Genau dafür dokumentieren wir die Übergabe per Foto, damit Sie aus der Ferne sehen, dass die Wohnung zum Check-in bereit ist. Festpreis nach kostenloser Besichtigung, ohne Mehrwertsteuer obendrauf.",
+   "definition": "Ferienwohnung-Reinigung ist die getaktete Aufbereitung einer Ferien- oder Airbnb-Wohnung zwischen zwei Gästen, damit die nächste Anreise pünktlich und sauber stattfindet. Sie umfasst Endreinigung, Wäschewechsel, Auffüllen der Ausstattung und die geprüfte Übergabe an den nächsten Gast.",
+   "sections": [
+    {
+     "h3": "Endreinigung zwischen Gästen",
+     "body": "Die Endreinigung bringt Ihre Wohnung im Gästetakt wieder auf Anfang. Wir reinigen Bad, Küche und Wohnbereich, wischen Böden, leeren Müll, entkalken Armaturen und kontrollieren auf vergessene Gegenstände des Vorgängers. Bei knappen Wechseln zwischen Check-out und Check-in halten wir uns an Ihr Zeitfenster, damit der nächste Gast eine saubere Wohnung vorfindet. Sie sagen uns den Anreisetermin, wir richten den Einsatz danach aus."
+    },
+    {
+     "h3": "Wäsche & Ausstattung",
+     "body": "Wir wechseln Bettwäsche und Handtücher, beziehen die Betten frisch und füllen die Ausstattung wieder auf: Toilettenpapier, Seife, Kaffee, Spülmittel und Müllbeutel nach Ihrer Vorgabe. Beschädigte oder fehlende Teile melden wir Ihnen direkt per WhatsApp, statt sie stillschweigend zu übergehen. Auf Wunsch arbeiten wir mit Ihrem Wäsche-Set vor Ort oder mit einem festen Vorrat, den wir gemeinsam abstimmen, damit nie ein Bezug fehlt."
+    },
+    {
+     "h3": "Schlüsselübergabe",
+     "body": "Die Schlüsselübergabe organisieren wir so, dass Ihr Gast ohne Wartezeit hineinkommt. Wir arbeiten mit Schlüsselsafe, Schlüsselbox oder fester Deponierung nach Ihrer Vorgabe und prüfen vor jedem Wechsel, dass der Zugang funktioniert. Bei persönlicher Übergabe sind wir im vereinbarten Fenster vor Ort. Liegt der Schlüssel falsch oder klemmt das Schloss, melden wir das sofort, damit Sie aus der Ferne nicht auf eine Beschwerde des Gastes warten müssen."
+    },
+    {
+     "h3": "Foto-Nachweis remote",
+     "body": "Nach jedem Wechsel erhalten Sie Vorher-Nachher-Fotos der Wohnung direkt aufs Handy. So sehen Sie als Remote-Eigentümer den Übergabezustand, ohne selbst nach Werder oder an den Schwielowsee zu fahren. Die Bilder zeigen das frisch bezogene Bett, das gereinigte Bad und die aufgefüllte Ausstattung. Bei Schäden oder Auffälligkeiten dokumentieren wir den Fund mit Foto, damit Sie gegenüber Ihrem Gast eine klare Grundlage haben."
+    }
+   ],
+   "naehe": "Wir arbeiten ausschließlich in Werder (Havel) und am Schwielowsee, also dort, wo viele Ferienwohnungen und Airbnb-Objekte im Havelland und im Berliner Umland liegen. Diese Nähe ist der Grund, warum wir kurze Wechsel zwischen Check-out und Check-in zuverlässig schaffen. Suchen Sie eine Ferienwohnung-Reinigung in der Nähe, die Ihre Region kennt und nicht von weit anreist, sind Sie hier richtig. Wir kennen die Saisonspitzen am Wasser und planen Ihre Wechsel entsprechend ein.",
+   "ablauf": "Zuerst sehen wir uns Ihre Ferienwohnung kostenlos vor Ort an und klären Wechseltakt, Wäsche, Schlüsselweg und Ausstattung. Danach erhalten Sie einen Festpreis, der als Kleinunternehmer nach §19 UStG ohne Mehrwertsteuer auskommt: Der Festpreis ist der Endpreis. Anschließend übernehmen wir die Reinigung im vereinbarten Zeitfenster vor jedem Check-in. Zum Schluss bekommen Sie den Foto-Nachweis der Übergabe direkt aufs Handy.",
+   "faqs": [
+    {
+     "q": "Was gehört zur Endreinigung einer Ferienwohnung dazu?",
+     "a": "Zur Endreinigung gehören Bad, Küche und Wohnbereich, das Wischen der Böden, Müll leeren, Armaturen entkalken und die Kontrolle auf vergessene Gegenstände. Dazu kommen frische Bettwäsche, gewechselte Handtücher und das Auffüllen der Ausstattung. Den genauen Umfang stimmen wir bei der kostenlosen Besichtigung auf Ihre Wohnung und Ihren Gästetakt ab."
+    },
+    {
+     "q": "Wie sichern Sie die Übergabequalität, wenn ich nicht vor Ort wohne?",
+     "a": "Nach jedem Wechsel erhalten Sie Vorher-Nachher-Fotos direkt aufs Handy. Sie sehen das frisch bezogene Bett, das gereinigte Bad und die aufgefüllte Ausstattung, ohne selbst nach Werder oder an den Schwielowsee zu fahren. Bei Schäden dokumentieren wir den Fund per Foto, damit Sie gegenüber Ihrem Gast eine klare Grundlage haben."
+    },
+    {
+     "q": "Wie läuft die Schlüsselübergabe an den nächsten Gast?",
+     "a": "Wir arbeiten mit Schlüsselsafe, Schlüsselbox oder fester Deponierung nach Ihrer Vorgabe und prüfen vor jedem Wechsel, dass der Zugang funktioniert. Bei persönlicher Übergabe sind wir im vereinbarten Fenster vor Ort. Klemmt das Schloss oder liegt der Schlüssel falsch, melden wir das sofort per WhatsApp, bevor Ihr Gast davorsteht."
+    },
+    {
+     "q": "Wie schnell schaffen Sie einen Wechsel zwischen Check-out und Check-in?",
+     "a": "Das richtet sich nach Ihrem Zeitfenster und der Größe der Wohnung. Da wir nur in Werder und am Schwielowsee arbeiten, sind die Wege kurz, und enge Wechsel am selben Tag sind möglich. Den machbaren Takt klären wir bei der Besichtigung, damit der nächste Gast pünktlich eine saubere Wohnung vorfindet."
+    },
+    {
+     "q": "Was kostet die Reinigung meiner Ferienwohnung?",
+     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung vor Ort als Festpreis, der von Wohnungsgröße, Wechseltakt und Umfang abhängt. Der Festpreis ist der Endpreis: Als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Für regelmäßige Wechsel in der Saison sind feste Wartungsvereinbarungen möglich."
+    }
+   ],
+   "garantie_text": "Sind wir nicht rechtzeitig vor Ihrem Check-in fertig, erstatten wir Ihnen den Reinigungspreis.",
+   "ortsseite_lead": "Ihre Ferienwohnung-Reinigung in {ort} aus einer Hand: Endreinigung zwischen Gästen, frische Wäsche, geprüfte Schlüsselübergabe und Foto-Nachweis aufs Handy. Festpreis nach kostenloser Besichtigung vor Ort in {ort}.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  }
+ ]
+}

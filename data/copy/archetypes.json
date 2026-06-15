@@ -1,0 +1,85 @@
+{
+ "_meta": "P4 Orts-Archetyp-Rahmungen. Platzhalter {ort}{plz}{nachbarorte} fuellt der Generator.",
+ "archetypes": [
+  {
+   "key": "brandenburg",
+   "rahmen": "{ort} ist ein Wohnort zum Bleiben: Eigenheime mit Garten, ruhige Straßen, Berlin in Pendlernähe. Wer hier wohnt, kennt seine Nachbarn und schätzt kurze Wege. Genau so arbeiten wir. Als Haus- und Gartenservice sind wir im Havelland verwurzelt und kommen zu Ihnen nach {ort} und in die Nachbarorte {nachbarorte}. Garten, Reinigung, Winterdienst, Entrümpelung, Hausmeisterarbeiten: alles aus einer Hand, ein fester Ansprechpartner, der den Termin hält. Kein Callcenter, keine wechselnden Kolonnen. Sie erreichen uns per WhatsApp und bekommen meist binnen Stunden Antwort. Rund um die {plz} sind die Wege kurz, und das merken Sie an der Reaktionszeit.",
+   "trust": "In {ort} dokumentieren wir jeden Auftrag mit Fotos vorher und nachher, direkt auf Ihr Handy. So sehen Sie das Ergebnis, auch wenn Sie nicht vor Ort waren. Der Festpreis nach der kostenlosen Besichtigung ist der Endpreis. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Ein Ansprechpartner, von der Anfrage bis zur Abnahme.",
+   "faqs": [
+    {
+     "q": "Sind Sie auch in {ort} im Einsatz?",
+     "a": "Ja, {ort} liegt in unserem Kerngebiet im Havelland. Wir übernehmen hier Gartenpflege, Reinigung, Winterdienst, Entrümpelung und Hausmeisterarbeiten, von einzelnen Aufträgen bis zum 14-tägigen Gartenturnus. Schreiben Sie uns per WhatsApp, was ansteht. Meist melden wir uns binnen Stunden, vereinbaren eine kostenlose Besichtigung und nennen Ihnen danach einen Festpreis."
+    },
+    {
+     "q": "Wie schnell sind Sie nach einer Anfrage aus {ort} bei mir?",
+     "a": "Auf eine WhatsApp-Nachricht aus {ort} reagieren wir meist innerhalb von Stunden, nicht Tagen. Da wir im Havelland zuhause sind, sind die Wege kurz. Für die Besichtigung finden wir zeitnah einen Termin, oft schon in derselben Woche. Bei Winterdienst und akuten Fällen stimmen wir den Ablauf vorab mit Ihnen ab, damit Sie wissen, woran Sie sind."
+    }
+   ],
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "key": "berlinrand",
+   "rahmen": "In {ort} und den Nachbarorten {nachbarorte} stehen gepflegte Grundstücke, weite Gärten und Wohnlagen, die einen sauberen Gesamteindruck verlangen. Wer hier wohnt, achtet auf Sorgfalt am Detail und auf Diskretion auf dem eigenen Anwesen. Genau dafür sind wir da: ein fester Ansprechpartner für Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterarbeiten rund um {ort} ({plz}). Wir arbeiten ruhig, abgesprochen und hinterlassen das Grundstück so, wie Sie es erwarten. Als Betrieb aus dem Havelland kennen wir die Wege in der Region und sind kurzfristig vor Ort. Sie sprechen mit einer Person, von der Besichtigung bis zur Abnahme. Kein Callcenter, keine wechselnden Trupps.",
+   "trust": "In {ort} dokumentieren wir jeden Auftrag mit Vorher-Nachher-Fotos, die direkt auf Ihr Handy gehen. So sehen Sie das Ergebnis auch dann, wenn Sie nicht vor Ort sind. Sie erhalten einen Festpreis nach kostenloser Besichtigung. Als Kleinunternehmer nach §19 schlagen wir keine Mehrwertsteuer obendrauf, der Festpreis ist der Endpreis. Für laufende Pflege vereinbaren wir feste Turnusse oder einen Rahmenvertrag.",
+   "faqs": [
+    {
+     "q": "Sind Sie auch in {ort} im Einsatz?",
+     "a": "Ja, {ort} und die Nachbarorte {nachbarorte} gehören zu unserem festen Einsatzgebiet im Havelland und Berliner Umland. Schreiben Sie uns kurz per WhatsApp, was ansteht, dann melden wir uns innerhalb von Stunden zurück und stimmen einen Termin zur kostenlosen Vor-Ort-Besichtigung ab. Danach erhalten Sie einen Festpreis, der Ihr Endpreis bleibt."
+    },
+    {
+     "q": "Arbeiten Sie auch diskret, wenn ich nicht zu Hause bin?",
+     "a": "Ja. Viele Eigentümer in {ort} sind während der Arbeiten unterwegs oder im Urlaub. Nach Absprache übernehmen wir die Pflege Ihres Grundstücks eigenständig und schicken Ihnen Vorher-Nachher-Fotos jedes Auftrags direkt aufs Handy. Schlüssel- oder Toröffnung klären wir vorab persönlich. So behalten Sie den Überblick, ohne vor Ort sein zu müssen."
+    }
+   ],
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "key": "b2b",
+   "rahmen": "Gewerbestandorte und verwaltete Objekte in {ort} brauchen Dienstleister, die zur vereinbarten Zeit kommen — ohne Nachfragen, ohne Lücken. Genau hier sind wir als Haus- & Gartenservice Havelland zuhause: ein fester Ansprechpartner für Außenanlagen, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste, statt fünf einzelner Firmen. Wir bedienen Gewerbeflächen, Hausverwaltungen und Liegenschaften in {ort} ({plz}) und den Nachbarorten {nachbarorte} im festen Turnus. Sie sprechen mit einer Person, die Ihr Objekt kennt und planbar liefert. Per WhatsApp erreichen Sie uns in Stunden, nicht Tagen. So bleibt Ihre Liegenschaft gepflegt, verkehrssicher und ordentlich — über das ganze Jahr.",
+   "trust": "In {ort} arbeiten wir mit Rahmenvertrag und festem Turnus: Sie bekommen denselben Ansprechpartner, klare Termine und nach jedem Einsatz eine Foto-Doku (Vorher/Nachher) direkt aufs Handy. Den Umfang halten wir nach kostenloser Vor-Ort-Besichtigung im Festpreis fest — der Festpreis ist der Endpreis. Fällt ein Termin auf einen Engpass, sichern wir die Vertretung ab. Sie tragen kein Risiko bei Personalausfall.",
+   "faqs": [
+    {
+     "q": "Sind Sie auch in {ort} im Einsatz?",
+     "a": "Ja, {ort} und die Nachbarorte {nachbarorte} gehören zu unserem festen Einsatzgebiet im Havelland. Für Gewerbeflächen, Hausverwaltungen und einzelne Objekte in {ort} ({plz}) übernehmen wir Außenpflege, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste aus einer Hand. Schreiben Sie uns per WhatsApp die Adresse und den Bedarf — wir antworten innerhalb von Stunden und vereinbaren eine kostenlose Vor-Ort-Besichtigung."
+    },
+    {
+     "q": "Können wir für unser Objekt in {ort} einen festen Turnus oder Rahmenvertrag vereinbaren?",
+     "a": "Ja. Für Objekte in {ort} richten wir einen festen Turnus ein, zum Beispiel die Gartenpflege 14-tägig oder den Winterdienst über die ganze Saison. Sie haben einen Ansprechpartner, planbare Termine und nach jedem Einsatz eine Foto-Doku. Den Umfang legen wir nach kostenloser Besichtigung im Festpreis fest. Fällt ein Termin auf einen Engpass, sichern wir die Vertretung ab — Ihre Anlage bleibt versorgt."
+    }
+   ],
+   "skills_applied": [
+    "seo-web-copy.md (Keyword/Entity-Platzierung, Title/H1-Logik auf Archetyp uebertragen, FAQ-Struktur fuer Snippets, E-E-A-T Trust-Signale)",
+    "llm-optimisation.md (Antwort-zuerst in rahmen+FAQ, Definition-/Entity-Klarheit 'Haus- & Gartenservice Havelland ... in {ort}', eigenstaendige FAQ-Antworten 40-80 W)",
+    "stop-slop SKILL.md (keine Floskel-Opener, kein 'nicht nur...sondern', Adverb-Filler entfernt, Aktiv statt Passiv, 'Sie' statt 'man', variierte Satzlaengen, Gedankenstrich sparsam)"
+   ]
+  },
+  {
+   "key": "ferien",
+   "rahmen": "Rund um {ort} ({plz}) und die Havelseen stehen viele Ferienwohnungen und Wochenendgrundstücke leer, während die Eigentümer weit weg wohnen. Genau hier sind wir Ihr fester Ansprechpartner vor Ort. Wir halten Grundstück und Außenanlage zwischen den Gästen in Schuss, übernehmen die Schlüsselverwaltung und sorgen für eine saubere Übergabe zum vereinbarten Termin. Nach jedem Einsatz erhalten Sie Vorher-Nachher-Fotos direkt aufs Handy, auch wenn Sie hunderte Kilometer entfernt sind. Ob in {ort} selbst oder in {nachbarorte}: Sie haben einen Nachbarn, der nach dem Rechten sieht, statt fünf verschiedener Dienstleister zu koordinieren.",
+   "trust": "In {ort} arbeiten Sie mit einem festen Ansprechpartner, nicht mit wechselnden Kräften. Nach jedem Einsatz schicken wir Ihnen Vorher-Nachher-Fotos aufs Handy, damit Sie aus der Ferne sehen, dass alles passt. Den Festpreis vereinbaren wir nach kostenloser Besichtigung. Als Kleinunternehmer nach §19 schlagen wir keine Mehrwertsteuer obendrauf. Schlüssel und Termine zwischen Ihren Gästen verwalten wir zuverlässig.",
+   "faqs": [
+    {
+     "q": "Sind Sie auch in {ort} im Einsatz?",
+     "a": "Ja, {ort} und die umliegenden Havelorte gehören zu unserem Gebiet. Wir betreuen dort Ferienwohnungen und Wochenendgrundstücke, deren Eigentümer nicht vor Ort wohnen. Sie schreiben uns per WhatsApp, wir melden uns innerhalb von Stunden und kommen zur kostenlosen Besichtigung vorbei. Danach steht Ihr Festpreis. Nach jedem Auftrag erhalten Sie Vorher-Nachher-Fotos direkt aufs Handy."
+    },
+    {
+     "q": "Wie läuft die Schlüsselübergabe in {ort}, wenn ich nicht vor Ort bin?",
+     "a": "Wir verwalten Ihren Schlüssel sicher und stimmen jeden Termin in {ort} vorab mit Ihnen ab. Zwischen zwei Gästen prüfen wir das Objekt, erledigen den vereinbarten Einsatz und dokumentieren das Ergebnis mit Fotos. So sehen Sie aus der Ferne, dass die Wohnung pünktlich und sauber für die nächste Belegung bereitsteht, ohne selbst anreisen zu müssen."
+    }
+   ],
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  }
+ ]
+}
