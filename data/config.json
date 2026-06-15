@@ -1,0 +1,16 @@
+{
+  "_meta": "Zentrale Build-Konstanten. Generator bricht ab, wenn ein required-Feld ein Platzhalter-Pattern (XXXX / TBD / null) traegt. Quelle der Wahrheit fuer Domain, IDs, Wellenplan.",
+  "domain": "https://haus-und-gartenservice-havelland.de",
+  "ga4_id": "TBD-P0",
+  "gtm_id": "TBD-P0",
+  "web3forms_key": "TBD-P0 (Empfaenger: Noahs Mail, live-getestet)",
+  "indexnow_key": "TBD-P8 (Generator-Output)",
+  "aktive_welle": 0,
+  "wellen": {
+    "1": "alle 17 Service-Hubs + Geo-A Money-Pages der Top-5-Services (hausmeisterservice, fensterreinigung, entruempelung, heckenschnitt, winterdienst)",
+    "2": "Geo-A Rest + Geo-B Tier-1-Orte",
+    "3": "Geo-B Tier-2 + Ratgeber-Cluster",
+    "later": "Geo-LT (Capture)"
+  },
+  "saison_gate": "Winterdienst-Welle vor September live; Heckenschnitt vor Februar-Peak (8-10 Wo Vorlauf)"
+}

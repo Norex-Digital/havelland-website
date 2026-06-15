@@ -1,0 +1,17 @@
+{
+  "_meta": "Single Source fuer NAP. Schema + Footer + Impressum ziehen NUR hieraus. street/zip=null -> Generator baut KEINEN PostalAddress-Block, #organization bleibt valide. NAP-Aenderung nach Bau = Re-Generierung aller Seiten -> VOR Bau locken (harter P0-Blocker).",
+  "name": "Haus- & Gartenservice Havelland",
+  "inhaber": "Noah Telo",
+  "street": "Darmstädter Str. 15",
+  "zip": "14612",
+  "city": "Falkensee",
+  "phone_e164": "+491729589515",
+  "phone_display": "0172 9589515",
+  "email": null,
+  "domain": "https://haus-und-gartenservice-havelland.de",
+  "kleinunternehmer_19": true,
+  "openingHours": null,
+  "geo": { "lat": null, "lng": null },
+  "service_radius_km": 30,
+  "areaServed_pattern": "PostalAddress IMMER Falkensee-Zentrale; je Ortsseite nur areaServed{name + amtlich verifizierte PLZ}"
+}

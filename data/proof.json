@@ -1,0 +1,12 @@
+{
+  "_meta": "Cold-Start-Trust-Layer. Steuert echte vs. Platzhalter-Inhalte je Komponente. Bei 0/leer zeigen Komponenten ehrliche Empty-States (CTA statt Fake-Sterne). Wird mit Aufträgen befuellt.",
+  "google_reviews": { "count": 0, "rating": null, "place_id": null, "kgmid": "/g/11yz8j7dfq", "block_ab_count": 1, "_lookup": "GBP bestaetigt 2026-06-15 (kgmid /g/11yz8j7dfq, Name 'Haus-& Gartenservice Havelland'). Rating/Reviews/Kategorien noch ziehen (JS-Knowledge-Panel oder von Noah)." },
+  "auftraege_abgeschlossen": 0,
+  "stat_tiles_erlaubt": false,
+  "vorher_nachher": {
+    "echt": [],
+    "platzhalter_label": "Beispielhafte Darstellung",
+    "hinweis": "KI-Vorher/Nachher NIE als konkretes Kundenergebnis labeln (UWG). Mit echten Auftraegen ersetzen."
+  },
+  "garantien_quelle": "../Branding/offer.md — vor Live juristisch pruefen (rechtlich bindende Werbung auf hunderten Seiten)"
+}

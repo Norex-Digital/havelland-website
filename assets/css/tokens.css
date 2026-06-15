@@ -1,0 +1,82 @@
+/* havelland-design — Design Tokens (SSOT: design-model.yaml, Referenz: homepage-richtung1-v6.html)
+   Jede Seite importiert diese Datei. Werte NICHT inline überschreiben — hier ändern. */
+
+/* Fonts: Fraunces (Display/Serif, ital) + Inter (Body) — self-hosted WOFF2 in Produktion;
+   im Dev: https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,500..700&family=Inter:wght@400..700&display=swap */
+
+:root{
+  /* Marke */
+  --green:#205840; --green-d:#16412D; --green-deep:#0E2E1F;
+  --accent:#E0A23B; --accent-d:#C2851F; --accent-ink:#3A2A06;
+
+  /* Neutral (warm) */
+  --cream:#FBFAF6; --paper:#F7F6F2; --surface2:#ECE9E0;
+  --hair:#E2DED3; --border-visible:#B7B9B0;
+  --ink:#15201A; --muted:#6B726B; --text3:#B7B9B0;
+
+  /* Semantische Rollen — Light (Standard-Zone) */
+  --background:var(--cream); --bg:var(--cream);
+  --surface1:var(--paper);
+  --text1:var(--ink); --text2:var(--muted);
+  --link:var(--green);            /* Marken-/Linkfarbe */
+  --action:var(--accent);         /* CTA-Holzton */
+  --action-text:var(--accent-ink);
+
+  /* Dunkle Farb-Zonen (Value-Band / CTA / Footer) */
+  --dark-bg:var(--green-d); --deep-bg:var(--green-deep);
+  --dark-text1:#FFFFFF; --dark-text2:#DCEAE1;   /* kontraststark, nicht gedämpft */
+
+  /* Status */
+  --success:#3F9B63; --warning:#E0A23B; --error:#D6453F;
+
+  /* Radii */
+  --r-button:999px; --r-chip:999px; --r-card:18px; --r-image:24px; --r-el:12px;
+
+  /* Spacing (8er-nah, warm) */
+  --s-2xs:4px; --s-xs:8px; --s-sm:14px; --s-md:18px; --s-lg:22px;
+  --s-xl:28px; --s-2xl:40px; --s-3xl:52px; --s-4xl:70px; --s-5xl:90px;
+
+  /* Typo */
+  --font-display:"Fraunces",Georgia,serif;
+  --font-body:"Inter",system-ui,sans-serif;
+  --fs-display:clamp(42px,5.2vw,70px); --fs-h2:clamp(30px,3.6vw,44px);
+  --fs-h2-dark:clamp(28px,3.4vw,40px); --fs-h3:21px;
+  --fs-lead:19.5px; --fs-body:17px; --fs-small:14px; --fs-label:12.5px;
+  --lh-body:1.62; --ls-display:-.022em;
+
+  /* Elevation */
+  --sh-photo:0 50px 90px -40px rgba(14,46,31,.65);
+  --sh-badge:0 26px 50px -18px rgba(0,0,0,.35);
+  --sh-cta:0 8px 22px -8px rgba(224,162,59,.7);
+
+  /* Motion */
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --t-fast:140ms; --t-reveal:.7s;
+}
+
+/* Basis */
+body{background:var(--background);color:var(--text1);font-family:var(--font-body);font-size:var(--fs-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.serif{font-family:var(--font-display)}
+
+/* Dunkle Zone: auf <section class="zone-dark"> / .zone-deep anwenden */
+.zone-dark{background:var(--dark-bg);color:var(--dark-text2)}
+.zone-deep{background:var(--deep-bg);color:var(--dark-text2)}
+.zone-dark :is(h1,h2,h3),.zone-deep :is(h1,h2,h3){color:var(--dark-text1);font-weight:700}   /* Gewicht 700 = scharf, nicht verwaschen */
+
+/* CTA-Button (Holz-Akzent, dunkler Text, AA) */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;font-weight:700;border-radius:var(--r-button);
+  padding:15px 28px;background:var(--action);color:var(--action-text);box-shadow:var(--sh-cta);
+  transition:transform var(--t-fast) var(--ease),background .2s}
+.btn-primary:hover{background:var(--accent-d)} .btn-primary:active{transform:scale(.96)}
+.btn-line{display:inline-flex;align-items:center;gap:10px;font-weight:600;border-radius:var(--r-button);
+  padding:15px 28px;border:1.5px solid var(--green);color:var(--green-d)}
+.btn-line:hover{background:var(--green-d);color:#fff;border-color:var(--green-d)}
+
+/* Foto-Karte mit Tiefe */
+.photo-card{border-radius:var(--r-image);box-shadow:var(--sh-photo);overflow:hidden}
+
+/* Reveal-Motion */
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--t-reveal) var(--ease),transform var(--t-reveal) var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
