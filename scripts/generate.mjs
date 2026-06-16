@@ -69,8 +69,8 @@ const esc = t => (t == null ? '' : String(t)).replace(/&/g,'&amp;').replace(/</g
 const sj = v => String(v == null ? '' : decEnt(v)).replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/</g, '\\u003c').replace(/[\r\n\t]+/g, ' ');
 const leaf = cls => `<svg class="${cls}" viewBox="0 0 100 100"><path fill="currentColor" d="M90 10C38 12 10 42 10 92c32-2 52-15 63-35 2 15-3 27-3 27s20-23 20-54c0-10-2-21 0-20Z"/></svg>`;
 const tel = nap.phone_e164; const waHref = q => `https://wa.me/${tel.replace('+','')}?text=${encodeURIComponent(q)}`;
-const ctaA = '<a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung anfragen</a>';
-const ctaPrim = label => `<a class="btn btn-acc" href="/kontakt/">${label}</a>`;
+const ctaA = '<a class="btn btn-acc" href="/kontakt/#anfrage">Kostenlose Besichtigung anfragen</a>';
+const ctaPrim = label => `<a class="btn btn-acc" href="/kontakt/#anfrage">${label}</a>`;
 const CTA_ANGEBOT = 'Angebot für Ihr Objekt anfordern';
 const isB2Bonly = seg => Array.isArray(seg) && seg.includes('B2B') && !seg.includes('B2C') && !seg.includes('Ferien');
 
@@ -150,7 +150,7 @@ const written = { hubs: [], ortsseiten: [], orts_hubs: [], ratgeber: [], basis: 
 
 function orgSchema() {
   const addr = nap.street ? `,"address":{"@type":"PostalAddress","streetAddress":"${sj(nap.street)}","postalCode":"${sj(nap.zip)}","addressLocality":"${sj(nap.city)}","addressCountry":"DE"}` : '';
-  return `{"@type":"LocalBusiness","@id":"${DOMAIN}/#organization","name":"${sj(nap.name)}","telephone":"${tel}","url":"${DOMAIN}/","image":"${imgAbs('og-default')}","logo":"${DOMAIN}/assets/img/logo.png"${addr},"areaServed":${JSON.stringify(haupt.map(o=>o.name))}}`;
+  return `{"@type":"HomeAndConstructionBusiness","@id":"${DOMAIN}/#organization","name":"${sj(nap.name)}","telephone":"${tel}","url":"${DOMAIN}/","image":"${imgAbs('og-default')}","logo":"${DOMAIN}/assets/img/logo.png"${addr},"areaServed":${JSON.stringify(haupt.map(o=>o.name))}}`;
 }
 function breadcrumb(items) { // [{name,url}]
   const li = items.map((it,i)=>`{"@type":"ListItem","position":${i+1},"name":"${sj(it.name)}"${it.url?`,"item":"${DOMAIN}${it.url}"`:''}}`).join(',');
