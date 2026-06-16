@@ -111,15 +111,15 @@ function breadcrumb(items) { // [{name,url}]
   return `{"@type":"BreadcrumbList","itemListElement":[${li}]}`;
 }
 
-function head(title, desc, canonical, schemaGraph) {
+function head(title, desc, canonical, schemaGraph, opts = {}) {
   return `<!doctype html><html lang="de"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
-<meta name="description" content="${esc(desc)}">
+<meta name="description" content="${esc(desc)}">${opts.noindex ? '\n<meta name="robots" content="noindex, follow">' : ''}
 <link rel="canonical" href="${DOMAIN}${canonical}">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${DOMAIN}${canonical}"><meta property="og:type" content="website"><meta property="og:locale" content="de_DE">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[${schemaGraph}]}</script>
 </head><body>`;
@@ -341,6 +341,47 @@ ${nap.email ? '' : '<p><em>Hinweis: Eine E-Mail-Adresse für die elektronische K
 </div>`;
   write('/datenschutz/', head(`Datenschutz — ${nap.name}`, mkMeta(`Datenschutzhinweise des Haus- & Gartenservice Havelland in ${nap.city}: Umgang mit Ihren Angaben bei Anfragen per Telefon, WhatsApp und Formular nach DSGVO.`), '/datenschutz/', orgSchema()) + header + legalShell('Datenschutz', datenschutzBody) + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push('/datenschutz/');
+}
+
+// ---------- WEITERE BASIS-SEITEN: Über uns / Bewertungen / Danke / 404 ----------
+function ueberUns() {
+  const url = '/ueber-uns/';
+  const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Über uns</div>
+<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Über uns</span><h1 class="rv in d1">Ein Ansprechpartner für Haus und Garten — <em>im Havelland zuhause</em></h1><p class="lead rv in d2">Der Haus- &amp; Gartenservice Havelland ist ein regionaler Betrieb aus ${esc(nap.city)}. Inhaber ${esc(nap.inhaber)} kümmert sich persönlich um Garten, Reinigung, Winterdienst, Entrümpelung und die kleinen Dinge rund ums Haus — ein fester Ansprechpartner statt wechselnder Kräfte.</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div>
+<div class="shot rv in d2"><img class="main" src="/assets/img/hero-garten.png" alt="Gepflegter Garten im Havelland" width="640" height="480"><div class="badge"><span class="ic">${leaf('')}</span><span class="t">Foto-Nachweis<span>nach jedem Auftrag</span></span></div></div></div></section>
+<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Aus der Region, für die Region — <em>kurze Wege, klare Absprachen.</em></p>
+<div class="vals"><div class="v rv d1"><h4><span class="n">01</span> Aus einer Hand</h4><p>Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles rund ums Haus.</p></div><div class="v rv d2"><h4><span class="n">02</span> Nachweis statt Versprechen</h4><p>Foto-Dokumentation vor und nach jedem Auftrag, direkt aufs Handy.</p></div><div class="v rv d3"><h4><span class="n">03</span> Festpreis ist Endpreis</h4><p>Kostenlose Besichtigung, klarer Preis. Als Kleinunternehmer nach § 19 UStG ohne Mehrwertsteuer-Aufschlag.</p></div><div class="v rv d4"><h4><span class="n">04</span> Schnell erreichbar</h4><p>Eine WhatsApp genügt — Antwort in Stunden, nicht in Tagen.</p></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="prose wide rv"><h2>So arbeiten wir</h2><p>Sie sagen uns, was ansteht. Wir kommen kostenlos vorbei, schauen uns die Sache vor Ort an und nennen einen Festpreis. Zum vereinbarten Termin führen wir die Arbeit sauber und pünktlich aus und räumen hinter uns auf. Zum Schluss bekommen Sie Vorher-/Nachher-Fotos per WhatsApp — Sie sehen das Ergebnis, auch wenn Sie nicht zu Hause waren.</p><h2>Warum regional zählt</h2><p>Wir sind in ${esc(nap.city)} und im Havelland zuhause und kennen die Orte zwischen Falkensee, Nauen, Oranienburg und dem Berliner Rand. Kurze Anfahrt bedeutet schnelle Reaktion und planbare Termine. Wer in der Region wohnt, schätzt es, wenn auch der Dienstleister aus der Region kommt.</p><h2>Unser Versprechen</h2><p>Zuverlässig, sauber, pünktlich. Was vereinbart ist, wird gehalten — und wenn etwas nicht passt, kommen wir nach. Konkrete Garantien finden Sie auf der jeweiligen Leistungsseite.</p></div></div></section>
+${endBand}`;
+  write(url, head(`Über uns — ${nap.name}`, mkMeta(`Haus- & Gartenservice Havelland: regionaler Betrieb aus ${nap.city}, Inhaber ${nap.inhaber}. Ein fester Ansprechpartner, Festpreis, Foto-Nachweis.`), url, `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Über uns',url}])}`) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  written.basis.push(url);
+}
+function bewertungen() {
+  const url = '/bewertungen/';
+  const r = proof.google_reviews || {};
+  const hasReviews = r.count > 0 && r.rating;
+  const gbp = `https://www.google.com/search?q=${encodeURIComponent(nap.name + ' ' + nap.city)}`;
+  const body = hasReviews
+    ? `<p>Unsere Kundinnen und Kunden bewerten uns bei Google mit <strong>${esc(r.rating)}</strong> von 5 Sternen (${esc(r.count)} Bewertungen).</p>`
+    : `<p>Wir sind ein regionaler Betrieb und sammeln Bewertungen direkt bei Google. Hier zeigen wir keine erfundenen Sterne: Was zählt, ist das Ergebnis vor Ort. Nach jedem Auftrag dokumentieren wir es mit Vorher-/Nachher-Fotos und schicken sie Ihnen per WhatsApp — Sie sehen, was Sie bekommen, ohne sich auf Werbeversprechen verlassen zu müssen.</p>
+<h3>Schon mit uns gearbeitet?</h3><p>Über eine ehrliche Bewertung bei Google freuen wir uns. Sie hilft anderen Nachbarn in der Region, einen verlässlichen Ansprechpartner zu finden.</p>`;
+  const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Bewertungen</div>
+<section class="phero" style="padding-bottom:24px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Bewertungen</span><h1 class="rv in d1">Bewertungen &amp; <em>Erfahrungen</em></h1><p class="lead rv in d2">Echte Ergebnisse statt großer Worte — und der Weg, uns selbst zu bewerten.</p></div></section>
+<section class="sec" style="padding-top:24px"><div class="wrap"><div class="prose rv">${body}<p style="margin-top:24px"><a class="btn btn-acc" href="${gbp}" rel="nofollow">Bei Google bewerten</a></p></div></div></section>
+${endBand}`;
+  write(url, head(`Bewertungen — ${nap.name}`, mkMeta(`Bewertungen und Erfahrungen zum Haus- & Gartenservice Havelland in ${nap.city}: Foto-Nachweis nach jedem Auftrag statt erfundener Sterne.`), url, `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Bewertungen',url}])}`) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  written.basis.push(url);
+}
+function danke() {
+  const url = '/danke/';
+  const main = `<section class="phero"><div class="wrap center" style="text-align:center"><span class="kick rv in" style="color:var(--green);justify-content:center;display:inline-flex">Anfrage eingegangen</span><h1 class="rv in d1" style="margin:0 auto">Danke für Ihre <em>Anfrage</em></h1><p class="lead rv in d2" style="margin:20px auto 28px">Wir haben Ihre Anfrage erhalten und melden uns schnell, meist noch am selben Tag. Bei dringenden Fällen erreichen Sie uns direkt.</p><div class="cta-row rv in d3" style="justify-content:center"><a class="btn btn-acc" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-line" href="${waHref('Hallo, ich hatte gerade eine Anfrage über die Website gesendet.')}">WhatsApp</a></div><p class="rv" style="margin-top:28px"><a href="/leistungen/">Alle Leistungen ansehen</a> · <a href="/ratgeber/">Zum Ratgeber</a></p></div></section>`;
+  write(url, head(`Danke — ${nap.name}`, `Danke für Ihre Anfrage beim Haus- & Gartenservice Havelland. Wir melden uns schnell.`, url, orgSchema(), { noindex: true }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  written.basis.push(url);
+}
+function notFound() {
+  const main = `<section class="phero"><div class="wrap center" style="text-align:center"><span class="kick rv in" style="color:var(--green);justify-content:center;display:inline-flex">Fehler 404</span><h1 class="rv in d1" style="margin:0 auto">Diese Seite gibt es <em>nicht (mehr)</em></h1><p class="lead rv in d2" style="margin:20px auto 28px">Der Link ist vielleicht veraltet oder vertippt. Hier kommen Sie weiter:</p><div class="cta-row rv in d3" style="justify-content:center"><a class="btn btn-acc" href="/leistungen/">Alle Leistungen</a><a class="btn btn-line" href="/kontakt/">Kontakt</a></div><p class="rv" style="margin-top:24px"><a href="/">Startseite</a> · <a href="/standorte/">Standorte</a> · <a href="/ratgeber/">Ratgeber</a></p></div></section>`;
+  const htmlDoc = head(`Seite nicht gefunden — ${nap.name}`, `Die aufgerufene Seite wurde nicht gefunden. Zurück zu den Leistungen des Haus- & Gartenservice Havelland.`, '/404.html', orgSchema(), { noindex: true }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>';
+  fs.writeFileSync('website/404.html', htmlDoc); // Vercel Custom-404 (Output-Root)
 }
 
 // ---------- SITEMAPS ----------

@@ -57,6 +57,7 @@ for(const f of files){
   // grep-Verbote
   const visEarly = visibleText(h);
   if(/cdn\.tailwindcss\.com/.test(h)) FAIL('CDN', `${url} nutzt cdn.tailwindcss.com`);
+  if(/fonts\.googleapis\.com|fonts\.gstatic\.com/.test(h)) FAIL('FontCDN', `${url} lädt externe Google-Fonts (DSGVO)`);
   if(/\{\{|\}\}/.test(visEarly)) FAIL('Mustache', `${url} enthält {{ }} im Text`);
   const tok = visEarly.match(/\{(ort|plz|nachbarorte|service|[a-z_]{2,})\}/);
   if(tok) FAIL('Token', `${url} unausgefüllter Platzhalter ${tok[0]}`);
