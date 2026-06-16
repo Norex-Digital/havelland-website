@@ -6,3 +6,6 @@ node_modules/
 .env.*
 .gstack/
 _src4k/
+
+# Visual-Companion Brainstorm (lokal, nicht committen)
+.superpowers/
