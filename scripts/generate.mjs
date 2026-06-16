@@ -113,6 +113,39 @@ function mkMeta(s) {
 const seedOf = s => { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; };
 function rotate(arr, seed, n) { if (!arr || !arr.length) return []; const out = []; const a = arr.slice(); const start = seed % a.length; for (let i = 0; i < Math.min(n, a.length); i++) out.push(a[(start + i) % a.length]); return out; }
 
+// ---------- BILDER: Manifest + zentrale <picture>-Komponente (AVIF/WebP/Fallback, responsive) ----------
+const IMG = JSON.parse(fs.readFileSync('assets/img/manifest.json', 'utf8'));
+// pic(): <picture style="display:contents"> -> bestehende .main/.pic-CSS-Regeln greifen weiter aufs <img>. LCP-Bild: fetchpriority statt fehleranfälligem preload bei <picture>.
+function pic(slug, { cls = '', alt = '', sizes = '100vw', lcp = false, decorative = false } = {}) {
+  const m = IMG[slug];
+  if (!m) return '';
+  const ss = ext => m.widths.map(w => `/assets/img/${slug}-${w}.${ext} ${w}w`).join(', ');
+  const sources = (m.avif ? `<source type="image/avif" srcset="${ss('avif')}" sizes="${sizes}">` : '') + `<source type="image/webp" srcset="${ss('webp')}" sizes="${sizes}">`;
+  const aAttr = decorative ? 'alt="" role="presentation"' : `alt="${esc(alt)}"`;
+  const lAttr = lcp ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
+  return `<picture style="display:contents">${sources}<img${cls ? ` class="${cls}"` : ''} src="/assets/img/${slug}-${m.fb_w}.${m.fb_ext}" width="${m.w}" height="${m.h}" ${aAttr} ${lAttr}></picture>`;
+}
+const imgAbs = slug => { const m = IMG[slug]; return m ? `${DOMAIN}/assets/img/${slug}-${m.fb_w}.${m.fb_ext}` : ''; };
+// Service -> Hero-Slug (Renovierung: Maler-Bild tabu -> neutraler Fassaden-Fallback)
+const HERO_OVERRIDE = { renovierung: 'bg-fassade' };
+const svcHero = slug => IMG[`svc-${slug}-hero`] ? `svc-${slug}-hero` : (HERO_OVERRIDE[slug] || 'bg-fassade');
+// Ort -> regionaler Archetyp (c*) für "lokaler Kontext"-Bild
+const ARCH_C2 = new Set(['berlin-kladow', 'berlin-gatow', 'gross-glienicke']);
+const ARCH_C3 = new Set(['falkensee', 'dallgow-doeberitz', 'nauen', 'hennigsdorf', 'velten', 'hohen-neuendorf', 'birkenwerder', 'glienicke-nordbahn', 'kremmen', 'oranienburg', 'berlin-spandau', 'rathenow', 'premnitz']);
+const ARCH_C6 = new Set(['ketzin', 'werder-havel', 'schwielowsee', 'phoeben', 'gross-kreutz', 'milower-land']);
+const ortArchImg = o => 'region-' + (ARCH_C2.has(o.slug) ? 'villenvorort' : ARCH_C3.has(o.slug) ? 'kleinstadt' : ARCH_C6.has(o.slug) ? 'havel-umland' : 'brandenburg-gemeinde');
+// Ratgeber -> Header-Bild (d*), sonst Service-Hero-Fallback
+const RAT_IMG = { 'wann-hecke-schneiden': 'ratgeber-heckenschnitt-zeitpunkt', 'hecke-schneiden-erlaubt': 'ratgeber-heckenschnitt-zeitpunkt', 'heckenschnitt-kosten': 'ratgeber-heckenschnitt-zeitpunkt', 'entruempelung-kosten': 'ratgeber-entruempelung-kosten', 'was-kostet-entruempelung': 'ratgeber-entruempelung-kosten', 'haushaltsaufloesung-kosten': 'ratgeber-haushaltsaufloesung-checkliste', 'haushaltsaufloesung-checkliste': 'ratgeber-haushaltsaufloesung-checkliste', 'fensterreinigung-preise': 'ratgeber-fensterreinigung-preise', 'fenster-putzen-streifenfrei': 'ratgeber-fensterreinigung-preise', 'winterdienst-streupflicht-brandenburg': 'ratgeber-winterdienst-pflichten', 'winterdienst-kosten': 'ratgeber-winterdienst-pflichten', 'dachrinne-reinigen-kosten': 'ratgeber-dachrinne-herbst', 'dachrinne-reinigen-wie-oft': 'ratgeber-dachrinne-herbst', 'terrasse-reinigen': 'ratgeber-pflaster-gruenbelag', 'pflaster-reinigen': 'ratgeber-pflaster-gruenbelag', 'rasen-maehen-wie-oft': 'ratgeber-rasenpflege-kalender', 'rasen-vertikutieren-wann': 'ratgeber-rasenpflege-kalender', 'laub-entfernen-pflicht': 'ratgeber-rasenpflege-kalender', 'gartenpflege-kosten': 'ratgeber-rasenpflege-kalender', 'pv-reinigung-lohnt-sich': 'ratgeber-photovoltaik-reinigung', 'ferienwohnung-endreinigung-kosten': 'ratgeber-ferienwohnung-wechsel', 'umzug-checkliste': 'ratgeber-umzug-tipps' };
+const ratHeaderImg = r => RAT_IMG[r.slug] || svcHero(r.cta_service);
+// Saison-Hero Home: config.saison_monat überschreibt, sonst Build-Monat (Sommer -> Standard-Hero a1)
+const HERO_HOME = (() => { const m = config.saison_monat || (new Date()).getMonth() + 1; if (m >= 3 && m <= 5) return IMG['hero-home-fruehjahr'] ? 'hero-home-fruehjahr' : 'hero-home'; if (m >= 9 && m <= 11) return IMG['hero-home-herbst'] ? 'hero-home-herbst' : 'hero-home'; if (m === 12 || m <= 2) return IMG['hero-home-winter'] ? 'hero-home-winter' : 'hero-home'; return 'hero-home'; })();
+// Prozess-Sektion "So läuft es ab" (e1–e4)
+const PROZESS = [['anfrage', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was ansteht — gern mit Fotos.'], ['besichtigung', 'Kostenlose Besichtigung', 'Wir kommen vorbei und nennen Ihnen einen Festpreis.'], ['ausfuehrung', 'Saubere Ausführung', 'Pünktlich und gründlich — wir räumen hinter uns auf.'], ['fotoabnahme', 'Foto-Nachweis', 'Vorher-/Nachher-Fotos aufs Handy nach jedem Auftrag.']];
+function stepsSektion(alt) {
+  const cards = PROZESS.map(([slug, t, d], i) => `<div class="step rv d${i + 1}"><div class="step-img">${pic('prozess-' + slug, { alt: t + ' — Haus- & Gartenservice Havelland', sizes: '(max-width:760px) 44vw, 210px' })}</div><h3><span class="sn">${i + 1}</span> ${esc(t)}</h3><p>${esc(d)}</p></div>`).join('');
+  return `<section class="sec${alt ? ' section-alt' : ''}"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft es ab</h2></div><div class="steps rv">${cards}</div></div></section>`;
+}
+
 const written = { hubs: [], ortsseiten: [], orts_hubs: [], ratgeber: [], basis: [] };
 
 function orgSchema() {
