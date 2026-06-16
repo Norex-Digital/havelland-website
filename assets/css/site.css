@@ -58,7 +58,7 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 .trust-row .t b{font-family:Fraunces,serif;font-weight:600;font-size:20px;color:var(--green-d)}
 .trust-row .t span{font-size:13px;color:var(--muted)}
 .shot{position:relative}
-.shot .main{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center;border-radius:24px;box-shadow:0 50px 90px -40px rgba(14,46,31,.65);display:block}
+.shot .main{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:center;border-radius:24px;box-shadow:0 50px 90px -40px rgba(14,46,31,.65);display:block}
 .shot .badge{position:absolute;left:-26px;bottom:34px;background:#fff;border-radius:18px;padding:16px 20px;box-shadow:0 26px 50px -18px rgba(0,0,0,.35);display:flex;align-items:center;gap:14px;max-width:260px}
 .shot .badge .ic{width:46px;height:46px;border-radius:13px;background:var(--green);color:#cfe3d6;display:flex;align-items:center;justify-content:center;flex:none}
 .shot .badge .ic svg{width:22px;height:22px;display:block}
