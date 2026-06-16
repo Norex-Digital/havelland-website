@@ -1,7 +1,7 @@
 {
 "hero-home": {
-"w": 1376,
-"h": 768,
+"w": 4096,
+"h": 2294,
 "widths": [
 480,
 768,
@@ -182,8 +182,8 @@
 "fb_w": 1024
 },
 "svc-fensterreinigung-hero": {
-"w": 1376,
-"h": 768,
+"w": 4096,
+"h": 2294,
 "widths": [
 480,
 768,
@@ -221,8 +221,8 @@
 "fb_w": 1024
 },
 "svc-entruempelung-hero": {
-"w": 1376,
-"h": 768,
+"w": 4096,
+"h": 2294,
 "widths": [
 480,
 768,
@@ -776,5 +776,44 @@
 "avif": true,
 "fb_ext": "jpg",
 "fb_w": 440
+},
+"bewertungen": {
+"w": 4096,
+"h": 2294,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"ratgeber-index": {
+"w": 4096,
+"h": 2294,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"ueber-uns": {
+"w": 4096,
+"h": 2294,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
 }
 }
