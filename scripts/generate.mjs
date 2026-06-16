@@ -104,7 +104,7 @@ function mkMeta(s) {
   while (rlen(t) > 158) { const sp = t.lastIndexOf(' '); if (sp < 110) break; t = t.slice(0, sp); }
   // bevorzugt an Klausel-/Satz-Grenze (Komma/Punkt im hinteren Drittel) kürzen → sauberes Ende
   const cl = Math.max(t.lastIndexOf(', '), t.lastIndexOf('. '));
-  if (cl >= 130) t = t.slice(0, cl);
+  if (cl >= 150) t = t.slice(0, cl);
   t = t.replace(/[ ,;:.–-]+$/, '');
   while (DANGLE.test(t)) t = t.replace(DANGLE, '').replace(/[ ,;:.–-]+$/, '');
   return t + '.';
