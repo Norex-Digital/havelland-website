@@ -28,7 +28,7 @@
     }
    ],
    "naehe": "Sie suchen Gartenpflege in der Nähe? Wir sitzen in Falkensee und sind im gesamten Havelland sowie im angrenzenden Berliner Umland für Sie unterwegs – von Nauen über Dallgow-Döberitz und Brieselang bis Spandau. Kurze Wege bedeuten kurze Reaktionszeiten: Auf Ihre WhatsApp antworten wir in Stunden, nicht in Tagen. Als regional verwurzelter Betrieb kennen wir Boden, Wetter und Pflanzen vor Ort und planen die Termine so, dass sie zu Ihrem Garten und der Saison passen.",
-   "ablauf": "So läuft es ab: Sie schildern uns per WhatsApp oder Telefon kurz, was ansteht. Wir kommen kostenlos vorbei und sehen uns Ihren Garten an. Danach erhalten Sie einen Festpreis – als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf, der Festpreis ist der Endpreis. Zum vereinbarten Termin führen wir die Arbeit sauber und pünktlich aus und räumen hinter uns auf. Zum Schluss bekommen Sie Vorher-/Nachher-Fotos direkt aufs Handy, damit Sie das Ergebnis sehen, auch wenn Sie nicht zu Hause waren.",
+   "ablauf": "So läuft es ab: Sie schildern uns per WhatsApp oder Telefon kurz, was ansteht. Wir kommen kostenlos vorbei und sehen uns Ihren Garten an. Danach erhalten Sie einen Festpreis – der Festpreis ist der Endpreis, ohne Nachforderung. Zum vereinbarten Termin führen wir die Arbeit sauber und pünktlich aus und räumen hinter uns auf. Zum Schluss bekommen Sie Vorher-/Nachher-Fotos direkt aufs Handy, damit Sie das Ergebnis sehen, auch wenn Sie nicht zu Hause waren.",
    "faqs": [
     {
      "q": "Was gehört alles zur Gartenpflege?",
@@ -44,7 +44,7 @@
     },
     {
      "q": "Was kostet die Gartenpflege im Havelland?",
-     "a": "Einen festen Eurobetrag nennen wir erst nach der kostenlosen Besichtigung, weil der Preis von Gartengröße, Aufwand und Pflegerhythmus abhängt. Sie bekommen dann einen Festpreis, der auch der Endpreis ist – als Kleinunternehmer rechnen wir ohne Mehrwertsteuer. So wissen Sie vorher genau, was Sie zahlen, ohne Überraschungen auf der Rechnung."
+     "a": "Einen festen Eurobetrag nennen wir erst nach der kostenlosen Besichtigung, weil der Preis von Gartengröße, Aufwand und Pflegerhythmus abhängt. Sie bekommen dann einen Festpreis, der auch der Endpreis ist – ohne Aufschlag. So wissen Sie vorher genau, was Sie zahlen, ohne Überraschungen auf der Rechnung."
     },
     {
      "q": "Bieten Sie auch regelmäßige Gartenpflege im Abo an?",
@@ -86,7 +86,7 @@
     }
    ],
    "naehe": "Sie suchen einen Heckenschnitt in der Nähe? Wir sitzen in Falkensee und fahren das gesamte Havelland sowie das angrenzende Berliner Umland an, von Nauen über Dallgow-Döberitz und Brieselang bis Schönwalde und Spandau. Kurze Wege bedeuten kurze Reaktionszeiten und einen Ansprechpartner, der die Region kennt. Schreiben Sie uns Ihre Adresse per WhatsApp, dann stimmen wir die kostenlose Besichtigung vor Ort ab.",
-   "ablauf": "Sie fragen per WhatsApp oder Telefon an, wir kommen kostenlos zur Besichtigung vorbei und schauen uns Hecke, Höhe und Zugang an. Daraus erhalten Sie einen Festpreis, der als Kleinunternehmer ohne Mehrwertsteuer Ihr Endpreis bleibt. Zum vereinbarten Termin führen wir den Schnitt aus und fahren den Grünschnitt ab. Danach bekommen Sie die Foto-Doku vom Vorher und Nachher direkt aufs Handy.",
+   "ablauf": "Sie fragen per WhatsApp oder Telefon an, wir kommen kostenlos zur Besichtigung vorbei und schauen uns Hecke, Höhe und Zugang an. Daraus erhalten Sie einen Festpreis, der ohne Aufschlag Ihr Endpreis bleibt. Zum vereinbarten Termin führen wir den Schnitt aus und fahren den Grünschnitt ab. Danach bekommen Sie die Foto-Doku vom Vorher und Nachher direkt aufs Handy.",
    "faqs": [
     {
      "q": "Wann darf man eine Hecke schneiden?",
@@ -98,7 +98,7 @@
     },
     {
      "q": "Was kostet ein Heckenschnitt im Havelland?",
-     "a": "Einen Pauschalpreis nennen wir nicht ins Blaue, weil Länge, Höhe, Heckenart und Zugang den Aufwand bestimmen. Sie erhalten nach einer kostenlosen Besichtigung vor Ort einen Festpreis, der inklusive Abfuhr des Grünschnitts Ihr Endpreis bleibt. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Nachträgliche Posten gibt es nicht, der vereinbarte Preis steht."
+     "a": "Einen Pauschalpreis nennen wir nicht ins Blaue, weil Länge, Höhe, Heckenart und Zugang den Aufwand bestimmen. Sie erhalten nach einer kostenlosen Besichtigung vor Ort einen Festpreis, der inklusive Abfuhr des Grünschnitts Ihr Endpreis bleibt. Nachträgliche Posten gibt es nicht, der vereinbarte Preis steht."
     },
     {
      "q": "Fahren Sie den Grünschnitt nach dem Schnitt ab?",
@@ -144,11 +144,11 @@
     }
    ],
    "naehe": "Den Winterdienst erledigen wir vor Ort im Havelland und im angrenzenden Berliner Umland. Von Falkensee aus erreichen wir Nauen, Dallgow-Döberitz, Brieselang, Wustermark, Schönwalde-Glien und die nahen Berliner Randbezirke kurzfristig, oft innerhalb derselben Stunde nach Schneefall. Kurze Wege bedeuten kurze Reaktionszeiten: Wir sitzen nicht im Stau quer durchs Land, sondern fahren die Strecke, die wir aus dem Alltag kennen. Sie haben einen Ansprechpartner aus der Region, den Sie über WhatsApp direkt erreichen.",
-   "ablauf": "Zuerst besichtigen wir Ihre Flächen kostenlos vor Ort und besprechen Zeitfenster, Streumittel und Ihre Räum- und Streupflicht. Danach erhalten Sie einen Festpreis für die gesamte Saison, der Festpreis ist der Endpreis, denn als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Mit Vertragsbeginn räumen und streuen wir Ihre Flächen pünktlich nach Wetterlage. Nach jedem Einsatz schicken wir Ihnen einen Foto-Nachweis mit Uhrzeit direkt aufs Handy.",
+   "ablauf": "Zuerst besichtigen wir Ihre Flächen kostenlos vor Ort und besprechen Zeitfenster, Streumittel und Ihre Räum- und Streupflicht. Danach erhalten Sie einen Festpreis für die gesamte Saison, der Festpreis ist der Endpreis, ohne Nachforderung. Mit Vertragsbeginn räumen und streuen wir Ihre Flächen pünktlich nach Wetterlage. Nach jedem Einsatz schicken wir Ihnen einen Foto-Nachweis mit Uhrzeit direkt aufs Handy.",
    "faqs": [
     {
      "q": "Was kostet der Winterdienst im Havelland?",
-     "a": "Wir nennen Ihnen keinen Preis am Telefon, weil jede Fläche anders ist. Stattdessen besichtigen wir Ihre Gehwege und Zufahrten kostenlos vor Ort und geben Ihnen danach einen Festpreis für die gesamte Saison. Dieser Festpreis ist der Endpreis, denn als Kleinunternehmer nach Paragraf 19 schlagen wir keine Mehrwertsteuer obendrauf. So wissen Sie vorab genau, woran Sie sind."
+     "a": "Wir nennen Ihnen keinen Preis am Telefon, weil jede Fläche anders ist. Stattdessen besichtigen wir Ihre Gehwege und Zufahrten kostenlos vor Ort und geben Ihnen danach einen Festpreis für die gesamte Saison. Dieser Festpreis ist der Endpreis, ohne Aufschlag und ohne Nachforderung. So wissen Sie vorab genau, woran Sie sind."
     },
     {
      "q": "Wann sollte ich den Saisonvertrag abschließen?",
@@ -202,7 +202,7 @@
     }
    ],
    "naehe": "Den Haus- & Gartenservice Havelland erreichen Sie vor Ort im ganzen Havelland und im angrenzenden Berliner Umland. Von unserem Sitz in Falkensee fahren wir Orte wie Nauen, Dallgow-Döberitz, Brieselang, Wustermark und die westlichen Berliner Randbezirke an. Weil wir hier zu Hause sind, kennen wir die Wege und sind schnell bei Ihnen. Schreiben Sie uns kurz per WhatsApp, und Sie hören meist innerhalb weniger Stunden von uns.",
-   "ablauf": "Zuerst schauen wir uns Ihre Steinflächen kostenlos vor Ort an und besprechen, was Sie sich wünschen. Danach erhalten Sie einen Festpreis. Der Festpreis ist der Endpreis, denn als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Zum vereinbarten Termin führen wir die Reinigung sauber und pünktlich aus. Zum Schluss bekommen Sie Vorher-Nachher-Fotos direkt aufs Handy, damit Sie das Ergebnis schwarz auf weiß haben.",
+   "ablauf": "Zuerst schauen wir uns Ihre Steinflächen kostenlos vor Ort an und besprechen, was Sie sich wünschen. Danach erhalten Sie einen Festpreis. Der Festpreis ist der Endpreis, ohne Aufschlag. Zum vereinbarten Termin führen wir die Reinigung sauber und pünktlich aus. Zum Schluss bekommen Sie Vorher-Nachher-Fotos direkt aufs Handy, damit Sie das Ergebnis schwarz auf weiß haben.",
    "faqs": [
     {
      "q": "Was bringt eine professionelle Steinreinigung?",
@@ -222,7 +222,7 @@
     },
     {
      "q": "Was kostet eine Steinreinigung im Havelland?",
-     "a": "Den Preis nennen wir Ihnen erst nach einer kostenlosen Besichtigung vor Ort, weil Fläche, Verschmutzung und Material den Aufwand bestimmen. Sie bekommen dann einen Festpreis, und der Festpreis ist der Endpreis. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. So wissen Sie vorher genau, was die Reinigung kostet, ohne Überraschung auf der Rechnung."
+     "a": "Den Preis nennen wir Ihnen erst nach einer kostenlosen Besichtigung vor Ort, weil Fläche, Verschmutzung und Material den Aufwand bestimmen. Sie bekommen dann einen Festpreis, und der Festpreis ist der Endpreis. So wissen Sie vorher genau, was die Reinigung kostet, ohne Überraschung auf der Rechnung."
     }
    ],
    "garantie_text": "Bleibt nach unserer Reinigung Moos- oder Algenrest zurück, kommen wir kostenlos noch einmal vorbei, auf Wunsch gleich mit Fugen-Schutz.",
@@ -260,11 +260,11 @@
     }
    ],
    "naehe": "Den Haus- & Gartenservice Havelland finden Sie direkt vor Ort in Falkensee. Wir reinigen Fenster im gesamten Havelland und im angrenzenden Berliner Umland — von Falkensee über Dallgow-Döberitz, Nauen und Brieselang bis Spandau. Kurze Wege bedeuten kurze Wartezeiten: Sie schreiben uns per WhatsApp, wir besichtigen vor Ort und nennen den Festpreis. Weil wir aus der Region kommen und hier zuhause sind, kennen wir die typischen Fenster im Havelland und die Sorte Schmutz, die Wind und Wetter hier hinterlassen.",
-   "ablauf": "Zuerst kommen wir kostenlos zu Ihnen und schauen uns Anzahl, Größe und Erreichbarkeit der Fenster an. Daraus machen wir einen Festpreis — der Festpreis ist der Endpreis, denn als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Zum vereinbarten Termin reinigen wir Glas, Rahmen und Bänke schlierenfrei. Zum Schluss erhalten Sie den Vorher-Nachher-Nachweis als Foto direkt aufs Handy. Bleiben Schlieren, kommen wir am selben Tag noch einmal vorbei.",
+   "ablauf": "Zuerst kommen wir kostenlos zu Ihnen und schauen uns Anzahl, Größe und Erreichbarkeit der Fenster an. Daraus machen wir einen Festpreis — der Festpreis ist der Endpreis, kein Aufschlag, keine Nachforderung. Zum vereinbarten Termin reinigen wir Glas, Rahmen und Bänke schlierenfrei. Zum Schluss erhalten Sie den Vorher-Nachher-Nachweis als Foto direkt aufs Handy. Bleiben Schlieren, kommen wir am selben Tag noch einmal vorbei.",
    "faqs": [
     {
      "q": "Was kostet eine Fensterreinigung im Havelland?",
-     "a": "Das hängt von Anzahl, Größe und Erreichbarkeit Ihrer Fenster ab — pauschal lässt sich das nicht sagen. Deshalb kommen wir vom Haus- & Gartenservice Havelland kostenlos vorbei, schauen uns alles an und nennen Ihnen einen Festpreis. Dieser Festpreis ist der Endpreis. Als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf, Sie zahlen genau das Vereinbarte."
+     "a": "Das hängt von Anzahl, Größe und Erreichbarkeit Ihrer Fenster ab — pauschal lässt sich das nicht sagen. Deshalb kommen wir vom Haus- & Gartenservice Havelland kostenlos vorbei, schauen uns alles an und nennen Ihnen einen Festpreis. Dieser Festpreis ist der Endpreis, Sie zahlen genau das Vereinbarte."
     },
     {
      "q": "Wie oft sollte man die Fenster reinigen lassen?",
@@ -318,11 +318,11 @@
     }
    ],
    "naehe": "Sie suchen eine Dachrinnenreinigung in der Nähe? Wir sind im gesamten Havelland und im Berliner Umland vor Ort: Falkensee, Nauen, Dallgow-Döberitz, Brieselang, Wustermark, Schönwalde-Glien und die umliegenden Orte. Kurze Wege heißen schnelle Termine, oft schon in derselben Woche. Auf Ihre WhatsApp melden wir uns innerhalb von Stunden, nicht erst nach Tagen.",
-   "ablauf": "Sie schreiben uns kurz per WhatsApp oder rufen an. Wir kommen kostenlos vorbei, schauen uns Rinne, Fallrohre und Dachsituation an und nennen Ihnen einen Festpreis. Der Festpreis ist der Endpreis – als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Sie geben das Okay, wir machen den Termin und reinigen Rinne und Fallrohre. Zum Schluss bekommen Sie die Foto-Doku mit Vorher/Nachher direkt aufs Handy.",
+   "ablauf": "Sie schreiben uns kurz per WhatsApp oder rufen an. Wir kommen kostenlos vorbei, schauen uns Rinne, Fallrohre und Dachsituation an und nennen Ihnen einen Festpreis. Der Festpreis ist der Endpreis – kein Aufschlag, keine Nachforderung. Sie geben das Okay, wir machen den Termin und reinigen Rinne und Fallrohre. Zum Schluss bekommen Sie die Foto-Doku mit Vorher/Nachher direkt aufs Handy.",
    "faqs": [
     {
      "q": "Was kostet eine Dachrinnenreinigung im Havelland?",
-     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung als Festpreis. Er hängt von der Länge der Rinne, der Höhe des Hauses, dem Verschmutzungsgrad und der Zugänglichkeit ab. Was wir Ihnen sagen, ist der Endpreis: Als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Keine versteckten Posten, keine Überraschung auf der Rechnung."
+     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung als Festpreis. Er hängt von der Länge der Rinne, der Höhe des Hauses, dem Verschmutzungsgrad und der Zugänglichkeit ab. Was wir Ihnen sagen, ist der Endpreis. Keine versteckten Posten, keine Überraschung auf der Rechnung."
     },
     {
      "q": "Wie oft sollte ich die Dachrinne reinigen lassen?",
@@ -376,7 +376,7 @@
     }
    ],
    "naehe": "Sie suchen Photovoltaikreinigung in der Nähe? Wir sitzen in Falkensee und arbeiten im gesamten Havelland sowie im angrenzenden Berliner Umland. Kurze Wege heißen: Wir sind schnell bei Ihnen, kennen die Region und melden uns per WhatsApp oft schon innerhalb weniger Stunden. Orte wie Falkensee, Nauen, Rathenow, Brieselang und Dallgow-Döberitz fahren wir regelmäßig an. Fragen Sie einfach an, wir sagen Ihnen, wann wir bei Ihnen vorbeikommen.",
-   "ablauf": "Sie melden sich per WhatsApp oder Telefon. Wir kommen kostenlos vorbei, sehen uns Dach, Modulanzahl und Verschmutzung an und nennen Ihnen einen Festpreis, der auch der Endpreis bleibt. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Nach Ihrer Zusage reinigen wir die Module zum vereinbarten Termin. Zum Abschluss erhalten Sie Vorher-Nachher-Fotos direkt auf Ihr Handy, sodass Sie das Ergebnis sehen, ohne aufs Dach zu steigen.",
+   "ablauf": "Sie melden sich per WhatsApp oder Telefon. Wir kommen kostenlos vorbei, sehen uns Dach, Modulanzahl und Verschmutzung an und nennen Ihnen einen Festpreis, der auch der Endpreis bleibt. Nach Ihrer Zusage reinigen wir die Module zum vereinbarten Termin. Zum Abschluss erhalten Sie Vorher-Nachher-Fotos direkt auf Ihr Handy, sodass Sie das Ergebnis sehen, ohne aufs Dach zu steigen.",
    "faqs": [
     {
      "q": "Was bringt eine Photovoltaikreinigung?",
@@ -392,7 +392,7 @@
     },
     {
      "q": "Was kostet die Reinigung meiner Photovoltaikanlage?",
-     "a": "Den Preis nennen wir Ihnen nach einer kostenlosen Vor-Ort-Besichtigung als Festpreis. Vorher sehen wir uns Dach, Modulanzahl, Zugang und Verschmutzungsgrad an, denn diese Faktoren bestimmen den Aufwand. Der Festpreis ist der Endpreis. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. So wissen Sie vor der Zusage genau, woran Sie sind, ohne Überraschung auf der Rechnung."
+     "a": "Den Preis nennen wir Ihnen nach einer kostenlosen Vor-Ort-Besichtigung als Festpreis. Vorher sehen wir uns Dach, Modulanzahl, Zugang und Verschmutzungsgrad an, denn diese Faktoren bestimmen den Aufwand. Der Festpreis ist der Endpreis. So wissen Sie vor der Zusage genau, woran Sie sind, ohne Überraschung auf der Rechnung."
     },
     {
      "q": "Wann lohnt sich eine Photovoltaikreinigung besonders?",
@@ -438,7 +438,7 @@
    "faqs": [
     {
      "q": "Was kostet eine Entrümpelung im Havelland?",
-     "a": "Den Preis nennen wir erst nach einer kostenlosen Vor-Ort-Besichtigung, weil er von Menge, Zugang, Entsorgungsart und verwertbaren Gegenständen abhängt. Sie bekommen einen Festpreis, der der Endpreis bleibt. Egal wie viel am Ende rausgeht, es kommt kein Aufpreis dazu. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf."
+     "a": "Den Preis nennen wir erst nach einer kostenlosen Vor-Ort-Besichtigung, weil er von Menge, Zugang, Entsorgungsart und verwertbaren Gegenständen abhängt. Sie bekommen einen Festpreis, der der Endpreis bleibt. Egal wie viel am Ende rausgeht, es kommt kein Aufpreis dazu."
     },
     {
      "q": "Wie läuft eine Entrümpelung bei Ihnen ab?",
@@ -492,11 +492,11 @@
     }
    ],
    "naehe": "Sie suchen eine Haushaltsauflösung in Ihrer Nähe? Wir sind in Falkensee zuhause und im gesamten Havelland sowie im Berliner Umland für Sie vor Ort, von Nauen über Dallgow-Döberitz und Brieselang bis Schönwalde-Glien. Kurze Wege bedeuten kurze Reaktionszeiten: Auf Ihre WhatsApp-Anfrage melden wir uns in Stunden, nicht in Tagen, und kommen für die kostenlose Besichtigung vorbei. Als regional verwurzelter Betrieb kennen wir die Wertstoffhöfe und Übergabe-Gepflogenheiten vor Ort und sind nach getaner Arbeit weiter erreichbar.",
-   "ablauf": "So läuft Ihre Haushaltsauflösung ab. Erstens: kostenlose Besichtigung vor Ort, wir schauen uns Räume und Mengen an und besprechen, was gesichert und was geräumt wird. Zweitens: Sie erhalten einen Festpreis, der Ihr Endpreis bleibt, ohne Mehrwertsteuer obendrauf, weil wir als Kleinunternehmer nach §19 UStG arbeiten. Drittens: Wir führen die Räumung zum vereinbarten Termin aus, sichern Dokumente, trennen Wertgegenstände und entsorgen fachgerecht. Viertens: Sie bekommen den Foto-Nachweis der leeren, besenreinen Wohnung direkt aufs Handy.",
+   "ablauf": "So läuft Ihre Haushaltsauflösung ab. Erstens: kostenlose Besichtigung vor Ort, wir schauen uns Räume und Mengen an und besprechen, was gesichert und was geräumt wird. Zweitens: Sie erhalten einen Festpreis, der Ihr Endpreis bleibt, ohne Aufschlag und ohne Nachforderung. Drittens: Wir führen die Räumung zum vereinbarten Termin aus, sichern Dokumente, trennen Wertgegenstände und entsorgen fachgerecht. Viertens: Sie bekommen den Foto-Nachweis der leeren, besenreinen Wohnung direkt aufs Handy.",
    "faqs": [
     {
      "q": "Was kostet eine Haushaltsauflösung im Havelland?",
-     "a": "Den Preis nennen wir Ihnen nach einer kostenlosen Besichtigung vor Ort als Festpreis, der Ihr Endpreis bleibt. So vermeiden Sie Überraschungen. Die Kosten hängen von der Wohnungsgröße, der Menge an Hausrat, dem Aufwand für Demontagen und der zu entsorgenden Restmenge ab. Verwertbare Möbel senken die Entsorgungskosten. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf."
+     "a": "Den Preis nennen wir Ihnen nach einer kostenlosen Besichtigung vor Ort als Festpreis, der Ihr Endpreis bleibt. So vermeiden Sie Überraschungen. Die Kosten hängen von der Wohnungsgröße, der Menge an Hausrat, dem Aufwand für Demontagen und der zu entsorgenden Restmenge ab. Verwertbare Möbel senken die Entsorgungskosten."
     },
     {
      "q": "Wie läuft eine Haushaltsauflösung bei einem Erbfall ab?",
@@ -550,7 +550,7 @@
     }
    ],
    "naehe": "Sie suchen eine Grundreinigung in der Nähe? Wir sitzen in Falkensee und arbeiten im gesamten Havelland sowie im angrenzenden Berliner Umland — Nauen, Dallgow-Döberitz, Brieselang, Wustermark, Schönwalde-Glien und die Nachbarorte. Kurze Wege bedeuten, dass wir oft schon kurzfristig zur Besichtigung vorbeikommen. Ein Anruf oder eine WhatsApp genügt, und Sie haben einen festen Ansprechpartner aus der Region vor Ort, der die Wohnungen und die Vermieter hier kennt.",
-   "ablauf": "So läuft Ihre Auszugsreinigung ab: Sie melden sich per Telefon oder WhatsApp, wir kommen kostenlos zur Vor-Ort-Besichtigung und sehen uns Größe und Zustand der Wohnung an. Danach erhalten Sie einen Festpreis — der Festpreis ist der Endpreis, als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Zum vereinbarten Termin reinigen wir die Wohnung von Grund auf. Zum Schluss bekommen Sie die Vorher-Nachher-Fotos aufs Handy, fertig für Ihre Übergabe.",
+   "ablauf": "So läuft Ihre Auszugsreinigung ab: Sie melden sich per Telefon oder WhatsApp, wir kommen kostenlos zur Vor-Ort-Besichtigung und sehen uns Größe und Zustand der Wohnung an. Danach erhalten Sie einen Festpreis — der Festpreis ist der Endpreis, kein Aufschlag, keine Nachforderung. Zum vereinbarten Termin reinigen wir die Wohnung von Grund auf. Zum Schluss bekommen Sie die Vorher-Nachher-Fotos aufs Handy, fertig für Ihre Übergabe.",
    "faqs": [
     {
      "q": "Was ist der Unterschied zwischen Grundreinigung und Unterhaltsreinigung?",
@@ -562,7 +562,7 @@
     },
     {
      "q": "Was kostet eine Auszugsreinigung im Havelland?",
-     "a": "Einen Pauschalpreis nennen wir nicht aus der Ferne, weil Größe, Zustand und Aufwand jede Wohnung unterscheiden. Wir kommen kostenlos vorbei, sehen uns alles an und nennen Ihnen danach einen Festpreis. Dieser Festpreis ist der Endpreis: Als Kleinunternehmer nach §19 schlagen wir keine Mehrwertsteuer obendrauf. Keine Nachforderungen nach der Besichtigung."
+     "a": "Einen Pauschalpreis nennen wir nicht aus der Ferne, weil Größe, Zustand und Aufwand jede Wohnung unterscheiden. Wir kommen kostenlos vorbei, sehen uns alles an und nennen Ihnen danach einen Festpreis. Dieser Festpreis ist der Endpreis. Keine Nachforderungen nach der Besichtigung."
     },
     {
      "q": "Wie schnell bekomme ich einen Termin?",
@@ -608,7 +608,7 @@
     }
    ],
    "naehe": "Sie suchen Umzugshilfe in der Nähe? Wir sind in Falkensee zu Hause und im ganzen Havelland sowie im angrenzenden Berliner Umland für Sie unterwegs — von Nauen über Dallgow-Döberitz und Brieselang bis an die Berliner Stadtgrenze. Kurze Wege bedeuten kurze Reaktionszeiten: Auf Ihre WhatsApp-Nachricht melden wir uns in Stunden, nicht erst nach Tagen. Weil wir aus der Region kommen, kennen wir die typischen Altbau-Treppenhäuser, Reihenhäuser und Dachwohnungen vor Ort und wissen, worauf es beim Tragen ankommt.",
-   "ablauf": "So läuft Ihre Umzugshilfe ab: Zuerst kommen wir kostenlos zur Vor-Ort-Besichtigung und schauen uns Wohnung, Möbel, Treppen und Zugänge an. Danach nennen wir Ihnen einen Festpreis — der Festpreis ist der Endpreis, denn als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Am vereinbarten Tag führen wir den Umzug mit Muskelkraft und Sorgfalt aus. Zum Schluss erhalten Sie die Foto-Doku mit Vorher/Nachher direkt aufs Handy.",
+   "ablauf": "So läuft Ihre Umzugshilfe ab: Zuerst kommen wir kostenlos zur Vor-Ort-Besichtigung und schauen uns Wohnung, Möbel, Treppen und Zugänge an. Danach nennen wir Ihnen einen Festpreis — der Festpreis ist der Endpreis, kein Aufschlag, keine Nachforderung. Am vereinbarten Tag führen wir den Umzug mit Muskelkraft und Sorgfalt aus. Zum Schluss erhalten Sie die Foto-Doku mit Vorher/Nachher direkt aufs Handy.",
    "faqs": [
     {
      "q": "Was umfasst eine Umzugshilfe für Privathaushalte?",
@@ -624,7 +624,7 @@
     },
     {
      "q": "Was kostet eine Umzugshilfe?",
-     "a": "Wir nennen keinen Pauschalbetrag im Voraus, weil jeder Umzug anders ist. Den Preis bestimmen Menge und Gewicht der Möbel, Stockwerke ohne Aufzug, Wegstrecke und der Aufwand für Ab- und Aufbau. Nach der kostenlosen Besichtigung bekommen Sie einen Festpreis, und dieser Festpreis ist der Endpreis — als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf."
+     "a": "Wir nennen keinen Pauschalbetrag im Voraus, weil jeder Umzug anders ist. Den Preis bestimmen Menge und Gewicht der Möbel, Stockwerke ohne Aufzug, Wegstrecke und der Aufwand für Ab- und Aufbau. Nach der kostenlosen Besichtigung bekommen Sie einen Festpreis, und dieser Festpreis ist der Endpreis — ohne Aufschlag, ohne Nachforderung."
     },
     {
      "q": "Was passiert, wenn beim Tragen ein Möbel verkratzt wird?",
@@ -666,7 +666,7 @@
     }
    ],
    "naehe": "Sie suchen einen Handwerker für Renovierungsarbeiten in der Nähe? Der Haus- & Gartenservice Havelland sitzt in Falkensee und arbeitet im gesamten Havelland sowie im angrenzenden Berliner Umland. Kurze Wege bedeuten kurze Reaktionszeiten: Auf Ihre WhatsApp-Nachricht melden wir uns in Stunden, nicht in Tagen. Als regional verwurzelter Betrieb kennen wir die typischen Altbauten, Reihenhäuser und Neubauwohnungen der Region und wissen, worauf es bei Boden, Türen und Montagen vor Ort ankommt.",
-   "ablauf": "Erst kommen wir kostenlos zur Besichtigung vorbei und schauen uns Ihre Renovierungspunkte an. Danach erhalten Sie einen Festpreis, der Ihr Endpreis bleibt — als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Stimmen Sie zu, führen wir die Arbeiten zum vereinbarten Termin sauber und pünktlich aus. Zum Abschluss bekommen Sie eine Foto-Doku mit Vorher- und Nachher-Bildern direkt aufs Handy.",
+   "ablauf": "Erst kommen wir kostenlos zur Besichtigung vorbei und schauen uns Ihre Renovierungspunkte an. Danach erhalten Sie einen Festpreis, der Ihr Endpreis bleibt — ohne Aufschlag, ohne Nachforderung. Stimmen Sie zu, führen wir die Arbeiten zum vereinbarten Termin sauber und pünktlich aus. Zum Abschluss bekommen Sie eine Foto-Doku mit Vorher- und Nachher-Bildern direkt aufs Handy.",
    "faqs": [
     {
      "q": "Was gehört zur Renovierung beim Haus- & Gartenservice Havelland?",
@@ -674,7 +674,7 @@
     },
     {
      "q": "Was kostet eine Renovierung im Havelland?",
-     "a": "Einen festen Betrag nennen wir erst nach der Besichtigung, weil jeder Raum, Untergrund und Materialwunsch anders ist. So läuft es: Wir kommen kostenlos vorbei, sehen uns den Umfang an und nennen Ihnen danach einen Festpreis. Dieser Festpreis ist Ihr Endpreis. Als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Sie wissen also vor Beginn genau, was die Arbeit kostet."
+     "a": "Einen festen Betrag nennen wir erst nach der Besichtigung, weil jeder Raum, Untergrund und Materialwunsch anders ist. So läuft es: Wir kommen kostenlos vorbei, sehen uns den Umfang an und nennen Ihnen danach einen Festpreis. Dieser Festpreis ist Ihr Endpreis. Sie wissen also vor Beginn genau, was die Arbeit kostet."
     },
     {
      "q": "Wie läuft ein Renovierungsauftrag ab?",
@@ -689,7 +689,7 @@
      "a": "Schnell. Schreiben Sie uns über WhatsApp, melden wir uns in Stunden zurück, nicht in Tagen. Weil wir in Falkensee sitzen und im gesamten Havelland sowie im Berliner Umland arbeiten, sind die Wege kurz und ein Besichtigungstermin lässt sich meist zeitnah einrichten. Die Besichtigung ist kostenlos und unverbindlich. Erst danach entscheiden Sie auf Basis des Festpreises, ob wir loslegen."
     }
    ],
-   "garantie_text": "Keine festen Preise im Voraus: Wir kommen kostenlos zur Besichtigung, danach erhalten Sie einen Festpreis, der Ihr Endpreis bleibt — als Kleinunternehmer ohne Mehrwertsteuer obendrauf.",
+   "garantie_text": "Keine festen Preise im Voraus: Wir kommen kostenlos zur Besichtigung, danach erhalten Sie einen Festpreis, der Ihr Endpreis bleibt — ohne Aufschlag, ohne Nachforderung.",
    "ortsseite_lead": "Ihre Renovierung in {ort} aus einer Hand: Kleinreparaturen, Bodenverlegung, Demontage und Montage vom Haus- & Gartenservice Havelland. Kostenlose Besichtigung in {ort}, danach ein Festpreis als Endpreis und nach dem Auftrag die Foto-Doku aufs Handy.",
    "skills_applied": [
     "seo-web-copy.md (Keyword-Platzierung Title/Meta/H1/erste 100 Wörter, Sektions-Struktur mit eigenständigen H3, FAQ für PAA-Capture, Scannability)",
@@ -724,7 +724,7 @@
     }
    ],
    "naehe": "Sie suchen einen Hausmeisterservice in der Nähe? Wir sind in Falkensee zuhause und betreuen Objekte im gesamten Havelland und Berliner Umland: von Falkensee, Nauen und Rathenow bis Dallgow-Döberitz, Brieselang und an den westlichen Berliner Stadtrand. Kurze Wege bedeuten kurze Reaktionszeiten. Wenn etwas ansteht, schreiben Sie uns per WhatsApp, und Sie hören in Stunden von uns, nicht in Tagen. Als regional verwurzelter Betrieb kennen wir die Gegend, die Anbieter vor Ort und die Anforderungen an Räum- und Streupflicht in den Gemeinden.",
-   "ablauf": "So läuft Ihr Hausmeisterservice ab: Zuerst kommen wir zur kostenlosen Besichtigung vor Ort und nehmen den Umfang auf. Daraus erstellen wir einen Festpreis, bei dauerhafter Betreuung als Rahmenvertrag mit festen Leistungen und Terminen. Der Festpreis ist der Endpreis, denn als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Anschließend führen wir die vereinbarten Einsätze zuverlässig und pünktlich aus. Nach jedem Termin erhalten Sie eine Foto-Dokumentation aufs Handy.",
+   "ablauf": "So läuft Ihr Hausmeisterservice ab: Zuerst kommen wir zur kostenlosen Besichtigung vor Ort und nehmen den Umfang auf. Daraus erstellen wir einen Festpreis, bei dauerhafter Betreuung als Rahmenvertrag mit festen Leistungen und Terminen. Der Festpreis ist der Endpreis, kein Aufschlag, keine Nachforderung. Anschließend führen wir die vereinbarten Einsätze zuverlässig und pünktlich aus. Nach jedem Termin erhalten Sie eine Foto-Dokumentation aufs Handy.",
    "faqs": [
     {
      "q": "Was umfasst ein Hausmeisterservice genau?",
@@ -736,7 +736,7 @@
     },
     {
      "q": "Was kostet ein Hausmeisterservice im Havelland?",
-     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung als Festpreis, abhängig von Objektgröße, Leistungsumfang und Häufigkeit der Einsätze. Der Festpreis ist der Endpreis, weil wir als Kleinunternehmer nach §19 UStG keine Mehrwertsteuer berechnen. Bei laufender Betreuung erhalten Sie einen Rahmenvertrag mit gleichbleibenden Konditionen. So wissen Sie vorab genau, was Sie zahlen, ohne Überraschungen auf der Rechnung."
+     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung als Festpreis, abhängig von Objektgröße, Leistungsumfang und Häufigkeit der Einsätze. Der Festpreis ist der Endpreis, ohne Aufschlag und ohne Nachforderung. Bei laufender Betreuung erhalten Sie einen Rahmenvertrag mit gleichbleibenden Konditionen. So wissen Sie vorab genau, was Sie zahlen, ohne Überraschungen auf der Rechnung."
     },
     {
      "q": "Übernehmen Sie auch Hausverwaltungen und Gewerbeobjekte?",
@@ -782,7 +782,7 @@
     }
    ],
    "naehe": "Sie suchen eine Gebäudereinigung in der Nähe Ihres Objekts? Der Haus- & Gartenservice Havelland sitzt in Falkensee und ist im gesamten Havelland sowie im angrenzenden Berliner Umland vor Ort, von Falkensee über Nauen, Dallgow-Döberitz und Brieselang bis Wustermark. Kurze Wege bedeuten kurze Reaktionszeiten: Wir kommen zur kostenlosen Besichtigung, fahren feste Turnustermine zuverlässig an und sind bei Rückfragen per WhatsApp in Stunden erreichbar. Regional verwurzelt, ein fester Ansprechpartner, der Ihre Häuser und Flächen über die Jahre kennt.",
-   "ablauf": "Zuerst kommen wir zur kostenlosen Besichtigung Ihres Objekts und klären Flächen, Turnus und Zugänge. Danach erhalten Sie einen schriftlichen Festpreis, der Festpreis ist der Endpreis, denn als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Anschließend führen wir die Reinigung zu den vereinbarten Terminen aus, bei Ausfall durch Urlaub oder Krankheit mit organisierter Vertretung. Nach jedem Einsatz bekommen Sie eine Foto-Doku vorher/nachher direkt aufs Handy.",
+   "ablauf": "Zuerst kommen wir zur kostenlosen Besichtigung Ihres Objekts und klären Flächen, Turnus und Zugänge. Danach erhalten Sie einen schriftlichen Festpreis, der Festpreis ist der Endpreis, kein Aufschlag, keine Nachforderung. Anschließend führen wir die Reinigung zu den vereinbarten Terminen aus, bei Ausfall durch Urlaub oder Krankheit mit organisierter Vertretung. Nach jedem Einsatz bekommen Sie eine Foto-Doku vorher/nachher direkt aufs Handy.",
    "faqs": [
     {
      "q": "Was umfasst die Gebäudereinigung beim Haus- & Gartenservice Havelland?",
@@ -798,7 +798,7 @@
     },
     {
      "q": "Was kostet eine Gebäudereinigung für ein Objekt im Havelland?",
-     "a": "Einen Pauschalpreis gibt es nicht, weil Flächen, Turnus und Aufwand pro Objekt unterschiedlich sind. Wir besichtigen Ihr Gebäude kostenlos vor Ort und nennen Ihnen danach einen Festpreis. Dieser Festpreis ist der Endpreis: Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. So wissen Sie vor dem ersten Einsatz genau, woran Sie sind, ohne versteckte Zuschläge."
+     "a": "Einen Pauschalpreis gibt es nicht, weil Flächen, Turnus und Aufwand pro Objekt unterschiedlich sind. Wir besichtigen Ihr Gebäude kostenlos vor Ort und nennen Ihnen danach einen Festpreis. Dieser Festpreis ist der Endpreis. So wissen Sie vor dem ersten Einsatz genau, woran Sie sind, ohne versteckte Zuschläge."
     },
     {
      "q": "Bietet ihr Reinigung als laufenden Wartungsvertrag an?",
@@ -852,7 +852,7 @@
     },
     {
      "q": "Was kostet eine Unterhaltsreinigung im Havelland?",
-     "a": "Den Preis legen wir nach einer kostenlosen Besichtigung als Festpreis fest, pro Durchgang oder pro Monat. So wissen Sie vorher genau, was Sie zahlen. Der Festpreis ist Ihr Endpreis: Als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Den Preis bestimmen Faktoren wie Flächengröße, Turnus, Art der Räume und gewünschter Leistungsumfang."
+     "a": "Den Preis legen wir nach einer kostenlosen Besichtigung als Festpreis fest, pro Durchgang oder pro Monat. So wissen Sie vorher genau, was Sie zahlen. Der Festpreis ist Ihr Endpreis, ohne Aufschlag und ohne Nachforderung. Den Preis bestimmen Faktoren wie Flächengröße, Turnus, Art der Räume und gewünschter Leistungsumfang."
     },
     {
      "q": "Wie sichern Sie die Qualität bei laufender Reinigung?",
@@ -877,7 +877,7 @@
    "meta": "Objektbetreuung im Havelland für Hausverwaltungen: technische Kontrolle, Außenanlagen, Kleininstandhaltung. Ein Ansprechpartner, Festpreis als Endpreis, Foto-Nachweis.",
    "h1": "Objektbetreuung im Havelland — Ihr fester Ansprechpartner vor Ort",
    "h1_em": "fester Ansprechpartner",
-   "intro": "Der Haus- & Gartenservice Havelland übernimmt für Hausverwaltungen und Gewerbe in Falkensee und im ganzen Havelland die laufende Objektbetreuung: technische Kontrolle, Pflege der Außenanlagen, Kleininstandhaltung und ein fester Ansprechpartner vor Ort. Sie koordinieren nicht mehr fünf Gewerke einzeln, sondern arbeiten mit einer Hand für das gesamte Objekt. Nach jedem Einsatz erhalten Sie eine Foto-Doku aufs Handy. Der Preis steht vorab als Festpreis fest, ohne Mehrwertsteuer obendrauf.",
+   "intro": "Der Haus- & Gartenservice Havelland übernimmt für Hausverwaltungen und Gewerbe in Falkensee und im ganzen Havelland die laufende Objektbetreuung: technische Kontrolle, Pflege der Außenanlagen, Kleininstandhaltung und ein fester Ansprechpartner vor Ort. Sie koordinieren nicht mehr fünf Gewerke einzeln, sondern arbeiten mit einer Hand für das gesamte Objekt. Nach jedem Einsatz erhalten Sie eine Foto-Doku aufs Handy. Der Preis steht vorab als Festpreis fest, ohne Aufschlag und ohne Nachforderung.",
    "definition": "Objektbetreuung ist die laufende Betreuung von Wohn- und Gewerbeobjekten, bei der ein Dienstleister technische Kontrolle, Außenanlagen und kleine Reparaturen gebündelt übernimmt. Für Hausverwaltungen ersetzt sie die Koordination vieler Einzelgewerke durch einen festen Ansprechpartner, der den Zustand des Objekts kennt und dokumentiert.",
    "sections": [
     {
@@ -898,7 +898,7 @@
     }
    ],
    "naehe": "Wir betreuen Objekte vor Ort im gesamten Havelland und im angrenzenden Berliner Umland — von Falkensee, Nauen und Rathenow bis Dallgow-Döberitz, Brieselang und Schönwalde-Glien. Als regional verwurzelter Betrieb sind wir nah an Ihren Objekten, kennen die örtlichen Gegebenheiten und sind schnell vor Ort, wenn etwas ansteht. Kurze Anfahrtswege bedeuten für Sie als Hausverwaltung verlässliche Termine und schnelle Reaktion bei kleinen Vorfällen.",
-   "ablauf": "Zuerst schauen wir uns Ihr Objekt bei einer kostenlosen Vor-Ort-Besichtigung an und klären den Umfang der Betreuung. Danach erhalten Sie einen Festpreis, der als Endpreis gilt — als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Anschließend führen wir die vereinbarten Leistungen aus, ob als einmaliger Auftrag oder im laufenden Wartungsvertrag. Nach jedem Einsatz bekommen Sie eine Foto-Doku mit Vorher-Nachher direkt aufs Handy, damit Sie den Zustand des Objekts ohne eigenen Vor-Ort-Termin nachvollziehen können.",
+   "ablauf": "Zuerst schauen wir uns Ihr Objekt bei einer kostenlosen Vor-Ort-Besichtigung an und klären den Umfang der Betreuung. Danach erhalten Sie einen Festpreis, der als Endpreis gilt — ohne Aufschlag, ohne Nachforderung. Anschließend führen wir die vereinbarten Leistungen aus, ob als einmaliger Auftrag oder im laufenden Wartungsvertrag. Nach jedem Einsatz bekommen Sie eine Foto-Doku mit Vorher-Nachher direkt aufs Handy, damit Sie den Zustand des Objekts ohne eigenen Vor-Ort-Termin nachvollziehen können.",
    "faqs": [
     {
      "q": "Was umfasst die Objektbetreuung für Hausverwaltungen?",
@@ -914,14 +914,14 @@
     },
     {
      "q": "Was kostet die Objektbetreuung im Havelland?",
-     "a": "Den Preis nennen wir nach einer kostenlosen Vor-Ort-Besichtigung als Festpreis, der als Endpreis gilt. Er hängt von der Größe des Objekts, dem Umfang der Außenanlagen und der gewünschten Kontrollhäufigkeit ab. Als Kleinunternehmer schlagen wir keine Mehrwertsteuer obendrauf. Für laufende Betreuung vereinbaren wir Wartungsverträge mit festen monatlichen Konditionen, damit Sie sicher kalkulieren können."
+     "a": "Den Preis nennen wir nach einer kostenlosen Vor-Ort-Besichtigung als Festpreis, der als Endpreis gilt. Er hängt von der Größe des Objekts, dem Umfang der Außenanlagen und der gewünschten Kontrollhäufigkeit ab. Für laufende Betreuung vereinbaren wir Wartungsverträge mit festen monatlichen Konditionen, damit Sie sicher kalkulieren können."
     },
     {
      "q": "Bieten Sie auch laufende Verträge statt Einzelaufträge an?",
      "a": "Ja, für die laufende Objektbetreuung schließen wir Wartungsverträge ab. Üblich sind eine 14-tägige Gartenpflege in der Saison und ein Winterdienst über die gesamte Saison, kombiniert mit regelmäßigen Kontrollrundgängen. So haben Sie feste Ansprechzeiten, planbare Kosten und müssen nicht jeden Einsatz einzeln beauftragen. Den Umfang legen wir gemeinsam fest und halten ihn schriftlich fest."
     }
    ],
-   "garantie_text": "Eine feste Garantie nennen wir hier nicht, dafür ein klares Preisversprechen: kostenlose Vor-Ort-Besichtigung, danach ein Festpreis, der als Endpreis gilt — ohne Mehrwertsteuer obendrauf.",
+   "garantie_text": "Eine feste Garantie nennen wir hier nicht, dafür ein klares Preisversprechen: kostenlose Vor-Ort-Besichtigung, danach ein Festpreis, der als Endpreis gilt — ohne Aufschlag, ohne Nachforderung.",
    "ortsseite_lead": "Ihre Objektbetreuung in {ort} aus einer Hand: technische Kontrolle, Außenanlagen und Kleininstandhaltung, betreut von einem festen Ansprechpartner aus dem Havelland. Festpreis als Endpreis, Foto-Nachweis nach jedem Einsatz.",
    "skills_applied": [
     "seo-web-copy.md (Keyword-Platzierung: Objektbetreuung in Title vorn, H1, erste 100 Wörter; Struktur Title/Meta/H1/H2-Sektionen/FAQ/CTA; Scannability mit eigenständigen Subheadings)",
@@ -935,7 +935,7 @@
    "meta": "Ferienwohnung-Reinigung in Werder & Schwielowsee: Endreinigung zwischen Gästen, Wäsche, Schlüsselübergabe. Festpreis, Foto-Nachweis aufs Handy. Jetzt per WhatsApp anfragen.",
    "h1": "Ihre Ferienwohnung in Werder & Schwielowsee — sauber zum nächsten <em>Check-in</em>",
    "h1_em": "Check-in",
-   "intro": "Der Haus- & Gartenservice Havelland aus Falkensee übernimmt die Ferienwohnung-Reinigung in Werder (Havel) und am Schwielowsee. Sie buchen einen festen Ansprechpartner für die Endreinigung zwischen Gästen, frische Wäsche, die Schlüsselübergabe und einen Foto-Nachweis nach jedem Wechsel. Als Eigentümer wohnen Sie oft nicht vor Ort. Genau dafür dokumentieren wir die Übergabe per Foto, damit Sie aus der Ferne sehen, dass die Wohnung zum Check-in bereit ist. Festpreis nach kostenloser Besichtigung, ohne Mehrwertsteuer obendrauf.",
+   "intro": "Der Haus- & Gartenservice Havelland aus Falkensee übernimmt die Ferienwohnung-Reinigung in Werder (Havel) und am Schwielowsee. Sie buchen einen festen Ansprechpartner für die Endreinigung zwischen Gästen, frische Wäsche, die Schlüsselübergabe und einen Foto-Nachweis nach jedem Wechsel. Als Eigentümer wohnen Sie oft nicht vor Ort. Genau dafür dokumentieren wir die Übergabe per Foto, damit Sie aus der Ferne sehen, dass die Wohnung zum Check-in bereit ist. Festpreis nach kostenloser Besichtigung, ohne Aufschlag und ohne Nachforderung.",
    "definition": "Ferienwohnung-Reinigung ist die getaktete Aufbereitung einer Ferien- oder Airbnb-Wohnung zwischen zwei Gästen, damit die nächste Anreise pünktlich und sauber stattfindet. Sie umfasst Endreinigung, Wäschewechsel, Auffüllen der Ausstattung und die geprüfte Übergabe an den nächsten Gast.",
    "sections": [
     {
@@ -956,7 +956,7 @@
     }
    ],
    "naehe": "Wir arbeiten ausschließlich in Werder (Havel) und am Schwielowsee, also dort, wo viele Ferienwohnungen und Airbnb-Objekte im Havelland und im Berliner Umland liegen. Diese Nähe ist der Grund, warum wir kurze Wechsel zwischen Check-out und Check-in zuverlässig schaffen. Suchen Sie eine Ferienwohnung-Reinigung in der Nähe, die Ihre Region kennt und nicht von weit anreist, sind Sie hier richtig. Wir kennen die Saisonspitzen am Wasser und planen Ihre Wechsel entsprechend ein.",
-   "ablauf": "Zuerst sehen wir uns Ihre Ferienwohnung kostenlos vor Ort an und klären Wechseltakt, Wäsche, Schlüsselweg und Ausstattung. Danach erhalten Sie einen Festpreis, der als Kleinunternehmer nach §19 UStG ohne Mehrwertsteuer auskommt: Der Festpreis ist der Endpreis. Anschließend übernehmen wir die Reinigung im vereinbarten Zeitfenster vor jedem Check-in. Zum Schluss bekommen Sie den Foto-Nachweis der Übergabe direkt aufs Handy.",
+   "ablauf": "Zuerst sehen wir uns Ihre Ferienwohnung kostenlos vor Ort an und klären Wechseltakt, Wäsche, Schlüsselweg und Ausstattung. Danach erhalten Sie einen Festpreis. Der Festpreis ist der Endpreis, ohne Aufschlag und ohne Nachforderung. Anschließend übernehmen wir die Reinigung im vereinbarten Zeitfenster vor jedem Check-in. Zum Schluss bekommen Sie den Foto-Nachweis der Übergabe direkt aufs Handy.",
    "faqs": [
     {
      "q": "Was gehört zur Endreinigung einer Ferienwohnung dazu?",
@@ -976,7 +976,7 @@
     },
     {
      "q": "Was kostet die Reinigung meiner Ferienwohnung?",
-     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung vor Ort als Festpreis, der von Wohnungsgröße, Wechseltakt und Umfang abhängt. Der Festpreis ist der Endpreis: Als Kleinunternehmer nach §19 UStG schlagen wir keine Mehrwertsteuer obendrauf. Für regelmäßige Wechsel in der Saison sind feste Wartungsvereinbarungen möglich."
+     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung vor Ort als Festpreis, der von Wohnungsgröße, Wechseltakt und Umfang abhängt. Der Festpreis ist der Endpreis, ohne Aufschlag und ohne Nachforderung. Für regelmäßige Wechsel in der Saison sind feste Wartungsvereinbarungen möglich."
     }
    ],
    "garantie_text": "Sind wir nicht rechtzeitig vor Ihrem Check-in fertig, erstatten wir Ihnen den Reinigungspreis.",
