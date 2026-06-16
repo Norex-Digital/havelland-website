@@ -235,3 +235,4 @@ footer em{font-style:italic}
 @media(max-width:760px){.media-band{aspect-ratio:16/9}}
 .mini-illu{max-width:360px;margin:0 auto 26px;border-radius:22px;overflow:hidden;box-shadow:0 36px 70px -40px rgba(14,46,31,.45)}
 .mini-illu img{width:100%;height:auto;display:block}
+#anfrage{scroll-margin-top:100px}
