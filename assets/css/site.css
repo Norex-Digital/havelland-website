@@ -178,6 +178,7 @@ footer em{font-style:italic}
   .nav .cta{display:none}
   .hamb{display:flex;flex-direction:column;justify-content:center;gap:5px;width:48px;height:48px;cursor:pointer;flex:none}
   .hamb span{display:block;width:25px;height:2px;background:var(--green-d);border-radius:2px;transition:transform .25s var(--ease),opacity .2s}
+  .nvt:focus-visible ~ .hamb{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
   .navmenu{display:flex;position:fixed;left:0;right:0;top:80px;height:calc(100dvh - 80px);flex-direction:column;gap:2px;padding:22px 28px 40px;background:var(--cream);transform:translateX(100%);transition:transform .28s var(--ease);z-index:39;overflow-y:auto}
   .navmenu a{padding:17px 2px;font-size:19px;font-weight:600;color:var(--green-d);border-bottom:1px solid var(--hair)}
   .navmenu a.btn{margin-top:22px;justify-content:center;border-bottom:none;color:#3a2a06}
@@ -207,3 +208,15 @@ footer em{font-style:italic}
 .scta .wa{background:var(--accent);color:#3a2a06}
 .scta .wa:active{background:var(--accent-d)}
 @media(max-width:900px){.scta{display:flex}body{padding-bottom:56px}}
+
+/* consent-banner (Consent Mode v2 — erscheint nur bei aktivem Tracking) */
+.consent{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--green-deep);color:#eef4f0;box-shadow:0 -12px 40px -20px rgba(0,0,0,.6)}
+.consent[hidden]{display:none}
+.consent-in{max-width:var(--maxw);margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+.consent-in p{font-size:14px;line-height:1.5;color:#dceae1;max-width:62ch;margin:0}
+.consent-in a{color:#fff;border-bottom:1px solid var(--accent)}
+.consent-btns{display:flex;gap:12px;flex:none}
+.consent-btns .btn{padding:11px 22px;font-size:14.5px}
+.consent-btns .btn-line{color:#fff;border-color:rgba(255,255,255,.55)}
+.consent-btns .btn-line:hover{background:rgba(255,255,255,.1)}
+@media(max-width:600px){.consent-in{padding:14px 20px;flex-direction:column;align-items:stretch}.consent-btns .btn{flex:1;justify-content:center}}
