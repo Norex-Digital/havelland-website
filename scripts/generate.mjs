@@ -284,13 +284,17 @@ function ratgeberPage(r) {
   const sameSvc = (ratgeberByService[r.cta_service] || []).filter(x => x.slug !== r.slug);
   const others = ratCopy.filter(x => x.cta_service !== r.cta_service && x.slug !== r.slug);
   const related = [...sameSvc, ...rotate(others, seedOf(r.slug), 3)].slice(0, 3);
+  // CTA-Pitch: nachgestellte Kontakt-Imperative ("Sprechen Sie … an / rufen Sie an: NR") strippen — die werden zu echten Buttons
+  const ctaPitch = String(r.cta_text || `${svc.name || 'Diese Leistung'} im Havelland — kostenlose Besichtigung, Festpreis, Foto-Doku nach dem Auftrag.`)
+    .replace(/\s*(Sprechen Sie|Rufen Sie|rufen Sie|Schreiben Sie|Melden Sie sich)[^.!?]*[.!?]?\s*$/, '').trim();
+  const ctaWa = waHref(`Hallo, ich interessiere mich für ${svc.name || 'Ihre Leistungen'}${svc.name ? '' : ''}.`);
   const bodyHtml = (r.sections || []).map(x => `<h2>${esc(x.h2)}</h2>${x.body_html || ''}`).join('');
   const faqHtml = (r.faqs && r.faqs.length) ? `<h2>Häufige Fragen</h2>${r.faqs.map(f=>`<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}` : '';
   const schema = `${orgSchema()},{"@type":"Article","@id":"${DOMAIN}${url}#article","headline":"${esc(r.title)}","inLanguage":"de","author":{"@id":"${DOMAIN}/#organization"},"publisher":{"@id":"${DOMAIN}/#organization"},"mainEntityOfPage":"${DOMAIN}${url}"},${breadcrumb([{name:'Start',url:'/'},{name:'Ratgeber',url:'/ratgeber/'},{name:r.title,url}])}`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/ratgeber/">Ratgeber</a><span class="sep">›</span>${esc(r.title)}</div>
 <section class="phero" style="border-bottom:none;padding-bottom:20px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Ratgeber</span><h1 class="rv in d1" style="max-width:16em">${esc(r.title)}</h1><p class="lead rv in d2">${esc(r.lead)}</p></div></section>
 <section class="sec" style="padding-top:20px"><div class="wrap"><div class="prose rv">${r.intro?`<p class="ratgeber-intro"><strong>${esc(r.intro)}</strong></p>`:''}${bodyHtml}<div class="faq" style="margin-top:24px">${faqHtml}</div></div></div></section>
-<section class="sec section-alt"><div class="wrap center"><a class="btn btn-acc" href="/${r.cta_service}/">${esc(r.cta_text || `Zu ${svc.name||'unserer Leistung'}`)} →</a></div></section>
+<section class="sec section-alt"><div class="wrap center"><h2 class="serif rv">Lieber machen lassen?</h2><p class="rv d1" style="max-width:44em;margin-inline:auto">${esc(ctaPitch)}</p><div class="cta-row rv d2"><a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung anfragen</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-line" href="${ctaWa}">WhatsApp</a></div>${svc.name?`<p class="rv d3" style="margin-top:14px;font-size:.92rem"><a href="/${r.cta_service}/">Mehr zu ${esc(svc.name)} im Havelland →</a></p>`:''}</div></section>
 ${related.length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Das könnte Sie auch interessieren</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${related.map(x=>`<a class="card" href="/ratgeber/${x.slug}/"><h3>${esc(x.title)}</h3><p>${esc(x.lead||'')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : ''}
 ${endBand}`;
   write(url, head(clampTitle(r.title), mkMeta(r.meta || r.lead), url, schema) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
