@@ -11,6 +11,17 @@ const nap = J('nap.json'); const config = J('config.json'); const proof = J('pro
 const DOMAIN = config.domain.replace(/\/$/, '');
 const FULL = !!process.env.FULL;
 
+// ---------- Analytics-Gerüst (GA4/GTM + Consent Mode v2) — rendert NUR bei echter GTM-ID ----------
+const isReal = v => v && !/\b(TBD|XXXX|G-XXXX|GTM-X|null)\b/i.test(String(v));
+const GTM = config.gtm_id; const TRACK = isReal(GTM);
+const ANALYTICS_HEAD = TRACK ? `
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f)})(window,document,'script','dataLayer','${GTM}');</script>` : '';
+const ANALYTICS_BODY = TRACK ? `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${GTM}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>` : '';
+const CONSENT_BANNER = TRACK ? `<div id="consent" class="consent" hidden><div class="consent-in"><p>Wir nutzen Cookies und Tools für anonyme Nutzungsstatistik. Sie entscheiden — mehr in der <a href="/datenschutz/">Datenschutzerklärung</a>.</p><div class="consent-btns"><button type="button" class="btn btn-line" data-c="deny">Ablehnen</button><button type="button" class="btn btn-acc" data-c="allow">Akzeptieren</button></div></div></div>
+<script>(function(){var box=document.getElementById('consent');if(!box)return;function gtag(){dataLayer.push(arguments)}var grant={analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'};var s=localStorage.getItem('consent');if(s==='allow'){gtag('consent','update',grant)}else if(!s){box.hidden=false}box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var c=b.getAttribute('data-c');localStorage.setItem('consent',c);if(c==='allow'){gtag('consent','update',grant)}box.hidden=true})})();</script>` : '';
+const TRACK_EVENTS = TRACK ? `<script>document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a||!a.href)return;if(a.href.indexOf('tel:')===0){dataLayer.push({event:'phone_call'})}else if(a.href.indexOf('wa.me')>-1||a.href.indexOf('api.whatsapp')>-1){dataLayer.push({event:'whatsapp_click'})}});</script>` : '';
+
 // ---------- Copy-Schicht (P4) — inkl. Sanitizer gegen Agenten-Encoding-Artefakte ----------
 // decEnt: dekodiert HTML-Entities (auch mehrfach geschachtelt) -> Klartext; plain: + Tags strippen; fixHtml: body_html reparieren
 const decEnt = s => { let p = String(s == null ? '' : s), c; do { c = p; p = p.replace(/&amp;/gi, '&').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&quot;/gi, '"').replace(/&#0*39;/gi, "'").replace(/&apos;/gi, "'").replace(/&nbsp;/gi, ' '); } while (p !== c); return p; };
@@ -115,7 +126,7 @@ function breadcrumb(items) { // [{name,url}]
 
 function head(title, desc, canonical, schemaGraph, opts = {}) {
   return `<!doctype html><html lang="de"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">${ANALYTICS_HEAD}
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">${opts.noindex ? '\n<meta name="robots" content="noindex, follow">' : ''}
 <link rel="canonical" href="${DOMAIN}${canonical}">
@@ -125,13 +136,13 @@ function head(title, desc, canonical, schemaGraph, opts = {}) {
 <link rel="stylesheet" href="/assets/css/site.css">
 <noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[${schemaGraph}]}</script>
-</head><body>`;
+</head><body>${ANALYTICS_BODY}`;
 }
 const header = `<header><div class="wrap nav"><a href="/"><img src="/assets/img/logo.png" alt="${esc(nap.name)}" width="180" height="50"></a><div class="links"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/kontakt/">Kontakt</a></div><a class="cta" href="/kontakt/">Besichtigung anfragen</a><input type="checkbox" id="nvt" class="nvt" aria-hidden="true"><label for="nvt" class="hamb" role="button" aria-label="Menü öffnen"><span></span><span></span><span></span></label><nav class="navmenu" aria-label="Hauptmenü"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/bewertungen/">Bewertungen</a><a href="/kontakt/">Kontakt</a><a href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung</a></nav></div></header>`;
 const sctaBar = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ Anrufen</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav>`;
 const SCTA_DEFAULT = sctaBar('Hallo, ich hätte gern eine kostenlose Besichtigung.');
 const footer = `<footer><div class="wrap"><span>${esc(nap.name)} · ${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · ${esc(nap.phone_display)}</span><span><a href="/leistungen/">Leistungen</a> · <a href="/standorte/">Standorte</a> · <a href="/ratgeber/">Ratgeber</a> · <a href="/ueber-uns/">Über uns</a> · <a href="/bewertungen/">Bewertungen</a> · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></span></div></footer>`;
-const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script>`;
+const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script>` + CONSENT_BANNER + TRACK_EVENTS;
 const endBand = `<section class="end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, was ansteht — wir kümmern uns.</h2><p class="rv d1">Kostenlose Besichtigung, Festpreis, dann erledigt.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
 
 function write(url, html) {
@@ -417,6 +428,8 @@ function sitemaps() {
   // llms.txt (GEO)
   const llms = `# ${nap.name}\n\n> Haus- & Gartenservice im Havelland und Berliner Umland. Ein fester Ansprechpartner für Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste. Sitz: ${nap.city}. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Auftrag.\n\n## Leistungen\n${services.map(s=>`- [${s.name}](${DOMAIN}/${s.slug}/)`).join('\n')}\n\n## Ratgeber\n${(ratCopy.length?ratCopy:RATGEBER_FALLBACK).map(r=>`- [${r.title}](${DOMAIN}/ratgeber/${r.slug}/)`).join('\n')}\n\n## Kontakt\n- Telefon: ${nap.phone_display}\n- Ort: ${nap.street}, ${nap.zip} ${nap.city}\n`;
   fs.writeFileSync('website/llms.txt', llms);
+  // IndexNow-Verifikationsdatei (Root) — nur bei echtem Key
+  if (config.indexnow_key && !/TBD|XXXX|null/i.test(config.indexnow_key)) fs.writeFileSync(`website/${config.indexnow_key}.txt`, config.indexnow_key);
 }
 
 // ---------- RUN ----------
