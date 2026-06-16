@@ -10,10 +10,13 @@
   "email": "hausgartenservicehvl@gmail.com",
   "domain": "https://haus-und-gartenservice-havelland.de",
   "kleinunternehmer_19": true,
-  "openingHours": null,
+  "openingHours": [
+    { "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00" },
+    { "dayOfWeek": ["Saturday"], "opens": "08:00", "closes": "14:00" }
+  ],
   "geo": {
-    "lat": null,
-    "lng": null
+    "lat": 52.585035,
+    "lng": 13.079492
   },
   "service_radius_km": 30,
   "areaServed_pattern": "PostalAddress IMMER Falkensee-Zentrale; je Ortsseite nur areaServed{name + amtlich verifizierte PLZ}",

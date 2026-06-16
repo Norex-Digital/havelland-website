@@ -165,9 +165,21 @@ function stepsSektion(alt) {
 
 const written = { hubs: [], ortsseiten: [], orts_hubs: [], ratgeber: [], basis: [] };
 
+const OH_DE = { Monday: 'Mo', Tuesday: 'Di', Wednesday: 'Mi', Thursday: 'Do', Friday: 'Fr', Saturday: 'Sa', Sunday: 'So' };
+// Öffnungszeiten — Schema-Spec + kompakte deutsche Anzeige, Single-Source aus nap.openingHours
+const ohSpecJson = (nap.openingHours || []).map(s => `{"@type":"OpeningHoursSpecification","dayOfWeek":[${s.dayOfWeek.map(d => `"${d}"`).join(',')}],"opens":"${s.opens}","closes":"${s.closes}"}`).join(',');
+function ohDisplay() {
+  const spec = nap.openingHours; if (!spec || !spec.length) return '';
+  const hm = t => String(t).replace(':00', '').replace(/^0/, '');
+  const parts = spec.map(s => { const d = s.dayOfWeek; const lbl = d.length > 1 ? `${OH_DE[d[0]]}–${OH_DE[d[d.length - 1]]}` : OH_DE[d[0]]; return `${lbl} ${hm(s.opens)}–${hm(s.closes)} Uhr`; });
+  if (!spec.some(s => s.dayOfWeek.includes('Sunday'))) parts.push('So geschlossen');
+  return parts.join(' · ');
+}
 function orgSchema() {
   const addr = nap.street ? `,"address":{"@type":"PostalAddress","streetAddress":"${sj(nap.street)}","postalCode":"${sj(nap.zip)}","addressLocality":"${sj(nap.city)}","addressCountry":"DE"}` : '';
-  return `{"@type":"HomeAndConstructionBusiness","@id":"${DOMAIN}/#organization","name":"${sj(nap.name)}","telephone":"${tel}","url":"${DOMAIN}/","image":"${imgAbs('og-default')}","logo":"${DOMAIN}/assets/img/logo.png"${addr},"areaServed":${JSON.stringify(haupt.map(o=>o.name))}}`;
+  const geo = (nap.geo && nap.geo.lat != null) ? `,"geo":{"@type":"GeoCoordinates","latitude":${nap.geo.lat},"longitude":${nap.geo.lng}}` : '';
+  const oh = ohSpecJson ? `,"openingHoursSpecification":[${ohSpecJson}]` : '';
+  return `{"@type":"HomeAndConstructionBusiness","@id":"${DOMAIN}/#organization","name":"${sj(nap.name)}","telephone":"${tel}","url":"${DOMAIN}/","image":"${imgAbs('og-default')}","logo":"${DOMAIN}/assets/img/logo.png"${addr}${geo}${oh},"areaServed":${JSON.stringify(haupt.map(o => o.name))}}`;
 }
 function breadcrumb(items) { // [{name,url}]
   const li = items.map((it,i)=>`{"@type":"ListItem","position":${i+1},"name":"${sj(it.name)}"${it.url?`,"item":"${DOMAIN}${it.url}"`:''}}`).join(',');
@@ -478,7 +490,7 @@ function basis() {
     ? `<script>(function(){var f=document.getElementById('anfrage');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();if(!f.checkValidity()){f.reportValidity();return}var b=f.querySelector('button[type=submit]'),o=b.textContent;b.disabled=true;b.textContent='Wird gesendet…';fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)}).then(function(r){return r.json()}).then(function(j){if(j&&j.success){if(window.dataLayer){window.dataLayer.push({event:'generate_lead'})}window.location.href='/danke/'}else{b.disabled=false;b.textContent=o;alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder versuchen Sie es noch einmal.')}}).catch(function(){b.disabled=false;b.textContent=o;alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder versuchen Sie es noch einmal.')})})})();</script>`
     : `<script>(function(){var f=document.getElementById('anfrage');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();if(!f.checkValidity()){f.reportValidity();return;}var g=function(n){var el=f.elements[n];return el?String(el.value).trim():'';};var msg='Anfrage über die Website. Name: '+g('name')+', Telefon: '+g('tel')+', Ort/PLZ: '+g('ort')+', Anliegen: '+g('anliegen');if(window.dataLayer){window.dataLayer.push({event:'generate_lead'})}window.location.href='https://wa.me/${waNum}?text='+encodeURIComponent(msg);});})();</script>`;
   const kontaktMain = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Kontakt</div>
-<section class="phero"><div class="wrap"><h1 class="rv in d1">Kontakt &amp; <em>kostenlose Besichtigung</em></h1><p class="lead rv in d2">Sagen Sie uns, was ansteht — wir melden uns schnell, meist noch am selben Tag.</p><div class="cta-row rv in d3"><a class="btn btn-acc" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-line" href="${waHref('Hallo, ich hätte gern eine kostenlose Besichtigung.')}">WhatsApp</a></div><div class="chips rv"><span>${esc(nap.name)}</span><span>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)}</span></div></div></section>
+<section class="phero"><div class="wrap"><h1 class="rv in d1">Kontakt &amp; <em>kostenlose Besichtigung</em></h1><p class="lead rv in d2">Sagen Sie uns, was ansteht — wir melden uns schnell, meist noch am selben Tag.</p><div class="cta-row rv in d3"><a class="btn btn-acc" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-line" href="${waHref('Hallo, ich hätte gern eine kostenlose Besichtigung.')}">WhatsApp</a></div><div class="chips rv"><span>${esc(nap.name)}</span><span>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)}</span>${ohDisplay()?`<span>${esc(ohDisplay())}</span>`:''}</div></div></section>
 <section class="sec" style="padding-top:8px"><div class="wrap"><div class="head"><h2 class="serif rv">Anfrage senden</h2></div><p class="intro rv">${formIntro}</p>
 ${formOpen}
 <label>Name<input name="name" autocomplete="name" required></label>
