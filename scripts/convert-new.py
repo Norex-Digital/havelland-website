@@ -7,8 +7,8 @@ SRC = r"C:\Norex\havelland-website\_src4k"
 DST = r"C:\Norex\havelland-website\assets\img"
 MAN = os.path.join(DST, "manifest.json")
 
-WIDTHS = [480, 768, 1024, 1376]   # 16:9 Hero/Band-Breiten (wie die anderen Heroes)
-FB_W = 1024
+WIDTHS = [480, 768, 1024, 1376, 1600, 1920]   # bis 1920 fuer scharfe HiDPI-Darstellung (4k-Quellen)
+FB_W = 1280
 
 manifest = json.load(open(MAN, encoding="utf-8"))
 def rs(im, w):
