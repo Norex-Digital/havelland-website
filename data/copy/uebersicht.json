@@ -1,0 +1,38 @@
+{
+  "_meta": "Copy für die Übersichtsseiten /leistungen/ + /standorte/ (2026-06-16). Faktenbasiert, Marken-Stimme, keine erfundenen Reviews/Zahlen/Landmarks. Umlaute korrekt (Translit-Gate). Gruppen-Labels stehen im Generator (LEISTUNGEN_KATEGORIEN / STANDORT_REGIONEN), die Intros hier.",
+  "leistungen": {
+    "lead": "Vom regelmäßigen Garten bis zum einmaligen Großeinsatz: Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste — koordiniert von einem festen Ansprechpartner, mit Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.",
+    "meta": "Alle Leistungen im Havelland aus einer Hand — Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste, Festpreis nach kostenloser Besichtigung",
+    "intro": "Wir bündeln die Arbeiten rund um Haus und Grundstück, damit Sie nicht für jede Aufgabe einen eigenen Betrieb suchen und koordinieren müssen. Hier sind unsere Leistungen nach Bereichen sortiert — von der laufenden Gartenpflege bis zur Betreuung von Gewerbeobjekten.",
+    "kategorien": {
+      "garten": "Pflege übers Jahr — Rasen und Grünschnitt, Hecken in Form, Laub im Herbst und im Winter geräumte Wege.",
+      "reinigung": "Was mit der Zeit vergrünt oder verschmutzt: Pflaster und Terrasse, Fenster, Dachrinne und Photovoltaik — bis zur Ferienwohnung am Wasser.",
+      "aufloesung": "Einmalige Großeinsätze mit Festpreis nach Besichtigung — entrümpelt, aufgelöst, umgezogen oder instand gesetzt und besenrein übergeben.",
+      "gewerbe": "Für Eigentümer, Hausverwaltungen und Betriebe: Hausmeisterdienst, Gebäude- und Unterhaltsreinigung sowie Objektbetreuung im festen Turnus."
+    },
+    "faqs": [
+      { "q": "Bekomme ich alle Leistungen aus einer Hand?", "a": "Ja. Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste übernehmen wir mit einem festen Ansprechpartner — Sie müssen nicht für jede Aufgabe einen eigenen Betrieb suchen und koordinieren." },
+      { "q": "Was kostet eine Besichtigung?", "a": "Die Vor-Ort-Besichtigung ist für Sie kostenlos. Wir schauen uns an, was ansteht, und nennen Ihnen danach einen Festpreis. Der vereinbarte Betrag ist der Endbetrag, ohne Aufschlag am Ende." },
+      { "q": "Übernehmen Sie auch einzelne, kleinere Aufträge?", "a": "Ja. Ob nur die Hecke geschnitten oder die Dachrinne gereinigt werden soll — auch einzelne Arbeiten sind möglich. Schreiben Sie uns kurz per WhatsApp, worum es geht, dann stimmen wir einen Termin ab." },
+      { "q": "Machen Sie auch Malerarbeiten?", "a": "Malerarbeiten gehören nicht zu unserem Angebot. Im Bereich Renovierung übernehmen wir handwerkliche Arbeiten wie Kleinreparaturen, Boden- und Laminatverlegung sowie De- und Montage." }
+    ]
+  },
+  "standorte": {
+    "lead": "Wir sind in Falkensee zuhause und im gesamten Havelland sowie im angrenzenden Berliner Umland für Sie da. Kurze Wege bedeuten schnelle Reaktion und planbare Termine — finden Sie hier Ihren Ort und die Leistungen vor Ort.",
+    "meta": "Im ganzen Havelland und Berliner Umland im Einsatz — finden Sie Ihren Ort von Falkensee über Nauen und Oranienburg bis Werder, Spandau und Hennigsdorf",
+    "servicegebiet": "Von Falkensee aus erreichen wir das westliche Havelland um Dallgow-Döberitz, Brieselang, Nauen und Wustermark ebenso schnell wie das nördliche Umland rund um Oranienburg, Hennigsdorf, Velten und Oberkrämer. Am Wasser sind wir in Werder (Havel) und am Schwielowsee im Einsatz, am Berliner Westrand in Kladow, Gatow, Groß Glienicke und Spandau. Suchen Sie Ihren Ort in der passenden Region — jede Ortsseite zeigt die dort verfügbaren Leistungen.",
+    "regionen": {
+      "west": "Unser Kerngebiet rund um den Firmensitz in Falkensee — von Dallgow-Döberitz und Brieselang bis nach Nauen, Wustermark und Ketzin an der Havel.",
+      "nord": "Oberhavel und das nördliche Berliner Umland: von Oranienburg und Hennigsdorf über Velten und Oberkrämer bis Hohen Neuendorf, Birkenwerder und Glienicke/Nordbahn.",
+      "berlinrand": "Der westliche Stadtrand Berlins am Havelufer — gehobene Wohnlagen und Gewerbe in Kladow, Gatow, Groß Glienicke und Spandau.",
+      "seen": "Ferienlagen und Zweitwohnsitze am Wasser: Werder (Havel) und der Schwielowsee mit Caputh, Ferch und Geltow — inklusive Reinigung zwischen den Gästewechseln."
+    },
+    "ausserdem_label": "Außerdem im Einsatz in",
+    "faqs": [
+      { "q": "Kommen Sie auch in meinen Ort, wenn er nicht aufgeführt ist?", "a": "Sehr wahrscheinlich ja. Die Seiten zeigen die größeren Orte im Havelland und Berliner Umland — wir sind aber auch in den umliegenden Gemeinden und Ortsteilen unterwegs. Fragen Sie einfach kurz per WhatsApp nach." },
+      { "q": "Wie schnell sind Sie vor Ort?", "a": "Weil wir aus Falkensee kommen und im gesamten Havelland kurze Wege haben, lässt sich ein Termin oft schon innerhalb derselben Woche einrichten. Bei dringenden Fällen versuchen wir, früher da zu sein." },
+      { "q": "Berechnen Sie Anfahrtskosten?", "a": "Die Besichtigung vor Ort ist kostenlos. Eine etwaige Anfahrt ist im Festpreis enthalten, den wir Ihnen nach der Besichtigung nennen — es kommt nichts unerwartet obendrauf." },
+      { "q": "Bekomme ich auch außerhalb des Havellands Hilfe?", "a": "Unser Schwerpunkt liegt im Havelland und am westlichen sowie nördlichen Berliner Rand. Ob wir Ihren Standort übernehmen, klären wir kurz vorab — schreiben Sie uns einfach Ihren Ort." }
+    ]
+  }
+}

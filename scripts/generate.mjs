@@ -46,6 +46,23 @@ const _orteCp = CP('orte.json'); const orteCopy = (_orteCp && _orteCp.orte) || {
 // Reverse-Index Service → Ratgeber (interne Verlinkung, seiten-architektur §7)
 const ratgeberByService = {}; for (const r of ratCopy) { if (!r.cta_service) continue; (ratgeberByService[r.cta_service] = ratgeberByService[r.cta_service] || []).push(r); }
 
+// Übersichtsseiten-Copy (/leistungen/ + /standorte/) — Intros/FAQ; Labels stehen in den Maps unten
+const _ueb = CP('uebersicht.json') || {}; const uebL = _ueb.leistungen || {}; const uebS = _ueb.standorte || {};
+// Gruppierung: Service-Slug → Themen-Block (deckt alle 17 Services), Reihenfolge = Anzeige-Reihenfolge
+const LEISTUNGEN_KATEGORIEN = [
+  { key: 'garten', label: 'Garten & Außenanlagen', slugs: ['gartenpflege', 'heckenschnitt', 'winterdienst'] },
+  { key: 'reinigung', label: 'Reinigung rund ums Haus', slugs: ['steinreinigung', 'fensterreinigung', 'dachrinnenreinigung', 'photovoltaikreinigung', 'ferienwohnung-reinigung'] },
+  { key: 'aufloesung', label: 'Entrümpelung, Auflösung & Umzug', slugs: ['entruempelung', 'haushaltsaufloesung', 'grundreinigung', 'umzugshilfe', 'renovierung'] },
+  { key: 'gewerbe', label: 'Hausmeister & Gewerbe', slugs: ['hausmeisterservice', 'gebaeudereinigung', 'unterhaltsreinigung', 'objektbetreuung'] }
+];
+// Ort-Slug → geografische Region (nur Money-Page-Orte werden gerendert; Schnittmenge im Builder)
+const STANDORT_REGIONEN = [
+  { key: 'west', label: 'Falkensee & westliches Havelland', slugs: ['falkensee', 'dallgow-doeberitz', 'brieselang', 'schoenwalde-glien', 'wustermark', 'nauen', 'ketzin'] },
+  { key: 'nord', label: 'Oberhavel & nördliches Umland', slugs: ['oranienburg', 'hennigsdorf', 'velten', 'oberkraemer', 'kremmen', 'leegebruch', 'lehnitz', 'hohen-neuendorf', 'birkenwerder', 'glienicke-nordbahn'] },
+  { key: 'berlinrand', label: 'Berliner Westrand & Havelufer', slugs: ['berlin-kladow', 'berlin-gatow', 'gross-glienicke', 'berlin-spandau'] },
+  { key: 'seen', label: 'Havelseen & Ferienlagen', slugs: ['werder-havel', 'schwielowsee'] }
+];
+
 const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','winterdienst','steinreinigung','dachrinnenreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung']);
 const PREMIUM = new Set(['gross-glienicke','berlin-kladow','berlin-gatow']);
 const sectionOT = new Set(Object.keys(ortsteileVon).filter(s => !PREMIUM.has(s)));
@@ -180,6 +197,9 @@ const SCTA_DEFAULT = sctaBar('Hallo, ich hätte gern eine kostenlose Besichtigun
 const footer = `<footer><div class="wrap"><span>${esc(nap.name)} · ${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · ${esc(nap.phone_display)}</span><span><a href="/leistungen/">Leistungen</a> · <a href="/standorte/">Standorte</a> · <a href="/ratgeber/">Ratgeber</a> · <a href="/ueber-uns/">Über uns</a> · <a href="/bewertungen/">Bewertungen</a> · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></span></div></footer>`;
 const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script>` + CONSENT_BANNER + TRACK_EVENTS;
 const endBand = `<section class="end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, was ansteht — wir kümmern uns.</h2><p class="rv d1">Kostenlose Besichtigung, Festpreis, dann erledigt.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
+// Dunkles Wert-Band (4 Werte) — auf Home + Übersichtsseiten wiederverwendet
+const valueBand = `<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>
+<div class="vals"><div class="v rv d1"><h4><span class="n">01</span> Aus einer Hand</h4><p>Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles.</p></div><div class="v rv d2"><h4><span class="n">02</span> Nachweis statt Versprechen</h4><p>Foto-Dokumentation nach jedem Auftrag, direkt aufs Handy.</p></div><div class="v rv d3"><h4><span class="n">03</span> Festpreis</h4><p>Kostenlose Besichtigung, klarer Preis — kein Nachkommen.</p></div><div class="v rv d4"><h4><span class="n">04</span> Schnell erreichbar</h4><p>WhatsApp-Antwort in Stunden, nicht in Tagen.</p></div></div></div></section>`;
 
 function write(url, html) {
   const dir = `website${url}`.replace(/\/$/, '');
@@ -200,8 +220,7 @@ function home() {
 <div class="trust-row rv in d4"><div class="t"><b>Ein</b><span>fester Ansprechpartner</span></div><div class="t"><b>Festpreis</b><span>nach Besichtigung</span></div><div class="t"><b>Stunden</b><span>statt Tage bis zur Antwort</span></div></div></div>
 <div class="shot rv in d2">${pic(HERO_HOME, { cls: 'main', alt: 'Haus- & Gartenservice Havelland — gepflegter Garten im Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true })}<div class="chip2">Foto-Nachweis</div><div class="badge"><span class="ic">${leaf('')}</span><span class="t">Vorher / Nachher<span>per WhatsApp, nach jedem Auftrag</span></span></div></div>
 </div></section>
-<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>
-<div class="vals"><div class="v rv d1"><h4><span class="n">01</span> Aus einer Hand</h4><p>Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles.</p></div><div class="v rv d2"><h4><span class="n">02</span> Nachweis statt Versprechen</h4><p>Foto-Dokumentation nach jedem Auftrag, direkt aufs Handy.</p></div><div class="v rv d3"><h4><span class="n">03</span> Festpreis</h4><p>Kostenlose Besichtigung, klarer Preis — kein Nachkommen.</p></div><div class="v rv d4"><h4><span class="n">04</span> Schnell erreichbar</h4><p>WhatsApp-Antwort in Stunden, nicht in Tagen.</p></div></div></div></section>
+${valueBand}
 <section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Was wir machen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Vom regelmäßigen Garten bis zum einmaligen Großeinsatz — koordiniert von einem festen Ansprechpartner.</p><div class="list">${items}</div></div></section>
 <section class="proof"><div class="grid"><div class="pic rv">${pic('svc-steinreinigung-detail', { alt: 'Beispielhaft gereinigte Terrasse im Havelland', sizes: '(max-width:900px) 100vw, 52vw' })}<div class="tags">${(proof.vorher_nachher && proof.vorher_nachher.echt && proof.vorher_nachher.echt.length) ? '<span>Vorher</span><span class="acc">Nachher</span>' : `<span>${esc((proof.vorher_nachher && proof.vorher_nachher.platzhalter_label) || 'Beispielhafte Darstellung')}</span>`}</div></div><div class="txt"><h2 class="serif rv">Nachweis, <em>nicht Versprechen.</em></h2><p class="rv d1">Nach jedem Auftrag bekommen Sie Vorher/Nachher-Fotos per WhatsApp. Sie sehen das Ergebnis — auch wenn Sie nicht dabei waren.</p><p class="q rv d2">„Wenn nach unserer Reinigung noch sichtbarer Moos- oder Algenbelag bleibt — wir kommen nochmal. Kostenlos."</p></div></div></section>
 ${stepsSektion(true)}
@@ -351,13 +370,100 @@ function listingPage(url, title, intro, cardsHtml, schema) {
   write(url, head(clampTitle(`${title} — ${nap.name}`), mkMeta(`${intro} ${nap.name} im Havelland und Berliner Umland.`), url, schema) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push(url);
 }
+// Eyebrow (Nummer + Label) für gruppierte Übersichts-Sektionen
+const catHead = (n, label) => `<div class="cat rv"><span class="cat-n">${String(n).padStart(2, '0')}</span><h2 class="serif">${esc(label)}</h2></div>`;
+
+// ---------- ÜBERSICHT: /leistungen/ (Themen-Blöcke) ----------
+function leistungenPage() {
+  const url = '/leistungen/';
+  const bySlug = Object.fromEntries(services.map(s => [s.slug, s]));
+  const seen = new Set();
+  const ordered = [];   // für ItemList-Schema in Anzeige-Reihenfolge
+  const blocks = [];
+  let n = 0;
+  const renderCards = svcs => svcs.map(s => {
+    ordered.push(s);
+    const desc = (s.sektionen || []).slice(0, 4).join(' · ') || s.garantie || 'Festpreis nach Besichtigung.';
+    return `<a class="card" href="/${s.slug}/"><h3>${esc(s.name)}</h3><p>${esc(desc)}</p><span class="go">Mehr →</span></a>`;
+  }).join('');
+  for (const cat of LEISTUNGEN_KATEGORIEN) {
+    const svcs = cat.slugs.map(sl => bySlug[sl]).filter(Boolean);
+    if (!svcs.length) continue;
+    svcs.forEach(s => seen.add(s.slug));
+    n++;
+    const intro = uebL.kategorien && uebL.kategorien[cat.key] ? `<p class="intro rv">${esc(uebL.kategorien[cat.key])}</p>` : '';
+    blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}" style="padding:64px 0"><div class="wrap">${catHead(n, cat.label)}${intro}<div class="cards rv">${renderCards(svcs)}</div></div></section>`);
+  }
+  const rest = services.filter(s => !seen.has(s.slug));   // Schutz: künftige Services ohne Kategorie
+  if (rest.length) { n++; blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}" style="padding:64px 0"><div class="wrap">${catHead(n, 'Weitere Leistungen')}<div class="cards rv">${renderCards(rest)}</div></div></section>`); }
+
+  const lead = uebL.lead || 'Alles rund um Haus und Garten im Havelland — aus einer Hand.';
+  const introProse = uebL.intro ? `<section class="sec" style="padding:44px 0 0"><div class="wrap"><div class="prose wide rv"><p>${esc(uebL.intro)}</p></div></div></section>` : '';
+  const items = ordered.map((s, i) => `{"@type":"ListItem","position":${i + 1},"name":"${sj(s.name)}","item":"${DOMAIN}/${s.slug}/"}`).join(',');
+  const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Unsere Leistungen","about":{"@id":"${DOMAIN}/#organization"}},{"@type":"ItemList","@id":"${DOMAIN}${url}#leistungen","name":"Leistungen im Havelland","itemListElement":[${items}]},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Leistungen', url }])}`;
+  const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Leistungen</div>
+<section class="phero" style="padding-bottom:24px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Leistungen</span><h1 class="rv in d1">Unsere Leistungen</h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref('Hallo, ich interessiere mich für Ihre Leistungen.')}">WhatsApp</a></div></div></section>
+<section class="sec" style="padding:28px 0 0"><div class="wrap"><div class="media-band rv">${pic('region-havelland', { alt: 'Servicegebiet Havelland — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
+${introProse}
+${blocks.join('\n')}
+${stepsSektion(n % 2 !== 0)}
+${valueBand}
+${faqBlock(uebL.faqs)}
+${endBand}`;
+  write(url, head(clampTitle(`Unsere Leistungen — ${nap.name}`), mkMeta(uebL.meta || lead), url, schema) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  written.basis.push(url);
+}
+
+// ---------- ÜBERSICHT: /standorte/ (geografische Regionen) ----------
+function standortePage() {
+  const url = '/standorte/';
+  const money = haupt.filter(o => servicesForOrt(o).length >= 3);
+  const bySlug = Object.fromEntries(money.map(o => [o.slug, o]));
+  const seen = new Set();
+  const ordered = [];
+  const blocks = [];
+  let n = 0;
+  const renderCards = orts => orts.map(o => {
+    ordered.push(o);
+    return `<a class="card" href="/standorte/${o.slug}/"><h3>${esc(o.name)}</h3><p>${esc(o.plz || '')}</p><span class="go">Zum Ort →</span></a>`;
+  }).join('');
+  for (const reg of STANDORT_REGIONEN) {
+    const orts = reg.slugs.map(sl => bySlug[sl]).filter(Boolean);
+    if (!orts.length) continue;
+    orts.forEach(o => seen.add(o.slug));
+    n++;
+    const intro = uebS.regionen && uebS.regionen[reg.key] ? `<p class="intro rv">${esc(uebS.regionen[reg.key])}</p>` : '';
+    blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}" style="padding:64px 0"><div class="wrap">${catHead(n, reg.label)}${intro}<div class="cards rv">${renderCards(orts)}</div></div></section>`);
+  }
+  const rest = money.filter(o => !seen.has(o.slug));   // Schutz: Money-Ort ohne Region
+  if (rest.length) { n++; blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}" style="padding:64px 0"><div class="wrap">${catHead(n, 'Weitere Orte im Havelland')}<div class="cards rv">${renderCards(rest)}</div></div></section>`); }
+
+  // "Außerdem im Einsatz": bediente Orte/Ortsteile ohne eigene Seite (echte Orte aus locations.json)
+  const cardSlugs = new Set(ordered.map(o => o.slug));
+  const extra = launch.filter(o => !cardSlugs.has(o.slug)).map(o => o.name);
+  const ausserdem = extra.length ? `<section class="sec" style="padding:0 0 8px"><div class="wrap"><p class="intro rv" style="max-width:62em">${esc(uebS.ausserdem_label || 'Außerdem im Einsatz in')}: ${esc(extra.join(', '))} und Umgebung.</p></div></section>` : '';
+
+  const lead = uebS.lead || 'Wir sind im ganzen Havelland und Berliner Umland für Sie da.';
+  const gebiet = uebS.servicegebiet ? `<section class="sec" style="padding:44px 0 0"><div class="wrap"><div class="prose wide rv"><p>${esc(uebS.servicegebiet)}</p></div></div></section>` : '';
+  const items = ordered.map((o, i) => `{"@type":"ListItem","position":${i + 1},"name":"${sj(o.name)}","item":"${DOMAIN}/standorte/${o.slug}/"}`).join(',');
+  const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Unsere Standorte","about":{"@id":"${DOMAIN}/#organization"}},{"@type":"ItemList","@id":"${DOMAIN}${url}#standorte","name":"Standorte im Havelland","itemListElement":[${items}]},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Standorte', url }])}`;
+  const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Standorte</div>
+<section class="phero" style="padding-bottom:24px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Standorte</span><h1 class="rv in d1">Unsere Standorte</h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref('Hallo, sind Sie auch in meinem Ort im Einsatz?')}">WhatsApp</a></div></div></section>
+<section class="sec" style="padding:28px 0 0"><div class="wrap"><div class="media-band rv">${pic('region-havelland', { alt: 'Servicegebiet Havelland und Berliner Umland — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
+${gebiet}
+${blocks.join('\n')}
+${ausserdem}
+${stepsSektion(n % 2 !== 0)}
+${valueBand}
+${faqBlock(uebS.faqs)}
+${endBand}`;
+  write(url, head(clampTitle(`Unsere Standorte — ${nap.name}`), mkMeta(uebS.meta || lead), url, schema) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  written.basis.push(url);
+}
+
 function basis() {
-  listingPage('/leistungen/', 'Unsere Leistungen', 'Alles rund um Haus und Garten im Havelland — aus einer Hand.',
-    services.map(s => `<a class="card" href="/${s.slug}/"><h3>${esc(s.name)}</h3><p>${esc((s.sektionen||[]).slice(0,3).join(' · ')||s.garantie||'')}</p><span class="go">Mehr →</span></a>`).join(''),
-    `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Leistungen',url:'/leistungen/'}])}`);
-  listingPage('/standorte/', 'Unsere Standorte', 'Wir sind im ganzen Havelland und Berliner Umland für Sie da.',
-    haupt.filter(o=>servicesForOrt(o).length>=3).map(o => `<a class="card" href="/standorte/${o.slug}/"><h3>${esc(o.name)}</h3><p>${esc(o.plz||'')}</p><span class="go">Zum Ort →</span></a>`).join(''),
-    `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Standorte',url:'/standorte/'}])}`);
+  leistungenPage();
+  standortePage();
   ratgeberIndex();
   // Kontakt — echte Konversions-Seite: Web3Forms-Formular (Fallback: WhatsApp-Bridge falls kein Key)
   const waNum = tel.replace('+', '');
