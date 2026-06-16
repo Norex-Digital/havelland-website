@@ -334,8 +334,8 @@ function basis() {
   const legalShell = (t, bodyHtml) => `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${t}</div><section class="phero" style="padding-bottom:24px"><div class="wrap"><h1 class="rv in d1">${t}</h1></div></section><section class="sec" style="padding-top:24px"><div class="wrap">${bodyHtml}</div></section>${endBand}`;
   const impressumBody = `<div class="prose rv">
 <h2>Angaben gemäß § 5 DDG</h2>
-<p>${esc(nap.inhaber)}<br>Haus- &amp; Gartenservice Havelland<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}</p>
-<p>Einzelunternehmen, Inhaber ${esc(nap.inhaber)}.</p>
+<p>Haus- &amp; Gartenservice Havelland GbR<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}</p>
+<p>Vertreten durch die Gesellschafter: ${esc((nap.gesellschafter || [nap.inhaber]).join(' und '))}.</p>
 <h2>Kontakt</h2>
 <p>Telefon: <a href="tel:${tel}">${esc(nap.phone_display)}</a><br>E-Mail: <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a></p>
 <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
@@ -358,7 +358,7 @@ function basis() {
 <p>Wir nehmen den Schutz Ihrer persönlichen Daten ernst und behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO, BDSG) sowie dieser Datenschutzerklärung. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
 <h2>2. Verantwortlicher</h2>
 <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
-<p>${esc(nap.inhaber)}<br>Haus- &amp; Gartenservice Havelland<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}<br>Telefon: ${esc(nap.phone_display)}<br>E-Mail: ${esc(nap.email)}</p>
+<p>Haus- &amp; Gartenservice Havelland GbR<br>vertreten durch ${esc((nap.gesellschafter || [nap.inhaber]).join(' und '))}<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}<br>Telefon: ${esc(nap.phone_display)}<br>E-Mail: ${esc(nap.email)}</p>
 <h2>3. SSL-/TLS-Verschlüsselung</h2>
 <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt.</p>
 <h2>4. Hosting</h2>

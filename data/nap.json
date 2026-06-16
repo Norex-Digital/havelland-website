@@ -16,5 +16,10 @@
     "lng": null
   },
   "service_radius_km": 30,
-  "areaServed_pattern": "PostalAddress IMMER Falkensee-Zentrale; je Ortsseite nur areaServed{name + amtlich verifizierte PLZ}"
+  "areaServed_pattern": "PostalAddress IMMER Falkensee-Zentrale; je Ortsseite nur areaServed{name + amtlich verifizierte PLZ}",
+  "rechtsform": "GbR",
+  "gesellschafter": [
+    "Noah Telo",
+    "Maurice Brehm"
+  ]
 }
