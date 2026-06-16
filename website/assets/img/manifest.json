@@ -1,0 +1,780 @@
+{
+"hero-home": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"bg-fassade": {
+"w": 1376,
+"h": 768,
+"widths": [
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"region-havelland": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"hero-home-fruehjahr": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"hero-home-herbst": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"hero-home-winter": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"og-default": {
+"w": 1200,
+"h": 630,
+"widths": [
+1200
+],
+"avif": false,
+"fb_ext": "jpg",
+"fb_w": 1200
+},
+"page-404": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+800
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"page-danke": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+800
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"bg-blatt": {
+"w": 1376,
+"h": 768,
+"widths": [
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"bg-hecke": {
+"w": 1376,
+"h": 768,
+"widths": [
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-gartenpflege-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-heckenschnitt-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-winterdienst-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-steinreinigung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-fensterreinigung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-dachrinnenreinigung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-photovoltaikreinigung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-entruempelung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-haushaltsaufloesung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-grundreinigung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-umzugshilfe-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-hausmeisterservice-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-gebaeudereinigung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-unterhaltsreinigung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-objektbetreuung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-ferienwohnung-reinigung-hero": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024,
+1376
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"svc-gartenpflege-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-heckenschnitt-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-winterdienst-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-steinreinigung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-fensterreinigung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-dachrinnenreinigung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-photovoltaikreinigung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-entruempelung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-haushaltsaufloesung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-grundreinigung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-umzugshilfe-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-hausmeisterservice-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-gebaeudereinigung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-unterhaltsreinigung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-objektbetreuung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"svc-ferienwohnung-reinigung-detail": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+800,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 800
+},
+"region-brandenburg-gemeinde": {
+"w": 1376,
+"h": 768,
+"widths": [
+414,
+640,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 640
+},
+"region-villenvorort": {
+"w": 1376,
+"h": 768,
+"widths": [
+414,
+640,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 640
+},
+"region-kleinstadt": {
+"w": 1376,
+"h": 768,
+"widths": [
+414,
+640,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 640
+},
+"region-vorgarten": {
+"w": 1376,
+"h": 768,
+"widths": [
+414,
+640,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 640
+},
+"region-einfahrt-pflaster": {
+"w": 1376,
+"h": 768,
+"widths": [
+414,
+640,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 640
+},
+"region-havel-umland": {
+"w": 1376,
+"h": 768,
+"widths": [
+414,
+640,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 640
+},
+"ratgeber-rasenpflege-kalender": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"ratgeber-winterdienst-pflichten": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"ratgeber-entruempelung-kosten": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"ratgeber-fensterreinigung-preise": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"ratgeber-heckenschnitt-zeitpunkt": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"ratgeber-haushaltsaufloesung-checkliste": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"ratgeber-pflaster-gruenbelag": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"ratgeber-photovoltaik-reinigung": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"ratgeber-dachrinne-herbst": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"ratgeber-umzug-tipps": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"ratgeber-ferienwohnung-wechsel": {
+"w": 1376,
+"h": 768,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"prozess-anfrage": {
+"w": 1024,
+"h": 1024,
+"widths": [
+220,
+440
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 440
+},
+"prozess-besichtigung": {
+"w": 1024,
+"h": 1024,
+"widths": [
+220,
+440
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 440
+},
+"prozess-ausfuehrung": {
+"w": 1024,
+"h": 1024,
+"widths": [
+220,
+440
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 440
+},
+"prozess-fotoabnahme": {
+"w": 1024,
+"h": 1024,
+"widths": [
+220,
+440
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 440
+}
+}

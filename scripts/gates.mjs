@@ -26,7 +26,7 @@ const visibleText = h => h.replace(/<script[^>]*>[\s\S]*?<\/script>/g,' ').repla
 
 // ---- Pro-Datei-Checks ----
 let brokenLinks=0; const brokenSamples=[];
-let imgNoAlt=0, imgNoDim=0, noScta=0, noHamb=0; const titles=new Map(); const metas=new Map();
+let imgNoAlt=0, imgNoDim=0, noScta=0, noHamb=0, noOg=0; const titles=new Map(); const metas=new Map();
 const transRe = /\b(fuer|ueber|koennen|koennt|muessen|moechten?|moeglich|schoen|groesse|groesser|qualitaet|taetig|naehe|naehere|haeufig|haeufige|gruen|gruenflaeche|natuerlich|persoenlich|zuverlaessig|regelmaessig|raeumen|geraeumt|fruehjahr|fruehling|gebaeude|aufloesung|entruempelung|haushaltsaufloesung|oberflaeche|baeume|straeucher|waehrend|gemaess|spaeter|draussen|fuehren|massnahmen|grundstuecke?|doeberitz|schoenwalde|oberkraemer|muehlenberge|phoeben)\b/i;
 const bodyByService = {}; // service -> [{url,shingles}]
 
@@ -68,6 +68,9 @@ for(const f of files){
   if(/&lt;\/?em&gt;/.test(h)) FAIL('EscapedEm', `${url} escaptes <em> als sichtbarer Text`);
   if(!/class="scta"/.test(h)) noScta++;
   if(!/class="hamb"/.test(h)) noHamb++;
+  if(!/property="og:image"/.test(h)) noOg++;
+  if(/hero-garten\.png|terrasse\.png/.test(h)) FAIL('AltPlatzhalter', `${url} referenziert Mockup-Platzhalter (hero-garten/terrasse)`);
+  if(/srcset="\s*"/.test(h)) FAIL('LeeresSrcset', `${url} hat leeres srcset (Bild fehlt im Manifest)`);
 
   // ASCII-Transliteration im sichtbaren Text
   const vis = visibleText(h);
@@ -106,6 +109,7 @@ if(imgNoAlt===0) OK('alt≠"" auf allen <img>'); else FAIL('ImgAlt', `${imgNoAlt
 if(imgNoDim===0) OK('width+height auf allen <img>'); else FAIL('ImgDim', `${imgNoDim} <img> ohne width/height`);
 if(noScta===0) OK('Sticky-Mobile-CTA (.scta) auf allen Seiten'); else FAIL('StickyCTA', `${noScta} Seiten ohne .scta`);
 if(noHamb===0) OK('Mobile-Hamburger (.hamb) auf allen Seiten'); else FAIL('Hamburger', `${noHamb} Seiten ohne .hamb`);
+if(noOg===0) OK('og:image auf allen Seiten'); else FAIL('OgImage', `${noOg} Seiten ohne og:image`);
 { const kf = files.find(f=>urlOf(f)==='/kontakt/'); if(kf && /<form id="anfrage"/.test(fs.readFileSync(kf,'utf8'))) OK('Kontakt-Formular vorhanden'); else FAIL('KontaktForm','/kontakt/ ohne Anfrage-Formular'); }
 
 // Title-Uniqueness

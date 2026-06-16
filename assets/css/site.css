@@ -221,3 +221,17 @@ footer em{font-style:italic}
 .consent-btns .btn-line{color:#fff;border-color:rgba(255,255,255,.55)}
 .consent-btns .btn-line:hover{background:rgba(255,255,255,.1)}
 @media(max-width:600px){.consent-in{padding:14px 20px;flex-direction:column;align-items:stretch}.consent-btns .btn{flex:1;justify-content:center}}
+
+/* ---------- Bilder: Prozess-Steps / Media-Band / Mini-Illustration ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.steps .step-img{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:1/1;margin-bottom:16px;box-shadow:0 30px 60px -34px rgba(14,46,31,.5)}
+.steps .step-img img{width:100%;height:100%;object-fit:cover;display:block}
+.steps h3{font:700 17px Inter;color:var(--green-d);display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.steps .sn{width:28px;height:28px;border-radius:50%;background:var(--green);color:#cfe3d6;font:700 14px Inter;display:flex;align-items:center;justify-content:center;flex:none}
+.steps p{color:var(--muted);font-size:14.5px;line-height:1.5}
+@media(max-width:760px){.steps{grid-template-columns:repeat(2,1fr);gap:22px}}
+.media-band{border-radius:22px;overflow:hidden;aspect-ratio:16/6.2;box-shadow:0 40px 80px -44px rgba(14,46,31,.5)}
+.media-band img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:760px){.media-band{aspect-ratio:16/9}}
+.mini-illu{max-width:360px;margin:0 auto 26px;border-radius:22px;overflow:hidden;box-shadow:0 36px 70px -40px rgba(14,46,31,.45)}
+.mini-illu img{width:100%;height:auto;display:block}
