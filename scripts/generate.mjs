@@ -403,7 +403,7 @@ function leistungenPage() {
   const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Unsere Leistungen","about":{"@id":"${DOMAIN}/#organization"}},{"@type":"ItemList","@id":"${DOMAIN}${url}#leistungen","name":"Leistungen im Havelland","itemListElement":[${items}]},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Leistungen', url }])}`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Leistungen</div>
 <section class="phero" style="padding-bottom:24px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Leistungen</span><h1 class="rv in d1">Unsere Leistungen</h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref('Hallo, ich interessiere mich für Ihre Leistungen.')}">WhatsApp</a></div></div></section>
-<section class="sec" style="padding:28px 0 0"><div class="wrap"><div class="media-band rv">${pic('region-havelland', { alt: 'Servicegebiet Havelland — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
+<section class="sec" style="padding:28px 0 0"><div class="wrap"><div class="media-band rv">${pic('leistungen-band', { alt: 'Das Team des Haus- & Gartenservice Havelland lädt Werkzeug aus dem Firmenwagen', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 ${introProse}
 ${blocks.join('\n')}
 ${stepsSektion(n % 2 !== 0)}
