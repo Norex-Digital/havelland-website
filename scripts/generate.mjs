@@ -333,28 +333,58 @@ function basis() {
   written.basis.push('/kontakt/');
   const legalShell = (t, bodyHtml) => `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${t}</div><section class="phero" style="padding-bottom:24px"><div class="wrap"><h1 class="rv in d1">${t}</h1></div></section><section class="sec" style="padding-top:24px"><div class="wrap">${bodyHtml}</div></section>${endBand}`;
   const impressumBody = `<div class="prose rv">
-<h2>Angaben gemäß § 5 TMG</h2>
-<p>${esc(nap.inhaber)}<br>${esc(nap.name)}<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}</p>
+<h2>Angaben gemäß § 5 DDG</h2>
+<p>${esc(nap.inhaber)}<br>Haus- &amp; Gartenservice Havelland<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}</p>
+<p>Einzelunternehmen, Inhaber ${esc(nap.inhaber)}.</p>
 <h2>Kontakt</h2>
-<p>Telefon: <a href="tel:${tel}">${esc(nap.phone_display)}</a>${nap.email ? `<br>E-Mail: <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>` : ''}</p>
-<h2>Umsatzsteuer</h2>
-<p>Kleinunternehmer gemäß § 19 UStG. Es wird keine Umsatzsteuer ausgewiesen.</p>
+<p>Telefon: <a href="tel:${tel}">${esc(nap.phone_display)}</a><br>E-Mail: <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a></p>
 <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
 <p>${esc(nap.inhaber)}, Anschrift wie oben.</p>
-<h2>Streitbeilegung</h2>
-<p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr/" rel="nofollow">ec.europa.eu/consumers/odr</a>. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit.</p>
-${nap.email ? '' : '<p><em>Hinweis: Eine E-Mail-Adresse für die elektronische Kontaktaufnahme (§ 5 TMG) wird vor dem Launch ergänzt.</em></p>'}
+<h2>EU-Streitschlichtung</h2>
+<p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" rel="nofollow" target="_blank">ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse finden Sie oben.</p>
+<h2>Verbraucherstreitbeilegung</h2>
+<p>Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+<h2>Haftung für Inhalte</h2>
+<p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden entsprechender Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+<h2>Haftung für Links</h2>
+<p>Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+<h2>Urheberrecht</h2>
+<p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
 </div>`;
-  write('/impressum/', head(`Impressum — ${nap.name}`, mkMeta(`Impressum des Haus- & Gartenservice Havelland, ${nap.inhaber}, ${nap.street}, ${nap.zip} ${nap.city}. Kleinunternehmer nach § 19 UStG, Telefon ${nap.phone_display}.`), '/impressum/', orgSchema()) + header + legalShell('Impressum', impressumBody) + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  write('/impressum/', head(`Impressum — ${nap.name}`, mkMeta(`Impressum des Haus- & Gartenservice Havelland, ${nap.inhaber}, ${nap.street}, ${nap.zip} ${nap.city}. Telefon ${nap.phone_display}, E-Mail ${nap.email}.`), '/impressum/', orgSchema()) + header + legalShell('Impressum', impressumBody) + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push('/impressum/');
   const datenschutzBody = `<div class="prose rv">
-<h2>Datenschutz auf einen Blick</h2>
-<p>Verantwortlich für die Datenverarbeitung auf dieser Website ist ${esc(nap.inhaber)}, ${esc(nap.name)}, ${esc(nap.street)}, ${esc(nap.zip)} ${esc(nap.city)}, Telefon ${esc(nap.phone_display)}.</p>
-<h2>Kontaktaufnahme</h2>
-<p>Wenn Sie uns per Telefon, WhatsApp oder über das Anfrageformular erreichen, verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage und für etwaige Anschlussfragen (Art. 6 Abs. 1 lit. b und f DSGVO). Eine Weitergabe an Dritte erfolgt nicht ohne Ihre Einwilligung.</p>
-<h2>Ihre Rechte</h2>
-<p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie ein Beschwerderecht bei der zuständigen Aufsichtsbehörde.</p>
-<p><em>Hinweis: Die vollständige Datenschutzerklärung (inkl. Hosting, Cookie-/Consent-Banner, Anfrageformular-Dienst, Web-Analyse und Schriftarten) wird vor dem Launch ergänzt und juristisch geprüft.</em></p>
+<h2>1. Datenschutz auf einen Blick</h2>
+<p>Wir nehmen den Schutz Ihrer persönlichen Daten ernst und behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO, BDSG) sowie dieser Datenschutzerklärung. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+<h2>2. Verantwortlicher</h2>
+<p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+<p>${esc(nap.inhaber)}<br>Haus- &amp; Gartenservice Havelland<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}<br>Telefon: ${esc(nap.phone_display)}<br>E-Mail: ${esc(nap.email)}</p>
+<h2>3. SSL-/TLS-Verschlüsselung</h2>
+<p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt.</p>
+<h2>4. Hosting</h2>
+<p>Diese Website wird bei einem externen Dienstleister gehostet (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA). Die beim Besuch der Website automatisch erfassten Daten werden auf den Servern des Hosters verarbeitet. Dabei kann es zu einer Übermittlung in die USA kommen; Grundlage hierfür sind die Standardvertragsklauseln der EU-Kommission. Das Hosting erfolgt zur Anbahnung und Erfüllung des Vertragsverhältnisses mit unseren Interessenten und Kunden (Art. 6 Abs. 1 lit. b DSGVO) sowie im Interesse einer sicheren und schnellen Bereitstellung unseres Online-Angebots (Art. 6 Abs. 1 lit. f DSGVO). Mit dem Hoster haben wir einen Vertrag zur Auftragsverarbeitung geschlossen.</p>
+<h2>5. Server-Logfiles</h2>
+<p>Der Hoster erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser übermittelt. Dies sind: Browsertyp und -version, verwendetes Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage sowie die IP-Adresse. Eine Zusammenführung dieser Daten mit anderen Datenquellen erfolgt nicht. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer technisch fehlerfreien Darstellung und Sicherheit der Website).</p>
+<h2>6. Kontaktaufnahme</h2>
+<h3>Telefon und E-Mail</h3>
+<p>Wenn Sie uns per Telefon oder E-Mail kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung bzw. Erfüllung eines Vertrags) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung Ihrer Anfrage). Eine Weitergabe an Dritte erfolgt nicht ohne Ihre Einwilligung.</p>
+<h3>Anfrageformular und WhatsApp</h3>
+<p>Unser Anfrageformular übergibt die von Ihnen eingegebenen Angaben (Name, Telefonnummer, Ort/PLZ, Anliegen) beim Absenden an den Messengerdienst WhatsApp, über den Sie uns die Nachricht zusenden. Auch über die WhatsApp-Schaltflächen können Sie uns direkt kontaktieren. Anbieter ist die WhatsApp Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland (Meta). Bei der Nutzung von WhatsApp können Daten (u. a. Ihre Telefonnummer, der Inhalt der Nachricht und Metadaten) auch in die USA übertragen werden. Bitte beachten Sie die Datenschutzhinweise von WhatsApp: <a href="https://www.whatsapp.com/legal/privacy-policy-eea" rel="nofollow" target="_blank">whatsapp.com/legal/privacy-policy-eea</a>. Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sowie zur Vertragsanbahnung (Art. 6 Abs. 1 lit. b DSGVO). Möchten Sie keine Daten über WhatsApp übermitteln, erreichen Sie uns alternativ telefonisch oder per E-Mail.</p>
+<h2>7. Web-Analyse (Google Analytics 4 / Google Tag Manager)</h2>
+<p>Zur Reichweitenmessung und Verbesserung unseres Angebots setzen wir Google Analytics 4 und den Google Tag Manager ein (Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) — jedoch ausschließlich, nachdem Sie über unseren Consent-Banner ausdrücklich eingewilligt haben (Art. 6 Abs. 1 lit. a DSGVO). Vor Ihrer Einwilligung werden keine Analyse-Cookies gesetzt und keine personenbezogenen Daten zu Analysezwecken an Google übertragen (Google Consent Mode v2, Voreinstellung „abgelehnt"). Bei erteilter Einwilligung kann es zu einer Datenübermittlung in die USA kommen (Grundlage: Standardvertragsklauseln). Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie Ihre Cookie-Einstellungen anpassen. Informationen zum Umgang mit Nutzerdaten bei Google: <a href="https://policies.google.com/privacy" rel="nofollow" target="_blank">policies.google.com/privacy</a>.</p>
+<h2>8. Cookies und Einwilligung</h2>
+<p>Ohne Ihre Einwilligung verwenden wir nur technisch notwendige Cookies bzw. lokale Speicherung, die für den Betrieb der Seite erforderlich sind (z. B. um Ihre Cookie-Entscheidung zu speichern). Nicht notwendige Dienste (etwa die Web-Analyse) werden erst nach Ihrer Einwilligung über den Consent-Banner aktiviert. Rechtsgrundlage für notwendige Cookies ist § 25 Abs. 2 TDDDG i. V. m. Art. 6 Abs. 1 lit. f DSGVO, für einwilligungspflichtige Dienste § 25 Abs. 1 TDDDG i. V. m. Art. 6 Abs. 1 lit. a DSGVO.</p>
+<h2>9. Schriftarten</h2>
+<p>Diese Website bindet ihre Schriftarten lokal von unserem eigenen Server ein. Es wird dabei keine Verbindung zu Servern von Google oder anderen Dritten aufgebaut; eine Übermittlung Ihrer IP-Adresse zu diesem Zweck findet nicht statt.</p>
+<h2>10. Speicherdauer</h2>
+<p>Soweit innerhalb dieser Erklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck der Verarbeitung entfällt. Anfragen, die zu einem Auftrag führen, bewahren wir im Rahmen der gesetzlichen Aufbewahrungsfristen auf. Machen Sie ein berechtigtes Löschersuchen geltend oder widerrufen eine Einwilligung, werden Ihre Daten gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+<h2>11. Ihre Rechte</h2>
+<p>Ihnen stehen nach der DSGVO folgende Rechte zu:</p>
+<ul><li>Recht auf Auskunft (Art. 15 DSGVO)</li><li>Recht auf Berichtigung (Art. 16 DSGVO)</li><li>Recht auf Löschung (Art. 17 DSGVO)</li><li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li><li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li><li>Widerspruchsrecht gegen die Verarbeitung (Art. 21 DSGVO)</li><li>Recht auf Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li></ul>
+<p>Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an die oben genannten Kontaktdaten.</p>
+<h2>12. Beschwerderecht bei der Aufsichtsbehörde</h2>
+<p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die für uns zuständige Behörde ist die Landesbeauftragte für den Datenschutz und für das Recht auf Akteneinsicht Brandenburg (LDA), Stahnsdorfer Damm 77, 14532 Kleinmachnow.</p>
+<p><em>Diese Datenschutzerklärung wird angepasst, sobald sich die Rechtslage oder die eingesetzten Dienste ändern.</em></p>
 </div>`;
   write('/datenschutz/', head(`Datenschutz — ${nap.name}`, mkMeta(`Datenschutzhinweise des Haus- & Gartenservice Havelland in ${nap.city}: Umgang mit Ihren Angaben bei Anfragen per Telefon, WhatsApp und Formular nach DSGVO.`), '/datenschutz/', orgSchema()) + header + legalShell('Datenschutz', datenschutzBody) + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push('/datenschutz/');
