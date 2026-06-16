@@ -312,12 +312,7 @@ function basis() {
   listingPage('/standorte/', 'Unsere Standorte', 'Wir sind im ganzen Havelland und Berliner Umland für Sie da.',
     haupt.filter(o=>servicesForOrt(o).length>=3).map(o => `<a class="card" href="/standorte/${o.slug}/"><h3>${esc(o.name)}</h3><p>${esc(o.plz||'')}</p><span class="go">Zum Ort →</span></a>`).join(''),
     `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Standorte',url:'/standorte/'}])}`);
-  // Ratgeber-Index
-  const ratItems = written.ratgeber.length ? null : null;
-  const ratList = (ratCopy.length ? ratCopy : RATGEBER_FALLBACK);
-  listingPage('/ratgeber/', 'Ratgeber', 'Antworten rund um Garten, Reinigung und Haus — verständlich erklärt.',
-    ratList.map(r => `<a class="card" href="/ratgeber/${r.slug}/"><h3>${esc(r.title)}</h3><p>${esc(r.lead||'')}</p><span class="go">Lesen →</span></a>`).join(''),
-    `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Ratgeber',url:'/ratgeber/'}])}`);
+  ratgeberIndex();
   // Kontakt — echte Konversions-Seite: Telefon/WhatsApp prominent + Anfrage-Formular (WhatsApp-Bridge bis Web3Forms-Key vorliegt)
   const waNum = tel.replace('+', '');
   const kontaktMain = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Kontakt</div>
@@ -414,6 +409,29 @@ function notFound() {
   const main = `<section class="phero"><div class="wrap center" style="text-align:center"><span class="kick rv in" style="color:var(--green);justify-content:center;display:inline-flex">Fehler 404</span><h1 class="rv in d1" style="margin:0 auto">Diese Seite gibt es <em>nicht (mehr)</em></h1><p class="lead rv in d2" style="margin:20px auto 28px">Der Link ist vielleicht veraltet oder vertippt. Hier kommen Sie weiter:</p><div class="cta-row rv in d3" style="justify-content:center"><a class="btn btn-acc" href="/leistungen/">Alle Leistungen</a><a class="btn btn-line" href="/kontakt/">Kontakt</a></div><p class="rv" style="margin-top:24px"><a href="/">Startseite</a> · <a href="/standorte/">Standorte</a> · <a href="/ratgeber/">Ratgeber</a></p></div></section>`;
   const htmlDoc = head(`Seite nicht gefunden — ${nap.name}`, `Die aufgerufene Seite wurde nicht gefunden. Zurück zu den Leistungen des Haus- & Gartenservice Havelland.`, '/404.html', orgSchema(), { noindex: true }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>';
   fs.writeFileSync('website/404.html', htmlDoc); // Vercel Custom-404 (Output-Root)
+}
+
+// ---------- RATGEBER-INDEX (thematisch gruppiert) ----------
+function ratgeberIndex() {
+  const url = '/ratgeber/';
+  const list = ratCopy.length ? ratCopy : RATGEBER_FALLBACK;
+  const cats = [
+    { label: 'Garten & Heckenpflege', svcs: ['gartenpflege', 'heckenschnitt'] },
+    { label: 'Reinigung & Außenflächen', svcs: ['fensterreinigung', 'steinreinigung', 'dachrinnenreinigung', 'photovoltaikreinigung', 'gebaeudereinigung', 'grundreinigung', 'unterhaltsreinigung'] },
+    { label: 'Entrümpelung & Umzug', svcs: ['entruempelung', 'haushaltsaufloesung', 'umzugshilfe'] },
+    { label: 'Winterdienst & Hausservice', svcs: ['winterdienst', 'hausmeisterservice', 'ferienwohnung-reinigung', 'objektbetreuung', 'renovierung'] },
+  ];
+  const used = new Set();
+  const groups = cats.map(c => { const items = list.filter(r => c.svcs.includes(r.cta_service)); items.forEach(r => used.add(r.slug)); return { label: c.label, items }; }).filter(c => c.items.length);
+  const rest = list.filter(r => !used.has(r.slug));
+  if (rest.length) groups.push({ label: 'Weitere Ratgeber', items: rest });
+  const sections = groups.map((c, gi) => `<section class="sec${gi % 2 ? ' section-alt' : ''}" style="padding:56px 0"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(c.label)}</h2></div><div class="cards rv">${c.items.map((r, i) => `<a class="card guide" href="/ratgeber/${r.slug}/"><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(r.title)}</h3><p>${esc(r.lead || '')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>`).join('');
+  const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Ratgeber</div>
+<section class="phero" style="padding-bottom:10px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Ratgeber</span><h1 class="rv in d1">Ratgeber rund um <em>Haus &amp; Garten</em></h1><p class="lead rv in d2">Verständliche Antworten zu Kosten, Terminen und Pflege — aus der Praxis im Havelland und Berliner Umland.</p></div></section>
+${sections}
+${endBand}`;
+  write(url, head(`Ratgeber — ${nap.name}`, mkMeta(`Ratgeber vom Haus- & Gartenservice Havelland: Antworten zu Kosten, Terminen und Pflege rund um Garten, Reinigung, Entrümpelung und Winterdienst.`), url, `${orgSchema()},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Ratgeber', url }])}`) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  written.basis.push(url);
 }
 
 // ---------- SITEMAPS ----------
