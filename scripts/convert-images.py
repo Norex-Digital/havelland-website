@@ -86,15 +86,15 @@ for folder in ["marke","hubs","details","regional","ratgeber","prozess"]:
         for w in widths:
             r = resize_to(im, w, crop)
             aw = r.width
-            r.save(os.path.join(DST, f"{slug}-{aw}.webp"), "WEBP", quality=80, method=6); count["webp"]+=1
+            r.save(os.path.join(DST, f"{slug}-{aw}.webp"), "WEBP", quality=90, method=6); count["webp"]+=1
             if do_avif:
-                r.save(os.path.join(DST, f"{slug}-{aw}.avif"), "AVIF", quality=52, speed=6); count["avif"]+=1
+                r.save(os.path.join(DST, f"{slug}-{aw}.avif"), "AVIF", quality=80, speed=4); count["avif"]+=1
             out_widths.append(aw)
         # jpg/png Fallback @ fb_w
         fb = resize_to(im, fb_w, crop)
         fb_ext = "png" if slug == "og-default" else "jpg"
         if fb_ext == "jpg":
-            fb.save(os.path.join(DST, f"{slug}-{fb.width}.jpg"), "JPEG", quality=82, optimize=True, progressive=True)
+            fb.save(os.path.join(DST, f"{slug}-{fb.width}.jpg"), "JPEG", quality=90, optimize=True, progressive=True)
         else:
             fb.save(os.path.join(DST, f"{slug}-{fb.width}.png"), "PNG", optimize=True)
         count["jpg"]+=1
