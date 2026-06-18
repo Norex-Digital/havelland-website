@@ -322,7 +322,7 @@ function ortsseite(s, o) {
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}${servicesForOrt(o).length>=3?`<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a>`:`<a class="card" href="/${s.slug}/"><h3>Mehr zu ${esc(s.name)}</h3><span class="go">Zur Leistung →</span></a>`}</div></div></section>
 ${faqBlock(faqs)}
 ${endBand}`;
-  write(url, head(title, meta, url, schema) + header + main + footer + sctaBar(`Hallo, ich brauche ${s.name} in ${o.name}.`) + revealJS + '</body></html>');
+  write(url, head(title, meta, url, schema, { noindex: (config.aktive_welle || 0) < 1 }) + header + main + footer + sctaBar(`Hallo, ich brauche ${s.name} in ${o.name}.`) + revealJS + '</body></html>');
   written.ortsseiten.push(url);
 }
 
@@ -341,7 +341,7 @@ function ortsHub(o) {
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name, sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 <section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Leistungen in ${esc(o.name)}</h2></div><div class="cards rv">${cards}</div>${teile.length?`<p class="intro rv" style="margin-top:30px">Auch in ${esc(teile.join(', '))} und Umgebung.</p>`:''}</div></section>
 ${endBand}`;
-  write(url, head(clampTitle(`Haus- & Gartenservice ${o.name}`), mkMeta(`Haus- & Gartenservice in ${o.name}${o.plz?` (${o.plz})`:''}: Garten, Reinigung, Winterdienst, Entrümpelung von einem festen Ansprechpartner.`), url, schema) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  write(url, head(clampTitle(`Haus- & Gartenservice ${o.name}`), mkMeta(`Haus- & Gartenservice in ${o.name}${o.plz?` (${o.plz})`:''}: Garten, Reinigung, Winterdienst, Entrümpelung von einem festen Ansprechpartner.`), url, schema, { noindex: (config.aktive_welle || 0) < 1 }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.orts_hubs.push(url);
 }
 
@@ -370,7 +370,7 @@ function ratgeberPage(r) {
 <section class="sec section-alt"><div class="wrap center"><h2 class="serif rv">Lieber machen lassen?</h2><p class="rv d1" style="max-width:44em;margin-inline:auto">${esc(ctaPitch)}</p><div class="cta-row rv d2"><a class="btn btn-acc" href="/kontakt/#anfrage">Kostenlose Besichtigung anfragen</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-line" href="${ctaWa}">WhatsApp</a></div>${svc.name?`<p class="rv d3" style="margin-top:14px;font-size:.92rem"><a href="/${r.cta_service}/">Mehr zu ${esc(svc.name)} im Havelland →</a></p>`:''}</div></section>
 ${related.length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Das könnte Sie auch interessieren</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${related.map(x=>`<a class="card" href="/ratgeber/${x.slug}/"><h3>${esc(x.title)}</h3><p>${esc(x.lead||'')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : ''}
 ${endBand}`;
-  write(url, head(clampTitle(r.title), mkMeta(r.meta || r.lead), url, schema) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  write(url, head(clampTitle(r.title), mkMeta(r.meta || r.lead), url, schema, { noindex: (config.aktive_welle || 0) < 1 }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.ratgeber.push(url);
 }
 
@@ -645,9 +645,10 @@ ${endBand}`;
 // ---------- SITEMAPS ----------
 function sitemaps() {
   const sm = (name, urls) => { const x = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`<url><loc>${DOMAIN}${u}</loc></url>`).join('\n')}\n</urlset>\n`; fs.writeFileSync(`website/${name}`, x); };
-  sm('sitemap-services.xml', [...written.basis.filter(u=>['/','/leistungen/','/ueber-uns/','/bewertungen/','/kontakt/'].includes(u)), ...written.hubs, ...written.ortsseiten]);
-  sm('sitemap-standorte.xml', [...written.orts_hubs, '/standorte/']);
-  sm('sitemap-ratgeber.xml', [...written.ratgeber, '/ratgeber/']);
+  const gate = (config.aktive_welle || 0) < 1; // Wellen-Gate: aktive_welle=0 → nur Kern+Hubs indexieren/sitemappen (pSEO erst in Wellen freischalten)
+  sm('sitemap-services.xml', [...written.basis.filter(u=>['/','/leistungen/','/ueber-uns/','/bewertungen/','/kontakt/'].includes(u)), ...written.hubs, ...(gate ? [] : written.ortsseiten)]);
+  sm('sitemap-standorte.xml', gate ? [] : [...written.orts_hubs, '/standorte/']);
+  sm('sitemap-ratgeber.xml', gate ? [] : [...written.ratgeber, '/ratgeber/']);
   const idx = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${['sitemap-services.xml','sitemap-standorte.xml','sitemap-ratgeber.xml'].map(f=>`<sitemap><loc>${DOMAIN}/${f}</loc></sitemap>`).join('\n')}\n</sitemapindex>\n`;
   fs.writeFileSync('website/sitemap.xml', idx);
   fs.writeFileSync('website/robots.txt', `User-agent: *\nAllow: /\n\n# AI-Crawler erlaubt (AEO/GEO)\nUser-agent: GPTBot\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
