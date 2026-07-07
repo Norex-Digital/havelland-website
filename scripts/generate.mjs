@@ -2,12 +2,19 @@
 // Liest data/*.json + data/copy/*.json (P4-Copy), rendert gegen havelland-design (site.css), schreibt website/ + Sitemaps.
 // Kein FAQPage-JSON-LD (Projekt-Regel) — FAQ als nativer <details>-Inhalt.
 import fs from 'fs';
+// Gelockte Voll-Print-Komponenten (Klassen-Hooks 1:1 aus den Previews) — pro Seitentyp verdrahtet.
+import {
+  baSlider, garantienStrip, schnittkalender, heckenKompass, jahreszeiten, echtProjekt,
+  karussell, archivGrid, whatsappFlow, auftragsTimeline, uspBand, faqFilter, gebietskarte,
+  trustBadges, fristband, aeoKapsel, beweisMechanik
+} from './components.mjs';
 
 const J = f => JSON.parse(fs.readFileSync(`data/${f}`, 'utf8'));
 const CP = f => { try { return JSON.parse(fs.readFileSync(`data/copy/${f}`, 'utf8')); } catch { return null; } };
 const services = J('services.json').services;
 const loc = J('locations.json'); const orte = loc.orte; const ortsteileVon = loc._meta.ortsteile_von || {};
 const nap = J('nap.json'); const config = J('config.json'); const proof = J('proof.json');
+const reviews = (() => { try { return J('reviews.json'); } catch { return { enabled: false }; } })();
 const DOMAIN = config.domain.replace(/\/$/, '');
 const FULL = !!process.env.FULL;
 
@@ -64,6 +71,17 @@ const STANDORT_REGIONEN = [
 ];
 
 const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','winterdienst','steinreinigung','dachrinnenreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung']);
+// Gewerk-Klassen fuer die Voll-Print-Komposition der Hubs/Ortsseiten:
+//  VOLL_VN   = echtes Vorher/Nachher-Material -> Slider + Heckenkompass + Schnittkalender
+//  GARTEN    = Garten ohne V/N-Material -> kein Slider/Kompass, Ortskarten + Foto-Flow
+//  REINIGUNG = Reinigungs-Gewerke -> beweisMechanik (Gegenlicht) statt Slider, kein Teleskop/Osmose
+//  Rest      = generische Rich-Variante (Entruempelung/Umzug/Hausmeister/Objekt ...)
+const VOLL_VN = new Set(['heckenschnitt']);
+const GARTEN = new Set(['gartenpflege', 'winterdienst']);
+const REINIGUNG = new Set(['fensterreinigung', 'steinreinigung', 'dachrinnenreinigung', 'photovoltaikreinigung', 'grundreinigung', 'gebaeudereinigung', 'unterhaltsreinigung', 'ferienwohnung-reinigung']);
+const BEWEIS_KEY = { fensterreinigung: 'fensterreinigung', steinreinigung: 'steinreinigung', dachrinnenreinigung: 'dachrinnenreinigung' }; // eigene Beweis-Copy vorhanden
+const gewerkClass = slug => VOLL_VN.has(slug) ? 'voll' : GARTEN.has(slug) ? 'garten' : REINIGUNG.has(slug) ? 'reinigung' : 'generisch';
+const waGewerk = s => VOLL_VN.has(s.slug) ? 'meiner Hecke' : REINIGUNG.has(s.slug) ? `meiner Fläche für ${s.name}` : GARTEN.has(s.slug) ? 'meinem Garten' : `meinem Anliegen (${s.name})`;
 const PREMIUM = new Set(['gross-glienicke','berlin-kladow','berlin-gatow']);
 const sectionOT = new Set(Object.keys(ortsteileVon).filter(s => !PREMIUM.has(s)));
 const launch = orte.filter(o => o.geo === 'A' || o.geo === 'B');
@@ -203,15 +221,21 @@ function head(title, desc, canonical, schemaGraph, opts = {}) {
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[${schemaGraph}]}</script>
 </head><body>${ANALYTICS_BODY}`;
 }
-const header = `<header><div class="wrap nav"><a href="/"><img src="/assets/img/logo.png" alt="${esc(nap.name)}" width="180" height="50"></a><div class="links"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/kontakt/">Kontakt</a></div><a class="cta" href="/kontakt/">Besichtigung anfragen</a><input type="checkbox" id="nvt" class="nvt" aria-label="Menü öffnen und schließen"><label for="nvt" class="hamb" aria-hidden="true"><span></span><span></span><span></span></label><nav class="navmenu" aria-label="Hauptmenü"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/bewertungen/">Bewertungen</a><a href="/kontakt/">Kontakt</a><a href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung</a></nav></div></header>`;
+// Header — lock-v2: Logo + Site-Nav + Callpill (sichtbare Nummer) + Besichtigungs-CTA + Progress-Bar (#progress) + gate-sichere .hamb/#nvt/.navmenu-Mechanik
+const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
+const header = `<header><div class="wrap nav"><a class="logo" href="/"><img src="/assets/img/logo.png" alt="${esc(nap.name)}" width="180" height="50"></a><nav class="links nav-links" aria-label="Hauptnavigation"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/kontakt/">Kontakt</a></nav><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${esc(nap.phone_display)}</span></a><a class="cta nav-cta" href="/kontakt/">Kostenlose Besichtigung</a><input type="checkbox" id="nvt" class="nvt" aria-label="Menü öffnen und schließen"><label for="nvt" class="hamb" aria-hidden="true"><span></span><span></span><span></span></label><nav class="navmenu mnav" aria-label="Hauptmenü"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/bewertungen/">Bewertungen</a><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a><a href="/kontakt/">Kontakt</a><a href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung</a></nav></div><div class="progress" id="progress" aria-hidden="true"></div></header>`;
 const sctaBar = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ Anrufen</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav>`;
 const SCTA_DEFAULT = sctaBar('Hallo, ich hätte gern eine kostenlose Besichtigung.');
-const footer = `<footer><div class="wrap"><span>${esc(nap.name)} · ${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · ${esc(nap.phone_display)}</span><span><a href="/leistungen/">Leistungen</a> · <a href="/standorte/">Standorte</a> · <a href="/ratgeber/">Ratgeber</a> · <a href="/ueber-uns/">Über uns</a> · <a href="/bewertungen/">Bewertungen</a> · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></span></div></footer>`;
-const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script>` + CONSENT_BANNER + TRACK_EVENTS;
+// Footer — lock-v2 fcols-Sitemap (hell): Leistungen A–H / H–W / Unternehmen (inkl. /fuer-hausverwaltungen/) + legal
+const footer = `<footer><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · <a href="tel:${tel}">${esc(nap.phone_display)}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>${ohDisplay()?`<br>${esc(ohDisplay())}`:''}</p><div class="fcols"><div><h4>Leistungen</h4><ul><li><a href="/gartenpflege/">Gartenpflege</a></li><li><a href="/heckenschnitt/">Heckenschnitt</a></li><li><a href="/winterdienst/">Winterdienst</a></li><li><a href="/steinreinigung/">Steinreinigung</a></li><li><a href="/fensterreinigung/">Fensterreinigung</a></li><li><a href="/dachrinnenreinigung/">Dachrinnenreinigung</a></li><li><a href="/photovoltaikreinigung/">Photovoltaikreinigung</a></li></ul></div><div><h4>Weitere Leistungen</h4><ul><li><a href="/entruempelung/">Entrümpelung</a></li><li><a href="/haushaltsaufloesung/">Haushaltsauflösung</a></li><li><a href="/grundreinigung/">Grundreinigung</a></li><li><a href="/umzugshilfe/">Umzugshilfe</a></li><li><a href="/hausmeisterservice/">Hausmeisterservice</a></li><li><a href="/gebaeudereinigung/">Gebäudereinigung</a></li><li><a href="/objektbetreuung/">Objektbetreuung</a></li></ul></div><div><h4>Unternehmen</h4><ul><li><a href="/leistungen/">Alle Leistungen</a></li><li><a href="/standorte/">Standorte</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/bewertungen/">Bewertungen</a></li><li><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a></li><li><a href="/kontakt/">Kontakt</a></li></ul></div></div><div class="legal"><span>${esc(nap.name)} (${esc(nap.rechtsform||'GbR')})</span><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></div></div></footer>`;
+const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script><script src="/assets/js/site.js" defer></script>` + CONSENT_BANNER + TRACK_EVENTS;
 const endBand = `<section class="end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, was ansteht — wir kümmern uns.</h2><p class="rv d1">Kostenlose Besichtigung, Festpreis, dann erledigt.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
 // Dunkles Wert-Band (4 Werte) — auf Home + Übersichtsseiten wiederverwendet
 const valueBand = `<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>
 <div class="vals"><div class="v rv d1"><h4><span class="n">01</span> Aus einer Hand</h4><p>Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles.</p></div><div class="v rv d2"><h4><span class="n">02</span> Nachweis statt Versprechen</h4><p>Foto-Dokumentation nach jedem Auftrag, direkt aufs Handy.</p></div><div class="v rv d3"><h4><span class="n">03</span> Festpreis</h4><p>Kostenlose Besichtigung, klarer Preis — kein Nachkommen.</p></div><div class="v rv d4"><h4><span class="n">04</span> Schnell erreichbar</h4><p>WhatsApp-Antwort in Stunden, nicht in Tagen.</p></div></div></div></section>`;
+
+// Garantie-Strip (lock-v2 .gstrip) — feste 3-Zusagen-Leiste, markenübergreifend (Home + Hubs). Ohne Bild/Overlay-Label.
+const gstrip = `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Festpreis ist Endpreis</h3><p>Nach der kostenlosen Besichtigung steht Ihr Preis — inklusive Abfuhr, ohne Nachforderung.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Foto-Nachweis</h3><p>Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Ein Ansprechpartner</h3><p>Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.</p></div></div></div></div></section>`;
 
 function write(url, html) {
   const dir = `website${url}`.replace(/\/$/, '');
@@ -221,8 +245,11 @@ function write(url, html) {
 
 // ---------- HOME ----------
 function home() {
-  const nine = services.slice(0, 9);
-  const items = nine.map((s,i)=>`<a class="it rv" href="/${s.slug}/"><span class="no">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(s.name)}</h3><p>${esc((s.sektionen||[]).slice(0,4).join(' · ')|| s.garantie || 'Festpreis nach Besichtigung.')}</p></div><span class="arr">→</span></a>`).join('');
+  // 3 Fokus-Leistungen (Wellen-1: heckenschnitt, gartenpflege, fensterreinigung) — Fallback erste 3 Services
+  const bySlug = Object.fromEntries(services.map(s => [s.slug, s]));
+  const fokus = ['heckenschnitt', 'gartenpflege', 'fensterreinigung'].map(sl => bySlug[sl]).filter(Boolean);
+  const fokusList = (fokus.length ? fokus : services.slice(0, 3));
+  const fokusCards = fokusList.map((s, i) => `<a class="it rv d${i + 1}" href="/${s.slug}/"><span class="no">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(s.name)}</h3><p>${esc((s.sektionen || []).slice(0, 3).join(' · ') || s.garantie || 'Festpreis nach Besichtigung.')}</p></div><span class="arr">→</span></a>`).join('');
   const main = `
 <section class="hero">${leaf('hleaf')}<div class="wrap grid">
 <div><span class="kick rv in"><span class="dot"></span> ${esc(nap.city)} · Havelland</span>
@@ -230,12 +257,20 @@ function home() {
 <p class="lead rv in d2">Garten, Reinigung, Winterdienst, Entrümpelung. Ein fester Ansprechpartner, der zurückruft — Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.</p>
 <div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref('Hallo, ich interessiere mich für Ihre Leistungen.')}">WhatsApp schreiben</a></div>
 <div class="trust-row rv in d4"><div class="t"><b>Ein</b><span>fester Ansprechpartner</span></div><div class="t"><b>Festpreis</b><span>nach Besichtigung</span></div><div class="t"><b>Stunden</b><span>statt Tage bis zur Antwort</span></div></div></div>
-<div class="shot rv in d2">${pic(HERO_HOME, { cls: 'main', alt: 'Haus- & Gartenservice Havelland — gepflegter Garten im Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true })}<div class="chip2">Foto-Nachweis</div><div class="badge"><span class="ic">${leaf('')}</span><span class="t">Vorher / Nachher<span>per WhatsApp, nach jedem Auftrag</span></span></div></div>
+<div class="shot rv in d2">${baSlider({ slug: '06-02-thuja-grenze', alt: 'Thuja-Hecke an der Grundstücksgrenze', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })}</div>
 </div></section>
-${valueBand}
-<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Was wir machen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Vom regelmäßigen Garten bis zum einmaligen Großeinsatz — koordiniert von einem festen Ansprechpartner.</p><div class="list">${items}</div></div></section>
-<section class="proof"><div class="grid"><div class="pic rv">${pic('svc-steinreinigung-detail', { alt: 'Beispielhaft gereinigte Terrasse im Havelland', sizes: '(max-width:900px) 100vw, 52vw' })}<div class="tags">${(proof.vorher_nachher && proof.vorher_nachher.echt && proof.vorher_nachher.echt.length) ? '<span>Vorher</span><span class="acc">Nachher</span>' : `<span>${esc((proof.vorher_nachher && proof.vorher_nachher.platzhalter_label) || 'Beispielhafte Darstellung')}</span>`}</div></div><div class="txt"><h2 class="serif rv">Nachweis, <em>nicht Versprechen.</em></h2><p class="rv d1">Nach jedem Auftrag bekommen Sie Vorher/Nachher-Fotos per WhatsApp. Sie sehen das Ergebnis — auch wenn Sie nicht dabei waren.</p><p class="q rv d2">„Wenn nach unserer Reinigung noch sichtbarer Moos- oder Algenbelag bleibt — wir kommen nochmal. Kostenlos."</p></div></div></section>
-${stepsSektion(true)}
+${gstrip}
+<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Womit wir am häufigsten kommen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Drei Leistungen fragen unsere Nachbarn im Havelland am öftesten an — vom regelmäßigen Garten bis zur streifenfreien Scheibe.</p><div class="list">${fokusCards}</div></div></section>
+<section class="sec section-alt"><div class="wrap">${jahreszeiten()}</div></section>
+<section class="sec"><div class="wrap">${schnittkalender()}</div></section>
+${heckenKompass()}
+<section class="sec"><div class="wrap">${echtProjekt()}</div></section>
+<section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Echte Ergebnisse zum Durchziehen</h2></div><p class="intro rv">Ziehen Sie den Regler — jedes Bild ist ein dokumentierter Schnitt aus dem Havelland.</p>${karussell()}${archivGrid({ ctaHref: '/kontakt/#anfrage' })}</div></section>
+<section class="sec"><div class="wrap">${whatsappFlow()}</div></section>
+<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline()}</div></section>
+<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>${uspBand()}</div></section>
+<section class="sec"><div class="wrap">${faqFilter()}</div></section>
+${gebietskarte()}
 ${endBand}`;
   write('/', head('Haus- & Gartenservice in Falkensee & Havelland', mkMeta('Garten, Reinigung, Winterdienst und Entrümpelung im Havelland. Ein fester Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.'), '/', orgSchema()) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push('/');
@@ -263,15 +298,41 @@ function hub(s) {
   const meta = mkMeta(c && c.meta ? c.meta : `${s.name} im Havelland und Falkensee: Festpreis nach Besichtigung, Foto-Nachweis, ein fester Ansprechpartner.`);
 
   const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","provider":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
+
+  // ---- Gewerk-abhaengige Voll-Print-Komposition ----
+  const gk = gewerkClass(s.slug);
+  const heroShot = gk === 'voll'
+    ? baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' im Havelland', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })
+    : pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' im Havelland — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true });
+  const faqData = (c && c.faqs && c.faqs.length) ? c.faqs : null;   // sonst faqFilter-Default
+  const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s) })}</div></section>`;
+  const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline()}</div></section>`;
+  const faqSection = `<section class="sec"><div class="wrap">${faqFilter(faqData)}</div></section>`;
+  const cardOrteSection = cardOrte.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div><div class="cards rv">${cards}</div></div></section>` : '';
+  const ratgeberSection = (ratgeberByService[s.slug] || []).length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Ratgeber rund um ${esc(s.name)}</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${(ratgeberByService[s.slug] || []).slice(0, 3).map(r => `<a class="card" href="/ratgeber/${r.slug}/"><h3>${esc(r.title)}</h3><p>${esc(r.lead || '')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : '';
+  let rich;
+  if (gk === 'voll') {
+    rich =
+      `<section class="sec"><div class="wrap">${schnittkalender()}</div></section>` +
+      heckenKompass() +
+      `<section class="sec"><div class="wrap">${echtProjekt()}</div></section>` +
+      `<section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Ergebnisse zum Durchziehen</h2></div>${karussell()}${archivGrid({ ctaHref: '/kontakt/#anfrage' })}</div></section>` +
+      flowBlock + timelineBlock + faqSection + cardOrteSection + gebietskarte() + ratgeberSection;
+  } else {
+    const beweis = (gk === 'reinigung' && BEWEIS_KEY[s.slug])
+      ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Woran Sie ein sauberes Ergebnis erkennen</h2></div>${beweisMechanik(BEWEIS_KEY[s.slug])}</div></section>`
+      : '';
+    // Garten/Generisch: mit Ortskarten; Reinigung: ohne Gebietskarte, Ortskarten bleiben (interne Links)
+    rich = beweis + flowBlock + timelineBlock + faqSection + cardOrteSection + ratgeberSection;
+  }
+
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim(isB2Bonly(s.segment) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div>
-<div class="shot rv in d2">${pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' im Havelland — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true })}<div class="badge"><span class="ic">${leaf('')}</span><span class="t">Foto-Nachweis<span>nach jedem Auftrag</span></span></div></div></div></section>
+<div class="shot rv in d2">${heroShot}</div></div></section>
+${gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv">${definition}<h2>${esc(s.name)} im Havelland — was dazugehört</h2>${sektionenHtml}${naehe}${ablauf}<h3>${s.garantie ? 'Unsere Garantie' : 'Unser Versprechen'}</h3><p>${esc(garantieTxt)}</p></div></div></section>
 ${IMG['svc-' + s.slug + '-detail'] ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic('svc-' + s.slug + '-detail', { alt: s.name + ' im Detail — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>` : ''}
-${cardOrte.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div><div class="cards rv">${cards}</div></div></section>` : ''}
-${(ratgeberByService[s.slug]||[]).length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Ratgeber rund um ${esc(s.name)}</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${(ratgeberByService[s.slug]||[]).slice(0,3).map(r=>`<a class="card" href="/ratgeber/${r.slug}/"><h3>${esc(r.title)}</h3><p>${esc(r.lead||'')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : ''}
-${stepsSektion(false)}
-${faqBlock(c && c.faqs)}
+${rich}
 ${endBand}`;
   write(url, head(title, meta, url, schema) + header + main + footer + sctaBar(`Hallo, ich interessiere mich für ${s.name} im Havelland.`) + revealJS + '</body></html>');
   written.hubs.push(url);
@@ -314,13 +375,21 @@ function ortsseite(s, o) {
   const title = clampTitle(`${s.name} ${o.name}${(s.name.length + o.name.length) < 34 ? ' – Havelland' : ''}`);
   const meta = mkMeta(`${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`);
 
+  // Heckenschnitt-Ort: Vorher/Nachher-Slider im Hero; andere Gewerke: Standard-Bild (kein Slider)
+  const ortVoll = VOLL_VN.has(s.slug);
+  const heroShotO = ortVoll
+    ? baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' in ' + o.name, cap: 'Thuja', sub: 'in ' + o.name + ' geschnitten', hint: true, lcp: true })
+    : pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' in ' + o.name + ' — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true });
+  const nachbarSection = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}${servicesForOrt(o).length>=3?`<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a>`:`<a class="card" href="/${s.slug}/"><h3>Mehr zu ${esc(s.name)}</h3><span class="go">Zur Leistung →</span></a>`}</div></div></section>`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/${s.slug}/">${esc(s.name)}</a><span class="sep">›</span>${esc(o.name)}</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(o.name)}${o.plz?` · ${esc(o.plz)}`:''}</span><h1 class="rv in d1">${esc(s.name)} <em>in ${esc(o.name)}</em></h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || isB2Bonly(o.typ)) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich brauche ${s.name} in ${o.name}.`)}">WhatsApp</a></div></div>
-<div class="shot rv in d2">${pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' in ' + o.name + ' — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true })}<div class="badge"><span class="ic">${leaf('')}</span><span class="t">Vor Ort in ${esc(o.name)}<span>schnelle Reaktion</span></span></div></div></div></section>
+<div class="shot rv in d2">${heroShotO}</div></div></section>
+${gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>Festpreis &amp; Foto-Nachweis</h3>${trust}${ortRatLink}</div></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
-<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}${servicesForOrt(o).length>=3?`<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a>`:`<a class="card" href="/${s.slug}/"><h3>Mehr zu ${esc(s.name)}</h3><span class="go">Zur Leistung →</span></a>`}</div></div></section>
-${faqBlock(faqs)}
+<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name })}</div></section>
+<section class="sec section-alt"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
+${nachbarSection}
 ${endBand}`;
   write(url, head(title, meta, url, schema, { noindex: (config.aktive_welle || 0) < 1 }) + header + main + footer + sctaBar(`Hallo, ich brauche ${s.name} in ${o.name}.`) + revealJS + '</body></html>');
   written.ortsseiten.push(url);
@@ -337,9 +406,12 @@ function ortsHub(o) {
   const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Haus- & Gartenservice in ${esc(o.name)}","about":{"@id":"${DOMAIN}/#organization"}},${breadcrumb([{name:'Start',url:'/'},{name:'Standorte',url:'/standorte/'},{name:o.name,url}])}`;
   const intro = oc && oc.hook ? `<p class="lead rv in d2">${esc(oc.hook)}</p>` : `<p class="lead rv in d2">Alle Leistungen rund um Haus und Garten in ${esc(o.name)}${o.plz?` (${esc(o.plz)})`:''} — von einem festen Ansprechpartner.</p>`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/standorte/">Standorte</a><span class="sep">›</span>${esc(o.name)}</div>
-<section class="phero">${leaf('hleaf')}<div class="wrap"><span class="kick rv in" style="color:var(--green)">Standort</span><h1 class="rv in d1" style="max-width:14em">Haus- &amp; Gartenservice <em>in ${esc(o.name)}</em></h1>${intro}<div class="cta-row rv in d3">${ctaA}</div></div></section>
+<section class="phero">${leaf('hleaf')}<div class="wrap"><span class="kick rv in" style="color:var(--green)">Standort</span><h1 class="rv in d1" style="max-width:14em">Haus- &amp; Gartenservice <em>in ${esc(o.name)}</em></h1>${intro}<div class="cta-row rv in d3">${ctaA}</div>${trustBadges()}</div></section>
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name, sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 <section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Leistungen in ${esc(o.name)}</h2></div><div class="cards rv">${cards}</div>${teile.length?`<p class="intro rv" style="margin-top:30px">Auch in ${esc(teile.join(', '))} und Umgebung.</p>`:''}</div></section>
+${gstrip}
+<section class="sec"><div class="wrap">${whatsappFlow({ ort: o.name, gewerk: 'meinem Anliegen' })}</div></section>
+${gebietskarte({ activeSlug: o.slug })}
 ${endBand}`;
   write(url, head(clampTitle(`Haus- & Gartenservice ${o.name}`), mkMeta(`Haus- & Gartenservice in ${o.name}${o.plz?` (${o.plz})`:''}: Garten, Reinigung, Winterdienst, Entrümpelung von einem festen Ansprechpartner.`), url, schema, { noindex: (config.aktive_welle || 0) < 1 }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.orts_hubs.push(url);
@@ -361,12 +433,17 @@ function ratgeberPage(r) {
     .replace(/\s*(Sprechen Sie|Rufen Sie|rufen Sie|Schreiben Sie|Melden Sie sich)[^.!?]*[.!?]?\s*$/, '').trim();
   const ctaWa = waHref(`Hallo, ich interessiere mich für ${svc.name || 'Ihre Leistungen'}${svc.name ? '' : ''}.`);
   const bodyHtml = (r.sections || []).map(x => `<h2>${esc(x.h2)}</h2>${x.body_html || ''}`).join('');
-  const faqHtml = (r.faqs && r.faqs.length) ? `<h2>Häufige Fragen</h2>${r.faqs.map(f=>`<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}` : '';
+  // AEO-Direktantwort oben (aus intro); Hecken-Zeitpunkt-Ratgeber bekommen zusaetzlich den Schnittkalender
+  const KAL_RATGEBER = new Set(['wann-hecke-schneiden', 'hecke-schneiden-erlaubt']);
+  const kalEmbed = KAL_RATGEBER.has(r.slug) ? `<section class="sec section-alt"><div class="wrap">${schnittkalender()}</div></section>` : '';
+  const faqSection = (r.faqs && r.faqs.length) ? `<section class="sec"><div class="wrap">${faqFilter(r.faqs)}</div></section>` : '';
   const schema = `${orgSchema()},{"@type":"Article","@id":"${DOMAIN}${url}#article","headline":"${esc(r.title)}","image":"${imgAbs(ratHeaderImg(r))}","inLanguage":"de","author":{"@id":"${DOMAIN}/#organization"},"publisher":{"@id":"${DOMAIN}/#organization"},"mainEntityOfPage":"${DOMAIN}${url}"},${breadcrumb([{name:'Start',url:'/'},{name:'Ratgeber',url:'/ratgeber/'},{name:r.title,url}])}`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/ratgeber/">Ratgeber</a><span class="sep">›</span>${esc(r.title)}</div>
 <section class="phero" style="border-bottom:none;padding-bottom:20px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Ratgeber</span><h1 class="rv in d1" style="max-width:16em">${esc(r.title)}</h1><p class="lead rv in d2">${esc(r.lead)}</p></div></section>
 <section class="sec" style="padding:14px 0 0"><div class="wrap"><div class="media-band rv">${pic(ratHeaderImg(r), { alt: r.title + ' — Ratgeber Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px', lcp: true })}</div></div></section>
-<section class="sec" style="padding-top:20px"><div class="wrap"><div class="prose rv">${r.intro?`<p class="ratgeber-intro"><strong>${esc(r.intro)}</strong></p>`:''}${bodyHtml}<div class="faq" style="margin-top:24px">${faqHtml}</div></div></div></section>
+<section class="sec" style="padding-top:20px"><div class="wrap"><div class="prose rv">${aeoKapsel(r.intro)}${bodyHtml}</div></div></section>
+${kalEmbed}
+${faqSection}
 <section class="sec section-alt"><div class="wrap center"><h2 class="serif rv">Lieber machen lassen?</h2><p class="rv d1" style="max-width:44em;margin-inline:auto">${esc(ctaPitch)}</p><div class="cta-row rv d2"><a class="btn btn-acc" href="/kontakt/#anfrage">Kostenlose Besichtigung anfragen</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-line" href="${ctaWa}">WhatsApp</a></div>${svc.name?`<p class="rv d3" style="margin-top:14px;font-size:.92rem"><a href="/${r.cta_service}/">Mehr zu ${esc(svc.name)} im Havelland →</a></p>`:''}</div></section>
 ${related.length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Das könnte Sie auch interessieren</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${related.map(x=>`<a class="card" href="/ratgeber/${x.slug}/"><h3>${esc(x.title)}</h3><p>${esc(x.lead||'')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : ''}
 ${endBand}`;
@@ -495,9 +572,10 @@ function basis() {
 ${formOpen}
 <label>Name<input name="name" autocomplete="name" required></label>
 <label>Telefon<input name="tel" type="tel" autocomplete="tel" required></label>
+<label>E-Mail<input name="email" type="email" autocomplete="email" placeholder="für die Rückmeldung (optional)"></label>
 <label>Ort / PLZ<input name="ort" autocomplete="address-level2"></label>
 <label>Was steht an?<textarea name="anliegen" rows="4" required></textarea></label>
-<label class="chk"><input type="checkbox" name="dsgvo" required> Ich bin mit der Verarbeitung meiner Angaben zur Kontaktaufnahme einverstanden (siehe <a href="/datenschutz/">Datenschutz</a>).</label>
+<label class="chk"><input type="checkbox" name="dsgvo" required> <span>Ich bin mit der Verarbeitung meiner Angaben zur Kontaktaufnahme einverstanden (siehe <a href="/datenschutz/">Datenschutz</a>).</span></label>
 <button class="btn btn-acc" type="submit">Anfrage absenden</button>
 <p class="kf-alt">Lieber direkt? <a href="tel:${tel}">Anrufen: ${esc(nap.phone_display)}</a> · <a href="${waHref('Hallo, ich hätte gern eine kostenlose Besichtigung.')}">WhatsApp schreiben</a></p>
 </form></div></section>
@@ -570,12 +648,12 @@ ${formScript}
 function ueberUns() {
   const url = '/ueber-uns/';
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Über uns</div>
-<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Über uns</span><h1 class="rv in d1">Ein Ansprechpartner für Haus und Garten — <em>im Havelland zuhause</em></h1><p class="lead rv in d2">Hinter dem Haus- &amp; Gartenservice Havelland stehen ${esc(nap.inhaber)} und sein Partner — ein kleines Team aus ${esc(nap.city)}, das selbst mit anpackt. Garten, Reinigung, Winterdienst, Entrümpelung: ein fester Ansprechpartner für alles, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div>
-<div class="shot rv in d2">${pic('ueber-uns', { cls: 'main', alt: 'Das Team vom Haus- & Gartenservice Havelland am Einsatzfahrzeug', sizes: '(max-width:900px) 92vw, 60vw', lcp: true })}<div class="badge"><span class="ic">${leaf('')}</span><span class="t">Foto-Nachweis<span>nach jedem Auftrag</span></span></div></div></div></section>
+<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Über uns</span><h1 class="rv in d1">Ein Ansprechpartner für Haus und Garten — <em>im Havelland zuhause</em></h1><p class="lead rv in d2">Hinter dem Haus- &amp; Gartenservice Havelland stehen ${esc((nap.gesellschafter || [nap.inhaber]).join(' und '))} — zwei Gründer aus ${esc(nap.city)}, die selbst mit anpacken. Garten, Reinigung, Winterdienst, Entrümpelung: ein fester Ansprechpartner für alles, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div>${trustBadges()}</div>
+<div class="shot rv in d2">${pic('ueber-uns', { cls: 'main', alt: 'Das Team vom Haus- & Gartenservice Havelland am Einsatzfahrzeug', sizes: '(max-width:900px) 92vw, 60vw', lcp: true })}</div></div></section>
 <section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Aus der Region, für die Region — <em>kurze Wege, klare Absprachen.</em></p>
 <div class="vals"><div class="v rv d1"><h4><span class="n">01</span> Aus einer Hand</h4><p>Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles rund ums Haus.</p></div><div class="v rv d2"><h4><span class="n">02</span> Nachweis statt Versprechen</h4><p>Foto-Dokumentation vor und nach jedem Auftrag, direkt aufs Handy.</p></div><div class="v rv d3"><h4><span class="n">03</span> Festpreis ist Endpreis</h4><p>Kostenlose Besichtigung, klarer Preis — kein Nachkommen, keine Überraschung.</p></div><div class="v rv d4"><h4><span class="n">04</span> Schnell erreichbar</h4><p>Eine WhatsApp genügt — Antwort in Stunden, nicht in Tagen.</p></div></div></div></section>
-<section class="sec"><div class="wrap"><div class="prose wide rv"><h2>Wer hinter dem Service steht</h2><p>Den Haus- &amp; Gartenservice Havelland führen wir zu zweit: ${esc(nap.inhaber)} ist Ihr Ansprechpartner vor Ort, mit Praxis aus dem Garten- und Gebäudereinigungs-Handwerk. Sein Partner hält ihm bei Planung und Organisation den Rücken frei. Sie haben es vom ersten Anruf bis zur Abnahme mit festen Gesichtern zu tun — kein Callcenter, keine wechselnden Kräfte, keine Warteschleife.</p><p>Und wir sind selbst dabei: Besichtigung, Ausführung und die Foto-Abnahme machen wir persönlich. Bei größeren Aufträgen unterstützen uns eingearbeitete Helfer — die Verantwortung und Ihr Ansprechpartner bleiben aber immer bei uns.</p><p>Der Betrieb sitzt in der ${esc(nap.street)} in ${esc(nap.zip)} ${esc(nap.city)} und ist im gesamten Havelland und Berliner Umland unterwegs. Der Festpreis, den Sie nach der Besichtigung bekommen, ist der Endpreis — kein Aufschlag, keine Überraschung.</p></div></div></section>
-<section class="sec section-alt"><div class="wrap"><div class="prose wide rv"><h2>So arbeiten wir — in vier Schritten</h2><ul><li><strong>1. Sie melden sich.</strong> Per Telefon oder WhatsApp, kurz was ansteht — gern mit ein paar Fotos. Meist antworten wir innerhalb weniger Stunden.</li><li><strong>2. Kostenlose Besichtigung.</strong> Wir kommen vorbei, schauen uns die Sache vor Ort an und nennen Ihnen einen Festpreis. Die Besichtigung kostet nichts und verpflichtet zu nichts.</li><li><strong>3. Saubere Ausführung.</strong> Zum vereinbarten Termin, pünktlich und gründlich — und wir räumen hinter uns auf.</li><li><strong>4. Foto-Nachweis.</strong> Nach dem Auftrag bekommen Sie Vorher-/Nachher-Fotos aufs Handy. Sie sehen das Ergebnis, auch wenn Sie nicht zu Hause waren.</li></ul></div></div></section>
+<section class="sec"><div class="wrap"><div class="prose wide rv"><h2>Wer hinter dem Service steht</h2><p>Den Haus- &amp; Gartenservice Havelland führen ${esc((nap.gesellschafter || [nap.inhaber]).join(' und '))} als Gründer-Duo: einer ist Ihr Ansprechpartner vor Ort, mit Praxis aus dem Garten- und Gebäudereinigungs-Handwerk, der andere hält bei Planung und Organisation den Rücken frei. Sie haben es vom ersten Anruf bis zur Abnahme mit festen Gesichtern zu tun — kein Callcenter, keine wechselnden Kräfte, keine Warteschleife.</p><p>Und wir sind selbst dabei: Besichtigung, Ausführung und die Foto-Abnahme machen wir persönlich. Bei größeren Aufträgen unterstützen uns eingearbeitete Helfer — die Verantwortung und Ihr Ansprechpartner bleiben aber immer bei uns.</p><p>Der Betrieb sitzt in der ${esc(nap.street)} in ${esc(nap.zip)} ${esc(nap.city)} und ist im gesamten Havelland und Berliner Umland unterwegs. Der Festpreis, den Sie nach der Besichtigung bekommen, ist der Endpreis — kein Aufschlag, keine Überraschung.</p></div></div></section>
+<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So arbeiten wir — in vier Schritten</h2></div>${auftragsTimeline()}</div></section>
 <section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Was wir übernehmen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Vom regelmäßigen Garten bis zum einmaligen Großeinsatz — koordiniert von einem festen Ansprechpartner.</p><div class="cards rv"><a class="card" href="/gartenpflege/"><h3>Garten &amp; Außenanlagen</h3><p>Gartenpflege, Heckenschnitt, Winterdienst, Laub.</p><span class="go">Mehr →</span></a><a class="card" href="/fensterreinigung/"><h3>Reinigung</h3><p>Fenster, Terrasse &amp; Pflaster, Dachrinne, Photovoltaik.</p><span class="go">Mehr →</span></a><a class="card" href="/entruempelung/"><h3>Entrümpelung &amp; Auflösung</h3><p>Keller, Wohnung, Haushaltsauflösung, Umzugshilfe.</p><span class="go">Mehr →</span></a><a class="card" href="/hausmeisterservice/"><h3>Hausmeister &amp; Gewerbe</h3><p>Hausmeisterdienst, Gebäude- und Unterhaltsreinigung.</p><span class="go">Mehr →</span></a></div></div></section>
 <section class="sec section-alt"><div class="wrap"><div class="prose wide rv"><h2>Unser Servicegebiet</h2><p>Wir sind in ${esc(nap.city)} zuhause und im gesamten Havelland sowie im angrenzenden Berliner Umland für Sie da — von Falkensee über Dallgow-Döberitz, Brieselang, Nauen und Oberkrämer bis Oranienburg, Hennigsdorf und an den Berliner Rand nach Kladow, Gatow und Spandau. Kurze Wege bedeuten schnelle Reaktion und planbare Termine.</p><p>Eine Übersicht aller Orte mit den jeweiligen Leistungen finden Sie auf der Seite <a href="/standorte/">Standorte</a>.</p><h2>Unsere Garantien</h2><p>Wir versprechen nichts, was wir nicht halten. Je Leistung gibt es eine konkrete Zusage — ein paar Beispiele:</p><ul><li><strong>Heckenschnitt:</strong> Bleiben Schnittreste liegen, kommen wir kostenlos nach.</li><li><strong>Fensterreinigung:</strong> Schlierenfrei — oder wir kommen am selben Tag nochmal.</li><li><strong>Winterdienst:</strong> Reaktionszeit-Garantie, sonst anteilige Erstattung.</li><li><strong>Entrümpelung:</strong> Festpreis nach Besichtigung — kein Aufpreis, egal wie viel rausgeht.</li></ul><p>Die vollständige Garantie steht jeweils auf der passenden <a href="/leistungen/">Leistungsseite</a>.</p></div></div></section>
 ${faqBlock([
@@ -586,24 +664,56 @@ ${faqBlock([
   {q:'Wie schnell bekomme ich eine Antwort?',a:'Schreiben Sie uns tagsüber eine WhatsApp mit ein paar Fotos, melden wir uns meist innerhalb weniger Stunden zurück und stimmen einen Termin ab.'},
 ])}
 ${endBand}`;
-  write(url, head(`Über uns — ${nap.name}`, mkMeta(`Haus- & Gartenservice Havelland aus ${nap.city}, geführt von ${nap.inhaber} und Partner. Wir packen selbst mit an: Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.`), url, `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Über uns',url}])}`) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  write(url, head(`Über uns — ${nap.name}`, mkMeta(`Haus- & Gartenservice Havelland aus ${nap.city}, geführt von ${(nap.gesellschafter || [nap.inhaber]).join(' und ')} als Gründer-Duo. Wir packen selbst mit an: Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.`), url, `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Über uns',url}])}`) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push(url);
 }
 function bewertungen() {
   const url = '/bewertungen/';
   const r = proof.google_reviews || {};
-  const hasReviews = r.count > 0 && r.rating;
-  const gbp = `https://www.google.com/search?q=${encodeURIComponent(nap.name + ' ' + nap.city)}`;
-  const body = hasReviews
-    ? `<p>Unsere Kundinnen und Kunden bewerten uns bei Google mit <strong>${esc(r.rating)}</strong> von 5 Sternen (${esc(r.count)} Bewertungen).</p>`
+  // Rating nur wenn reviews.json aktiv UND genug echte Reviews — sonst ehrlicher Empty-State (kein Fake-Sterne)
+  const reviewsLive = !!reviews.enabled && (r.count || 0) >= (reviews.block_ab_count || 5) && r.rating;
+  // Google-Deeplink: write_review_url aus reviews.json (falls echt), sonst Google-Suche nach dem Betrieb
+  const gbp = (reviews.write_review_url && !/TBD|XXXX|null/i.test(String(reviews.write_review_url)))
+    ? reviews.write_review_url
+    : `https://www.google.com/search?q=${encodeURIComponent(nap.name + ' ' + nap.city)}`;
+  const done = proof.auftraege_abgeschlossen || 0;
+  // Ehrlicher Auftragszähler statt erfundener Sterne
+  const counter = done > 0
+    ? `<div class="trust-row rv"><div class="t"><b>${esc(done)}</b><span>dokumentierte Aufträge</span></div><div class="t"><b>Foto</b><span>Nachweis nach jedem Auftrag</span></div><div class="t"><b>Festpreis</b><span>nach Besichtigung</span></div></div>`
+    : `<div class="trust-row rv"><div class="t"><b>Foto</b><span>Nachweis nach jedem Auftrag</span></div><div class="t"><b>Festpreis</b><span>nach Besichtigung</span></div><div class="t"><b>Ein</b><span>fester Ansprechpartner</span></div></div>`;
+  const body = reviewsLive
+    ? `<p>Unsere Kundinnen und Kunden bewerten uns bei Google (${esc(r.count)} Bewertungen). Die aktuelle Bewertung sehen Sie direkt in unserem Google-Profil.</p>`
     : `<p>Wir sind ein regionaler Betrieb und sammeln Bewertungen direkt bei Google. Hier zeigen wir keine erfundenen Sterne: Was zählt, ist das Ergebnis vor Ort. Nach jedem Auftrag dokumentieren wir es mit Vorher-/Nachher-Fotos und schicken sie Ihnen per WhatsApp — Sie sehen, was Sie bekommen, ohne sich auf Werbeversprechen verlassen zu müssen.</p>
 <h3>Schon mit uns gearbeitet?</h3><p>Über eine ehrliche Bewertung bei Google freuen wir uns. Sie hilft anderen Nachbarn in der Region, einen verlässlichen Ansprechpartner zu finden.</p>`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Bewertungen</div>
-<section class="phero" style="padding-bottom:24px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Bewertungen</span><h1 class="rv in d1">Bewertungen &amp; <em>Erfahrungen</em></h1><p class="lead rv in d2">Echte Ergebnisse statt großer Worte — und der Weg, uns selbst zu bewerten.</p></div></section>
-<section class="sec" style="padding:14px 0 0"><div class="wrap"><div class="media-band rv">${pic('bewertungen', { alt: 'Zufriedener Kunde sieht das Vorher-Nachher-Foto — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
-<section class="sec" style="padding-top:24px"><div class="wrap"><div class="prose rv">${body}<p style="margin-top:24px"><a class="btn btn-acc" href="${gbp}" rel="nofollow">Bei Google bewerten</a></p></div></div></section>
+<section class="phero" style="padding-bottom:24px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Bewertungen</span><h1 class="rv in d1">Bewertungen &amp; <em>Erfahrungen</em></h1><p class="lead rv in d2">Echte Ergebnisse statt großer Worte — und der Weg, uns selbst zu bewerten.</p>${counter}</div></section>
+<section class="sec" style="padding-top:24px"><div class="wrap"><div class="prose rv">${body}<p style="margin-top:24px"><a class="btn btn-acc" href="${gbp}" rel="nofollow" target="_blank">Bei Google bewerten</a></p></div></div></section>
+<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So sieht unser Foto-Nachweis aus</h2></div><p class="intro rv">Statt Sternen zeigen wir das Ergebnis: Nach jedem Auftrag bekommen Sie Vorher-/Nachher-Fotos aufs Handy — hier ein Beispiel aus dem Havelland.</p>${echtProjekt()}</div></section>
 ${endBand}`;
   write(url, head(`Bewertungen — ${nap.name}`, mkMeta(`Bewertungen und Erfahrungen zum Haus- & Gartenservice Havelland in ${nap.city}: Foto-Nachweis nach jedem Auftrag statt erfundener Sterne.`), url, `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Bewertungen',url}])}`) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  written.basis.push(url);
+}
+// ---------- B2B: /fuer-hausverwaltungen/ (noindex bis Welle 2) ----------
+function b2bPage() {
+  const url = '/fuer-hausverwaltungen/';
+  const b2b = J('b2b.json');
+  const objekte = (b2b.objektklassen || []).map(o => `<li>${esc(o)}</li>`).join('');
+  const leist = (b2b.leistungen || []).map((l, i) => `<div class="card"><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(l)}</h3><span class="go">Aus einer Hand →</span></div>`).join('');
+  const zus = (b2b.zusagen || []).map((z, i) => `<div class="v rv d${i + 1}"><h4><span class="n">0${i + 1}</span> ${esc(z)}</h4></div>`).join('');
+  const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Für Hausverwaltungen & Gewerbe","about":{"@id":"${DOMAIN}/#organization"}},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"Objektbetreuung für Hausverwaltungen","serviceType":"Facility Service","provider":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(haupt.map(o => o.name))}},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Für Hausverwaltungen', url }])}`;
+  // B2B statt WhatsApp-Foto-Flow: E-Mail-Angebot als Haupt-CTA (schriftliches Angebot in 48 h)
+  const mailtoAngebot = `mailto:${nap.email}?subject=${encodeURIComponent('Angebot Objektbetreuung')}&body=${encodeURIComponent('Guten Tag,\n\nwir sind eine Hausverwaltung / Gewerbe und interessieren uns für Ihre Objektbetreuung.\n\nObjekt(e): \nOrt/PLZ: \nGewünschte Leistungen: \n\nBitte senden Sie uns ein schriftliches Angebot.\n\nMit freundlichen Grüßen')}`;
+  const emailCta = `<section class="sec"><div class="wrap center"><div class="head" style="justify-content:center"><h2 class="serif rv">Angebot per E-Mail anfordern</h2></div><p class="intro rv" style="max-width:44em;margin-inline:auto">Senden Sie uns Ihre Objektdaten — Sie erhalten ein schriftliches Angebot per E-Mail, in der Regel innerhalb von 48 Stunden. Ein fester Ansprechpartner, kein Callcenter.</p><div class="cta-row rv d2" style="justify-content:center"><a class="btn btn-acc" href="${mailtoAngebot}">${CTA_ANGEBOT}</a><a class="btn btn-line" href="mailto:${esc(nap.email)}">${esc(nap.email)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
+  const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Für Hausverwaltungen</div>
+<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Für Hausverwaltungen &amp; Gewerbe</span><h1 class="rv in d1">Ein Dienstleister für <em>Ihre Objekte</em> im Havelland</h1><p class="lead rv in d2">Grünpflege, Reinigung, Winterdienst und Objektkontrolle aus einer Hand — mit festem Ansprechpartner, schriftlichem Angebot und Foto-Reporting nach jedem Einsatz.</p><div class="cta-row rv in d3"><a class="btn btn-acc" href="${mailtoAngebot}">${CTA_ANGEBOT}</a><a class="btn btn-line" href="mailto:${esc(nap.email)}">E-Mail schreiben</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div>
+<div class="shot rv in d2">${pic('bg-fassade', { cls: 'main', alt: 'Wohnanlage im Havelland — Objektbetreuung durch den Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true })}</div></div></section>
+${gstrip}
+<section class="sec"><div class="wrap"><div class="prose wide rv"><h2>Für wen wir arbeiten</h2><p>Wir betreuen laufende Objekte zuverlässig und dokumentiert — mit einem festen Ansprechpartner statt wechselnder Kräfte.</p><ul>${objekte}</ul></div></div></section>
+<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Leistungen für Ihr Objekt</h2></div><div class="cards rv">${leist}</div></div></section>
+<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Verlässlich, dokumentiert, ohne Callcenter — <em>ein Ansprechpartner für alle Objekte.</em></p><div class="vals">${zus}</div></div></section>
+${emailCta}
+${endBand}`;
+  write(url, head(clampTitle(`Für Hausverwaltungen & Gewerbe — ${nap.name}`), mkMeta('Haus- & Gartenservice Havelland für Hausverwaltungen, WEG und Gewerbe: Grünpflege, Reinigung, Winterdienst und Objektkontrolle mit festem Ansprechpartner und Foto-Reporting.'), url, schema, { noindex: (config.aktive_welle || 0) < 2 }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push(url);
 }
 function danke() {
@@ -623,16 +733,16 @@ function ratgeberIndex() {
   const url = '/ratgeber/';
   const list = ratCopy.length ? ratCopy : RATGEBER_FALLBACK;
   const cats = [
-    { label: 'Garten & Heckenpflege', svcs: ['gartenpflege', 'heckenschnitt'] },
-    { label: 'Reinigung & Außenflächen', svcs: ['fensterreinigung', 'steinreinigung', 'dachrinnenreinigung', 'photovoltaikreinigung', 'gebaeudereinigung', 'grundreinigung', 'unterhaltsreinigung'] },
-    { label: 'Entrümpelung & Umzug', svcs: ['entruempelung', 'haushaltsaufloesung', 'umzugshilfe'] },
-    { label: 'Winterdienst & Hausservice', svcs: ['winterdienst', 'hausmeisterservice', 'ferienwohnung-reinigung', 'objektbetreuung', 'renovierung'] },
+    { label: 'Garten & Heckenpflege', svcs: ['gartenpflege', 'heckenschnitt'], teaser: 'Wann geschnitten wird, was der Naturschutz erlaubt und wie regelmäßige Pflege im Havelland aussieht.' },
+    { label: 'Reinigung & Außenflächen', svcs: ['fensterreinigung', 'steinreinigung', 'dachrinnenreinigung', 'photovoltaikreinigung', 'gebaeudereinigung', 'grundreinigung', 'unterhaltsreinigung'], teaser: 'Von der streifenfreien Scheibe bis zum grünbelagfreien Pflaster — Kosten, Turnus und worauf es beim Ergebnis ankommt.' },
+    { label: 'Entrümpelung & Umzug', svcs: ['entruempelung', 'haushaltsaufloesung', 'umzugshilfe'], teaser: 'Was Entrümpelung und Haushaltsauflösung kosten, wie ein Festpreis zustande kommt und wie der Ablauf ist.' },
+    { label: 'Winterdienst & Hausservice', svcs: ['winterdienst', 'hausmeisterservice', 'ferienwohnung-reinigung', 'objektbetreuung', 'renovierung'], teaser: 'Streupflicht, Reaktionszeiten und laufende Betreuung rund ums Haus im Havelland und Berliner Umland.' },
   ];
   const used = new Set();
-  const groups = cats.map(c => { const items = list.filter(r => c.svcs.includes(r.cta_service)); items.forEach(r => used.add(r.slug)); return { label: c.label, items }; }).filter(c => c.items.length);
+  const groups = cats.map(c => { const items = list.filter(r => c.svcs.includes(r.cta_service)); items.forEach(r => used.add(r.slug)); return { label: c.label, teaser: c.teaser, items }; }).filter(c => c.items.length);
   const rest = list.filter(r => !used.has(r.slug));
-  if (rest.length) groups.push({ label: 'Weitere Ratgeber', items: rest });
-  const sections = groups.map((c, gi) => `<section class="sec${gi % 2 ? ' section-alt' : ''}" style="padding:56px 0"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(c.label)}</h2></div><div class="cards rv">${c.items.map((r, i) => `<a class="card guide" href="/ratgeber/${r.slug}/"><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(r.title)}</h3><p>${esc(r.lead || '')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>`).join('');
+  if (rest.length) groups.push({ label: 'Weitere Ratgeber', teaser: '', items: rest });
+  const sections = groups.map((c, gi) => `<section class="sec${gi % 2 ? ' section-alt' : ''}" style="padding:56px 0"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(c.label)}</h2></div>${c.teaser ? `<p class="intro rv">${esc(c.teaser)}</p>` : ''}<div class="cards rv">${c.items.map((r, i) => `<a class="card guide" href="/ratgeber/${r.slug}/"><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(r.title)}</h3><p>${esc(r.lead || '')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>`).join('');
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Ratgeber</div>
 <section class="phero" style="padding-bottom:10px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Ratgeber</span><h1 class="rv in d1">Ratgeber rund um <em>Haus &amp; Garten</em></h1><p class="lead rv in d2">Verständliche Antworten zu Kosten, Terminen und Pflege — aus der Praxis im Havelland und Berliner Umland.</p></div></section>
 <section class="sec" style="padding:14px 0 0"><div class="wrap"><div class="media-band rv">${pic('ratgeber-index', { alt: 'Gepflegtes Haus mit Garten im Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
@@ -669,6 +779,7 @@ haupt.forEach(ortsHub);
 basis();
 ueberUns();
 bewertungen();
+b2bPage();
 danke();
 notFound();
 if (FULL) {

@@ -1,0 +1,22 @@
+{
+  "_meta": "Daten-Block fuer die B2B-Seite /fuer-hausverwaltungen/. Kein eigener Service-Slug in services.json — die Seite wird als eigene Basis-Funktion im Generator gebaut (Phase Generator).",
+  "objektklassen": [
+    "Wohnungseigentümergemeinschaft (WEG)",
+    "Mehrfamilienhaus",
+    "Gewerbeobjekt",
+    "Hausverwaltung mit mehreren Objekten"
+  ],
+  "leistungen": [
+    "Grünpflege & Heckenschnitt",
+    "Treppenhaus- & Unterhaltsreinigung",
+    "Winterdienst mit Doku",
+    "Objektkontrolle & Kleinreparatur",
+    "Dachrinnen & Außenflächen"
+  ],
+  "zusagen": [
+    "Fester Ansprechpartner statt Callcenter",
+    "Schriftliches Angebot per E-Mail in 48 h",
+    "Foto-Dokumentation nach jedem Einsatz als Reporting",
+    "Vertretungsregel bei Urlaub/Krankheit"
+  ]
+}
