@@ -575,7 +575,7 @@ ${formOpen}
 <label>E-Mail<input name="email" type="email" autocomplete="email" placeholder="für die Rückmeldung (optional)"></label>
 <label>Ort / PLZ<input name="ort" autocomplete="address-level2"></label>
 <label>Was steht an?<textarea name="anliegen" rows="4" required></textarea></label>
-<label class="chk"><input type="checkbox" name="dsgvo" required> Ich bin mit der Verarbeitung meiner Angaben zur Kontaktaufnahme einverstanden (siehe <a href="/datenschutz/">Datenschutz</a>).</label>
+<label class="chk"><input type="checkbox" name="dsgvo" required> <span>Ich bin mit der Verarbeitung meiner Angaben zur Kontaktaufnahme einverstanden (siehe <a href="/datenschutz/">Datenschutz</a>).</span></label>
 <button class="btn btn-acc" type="submit">Anfrage absenden</button>
 <p class="kf-alt">Lieber direkt? <a href="tel:${tel}">Anrufen: ${esc(nap.phone_display)}</a> · <a href="${waHref('Hallo, ich hätte gern eine kostenlose Besichtigung.')}">WhatsApp schreiben</a></p>
 </form></div></section>
