@@ -220,21 +220,15 @@
   var mapDots = $$('.map-dot');
   var ortBtns = $$('.ortbtn');
   if (mapDots.length || ortBtns.length) {
-    var ortTexte = {
-      'Falkensee': 'Falkensee ist unser Standort — Darmstädter Str. 15. Kürzeste Wege, schnellste Termine.',
-      'Seeburg': 'Seeburg liegt in unserem Kerngebiet — kostenlose Besichtigung, Anfahrt im Festpreis enthalten.',
-      'Dallgow-Döberitz': 'Dallgow-Döberitz liegt in unserem Kerngebiet — kostenlose Besichtigung, Anfahrt im Festpreis enthalten.',
-      'Rohrbeck': 'Rohrbeck liegt in unserem Kerngebiet — kostenlose Besichtigung, Anfahrt im Festpreis enthalten.',
-      'Brieselang': 'Brieselang liegt in unserem Kerngebiet — kostenlose Besichtigung, Anfahrt im Festpreis enthalten.',
-      'Schönwalde-Glien': 'Schönwalde-Glien liegt in unserem Kerngebiet — kostenlose Besichtigung, Anfahrt im Festpreis enthalten.',
-      'Wustermark': 'Wustermark liegt in unserem Kerngebiet — kostenlose Besichtigung, Anfahrt im Festpreis enthalten.',
-      'Elstal': 'Elstal liegt in unserem Kerngebiet — kostenlose Besichtigung, Anfahrt im Festpreis enthalten.',
-      'Berlin-Staaken': 'Berlin-Staaken grenzt direkt an Falkensee — auch hier: kostenlose Besichtigung, Anfahrt im Festpreis enthalten.'
+    var ortText = function (name) {
+      return name === 'Falkensee'
+        ? 'Falkensee ist unser Standort — Darmstädter Str. 15. Kürzeste Wege, schnellste Termine.'
+        : name + ' liegt in unserem Servicegebiet — kostenlose Besichtigung, Anfahrt im Festpreis enthalten.';
     };
     var ortSelect = function (name) {
       mapDots.forEach(function (d) { d.classList.toggle('on', d.dataset.ort === name); });
       ortBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.ort === name ? 'true' : 'false'); });
-      if (mapInfo) mapInfo.textContent = ortTexte[name] || '';
+      if (mapInfo) mapInfo.textContent = ortText(name);
     };
     ortBtns.forEach(function (b) { on(b, 'click', function () { ortSelect(b.dataset.ort); }); });
     mapDots.forEach(function (d) { on(d, 'click', function () { ortSelect(d.dataset.ort); }); });

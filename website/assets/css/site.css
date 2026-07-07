@@ -373,7 +373,13 @@ body.lb-open{overflow:hidden}
 .ortbtn .on2{font-family:var(--font-display);font-style:italic;font-weight:600;color:var(--green);font-size:15px;flex:0 0 2.2em}
 .ortbtn:hover{color:var(--green-d)}
 .ortbtn[aria-pressed=true]{color:var(--green-d)}
-.ortbtn[aria-pressed=true] .on2{color:var(--accent)}
+.ortbtn[aria-pressed=true] .on2{color:var(--accent)!important}
+.ortbtn .on2{flex:0 0 auto;font-style:normal;font-size:18px;line-height:1}
+.ortlist-grouped .ortgroup{margin-bottom:14px}
+.ortlist-grouped .ortgroup-h{font:700 12px var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 2px;padding-top:12px;border-top:1px solid var(--hair)}
+.ortlist-grouped .ortgroup:first-child .ortgroup-h{border-top:0;padding-top:0}
+.ortlist-grouped .ortbtn{min-height:44px;padding:9px 4px;font-size:16.5px}
+@media(min-width:560px){.ortlist-grouped .ortgroup{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;align-items:start}.ortlist-grouped .ortgroup-h{grid-column:1/-1}}
 .gebiet-note{margin-top:28px;color:var(--muted);font-size:var(--fs-small);max-width:38em}
 
 /* ===== CTA-Band ===== */

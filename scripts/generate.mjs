@@ -411,7 +411,7 @@ function ortsHub(o) {
 <section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Leistungen in ${esc(o.name)}</h2></div><div class="cards rv">${cards}</div>${teile.length?`<p class="intro rv" style="margin-top:30px">Auch in ${esc(teile.join(', '))} und Umgebung.</p>`:''}</div></section>
 ${gstrip}
 <section class="sec"><div class="wrap">${whatsappFlow({ ort: o.name, gewerk: 'meinem Anliegen' })}</div></section>
-${gebietskarte()}
+${gebietskarte({ activeSlug: o.slug })}
 ${endBand}`;
   write(url, head(clampTitle(`Haus- & Gartenservice ${o.name}`), mkMeta(`Haus- & Gartenservice in ${o.name}${o.plz?` (${o.plz})`:''}: Garten, Reinigung, Winterdienst, Entrümpelung von einem festen Ansprechpartner.`), url, schema, { noindex: (config.aktive_welle || 0) < 1 }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.orts_hubs.push(url);

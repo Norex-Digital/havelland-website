@@ -344,33 +344,78 @@ export function faqFilter(faqs, { heading = 'Häufige <em>Fragen.</em>' } = {}) 
 // gebietskarte — .gebiet-wrap mit SVG-Karte (9 Orte, Koordinaten fix aus lock-v2) + ortlist.
 // map-info-Text + Ortstexte fuellt site.js. orte optional -> ueberschreibt ortlist-Labels.
 // ---------------------------------------------------------------------------
-const ORTE9 = ['Falkensee', 'Seeburg', 'Dallgow-Döberitz', 'Rohrbeck', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Elstal', 'Berlin-Staaken'];
-const GEBIET_SVG = `<svg viewBox="0 0 600 480" role="img" aria-label="Schematische Karte des Servicegebiets West-Havelland mit neun Orten">` +
-  `<path d="M70,260 C70,140 180,64 320,64 C430,64 492,120 486,210 C520,290 496,392 386,418 C266,446 152,432 110,382 C76,342 70,300 70,260 Z" fill="#FFFFFF" stroke="#E2DED3" stroke-width="2"/>` +
-  `<path d="M460,44 C457,110 458,180 456,240 C455,275 452,300 452,320 C452,360 490,430 505,474" fill="none" stroke="#B7B9B0" stroke-width="2" stroke-dasharray="7 7"/>` +
-  `<text x="520" y="110" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="#6B726B">BERLIN</text>` +
-  `<text x="90" y="105" font-family="Fraunces,Georgia,serif" font-size="16" font-style="italic" fill="#6B726B">West-Havelland</text>` +
-  `<g class="map-dot" data-ort="Wustermark" tabindex="-1"><circle class="hit" cx="127" cy="285" r="26"/><circle class="pt" cx="127" cy="285" r="8"/><text x="127" y="264" text-anchor="middle">Wustermark</text></g>` +
-  `<g class="map-dot" data-ort="Elstal" tabindex="-1"><circle class="hit" cx="150" cy="345" r="26"/><circle class="pt" cx="150" cy="345" r="8"/><text x="150" y="374" text-anchor="middle">Elstal</text></g>` +
-  `<g class="map-dot" data-ort="Brieselang" tabindex="-1"><circle class="hit" cx="196" cy="196" r="26"/><circle class="pt" cx="196" cy="196" r="8"/><text x="196" y="175" text-anchor="middle">Brieselang</text></g>` +
-  `<g class="map-dot" data-ort="Rohrbeck" tabindex="-1"><circle class="hit" cx="248" cy="330" r="26"/><circle class="pt" cx="248" cy="330" r="8"/><text x="248" y="359" text-anchor="middle">Rohrbeck</text></g>` +
-  `<g class="map-dot" data-ort="Dallgow-Döberitz" tabindex="-1"><circle class="hit" cx="318" cy="302" r="26"/><circle class="pt" cx="318" cy="302" r="8"/><text x="318" y="288" text-anchor="middle">Dallgow-Döberitz</text></g>` +
-  `<g class="map-dot" data-ort="Seeburg" tabindex="-1"><circle class="hit" cx="420" cy="352" r="26"/><circle class="pt" cx="420" cy="352" r="8"/><text x="420" y="381" text-anchor="middle">Seeburg</text></g>` +
-  `<g class="map-dot" data-ort="Schönwalde-Glien" tabindex="-1"><circle class="hit" cx="405" cy="122" r="26"/><circle class="pt" cx="405" cy="122" r="8"/><text x="405" y="101" text-anchor="middle">Schönwalde-Glien</text></g>` +
-  `<g class="map-dot" data-ort="Berlin-Staaken" tabindex="-1"><circle class="hit" cx="486" cy="290" r="26"/><circle class="pt" cx="486" cy="290" r="8"/><text x="486" y="270" text-anchor="middle">Staaken</text></g>` +
-  `<g class="map-dot base" data-ort="Falkensee" tabindex="-1"><circle class="hit" cx="340" cy="212" r="30"/><circle class="pt" cx="340" cy="212" r="11"/><circle cx="340" cy="212" r="17" fill="none" stroke="#E0A23B" stroke-width="2"/><text x="340" y="186" text-anchor="middle" font-size="17">Falkensee</text></g>` +
-  `</svg>`;
-export function gebietskarte(orte, { heading = 'Wir fahren dorthin, wo wir <em>pünktlich</em> sein können.' } = {}) {
-  const list = arr(orte).length ? arr(orte).map(o => (o && o.name) ? o.name : String(o)) : ORTE9;
-  const ortl = list.map((name, i) =>
-    `<button class="ortbtn" data-ort="${esc(name)}" aria-pressed="${i === 0 ? 'true' : 'false'}"><span class="on2">${String(i + 1).padStart(2, '0')}</span>${esc(name)}</button>`).join('');
+// GEBIET_REGIONEN — alle bedienten Haupt-Orte, nach Region gruppiert, mit schematischen
+// SVG-Koordinaten (viewBox 600x480, Falkensee = Anker, Norden oben, Berlin im Osten/SO).
+// Farbe je Region (Grün-Familie, markensicher). Positionen approximieren die reale Geografie.
+const GEBIET_REGIONEN = [
+  { key: 'west', label: 'Falkensee & West-Havelland', color: '#205840', lx: 96, ly: 108, orts: [
+    { slug: 'falkensee', name: 'Falkensee', x: 280, y: 235, anchor: true },
+    { slug: 'brieselang', name: 'Brieselang', x: 245, y: 150 },
+    { slug: 'schoenwalde-glien', name: 'Schönwalde-Glien', x: 335, y: 118 },
+    { slug: 'nauen', name: 'Nauen', x: 92, y: 196 },
+    { slug: 'wustermark', name: 'Wustermark', x: 185, y: 300 },
+    { slug: 'ketzin', name: 'Ketzin/Havel', x: 148, y: 392 },
+    { slug: 'dallgow-doeberitz', name: 'Dallgow-Döberitz', x: 352, y: 296 } ] },
+  { key: 'nord', label: 'Oberhavel & Norden', color: '#16412D', lx: 386, ly: 42, orts: [
+    { slug: 'kremmen', name: 'Kremmen', x: 300, y: 60 },
+    { slug: 'oberkraemer', name: 'Oberkrämer', x: 366, y: 90 },
+    { slug: 'leegebruch', name: 'Leegebruch', x: 416, y: 72 },
+    { slug: 'oranienburg', name: 'Oranienburg', x: 474, y: 62 },
+    { slug: 'lehnitz', name: 'Lehnitz', x: 496, y: 106 },
+    { slug: 'velten', name: 'Velten', x: 446, y: 132 },
+    { slug: 'hennigsdorf', name: 'Hennigsdorf', x: 452, y: 192 },
+    { slug: 'hohen-neuendorf', name: 'Hohen Neuendorf', x: 510, y: 160 },
+    { slug: 'birkenwerder', name: 'Birkenwerder', x: 526, y: 204 },
+    { slug: 'glienicke-nordbahn', name: 'Glienicke/Nordbahn', x: 548, y: 250 } ] },
+  { key: 'berlinrand', label: 'Berliner Westrand', color: '#3F7A5B', lx: 448, ly: 402, orts: [
+    { slug: 'berlin-spandau', name: 'Berlin-Spandau', x: 478, y: 300 },
+    { slug: 'gross-glienicke', name: 'Groß Glienicke', x: 430, y: 348 },
+    { slug: 'berlin-gatow', name: 'Berlin-Gatow', x: 496, y: 344 },
+    { slug: 'berlin-kladow', name: 'Berlin-Kladow', x: 456, y: 392 } ] },
+  { key: 'seen', label: 'Havelseen', color: '#6FA285', lx: 214, ly: 456, orts: [
+    { slug: 'werder-havel', name: 'Werder (Havel)', x: 286, y: 426 },
+    { slug: 'schwielowsee', name: 'Schwielowsee', x: 334, y: 446 } ] },
+];
+function gebietSvg(activeSlug) {
+  let dots = '';
+  for (const reg of GEBIET_REGIONEN) for (const o of reg.orts) {
+    const on = o.slug === activeSlug;
+    if (o.anchor) {
+      dots += `<g class="map-dot base${on ? ' on' : ''}" data-ort="${esc(o.name)}" data-slug="${o.slug}" tabindex="-1">` +
+        `<circle class="hit" cx="${o.x}" cy="${o.y}" r="26"/><circle class="pt" cx="${o.x}" cy="${o.y}" r="10" style="fill:${reg.color}"/>` +
+        `<circle cx="${o.x}" cy="${o.y}" r="16" fill="none" stroke="#E0A23B" stroke-width="2.5"/>` +
+        `<text x="${o.x}" y="${o.y - 22}" text-anchor="middle" font-size="16">Falkensee</text></g>`;
+    } else {
+      dots += `<g class="map-dot${on ? ' on' : ''}" data-ort="${esc(o.name)}" data-slug="${o.slug}" tabindex="-1">` +
+        `<circle class="hit" cx="${o.x}" cy="${o.y}" r="18"/><circle class="pt" cx="${o.x}" cy="${o.y}" r="6.5" style="fill:${reg.color}"/>` +
+        (on ? `<circle cx="${o.x}" cy="${o.y}" r="12" fill="none" stroke="#E0A23B" stroke-width="2.5"/><text x="${o.x}" y="${o.y - 15}" text-anchor="middle" font-size="13" font-weight="600" fill="#15201A">${esc(o.name)}</text>` : '') +
+        `</g>`;
+    }
+  }
+  const regionLabels = GEBIET_REGIONEN.map(r =>
+    `<text x="${r.lx}" y="${r.ly}" font-family="Fraunces,Georgia,serif" font-size="14" font-style="italic" fill="${r.color}" opacity="0.85">${esc(r.label)}</text>`).join('');
+  return `<svg viewBox="0 0 600 480" role="img" aria-label="Schematische Karte unseres Servicegebiets im Havelland und Berliner Umland mit allen bedienten Orten">` +
+    `<path d="M60,250 C60,120 190,52 340,52 C470,52 560,120 556,230 C560,320 500,410 380,438 C250,462 130,442 92,388 C64,346 60,300 60,250 Z" fill="#FFFFFF" stroke="#E2DED3" stroke-width="2"/>` +
+    `<text x="560" y="150" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="#B7B9B0" text-anchor="end">BERLIN →</text>` +
+    regionLabels + dots + `</svg>`;
+}
+export function gebietskarte({ activeSlug = null, heading = 'Wir fahren dorthin, wo wir <em>pünktlich</em> sein können.' } = {}) {
+  const groups = GEBIET_REGIONEN.map(reg => {
+    const btns = reg.orts.map(o =>
+      `<button class="ortbtn" data-ort="${esc(o.name)}" data-slug="${o.slug}" aria-pressed="${o.slug === activeSlug ? 'true' : 'false'}"><span class="on2" style="color:${reg.color}">•</span>${esc(o.name)}</button>`).join('');
+    return `<div class="ortgroup"><h3 class="ortgroup-h">${esc(reg.label)}</h3>${btns}</div>`;
+  }).join('');
+  const activeName = (() => { for (const r of GEBIET_REGIONEN) for (const o of r.orts) if (o.slug === activeSlug) return o.name; return null; })();
+  const info = activeName && activeSlug !== 'falkensee'
+    ? `${esc(activeName)} liegt in unserem Servicegebiet — kostenlose Besichtigung, Anfahrt im Festpreis enthalten.`
+    : 'Falkensee ist unser Standort — von hier fahren wir ins ganze Havelland und ans Berliner Umland.';
   return `<section class="sec sec-alt" id="gebiet"><div class="wrap">` +
     `<div class="head"><h2 class="rv">${heading}</h2></div>` +
-    `<p class="intro rv">Unser Servicegebiet im West-Havelland — kurze Wege, verlässliche Termine. Tippen Sie Ihren Ort an:</p>` +
-    `<div class="gebiet-wrap rv"><div class="map-card">${GEBIET_SVG}` +
-    `<p class="map-info" id="map-info">Falkensee ist unser Standort — von hier aus sind alle neun Orte kurz angefahren.</p></div>` +
-    `<div><div class="ortlist" id="ortlist">${ortl}</div>` +
-    `<p class="gebiet-note">Ihr Ort ist nicht dabei? <a href="tel:${TEL}">Rufen Sie kurz an</a> — wir sagen Ihnen ehrlich, ob wir kommen. Alle Orte im Überblick: <a href="/standorte/">Standorte</a>.</p></div>` +
+    `<p class="intro rv">Von Falkensee ins West-Havelland, nach Oberhavel, an den Berliner Westrand und an die Havelseen — kurze Wege, verlässliche Termine. Tippen Sie Ihren Ort an:</p>` +
+    `<div class="gebiet-wrap rv"><div class="map-card">${gebietSvg(activeSlug)}` +
+    `<p class="map-info" id="map-info">${info}</p></div>` +
+    `<div><div class="ortlist ortlist-grouped" id="ortlist">${groups}</div>` +
+    `<p class="gebiet-note">Ihr Ort ist nicht dabei? <a href="tel:${TEL}">Rufen Sie kurz an</a> — wir sagen Ihnen ehrlich, ob wir kommen. Auch in vielen Ortsteilen und Nachbargemeinden sind wir im Einsatz. Alle Orte im Überblick: <a href="/standorte/">Standorte</a>.</p></div>` +
     `</div></div></section>`;
 }
 
