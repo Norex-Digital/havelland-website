@@ -1,8 +1,8 @@
 {
   "_meta": "Zentrale Build-Konstanten. Generator bricht ab, wenn ein required-Feld ein Platzhalter-Pattern (XXXX / TBD / null) traegt. Quelle der Wahrheit fuer Domain, IDs, Wellenplan.",
   "domain": "https://haus-und-gartenservice-havelland.de",
-  "ga4_id": "TBD-P0",
-  "gtm_id": "TBD-P0",
+  "ga4_id": "G-8CKCRP9B1L",
+  "gtm_id": "GTM-TR7JVXZL",
   "web3forms_key": "b7a7d8dc-c9de-4a70-a63d-6b1d179104f8",
   "indexnow_key": "b497eeb3777a37bba0952540d225aba4",
   "aktive_welle": 0,
