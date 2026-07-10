@@ -1,5 +1,5 @@
 {
-  "_meta": "Struktur fuer spaetere GBP-Review-Integration vorbereitet, nicht live. enabled=false haelt alle Review-Blocks aus; Block erscheint erst ab block_ab_count echten Reviews. Keine erfundenen Reviews.",
+  "_meta": "Echte Google-Reviews via GBP-API (v4) 2026-07-10 gezogen. Kuratiert (8 von 16), verbatim. Inhaber-Review (Mo Br) bewusst ausgeschlossen. Rating/Count aus GBP-API. Kein self-serving aggregateRating-Schema im Output.",
   "enabled": true,
   "block_ab_count": 5,
   "place_id": "ChIJR7QuOPz_qEcR5fzAJn2cSPY",
@@ -8,7 +8,56 @@
   "aggregate": {
     "rating": 5.0,
     "count": 16,
-    "as_of": "2026-07-07"
+    "as_of": "2026-07-10"
   },
-  "reviews": []
+  "reviews": [
+    {
+      "author": "Nikita",
+      "rating": 5,
+      "date": "2026-06-22",
+      "text": "Ich bin sehr zufrieden mit dem Haus- & Gartenservice Havelland. Alles war perfekt von der Kommunikation bis zur Ausführung der Arbeiten. Zuverlässig, pünktlich und sehr professionell. Klare Weiterempfehlung!"
+    },
+    {
+      "author": "Abdullah Bayraktar",
+      "rating": 5,
+      "date": "2026-06-16",
+      "text": "Super Service Meine Terrasse sieht wie neu aus\nIch bin wirklich begeistert! Meine Terrasse sah seit 20 Jahren nicht gepflegt aus  völlig verwildert, Unkraut überall, die Holzbohlen waren morsch. Die Jungs von Haus-Gartenservice Havelland haben das in zwei Tagen komplett transformiert.\nSie haben alles abgeräumt, neue Bretter verlegt, Unkraut entfernt und die Fläche perfekt hergerichtet. Sehr zuverlässig, freundlich und das beste: das Preis Leistungs Verhältnis ist top\nWürde ich jederzeit wieder buchen. Absolute Empfehlung 👍"
+    },
+    {
+      "author": "hanan k",
+      "rating": 5,
+      "date": "2026-06-18",
+      "text": "Meine hecke war noch nie so schön geformt..  Sauber wurde der Arbeitsplatz auch hinterlassen. Gerne wieder!"
+    },
+    {
+      "author": "Alq",
+      "rating": 5,
+      "date": "2026-07-01",
+      "text": "Unser Garten war so verwuchert und die Hecken mindestens 3 Meter hoch. Jetz sieht alles wieder hübsch aus. Gute Arbeit Männers"
+    },
+    {
+      "author": "Luis Zoras",
+      "rating": 5,
+      "date": "2026-07-02",
+      "text": "Meine Hecken sehen wieder aus wie in einem 5 Sterne Hotel, ohne zu übertreiben. Super Arbeit."
+    },
+    {
+      "author": "Adis Skrijelj",
+      "rating": 5,
+      "date": "2026-07-02",
+      "text": "Mein Garten ist jetz für den Sommer wieder betretbar, und die Hecken wieder in Form. Gerne wieder 👍"
+    },
+    {
+      "author": "Mark Schneider",
+      "rating": 5,
+      "date": "2026-06-22",
+      "text": "Endlich mal eine angemesse Preisvorstellung. An Qualität hapert es aber nicht. Super Firma 👍"
+    },
+    {
+      "author": "Qusai 21",
+      "rating": 5,
+      "date": "2026-06-19",
+      "text": "Die Jungs haben echt eine super Arbeit geleistet, meine Hecke sieht aus wie Neu.\nKann ich nur empfehlen 👍🏼"
+    }
+  ]
 }
