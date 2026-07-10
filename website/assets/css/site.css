@@ -407,6 +407,15 @@ body.lb-open{overflow:hidden}
 .grating .gr-stars{color:var(--accent);font-size:22px;letter-spacing:2px;line-height:1}
 .grating .gr-val{font-family:var(--font-display);font-size:34px;font-weight:600;color:var(--green);line-height:1}
 .grating .gr-meta{color:var(--muted);font-size:var(--fs-small)}
+/* ===== Echte Google-Review-Kacheln ===== */
+.review-grid{display:grid;gap:20px;grid-template-columns:1fr;align-items:start}
+@media(min-width:640px){.review-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.review-grid{grid-template-columns:1fr 1fr 1fr}}
+.review-card{margin:0;background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:22px 22px 18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 18px 40px -30px rgba(14,46,31,.4)}
+.review-card .rc-stars{color:var(--accent);font-size:16px;letter-spacing:2px;line-height:1}
+.review-card blockquote{margin:0;font-size:var(--fs-small);line-height:1.6;color:var(--ink);flex:1}
+.review-card figcaption{font-size:13px;color:var(--muted);border-top:1px solid var(--hair);padding-top:12px;margin-top:4px}
+.review-card figcaption b{display:block;color:var(--ink);font-weight:600;font-size:14.5px}
 
 /* ===== CTA-Band ===== */
 .zone-deep{background:var(--green-deep);color:var(--dark-text2)}

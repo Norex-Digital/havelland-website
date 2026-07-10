@@ -697,9 +697,19 @@ function bewertungen() {
 <h3>Schon mit uns gearbeitet?</h3><p>Über eine ehrliche Bewertung bei Google freuen wir uns. Sie hilft anderen Nachbarn in der Region, einen verlässlichen Ansprechpartner zu finden.</p>`
     : `<p>Wir sind ein regionaler Betrieb und sammeln Bewertungen direkt bei Google. Hier zeigen wir keine erfundenen Sterne: Was zählt, ist das Ergebnis vor Ort. Nach jedem Auftrag dokumentieren wir es mit Vorher-/Nachher-Fotos und schicken sie Ihnen per WhatsApp — Sie sehen, was Sie bekommen, ohne sich auf Werbeversprechen verlassen zu müssen.</p>
 <h3>Schon mit uns gearbeitet?</h3><p>Über eine ehrliche Bewertung bei Google freuen wir uns. Sie hilft anderen Nachbarn in der Region, einen verlässlichen Ansprechpartner zu finden.</p>`;
+  // Echte Google-Reviews als Kacheln (verbatim aus reviews.json, via GBP-API gezogen). KEIN Review-JSON-LD (self-serving-Policy) — nur sichtbar.
+  const MON = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+  const fmtD = d => { const m = String(d || '').match(/^(\d{4})-(\d{2})/); return m ? `${MON[+m[2] - 1]} ${m[1]}` : ''; };
+  const rvArr = Array.isArray(reviews.reviews) ? reviews.reviews : [];
+  const reviewTiles = (reviewsLive && rvArr.length)
+    ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Das sagen unsere Kundinnen und Kunden</h2><a class="rv" href="${gbpView}" rel="nofollow" target="_blank">Alle auf Google →</a></div><div class="review-grid rv">`
+      + rvArr.map(t => `<figure class="review-card"><div class="rc-stars" aria-label="${t.rating} von 5 Sternen">${'★'.repeat(Math.max(0, Math.min(5, t.rating | 0)))}</div><blockquote>${esc(t.text)}</blockquote><figcaption><b>${esc(t.author)}</b><span>${fmtD(t.date)} · Google</span></figcaption></figure>`).join('')
+      + `</div><p class="gebiet-note rv" style="margin-top:22px">Echte, ungefilterte Google-Bewertungen — ${esc(r.count)} insgesamt. <a href="${gbpView}" rel="nofollow" target="_blank">Alle auf Google ansehen</a>.</p></div></section>`
+    : '';
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Bewertungen</div>
 <section class="phero" style="padding-bottom:24px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Bewertungen</span><h1 class="rv in d1">Bewertungen &amp; <em>Erfahrungen</em></h1><p class="lead rv in d2">Echte Ergebnisse statt großer Worte — und der Weg, uns selbst zu bewerten.</p>${counter}</div></section>
 <section class="sec" style="padding-top:24px"><div class="wrap"><div class="prose rv">${body}<p style="margin-top:24px"><a class="btn btn-acc" href="${gbp}" rel="nofollow" target="_blank">Bei Google bewerten</a></p></div></div></section>
+${reviewTiles}
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So sieht unser Foto-Nachweis aus</h2></div><p class="intro rv">Statt Sternen zeigen wir das Ergebnis: Nach jedem Auftrag bekommen Sie Vorher-/Nachher-Fotos aufs Handy — hier ein Beispiel aus dem Havelland.</p>${echtProjekt()}</div></section>
 ${endBand}`;
   write(url, head(`Bewertungen — ${nap.name}`, mkMeta(`Bewertungen und Erfahrungen zum Haus- & Gartenservice Havelland in ${nap.city}: Foto-Nachweis nach jedem Auftrag statt erfundener Sterne.`), url, `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Bewertungen',url}])}`) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
