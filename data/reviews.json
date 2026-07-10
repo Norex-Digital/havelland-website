@@ -1,14 +1,14 @@
 {
   "_meta": "Struktur fuer spaetere GBP-Review-Integration vorbereitet, nicht live. enabled=false haelt alle Review-Blocks aus; Block erscheint erst ab block_ab_count echten Reviews. Keine erfundenen Reviews.",
-  "enabled": false,
+  "enabled": true,
   "block_ab_count": 5,
   "place_id": "ChIJR7QuOPz_qEcR5fzAJn2cSPY",
   "cid": "17746606392988466405",
   "write_review_url": "https://g.page/r/CeX8wCZ9nEj2EAE/review",
   "aggregate": {
-    "rating": null,
-    "count": null,
-    "as_of": null
+    "rating": 5.0,
+    "count": 16,
+    "as_of": "2026-07-07"
   },
   "reviews": []
 }
