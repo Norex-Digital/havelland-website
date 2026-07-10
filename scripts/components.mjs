@@ -382,12 +382,12 @@ function gebietSvg(activeSlug) {
     const on = o.slug === activeSlug;
     if (o.anchor) {
       dots += `<g class="map-dot base${on ? ' on' : ''}" data-ort="${esc(o.name)}" data-slug="${o.slug}" tabindex="-1">` +
-        `<circle class="hit" cx="${o.x}" cy="${o.y}" r="26"/><circle class="pt" cx="${o.x}" cy="${o.y}" r="10" style="fill:${reg.color}"/>` +
+        `<circle class="hit" cx="${o.x}" cy="${o.y}" r="26"/><circle class="pt" cx="${o.x}" cy="${o.y}" r="10" style="--rc:${reg.color}"/>` +
         `<circle cx="${o.x}" cy="${o.y}" r="16" fill="none" stroke="#E0A23B" stroke-width="2.5"/>` +
         `<text x="${o.x}" y="${o.y - 22}" text-anchor="middle" font-size="16">Falkensee</text></g>`;
     } else {
       dots += `<g class="map-dot${on ? ' on' : ''}" data-ort="${esc(o.name)}" data-slug="${o.slug}" tabindex="-1">` +
-        `<circle class="hit" cx="${o.x}" cy="${o.y}" r="18"/><circle class="pt" cx="${o.x}" cy="${o.y}" r="6.5" style="fill:${reg.color}"/>` +
+        `<circle class="hit" cx="${o.x}" cy="${o.y}" r="18"/><circle class="pt" cx="${o.x}" cy="${o.y}" r="6.5" style="--rc:${reg.color}"/>` +
         (on ? `<circle cx="${o.x}" cy="${o.y}" r="12" fill="none" stroke="#E0A23B" stroke-width="2.5"/><text x="${o.x}" y="${o.y - 15}" text-anchor="middle" font-size="13" font-weight="600" fill="#15201A">${esc(o.name)}</text>` : '') +
         `</g>`;
     }
