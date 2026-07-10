@@ -2,6 +2,9 @@
 // Liest data/*.json + data/copy/*.json (P4-Copy), rendert gegen havelland-design (site.css), schreibt website/ + Sitemaps.
 // Kein FAQPage-JSON-LD (Projekt-Regel) — FAQ als nativer <details>-Inhalt.
 import fs from 'fs';
+import crypto from 'node:crypto';
+// Cache-Busting: Inhalts-Hash aus site.css + site.js -> ?v=… an <link>/<script>, damit Browser nach jeder Änderung frisch laden.
+const ASSET_VER = crypto.createHash('md5').update(fs.readFileSync('assets/css/site.css')).update(fs.readFileSync('assets/js/site.js')).digest('hex').slice(0, 8);
 // Gelockte Voll-Print-Komponenten (Klassen-Hooks 1:1 aus den Previews) — pro Seitentyp verdrahtet.
 import {
   baSlider, garantienStrip, schnittkalender, heckenKompass, jahreszeiten, echtProjekt,
@@ -216,7 +219,7 @@ function head(title, desc, canonical, schemaGraph, opts = {}) {
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${DOMAIN}${canonical}"><meta property="og:type" content="website"><meta property="og:locale" content="de_DE">${ogImg}
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/site.css?v=${ASSET_VER}">
 <noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[${schemaGraph}]}</script>
 </head><body>${ANALYTICS_BODY}`;
@@ -228,7 +231,7 @@ const sctaBar = waText => `<nav class="scta" aria-label="Schnellkontakt"><a clas
 const SCTA_DEFAULT = sctaBar('Hallo, ich hätte gern eine kostenlose Besichtigung.');
 // Footer — lock-v2 fcols-Sitemap (hell): Leistungen A–H / H–W / Unternehmen (inkl. /fuer-hausverwaltungen/) + legal
 const footer = `<footer><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · <a href="tel:${tel}">${esc(nap.phone_display)}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>${ohDisplay()?`<br>${esc(ohDisplay())}`:''}</p><div class="fcols"><div><h4>Leistungen</h4><ul><li><a href="/gartenpflege/">Gartenpflege</a></li><li><a href="/heckenschnitt/">Heckenschnitt</a></li><li><a href="/winterdienst/">Winterdienst</a></li><li><a href="/steinreinigung/">Steinreinigung</a></li><li><a href="/fensterreinigung/">Fensterreinigung</a></li><li><a href="/dachrinnenreinigung/">Dachrinnenreinigung</a></li><li><a href="/photovoltaikreinigung/">Photovoltaikreinigung</a></li></ul></div><div><h4>Weitere Leistungen</h4><ul><li><a href="/entruempelung/">Entrümpelung</a></li><li><a href="/haushaltsaufloesung/">Haushaltsauflösung</a></li><li><a href="/grundreinigung/">Grundreinigung</a></li><li><a href="/umzugshilfe/">Umzugshilfe</a></li><li><a href="/hausmeisterservice/">Hausmeisterservice</a></li><li><a href="/gebaeudereinigung/">Gebäudereinigung</a></li><li><a href="/objektbetreuung/">Objektbetreuung</a></li></ul></div><div><h4>Unternehmen</h4><ul><li><a href="/leistungen/">Alle Leistungen</a></li><li><a href="/standorte/">Standorte</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/bewertungen/">Bewertungen</a></li><li><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a></li><li><a href="/kontakt/">Kontakt</a></li></ul></div></div><div class="legal"><span>${esc(nap.name)} (${esc(nap.rechtsform||'GbR')})</span><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></div></div></footer>`;
-const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script><script src="/assets/js/site.js" defer></script>` + CONSENT_BANNER + TRACK_EVENTS;
+const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script><script src="/assets/js/site.js?v=${ASSET_VER}" defer></script>` + CONSENT_BANNER + TRACK_EVENTS;
 const endBand = `<section class="end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, was ansteht — wir kümmern uns.</h2><p class="rv d1">Kostenlose Besichtigung, Festpreis, dann erledigt.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
 // Dunkles Wert-Band (4 Werte) — auf Home + Übersichtsseiten wiederverwendet
 const valueBand = `<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>
