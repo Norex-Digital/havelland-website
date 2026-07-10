@@ -840,5 +840,17 @@
 "avif": true,
 "fb_ext": "jpg",
 "fb_w": 1280
+},
+"servicegebiet-karte": {
+"w": 1200,
+"h": 1200,
+"widths": [
+640,
+900,
+1200
+],
+"avif": false,
+"fb_ext": "jpg",
+"fb_w": 900
 }
 }

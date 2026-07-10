@@ -358,8 +358,28 @@ body.lb-open{overflow:hidden}
 
 /* ===== Servicegebiet (Karte) ===== */
 .gebiet-wrap{display:grid;gap:40px;align-items:start}
-.map-card{background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:18px}
+.map-card{background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:14px}
 .map-card svg{width:100%;height:auto;display:block}
+/* ===== Servicegebiet-Karte (selbst gehostetes OSM-Bild + Pin-Overlays) ===== */
+.svc-map{position:relative;margin:0;border-radius:var(--r-el);overflow:hidden;border:1px solid var(--hair)}
+.svc-map picture,.svc-map img{display:block;width:100%;height:auto}
+.svc-map-pins{position:absolute;inset:0;pointer-events:none}
+.svc-pin{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:6px;border:0;background:transparent;padding:0;margin:0;cursor:pointer;pointer-events:auto;line-height:0}
+.svc-pin:focus{outline:none}
+.svc-pin-dot{width:14px;height:14px;border-radius:50%;background:var(--green);border:2.5px solid #fff;box-shadow:0 1px 5px rgba(14,46,31,.5);flex:0 0 auto;transition:transform .15s,background .15s}
+.svc-pin-lbl{font:600 13px/1 var(--font-body);color:var(--green-deep);background:rgba(255,255,255,.95);padding:5px 10px;border-radius:var(--r-button);white-space:nowrap;box-shadow:0 3px 10px rgba(14,46,31,.22);opacity:0;transform:translateX(-3px);transition:opacity .15s,transform .15s;pointer-events:none}
+.svc-pin:hover,.svc-pin:focus-visible,.svc-pin.is-active{z-index:4}
+.svc-pin:hover .svc-pin-lbl,.svc-pin:focus-visible .svc-pin-lbl,.svc-pin.is-active .svc-pin-lbl,.svc-pin--anchor .svc-pin-lbl{opacity:1;transform:none}
+.svc-pin:hover .svc-pin-dot,.svc-pin:focus-visible .svc-pin-dot,.svc-pin.is-active .svc-pin-dot{background:var(--accent);transform:scale(1.28)}
+.svc-pin--left{flex-direction:row-reverse}
+.svc-pin--left .svc-pin-lbl{transform:translateX(3px)}
+.svc-pin--left:hover .svc-pin-lbl,.svc-pin--left.is-active .svc-pin-lbl{transform:none}
+.svc-pin--anchor{z-index:5}
+.svc-pin--anchor .svc-pin-dot{background:var(--accent);width:17px;height:17px;box-shadow:0 0 0 4px rgba(224,162,59,.35),0 1px 5px rgba(14,46,31,.5)}
+.svc-pin--anchor .svc-pin-lbl{color:var(--accent-ink);background:var(--accent)}
+.svc-map-attr{font:500 11px var(--font-body);color:var(--muted);padding:6px 10px 2px;text-align:right}
+.ortbtn.is-active{color:var(--green-d)}
+.ortbtn.is-active .on2{color:var(--accent)}
 .map-dot{cursor:pointer}
 .map-dot:focus,.map-dot:focus-visible{outline:none}
 .map-dot circle.hit{fill:transparent}

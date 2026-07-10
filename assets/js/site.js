@@ -215,23 +215,30 @@
     }
   }
 
-  /* ===== Servicegebiet: Karte + Liste synchron ===== */
+  /* ===== Servicegebiet: OSM-Kartenbild-Pins + Liste synchron (Hover + Klick) ===== */
   var mapInfo = $('#map-info');
-  var mapDots = $$('.map-dot');
+  var mapPins = $$('.svc-pin');
   var ortBtns = $$('.ortbtn');
-  if (mapDots.length || ortBtns.length) {
+  if (mapPins.length || ortBtns.length) {
     var ortText = function (name) {
       return name === 'Falkensee'
         ? 'Falkensee ist unser Standort — Darmstädter Str. 15. Kürzeste Wege, schnellste Termine.'
         : name + ' liegt in unserem Servicegebiet — kostenlose Besichtigung, Anfahrt im Festpreis enthalten.';
     };
     var ortSelect = function (name) {
-      mapDots.forEach(function (d) { d.classList.toggle('on', d.dataset.ort === name); });
-      ortBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.ort === name ? 'true' : 'false'); });
-      if (mapInfo) mapInfo.textContent = ortText(name);
+      mapPins.forEach(function (p) { p.classList.toggle('is-active', p.dataset.ort === name); });
+      ortBtns.forEach(function (b) { var a = b.dataset.ort === name; b.classList.toggle('is-active', a); b.setAttribute('aria-pressed', a ? 'true' : 'false'); });
+      if (mapInfo && name) mapInfo.textContent = ortText(name);
     };
-    ortBtns.forEach(function (b) { on(b, 'click', function () { ortSelect(b.dataset.ort); }); });
-    mapDots.forEach(function (d) { on(d, 'click', function () { ortSelect(d.dataset.ort); }); });
+    ortBtns.forEach(function (b) {
+      on(b, 'click', function () { ortSelect(b.dataset.ort); });
+      on(b, 'mouseenter', function () { ortSelect(b.dataset.ort); });
+    });
+    mapPins.forEach(function (p) {
+      on(p, 'click', function (e) { if (e && e.preventDefault) e.preventDefault(); ortSelect(p.dataset.ort); });
+      on(p, 'mouseenter', function () { ortSelect(p.dataset.ort); });
+      on(p, 'focus', function () { ortSelect(p.dataset.ort); });
+    });
   }
 
   /* ===== [D3] Öffnungszeiten-Erreichbarkeits-Chip =====

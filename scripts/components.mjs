@@ -344,65 +344,50 @@ export function faqFilter(faqs, { heading = 'Häufige <em>Fragen.</em>' } = {}) 
 // gebietskarte — .gebiet-wrap mit SVG-Karte (9 Orte, Koordinaten fix aus lock-v2) + ortlist.
 // map-info-Text + Ortstexte fuellt site.js. orte optional -> ueberschreibt ortlist-Labels.
 // ---------------------------------------------------------------------------
-// GEBIET_REGIONEN — alle bedienten Haupt-Orte, nach Region gruppiert, mit schematischen
-// SVG-Koordinaten (viewBox 600x480, Falkensee = Anker, Norden oben, Berlin im Osten/SO).
-// Farbe je Region (Grün-Familie, markensicher). Positionen approximieren die reale Geografie.
+// GEBIET_REGIONEN — alle bedienten Haupt-Orte, nach Region gruppiert. px/py = Pin-Position in %
+// auf dem selbst gehosteten OSM-Kartenbild (servicegebiet-karte, z11, center 52.55/13.08, 1200x1200).
+// Reproduzierbar via scripts/build-servicegebiet-map.py (0 Laufzeit-Requests, DSGVO-sauber).
 const GEBIET_REGIONEN = [
-  { key: 'west', label: 'Falkensee & West-Havelland', color: '#205840', lx: 96, ly: 108, orts: [
-    { slug: 'falkensee', name: 'Falkensee', x: 280, y: 235, anchor: true },
-    { slug: 'brieselang', name: 'Brieselang', x: 245, y: 150 },
-    { slug: 'schoenwalde-glien', name: 'Schönwalde-Glien', x: 335, y: 118 },
-    { slug: 'nauen', name: 'Nauen', x: 92, y: 196 },
-    { slug: 'wustermark', name: 'Wustermark', x: 185, y: 300 },
-    { slug: 'ketzin', name: 'Ketzin/Havel', x: 148, y: 392 },
-    { slug: 'dallgow-doeberitz', name: 'Dallgow-Döberitz', x: 352, y: 296 } ] },
-  { key: 'nord', label: 'Oberhavel & Norden', color: '#16412D', lx: 386, ly: 42, orts: [
-    { slug: 'kremmen', name: 'Kremmen', x: 300, y: 60 },
-    { slug: 'oberkraemer', name: 'Oberkrämer', x: 366, y: 90 },
-    { slug: 'leegebruch', name: 'Leegebruch', x: 416, y: 72 },
-    { slug: 'oranienburg', name: 'Oranienburg', x: 474, y: 62 },
-    { slug: 'lehnitz', name: 'Lehnitz', x: 496, y: 106 },
-    { slug: 'velten', name: 'Velten', x: 446, y: 132 },
-    { slug: 'hennigsdorf', name: 'Hennigsdorf', x: 452, y: 192 },
-    { slug: 'hohen-neuendorf', name: 'Hohen Neuendorf', x: 510, y: 160 },
-    { slug: 'birkenwerder', name: 'Birkenwerder', x: 526, y: 204 },
-    { slug: 'glienicke-nordbahn', name: 'Glienicke/Nordbahn', x: 548, y: 250 } ] },
-  { key: 'berlinrand', label: 'Berliner Westrand', color: '#3F7A5B', lx: 448, ly: 402, orts: [
-    { slug: 'berlin-spandau', name: 'Berlin-Spandau', x: 478, y: 300 },
-    { slug: 'gross-glienicke', name: 'Groß Glienicke', x: 430, y: 348 },
-    { slug: 'berlin-gatow', name: 'Berlin-Gatow', x: 496, y: 344 },
-    { slug: 'berlin-kladow', name: 'Berlin-Kladow', x: 456, y: 392 } ] },
-  { key: 'seen', label: 'Havelseen', color: '#6FA285', lx: 214, ly: 456, orts: [
-    { slug: 'werder-havel', name: 'Werder (Havel)', x: 286, y: 426 },
-    { slug: 'schwielowsee', name: 'Schwielowsee', x: 334, y: 446 } ] },
+  { key: 'west', label: 'Falkensee & West-Havelland', orts: [
+    { slug: 'falkensee', name: 'Falkensee', px: 51.6, py: 47.9, anchor: true },
+    { slug: 'brieselang', name: 'Brieselang', px: 40.7, py: 42.2 },
+    { slug: 'schoenwalde-glien', name: 'Schönwalde-Glien', px: 57.3, py: 37.0 },
+    { slug: 'nauen', name: 'Nauen', px: 24.9, py: 38.2 },
+    { slug: 'wustermark', name: 'Wustermark', px: 34.6, py: 50.4 },
+    { slug: 'ketzin', name: 'Ketzin/Havel', px: 21.4, py: 64.5 },
+    { slug: 'dallgow-doeberitz', name: 'Dallgow-Döberitz', px: 46.7, py: 52.3 } ] },
+  { key: 'nord', label: 'Oberhavel & Norden', orts: [
+    { slug: 'kremmen', name: 'Kremmen', px: 43.3, py: 8.3 },
+    { slug: 'oberkraemer', name: 'Oberkrämer', px: 56.4, py: 20.0 },
+    { slug: 'leegebruch', name: 'Leegebruch', px: 60.5, py: 13.3 },
+    { slug: 'oranienburg', name: 'Oranienburg', px: 69.4, py: 9.0 },
+    { slug: 'lehnitz', name: 'Lehnitz', px: 70.3, py: 12.6 },
+    { slug: 'velten', name: 'Velten', px: 61.9, py: 22.2 },
+    { slug: 'hennigsdorf', name: 'Hennigsdorf', px: 65.2, py: 32.7 },
+    { slug: 'hohen-neuendorf', name: 'Hohen Neuendorf', px: 74.7, py: 25.4 },
+    { slug: 'birkenwerder', name: 'Birkenwerder', px: 74.7, py: 22.7 },
+    { slug: 'glienicke-nordbahn', name: 'Glienicke/Nordbahn', px: 79.1, py: 32.7 } ] },
+  { key: 'berlinrand', label: 'Berliner Westrand', orts: [
+    { slug: 'berlin-spandau', name: 'Berlin-Spandau', px: 64.6, py: 52.6 },
+    { slug: 'gross-glienicke', name: 'Groß Glienicke', px: 53.4, py: 67.0 },
+    { slug: 'berlin-gatow', name: 'Berlin-Gatow', px: 62.6, py: 63.6 },
+    { slug: 'berlin-kladow', name: 'Berlin-Kladow', px: 57.9, py: 69.2 } ] },
+  { key: 'seen', label: 'Havelseen', orts: [
+    { slug: 'werder-havel', name: 'Werder (Havel)', px: 32.3, py: 84.2 },
+    { slug: 'schwielowsee', name: 'Schwielowsee', px: 34.2, py: 93.1 } ] },
 ];
-function gebietSvg(activeSlug) {
-  let dots = '';
-  for (const reg of GEBIET_REGIONEN) for (const o of reg.orts) {
-    const on = o.slug === activeSlug;
-    if (o.anchor) {
-      dots += `<g class="map-dot base${on ? ' on' : ''}" data-ort="${esc(o.name)}" data-slug="${o.slug}" tabindex="-1">` +
-        `<circle class="hit" cx="${o.x}" cy="${o.y}" r="26"/><circle class="pt" cx="${o.x}" cy="${o.y}" r="10" style="--rc:${reg.color}"/>` +
-        `<circle cx="${o.x}" cy="${o.y}" r="16" fill="none" stroke="#E0A23B" stroke-width="2.5"/>` +
-        `<text x="${o.x}" y="${o.y - 22}" text-anchor="middle" font-size="16">Falkensee</text></g>`;
-    } else {
-      dots += `<g class="map-dot${on ? ' on' : ''}" data-ort="${esc(o.name)}" data-slug="${o.slug}" tabindex="-1">` +
-        `<circle class="hit" cx="${o.x}" cy="${o.y}" r="18"/><circle class="pt" cx="${o.x}" cy="${o.y}" r="6.5" style="--rc:${reg.color}"/>` +
-        (on ? `<circle cx="${o.x}" cy="${o.y}" r="12" fill="none" stroke="#E0A23B" stroke-width="2.5"/><text x="${o.x}" y="${o.y - 15}" text-anchor="middle" font-size="13" font-weight="600" fill="#15201A">${esc(o.name)}</text>` : '') +
-        `</g>`;
-    }
-  }
-  const regionLabels = GEBIET_REGIONEN.map(r =>
-    `<text x="${r.lx}" y="${r.ly}" font-family="Fraunces,Georgia,serif" font-size="14" font-style="italic" fill="${r.color}" opacity="0.85">${esc(r.label)}</text>`).join('');
-  return `<svg viewBox="0 0 600 480" role="img" aria-label="Schematische Karte unseres Servicegebiets im Havelland und Berliner Umland mit allen bedienten Orten">` +
-    `<path d="M60,250 C60,120 190,52 340,52 C470,52 560,120 556,230 C560,320 500,410 380,438 C250,462 130,442 92,388 C64,346 60,300 60,250 Z" fill="#FFFFFF" stroke="#E2DED3" stroke-width="2"/>` +
-    `<text x="560" y="150" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="#B7B9B0" text-anchor="end">BERLIN →</text>` +
-    regionLabels + dots + `</svg>`;
+// Labels dieser (rechten) Pins nach links öffnen, damit sie nicht über den Kartenrand laufen.
+const PINLEFT = new Set(['leegebruch', 'oranienburg', 'lehnitz', 'velten', 'hennigsdorf', 'hohen-neuendorf', 'birkenwerder', 'glienicke-nordbahn', 'berlin-spandau', 'berlin-gatow']);
+function gebietMap(activeSlug) {
+  const pins = GEBIET_REGIONEN.flatMap(reg => reg.orts).map(o =>
+    `<button class="svc-pin${o.anchor ? ' svc-pin--anchor' : ''}${PINLEFT.has(o.slug) ? ' svc-pin--left' : ''}${o.slug === activeSlug ? ' is-active' : ''}" data-ort="${esc(o.name)}" data-slug="${o.slug}" style="left:${o.px}%;top:${o.py}%" aria-label="${esc(o.name)} — in unserem Servicegebiet"><span class="svc-pin-dot"></span><span class="svc-pin-lbl">${esc(o.name)}</span></button>`).join('');
+  const img = `<picture><source type="image/webp" srcset="/assets/img/servicegebiet-karte-640.webp 640w, /assets/img/servicegebiet-karte-900.webp 900w, /assets/img/servicegebiet-karte-1200.webp 1200w" sizes="(max-width:900px) 92vw, 560px"><img src="/assets/img/servicegebiet-karte-900.jpg" width="1200" height="1200" alt="Karte des Servicegebiets im Havelland und Berliner Umland mit den bedienten Orten" loading="lazy" decoding="async"></picture>`;
+  return `<figure class="svc-map" id="svc-map">${img}<div class="svc-map-pins">${pins}</div><figcaption class="svc-map-attr">Kartendaten © OpenStreetMap-Mitwirkende</figcaption></figure>`;
 }
 export function gebietskarte({ activeSlug = null, heading = 'Wir fahren dorthin, wo wir <em>pünktlich</em> sein können.' } = {}) {
   const groups = GEBIET_REGIONEN.map(reg => {
     const btns = reg.orts.map(o =>
-      `<button class="ortbtn" data-ort="${esc(o.name)}" data-slug="${o.slug}" aria-pressed="${o.slug === activeSlug ? 'true' : 'false'}"><span class="on2" style="color:${reg.color}">•</span>${esc(o.name)}</button>`).join('');
+      `<button class="ortbtn" data-ort="${esc(o.name)}" data-slug="${o.slug}" aria-pressed="${o.slug === activeSlug ? 'true' : 'false'}"><span class="on2">•</span>${esc(o.name)}</button>`).join('');
     return `<div class="ortgroup"><h3 class="ortgroup-h">${esc(reg.label)}</h3>${btns}</div>`;
   }).join('');
   const activeName = (() => { for (const r of GEBIET_REGIONEN) for (const o of r.orts) if (o.slug === activeSlug) return o.name; return null; })();
@@ -411,8 +396,8 @@ export function gebietskarte({ activeSlug = null, heading = 'Wir fahren dorthin,
     : 'Falkensee ist unser Standort — von hier fahren wir ins ganze Havelland und ans Berliner Umland.';
   return `<section class="sec sec-alt" id="gebiet"><div class="wrap">` +
     `<div class="head"><h2 class="rv">${heading}</h2></div>` +
-    `<p class="intro rv">Von Falkensee ins West-Havelland, nach Oberhavel, an den Berliner Westrand und an die Havelseen — kurze Wege, verlässliche Termine. Tippen Sie Ihren Ort an:</p>` +
-    `<div class="gebiet-wrap rv"><div class="map-card">${gebietSvg(activeSlug)}` +
+    `<p class="intro rv">Von Falkensee ins West-Havelland, nach Oberhavel, an den Berliner Westrand und an die Havelseen — kurze Wege, verlässliche Termine. Fahren Sie über einen Ort oder tippen Sie ihn an:</p>` +
+    `<div class="gebiet-wrap rv"><div class="map-card">${gebietMap(activeSlug)}` +
     `<p class="map-info" id="map-info">${info}</p></div>` +
     `<div><div class="ortlist ortlist-grouped" id="ortlist">${groups}</div>` +
     `<p class="gebiet-note">Ihr Ort ist nicht dabei? <a href="tel:${TEL}">Rufen Sie kurz an</a> — wir sagen Ihnen ehrlich, ob wir kommen. Auch in vielen Ortsteilen und Nachbargemeinden sind wir im Einsatz. Alle Orte im Überblick: <a href="/standorte/">Standorte</a>.</p></div>` +
