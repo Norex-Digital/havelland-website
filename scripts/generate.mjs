@@ -681,8 +681,17 @@ function bewertungen() {
   const counter = done > 0
     ? `<div class="trust-row rv"><div class="t"><b>${esc(done)}</b><span>dokumentierte Aufträge</span></div><div class="t"><b>Foto</b><span>Nachweis nach jedem Auftrag</span></div><div class="t"><b>Festpreis</b><span>nach Besichtigung</span></div></div>`
     : `<div class="trust-row rv"><div class="t"><b>Foto</b><span>Nachweis nach jedem Auftrag</span></div><div class="t"><b>Festpreis</b><span>nach Besichtigung</span></div><div class="t"><b>Ein</b><span>fester Ansprechpartner</span></div></div>`;
+  // Live-Ansehen-Link (Reviews-Ansicht) aus place_id, sonst Google-Suche
+  const gbpView = (reviews.place_id && !/TBD|XXXX|null/i.test(String(reviews.place_id)))
+    ? `https://search.google.com/local/reviews?placeid=${reviews.place_id}`
+    : gbp;
+  // Rating-Badge: sichtbarer Text + Live-Link (KEIN aggregateRating-Schema — Google-Policy self-serving)
+  const ratingBadge = reviewsLive
+    ? `<div class="grating rv"><span class="gr-stars" aria-hidden="true">★★★★★</span><b class="gr-val">${Number(r.rating).toFixed(1).replace('.', ',')}</b><span class="gr-meta">aus ${esc(r.count)} Google-Bewertungen · <a href="${gbpView}" rel="nofollow" target="_blank">live ansehen</a></span></div>`
+    : '';
   const body = reviewsLive
-    ? `<p>Unsere Kundinnen und Kunden bewerten uns bei Google (${esc(r.count)} Bewertungen). Die aktuelle Bewertung sehen Sie direkt in unserem Google-Profil.</p>`
+    ? `${ratingBadge}<p>Unsere Kundinnen und Kunden bewerten uns bei Google mit ${Number(r.rating).toFixed(1).replace('.', ',')} von 5 Sternen (${esc(r.count)} Bewertungen, Stand Juli 2026). Wir zeigen hier bewusst keine ausgewählten Zitate — die vollständigen, ungefilterten Bewertungen sehen Sie jederzeit live in unserem Google-Profil. Was zählt, ist das Ergebnis vor Ort: Nach jedem Auftrag dokumentieren wir es mit Vorher-/Nachher-Fotos und schicken sie Ihnen per WhatsApp.</p>
+<h3>Schon mit uns gearbeitet?</h3><p>Über eine ehrliche Bewertung bei Google freuen wir uns. Sie hilft anderen Nachbarn in der Region, einen verlässlichen Ansprechpartner zu finden.</p>`
     : `<p>Wir sind ein regionaler Betrieb und sammeln Bewertungen direkt bei Google. Hier zeigen wir keine erfundenen Sterne: Was zählt, ist das Ergebnis vor Ort. Nach jedem Auftrag dokumentieren wir es mit Vorher-/Nachher-Fotos und schicken sie Ihnen per WhatsApp — Sie sehen, was Sie bekommen, ohne sich auf Werbeversprechen verlassen zu müssen.</p>
 <h3>Schon mit uns gearbeitet?</h3><p>Über eine ehrliche Bewertung bei Google freuen wir uns. Sie hilft anderen Nachbarn in der Region, einen verlässlichen Ansprechpartner zu finden.</p>`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Bewertungen</div>

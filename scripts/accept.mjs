@@ -125,7 +125,8 @@ page('ratgeber/index.html', 'RATGEBER-INDEX', h => {
 page('bewertungen/index.html', 'BEWERTUNGEN', h => {
   check('bewertungen', 'bewerten (Deeplink-CTA)', hasI(h, 'bewerten'));
   check('bewertungen', 'auftrag ODER Zähler-Hinweis', hasI(h, 'auftrag') || hasI(h, 'nach jedem') || hasI(h, 'zähler'));
-  check('bewertungen', 'kein erfundenes Rating', !has(h, 'aggregateRating') && !has(h, '5,0'));
+  // Rating-Anzeige erlaubt (echt, via GBP-API/SERP verifiziert), ABER kein self-serving aggregateRating/ratingValue-Schema-Markup (Google-Policy)
+  check('bewertungen', 'kein aggregateRating-Schema (self-serving)', !has(h, 'aggregateRating') && !has(h, 'ratingValue'));
 });
 
 // ---- UEBER-UNS (Gruender-Duo) ----

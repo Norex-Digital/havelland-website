@@ -381,6 +381,10 @@ body.lb-open{overflow:hidden}
 .ortlist-grouped .ortbtn{min-height:44px;padding:9px 4px;font-size:16.5px}
 @media(min-width:560px){.ortlist-grouped .ortgroup{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;align-items:start}.ortlist-grouped .ortgroup-h{grid-column:1/-1}}
 .gebiet-note{margin-top:28px;color:var(--muted);font-size:var(--fs-small);max-width:38em}
+.grating{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 22px}
+.grating .gr-stars{color:var(--accent);font-size:22px;letter-spacing:2px;line-height:1}
+.grating .gr-val{font-family:var(--font-display);font-size:34px;font-weight:600;color:var(--green);line-height:1}
+.grating .gr-meta{color:var(--muted);font-size:var(--fs-small)}
 
 /* ===== CTA-Band ===== */
 .zone-deep{background:var(--green-deep);color:var(--dark-text2)}
