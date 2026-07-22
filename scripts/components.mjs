@@ -263,9 +263,13 @@ export function archivGrid(slugs, { ctaHref = '#kontakt' } = {}) {
 // whatsappFlow — .wa-grid, 3 Schritte + wa.me-CTA (Kontext vorausgefuellt) + Noah-Arbeitsbild (kein Label).
 // ---------------------------------------------------------------------------
 export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
-  heading = 'Ein Handy-Foto <em>reicht.</em>' } = {}) {
+  heading = 'Ein Handy-Foto <em>reicht.</em>', partner = false } = {}) {
   const ortTeil = ort ? ` in ${ort}` : '';
   const text = `Hallo, hier ein Foto von ${gewerk}${ortTeil} — was würde das kosten?`;
+  // Partner-/Tippgeber-Services (Dach): Schritt 3 nennt keinen eigenen Festpreis — das Angebot kommt vom ausführenden Fachbetrieb.
+  const step3 = partner
+    ? `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort in Stunden</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung durch den geprüften Partner-Fachbetrieb — das verbindliche Angebot kommt vom ausführenden Betrieb.</p></div></li>`
+    : `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort in Stunden</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung — danach steht Ihr Festpreis.</p></div></li>`;
   return `<div class="wa-grid"><div>` +
     `<span class="kick rv"><span class="dot"></span> Der schnellste Weg</span>` +
     `<div class="head" style="margin-top:14px"><h2 class="rv">${heading}</h2></div>` +
@@ -273,7 +277,7 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
     `<ol class="wa-steps rv d1">` +
     `<li class="wa-step"><span class="wn">1</span><div><h3>Fotografieren</h3><p>Einmal längs, einmal von vorn — so sehen wir Höhe, Länge und Zugang.</p></div></li>` +
     `<li class="wa-step"><span class="wn">2</span><div><h3>Per WhatsApp senden</h3><p>An ${TEL_DISP}, gern mit zwei Sätzen dazu: Was soll passieren, wo stehen Sie?</p></div></li>` +
-    `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort in Stunden</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung — danach steht Ihr Festpreis.</p></div></li>` +
+    step3 +
     `</ol>` +
     `<div class="wa-cta rv d2"><a class="btn btn-acc" href="${waHref(text)}">Foto per WhatsApp senden</a>` +
     `<a class="tel-quiet" href="tel:${TEL}">lieber anrufen: ${TEL_DISP}</a></div></div>` +
@@ -292,8 +296,15 @@ const TL = [
   ['Zum vereinbarten Termin', 'Saubere Ausführung', 'Pünktlich, gründlich, fristgerecht nach § 39 BNatSchG geplant. Wir räumen hinter uns auf — besenrein ist Teil des Preises.'],
   ['Direkt nach der Arbeit', 'Foto-Nachweis aufs Handy', 'Vorher-/Nachher-Fotos Ihres Auftrags, direkt aufs Handy. Sie sehen das Ergebnis auch dann, wenn Sie nicht zu Hause waren.']
 ];
-export function auftragsTimeline() {
-  const items = TL.map(([when, h, p], i) =>
+// Partner-/Tippgeber-Variante (Dach): keine Eigenleistung, kein eigener Festpreis, kein eigener Foto-Nachweis — Ausführung + Angebot beim Fachbetrieb.
+const TL_PARTNER = [
+  ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was am Dach ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
+  ['Kurzfristig · kostenlos', 'Besichtigung durch den Fachbetrieb', 'Der geprüfte Partner-Fachbetrieb sieht sich Dach, Zugang und Umfang an. Die Besichtigung ist für Sie kostenlos und unverbindlich.'],
+  ['Nach der Besichtigung', 'Angebot vom Fachbetrieb', 'Das verbindliche Angebot erstellt der ausführende Betrieb. Sagen Sie zu, stimmen wir Termin und Ablauf mit Ihnen ab.'],
+  ['Zum vereinbarten Termin', 'Ausführung, ein Ansprechpartner', 'Die Arbeit am Dach übernimmt der Fachbetrieb mit passender Absicherung — wir begleiten den Einsatz als Ihr fester Draht.']
+];
+export function auftragsTimeline(partner = false) {
+  const items = (partner ? TL_PARTNER : TL).map(([when, h, p], i) =>
     `<div class="tli"><span class="tn">${i + 1}</span><div class="tbody">` +
     `<span class="twhen">${when}</span><h3>${h}</h3><p>${p}</p></div></div>`).join('');
   return `<div class="tl rv">${items}</div>`;
