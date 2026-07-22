@@ -852,5 +852,18 @@
 "avif": false,
 "fb_ext": "jpg",
 "fb_w": 900
+},
+"svc-dachreinigung-hero": {
+"w": 1200,
+"h": 896,
+"widths": [
+480,
+768,
+1024,
+1200
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1200
 }
 }

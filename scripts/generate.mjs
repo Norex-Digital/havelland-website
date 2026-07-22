@@ -269,8 +269,8 @@ function home() {
     { slug: 'gartenpflege', label: 'Gartenpflege', promise: 'Fällt ein Termin ohne Vorankündigung aus, geht der nächste auf uns.' },
     { slug: 'fensterreinigung', label: 'Fensterreinigung', promise: 'Schlierenfrei — oder wir kommen am selben Tag noch einmal.' },
     { slug: 'entruempelung', label: 'Entrümpelung & Haushaltsauflösung', promise: 'Festpreis nach Besichtigung — besenrein zum vereinbarten Termin.' },
-    { slug: 'dachrinnenreinigung', label: 'Dachrinnenreinigung', promise: 'Rinne frei vor dem Winter — Ausführung über geprüften Partner-Fachbetrieb, koordiniert von uns.' },
-    { slug: 'dachreinigung', label: 'Dachreinigung', promise: 'Moos und Grünbelag vom Dach — Ausführung durch geprüften Partner-Fachbetrieb, wir koordinieren.' }
+    { slug: 'dachrinnenreinigung', label: 'Dachrinnenreinigung', promise: 'Rinne frei vor dem Winter — ein Termin, ein Ansprechpartner.' },
+    { slug: 'dachreinigung', label: 'Dachreinigung', promise: 'Moos und Grünbelag vom Dach — komplett organisiert, zum vereinbarten Termin.' }
   ];
   const fokusCards = KERN.map((k, i) => `<a class="it rv d${i + 1}" href="/${k.slug}/"><span class="no">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(k.label)}</h3><p>${esc(k.promise)}</p></div><span class="arr">→</span></a>`).join('');
   const main = `
