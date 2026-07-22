@@ -251,6 +251,10 @@
      "body_html": "<p>Entsorgungskosten entstehen durch Deponiegebühren, Sperrmüllanfuhr und die fachgerechte Behandlung von Sondermaterialien. Gleichzeitig können Gegenstände mit Zeitwert den Gesamtpreis senken.</p><h3>Was die Entsorgung teurer macht</h3><ul><li><strong>Elektroschrott</strong> (E-Geräte, Leuchtstoffröhren) muss nach ElektroG getrennt entsorgt werden</li><li><strong>Schadstoffe</strong> wie alte Farben, Lacke oder Asbest-haltige Baustoffe erfordern Sonderentsorgung</li><li><strong>Große Mengen Sperrmüll</strong> — Deponiegebühren richten sich nach Gewicht und Volumen</li></ul><h3>Was den Preis senken kann</h3><ul><li><strong>Wertanrechnung</strong>: Funktionsfähige Möbel, Elektrogeräte oder Sammlerstücke mit Zeitwert werden angerechnet — das mindert den Gesamtpreis</li><li><strong>Selbst vorbereitete Kartons</strong>: Wer Kleinkram schon sortiert hat, spart Arbeitszeit</li></ul><p>Sondergut wie Asbest oder Dachpappe ist kein Ausschlussgrund, erfordert aber eine separate Kalkulation. Klären Sie das direkt bei der Vor-Ort-Besichtigung.</p>"
     },
     {
+     "h2": "Wohnungsauflösung: Kosten und Unterschied zur Entrümpelung",
+     "body_html": "<p>Die Begriffe Haushaltsauflösung und Wohnungsauflösung werden oft gleichbedeutend verwendet — gemeint ist meist dasselbe: eine Wohnung oder ein Haus vollständig räumen, verwertbare Gegenstände abziehen und besenrein übergeben. Auch die Kostenfaktoren sind identisch: Größe, Füllmenge, Etage, Zugang, Entsorgungsaufwand und mögliche Wertanrechnung.</p><p>Ein feiner Unterschied zur reinen Entrümpelung: Bei der Wohnungsauflösung geht es um den gesamten Hausstand inklusive Möbeln, Hausrat und persönlichen Gegenständen — häufig nach einem Umzug ins Pflegeheim, einem Todesfall oder einer Trennung. Die Entrümpelung meint eher das Beräumen einzelner Bereiche wie Keller, Dachboden oder Garage. In der Praxis überschneiden sich beide, und wir bieten beides aus einer Hand.</p><p>Was die Kosten senkt: Wohnungsauflösungen enthalten oft verwertbare Möbel, Elektrogeräte oder Sammlerstücke mit Zeitwert, die angerechnet werden. Was sie verteuert: Zeitdruck durch Mietfristen und der Umfang eines kompletten Hausstands. Den Preis nennt der Festpreis nach kostenloser Besichtigung — ein Ansprechpartner für Räumung und besenreine Übergabe.</p>"
+    },
+    {
      "h2": "Warum ein Festpreis nach Vor-Ort-Besichtigung seriöser ist als Online-Pauschalen",
      "body_html": "<p>Online-Preisrechner für Haushaltsauflösungen arbeiten mit Durchschnittswerten, die Ihre Situation selten treffen. Die Wirklichkeit weicht fast immer ab — nach oben oder nach unten.</p><p>Wir kommen zu Ihnen, schauen uns alles an und nennen Ihnen danach einen Festpreis. Dieser Preis gilt — der Festpreis ist der Endpreis, ohne Aufschlag.</p><p>Foto-Dokumentation gehört zum Standard: Sie erhalten Vorher- und Nachher-Fotos direkt auf Ihr Handy, sobald der Auftrag abgeschlossen ist. Kein Streit darüber, was vorher da war und was danach fehlt.</p><p>Für Haushaltsauflösungen im Havelland und Berliner Umland ist die Besichtigung kostenlos und unverbindlich.</p>"
     }
@@ -259,6 +263,10 @@
     {
      "q": "Was kostet eine Haushaltsauflösung im Havelland?",
      "a": "Ein pauschaler Preis ist ohne Besichtigung nicht seriös. Die Kosten hängen von Wohnungsgröße, Füllmenge, Etage, Entsorgungsaufwand und möglicher Wertanrechnung ab. Wir besichtigen kostenlos und erstellen danach einen verbindlichen Festpreis — ohne Aufschlag, ohne Nachforderung. Die Anfahrt im Havelland steckt drin."
+    },
+    {
+     "q": "Was kostet eine Wohnungsauflösung?",
+     "a": "Wohnungsauflösung und Haushaltsauflösung kosten dasselbe, weil die Faktoren identisch sind: Wohnungsgröße, Füllmenge, Etage, Zugang und Entsorgungsaufwand. Ein pauschaler Betrag ohne Besichtigung ist unseriös. Wir besichtigen kostenlos im Havelland und nennen danach einen verbindlichen Festpreis — verwertbare Gegenstände mit Zeitwert rechnen wir an."
     },
     {
      "q": "Kann der Zeitwert von Möbeln oder Geräten den Preis einer Haushaltsauflösung senken?",
@@ -570,7 +578,7 @@
    "title": "Dachrinne reinigen: Kosten & Preisfaktoren",
    "meta": "Dachrinne reinigen lassen: Welche Faktoren den Preis beeinflussen, wann die Reinigung fällig ist und was Sie im Havelland erwartet. Festpreis nach Besichtigung.",
    "lead": "Was eine Dachrinnenreinigung kostet, hängt von fünf konkreten Faktoren ab — kein Pauschalpreis ohne Vor-Ort-Blick.",
-   "intro": "Die Kosten für eine Dachrinnenreinigung lassen sich nicht seriös ohne Besichtigung nennen. Fünf Faktoren bestimmen den Preis: Länge der Dachrinne, Zugänglichkeit (Höhe, Dachneigung, Bebauung), Verschmutzungsgrad, Anzahl der Fallrohre und ob die Abläufe frei oder verstopft sind. Wer Ihnen am Telefon einen Festbetrag nennt, ohne diese Punkte zu kennen, schätzt ins Blaue. Wir besichtigen kostenlos und geben Ihnen danach einen verbindlichen Festpreis — der Endpreis ist der Festpreis, keine Überraschungen. Der Preis steht.",
+   "intro": "Die Kosten für eine Dachrinnenreinigung lassen sich nicht seriös ohne Besichtigung nennen. Fünf Faktoren bestimmen den Preis: Länge der Dachrinne, Zugänglichkeit (Höhe, Dachneigung, Bebauung), Verschmutzungsgrad, Anzahl der Fallrohre und ob die Abläufe frei oder verstopft sind. Wer Ihnen am Telefon einen Festbetrag nennt, ohne diese Punkte zu kennen, schätzt ins Blaue. Die Ausführung übernimmt ein geprüfter Partner-Fachbetrieb; wir koordinieren Besichtigung, Termin und Ablauf. Das verbindliche Angebot erstellt der Fachbetrieb nach einer kostenlosen Vor-Ort-Besichtigung im Havelland — ein Ansprechpartner, ein Termin.",
    "sections": [
     {
      "h2": "Diese fünf Faktoren bestimmen den Preis",
@@ -581,18 +589,18 @@
      "body_html": "<p>Zweimal im Jahr ist der empfohlene Rhythmus für die meisten Häuser im Havelland: einmal im Spätherbst nach dem Laubfall (Oktober bis Dezember) und einmal im Frühjahr (März bis April), wenn Moos und Winterrückstände abgetragen werden.</p><p>Häuser mit viel Baumbestand — Linden, Ahorne, Birken — können eine dritte Reinigung im Sommer brauchen, wenn Samen und Fruchtstand die Rinne zustopfen.</p><h3>Zeichen, dass es zu spät ist</h3><ul><li>Wasser läuft bei Regen seitlich über die Rinne statt durch das Fallrohr ab.</li><li>An der Hauswand zeigen sich nasse Flecken oder Ausblühungen.</li><li>Pflanzen sprießen aus der Rinne (eingewurzeltes Moos oder Kräuter).</li><li>Im Winter bilden sich Eiszapfen, die länger hängen bleiben als bei Nachbarshäusern.</li></ul><p>Wer zu lange wartet, riskiert Wasserschäden an Fassade und Fundament. Eine Rinne, die überläuft, leitet das Wasser dorthin, wo es nicht hingehört.</p>"
     },
     {
-     "h2": "Festpreis statt Stundensatz: Was das für Sie bedeutet",
-     "body_html": "<p>Wir arbeiten mit Festpreisen. Nach der kostenlosen Vor-Ort-Besichtigung erhalten Sie ein Angebot, das alle Leistungen enthält: Reinigung der Rinne, Spülen der Fallrohre, Entsorgung des Abraums. Der genannte Preis ist der Endpreis — ohne Aufschlag, ohne Nachforderung.</p><p>Stundensatz-Modelle klingen günstig, bis die Arbeit länger dauert als geplant. Ein Festpreis schützt Sie vor dieser Ungewissheit.</p><h3>Was im Festpreis enthalten ist</h3><ul><li>Kostenlose Besichtigung vor Ort im Havelland</li><li>Reinigung aller Dachrinnen am Gebäude</li><li>Spülen der Fallrohre</li><li>Entfernen von Laub, Moos, Schlamm und Pflanzenrückständen</li><li>Foto-Dokumentation vor und nach der Arbeit, direkt auf Ihr Handy</li><li>Mündliche Rückmeldung zu Schäden oder Handlungsbedarf (z.B. gerissene Rinne, lockere Halter)</li></ul><p>Sie müssen nicht dabei sein. Die Fotos zeigen Ihnen, was gemacht wurde.</p>"
+     "h2": "Ein Ansprechpartner, ein Termin: So läuft die Koordination",
+     "body_html": "<p>Die Dachrinnenreinigung führt ein geprüfter Partner-Fachbetrieb aus. Sie brauchen trotzdem nur einen Ansprechpartner: Wir nehmen Ihre Anfrage auf, koordinieren die kostenlose Besichtigung, stimmen den Termin ab und begleiten den Ablauf. Das verbindliche Angebot erstellt der ausführende Fachbetrieb nach der Besichtigung.</p><p>Was der Umfang üblicherweise abdeckt:</p><ul><li>Kostenlose Besichtigung vor Ort im Havelland</li><li>Reinigung aller Dachrinnen am Gebäude</li><li>Spülen der Fallrohre</li><li>Entfernen von Laub, Moos, Schlamm und Pflanzenrückständen</li><li>Rückmeldung zu Schäden oder Handlungsbedarf (etwa gerissene Rinne, lockere Halter)</li><li>Dokumentation des Ergebnisses durch den Fachbetrieb</li></ul><p>Sie müssen nicht dabei sein. Wir stimmen Zugang und Termin mit Ihnen ab und halten Sie auf dem Laufenden.</p>"
     },
     {
      "h2": "Dachrinnenreinigung selbst machen oder beauftragen?",
-     "body_html": "<p>Wer ein einstöckiges Haus mit guter Leiterstandfläche hat, kann die Rinne selbst reinigen. Ab dem zweiten Obergeschoss oder bei ungünstigem Untergrund steigt das Sturzrisiko auf Leitern erheblich. Laut Statistik der Deutschen Gesetzlichen Unfallversicherung gehören Leitersturz-Unfälle zu den häufigsten schweren Haushaltsunfällen.</p><p>Hinzu kommt die Frage der Ausrüstung: Für eine gründliche Reinigung brauchen Sie einen Teleskopstock oder Schlauch, einen Kübel für den Abraum und Zeit. Wer das nicht hat oder das Risiko vermeiden will, ist mit einem Fachbetrieb besser beraten.</p><p>Im Havelland und Berliner Umland übernehmen wir den Einsatz — mit Leiter, Ausrüstung und Erfahrung. Und wenn beim Reinigen eine gerissene Rinne oder ein lockerer Halter auffällt, erfahren Sie davon direkt, nicht erst beim nächsten Starkregen.</p>"
+     "body_html": "<p>Wer ein einstöckiges Haus mit guter Leiterstandfläche hat, kann die Rinne selbst reinigen. Ab dem zweiten Obergeschoss oder bei ungünstigem Untergrund steigt das Sturzrisiko auf Leitern erheblich. Laut Statistik der Deutschen Gesetzlichen Unfallversicherung gehören Leitersturz-Unfälle zu den häufigsten schweren Haushaltsunfällen.</p><p>Hinzu kommt die Frage der Ausrüstung: Für eine gründliche Reinigung brauchen Sie einen Teleskopstock oder Schlauch, einen Kübel für den Abraum und Zeit. Wer das nicht hat oder das Risiko vermeiden will, ist mit einem Fachbetrieb besser beraten.</p><p>Im Havelland und Berliner Umland läuft der Einsatz über einen geprüften Partner-Fachbetrieb — mit der passenden Ausrüstung und Absturzsicherung. Wir koordinieren Besichtigung und Termin; fällt dabei eine gerissene Rinne oder ein lockerer Halter auf, erfahren Sie davon direkt, nicht erst beim nächsten Starkregen.</p>"
     }
    ],
    "faqs": [
     {
      "q": "Was kostet eine Dachrinnenreinigung im Havelland?",
-     "a": "Einen pauschalen Betrag ohne Besichtigung zu nennen wäre unseriös. Die Kosten hängen von der Rinnenlänge, der Gebäudehöhe, dem Verschmutzungsgrad und der Anzahl der Fallrohre ab. Wir besichtigen kostenlos und erstellen danach einen verbindlichen Festpreis — der genannte Preis ist der Endpreis, ohne Nachforderung."
+     "a": "Einen pauschalen Betrag ohne Besichtigung zu nennen wäre unseriös. Die Kosten hängen von der Rinnenlänge, der Gebäudehöhe, dem Verschmutzungsgrad und der Anzahl der Fallrohre ab. Ein geprüfter Partner-Fachbetrieb besichtigt kostenlos und erstellt danach das verbindliche Angebot — wir koordinieren Besichtigung, Termin und Ablauf."
     },
     {
      "q": "Wie oft muss eine Dachrinne gereinigt werden?",
@@ -604,7 +612,7 @@
     }
    ],
    "cta_service": "dachrinnenreinigung",
-   "cta_text": "Sie möchten wissen, was die Dachrinnenreinigung an Ihrem Haus kostet? Wir kommen zur kostenlosen Besichtigung ins Havelland und geben Ihnen danach einen verbindlichen Festpreis. Zur Leistungsseite Dachrinnenreinigung.",
+   "cta_text": "Sie möchten wissen, was die Dachrinnenreinigung an Ihrem Haus kostet? Wir koordinieren die kostenlose Besichtigung durch einen geprüften Partner-Fachbetrieb im Havelland — ein Ansprechpartner, ein Termin. Zur Leistungsseite Dachrinnenreinigung.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
@@ -616,7 +624,7 @@
    "title": "Dachrinne reinigen: wie oft & wann? Ratgeber",
    "meta": "Wie oft sollte man die Dachrinne reinigen lassen? Zweimal pro Jahr ist der Richtwert — Frühjahr und Herbst. Ratgeber für Havelland und Berliner Umland.",
    "lead": "Zweimal jährlich ist der empfohlene Rhythmus — wer länger wartet, riskiert Wasserschäden am Mauerwerk.",
-   "intro": "Die Dachrinne sollte man mindestens zweimal pro Jahr reinigen lassen: einmal im Frühjahr (März bis April) und einmal im Spätherbst (November), nachdem der Laubfall abgeschlossen ist. Wer in der Nähe von Bäumen wohnt, braucht oft drei Reinigungen pro Jahr. Verstopfte Dachrinnen leiten Regenwasser nicht mehr ab — es läuft an der Fassade herunter, dringt ins Mauerwerk ein und verursacht Feuchtigkeitsschäden, die teuer werden. Wir übernehmen die Reinigung für Eigentümer und Verwalter im Havelland und Berliner Umland.",
+   "intro": "Die Dachrinne sollte man mindestens zweimal pro Jahr reinigen lassen: einmal im Frühjahr (März bis April) und einmal im Spätherbst (November), nachdem der Laubfall abgeschlossen ist. Wer in der Nähe von Bäumen wohnt, braucht oft drei Reinigungen pro Jahr. Verstopfte Dachrinnen leiten Regenwasser nicht mehr ab — es läuft an der Fassade herunter, dringt ins Mauerwerk ein und verursacht Feuchtigkeitsschäden, die teuer werden. Die Reinigung übernimmt ein geprüfter Partner-Fachbetrieb; wir koordinieren Besichtigung, Termin und Ablauf für Eigentümer und Verwalter im Havelland und Berliner Umland.",
    "sections": [
     {
      "h2": "Warum der Reinigungsrhythmus wichtig ist",
@@ -628,15 +636,15 @@
     },
     {
      "h2": "Welche Faktoren beeinflussen den Reinigungsaufwand?",
-     "body_html": "<p>Kein Haus gleicht dem anderen. Diese Punkte bestimmen, wie oft und wie aufwendig die Reinigung bei Ihnen ausfällt:</p><ul><li><strong>Baumbestand:</strong> Eichen, Linden und Nadelbäume in Hausnähe tragen erheblich zur Verschmutzung bei. Nadeln setzen sich besonders hartnäckig in Rinnenecken fest.</li><li><strong>Dachfläche und Neigung:</strong> Flache Dächer und lange Rinnenabschnitte sammeln mehr Material als steile, kurze Dachflächen.</li><li><strong>Dachbelag:</strong> Ziegel mit rauer Oberfläche lösen über Zeit Moospartikel und Schmutz, die in die Rinne gespült werden.</li><li><strong>Lage:</strong> Häuser im Havelland mit Wald- oder Feldnähe haben oft höheren Eintrag als Häuser in dicht bebauten Stadtgebieten.</li><li><strong>Rinnentyp und Alter:</strong> Alte Rinnen aus Zink oder Blech können Korrosionsstellen haben, die Laubaufbau begünstigen.</li></ul><p>Den genauen Bedarf stellen wir bei der kostenlosen Vor-Ort-Besichtigung fest. Sie erhalten danach einen Festpreis — der Festpreis ist der Endpreis, ohne Aufschläge.</p>"
+     "body_html": "<p>Kein Haus gleicht dem anderen. Diese Punkte bestimmen, wie oft und wie aufwendig die Reinigung bei Ihnen ausfällt:</p><ul><li><strong>Baumbestand:</strong> Eichen, Linden und Nadelbäume in Hausnähe tragen erheblich zur Verschmutzung bei. Nadeln setzen sich besonders hartnäckig in Rinnenecken fest.</li><li><strong>Dachfläche und Neigung:</strong> Flache Dächer und lange Rinnenabschnitte sammeln mehr Material als steile, kurze Dachflächen.</li><li><strong>Dachbelag:</strong> Ziegel mit rauer Oberfläche lösen über Zeit Moospartikel und Schmutz, die in die Rinne gespült werden.</li><li><strong>Lage:</strong> Häuser im Havelland mit Wald- oder Feldnähe haben oft höheren Eintrag als Häuser in dicht bebauten Stadtgebieten.</li><li><strong>Rinnentyp und Alter:</strong> Alte Rinnen aus Zink oder Blech können Korrosionsstellen haben, die Laubaufbau begünstigen.</li></ul><p>Den genauen Bedarf stellt der Partner-Fachbetrieb bei der kostenlosen Vor-Ort-Besichtigung fest. Das verbindliche Angebot erstellt der ausführende Betrieb; wir koordinieren Besichtigung, Termin und Ablauf.</p>"
     },
     {
      "h2": "Risiken bei zu seltener Reinigung",
-     "body_html": "<p>Verstopfte Dachrinnen verursachen Schäden, die sich über Monate unbemerkt aufbauen:</p><ul><li><strong>Fassadendurchfeuchtung:</strong> Überlaufendes Wasser zieht ins Mauerwerk ein. Sichtbar wird das oft erst als Schimmel im Inneren oder als abblätternder Außenputz.</li><li><strong>Kellerfeuchtigkeit:</strong> Bei Grundstücken mit Gefälle zur Hauswand läuft aufgestautes Wasser am Fundament entlang in den Keller.</li><li><strong>Frostschäden:</strong> Stehendes Wasser gefriert, dehnt sich aus und biegt Rinnen und Halterungen dauerhaft aus der Form.</li><li><strong>Schädlingsbefall:</strong> Feuchtes Laub in der Rinne ist ein Brutnistplatz für Mücken und Schädlinge.</li><li><strong>Dachdecker-Einsatz:</strong> Schäden an Rinnen, Haken und Fallrohren, die aus Vernachlässigung entstehen, liegen preislich weit über dem, was eine jährliche Reinigung kostet.</li></ul><p>Wer den Aufwand scheut, kann mit uns einen Wartungsvertrag vereinbaren: feste Termine, keine Terminsuche, keine bösen Überraschungen vor dem Winter.</p>"
+     "body_html": "<p>Verstopfte Dachrinnen verursachen Schäden, die sich über Monate unbemerkt aufbauen:</p><ul><li><strong>Fassadendurchfeuchtung:</strong> Überlaufendes Wasser zieht ins Mauerwerk ein. Sichtbar wird das oft erst als Schimmel im Inneren oder als abblätternder Außenputz.</li><li><strong>Kellerfeuchtigkeit:</strong> Bei Grundstücken mit Gefälle zur Hauswand läuft aufgestautes Wasser am Fundament entlang in den Keller.</li><li><strong>Frostschäden:</strong> Stehendes Wasser gefriert, dehnt sich aus und biegt Rinnen und Halterungen dauerhaft aus der Form.</li><li><strong>Schädlingsbefall:</strong> Feuchtes Laub in der Rinne ist ein Brutnistplatz für Mücken und Schädlinge.</li><li><strong>Dachdecker-Einsatz:</strong> Schäden an Rinnen, Haken und Fallrohren, die aus Vernachlässigung entstehen, liegen preislich weit über dem, was eine jährliche Reinigung kostet.</li></ul><p>Wer den Aufwand scheut, kann über uns eine feste Termin-Koordination vereinbaren: Wir stimmen die Termine mit dem Partner-Fachbetrieb ab — keine Terminsuche, keine bösen Überraschungen vor dem Winter.</p>"
     },
     {
      "h2": "Dachrinnenreinigung: Eigenleistung oder Fachbetrieb?",
-     "body_html": "<p>Die Dachrinne lässt sich im Prinzip selbst reinigen — mit Leiter, Handschuhen und einem Eimer. Die Risiken sind bekannt: Sturz von der Leiter, unterschätzte Dachneigung, mangelnde Standsicherheit auf unebenem Untergrund.</p><p>Hinzu kommt: Wer selbst reinigt, sieht oft nur das Grobe. Risse in der Rinne, lose Haken, korrodierte Abflussrohre oder ein beginnendes Mooswachstum auf der Dachhaut fallen Laien selten auf.</p><p>Wir dokumentieren jeden Auftrag mit Fotos — Vorher und Nachher, direkt aufs Handy. Sie sehen, was wir gefunden haben, was wir behoben haben und wo eventuell Handwerkerbedarf besteht. So haben Sie Gewissheit, ohne selbst auf das Dach zu steigen.</p><p>Unser Einsatz im Havelland und Berliner Umland: Falkensee, Nauen, Rathenow, Spandau, Potsdam und die umliegenden Gemeinden. Anfrage per WhatsApp — Erstreaktion in Stunden, nicht Tagen.</p>"
+     "body_html": "<p>Die Dachrinne lässt sich im Prinzip selbst reinigen — mit Leiter, Handschuhen und einem Eimer. Die Risiken sind bekannt: Sturz von der Leiter, unterschätzte Dachneigung, mangelnde Standsicherheit auf unebenem Untergrund.</p><p>Hinzu kommt: Wer selbst reinigt, sieht oft nur das Grobe. Risse in der Rinne, lose Haken, korrodierte Abflussrohre oder ein beginnendes Mooswachstum auf der Dachhaut fallen Laien selten auf.</p><p>Der Partner-Fachbetrieb dokumentiert jeden Auftrag mit Fotos — Vorher und Nachher. Sie sehen, was gefunden und behoben wurde und wo eventuell Handwerkerbedarf besteht. So haben Sie Gewissheit, ohne selbst auf die Leiter zu steigen.</p><p>Wir koordinieren Einsätze im Havelland und Berliner Umland: Falkensee, Nauen, Rathenow, Spandau, Potsdam und die umliegenden Gemeinden. Anfrage per WhatsApp — Erstreaktion in Stunden, nicht Tagen.</p>"
     }
    ],
    "faqs": [
@@ -650,11 +658,111 @@
     },
     {
      "q": "Was kostet eine professionelle Dachrinnenreinigung im Havelland?",
-     "a": "Einen pauschalen Preis gibt es nicht, weil Dachfläche, Rinnenlänge, Stockwerkzahl und Verschmutzungsgrad stark variieren. Wir erstellen den Preis nach kostenloser Vor-Ort-Besichtigung als Festpreis — der genannte Festpreis ist der Endpreis, ohne Nachforderung."
+     "a": "Einen pauschalen Preis gibt es nicht, weil Dachfläche, Rinnenlänge, Stockwerkzahl und Verschmutzungsgrad stark variieren. Ein geprüfter Partner-Fachbetrieb erstellt das Angebot nach kostenloser Vor-Ort-Besichtigung; wir koordinieren Besichtigung, Termin und Ablauf."
     }
    ],
    "cta_service": "dachrinnenreinigung",
-   "cta_text": "Sie möchten die Dachrinne professionell reinigen lassen? Wir besichtigen kostenlos, erstellen einen Festpreis und dokumentieren den Auftrag mit Vorher-Nachher-Fotos. Jetzt zur Dachrinnenreinigung.",
+   "cta_text": "Sie möchten die Dachrinne professionell reinigen lassen? Wir koordinieren die kostenlose Besichtigung durch einen geprüften Partner-Fachbetrieb — ein Ansprechpartner, ein Termin. Jetzt zur Dachrinnenreinigung.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "dachreinigung-kosten",
+   "title": "Dachreinigung Kosten: Was den Preis bestimmt",
+   "meta": "Was kostet eine Dachreinigung? Marktübliche Preisspannen, alle Kostenfaktoren und wie das Angebot vom geprüften Partner-Fachbetrieb im Havelland entsteht.",
+   "lead": "Was eine Dachreinigung kostet, hängt von Dachfläche, Material, Verfahren und Zugang ab — das verbindliche Angebot erstellt ein geprüfter Partner-Fachbetrieb nach der Besichtigung.",
+   "intro": "Eine Dachreinigung kostet marktüblich zwischen etwa 8 und 25 Euro pro Quadratmeter Dachfläche — kommt eine Imprägnierung oder Beschichtung dazu, liegt die Spanne höher. Der Preis hängt von Dachgröße, Eindeckung (Ziegel, Beton, Faserzement), Verschmutzungsgrad, Dachneigung und Zugänglichkeit ab. Diese Zahlen sind Marktrichtwerte aus Branchenquellen und ersetzen keine Kalkulation. Die Ausführung übernimmt ein geprüfter Partner-Fachbetrieb; wir koordinieren Besichtigung, Termin und Ablauf. Das verbindliche Angebot erstellt der Fachbetrieb nach einer kostenlosen Vor-Ort-Besichtigung im Havelland — ein Ansprechpartner, ein Termin.",
+   "sections": [
+    {
+     "h2": "Diese Faktoren bestimmen den Preis einer Dachreinigung",
+     "body_html": "<p>Kein Dach gleicht dem anderen. Diese Faktoren entscheiden, wie aufwendig die Reinigung ausfällt:</p><ul><li><strong>Dachfläche:</strong> Abgerechnet wird meist pro Quadratmeter. Ein großes Satteldach kostet in der Summe mehr als ein kleines Garagendach, im Quadratmeterpreis aber oft weniger.</li><li><strong>Eindeckung:</strong> Tonziegel, Betondachsteine, Faserzement oder Schiefer reagieren unterschiedlich auf Reinigungsverfahren. Beschichtete oder empfindliche Oberflächen verlangen ein schonenderes Vorgehen.</li><li><strong>Verschmutzungsgrad:</strong> Ein dünner Algenfilm ist schnell abgetragen. Dicke Moospolster, eingewachsene Flechten und jahrelange Ablagerungen brauchen mehrere Arbeitsgänge.</li><li><strong>Dachneigung und Zugänglichkeit:</strong> Steile Dächer, hohe Gebäude und enge Grundstücke erfordern Gerüst, Hebebühne oder Absturzsicherung. Das treibt den Aufwand stärker als die reine Fläche.</li><li><strong>Verfahren:</strong> Abbürsten, Nieder- oder Hochdruck und eine anschließende Imprägnierung oder Beschichtung liegen preislich weit auseinander.</li><li><strong>Entsorgung:</strong> Abgetragenes Moos, Laub und Schmutz müssen aufgefangen und entsorgt werden — besonders, wenn ein Anti-Moos-Mittel im Spiel ist.</li></ul><p>Erst wenn diese Punkte vor Ort erfasst sind, lässt sich ein belastbarer Preis nennen. Deshalb kommt das verbindliche Angebot immer nach der Besichtigung.</p>"
+    },
+    {
+     "h2": "Marktübliche Preisspannen im Überblick",
+     "body_html": "<p>Die folgenden Spannen sind redaktionelle Marktrichtwerte aus Branchen- und Verbraucherquellen. Sie geben eine Orientierung, ersetzen aber kein Angebot — regionale Unterschiede und der Zustand Ihres Dachs verschieben die Zahlen in beide Richtungen.</p><ul><li><strong>Reine Reinigung (Abbürsten, Nieder- oder Hochdruck):</strong> marktüblich etwa 8 bis 15 Euro pro Quadratmeter</li><li><strong>Reinigung inklusive Imprägnierung:</strong> marktüblich etwa 15 bis 25 Euro pro Quadratmeter</li><li><strong>Reinigung mit farbiger Beschichtung:</strong> marktüblich 25 Euro pro Quadratmeter und mehr</li><li><strong>Kleinere Dächer (Garage, Carport, Anbau):</strong> oft als Pauschale je Einsatz statt pro Quadratmeter</li></ul><p>Für ein Einfamilienhaus mit rund 120 Quadratmetern Dachfläche ergibt sich daraus je nach Verfahren und Region eine breite Gesamtspanne. Welcher Wert für Ihr Dach realistisch ist, klärt die kostenlose Besichtigung durch den Partner-Fachbetrieb.</p>"
+    },
+    {
+     "h2": "Warum die Ausführung über einen Partner-Fachbetrieb läuft",
+     "body_html": "<p>Arbeiten auf dem Dach sind Höhenarbeiten. Sie verlangen Absturzsicherung, das richtige Verfahren für die jeweilige Eindeckung und einen Betrieb, der für Ergebnis und Sicherheit geradesteht. Genau dafür arbeiten wir im Havelland mit geprüften Dach- und Reinigungsfachbetrieben zusammen.</p><p>Für Sie ändert das nichts am Ablauf — im Gegenteil:</p><ul><li><strong>Ein Ansprechpartner:</strong> Sie schildern uns Ihr Anliegen, wir koordinieren Besichtigung, Termin und Ablauf.</li><li><strong>Ein Termin:</strong> Die Besichtigung vor Ort ist kostenlos und unverbindlich.</li><li><strong>Fachbetrieb führt aus:</strong> Das verbindliche Angebot und die Arbeit auf dem Dach kommen vom geprüften Betrieb, der die Gewährleistung trägt.</li></ul><p>So bekommen Sie die Fachkompetenz eines spezialisierten Betriebs und trotzdem einen einzigen, festen Ansprechpartner für die Organisation.</p>"
+    },
+    {
+     "h2": "Welche Reinigungsverfahren es gibt",
+     "body_html": "<h3>Mechanisches Abbürsten</h3><p>Moos und lose Ablagerungen werden mit Bürste oder Spachtel abgetragen. Schonend für die Ziegeloberfläche, aber arbeitsintensiv. Für empfindliche oder ältere Eindeckungen oft die sicherste Wahl.</p><h3>Nieder- und Hochdruckreinigung</h3><p>Wasser löst Bewuchs und Schmutz. Hochdruck arbeitet schnell, kann aber die Oberflächenversiegelung (Engobe) von Ziegeln angreifen und Wasser unter die Ziegel treiben. Deshalb entscheidet der Fachbetrieb Druck und Winkel je nach Eindeckung.</p><h3>Imprägnierung</h3><p>Nach der Reinigung schließt ein Imprägniermittel die Poren, sodass Wasser abperlt und Moos langsamer zurückkehrt. Das verlängert die Wirkung der Reinigung um mehrere Jahre.</p><h3>Farbige Beschichtung</h3><p>Eine pigmentierte Beschichtung frischt die Optik auf. Sie ist die teuerste Variante — und umstritten, mehr dazu in der nächsten Sektion.</p>"
+    },
+    {
+     "h2": "Wann sich eine Dachreinigung lohnt — und wann Vorsicht gilt",
+     "body_html": "<p>Eine Reinigung ist sinnvoll, wenn Moos und Flechten die Dachfläche flächig bedecken, Rinnen und Abläufe zusetzen oder das Dach vor einem Verkauf gepflegt wirken soll. Dichter Bewuchs hält Feuchtigkeit auf der Eindeckung und kann bei Frost die Ziegeloberfläche schädigen.</p><p>Vorsicht ist bei der <strong>Dachbeschichtung</strong> angebracht. Verbraucherzentralen weisen seit Jahren darauf hin, dass beschichtete Dächer an der Haustür oft überteuert und mit übertriebenen Versprechen zu Lebensdauer und Dämmwirkung verkauft werden. Eine Beschichtung ersetzt keine schadhaften Ziegel und ist kein Muss nach jeder Reinigung. Lassen Sie sich den Nutzen für Ihr konkretes Dach erklären, bevor Sie zustimmen.</p><p>Wenn Ziegel gerissen, Firste locker oder Anschlüsse undicht sind, ist das ein Fall für den Dachdecker, nicht für die Reinigung allein. Der Partner-Fachbetrieb erkennt solche Punkte bei der Besichtigung und sagt Ihnen, was wirklich nötig ist.</p>"
+    }
+   ],
+   "faqs": [
+    {
+     "q": "Was kostet eine Dachreinigung im Havelland?",
+     "a": "Marktüblich liegt eine reine Dachreinigung bei etwa 8 bis 15 Euro pro Quadratmeter, mit Imprägnierung höher. Das sind Richtwerte aus Branchenquellen — der genaue Preis hängt von Dachfläche, Eindeckung, Verschmutzung und Zugang ab. Das verbindliche Angebot erstellt ein geprüfter Partner-Fachbetrieb nach kostenloser Besichtigung; wir koordinieren Termin und Ablauf."
+    },
+    {
+     "q": "Lohnt sich eine Dachbeschichtung nach der Reinigung?",
+     "a": "Nicht automatisch. Eine Beschichtung frischt die Optik auf, ersetzt aber keine schadhaften Ziegel und bringt keine nennenswerte Dämmwirkung. Verbraucherschützer warnen vor überteuerten Haustürangeboten. Sinnvoll ist sie nur, wenn Zustand und Eindeckung es hergeben — lassen Sie sich den konkreten Nutzen vor der Zusage erklären."
+    },
+    {
+     "q": "Wer führt die Dachreinigung aus?",
+     "a": "Die Arbeit auf dem Dach übernimmt ein geprüfter Partner-Fachbetrieb mit Absturzsicherung und passendem Verfahren für Ihre Eindeckung. Wir sind Ihr Ansprechpartner für Anfrage, die Koordination von Besichtigung und Termin sowie den Ablauf — ein Ansprechpartner, ein Termin, ausgeführt vom Fachbetrieb."
+    }
+   ],
+   "cta_service": "dachreinigung",
+   "cta_text": "Sie möchten wissen, was eine Dachreinigung an Ihrem Haus kostet? Wir koordinieren die kostenlose Besichtigung durch einen geprüften Partner-Fachbetrieb im Havelland — ein Ansprechpartner, ein Termin. Zur Leistungsseite Dachreinigung.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "moos-vom-dach-entfernen",
+   "title": "Moos vom Dach entfernen: Methoden & Kosten",
+   "meta": "Moos vom Dach entfernen: welche Methoden es gibt, was die Entfernung marktüblich kostet und warum ein Partner-Fachbetrieb im Havelland die Arbeit übernimmt.",
+   "lead": "Moos, Flechten und Algen auf dem Dach lassen sich mechanisch oder chemisch entfernen — die Höhenarbeit übernimmt ein geprüfter Partner-Fachbetrieb, wir koordinieren den Ablauf.",
+   "intro": "Moos vom Dach entfernen bedeutet, den Bewuchs mechanisch abzubürsten oder mit einem Niederdruckverfahren zu lösen, die Fläche abzunehmen und den Belag anschließend optional mit einem Anti-Moos-Mittel oder einer Imprägnierung zu schützen. Die Kosten liegen marktüblich im Bereich einer Dachreinigung — je nach Dachfläche, Verfahren und Zugang. Die Arbeit auf dem Dach ist Höhenarbeit und gehört in die Hände eines geprüften Partner-Fachbetriebs; wir koordinieren Besichtigung, Termin und Ablauf im Havelland — ein Ansprechpartner, ein Termin.",
+   "sections": [
+    {
+     "h2": "Warum Moos auf dem Dach wächst",
+     "body_html": "<p>Moos braucht Feuchtigkeit, Schatten und eine raue Oberfläche — Bedingungen, die viele Dächer im Havelland bieten. Besonders betroffen sind:</p><ul><li><strong>Nord- und Schattenseiten:</strong> Hier trocknet die Dachfläche nach Regen am langsamsten.</li><li><strong>Betondachsteine und raue Ziegel:</strong> Ihre poröse Oberfläche hält Wasser und bietet Sporen Halt.</li><li><strong>Dächer unter Bäumen:</strong> Laub und Schattenwurf fördern den Bewuchs zusätzlich.</li><li><strong>Ältere Eindeckungen:</strong> Verwitterte Ziegel mit abgetragener Engobe nehmen mehr Feuchtigkeit auf.</li></ul><p>Sporen von Moos, Algen und Flechten verbreiten sich über die Luft und siedeln sich dort an, wo sie dauerhaft feucht bleiben. Innerhalb weniger Jahre entstehen aus einem grünen Schimmer dichte Polster.</p>"
+    },
+    {
+     "h2": "Schadet Moos dem Dach wirklich?",
+     "body_html": "<p>Teils ja, teils wird die Gefahr übertrieben. Eine ehrliche Einordnung:</p><ul><li><strong>Reales Risiko:</strong> Moospolster halten Feuchtigkeit auf der Eindeckung. Bei Frost dehnt sich das Wasser aus und kann die Ziegeloberfläche absprengen. Abgelöste Moosbrocken verstopfen außerdem Dachrinnen und Fallrohre.</li><li><strong>Übertrieben:</strong> Das oft gehörte Argument, Moos gefährde die Statik durch sein Gewicht, trägt bei üblichem Bewuchs nicht — die Last ist gering.</li><li><strong>Optik:</strong> Ein bemoostes Dach wirkt ungepflegt und drückt vor einem Verkauf den Eindruck.</li></ul><p>Kurz: Moos entfernen schützt vor allem Eindeckung und Entwässerung — es ist Substanz- und Werterhalt, kein rein kosmetischer Schritt. Der Partner-Fachbetrieb schätzt bei der Besichtigung ein, wie dringend der Fall ist.</p>"
+    },
+    {
+     "h2": "Methoden, um Moos vom Dach zu entfernen",
+     "body_html": "<h3>Mechanisch abbürsten oder abkehren</h3><p>Der klassische Weg: Moos wird mit Bürste oder Spachtel abgetragen. Schonend für die Ziegel, aber zeit- und arbeitsintensiv. Für empfindliche Eindeckungen die sicherste Methode.</p><h3>Niederdruck statt Hochdruck</h3><p>Wasser löst den Bewuchs. Auf dem Dach ist Hochdruck heikel: Er kann die Engobe angreifen und Wasser unter die Ziegel treiben. Fachbetriebe wählen Druck und Winkel deshalb je nach Eindeckung — häufig Niederdruck.</p><h3>Anti-Moos-Mittel</h3><p>Spezialreiniger töten Moos und Flechten bis in die Wurzel ab; die Reste werden nach der Einwirkzeit abgetragen oder abgeregnet. Beim Einsatz sind Umwelt- und Abwasserauflagen zu beachten.</p><h3>Imprägnierung danach</h3><p>Eine Imprägnierung schließt die Poren und verzögert den erneuten Bewuchs um mehrere Jahre — der Schritt, der die Wirkung hält.</p>"
+    },
+    {
+     "h2": "Selbst entfernen oder Fachbetrieb beauftragen?",
+     "body_html": "<p>Vom Boden aus lässt sich Moos nicht entfernen — die Arbeit findet auf dem Dach statt. Und genau da liegt das Problem der Eigenleistung:</p><ul><li><strong>Absturzgefahr:</strong> Stürze aus der Höhe zählen zu den häufigsten schweren Unfällen bei Heimwerkern. Ohne Sicherung ist die Dacharbeit lebensgefährlich.</li><li><strong>Ziegel brechen:</strong> Wer ungeübt über die Eindeckung läuft, tritt Ziegel ein und verursacht neue Schäden.</li><li><strong>Falsches Verfahren:</strong> Hochdruck am falschen Ziegel richtet mehr Schaden an als das Moos.</li></ul><p>Deshalb übernimmt die Moosentfernung ein geprüfter Partner-Fachbetrieb mit Absturzsicherung und passender Technik. Wir koordinieren Besichtigung, Termin und Ablauf — Sie haben einen Ansprechpartner, die Ausführung und Gewährleistung liegen beim Fachbetrieb.</p>"
+    },
+    {
+     "h2": "Was kostet die Moosentfernung vom Dach?",
+     "body_html": "<p>Die Moosentfernung wird meist als Teil einer Dachreinigung kalkuliert und pro Quadratmeter abgerechnet. Als redaktionelle Marktrichtwerte gelten:</p><ul><li><strong>Mechanisch oder Niederdruck:</strong> marktüblich etwa 8 bis 15 Euro pro Quadratmeter</li><li><strong>Inklusive Imprägnierung:</strong> marktüblich etwa 15 bis 25 Euro pro Quadratmeter</li></ul><p>Diese Spannen stammen aus Branchen- und Verbraucherquellen und sind je nach Region und Dachzustand nach oben oder unten zu verschieben. Das verbindliche Angebot erstellt der Partner-Fachbetrieb nach der kostenlosen Besichtigung. Steht ohnehin eine gründliche Reinigung an, lässt sich beides in einem Termin verbinden — mehr dazu auf unserer Seite zur Dachreinigung.</p>"
+    }
+   ],
+   "faqs": [
+    {
+     "q": "Wie bekomme ich Moos vom Dach?",
+     "a": "Moos wird mechanisch abgebürstet oder mit Niederdruck gelöst und abgetragen; anschließend schützt eine Imprägnierung vor schnellem Nachwachsen. Weil die Arbeit auf dem Dach Höhenarbeit ist, übernimmt sie ein geprüfter Partner-Fachbetrieb mit Absturzsicherung. Wir koordinieren Besichtigung und Termin im Havelland."
+    },
+    {
+     "q": "Was kostet es, Moos vom Dach entfernen zu lassen?",
+     "a": "Marktüblich liegt die Moosentfernung im Bereich einer Dachreinigung, etwa 8 bis 15 Euro pro Quadratmeter, mit Imprägnierung höher. Das sind Richtwerte aus Branchenquellen. Der genaue Preis hängt von Fläche, Verfahren und Zugang ab und kommt als verbindliches Angebot vom Partner-Fachbetrieb nach der Besichtigung."
+    },
+    {
+     "q": "Schadet Moos wirklich dem Dach?",
+     "a": "Dichte Moospolster halten Feuchtigkeit auf der Eindeckung, können bei Frost die Ziegeloberfläche schädigen und verstopfen mit abgelösten Brocken die Dachrinne. Das oft genannte Statik-Risiko durch das Gewicht ist bei üblichem Bewuchs dagegen gering. Die Entfernung dient vor allem dem Erhalt von Eindeckung und Entwässerung."
+    }
+   ],
+   "cta_service": "dachreinigung",
+   "cta_text": "Moos auf dem Dach? Wir koordinieren die kostenlose Besichtigung durch einen geprüften Partner-Fachbetrieb im Havelland — ein Ansprechpartner, ein Termin. Zur Leistungsseite Dachreinigung.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",

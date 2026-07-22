@@ -257,9 +257,9 @@ function home() {
     { slug: 'heckenschnitt', label: 'Heckenschnitt', promise: 'Geradlinien-Garantie — bleiben Schnittreste liegen, kommen wir kostenlos nach.' },
     { slug: 'gartenpflege', label: 'Gartenpflege', promise: 'Fällt ein Termin ohne Vorankündigung aus, geht der nächste auf uns.' },
     { slug: 'fensterreinigung', label: 'Fensterreinigung', promise: 'Schlierenfrei — oder wir kommen am selben Tag noch einmal.' },
-    { slug: 'entruempelung', label: 'Entrümpelung & Haushaltsauflösung', promise: 'Festpreis nach Besichtigung — kein Aufpreis, besenrein übergeben.' },
-    { slug: 'dachrinnenreinigung', label: 'Dachrinnenreinigung', promise: 'Vor dem Herbst geräumt und geprüft — wir koordinieren Termin und Ausführung.' },
-    { slug: 'dachreinigung', label: 'Dachreinigung', promise: 'Ausführung durch geprüften Partner-Fachbetrieb — wir koordinieren Besichtigung, Termin und Ablauf.' }
+    { slug: 'entruempelung', label: 'Entrümpelung & Haushaltsauflösung', promise: 'Festpreis nach Besichtigung — besenrein zum vereinbarten Termin.' },
+    { slug: 'dachrinnenreinigung', label: 'Dachrinnenreinigung', promise: 'Rinne frei vor dem Winter — Ausführung über geprüften Partner-Fachbetrieb, koordiniert von uns.' },
+    { slug: 'dachreinigung', label: 'Dachreinigung', promise: 'Moos und Grünbelag vom Dach — Ausführung durch geprüften Partner-Fachbetrieb, wir koordinieren.' }
   ];
   const fokusCards = KERN.map((k, i) => `<a class="it rv d${i + 1}" href="/${k.slug}/"><span class="no">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(k.label)}</h3><p>${esc(k.promise)}</p></div><span class="arr">→</span></a>`).join('');
   const main = `
@@ -340,12 +340,16 @@ function hub(s) {
 
   // b2b_only-Hub (hausmeisterservice): Querverlinkung zu /fuer-hausverwaltungen/ (Design §2 — beide Richtungen)
   const b2bCross = s.b2b_only ? `<section class="sec section-alt"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} für Hausverwaltungen &amp; Gewerbe</h2><p>${esc(s.name)} bieten wir im Havelland vor allem für Hausverwaltungen, WEG und Gewerbeobjekte an — mit festem Ansprechpartner, schriftlichem Angebot und Foto-Reporting nach jedem Einsatz. Den vollständigen Überblick über unser Objekt-Angebot finden Sie unter <a href="/fuer-hausverwaltungen/">Für Hausverwaltungen &amp; Gewerbe</a>.</p></div></div></section>` : '';
+  // Optionale Copy-Blöcke (H2 + Fließtext, optionale Service-Querverlinkung): Wohnungsauflösungs-H2 + Kannibalisierungs-Firewall Entrümpelung↔Haushaltsauflösung (Design §4). Nur Hubs mit copy.blocks; sonst ''.
+  const extraBlocks = (c && Array.isArray(c.blocks) ? c.blocks : []).map((b, i) =>
+    `<section class="sec${i % 2 ? '' : ' section-alt'}"><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2><p>${esc(b.body)}${b.link_to ? ` <a href="/${esc(b.link_to)}/">${esc(b.link_text || 'Mehr erfahren')}</a>.` : ''}</p></div></div></section>`).join('');
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || s.b2b_only) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div>
 <div class="shot rv in d2">${heroShot}</div></div></section>
 ${gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv">${definition}<h2>${esc(s.name)} im Havelland — was dazugehört</h2>${sektionenHtml}${naehe}${ablauf}<h3>${s.garantie ? 'Unsere Garantie' : 'Unser Versprechen'}</h3><p>${esc(garantieTxt)}</p></div></div></section>
 ${IMG['svc-' + s.slug + '-detail'] ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic('svc-' + s.slug + '-detail', { alt: s.name + ' im Detail — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>` : ''}
+${extraBlocks}
 ${rich}
 ${b2bCross}
 ${endBand}`;
@@ -381,7 +385,7 @@ function ortsseite(s, o) {
 
   // FAQ: 2 Archetyp-FAQ ({ort}-spezifisch) + 2 Hub-FAQ (idx-rotiert, je Ort andere) → ortspezifisch + Near-Dup-Marge
   const archFaqs = arch && arch.faqs ? rotate(arch.faqs, idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
-  const hubFaqs = c && c.faqs ? rotate(c.faqs, idx + 1, archFaqs.length ? 2 : 4) : [];
+  const hubFaqs = c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), idx + 1, archFaqs.length ? 2 : 4) : [];
   const faqs = [...archFaqs, ...hubFaqs];
   const ortRatPool = ratgeberByService[s.slug] || [];
   const ortRat = ortRatPool.length ? ortRatPool[idx % ortRatPool.length] : null;
@@ -770,7 +774,7 @@ function ratgeberIndex() {
   const list = ratCopy.length ? ratCopy : RATGEBER_FALLBACK;
   const cats = [
     { label: 'Garten & Heckenpflege', svcs: ['gartenpflege', 'heckenschnitt'], teaser: 'Wann geschnitten wird, was der Naturschutz erlaubt und wie regelmäßige Pflege im Havelland aussieht.' },
-    { label: 'Reinigung & Außenflächen', svcs: ['fensterreinigung', 'steinreinigung', 'dachrinnenreinigung', 'photovoltaikreinigung', 'gebaeudereinigung', 'grundreinigung', 'unterhaltsreinigung'], teaser: 'Von der streifenfreien Scheibe bis zum grünbelagfreien Pflaster — Kosten, Turnus und worauf es beim Ergebnis ankommt.' },
+    { label: 'Reinigung & Außenflächen', svcs: ['fensterreinigung', 'steinreinigung', 'dachrinnenreinigung', 'dachreinigung', 'photovoltaikreinigung', 'gebaeudereinigung', 'grundreinigung', 'unterhaltsreinigung'], teaser: 'Von der streifenfreien Scheibe bis zum moosfreien Dach — Kosten, Turnus und worauf es beim Ergebnis ankommt.' },
     { label: 'Entrümpelung & Umzug', svcs: ['entruempelung', 'haushaltsaufloesung', 'umzugshilfe'], teaser: 'Was Entrümpelung und Haushaltsauflösung kosten, wie ein Festpreis zustande kommt und wie der Ablauf ist.' },
     { label: 'Winterdienst & Hausservice', svcs: ['winterdienst', 'hausmeisterservice', 'ferienwohnung-reinigung', 'objektbetreuung', 'renovierung'], teaser: 'Streupflicht, Reaktionszeiten und laufende Betreuung rund ums Haus im Havelland und Berliner Umland.' },
   ];
