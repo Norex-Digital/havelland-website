@@ -7,8 +7,8 @@
   "indexnow_key": "b497eeb3777a37bba0952540d225aba4",
   "aktive_welle": 0,
   "wellen": {
-    "1": "3 Fokus-Services (heckenschnitt, gartenpflege, fensterreinigung) × 9 Geo-A-Orte + 6–8 vorgezogene Ratgeber (Traffic-Motor, wann-hecke-schneiden Feb-Peak) ≈ 35 Seiten",
-    "2": "Geo-A Rest + Geo-B Tier-1-Orte",
+    "1": "Portfolio-Refokus 2026-07-22. Welle 1a (wave=1, Fokus, saisonlos/Herbst-Deadline): entruempelung, haushaltsaufloesung, dachrinnenreinigung, dachreinigung × 5 Geo-A-Money-Orte = 20 Seiten + 5 Ratgeber (entrümpelung/dachreinigung/haushaltsauflösung/dachrinnenreinigung kosten, moos vom dach). Welle 1b (~Sept, wave=1, Garten): heckenschnitt, gartenpflege, fensterreinigung × 5 Orte = 15 Seiten + wann-hecke-schneiden. Dach-Ortsseiten erst nach unterschriebener Partnervereinbarung (Tippgeber). Batch-Freischaltung per GSC-Daten-Trigger (Vorstufe >=50% indexiert), nicht per Kalender. aktive_welle bleibt 0 bis Hubs im Index.",
+    "2": "wave=2-Services (winterdienst, steinreinigung, grundreinigung, gebaeudereinigung, unterhaltsreinigung, objektbetreuung, ferienwohnung-reinigung) + Geo-A Rest + Geo-B Tier-1-Orte",
     "3": "Geo-B Tier-2 + Ratgeber-Cluster",
     "later": "Geo-LT (Capture)"
   },

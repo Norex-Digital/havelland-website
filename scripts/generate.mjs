@@ -58,12 +58,12 @@ const ratgeberByService = {}; for (const r of ratCopy) { if (!r.cta_service) con
 
 // Übersichtsseiten-Copy (/leistungen/ + /standorte/) — Intros/FAQ; Labels stehen in den Maps unten
 const _ueb = CP('uebersicht.json') || {}; const uebL = _ueb.leistungen || {}; const uebS = _ueb.standorte || {};
-// Gruppierung: Service-Slug → Themen-Block (deckt alle 17 Services), Reihenfolge = Anzeige-Reihenfolge
+// Gruppierung: Service-Slug → Themen-Block (Portfolio-Refokus 2026-07-22: Garten & Außen · Entrümpelung & Auflösung · Dach · Für Gewerbe & Hausverwaltungen). Reihenfolge = Anzeige-Reihenfolge. b2b_only-Services (hausmeisterservice) leben im Gewerbe-Block.
 const LEISTUNGEN_KATEGORIEN = [
-  { key: 'garten', label: 'Garten & Außenanlagen', slugs: ['gartenpflege', 'heckenschnitt', 'winterdienst'] },
-  { key: 'reinigung', label: 'Reinigung rund ums Haus', slugs: ['steinreinigung', 'fensterreinigung', 'dachrinnenreinigung', 'photovoltaikreinigung', 'ferienwohnung-reinigung'] },
-  { key: 'aufloesung', label: 'Entrümpelung, Auflösung & Umzug', slugs: ['entruempelung', 'haushaltsaufloesung', 'grundreinigung', 'umzugshilfe', 'renovierung'] },
-  { key: 'gewerbe', label: 'Hausmeister & Gewerbe', slugs: ['hausmeisterservice', 'gebaeudereinigung', 'unterhaltsreinigung', 'objektbetreuung'] }
+  { key: 'garten', label: 'Garten & Außen', slugs: ['gartenpflege', 'heckenschnitt', 'winterdienst', 'steinreinigung', 'fensterreinigung'] },
+  { key: 'aufloesung', label: 'Entrümpelung & Auflösung', slugs: ['entruempelung', 'haushaltsaufloesung', 'grundreinigung'] },
+  { key: 'dach', label: 'Dach', slugs: ['dachrinnenreinigung', 'dachreinigung'] },
+  { key: 'gewerbe', label: 'Für Gewerbe & Hausverwaltungen', slugs: ['hausmeisterservice', 'gebaeudereinigung', 'unterhaltsreinigung', 'objektbetreuung', 'ferienwohnung-reinigung'] }
 ];
 // Ort-Slug → geografische Region (nur Money-Page-Orte werden gerendert; Schnittmenge im Builder)
 const STANDORT_REGIONEN = [
@@ -73,7 +73,7 @@ const STANDORT_REGIONEN = [
   { key: 'seen', label: 'Havelseen & Ferienlagen', slugs: ['werder-havel', 'schwielowsee'] }
 ];
 
-const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','winterdienst','steinreinigung','dachrinnenreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung']);
+const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','haushaltsaufloesung','winterdienst','steinreinigung','dachrinnenreinigung','dachreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung']);
 // Gewerk-Klassen fuer die Voll-Print-Komposition der Hubs/Ortsseiten:
 //  VOLL_VN   = echtes Vorher/Nachher-Material -> Slider + Heckenkompass + Schnittkalender
 //  GARTEN    = Garten ohne V/N-Material -> kein Slider/Kompass, Ortskarten + Foto-Flow
@@ -90,11 +90,15 @@ const sectionOT = new Set(Object.keys(ortsteileVon).filter(s => !PREMIUM.has(s))
 const launch = orte.filter(o => o.geo === 'A' || o.geo === 'B');
 const haupt = launch.filter(o => !sectionOT.has(o.slug));
 const segMatch = (s, o) => s.segment.some(x => o.typ.includes(x));
-const orteForService = s => haupt.filter(o => s.orte_fix ? s.orte_fix.includes(o.slug) : segMatch(s, o));
-const servicesForOrt = o => services.filter(s => PAGE_SVC.has(s.slug) && (s.orte_fix ? s.orte_fix.includes(o.slug) : segMatch(s, o)));
+// b2b_only-Services (hausmeisterservice): raus aus Privatkunden-Kontexten → keine Ortsseiten, nicht in Orts-Hubs/Kernleistungen. Getragen von /fuer-hausverwaltungen/ + Footer-B2B-Block.
+const orteForService = s => s.b2b_only ? [] : haupt.filter(o => s.orte_fix ? s.orte_fix.includes(o.slug) : segMatch(s, o));
+const servicesForOrt = o => services.filter(s => PAGE_SVC.has(s.slug) && !s.b2b_only && (s.orte_fix ? s.orte_fix.includes(o.slug) : segMatch(s, o)));
+// Service-scharfes Wellen-Gate: Ortsseiten/Ratgeber eines Service indexierbar erst wenn aktive_welle >= service.wave; wave null = globales Gate (<1). Rückwärtskompatibel: bei aktive_welle 0 bleibt ALLES noindex.
+const svcWaveNoindex = s => (config.aktive_welle || 0) < (s && s.wave != null ? s.wave : 1);
+const svcNoindexBySlug = slug => svcWaveNoindex(services.find(x => x.slug === slug));
 
 // Welche Ortsseiten werden TATSÄCHLICH gerendert? (Manifest-First → Link-Graph geschlossen, keine 404)
-const SAMPLE_ORTSSEITEN = [['heckenschnitt','falkensee'],['gartenpflege','berlin-kladow'],['steinreinigung','dallgow-doeberitz'],['fensterreinigung','nauen'],['entruempelung','oranienburg'],['winterdienst','falkensee'],['hausmeisterservice','hennigsdorf'],['gebaeudereinigung','berlin-spandau'],['ferienwohnung-reinigung','werder-havel'],['dachrinnenreinigung','hohen-neuendorf']];
+const SAMPLE_ORTSSEITEN = [['heckenschnitt','falkensee'],['gartenpflege','berlin-kladow'],['steinreinigung','dallgow-doeberitz'],['fensterreinigung','nauen'],['entruempelung','oranienburg'],['haushaltsaufloesung','brieselang'],['winterdienst','falkensee'],['dachreinigung','schoenwalde-glien'],['gebaeudereinigung','berlin-spandau'],['ferienwohnung-reinigung','werder-havel'],['dachrinnenreinigung','hohen-neuendorf']];
 const PAGE_ORTS = [];
 for (const s of services) if (PAGE_SVC.has(s.slug)) for (const o of orteForService(s)) PAGE_ORTS.push([s.slug, o.slug]);
 const genOrts = new Set((FULL ? PAGE_ORTS : SAMPLE_ORTSSEITEN).map(([a, b]) => a + '|' + b));
@@ -230,7 +234,7 @@ const header = `<header><div class="wrap nav"><a class="logo" href="/"><img src=
 const sctaBar = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ Anrufen</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav>`;
 const SCTA_DEFAULT = sctaBar('Hallo, ich hätte gern eine kostenlose Besichtigung.');
 // Footer — lock-v2 fcols-Sitemap (hell): Leistungen A–H / H–W / Unternehmen (inkl. /fuer-hausverwaltungen/) + legal
-const footer = `<footer><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · <a href="tel:${tel}">${esc(nap.phone_display)}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>${ohDisplay()?`<br>${esc(ohDisplay())}`:''}</p><div class="fcols"><div><h4>Leistungen</h4><ul><li><a href="/gartenpflege/">Gartenpflege</a></li><li><a href="/heckenschnitt/">Heckenschnitt</a></li><li><a href="/winterdienst/">Winterdienst</a></li><li><a href="/steinreinigung/">Steinreinigung</a></li><li><a href="/fensterreinigung/">Fensterreinigung</a></li><li><a href="/dachrinnenreinigung/">Dachrinnenreinigung</a></li><li><a href="/photovoltaikreinigung/">Photovoltaikreinigung</a></li></ul></div><div><h4>Weitere Leistungen</h4><ul><li><a href="/entruempelung/">Entrümpelung</a></li><li><a href="/haushaltsaufloesung/">Haushaltsauflösung</a></li><li><a href="/grundreinigung/">Grundreinigung</a></li><li><a href="/umzugshilfe/">Umzugshilfe</a></li><li><a href="/hausmeisterservice/">Hausmeisterservice</a></li><li><a href="/gebaeudereinigung/">Gebäudereinigung</a></li><li><a href="/objektbetreuung/">Objektbetreuung</a></li></ul></div><div><h4>Unternehmen</h4><ul><li><a href="/leistungen/">Alle Leistungen</a></li><li><a href="/standorte/">Standorte</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/bewertungen/">Bewertungen</a></li><li><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a></li><li><a href="/kontakt/">Kontakt</a></li></ul></div></div><div class="legal"><span>${esc(nap.name)} (${esc(nap.rechtsform||'GbR')})</span><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></div></div></footer>`;
+const footer = `<footer><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · <a href="tel:${tel}">${esc(nap.phone_display)}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>${ohDisplay()?`<br>${esc(ohDisplay())}`:''}</p><div class="fcols"><div><h4>Garten & Reinigung</h4><ul><li><a href="/gartenpflege/">Gartenpflege</a></li><li><a href="/heckenschnitt/">Heckenschnitt</a></li><li><a href="/winterdienst/">Winterdienst</a></li><li><a href="/steinreinigung/">Steinreinigung</a></li><li><a href="/fensterreinigung/">Fensterreinigung</a></li><li><a href="/dachrinnenreinigung/">Dachrinnenreinigung</a></li><li><a href="/dachreinigung/">Dachreinigung</a></li></ul></div><div><h4>Entrümpelung & Auflösung</h4><ul><li><a href="/entruempelung/">Entrümpelung</a></li><li><a href="/haushaltsaufloesung/">Haushaltsauflösung</a></li><li><a href="/grundreinigung/">Grundreinigung</a></li><li><a href="/ferienwohnung-reinigung/">Ferienwohnung-Reinigung</a></li></ul><h4 style="margin-top:22px">Für Gewerbe & Hausverwaltungen</h4><ul><li><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a></li><li><a href="/hausmeisterservice/">Hausmeisterservice</a></li><li><a href="/gebaeudereinigung/">Gebäudereinigung</a></li><li><a href="/unterhaltsreinigung/">Unterhaltsreinigung</a></li><li><a href="/objektbetreuung/">Objektbetreuung</a></li></ul></div><div><h4>Unternehmen</h4><ul><li><a href="/leistungen/">Alle Leistungen</a></li><li><a href="/standorte/">Standorte</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/bewertungen/">Bewertungen</a></li><li><a href="/kontakt/">Kontakt</a></li></ul></div></div><div class="legal"><span>${esc(nap.name)} (${esc(nap.rechtsform||'GbR')})</span><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></div></div></footer>`;
 const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script><script src="/assets/js/site.js?v=${ASSET_VER}" defer></script>` + CONSENT_BANNER + TRACK_EVENTS;
 const endBand = `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, was ansteht — wir kümmern uns.</h2><p class="rv d1">Kostenlose Besichtigung, Festpreis, dann erledigt.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
 // Dunkles Wert-Band (4 Werte) — auf Home + Übersichtsseiten wiederverwendet
@@ -248,11 +252,16 @@ function write(url, html) {
 
 // ---------- HOME ----------
 function home() {
-  // 3 Fokus-Leistungen (Wellen-1: heckenschnitt, gartenpflege, fensterreinigung) — Fallback erste 3 Services
-  const bySlug = Object.fromEntries(services.map(s => [s.slug, s]));
-  const fokus = ['heckenschnitt', 'gartenpflege', 'fensterreinigung'].map(sl => bySlug[sl]).filter(Boolean);
-  const fokusList = (fokus.length ? fokus : services.slice(0, 3));
-  const fokusCards = fokusList.map((s, i) => `<a class="it rv d${i + 1}" href="/${s.slug}/"><span class="no">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(s.name)}</h3><p>${esc((s.sektionen || []).slice(0, 3).join(' · ') || s.garantie || 'Festpreis nach Besichtigung.')}</p></div><span class="arr">→</span></a>`).join('');
+  // Kernleistungen (Portfolio-Refokus 2026-07-22): 6 feste Einträge. Versprechen-Zeilen im Marken-Stil; Dach-Einträge (05/06) Tippgeber-konform — keine Eigenleistung, kein "ein Preis".
+  const KERN = [
+    { slug: 'heckenschnitt', label: 'Heckenschnitt', promise: 'Geradlinien-Garantie — bleiben Schnittreste liegen, kommen wir kostenlos nach.' },
+    { slug: 'gartenpflege', label: 'Gartenpflege', promise: 'Fällt ein Termin ohne Vorankündigung aus, geht der nächste auf uns.' },
+    { slug: 'fensterreinigung', label: 'Fensterreinigung', promise: 'Schlierenfrei — oder wir kommen am selben Tag noch einmal.' },
+    { slug: 'entruempelung', label: 'Entrümpelung & Haushaltsauflösung', promise: 'Festpreis nach Besichtigung — kein Aufpreis, besenrein übergeben.' },
+    { slug: 'dachrinnenreinigung', label: 'Dachrinnenreinigung', promise: 'Vor dem Herbst geräumt und geprüft — wir koordinieren Termin und Ausführung.' },
+    { slug: 'dachreinigung', label: 'Dachreinigung', promise: 'Ausführung durch geprüften Partner-Fachbetrieb — wir koordinieren Besichtigung, Termin und Ablauf.' }
+  ];
+  const fokusCards = KERN.map((k, i) => `<a class="it rv d${i + 1}" href="/${k.slug}/"><span class="no">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(k.label)}</h3><p>${esc(k.promise)}</p></div><span class="arr">→</span></a>`).join('');
   const main = `
 <section class="hero">${leaf('hleaf')}<div class="wrap grid">
 <div><span class="kick rv in"><span class="dot"></span> ${esc(nap.city)} · Havelland</span>
