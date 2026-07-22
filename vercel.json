@@ -3,6 +3,16 @@
   "outputDirectory": "website",
   "cleanUrls": false,
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/renovierung/", "destination": "/leistungen/", "permanent": true },
+    { "source": "/renovierung-:ort/", "destination": "/leistungen/", "permanent": true },
+    { "source": "/umzugshilfe/", "destination": "/leistungen/", "permanent": true },
+    { "source": "/umzugshilfe-:ort/", "destination": "/leistungen/", "permanent": true },
+    { "source": "/photovoltaikreinigung/", "destination": "/leistungen/", "permanent": true },
+    { "source": "/photovoltaikreinigung-:ort/", "destination": "/leistungen/", "permanent": true },
+    { "source": "/ratgeber/pv-reinigung-lohnt-sich/", "destination": "/leistungen/", "permanent": true },
+    { "source": "/ratgeber/umzug-checkliste/", "destination": "/leistungen/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

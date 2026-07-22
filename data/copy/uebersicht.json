@@ -5,16 +5,16 @@
     "meta": "Alle Leistungen im Havelland aus einer Hand — Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste, Festpreis nach kostenloser Besichtigung",
     "intro": "Wir bündeln die Arbeiten rund um Haus und Grundstück, damit Sie nicht für jede Aufgabe einen eigenen Betrieb suchen und koordinieren müssen. Hier sind unsere Leistungen nach Bereichen sortiert — von der laufenden Gartenpflege bis zur Betreuung von Gewerbeobjekten.",
     "kategorien": {
-      "garten": "Pflege übers Jahr — Rasen und Grünschnitt, Hecken in Form, Laub im Herbst und im Winter geräumte Wege.",
-      "reinigung": "Was mit der Zeit vergrünt oder verschmutzt: Pflaster und Terrasse, Fenster, Dachrinne und Photovoltaik — bis zur Ferienwohnung am Wasser.",
-      "aufloesung": "Einmalige Großeinsätze mit Festpreis nach Besichtigung — entrümpelt, aufgelöst, umgezogen oder instand gesetzt und besenrein übergeben.",
-      "gewerbe": "Für Eigentümer, Hausverwaltungen und Betriebe: Hausmeisterdienst, Gebäude- und Unterhaltsreinigung sowie Objektbetreuung im festen Turnus."
+      "garten": "Pflege und Sauberkeit rund ums Haus — Rasen und Grünschnitt, Hecken in Form, Laub und Winterdienst sowie Pflaster, Terrasse und streifenfreie Fenster.",
+      "aufloesung": "Einmalige Großeinsätze mit Festpreis nach Besichtigung — entrümpelt, aufgelöst und besenrein übergeben.",
+      "dach": "Rund ums Dach: die Dachrinne frei vor dem Herbst und die Dachreinigung. Für Arbeiten auf dem Dach koordinieren wir einen geprüften Partner-Fachbetrieb — ein Ansprechpartner für Besichtigung, Termin und Ablauf.",
+      "gewerbe": "Für Eigentümer, Hausverwaltungen und Betriebe: Hausmeisterdienst, Gebäude- und Unterhaltsreinigung, Objektbetreuung und Ferienwohnungs-Reinigung im festen Turnus."
     },
     "faqs": [
       { "q": "Bekomme ich alle Leistungen aus einer Hand?", "a": "Ja. Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste übernehmen wir mit einem festen Ansprechpartner — Sie müssen nicht für jede Aufgabe einen eigenen Betrieb suchen und koordinieren." },
       { "q": "Was kostet eine Besichtigung?", "a": "Die Vor-Ort-Besichtigung ist für Sie kostenlos. Wir schauen uns an, was ansteht, und nennen Ihnen danach einen Festpreis. Der vereinbarte Betrag ist der Endbetrag, ohne Aufschlag am Ende." },
       { "q": "Übernehmen Sie auch einzelne, kleinere Aufträge?", "a": "Ja. Ob nur die Hecke geschnitten oder die Dachrinne gereinigt werden soll — auch einzelne Arbeiten sind möglich. Schreiben Sie uns kurz per WhatsApp, worum es geht, dann stimmen wir einen Termin ab." },
-      { "q": "Machen Sie auch Malerarbeiten?", "a": "Malerarbeiten gehören nicht zu unserem Angebot. Im Bereich Renovierung übernehmen wir handwerkliche Arbeiten wie Kleinreparaturen, Boden- und Laminatverlegung sowie De- und Montage." }
+      { "q": "Machen Sie auch Dacharbeiten?", "a": "Ja — die Dachrinnenreinigung vor dem Herbst und die Dachreinigung gehören zu unserem Angebot. Die eigentliche Arbeit auf dem Dach übernimmt ein geprüfter Partner-Fachbetrieb; wir koordinieren für Sie Besichtigung, Termin und Ablauf, sodass Sie einen festen Ansprechpartner haben. Malerarbeiten gehören nicht zu unserem Angebot." }
     ]
   },
   "standorte": {
