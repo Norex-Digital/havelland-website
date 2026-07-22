@@ -1,0 +1,195 @@
+{
+  "_meta": "Welle-1a Ortsseiten-Copy (service × ort) — bespoke pro Seite. Rendert in ortsseite() VOR dem Archetyp-Fallback (hook/rahmen/trust ersetzen Archetyp+Ort-Hook; faqs ersetzen Archetyp-FAQ und schalten Hub-FAQ auf der Ortsseite ab). Platzhalter {ort}{plz}{nachbarorte} via fillTok. Dach-Services (dachrinnenreinigung + dachreinigung): STRIKT Partner-/Tippgeber-Framing (gu-modell.md §Ausnahme, §5 UWG) — KEINE Eigenleistung, KEIN 'ein/Festpreis' von uns (Angebot kommt vom Partner-Fachbetrieb), keine Provisions-Erwähnung. haushaltsaufloesung: 'Wohnungsauflösung' als Sekundär-Keyword eingewoben + Firewall Unterschied Entrümpelung/Haushaltsauflösung. Faktengebundener Lokalbezug (Ortsteile/Charakter aus orte.json/locations.json), keine erfundenen Landmarks/Zahlen.",
+  "services": {
+    "entruempelung": {
+      "faqs": [
+        {
+          "q": "Wie schnell können Sie in {ort} entrümpeln?",
+          "a": "Schreiben Sie uns per WhatsApp ein paar Fotos, dann kommen wir zur kostenlosen Besichtigung nach {ort} und stimmen einen Termin ab. Weil wir aus dem Havelland kommen, klappt der oft schon in derselben Woche. Einen Keller oder eine Garage räumen wir meist an einem Tag, für Haus und Dachboden planen wir mehr Zeit ein."
+        },
+        {
+          "q": "Was passiert mit den Sachen aus der Entrümpelung in {ort}?",
+          "a": "Was noch brauchbar ist, trennen wir aus und führen es einer Weiterverwendung zu. Der Rest wird nach Art getrennt und fachgerecht entsorgt — Sperrmüll, Alt-Elektro, Metall und Problemstoffe gehen jeweils den richtigen Weg. Sie erhalten die Fläche besenrein zurück, auf Wunsch mit Foto vom Vorher und Nachher."
+        },
+        {
+          "q": "Was kostet eine Entrümpelung in {ort}?",
+          "a": "Den Preis nennen wir erst nach einer kostenlosen Besichtigung als Festpreis, denn Menge, Etage und Zugang machen den Unterschied. Der genannte Betrag ist der Endbetrag, ohne Aufschlag hinterher. Anrechenbare Wertgegenstände ziehen wir vorher offen ab."
+        },
+        {
+          "q": "Räumen Sie in {ort} auch nur den Keller oder einzelne Räume?",
+          "a": "Ja. Ob nur der Keller, die Garage, der Dachboden oder ein einzelnes Zimmer — auch kleinere Entrümpelungen übernehmen wir in {ort}. Sagen Sie uns kurz, worum es geht, dann schauen wir es bei der Besichtigung an und nennen einen Festpreis."
+        }
+      ],
+      "orte": {
+        "falkensee": {
+          "hook": "Falkensee ist die größte Stadt im Havelland, direkt an der Grenze zu Berlin-Spandau und mit Brieselang und Dallgow-Döberitz als Nachbarn. Hinter den vielen Einfamilienhäusern und den älteren Siedlungshäusern stecken über die Jahre volle Keller, Dachböden und Garagen. Wird ein Haushalt gelöst, steht ein Umzug an oder ist einfach über Jahrzehnte zu viel zusammengekommen, räumen wir das diskret aus. Von der Anfrage bis zur besenreinen Übergabe bleibt dieselbe Hand zuständig, und die kurzen Wege aus dem Havelland halten den Termin nah. Ausgeräumt, nicht ausgesessen.",
+          "rahmen": "In Falkensee treffen wir vom schmalen Reihenhauskeller bis zum vollgestellten Einfamilienhaus alles an. Wir sortieren vor Ort, trennen Brauchbares vom Müll und tragen auch aus dem Dachgeschoss und engen Treppenhäusern heraus, ohne dass Sie mit anpacken. Alt-Möbel, Elektrogeräte, Metall und Problemstoffe führen wir getrennt der richtigen Entsorgung zu. Wertgegenstände rechnen wir vorher offen vom Preis ab. Am Ende steht die Fläche besenrein bereit — für die Übergabe an Käufer, Vermieter oder die eigene Weiternutzung.",
+          "trust": "Nach der kostenlosen Besichtigung in Falkensee steht ein Festpreis, der der Endpreis bleibt. Sie erhalten die Räume besenrein zurück und auf Wunsch Vorher-Nachher-Fotos aufs Handy, auch wenn Sie am Termin selbst nicht dabei sind."
+        },
+        "dallgow-doeberitz": {
+          "hook": "Dallgow-Döberitz liegt zwischen Falkensee und Berlin-Spandau, mit Wustermark im Westen und den Ortsteilen Seeburg und Rohrbeck. Die Gemeinde ist in den letzten Jahren stark gewachsen; neben den Neubaugebieten stehen ältere Höfe und Siedlungshäuser. Gerade beim Einzug ins neue Haus oder beim Verkauf des alten bleibt oft ein voller Keller oder eine Garage zurück, die niemand mehr braucht. Wir räumen solche Flächen diskret aus und übergeben sie besenrein. Von Falkensee und Spandau sind die Wege kurz, ein Termin lässt sich schnell einschieben. Platz geschafft, sauber übergeben.",
+          "rahmen": "Ob frisch gekauftes Haus mit Altlasten des Vorbesitzers oder die eigene Garage nach vielen Jahren — in Dallgow-Döberitz nehmen wir die komplette Räumung ab. Wir tragen selbst heraus, laden auf und lassen nichts stehen. Möbel, Elektrogeräte, Sperrmüll und Problemstoffe gehen getrennt in die passende Entsorgung, Wiederverwendbares sortieren wir aus. Was einen Wert hat, rechnen wir offen an. Sie müssen weder Container bestellen noch selbst zur Deponie fahren; am Schluss ist die Fläche leer und besenrein.",
+          "trust": "In Dallgow-Döberitz gilt: Was bei der kostenlosen Besichtigung vereinbart wird, ist der Festpreis und bleibt der Endpreis — kein Aufschlag nach getaner Arbeit. Den Zustand vor und nach der Räumung halten wir auf Wunsch mit Fotos fest."
+        },
+        "brieselang": {
+          "hook": "Brieselang liegt zwischen Falkensee und Wustermark am Rand des Brieselanger Forsts, mit Nauen als westlichem Nachbarn. Viele Bewohner pendeln nach Berlin und haben abends wenig Zeit für die großen Aufräumaktionen, die sich in Keller, Schuppen und Dachboden ansammeln. Wenn ein Haus den Besitzer wechselt, ein Angehöriger versorgt werden muss oder der Gartenschuppen überquillt, räumen wir das für Sie aus. Wir kennen die Wege nach Falkensee, Wustermark und Nauen und sind schnell vor Ort. Ihr Feierabend bleibt Ihrer.",
+          "rahmen": "In Brieselang reicht die Bandbreite vom Gartenschuppen am Waldrand bis zum kompletten Hausrat. Wir räumen Keller, Dachboden, Garage und Nebengebäude, tragen selbst heraus und laden auf. Alles Brauchbare trennen wir vom Müll; Sperrmüll, Alt-Elektro, Metall und Problemstoffe führen wir jeweils der richtigen Stelle zu. Wertgegenstände rechnen wir offen an. Container, Transport und Entsorgung übernehmen wir komplett, damit Sie sich um nichts kümmern müssen. Zurück bleibt eine besenreine Fläche.",
+          "trust": "Nach der kostenlosen Besichtigung in Brieselang bekommen Sie einen Festpreis, der der Endpreis bleibt, ohne Nachforderung. Auf Wunsch dokumentieren wir das Ergebnis mit Vorher-Nachher-Fotos, damit Sie auch aus dem Büro oder von unterwegs sehen, dass alles erledigt ist."
+        },
+        "schoenwalde-glien": {
+          "hook": "Schönwalde-Glien reicht mit den Ortsteilen Pausin und Paaren weit ins ländliche Havelland, zwischen Hennigsdorf und Oberkrämer. Die Grundstücke sind hier groß, oft mit Scheune, Stall oder mehreren Nebengebäuden, in denen sich über Generationen einiges ansammelt. Steht eine Hofübergabe, ein Verkauf oder die Auflösung eines Nachlasses an, kommt schnell mehr zusammen, als ein Anhänger fasst. Wir räumen auch weitläufige Anwesen komplett und mit dem passenden Gerät. Von Falkensee aus sind die Wege kurz, auch bis in die Ortsteile. Große Fläche, klarer Plan.",
+          "rahmen": "In Schönwalde-Glien geht es selten nur um einen Keller — oft sind Scheune, Dachboden und Nebengebäude gleich mit dabei. Wir bringen genug Kapazität mit, sortieren vor Ort und trennen Brauchbares vom Rest. Alt-Möbel, Elektro, Schrott, Reifen und Problemstoffe gehen getrennt in die richtige Entsorgung, Wiederverwendbares und Wertstoffe rechnen wir offen an. Sie brauchen weder mehrere Container noch eigene Fahrten zur Deponie. Am Ende übergeben wir die Flächen leer und besenrein, vom Wohnhaus bis zum letzten Stall.",
+          "trust": "Auf einem großen Anwesen in Schönwalde-Glien zählt Planbarkeit: Nach der kostenlosen Besichtigung steht ein Festpreis für den gesamten Umfang, und der bleibt der Endpreis. Auf Wunsch halten wir jeden geräumten Bereich mit Fotos fest, gerade wenn Sie das Grundstück für Angehörige betreuen."
+        },
+        "wustermark": {
+          "hook": "Wustermark liegt westlich von Berlin, mit dem Ortsteil Elstal und dem historischen Olympischen Dorf von 1936, dazu Dallgow-Döberitz, Brieselang und Nauen ringsum. Neben den Neubaugebieten stehen ältere Siedlungshäuser und Höfe, in denen sich über die Jahre volle Keller, Dachböden und Garagen angesammelt haben. Bei Umzug, Verkauf oder einer Nachlassauflösung räumen wir diese Flächen diskret und vollständig aus. Die kurzen Wege aus dem Havelland halten den Termin planbar. Leer, sauber, erledigt.",
+          "rahmen": "In Wustermark und Elstal räumen wir vom einzelnen Kellerabteil bis zum ganzen Haus. Wir tragen selbst heraus, auch aus oberen Etagen und engen Treppenhäusern, und laden alles auf. Möbel, Elektrogeräte, Sperrmüll, Metall und Problemstoffe trennen wir und führen sie der jeweils richtigen Entsorgung zu. Brauchbares sortieren wir aus, Wertgegenstände rechnen wir offen vom Preis ab. Container und Transport sind dabei, Sie müssen nichts organisieren. Übergeben wird besenrein.",
+          "trust": "Nach der kostenlosen Besichtigung in Wustermark steht der Festpreis fest und bleibt der Endpreis, ohne Aufschlag am Schluss. Den Vorher- und Nachher-Zustand dokumentieren wir auf Wunsch per Foto — praktisch bei Verkauf, Vermietung oder Übergabe an Angehörige."
+        }
+      }
+    },
+    "haushaltsaufloesung": {
+      "faqs": [
+        {
+          "q": "Was ist der Unterschied zwischen Entrümpelung und Haushaltsauflösung?",
+          "a": "Bei einer Entrümpelung entfernen wir gezielt Unrat aus einzelnen Bereichen wie Keller oder Dachboden. Eine Haushaltsauflösung geht weiter: Der komplette Hausstand einer Wohnung oder eines Hauses wird aufgelöst — Möbel, Küche, Hausrat und persönliche Dinge. Oft steht sie am Ende, wenn ein Haushalt im Erb- oder Pflegefall vollständig geräumt und besenrein übergeben werden soll."
+        },
+        {
+          "q": "Führen Sie in {ort} auch eine Wohnungsauflösung durch?",
+          "a": "Ja. Ob Haus oder Mietwohnung — wir lösen den kompletten Haushalt in {ort} auf, entsorgen fachgerecht und übergeben besenrein. Gerade bei einer Wohnungsauflösung nach Auszug, Umzug ins Heim oder im Erbfall achten wir auf einen diskreten Ablauf und halten die Fristen des Vermieters ein."
+        },
+        {
+          "q": "Wie läuft eine Haushaltsauflösung im Erb- oder Pflegefall ab?",
+          "a": "Hinter einer Auflösung steht oft ein Trauerfall oder ein Umzug ins Pflegeheim. Deshalb gehen wir behutsam vor: Sie sichten in Ruhe, was Ihnen wichtig ist, den Rest übernehmen wir. Unterlagen, Fotos und persönliche Fundstücke legen wir beiseite, statt sie einfach zu entsorgen. Nach der kostenlosen Besichtigung steht ein Festpreis, und wir übergeben besenrein zur vereinbarten Zeit."
+        },
+        {
+          "q": "Was kostet eine Haushaltsauflösung in {ort}?",
+          "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung als Festpreis — er hängt von Größe, Menge und Zugang ab. Anrechenbare Wertgegenstände, etwa gut erhaltene Möbel oder Antiquitäten, ziehen wir offen vom Preis ab. Was wir vereinbaren, ist der Endpreis, ohne Nachforderung."
+        }
+      ],
+      "orte": {
+        "falkensee": {
+          "hook": "In Falkensee, der größten Stadt im Havelland an der Grenze zu Berlin-Spandau, stehen viele Häuser seit den Siedlungsjahren in Familienhand. Wechselt ein Elternhaus in den Wohnvierteln Richtung Finkenkrug den Besitzer, steht oft die komplette Auflösung des Haushalts an. Wir lösen Wohnung oder Haus vollständig auf, entsorgen fachgerecht und übergeben besenrein — diskret, gerade im Erb- oder Pflegefall. Die kurzen Wege aus dem Havelland machen einen Termin schnell möglich. Ein Haushalt, ein Ansprechpartner.",
+          "rahmen": "Eine Haushaltsauflösung in Falkensee betrifft den ganzen Hausstand: Möbel, Küche, Kleidung, Hausrat und die vielen Kleinigkeiten über Jahrzehnte. Sie sichten in Ruhe, was bleiben soll; Fotos, Unterlagen und Erinnerungsstücke legen wir beiseite, statt sie zu entsorgen. Den Rest lösen wir vollständig auf, trennen Wertstoffe und führen alles der richtigen Entsorgung zu. Gut erhaltene Möbel und Antiquitäten rechnen wir offen an. Ob Eigenheim oder Mietwohnung: Am Ende ist der Haushalt aufgelöst und die Räume sind besenrein.",
+          "trust": "Nach der kostenlosen Besichtigung in Falkensee steht ein Festpreis für die gesamte Auflösung, der der Endpreis bleibt. Wir halten die vereinbarte Zeit ein — wichtig, wenn ein Übergabetermin beim Notar oder Vermieter drängt — und dokumentieren das Ergebnis auf Wunsch per Foto."
+        },
+        "dallgow-doeberitz": {
+          "hook": "Dallgow-Döberitz mit den Ortsteilen Seeburg und Rohrbeck liegt zwischen Falkensee und Berlin-Spandau. Neben den neuen Wohngebieten stehen ältere Häuser, die heute an die nächste Generation übergehen. Zieht ein Angehöriger ins Heim oder wird ein Nachlass geregelt, muss der komplette Haushalt aufgelöst werden. Wir übernehmen das vollständig — von der ersten Sichtung bis zur besenreinen Übergabe — und behandeln persönliche Dinge mit dem nötigen Feingefühl. Von Falkensee und Spandau sind wir schnell da. Behutsam und vollständig.",
+          "rahmen": "Bei einer Wohnungsauflösung oder der Auflösung eines ganzen Hauses in Dallgow-Döberitz nehmen wir Ihnen den gesamten Ablauf ab. Sie entscheiden, was Sie behalten; alles Übrige lösen wir auf. Möbel, Elektrogeräte, Teppiche und Hausrat trennen wir nach Wertstoff und Entsorgungsweg, Wiederverwendbares und Antiquitäten rechnen wir offen an. Container, Transport und Entsorgung laufen über uns, Sie brauchen nichts zu organisieren. Nach der Auflösung übergeben wir die Räume besenrein, bereit für Verkauf oder Neuvermietung.",
+          "trust": "In Dallgow-Döberitz vereinbaren wir nach der kostenlosen Besichtigung einen Festpreis, der der Endpreis bleibt. Wir arbeiten diskret und halten Übergabefristen ein. Auf Wunsch erhalten Sie Fotos vom Vorher und Nachher, auch wenn Sie weiter weg wohnen und die Auflösung aus der Ferne begleiten."
+        },
+        "brieselang": {
+          "hook": "Brieselang am Rand des Brieselanger Forsts, zwischen Falkensee, Wustermark und Nauen, ist von jungen Familien und langjährigen Bewohnern geprägt. Wird ein Elternhaus verkauft oder kann ein Angehöriger nicht mehr allein wohnen, steht die Auflösung des ganzen Haushalts an — eine Aufgabe, die neben Beruf und Familie schwer zu stemmen ist. Wir lösen Haus oder Wohnung vollständig auf, diskret und fachgerecht, und übergeben besenrein. Kurze Wege aus dem Havelland halten den Termin nah. Sie behalten den Kopf frei.",
+          "rahmen": "Eine Haushaltsauflösung in Brieselang umfasst den kompletten Hausstand, oft samt Keller, Dachboden und Gartenhaus. Sie nehmen in Ruhe heraus, was Ihnen wichtig ist; Dokumente, Fotos und persönliche Fundstücke legen wir zur Seite. Den Rest lösen wir vollständig auf, trennen Wertstoffe und entsorgen fachgerecht. Gebrauchsfähige Möbel und Wertgegenstände rechnen wir offen an. Ob geerbtes Haus oder gekündigte Mietwohnung — Sie müssen weder Container bestellen noch selbst fahren, und am Ende sind die Räume besenrein.",
+          "trust": "Nach der kostenlosen Besichtigung in Brieselang steht ein Festpreis für die ganze Auflösung fest und bleibt der Endpreis. Wir übergeben leer und besenrein zur vereinbarten Zeit; verpasst der Termin einen Tag, ist der nächste für Sie kostenlos. Auf Wunsch dokumentieren wir alles per Foto."
+        },
+        "schoenwalde-glien": {
+          "hook": "Schönwalde-Glien mit Pausin und Paaren liegt im ländlichen Havelland zwischen Hennigsdorf und Oberkrämer, geprägt von großen Grundstücken und Höfen in langem Familienbesitz. Wird ein solcher Hof übergeben oder ein Nachlass geregelt, ist die Auflösung umfangreich: Wohnhaus, Scheune und Nebengebäude gehören dazu. Wir lösen den gesamten Haushalt auf, sortieren mit Bedacht und übergeben besenrein — auch bei großem Umfang aus einer Hand. Von Falkensee aus erreichen wir die Ortsteile auf kurzem Weg. Alles aus einer Hand, mit Ruhe.",
+          "rahmen": "Bei einer Haushaltsauflösung in Schönwalde-Glien kommt meist mehr zusammen als bei einer Stadtwohnung: gewachsener Hausrat, Werkstatt, Dachboden und Scheune. Sie sichten, was bleiben soll, Persönliches legen wir beiseite. Den kompletten Rest lösen wir auf, trennen Alt-Möbel, Elektro, Metall und Problemstoffe und führen alles der richtigen Entsorgung zu. Antiquitäten und werthaltige Stücke rechnen wir offen an. Wir bringen genug Kapazität mit, sodass Sie weder Container noch Deponiefahrten organisieren. Übergeben wird jeder Bereich besenrein.",
+          "trust": "Für ein großes Anwesen in Schönwalde-Glien vereinbaren wir nach der kostenlosen Besichtigung einen Festpreis über den gesamten Umfang, der der Endpreis bleibt. Wir arbeiten diskret, gerade im Erb- oder Pflegefall, und halten das Ergebnis auf Wunsch je Bereich mit Fotos fest."
+        },
+        "wustermark": {
+          "hook": "Wustermark mit dem Ortsteil Elstal, westlich von Berlin zwischen Dallgow-Döberitz, Brieselang und Nauen, verbindet neue Wohngebiete mit alten Siedlungshäusern. Wechselt ein solches Haus im Erbfall den Besitzer oder zieht ein Angehöriger ins Heim, steht die vollständige Auflösung des Haushalts an. Wir lösen Wohnung oder Haus komplett auf, entsorgen fachgerecht und übergeben besenrein, diskret und zur vereinbarten Zeit. Die kurzen Wege aus dem Havelland machen den Termin planbar. Vollständig aufgelöst, sauber übergeben.",
+          "rahmen": "Eine Wohnungs- oder Haushaltsauflösung in Wustermark und Elstal nehmen wir Ihnen vollständig ab. Sie behalten, was zählt; wir legen Unterlagen, Fotos und Erinnerungsstücke beiseite und lösen den übrigen Hausstand auf. Möbel, Küche, Elektro und Hausrat trennen wir nach Entsorgungsweg, Wiederverwendbares und Wertgegenstände rechnen wir offen an. Container, Abtransport und Entsorgung liegen bei uns. Ob geerbtes Elternhaus oder gekündigte Mietwohnung, am Ende sind die Räume leer und besenrein, bereit zur Übergabe.",
+          "trust": "Nach der kostenlosen Besichtigung in Wustermark steht ein Festpreis für die gesamte Auflösung, der der Endpreis bleibt. Wir übergeben besenrein zur vereinbarten Zeit und arbeiten diskret. Auf Wunsch erhalten Sie Vorher-Nachher-Fotos, hilfreich bei Verkauf, Vermietung oder Nachlassregelung."
+        }
+      }
+    },
+    "dachrinnenreinigung": {
+      "meta": "Dachrinnenreinigung in {ort}: Ausführung durch einen geprüften Partner-Fachbetrieb — Besichtigung, Termin und Ablauf koordinieren wir für Sie über einen festen Ansprechpartner.",
+      "faqs": [
+        {
+          "q": "Wer reinigt die Dachrinne in {ort}?",
+          "a": "Die Arbeit an Rinne und Fallrohr übernimmt ein geprüfter Partner-Fachbetrieb mit der passenden Ausrüstung und Absicherung. Wir sind Ihr fester Ansprechpartner in {ort}: Wir koordinieren Besichtigung, Termin und Ablauf, damit Sie nur einen Weg haben und nicht selbst mehrere Betriebe suchen und vergleichen."
+        },
+        {
+          "q": "Wie läuft die Dachrinnenreinigung in {ort} ab?",
+          "a": "Sie schildern uns per WhatsApp Ihr Anliegen, wir organisieren die Besichtigung durch den Partner-Fachbetrieb. Der sieht sich Rinne, Fallrohre und Zugang an und erstellt das Angebot. Sagen Sie zu, stimmen wir Termin und Ablauf ab und begleiten den Einsatz als Ihr Ansprechpartner. Danach läuft das Wasser wieder frei ab."
+        },
+        {
+          "q": "Wann sollte die Dachrinne gereinigt werden?",
+          "a": "Der Spätherbst nach dem Laubfall im Oktober und November ist ideal, damit die Rinne vor dem Winter frei ist und Schmelzwasser ungehindert abläuft. Stehen Laub- oder Nadelbäume nah am Haus, ist eine zweite Reinigung im Frühsommer sinnvoll. Melden Sie sich früh, dann stimmen wir den Termin rechtzeitig ab."
+        },
+        {
+          "q": "Was kostet die Dachrinnenreinigung in {ort}?",
+          "a": "Das Angebot erstellt der ausführende Partner-Fachbetrieb nach der Besichtigung — es hängt von Länge der Rinne, Höhe des Hauses und Zugänglichkeit ab. Die Besichtigung ist für Sie kostenlos und unverbindlich. Wir koordinieren den Termin, sodass Sie in {ort} einen festen Ansprechpartner haben."
+        }
+      ],
+      "orte": {
+        "falkensee": {
+          "hook": "Falkensee ist die größte Stadt im Havelland, an der Grenze zu Berlin-Spandau und mit Brieselang und Dallgow-Döberitz nebenan. In den vielen Einfamilienhaus-Siedlungen mit ihren Bäumen an der Straße füllen sich die Dachrinnen jeden Herbst mit Laub, bis das Wasser nicht mehr abläuft. Für die Dachrinnenreinigung koordinieren wir einen geprüften Partner-Fachbetrieb, der Rinne und Fallrohre frei macht. Wir bleiben Ihr fester Ansprechpartner in Falkensee, von der Anfrage bis zur Abnahme. Ein Weg, ein Ansprechpartner.",
+          "rahmen": "Läuft die Rinne bei Regen über oder wächst schon Moos aus der Fuge, wird es Zeit. Sie schildern uns die Lage per WhatsApp, wir organisieren die Besichtigung durch den Partner-Fachbetrieb in Falkensee. Der beurteilt Rinne, Fallrohr und Zugang und erstellt Ihnen das Angebot. Nach der Reinigung läuft Regenwasser wieder frei ab, das schützt Fassade, Mauerwerk und Fundament vor Feuchte. Termin und Ablauf stimmen wir für Sie ab, damit Sie nur einen Ansprechpartner haben statt mehrerer Firmen.",
+          "trust": "Sie haben in Falkensee einen festen Ansprechpartner für Besichtigung, Termin und Ablauf — die Arbeit an Rinne und Fallrohr übernimmt ein geprüfter Partner-Fachbetrieb, das Angebot kommt vom ausführenden Betrieb. So bleibt der Weg für Sie kurz und klar."
+        },
+        "dallgow-doeberitz": {
+          "hook": "Dallgow-Döberitz liegt zwischen Falkensee und Berlin-Spandau, mit den Ortsteilen Seeburg und Rohrbeck und Wustermark im Westen. In den gewachsenen Straßen mit älterem Baumbestand setzen sich Rinnen und Fallrohre über den Herbst mit Laub und Moos zu. Für die Dachrinnenreinigung vermitteln wir Ihnen einen geprüften Partner-Fachbetrieb und koordinieren Besichtigung, Termin und Ablauf. Sie behalten uns als festen Ansprechpartner in Dallgow-Döberitz, ohne selbst Betriebe vergleichen zu müssen. Wir koordinieren, der Fachbetrieb führt aus.",
+          "rahmen": "Bleibt Wasser in der Rinne stehen, durchnässt der Überlauf mit der Zeit die Fassade und friert im Winter zu Eiszapfen. So weit muss es nicht kommen. Melden Sie sich, dann organisieren wir die Besichtigung durch den Partner-Fachbetrieb, der Rinne, Fallrohr und Gefälle prüft und das Angebot erstellt. Er entfernt Laub und Ablagerungen und spült die Fallrohre durch, bis das Wasser sauber abläuft. Wir stimmen Termin und Ablauf mit Ihnen ab und begleiten den Einsatz als Ihr Ansprechpartner in Dallgow-Döberitz.",
+          "trust": "In Dallgow-Döberitz koordinieren wir für Sie einen festen Ablauf: Ein geprüfter Partner-Fachbetrieb übernimmt die Ausführung, das Angebot dazu erstellt der ausführende Betrieb nach der kostenlosen Besichtigung. Sie haben durchgehend einen Ansprechpartner, nicht mehrere."
+        },
+        "brieselang": {
+          "hook": "Brieselang liegt am Rand des Brieselanger Forsts, zwischen Falkensee, Wustermark und Nauen. Die Nähe zum Wald hat ihren Preis an der Dachrinne: Laub, Nadeln und herabfallende Äste setzen Rinnen und Fallrohre schneller zu als anderswo. Für die Dachrinnenreinigung koordinieren wir einen geprüften Partner-Fachbetrieb, der die Rinne frei macht und den Ablauf prüft. Wir bleiben Ihr fester Ansprechpartner in Brieselang und stimmen Besichtigung und Termin ab. Waldnah wohnen, ohne verstopfte Rinne.",
+          "rahmen": "Wo Kiefern und Laubbäume nah am Haus stehen, reicht eine Reinigung im Jahr oft nicht. Sie sagen uns kurz Bescheid, wir organisieren die Besichtigung durch den Partner-Fachbetrieb in Brieselang. Der schaut sich Rinne, Fallrohr und die Bäume ringsum an, erstellt das Angebot und entfernt bei der Ausführung Laub, Nadeln und Ablagerungen restlos. Auf Wunsch beurteilt er, ob ein Laubschutzgitter sinnvoll ist. Termin und Ablauf koordinieren wir, damit Sie es nur mit einem Ansprechpartner zu tun haben.",
+          "trust": "Für Brieselang gilt: Wir koordinieren Besichtigung, Termin und Ablauf, die Ausführung an Rinne und Fallrohr übernimmt ein geprüfter Partner-Fachbetrieb. Das Angebot erstellt der ausführende Betrieb — ein Weg für Sie und ein fester Ansprechpartner."
+        },
+        "schoenwalde-glien": {
+          "hook": "Schönwalde-Glien reicht mit Pausin und Paaren ins ländliche Havelland, zwischen Hennigsdorf und Oberkrämer. Die Grundstücke sind groß, die Häuser oft langgestreckt mit entsprechend viel Rinne und mehreren Fallrohren. Setzt sich das über den Herbst zu, ist der Aufwand größer als beim Reihenhaus. Für die Dachrinnenreinigung koordinieren wir einen geprüften Partner-Fachbetrieb mit dem passenden Gerät und bleiben Ihr fester Ansprechpartner in Schönwalde-Glien. Auch die Ortsteile erreichen wir auf kurzem Weg. Langes Dach, klarer Ablauf.",
+          "rahmen": "An einem weitläufigen Haus zählt, dass Rinne und Fallrohre auf ganzer Länge frei sind, nicht nur an einer Ecke. Sie melden sich, wir organisieren die Besichtigung durch den Partner-Fachbetrieb, der die gesamte Dachentwässerung prüft und das Angebot erstellt. Bei der Ausführung entfernt er Laub und Ablagerungen, spült die Fallrohre und kontrolliert den Ablauf. Termin und Ablauf stimmen wir mit Ihnen ab, gerade wenn Sie das Anwesen für Angehörige betreuen. Ein Ansprechpartner für das ganze Grundstück.",
+          "trust": "In Schönwalde-Glien koordinieren wir den kompletten Ablauf: Besichtigung, Termin und Abnahme über einen festen Ansprechpartner, die Ausführung durch einen geprüften Partner-Fachbetrieb. Das Angebot über den Umfang erstellt der ausführende Betrieb nach der kostenlosen Besichtigung."
+        },
+        "wustermark": {
+          "hook": "Wustermark liegt westlich von Berlin, mit dem Ortsteil Elstal und Nachbarn wie Dallgow-Döberitz, Brieselang und Nauen. In den Wohngebieten mit älterem Baumbestand füllen sich die Dachrinnen über den Herbst, bis das Wasser nicht mehr abläuft. Für die Dachrinnenreinigung koordinieren wir einen geprüften Partner-Fachbetrieb, der Rinne und Fallrohre frei macht und den Ablauf prüft. Wir bleiben Ihr fester Ansprechpartner in Wustermark, von der Anfrage bis zur Abnahme. Ein Anruf, ein Weg.",
+          "rahmen": "Eine volle Rinne fällt oft erst auf, wenn es bei Regen an der Fassade herunterläuft. Melden Sie sich per WhatsApp, wir organisieren die Besichtigung durch den Partner-Fachbetrieb in Wustermark. Der beurteilt Rinne, Fallrohr und Zugang, erstellt das Angebot und entfernt bei der Ausführung Laub und Schmutz, bis das Wasser wieder frei abläuft. Das schützt Mauerwerk und Fundament vor Feuchte. Termin und Ablauf koordinieren wir für Sie, mit einem festen Ansprechpartner statt mehreren Firmen.",
+          "trust": "Für Wustermark und Elstal koordinieren wir Besichtigung, Termin und Ablauf; die Ausführung an Rinne und Fallrohr übernimmt ein geprüfter Partner-Fachbetrieb. Das Angebot kommt vom ausführenden Betrieb nach der kostenlosen Besichtigung. Sie haben durchgehend einen Ansprechpartner."
+        }
+      }
+    },
+    "dachreinigung": {
+      "meta": "Dachreinigung in {ort}: Moos und Grünbelag vom Dach — Ausführung durch einen geprüften Partner-Fachbetrieb, koordiniert über einen festen Ansprechpartner für Besichtigung und Termin.",
+      "faqs": [
+        {
+          "q": "Wer führt die Dachreinigung in {ort} aus?",
+          "a": "Die Arbeit auf dem Dach übernimmt ein geprüfter Partner-Fachbetrieb mit der passenden Ausrüstung und Absicherung. Wir sind Ihr fester Ansprechpartner in {ort} und koordinieren Besichtigung, Termin und Ablauf, sodass Sie nur einen Weg haben und nicht selbst mehrere Dachbetriebe vergleichen müssen."
+        },
+        {
+          "q": "Wie wird in {ort} Moos vom Dach entfernt?",
+          "a": "Moos, Algen und Grünbelag werden von der Dachfläche entfernt und die Ziegel gereinigt; das passende Verfahren wählt der Partner-Fachbetrieb je nach Material und Zustand bei der Besichtigung. So bleibt die Eindeckung geschont und Regenwasser läuft wieder frei in die Dachrinne ab."
+        },
+        {
+          "q": "Kann man Dachziegel reinigen, ohne sie zu beschädigen?",
+          "a": "Ob und wie Dachziegel gereinigt werden, beurteilt der ausführende Fachbetrieb vor Ort — abhängig von Material, Alter und Dachneigung. Ist die Eindeckung zu empfindlich, sagt er das offen und schlägt eine schonende Lösung vor. Wir koordinieren den Termin in {ort} und begleiten den Ablauf."
+        },
+        {
+          "q": "Was kostet eine Dachreinigung in {ort}?",
+          "a": "Das Angebot erstellt der ausführende Partner-Fachbetrieb nach der Besichtigung — es hängt von Dachgröße, Neigung, Verschmutzung und Zugang ab. Die Besichtigung ist für Sie kostenlos und unverbindlich. Wir koordinieren den Termin, damit Sie in {ort} nur einen Ansprechpartner haben."
+        }
+      ],
+      "orte": {
+        "falkensee": {
+          "hook": "Falkensee, die größte Stadt im Havelland an der Grenze zu Berlin-Spandau, ist von Einfamilienhaus-Siedlungen geprägt. Auf den Nordseiten und unter Bäumen setzen sich mit den Jahren Moos, Algen und Grünbelag auf den Dachziegeln fest. Für die Dachreinigung koordinieren wir einen geprüften Partner-Fachbetrieb, der den Bewuchs von der Dachfläche entfernt. Wir bleiben Ihr fester Ansprechpartner in Falkensee und stimmen Besichtigung, Termin und Ablauf ab. Ein Ansprechpartner, ein koordinierter Weg.",
+          "rahmen": "Zeigt sich großflächig grüner Belag auf dem Dach, hält er Nässe auf den Ziegeln und löst sich bei Regen in die Rinne. Sie schildern uns Ihr Anliegen, wir organisieren die Besichtigung durch den Partner-Fachbetrieb in Falkensee. Der beurteilt Material, Zustand und Dachneigung, erstellt das Angebot und entfernt Moos und Grünbelag mit dem passenden Verfahren. So läuft Wasser wieder frei ab und die Eindeckung trocknet schneller. Die Arbeit auf dem Dach liegt beim Fachbetrieb, die Koordination bei uns.",
+          "trust": "In Falkensee haben Sie einen festen Ansprechpartner für Besichtigung, Termin und Ablauf — die Ausführung auf dem Dach übernimmt ein geprüfter Partner-Fachbetrieb, das Angebot kommt vom ausführenden Betrieb. So müssen Sie nicht selbst mehrere Dachbetriebe suchen und vergleichen."
+        },
+        "dallgow-doeberitz": {
+          "hook": "Dallgow-Döberitz mit Seeburg und Rohrbeck liegt zwischen Falkensee und Berlin-Spandau. Neben Neubauten stehen Häuser, deren Dächer über die Jahre Moos und Grünbelag angesetzt haben, besonders auf schattigen Nordseiten. Für die Dachreinigung vermitteln wir Ihnen einen geprüften Partner-Fachbetrieb und koordinieren Besichtigung, Termin und Ablauf. Sie behalten uns als festen Ansprechpartner in Dallgow-Döberitz, ohne selbst Betriebe anzufragen. Wir koordinieren, der Fachbetrieb reinigt.",
+          "rahmen": "Dichter Moosbewuchs belastet Fugen und Nähte und hält die Ziegel dauerhaft feucht. Melden Sie sich, wir organisieren die Besichtigung durch den Partner-Fachbetrieb, der Dachfläche, Ziegel und Zugang beurteilt und das Angebot erstellt. Bei der Ausführung entfernt er Moos, Algen und Grünbelag und reinigt die Ziegel mit dem für Material und Zustand passenden Verfahren. Termin und Ablauf stimmen wir mit Ihnen ab und begleiten den Einsatz als Ihr Ansprechpartner in Dallgow-Döberitz.",
+          "trust": "In Dallgow-Döberitz koordinieren wir einen klaren Ablauf: Ein geprüfter Partner-Fachbetrieb übernimmt die Arbeit auf dem Dach, das Angebot dazu erstellt der ausführende Betrieb nach der kostenlosen Besichtigung. Sie haben durchgehend einen Ansprechpartner statt mehrerer."
+        },
+        "brieselang": {
+          "hook": "Brieselang am Rand des Brieselanger Forsts, zwischen Falkensee, Wustermark und Nauen, liegt waldnah — und das begünstigt Moos und Grünbelag auf den Dächern. Wo Bäume Schatten werfen und Feuchtigkeit halten, setzt sich der Bewuchs schneller fest. Für die Dachreinigung koordinieren wir einen geprüften Partner-Fachbetrieb, der Moos und Grünbelag von der Dachfläche entfernt. Wir bleiben Ihr fester Ansprechpartner in Brieselang und stimmen den Ablauf ab. Waldnah, aber ohne bemoostes Dach.",
+          "rahmen": "Unter Bäumen bleibt ein Dach länger feucht, Moos und Algen breiten sich aus und lösen sich bei Regen in die Rinne. Sie sagen uns kurz Bescheid, wir organisieren die Besichtigung durch den Partner-Fachbetrieb in Brieselang. Der beurteilt Material, Neigung und Zustand, erstellt das Angebot und entfernt bei der Ausführung Moos und Grünbelag schonend. Danach läuft Wasser wieder frei ab und die Eindeckung trocknet schneller. Die Koordination von Besichtigung und Termin liegt bei uns, die Arbeit auf dem Dach beim Fachbetrieb.",
+          "trust": "Für Brieselang koordinieren wir Besichtigung, Termin und Ablauf, die Ausführung auf dem Dach übernimmt ein geprüfter Partner-Fachbetrieb. Das Angebot erstellt der ausführende Betrieb — ein Weg für Sie und ein fester Ansprechpartner."
+        },
+        "schoenwalde-glien": {
+          "hook": "Schönwalde-Glien mit Pausin und Paaren liegt im ländlichen Havelland zwischen Hennigsdorf und Oberkrämer, geprägt von großen Grundstücken mit entsprechend großen Dachflächen. Auf weiten, teils beschatteten Dächern sammeln sich Moos und Grünbelag über die Jahre großflächig an. Für die Dachreinigung koordinieren wir einen geprüften Partner-Fachbetrieb mit dem passenden Gerät und bleiben Ihr fester Ansprechpartner in Schönwalde-Glien. Auch die Ortsteile erreichen wir kurz. Große Dachfläche, koordinierter Ablauf.",
+          "rahmen": "Auf einer großen Dachfläche lohnt sich die Reinigung, sobald der grüne Belag zusammenhängend wird. Sie melden sich, wir organisieren die Besichtigung durch den Partner-Fachbetrieb, der die gesamte Fläche, Ziegelmaterial und Neigung beurteilt und das Angebot erstellt. Bei der Ausführung entfernt er Moos, Algen und Flechten und reinigt die Ziegel schonend. Termin und Ablauf stimmen wir mit Ihnen ab, gerade wenn Sie das Anwesen für Angehörige betreuen. Ein Ansprechpartner für das ganze Dach.",
+          "trust": "In Schönwalde-Glien koordinieren wir den kompletten Ablauf: Besichtigung, Termin und Abnahme über einen festen Ansprechpartner, die Ausführung auf dem Dach durch einen geprüften Partner-Fachbetrieb. Das Angebot über den Umfang erstellt der ausführende Betrieb nach der kostenlosen Besichtigung."
+        },
+        "wustermark": {
+          "hook": "Wustermark mit dem Ortsteil Elstal liegt westlich von Berlin, zwischen Dallgow-Döberitz, Brieselang und Nauen. In den Wohngebieten setzen Dächer auf Nordseiten und unter Bäumen mit der Zeit Moos und Grünbelag an. Für die Dachreinigung koordinieren wir einen geprüften Partner-Fachbetrieb, der den Bewuchs von der Dachfläche entfernt und die Ziegel reinigt. Wir bleiben Ihr fester Ansprechpartner in Wustermark und stimmen Besichtigung, Termin und Ablauf ab. Ein Weg, ein Ansprechpartner.",
+          "rahmen": "Grüner Belag auf dem Dach sieht nicht nur unruhig aus, er hält Nässe auf den Ziegeln und wandert bei Regen in die Rinne. Melden Sie sich per WhatsApp, wir organisieren die Besichtigung durch den Partner-Fachbetrieb in Wustermark. Der beurteilt Material, Zustand und Neigung, erstellt das Angebot und entfernt Moos und Grünbelag mit dem passenden Verfahren. So trocknet die Eindeckung schneller und Wasser läuft frei ab. Die Arbeit auf dem Dach liegt beim Fachbetrieb, die Koordination von Termin und Ablauf bei uns.",
+          "trust": "Für Wustermark und Elstal koordinieren wir Besichtigung, Termin und Ablauf; die Ausführung auf dem Dach übernimmt ein geprüfter Partner-Fachbetrieb. Das Angebot kommt vom ausführenden Betrieb nach der kostenlosen Besichtigung. Sie haben durchgehend einen festen Ansprechpartner."
+        }
+      }
+    }
+  }
+}

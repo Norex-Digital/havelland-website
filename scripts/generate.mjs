@@ -53,6 +53,9 @@ const _hubArr = CP('hubs.json'); const hubCopy = {}; if (_hubArr) for (const h o
 const _archArr = CP('archetypes.json'); const archCopy = {}; if (_archArr) for (const a of (_archArr.archetypes || _archArr)) archCopy[a.key] = sanArch(a);
 const _ratArr = CP('ratgeber.json'); const ratCopy = ((_ratArr && (_ratArr.ratgeber || _ratArr)) || []).map(sanRat);
 const _orteCp = CP('orte.json'); const orteCopy = (_orteCp && _orteCp.orte) || {}; for (const k in orteCopy) sanOrt(orteCopy[k]);
+// Welle-1a: bespoke Ortsseiten-Copy (service×ort) — ersetzt Archetyp/Ort-Hook + Archetyp-FAQ auf der Ortsseite (Fallback bleibt Archetyp). Dach: Partner-Framing (gu-modell.md, §5 UWG).
+function sanOrtsSvc(o) { if (o.meta != null) o.meta = plain(o.meta); if (o.faqs) for (const f of o.faqs) { f.q = plain(f.q); f.a = plain(f.a); } if (o.orte) for (const k in o.orte) { const e = o.orte[k]; for (const kk of ['hook', 'rahmen', 'trust']) if (e[kk] != null) e[kk] = plain(e[kk]); } return o; }
+const _ortsSvcCp = CP('ortsseiten.json'); const ortsSvcCopy = (_ortsSvcCp && _ortsSvcCp.services) || {}; for (const k in ortsSvcCopy) sanOrtsSvc(ortsSvcCopy[k]);
 // Reverse-Index Service → Ratgeber (interne Verlinkung, seiten-architektur §7)
 const ratgeberByService = {}; for (const r of ratCopy) { if (!r.cta_service) continue; (ratgeberByService[r.cta_service] = ratgeberByService[r.cta_service] || []).push(r); }
 
@@ -98,7 +101,7 @@ const svcWaveNoindex = s => (config.aktive_welle || 0) < (s && s.wave != null ? 
 const svcNoindexBySlug = slug => svcWaveNoindex(services.find(x => x.slug === slug));
 
 // Welche Ortsseiten werden TATSÄCHLICH gerendert? (Manifest-First → Link-Graph geschlossen, keine 404)
-const SAMPLE_ORTSSEITEN = [['heckenschnitt','falkensee'],['gartenpflege','berlin-kladow'],['steinreinigung','dallgow-doeberitz'],['fensterreinigung','nauen'],['entruempelung','oranienburg'],['haushaltsaufloesung','brieselang'],['winterdienst','falkensee'],['dachreinigung','schoenwalde-glien'],['gebaeudereinigung','berlin-spandau'],['ferienwohnung-reinigung','werder-havel'],['dachrinnenreinigung','hohen-neuendorf']];
+const SAMPLE_ORTSSEITEN = [['heckenschnitt','falkensee'],['gartenpflege','berlin-kladow'],['steinreinigung','dallgow-doeberitz'],['fensterreinigung','nauen'],['entruempelung','wustermark'],['haushaltsaufloesung','brieselang'],['winterdienst','falkensee'],['dachreinigung','schoenwalde-glien'],['gebaeudereinigung','berlin-spandau'],['ferienwohnung-reinigung','werder-havel'],['dachrinnenreinigung','dallgow-doeberitz']];
 const PAGE_ORTS = [];
 for (const s of services) if (PAGE_SVC.has(s.slug)) for (const o of orteForService(s)) PAGE_ORTS.push([s.slug, o.slug]);
 const genOrts = new Set((FULL ? PAGE_ORTS : SAMPLE_ORTSSEITEN).map(([a, b]) => a + '|' + b));
@@ -374,25 +377,30 @@ function ortsseite(s, o) {
   const pickPool = (arr, i) => Array.isArray(arr) && arr.length ? arr[((i % arr.length) + arr.length) % arr.length] : (typeof arr === 'string' ? arr : '');
   const idx = archOrtIdx[o.slug] || 0;
   const rLen = arch && Array.isArray(arch.rahmen) ? arch.rahmen.length : 1;
+  // Welle-1a: bespoke Service×Ort-Copy (falls vorhanden) hat Vorrang vor Archetyp/Ort-Hook
+  const so = ortsSvcCopy[s.slug] || null;
+  const soOrt = (so && so.orte && so.orte[o.slug]) || null;
   const lead = c && c.ortsseite_lead ? fillTok(c.ortsseite_lead, o, oc) : `Ihr ${s.name} in ${o.name} — vom Haus- & Gartenservice Havelland.`;
-  const hook = oc && oc.hook ? `<p>${esc(oc.hook)}</p>` : '';
-  const rahmenTxt = pickPool(arch && arch.rahmen, idx);                       // eindeutige Verteilung
-  const trustTxt = pickPool(arch && arch.trust, Math.floor(idx / rLen));      // -> (rahmen,trust)-Tupel eindeutig je Archetyp-Ort
+  const hookSrc = soOrt && soOrt.hook ? soOrt.hook : (oc && oc.hook ? oc.hook : '');
+  const hook = hookSrc ? `<p>${esc(fillTok(hookSrc, o, oc))}</p>` : '';
+  const rahmenTxt = soOrt && soOrt.rahmen ? soOrt.rahmen : pickPool(arch && arch.rahmen, idx);   // eindeutige Verteilung
+  const trustTxt = soOrt && soOrt.trust ? soOrt.trust : pickPool(arch && arch.trust, Math.floor(idx / rLen));  // -> (rahmen,trust)-Tupel eindeutig je Archetyp-Ort
   const rahmen = rahmenTxt ? `<p>${esc(fillTok(rahmenTxt, o, oc))}</p>` : '';
   const sektionen = (s.sektionen || []).map(x => `<li>${esc(x)}</li>`).join('');
   const ortsteile = (o.ortsteile && o.ortsteile.length) ? `<p>Auch in ${esc(o.ortsteile.join(', '))} und Umgebung sind wir für Sie da.</p>` : '';
   const trust = trustTxt ? `<p>${esc(fillTok(trustTxt, o, oc))}</p>` : `<p>Kostenlose Besichtigung, danach ein Festpreis ohne Nachkommen — und nach dem Auftrag Vorher/Nachher-Fotos per WhatsApp.</p>`;
 
-  // FAQ: 2 Archetyp-FAQ ({ort}-spezifisch) + 2 Hub-FAQ (idx-rotiert, je Ort andere) → ortspezifisch + Near-Dup-Marge
-  const archFaqs = arch && arch.faqs ? rotate(arch.faqs, idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
-  const hubFaqs = c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), idx + 1, archFaqs.length ? 2 : 4) : [];
+  // FAQ: bespoke Service-Ort-Pool (falls vorhanden) ersetzt Archetyp-FAQ UND Hub-FAQ auf der Ortsseite (volle Compliance-Kontrolle, u.a. Dach-Partner-Framing); sonst 2 Archetyp-FAQ + 2 Hub-FAQ wie bisher
+  const _faqPool = so && so.faqs ? so.faqs : (arch && arch.faqs);
+  const archFaqs = _faqPool ? rotate(_faqPool, idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
+  const hubFaqs = (so && so.faqs) ? [] : (c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), idx + 1, archFaqs.length ? 2 : 4) : []);
   const faqs = [...archFaqs, ...hubFaqs];
   const ortRatPool = ratgeberByService[s.slug] || [];
   const ortRat = ortRatPool.length ? ortRatPool[idx % ortRatPool.length] : null;
   const ortRatLink = ortRat ? `<p>Mehr zum Thema lesen Sie in unserem Ratgeber: <a href="/ratgeber/${ortRat.slug}/">${esc(ortRat.title)}</a>.</p>` : '';
 
   const title = clampTitle(`${s.name} ${o.name}${(s.name.length + o.name.length) < 34 ? ' – Havelland' : ''}`);
-  const meta = mkMeta(`${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`);
+  const meta = mkMeta(so && so.meta ? fillTok(so.meta, o, oc) : `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`);
 
   // Heckenschnitt-Ort: Vorher/Nachher-Slider im Hero; andere Gewerke: Standard-Bild (kein Slider)
   const ortVoll = VOLL_VN.has(s.slug);

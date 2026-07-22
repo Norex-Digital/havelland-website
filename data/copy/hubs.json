@@ -380,9 +380,13 @@
    "ablauf": "Schreiben Sie uns kurz per WhatsApp oder rufen Sie an. Wir organisieren die kostenlose Besichtigung durch den geprüften Partner-Fachbetrieb, der sich Dachfläche, Ziegel und Zugang ansieht. Danach erhalten Sie das Angebot vom ausführenden Betrieb. Sagen Sie zu, stimmen wir Termin und Ablauf ab und begleiten den Einsatz als Ihr fester Ansprechpartner.",
    "faqs": [
     {
-     "hub_only": true,
      "q": "Was kostet eine Dachreinigung im Havelland?",
-     "a": "Das Angebot erstellt der ausführende Partner-Fachbetrieb nach einer Besichtigung. Zur Orientierung nennen Branchen- und Vergleichsportale für eine Dachreinigung je nach Verfahren rund 8 bis 15 Euro pro Quadratmeter, mit anschließender Imprägnierung oder Beschichtung eher 15 bis 25 Euro pro Quadratmeter. Was Ihr Dach kostet, hängt von Dachgröße, Neigung, Verschmutzung und Zugang ab — den verbindlichen Preis nennt der Fachbetrieb nach der kostenlosen, unverbindlichen Besichtigung. Wir koordinieren den Termin, damit Sie nur einen Ansprechpartner haben."
+     "a": "Das Angebot erstellt der ausführende Partner-Fachbetrieb nach einer Besichtigung — es hängt von Dachgröße, Neigung, Verschmutzung und Zugang ab. Die Besichtigung ist für Sie kostenlos und unverbindlich. Wir koordinieren den Termin, damit Sie nur einen Ansprechpartner haben."
+    },
+    {
+     "hub_only": true,
+     "q": "Was kostet eine Dachreinigung pro Quadratmeter?",
+     "a": "Verbindlich rechnet der ausführende Partner-Fachbetrieb nach der Besichtigung ab. Zur Orientierung nennen Branchen- und Vergleichsportale je nach Verfahren rund 8 bis 15 Euro pro Quadratmeter für die reine Reinigung, mit anschließender Imprägnierung oder Beschichtung eher 15 bis 25 Euro pro Quadratmeter. Der tatsächliche Preis hängt von Dachgröße, Neigung, Verschmutzung und Zugang ab — den verbindlichen Preis nennt der Fachbetrieb nach der kostenlosen Besichtigung."
     },
     {
      "q": "Wer führt die Dachreinigung aus?",
