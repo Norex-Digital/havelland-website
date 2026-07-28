@@ -1,1 +1,0 @@
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAjMwGPWpOsCF5v2vVSlf5ToVUnO6LIcKe34tPWZOYyk norex-index-pilot-win
