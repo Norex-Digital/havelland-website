@@ -1,16 +1,16 @@
 {
-  "_meta": "Zentrale Build-Konstanten. Generator bricht ab, wenn ein required-Feld ein Platzhalter-Pattern (XXXX / TBD / null) traegt. Quelle der Wahrheit fuer Domain, IDs, Wellenplan.",
-  "domain": "https://haus-und-gartenservice-havelland.de",
-  "ga4_id": "G-8CKCRP9B1L",
-  "gtm_id": "GTM-TR7JVXZL",
-  "web3forms_key": "b7a7d8dc-c9de-4a70-a63d-6b1d179104f8",
-  "indexnow_key": "b497eeb3777a37bba0952540d225aba4",
-  "aktive_welle": 1,
-  "wellen": {
-    "1": "Portfolio-Refokus 2026-07-22. Welle 1a (wave=1, Fokus, saisonlos/Herbst-Deadline): entruempelung, haushaltsaufloesung, dachrinnenreinigung, dachreinigung × 5 Geo-A-Money-Orte = 20 Seiten + 5 Ratgeber (entrümpelung/dachreinigung/haushaltsauflösung/dachrinnenreinigung kosten, moos vom dach). Welle 1b (~Sept, wave=1, Garten): heckenschnitt, gartenpflege, fensterreinigung × 5 Orte = 15 Seiten + wann-hecke-schneiden. Dach-Ortsseiten erst nach unterschriebener Partnervereinbarung (Tippgeber). Batch-Freischaltung per GSC-Daten-Trigger (Vorstufe >=50% indexiert), nicht per Kalender. aktive_welle bleibt 0 bis Hubs im Index.",
-    "2": "wave=2-Services (winterdienst, steinreinigung, grundreinigung, gebaeudereinigung, unterhaltsreinigung, objektbetreuung, ferienwohnung-reinigung) + Geo-A Rest + Geo-B Tier-1-Orte",
-    "3": "Geo-B Tier-2 + Ratgeber-Cluster",
-    "later": "Geo-LT (Capture)"
-  },
-  "saison_gate": "Winterdienst-Welle vor September live; Heckenschnitt vor Februar-Peak (8-10 Wo Vorlauf)"
+ "_meta": "Zentrale Build-Konstanten. Generator bricht ab, wenn ein required-Feld ein Platzhalter-Pattern (XXXX / TBD / null) traegt. Quelle der Wahrheit fuer Domain, IDs, Wellenplan.",
+ "domain": "https://haus-und-gartenservice-havelland.de",
+ "ga4_id": "G-8CKCRP9B1L",
+ "gtm_id": "GTM-TR7JVXZL",
+ "web3forms_key": "b7a7d8dc-c9de-4a70-a63d-6b1d179104f8",
+ "indexnow_key": "b497eeb3777a37bba0952540d225aba4",
+ "aktive_welle": 2,
+ "wellen": {
+  "1": "Portfolio-Refokus 2026-07-22. Welle 1a (wave=1, Fokus, saisonlos/Herbst-Deadline): entruempelung, haushaltsaufloesung, dachrinnenreinigung, dachreinigung × 5 Geo-A-Money-Orte = 20 Seiten + 5 Ratgeber (entrümpelung/dachreinigung/haushaltsauflösung/dachrinnenreinigung kosten, moos vom dach). Welle 1b (~Sept, wave=1, Garten): heckenschnitt, gartenpflege, fensterreinigung × 5 Orte = 15 Seiten + wann-hecke-schneiden. Dach-Ortsseiten erst nach unterschriebener Partnervereinbarung (Tippgeber). Batch-Freischaltung per GSC-Daten-Trigger (Vorstufe >=50% indexiert), nicht per Kalender. aktive_welle bleibt 0 bis Hubs im Index.",
+  "2": "Freischaltung 2026-07-28 (Maurice): ALLE Services auf wave=1 ausser steinreinigung + dachreinigung (wave=3). aktive_welle=2 oeffnet zusaetzlich Orts-Hubs (/standorte/) + B2B-Seite. GESPERRT bleiben: 20 Steinreinigungs-Ortsseiten (Kannibalisierung mit Blankstein - Entscheidung offen) und 5 Dachreinigungs-Ortsseiten (Provisionsvereinbarung Partner fehlt).",
+  "3": "Geo-B Tier-2 + Ratgeber-Cluster",
+  "later": "Geo-LT (Capture)"
+ },
+ "saison_gate": "Winterdienst-Welle vor September live; Heckenschnitt vor Februar-Peak (8-10 Wo Vorlauf)"
 }
