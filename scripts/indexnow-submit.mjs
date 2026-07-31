@@ -15,13 +15,17 @@ if (!KEY || /\b(TBD|XXXX|null)\b/i.test(KEY)) { console.error('IndexNow: kein g�
 const keyFile = `website/${KEY}.txt`;
 if (!fs.existsSync(keyFile)) { fs.writeFileSync(keyFile, KEY); console.log(`Key-Datei angelegt: ${keyFile}`); }
 
-// URLs aus allen Sitemaps sammeln (nur indexierbare Seiten stehen dort → Wellen-Gate-konform)
-const sm = ['sitemap-services.xml', 'sitemap-standorte.xml', 'sitemap-ratgeber.xml'];
-const urls = [...new Set(sm.flatMap(f => { const p = `website/${f}`; return fs.existsSync(p) ? [...fs.readFileSync(p, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]) : []; }))];
+const locs = (file) => { const p = `website/${file}`; return fs.existsSync(p) ? [...fs.readFileSync(p, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]) : []; };
+
+// sitemap.xml ist ein Index — erst die Sub-Sitemaps auflösen, dann deren URLs sammeln.
+// Nur indexierbare Seiten stehen in den Sitemaps → Wellen-Gate-konform. Bewusst nicht hart
+// verdrahtet: eine neue Sub-Sitemap darf nicht stillschweigend aus dem Submit fallen.
+const subs = locs('sitemap.xml').map(u => u.split('/').pop()).filter(f => f.endsWith('.xml'));
+const urls = [...new Set(subs.flatMap(locs))];
 if (!urls.length) { console.log('IndexNow: keine URLs in den Sitemaps — nichts zu senden.'); process.exit(0); }
 
 const body = { host: HOST, key: KEY, keyLocation: `${DOMAIN}/${KEY}.txt`, urlList: urls };
-if (DRY) { console.log(`IndexNow (dry): ${urls.length} URLs bereit für ${HOST}.`); process.exit(0); }
+if (DRY) { console.log(`IndexNow (dry): ${urls.length} URLs aus ${subs.length} Sub-Sitemaps bereit für ${HOST}.`); process.exit(0); }
 
 const res = await fetch('https://api.indexnow.org/indexnow', { method: 'POST', headers: { 'Content-Type': 'application/json; charset=utf-8' }, body: JSON.stringify(body) });
 console.log(`IndexNow: ${urls.length} URLs gesendet an api.indexnow.org → HTTP ${res.status} ${res.statusText}`);
