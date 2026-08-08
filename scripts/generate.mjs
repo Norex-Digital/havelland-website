@@ -812,13 +812,16 @@ ${endBand}`;
 
 // ---------- SITEMAPS ----------
 function sitemaps() {
-  const sm = (name, urls) => { const x = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`<url><loc>${DOMAIN}${u}</loc></url>`).join('\n')}\n</urlset>\n`; fs.writeFileSync(`website/${name}`, x); };
+  // lastmod ist Pflicht, nicht Deko: ohne Änderungssignal crawlt Google freigeschaltete Seiten nicht neu
+  // und behält den alten noindex-Stand (Vorfall 08.08.2026: 36 Seiten seit 13.07. nicht neu gecrawlt).
+  const LASTMOD = new Date().toISOString().slice(0, 10);
+  const sm = (name, urls) => { const x = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`<url><loc>${DOMAIN}${u}</loc><lastmod>${LASTMOD}</lastmod></url>`).join('\n')}\n</urlset>\n`; fs.writeFileSync(`website/${name}`, x); };
   // Wellen-Gate: Hubs + Kern-Basis immer indexiert. Ortsseiten/Ratgeber service-scharf (nur wenn service.wave <= aktive_welle → in *Idx gesammelt). Orts-Hubs am globalen Gate. Bei aktive_welle=0 sind *Idx leer → Output wie bisher.
   const gate = (config.aktive_welle || 0) < 2; // Orts-Hubs erst ab Welle 2 (Welle 1 = nur service-scharfe Ortsseiten via *Idx)
   sm('sitemap-services.xml', [...written.basis.filter(u=>['/','/leistungen/','/ueber-uns/','/bewertungen/','/kontakt/'].includes(u)), ...written.hubs, ...written.ortsseitenIdx]);
   sm('sitemap-standorte.xml', gate ? [] : [...written.orts_hubs, '/standorte/']);
   sm('sitemap-ratgeber.xml', written.ratgeberIdx.length ? [...written.ratgeberIdx, '/ratgeber/'] : []);
-  const idx = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${['sitemap-services.xml','sitemap-standorte.xml','sitemap-ratgeber.xml'].map(f=>`<sitemap><loc>${DOMAIN}/${f}</loc></sitemap>`).join('\n')}\n</sitemapindex>\n`;
+  const idx = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${['sitemap-services.xml','sitemap-standorte.xml','sitemap-ratgeber.xml'].map(f=>`<sitemap><loc>${DOMAIN}/${f}</loc><lastmod>${LASTMOD}</lastmod></sitemap>`).join('\n')}\n</sitemapindex>\n`;
   fs.writeFileSync('website/sitemap.xml', idx);
   fs.writeFileSync('website/robots.txt', `User-agent: *\nAllow: /\n\n# AI-Crawler erlaubt (AEO/GEO)\nUser-agent: GPTBot\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
   // llms.txt (GEO)
