@@ -4,6 +4,7 @@
   "cleanUrls": false,
   "trailingSlash": true,
   "redirects": [
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.haus-und-gartenservice-havelland.de" }], "destination": "https://haus-und-gartenservice-havelland.de/$1", "permanent": true },
     { "source": "/renovierung/", "destination": "/leistungen/", "permanent": true },
     { "source": "/renovierung-:ort/", "destination": "/leistungen/", "permanent": true },
     { "source": "/umzugshilfe/", "destination": "/leistungen/", "permanent": true },
