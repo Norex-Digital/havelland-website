@@ -108,6 +108,10 @@ const genOrts = new Set((FULL ? PAGE_ORTS : SAMPLE_ORTSSEITEN).map(([a, b]) => a
 const hasOrt = (ss, os) => genOrts.has(ss + '|' + os);
 // per-Archetyp Ort-Index → gleichmäßige Pool-Verteilung (eindeutige rahmen/trust-Tupel statt Seed-Kollisionen)
 const archOrtIdx = {}; { const cnt = {}; for (const o of haupt) { const a = ((_orteCp && _orteCp.orte && _orteCp.orte[o.slug]) || {}).archetype || 'x'; archOrtIdx[o.slug] = (cnt[a] = (cnt[a] || 0) + 1) - 1; } }
+// Service-Versatz auf denselben Pool: ohne ihn zogen ALLE Services eines Ortes denselben rahmen/trust-Eintrag
+// (heckenschnitt-falkensee, gartenpflege-falkensee, winterdienst-falkensee … wortgleich — Duplicate-Signal 08.08.2026).
+// Pool ist 4 rahmen × 3 trust = 12 Kombis je Archetyp; bei ≤9 Services pro Ort kollidiert kein (rahmen,trust)-Tupel.
+const svcPoolIdx = {}; services.forEach((s, i) => { svcPoolIdx[s.slug] = i; });
 
 const esc = t => (t == null ? '' : String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 // sj: JSON-LD-String-Wert — rohes & (kein HTML-Escape), aber < -> < (kein </script>-Ausbruch) + JSON-escape
@@ -385,7 +389,7 @@ function ortsseite(s, o) {
 
   // Body aus Copy-Schicht (mit Fallback) — Archetyp-Bausteine aus POOLS per Seed (Near-Duplicate-Reduktion)
   const pickPool = (arr, i) => Array.isArray(arr) && arr.length ? arr[((i % arr.length) + arr.length) % arr.length] : (typeof arr === 'string' ? arr : '');
-  const idx = archOrtIdx[o.slug] || 0;
+  const idx = (archOrtIdx[o.slug] || 0) + (svcPoolIdx[s.slug] || 0); // Ort + Service, sonst teilen sich alle Services eines Ortes den Text
   const rLen = arch && Array.isArray(arch.rahmen) ? arch.rahmen.length : 1;
   // Welle-1a: bespoke Service×Ort-Copy (falls vorhanden) hat Vorrang vor Archetyp/Ort-Hook
   const so = ortsSvcCopy[s.slug] || null;
