@@ -299,7 +299,9 @@ ${heckenKompass()}
 <section class="sec"><div class="wrap">${faqFilter()}</div></section>
 ${gebietskarte()}
 ${endBand}`;
-  write('/', head('Haus- & Gartenservice in Falkensee & Havelland', mkMeta('Garten, Reinigung, Winterdienst und Entrümpelung im Havelland. Ein fester Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.'), '/', orgSchema()) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  // Title führt mit "Gartenpflege Falkensee": stärkste Query der Domain (154 Impressionen, Pos. 2,5),
+  // aber CTR nur 2,6 % statt ~15 % — das Suchwort kam im alten Title gar nicht vor (GSC 08.08.2026).
+  write('/', head('Gartenpflege Falkensee | Haus- & Gartenservice Havelland', mkMeta('Gartenpflege, Heckenschnitt und Hausservice in Falkensee und Umgebung. Fester Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.'), '/', orgSchema()) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push('/');
 }
 
