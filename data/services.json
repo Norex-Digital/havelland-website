@@ -70,14 +70,17 @@
    "wave": 1,
    "price": null,
    "offer_ref": "G1.3",
-   "garantie": "Reaktionszeit-Garantie — sonst anteilige Erstattung",
+   "garantie": "Ausführung durch geprüften Partner-Fachbetrieb — Besichtigung, Angebot und Termin koordinieren wir für Sie",
    "element_status": "geplant",
    "faq": null,
    "saison": "Seite ab September; Verträge Sep-Nov",
    "sektionen": [
     "Schneeräumen",
-    "Streupflicht"
-   ]
+    "Streuen bei Glätte",
+    "Räum- und Streupflicht"
+   ],
+   "partner_modell": true,
+   "_hinweis": "Vermittlungsmodell (Owner-Entscheidung Maurice 10.08.2026): Leads gehen an einen Partner-Fachbetrieb, der Winterdienstvertrag kommt zwischen Kunde und Betrieb zustande. Copy-Guardrail: KEINE Eigenleistung ('wir räumen' verboten), KEINE eigene Reaktionszeit-Garantie, KEINE Zusage zur Übernahme der Räum-/Streupflicht durch uns. Framing wie dachreinigung/dachrinnenreinigung. ACHTUNG: offer_ref G1.3 in Branding/offer.md beschreibt noch Eigenleistung inkl. eigener Reaktionsgarantie und ist nachzuziehen."
   },
   {
    "slug": "steinreinigung",
