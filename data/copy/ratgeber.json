@@ -1240,6 +1240,60 @@
     "stop-slop/SKILL.md (C:/Users/mobre/.claude/skills/stop-slop/SKILL.md): Keine Floskel-Opener, keine Adverbien, keine Binärkontraste, kein Passiv, keine Gedankenstriche im Fließtext, direkte Aussagen, variierte Satzlängen, Leser mit Sie angesprochen",
     "llm-optimisation.md (C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md): Antwort-zuerst im Intro (Kern-Frage in ersten 100 Wörtern beantwortet), Definition-Block für beide Begriffe, FAQ mit KI-Frage-Stil und eigenständigen Antworten 40-80 Wörter, Entity-Klarheit (Name, Ort, Inhaber, Telefon), semantische Vollständigkeit (was/wann/wofür/Preis-Faktoren)"
    ]
+  },
+  {
+   "slug": "garten-winterfest-machen",
+   "title": "Garten winterfest machen: Checkliste fürs Havelland",
+   "meta": "Garten winterfest machen: Wann der Zeitpunkt stimmt, was auf die Checkliste gehört und welche Arbeiten im Havelland vor dem ersten Frost noch anstehen.",
+   "lead": "Das Zeitfenster liegt zwischen Mitte Oktober und dem ersten Dauerfrost. Was bis dahin erledigt sein sollte.",
+   "intro": "Einen Garten winterfest zu machen heißt: den Rasen ein letztes Mal auf etwa fünf Zentimeter mähen, Laub von Rasen und Wegen holen, Außenwasserhahn und Regentonne leeren, empfindliche Kübelpflanzen ins Winterquartier bringen. Im Havelland bleibt dafür meist die Zeit zwischen Mitte Oktober und Anfang November. Der Haus- & Gartenservice Havelland aus Falkensee übernimmt diese Arbeiten als einmaligen Herbsteinsatz oder im laufenden Pflegevertrag.",
+   "sections": [
+    {
+     "h2": "Wann der richtige Zeitpunkt ist",
+     "body_html": "<p>Die Hauptarbeit fällt zwischen <strong>Mitte Oktober und Anfang November</strong> an. In Brandenburg kommen die ersten Nachtfröste oft schon Ende Oktober, der Dauerfrost folgt später. Zwei Termine helfen: einer für Laub und Rasen im Oktober, ein zweiter für Wasser und Kübelpflanzen kurz vor dem ersten Frost.</p><p>Wer zu früh das letzte Mal mäht, steht bei mildem Herbst noch einmal mit dem Rasenmäher im Garten. Wer zu spät dran ist, findet gesprungene Leitungen und einen Rasen mit Fäulnisstellen.</p>"
+    },
+    {
+     "h2": "Laub: runter vom Rasen, rauf auf die Beete",
+     "body_html": "<p>Laub gehört nicht überall weg. Auf dem Rasen schadet es, auf den Beeten nützt es.</p><ul><li><strong>Rasen:</strong> Eine geschlossene Laubschicht nimmt dem Gras Licht und Luft. Darunter entstehen Fäulnisstellen, die im Frühjahr kahl bleiben.</li><li><strong>Beete und Sträucher:</strong> Dieselbe Schicht wirkt als Frostschutz und liefert Igeln und Insekten ein Winterquartier.</li><li><strong>Wege und Zufahrten:</strong> Nasses Laub wird rutschig. Hier geht es um die Verkehrssicherungspflicht, nicht um den Garten (mehr dazu im Ratgeber <a href=\"/ratgeber/laub-entfernen-pflicht/\">Laub entfernen: Pflicht, Termine und Tipps</a>).</li></ul><p>Die <a href=\"/dachrinnenreinigung/\">Dachrinne</a> vergessen viele. Füllt sie sich im Herbst mit Laub und friert das Wasser darin ein, drückt das Eis die Rinne auseinander.</p>"
+    },
+    {
+     "h2": "Wasser und Technik vor dem Frost sichern",
+     "body_html": "<p>Gefrierendes Wasser dehnt sich aus und sprengt, was es umschließt. Das betrifft jede Leitung und jedes Gefäß im Freien.</p><ul><li>Außenwasserhahn abstellen und die Leitung entleeren</li><li>Regentonne, Gießkannen und Schläuche leeren, Tonne abdecken oder umdrehen</li><li>Teichpumpe und Filter ausbauen, reinigen und frostfrei lagern</li><li>Akku-Geräte bei etwa 30 bis 40 Prozent Ladung trocken und frostfrei einlagern</li></ul><p>Diese Arbeiten kosten eine Stunde. Eine gesprungene Zuleitung kostet deutlich mehr.</p>"
+    },
+    {
+     "h2": "Was jetzt geschnitten wird und was stehen bleibt",
+     "body_html": "<p>Ab dem 1. Oktober dürfen Sie Hecken und Sträucher wieder stark zurücknehmen. Zwischen dem 1. März und dem 30. September erlaubt § 39 Bundesnaturschutzgesetz nur den Form- und Pflegeschnitt, damit brütende Vögel geschützt bleiben. Einzelheiten stehen im Ratgeber <a href=\"/ratgeber/hecke-schneiden-erlaubt/\">Wann darf man die Hecke schneiden?</a></p><p>Stauden und Ziergräser schneiden Sie besser erst im Frühjahr. Die verholzten Halme schützen die Pflanze vor Frost und bieten Insekten Unterschlupf. Obstbäume vertragen an frostfreien Tagen einen Auslichtungsschnitt. Rosen häufeln Sie an der Veredelungsstelle mit Erde oder Laub an.</p>"
+    },
+    {
+     "h2": "Was Sie selbst machen und was wir übernehmen",
+     "body_html": "<p>Laub harken und Kübelpflanzen einräumen schafft jeder selbst. Aufwendig wird es bei großen Flächen, hohen Hecken und der Entsorgung: Für den Grünschnitt eines mittleren Grundstücks brauchen Sie mehrere Anhängerfahrten zum Wertstoffhof.</p><p>Wir übernehmen den Herbsteinsatz komplett oder einzelne Arbeiten daraus. Sie bekommen eine kostenlose Besichtigung, einen Festpreis als Endpreis und nach dem Einsatz Fotos vom Ergebnis. Wer die <a href=\"/gartenpflege/\">Gartenpflege</a> im Vertrag hat, für den ist der Herbstdurchgang bereits eingeplant.</p><p>Ab Dezember kommt die Räum- und Streupflicht dazu. Den <a href=\"/winterdienst/\">Winterdienst</a> organisieren wir über einen geprüften Partner-Fachbetrieb, den Saisonvertrag schließen Sie am besten im Herbst ab.</p>"
+    }
+   ],
+   "faqs": [
+    {
+     "q": "In welchem Monat macht man den Garten winterfest?",
+     "a": "Zwischen Mitte Oktober und Anfang November. In Brandenburg fallen die ersten Nachtfröste meist Ende Oktober, strenger Dauerfrost kommt später. Laub und der letzte Rasenschnitt haben Zeit bis in den Oktober. Wasserleitungen, Regentonne und Teichpumpe sichern Sie vor dem ersten Frost, nicht danach."
+    },
+    {
+     "q": "Soll man das Laub im Garten liegen lassen?",
+     "a": "Auf Beeten und unter Sträuchern ja, auf dem Rasen nein. Eine geschlossene Laubschicht nimmt dem Gras Licht und Luft, darunter entstehen Fäulnisstellen, die im Frühjahr kahl bleiben. Auf Beeten wirkt dieselbe Schicht als Frostschutz und Winterquartier für Igel und Insekten. Wege und Zufahrten halten Sie laubfrei, dort geht es um die Rutschgefahr."
+    },
+    {
+     "q": "Welche Pflanzen schneidet man vor dem Winter zurück?",
+     "a": "Hecken und Sträucher dürfen Sie ab dem 1. Oktober stark zurücknehmen, dazwischen erlaubt § 39 Bundesnaturschutzgesetz nur Form- und Pflegeschnitt. Obstbäume vertragen an frostfreien Tagen einen Auslichtungsschnitt. Stauden und Ziergräser bleiben besser stehen: Die Halme schützen die Pflanze und bieten Insekten ein Winterquartier."
+    },
+    {
+     "q": "Was kostet es, den Garten winterfest machen zu lassen?",
+     "a": "Der Preis hängt von der Fläche, der Laubmenge, der Heckenlänge und der Entsorgung ab. Deshalb nennen wir keine Pauschale ins Blaue: Wir besichtigen das Grundstück kostenlos und nennen danach einen Festpreis, der auch der Endpreis bleibt. Für Kunden mit Pflegevertrag ist der Herbstdurchgang bereits enthalten."
+    }
+   ],
+   "cta_service": "gartenpflege",
+   "cta_text": "Garten winterfest machen im Havelland — kostenlose Besichtigung, Festpreis als Endpreis, Foto-Nachweis nach dem Einsatz. Jetzt Gartenpflege anfragen.",
+   "skills_applied": [
+    "seo-web-copy.md (C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md): Primaerkeyword in Title, H1 und den ersten 100 Woertern; H2-Struktur nach Teilfragen; FAQ auf People-also-ask-Fragen der SERP; CTA-Section am Ende; E-E-A-T durch Ortsbezug Havelland/Brandenburg und konkrete Ausfuehrung",
+    "stop-slop/SKILL.md (C:/Users/mobre/.claude/skills/stop-slop/SKILL.md): Keine Floskel-Opener, keine Adverbien, keine Binaerkontraste, kein Passiv, keine Gedankenstriche im Fliesstext, direkte Aussagen, variierte Satzlaengen, Leser mit Sie angesprochen",
+    "llm-optimisation.md (C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md): Antwort-zuerst im Intro (Zeitfenster und Arbeiten in den ersten 100 Woertern), Definition-Block zum Begriff, FAQ im KI-Frage-Stil mit eigenstaendigen Antworten 40-80 Woerter, Entity-Klarheit (Name, Falkensee), semantische Vollstaendigkeit (wann/Laub/Wasser/Schnitt/Kosten)"
+   ]
   }
  ]
 }
