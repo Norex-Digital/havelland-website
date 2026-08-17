@@ -58,6 +58,7 @@
   {
    "slug": "winterdienst",
    "name": "Winterdienst",
+   "title_suffix": "Schneeräumen & Streuen",
    "strang": "A",
    "segment": [
     "B2C",
@@ -128,6 +129,7 @@
   {
    "slug": "dachrinnenreinigung",
    "name": "Dachrinnenreinigung",
+   "title_suffix": "Rinne & Fallrohr frei",
    "strang": "A2",
    "segment": [
     "B2C"

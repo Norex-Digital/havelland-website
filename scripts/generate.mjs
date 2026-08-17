@@ -415,7 +415,12 @@ function ortsseite(s, o) {
   const ortRat = ortRatPool.length ? ortRatPool[idx % ortRatPool.length] : null;
   const ortRatLink = ortRat ? `<p>Mehr zum Thema lesen Sie in unserem Ratgeber: <a href="/ratgeber/${ortRat.slug}/">${esc(ortRat.title)}</a>.</p>` : '';
 
-  const title = clampTitle(`${s.name} ${o.name}${(s.name.length + o.name.length) < 34 ? ' – Havelland' : ''}`);
+  // Ortsseiten-Title: optionales title_suffix je Service (data/services.json) statt des generischen
+  // "– Havelland". Nur gesetzt, wo das Suchmotiv einen Zusatz rechtfertigt (saisonale Gewerke) —
+  // Services ohne das Feld behalten den bisherigen Title unverändert.
+  const tSuffix = s.title_suffix ? ` – ${s.title_suffix}`
+    : ((s.name.length + o.name.length) < 34 ? ' – Havelland' : '');
+  const title = clampTitle(`${s.name} ${o.name}${tSuffix}`);
   const meta = mkMeta(so && so.meta ? fillTok(so.meta, o, oc) : `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`);
 
   // Heckenschnitt-Ort: Vorher/Nachher-Slider im Hero; andere Gewerke: Standard-Bild (kein Slider)
