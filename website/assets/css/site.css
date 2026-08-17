@@ -686,9 +686,15 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 .kf-alt{font-size:14.5px;color:var(--muted);margin-top:4px}
 .kf-alt a{color:var(--green);font-weight:600;border-bottom:1px solid var(--accent)}
 
-/* ---- Consent-Banner (Consent Mode v2) ---- */
-.consent{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--green-deep);color:#eef4f0;box-shadow:0 -12px 40px -20px rgba(0,0,0,.6)}
+/* ---- Consent-Banner (Consent Mode v2) ----
+   z-index MUSS ueber .scta (70) liegen: beide sind position:fixed;bottom:0, und bis 899px ist
+   die Sticky-CTA sichtbar. Mit dem alten Wert 60 lag sie ueber den Consent-Buttons und machte
+   sie unklickbar — auf dem Handy war der Banner damit weder annehmbar noch ablehnbar. */
+.consent{position:fixed;left:0;right:0;bottom:0;z-index:80;background:var(--green-deep);color:#eef4f0;box-shadow:0 -12px 40px -20px rgba(0,0,0,.6)}
 .consent[hidden]{display:none}
+/* Solange die Entscheidung aussteht, ruht die Sticky-CTA — sonst ueberlagern sich zwei
+   fixierte Leisten am selben Rand. Einmalig: nach der Wahl ist der Banner weg (localStorage). */
+body:has(.consent:not([hidden])) .scta{display:none}
 .consent-in{max-width:var(--maxw);margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
 .consent-in p{font-size:14px;line-height:1.5;color:#dceae1;max-width:62ch;margin:0}
 .consent-in a{color:#fff;border-bottom:1px solid var(--accent)}
@@ -696,7 +702,8 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 .consent-btns .btn{padding:11px 22px;font-size:14.5px}
 .consent-btns .btn-line{color:#fff;border-color:rgba(255,255,255,.55)}
 .consent-btns .btn-line:hover{background:rgba(255,255,255,.1)}
-@media(max-width:600px){.consent-in{padding:14px 20px;flex-direction:column;align-items:stretch}.consent-btns .btn{flex:1;justify-content:center}}
+/* Home-Indicator/Gesten-Leiste freihalten, sonst sitzt "Akzeptieren" darunter */
+@media(max-width:600px){.consent-in{padding:14px 20px calc(14px + env(safe-area-inset-bottom,0px));flex-direction:column;align-items:stretch}.consent-btns .btn{flex:1;justify-content:center}}
 
 /* ---- Bilder: Prozess-Steps / Media-Band / Mini-Illustration ---- */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
