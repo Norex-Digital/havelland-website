@@ -161,20 +161,25 @@ export function heckenKompass({ heading = 'Welche Hecke steht bei <em>Ihnen?</em
 // ---------------------------------------------------------------------------
 // jahreszeiten — .jz-grid, 4 Karten (hero-home-*). OHNE pbadge-Label.
 // ---------------------------------------------------------------------------
+// Letztes Feld: Ziel-Seite der Karte. Ohne Link waren Laub und Winterdienst hier zwar genannt,
+// aber nicht erreichbar — die Saisonthemen hatten keinen Klickpfad.
 const JZ = [
-  ['fruehjahr', 'Frühjahr', 'Garten im Frühjahr im Havelland', 'März – Mai', 'Beete vorbereiten, erster Formschnitt', ''],
-  ['', 'Sommer', 'Garten im Sommer im Havelland', 'Juni – August', 'Rasen, Hecke, Bewässerung im Blick', 'd1'],
-  ['herbst', 'Herbst', 'Garten im Herbst im Havelland', 'September – November', 'Laub, letzter Schnitt vor dem Winter', 'd2'],
-  ['winter', 'Winter', 'Garten im Winter im Havelland', 'Dezember – Februar', 'Rückschnitt-Zeit, Winterdienst', 'd3']
+  ['fruehjahr', 'Frühjahr', 'Garten im Frühjahr im Havelland', 'März – Mai', 'Beete vorbereiten, erster Formschnitt', '', '/gartenpflege/'],
+  ['', 'Sommer', 'Garten im Sommer im Havelland', 'Juni – August', 'Rasen, Hecke, Bewässerung im Blick', 'd1', '/heckenschnitt/'],
+  ['herbst', 'Herbst', 'Garten im Herbst im Havelland', 'September – November', 'Laub, letzter Schnitt vor dem Winter', 'd2', '/gartenpflege/'],
+  ['winter', 'Winter', 'Garten im Winter im Havelland', 'Dezember – Februar', 'Rückschnitt-Zeit, Winterdienst', 'd3', '/winterdienst/']
 ];
 export function jahreszeiten({ heading = 'Ein Garten durch <em>vier Jahreszeiten.</em>',
   intro = 'Gartenpflege hört nicht im Sommer auf. Wer uns im Abo bucht, bekommt zu jeder Jahreszeit das, was gerade ansteht — ohne selbst an Termine denken zu müssen.' } = {}) {
-  const cards = JZ.map(([key, name, alt, spanne, tun, d]) => {
+  const cards = JZ.map(([key, name, alt, spanne, tun, d, href]) => {
     const src = `${IMG}/hero-home${key ? '-' + key : ''}-1024.jpg`;
-    return `<figure class="jz rv${d ? ' ' + d : ''}"><div class="photo">` +
+    const bild = `<div class="photo">` +
       `<img src="${src}" alt="${esc(alt)}" loading="lazy" decoding="async" width="1024" height="768">` +
-      `<span class="jn">${esc(name)}</span></div>` +
-      `<figcaption class="ba-cap"><b>${esc(spanne)}</b><span>${esc(tun)}</span></figcaption></figure>`;
+      `<span class="jn">${esc(name)}</span></div>`;
+    // Link nur um das Bild: figcaption bleibt direktes Kind der figure (HTML-Vorgabe).
+    return `<figure class="jz rv${d ? ' ' + d : ''}">` +
+      (href ? `<a class="jz-a" href="${href}" aria-label="${esc(name)}: ${esc(tun)}">${bild}</a>` : bild) +
+      `<figcaption class="ba-cap"><b>${esc(spanne)}</b><span>${href ? `<a href="${href}">${esc(tun)}</a>` : esc(tun)}</span></figcaption></figure>`;
   }).join('');
   return `<div class="head"><h2 class="rv">${heading}</h2></div>` +
     `<p class="intro rv">${esc(intro)}</p><div class="jz-grid">${cards}</div>`;
