@@ -76,7 +76,7 @@ const STANDORT_REGIONEN = [
   { key: 'seen', label: 'Havelseen & Ferienlagen', slugs: ['werder-havel', 'schwielowsee'] }
 ];
 
-const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','haushaltsaufloesung','winterdienst','steinreinigung','dachrinnenreinigung','dachreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung']);
+const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','haushaltsaufloesung','winterdienst','steinreinigung','dachrinnenreinigung','dachreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung','heckenentfernung','baumstumpf-entfernen']);
 // Gewerk-Klassen fuer die Voll-Print-Komposition der Hubs/Ortsseiten:
 //  VOLL_VN   = echtes Vorher/Nachher-Material -> Slider + Heckenkompass + Schnittkalender
 //  GARTEN    = Garten ohne V/N-Material -> kein Slider/Kompass, Ortskarten + Foto-Flow
