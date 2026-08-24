@@ -2,7 +2,8 @@
  "_meta": {
   "generiert": "2026-06-15 Planung",
   "regel": "seiten-architektur.md",
-  "ratgeber": "Platzhalter, P1-final"
+  "ratgeber": "Platzhalter, P1-final",
+  "status": "DEPRECATED 2026-08-24 — wird von keinem Script gelesen, Zahlen veraltet (u.a. geloeschte Hubs, ohne Herbst-Paket). Quelle der Wahrheit: data/services.json + scripts/generate.mjs. Nur als Planungs-Historie behalten."
  },
  "counts": {
   "basis": 9,

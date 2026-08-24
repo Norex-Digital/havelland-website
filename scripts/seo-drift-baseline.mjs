@@ -1,12 +1,13 @@
-// seo-drift Baseline — erfasst SEO-kritische Elemente der Tier-1-Seiten (Home + 17 Hubs).
+// seo-drift Baseline — erfasst SEO-kritische Elemente der Tier-1-Seiten (Home + 20 Hubs).
 // Run: node scripts/seo-drift-baseline.mjs   → schreibt seo-drift-baseline.json
 // Vergleich später: erneut laufen lassen + gegen die Baseline diffen (Regressions-Schutz für die wichtigsten Seiten).
+// Liste aktualisiert 2026-08-24: gelöschte Hubs (photovoltaikreinigung, umzugshilfe, renovierung) raus, dachreinigung + 5 Herbst-Paket-Hubs rein. Baseline nach Änderung neu ziehen.
 import fs from 'fs';
 
-const TIER1 = ['/', '/gartenpflege/', '/heckenschnitt/', '/winterdienst/', '/steinreinigung/', '/fensterreinigung/', '/dachrinnenreinigung/', '/photovoltaikreinigung/', '/entruempelung/', '/haushaltsaufloesung/', '/grundreinigung/', '/umzugshilfe/', '/renovierung/', '/hausmeisterservice/', '/gebaeudereinigung/', '/unterhaltsreinigung/', '/objektbetreuung/', '/ferienwohnung-reinigung/'];
+const TIER1 = ['/', '/gartenpflege/', '/heckenschnitt/', '/winterdienst/', '/steinreinigung/', '/fensterreinigung/', '/dachrinnenreinigung/', '/dachreinigung/', '/entruempelung/', '/haushaltsaufloesung/', '/grundreinigung/', '/hausmeisterservice/', '/gebaeudereinigung/', '/unterhaltsreinigung/', '/objektbetreuung/', '/ferienwohnung-reinigung/', '/heckenentfernung/', '/baumstumpf-entfernen/', '/gartenrodung/', '/baumschnitt/', '/galabau/'];
 
 const grab = (h, re) => { const m = h.match(re); return m ? m[1].trim() : null; };
-const baseline = { _meta: 'seo-drift Baseline Tier-1 (Home + 17 Hubs). Erneut laufen + diffen zur Regressionserkennung.', captured_at: 'lokal', pages: {} };
+const baseline = { _meta: 'seo-drift Baseline Tier-1 (Home + 20 Hubs, Stand Herbst-Paket 2026-08-24). Erneut laufen + diffen zur Regressionserkennung.', captured_at: 'lokal', pages: {} };
 
 for (const url of TIER1) {
   const f = `website${url}index.html`;
