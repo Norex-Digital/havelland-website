@@ -353,6 +353,146 @@
     "werder-havel",
     "schwielowsee"
    ]
+  },
+  {
+   "slug": "heckenentfernung",
+   "name": "Heckenentfernung",
+   "title_suffix": "komplett mit Wurzel",
+   "strang": "A",
+   "segment": [
+    "B2C"
+   ],
+   "farbe": "gruen",
+   "tier_global": null,
+   "tier_lokal": null,
+   "vol_lokal": null,
+   "wave": 2,
+   "price": null,
+   "offer_ref": null,
+   "element_status": "geplant",
+   "faq": null,
+   "peak": "Februar",
+   "garantie": "Geradlinien-Garantie — bleiben Schnittreste oder Fräsgut liegen, kommen wir kostenlos nach",
+   "sektionen": [
+    "Hecke auf den Stock setzen",
+    "Komplett entfernen mit Wurzel",
+    "Stubben fräsen",
+    "Entsorgung inklusive"
+   ],
+   "orte_fix": [
+    "falkensee",
+    "dallgow-doeberitz",
+    "brieselang",
+    "schoenwalde-glien",
+    "nauen",
+    "berlin-spandau"
+   ]
+  },
+  {
+   "slug": "baumstumpf-entfernen",
+   "name": "Baumstumpf- & Wurzelentfernung",
+   "title_suffix": "Stubbenfräsen",
+   "strang": "A",
+   "segment": [
+    "B2C"
+   ],
+   "farbe": "gruen",
+   "tier_global": null,
+   "tier_lokal": null,
+   "vol_lokal": null,
+   "wave": 2,
+   "price": null,
+   "offer_ref": null,
+   "element_status": "geplant",
+   "faq": null,
+   "garantie": "Festpreis aus der Besichtigung ist der Endpreis — auch bei zähem Wurzelwerk kein Aufpreis",
+   "sektionen": [
+    "Stubbenfräsen",
+    "Wurzeln entfernen",
+    "Mehrere Stubben in einem Termin",
+    "Einebnen & Entsorgung"
+   ],
+   "orte_fix": [
+    "falkensee",
+    "dallgow-doeberitz",
+    "brieselang",
+    "schoenwalde-glien",
+    "nauen",
+    "berlin-spandau"
+   ]
+  },
+  {
+   "slug": "gartenrodung",
+   "name": "Gartenrodung",
+   "strang": "A",
+   "segment": [
+    "B2C"
+   ],
+   "farbe": "gruen",
+   "tier_global": null,
+   "tier_lokal": null,
+   "vol_lokal": null,
+   "wave": 2,
+   "price": null,
+   "offer_ref": null,
+   "element_status": "geplant",
+   "faq": null,
+   "garantie": "Festpreis nach Besichtigung — Fläche wird besenrein übergeben, sonst kommen wir kostenlos nach",
+   "sektionen": [
+    "Gestrüpp & Wildwuchs roden",
+    "Hecken & Sträucher entfernen",
+    "Stubben fräsen",
+    "Abfuhr & Entsorgung"
+   ]
+  },
+  {
+   "slug": "baumschnitt",
+   "name": "Baum- & Obstbaumschnitt",
+   "strang": "A",
+   "segment": [
+    "B2C"
+   ],
+   "farbe": "gruen",
+   "tier_global": null,
+   "tier_lokal": null,
+   "vol_lokal": null,
+   "wave": 2,
+   "price": null,
+   "offer_ref": null,
+   "element_status": "geplant",
+   "faq": null,
+   "peak": "Februar",
+   "garantie": "Schnittgut abgefahren, Fläche besenrein — sonst kommen wir kostenlos nach",
+   "sektionen": [
+    "Obstbaumschnitt",
+    "Kronen- & Pflegeschnitt",
+    "Sträucher & Gehölze",
+    "Schnittgut-Abfuhr inklusive"
+   ]
+  },
+  {
+   "slug": "galabau",
+   "name": "Kleinere GaLaBau-Arbeiten",
+   "strang": "A",
+   "segment": [
+    "B2C"
+   ],
+   "farbe": "gruen",
+   "tier_global": null,
+   "tier_lokal": null,
+   "vol_lokal": null,
+   "wave": 2,
+   "price": null,
+   "offer_ref": null,
+   "element_status": "geplant",
+   "faq": null,
+   "garantie": "Gerade Kanten, fest sitzende Steine — ist etwas nicht wie besprochen, bessern wir kostenlos nach",
+   "sektionen": [
+    "Pflaster ausbessern",
+    "Zaunmontage & Sichtschutz",
+    "Beeteinfassungen & Hochbeete",
+    "Wegeplatten & Kantensteine"
+   ]
   }
  ]
 }

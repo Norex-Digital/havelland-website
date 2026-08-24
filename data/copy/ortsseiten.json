@@ -190,6 +190,128 @@
           "trust": "Von der ersten Anfrage bis zur Abnahme haben Sie in Wustermark und Elstal denselben Ansprechpartner an der Seite. Auf dem Dach arbeitet der geprüfte Partner-Fachbetrieb, dessen Angebot Sie nach der kostenlosen Besichtigung erhalten. Mehrere Betriebe anzurufen und zu vergleichen bleibt Ihnen erspart."
         }
       }
+    },
+    "heckenentfernung": {
+      "meta": "Hecke entfernen in {ort} — komplett mit Wurzel, erlaubt vom 1. Oktober bis 28. Februar. Kostenlose Besichtigung, Festpreis — Abfuhr und Entsorgung inklusive.",
+      "faqs": [
+        {
+          "q": "Wann darf man in {ort} eine Hecke komplett entfernen?",
+          "a": "Nur vom 1. Oktober bis 28. Februar — § 39 BNatSchG verbietet das Roden und Auf-den-Stock-Setzen von Hecken in der übrigen Zeit, um brütende Vögel zu schützen. Wir legen jeden Termin in {ort} in dieses Fenster und prüfen die Hecke vor dem Eingriff zusätzlich auf Nester. Ein normaler Formschnitt ist dagegen ganzjährig zulässig."
+        },
+        {
+          "q": "Was kostet es, eine Hecke in {ort} entfernen zu lassen?",
+          "a": "Das hängt von Länge, Höhe, Heckenart und Wurzelaufwand ab — deshalb nennen wir keinen Pauschalwert ins Blaue. Wir kommen kostenlos zur Besichtigung nach {ort} und nennen danach einen Festpreis inklusive Rodung, Abfuhr und Entsorgung. Dieser Betrag ist der Endpreis, es kommt nichts dazu."
+        },
+        {
+          "q": "Entfernen Sie auch die Wurzeln der Hecke?",
+          "a": "Ja. Nach dem Rückschnitt fräsen wir Stubbenreihe und Hauptwurzeln bis unter das Bodenniveau. Die Fläche in {ort} ist danach eben und direkt nutzbar — für Zaun, Rasen oder eine Neupflanzung. Ohne Wurzelentfernung treiben viele Heckenarten wieder aus, und im Boden bleiben Stolperkanten zurück."
+        },
+        {
+          "q": "Wohin kommt das Schnittgut nach der Heckenentfernung in {ort}?",
+          "a": "Wir laden Grünschnitt, Stammholz und Fräsgut komplett auf und entsorgen alles ordnungsgemäß — das ist im Festpreis enthalten. Sie brauchen weder einen Container zu bestellen noch selbst zum Wertstoffhof zu fahren. Die Fläche übergeben wir besenrein, auf Wunsch mit Vorher-Nachher-Fotos aufs Handy."
+        },
+        {
+          "q": "Muss eine braune Thuja-Hecke in {ort} komplett raus?",
+          "a": "Meistens ja. Thuja treibt aus altem, braunem Holz nicht mehr aus — eine verkahlte Hecke wird durch Zurückschneiden nicht wieder dicht. Die dauerhafte Lösung ist die Komplettentfernung samt Wurzelfräsen; danach ist Platz für einen Zaun oder eine robustere Neupflanzung. Bei der kostenlosen Besichtigung in {ort} sagen wir ehrlich, ob noch etwas zu retten ist."
+        },
+        {
+          "q": "Wie lange dauert eine Heckenentfernung in {ort}?",
+          "a": "Eine Heckenreihe von üblicher Gartenlänge schaffen wir mit Rückschnitt, Wurzelfräsen und Verladung meist an einem Tag. Bei sehr langen oder alten Hecken mit dickem Stammwerk planen wir einen zweiten Tag ein. Den realistischen Umfang für Ihr Grundstück in {ort} nennen wir nach der kostenlosen Besichtigung — zusammen mit dem Festpreis."
+        }
+      ],
+      "orte": {
+        "falkensee": {
+          "hook": "Falkensee ist unser Zuhause: Der Haus- & Gartenservice Havelland sitzt hier, kürzer kann eine Anfahrt nicht sein. Die Stadt mit ihren alten Villengrundstücken und den Siedlungen rund um den Falkenhagener See ist voller Hecken, die seit Jahrzehnten wachsen — viele Thuja-Reihen sind unten verkahlt und braun, und braunes Thuja-Holz treibt nicht wieder aus. Dann hilft kein Schnitt mehr, die Hecke muss komplett raus: Rückschnitt, Wurzeln fräsen, Abfuhr. Wir erledigen das im erlaubten Fenster vom 1. Oktober bis 28. Februar und hinterlassen eine ebene, freie Fläche. Kurzer Weg, klare Sache.",
+          "rahmen": "In Falkensee holen wir alles raus, was nicht mehr gewünscht ist: die mannshohe Thuja an der Grundstücksgrenze, den ausgewucherten Kirschlorbeer, die Ligusterreihe vor dem Umbau. Erst wird die Hecke bodennah abgetragen, dann fräsen wir Stubbenreihe und Hauptwurzeln bis unter das Bodenniveau — die Fläche wird eben und ist direkt nutzbar, für Zaun, Beet oder Rasen. Grünschnitt, Stammholz und Fräsgut laden wir auf und entsorgen alles ordnungsgemäß. Vor jedem Eingriff prüfen wir auf Nester. Sie packen nichts an und fahren nichts weg.",
+          "trust": "Wir kommen kostenlos zur Besichtigung — in Falkensee oft besonders schnell, die Wege sind kurz. Danach nennen wir einen Festpreis inklusive Rodung und Entsorgung: Der Preis steht. Nach dem Einsatz gibt es Vorher-Nachher-Fotos aufs Handy, die Fläche bleibt besenrein."
+        },
+        "dallgow-doeberitz": {
+          "hook": "Wer in Dallgow-Döberitz baut oder umbaut, steht oft vor derselben Frage: Was passiert mit der Hecke des Vorbesitzers? In den gewachsenen Straßen zwischen Bahnhof und Döberitzer Heide stehen Koniferenreihen aus den Neunzigern, in den Neubaugebieten weichen die ersten Pflanzungen schon der neuen Gartenplanung. Wir entfernen Hecken komplett — mit Wurzel, Abfuhr und Entsorgung — und halten dabei das gesetzliche Fenster ein: Die Rodung ist vom 1. Oktober bis 28. Februar zulässig. Aus Falkensee sind wir in wenigen Minuten da. Erst raus, dann neu gedacht.",
+          "rahmen": "Viele Aufträge in Dallgow-Döberitz beginnen mit einer Gartenumgestaltung: Die Hecke soll einem Zaun weichen, einer Terrasse oder einer niedrigeren Bepflanzung. Wir schneiden die Hecke bodennah ab, roden die Wurzelreihe mit der Fräse und ebnen die Fläche ein — so lässt sich direkt weiterbauen oder neu pflanzen. Auch Seeburg und Rohrbeck gehören zu unserem Gebiet. Schnittgut und Wurzelholz nehmen wir vollständig mit; auf Nester wird vor jedem Eingriff geprüft. Am Ende steht eine freie Grenze statt einer halben Baustelle.",
+          "trust": "Die Besichtigung in Dallgow-Döberitz kostet nichts. Danach bekommen Sie einen Festpreis, der der Endpreis bleibt — egal, wie viel Wurzelwerk im Boden steckt. Vorher-Nachher-Fotos schicken wir aufs Handy, übergeben wird besenrein."
+        },
+        "brieselang": {
+          "hook": "In Brieselang stehen viele Hecken seit Jahrzehnten: alte Fichten- und Thuja-Reihen aus der Zeit, als die Siedlungen zwischen Brieselanger Forst und Havelkanal gewachsen sind — inzwischen zu hoch, zu breit oder von innen verkahlt. Irgendwann ist Pflege keine Option mehr, dann muss die Hecke ganz weg, samt Wurzeln. Genau das ist unsere Arbeit: abtragen, roden, die Wurzelreihe fräsen, alles abfahren. Den Takt gibt der Naturschutz vor — erlaubt ist die Entfernung vom 1. Oktober bis 28. Februar, und genau in dieses Fenster legen wir Ihren Termin. Aus Falkensee sind es nur ein paar Kilometer.",
+          "rahmen": "Altbestand heißt in Brieselang oft: dicke Stämme in der Heckenreihe, Wurzelwerk, das seit dreißig Jahren im Boden sitzt, und mehr Grünmasse, als ein Anhänger fasst. Uns schreckt das nicht — wir arbeiten uns Abschnitt für Abschnitt vor, fräsen die Stubben unter das Bodenniveau und laden Schnittgut wie Wurzelholz komplett auf. Die Entsorgung ist Teil des Auftrags, nicht Ihr Problem. Zurück bleibt eine ebene Fläche, auf der ein Zaun, eine neue Hecke oder einfach Rasen Platz findet.",
+          "trust": "Erst die kostenlose Besichtigung in Brieselang, dann der Festpreis: Der Preis steht, auch wenn im Boden mehr Wurzel wartet als gedacht. Wir sind das Duo, das auch die Arbeit macht — kein Subunternehmer. Besenreine Übergabe, Foto-Doku aufs Handy."
+        },
+        "schoenwalde-glien": {
+          "hook": "Wald auf der einen Seite, Garten auf der anderen — so wohnen viele in Schönwalde-Glien. Am Rand des Krämer Forsts und in den Ortsteilen bis Pausin und Paaren wachsen Hecken schneller zu, als man schneiden kann, und unter Kiefern werden Thuja und Fichte oft schütter und braun. Wenn eine Heckenreihe nicht mehr zu retten ist oder schlicht weichen soll, entfernen wir sie vollständig: abschneiden, Wurzeln fräsen, alles abfahren. Beim Termin richten wir uns nach § 39 BNatSchG — gerodet wird ausschließlich zwischen dem 1. Oktober und dem 28. Februar. Danach ist die Fläche frei und eben.",
+          "rahmen": "Waldnahe Grundstücke bringen eigene Aufgaben mit: Wurzeln, die im Sandboden weit laufen, Zäune dicht an der Heckenreihe, schmale Zufahrten. Wir planen das bei der Besichtigung in Schönwalde-Glien ein und arbeiten mit Technik, die durch ein normales Gartentor passt. Die Hecke wird bodennah abgetragen, die Wurzelreihe gefräst, das Fräsgut mitgenommen oder auf Wunsch als Mulch dagelassen. Die Nestkontrolle vor dem Eingriff ist bei uns Standard. Auch in Pausin und Paaren sind wir regelmäßig unterwegs.",
+          "trust": "Nach der kostenlosen Besichtigung nennen wir Ihnen für Schönwalde-Glien einen Festpreis mit Abfuhr und Entsorgung — der genannte Betrag ist der Endbetrag. Gearbeitet wird vom eingespielten Duo selbst, nicht von einem Subunternehmer. Zum Abschluss: besenreine Fläche und Fotos vom Vorher und Nachher."
+        },
+        "nauen": {
+          "hook": "Nauen ist die Flächenstadt im Havelland: ein historischer Kern, Wohnstraßen am Stadtrand, viele Ortsteile weit im Land. Entsprechend verschieden sind die Hecken — schmaler Vorgarten in der Stadt, lange Grundstücksgrenze draußen im Dorf. Wir übernehmen die komplette Heckenentfernung in Nauen und seinen Ortsteilen: Rückschnitt, Rodung der Wurzeln, Abfuhr und Entsorgung in einem Einsatz. Die Anfahrt aus Falkensee planen wir fest ein, ein zugesagter Termin gilt. Rechtlich bleibt es dabei: Beseitigt werden darf eine Hecke nur vom 1. Oktober bis 28. Februar — Ihren Termin legen wir passend.",
+          "rahmen": "Gerade bei längeren Heckenreihen am Stadtrand von Nauen lohnt ein Einsatz aus einer Hand: Wir schneiden, roden und fräsen in einem Durchgang, statt Gewerke zu stückeln. Das Wurzelwerk holen wir bis unter das Bodenniveau heraus, damit nichts nachtreibt und keine Stolperkanten bleiben. Grünschnitt und Wurzelholz fahren wir vollständig ab — auch die größeren Mengen, die bei alten Thuja- oder Fichtenreihen anfallen. Vorab prüfen wir auf Nester, danach ist die Grenze frei für Zaun oder Neupflanzung.",
+          "trust": "Besichtigung und Anfahrt nach Nauen kosten Sie nichts. Danach steht ein Festpreis inklusive Entsorgung — ohne Nachschlag, auch wenn der Einsatz länger dauert. Per WhatsApp erreichen Sie uns direkt: Rückmeldung in Stunden, nicht Tagen. Übergabe besenrein, Fotos inklusive."
+        },
+        "berlin-spandau": {
+          "hook": "Berlin-Spandau liegt näher am Havelland als am Rest von Berlin — und genau das nutzen wir als Haus- & Gartenservice Havelland. Während viele Berliner Baumdienste vom anderen Ende der Stadt anrücken, kommen wir aus Falkensee über die Stadtgrenze: kurze Anfahrt, planbare Termine, ein fester Ansprechpartner. Wir entfernen Hecken in Spandau komplett — für private Gärten in Staaken, Gatow oder Kladow ebenso wie für Hausverwaltungen und Gewerbeobjekte. Mit Wurzelfräsen, Abfuhr und Entsorgung, im gesetzlich erlaubten Fenster: Die Heckenrodung ist vom 1. Oktober bis 28. Februar zulässig.",
+          "rahmen": "Ob Reihenhausgarten mit Ligusterhecke oder Wohnanlage, deren Koniferenreihe den Weg zuwächst: In Spandau räumen wir beides ab. Erst der bodennahe Rückschnitt, dann die Fräse für Stubben und Hauptwurzeln, zum Schluss die komplette Abfuhr — Grünschnitt, Stammholz, Fräsgut. Privatkunden bekommen denselben Ablauf wie Verwaltungen: kostenlose Besichtigung, ein Termin, ein Team, eine ebene Fläche als Ergebnis. Auf brütende Vögel prüfen wir vor jedem Einsatz, unabhängig davon, wie eilig es ist.",
+          "trust": "Für Spandau gilt dasselbe wie im Havelland: Nach der kostenlosen Besichtigung nennen wir einen Festpreis — der Preis steht, für Privatgärten genauso wie für Objekte. Es arbeitet das Duo selbst, kein Subunternehmer. Besenreine Übergabe mit Vorher-Nachher-Fotos aufs Handy."
+        }
+      }
+    },
+    "baumstumpf-entfernen": {
+      "meta": "Baumstumpf entfernen in {ort}: Stubben und Wurzeln fräsen statt graben, Fläche eben und nutzbar. Kostenlose Besichtigung, Festpreis inklusive Abfuhr vor Ort.",
+      "faqs": [
+        {
+          "q": "Was kostet es, einen Baumstumpf in {ort} entfernen zu lassen?",
+          "a": "Der Stammdurchmesser ist die wichtigste Größe, dazu kommen Anzahl der Stubben, Zugang und die gewünschte Frästiefe. Mehrere Stümpfe in einem Termin sind pro Stück günstiger. Wir besichtigen kostenlos in {ort} und nennen danach einen Festpreis inklusive Abfuhr — der genannte Betrag ist der Endpreis."
+        },
+        {
+          "q": "Wie tief wird der Baumstumpf in {ort} ausgefräst?",
+          "a": "Standard sind rund 20 bis 30 Zentimeter unter Bodenniveau — genug für Rasen, Beet oder eine neue Pflanzung. Soll an der Stelle gebaut oder tief gepflanzt werden, fräsen wir tiefer oder graben den Wurzelstock komplett aus. Was für Ihr Vorhaben in {ort} nötig ist, legen wir bei der Besichtigung fest."
+        },
+        {
+          "q": "Fällen Sie auch den Baum, bevor der Stumpf gefräst wird?",
+          "a": "Nein — wir übernehmen Stubben und Wurzeln bereits gefällter oder abgestorbener Bäume. Große Fällungen vermitteln wir an Fachpartner. Sobald der Baum liegt, machen wir in {ort} weiter: Stumpf fräsen, Fläche einebnen, Fräsgut abfahren. So kommt vom Reststamm bis zur bepflanzbaren Fläche alles aus einer Hand."
+        },
+        {
+          "q": "Passt die Stubbenfräse durch mein Gartentor in {ort}?",
+          "a": "In den meisten Fällen ja — unsere Maschine ist kompakt und für normale Gartentore und Durchgänge ausgelegt. Enge Zugänge, Stufen oder Leitungen in der Nähe schauen wir uns bei der kostenlosen Besichtigung in {ort} an und planen den Einsatz entsprechend. Ein schwerer Baggereinsatz ist fürs Fräsen nicht nötig."
+        },
+        {
+          "q": "Was passiert mit dem Fräsgut?",
+          "a": "Beim Fräsen entstehen feine Holzspäne, vermischt mit etwas Erde. Wir fahren das Fräsgut standardmäßig ab und entsorgen es — oder lassen es auf Wunsch als Mulch für Ihre Beete in {ort} da. Die Mulde wird verfüllt und eingeebnet, sodass Sie direkt Rasen säen oder neu pflanzen können."
+        },
+        {
+          "q": "Wann ist die beste Zeit, um einen Baumstumpf in {ort} entfernen zu lassen?",
+          "a": "Stubbenfräsen ist grundsätzlich das ganze Jahr über möglich, denn der Baum ist bereits gefällt — das Schnittzeiten-Fenster für Hecken vom 1. Oktober bis 28. Februar gilt hier nicht. Wir achten nur auf tragfähigen Boden und freie Zufahrt. In {ort} bekommen Sie deshalb auch kurzfristig einen Termin."
+        }
+      ],
+      "orte": {
+        "falkensee": {
+          "hook": "Der Sturm hat die Fichte geholt, die Birke war krank, die alte Kiefer stand zu dicht am Haus — gefällt ist in Falkensee schnell, aber der Stumpf bleibt. Mitten im Rasen, an der Einfahrt, genau dort, wo die neue Terrasse hin soll. Wir fräsen Baumstümpfe samt Hauptwurzeln bis unter das Bodenniveau ab, ebnen die Stelle ein und nehmen das Fräsgut mit. Als Falkenseer Betrieb sind wir meist innerhalb weniger Tage da, und oft dauert der Einsatz selbst keine Stunde. Übrig bleibt keine Stolperkante, sondern eine Fläche, auf der wieder Rasen, Beet oder Pflaster Platz hat.",
+          "rahmen": "In Falkenseer Gärten stehen oft mehrere Stubben aus verschiedenen Jahren — einer vom Vorbesitzer, ein anderer vom letzten Wintersturm. Wir fräsen alle in einem Termin; das ist pro Stück günstiger als jeder Einzeleinsatz. Unsere Fräse passt durch normale Gartentore und arbeitet bodenschonend, ohne Bagger und ohne Krater. Auch der Wurzelstock einer gerodeten Hecke oder der stehen gebliebene Reststamm eines abgestorbenen Baums gehört zu unserer Arbeit. Zum Schluss ebnen wir ein und kehren nach — Sie übernehmen nichts davon.",
+          "trust": "Schicken Sie uns per WhatsApp ein Foto vom Stumpf und grob den Durchmesser — Rückmeldung in Stunden, nicht Tagen. Nach der kostenlosen Besichtigung in Falkensee gilt ein Festpreis inklusive Abfuhr: Der Preis steht. Vorher-Nachher-Fotos gibt es aufs Handy dazu."
+        },
+        "dallgow-doeberitz": {
+          "hook": "Wo neu gebaut und umgestaltet wird, stören alte Wurzeln am meisten — und Dallgow-Döberitz wächst seit Jahren. Da soll auf dem frisch übernommenen Grundstück eine Garage an die Stelle des alten Baums, ein Zaunfundament kreuzt die Wurzelbahn, oder der Stumpf des gefällten Ahorns sitzt genau dort, wo der Spielturm geplant ist. Wir entfernen Baumstümpfe und Wurzelstöcke in Dallgow-Döberitz, Seeburg und Rohrbeck: gefräst oder, wenn gebaut werden soll, komplett ausgegraben. Danach ist die Stelle eben, tragfähig und frei für das, was Sie vorhaben.",
+          "rahmen": "Fräsen ist auch in Dallgow-Döberitz der Normalfall: schnell, bodenschonend, ohne schweres Gerät im frisch angelegten Garten. Rund 20 bis 30 Zentimeter unter Bodenniveau reichen für Rasen und Beet; wird an der Stelle gebaut oder tief gepflanzt, gehen wir tiefer oder holen den Wurzelballen ganz heraus. Welche Methode passt, klären wir bei der kostenlosen Besichtigung — inklusive Blick auf Zugang und Leitungen. Das Fräsgut nehmen wir mit oder lassen es als Mulch da, ganz wie Sie möchten.",
+          "trust": "Ein Foto per WhatsApp genügt für die erste Einschätzung, danach kommen wir kostenlos nach Dallgow-Döberitz. Der Festpreis, den Sie dann bekommen, ist der Endpreis — inklusive Abfuhr und Einebnen. Dokumentiert wird mit Fotos vom Vorher und Nachher, direkt aufs Handy."
+        },
+        "brieselang": {
+          "hook": "Am Brieselanger Forst stehen die Bäume seit Generationen — und wo über die Jahre gefällt wurde, warten die Stümpfe noch heute. Manche Gärten in Brieselang haben gleich mehrere davon: die alte Fichte hinterm Schuppen, den Kirschbaum von früher, den Rest der Birke am Zaun. Wir fräsen solche Stubben samt Hauptwurzeln weg, egal wie lange sie schon sitzen — altes, hartes Holz ist für die Fräse kein Hindernis. In einem Termin verschwinden auch mehrere Stümpfe, die Stellen werden eingeebnet, das Fräsgut fahren wir ab. Der Garten gehört danach wieder Ihnen, nicht der Vergangenheit.",
+          "rahmen": "Der sandige Boden im Havelland lässt Wurzeln weit laufen; bei alten Bäumen in Brieselang fräsen wir deshalb großzügig um den Stumpf herum, damit keine Kanten und kein Wurzelausschlag bleiben. Ausschlagfreudige Arten wie Robinie oder Pappel nehmen wir besonders tief. Den Zugang klären wir bei der Besichtigung: Unsere Maschine kommt durch Gartentore und schmale Wege zwischen Haus und Hecke. Anschließend ist die Stelle bereit für Rasensaat, ein Beet oder das nächste Bauvorhaben.",
+          "trust": "Für Brieselang gilt unser fester Ablauf: kostenlose Besichtigung, dann ein Festpreis, der auch dann hält, wenn das Wurzelwerk zäher ist als erwartet. Es kommt das Duo selbst — kein Subunternehmer. Besenrein hinterlassen wir sowieso, Fotos vom Vorher und Nachher inklusive."
+        },
+        "schoenwalde-glien": {
+          "hook": "Kiefern prägen Schönwalde-Glien — und Kiefernstümpfe sind hartnäckig: harzig, tief verwurzelt, im Sandboden am Krämer Forst scheinbar für die Ewigkeit gemacht. Ob nach einem Sturmbruch, nach der Fällung durch einen Baumdienst oder bei einem abgestorbenen Baum im Garten: Wir übernehmen den Teil, der danach kommt. Stumpf und Hauptwurzeln werden gefräst, die Fläche eingeebnet, das Fräsgut abgefahren. Das gilt für die Siedlung genauso wie für Pausin und Paaren. Aus Falkensee sind wir schnell da — das ganze Jahr über, denn fürs Stubbenfräsen gibt es kein Saisonfenster.",
+          "rahmen": "Auf waldnahen Grundstücken in Schönwalde-Glien fragen uns viele zuerst: Kommt ihr überhaupt an den Stumpf heran? Meistens ja — die Fräse ist kompakt, passt durchs Gartentor und arbeitet auch dicht am Zaun oder zwischen Beeten. Bei der kostenlosen Besichtigung prüfen wir Zugang, Leitungen und die nötige Frästiefe. Gefräst wird bis unter das Bodenniveau, bei ausschlagfreudigen Arten tiefer. Was übrig bleibt, sind feine Holzspäne — als Mulch nutzbar oder von uns entsorgt, wie Sie wollen.",
+          "trust": "Nach der Besichtigung in Schönwalde-Glien steht der Festpreis fest und bleibt es auch — harzige Kiefer hin oder her. Angebot, Termin und Ausführung kommen aus einer Hand, vom Duo des Haus- & Gartenservice Havelland aus Falkensee. Fotos vom Ergebnis schicken wir direkt aufs Handy."
+        },
+        "nauen": {
+          "hook": "Rund um Nauen ist Platz — und mit dem Platz kommen die Bäume: Obstwiesen hinter dem Haus, alte Linden an der Einfahrt, Windschutzreihen draußen in den Ortsteilen. Bleibt nach Sturm, Krankheit oder einer Fällung der Stumpf zurück, holen wir ihn heraus. Wir fräsen Baumstümpfe und Wurzelstöcke in Nauen und den umliegenden Dörfern, ebnen die Stelle ein und nehmen das Holz mit. Die Anfahrt aus Falkensee ist fest eingeplant und kostet Sie nichts extra — auch für einen einzelnen Stumpf kommen wir raus. Kurz gemeldet, bald gefräst.",
+          "rahmen": "Ein einzelner Stubben ist in Nauen meist ein Termin von unter einer Stunde; bei Obstbaumreihen oder mehreren Altstümpfen planen wir entsprechend mehr. Vor Ort prüfen wir, was die Fläche später können muss: Rasen braucht weniger Tiefe als ein Fundament, dort graben wir den Wurzelstock notfalls komplett aus. Steine, Zäune und enge Hofdurchfahrten besprechen wir vorher, damit am Einsatztag alles durchläuft. Abfuhr und Entsorgung des Fräsguts gehören für uns selbstverständlich dazu.",
+          "trust": "Schicken Sie ein Handyfoto vom Stumpf per WhatsApp — wir melden uns in Stunden, nicht Tagen, auch für Adressen außerhalb des Nauener Zentrums. Nach der kostenlosen Besichtigung gibt es den Festpreis, und der gilt: keine Nachforderung, besenreine Übergabe, Fotos inklusive."
+        },
+        "berlin-spandau": {
+          "hook": "Ein Baumstumpf in Spandau, und die Firma sitzt am anderen Ende Berlins? Das muss nicht sein. Wir kommen aus Falkensee — vom Westrand aus die deutlich kürzere Strecke — und fräsen Stubben in ganz Spandau: im Reihenhausgarten in Staaken, auf dem Wassergrundstück in Gatow oder Kladow, im Hof einer Wohnanlage im Zentrum. Privatkunden und Verwaltungen bekommen denselben Ablauf: Foto per WhatsApp, kostenlose Besichtigung, Festpreis, Einsatz. Der Stumpf verschwindet samt Hauptwurzeln unter das Bodenniveau, die Fläche wird eben und wieder nutzbar — für Rasen, Pflaster oder die nächste Pflanzung.",
+          "rahmen": "In Spandauer Gärten ist der Zugang oft der Knackpunkt: Hauseingang, Durchgang, Hinterhof. Unsere Fräse ist kompakt genug für normale Gartentore und Durchfahrten, gearbeitet wird bodenschonend und ohne Kran. Wir übernehmen Stümpfe und Wurzelstöcke bereits gefällter oder abgestorbener Bäume — die Fällung selbst bieten wir nicht an, große Fällungen vermitteln wir an Fachpartner. Für Hausverwaltungen dokumentieren wir den Zustand vorher und nachher; für private Auftraggeber gilt derselbe Standard, nur ohne Papierkram.",
+          "trust": "Auch westlich der Havel gilt unser Versprechen: kostenloser Ortstermin in Spandau, danach ein Festpreis als Endpreis — für den einzelnen Stumpf im Privatgarten wie für die Stubbenreihe am Mietobjekt. Es arbeitet das eingespielte Duo, kein Subunternehmer. Besenrein ist Standard."
+        }
+      }
     }
   }
 }

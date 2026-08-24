@@ -24,7 +24,7 @@
     },
     {
      "h3": "Baumschnitt (klein)",
-     "body": "Wir schneiden kleine Bäume und Obstbäume bis zu einer Höhe, die wir sicher vom Boden oder von der Leiter aus erreichen. Dazu gehören das Auslichten der Krone, das Entfernen abgestorbener Äste und der Formschnitt junger Bäume. Bei Obstbäumen fördert ein sauberer Schnitt im späten Winter oder zeitigen Frühjahr den Ertrag. Größere Fällungen und Arbeiten in der Höhe gehören in die Hände einer Fachfirma mit Spezialausrüstung – das sagen wir Ihnen bei der Besichtigung ehrlich."
+     "body": "Wir schneiden kleine Bäume und Obstbäume bis zu einer Höhe, die wir sicher vom Boden oder von der Leiter aus erreichen. Dazu gehören das Auslichten der Krone, das Entfernen abgestorbener Äste und der Formschnitt junger Bäume. Bei Obstbäumen fördert ein sauberer Schnitt im späten Winter oder zeitigen Frühjahr den Ertrag. Bleibt von einem bereits gefällten oder abgestorbenen Baum der Stumpf zurück, fräsen wir ihn samt Wurzeln heraus — das übernehmen wir selbst, mit eigenem Gerät. Nur große Fällungen und Arbeiten hoch in der Krone vermitteln wir an Fachpartner; was bei Ihnen sinnvoll ist, sagen wir Ihnen bei der Besichtigung ehrlich."
     }
    ],
    "naehe": "Suchen Sie Gartenpflege in der Nähe? Wir sitzen in Falkensee und fahren das gesamte Havelland sowie das angrenzende Berliner Umland an – von Nauen über Dallgow-Döberitz und Brieselang bis Spandau. Kurze Wege heißen kurze Reaktionszeiten: Auf Ihre WhatsApp antworten wir in Stunden, nicht in Tagen, und die Anfahrt steckt im Festpreis. Die Termine planen wir nach Saison und nach Ihrem Garten. Schreiben Sie uns Ihre Adresse.",
@@ -52,6 +52,20 @@
     }
    ],
    "garantie_text": "Fällt ein vereinbarter Pflegetermin ohne Vorankündigung aus, ist Ihr nächster Termin kostenlos.",
+   "blocks": [
+    {
+     "h2": "Mehr Schnitt gefällig?",
+     "body": "Braucht ein Baum mehr als den kleinen Pflegeschnitt — ein Obstbaum den gründlichen Ertragsschnitt, eine Krone das fachgerechte Auslichten, ein Ziergehölz den Aufbau über mehrere Jahre? Dann ist unser Baumschnitt der richtige Rahmen: geplant zur passenden Jahreszeit, geschnitten mit Blick auf Art und Wuchs, Abfuhr des Schnittguts inklusive.",
+     "link_to": "baumschnitt",
+     "link_text": "Zum Baumschnitt und Obstbaumschnitt im Havelland"
+    },
+    {
+     "h2": "Ein Stumpf stört im Garten?",
+     "body": "Wo ein Baum schon gefällt wurde oder abgestorben ist, bleibt oft der Stubben im Rasen stehen — beim Mähen im Weg, für Neues an der falschen Stelle. Wir fräsen Baumstümpfe samt Hauptwurzeln bis unter das Bodenniveau, ebnen die Fläche ein und nehmen das Fräsgut mit.",
+     "link_to": "baumstumpf-entfernen",
+     "link_text": "Baumstumpf entfernen im Havelland"
+    }
+   ],
    "ortsseite_lead": "Ihre Gartenpflege in {ort} – Rasen, Grünschnitt, Laub und kleiner Baumschnitt aus einer Hand. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Termin in {ort}.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
@@ -110,6 +124,20 @@
     }
    ],
    "garantie_text": "Geradlinien-Garantie: Bleiben nach dem Schnitt doch Grünschnitt-Reste auf Ihrem Grundstück liegen, kommen wir kostenlos nach und räumen sie weg.",
+   "blocks": [
+    {
+     "h2": "Hecke soll ganz weg?",
+     "body": "Manchmal hilft kein Schnitt mehr: Die Thuja ist braun und verkahlt, die Hecke der Fläche im Weg, oder an die Grenze soll ein Zaun. Dann entfernen wir die Hecke komplett — Rückschnitt im erlaubten Fenster vom 1. Oktober bis 28. Februar, Wurzeln gefräst, alles abgefahren und entsorgt, die Fläche eben und besenrein. Festpreis nach kostenloser Besichtigung.",
+     "link_to": "heckenentfernung",
+     "link_text": "Zur Heckenentfernung und Rodung im Havelland"
+    },
+    {
+     "h2": "Stubben und Wurzeln noch im Boden?",
+     "body": "Nach einer gerodeten Hecke oder einem bereits gefällten Baum bleibt oft der Wurzelstock zurück. Wir fräsen Stubben und Hauptwurzeln bis unter das Bodenniveau, ebnen die Fläche ein und nehmen das Fräsgut mit — danach können Sie mähen, pflanzen oder den Zaun setzen.",
+     "link_to": "baumstumpf-entfernen",
+     "link_text": "Baumstumpf und Wurzel entfernen im Havelland"
+    }
+   ],
    "ortsseite_lead": "Ihr Heckenschnitt in {ort}: Formschnitt, Radikalschnitt zur erlaubten Zeit und die komplette Grünschnitt-Abfuhr zum Festpreis. Kostenlose Besichtigung vor Ort in {ort}, Foto-Nachweis nach dem Auftrag direkt aufs Handy.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
@@ -905,6 +933,411 @@
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "heckenentfernung",
+   "title": "Heckenentfernung Havelland | Hecke komplett entfernen",
+   "meta": "Hecke komplett entfernen im Havelland: mit Wurzel, Abfuhr und Entsorgung — erlaubt vom 1. Oktober bis 28. Februar. Kostenlose Besichtigung, dann Festpreis.",
+   "h1": "Heckenentfernung im Havelland — Hecke weg, Wurzel raus, Fläche frei",
+   "h1_em": "Fläche frei",
+   "intro": "Soll die Hecke ganz weg? Schreiben Sie uns per WhatsApp — die erste Rückmeldung kommt in Stunden, nicht in Tagen. Wir vom Haus- & Gartenservice Havelland schneiden die Hecke zurück, roden das Wurzelwerk, fräsen die Stubben und fahren alles ab. Vorab kommen wir kostenlos zur Besichtigung, danach steht Ihr Festpreis als Endpreis. Nach dem Auftrag liegt die Foto-Doku vom Vorher und Nachher auf Ihrem Handy, die Fläche bleibt besenrein — bereit für Zaun, Rasen oder Neupflanzung.",
+   "definition": "Heckenentfernung ist das vollständige Beseitigen einer Hecke samt Wurzelwerk — Rückschnitt, Rodung der Wurzeln, Abfuhr und Entsorgung inklusive — für Grundstücke, auf denen die Hecke dauerhaft weichen soll. Erlaubt ist sie nur im Zeitfenster vom 1. Oktober bis 28. Februar.",
+   "sections": [
+    {
+     "h3": "Auf den Stock setzen oder komplett entfernen?",
+     "body": "Zwei Wege führen zur freien Grenze. Beim Auf-den-Stock-Setzen kappen wir die Hecke bis kurz über den Boden — die Wurzeln bleiben, austriebsfähige Arten schlagen wieder aus. Bei der Komplettentfernung roden wir zusätzlich Stubben und Wurzelwerk, damit dauerhaft nichts nachwächst. Beide Eingriffe erlaubt das Bundesnaturschutzgesetz nur vom 1. Oktober bis 28. Februar. Was zu Ihrer Hecke passt, hängt von der Art und von Ihrem Ziel ab: Soll ein Zaun an die Grenze, die Fläche bebaut oder neu bepflanzt werden? Das klären wir bei der kostenlosen Besichtigung."
+    },
+    {
+     "h3": "Das erlaubte Fenster: 1. Oktober bis 28. Februar",
+     "body": "§ 39 des Bundesnaturschutzgesetzes verbietet es, Hecken vom 1. März bis 30. September zu beseitigen oder auf den Stock zu setzen — zum Schutz brütender Vögel. Für die Entfernung bleibt das Winterhalbjahr vom 1. Oktober bis 28. Februar. Vor jedem Eingriff prüfen wir die Hecke auf Nester. Planen Sie früh: Die Nachfrage steigt zum Februar stark an, weil viele die Rodung noch vor dem Fristende erledigen wollen. Wer im Herbst anfragt, bekommt seinen Wunschtermin ohne Gedränge."
+    },
+    {
+     "h3": "Thuja und Kirschlorbeer entfernen",
+     "body": "Thuja treibt aus altem, braunem Holz nicht neu aus. Eine verkahlte oder vertrocknete Thuja-Hecke wird durch keinen Schnitt wieder dicht — der saubere Weg ist die Komplettentfernung samt Wurzelfräsen. Das Schnittgut fällt bei Thuja in großen Mengen an; Abfuhr und Entsorgung stecken bei uns im Festpreis. Kirschlorbeer ist das Gegenteil: Er treibt aus dem Stock kräftig wieder aus. Wer ihn nur stark einkürzt, hat in zwei Jahren dieselbe Wand. Deshalb gibt es beim Kirschlorbeer nur die konsequente Lösung: im erlaubten Fenster vom 1. Oktober bis 28. Februar auf den Stock setzen und das Wurzelwerk gleich mit roden — beides als Teil der Entfernung, in einem Termin."
+    },
+    {
+     "h3": "Wurzeln raus: Stubben und Wurzelwerk fräsen",
+     "body": "Nach dem Rückschnitt bleibt eine Reihe Stubben in der Erde. Wir fräsen sie samt Hauptwurzeln bis unter das Bodenniveau, das Fräsgut nehmen wir mit. Übrig bleibt eine ebene Fläche, die Sie sofort nutzen können — für Rasen, ein Beet, ein Zaunfundament oder eine Neupflanzung. Ohne Wurzelentfernung drohen zwei Probleme: Ausschlagfreudige Arten treiben aus den Resten wieder aus, und die Stubbenreihe bleibt als Stolperkante an der Grenze stehen. Feinwurzeln verbleiben im Boden und verrotten von selbst."
+    },
+    {
+     "h3": "Entsorgung inklusive, Fläche besenrein",
+     "body": "Grünschnitt, Stammholz, Wurzelholz und Fräsgut fahren wir komplett ab und entsorgen alles ordnungsgemäß — das ist Teil des Festpreises, Nachposten für die Entsorgung gibt es nicht. Zum Schluss kehren wir die Fläche besenrein und schicken Ihnen die Foto-Doku vom Vorher und Nachher direkt aufs Handy, auch wenn Sie beim Termin nicht zu Hause sind. Bei uns arbeitet das Duo, das Sie gebucht haben: kein Subunternehmer, eine feste Nummer von der Anfrage bis zur fertigen Fläche."
+    }
+   ],
+   "naehe": "Suchen Sie eine Firma für die Heckenentfernung in der Nähe? Wir sitzen in Falkensee und fahren das gesamte Havelland und das angrenzende Berliner Umland an — von Nauen über Dallgow-Döberitz und Brieselang bis Schönwalde-Glien und Spandau. Kurze Wege heißen kurze Reaktionszeiten, die Anfahrt steckt im Festpreis. Schreiben Sie uns Ihre Adresse und ein Foto der Hecke per WhatsApp, dann stimmen wir die kostenlose Besichtigung ab.",
+   "ablauf": "Fragen Sie per WhatsApp oder Telefon an, gern mit Foto und ungefährer Länge der Hecke. Wir kommen kostenlos zur Besichtigung und schauen uns Heckenart, Höhe, Wurzelwerk und Zugang an. Danach erhalten Sie einen Festpreis inklusive Rodung, Abfuhr und Entsorgung, der ohne Aufschlag Ihr Endpreis bleibt. Den Termin legen wir in das erlaubte Fenster vom 1. Oktober bis 28. Februar. Nach der Arbeit ist die Fläche eben und besenrein, die Foto-Doku kommt aufs Handy. Der Preis steht.",
+   "faqs": [
+    {
+     "q": "Wann darf man eine Hecke komplett entfernen?",
+     "a": "Nur zwischen dem 1. Oktober und dem 28. Februar. § 39 des Bundesnaturschutzgesetzes verbietet es, Hecken vom 1. März bis 30. September zu beseitigen oder auf den Stock zu setzen, weil dann Vögel darin brüten. Wir legen jeden Termin in das erlaubte Fenster und prüfen die Hecke vorab auf Nester."
+    },
+    {
+     "q": "Was kostet es, eine Hecke entfernen zu lassen?",
+     "a": "Länge, Höhe, Heckenart und der Aufwand für die Wurzeln bestimmen den Preis — deshalb nennen wir keine Pauschale ins Blaue. Sie erhalten nach einer kostenlosen Besichtigung vor Ort einen Festpreis inklusive Abfuhr und Entsorgung, der Ihr Endpreis bleibt. Orientierungswerte finden Sie in unserem Ratgeber zu den Kosten der Heckenentfernung."
+    },
+    {
+     "q": "Braucht man eine Genehmigung, um eine Hecke zu entfernen?",
+     "a": "Auf dem eigenen Grundstück und im erlaubten Fenster vom 1. Oktober bis 28. Februar brauchen Sie in der Regel keine Genehmigung. Ausnahmen gibt es, wenn die Hecke als geschützter Landschaftsbestandteil eingestuft ist oder eine kommunale Satzung greift. Ob das bei Ihnen der Fall ist, prüfen wir vor dem Termin — Sie gehen kein Risiko ein."
+    },
+    {
+     "q": "Wächst eine Thuja-Hecke nach dem Rückschnitt wieder nach?",
+     "a": "Nein. Thuja treibt aus altem, braunem Holz nicht neu aus — eine verkahlte Thuja-Hecke wird durch Rückschnitt nicht wieder dicht. Die dauerhafte Lösung ist die Komplettentfernung samt Wurzelfräsen. Danach ist die Fläche frei für einen Zaun, eine neue Hecke oder Rasen."
+    },
+    {
+     "q": "Was passiert mit den Wurzeln der Hecke?",
+     "a": "Wir fräsen Stubben und Hauptwurzeln bis unter das Bodenniveau und nehmen das Fräsgut mit. Die Fläche ist danach eben und sofort nutzbar — für Rasen, Beet oder Zaunfundament. Feinwurzeln bleiben im Boden und verrotten von selbst. So schlagen auch austriebsfreudige Arten wie Kirschlorbeer nicht wieder aus."
+    },
+    {
+     "q": "Entsorgen Sie das Schnittgut und die Wurzeln?",
+     "a": "Ja. Die komplette Abfuhr und die ordnungsgemäße Entsorgung von Grünschnitt, Stammholz und Fräsgut sind Teil des Festpreises — nachträgliche Posten gibt es nicht. Die Fläche übergeben wir besenrein. Bleibt wider Erwarten doch etwas liegen, kommen wir im Rahmen unserer Geradlinien-Garantie kostenlos nach."
+    }
+   ],
+   "garantie_text": "Geradlinien-Garantie: Bleiben nach der Entfernung doch Schnittreste oder Fräsgut auf Ihrem Grundstück liegen, kommen wir kostenlos nach und räumen sie weg.",
+   "blocks": [
+    {
+     "h2": "Hecke soll bleiben und nur in Form?",
+     "body": "Nicht jede Hecke muss weichen. Ist Ihre Hecke gesund und soll nur wieder ordentlich aussehen, reicht die regelmäßige Pflege: der Formschnitt in Höhe und Breite, bei Bedarf über mehrere Jahre der behutsame Aufbau einer verkahlten Hecke. Den Pflege- und Formschnitt übernehmen wir ganzjährig — inklusive Abfuhr des Grünschnitts.",
+     "link_to": "heckenschnitt",
+     "link_text": "Zum Heckenschnitt: Formschnitt und Pflege im Havelland"
+    },
+    {
+     "h2": "Nur noch Stubben im Weg?",
+     "body": "Die Hecke ist schon gerodet, aber die Stubbenreihe steht noch? Oder ein einzelner Baumstumpf blockiert die Fläche? Wir fräsen Stubben und Wurzeln bis unter das Bodenniveau, ebnen ein und nehmen das Fräsgut mit — auch als eigener Termin ohne Heckenentfernung.",
+     "link_to": "baumstumpf-entfernen",
+     "link_text": "Baumstumpf und Wurzel entfernen im Havelland"
+    },
+    {
+     "h2": "Mehr als nur die Hecke?",
+     "body": "Wenn nicht nur die Hecke, sondern das halbe Grundstück zugewachsen ist, roden wir die komplette Fläche: Gestrüpp, Sträucher, Wildwuchs und Wurzelwerk, inklusive Abfuhr und Entsorgung. Aus verwildert wird wieder Grundstück — zum Festpreis nach kostenloser Besichtigung.",
+     "link_to": "gartenrodung",
+     "link_text": "Zur Gartenrodung im Havelland"
+    },
+    {
+     "h2": "Und nach der Hecke: Zaun, Sichtschutz oder Neupflanzung",
+     "body": "Die freie Grenze ist oft erst der Anfang. Danach setzen wir den Zaun oder Sichtschutz, ziehen Kanten und Einfassungen oder pflanzen die neue Hecke — kleinere Garten- und Landschaftsbau-Arbeiten aus derselben Hand, ohne dass Sie eine zweite Firma suchen müssen.",
+     "link_to": "galabau",
+     "link_text": "Kleinere GaLaBau-Arbeiten im Havelland"
+    }
+   ],
+   "ortsseite_lead": "Ihre Heckenentfernung in {ort}: Hecke zurückgeschnitten, Wurzeln gefräst, alles abgefahren — im erlaubten Fenster vom 1. Oktober bis 28. Februar. Kostenlose Besichtigung vor Ort in {ort}, danach ein Festpreis als Endpreis und die Foto-Doku direkt aufs Handy.",
+   "skills_applied": [
+    "seo-web-copy (geladen via Skill-Tool, Copythat-Kette)",
+    "llm-optimisation (geladen via Skill-Tool, Copythat-Kette)"
+   ]
+  },
+  {
+   "slug": "baumstumpf-entfernen",
+   "title": "Baumstumpf entfernen Havelland | Fräsen zum Festpreis",
+   "meta": "Baumstumpf und Wurzel entfernen im Havelland: fräsen statt graben, Fläche eben, Abfuhr inklusive. Kostenlose Besichtigung, Festpreis. Per WhatsApp anfragen.",
+   "h1": "Baumstumpf und Wurzel entfernen im Havelland — gefräst, entsorgt, eingeebnet",
+   "h1_em": "gefräst",
+   "intro": "Ein Foto per WhatsApp reicht für die Ersteinschätzung — die Rückmeldung kommt in Stunden, nicht in Tagen. Wir vom Haus- & Gartenservice Havelland fräsen Baumstümpfe und Wurzelstöcke bis unter das Bodenniveau, ebnen die Fläche ein und fahren das Fräsgut ab. Vorab kommen wir kostenlos zur Besichtigung, danach steht Ihr Festpreis als Endpreis. Nach dem Termin liegt die Foto-Doku vom Vorher und Nachher auf Ihrem Handy — und wo eben noch der Stumpf saß, können Sie mähen, pflanzen oder bauen.",
+   "definition": "Stubbenfräsen ist das maschinelle Abtragen eines Baumstumpfs samt Hauptwurzeln bis unter das Bodenniveau, das aus einem bereits gefällten oder abgestorbenen Baum wieder eine ebene, nutzbare Fläche macht — für Gartenbesitzer, die den Stumpf nicht jahrelang verrotten lassen wollen.",
+   "sections": [
+    {
+     "h3": "Fräsen oder ausgraben — welche Methode passt?",
+     "body": "Fräsen ist der Standard: Die Stubbenfräse trägt den Stumpf samt Hauptwurzeln Schicht für Schicht ab — schnell, bodenschonend und ohne Krater im Garten. Ausgraben lohnt sich nur, wenn der komplette Wurzelballen raus muss, etwa für ein Fundament, einen Anbau oder einen Leitungsgraben. Welche Methode zu Ihrem Vorhaben passt, empfehlen wir Ihnen bei der kostenlosen Besichtigung. In den meisten Gärten ist das Fräsen die sauberere und günstigere Lösung."
+    },
+    {
+     "h3": "Zugang, Dauer und mehrere Stubben in einem Termin",
+     "body": "Schicken Sie uns per WhatsApp ein Foto und den ungefähren Stammdurchmesser, dann können wir den Aufwand oft schon gut einschätzen. Bei der Besichtigung klären wir den Rest: Passt die Fräse durchs Gartentor, liegen Leitungen im Boden, wie tief soll gefräst werden? Ein einzelner Stubben ist meist in unter einer Stunde gefräst, mehrere Stümpfe erledigen wir in einem Termin — das ist pro Stück günstiger als einzelne Anfahrten. Danach ebnen wir die Fläche ein und fahren das Fräsgut ab, auf Wunsch lassen wir es als Mulch da."
+    },
+    {
+     "h3": "Wie tief wird gefräst — und was bleibt im Boden?",
+     "body": "Standard sind rund 20 bis 30 Zentimeter unter Bodenniveau, genug für Rasen, Beet oder eine neue Pflanzung. Feinwurzeln bleiben im Boden und verrotten von selbst. Ausschlagfreudige Arten wie Kirschlorbeer, Robinie, Essigbaum oder Pappel können aus Wurzelresten neu austreiben — bei ihnen fräsen wir tiefer und sagen Ihnen, worauf Sie im ersten Jahr achten sollten. Wir übernehmen die Arbeit an bereits gefällten oder abgestorbenen Bäumen; danach ist die Stelle frei für eine Neupflanzung oder frische Rasensaat."
+    },
+    {
+     "h3": "Was den Preis bestimmt",
+     "body": "Die wichtigste Größe ist der Stammdurchmesser in Zentimetern, dazu kommen die Anzahl der Stubben, der Zugang und das Wurzelwerk. Konkrete Zahlen nennen wir nach der kostenlosen Besichtigung: Sie bekommen einen Festpreis inklusive Abfuhr des Fräsguts, der Ihr Endpreis bleibt — ohne Aufschlag, egal wie zäh das Wurzelwerk ist. Orientierungswerte pro Zentimeter finden Sie in unserem Kosten-Ratgeber. Bei uns fräst das Duo, das Sie gebucht haben: kein Subunternehmer, eine feste Nummer für alles."
+    }
+   ],
+   "naehe": "Suchen Sie eine Firma, die Baumstümpfe in der Nähe entfernt? Wir sitzen in Falkensee und fahren mit der Fräse das gesamte Havelland und das angrenzende Berliner Umland an — von Nauen über Dallgow-Döberitz und Brieselang bis Schönwalde-Glien und Spandau. Kurze Wege heißen kurze Reaktionszeiten, die Anfahrt steckt im Festpreis. Schicken Sie uns Foto und Adresse per WhatsApp, dann stimmen wir die kostenlose Besichtigung ab.",
+   "ablauf": "Schreiben Sie uns per WhatsApp — ein Foto vom Stumpf und der ungefähre Durchmesser reichen für die erste Einschätzung. Wir kommen kostenlos zur Besichtigung und prüfen Zugang, Leitungen und die nötige Frästiefe. Danach erhalten Sie einen Festpreis inklusive Abfuhr, der ohne Aufschlag Ihr Endpreis bleibt. Zum Termin fräsen wir, ebnen die Fläche ein und nehmen das Fräsgut mit. Die Foto-Doku vom Vorher und Nachher kommt direkt aufs Handy. Der Preis steht.",
+   "faqs": [
+    {
+     "q": "Was kostet es, einen Baumstumpf entfernen zu lassen?",
+     "a": "Der Preis richtet sich vor allem nach dem Stammdurchmesser, der Anzahl der Stubben und dem Zugang zum Grundstück. Wir besichtigen kostenlos und nennen Ihnen danach einen Festpreis inklusive Abfuhr des Fräsguts — der Endpreis bleibt, ohne Aufschlag. Orientierungswerte pro Zentimeter Durchmesser stehen in unserem Kosten-Ratgeber."
+    },
+    {
+     "q": "Kann ich eine Stubbenfräse nicht einfach selbst mieten?",
+     "a": "Möglich, aber selten günstiger: Zur Tagesmiete kommen Transport, Einarbeitung, das Risiko von Steinschlag und die Entsorgung des Fräsguts. Bei ein bis drei Stubben ist der Profi-Einsatz meist schneller und in Summe kaum teurer — und Sie tragen kein Risiko an Maschine und Leitungen. Den Rechenvergleich finden Sie in unserem Kosten-Ratgeber."
+    },
+    {
+     "q": "Kann man einen Baumstumpf mit Salz oder Essig entfernen?",
+     "a": "Nein. Hausmittel wie Salz oder Essig beschleunigen die Verrottung kaum, schädigen den Boden und sind teils gar nicht zulässig. Ein Stumpf verrottet auf natürlichem Weg erst nach vielen Jahren — und treibt bei manchen Arten sogar wieder aus. Fräsen löst das Problem in der Regel in unter einer Stunde."
+    },
+    {
+     "q": "Wie tief wird der Baumstumpf ausgefräst?",
+     "a": "Standard sind rund 20 bis 30 Zentimeter unter dem Bodenniveau — das reicht für Rasen, Beet oder eine neue Pflanzung. Soll an der Stelle gebaut oder tief gepflanzt werden, fräsen wir tiefer oder graben den Wurzelstock komplett aus. Die passende Tiefe legen wir bei der kostenlosen Besichtigung fest."
+    },
+    {
+     "q": "Muss der Baum schon gefällt sein, bevor Sie kommen?",
+     "a": "Ja. Wir entfernen Stubben und Wurzeln bereits gefällter oder abgestorbener Bäume — vom stehenden Reststamm bis zur ebenen, bepflanzbaren Fläche kommt dann alles aus einer Hand. Große Fällungen vermitteln wir an Fachpartner und übernehmen die Wurzelarbeit im Anschluss, sobald der Stamm am Boden liegt."
+    },
+    {
+     "q": "Treibt ein gefräster Baumstumpf wieder aus?",
+     "a": "Nach dem Fräsen bis unter das Bodenniveau in der Regel nicht mehr. Ausschlagfreudige Arten wie Robinie, Pappel oder Kirschlorbeer können aus verbliebenen Wurzelresten treiben — bei ihnen fräsen wir von vornherein tiefer und sagen Ihnen, worauf Sie im ersten Jahr achten sollten. Feinwurzeln verrotten von selbst im Boden."
+    }
+   ],
+   "garantie_text": "Der Festpreis aus der Besichtigung ist Ihr Endpreis — auch wenn das Wurzelwerk zäher ist als gedacht, kommt kein Aufpreis dazu.",
+   "blocks": [
+    {
+     "h2": "Ganze Hecke weg statt einzelner Stumpf?",
+     "body": "Steht statt eines einzelnen Stumpfs noch die ganze Hecke an der Grenze — oder ihre gerodete Stubbenreihe? Wir entfernen Hecken komplett: Rückschnitt im erlaubten Fenster vom 1. Oktober bis 28. Februar, Wurzeln gefräst, alles abgefahren und entsorgt. Ein Termin, ein Festpreis.",
+     "link_to": "heckenentfernung",
+     "link_text": "Zur Heckenentfernung im Havelland"
+    },
+    {
+     "h2": "Stubben, Gestrüpp und Wildwuchs auf der ganzen Fläche?",
+     "body": "Wenn es nicht bei einem Stumpf bleibt, sondern das ganze Grundstück verwildert ist, roden wir die komplette Fläche: Gestrüpp, alte Sträucher, Hecken und Wurzelwerk, inklusive Abfuhr und Entsorgung. Danach ist das Grundstück wieder nutzbar — zum Festpreis nach kostenloser Besichtigung.",
+     "link_to": "gartenrodung",
+     "link_text": "Zur Gartenrodung im Havelland"
+    }
+   ],
+   "ortsseite_lead": "Baumstumpf entfernen in {ort}: Stubben und Wurzeln gefräst, Fläche eingeebnet, Fräsgut abgefahren. Kostenlose Besichtigung vor Ort in {ort}, danach ein Festpreis als Endpreis — die Foto-Doku vom Vorher und Nachher kommt direkt aufs Handy.",
+   "skills_applied": [
+    "seo-web-copy (geladen via Skill-Tool, Copythat-Kette)",
+    "llm-optimisation (geladen via Skill-Tool, Copythat-Kette)"
+   ]
+  },
+  {
+   "slug": "gartenrodung",
+   "title": "Gartenrodung Havelland | Verwilderten Garten roden",
+   "meta": "Verwilderten Garten oder Grundstück roden lassen im Havelland: Gestrüpp, Hecken, Wurzeln — alles raus, alles entsorgt. Kostenlose Besichtigung, Festpreis.",
+   "h1": "Gartenrodung im Havelland — aus verwildert wird wieder Grundstück",
+   "h1_em": "verwildert",
+   "intro": "Schicken Sie uns per WhatsApp ein paar Fotos vom Grundstück — Sie bekommen eine Rückmeldung in Stunden, nicht Tagen. Wir roden verwilderte Gärten und Grundstücke im Havelland: Gestrüpp, Brombeeren, alte Hecken, Sträucher und Wurzelwerk kommen raus, alles wird abgefahren und entsorgt. Nach der kostenlosen Besichtigung nennen wir Ihnen einen Festpreis, der der Endpreis bleibt. Am Ende liegt die Vorher-Nachher-Doku auf Ihrem Handy — auch dann, wenn Sie gar nicht vor Ort wohnen. Anfassen müssen Sie dabei nichts.",
+   "definition": "Gartenrodung ist das flächige Entfernen von Wildwuchs, Gestrüpp, alten Hecken, Sträuchern und Wurzelwerk auf verwilderten Gärten und Grundstücken — inklusive Abfuhr und Entsorgung. Sie macht zugewachsene Flächen wieder nutzbar, etwa für Erben, Käufer und Eigentümer, die ihr Grundstück herrichten wollen.",
+   "sections": [
+    {
+     "h3": "Was zur Gartenrodung gehört",
+     "body": "Die typischen Fälle kennen wir gut: das geerbte Haus, dessen Garten seit Jahren niemand betreten hat. Das lange unbewohnte Grundstück, auf dem Brombeeren und Wildwuchs alles überwachsen haben. Das gekaufte Sanierungsobjekt, das erst einmal freigeräumt werden muss. Oder die hintere Gartenhälfte, die über die Jahre zugewachsen ist. Wir entfernen Gestrüpp, Sträucher, eingewachsene Hecken und Wurzelwerk und arbeiten dabei in Eigenleistung mit eigenem Gerät — als eingespieltes Zwei-Mann-Team, ohne Subunternehmer."
+    },
+    {
+     "h3": "So läuft die Rodung ab",
+     "body": "Für die erste Einschätzung reichen Fotos per WhatsApp — auch aus der Ferne, wenn Sie nicht am Ort wohnen. Danach besichtigen wir das Grundstück kostenlos und nennen Ihnen einen Festpreis inklusive Abfuhr und Entsorgung. Der Preis steht. Zum Termin roden wir die Fläche, fahren alles ab und übergeben besenrein. Die Vorher-Nachher-Fotos kommen direkt aufs Handy — Sie müssen für nichts davon anreisen."
+    },
+    {
+     "h3": "Bester Zeitpunkt: Oktober bis Februar",
+     "body": "Hecken, Gebüsche und andere Gehölze dürfen nach § 39 BNatSchG nur vom 1. Oktober bis 28. Februar beseitigt werden. Das trifft sich gut: Die Vegetationsruhe ist zugleich die arbeitsbeste Zeit — kein Laub, tragfähiger Boden, die Vögel sind ausgeflogen. Gras- und Krautflächen dürfen wir dagegen ganzjährig mähen und freiräumen. Wer sein Grundstück im Winterfenster geräumt haben will, fragt am besten früh an — die Termine zwischen Oktober und Februar sind begrenzt."
+    },
+    {
+     "h3": "Vorher / Nachher: echte Aufträge",
+     "body": "Jede Rodung dokumentieren wir mit Vorher-Nachher-Fotos — für Sie als Nachweis, und mit Einverständnis der Kunden auch hier auf der Seite. Sie sehen an dieser Stelle ausschließlich echte Aufträge aus dem Havelland, keine Stock-Fotos, und die Strecke wächst mit jedem Einsatz. Was aus einem komplett zugewachsenen Grundstück werden kann, zeigt ausführlich unser Ratgeber zum verwilderten Garten."
+    },
+    {
+     "h3": "Was kostet eine Gartenrodung?",
+     "body": "Den Aufwand bestimmen vier Dinge: die Fläche, die Dichte des Bewuchses, der Anteil an Gehölz und Wurzeln — und die Menge, die am Ende entsorgt werden muss. Auch die Zufahrt spielt mit hinein. Deshalb gibt es bei uns keine Quadratmeter-Pauschale, sondern eine kostenlose Besichtigung und danach einen Festpreis, in dem die komplette Entsorgung schon steckt. Der Festpreis ist der Endpreis — egal, wie viele Fuhren es am Ende werden. Orientierungsspannen finden Sie in unserem Kosten-Ratgeber zum Roden verwilderter Gärten."
+    }
+   ],
+   "naehe": "Der Haus- & Gartenservice Havelland sitzt in Falkensee und rodet Gärten und Grundstücke im gesamten Havelland sowie im angrenzenden Berliner Umland — von Nauen über Dallgow-Döberitz und Brieselang bis Berlin-Spandau. Kurze Wege heißen kurze Reaktionszeiten: Auf Ihre WhatsApp-Anfrage antworten wir in Stunden, nicht in Tagen, und die Anfahrt steckt im Festpreis. Schreiben Sie uns die Adresse des Grundstücks — den Rest übernehmen wir.",
+   "ablauf": "Schicken Sie uns per WhatsApp Fotos oder rufen Sie an. Wir besichtigen das Grundstück kostenlos und nennen Ihnen danach einen Festpreis inklusive Abfuhr und Entsorgung — der Festpreis ist der Endpreis, ohne Nachforderung. Zum Termin roden wir die Fläche, fahren alles ab und übergeben besenrein. Zum Schluss bekommen Sie die Vorher-Nachher-Fotos aufs Handy, auch wenn Sie nicht vor Ort waren. Der Preis steht.",
+   "faqs": [
+    {
+     "q": "Was kostet es, einen verwilderten Garten roden zu lassen?",
+     "a": "Das hängt von Fläche, Bewuchsdichte, Wurzelanteil und Entsorgungsmenge ab — seriös lässt sich das nur nach einer Besichtigung sagen. Die ist bei uns kostenlos. Danach erhalten Sie einen Festpreis inklusive Abfuhr und Entsorgung, der der Endpreis bleibt, egal wie viel am Ende zusammenkommt. Orientierungsspannen nennt unser Ratgeber zum Roden verwilderter Gärten."
+    },
+    {
+     "q": "Wann darf ein Garten gerodet werden?",
+     "a": "Hecken, Gebüsche und Gehölze dürfen nach § 39 BNatSchG nur vom 1. Oktober bis 28. Februar beseitigt werden. Gras- und Krautflächen sind dagegen ganzjährig möglich. Wir planen jede Rodung so, dass alle Gehölzarbeiten im erlaubten Fenster liegen — und raten dazu, für einen Termin im Winterfenster früh anzufragen."
+    },
+    {
+     "q": "Übernehmen Sie auch komplett zugewucherte Grundstücke?",
+     "a": "Ja, genau dafür sind wir ausgerüstet: Brombeergestrüpp, meterhoher Wildwuchs, eingewachsene Hecken und Wurzelwerk. Wir arbeiten uns mit eigenem Gerät durch die Fläche, fahren alles ab und übergeben besenrein. Nach der kostenlosen Besichtigung wissen Sie mit dem Festpreis genau, was das Freiräumen kostet — als Endpreis, ohne Nachforderung."
+    },
+    {
+     "q": "Ich habe das Grundstück geerbt und wohne weiter weg — geht das trotzdem?",
+     "a": "Ja. Schicken Sie uns Fotos per WhatsApp, wir besichtigen vor Ort und stimmen alles telefonisch mit Ihnen ab. Nach der Rodung dokumentieren wir das Ergebnis mit Vorher-Nachher-Fotos aufs Handy — Sie sehen genau, was gemacht wurde, ohne dafür anzureisen. So betreuen wir regelmäßig Erben und auswärtige Eigentümer im Havelland."
+    },
+    {
+     "q": "Was passiert mit Grünschnitt, Wurzeln und Unrat?",
+     "a": "Wir fahren alles ab und entsorgen es fachgerecht — Grünschnitt, Wurzelholz, Gestrüpp und losen Unrat. Abtransport und Entsorgung organisieren wir komplett selbst, das steckt im Festpreis, nachträgliche Gebühren gibt es nicht. Die Fläche bleibt besenrein. Sollte doch etwas liegen bleiben, kommen wir kostenlos nach."
+    },
+    {
+     "q": "Wie lange dauert eine Gartenrodung?",
+     "a": "Je nach Fläche und Bewuchs meist ein bis drei Arbeitstage: Ein normaler Hausgarten ist oft an einem Tag gerodet, ein komplett zugewachsenes Grundstück braucht länger. Den konkreten Zeitrahmen nennen wir Ihnen zusammen mit dem Festpreis nach der kostenlosen Besichtigung. Wir arbeiten als festes Zwei-Mann-Team und bleiben dran, bis die Fläche frei ist."
+    }
+   ],
+   "garantie_text": "Der Festpreis aus der Besichtigung ist der Endpreis — und die Fläche wird besenrein übergeben. Bleibt etwas liegen, kommen wir kostenlos nach.",
+   "blocks": [
+    {
+     "h2": "Nur die Hecke soll weg?",
+     "body": "Nicht immer muss das ganze Grundstück gerodet werden. Soll nur eine Hecke komplett raus — samt Stubben und Wurzelreihe —, ist das ein eigener Einsatz mit eigener Seite. Dort lesen Sie, wie wir Thuja, Kirschlorbeer und Liguster entfernen, was mit den Wurzeln passiert und warum auch dafür das Fenster vom 1. Oktober bis 28. Februar gilt.",
+     "link_to": "heckenentfernung",
+     "link_text": "Zur Heckenentfernung im Havelland"
+    },
+    {
+     "h2": "Stubben und Wurzeln gleich mitfräsen",
+     "body": "Nach der Rodung bleiben oft einzelne Baumstümpfe stehen — vom abgestorbenen Obstbaum oder von einem früher gefällten Baum. Die fräsen wir bis unter das Bodenniveau weg, damit die Fläche wirklich eben und neu nutzbar ist. Als Kombi-Auftrag mit der Rodung spart das einen zweiten Anfahrtstermin.",
+     "link_to": "baumstumpf-entfernen",
+     "link_text": "Mehr zum Baumstumpf entfernen und Stubbenfräsen"
+    },
+    {
+     "h2": "Danach in Pflege nehmen",
+     "body": "Damit das freigeräumte Grundstück nicht in zwei Sommern wieder zuwächst, übernehmen wir im Anschluss die regelmäßige Pflege: Rasen, Grünschnitt und Laub im 14-tägigen Rhythmus. So wird aus der einmaligen Rodung ein dauerhaft gepflegter Garten — mit derselben festen Nummer, die schon gerodet hat.",
+     "link_to": "gartenpflege",
+     "link_text": "Zur regelmäßigen Gartenpflege im Havelland"
+    }
+   ],
+   "ortsseite_lead": "Gartenrodung in {ort}: Wir roden verwilderte Gärten und Grundstücke — Gestrüpp, Sträucher und Wurzeln raus, alles entsorgt. Festpreis nach kostenloser Besichtigung in {ort}, Vorher-Nachher-Fotos inklusive.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "baumschnitt",
+   "title": "Baumschnitt Havelland | Obstbaum- & Gehölzschnitt",
+   "meta": "Baumschnitt und Obstbaumschnitt im Havelland: fachgerecht in der Saftruhe geschnitten, Schnittgut-Abfuhr inklusive. Kostenlose Besichtigung, Festpreis.",
+   "h1": "Baumschnitt im Havelland — fachgerecht geschnitten, komplett abgefahren",
+   "h1_em": "fachgerecht",
+   "intro": "Schicken Sie uns ein Foto Ihres Baums per WhatsApp — Rückmeldung in Stunden, nicht Tagen. Wir schneiden Obstbäume, Laubbäume und Sträucher im Havelland: auslichten, Totholz entfernen, in Form bringen — alles, was sich vom Boden und von der Leiter aus sicher erreichen lässt. Nach der kostenlosen Besichtigung erhalten Sie einen Festpreis inklusive Schnittgut-Abfuhr, der der Endpreis bleibt. Die Vorher-Nachher-Fotos kommen danach aufs Handy. Die Leiter bleibt in Ihrem Schuppen.",
+   "definition": "Baumschnitt ist der fachgerechte Rückschnitt von Obst-, Laub- und Zierbäumen, der die Krone licht hält, Totholz entfernt und bei Obstbäumen den Ertrag sichert — für Gartenbesitzer, die ihre Bäume gesund und in sicherer Form halten wollen. Zur richtigen Zeit geschnitten, verheilen die Schnitte schnell und der Baum bleibt vital.",
+   "sections": [
+    {
+     "h3": "Obstbaumschnitt: der Winterschnitt für volle Ernte",
+     "body": "Obstbaumschnitt ist der fachgerechte Rückschnitt von Apfel, Birne, Kirsche und Pflaume, der die Krone licht hält und den Ertrag sichert. Für Kernobst ist der Winterschnitt in der Saftruhe von November bis März der Standard — Süßkirsche und Walnuss schneidet man dagegen nach der Ernte im Sommer. Je nach Alter unterscheidet sich der Schnitt: Erziehungsschnitt bei jungen Bäumen, Erhaltungsschnitt bei tragenden, Verjüngungsschnitt bei alten. Lange ungeschnittene Obstbäume bauen wir schonend über zwei bis drei Jahre zurück, statt alles auf einmal abzunehmen — das verkraftet der Baum deutlich besser."
+    },
+    {
+     "h3": "Kronen- und Pflegeschnitt für Laubbäume",
+     "body": "Bei Laub- und Zierbäumen lichten wir die Krone aus, entfernen Totholz und schaffen freien Durchgang über Wegen, Einfahrt und Terrasse. Kleinere Hausbäume wie Kugelahorn bringen wir per Formschnitt wieder in eine saubere Silhouette. Wir arbeiten vom Boden und von der Leiter aus — ehrlich gesagt: Das deckt die allermeisten Gartenbäume ab, und was sich so nicht sicher erreichen lässt, sagen wir Ihnen bei der Besichtigung offen."
+    },
+    {
+     "h3": "Sträucher und Gehölze schneiden",
+     "body": "Auch Ziersträucher gehören dazu: Flieder, Forsythie, Zierjohannisbeere und Beerensträucher schneiden wir so, dass sie blühen und tragen — auslichten statt kugeln. Der Zeitpunkt richtet sich nach der Blüte: Frühjahrsblüher kommen direkt nach der Blüte dran, Sommerblüher im Spätwinter. Beim selben Termin nehmen wir gern weitere Gehölze im Garten mit — das spart Ihnen Anfahrt und Abstimmung."
+    },
+    {
+     "h3": "Schnittzeiten: Was wann erlaubt und sinnvoll ist",
+     "body": "Das oft zitierte Sommer-Schnittverbot aus § 39 BNatSchG gilt für Hecken und Gebüsche: Stark zurückschneiden oder beseitigen darf man sie nur vom 1. Oktober bis 28. Februar. Bäume in Hausgärten nimmt das Gesetz davon ausdrücklich aus — pauschal verboten ist ein Baumschnitt im Sommer also nicht. Trotzdem schneiden wir nicht einfach drauflos: Vor jedem Schnitt prüfen wir die Krone auf besetzte Nester, denn brütende Vögel sind ganzjährig geschützt, und nehmen Rücksicht auf die Brutzeit. In Falkensee gilt zudem eine kommunale Baumschutzsatzung — ob Ihr Baum darunter fällt und ein stärkerer Rückschnitt genehmigt werden muss, klären wir vor dem Termin. Fachlich bleibt für die meisten Arten die Saftruhe im Winter die beste Schnittzeit, an frostfreien Tagen."
+    },
+    {
+     "h3": "Schnittgut-Abfuhr inklusive, Festpreis nach Besichtigung",
+     "body": "Nach dem Schnitt bleibt bei uns kein Asthaufen im Garten zurück: Abfuhr und Entsorgung des kompletten Schnittguts stecken im Festpreis, die Fläche übergeben wir besenrein. Bei der kostenlosen Besichtigung klären wir Baumhöhe, Zugang und Umfang — ein Foto per WhatsApp vorab beschleunigt die Einschätzung. Danach steht der Festpreis als Endpreis, und nach dem Termin liegen die Vorher-Nachher-Fotos auf Ihrem Handy."
+    },
+    {
+     "h3": "Wo Baumschnitt aufhört",
+     "body": "Wir schneiden Bäume, die sich vom Boden oder von der Leiter aus sicher und fachgerecht erreichen lassen — vom Obstbaum bis zum mittelgroßen Hausbaum. Seilklettertechnik und Hubarbeitsbühne gehören nicht zu unserem Programm, und große Fällungen vermitteln wir an Fachpartner. Ist ein Baum bereits gefällt oder abgestorben, übernehmen wir das, was danach kommt: Stubben und Wurzeln raus, Fläche wieder nutzbar. Was für Ihren Baum passt, sagen wir Ihnen ehrlich bei der kostenlosen Besichtigung."
+    }
+   ],
+   "naehe": "Der Haus- & Gartenservice Havelland sitzt in Falkensee und schneidet Bäume und Sträucher im gesamten Havelland sowie im angrenzenden Berliner Umland — von Nauen über Dallgow-Döberitz und Brieselang bis Berlin-Spandau. Kurze Wege heißen kurze Reaktionszeiten: Auf Ihre WhatsApp-Anfrage antworten wir in Stunden, nicht in Tagen, und die Anfahrt steckt im Festpreis. Gerade im Winterfenster lohnt eine frühe Anfrage — dann planen wir Ihren Baum fest ein.",
+   "ablauf": "Schicken Sie uns per WhatsApp ein Foto des Baums oder rufen Sie an. Wir kommen kostenlos vorbei, sehen uns Baum, Zugang und Umfang an und nennen Ihnen danach einen Festpreis inklusive Schnittgut-Abfuhr — der Festpreis ist der Endpreis, ohne Nachforderung. Zum Termin schneiden wir fachgerecht, laden alles auf und übergeben besenrein. Zum Schluss bekommen Sie die Vorher-Nachher-Fotos aufs Handy. Der Preis steht.",
+   "faqs": [
+    {
+     "q": "Wann ist die beste Zeit für den Obstbaumschnitt?",
+     "a": "Für Apfel und Birne ist der späte Winter von Januar bis März die beste Zeit — in der Saftruhe, an frostfreien Tagen. Süßkirsche und Walnuss schneidet man dagegen nach der Ernte im Sommer, weil die Schnittwunden dann besser verheilen. Wir planen den Termin passend zur Baumart und tragen ihn auf Wunsch fest in Ihren Pflegeplan ein."
+    },
+    {
+     "q": "Was kostet ein Baumschnitt?",
+     "a": "Baumgröße, Zustand der Krone, Zugang und Schnittgutmenge bestimmen den Aufwand — deshalb nennen wir den Preis erst nach einer kostenlosen Besichtigung. Sie erhalten dann einen Festpreis inklusive Abfuhr und Entsorgung, der der Endpreis bleibt. Für eine erste Einschätzung reicht oft schon ein Foto des Baums per WhatsApp."
+    },
+    {
+     "q": "Darf man Bäume im Sommer schneiden?",
+     "a": "Für Bäume in Hausgärten gibt es kein pauschales Sommer-Schnittverbot — die Fristenregel des § 39 BNatSchG mit dem Fenster vom 1. Oktober bis 28. Februar betrifft Hecken und Gebüsche. Wichtig sind drei Dinge: keine besetzten Nester im Baum, Rücksicht auf die Brutzeit und die Baumschutzsatzung Ihrer Gemeinde — Falkensee hat eine. Fachlich am besten schneidet man die meisten Bäume trotzdem im Winter, in der Saftruhe."
+    },
+    {
+     "q": "Schneiden Sie auch große, hohe Bäume?",
+     "a": "Wir schneiden alles, was sich vom Boden und von der Leiter aus sicher und fachgerecht erreichen lässt — das deckt die allermeisten Garten- und Obstbäume ab. Für Arbeiten, die Seilklettertechnik oder eine Hubarbeitsbühne verlangen, sind wir nicht der richtige Betrieb. Ob Ihr Baum dazugehört, sagen wir Ihnen ehrlich bei der kostenlosen Besichtigung."
+    },
+    {
+     "q": "Nehmen Sie das Schnittgut mit?",
+     "a": "Ja, Abfuhr und Entsorgung des gesamten Schnittguts gehören bei uns zum Festpreis. Äste, Zweige und Laub werden aufgeladen, die Fläche bleibt besenrein — es wartet kein Asthaufen auf die Biotonne. Sollte doch etwas liegen bleiben, kommen wir kostenlos nach. Das gilt für jeden Baumschnitt-Termin im Havelland."
+    },
+    {
+     "q": "Was wird aus einem alten, lange nicht geschnittenen Obstbaum?",
+     "a": "Ein verwilderter Obstbaum lässt sich fast immer retten — aber nicht in einem Schritt. Wir bauen die Krone über zwei bis drei Winter schrittweise zurück: erst Totholz und Konkurrenztriebe, dann die eigentliche Verjüngung. So bleibt der Baum vital und treibt kontrolliert nach, statt mit Wasserschossern zu reagieren. Den Plan dafür legen wir bei der Besichtigung fest."
+    }
+   ],
+   "garantie_text": "Schnittgut abgefahren, Fläche besenrein — bleibt etwas zurück oder ist etwas nicht wie besprochen, kommen wir kostenlos nach.",
+   "blocks": [
+    {
+     "h2": "Vom Stumpf zur freien Fläche",
+     "body": "Steht nur noch der Stumpf eines abgestorbenen Baums im Weg, übernimmt die Fräse: Wir entfernen Stubben und Wurzeln bis unter das Bodenniveau, damit sich die Stelle neu bepflanzen, einsäen oder pflastern lässt. Auch mehrere Stubben auf einmal sind kein Problem — oft im selben Termin wie der Baumschnitt.",
+     "link_to": "baumstumpf-entfernen",
+     "link_text": "Mehr zum Baumstumpf entfernen und Stubbenfräsen"
+    },
+    {
+     "h2": "Hecken in Form bringen",
+     "body": "Hecken schneiden wir nicht nebenbei, sondern mit eigener Seite und eigenem Kalender: Formschnitt für Thuja, Liguster, Kirschlorbeer und Buche, die richtigen Schnittfenster im Jahr und die Pflege im festen Rhythmus. Wenn zum Baumschnitt-Termin auch die Hecke wieder in Form soll, kombinieren wir beides in einem Einsatz.",
+     "link_to": "heckenschnitt",
+     "link_text": "Zum Heckenschnitt und Formschnitt im Havelland"
+    }
+   ],
+   "ortsseite_lead": "Baumschnitt in {ort}: Obstbaumschnitt, Kronenpflege und Strauchschnitt zur richtigen Zeit — inklusive Schnittgut-Abfuhr. Festpreis nach kostenloser Besichtigung in {ort}, Vorher-Nachher-Fotos inklusive.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
+   ]
+  },
+  {
+   "slug": "galabau",
+   "title": "GaLaBau Falkensee | Kleinere Garten- & Pflasterarbeiten",
+   "meta": "Kleinere GaLaBau-Arbeiten in Falkensee & im Havelland: Pflaster ausbessern, Kantensteine, Zaunmontage, Beeteinfassung. Kostenlose Besichtigung, Festpreis.",
+   "h1": "Kleinere GaLaBau-Arbeiten in Falkensee und im Havelland",
+   "h1_em": "Kleinere",
+   "intro": "Schreiben Sie uns per WhatsApp, was gebaut oder repariert werden soll — Rückmeldung in Stunden, nicht Tagen. Wir übernehmen kleinere GaLaBau-Arbeiten in Falkensee und im Havelland: Pflaster ausbessern, Kantensteine setzen, Zäune montieren, Beete einfassen, Hochbeete bauen. Bewusst keine Großprojekte — dafür mit kostenloser Besichtigung, einem Festpreis, der der Endpreis bleibt, und Vorher-Nachher-Fotos aufs Handy. Genau die Aufträge, für die sonst niemand kommt.",
+   "definition": "Kleinere GaLaBau-Arbeiten sind handwerkliche Bau- und Gestaltungsarbeiten im Garten — Pflaster ausbessern, Kantensteine setzen, Zäune montieren, Beete einfassen — unterhalb des klassischen Großprojekts. Für Hausbesitzer in Falkensee und im Havelland, die dafür keinen Großbetrieb beauftragen wollen, sondern ein festes Zwei-Mann-Team mit Festpreis.",
+   "sections": [
+    {
+     "h3": "Ehrlich gesagt: kleinere GaLaBau-Arbeiten",
+     "body": "Wir sagen es lieber vorab als hinterher: Komplette Gartenneuanlagen mit Erdbau, Poolbau oder große Pflasterflächen ab Neubau machen wir nicht. Unser Feld sind die überschaubaren Bau- und Gestaltungsarbeiten, für die sich ein großer GaLaBau-Betrieb selten interessiert — die abgesackte Einfahrtsecke, die fehlende Kantenreihe, der neue Zaun an der Grenze, das Hochbeet an der Terrasse. Genau diese Größe macht den Festpreis ohne Überraschungen möglich: Wir überblicken den Aufwand bei der Besichtigung vollständig und führen alles selbst aus — als Duo, ohne Subunternehmer."
+    },
+    {
+     "h3": "Pflaster ausbessern, Kantensteine und Wegeplatten",
+     "body": "Abgesackte Stellen in Einfahrt oder Gartenweg nehmen wir auf, richten den Unterbau und setzen die Steine neu — auch einzelne gebrochene Platten tauschen wir aus. Dazu kommen Kantensteine und Rasenkanten, die Beet und Rasen sauber trennen, und kleine Wege aus Wegeplatten. Übrigens: Ist Ihr Pflaster intakt und nur verschmutzt oder vermoost, reicht statt der Neuverlegung oft eine Steinreinigung — auch die bekommen Sie bei uns im Haus."
+    },
+    {
+     "h3": "Zaunmontage und Sichtschutz",
+     "body": "Wir montieren Doppelstabmattenzäune, Sichtschutzelemente und kleine Gartentore — inklusive Fundament- oder Einschlaghülsenarbeit, sauber ausgerichtet und dauerhaft fest. Der häufigste Kombi-Auftrag: Erst kommt die alte Hecke samt Wurzeln raus, dann steht auf der freien Grenze der neue Zaun. Ein Termin zur Besichtigung, ein Festpreis für beides."
+    },
+    {
+     "h3": "Beeteinfassungen und Hochbeete",
+     "body": "Beeteinfassungen aus Stein oder Metall geben Beeten eine klare Kante, die das Nachstechen jedes Frühjahr spart. Hochbeete bauen wir auf Wunsch komplett auf — inklusive Befüllung in Schichten, sodass direkt gepflanzt werden kann. Solche Gestaltungsarbeiten sind oft der letzte Schritt, nachdem ein Garten neu geordnet oder eine Fläche freigeräumt wurde: erst die klare Fläche, dann die neue Struktur."
+    }
+   ],
+   "naehe": "Der Haus- & Gartenservice Havelland sitzt in Falkensee — GaLaBau-Anfragen aus Falkensee, Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Nauen und Berlin-Spandau haben deshalb kurze Wege. Auf Ihre WhatsApp-Anfrage antworten wir in Stunden, nicht in Tagen, und die Anfahrt steckt im Festpreis. Schicken Sie uns ein Foto der Stelle, um die es geht — das reicht für die erste Einschätzung.",
+   "ablauf": "Schreiben Sie uns per WhatsApp oder rufen Sie an. Wir kommen kostenlos vorbei, sehen uns Stelle, Untergrund und Material an und nennen Ihnen danach einen Festpreis — der Festpreis ist der Endpreis, ohne Nachforderung. Zum Termin arbeiten wir sauber, räumen die Baustelle auf und übergeben besenrein. Zum Schluss bekommen Sie Vorher-Nachher-Fotos aufs Handy. Der Preis steht.",
+   "faqs": [
+    {
+     "q": "Welche GaLaBau-Arbeiten übernehmen Sie — und welche nicht?",
+     "a": "Wir übernehmen kleinere Bau- und Gestaltungsarbeiten: Pflaster-Ausbesserung, Kantensteine, Wegeplatten, Zaunmontage, Beeteinfassungen und Hochbeete. Komplette Neuanlagen mit großem Erdbau, Poolbau oder Pflasterflächen ab Neubau bieten wir bewusst nicht an. Was wir zusagen, führen wir selbst aus — als festes Zwei-Mann-Team, zum Festpreis nach kostenloser Besichtigung."
+    },
+    {
+     "q": "Was kosten Pflasterarbeiten oder eine Zaunmontage?",
+     "a": "Fläche beziehungsweise Laufmeter, Material und Untergrund bestimmen den Aufwand — deshalb nennen wir den Preis erst nach einer kostenlosen Besichtigung vor Ort. Sie erhalten dann einen Festpreis, der der Endpreis bleibt, inklusive Materialabstimmung vorab. So wissen Sie vor dem ersten Handgriff genau, was das Projekt kostet."
+    },
+    {
+     "q": "Bessern Sie auch nur einzelne abgesackte Stellen aus?",
+     "a": "Ja, genau solche Einsätze sind unser Kerngeschäft: einzelne abgesackte Platten, eine Stolperkante in der Einfahrt, eine fehlende Reihe Kantensteine. Kein Auftrag ist uns dafür zu klein. Wir nehmen die Stelle auf, richten den Unterbau und setzen alles neu — zum Festpreis, mit Vorher-Nachher-Fotos aufs Handy."
+    },
+    {
+     "q": "Können Sie nach einer Heckenentfernung direkt den Zaun setzen?",
+     "a": "Ja — das ist der häufigste Kombi-Auftrag: Die Hecke kommt samt Wurzeln raus, danach montieren wir Doppelstabmatten oder Sichtschutz auf die freie Grenze. Sie haben eine Besichtigung, einen Festpreis und einen Ansprechpartner für beides. Die Reihenfolge planen wir so, dass die Gehölzarbeiten im Fenster vom 1. Oktober bis 28. Februar liegen."
+    },
+    {
+     "q": "Wer macht GaLaBau-Arbeiten in Falkensee?",
+     "a": "Der Haus- & Gartenservice Havelland aus Falkensee führt kleinere GaLaBau-Arbeiten in Falkensee und im gesamten Havelland aus — Pflaster-Ausbesserung, Zaunmontage, Kantensteine, Beeteinfassungen. Es arbeitet immer dasselbe eingespielte Zwei-Mann-Team, ohne Subunternehmer, mit kostenloser Besichtigung vor Ort und einem Festpreis, der der Endpreis bleibt."
+    }
+   ],
+   "garantie_text": "Gerade Kanten, fest sitzende Steine, aufgeräumte Baustelle — ist etwas nicht wie besprochen, bessern wir kostenlos nach.",
+   "blocks": [
+    {
+     "h2": "Erst freiräumen, dann bauen",
+     "body": "Auf einem zugewachsenen Grundstück beginnt die Gestaltung einen Schritt früher: Erst müssen Gestrüpp, alte Sträucher und Wurzeln raus, dann entsteht Platz für Wege, Kanten und Zaun. Diese Reihenfolge übernehmen wir komplett aus einer Hand — von der Rodung über das Wurzelfräsen bis zur neuen Beeteinfassung.",
+     "link_to": "gartenrodung",
+     "link_text": "Zur Gartenrodung im Havelland"
+    },
+    {
+     "h2": "Und danach: gepflegt bleiben",
+     "body": "Nach dem Bauen kommt das Erhalten. Wer möchte, gibt Rasen, Hecken und Beete anschließend bei uns in die regelmäßige Pflege im 14-tägigen Rhythmus — dieselbe feste Nummer, dasselbe Team, das schon gepflastert und montiert hat. So bleibt das Ergebnis so ordentlich wie am Übergabetag.",
+     "link_to": "gartenpflege",
+     "link_text": "Zur regelmäßigen Gartenpflege im Havelland"
+    }
+   ],
+   "ortsseite_lead": "Kleinere GaLaBau-Arbeiten in {ort}: Pflaster ausbessern, Kantensteine, Zaunmontage, Beeteinfassungen und Hochbeete. Festpreis nach kostenloser Besichtigung in {ort}, Vorher-Nachher-Fotos inklusive.",
+   "skills_applied": [
+    "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
    ]
   }

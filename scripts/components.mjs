@@ -97,7 +97,7 @@ export function schnittkalender({ heading = 'Wann schneidet man was? Der Schnitt
     `<span><i class="li-no"></i> gesetzlich gesperrt</span></div></div>` +
     `<div class="cal-months" role="group" aria-label="Monate — antippen für Details">${months}</div>` +
     `<p class="cal-hint" id="cal-hint" aria-live="polite"></p>` +
-    `<p class="cal-law">Obere Leiste: Pflege- und Formschnitt. Untere Leiste: starker Rückschnitt — vom 1. März bis 30. September zum Schutz brütender Vögel gesetzlich untersagt (§ 39 BNatSchG). Wir planen jeden Schnitt passend zu diesen Fristen.</p>` +
+    `<p class="cal-law">Obere Leiste: Pflege- und Formschnitt. Untere Leiste: starker Rückschnitt — vom 1. März bis 30. September zum Schutz brütender Vögel gesetzlich untersagt (§ 39 BNatSchG). Wir planen jeden Schnitt passend zu diesen Fristen. Soll die Hecke komplett verschwinden, ist das nur vom 1. Oktober bis 28. Februar zulässig — mehr dazu auf unserer Seite zur <a href="/heckenentfernung/">Heckenentfernung</a>.</p>` +
     `</div>`;
 }
 
@@ -109,7 +109,8 @@ const HECKEN = [
   { id: 'thuja', tab: 'Thuja', slug: '14-10-thuja', cap: 'Thuja', sub: 'Regler ziehen zum Vergleichen',
     h3: 'Thuja (Lebensbaum)', lat: 'Thuja occidentalis',
     schnitt: 'Formschnitt ideal Ende Juni, zweiter leichter Schnitt bis September möglich.',
-    bes: 'Treibt aus altem Holz nicht neu aus — deshalb nie zu tief schneiden, sondern regelmäßig in Form halten. Genau dafür sind wir da.' },
+    bes: 'Treibt aus altem Holz nicht neu aus — deshalb nie zu tief schneiden, sondern regelmäßig in Form halten. Genau dafür sind wir da.',
+    mehr: { href: '/heckenentfernung/', text: 'Verkahlte Thuja komplett entfernen lassen →' } },
   { id: 'kirschlorbeer', tab: 'Kirschlorbeer', slug: '21-kirschlorbeer-anthrazit-kubisch', cap: 'Kirschlorbeer', sub: 'kubisch geschnitten',
     h3: 'Kirschlorbeer', lat: 'Prunus laurocerasus',
     schnitt: 'Hauptschnitt Ende Juni, bei starkem Wuchs zweiter Schnitt Ende August.',
@@ -150,7 +151,7 @@ export function heckenKompass({ heading = 'Welche Hecke steht bei <em>Ihnen?</em
     `<div class="kinfo"><h3>${esc(a.h3)}</h3><p class="lat">${esc(a.lat)}</p>` +
     `<div class="krow"><span class="kl">Schnittfenster</span><span class="kv">${esc(a.schnitt)}</span></div>` +
     `<div class="krow"><span class="kl">Besonderheit</span><span class="kv">${esc(a.bes)}</span></div>` +
-    `<p class="kmehr"><a href="${esc(galerieHref)}">Alle Ergebnisse ansehen →</a></p></div></div>`).join('');
+    `<p class="kmehr"><a href="${esc(galerieHref)}">Alle Ergebnisse ansehen →</a>${a.mehr ? ` · <a href="${esc(a.mehr.href)}">${esc(a.mehr.text)}</a>` : ''}</p></div></div>`).join('');
   return `<section class="sec" id="heckenarten"><div class="wrap">` +
     `<div class="head"><h2 class="rv">${heading}</h2></div><p class="intro rv">${esc(intro)}</p>` +
     `<div class="pills" role="tablist" aria-label="Heckenart wählen">${pills}</div>${panels}` +

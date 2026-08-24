@@ -75,6 +75,26 @@ page('gartenpflege/index.html', 'HUB gartenpflege', h => {
   check('gartenpflege', 'pills==0 (kein Kompass)', classCount(h, 'pills') === 0);
 });
 
+// ---- SERVICE-HUB heckenentfernung (Herbst-Paket, kein V/N-Material, kein Kompass) ----
+page('heckenentfernung/index.html', 'HUB heckenentfernung', h => {
+  check('heckenentfernung', 'gstrip', classCount(h, 'gstrip') >= 1);
+  check('heckenentfernung', 'wa-grid', classCount(h, 'wa-grid') >= 1);
+  check('heckenentfernung', 'tl', classCount(h, 'tl') >= 1);
+  check('heckenentfernung', 'faq', classCount(h, 'faq') >= 1);
+  check('heckenentfernung', 'ba==0 (kein V/N)', classCount(h, 'ba') === 0);
+  check('heckenentfernung', 'pills==0 (kein Kompass)', classCount(h, 'pills') === 0);
+});
+
+// ---- SERVICE-HUB baumstumpf-entfernen (Herbst-Paket) ----
+page('baumstumpf-entfernen/index.html', 'HUB baumstumpf-entfernen', h => {
+  check('baumstumpf-entfernen', 'gstrip', classCount(h, 'gstrip') >= 1);
+  check('baumstumpf-entfernen', 'wa-grid', classCount(h, 'wa-grid') >= 1);
+  check('baumstumpf-entfernen', 'tl', classCount(h, 'tl') >= 1);
+  check('baumstumpf-entfernen', 'faq', classCount(h, 'faq') >= 1);
+  check('baumstumpf-entfernen', 'ba==0 (kein V/N)', classCount(h, 'ba') === 0);
+  check('baumstumpf-entfernen', 'pills==0 (kein Kompass)', classCount(h, 'pills') === 0);
+});
+
 // ---- SERVICE-HUB fensterreinigung (klassisch) ----
 page('fensterreinigung/index.html', 'HUB fensterreinigung', h => {
   check('fensterreinigung', 'gstrip', classCount(h, 'gstrip') >= 1);
