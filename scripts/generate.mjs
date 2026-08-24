@@ -284,17 +284,19 @@ function home() {
     { slug: 'gartenpflege', label: 'Gartenpflege', promise: 'Fällt ein Termin ohne Vorankündigung aus, geht der nächste auf uns.' },
     { slug: 'entruempelung', label: 'Entrümpelung & Haushaltsauflösung', promise: 'Festpreis nach Besichtigung — besenrein zum vereinbarten Termin.' },
     { slug: 'dachrinnenreinigung', label: 'Dachrinnenreinigung', promise: 'Rinne frei vor dem Winter — ein Termin, ein Ansprechpartner.' },
-    { slug: 'dachreinigung', label: 'Dachreinigung', promise: 'Moos und Grünbelag vom Dach — komplett organisiert, zum vereinbarten Termin.' }
+    { slug: 'baumstumpf-entfernen', label: 'Baumstumpf- & Wurzelentfernung', promise: 'Stubben bodeneben gefräst, Wurzeln raus — ganzjährig möglich, meist an einem Termin.' }
   ];
-  // Saisontausch Oktober–Februar: Winterdienst auf Platz 1, Dachreinigung raus. Begruendung in
+  // Saisontausch Oktober–Februar: Winterdienst auf Platz 1, Gartenpflege raus. Begruendung in
   // wissen/website/saisonalitaet.md — Winterdienst hat mit 49.500 Suchen im Januar den groessten
-  // Peak des Portfolios, Moos und Gruenbelag sind dagegen ein Maerz-Thema. Steuerung wie beim
-  // Saison-Hero ueber config.saison_monat (Override zum Testen), sonst der Build-Monat.
+  // Peak des Portfolios; Gartenpflege hat den schwaechsten Winter-Fit (Rasen ruht Nov–Feb),
+  // die Marken-Identitaet bleibt ueber Hero/Title/Nav sichtbar. (Bis 08/2026 flog hier
+  // Dachreinigung raus — die Kachel wurde durch Baumstumpf- & Wurzelentfernung ersetzt.)
+  // Steuerung wie beim Saison-Hero ueber config.saison_monat (Override zum Testen), sonst der Build-Monat.
   const saisonMonat = config.saison_monat || (new Date()).getMonth() + 1;
   const istWintersaison = saisonMonat >= 10 || saisonMonat <= 2;
   const KERN = istWintersaison
     ? [{ slug: 'winterdienst', label: 'Winterdienst', promise: 'Saisonvertrag vor dem ersten Schnee — geräumt wird von einem geprüften Partner-Fachbetrieb.' },
-       ...KERN_BASIS.filter(k => k.slug !== 'dachreinigung')]
+       ...KERN_BASIS.filter(k => k.slug !== 'gartenpflege')]
     : KERN_BASIS;
   const fokusCards = KERN.map((k, i) => `<a class="it rv d${i + 1}" href="/${k.slug}/"><span class="no">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(k.label)}</h3><p>${esc(k.promise)}</p></div><span class="arr">→</span></a>`).join('');
   const main = `
