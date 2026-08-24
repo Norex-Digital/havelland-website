@@ -280,8 +280,8 @@ function home() {
   // Dach- und Winterdienst-Einträge Tippgeber-konform — keine Eigenleistung, kein "ein Preis".
   const KERN_BASIS = [
     { slug: 'heckenschnitt', label: 'Heckenschnitt', promise: 'Geradlinien-Garantie — bleiben Schnittreste liegen, kommen wir kostenlos nach.' },
+    { slug: 'heckenentfernung', label: 'Heckenentfernung', promise: 'Hecke komplett weg, Wurzeln gefräst, Fläche frei — erlaubt vom 1. Oktober bis 28. Februar.' },
     { slug: 'gartenpflege', label: 'Gartenpflege', promise: 'Fällt ein Termin ohne Vorankündigung aus, geht der nächste auf uns.' },
-    { slug: 'fensterreinigung', label: 'Fensterreinigung', promise: 'Schlierenfrei — oder wir kommen am selben Tag noch einmal.' },
     { slug: 'entruempelung', label: 'Entrümpelung & Haushaltsauflösung', promise: 'Festpreis nach Besichtigung — besenrein zum vereinbarten Termin.' },
     { slug: 'dachrinnenreinigung', label: 'Dachrinnenreinigung', promise: 'Rinne frei vor dem Winter — ein Termin, ein Ansprechpartner.' },
     { slug: 'dachreinigung', label: 'Dachreinigung', promise: 'Moos und Grünbelag vom Dach — komplett organisiert, zum vereinbarten Termin.' }
