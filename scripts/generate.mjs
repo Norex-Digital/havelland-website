@@ -254,6 +254,15 @@ const endBandPartner = `<section class="zone-deep end">${leaf('leaf')}<div class
 const valueBand = `<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>
 <div class="vals"><div class="v rv d1"><h4><span class="n">01</span> Aus einer Hand</h4><p>Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles.</p></div><div class="v rv d2"><h4><span class="n">02</span> Nachweis statt Versprechen</h4><p>Foto-Dokumentation nach jedem Auftrag, direkt aufs Handy.</p></div><div class="v rv d3"><h4><span class="n">03</span> Festpreis</h4><p>Kostenlose Besichtigung, klarer Preis — kein Nachkommen.</p></div><div class="v rv d4"><h4><span class="n">04</span> Schnell erreichbar</h4><p>WhatsApp-Antwort in Stunden, nicht in Tagen.</p></div></div></div></section>`;
 
+// Sichtbare Trust-Zeile für Service-Hubs (Audit 2026-08, P1-2): Rating + Anzahl aus proof.google_reviews
+// (kein Hardcode-Drift; via GBP-API pflegen), gleiche Live-Gate-Logik wie /bewertungen/. NUR sichtbarer
+// Text mit Link auf /bewertungen/ — KEIN aggregateRating-Schema (Google-Policy: self-serving).
+const trustLine = (() => {
+  const gr = proof.google_reviews || {};
+  const live = !!reviews.enabled && (gr.count || 0) >= (reviews.block_ab_count || 5) && gr.rating;
+  return live ? `<p class="hub-trust rv in d4"><a href="/bewertungen/">${Number(gr.rating).toFixed(1).replace('.', ',')}&nbsp;★ bei Google · ${esc(gr.count)} Bewertungen</a></p>` : '';
+})();
+
 // Garantie-Strip (lock-v2 .gstrip) — feste 3-Zusagen-Leiste, markenübergreifend (Home + Hubs). Ohne Bild/Overlay-Label.
 const gstrip = `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Festpreis ist Endpreis</h3><p>Nach der kostenlosen Besichtigung steht Ihr Preis — inklusive Abfuhr, ohne Nachforderung.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Foto-Nachweis</h3><p>Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Ein Ansprechpartner</h3><p>Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.</p></div></div></div></div></section>`;
 // Partner-/Tippgeber-Variante (Dach): keine Eigenleistungs- oder Festpreis-Zusage — Ausführung + Angebot beim geprüften Fachbetrieb, wir koordinieren.
@@ -346,8 +355,8 @@ function hub(s) {
     ? baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' im Havelland', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })
     : pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' im Havelland — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true });
   const faqData = (c && c.faqs && c.faqs.length) ? c.faqs : null;   // sonst faqFilter-Default
-  const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), partner: !!s.partner_modell })}</div></section>`;
-  const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline(!!s.partner_modell)}</div></section>`;
+  const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), partner: !!s.partner_modell, fotoNeutral: s.slug === 'baumstumpf-entfernen' })}</div></section>`;
+  const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline(!!s.partner_modell, s.slug)}</div></section>`;
   const faqSection = `<section class="sec"><div class="wrap">${faqFilter(faqData)}</div></section>`;
   const cardOrteSection = cardOrte.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div><div class="cards rv">${cards}</div></div></section>` : '';
   const ratgeberSection = (ratgeberByService[s.slug] || []).length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Ratgeber rund um ${esc(s.name)}</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${(ratgeberByService[s.slug] || []).slice(0, 3).map(r => `<a class="card" href="/ratgeber/${r.slug}/"><h3>${esc(r.title)}</h3><p>${esc(r.lead || '')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : '';
@@ -374,7 +383,7 @@ function hub(s) {
   const extraBlocks = (c && Array.isArray(c.blocks) ? c.blocks : []).map((b, i) =>
     `<section class="sec${i % 2 ? '' : ' section-alt'}"><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2><p>${esc(b.body)}${b.link_to ? ` <a href="/${esc(b.link_to)}/">${esc(b.link_text || 'Mehr erfahren')}</a>.` : ''}</p></div></div></section>`).join('');
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
-<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || s.b2b_only) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div>
+<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || s.b2b_only) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div>${trustLine}</div>
 <div class="shot rv in d2">${heroShot}</div></div></section>
 ${s.partner_modell ? gstripPartner : gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv">${definition}<h2>${esc(s.name)} im Havelland — was dazugehört</h2>${sektionenHtml}${naehe}${ablauf}<h3>${s.garantie ? 'Unsere Garantie' : 'Unser Versprechen'}</h3><p>${esc(garantieTxt)}</p></div></div></section>
@@ -761,8 +770,12 @@ function bewertungen() {
   const ratingBadge = reviewsLive
     ? `<div class="grating rv"><span class="gr-stars" aria-hidden="true">★★★★★</span><b class="gr-val">${Number(r.rating).toFixed(1).replace('.', ',')}</b><span class="gr-meta">aus ${esc(r.count)} Google-Bewertungen · <a href="${gbpView}" rel="nofollow" target="_blank">live ansehen</a></span></div>`
     : '';
+  // Stand-Angabe aus proof.google_reviews.as_of ableiten (nicht hart verdrahten — Zahl und Datum altern gemeinsam)
+  const MONS = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+  const standM = String(r.as_of || '').match(/^(\d{4})-(\d{2})/);
+  const stand = standM ? `${MONS[+standM[2] - 1]} ${standM[1]}` : 'Juli 2026';
   const body = reviewsLive
-    ? `${ratingBadge}<p>Unsere Kundinnen und Kunden bewerten uns bei Google mit ${Number(r.rating).toFixed(1).replace('.', ',')} von 5 Sternen (${esc(r.count)} Bewertungen, Stand Juli 2026). Wir zeigen hier bewusst keine ausgewählten Zitate — die vollständigen, ungefilterten Bewertungen sehen Sie jederzeit live in unserem Google-Profil. Was zählt, ist das Ergebnis vor Ort: Nach jedem Auftrag dokumentieren wir es mit Vorher-/Nachher-Fotos und schicken sie Ihnen per WhatsApp.</p>
+    ? `${ratingBadge}<p>Unsere Kundinnen und Kunden bewerten uns bei Google mit ${Number(r.rating).toFixed(1).replace('.', ',')} von 5 Sternen (${esc(r.count)} Bewertungen, Stand ${stand}). Wir zeigen hier bewusst keine ausgewählten Zitate — die vollständigen, ungefilterten Bewertungen sehen Sie jederzeit live in unserem Google-Profil. Was zählt, ist das Ergebnis vor Ort: Nach jedem Auftrag dokumentieren wir es mit Vorher-/Nachher-Fotos und schicken sie Ihnen per WhatsApp.</p>
 <h3>Schon mit uns gearbeitet?</h3><p>Über eine ehrliche Bewertung bei Google freuen wir uns. Sie hilft anderen Nachbarn in der Region, einen verlässlichen Ansprechpartner zu finden.</p>`
     : `<p>Wir sind ein regionaler Betrieb und sammeln Bewertungen direkt bei Google. Hier zeigen wir keine erfundenen Sterne: Was zählt, ist das Ergebnis vor Ort. Nach jedem Auftrag dokumentieren wir es mit Vorher-/Nachher-Fotos und schicken sie Ihnen per WhatsApp — Sie sehen, was Sie bekommen, ohne sich auf Werbeversprechen verlassen zu müssen.</p>
 <h3>Schon mit uns gearbeitet?</h3><p>Über eine ehrliche Bewertung bei Google freuen wir uns. Sie hilft anderen Nachbarn in der Region, einen verlässlichen Ansprechpartner zu finden.</p>`;

@@ -269,7 +269,7 @@ export function archivGrid(slugs, { ctaHref = '#kontakt' } = {}) {
 // whatsappFlow — .wa-grid, 3 Schritte + wa.me-CTA (Kontext vorausgefuellt) + Noah-Arbeitsbild (kein Label).
 // ---------------------------------------------------------------------------
 export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
-  heading = 'Ein Handy-Foto <em>reicht.</em>', partner = false } = {}) {
+  heading = 'Ein Handy-Foto <em>reicht.</em>', partner = false, fotoNeutral = false } = {}) {
   const ortTeil = ort ? ` in ${ort}` : '';
   const text = `Hallo, hier ein Foto von ${gewerk}${ortTeil} — was würde das kosten?`;
   // Partner-/Tippgeber-Services (Dach): Schritt 3 nennt keinen eigenen Festpreis — das Angebot kommt vom ausführenden Fachbetrieb.
@@ -288,8 +288,10 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
     `<div class="wa-cta rv d2"><a class="btn btn-acc" href="${waHref(text)}">Foto per WhatsApp senden</a>` +
     `<a class="tel-quiet" href="tel:${TEL}">lieber anrufen: ${TEL_DISP}</a></div></div>` +
     `<div class="wa-stage rv d2"><div class="pframe" style="box-shadow:var(--sh-photo)">` +
-    `<img src="${ARB}/hecke-hinten-schere-noah.jpg" alt="Heckenschnitt mit der Heckenschere an einer Hecke" loading="lazy" decoding="async" width="2400" height="2979"></div>` +
-    `<p class="ba-cap"><b>Handarbeit, wo es drauf ankommt</b><span>Kanten &amp; Ecken</span></p></div></div>`;
+    // fotoNeutral (Audit 2026-08, P2-b): auf Services ohne Hecken-Bezug (baumstumpf-entfernen) Alt/Untertitel
+    // neutral auf Sorgfalt/Handarbeit — das Foto zeigt Heckenschnitt, darf dort nicht als Service-Beweis wirken.
+    `<img src="${ARB}/hecke-hinten-schere-noah.jpg" alt="${fotoNeutral ? 'Sorgfältige Handarbeit im Grünen — Haus- &amp; Gartenservice Havelland' : 'Heckenschnitt mit der Heckenschere an einer Hecke'}" loading="lazy" decoding="async" width="2400" height="2979"></div>` +
+    `<p class="ba-cap"><b>Handarbeit, wo es drauf ankommt</b><span>${fotoNeutral ? 'Sorgfalt im Detail' : 'Kanten &amp; Ecken'}</span></p></div></div>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -299,9 +301,17 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
 const TL = [
   ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
   ['Kurzfristig · kostenlos', 'Besichtigung &amp; Festpreis', 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis — inklusive Abfuhr. Der Preis steht, bevor wir anfangen.'],
-  ['Zum vereinbarten Termin', 'Saubere Ausführung', 'Pünktlich, gründlich, fristgerecht nach § 39 BNatSchG geplant. Wir räumen hinter uns auf — besenrein ist Teil des Preises.'],
+  ['Zum vereinbarten Termin', 'Saubere Ausführung', 'Pünktlich, gründlich, terminlich sauber geplant. Wir räumen hinter uns auf — besenrein ist Teil des Preises.'],
   ['Direkt nach der Arbeit', 'Foto-Nachweis aufs Handy', 'Vorher-/Nachher-Fotos Ihres Auftrags, direkt aufs Handy. Sie sehen das Ergebnis auch dann, wenn Sie nicht zu Hause waren.']
 ];
+// P0-1 (Audit 2026-08): Der §39-Satz in Schritt 3 erscheint NUR auf Services mit echtem §39-Bezug —
+// auf Stubben-/Reinigungs-/übrigen Services wäre er eine falsche bzw. irrelevante Rechtsaussage.
+const TL_39 = new Set(['heckenschnitt', 'heckenentfernung', 'gartenrodung']);
+const tlStep3 = slug => TL_39.has(slug)
+  ? 'Pünktlich, gründlich, fristgerecht nach § 39 BNatSchG geplant. Wir räumen hinter uns auf — besenrein ist Teil des Preises.'
+  : slug === 'baumstumpf-entfernen'
+    ? 'Pünktlich, gründlich — Stubbenfräsen ist ganzjährig möglich. Wir räumen hinter uns auf — besenrein ist Teil des Preises.'
+    : TL[2][2];
 // Partner-/Tippgeber-Variante (Dach): keine Eigenleistung, kein eigener Festpreis, kein eigener Foto-Nachweis — Ausführung + Angebot beim Fachbetrieb.
 const TL_PARTNER = [
   ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was am Dach ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
@@ -309,8 +319,9 @@ const TL_PARTNER = [
   ['Nach der Besichtigung', 'Angebot vom Fachbetrieb', 'Das verbindliche Angebot erstellt der ausführende Betrieb. Sagen Sie zu, stimmen wir Termin und Ablauf mit Ihnen ab.'],
   ['Zum vereinbarten Termin', 'Ausführung, ein Ansprechpartner', 'Die Arbeit am Dach übernimmt der Fachbetrieb mit passender Absicherung — wir begleiten den Einsatz als Ihr fester Draht.']
 ];
-export function auftragsTimeline(partner = false) {
-  const items = (partner ? TL_PARTNER : TL).map(([when, h, p], i) =>
+export function auftragsTimeline(partner = false, slug = '') {
+  const base = partner ? TL_PARTNER : TL.map((row, i) => i === 2 ? [row[0], row[1], tlStep3(slug)] : row);
+  const items = base.map(([when, h, p], i) =>
     `<div class="tli"><span class="tn">${i + 1}</span><div class="tbody">` +
     `<span class="twhen">${when}</span><h3>${h}</h3><p>${p}</p></div></div>`).join('');
   return `<div class="tl rv">${items}</div>`;

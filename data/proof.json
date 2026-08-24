@@ -1,13 +1,13 @@
 {
   "_meta": "Cold-Start-Trust-Layer. Steuert echte vs. Platzhalter-Inhalte je Komponente. Bei 0/leer zeigen Komponenten ehrliche Empty-States (CTA statt Fake-Sterne). Wird mit Aufträgen befuellt.",
   "google_reviews": {
-    "count": 16,
+    "count": 19,
     "rating": 5.0,
     "place_id": "ChIJR7QuOPz_qEcR5fzAJn2cSPY",
-    "as_of": "2026-07-07",
+    "as_of": "2026-08-24",
     "kgmid": "/g/11yz8j7dfq",
     "block_ab_count": 1,
-    "_lookup": "Verifiziert via GBP-API + DataForSEO-SERP 2026-07-07 (5,0 / 16 Reviews). Rating ist zeitvariant — Stand-Datex pflegen."
+    "_lookup": "Verifiziert via GBP-API 2026-08-24 (totalReviewCount 19, averageRating 5,0). Audit 2026-08 nannte 21 — Maps-UI kann der v4-API vorlaufen; wir zeigen nur den API-verifizierten Wert. Rating ist zeitvariant — Stand-Datum pflegen."
   },
   "auftraege_abgeschlossen": 0,
   "stat_tiles_erlaubt": false,

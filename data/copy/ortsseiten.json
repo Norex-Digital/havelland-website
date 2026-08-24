@@ -192,6 +192,10 @@
       }
     },
     "heckenentfernung": {
+      "skills_applied": [
+        "seo-web-copy (geladen via Skill-Tool, Copythat-Kette)",
+        "llm-optimisation (geladen via Skill-Tool, Copythat-Kette)"
+      ],
       "meta": "Hecke entfernen in {ort} — komplett mit Wurzel, erlaubt vom 1. Oktober bis 28. Februar. Kostenlose Besichtigung, Festpreis — Abfuhr und Entsorgung inklusive.",
       "faqs": [
         {
@@ -253,6 +257,10 @@
       }
     },
     "baumstumpf-entfernen": {
+      "skills_applied": [
+        "seo-web-copy (geladen via Skill-Tool, Copythat-Kette)",
+        "llm-optimisation (geladen via Skill-Tool, Copythat-Kette)"
+      ],
       "meta": "Baumstumpf entfernen in {ort}: Stubben und Wurzeln fräsen statt graben, Fläche eben und nutzbar. Kostenlose Besichtigung, Festpreis inklusive Abfuhr vor Ort.",
       "faqs": [
         {
