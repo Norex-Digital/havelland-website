@@ -865,5 +865,155 @@
 "avif": true,
 "fb_ext": "jpg",
 "fb_w": 1200
+},
+"svc-baumschnitt-detail": {
+"w": 5504,
+"h": 3072,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-baumschnitt-hero": {
+"w": 5504,
+"h": 3072,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-baumstumpf-entfernen-detail": {
+"w": 5504,
+"h": 3072,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-baumstumpf-entfernen-hero": {
+"w": 5504,
+"h": 3072,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-galabau-detail": {
+"w": 5504,
+"h": 3072,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-galabau-hero": {
+"w": 5504,
+"h": 3072,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-gartenrodung-detail": {
+"w": 5504,
+"h": 3072,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-gartenrodung-hero": {
+"w": 5504,
+"h": 3072,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-heckenentfernung-detail": {
+"w": 5504,
+"h": 3072,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-heckenentfernung-hero": {
+"w": 5504,
+"h": 3072,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
 }
 }
