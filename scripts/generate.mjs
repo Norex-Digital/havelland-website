@@ -463,7 +463,8 @@ function ortsseite(s, o) {
   const rLen = arch && Array.isArray(arch.rahmen) ? arch.rahmen.length : 1;
   // Welle-1a: bespoke Service×Ort-Copy (falls vorhanden) hat Vorrang vor Archetyp/Ort-Hook
   const lead = c && c.ortsseite_lead ? fillTok(c.ortsseite_lead, o, oc) : `Ihr ${s.name} in ${o.name} — vom Haus- & Gartenservice Havelland.`;
-  const hookSrc = soOrt && soOrt.hook ? soOrt.hook : (oc && oc.hook ? oc.hook : (partnerNoCopy && arch && arch.hooks ? pickPool(arch.hooks, idxP + 1) : '')); // Orts-Hooks seit C5 (03.09.) service-neutral; Partner-Pool liefert Hook-Fallback
+  // Reihenfolge (Umbau 03.09.): bespoke Hook → bei Partner-Services der Partner-Pool-Hook (nie oc.hook: der trägt "Anfahrt steckt im Festpreis") → sonst Orts-Hook
+  const hookSrc = soOrt && soOrt.hook ? soOrt.hook : (s.partner_modell ? (arch && arch.hooks ? pickPool(arch.hooks, idxP + 1) : '') : (oc && oc.hook ? oc.hook : ''));
   const hook = hookSrc ? `<p>${esc(fillTok(hookSrc, o, oc))}</p>` : '';
   const rahmenTxt = soOrt && soOrt.rahmen ? soOrt.rahmen : pickPool(arch && arch.rahmen, idxP);   // eindeutige Verteilung
   const trustTxt = soOrt && soOrt.trust ? soOrt.trust : pickPool(arch && arch.trust, Math.floor(idxP / rLen));  // -> (rahmen,trust)-Tupel eindeutig je Archetyp-Ort
@@ -475,10 +476,12 @@ function ortsseite(s, o) {
   // FAQ: bespoke Service-Ort-Pool (falls vorhanden) ersetzt Archetyp-FAQ UND Hub-FAQ auf der Ortsseite (volle Compliance-Kontrolle, u.a. Dach-Partner-Framing); sonst 2 Archetyp-FAQ + 2 Hub-FAQ wie bisher
   const _faqPool = so && so.faqs ? so.faqs : (partnerNoCopy ? null : (arch && arch.faqs));
   const archFaqs = _faqPool ? rotate(_faqPool, partnerNoCopy ? idxP : idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
-  const hubFaqs = (so && so.faqs) ? [] : (c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), idx + 1, archFaqs.length ? 2 : 4) : []);
+  // so.hub_faq_fill = N (Umbau 03.09., winterdienst): bespoke Pool liefert 2, der Hub füllt auf N auf; ohne das Feld bleibt bespoke = Hub-FAQ aus.
+  const faqFill = so && so.faqs ? Math.max(0, (so.hub_faq_fill || 0) - archFaqs.length) : (archFaqs.length ? 2 : 4);
+  const hubFaqs = (so && so.faqs && !faqFill) ? [] : (c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), idx + 1, faqFill) : []);
   const faqs = [...archFaqs, ...hubFaqs];
   const ortRatPool = ratgeberByService[s.slug] || [];
-  const ortRat = ortRatPool.length ? ortRatPool[idx % ortRatPool.length] : null;
+  const ortRat = (soOrt && soOrt.ratgeber && ratCopy.find(r => r.slug === soOrt.ratgeber)) || (ortRatPool.length ? ortRatPool[idx % ortRatPool.length] : null); // soOrt.ratgeber = fester Ratgeber je Ort (Falkensee → Uhrzeiten)
   const ortRatLink = ortRat ? `<p>Mehr zum Thema lesen Sie in unserem Ratgeber: <a href="/ratgeber/${ortRat.slug}/">${esc(ortRat.title)}</a>.</p>` : '';
 
   // Ortsseiten-Title: optionales title_suffix je Service (data/services.json) statt des generischen
@@ -486,8 +489,10 @@ function ortsseite(s, o) {
   // Services ohne das Feld behalten den bisherigen Title unverändert.
   const tSuffix = s.title_suffix ? ` – ${s.title_suffix}`
     : ((s.name.length + o.name.length) < 34 ? ' – Havelland' : '');
-  const title = clampTitle(`${s.name} ${o.name}${tSuffix}`);
-  const meta = mkMeta(so && so.meta ? fillTok(so.meta, o, oc) : (s.partner_modell ? `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''}: Ausführung durch einen Partner-Fachbetrieb, koordiniert über einen festen Ansprechpartner vom Haus- & Gartenservice Havelland.` : `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`));
+  // Passt der volle Suffix nicht in 60 Zeichen, greift title_suffix_short (services.json) statt eines abgeschnittenen Titels.
+  const tShort = (s.title_suffix && s.title_suffix_short && rlen(`${s.name} ${o.name}${tSuffix}`) > 60) ? ` – ${s.title_suffix_short}` : tSuffix;
+  const title = clampTitle(`${s.name} ${o.name}${tShort}`);
+  const meta = mkMeta(soOrt && soOrt.meta ? fillTok(soOrt.meta, o, oc) : so && so.meta ? fillTok(so.meta, o, oc) : (s.partner_modell ? `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''}: Ausführung durch einen Partner-Fachbetrieb, koordiniert über einen festen Ansprechpartner vom Haus- & Gartenservice Havelland.` : `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`));
 
   // Heckenschnitt-Ort: Vorher/Nachher-Slider im Hero; andere Gewerke: Standard-Bild (kein Slider)
   const ortVoll = VOLL_VN.has(s.slug);
