@@ -120,6 +120,12 @@ const leaf = cls => `<svg class="${cls}" viewBox="0 0 100 100"><path fill="curre
 const tel = nap.phone_e164; const waHref = q => `https://wa.me/${tel.replace('+','')}?text=${encodeURIComponent(q)}`;
 const ctaA = '<a class="btn btn-acc" href="/kontakt/#anfrage">Kostenlose Besichtigung anfragen</a>';
 const ctaPrim = label => `<a class="btn btn-acc" href="/kontakt/#anfrage">${label}</a>`;
+// Primär-CTA-Label je Service (Umbau 03.09.): Winterdienst bekommt ein sprechendes Label, sonst Standard.
+const primLabel = s => (s && s.slug === 'winterdienst') ? 'Winterdienst-Besichtigung anfragen' : 'Kostenlose Besichtigung anfragen';
+// Copy-Link-Ziel "slug" oder "slug#anker" oder "ratgeber/slug" → "/slug/#anker" (kein rohes HTML in JSON)
+const hrefOf = t => { const [p, f] = String(t || '').split('#'); return `/${p.replace(/^\/|\/$/g, '')}/${f ? '#' + f : ''}`; };
+const copyLinks = x => [x.link_to ? `<a href="${hrefOf(x.link_to)}">${esc(x.link_text || 'Mehr erfahren')}</a>` : '', x.link2_to ? `<a href="${hrefOf(x.link2_to)}">${esc(x.link2_text || 'Mehr erfahren')}</a>` : ''].filter(Boolean);
+const copyLinksHtml = x => { const l = copyLinks(x); return l.length ? ' ' + l.join(' · ') + '.' : ''; };
 const CTA_ANGEBOT = 'Angebot für Ihr Objekt anfordern';
 const isB2Bonly = seg => Array.isArray(seg) && seg.includes('B2B') && !seg.includes('B2C') && !seg.includes('Ferien');
 
@@ -144,7 +150,7 @@ function faqBlock(faqs, alt) {
 }
 // Title ≤60 / Meta 150–158 erzwingen — escape-aware (gemessen wird die gerenderte Länge mit &amp; etc.)
 const rlen = s => (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').length;
-function clampTitle(s) { s = (s || '').replace(/\s+/g, ' ').trim(); while (rlen(s) > 60) { const sp = s.lastIndexOf(' '); if (sp < 30) { s = s.slice(0, s.length - 1); continue; } s = s.slice(0, sp); } return s.replace(/[ ,;:–-]+$/, ''); }
+function clampTitle(s) { s = (s || '').replace(/\s+/g, ' ').trim(); while (rlen(s) > 60) { const sp = s.lastIndexOf(' '); if (sp < 30) { s = s.slice(0, s.length - 1); continue; } s = s.slice(0, sp); } s = s.replace(/[ ,;:–-]+$/, ''); while (DANGLE.test(s)) s = s.replace(DANGLE, '').replace(/[ ,;:–-]+$/, ''); return s; } // kein hängendes "im/und" nach dem Kürzen (Umbau 03.09.)
 const META_TAIL = ' Ein fester Ansprechpartner im Havelland und Berliner Umland, telefonisch oder per WhatsApp erreichbar, mit kostenloser Vor-Ort-Besichtigung.';
 const DANGLE = /\s+(per|und|mit|nach|für|im|in|zu|von|der|die|das|ein|eine|einen|am|an|auf|bei|als|wie|oder|aus|über|unter|vor|jetzt|noch|so|dem|den)$/i;
 function mkMeta(s) {
