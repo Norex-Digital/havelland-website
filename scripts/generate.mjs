@@ -374,7 +374,7 @@ function hub(s) {
   const h1 = c ? emH1(c.h1, c.h1_em) : `${esc(s.name)} <em>im Havelland</em>`;
   const lead = c ? esc(c.intro) : esc(s.garantie || 'Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.');
   const sektionenHtml = c
-    ? (c.sections || []).map(x => `<h3>${esc(x.h3)}</h3><p>${esc(x.body)}</p>`).join('')
+    ? (c.sections || []).map(x => `<h3>${esc(x.h3)}</h3><p>${esc(x.body)}${copyLinksHtml(x)}</p>`).join('')   // optionale link_to/link2_to je Sektion (Umbau 03.09.), kein rohes HTML
     : (s.sektionen || []).map(x => `<h3>${esc(x)}</h3><p>${esc(x)} als Teil unserer ${esc(s.name)} — sauber ausgeführt, mit Foto-Nachweis.</p>`).join('');
   const definition = c && c.definition ? `<p class="lead-p"><strong>${esc(c.definition)}</strong></p>` : '';
   const naehe = c && c.naehe ? `<h3>${esc(s.name)} in Ihrer Nähe</h3><p>${esc(c.naehe)}</p>` : '';
@@ -392,7 +392,8 @@ function hub(s) {
     ? baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' im Havelland', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })
     : pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' im Havelland — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true });
   const faqData = (c && c.faqs && c.faqs.length) ? c.faqs : null;   // sonst faqFilter-Default
-  const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), partner: !!s.partner_modell, fotoNeutral: s.slug === 'baumstumpf-entfernen' })}</div></section>`;
+  // Winterdienst: WA-Flow ohne Foto-Zusage (Partner) — "Adresse und Flächenbeschreibung reichen" (Umbau 03.09.)
+  const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), partner: !!s.partner_modell, fotoNeutral: s.slug === 'baumstumpf-entfernen' || s.slug === 'winterdienst', winter: s.slug === 'winterdienst' })}</div></section>`;
   const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline(!!s.partner_modell, s.slug)}</div></section>`;
   const faqSection = `<section class="sec"><div class="wrap">${faqFilter(faqData)}</div></section>`;
   const cardOrteSection = cardOrte.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div><div class="cards rv">${cards}</div></div></section>` : '';
@@ -417,13 +418,17 @@ function hub(s) {
   // b2b_only-Hub (hausmeisterservice): Querverlinkung zu /fuer-hausverwaltungen/ (Design §2 — beide Richtungen)
   const b2bCross = s.b2b_only ? `<section class="sec section-alt"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} für Hausverwaltungen &amp; Gewerbe</h2><p>${esc(s.name)} bieten wir im Havelland vor allem für Hausverwaltungen, WEG und Gewerbeobjekte an — mit festem Ansprechpartner, schriftlichem Angebot und Foto-Reporting nach jedem Einsatz. Den vollständigen Überblick über unser Objekt-Angebot finden Sie unter <a href="/fuer-hausverwaltungen/">Für Hausverwaltungen &amp; Gewerbe</a>.</p></div></div></section>` : '';
   // Optionale Copy-Blöcke (H2 + Fließtext, optionale Service-Querverlinkung): Wohnungsauflösungs-H2 + Kannibalisierungs-Firewall Entrümpelung↔Haushaltsauflösung (Design §4). Nur Hubs mit copy.blocks; sonst ''.
+  // Blocks: optionales id (Anker-Ziel, z. B. /gartenpflege/#herbst-paket) + zweiter Link link2_to/link2_text; Ziele auch mit #anker oder ratgeber/… (Umbau 03.09.).
   const extraBlocks = (c && Array.isArray(c.blocks) ? c.blocks : []).map((b, i) =>
-    `<section class="sec${i % 2 ? '' : ' section-alt'}"><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2><p>${esc(b.body)}${b.link_to ? ` <a href="/${esc(b.link_to)}/">${esc(b.link_text || 'Mehr erfahren')}</a>.` : ''}</p></div></div></section>`).join('');
+    `<section class="sec${i % 2 ? '' : ' section-alt'}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2><p>${esc(b.body)}${copyLinksHtml(b)}</p></div></div></section>`).join('');
+  // Zwischen-CTA nach der Prose auf allen Hubs ohne Galerie-CTA (voll = Heckenschnitt hat die Galerie)
+  const zwischen = (s.partner_modell || gk !== 'voll') ? ctaZwischen(s) : '';
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
-<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || s.b2b_only) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div>${trustLine}</div>
+<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || s.b2b_only) ? CTA_ANGEBOT : primLabel(s))}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div>${trustLine}</div>
 <div class="shot rv in d2">${heroShot}</div></div></section>
 ${s.partner_modell ? gstripPartner(s) : gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv">${definition}<h2>${esc(s.name)} im Havelland — was dazugehört</h2>${sektionenHtml}${naehe}${ablauf}<h3>${(s.garantie && !s.partner_modell) ? 'Unsere Garantie' : 'Unser Versprechen'}</h3><p>${esc(garantieTxt)}</p></div></div></section>
+${zwischen}
 ${IMG['svc-' + s.slug + '-detail'] ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic('svc-' + s.slug + '-detail', { alt: s.name + ' im Detail — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>` : ''}
 ${extraBlocks}
 ${rich}
