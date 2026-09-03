@@ -9,7 +9,7 @@ const ASSET_VER = crypto.createHash('md5').update(fs.readFileSync('assets/css/si
 import {
   baSlider, garantienStrip, schnittkalender, heckenKompass, jahreszeiten, echtProjekt,
   karussell, archivGrid, whatsappFlow, auftragsTimeline, uspBand, faqFilter, gebietskarte,
-  trustBadges, fristband, aeoKapsel, beweisMechanik
+  trustBadges, fristband, aeoKapsel, beweisMechanik, saisonTeaser
 } from './components.mjs';
 
 const J = f => JSON.parse(fs.readFileSync(`data/${f}`, 'utf8'));

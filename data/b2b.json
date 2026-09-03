@@ -1,164 +1,199 @@
 {
-  "_meta": "Daten-Block für die B2B-Seite /fuer-hausverwaltungen/. Überarbeitet 2026-09-03 (Herbst/Winter-Offensive, Aufgabe C4). objektklassen/leistungen/zusagen bleiben String-Arrays, weil generate.mjs b2bPage() sie so rendert. NEU und noch ohne Generator-Anbindung: title_tag, meta, kick, h1, h1_em, lead, intro, objektklassen_detail, leistungen_detail (mit ausfuehrung eigen|partner), zusagen_detail, band_lead, ablauf, faqs, cta, partnermodell_hinweis. Partnermodell (Tippgeber, §5 UWG): Winterdienst und Dachrinne führt ein Partner-Fachbetrieb aus, Vertrag Kunde-Fachbetrieb, Preis vom Fachbetrieb nach Objekttermin, keine Reaktionszeit-Zusage, Partner nie namentlich. Laub, Grünpflege, Treppenhaus = Eigenleistung (wir).",
+  "_meta": "Daten-Block für die B2B-Seite /fuer-hausverwaltungen/. Überarbeitet 2026-09-03 (Herbst/Winter-Offensive, Aufgabe C4). objektklassen/leistungen/zusagen bleiben String-Arrays, weil generate.mjs b2bPage() sie so rendert. NEU und noch ohne Generator-Anbindung: title_tag, meta, kick, h1, h1_em, lead, intro, objektklassen_detail, leistungen_detail (mit ausfuehrung eigen|partner), zusagen_detail, band_lead, ablauf, faqs, cta, partnermodell_hinweis. Partnermodell (Tippgeber, §5 UWG): Winterdienst und Dachrinne führt ein Partner-Fachbetrieb aus, Vertrag Kunde-Fachbetrieb, Preis vom Fachbetrieb nach Objekttermin, keine Reaktionszeit-Zusage, Partner nie namentlich. Laub, Grünpflege, Treppenhaus = Eigenleistung (wir). Umbau 03.09. abends: gekürzt auf Referenzmaß (alte Seite 536bf206 + Timeline + kurze FAQ); objektklassen_detail 6 Kurzlabels, leistungen_detail 6 × ≤28 W mit Chip, zusagen ≤16 W, ablauf 4 × {when,h,p}, faqs 4, cta ≤25 W, endband. Keine Fristzusage, kein Festpreis, kein Vorher/Nachher-Foto.",
   "title": "Für Hausverwaltungen, Gewerbe und große Flächen im Havelland",
-  "title_tag": "Hausverwaltungen & Gewerbe Havelland | Winterdienst, Laub",
-  "meta": "Winterdienst, Laub, Dachrinne, Grünpflege und Treppenhaus für Hausverwaltungen und Gewerbe im Havelland. Fester Ansprechpartner, Nachweis je Einsatz.",
-  "kick": "Hausverwaltungen · Gewerbe · Große Flächen",
-  "h1": "Für Hausverwaltungen, Gewerbe und große Flächen im Havelland",
-  "h1_em": "große Flächen",
-  "lead": "Kundenparkplatz, Gewerbehof, Wohnanlage: Sie bekommen einen festen Ansprechpartner für Winterdienst, Laub, Dachrinne, Grünpflege und Treppenhaus. Laub, Grün und Treppenhaus erledigen wir selbst. Winterdienst und Dachrinne führt jeweils ein Partner-Fachbetrieb aus, koordiniert über Noah Telo, mit Nachweis je Einsatz.",
+  "title_tag": "Winterdienst für WEG, Hausverwaltung und Gewerbe – Havelland",
+  "meta": "Winterdienst für Eigentümergemeinschaft, Hausverwaltung und Gewerbe im Havelland: Partner-Fachbetrieb mit Nachweis je Einsatz, dazu Laub und Dachrinne.",
+  "kick": "Hausverwaltungen · WEG · Gewerbe",
+  "h1": "Winterdienst und Objektpflege für Hausverwaltungen, WEG und Gewerbe im Havelland",
+  "h1_em": "Hausverwaltungen",
+  "lead": "Ein Ansprechpartner für Winterdienst, Laub, Dachrinne, Grünpflege und Treppenhaus. Winterdienst und Dachrinne führt ein Partner-Fachbetrieb aus, Laub und Grün erledigen wir selbst – mit Nachweis je Einsatz.",
   "intro": {
     "h2": "Für wen wir arbeiten",
-    "body": "Der Haus- & Gartenservice Havelland betreut Objekte, bei denen mehrere Gewerke zusammenkommen und jemand den Überblick behalten muss. Sie verwalten eine WEG mit vier Eingängen, betreiben einen Markt mit Kundenparkplatz oder einen Gewerbehof mit Zufahrt und Ladezone. In allen Fällen nimmt ein Ansprechpartner, Noah Telo, Ihre Objekte auf, plant Begehung und Termine und schickt Ihnen den Nachweis je Einsatz. Laub, Grünpflege und Treppenhaus erledigen wir mit eigenem Team und eigenem Gerät. Für Winterdienst und Dachrinne arbeiten wir mit Partner-Fachbetrieben: Sie schließen den Vertrag mit dem ausführenden Betrieb, wir koordinieren Begehung, Angebot und Ablauf. Wer welche Leistung ausführt, steht bei jeder Leistung unten dabei."
+    "body": "Wir betreuen Objekte, bei denen mehrere Gewerke zusammenkommen und jemand den Überblick behalten muss. Noah Telo nimmt Ihre Objekte auf, plant Begehung und Termine und schickt den Nachweis je Einsatz. Wer welche Leistung ausführt, steht bei jeder Leistung dabei."
   },
   "objektklassen": [
-    "Wohnungseigentümergemeinschaft (WEG) und Mehrfamilienhaus",
+    "Wohnungseigentümergemeinschaft (WEG)",
+    "Mehrfamilienhaus und Vermieter",
     "Hausverwaltung mit mehreren Objekten",
-    "Gewerbeobjekt mit Außenanlage",
-    "Kundenparkplatz (Einzelhandel, Markt, Praxis)",
-    "Autohaus mit Ausstellungs- und Stellflächen",
-    "Gewerbehof mit Zufahrt und Ladezone",
-    "Logistik- und Lagerfläche"
+    "Kundenparkplatz und Einzelhandel",
+    "Autohaus und Gewerbehof",
+    "Logistik und Lager"
   ],
   "objektklassen_detail": [
     {
-      "name": "Wohnungseigentümergemeinschaft (WEG) und Mehrfamilienhaus",
-      "body": "Gehwege entlang des Grundstücks, Zugänge zu den Eingängen, Müllplatz und Treppenhaus. Die Eigentümergemeinschaft haftet für die Verkehrssicherung, der Verwalter organisiert sie."
+      "name": "Wohnungseigentümergemeinschaft (WEG)",
+      "body": "Ein Saisonvertrag statt Räumplan, Nachweis für alle Eigentümer"
+    },
+    {
+      "name": "Mehrfamilienhaus und Vermieter",
+      "body": "Gehwege, Zugänge, Müllplatz und Treppenhaus in einem Turnus"
     },
     {
       "name": "Hausverwaltung mit mehreren Objekten",
-      "body": "Eine Begehung je Objekt, ein Angebot je Objekt, ein Ansprechpartner für alle Adressen. Die Nachweise kommen objektweise, damit Sie sie den Eigentümern zuordnen können."
+      "body": "Eine Begehung je Objekt, Nachweise objektweise sortiert"
     },
     {
-      "name": "Gewerbeobjekt mit Außenanlage",
-      "body": "Zuwegung, Mitarbeiterparkplatz, Grünstreifen und Hecke zur Straße. Termine für Grünpflege und Reinigung legen wir außerhalb Ihrer Kernzeiten."
+      "name": "Kundenparkplatz und Einzelhandel",
+      "body": "Begehbar vor der Öffnung: Stellflächen, Wege, Eingang"
     },
     {
-      "name": "Kundenparkplatz (Einzelhandel, Markt, Praxis)",
-      "body": "Im Winter zählt die Öffnungszeit: Die Fläche muss begehbar sein, bevor der erste Kunde kommt. Im Herbst sammelt sich Laub an Einkaufswagenboxen, in Ecken und auf den Abläufen."
+      "name": "Autohaus und Gewerbehof",
+      "body": "Ausstellungsflächen, Zufahrt, Ladezone und Feuerwehrzufahrt"
     },
     {
-      "name": "Autohaus mit Ausstellungs- und Stellflächen",
-      "body": "Ausstellungsfläche, Kundenstellplätze und Zufahrt zur Werkstatt. Welches Streumittel zu Pflaster und Fahrzeugen passt, klärt der Fachbetrieb bei der Begehung."
-    },
-    {
-      "name": "Gewerbehof mit Zufahrt und Ladezone",
-      "body": "Zufahrt, Wendefläche und Ladezone müssen befahrbar bleiben, sonst steht der Betrieb. Große Flächen räumt der Partner-Fachbetrieb mit Maschine, nicht mit der Schaufel."
-    },
-    {
-      "name": "Logistik- und Lagerfläche",
-      "body": "Lkw-Zufahrt, Rampen und Mitarbeiterparkplatz. Große zusammenhängende Flächen mit früher Räumzeit, geregelt im Saisonvertrag mit dem Fachbetrieb."
+      "name": "Logistik und Lager",
+      "body": "Laderampen und Hofflächen, Zeitfenster nach Schichtplan"
     }
   ],
   "leistungen": [
-    "Winterdienst auf großen Flächen (Partner-Fachbetrieb mit Räumtechnik)",
-    "Laubentfernung auf Parkplätzen und Außenanlagen, mit Abtransport",
-    "Dachrinnenreinigung (Partner-Fachbetrieb)",
+    "Winterdienst auf großen Flächen",
+    "Laub auf Parkplätzen und Außenanlagen",
+    "Dachrinnenreinigung an Wohnanlagen und Hallen",
     "Grünpflege und Heckenschnitt",
-    "Treppenhaus- und Unterhaltsreinigung"
+    "Treppenhaus- und Unterhaltsreinigung",
+    "Objektkontrolle und Kleinreparaturen"
   ],
   "leistungen_detail": [
     {
       "h3": "Winterdienst auf großen Flächen",
       "ausfuehrung": "partner",
-      "label": "Ausführung: Partner-Fachbetrieb",
+      "chip": "Partner-Fachbetrieb",
+      "body": "Parkplatz, Hof, Zufahrt und Gehweg maschinell geräumt und gestreut. Saisonvertrag mit dem Betrieb, Einsatznachweis mit Datum und Uhrzeit je Objekt.",
       "link_to": "winterdienst",
-      "body": "Parkplatz, Zufahrt, Gewerbehof: Die Durchführung übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik für große Flächen. Sie schließen mit dem ausführenden Betrieb einen Saisonvertrag, üblich von November bis März. Darin stehen die Flächen, die Zeitfenster, das Streumittel und der Einsatznachweis. Die Kontrollpflicht bleibt bei Ihnen als Eigentümer oder Verwalter, die Durchführung ist übertragen. Je Räum- und Streueinsatz erhalten Sie einen Einsatznachweis mit Datum und Uhrzeit. Noah Telo koordiniert Begehung, Angebot und Vertragsbeginn und bleibt über die Saison Ihr Ansprechpartner. Den Preis nennt der Fachbetrieb im Saisonvertrag nach dem Objekttermin."
+      "label": "Mehr zum Winterdienst"
     },
     {
-      "h3": "Laubentfernung auf Parkplätzen und Außenanlagen",
+      "h3": "Laub auf Parkplätzen und Außenanlagen",
       "ausfuehrung": "eigen",
-      "label": "Ausführung: Haus- & Gartenservice Havelland",
-      "link_to": "gartenpflege",
-      "body": "Laub auf Stellflächen, Wegen, Grünstreifen und in den Ecken am Gebäude sammeln wir selbst ein, mit Laubbläser und Rechen, und nehmen es mit. Abtransport und Entsorgung gehören zur Leistung. Nasses Laub auf Pflaster wird rutschig und verstopft Abläufe; auf Rasen erstickt es das Gras. Für den Herbst bieten wir einen festen Rhythmus an, zum Beispiel alle zwei Wochen von Oktober bis Dezember, oder einen Großeinsatz nach dem Laubfall. Nach jedem Einsatz bekommen Sie Fotos vom Ergebnis. Der Preis steht nach der Begehung als Festpreis fest."
+      "chip": "Eigene Leistung",
+      "body": "Blasen, rechen, aufladen, entsorgen – Stellflächen, Wege, Grünstreifen und Abläufe. Zwei bis drei Einsätze im Herbst oder ein Großeinsatz nach dem Laubfall.",
+      "link_to": "gartenpflege#laub",
+      "label": "Mehr zu Laub"
     },
     {
       "h3": "Dachrinnenreinigung an Wohnanlagen und Hallen",
       "ausfuehrung": "partner",
-      "label": "Ausführung: Partner-Fachbetrieb",
+      "chip": "Partner-Fachbetrieb",
+      "body": "Rinne und Fallrohre frei vor dem Winter, Funktionsprüfung inklusive. Angebot vom ausführenden Betrieb nach dem Objekttermin.",
       "link_to": "dachrinnenreinigung",
-      "body": "Volle Rinnen laufen im Herbst über und durchfeuchten Fassade und Sockel. Die Arbeit an Rinne und Fallrohr übernimmt ein Partner-Fachbetrieb; wir koordinieren Begehung, Termin und Ablauf. Das Angebot kommt vom ausführenden Betrieb nach der Begehung. Sinnvoll ist ein Termin nach dem Laubfall im November, bei vielen Bäumen am Objekt ein zweiter im Frühjahr. Für Hausverwaltungen mit mehreren Objekten nehmen wir die Rinnen bei einer Begehung gesammelt auf, damit sich die Termine bündeln lassen."
+      "label": "Mehr zur Dachrinne"
     },
     {
       "h3": "Grünpflege und Heckenschnitt",
       "ausfuehrung": "eigen",
-      "label": "Ausführung: Haus- & Gartenservice Havelland",
+      "chip": "Eigene Leistung",
+      "body": "Rasen, Hecken, Beete und Gehölze im festen Turnus, Grünschnitt-Abfuhr inklusive. Fotos nach jedem Einsatz.",
       "link_to": "heckenschnitt",
-      "body": "Rasen mähen, Kanten schneiden, Hecken und Sträucher in Form halten, Beete und Pflanzstreifen frei von Unkraut: Das erledigen wir selbst, im Turnus, den das Objekt braucht, meist alle zwei Wochen von April bis Oktober. Den letzten Heckenschnitt setzen wir in den Herbst, damit die Anlage ordentlich in den Winter geht. Starke Rückschnitte sind vom 1. März bis 30. September eingeschränkt (§ 39 BNatSchG), Form- und Pflegeschnitte sind das ganze Jahr möglich. Schnittgut nehmen wir mit. Nach jedem Termin liegen Fotos vom Ergebnis bei Ihnen, auch wenn niemand vom Objekt dabei war."
+      "label": "Mehr zum Heckenschnitt"
     },
     {
       "h3": "Treppenhaus- und Unterhaltsreinigung",
       "ausfuehrung": "eigen",
-      "label": "Ausführung: Haus- & Gartenservice Havelland",
+      "chip": "Eigene Leistung",
+      "body": "Treppen, Geländer, Briefkastenanlage und Eingangsbereich im Turnus, außen Höfe, Zuwege und Mülltonnenboxen.",
       "link_to": "unterhaltsreinigung",
-      "body": "Treppenhaus, Hauseingang, Briefkastenanlage, Kellergang und Müllplatz reinigen wir im festen Turnus, wöchentlich oder 14-tägig, nach einem Leistungsverzeichnis, das wir bei der Begehung mit Ihnen abstimmen. Fenster im Treppenhaus und Glastüren gehören dazu. Für Gewerbe kommt die Unterhaltsreinigung von Büro, Sozialraum und Sanitär hinzu, außerhalb Ihrer Kernzeiten. Der Preis steht als Monatspauschale fest. Fällt ein Termin aus, sehen Sie es im Nachweis und nicht erst in der Beschwerde eines Mieters."
+      "label": "Mehr zur Unterhaltsreinigung"
+    },
+    {
+      "h3": "Objektkontrolle und Kleinreparaturen",
+      "ausfuehrung": "eigen",
+      "chip": "Eigene Leistung",
+      "body": "Regelmäßige Kontrollgänge mit Foto, kleine Mängel direkt behoben, Meldung an die Verwaltung bei allem, was einen Fachbetrieb braucht.",
+      "link_to": "hausmeisterservice",
+      "label": "Mehr zum Hausmeisterservice"
     }
   ],
-  "partnermodell_hinweis": "Ausführung: Laub, Grünpflege und Treppenhaus durch den Haus- & Gartenservice Havelland. Winterdienst und Dachrinne durch Partner-Fachbetriebe; der Vertrag kommt zwischen Ihnen und dem ausführenden Betrieb zustande, der Preis steht in dessen Angebot.",
   "band_lead": "Ein Ansprechpartner für alle Objekte, ein Nachweis je Einsatz.",
   "zusagen": [
-    "Fester Ansprechpartner: Noah Telo, für alle Objekte und Gewerke",
-    "Angebot innerhalb von 2 Werktagen nach der Begehung",
-    "Nachweis je Einsatz: Fotos bei Eigenleistung, Einsatznachweis mit Datum und Uhrzeit im Winterdienst",
-    "Vertretung bei Urlaub oder Krankheit steht vorab fest"
+    "Fester Ansprechpartner: Noah Telo",
+    "Schriftliches Angebot nach Begehung",
+    "Nachweis je Einsatz",
+    "Vertrag mit dem, der ausführt"
   ],
   "zusagen_detail": [
     {
       "h4": "Fester Ansprechpartner: Noah Telo",
-      "body": "Sie rufen eine Nummer an oder schreiben eine E-Mail, und Noah Telo kennt Ihre Objekte. Er nimmt die Flächen bei der Begehung auf, stimmt Termine mit Ihnen und mit dem Fachbetrieb ab und bleibt über die Saison Ihr Gegenüber, auch wenn ein Partner-Fachbetrieb ausführt."
+      "body": "Ein Kontakt für alle Objekte, keine Warteschleife, Vertretung steht vorab fest."
     },
     {
-      "h4": "Angebot innerhalb von 2 Werktagen nach der Begehung",
-      "body": "Für Laub, Grünpflege und Treppenhaus erhalten Sie unser schriftliches Angebot innerhalb von zwei Werktagen nach der Begehung, per E-Mail, als Festpreis oder Monatspauschale. Für Winterdienst und Dachrinne stellt der ausführende Fachbetrieb das Angebot; wir stimmen den Objekttermin mit ihm ab und leiten es Ihnen weiter."
+      "h4": "Schriftliches Angebot nach Begehung",
+      "body": "Eigenleistungen von uns, Winterdienst und Dachrinne vom ausführenden Fachbetrieb."
     },
     {
       "h4": "Nachweis je Einsatz",
-      "body": "Bei Eigenleistung bekommen Sie nach jedem Einsatz Fotos vom Ergebnis mit Datum, per E-Mail oder WhatsApp. Im Winterdienst führt der ausführende Fachbetrieb je Räum- und Streueinsatz einen Einsatznachweis mit Datum und Uhrzeit. Den Nachweis vereinbaren Sie im Saisonvertrag; wir achten bei der Begehung darauf, dass er drinsteht. Er ist Ihr Beleg gegenüber Eigentümern, Versicherung und Geschädigten."
+      "body": "Fotos bei Eigenleistung, Einsatznachweis mit Datum und Uhrzeit vom Winterdienst-Betrieb."
     },
     {
-      "h4": "Vertretung steht vorab fest",
-      "body": "Ist Noah Telo im Urlaub oder krank, nennen wir Ihnen vorab, wer die Objekte in der Zeit betreut, mit Telefonnummer. Laufende Turnusse für Grünpflege und Reinigung laufen in der Zeit weiter."
+      "h4": "Vertrag mit dem, der ausführt",
+      "body": "Winterdienst und Dachrinne: Vertrag und Preis direkt vom Partner-Fachbetrieb."
+    }
+  ],
+  "gstrip": [
+    {
+      "h3": "Ein Ansprechpartner",
+      "p": "Noah Telo nimmt alle Objekte auf und bleibt Ihr Kontakt – kein Callcenter, keine wechselnden Kräfte."
+    },
+    {
+      "h3": "Nachweis je Einsatz",
+      "p": "Fotos bei Eigenleistung, Einsatznachweis mit Datum und Uhrzeit vom Winterdienst-Betrieb."
+    },
+    {
+      "h3": "Schriftliches Angebot",
+      "p": "Nach der Begehung – von uns für Laub, Grün und Treppenhaus, vom Fachbetrieb für Winterdienst und Dachrinne."
     }
   ],
   "ablauf": {
     "h2": "So kommen Sie zum Angebot",
     "schritte": [
-      "Anfrage per E-Mail oder Telefon mit Objektadresse, Flächen und gewünschten Leistungen.",
-      "Begehung vor Ort mit Noah Telo. Für Winterdienst und Dachrinne nimmt der Partner-Fachbetrieb die Flächen mit auf, beim selben Termin oder in einem eigenen Objekttermin.",
-      "Angebot: für Laub, Grünpflege und Treppenhaus von uns innerhalb von zwei Werktagen, für Winterdienst und Dachrinne vom ausführenden Betrieb.",
-      "Start zum vereinbarten Termin. Nach jedem Einsatz der Nachweis, je Objekt zugeordnet."
+      {
+        "when": "Tag 1",
+        "h": "Anfrage per E-Mail oder Telefon",
+        "p": "Objektadresse, Flächen und gewünschte Leistungen genügen für den Anfang."
+      },
+      {
+        "when": "Kurzfristig · kostenlos",
+        "h": "Begehung vor Ort",
+        "p": "Noah Telo nimmt die Objekte auf; für Winterdienst und Dachrinne kommt der Partner-Fachbetrieb dazu."
+      },
+      {
+        "when": "Nach der Begehung",
+        "h": "Schriftliches Angebot",
+        "p": "Laub, Grünpflege und Treppenhaus von uns, Winterdienst und Dachrinne vom ausführenden Betrieb."
+      },
+      {
+        "when": "Zum vereinbarten Termin",
+        "h": "Start mit Nachweis je Einsatz",
+        "p": "Fotos oder Einsatznachweis, je Objekt zugeordnet, für Eigentümer und Versicherung."
+      }
     ]
   },
   "faqs": [
     {
       "q": "Wer führt den Winterdienst auf großen Flächen aus?",
-      "a": "Die Durchführung übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik. Den Saisonvertrag schließen Sie direkt mit diesem Betrieb; er regelt Flächen, Zeitfenster, Streumittel und den Einsatznachweis. Der Haus- & Gartenservice Havelland koordiniert Begehung, Angebot und Ablauf und bleibt über Noah Telo Ihr Ansprechpartner. Räumung und Streuung führen wir nicht selbst aus."
+      "a": "Ein Partner-Fachbetrieb mit eigener Räumtechnik. Den Saisonvertrag schließen Sie direkt mit diesem Betrieb; er regelt Flächen, Zeitfenster, Streumittel und den Einsatznachweis. Wir koordinieren Begehung, Angebot und Ablauf und bleiben über Noah Telo Ihr Ansprechpartner."
     },
     {
-      "q": "Bis wann muss ein Kundenparkplatz im Winter geräumt sein?",
-      "a": "Für den öffentlichen Gehweg entlang Ihres Grundstücks gilt die Satzung Ihrer Gemeinde; in Falkensee zum Beispiel werktags bis 7 Uhr, an Sonn- und Feiertagen bis 9 Uhr. Für den Parkplatz selbst gilt die Verkehrssicherungspflicht: Er muss begehbar sein, sobald Kunden ihn nutzen, also vor der Öffnung. Welche Flächen bis wann geräumt sind, legen Sie im Saisonvertrag mit dem Fachbetrieb fest."
+      "q": "Räumt der Partnerbetrieb auch Parkplätze, Höfe und Gewerbeflächen?",
+      "a": "Ja. Kundenparkplätze, Gewerbehöfe, Zufahrten und die Wege zum Eingang räumt der Partner-Fachbetrieb maschinell, Eingänge und schmale Wege von Hand. Bei der Begehung nimmt er Öffnungszeiten, Ladezonen und die Ablagefläche für den Schnee auf."
     },
     {
       "q": "Übernehmen Sie unsere Räum- und Streupflicht?",
-      "a": "Die Durchführung übertragen Sie mit dem Saisonvertrag auf den ausführenden Fachbetrieb. Die Kontrollpflicht bleibt bei Ihnen als Eigentümer oder Verwalter: Sie prüfen stichprobenartig, ob geräumt wurde, und dafür gibt es den Einsatznachweis mit Datum und Uhrzeit. Wir selbst übernehmen die Pflicht nicht; wir koordinieren Begehung, Vertrag und Ansprechpartner."
-    },
-    {
-      "q": "Was kostet der Winterdienst für Parkplatz oder Gewerbehof?",
-      "a": "Den Preis nennt der ausführende Fachbetrieb im Saisonvertrag nach dem Objekttermin, weil Fläche, Zuwegung, Zeitfenster und Streumittel ihn bestimmen. Eine Pauschale ohne Begehung gibt es nicht. Wir stimmen den Objekttermin mit dem Betrieb ab; danach liegt Ihnen ein Saisonpreis vor, bevor Sie unterschreiben."
-    },
-    {
-      "q": "Wie läuft die Laubentfernung auf einem Parkplatz ab?",
-      "a": "Wir blasen und rechen das Laub von Stellflächen, Wegen und Grünstreifen zusammen, räumen Ecken und Abläufe frei, laden auf und entsorgen es. Für den Herbst empfehlen wir zwei bis drei Einsätze zwischen Oktober und Dezember oder einen Großeinsatz nach dem Laubfall. Der Preis steht nach der Begehung als Festpreis fest, Fotos gibt es nach jedem Einsatz."
+      "a": "Die Durchführung übertragen Sie mit dem Saisonvertrag auf den ausführenden Fachbetrieb. Die Kontrollpflicht bleibt bei Ihnen als Eigentümer oder Verwalter; dafür gibt es den Einsatznachweis mit Datum und Uhrzeit. Wir selbst übernehmen die Pflicht nicht, wir koordinieren Begehung, Vertrag und Ansprechpartner."
     },
     {
       "q": "Betreuen Sie auch mehrere Objekte einer Hausverwaltung?",
-      "a": "Ja. Wir nehmen jedes Objekt bei einer Begehung auf und legen je Objekt ein Leistungsverzeichnis an. Sie bekommen ein Angebot je Objekt oder eine Gesamtübersicht, die Nachweise kommen objektweise, damit Sie sie den Eigentümern zuordnen können. Ein Ansprechpartner für alle Adressen: Noah Telo."
+      "a": "Ja. Jedes Objekt nehmen wir bei einer Begehung auf und legen ein Leistungsverzeichnis an. Sie bekommen ein Angebot je Objekt oder eine Gesamtübersicht; die Nachweise kommen objektweise, damit Sie sie den Eigentümern zuordnen können."
     }
   ],
   "cta": {
     "h2": "Angebot per E-Mail anfordern",
-    "body": "Senden Sie uns Objektadresse, Flächen und die gewünschten Leistungen. Wir melden uns zur Begehung. Das Angebot für Laub, Grünpflege und Treppenhaus erhalten Sie innerhalb von zwei Werktagen danach, das Winterdienst-Angebot stellt der Fachbetrieb im Saisonvertrag.",
+    "body": "Senden Sie uns Objektadresse, Flächen und die gewünschten Leistungen. Wir melden uns zur Begehung; das Angebot für Winterdienst und Dachrinne stellt der Fachbetrieb.",
     "mail_subject": "Angebot Objektbetreuung / Winterdienst",
     "mail_body": "Guten Tag,\n\nwir sind eine Hausverwaltung / ein Gewerbebetrieb und interessieren uns für Ihre Objektbetreuung.\n\nObjekt(e) und Adresse(n): \nArt der Fläche (Parkplatz, Hof, Wohnanlage): \nGewünschte Leistungen (Winterdienst, Laub, Dachrinne, Grünpflege, Treppenhaus): \nGewünschter Beginn: \n\nBitte melden Sie sich zur Begehung.\n\nMit freundlichen Grüßen"
-  }
+  },
+  "endband": {
+    "h2": "Sagen Sie uns, welche Objekte anstehen — wir kümmern uns.",
+    "p": "Begehung vor Ort, schriftliches Angebot, Nachweis je Einsatz – ein Ansprechpartner für alle Adressen."
+  },
+  "scta_text": "Guten Tag, wir sind eine Hausverwaltung / ein Gewerbebetrieb im Havelland und interessieren uns für Objektbetreuung."
 }

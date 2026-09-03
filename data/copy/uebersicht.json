@@ -8,13 +8,27 @@
       "garten": "Pflege und Sauberkeit rund ums Haus — Rasen und Grünschnitt, Hecken in Form, Laub, Pflaster, Terrasse und streifenfreie Fenster; Winterdienst über Partner-Fachbetrieb.",
       "aufloesung": "Einmalige Großeinsätze mit Festpreis nach Besichtigung — entrümpelt, aufgelöst und besenrein übergeben.",
       "dach": "Rund ums Dach: die Dachrinne frei vor dem Herbst und die Dachreinigung. Für Arbeiten auf dem Dach koordinieren wir einen Partner-Fachbetrieb — ein Ansprechpartner für Besichtigung, Termin und Ablauf.",
-      "gewerbe": "Für Eigentümer, Hausverwaltungen und Betriebe: Hausmeisterdienst, Gebäude- und Unterhaltsreinigung, Objektbetreuung und Ferienwohnungs-Reinigung im festen Turnus."
+      "gewerbe": "Für Eigentümer, Hausverwaltungen und Betriebe: Hausmeisterdienst, Gebäude- und Unterhaltsreinigung, Objektbetreuung und Ferienwohnungs-Reinigung im festen Turnus.",
+      "saison_herbst": "Drei Dinge vor dem Winter: Laub und letzter Schnitt erledigen wir selbst, Dachrinne und Winterdienst laufen über einen Partner-Fachbetrieb – ein Ansprechpartner, ein Ablauf.",
+      "saison_winter": "Jetzt im Winter: Winterdienst über den Partner-Fachbetrieb, Heckenentfernung im gesetzlichen Fenster bis 28. Februar und Entrümpelung zum Festpreis nach Besichtigung."
     },
     "faqs": [
-      { "q": "Bekomme ich alle Leistungen aus einer Hand?", "a": "Ja. Garten, Reinigung, Entrümpelung und Hausmeisterdienste übernehmen wir selbst, Winterdienst und Dachrinne koordinieren wir über einen Partner-Fachbetrieb — Sie müssen nicht für jede Aufgabe einen eigenen Betrieb suchen." },
-      { "q": "Was kostet eine Besichtigung?", "a": "Die Vor-Ort-Besichtigung ist für Sie kostenlos. Wir schauen uns an, was ansteht, und nennen Ihnen danach einen Festpreis. Der vereinbarte Betrag ist der Endbetrag, ohne Aufschlag am Ende." },
-      { "q": "Übernehmen Sie auch einzelne, kleinere Aufträge?", "a": "Ja. Ob nur die Hecke geschnitten oder die Dachrinne gereinigt werden soll — auch einzelne Arbeiten sind möglich. Schreiben Sie uns kurz per WhatsApp, worum es geht, dann stimmen wir einen Termin ab." },
-      { "q": "Machen Sie auch Dacharbeiten?", "a": "Ja — die Dachrinnenreinigung vor dem Herbst und die Dachreinigung gehören zu unserem Angebot. Die eigentliche Arbeit auf dem Dach übernimmt ein Partner-Fachbetrieb; wir koordinieren für Sie Besichtigung, Termin und Ablauf, sodass Sie einen festen Ansprechpartner haben. Malerarbeiten gehören nicht zu unserem Angebot." }
+      {
+        "q": "Bekomme ich alle Leistungen aus einer Hand?",
+        "a": "Ja. Garten, Reinigung, Entrümpelung und Hausmeisterdienste übernehmen wir selbst, Winterdienst und Dachrinne koordinieren wir über einen Partner-Fachbetrieb — Sie müssen nicht für jede Aufgabe einen eigenen Betrieb suchen."
+      },
+      {
+        "q": "Was kostet eine Besichtigung?",
+        "a": "Die Vor-Ort-Besichtigung ist für Sie kostenlos. Wir schauen uns an, was ansteht, und nennen Ihnen danach einen Festpreis. Der vereinbarte Betrag ist der Endbetrag, ohne Aufschlag am Ende."
+      },
+      {
+        "q": "Übernehmen Sie auch einzelne, kleinere Aufträge?",
+        "a": "Ja. Ob nur die Hecke geschnitten oder die Dachrinne gereinigt werden soll — auch einzelne Arbeiten sind möglich. Schreiben Sie uns kurz per WhatsApp, worum es geht, dann stimmen wir einen Termin ab."
+      },
+      {
+        "q": "Machen Sie auch Dacharbeiten?",
+        "a": "Ja — die Dachrinnenreinigung vor dem Herbst und die Dachreinigung gehören zu unserem Angebot. Die eigentliche Arbeit auf dem Dach übernimmt ein Partner-Fachbetrieb; wir koordinieren für Sie Besichtigung, Termin und Ablauf, sodass Sie einen festen Ansprechpartner haben. Malerarbeiten gehören nicht zu unserem Angebot."
+      }
     ]
   },
   "standorte": {
@@ -29,10 +43,22 @@
     },
     "ausserdem_label": "Außerdem im Einsatz in",
     "faqs": [
-      { "q": "Kommen Sie auch in meinen Ort, wenn er nicht aufgeführt ist?", "a": "Sehr wahrscheinlich ja. Die Seiten zeigen die größeren Orte im Havelland und Berliner Umland — wir sind aber auch in den umliegenden Gemeinden und Ortsteilen unterwegs. Fragen Sie einfach kurz per WhatsApp nach." },
-      { "q": "Wie schnell sind Sie vor Ort?", "a": "Weil wir aus Falkensee kommen und im gesamten Havelland kurze Wege haben, lässt sich ein Termin oft schon innerhalb derselben Woche einrichten. Bei dringenden Fällen versuchen wir, früher da zu sein." },
-      { "q": "Berechnen Sie Anfahrtskosten?", "a": "Die Besichtigung vor Ort ist kostenlos. Eine etwaige Anfahrt ist im Festpreis enthalten, den wir Ihnen nach der Besichtigung nennen — es kommt nichts unerwartet obendrauf." },
-      { "q": "Bekomme ich auch außerhalb des Havellands Hilfe?", "a": "Unser Schwerpunkt liegt im Havelland und am westlichen sowie nördlichen Berliner Rand. Ob wir Ihren Standort übernehmen, klären wir kurz vorab — schreiben Sie uns einfach Ihren Ort." }
+      {
+        "q": "Kommen Sie auch in meinen Ort, wenn er nicht aufgeführt ist?",
+        "a": "Sehr wahrscheinlich ja. Die Seiten zeigen die größeren Orte im Havelland und Berliner Umland — wir sind aber auch in den umliegenden Gemeinden und Ortsteilen unterwegs. Fragen Sie einfach kurz per WhatsApp nach."
+      },
+      {
+        "q": "Wie schnell sind Sie vor Ort?",
+        "a": "Weil wir aus Falkensee kommen und im gesamten Havelland kurze Wege haben, lässt sich ein Termin oft schon innerhalb derselben Woche einrichten. Bei dringenden Fällen versuchen wir, früher da zu sein."
+      },
+      {
+        "q": "Berechnen Sie Anfahrtskosten?",
+        "a": "Die Besichtigung vor Ort ist kostenlos. Eine etwaige Anfahrt ist im Festpreis enthalten, den wir Ihnen nach der Besichtigung nennen — es kommt nichts unerwartet obendrauf."
+      },
+      {
+        "q": "Bekomme ich auch außerhalb des Havellands Hilfe?",
+        "a": "Unser Schwerpunkt liegt im Havelland und am westlichen sowie nördlichen Berliner Rand. Ob wir Ihren Standort übernehmen, klären wir kurz vorab — schreiben Sie uns einfach Ihren Ort."
+      }
     ]
   }
 }

@@ -3,8 +3,8 @@
  "hubs": [
   {
    "slug": "gartenpflege",
-   "title": "Gartenpflege Havelland – Haus- & Gartenservice",
-   "meta": "Gartenpflege im Havelland: Rasen, Grünschnitt, Laub und kleiner Baumschnitt aus einer Hand. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Termin.",
+   "title": "Gartenpflege Havelland – Rasen, Laub & Herbst-Paket",
+   "meta": "Gartenpflege im Havelland: Rasen, Grünschnitt, Laub entfernen und Baumschnitt aus einer Hand. Herbst-Paket mit Laub, Dachrinne und Hecke an einem Termin.",
    "h1": "Ihre regelmäßige Gartenpflege im Havelland – verlässlich und sauber",
    "h1_em": "verlässlich",
    "intro": "Schreiben Sie uns per WhatsApp, was im Garten ansteht. Wir übernehmen Ihre Gartenpflege im Havelland – Rasen mähen, Grünschnitt, Laub räumen und kleinen Baumschnitt, alles aus einer Hand. Wir kommen vorbei, sehen uns Ihren Garten an und nennen Ihnen einen Festpreis. Nach jedem Termin liegen Vorher-Nachher-Fotos auf Ihrem Handy, auch wenn Sie nicht zu Hause waren. Wer regelmäßig Ordnung will, bucht die Pflege im 14-tägigen Rhythmus. Der Mäher bleibt im Schuppen.",
@@ -17,10 +17,6 @@
     {
      "h3": "Grünschnitt",
      "body": "Wir schneiden Hecken, Sträucher und Bodendecker in Form und kürzen wuchernde Triebe ein. Buchs, Liguster, Thuja oder Kirschlorbeer bringen wir auf die Höhe und Breite, die zu Ihrem Garten passt. Den Grünschnitt räumen wir zusammen und entsorgen ihn fachgerecht. Der beste Zeitpunkt liegt im Frühjahr und nach dem Hauptwuchs im Sommer. Auf Wunsch legen wir feste Schnitttermine in Ihren Pflegeplan, damit die Hecke das ganze Jahr ordentlich aussieht."
-    },
-    {
-     "h3": "Laubentfernung",
-     "body": "Wir sammeln Laub von Rasen, Wegen, Terrasse und aus Beeten und nehmen es mit. Liegt nasses Laub zu lange auf dem Rasen, erstickt das Gras und es bilden sich kahle Stellen – darum räumen wir regelmäßig, nicht erst, wenn alles braun ist. Lichtschächte befreien wir auf Wunsch von Laub; die Dachrinne übernimmt ein Partner-Fachbetrieb, den wir gleich mit organisieren. Im Herbst lohnt sich ein fester Rhythmus; im Frühjahr räumen wir die letzten Reste des Vorjahres weg."
     },
     {
      "h3": "Baumschnitt (klein)",
@@ -54,10 +50,20 @@
    "garantie_text": "Fällt ein vereinbarter Pflegetermin ohne Vorankündigung aus, ist Ihr nächster Termin kostenlos.",
    "blocks": [
     {
+     "id": "laub",
+     "h2": "Laub entfernen lassen im Havelland: Rasen, Wege, Beete",
+     "body": "Wir sammeln Laub von Rasen, Wegen, Terrasse und aus den Beeten, laden es auf und nehmen es mit – Abfuhr im Festpreis. Liegt nasses Laub zu lange auf dem Rasen, erstickt das Gras und es bilden sich kahle Stellen; auf Gehweg und Zufahrt wird es bei Frost rutschig. Deshalb räumen wir im Oktober und November regelmäßig, auf Wunsch im 14-tägigen Rhythmus bis zum letzten Blatt, und holen im Frühjahr die Reste aus den Ecken. Lichtschächte befreien wir auf Wunsch gleich mit; die Dachrinne übernimmt ein Partner-Fachbetrieb, den wir auf denselben Termin abstimmen. Nach jedem Einsatz bekommen Sie Vorher-Nachher-Fotos aufs Handy.",
+     "link_to": "ratgeber/laub-entfernen-pflicht",
+     "link_text": "Ratgeber: Muss ich Laub vom Gehweg entfernen?"
+    },
+    {
+     "id": "herbst-paket",
      "h2": "Herbst-Paket: Laub, Rinne, letzter Heckenschnitt — ein Termin",
-     "body": "Laub, Hecke und Rasen vor dem Winter erledigen wir selbst, zum Festpreis nach Foto per WhatsApp. Die Dachrinne übernimmt ein Partner-Fachbetrieb, dessen Einsatz wir auf unseren Termin abstimmen; sein Angebot kommt nach der Besichtigung. Ein Ansprechpartner, ein Termin bei Ihnen.",
+     "body": "Laub, Hecke und Rasen vor dem Winter erledigen wir selbst, zum Festpreis nach Besichtigung. Die Dachrinne übernimmt ein Partner-Fachbetrieb, dessen Einsatz wir auf unseren Termin abstimmen; den Winterdienst-Saisonvertrag mit dem Partner-Fachbetrieb schließen Sie gleich mit ab. Ein Ansprechpartner, ein Termin bei Ihnen.",
      "link_to": "dachrinnenreinigung",
-     "link_text": "Zur Dachrinnenreinigung im Havelland"
+     "link_text": "Zur Dachrinnenreinigung",
+     "link2_to": "winterdienst",
+     "link2_text": "Zum Winterdienst"
     },
     {
      "h2": "Mehr Schnitt gefällig?",
@@ -153,44 +159,40 @@
   },
   {
    "slug": "winterdienst",
-   "title": "Winterdienst Havelland & Falkensee – Saisonvertrag",
-   "meta": "Winterdienst in Falkensee und im Havelland: Räumen und Streuen durch einen Partner-Fachbetrieb, Saisonvertrag mit Einsatznachweis. Privat, WEG und Gewerbe.",
-   "h1": "Winterdienst in Falkensee und im Havelland – geregelt, bevor es glatt wird",
+   "title": "Winterdienst Havelland – Räumen und Streuen im Saisonvertrag",
+   "meta": "Winterdienst im Havelland: Räumen und Streuen durch einen Partner-Fachbetrieb, Saisonvertrag mit Einsatznachweis für Privatgrundstück, WEG und Gewerbe.",
+   "h1": "Winterdienst im Havelland – geregelt, bevor es glatt wird",
    "h1_em": "geregelt",
-   "intro": "Winterdienst in Falkensee und im Havelland, bevor der erste Schnee liegt: Sie schildern uns Ihre Flächen, wir organisieren die Besichtigung, und ein Partner-Fachbetrieb mit eigener Räumtechnik übernimmt das Räumen und Streuen über die ganze Saison. Sie erhalten einen Saisonvertrag mit dem ausführenden Betrieb, nach jedem Einsatz einen Nachweis mit Datum und Uhrzeit und mit Noah Telo einen festen Ansprechpartner. Das gilt für das Privatgrundstück mit Gehweg und Zufahrt genauso wie für das Mehrfamilienhaus, die WEG und Gewerbeflächen mit Parkplatz und Hof.",
-   "definition": "Winterdienst ist das Räumen von Schnee und das Streuen bei Glätte auf Gehwegen, Zufahrten, Zugängen und Stellplätzen innerhalb der Zeiten, die die Straßenreinigungssatzung der Gemeinde vorgibt. Die Pflicht trifft den Grundstückseigentümer. Die Durchführung lässt sich vertraglich auf einen Fachbetrieb übertragen, die Kontrolle bleibt beim Eigentümer.",
+   "intro": "Gehweg, Zufahrt, Hauseingang oder Kundenparkplatz: Sie schildern uns die Flächen, ein Partner-Fachbetrieb mit eigener Räumtechnik übernimmt Räumen und Streuen über die ganze Saison. Sie schließen den Saisonvertrag mit dem Betrieb, erhalten nach jedem Einsatz den Nachweis und haben mit Noah Telo einen festen Ansprechpartner.",
+   "definition": "Winterdienst ist das Räumen von Schnee und das Streuen bei Glätte auf Gehwegen, Zufahrten und Stellplätzen nach den Zeiten Ihrer Gemeindesatzung. Schneeräumung, Räumdienst, Streudienst meinen dieselbe Leistung. Die Pflicht trifft den Eigentümer, die Durchführung lässt sich auf einen Fachbetrieb übertragen.",
    "sections": [
     {
-     "h3": "Winterdienst für das Privatgrundstück – Gehweg, Zufahrt, Hauseingang",
-     "body": "Beim Einfamilienhaus geht es um den Gehweg vor dem Grundstück, die Zufahrt zur Garage und den Weg zur Haustür. Der Partner-Fachbetrieb räumt diese Flächen nach Schneefall und streut bei Glätte mit abstumpfendem Material. Welche Flächen, welche Zeiten und welches Streumittel gelten, steht im Saisonvertrag mit dem Betrieb, ausgerichtet an der Satzung Ihrer Gemeinde. Sie greifen morgens nicht selbst zur Schippe und suchen im Urlaub oder bei Krankheit niemanden, der es für Sie tut. Bei der Besichtigung nimmt der Betrieb auf, wo der Schnee hin darf und wo Stufen, ein Tor oder ein enger Zugang den Aufwand erhöhen. Nach jedem Einsatz erhalten Sie den Nachweis mit Datum und Uhrzeit."
+     "h3": "Privatgrundstück und Mehrfamilienhaus – Gehweg, Zufahrt, Zugänge",
+     "body": "Beim Einfamilienhaus geht es um den Gehweg vor dem Grundstück, die Zufahrt und den Weg zur Haustür. Im Mehrfamilienhaus und in der WEG ersetzt ein Saisonvertrag für das ganze Objekt den Räumplan zwischen den Bewohnern: Der Partner-Fachbetrieb bedient Gehweg, Zugänge, Müllplatz und Stellplätze, der Einsatznachweis liegt für alle Eigentümer vor. Bei der Besichtigung nimmt der Betrieb auf, wo der Schnee hin darf und wo Stufen oder ein enger Zugang den Aufwand erhöhen."
     },
     {
-     "h3": "Mehrfamilienhaus und WEG – eine Regelung für alle Eigentümer",
-     "body": "In der Eigentümergemeinschaft wechselt die Räumpflicht oft nach Plan zwischen den Bewohnern, und im Ernstfall weiß niemand, wer dran war. Ein Saisonvertrag für das ganze Objekt ersetzt den Räumplan: Der Partner-Fachbetrieb bedient Gehweg, Zugänge, Müllplatz und Stellplätze, der Einsatznachweis liegt für alle Eigentümer vor. Für Vermieter gilt dasselbe. Haben Sie die Räumpflicht im Mietvertrag auf die Mieter übertragen, bleibt Ihre Kontrollpflicht bestehen, und die Gerichte legen sie eng aus. Mit Saisonvertrag und Einsatznachweis können Sie diese Kontrolle belegen. Verwaltung und Beirat haben mit Noah Telo einen Ansprechpartner für Rückfragen und Meldungen."
+     "h3": "Gewerbe, Hausverwaltung und große Flächen",
+     "body": "Kundenparkplätze, Gewerbehöfe, Laderampen und Zufahrten räumt der Partner-Fachbetrieb maschinell, Eingänge und schmale Wege von Hand. Ihre Öffnungszeiten bestimmen, wann die Fläche frei sein muss; das nimmt der Betrieb bei der Besichtigung mit auf. Hausverwaltungen bündeln mehrere Objekte in einer Anfrage und erhalten je Objekt den Einsatznachweis.",
+     "link_to": "fuer-hausverwaltungen",
+     "link_text": "Zum Angebot für Hausverwaltungen und Gewerbe"
     },
     {
-     "h3": "Winterdienst für Gewerbe, Hausverwaltungen und große Flächen",
-     "body": "Kundenparkplätze, Gewerbehöfe, Zufahrten von Autohäusern, Laderampen und die Wege zwischen Parkplatz und Eingang sind zu groß für die Schaufel. Diese Flächen räumt der Partner-Fachbetrieb maschinell mit eigener Räumtechnik, Eingänge und schmale Wege von Hand. Bei Gewerbeobjekten bestimmen Ihre Öffnungszeiten, wann die Fläche frei sein muss; das nimmt der Betrieb bei der Besichtigung mit auf, ebenso Ladezonen, Feuerwehrzufahrten und die Stelle, an der der Schnee abgelegt werden darf. Hausverwaltungen bündeln mehrere Objekte in einer Anfrage und erhalten je Objekt den Einsatznachweis mit Datum und Uhrzeit, als Beleg gegenüber Eigentümern, Mietern und Versicherung. Anfragen für mehrere Objekte stimmen wir gesammelt mit dem Betrieb ab."
-    },
-    {
-     "h3": "Schneeräumung, Räumdienst, Streudienst – was ist was",
-     "body": "Die Begriffe meinen Teile derselben Leistung. Schneeräumung oder Räumdienst ist das Beseitigen des Schnees von der Fläche nach dem Schneefall. Streudienst ist das Ausbringen von abstumpfendem Material bei Glätte, auch ohne Schnee, etwa bei überfrierender Nässe oder Eisregen. Winterdienst fasst beides zusammen und schließt die Bereitschaft über die Saison ein: Jemand beobachtet das Wetter und rückt aus, wenn es nötig ist. Ein Angebot nur für die Schneeräumung deckt Glatteis ohne Schnee nicht ab. Prüfen Sie deshalb, ob Räumen und Streuen beide im Vertrag stehen. Bei einer Anfrage über uns geht es immer um beides."
-    },
-    {
-     "h3": "Räum- und Streupflicht in Falkensee – die Satzung in Zahlen",
-     "body": "Die Satzung über die Straßenreinigung und den Winterdienst der Stadt Falkensee (Beschluss vom 9. Dezember 2020, in Kraft seit 1. Januar 2021) legt fest, was der Eigentümer leisten muss. Tagsüber von 7 bis 20 Uhr sind Schnee und Glätte unverzüglich zu beseitigen; was nach 20 Uhr fällt, muss werktags bis 7 Uhr und an Sonn- und Feiertagen bis 9 Uhr geräumt sein. Der Gehweg ist auf 1,00 m Breite freizuhalten, schmalere Gehwege ganz, in verkehrsberuhigten Bereichen auf 1,50 m; gibt es keinen Gehweg, gilt ein 1,00 m breiter Streifen entlang des Grundstücks. Gestreut wird mit abstumpfenden Mitteln wie Sand oder Granulat. Salz und andere auftauende Stoffe sind nur bei Eisregen sowie an Treppen, Rampen, Brücken und Gefällestrecken erlaubt, auf Baumscheiben nie. Verpflichtet sind die Eigentümer der erschlossenen Grundstücke nach dem Straßenverzeichnis; in den Reinigungsklassen 1 bis 3 liegt der Gehweg beim Anlieger, in den Klassen 4 und 5 bei der Stadt. Verstöße kosten laut Satzung 5 bis 1.000 Euro Bußgeld. Die Nachbargemeinden weichen ab: Brieselang verlangt 1,20 m Räumbreite, Dallgow-Döberitz und Schönwalde-Glien 1,50 m, Hennigsdorf werktags schon ab 6.30 Uhr. Welche Satzung für Ihr Objekt gilt und ob Ihre Straße überhaupt bei Ihnen liegt, prüfen wir vor der Besichtigung."
-    },
-    {
-     "h3": "Was Winterdienst kostet – Orientierung aus dem Markt",
-     "body": "Den Preis für Ihr Objekt nennt der Partner-Fachbetrieb nach der Besichtigung; eine Preisliste haben wir nicht. Zur Einordnung die Spannen aus öffentlich zugänglichen Preisübersichten (profirechner.de und mdl-group.de, Stand 2026, fremde Quellen, keine Angaben unseres Partners): Räumen und Streuen 1,00 bis 3,50 Euro je Quadratmeter und Einsatz, in ländlichen, maschinell erreichbaren Lagen ab 0,70 Euro; Bereitschaftspauschale 20 bis 100 Euro je Monat für Privathaushalte, für Gewerbe ab etwa 200 Euro. Für ein Einfamilienhaus mit Gehweg und Zufahrt kommen die Beispielrechnungen mit Bereitschaft und einzeln gezählten Einsätzen auf rund 1.000 bis 1.300 Euro je Saison; Für ein Gewerbeobjekt mit 300 Quadratmetern rechnet profirechner.de beispielhaft mit rund 6.000 Euro je Saison bei zehn Einsätzen, in maschinell erreichbaren Lagen mit niedrigeren Quadratmetersätzen entsprechend weniger. Was bei Ihnen zählt: Fläche, Zugang für Maschinen, Stufen und Gefälle, Lage in der Tour des Betriebs. Ein Saisonvertrag mit Pauschale ist in schneereichen Wintern günstiger als die Abrechnung je Einsatz, in milden Wintern teurer."
+     "h3": "Räum- und Streupflicht: was die Satzung verlangt",
+     "body": "Die Pflicht liegt beim Eigentümer. Tagsüber, zwischen 7 und 20 Uhr, sind Schnee und Glätte unverzüglich zu beseitigen; Nachtschnee muss werktags bis 7 Uhr und an Sonn- und Feiertagen bis 9 Uhr weg sein, gestreut wird abstumpfend mit Sand oder Granulat. Uhrzeiten, Räumbreiten und Bußgelder unterscheiden sich je Gemeinde.",
+     "link_to": "ratgeber/raeumpflicht-havelland-uhrzeiten",
+     "link_text": "Uhrzeiten je Gemeinde",
+     "link2_to": "ratgeber/streusalz-brandenburg-verboten",
+     "link2_text": "Erlaubte Streumittel"
     },
     {
      "h3": "Saisonvertrag und Einsatznachweis",
-     "body": "Den Vertrag schließen Sie direkt mit dem ausführenden Partner-Fachbetrieb, das Angebot kommt von ihm. Achten Sie darauf, dass darin stehen: die Flächen mit Skizze, die Zeiten nach Ihrer Satzung, das Streumittel, der Umgang mit Schnee nach 20 Uhr, die Laufzeit und der Preis für die Saison. Nach jedem Einsatz erhalten Sie einen Einsatznachweis mit Datum und Uhrzeit. Damit belegen Sie gegenüber Versicherung, Mietern oder der Stadt, dass geräumt wurde. Die Kontrollpflicht bleibt bei Ihnen, die Durchführung ist übertragen. Bleibt etwas liegen oder passt ein Zeitfenster nicht, melden Sie es Noah Telo, er klärt es mit dem Betrieb. Welche Fristen der Betrieb zusagt, steht in seinem Vertrag, nicht auf dieser Seite."
+     "body": "Den Vertrag schließen Sie mit dem ausführenden Partner-Fachbetrieb, das Angebot kommt von ihm. Darin stehen Flächen, Zeiten nach Ihrer Satzung, Streumittel, Laufzeit und Saisonpreis. Nach jedem Einsatz erhalten Sie einen Nachweis mit Datum und Uhrzeit, Ihr Beleg gegenüber Versicherung, Mietern oder Stadt. Die Kontrollpflicht bleibt bei Ihnen; bleibt etwas liegen, klärt Noah Telo es mit dem Betrieb.",
+     "link_to": "ratgeber/winterdienst-streupflicht-brandenburg",
+     "link_text": "Wer haftet bei einem Sturz"
     }
    ],
-   "naehe": "Suchen Sie einen Winterdienst in der Nähe? Wir koordinieren Winterdienst im Havelland und im angrenzenden Berliner Umland: Falkensee, Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Wustermark, Nauen sowie die Berliner Randlagen Spandau und Staaken. Je dichter die Objekte einer Tour beieinander liegen, desto günstiger wird der Einsatz je Objekt. Deshalb fragen wir bei der Anfrage zuerst nach der Adresse. Objekte außerhalb der laufenden Touren nehmen wir auf eine Warteliste und melden uns, sobald eine Tour in Ihre Nähe kommt.",
-   "ablauf": "Schreiben Sie Noah Telo per WhatsApp oder rufen Sie an, mit Adresse und einem Foto der Flächen. Wir prüfen, ob die Straße nach der Satzung bei Ihnen liegt oder ob die Gemeinde ohnehin räumt, und organisieren die kostenlose Besichtigung durch den Partner-Fachbetrieb. Danach erhalten Sie dessen Angebot für die Saison. Sagen Sie zu, schließen Sie den Saisonvertrag mit dem Betrieb, und der Einsatznachweis kommt nach jedem Einsatz. Noah Telo bleibt über den Winter Ihr Ansprechpartner für Rückfragen.",
+   "naehe": "Wir koordinieren Winterdienst im Havelland und im angrenzenden Berliner Umland: Falkensee, Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Wustermark, Nauen sowie Spandau und Kladow. Je dichter die Objekte einer Tour liegen, desto günstiger der Einsatz je Objekt – deshalb fragen wir zuerst nach der Adresse.",
+   "ablauf": "Schreiben Sie Noah Telo per WhatsApp oder rufen Sie an, mit Adresse und einer kurzen Beschreibung der Flächen. Wir organisieren die kostenlose Besichtigung durch den Partner-Fachbetrieb, danach erhalten Sie dessen Angebot für die Saison. Sagen Sie zu, schließen Sie den Saisonvertrag mit dem Betrieb; der Einsatznachweis kommt nach jedem Einsatz.",
    "faqs": [
     {
      "q": "Wer räumt und streut, und mit wem schließe ich den Vertrag?",
@@ -198,44 +200,38 @@
     },
     {
      "q": "Was kostet Winterdienst für ein Einfamilienhaus?",
-     "a": "Den Preis nennt der Partner-Fachbetrieb nach der Besichtigung, weil Gehweglänge, Zufahrt, Stufen und Lage den Aufwand bestimmen. Als Orientierung aus fremden Preisübersichten (profirechner.de, mdl-group.de, Stand 2026): Beispielrechnungen mit Bereitschaft und einzeln gezählten Einsätzen liegen dort bei rund 1.000 bis 1.300 Euro je Saison. Ihr Angebot kann darüber oder darunter liegen."
+     "a": "Den Preis nennt der Partner-Fachbetrieb nach der Besichtigung, weil Gehweglänge, Zufahrt, Stufen und Lage den Aufwand bestimmen. Zur Orientierung aus fremden Preisübersichten (profirechner.de, mdl-group.de, Stand 2026, keine Angaben unseres Partners): Beispielrechnungen mit Bereitschaft und einzeln gezählten Einsätzen liegen dort bei rund 1.000 bis 1.300 Euro je Saison. Ihr Angebot kann darüber oder darunter liegen."
     },
     {
-     "q": "Bis wann muss in Falkensee geräumt und gestreut sein?",
-     "a": "Nach der Falkenseer Satzung sind Schnee und Glätte tagsüber zwischen 7 und 20 Uhr unverzüglich zu beseitigen. Schnee, der nach 20 Uhr fällt, muss werktags bis 7 Uhr und an Sonn- und Feiertagen bis 9 Uhr geräumt sein. Gehwege sind auf 1,00 m Breite freizuhalten, gestreut wird mit Sand oder Granulat, Salz nur bei Eisregen und an Treppen, Rampen und Gefällestrecken. Diese Werte gehören in den Saisonvertrag.",
+     "q": "Bis wann muss der Gehweg geräumt sein?",
+     "a": "Tagsüber zwischen 7 und 20 Uhr unverzüglich nach dem Schneefall; Nachtschnee werktags bis 7 Uhr, an Sonn- und Feiertagen bis 9 Uhr. So regeln es Falkensee und fast alle Gemeinden im Havelland, Hennigsdorf verlangt 6.30 Uhr. Diese Zeiten gehören in den Saisonvertrag.",
      "hub_only": true
     },
     {
      "q": "Bleibe ich haftbar, wenn ein Winterdienst beauftragt ist?",
-     "a": "Die Räum- und Streupflicht liegt beim Eigentümer. Mit dem Saisonvertrag übertragen Sie die Durchführung auf den Partner-Fachbetrieb, die Kontrollpflicht bleibt bei Ihnen: Sie müssen stichprobenartig prüfen, ob geräumt wurde. Der Einsatznachweis mit Datum und Uhrzeit ist dafür der Beleg. Die Falkenseer Satzung sieht zusätzlich vor, dass ein Dritter die Pflicht mit Zustimmung der Stadt per schriftlicher Erklärung übernehmen kann, wenn er eine Haftpflichtversicherung nachweist. Ob Sie diesen Weg gehen, klären Sie mit dem Betrieb."
-    },
-    {
-     "q": "Räumt der Partnerbetrieb auch Parkplätze, Höfe und Gewerbeflächen?",
-     "a": "Ja. Kundenparkplätze, Gewerbehöfe, Zufahrten von Autohäusern und die Wege zum Eingang räumt der Partner-Fachbetrieb maschinell, Eingänge und schmale Wege von Hand. Bei der Besichtigung nimmt er Ihre Öffnungszeiten, Ladezonen und die Ablagefläche für den Schnee auf. Hausverwaltungen bündeln mehrere Objekte in einer Anfrage und erhalten je Objekt den Einsatznachweis."
+     "a": "Die Räum- und Streupflicht liegt beim Eigentümer. Mit dem Saisonvertrag übertragen Sie die Durchführung auf den Partner-Fachbetrieb, die Kontrollpflicht bleibt bei Ihnen: Sie prüfen stichprobenartig, ob geräumt wurde. Der Einsatznachweis mit Datum und Uhrzeit ist dafür der Beleg. Einige Gemeinden erlauben zusätzlich eine förmliche Übertragung mit Zustimmung der Stadt."
     },
     {
      "q": "Wann sollte ich den Saisonvertrag abschließen, und wie lange läuft er?",
-     "a": "Zwischen September und November, vor dem ersten Frost. Dann ist die Besichtigung erledigt und der Vertrag unterschrieben, bevor es glatt wird. Üblich ist eine Laufzeit von November bis März; die genaue Saison und ob sich der Vertrag verlängert, steht im Angebot des Betriebs. Wer erst beim ersten Schnee anfragt, konkurriert mit allen anderen um die freien Plätze in der Tour."
+     "a": "Zwischen September und November, vor dem ersten Frost. Dann ist die Besichtigung erledigt und der Vertrag unterschrieben, bevor es glatt wird. Üblich ist eine Laufzeit von November bis März; die genaue Saison und eine Verlängerung stehen im Angebot des Betriebs. Wer erst beim ersten Schnee anfragt, konkurriert um die freien Plätze in der Tour."
     }
    ],
-   "garantie_text": "Ein fester Ansprechpartner für Besichtigung, Angebot und Saison – Räumen und Streuen übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik, der Einsatznachweis mit Datum und Uhrzeit kommt nach jedem Einsatz.",
-   "ortsseite_lead": "Ihr Winterdienst in {ort}: Räumen und Streuen übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik, koordiniert über einen festen Ansprechpartner. Den Saisonvertrag für Ihr Objekt in {ort} schließen Sie am besten im Herbst ab, mit Einsatznachweis nach jedem Einsatz.",
+   "garantie_text": "Ein fester Ansprechpartner für Besichtigung, Angebot und Saison – Räumen und Streuen übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik, der Einsatznachweis kommt nach jedem Einsatz.",
+   "ortsseite_lead": "Ihr Winterdienst in {ort}: Räumen und Streuen übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik, koordiniert über einen festen Ansprechpartner – Saisonvertrag mit Einsatznachweis, am besten vor dem ersten Frost.",
    "blocks": [
     {
+     "id": "herbst-winter-paket",
      "h2": "Herbst-Winter-Paket: Laub, Dachrinne und Winterdienst in einem Ablauf",
-     "body": "Drei Arbeiten, die im Herbst zusammenfallen, in einer Reihenfolge. Im Oktober und November räumen wir das Laub von Rasen, Wegen, Terrasse und aus den Beeten und nehmen es mit; das ist unsere eigene Leistung. Ist das Laub unten, reinigt ein Partner-Fachbetrieb die Dachrinne und spült die Fallrohre, bevor der erste Frost das Wasser darin gefrieren lässt. Parallel besichtigt der Winterdienst-Partner Ihre Flächen und legt das Angebot für die Saison vor. Sie stellen eine Anfrage, Noah Telo sortiert die Termine, und Ihr Grundstück ist bis zum ersten Schnee vorbereitet.",
-     "link_to": "dachrinnenreinigung",
-     "link_text": "Zur Dachrinnenreinigung im Havelland"
+     "body": "Im Oktober und November holen wir das Laub von Rasen, Wegen und Terrasse weg – unsere eigene Leistung. Danach reinigt ein Partner-Fachbetrieb die Dachrinne, und der Winterdienst-Partner besichtigt Ihre Flächen für den Saisonvertrag. Eine Anfrage, Noah Telo sortiert die Termine.",
+     "link_to": "gartenpflege#herbst-paket",
+     "link_text": "Zum Herbst-Paket",
+     "link2_to": "dachrinnenreinigung",
+     "link2_text": "Zur Dachrinnenreinigung"
     },
     {
-     "h2": "Laub im Oktober und November – eigene Leistung",
-     "body": "Laub gehört zur Gartenpflege, und die machen wir selbst: Rasen, Wege, Terrasse und Beete, Abfuhr inklusive, auf Wunsch im 14-tägigen Rhythmus bis zum letzten Blatt. Nasses Laub auf dem Gehweg wird bei Frost rutschig und gehört deshalb beim Laubräumen dazu. Nach jedem Termin bekommen Sie Vorher-Nachher-Fotos aufs Handy.",
-     "link_to": "gartenpflege",
-     "link_text": "Zur Gartenpflege und Laubentfernung im Havelland"
-    },
-    {
+     "id": "hausverwaltungen",
      "h2": "Für Hausverwaltungen: Winterdienst als Teil der Objektbetreuung",
-     "body": "Wer mehrere Objekte betreut, will einen Ansprechpartner statt fünf Betriebe. Der Winterdienst über den Partner-Fachbetrieb lässt sich mit Hausmeisterservice, Grünpflege und Reinigung aus unserem Objekt-Angebot verbinden. Sie erhalten je Objekt ein schriftliches Angebot und einen Einsatznachweis, den Sie an die Eigentümer weiterreichen können.",
+     "body": "Wer mehrere Objekte betreut, will einen Ansprechpartner statt fünf Betriebe. Winterdienst über den Partner-Fachbetrieb lässt sich mit Laub, Grünpflege und Treppenhaus aus unserem Objekt-Angebot verbinden – je Objekt ein schriftliches Angebot und ein Einsatznachweis für die Eigentümer.",
      "link_to": "fuer-hausverwaltungen",
      "link_text": "Zum Angebot für Hausverwaltungen und Gewerbe"
     }
@@ -243,7 +239,7 @@
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/seo-web-copy/SKILL.md"
    ],
-   "_integriert": "2026-09-03 aus Workflow winter-lp-copy-fabrik C1; Preisspanne 250–600 € (unbelegte Snippets) gestrichen"
+   "_integriert": "2026-09-03 C1; Umbau 03.09. abends: Prose 1152→~450 W, Satzung/Marktpreise → Ratgeber/FAQ, Falkensee raus aus Title/H1 (Kannibalisierung Ortsseite)"
   },
   {
    "slug": "steinreinigung",
@@ -418,6 +414,22 @@
     "llm-optimisation.md (Antwort-zuerst pro Sektion, Definition-Block, eigenständige 40-80-Wort-FAQ, Entity-Klarheit Firma+Ort)",
     "stop-slop.md (deutsch: keine Floskel-Opener, keine Binär-Kontraste, Aktiv statt Passiv, 'Sie' statt 'man', variierte Satzlängen)",
     "Guardrail Design §3 (2026-07-22): Tippgeber-/Partnermodell — bestehende Eigenleistungs-Copy ersetzt durch Partner-Framing, kein 'ein Preis', keine Provisions-Erwähnung."
+   ],
+   "blocks": [
+    {
+     "id": "herbst-paket",
+     "h2": "Herbst-Paket: Laub und letzter Schnitt gleich mit",
+     "body": "Bevor der Partner-Fachbetrieb die Rinne reinigt, holen wir das Laub von Rasen, Wegen und Terrasse und schneiden die Hecke ein letztes Mal – unsere eigene Leistung. Beides stimmen wir auf einen Termin ab, Sie haben einen Ansprechpartner.",
+     "link_to": "gartenpflege#herbst-paket",
+     "link_text": "Zum Herbst-Paket"
+    },
+    {
+     "id": "winterdienst",
+     "h2": "Winterdienst gleich mit regeln",
+     "body": "Ist die Rinne frei, fehlt für den Winter nur noch der Saisonvertrag: Räumen und Streuen übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik, jeder Einsatz wird mit Datum und Uhrzeit festgehalten. Wir organisieren die Besichtigung, am besten vor dem ersten Frost.",
+     "link_to": "winterdienst",
+     "link_text": "Zum Winterdienst im Havelland"
+    }
    ]
   },
   {
@@ -699,7 +711,11 @@
    "sections": [
     {
      "h3": "Grünpflege & Winterdienst",
-     "body": "Wir halten Ihre Grünflächen das ganze Jahr in Form; für den Winter organisieren wir den Räumdienst. Zur Grünpflege gehören Rasen mähen, Hecken und Sträucher schneiden, Beete jäten, Laub entfernen und der Grünschnitt-Abtransport. Den Winterdienst auf Gehwegen, Hof- und Stellflächen übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik; jeder Einsatz wird mit Datum und Uhrzeit festgehalten, die Kontrollpflicht bleibt beim Eigentümer. Die Grünpflege bieten wir im 14-tägigen Rhythmus als Wartungsvertrag an, den Winterdienst schließen Sie als Saisonvertrag mit dem Fachbetrieb ab – wir koordinieren Besichtigung und Abschluss. So sind Termine gesichert, ohne dass Sie jedes Mal neu anrufen."
+     "body": "Wir halten Ihre Grünflächen das ganze Jahr in Form; für den Winter organisieren wir den Räumdienst. Zur Grünpflege gehören Rasen mähen, Hecken und Sträucher schneiden, Beete jäten, Laub entfernen und der Grünschnitt-Abtransport. Den Winterdienst auf Gehwegen, Hof- und Stellflächen übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik; jeder Einsatz wird mit Datum und Uhrzeit festgehalten, die Kontrollpflicht bleibt beim Eigentümer. Die Grünpflege bieten wir im 14-tägigen Rhythmus als Wartungsvertrag an, den Winterdienst schließen Sie als Saisonvertrag mit dem Fachbetrieb ab – wir koordinieren Besichtigung und Abschluss. So sind Termine gesichert, ohne dass Sie jedes Mal neu anrufen.",
+     "link_to": "winterdienst",
+     "link_text": "Mehr zum Winterdienst über den Partner-Fachbetrieb",
+     "link2_to": "gartenpflege#laub",
+     "link2_text": "Laub entfernen lassen"
     },
     {
      "h3": "Kleinreparaturen",

@@ -58,7 +58,7 @@
   {
    "slug": "winterdienst",
    "name": "Winterdienst",
-   "title_suffix": "Schneeräumen & Streuen",
+   "title_suffix": "Räumen und Streuen im Saisonvertrag",
    "strang": "A",
    "segment": [
     "B2C",
@@ -81,7 +81,8 @@
     "Räum- und Streupflicht"
    ],
    "partner_modell": true,
-   "_hinweis": "Vermittlungsmodell (Owner-Entscheidung Maurice 10.08.2026): Leads gehen an einen Partner-Fachbetrieb, der Winterdienstvertrag kommt zwischen Kunde und Betrieb zustande. Copy-Guardrail: KEINE Eigenleistung ('wir räumen' verboten), KEINE eigene Reaktionszeit-Garantie, KEINE Zusage zur Übernahme der Räum-/Streupflicht durch uns. Framing wie dachreinigung/dachrinnenreinigung. ACHTUNG: offer_ref G1.3 in Branding/offer.md beschreibt noch Eigenleistung inkl. eigener Reaktionsgarantie und ist nachzuziehen."
+   "_hinweis": "Vermittlungsmodell (Owner-Entscheidung Maurice 10.08.2026): Leads gehen an einen Partner-Fachbetrieb, der Winterdienstvertrag kommt zwischen Kunde und Betrieb zustande. Copy-Guardrail: KEINE Eigenleistung ('wir räumen' verboten), KEINE eigene Reaktionszeit-Garantie, KEINE Zusage zur Übernahme der Räum-/Streupflicht durch uns. Framing wie dachreinigung/dachrinnenreinigung. ACHTUNG: offer_ref G1.3 in Branding/offer.md beschreibt noch Eigenleistung inkl. eigener Reaktionsgarantie und ist nachzuziehen.",
+   "title_suffix_short": "Räumen und Streuen"
   },
   {
    "slug": "steinreinigung",
