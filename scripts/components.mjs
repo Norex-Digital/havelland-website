@@ -274,7 +274,7 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
   const text = `Hallo, hier ein Foto von ${gewerk}${ortTeil} — was würde das kosten?`;
   // Partner-/Tippgeber-Services (Dach): Schritt 3 nennt keinen eigenen Festpreis — das Angebot kommt vom ausführenden Fachbetrieb.
   const step3 = partner
-    ? `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort in Stunden</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung durch den geprüften Partner-Fachbetrieb — das verbindliche Angebot kommt vom ausführenden Betrieb.</p></div></li>`
+    ? `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort in Stunden</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung durch den Partner-Fachbetrieb — das verbindliche Angebot kommt vom ausführenden Betrieb.</p></div></li>`
     : `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort in Stunden</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung — danach steht Ihr Festpreis.</p></div></li>`;
   return `<div class="wa-grid"><div>` +
     `<span class="kick rv"><span class="dot"></span> Der schnellste Weg</span>` +
@@ -315,14 +315,14 @@ const tlStep3 = slug => TL_39.has(slug)
 // Partner-/Tippgeber-Variante (Dach): keine Eigenleistung, kein eigener Festpreis, kein eigener Foto-Nachweis — Ausführung + Angebot beim Fachbetrieb.
 const TL_PARTNER_DACH = [
   ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was am Dach ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
-  ['Kurzfristig · kostenlos', 'Besichtigung durch den Fachbetrieb', 'Der geprüfte Partner-Fachbetrieb sieht sich Dach, Zugang und Umfang an. Die Besichtigung ist für Sie kostenlos und unverbindlich.'],
+  ['Kurzfristig · kostenlos', 'Besichtigung durch den Fachbetrieb', 'Der Partner-Fachbetrieb sieht sich Dach, Zugang und Umfang an. Die Besichtigung ist für Sie kostenlos und unverbindlich.'],
   ['Nach der Besichtigung', 'Angebot vom Fachbetrieb', 'Das verbindliche Angebot erstellt der ausführende Betrieb. Sagen Sie zu, stimmen wir Termin und Ablauf mit Ihnen ab.'],
   ['Zum vereinbarten Termin', 'Ausführung, ein Ansprechpartner', 'Die Arbeit am Dach übernimmt der Fachbetrieb mit passender Absicherung — wir begleiten den Einsatz als Ihr fester Draht.']
 ];
 // Winterdienst-Variante (01.09.): gleiche Mechanik, Wording ohne „Dach" — Saisonvertrag statt Einmalauftrag.
 const TL_PARTNER_WINTER = [
   ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, welche Flächen im Winter frei sein müssen — Gehweg, Zufahrt, Stellplätze. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
-  ['Kurzfristig · kostenlos', 'Besichtigung durch den Fachbetrieb', 'Der geprüfte Partner-Fachbetrieb sieht sich Flächen, Zugänge und den Platz für Streugut an. Die Besichtigung ist für Sie kostenlos und unverbindlich.'],
+  ['Kurzfristig · kostenlos', 'Besichtigung durch den Fachbetrieb', 'Der Partner-Fachbetrieb sieht sich Flächen, Zugänge und den Platz für Streugut an. Die Besichtigung ist für Sie kostenlos und unverbindlich.'],
   ['Nach der Besichtigung', 'Saisonvertrag vom Fachbetrieb', 'Das verbindliche Angebot als Saisonvertrag erstellt der ausführende Betrieb. Sagen Sie zu, steht der Winterdienst vor dem ersten Schnee.'],
   ['Bei Schnee und Glätte', 'Einsätze mit Nachweis', 'Räumen und Streuen übernimmt der Fachbetrieb mit eigener Technik und Absicherung, jeder Einsatz wird festgehalten — wir bleiben Ihr fester Draht.']
 ];

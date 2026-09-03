@@ -71,7 +71,7 @@
    "wave": 1,
    "price": null,
    "offer_ref": "G1.3",
-   "garantie": "Ausführung durch geprüften Partner-Fachbetrieb — Besichtigung, Angebot und Termin koordinieren wir für Sie",
+   "garantie": "Ausführung durch Partner-Fachbetrieb — Besichtigung, Angebot und Termin koordinieren wir für Sie",
    "element_status": "geplant",
    "faq": null,
    "saison": "Seite ab September; Verträge Sep-Nov",
@@ -141,7 +141,7 @@
    "wave": 1,
    "price": null,
    "offer_ref": "G2.3",
-   "garantie": "Ausführung durch geprüften Partner-Fachbetrieb — wir koordinieren Besichtigung, Termin und Ablauf",
+   "garantie": "Ausführung durch Partner-Fachbetrieb — wir koordinieren Besichtigung, Termin und Ablauf",
    "element_status": "teilweise",
    "faq": null,
    "peak": "Oktober/November",
@@ -169,7 +169,7 @@
    "wave": 2,
    "price": null,
    "offer_ref": null,
-   "garantie": "Ausführung durch geprüften Partner-Fachbetrieb — Besichtigung, Termin und Ablauf koordinieren wir für Sie",
+   "garantie": "Ausführung durch Partner-Fachbetrieb — Besichtigung, Termin und Ablauf koordinieren wir für Sie",
    "element_status": "geplant",
    "faq": null,
    "peak": "März",
@@ -181,7 +181,7 @@
     "wustermark"
    ],
    "partner_modell": true,
-   "_hinweis": "Tippgeber-/Partnermodell (kein GU, Owner-Entscheidung 2026-07-22). Copy-Guardrail: KEINE Eigenleistung ('wir steigen aufs Dach' verboten), KEIN 'ein Preis', keine Provisions-Erwähnung. Framing: Ausführung durch geprüften Partner-Fachbetrieb — wir koordinieren Besichtigung, Termin und Ablauf. Ortsseiten erst nach unterschriebener Partnervereinbarung freischalten (Deadline 1. September)."
+   "_hinweis": "Tippgeber-/Partnermodell (kein GU, Owner-Entscheidung 2026-07-22). Copy-Guardrail: KEINE Eigenleistung ('wir steigen aufs Dach' verboten), KEIN 'ein Preis', keine Provisions-Erwähnung. Framing: Ausführung durch Partner-Fachbetrieb — wir koordinieren Besichtigung, Termin und Ablauf. Ortsseiten erst nach unterschriebener Partnervereinbarung freischalten (Deadline 1. September)."
   },
   {
    "slug": "entruempelung",
