@@ -249,7 +249,13 @@ const footer = `<footer><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p
 const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script><script src="/assets/js/site.js?v=${ASSET_VER}" defer></script>` + CONSENT_BANNER + TRACK_EVENTS;
 const endBand = `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, was ansteht — wir kümmern uns.</h2><p class="rv d1">Kostenlose Besichtigung, Festpreis, dann erledigt.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
 // Partner-/Tippgeber-Variante (Dach): kein eigener Festpreis — Besichtigung + Angebot über den Fachbetrieb, wir koordinieren.
-const endBandPartner = `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, was am Dach ansteht — wir koordinieren.</h2><p class="rv d1">Kostenlose Besichtigung durch den geprüften Partner-Fachbetrieb — ein Ansprechpartner für Termin und Ablauf.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
+// Partner-Wording je Service (01.09.): Dach-Texte rendern sonst woertlich 'Dach' auf Winterdienst-Seiten (Template-Bug, gefunden 01.09.).
+const PARTNER_TXT = {
+  dach: { was: 'was am Dach ansteht', arbeit: 'Die Arbeit am Dach', vergleich: 'mehrere Dachbetriebe' },
+  winterdienst: { was: 'welche Flächen im Winter frei sein müssen', arbeit: 'Räumen und Streuen', vergleich: 'mehrere Räumdienste' },
+};
+const partnerTxt = s => (s && s.slug === 'winterdienst') ? PARTNER_TXT.winterdienst : PARTNER_TXT.dach;
+const endBandPartner = s => { const t = partnerTxt(s); return `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, ${t.was} — wir koordinieren.</h2><p class="rv d1">Kostenlose Besichtigung durch den geprüften Partner-Fachbetrieb — ein Ansprechpartner für Termin und Ablauf.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`; };
 // Dunkles Wert-Band (4 Werte) — auf Home + Übersichtsseiten wiederverwendet
 const valueBand = `<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>
 <div class="vals"><div class="v rv d1"><h4><span class="n">01</span> Aus einer Hand</h4><p>Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles.</p></div><div class="v rv d2"><h4><span class="n">02</span> Nachweis statt Versprechen</h4><p>Foto-Dokumentation nach jedem Auftrag, direkt aufs Handy.</p></div><div class="v rv d3"><h4><span class="n">03</span> Festpreis</h4><p>Kostenlose Besichtigung, klarer Preis — kein Nachkommen.</p></div><div class="v rv d4"><h4><span class="n">04</span> Schnell erreichbar</h4><p>WhatsApp-Antwort in Stunden, nicht in Tagen.</p></div></div></div></section>`;
@@ -266,7 +272,7 @@ const trustLine = (() => {
 // Garantie-Strip (lock-v2 .gstrip) — feste 3-Zusagen-Leiste, markenübergreifend (Home + Hubs). Ohne Bild/Overlay-Label.
 const gstrip = `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Festpreis ist Endpreis</h3><p>Nach der kostenlosen Besichtigung steht Ihr Preis — inklusive Abfuhr, ohne Nachforderung.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Foto-Nachweis</h3><p>Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Ein Ansprechpartner</h3><p>Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.</p></div></div></div></div></section>`;
 // Partner-/Tippgeber-Variante (Dach): keine Eigenleistungs- oder Festpreis-Zusage — Ausführung + Angebot beim geprüften Fachbetrieb, wir koordinieren.
-const gstripPartner = `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Ein Ansprechpartner</h3><p>Von der Anfrage bis zur Abnahme koordinieren wir alles für Sie — Sie müssen nicht mehrere Dachbetriebe selbst vergleichen.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Geprüfter Partner-Fachbetrieb</h3><p>Die Arbeit am Dach übernimmt ein geprüfter Fachbetrieb mit passender Ausrüstung und Absicherung.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Angebot vom Fachbetrieb</h3><p>Nach der kostenlosen Besichtigung erstellt der ausführende Betrieb Ihr Angebot — transparent und unverbindlich.</p></div></div></div></div></section>`;
+const gstripPartner = s => { const t = partnerTxt(s); return `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Ein Ansprechpartner</h3><p>Von der Anfrage bis zur Abnahme koordinieren wir alles für Sie — Sie müssen nicht ${t.vergleich} selbst vergleichen.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Geprüfter Partner-Fachbetrieb</h3><p>${t.arbeit} übernimmt ein geprüfter Fachbetrieb mit passender Ausrüstung und Absicherung.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Angebot vom Fachbetrieb</h3><p>Nach der kostenlosen Besichtigung erstellt der ausführende Betrieb Ihr Angebot — transparent und unverbindlich.</p></div></div></div></div></section>`; };
 
 function write(url, html) {
   const dir = `website${url}`.replace(/\/$/, '');
@@ -387,13 +393,13 @@ function hub(s) {
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || s.b2b_only) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div>${trustLine}</div>
 <div class="shot rv in d2">${heroShot}</div></div></section>
-${s.partner_modell ? gstripPartner : gstrip}
+${s.partner_modell ? gstripPartner(s) : gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv">${definition}<h2>${esc(s.name)} im Havelland — was dazugehört</h2>${sektionenHtml}${naehe}${ablauf}<h3>${s.garantie ? 'Unsere Garantie' : 'Unser Versprechen'}</h3><p>${esc(garantieTxt)}</p></div></div></section>
 ${IMG['svc-' + s.slug + '-detail'] ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic('svc-' + s.slug + '-detail', { alt: s.name + ' im Detail — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>` : ''}
 ${extraBlocks}
 ${rich}
 ${b2bCross}
-${s.partner_modell ? endBandPartner : endBand}`;
+${s.partner_modell ? endBandPartner(s) : endBand}`;
   write(url, head(title, meta, url, schema) + header + main + footer + sctaBar(`Hallo, ich interessiere mich für ${s.name} im Havelland.`) + revealJS + '</body></html>');
   written.hubs.push(url);
 }
@@ -443,7 +449,7 @@ function ortsseite(s, o) {
   const tSuffix = s.title_suffix ? ` – ${s.title_suffix}`
     : ((s.name.length + o.name.length) < 34 ? ' – Havelland' : '');
   const title = clampTitle(`${s.name} ${o.name}${tSuffix}`);
-  const meta = mkMeta(so && so.meta ? fillTok(so.meta, o, oc) : `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`);
+  const meta = mkMeta(so && so.meta ? fillTok(so.meta, o, oc) : (s.partner_modell ? `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''}: Ausführung durch einen geprüften Partner-Fachbetrieb, koordiniert über einen festen Ansprechpartner vom Haus- & Gartenservice Havelland.` : `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`));
 
   // Heckenschnitt-Ort: Vorher/Nachher-Slider im Hero; andere Gewerke: Standard-Bild (kein Slider)
   const ortVoll = VOLL_VN.has(s.slug);
@@ -464,14 +470,14 @@ function ortsseite(s, o) {
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/${s.slug}/">${esc(s.name)}</a><span class="sep">›</span>${esc(o.name)}</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(o.name)}${o.plz?` · ${esc(o.plz)}`:''}</span><h1 class="rv in d1">${esc(s.name)} <em>in ${esc(o.name)}</em></h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || isB2Bonly(o.typ)) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich brauche ${s.name} in ${o.name}.`)}">WhatsApp</a></div></div>
 <div class="shot rv in d2">${heroShotO}</div></div></section>
-${s.partner_modell ? gstripPartner : gstrip}
+${s.partner_modell ? gstripPartner(s) : gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
 ${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 <section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell })}</div></section>
 <section class="sec section-alt"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
 ${nachbarSection}
-${s.partner_modell ? endBandPartner : endBand}`;
+${s.partner_modell ? endBandPartner(s) : endBand}`;
   const ni = svcWaveNoindex(s);
   write(url, head(title, meta, url, schema, { noindex: ni }) + header + main + footer + sctaBar(`Hallo, ich brauche ${s.name} in ${o.name}.`) + revealJS + '</body></html>');
   written.ortsseiten.push(url); if (!ni) written.ortsseitenIdx.push(url);
@@ -873,7 +879,7 @@ function sitemaps() {
   fs.writeFileSync('website/sitemap.xml', idx);
   fs.writeFileSync('website/robots.txt', `User-agent: *\nAllow: /\n\n# AI-Crawler erlaubt (AEO/GEO)\nUser-agent: GPTBot\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
   // llms.txt (GEO)
-  const llms = `# ${nap.name}\n\n> Haus- & Gartenservice im Havelland und Berliner Umland. Ein fester Ansprechpartner für Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste. Sitz: ${nap.city}. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Auftrag.\n\n## Leistungen\n${services.map(s=>`- [${s.name}](${DOMAIN}/${s.slug}/)`).join('\n')}\n\n## Ratgeber\n${(ratCopy.length?ratCopy:RATGEBER_FALLBACK).map(r=>`- [${r.title}](${DOMAIN}/ratgeber/${r.slug}/)`).join('\n')}\n\n## Kontakt\n- Telefon: ${nap.phone_display}\n- Ort: ${nap.street}, ${nap.zip} ${nap.city}\n`;
+  const llms = `# ${nap.name}\n\n> Haus- & Gartenservice im Havelland und Berliner Umland. Ein fester Ansprechpartner für Garten, Reinigung, Entrümpelung und Hausmeisterdienste; Winterdienst und Dachrinnenreinigung koordiniert über geprüfte Partner-Fachbetriebe. Sitz: ${nap.city}. Garten und Reinigung: Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Auftrag.\n\n## Leistungen\n${services.map(s=>`- [${s.name}](${DOMAIN}/${s.slug}/)`).join('\n')}\n\n## Ratgeber\n${(ratCopy.length?ratCopy:RATGEBER_FALLBACK).map(r=>`- [${r.title}](${DOMAIN}/ratgeber/${r.slug}/)`).join('\n')}\n\n## Kontakt\n- Telefon: ${nap.phone_display}\n- Ort: ${nap.street}, ${nap.zip} ${nap.city}\n`;
   fs.writeFileSync('website/llms.txt', llms);
   // IndexNow-Verifikationsdatei (Root) — nur bei echtem Key
   if (config.indexnow_key && !/TBD|XXXX|null/i.test(config.indexnow_key)) fs.writeFileSync(`website/${config.indexnow_key}.txt`, config.indexnow_key);

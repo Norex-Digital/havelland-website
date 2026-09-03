@@ -313,14 +313,22 @@ const tlStep3 = slug => TL_39.has(slug)
     ? 'Pünktlich, gründlich — Stubbenfräsen ist ganzjährig möglich. Wir räumen hinter uns auf — besenrein ist Teil des Preises.'
     : TL[2][2];
 // Partner-/Tippgeber-Variante (Dach): keine Eigenleistung, kein eigener Festpreis, kein eigener Foto-Nachweis — Ausführung + Angebot beim Fachbetrieb.
-const TL_PARTNER = [
+const TL_PARTNER_DACH = [
   ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was am Dach ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
   ['Kurzfristig · kostenlos', 'Besichtigung durch den Fachbetrieb', 'Der geprüfte Partner-Fachbetrieb sieht sich Dach, Zugang und Umfang an. Die Besichtigung ist für Sie kostenlos und unverbindlich.'],
   ['Nach der Besichtigung', 'Angebot vom Fachbetrieb', 'Das verbindliche Angebot erstellt der ausführende Betrieb. Sagen Sie zu, stimmen wir Termin und Ablauf mit Ihnen ab.'],
   ['Zum vereinbarten Termin', 'Ausführung, ein Ansprechpartner', 'Die Arbeit am Dach übernimmt der Fachbetrieb mit passender Absicherung — wir begleiten den Einsatz als Ihr fester Draht.']
 ];
+// Winterdienst-Variante (01.09.): gleiche Mechanik, Wording ohne „Dach" — Saisonvertrag statt Einmalauftrag.
+const TL_PARTNER_WINTER = [
+  ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, welche Flächen im Winter frei sein müssen — Gehweg, Zufahrt, Stellplätze. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
+  ['Kurzfristig · kostenlos', 'Besichtigung durch den Fachbetrieb', 'Der geprüfte Partner-Fachbetrieb sieht sich Flächen, Zugänge und den Platz für Streugut an. Die Besichtigung ist für Sie kostenlos und unverbindlich.'],
+  ['Nach der Besichtigung', 'Saisonvertrag vom Fachbetrieb', 'Das verbindliche Angebot als Saisonvertrag erstellt der ausführende Betrieb. Sagen Sie zu, steht der Winterdienst vor dem ersten Schnee.'],
+  ['Bei Schnee und Glätte', 'Einsätze mit Nachweis', 'Räumen und Streuen übernimmt der Fachbetrieb mit eigener Technik und Absicherung, jeder Einsatz wird festgehalten — wir bleiben Ihr fester Draht.']
+];
+const TL_PARTNER = TL_PARTNER_DACH;
 export function auftragsTimeline(partner = false, slug = '') {
-  const base = partner ? TL_PARTNER : TL.map((row, i) => i === 2 ? [row[0], row[1], tlStep3(slug)] : row);
+  const base = partner ? (slug === 'winterdienst' ? TL_PARTNER_WINTER : TL_PARTNER_DACH) : TL.map((row, i) => i === 2 ? [row[0], row[1], tlStep3(slug)] : row);
   const items = base.map(([when, h, p], i) =>
     `<div class="tli"><span class="tn">${i + 1}</span><div class="tbody">` +
     `<span class="twhen">${when}</span><h3>${h}</h3><p>${p}</p></div></div>`).join('');
