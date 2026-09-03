@@ -4,9 +4,9 @@
   {
    "key": "brandenburg",
    "rahmen": [
-    "Wer in {ort} ein Eigenheim bewohnt, kennt die Mischung aus ruhiger Wohnlage und einem Garten, der das ganze Jahr Arbeit macht. Hecken wachsen, Pflasterfugen veralgen, Laub sammelt sich in der Dachrinne. Wir nehmen diese wiederkehrenden Arbeiten am Stück ab – vom kleinen Vorgarten bis zum weitläufigen Grundstück Richtung {nachbarorte}. Dieselbe Hand bleibt von der Anfrage bis zur Abnahme zuständig, sodass Sie am Wochenende nicht selbst zur Heckenschere greifen. Gepflegt, ohne Ihren Sonntag.",
+    "Wer in {ort} ein Eigenheim bewohnt, kennt die Mischung aus ruhiger Wohnlage und einem Garten, der das ganze Jahr Arbeit macht. Hecken wachsen, Pflasterfugen veralgen, Laub sammelt sich auf Rasen und Wegen. Wir nehmen diese wiederkehrenden Arbeiten am Stück ab – vom kleinen Vorgarten bis zum weitläufigen Grundstück Richtung {nachbarorte}. Dieselbe Hand bleibt von der Anfrage bis zur Abnahme zuständig, sodass Sie am Wochenende nicht selbst zur Heckenschere greifen. Gepflegt, ohne Ihren Sonntag.",
     "Kurze Wege zählen hier mehr als große Worte. Von Falkensee aus erreichen wir {ort} und die Nachbarorte {nachbarorte} schnell, deshalb klappt ein Termin oft schon in derselben Woche und die Anfahrt steckt im Festpreis. Eine Nachricht per WhatsApp genügt, und Sie hören binnen weniger Stunden von uns. Das spart Ihnen das lange Warten auf Rückruf – und lässt uns auch für einen kurzen Pflegeschnitt vorbeischauen, ohne dass daraus ein Tagesprojekt wird. Nah dran, schnell da.",
-    "Die Aufträge in {ort} ähneln sich übers Jahr: Rasen mähen und vertikutieren im Frühjahr, Hecken und Sträucher in Form halten, im Herbst Laub räumen und Dachrinnen freilegen, im Winter Wege von Schnee befreien. Dazu die kleinen Dinge am Haus, für die sich kein eigener Handwerker lohnt – eine lockere Zaunlatte, ein verstopfter Ablauf, ein wackelndes Vordach. All das läuft über eine Nummer, statt für jede Kleinigkeit einen neuen Betrieb zu suchen. Eine Liste, ein Termin.",
+    "Die Aufträge in {ort} ähneln sich übers Jahr: Rasen mähen und vertikutieren im Frühjahr, Hecken und Sträucher in Form halten, im Herbst Laub räumen; Dachrinne und Winterdienst laufen über einen Partner-Fachbetrieb. Dazu die kleinen Dinge am Haus, für die sich kein eigener Handwerker lohnt – eine lockere Zaunlatte, ein verstopfter Ablauf, ein wackelndes Vordach. All das läuft über eine Nummer, statt für jede Kleinigkeit einen neuen Betrieb zu suchen. Eine Liste, ein Termin.",
     "Sie wissen bei uns, mit wem Sie es zu tun haben: In {ort} bleibt Ihr Ansprechpartner von der Anfrage bis zur Abnahme derselbe, keine wechselnden Kräfte. Wir sehen uns die Sache vor Ort gemeinsam an, nennen vorab einen festen Preis und zeigen das Ergebnis danach per Foto. So bleibt nachvollziehbar, was gemacht wurde – ob es um Ihr Grundstück geht oder das eines Angehörigen in {nachbarorte}. Nachweis per Bild, kein Vertrauensvorschuss nötig."
    ],
    "trust": [
@@ -25,7 +25,7 @@
     },
     {
      "q": "Übernehmen Sie in {ort} die Gartenpflege auch das ganze Jahr über?",
-     "a": "Gern. Viele Eigentümer in {ort} möchten sich nicht selbst um jeden Schnitt und jedes Laub kümmern. Wir vereinbaren einen festen Turnus – etwa Rasen im Sommer, Heckenschnitt im Herbst, Wege im Winter. Sie haben dabei durchgehend denselben Ansprechpartner und wissen, dass Ihr Grundstück verlässlich in Ordnung bleibt."
+     "a": "Gern. Viele Eigentümer in {ort} möchten sich nicht selbst um jeden Schnitt und jedes Laub kümmern. Wir vereinbaren einen festen Turnus – etwa Rasen im Sommer, Heckenschnitt und Laub im Herbst. Sie haben dabei durchgehend denselben Ansprechpartner und wissen, dass Ihr Grundstück verlässlich in Ordnung bleibt."
     },
     {
      "q": "Was kostet ein Auftrag in {ort} und gibt es eine Besichtigung vorab?",
@@ -36,9 +36,9 @@
   {
    "key": "berlinrand",
    "rahmen": [
-    "Wer in {ort} wohnt, hat sich meist bewusst fürs Grüne entschieden: ruhige Straßen, weite Grundstücke, oft Wasser oder Wald gleich nebenan. Diese Lage bringt Arbeit mit, die man nicht nebenbei erledigt. Hecken wachsen über die Grundstücksgrenze, das Herbstlaub füllt ganze Säcke, die Auffahrt soll auch im Januar begehbar bleiben. Wir kümmern uns das ganze Jahr darum, von der Pflasterfuge bis zur Baumkrone. Ein Grundstück, eine Zuständigkeit.",
+    "Wer in {ort} wohnt, hat sich meist bewusst fürs Grüne entschieden: ruhige Straßen, weite Grundstücke, oft Wasser oder Wald gleich nebenan. Diese Lage bringt Arbeit mit, die man nicht nebenbei erledigt. Hecken wachsen über die Grundstücksgrenze, das Herbstlaub füllt ganze Säcke, die Terrasse setzt im Schatten Grünbelag an. Wir kümmern uns das ganze Jahr darum, von der Pflasterfuge bis zur Baumkrone. Ein Grundstück, eine Zuständigkeit.",
     "Von Falkensee aus sind wir schnell bei Ihnen in {ort} und ohnehin regelmäßig in {nachbarorte} unterwegs, die Anfahrt steckt im Festpreis. Kurze Wege sind hier mehr als Bequemlichkeit: Ein Sturm legt einen Ast über die Einfahrt, der Briefkasten muss erreichbar bleiben, vor dem Wochenendbesuch soll die Terrasse sauber sein. Weil wir die Gegend kennen, lässt sich ein Termin oft kurzfristig einschieben. Sie schreiben über WhatsApp, wir melden uns am selben Tag. Kurzfristig statt irgendwann.",
-    "Die Aufträge in {ort} fallen meist größer aus, als man von außen denkt: ausgedehnte Rasenflächen, alte Baumbestände, lange Zaunlinien, Wege, die sauber bleiben sollen. Häufig kommt mehreres zusammen – Hecke schneiden, Grünschnitt abfahren, dazwischen die Dachrinne und ein paar lose Wegplatten. Wir nehmen solche Listen am Stück mit, statt für jeden Punkt jemand anderen anzukündigen. Nach der kostenlosen Besichtigung wissen Sie, was gemacht wird und was es kostet, bevor das erste Gerät läuft. Erst der Preis, dann die Arbeit.",
+    "Die Aufträge in {ort} fallen meist größer aus, als man von außen denkt: ausgedehnte Rasenflächen, alte Baumbestände, lange Zaunlinien, Wege, die sauber bleiben sollen. Häufig kommt mehreres zusammen – Hecke schneiden, Grünschnitt abfahren, dazwischen der Pflasterweg und ein paar lose Wegplatten. Wir nehmen solche Listen am Stück mit, statt für jeden Punkt jemand anderen anzukündigen. Nach der kostenlosen Besichtigung wissen Sie, was gemacht wird und was es kostet, bevor das erste Gerät läuft. Erst der Preis, dann die Arbeit.",
     "Auf einem großen Grundstück in {ort} möchten Sie nicht jedes Mal neu erklären, wo der Wasseranschluss liegt oder wie die Nachbarn zur Einfahrt stehen. Bei uns bleibt eine Person zuständig, die Ihr Anwesen kennt und beim nächsten Mal genau weiß, worauf es ankommt. Termine laufen ruhig ab, auch wenn Sie nicht zu Hause sind. Nach jedem Besuch erhalten Sie Fotos vom Vorher und Nachher. Prüfen Sie das Ergebnis in Ruhe."
    ],
    "trust": [
@@ -61,7 +61,7 @@
     },
     {
      "q": "Übernehmen Sie die regelmäßige Pflege übers ganze Jahr?",
-     "a": "Ja, viele Kunden in {ort} lassen ihr Grundstück das ganze Jahr von uns betreuen. Im Frühjahr und Sommer Rasen und Hecken, im Herbst das Laub, im Winter geräumte Wege und Zufahrten. Den Turnus legen wir gemeinsam fest, und Sie haben dafür einen festen Ansprechpartner, der Ihr Anwesen kennt."
+     "a": "Ja, viele Kunden in {ort} lassen ihr Grundstück das ganze Jahr von uns betreuen. Im Frühjahr und Sommer Rasen und Hecken, im Herbst das Laub und der letzte Schnitt vor dem Frost. Den Turnus legen wir gemeinsam fest, und Sie haben dafür einen festen Ansprechpartner, der Ihr Anwesen kennt."
     }
    ]
   },
@@ -69,9 +69,9 @@
    "key": "b2b",
    "rahmen": [
     "Rund um {ort} prägen Gewerbeflächen, Verwaltungen und größere Objekte das Bild – Standorte, an denen gepflegte Außenanlagen zum Eindruck beim Kunden gehören. Hier zählt nicht das einmalige Aufräumen, sondern ein Turnus, der ohne Nachfragen läuft: regelmäßige Pflege von Grünflächen, Wegen und Einfahrten, abgestimmt auf Ihren Betrieb. Ein fester Ablauf, eine klare Zuständigkeit. Außenanlagen, die durchgehend ordentlich wirken.",
-    "Von {ort} aus erreichen wir die Standorte in {nachbarorte} ohne lange Wege, und kurze Wege bedeuten Termintreue – die Anfahrt bleibt im Festpreis kalkuliert. Wer ein Objekt verwaltet, kennt das Problem: Ein Dienstleister sagt kurzfristig ab, der nächste kommt nicht zur vereinbarten Zeit. Wir halten den Turnus, weil die Strecke kalkulierbar bleibt. Heckenschnitt, Rasen, Winterdienst, kleinere Reparaturen – terminiert, dokumentiert, erledigt. Kein Hinterhertelefonieren.",
+    "Von {ort} aus erreichen wir die Standorte in {nachbarorte} ohne lange Wege, und kurze Wege bedeuten Termintreue – die Anfahrt bleibt im Festpreis kalkuliert. Wer ein Objekt verwaltet, kennt das Problem: Ein Dienstleister sagt kurzfristig ab, der nächste kommt nicht zur vereinbarten Zeit. Wir halten den Turnus, weil die Strecke kalkulierbar bleibt. Heckenschnitt, Rasen, Wegereinigung, kleinere Reparaturen – terminiert, dokumentiert, erledigt. Kein Hinterhertelefonieren.",
     "Die Aufträge in und um {ort} sehen anders aus als im privaten Garten: wiederkehrende Pflege übers Jahr, mehrere Gewerke an einem Standort, klare Erwartung an Termine und Nachweis. Eine Hausverwaltung braucht keinen Bastler für den Einzelfall, sondern jemanden, der Grünpflege, Wegereinigung und saisonale Arbeiten zuverlässig zusammen abdeckt. Wir übernehmen das als Rahmenvereinbarung – ein Turnus, eine Rechnung, ein Verantwortlicher. Auch bei Urlaub oder Krankheit ist die Vertretung gesichert. Ihr Objekt steht nie unversorgt da.",
-    "Was die Zusammenarbeit an Gewerbestandorten in {ort} trägt, ist Berechenbarkeit. Sie sprechen mit Noah Telo – nicht mit wechselnden Subunternehmern, nicht mit einer Hotline. Was vereinbart ist, steht; was erledigt wurde, halten wir per Foto fest. Statt mehrere Dienstleister zu koordinieren, läuft alles über einen Verantwortlichen, der Ihren Standort kennt und den Turnus im Kopf hat. Eine Vereinbarung regelt die wiederkehrenden Arbeiten, damit Pflege, Reinigung und Winterdienst ohne ständige Abstimmung laufen. Ein Name, eine Zuständigkeit."
+    "Was die Zusammenarbeit an Gewerbestandorten in {ort} trägt, ist Berechenbarkeit. Sie sprechen mit Noah Telo – nicht mit wechselnden Subunternehmern, nicht mit einer Hotline. Was vereinbart ist, steht; was erledigt wurde, halten wir per Foto fest. Statt mehrere Dienstleister zu koordinieren, läuft alles über einen Verantwortlichen, der Ihren Standort kennt und den Turnus im Kopf hat. Eine Vereinbarung regelt die wiederkehrenden Arbeiten, damit Pflege, Reinigung und Wegekontrolle ohne ständige Abstimmung laufen. Ein Name, eine Zuständigkeit."
    ],
    "trust": [
     "An Gewerbestandorten in {ort} zählt der Nachweis: Nach jedem Einsatz erhalten Sie Fotos vom Vorher und Nachher, auch wenn Sie selbst nicht vor Ort waren. So sieht Ihre Verwaltung schwarz auf weiß, dass der vereinbarte Turnus eingehalten wurde. Kein Nachhaken nötig.",
@@ -127,6 +127,34 @@
      "q": "Was kostet die Betreuung meines Grundstücks am See in {ort}?",
      "a": "Den Preis nennen wir erst nach einer kostenlosen Besichtigung, denn Lage und Aufwand am Wasser sind sehr verschieden. In {ort} sehen wir uns Ihr Grundstück an und nennen einen Festpreis, der dann der Endpreis bleibt."
     }
+   ]
+  },
+  {
+   "key": "partner-winterdienst",
+   "_hinweis": "03.09.2026: Partner-Pool für Partnermodell-Services ohne bespoke Ortscopy (Guard C5 Nr. 60). Kein Festpreis, keine Foto-Doku, keine Eigenleistung, keine Reaktionszeit. Rotation wie die anderen Pools.",
+   "rahmen": [
+    "In {ort} übernimmt Räumen und Streuen ein Partner-Fachbetrieb mit eigener Räumtechnik. Wir nehmen Ihre Anfrage entgegen, organisieren die Besichtigung und bleiben Ihr Ansprechpartner über die ganze Saison — Sie müssen nicht selbst mehrere Räumdienste vergleichen.",
+    "Gehweg, Zufahrt und Hauseingang in {ort}: Welche Flächen bis wann frei sein müssen, steht in der Satzung Ihrer Gemeinde. Der Partner-Fachbetrieb nimmt die Flächen bei der kostenlosen Besichtigung auf und erstellt den Saisonvertrag, wir koordinieren Termin und Ablauf.",
+    "Der Saisonvertrag wird vor dem ersten Schnee geschlossen. Für {ort} und {nachbarorte} fährt der Partner-Fachbetrieb feste Routen, jeder Räum- und Streueinsatz wird mit Datum und Uhrzeit festgehalten.",
+    "Ob Einfamilienhaus, Mehrfamilienhaus oder Gewerbeobjekt in {ort}: Sie schildern uns die Flächen, gern mit Foto, und bekommen einen Ansprechpartner statt einer Warteschleife. Räumen und Streuen führt der Partner-Fachbetrieb aus.",
+    "Wer in {ort} Eigentümer ist, bleibt für die Kontrolle verantwortlich — auch mit beauftragtem Winterdienst. Deshalb ist der Einsatznachweis Teil des Saisonvertrags: Datum, Uhrzeit und geräumte Fläche liegen Ihnen vor.",
+    "Streugut, Lagerplatz und Streumittelvorgaben der Gemeinde klärt der Partner-Fachbetrieb bei der Besichtigung in {ort}. Salz ist in den meisten Satzungen im Havelland nur bei Eisregen erlaubt, abstumpfende Mittel sind der Standard.",
+    "Viele Straßen in {ort} liegen laut Straßenverzeichnis beim Anlieger, andere räumt die Gemeinde. Das prüfen wir mit Ihnen vorab; für die Flächen, die bei Ihnen liegen, erstellt der Partner-Fachbetrieb nach der Besichtigung den Saisonvertrag.",
+    "Schnee nach 20 Uhr, Glätte am frühen Morgen: Die Satzung in {ort} nennt die Fristen, der Saisonvertrag legt fest, wie der Partner-Fachbetrieb sie auf Ihren Flächen einhält. Wir bleiben in der Saison Ihr fester Draht, wenn sich etwas ändert."
+   ],
+   "trust": [
+    "Ein Ansprechpartner für Besichtigung, Angebot und Saison — das Angebot kommt vom ausführenden Fachbetrieb, die Besichtigung ist kostenlos und unverbindlich.",
+    "Der Vertrag entsteht zwischen Ihnen und dem ausführenden Betrieb; wir koordinieren, erinnern und bleiben erreichbar, wenn im Winter Fragen aufkommen.",
+    "Anfragen aus {ort} beantworten wir meist noch am selben Werktag. Die Besichtigung durch den Partner-Fachbetrieb ist kostenlos und unverbindlich.",
+    "Kein Räumdienst-Vergleich auf eigene Faust: Sie bekommen über uns einen Partner-Fachbetrieb mit eigener Technik, der Ihre Straße in {ort} kennt und die Satzungsfristen im Vertrag festhält."
+   ],
+   "faqs": [],
+   "hooks": [
+    "Winterdienst in {ort} heißt für Eigentümer vor allem eines: Der Gehweg vor dem Haus muss zu den Zeiten frei sein, die die Gemeinde vorgibt — auch wenn Sie verreist sind oder früh im Büro. Ein Saisonvertrag nimmt Ihnen genau das ab.",
+    "In {ort} und den Nachbarorten {nachbarorte} fährt unser Partner-Fachbetrieb im Winter feste Routen. Je früher der Vertrag steht, desto sicherer ist Ihr Platz auf der Tour vor dem ersten Schnee.",
+    "Ob Einfamilienhaus mit Eckgrundstück oder Mehrfamilienhaus mit langem Gehweg in {ort}: Wir klären mit Ihnen, welche Flächen laut Satzung bei Ihnen liegen, und organisieren den Räumdienst dafür.",
+    "Für {ort} ({plz}) bündeln wir Anfrage, Besichtigung und Saisonvertrag bei einem Ansprechpartner. Räumen und Streuen übernimmt der Partner-Fachbetrieb mit eigener Technik, Sie bekommen den Nachweis je Einsatz.",
+    "Viele Haushalte in {ort} räumen noch selbst — bis zum ersten Winter mit Schichtdienst, Krankheit oder Urlaub. Ein Saisonvertrag regelt Gehweg, Zufahrt und Hauseingang, bevor die Frage überhaupt aufkommt."
    ]
   }
  ]

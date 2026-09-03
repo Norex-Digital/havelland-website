@@ -48,7 +48,7 @@
     },
     {
      "q": "Bieten Sie auch regelmäßige Gartenpflege im Abo an?",
-     "a": "Ja. Sie buchen die Pflege im festen 14-tägigen Rhythmus, dann kümmern wir uns laufend um Rasen, Hecken und Laub. Für den Winterdienst gibt es eigene Saisonverträge. Ein Abo spart Ihnen die Terminplanung und hält den Garten das ganze Jahr in Form. Für alle Arbeiten rund ums Haus bleibt eine feste Nummer Ihr Draht zu uns."
+     "a": "Ja. Sie buchen die Pflege im festen 14-tägigen Rhythmus, dann kümmern wir uns laufend um Rasen, Hecken und Laub. Winterdienst läuft als Saisonvertrag über einen Partner-Fachbetrieb. Ein Abo spart Ihnen die Terminplanung und hält den Garten das ganze Jahr in Form. Für alle Arbeiten rund ums Haus bleibt eine feste Nummer Ihr Draht zu uns."
     }
    ],
    "garantie_text": "Fällt ein vereinbarter Pflegetermin ohne Vorankündigung aus, ist Ihr nächster Termin kostenlos.",
@@ -472,7 +472,7 @@
     },
     {
      "q": "Reinigen Sie auch die Dachrinne mit?",
-     "a": "Ja, die Dachrinnenreinigung bieten wir ebenfalls an und stimmen beides bei der Besichtigung ab. So sind Dach und Rinne in einem Zug organisiert — mit einem festen Ansprechpartner für Termin und Ablauf."
+     "a": "Ja, die Dachrinnenreinigung koordinieren wir ebenfalls und stimmen beides bei der Besichtigung ab. So sind Dach und Rinne in einem Zug organisiert — mit einem festen Ansprechpartner für Termin und Ablauf."
     }
    ],
    "garantie_text": "Ein fester Ansprechpartner für Besichtigung, Termin und Ablauf — die Ausführung auf dem Dach übernimmt ein Partner-Fachbetrieb, das Angebot kommt vom ausführenden Betrieb.",
@@ -691,15 +691,15 @@
   {
    "slug": "hausmeisterservice",
    "title": "Hausmeisterservice Havelland | Festpreis & Foto",
-   "meta": "Hausmeisterservice im Havelland: Grünpflege, Winterdienst, Kleinreparaturen, Kontrollgänge. Ein Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Einsatz.",
+   "meta": "Hausmeisterservice im Havelland: Grünpflege, Kleinreparaturen, Kontrollgänge, Foto-Nachweis nach jedem Einsatz. Winterdienst koordiniert über einen Partner-Fachbetrieb.",
    "h1": "Ihr Hausmeisterservice im Havelland – ein Ansprechpartner für alles",
    "h1_em": "alles",
-   "intro": "Geben Sie Garten, Winterdienst, Kleinreparaturen und Kontrollgänge an eine Stelle – statt vier Firmen zu koordinieren. Ihr Hausmeisterservice im Havelland und Berliner Umland: Grünpflege, Winterdienst, Kleinreparaturen, Kontrollgänge und die Pflege von Treppenhaus und Außenanlagen, für Privathaushalt, Gewerbe und Hausverwaltung. Den Preis legen wir nach kostenloser Besichtigung als Festpreis fest. Nach jedem Einsatz liegt die Foto-Doku auf Ihrem Handy. Ein Anruf, alles erledigt.",
+   "intro": "Geben Sie Garten, Winterdienst, Kleinreparaturen und Kontrollgänge an eine Stelle – statt vier Firmen zu koordinieren. Ihr Hausmeisterservice im Havelland und Berliner Umland: Grünpflege, Kleinreparaturen, Kontrollgänge und die Pflege von Treppenhaus und Außenanlagen, für Privathaushalt, Gewerbe und Hausverwaltung; den Winterdienst koordinieren wir über einen Partner-Fachbetrieb. Den Preis für unsere Leistungen legen wir nach kostenloser Besichtigung als Festpreis fest. Nach jedem Einsatz liegt die Foto-Doku auf Ihrem Handy. Ein Anruf, alles erledigt.",
    "definition": "Ein Hausmeisterservice ist ein laufender Betreuungsdienst, der wiederkehrende Aufgaben rund um ein Gebäude und Grundstück übernimmt: Grünpflege, Winterdienst, kleine Reparaturen, regelmäßige Kontrollgänge sowie die Reinigung von Treppenhaus und Außenanlagen. Für Eigentümer, Mieter und Verwaltungen ersetzt das viele einzelne Dienstleister durch einen festen Ansprechpartner.",
    "sections": [
     {
      "h3": "Grünpflege & Winterdienst",
-     "body": "Wir halten Ihre Grünflächen das ganze Jahr in Form und Ihre Wege im Winter sicher. Zur Grünpflege gehören Rasen mähen, Hecken und Sträucher schneiden, Beete jäten, Laub entfernen und der Grünschnitt-Abtransport. Im Winterdienst räumen und streuen wir Gehwege, Hof- und Stellflächen vor der gesetzlichen Frist und dokumentieren jeden Einsatz für Ihre Räum- und Streupflicht. Für beides bieten wir feste Wartungsverträge an: Grünpflege im 14-tägigen Rhythmus, Winterdienst als Saisonvertrag. So sind Termine gesichert, ohne dass Sie jedes Mal neu anrufen."
+     "body": "Wir halten Ihre Grünflächen das ganze Jahr in Form; für den Winter organisieren wir den Räumdienst. Zur Grünpflege gehören Rasen mähen, Hecken und Sträucher schneiden, Beete jäten, Laub entfernen und der Grünschnitt-Abtransport. Den Winterdienst auf Gehwegen, Hof- und Stellflächen übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik; jeder Einsatz wird mit Datum und Uhrzeit festgehalten, die Kontrollpflicht bleibt beim Eigentümer. Die Grünpflege bieten wir im 14-tägigen Rhythmus als Wartungsvertrag an, den Winterdienst schließen Sie als Saisonvertrag mit dem Fachbetrieb ab – wir koordinieren Besichtigung und Abschluss. So sind Termine gesichert, ohne dass Sie jedes Mal neu anrufen."
     },
     {
      "h3": "Kleinreparaturen",
@@ -714,16 +714,16 @@
      "body": "Treppenhaus und Außenanlagen halten wir im Turnus sauber und ordentlich. Im Innenbereich reinigen wir Treppen, Geländer, Fensterbänke, Briefkastenanlagen und Eingangsbereiche. Außen kümmern wir uns um Höfe, Zuwege, Stellplätze, Mülltonnenboxen und das Entfernen von Wildwuchs zwischen Pflastersteinen. Das gilt für Mehrfamilienhäuser, Gewerbeobjekte und gepflegte Privatgrundstücke gleichermaßen. Auch hier dokumentieren wir das Ergebnis mit Vorher-Nachher-Fotos, sodass Mieter und Eigentümer den gepflegten Zustand belegt bekommen."
     }
    ],
-   "naehe": "Suchen Sie einen Hausmeisterservice in der Nähe? Wir sitzen in Falkensee und betreuen Objekte im gesamten Havelland und Berliner Umland — von Falkensee, Nauen und Rathenow bis Dallgow-Döberitz, Brieselang und an den westlichen Berliner Stadtrand. Kurze Wege heißen kurze Reaktionszeiten: Steht etwas an, schreiben Sie uns per WhatsApp, und Sie hören in Stunden von uns, nicht in Tagen. Die Räum- und Streupflicht der Gemeinden vor Ort kennen wir, die Anfahrt steckt im Festpreis.",
+   "naehe": "Suchen Sie einen Hausmeisterservice in der Nähe? Wir sitzen in Falkensee und betreuen Objekte im gesamten Havelland und Berliner Umland — von Falkensee, Nauen und Rathenow bis Dallgow-Döberitz, Brieselang und an den westlichen Berliner Stadtrand. Kurze Wege heißen planbare Termine: Steht etwas an, schreiben Sie uns per WhatsApp, und Sie hören zeitnah von uns. Die Räum- und Streupflicht der Gemeinden vor Ort kennen wir, die Anfahrt steckt im Festpreis.",
    "ablauf": "So läuft Ihr Hausmeisterservice ab: Zuerst kommen wir zur kostenlosen Besichtigung vor Ort und nehmen den Umfang auf. Daraus erstellen wir einen Festpreis, bei dauerhafter Betreuung als Rahmenvertrag mit festen Leistungen und Terminen. Der Festpreis ist der Endpreis, kein Aufschlag, keine Nachforderung. Anschließend führen wir die vereinbarten Einsätze zuverlässig und pünktlich aus. Nach jedem Termin erhalten Sie eine Foto-Dokumentation aufs Handy.",
    "faqs": [
     {
      "q": "Was umfasst ein Hausmeisterservice genau?",
-     "a": "Ein Hausmeisterservice umfasst die laufende Betreuung von Gebäude und Grundstück. Bei uns gehören Grünpflege, Winterdienst, Kleinreparaturen, regelmäßige Kontrollgänge sowie die Reinigung von Treppenhaus und Außenanlagen dazu. Sie buchen einzelne Leistungen oder ein festes Paket. Statt mehrere Firmen zu koordinieren, haben Sie einen Ansprechpartner für Privathaushalt, Gewerbe oder Hausverwaltung."
+     "a": "Ein Hausmeisterservice umfasst die laufende Betreuung von Gebäude und Grundstück. Bei uns gehören Grünpflege, Kleinreparaturen, Kontrollgänge sowie die Reinigung von Treppenhaus und Außenanlagen dazu, der Winterdienst läuft über einen Partner-Fachbetrieb. Sie buchen einzelne Leistungen oder ein festes Paket. Statt mehrere Firmen zu koordinieren, haben Sie einen Ansprechpartner für Privathaushalt, Gewerbe oder Hausverwaltung."
     },
     {
      "q": "Wie oft kommt der Hausmeister vorbei?",
-     "a": "Den Rhythmus legen Sie fest. Grünpflege bieten wir im 14-tägigen Turnus an, Kontrollgänge wöchentlich oder monatlich, den Winterdienst als Saisonvertrag mit Einsatz bei Schnee und Glätte. Bei einem Rahmenvertrag stehen die Termine fest, sodass Sie nicht jedes Mal neu anfragen. Einmalige Einsätze sind ebenso möglich, etwa eine Grundreinigung oder eine einzelne Reparatur."
+     "a": "Den Rhythmus legen Sie fest. Grünpflege bieten wir im 14-tägigen Turnus an, Kontrollgänge wöchentlich oder monatlich; den Winterdienst schließen Sie als Saisonvertrag mit unserem Partner-Fachbetrieb ab. Bei einem Rahmenvertrag stehen die Termine fest, sodass Sie nicht jedes Mal neu anfragen. Einmalige Einsätze sind ebenso möglich, etwa eine Grundreinigung oder eine einzelne Reparatur."
     },
     {
      "q": "Was kostet ein Hausmeisterservice im Havelland?",
@@ -731,15 +731,15 @@
     },
     {
      "q": "Übernehmen Sie auch Hausverwaltungen und Gewerbeobjekte?",
-     "a": "Ja. Wir betreuen Mehrfamilienhäuser, Gewerbeobjekte und Privatgrundstücke gleichermaßen. Für Hausverwaltungen ohne eigene Präsenz vor Ort übernehmen wir Kontrollgänge, Treppenhausreinigung, Winterdienst mit Nachweis und Kleinreparaturen über einen Rahmenvertrag. Sie erhalten nach jedem Einsatz eine Foto-Dokumentation, die Sie an Eigentümer und Mieter weitergeben können. Damit haben Sie einen verlässlichen Partner für mehrere Objekte im Havelland."
+     "a": "Ja. Wir betreuen Mehrfamilienhäuser, Gewerbeobjekte und Privatgrundstücke gleichermaßen. Für Hausverwaltungen ohne eigene Präsenz vor Ort übernehmen wir Kontrollgänge, Treppenhausreinigung und Kleinreparaturen über einen Rahmenvertrag, den Winterdienst koordiniert über einen Partnerbetrieb. Sie erhalten nach jedem Einsatz eine Foto-Dokumentation, die Sie an Eigentümer und Mieter weitergeben können. Damit haben Sie eine Stelle für mehrere Objekte im Havelland."
     },
     {
      "q": "Wie schnell reagieren Sie auf eine Anfrage?",
-     "a": "Auf eine WhatsApp-Anfrage antworten wir in der Regel innerhalb weniger Stunden am selben Tag, nicht erst nach Tagen. Danach vereinbaren wir einen Termin für die kostenlose Besichtigung. Aus Falkensee heraus haben wir kurze Wege ins gesamte Havelland und Berliner Umland, was schnelle Reaktionszeiten ermöglicht. Bei laufenden Verträgen erreichen Sie uns direkt über Ihre feste Nummer."
+     "a": "Auf eine WhatsApp-Anfrage antworten wir in der Regel innerhalb weniger Stunden am selben Tag, nicht erst nach Tagen. Danach vereinbaren wir einen Termin für die kostenlose Besichtigung. Aus Falkensee heraus haben wir kurze Wege ins gesamte Havelland und Berliner Umland, das hält Besichtigungstermine kurzfristig. Bei laufenden Verträgen erreichen Sie uns direkt über Ihre feste Nummer."
     }
    ],
    "garantie_text": "Fällt ein vereinbarter Einsatz ohne Vorankündigung aus, ist der nächste Einsatz für Sie kostenlos.",
-   "ortsseite_lead": "Ihr Hausmeisterservice in {ort}: Grünpflege, Winterdienst, Kleinreparaturen und Treppenhausreinigung mit einem Ansprechpartner für alles. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Einsatz in {ort}.",
+   "ortsseite_lead": "Ihr Hausmeisterservice in {ort}: Grünpflege, Kleinreparaturen und Treppenhausreinigung mit einem Ansprechpartner für alles, Winterdienst über einen Partner-Fachbetrieb. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Einsatz in {ort}.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
@@ -877,7 +877,7 @@
     },
     {
      "h3": "Pflege der Außenanlagen",
-     "body": "Die Außenanlagen halten wir das ganze Jahr in Schuss, damit Mieter und Eigentümer ein gepflegtes Objekt vorfinden. Dazu gehören Rasen mähen, Hecken und Sträucher schneiden, Wege und Beete von Unkraut frei halten, Laub räumen und die Bepflanzung saisonal pflegen. Im Winter übernehmen wir den Winterdienst auf Gehwegen und Zufahrten und sichern damit Ihre Verkehrssicherungspflicht ab. Müllplätze und Stellflächen halten wir sauber. Für wiederkehrende Pflege bieten wir Wartungsverträge an, etwa eine 14-tägige Gartenpflege in der Saison, damit Sie nicht bei jedem Termin neu beauftragen müssen."
+     "body": "Die Außenanlagen halten wir das ganze Jahr in Schuss, damit Mieter und Eigentümer ein gepflegtes Objekt vorfinden. Dazu gehören Rasen mähen, Hecken und Sträucher schneiden, Wege und Beete von Unkraut frei halten, Laub räumen und die Bepflanzung saisonal pflegen. Den Winterdienst auf Gehwegen und Zufahrten übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik; wir koordinieren Besichtigung und Vertrag. Müllplätze und Stellflächen halten wir sauber. Für wiederkehrende Pflege bieten wir Wartungsverträge an, etwa eine 14-tägige Gartenpflege in der Saison, damit Sie nicht bei jedem Termin neu beauftragen müssen."
     },
     {
      "h3": "Kleininstandhaltung am Objekt",
@@ -893,11 +893,11 @@
    "faqs": [
     {
      "q": "Was umfasst die Objektbetreuung für Hausverwaltungen?",
-     "a": "Die Objektbetreuung bündelt technische Kontrolle, Pflege der Außenanlagen, Kleininstandhaltung und einen festen Ansprechpartner vor Ort. Wir kontrollieren Gemeinschaftsflächen, halten Garten und Wege in Schuss, übernehmen den Winterdienst und erledigen kleine Reparaturen. Größere Schäden an Elektrik, Heizung oder Gas melden wir mit Foto, statt sie selbst anzugehen. So koordinieren Sie ein Objekt über eine Stelle statt über mehrere Firmen."
+     "a": "Die Objektbetreuung bündelt technische Kontrolle, Pflege der Außenanlagen, Kleininstandhaltung und einen festen Ansprechpartner vor Ort. Wir kontrollieren Gemeinschaftsflächen, halten Garten und Wege in Schuss, koordinieren den Winterdienst über einen Partner-Fachbetrieb und erledigen kleine Reparaturen. Größere Schäden an Elektrik, Heizung oder Gas melden wir mit Foto, statt sie selbst anzugehen. So koordinieren Sie ein Objekt über eine Stelle statt über mehrere Firmen."
     },
     {
      "q": "Wie oft kontrollieren Sie ein betreutes Objekt?",
-     "a": "Den Kontrollrhythmus stimmen wir bei der Besichtigung auf Ihr Objekt ab. Üblich sind regelmäßige Rundgänge, etwa wöchentlich oder 14-tägig, ergänzt um saisonale Einsätze wie Laubräumung im Herbst und Winterdienst im Winter. Den vereinbarten Turnus halten wir im Wartungsvertrag fest, damit Sie sich auf feste Termine verlassen können und nicht jedes Mal neu beauftragen müssen."
+     "a": "Den Kontrollrhythmus stimmen wir bei der Besichtigung auf Ihr Objekt ab. Üblich sind regelmäßige Rundgänge, etwa wöchentlich oder 14-tägig, ergänzt um saisonale Einsätze wie Laubräumung im Herbst, Winterdienst über einen Partner-Fachbetrieb. Den vereinbarten Turnus halten wir im Wartungsvertrag fest, damit Sie sich auf feste Termine verlassen können und nicht jedes Mal neu beauftragen müssen."
     },
     {
      "q": "Wie reagieren Sie, wenn am Objekt ein Schaden auffällt?",
@@ -909,7 +909,7 @@
     },
     {
      "q": "Bieten Sie auch laufende Verträge statt Einzelaufträge an?",
-     "a": "Ja, für die laufende Objektbetreuung schließen wir Wartungsverträge ab. Üblich sind eine 14-tägige Gartenpflege in der Saison und ein Winterdienst über die gesamte Saison, kombiniert mit regelmäßigen Kontrollrundgängen. So haben Sie feste Ansprechzeiten, planbare Kosten und müssen nicht jeden Einsatz einzeln beauftragen. Den Umfang legen wir gemeinsam fest und halten ihn schriftlich fest."
+     "a": "Ja, für die laufende Objektbetreuung schließen wir Wartungsverträge ab. Üblich sind eine 14-tägige Gartenpflege in der Saison, kombiniert mit regelmäßigen Kontrollrundgängen; den Winterdienst-Saisonvertrag schließen Sie mit dem Partner-Fachbetrieb. So haben Sie feste Ansprechzeiten, planbare Kosten und müssen nicht jeden Einsatz einzeln beauftragen. Den Umfang legen wir gemeinsam fest und halten ihn schriftlich fest."
     }
    ],
    "garantie_text": "Eine feste Garantie nennen wir hier nicht, dafür ein klares Preisversprechen: kostenlose Vor-Ort-Besichtigung, danach ein Festpreis, der als Endpreis gilt — ohne Aufschlag, ohne Nachforderung.",

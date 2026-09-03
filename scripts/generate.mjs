@@ -307,7 +307,7 @@ function home() {
   // Herbst-Lead (03.09., C4): Monat 9–11 Herbst-Paket-Ansage mit Partner-Framing für Dachrinne/Winterdienst, sonst Bestandstext.
   const homeLead = (saisonMonat >= 9 && saisonMonat <= 11)
     ? 'Laub, Rasen und der letzte Heckenschnitt vor dem Winter: Das erledigen wir selbst, zum Festpreis nach Besichtigung, mit Foto-Nachweis. Dachrinne und Winterdienst organisieren wir gleich mit: Die Ausführung übernimmt ein Partner-Fachbetrieb, den Saisonvertrag schließen Sie vor dem ersten Schnee.'
-    : 'Garten, Reinigung, Winterdienst, Entrümpelung. Ein fester Ansprechpartner, der zurückruft — Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.';
+    : 'Garten, Reinigung, Entrümpelung: Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag. Winterdienst über Partner-Fachbetrieb — ein Ansprechpartner, der zurückruft.';
   const fokusCards = KERN.map((k, i) => `<a class="it rv d${i + 1}" href="/${k.slug}/"><span class="no">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(k.label)}</h3><p>${esc(k.promise)}</p></div><span class="arr">→</span></a>`).join('');
   const main = `
 <section class="hero">${leaf('hleaf')}<div class="wrap grid">
@@ -413,7 +413,11 @@ function ortsseite(s, o) {
   const url = `/${s.slug}-${o.slug}/`;
   const c = hubCopy[s.slug];
   const oc = orteCopy[o.slug];
-  const arch = oc ? archCopy[oc.archetype] : null;
+  const so = ortsSvcCopy[s.slug] || null;
+  const soOrt = (so && so.orte && so.orte[o.slug]) || null;
+  // Guard (03.09., C5 Nr. 60): Partner-Service ohne bespoke Copy rendert keine Orts-Hooks/Archetyp-Pools — die tragen Festpreis-/Foto-/Eigenleistungs-Zusagen.
+  const partnerNoCopy = !!s.partner_modell && !soOrt;
+  const arch = oc ? (partnerNoCopy ? (archCopy['partner-winterdienst'] || null) : archCopy[oc.archetype]) : null; // Partner-Pool statt Festpreis-Pools
   const seed = seedOf(url);
   const nachbarn = orteForService(s).filter(x => x.slug !== o.slug && hasOrt(s.slug, x.slug));
   const nahCards = rotate(nachbarn, seed, 4);
@@ -424,23 +428,23 @@ function ortsseite(s, o) {
   // Body aus Copy-Schicht (mit Fallback) — Archetyp-Bausteine aus POOLS per Seed (Near-Duplicate-Reduktion)
   const pickPool = (arr, i) => Array.isArray(arr) && arr.length ? arr[((i % arr.length) + arr.length) % arr.length] : (typeof arr === 'string' ? arr : '');
   const idx = (archOrtIdx[o.slug] || 0) + (svcPoolIdx[s.slug] || 0); // Ort + Service, sonst teilen sich alle Services eines Ortes den Text
+  // Partner-Pool (03.09.): Index global über alle Orte, sonst teilen sich Orte verschiedener Archetypen dasselbe (rahmen,trust)-Tupel (NearDup).
+  const idxP = partnerNoCopy ? haupt.findIndex(x => x.slug === o.slug) : idx;
   const rLen = arch && Array.isArray(arch.rahmen) ? arch.rahmen.length : 1;
   // Welle-1a: bespoke Service×Ort-Copy (falls vorhanden) hat Vorrang vor Archetyp/Ort-Hook
-  const so = ortsSvcCopy[s.slug] || null;
-  const soOrt = (so && so.orte && so.orte[o.slug]) || null;
   const lead = c && c.ortsseite_lead ? fillTok(c.ortsseite_lead, o, oc) : `Ihr ${s.name} in ${o.name} — vom Haus- & Gartenservice Havelland.`;
-  const hookSrc = soOrt && soOrt.hook ? soOrt.hook : (oc && oc.hook ? oc.hook : '');
+  const hookSrc = soOrt && soOrt.hook ? soOrt.hook : (oc && oc.hook ? oc.hook : (partnerNoCopy && arch && arch.hooks ? pickPool(arch.hooks, idxP + 1) : '')); // Orts-Hooks seit C5 (03.09.) service-neutral; Partner-Pool liefert Hook-Fallback
   const hook = hookSrc ? `<p>${esc(fillTok(hookSrc, o, oc))}</p>` : '';
-  const rahmenTxt = soOrt && soOrt.rahmen ? soOrt.rahmen : pickPool(arch && arch.rahmen, idx);   // eindeutige Verteilung
-  const trustTxt = soOrt && soOrt.trust ? soOrt.trust : pickPool(arch && arch.trust, Math.floor(idx / rLen));  // -> (rahmen,trust)-Tupel eindeutig je Archetyp-Ort
+  const rahmenTxt = soOrt && soOrt.rahmen ? soOrt.rahmen : pickPool(arch && arch.rahmen, idxP);   // eindeutige Verteilung
+  const trustTxt = soOrt && soOrt.trust ? soOrt.trust : pickPool(arch && arch.trust, Math.floor(idxP / rLen));  // -> (rahmen,trust)-Tupel eindeutig je Archetyp-Ort
   const rahmen = rahmenTxt ? `<p>${esc(fillTok(rahmenTxt, o, oc))}</p>` : '';
   const sektionen = (s.sektionen || []).map(x => `<li>${esc(x)}</li>`).join('');
   const ortsteile = (o.ortsteile && o.ortsteile.length) ? `<p>Auch in ${esc(o.ortsteile.join(', '))} und Umgebung sind wir für Sie da.</p>` : '';
-  const trust = trustTxt ? `<p>${esc(fillTok(trustTxt, o, oc))}</p>` : `<p>Kostenlose Besichtigung, danach ein Festpreis ohne Nachkommen — und nach dem Auftrag Vorher/Nachher-Fotos per WhatsApp.</p>`;
+  const trust = trustTxt ? `<p>${esc(fillTok(trustTxt, o, oc))}</p>` : (s.partner_modell ? `<p>Kostenlose Besichtigung durch den Partner-Fachbetrieb, das Angebot kommt vom ausführenden Betrieb — wir koordinieren Termin und Ablauf.</p>` : `<p>Kostenlose Besichtigung, danach ein Festpreis ohne Nachkommen — und nach dem Auftrag Vorher/Nachher-Fotos per WhatsApp.</p>`);
 
   // FAQ: bespoke Service-Ort-Pool (falls vorhanden) ersetzt Archetyp-FAQ UND Hub-FAQ auf der Ortsseite (volle Compliance-Kontrolle, u.a. Dach-Partner-Framing); sonst 2 Archetyp-FAQ + 2 Hub-FAQ wie bisher
-  const _faqPool = so && so.faqs ? so.faqs : (arch && arch.faqs);
-  const archFaqs = _faqPool ? rotate(_faqPool, idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
+  const _faqPool = so && so.faqs ? so.faqs : (partnerNoCopy ? null : (arch && arch.faqs));
+  const archFaqs = _faqPool ? rotate(_faqPool, partnerNoCopy ? idxP : idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
   const hubFaqs = (so && so.faqs) ? [] : (c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), idx + 1, archFaqs.length ? 2 : 4) : []);
   const faqs = [...archFaqs, ...hubFaqs];
   const ortRatPool = ratgeberByService[s.slug] || [];
@@ -521,7 +525,7 @@ function ratgeberPage(r) {
   const others = ratCopy.filter(x => x.cta_service !== r.cta_service && x.slug !== r.slug);
   const related = [...sameSvc, ...rotate(others, seedOf(r.slug), 3)].slice(0, 3);
   // CTA-Pitch: nachgestellte Kontakt-Imperative ("Sprechen Sie … an / rufen Sie an: NR") strippen — die werden zu echten Buttons
-  const ctaPitch = String(r.cta_text || `${svc.name || 'Diese Leistung'} im Havelland — kostenlose Besichtigung, Festpreis, Foto-Doku nach dem Auftrag.`)
+  const ctaPitch = String(r.cta_text || ((svc && svc.partner_modell) ? `${svc.name} im Havelland — kostenlose Besichtigung durch den Partner-Fachbetrieb, ein Ansprechpartner für Termin und Ablauf.` : `${(svc && svc.name) || 'Diese Leistung'} im Havelland — kostenlose Besichtigung, Festpreis, Foto-Doku nach dem Auftrag.`))
     .replace(/\s*(Sprechen Sie|Rufen Sie|rufen Sie|Schreiben Sie|Melden Sie sich)[^.!?]*[.!?]?\s*$/, '').trim();
   const ctaWa = waHref(`Hallo, ich interessiere mich für ${svc.name || 'Ihre Leistungen'}${svc.name ? '' : ''}.`);
   const bodyHtml = (r.sections || []).map(x => `<h2>${esc(x.h2)}</h2>${x.body_html || ''}`).join('');
@@ -538,7 +542,7 @@ ${kalEmbed}
 ${faqSection}
 <section class="sec section-alt"><div class="wrap center"><h2 class="serif rv">Lieber machen lassen?</h2><p class="rv d1" style="max-width:44em;margin-inline:auto">${esc(ctaPitch)}</p><div class="cta-row rv d2"><a class="btn btn-acc" href="/kontakt/#anfrage">Kostenlose Besichtigung anfragen</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-line" href="${ctaWa}">WhatsApp</a></div>${svc.name?`<p class="rv d3" style="margin-top:14px;font-size:.92rem"><a href="/${r.cta_service}/">Mehr zu ${esc(svc.name)} im Havelland →</a></p>`:''}</div></section>
 ${related.length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Das könnte Sie auch interessieren</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${related.map(x=>`<a class="card" href="/ratgeber/${x.slug}/"><h3>${esc(x.title)}</h3><p>${esc(x.lead||'')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : ''}
-${endBand}`;
+${(svc && svc.partner_modell) ? endBandPartner(svc) : endBand}`;
   const ni = svcNoindexBySlug(r.cta_service);
   write(url, head(clampTitle(r.title), mkMeta(r.meta || r.lead), url, schema, { noindex: ni }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.ratgeber.push(url); if (!ni) written.ratgeberIdx.push(url);
@@ -741,18 +745,18 @@ ${formScript}
 function ueberUns() {
   const url = '/ueber-uns/';
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Über uns</div>
-<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Über uns</span><h1 class="rv in d1">Ein Ansprechpartner für Haus und Garten — <em>im Havelland zuhause</em></h1><p class="lead rv in d2">Hinter dem Haus- &amp; Gartenservice Havelland stehen ${esc((nap.gesellschafter || [nap.inhaber]).join(' und '))} — zwei Gründer aus ${esc(nap.city)}, die selbst mit anpacken. Garten, Reinigung, Winterdienst, Entrümpelung: ein fester Ansprechpartner für alles, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div>${trustBadges()}</div>
+<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Über uns</span><h1 class="rv in d1">Ein Ansprechpartner für Haus und Garten — <em>im Havelland zuhause</em></h1><p class="lead rv in d2">Hinter dem Haus- &amp; Gartenservice Havelland stehen ${esc((nap.gesellschafter || [nap.inhaber]).join(' und '))} — zwei Gründer aus ${esc(nap.city)}, die selbst mit anpacken. Garten, Reinigung, Entrümpelung: ein fester Ansprechpartner für alles, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag; Winterdienst über einen Partner-Fachbetrieb.</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div>${trustBadges()}</div>
 <div class="shot rv in d2">${pic('ueber-uns', { cls: 'main', alt: 'Das Team vom Haus- & Gartenservice Havelland am Einsatzfahrzeug', sizes: '(max-width:900px) 92vw, 60vw', lcp: true })}</div></div></section>
 <section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Aus der Region, für die Region — <em>kurze Wege, klare Absprachen.</em></p>
 <div class="vals"><div class="v rv d1"><h4><span class="n">01</span> Aus einer Hand</h4><p>Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles rund ums Haus.</p></div><div class="v rv d2"><h4><span class="n">02</span> Nachweis statt Versprechen</h4><p>Foto-Dokumentation vor und nach jedem Auftrag, direkt aufs Handy.</p></div><div class="v rv d3"><h4><span class="n">03</span> Festpreis ist Endpreis</h4><p>Kostenlose Besichtigung, klarer Preis — kein Nachkommen, keine Überraschung.</p></div><div class="v rv d4"><h4><span class="n">04</span> Schnell erreichbar</h4><p>Eine WhatsApp genügt — Antwort in Stunden, nicht in Tagen.</p></div></div></div></section>
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>Wer hinter dem Service steht</h2><p>Den Haus- &amp; Gartenservice Havelland führen ${esc((nap.gesellschafter || [nap.inhaber]).join(' und '))} als Gründer-Duo: einer ist Ihr Ansprechpartner vor Ort, mit Praxis aus dem Garten- und Gebäudereinigungs-Handwerk, der andere hält bei Planung und Organisation den Rücken frei. Sie haben es vom ersten Anruf bis zur Abnahme mit festen Gesichtern zu tun — kein Callcenter, keine wechselnden Kräfte, keine Warteschleife.</p><p>Und wir sind selbst dabei: Besichtigung, Ausführung und die Foto-Abnahme machen wir persönlich. Bei größeren Aufträgen unterstützen uns eingearbeitete Helfer — die Verantwortung und Ihr Ansprechpartner bleiben aber immer bei uns.</p><p>Der Betrieb sitzt in der ${esc(nap.street)} in ${esc(nap.zip)} ${esc(nap.city)} und ist im gesamten Havelland und Berliner Umland unterwegs. Der Festpreis, den Sie nach der Besichtigung bekommen, ist der Endpreis — kein Aufschlag, keine Überraschung.</p></div></div></section>
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So arbeiten wir — in vier Schritten</h2></div>${auftragsTimeline()}</div></section>
-<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Was wir übernehmen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Vom regelmäßigen Garten bis zum einmaligen Großeinsatz — koordiniert von einem festen Ansprechpartner.</p><div class="cards rv"><a class="card" href="/gartenpflege/"><h3>Garten &amp; Außenanlagen</h3><p>Gartenpflege, Heckenschnitt, Winterdienst, Laub.</p><span class="go">Mehr →</span></a><a class="card" href="/fensterreinigung/"><h3>Reinigung</h3><p>Fenster, Terrasse &amp; Pflaster, Dachrinne.</p><span class="go">Mehr →</span></a><a class="card" href="/entruempelung/"><h3>Entrümpelung &amp; Auflösung</h3><p>Keller, Wohnung, Haushaltsauflösung, Wohnungsauflösung.</p><span class="go">Mehr →</span></a><a class="card" href="/hausmeisterservice/"><h3>Hausmeister &amp; Gewerbe</h3><p>Hausmeisterdienst, Gebäude- und Unterhaltsreinigung.</p><span class="go">Mehr →</span></a></div></div></section>
+<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Was wir übernehmen oder koordinieren</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Vom regelmäßigen Garten bis zum einmaligen Großeinsatz — koordiniert von einem festen Ansprechpartner.</p><div class="cards rv"><a class="card" href="/gartenpflege/"><h3>Garten &amp; Außenanlagen</h3><p>Gartenpflege, Heckenschnitt, Winterdienst, Laub.</p><span class="go">Mehr →</span></a><a class="card" href="/fensterreinigung/"><h3>Reinigung</h3><p>Fenster, Terrasse &amp; Pflaster, Dachrinne.</p><span class="go">Mehr →</span></a><a class="card" href="/entruempelung/"><h3>Entrümpelung &amp; Auflösung</h3><p>Keller, Wohnung, Haushaltsauflösung, Wohnungsauflösung.</p><span class="go">Mehr →</span></a><a class="card" href="/hausmeisterservice/"><h3>Hausmeister &amp; Gewerbe</h3><p>Hausmeisterdienst, Gebäude- und Unterhaltsreinigung.</p><span class="go">Mehr →</span></a></div></div></section>
 <section class="sec section-alt"><div class="wrap"><div class="prose wide rv"><h2>Unser Servicegebiet</h2><p>Wir sind in ${esc(nap.city)} zuhause und im gesamten Havelland sowie im angrenzenden Berliner Umland für Sie da — von Falkensee über Dallgow-Döberitz, Brieselang, Nauen und Oberkrämer bis Oranienburg, Hennigsdorf und an den Berliner Rand nach Kladow, Gatow und Spandau. Kurze Wege bedeuten schnelle Reaktion und planbare Termine.</p><p>Eine Übersicht aller Orte mit den jeweiligen Leistungen finden Sie auf der Seite <a href="/standorte/">Standorte</a>.</p><h2>Unsere Garantien</h2><p>Wir versprechen nichts, was wir nicht halten. Je Leistung gibt es eine konkrete Zusage — ein paar Beispiele:</p><ul><li><strong>Heckenschnitt:</strong> Bleiben Schnittreste liegen, kommen wir kostenlos nach.</li><li><strong>Fensterreinigung:</strong> Schlierenfrei — oder wir kommen am selben Tag nochmal.</li><li><strong>Winterdienst:</strong> Ausführung durch einen Partner-Fachbetrieb im Saisonvertrag — wir koordinieren, der Einsatznachweis kommt nach jedem Einsatz.</li><li><strong>Entrümpelung:</strong> Festpreis nach Besichtigung — kein Aufpreis, egal wie viel rausgeht.</li></ul><p>Die vollständige Garantie steht jeweils auf der passenden <a href="/leistungen/">Leistungsseite</a>.</p></div></div></section>
 ${faqBlock([
   {q:'Bekomme ich einen Nachweis über die ausgeführte Arbeit?',a:'Ja. Nach jedem Auftrag dokumentieren wir das Ergebnis mit Vorher-/Nachher-Fotos und schicken sie Ihnen per WhatsApp. So sehen Sie genau, was gemacht wurde, auch wenn Sie nicht vor Ort waren.'},
   {q:'Was kostet die Besichtigung?',a:'Die Vor-Ort-Besichtigung ist kostenlos und unverbindlich. Wir schauen uns an, was ansteht, und nennen Ihnen danach einen Festpreis. Erst wenn Sie zusagen, legen wir los.'},
-  {q:'Bieten Sie auch regelmäßige Pflege oder Wartung an?',a:'Ja. Für Garten, Reinigung oder Winterdienst vereinbaren wir auf Wunsch feste Turnusse oder Saisonverträge — so bleibt alles in Ordnung, ohne dass Sie jedes Mal neu anfragen müssen. Den Umfang legen wir bei der Besichtigung gemeinsam fest.'},
+  {q:'Bieten Sie auch regelmäßige Pflege oder Wartung an?',a:'Ja. Für Garten und Reinigung vereinbaren wir auf Wunsch feste Turnusse; den Winterdienst-Saisonvertrag schließen Sie mit unserem Partner-Fachbetrieb — so bleibt alles in Ordnung, ohne dass Sie jedes Mal neu anfragen müssen. Den Umfang legen wir bei der Besichtigung gemeinsam fest.'},
   {q:'In welchen Orten sind Sie tätig?',a:`Wir arbeiten im gesamten Havelland und im angrenzenden Berliner Umland, mit Sitz in ${nap.city}. Eine Übersicht aller bedienten Orte finden Sie auf der Seite Standorte.`},
   {q:'Wie schnell bekomme ich eine Antwort?',a:'Schreiben Sie uns tagsüber eine WhatsApp mit ein paar Fotos, melden wir uns meist innerhalb weniger Stunden zurück und stimmen einen Termin ab.'},
 ])}
@@ -874,7 +878,7 @@ function ratgeberIndex() {
     { label: 'Garten & Heckenpflege', svcs: ['gartenpflege', 'heckenschnitt', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau'], teaser: 'Wann geschnitten wird, was der Naturschutz erlaubt und wie regelmäßige Pflege im Havelland aussieht.' },
     { label: 'Reinigung & Außenflächen', svcs: ['fensterreinigung', 'steinreinigung', 'dachrinnenreinigung', 'dachreinigung', 'photovoltaikreinigung', 'gebaeudereinigung', 'grundreinigung', 'unterhaltsreinigung'], teaser: 'Von der streifenfreien Scheibe bis zum moosfreien Dach — Kosten, Turnus und worauf es beim Ergebnis ankommt.' },
     { label: 'Entrümpelung & Umzug', svcs: ['entruempelung', 'haushaltsaufloesung', 'umzugshilfe'], teaser: 'Was Entrümpelung und Haushaltsauflösung kosten, wie ein Festpreis zustande kommt und wie der Ablauf ist.' },
-    { label: 'Winterdienst & Hausservice', svcs: ['winterdienst', 'hausmeisterservice', 'ferienwohnung-reinigung', 'objektbetreuung', 'renovierung'], teaser: 'Streupflicht, Reaktionszeiten und laufende Betreuung rund ums Haus im Havelland und Berliner Umland.' },
+    { label: 'Winterdienst & Hausservice', svcs: ['winterdienst', 'hausmeisterservice', 'ferienwohnung-reinigung', 'objektbetreuung', 'renovierung'], teaser: 'Streupflicht, Saisonverträge und laufende Betreuung rund ums Haus im Havelland und Berliner Umland.' },
   ];
   const used = new Set();
   const groups = cats.map(c => { const items = list.filter(r => c.svcs.includes(r.cta_service)); items.forEach(r => used.add(r.slug)); return { label: c.label, teaser: c.teaser, items }; }).filter(c => c.items.length);

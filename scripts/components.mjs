@@ -358,7 +358,7 @@ const FAQ_DEFAULT = [
   { q: 'Was kostet ein Heckenschnitt im Havelland?', a: 'Einen Pauschalpreis nennen wir nicht ins Blaue, weil Länge, Höhe, Heckenart und Zugang den Aufwand bestimmen. Sie erhalten nach einer kostenlosen Besichtigung vor Ort einen Festpreis, der inklusive Abfuhr des Grünschnitts Ihr Endpreis bleibt.' },
   { q: 'Fahren Sie den Grünschnitt nach dem Schnitt ab?', a: 'Ja, die Abfuhr und Entsorgung des gesamten Grünschnitts gehört bei uns zum Festpreis. Wir laden Äste und Laub auf, kehren die Fläche besenrein und entsorgen das Material ordnungsgemäß.' },
   { q: 'Was kostet eine Besichtigung?', a: 'Die Vor-Ort-Besichtigung ist für Sie kostenlos. Wir schauen uns an, was ansteht, und nennen Ihnen danach einen Festpreis. Der vereinbarte Betrag ist der Endbetrag, ohne Aufschlag am Ende.' },
-  { q: 'Bekomme ich alle Leistungen aus einer Hand?', a: 'Ja. Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste übernehmen wir mit einem festen Ansprechpartner — Sie müssen nicht für jede Aufgabe einen eigenen Betrieb suchen und koordinieren.' },
+  { q: 'Bekomme ich alle Leistungen aus einer Hand?', a: 'Ja. Garten, Reinigung, Entrümpelung und Hausmeisterdienste übernehmen wir selbst, Winterdienst und Dachrinne koordinieren wir über einen Partner-Fachbetrieb — Sie müssen nicht für jede Aufgabe einen eigenen Betrieb suchen.' },
   { q: 'Gibt es die Gartenpflege auch regelmäßig im Abo?', a: 'Ja. Auf Wunsch kommen wir im festen 14-tägigen Rhythmus: Rasen, Hecke, Beete, Laub — was die Jahreszeit eben verlangt. Der Rhythmus lässt sich jederzeit anpassen.' },
   { q: 'Was passiert, wenn nach der Reinigung Schlieren bleiben?', a: 'Dann kommen wir am selben Tag noch einmal vorbei und ziehen die betroffenen Scheiben nach — ohne Zusatzkosten. Schlierenfreies Glas ist der Kern unserer Arbeit, deshalb prüfen wir jede Scheibe im Gegenlicht, bevor wir gehen.' },
   { q: 'Wie schnell bekomme ich einen Termin für den Heckenschnitt?', a: 'Eine erste Rückmeldung erhalten Sie nach Ihrer WhatsApp-Anfrage meist innerhalb weniger Stunden. Den Termin für die kostenlose Besichtigung stimmen wir kurzfristig ab. Im Februar ist die Nachfrage am höchsten — fragen Sie früh an.' }
@@ -495,9 +495,9 @@ const BEWEIS = {
   steinreinigung: ['Testfläche vor dem Start', 'Auf einer kleinen Fläche zeigen wir das Ergebnis, bevor die ganze Terrasse gereinigt wird.',
     'Grünbelag mit der Wurzel', 'Wir spülen Moos und Algen gründlich aus den Fugen — nicht nur oberflächlich abgetragen.',
     'Foto-Nachweis aufs Handy', 'Vorher-/Nachher-Fotos direkt nach dem Termin — der Unterschied ist dokumentiert.'],
-  dachrinnenreinigung: ['Sicht- und Funktionsprüfung', 'Vor der Reinigung schauen wir uns Verlauf und Fallrohre an — damit nichts übersehen wird.',
+  dachrinnenreinigung: ['Sicht- und Funktionsprüfung', 'Der Fachbetrieb prüft Verlauf und Fallrohre vor der Reinigung — damit nichts übersehen wird.',
     'Rinne und Fallrohr frei', 'Laub und Schlamm werden entnommen, das Fallrohr auf Durchlauf geprüft.',
-    'Foto-Nachweis aufs Handy', 'Vorher-/Nachher-Fotos aus der Rinne — Sie sehen das Ergebnis vom Dach, ohne selbst hochzusteigen.']
+    'Foto-Nachweis aufs Handy', 'Der Fachbetrieb hält den Zustand fest — Sie sehen das Ergebnis vom Dach, ohne selbst hochzusteigen.']
 };
 export function beweisMechanik(gewerk) {
   const key = String(gewerk || '').toLowerCase();

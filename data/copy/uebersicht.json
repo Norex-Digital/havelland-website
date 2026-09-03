@@ -1,17 +1,17 @@
 {
   "_meta": "Copy für die Übersichtsseiten /leistungen/ + /standorte/ (2026-06-16). Faktenbasiert, Marken-Stimme, keine erfundenen Reviews/Zahlen/Landmarks. Umlaute korrekt (Translit-Gate). Gruppen-Labels stehen im Generator (LEISTUNGEN_KATEGORIEN / STANDORT_REGIONEN), die Intros hier.",
   "leistungen": {
-    "lead": "Vom regelmäßigen Garten bis zum einmaligen Großeinsatz: Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste — koordiniert von einem festen Ansprechpartner, mit Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.",
-    "meta": "Alle Leistungen im Havelland aus einer Hand — Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste, Festpreis nach kostenloser Besichtigung",
+    "lead": "Vom regelmäßigen Garten bis zum einmaligen Großeinsatz: Garten, Reinigung, Entrümpelung und Hausmeisterdienste mit Festpreis nach kostenloser Besichtigung und Foto-Nachweis; Winterdienst und Dachrinne koordiniert über einen Partner-Fachbetrieb.",
+    "meta": "Alle Leistungen im Havelland mit einem Ansprechpartner — Garten, Reinigung, Entrümpelung, Hausmeisterdienste; Winterdienst über Partner-Fachbetrieb",
     "intro": "Wir bündeln die Arbeiten rund um Haus und Grundstück, damit Sie nicht für jede Aufgabe einen eigenen Betrieb suchen und koordinieren müssen. Hier sind unsere Leistungen nach Bereichen sortiert — von der laufenden Gartenpflege bis zur Betreuung von Gewerbeobjekten.",
     "kategorien": {
-      "garten": "Pflege und Sauberkeit rund ums Haus — Rasen und Grünschnitt, Hecken in Form, Laub und Winterdienst sowie Pflaster, Terrasse und streifenfreie Fenster.",
+      "garten": "Pflege und Sauberkeit rund ums Haus — Rasen und Grünschnitt, Hecken in Form, Laub, Pflaster, Terrasse und streifenfreie Fenster; Winterdienst über Partner-Fachbetrieb.",
       "aufloesung": "Einmalige Großeinsätze mit Festpreis nach Besichtigung — entrümpelt, aufgelöst und besenrein übergeben.",
       "dach": "Rund ums Dach: die Dachrinne frei vor dem Herbst und die Dachreinigung. Für Arbeiten auf dem Dach koordinieren wir einen Partner-Fachbetrieb — ein Ansprechpartner für Besichtigung, Termin und Ablauf.",
       "gewerbe": "Für Eigentümer, Hausverwaltungen und Betriebe: Hausmeisterdienst, Gebäude- und Unterhaltsreinigung, Objektbetreuung und Ferienwohnungs-Reinigung im festen Turnus."
     },
     "faqs": [
-      { "q": "Bekomme ich alle Leistungen aus einer Hand?", "a": "Ja. Garten, Reinigung, Winterdienst, Entrümpelung und Hausmeisterdienste übernehmen wir mit einem festen Ansprechpartner — Sie müssen nicht für jede Aufgabe einen eigenen Betrieb suchen und koordinieren." },
+      { "q": "Bekomme ich alle Leistungen aus einer Hand?", "a": "Ja. Garten, Reinigung, Entrümpelung und Hausmeisterdienste übernehmen wir selbst, Winterdienst und Dachrinne koordinieren wir über einen Partner-Fachbetrieb — Sie müssen nicht für jede Aufgabe einen eigenen Betrieb suchen." },
       { "q": "Was kostet eine Besichtigung?", "a": "Die Vor-Ort-Besichtigung ist für Sie kostenlos. Wir schauen uns an, was ansteht, und nennen Ihnen danach einen Festpreis. Der vereinbarte Betrag ist der Endbetrag, ohne Aufschlag am Ende." },
       { "q": "Übernehmen Sie auch einzelne, kleinere Aufträge?", "a": "Ja. Ob nur die Hecke geschnitten oder die Dachrinne gereinigt werden soll — auch einzelne Arbeiten sind möglich. Schreiben Sie uns kurz per WhatsApp, worum es geht, dann stimmen wir einen Termin ab." },
       { "q": "Machen Sie auch Dacharbeiten?", "a": "Ja — die Dachrinnenreinigung vor dem Herbst und die Dachreinigung gehören zu unserem Angebot. Die eigentliche Arbeit auf dem Dach übernimmt ein Partner-Fachbetrieb; wir koordinieren für Sie Besichtigung, Termin und Ablauf, sodass Sie einen festen Ansprechpartner haben. Malerarbeiten gehören nicht zu unserem Angebot." }
