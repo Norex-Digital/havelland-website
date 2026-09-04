@@ -269,9 +269,11 @@ export function archivGrid(slugs, { ctaHref = '#kontakt' } = {}) {
 // whatsappFlow — .wa-grid, 3 Schritte + wa.me-CTA (Kontext vorausgefuellt) + Noah-Arbeitsbild (kein Label).
 // ---------------------------------------------------------------------------
 export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
-  heading = 'Ein Handy-Foto <em>reicht.</em>', partner = false, fotoNeutral = false } = {}) {
+  heading = 'Ein Handy-Foto <em>reicht.</em>', partner = false, fotoNeutral = false, winter = false } = {}) {
+  // winter (Umbau 04.09.): Winterdienst = Partnermodell ohne Foto-Zusage — Adresse und Flächen statt Handy-Foto, Saisonvertrag vom Betrieb.
+  if (winter) heading = 'Adresse und Flächenbeschreibung <em>reichen.</em>';
   const ortTeil = ort ? ` in ${ort}` : '';
-  const text = `Hallo, hier ein Foto von ${gewerk}${ortTeil} — was würde das kosten?`;
+  const text = winter ? `Hallo, ich brauche Winterdienst für ${gewerk}${ortTeil} — was ist der nächste Schritt?` : `Hallo, hier ein Foto von ${gewerk}${ortTeil} — was würde das kosten?`;
   // Partner-/Tippgeber-Services (Dach): Schritt 3 nennt keinen eigenen Festpreis — das Angebot kommt vom ausführenden Fachbetrieb.
   const step3 = partner
     ? `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort in Stunden</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung durch den Partner-Fachbetrieb — das verbindliche Angebot kommt vom ausführenden Betrieb.</p></div></li>`
@@ -281,11 +283,15 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
     `<div class="head" style="margin-top:14px"><h2 class="rv">${heading}</h2></div>` +
     `<p class="intro rv" style="margin-bottom:30px">Sie müssen nichts ausmessen und kein Formular ausfüllen. Drei Schritte, dann kümmern wir uns.</p>` +
     `<ol class="wa-steps rv d1">` +
-    `<li class="wa-step"><span class="wn">1</span><div><h3>Fotografieren</h3><p>Einmal längs, einmal von vorn — so sehen wir Höhe, Länge und Zugang.</p></div></li>` +
-    `<li class="wa-step"><span class="wn">2</span><div><h3>Per WhatsApp senden</h3><p>An ${TEL_DISP}, gern mit zwei Sätzen dazu: Was soll passieren, wo stehen Sie?</p></div></li>` +
+    (winter
+      ? `<li class="wa-step"><span class="wn">1</span><div><h3>Adresse und Flächen nennen</h3><p>Gehweg, Zufahrt, Hauseingang oder Hof — ungefähre Meter genügen, ausmessen müssen Sie nichts.</p></div></li>`
+      : `<li class="wa-step"><span class="wn">1</span><div><h3>Fotografieren</h3><p>Einmal längs, einmal von vorn — so sehen wir Höhe, Länge und Zugang.</p></div></li>`) +
+    (winter
+      ? `<li class="wa-step"><span class="wn">2</span><div><h3>Per WhatsApp senden</h3><p>An ${TEL_DISP}, gern mit einem Satz dazu: Welche Flächen müssen bis wann frei sein?</p></div></li>`
+      : `<li class="wa-step"><span class="wn">2</span><div><h3>Per WhatsApp senden</h3><p>An ${TEL_DISP}, gern mit zwei Sätzen dazu: Was soll passieren, wo stehen Sie?</p></div></li>`) +
     step3 +
     `</ol>` +
-    `<div class="wa-cta rv d2"><a class="btn btn-acc" href="${waHref(text)}">Foto per WhatsApp senden</a>` +
+    `<div class="wa-cta rv d2"><a class="btn btn-acc" href="${waHref(text)}">${winter ? 'Flächen per WhatsApp schicken' : 'Foto per WhatsApp senden'}</a>` +
     `<a class="tel-quiet" href="tel:${TEL}">lieber anrufen: ${TEL_DISP}</a></div></div>` +
     `<div class="wa-stage rv d2"><div class="pframe" style="box-shadow:var(--sh-photo)">` +
     // fotoNeutral (Audit 2026-08, P2-b): auf Services ohne Hecken-Bezug (baumstumpf-entfernen) Alt/Untertitel

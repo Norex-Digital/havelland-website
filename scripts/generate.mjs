@@ -63,7 +63,7 @@ const ratgeberByService = {}; for (const r of ratCopy) { if (!r.cta_service) con
 const _ueb = CP('uebersicht.json') || {}; const uebL = _ueb.leistungen || {}; const uebS = _ueb.standorte || {};
 // Gruppierung: Service-Slug → Themen-Block (Portfolio-Refokus 2026-07-22: Garten & Außen · Entrümpelung & Auflösung · Dach · Für Gewerbe & Hausverwaltungen). Reihenfolge = Anzeige-Reihenfolge. b2b_only-Services (hausmeisterservice) leben im Gewerbe-Block.
 const LEISTUNGEN_KATEGORIEN = [
-  { key: 'garten', label: 'Garten & Außen', slugs: ['gartenpflege', 'heckenschnitt', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau', 'winterdienst', 'steinreinigung', 'fensterreinigung'] },
+  { key: 'garten', label: 'Garten & Außen', slugs: ['gartenpflege', 'heckenschnitt', 'winterdienst', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau', 'steinreinigung', 'fensterreinigung'] },
   { key: 'aufloesung', label: 'Entrümpelung & Auflösung', slugs: ['entruempelung', 'haushaltsaufloesung', 'grundreinigung'] },
   { key: 'dach', label: 'Dach', slugs: ['dachrinnenreinigung', 'dachreinigung'] },
   { key: 'gewerbe', label: 'Für Gewerbe & Hausverwaltungen', slugs: ['hausmeisterservice', 'gebaeudereinigung', 'unterhaltsreinigung', 'objektbetreuung', 'ferienwohnung-reinigung'] }
@@ -247,7 +247,7 @@ function head(title, desc, canonical, schemaGraph, opts = {}) {
 }
 // Header — lock-v2: Logo + Site-Nav + Callpill (sichtbare Nummer) + Besichtigungs-CTA + Progress-Bar (#progress) + gate-sichere .hamb/#nvt/.navmenu-Mechanik
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
-const header = `<header><div class="wrap nav"><a class="logo" href="/"><img src="/assets/img/logo.png" alt="${esc(nap.name)}" width="180" height="50"></a><nav class="links nav-links" aria-label="Hauptnavigation"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/kontakt/">Kontakt</a></nav><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${esc(nap.phone_display)}</span></a><a class="cta nav-cta" href="/kontakt/">Kostenlose Besichtigung</a><input type="checkbox" id="nvt" class="nvt" aria-label="Menü öffnen und schließen"><label for="nvt" class="hamb" aria-hidden="true"><span></span><span></span><span></span></label><nav class="navmenu mnav" aria-label="Hauptmenü"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/bewertungen/">Bewertungen</a><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a><a href="/kontakt/">Kontakt</a><a href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung</a></nav></div><div class="progress" id="progress" aria-hidden="true"></div></header>`;
+const header = `<header><div class="wrap nav"><a class="logo" href="/"><img src="/assets/img/logo.png" alt="${esc(nap.name)}" width="180" height="50"></a><nav class="links nav-links" aria-label="Hauptnavigation"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/fuer-hausverwaltungen/">Hausverwaltungen</a><a href="/ueber-uns/">Über uns</a><a href="/kontakt/">Kontakt</a></nav><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${esc(nap.phone_display)}</span></a><a class="cta nav-cta" href="/kontakt/">Kostenlose Besichtigung</a><input type="checkbox" id="nvt" class="nvt" aria-label="Menü öffnen und schließen"><label for="nvt" class="hamb" aria-hidden="true"><span></span><span></span><span></span></label><nav class="navmenu mnav" aria-label="Hauptmenü"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/bewertungen/">Bewertungen</a><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a><a href="/kontakt/">Kontakt</a><a href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung</a></nav></div><div class="progress" id="progress" aria-hidden="true"></div></header>`;
 const sctaBar = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ Anrufen</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav>`;
 const SCTA_DEFAULT = sctaBar('Hallo, ich hätte gern eine kostenlose Besichtigung.');
 // Footer — lock-v2 fcols-Sitemap (hell): Leistungen A–H / H–W / Unternehmen (inkl. /fuer-hausverwaltungen/) + legal
@@ -475,10 +475,10 @@ function ortsseite(s, o) {
 
   // FAQ: bespoke Service-Ort-Pool (falls vorhanden) ersetzt Archetyp-FAQ UND Hub-FAQ auf der Ortsseite (volle Compliance-Kontrolle, u.a. Dach-Partner-Framing); sonst 2 Archetyp-FAQ + 2 Hub-FAQ wie bisher
   const _faqPool = so && so.faqs ? so.faqs : (partnerNoCopy ? null : (arch && arch.faqs));
-  const archFaqs = _faqPool ? rotate(_faqPool, partnerNoCopy ? idxP : idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
+  const archFaqs = _faqPool ? rotate(_faqPool, s.partner_modell ? idxP : idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
   // so.hub_faq_fill = N (Umbau 03.09., winterdienst): bespoke Pool liefert 2, der Hub füllt auf N auf; ohne das Feld bleibt bespoke = Hub-FAQ aus.
   const faqFill = so && so.faqs ? Math.max(0, (so.hub_faq_fill || 0) - archFaqs.length) : (archFaqs.length ? 2 : 4);
-  const hubFaqs = (so && so.faqs && !faqFill) ? [] : (c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), idx + 1, faqFill) : []);
+  const hubFaqs = (so && so.faqs && !faqFill) ? [] : (c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), (s.partner_modell ? idxP : idx) + 1, faqFill) : []);
   const faqs = [...archFaqs, ...hubFaqs];
   const ortRatPool = ratgeberByService[s.slug] || [];
   const ortRat = (soOrt && soOrt.ratgeber && ratCopy.find(r => r.slug === soOrt.ratgeber)) || (ortRatPool.length ? ortRatPool[idx % ortRatPool.length] : null); // soOrt.ratgeber = fester Ratgeber je Ort (Falkensee → Uhrzeiten)
@@ -517,7 +517,7 @@ ${s.partner_modell ? gstripPartner(s) : gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
 ${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
-<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell })}</div></section>
+<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: s.slug === 'winterdienst', winter: s.slug === 'winterdienst' })}</div></section>
 <section class="sec section-alt"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
 ${nachbarSection}
 ${s.partner_modell ? endBandPartner(s) : endBand}`;
@@ -602,18 +602,31 @@ function leistungenPage() {
   const ordered = [];   // für ItemList-Schema in Anzeige-Reihenfolge
   const blocks = [];
   let n = 0;
-  const renderCards = svcs => svcs.map(s => {
-    ordered.push(s);
-    const desc = (s.sektionen || []).slice(0, 4).join(' · ') || s.garantie || 'Festpreis nach Besichtigung.';
-    return `<a class="card" href="/${s.slug}/"><h3>${esc(s.name)}</h3><p>${esc(desc)}</p><span class="go">Mehr →</span></a>`;
+  // Saison-Kategorie (Umbau 04.09.): Herbst 9–11 / Winter 12–2 oben, ohne Doppelung im ItemList-Schema (Services bleiben in ihrer Stammkategorie).
+  const saisonM = config.saison_monat || (new Date()).getMonth() + 1;
+  const SAISON = (saisonM >= 9 && saisonM <= 11)
+    ? { key: 'saison', label: 'Jetzt im Herbst: Laub, Dachrinne, Winterdienst', slugs: ['gartenpflege', 'dachrinnenreinigung', 'winterdienst'], saison: true,
+        href: { gartenpflege: '/gartenpflege/#herbst-paket' }, text: { gartenpflege: 'Herbst-Paket: Laub · letzter Heckenschnitt · Rinne (Partner-Fachbetrieb) · ein Termin' },
+        intro: 'Drei Dinge vor dem Winter: Laub und letzter Schnitt machen wir selbst, Dachrinne und Winterdienst laufen über Partner-Fachbetriebe — ein Ansprechpartner für alles.' }
+    : (saisonM === 12 || saisonM <= 2)
+      ? { key: 'saison', label: 'Jetzt im Winter: Winterdienst, letzte Schnittfrist, Entrümpelung', slugs: ['winterdienst', 'heckenentfernung', 'entruempelung'], saison: true, href: {}, text: {},
+          intro: 'Schnee und Glätte über den Partner-Fachbetrieb, Heckenentfernung nur bis Ende Februar, Entrümpelung zum Festpreis nach Besichtigung.' }
+      : null;
+  const HV_CARD = `<a class="card" href="/fuer-hausverwaltungen/"><h3>Für Hausverwaltungen &amp; Gewerbe</h3><p>Winterdienst · Laub · Dachrinne · Grünpflege · Treppenhaus — ein Ansprechpartner, Nachweis je Einsatz</p><span class="go">Zur Übersicht →</span></a>`;
+  const renderCards = (svcs, cat = {}) => svcs.map(s => {
+    if (!cat.saison) ordered.push(s);
+    const desc = (cat.text && cat.text[s.slug]) || (s.sektionen || []).slice(0, 4).join(' · ') || s.garantie || 'Festpreis nach Besichtigung.';
+    const href = (cat.href && cat.href[s.slug]) || `/${s.slug}/`;
+    return `<a class="card" href="${href}"><h3>${esc(s.name)}</h3><p>${esc(desc)}</p><span class="go">Mehr →</span></a>`;
   }).join('');
-  for (const cat of LEISTUNGEN_KATEGORIEN) {
+  for (const cat of [SAISON, ...LEISTUNGEN_KATEGORIEN].filter(Boolean)) {
     const svcs = cat.slugs.map(sl => bySlug[sl]).filter(Boolean);
     if (!svcs.length) continue;
-    svcs.forEach(s => seen.add(s.slug));
+    if (!cat.saison) svcs.forEach(s => seen.add(s.slug));
     n++;
-    const intro = uebL.kategorien && uebL.kategorien[cat.key] ? `<p class="intro rv">${esc(uebL.kategorien[cat.key])}</p>` : '';
-    blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}" style="padding:64px 0"><div class="wrap">${catHead(n, cat.label)}${intro}<div class="cards rv">${renderCards(svcs)}</div></div></section>`);
+    const introTxt = cat.intro || (uebL.kategorien && uebL.kategorien[cat.key]);
+    const intro = introTxt ? `<p class="intro rv">${esc(introTxt)}</p>` : '';
+    blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}"${cat.saison ? ' id="saison"' : ''} style="padding:64px 0"><div class="wrap">${catHead(n, cat.label)}${intro}<div class="cards rv">${cat.key === 'gewerbe' ? HV_CARD : ''}${renderCards(svcs, cat)}</div></div></section>`);
   }
   const rest = services.filter(s => !seen.has(s.slug));   // Schutz: künftige Services ohne Kategorie
   if (rest.length) { n++; blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}" style="padding:64px 0"><div class="wrap">${catHead(n, 'Weitere Leistungen')}<div class="cards rv">${renderCards(rest)}</div></div></section>`); }
@@ -878,19 +891,22 @@ function b2bPage() {
   // B2B statt WhatsApp-Foto-Flow: E-Mail-Angebot als Haupt-CTA. Fristzusage (2 Werktage) nur für Eigenleistungen — das Winterdienst-Angebot stellt der Fachbetrieb.
   const mailtoAngebot = `mailto:${nap.email}?subject=${encodeURIComponent(cta.mail_subject || 'Angebot Objektbetreuung')}&body=${encodeURIComponent(cta.mail_body || 'Guten Tag,\n\nwir sind eine Hausverwaltung / Gewerbe und interessieren uns für Ihre Objektbetreuung.\n\nObjekt(e): \nOrt/PLZ: \nGewünschte Leistungen: \n\nBitte senden Sie uns ein schriftliches Angebot.\n\nMit freundlichen Grüßen')}`;
   const ctaBtns = `<a class="btn btn-acc" href="${mailtoAngebot}">Angebot per E-Mail anfordern</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a>`;
+  // B2B-Bänder (Umbau 04.09.): kein Festpreis, kein Vorher/Nachher-Foto — Partner-Winterdienst/Dachrinne. Ein Primär-CTA-Typ (mailto), zwei Positionen.
+  const gstripB2B = `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Ein Ansprechpartner</h3><p>Noah Telo kennt Ihre Objekte — Begehung, Termine und Nachweise laufen über eine Nummer.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Nachweis je Einsatz</h3><p>Fotos bei Eigenleistung, Einsatznachweis mit Datum und Uhrzeit vom Betrieb beim Winterdienst.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Schriftliches Angebot je Objekt</h3><p>Laub, Grünpflege und Treppenhaus von uns — Winterdienst und Dachrinne vom Partner-Fachbetrieb.</p></div></div></div></div></section>`;
+  const endBandB2B = `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, welche Objekte anstehen — wir melden uns zur Begehung.</h2><p class="rv d1">Angebot je Objekt, Nachweis je Einsatz, ein Ansprechpartner.</p><div class="cta-row rv d2">${ctaBtns}</div></div></section>`;
   const emailCta = `<section class="sec"><div class="wrap center"><div class="head" style="justify-content:center"><h2 class="serif rv">${esc(cta.h2 || 'Angebot per E-Mail anfordern')}</h2></div><p class="intro rv" style="max-width:44em;margin-inline:auto">${esc(cta.body || 'Senden Sie uns Ihre Objektdaten — Sie erhalten ein schriftliches Angebot per E-Mail. Ein fester Ansprechpartner, kein Callcenter.')}</p><div class="cta-row rv d1" style="justify-content:center">${ctaBtns}</div></div></section>`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Für Hausverwaltungen</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(b2b.kick || 'Für Hausverwaltungen & Gewerbe')}</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${esc(b2b.lead || 'Grünpflege, Reinigung und Objektkontrolle mit festem Ansprechpartner, schriftlichem Angebot und Foto-Reporting.')}</p><div class="cta-row rv in d3">${ctaBtns}</div></div>
 <div class="shot rv in d2">${pic('bg-fassade', { cls: 'main', alt: 'Wohnanlage im Havelland — Objektbetreuung durch den Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true })}</div></div></section>
-${gstrip}
+${gstripB2B}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(intro.h2)}</h2><p>${esc(intro.body)}</p><ul>${objekte}</ul><p>Einzelne Leistungen im Detail: <a href="/winterdienst/">Winterdienst</a>, <a href="/gartenpflege/">Gartenpflege und Laub</a>, <a href="/dachrinnenreinigung/">Dachrinnenreinigung</a>, <a href="/hausmeisterservice/">Hausmeisterservice</a>, <a href="/gebaeudereinigung/">Gebäudereinigung</a>.</p></div></div></section>
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Leistungen für Ihr Objekt</h2></div><div class="cards rv">${leist}</div>${partnerNote}</div></section>
 <section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">${esc(b2b.band_lead || 'Dokumentiert, ohne Callcenter — ein Ansprechpartner für alle Objekte.')}</p><div class="vals">${zus}</div></div></section>
 ${ablauf}
 ${faqSection}
 ${emailCta}
-${endBand}`;
-  write(url, head(clampTitle(b2b.title_tag || `Für Hausverwaltungen & Gewerbe — ${nap.name}`), mkMeta(b2b.meta || 'Haus- & Gartenservice Havelland für Hausverwaltungen, WEG und Gewerbe: Grünpflege, Reinigung, Winterdienst und Objektkontrolle mit festem Ansprechpartner und Foto-Reporting.'), url, schema, { noindex: (config.aktive_welle || 0) < 2 }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+${endBandB2B}`;
+  write(url, head(clampTitle(b2b.title_tag || `Für Hausverwaltungen & Gewerbe — ${nap.name}`), mkMeta(b2b.meta || 'Haus- & Gartenservice Havelland für Hausverwaltungen, WEG und Gewerbe: Grünpflege, Reinigung, Winterdienst und Objektkontrolle mit festem Ansprechpartner und Foto-Reporting.'), url, schema, { noindex: (config.aktive_welle || 0) < 2 }) + header + main + footer + sctaBar('Guten Tag, wir sind eine Hausverwaltung / ein Gewerbebetrieb im Havelland und interessieren uns für Objektbetreuung.') + revealJS + '</body></html>');
   written.basis.push(url);
 }
 function danke() {
