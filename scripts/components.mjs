@@ -167,7 +167,7 @@ export function heckenKompass({ heading = 'Welche Hecke steht bei <em>Ihnen?</em
 const JZ = [
   ['fruehjahr', 'Frühjahr', 'Garten im Frühjahr im Havelland', 'März – Mai', 'Beete vorbereiten, erster Formschnitt', '', '/gartenpflege/'],
   ['', 'Sommer', 'Garten im Sommer im Havelland', 'Juni – August', 'Rasen, Hecke, Bewässerung im Blick', 'd1', '/heckenschnitt/'],
-  ['herbst', 'Herbst', 'Garten im Herbst im Havelland', 'September – November', 'Laub, letzter Schnitt vor dem Winter', 'd2', '/gartenpflege/'],
+  ['herbst', 'Herbst', 'Garten im Herbst im Havelland', 'September – November', 'Laub, letzter Schnitt vor dem Winter', 'd2', '/gartenpflege/#herbst-paket'],
   ['winter', 'Winter', 'Garten im Winter im Havelland', 'Dezember – Februar', 'Rückschnitt-Zeit, Winterdienst', 'd3', '/winterdienst/']
 ];
 export function jahreszeiten({ heading = 'Ein Garten durch <em>vier Jahreszeiten.</em>',
@@ -513,3 +513,23 @@ export default {
   karussell, archivGrid, whatsappFlow, auftragsTimeline, uspBand, faqFilter, gebietskarte,
   trustBadges, fristband, aeoKapsel, beweisMechanik
 };
+
+// Saison-Teaser Startseite (Umbau 03./04.09.): Herbst (9–11) drei Punkte vor dem Winter, Winter (12–2) drei Winterpunkte, sonst leer.
+// Nummernliste wie die Kernleistungen (.list > a.it), kein zweiter Primär-CTA (Hero-CTA bleibt der eine btn-acc). Partner-Framing: Dachrinne/Winterdienst = Partner-Fachbetrieb.
+export function saisonTeaser(monat) {
+  const m = Number(monat) || 0;
+  const herbst = m >= 9 && m <= 11, winter = m === 12 || (m >= 1 && m <= 2);
+  if (!herbst && !winter) return '';
+  const items = herbst
+    ? [['Laub und letzter Schnitt', 'Herbst-Paket: Laub räumen, Rasen, Hecke — ein Termin, Festpreis nach Besichtigung.', '/gartenpflege/#herbst-paket'],
+       ['Dachrinne frei', 'Reinigung durch den Partner-Fachbetrieb, bevor das Laub die Rinne verstopft.', '/dachrinnenreinigung/'],
+       ['Winterdienst-Saisonvertrag', 'Räumen und Streuen durch den Partner-Fachbetrieb — Vertrag vor dem ersten Schnee.', '/winterdienst/']]
+    : [['Winterdienst', 'Saisonvertrag mit Einsatznachweis — Räumen und Streuen durch den Partner-Fachbetrieb.', '/winterdienst/'],
+       ['Heckenentfernung bis 28. Februar', 'Radikaler Rückschnitt und Rodung nur bis Ende Februar erlaubt (§ 39 BNatSchG).', '/heckenentfernung/'],
+       ['Entrümpelung', 'Keller, Dachboden, Garage — Festpreis nach Besichtigung, Foto-Nachweis danach.', '/entruempelung/']];
+  const h2 = herbst ? 'Herbst im Havelland: <em>drei Dinge</em> vor dem Winter.' : 'Winter im Havelland: <em>drei Dinge</em>, die jetzt anstehen.';
+  const intro = herbst ? 'Bevor der erste Frost kommt: Laub weg, Rinne frei, Winterdienst geregelt — wir organisieren alles über einen Ansprechpartner.' : 'Schnee, Glätte und die letzte Schnittfrist: Was jetzt zählt, in drei Punkten.';
+  const list = items.map((it, i) => `<a class="it rv d${i + 1}" href="${it[2]}"><span class="no">0${i + 1}</span><div><h3>${esc(it[0])}</h3><p>${esc(it[1])}</p></div><span class="arr">→</span></a>`).join('');
+  return `<section class="sec section-alt" id="saison"><div class="wrap"><div class="head"><h2 class="serif rv">${h2}</h2></div><p class="intro rv">${esc(intro)}</p><div class="list">${list}</div><p class="rv" style="margin-top:18px">Hausverwaltung oder Gewerbe? <a href="/fuer-hausverwaltungen/">Objektbetreuung mit Winterdienst und Laub →</a></p></div></section>`;
+}
+
