@@ -346,6 +346,22 @@
         {
           "q": "Übernimmt der Fachbetrieb in {ort} auch Parkplätze und Gewerbehöfe?",
           "a": "Ja. Neben Gehweg und Zufahrt am Wohnhaus gehören Kundenparkplätze, Hofflächen, Zuwege zu Eingängen und Stellplatzanlagen dazu; dafür bringt der Partner-Fachbetrieb Räumtechnik für größere Flächen mit. Für Hausverwaltungen und Betriebe in {ort} organisieren wir eine Besichtigung aller Flächen, das Angebot kommt als Saisonvertrag vom Betrieb, der Einsatznachweis dokumentiert jede Räumung."
+        },
+        {
+          "q": "Wann sollte ich den Saisonvertrag für {ort} abschließen?",
+          "a": "Am besten zwischen September und November: Dann plant der Partner-Fachbetrieb seine Touren, und Ihr Grundstück in {ort} bekommt einen festen Platz in der Reihenfolge. Wer erst beim ersten Schnee anfragt, konkurriert mit allen anderen Anfragen im Havelland."
+        },
+        {
+          "q": "Welches Streugut kommt in {ort} auf den Gehweg?",
+          "a": "Abstumpfende Mittel wie Sand, Splitt oder Granulat. Streusalz ist in den Satzungen im Havelland nur bei Eisregen oder an Treppen und Gefällstrecken erlaubt. Der Partner-Fachbetrieb hält sich an die Vorgabe der Gemeinde und lagert das Streugut selbst."
+        },
+        {
+          "q": "Was passiert, wenn es nachts schneit?",
+          "a": "Für Schnee nach 20 Uhr gilt in den meisten Satzungen: werktags bis 7 Uhr, sonn- und feiertags bis 9 Uhr geräumt. Der Saisonvertrag legt fest, wie der Partner-Fachbetrieb diese Frist auf Ihren Flächen in {ort} einhält; jeder Einsatz wird mit Datum und Uhrzeit festgehalten."
+        },
+        {
+          "q": "Kann ich den Winterdienst in {ort} auch nur für den Gehweg buchen?",
+          "a": "Ja. Ob nur der Gehweg entlang des Grundstücks, dazu Zufahrt und Hauseingang oder ein ganzer Hof: Die Flächen legen Sie bei der Besichtigung mit dem Partner-Fachbetrieb fest, der Saisonvertrag benennt sie einzeln."
         }
       ],
       "orte": {
@@ -387,8 +403,8 @@
           "meta": "Winterdienst Berlin-Kladow: Lange Gehwegfronten und Zufahrten mit Gefälle räumt und streut ein Partner-Fachbetrieb, Saisonvertrag mit Einsatznachweis."
         }
       },
-      "_umbau": "03.09. abends: hook ≤60 / rahmen ≤70 / trust ≤50 W, Satzungswerte je Ort behalten, meta je Ort, Falkensee → Uhrzeiten-Ratgeber",
-      "hub_faq_fill": 4
+      "_umbau": "03.09. abends: hook ≤60 / rahmen ≤70 / trust ≤50 W, Satzungswerte je Ort behalten, meta je Ort, Falkensee → Uhrzeiten-Ratgeber | 04.09.: FAQ-Pool 9 (3 je Seite, globale Rotation), keine Hub-Auffüllung — NearDup.",
+      "hub_faq_fill": 0
     }
   }
 }

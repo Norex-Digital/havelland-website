@@ -459,7 +459,7 @@ function ortsseite(s, o) {
   const pickPool = (arr, i) => Array.isArray(arr) && arr.length ? arr[((i % arr.length) + arr.length) % arr.length] : (typeof arr === 'string' ? arr : '');
   const idx = (archOrtIdx[o.slug] || 0) + (svcPoolIdx[s.slug] || 0); // Ort + Service, sonst teilen sich alle Services eines Ortes den Text
   // Partner-Pool (03.09.): Index global über alle Orte, sonst teilen sich Orte verschiedener Archetypen dasselbe (rahmen,trust)-Tupel (NearDup).
-  const idxP = partnerNoCopy ? haupt.findIndex(x => x.slug === o.slug) : idx;
+  const idxP = s.partner_modell ? haupt.findIndex(x => x.slug === o.slug) : idx; // 04.09.: global für alle Partner-Ortsseiten (bespoke + Pool), sonst kollidieren Rotationen
   const rLen = arch && Array.isArray(arch.rahmen) ? arch.rahmen.length : 1;
   // Welle-1a: bespoke Service×Ort-Copy (falls vorhanden) hat Vorrang vor Archetyp/Ort-Hook
   const lead = c && c.ortsseite_lead ? fillTok(c.ortsseite_lead, o, oc) : `Ihr ${s.name} in ${o.name} — vom Haus- & Gartenservice Havelland.`;
@@ -475,7 +475,9 @@ function ortsseite(s, o) {
 
   // FAQ: bespoke Service-Ort-Pool (falls vorhanden) ersetzt Archetyp-FAQ UND Hub-FAQ auf der Ortsseite (volle Compliance-Kontrolle, u.a. Dach-Partner-Framing); sonst 2 Archetyp-FAQ + 2 Hub-FAQ wie bisher
   const _faqPool = so && so.faqs ? so.faqs : (partnerNoCopy ? null : (arch && arch.faqs));
-  const archFaqs = _faqPool ? rotate(_faqPool, s.partner_modell ? idxP : idx, 2).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
+  // Partner-Ortsseiten (04.09.): zwei FAQs als paarweise eindeutiges Paar aus dem Pool (je zwei Seiten teilen höchstens eine Frage) — NearDup-Gate.
+  const faqPaar = (pool, k) => { const n = pool.length; if (n < 3) return pool; const runde = Math.floor(k / n); const i = k % n; const j = (i + 1 + 2 * runde) % n; return j === i ? [pool[i]] : [pool[i], pool[j]]; };
+  const archFaqs = _faqPool ? (s.partner_modell ? faqPaar(_faqPool, idxP) : rotate(_faqPool, idx, 2)).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
   // so.hub_faq_fill = N (Umbau 03.09., winterdienst): bespoke Pool liefert 2, der Hub füllt auf N auf; ohne das Feld bleibt bespoke = Hub-FAQ aus.
   const faqFill = so && so.faqs ? Math.max(0, (so.hub_faq_fill || 0) - archFaqs.length) : (archFaqs.length ? 2 : 4);
   const hubFaqs = (so && so.faqs && !faqFill) ? [] : (c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), (s.partner_modell ? idxP : idx) + 1, faqFill) : []);
@@ -901,10 +903,10 @@ function b2bPage() {
 ${gstripB2B}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(intro.h2)}</h2><p>${esc(intro.body)}</p><ul>${objekte}</ul><p>Einzelne Leistungen im Detail: <a href="/winterdienst/">Winterdienst</a>, <a href="/gartenpflege/">Gartenpflege und Laub</a>, <a href="/dachrinnenreinigung/">Dachrinnenreinigung</a>, <a href="/hausmeisterservice/">Hausmeisterservice</a>, <a href="/gebaeudereinigung/">Gebäudereinigung</a>.</p></div></div></section>
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Leistungen für Ihr Objekt</h2></div><div class="cards rv">${leist}</div>${partnerNote}</div></section>
+${emailCta}
 <section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">${esc(b2b.band_lead || 'Dokumentiert, ohne Callcenter — ein Ansprechpartner für alle Objekte.')}</p><div class="vals">${zus}</div></div></section>
 ${ablauf}
 ${faqSection}
-${emailCta}
 ${endBandB2B}`;
   write(url, head(clampTitle(b2b.title_tag || `Für Hausverwaltungen & Gewerbe — ${nap.name}`), mkMeta(b2b.meta || 'Haus- & Gartenservice Havelland für Hausverwaltungen, WEG und Gewerbe: Grünpflege, Reinigung, Winterdienst und Objektkontrolle mit festem Ansprechpartner und Foto-Reporting.'), url, schema, { noindex: (config.aktive_welle || 0) < 2 }) + header + main + footer + sctaBar('Guten Tag, wir sind eine Hausverwaltung / ein Gewerbebetrieb im Havelland und interessieren uns für Objektbetreuung.') + revealJS + '</body></html>');
   written.basis.push(url);
