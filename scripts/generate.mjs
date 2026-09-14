@@ -614,7 +614,7 @@ function leistungenPage() {
       ? { key: 'saison', label: 'Jetzt im Winter: Winterdienst, letzte Schnittfrist, Entrümpelung', slugs: ['winterdienst', 'heckenentfernung', 'entruempelung'], saison: true, href: {}, text: {},
           intro: 'Schnee und Glätte über den Partner-Fachbetrieb, Heckenentfernung nur bis Ende Februar, Entrümpelung zum Festpreis nach Besichtigung.' }
       : null;
-  const HV_CARD = `<a class="card" href="/fuer-hausverwaltungen/"><h3>Für Hausverwaltungen &amp; Gewerbe</h3><p>Winterdienst · Laub · Dachrinne · Grünpflege · Treppenhaus — ein Ansprechpartner, Nachweis je Einsatz</p><span class="go">Zur Übersicht →</span></a>`;
+  const HV_CARD = `<a class="card" href="/fuer-hausverwaltungen/"><h3>Für Hausverwaltungen &amp; Gewerbe</h3><p>Winterdienst · Laub · Dachrinne · Grünpflege · Entrümpelung — ein Ansprechpartner, Nachweis je Einsatz</p><span class="go">Zur Übersicht →</span></a>`;
   const renderCards = (svcs, cat = {}) => svcs.map(s => {
     if (!cat.saison) ordered.push(s);
     const desc = (cat.text && cat.text[s.slug]) || (s.sektionen || []).slice(0, 4).join(' · ') || s.garantie || 'Festpreis nach Besichtigung.';
