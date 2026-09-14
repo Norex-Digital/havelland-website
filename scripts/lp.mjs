@@ -2,19 +2,25 @@
 // Eigenes Modul, damit generate.mjs nur wenige Zeilen Eingriff braucht (Import, extraHead in head(), buildLp()-Aufruf im RUN-Block).
 // Regeln: noindex,follow · nicht in Sitemaps (kein written.*.push) · reduzierte Navigation (Logo + Anruf, kein Menü)
 // · eigenes 2-Schritt-Formular (Web3Forms, DSGVO-Checkbox, Klick-IDs/UTM als Hidden-Felder) · Danke-Seite als Conversion-Ziel (#ok-Fragment, kein Storage)
-// · Consent-Banner + Klick-Events werden geerbt (CONSENT_BANNER/TRACK_EVENTS) · kein site.js, keine .rv-Reveal-Klassen.
+// · Consent-Banner + Klick-Events werden geerbt (CONSENT_BANNER/TRACK_EVENTS) · kein site.js (initBA für .ba-Slider inline, .rv → .rv.in per rvIn()).
 // Review 14.09. eingearbeitet: Klick-IDs nur mit Einwilligung im Endgerät gespeichert (sonst nur im Speicher der Seite),
 // user_data nur bei Einwilligung, Enter in Schritt 1 → Schritt 2, Nummer sichtbar in Callpill + Sticky-Bar (Anruf-Conversion),
-// Kursiv-Font im H1 vermieden (kein Extra-Font-Request), Tap-Targets ≥ 44 px, ARIA-Kleinigkeiten, LP-Gates in gates.mjs.
-// Copy: data/copy/lp.json — Bilder nur, wenn lp.fotos Slugs aus dem Manifest enthält (Stand 14.09.: keine echten Entrümpelungs-Fotos → leer).
+// Tap-Targets ≥ 44 px, ARIA-Kleinigkeiten, LP-Gates in gates.mjs.
+// v2 (14.09. abends, ads/audit.md §10b): Site-Komponenten statt .lp-*-Nachbauten — .phero/.shot/.hleaf, gstripFrom(), timelineFrom(),
+// .trust-row (Google-Kennzahl aus proof.json), baSlider(), .review-card, .sec/.section-alt; kursiver H1-Akzent + Fraunces-Italic-Preload
+// (der Schnitt wird durch .gs .gn / .tli .tn / .ba-cap b ohnehin geladen; pyftsubset-Subset blieb bei 78 KB wegen gvar → Originaldatei).
+// Copy: data/copy/lp.json — hero je LP ({typ:'ba'|'foto'|'text'}), trust als [{b,t}], Fotos nur aus dem Manifest (fotos: [] → keine Galerie).
+
+import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
 
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
-const CHECK_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>`;
-const STAR_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
 
 // Servicegebiet laut Report Kap. 3.4 / GBP-Servicegebiet (A0 #8)
 const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Berlin-Spandau'];
 const ATTR_KEYS = ['gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+// Kursiv-Schnitt (H1-Akzent, .gs .gn, .tli .tn, .ba-cap b): site.css deklariert ihn per unicode-range; Preload verhindert den Swap-Reflow im Hero.
+const ITALIC_FONT = '/assets/fonts/fraunces-italic-latin.woff2';
+const FONT_PRELOAD = `<link rel="preload" href="${ITALIC_FONT}" as="font" type="font/woff2" crossorigin>`;
 
 // LP-eigenes CSS (mobile-first). Nutzt die Tokens/Klassen aus site.css (.btn, .kf, .faq, .scta, .consent, footer, .zone-deep).
 const LP_CSS = `<style>
@@ -22,49 +28,18 @@ const LP_CSS = `<style>
 .lp-head .logo img{height:52px;width:auto}
 .lp-head .callpill{font-size:15px;padding:10px 14px}
 .lp-head .callpill .num{display:inline}
-.lp-hero{background:var(--paper);border-bottom:1px solid var(--hair);padding:34px 0 30px}
 .lp-hero .kick{margin-bottom:12px;align-items:flex-start;line-height:1.35}
 .lp-hero .kick .dot{margin-top:.5em}
-.lp-hero h1{font-family:var(--font-display);font-weight:600;letter-spacing:-.01em;font-size:clamp(30px,6.2vw,46px);line-height:1.12;max-width:16em}
-.lp-hero h1 em{color:var(--green-d);font-style:normal}
-.lp-hero .lead{margin-top:16px;font-size:18px;line-height:1.55;color:var(--ink);max-width:34em}
-.lp-cta{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.lp-hero-text .grid{grid-template-columns:1fr;max-width:46em}
+.lp-cta{flex-direction:column;align-items:stretch;gap:12px}
 .lp-cta .btn{width:100%}
 .lp-cta .btn svg,.end .btn svg{width:18px;height:18px;flex:0 0 auto}
-.lp-trust{list-style:none;display:grid;gap:8px;margin:26px 0 0;padding:0}
-.lp-trust li{display:flex;align-items:center;gap:9px;font-size:15px;color:var(--ink);font-weight:600}
-.lp-trust svg{width:16px;height:16px;color:var(--green);flex:0 0 auto}
-.lp-trust .star svg{color:#b8860b}
-.lp-sec{padding:44px 0}
-.lp-sec h2{font-family:var(--font-display);font-weight:600;font-size:clamp(24px,4.6vw,32px);line-height:1.2;margin-bottom:18px;max-width:20em}
-.lp-alt{background:var(--paper);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-.lp-cards{display:grid;gap:14px}
-.lp-card{background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:20px}
-.lp-card h3{font-size:18px;margin-bottom:6px}
-.lp-card p{color:var(--muted);font-size:16px;line-height:1.5}
-.lp-steps{list-style:none;padding:0;margin:0;display:grid;gap:14px}
-.lp-steps li{display:flex;gap:14px;align-items:flex-start}
-.lp-steps .n{flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:var(--green-d);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:18px}
-.lp-steps h3{font-size:17px;margin-bottom:4px}
-.lp-steps p{color:var(--muted);font-size:15.5px;line-height:1.5}
-.lp-preis{background:#fff;border-left:3px solid var(--accent);border-radius:0 var(--r-el) var(--r-el) 0;padding:18px 20px}
+.tl+.lp-cta{margin-top:36px}
+main .sec .head h2{max-width:22em}
+.lp-gallery{display:grid;gap:18px}
+.lp-preis{background:var(--paper);border-left:3px solid var(--hair);border-radius:0 var(--r-el) var(--r-el) 0;padding:18px 20px}
 .lp-preis p{color:var(--ink);font-size:16px;line-height:1.55;margin-bottom:10px}
 .lp-preis p:last-child{margin-bottom:0}
-.lp-quotes{display:grid;gap:12px}
-.lp-quote{background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:18px 20px;margin:0}
-.lp-quote .stars{display:flex;gap:2px;color:#b8860b;margin-bottom:8px}
-.lp-quote .stars svg{width:15px;height:15px}
-.lp-quote blockquote{margin:0}
-.lp-quote p{font-size:15.5px;line-height:1.5;color:var(--ink)}
-.lp-quote figcaption{display:block;margin-top:8px;font-size:13.5px;color:var(--muted)}
-.lp-gallery{display:grid;gap:14px}
-.lp-ba{margin:0;background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:10px}
-.lp-ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.lp-ba-cell{position:relative;border-radius:var(--r-el);overflow:hidden;aspect-ratio:3/4;background:var(--paper)}
-.lp-ba-cell img{width:100%;height:100%;object-fit:cover;display:block}
-.lp-ba-tag{position:absolute;left:8px;top:8px;z-index:1;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:rgba(0,0,0,.62);color:#fff}
-.lp-ba-tag-n{background:var(--green-d)}
-.lp-ba figcaption{margin-top:8px;font-size:14px;color:var(--muted)}
 .lp-form{margin-top:6px}
 .lp-form fieldset{border:0;padding:0;margin:0 0 6px}
 .lp-form legend{font-weight:700;font-size:15px;color:var(--green-d);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
@@ -89,20 +64,16 @@ const LP_CSS = `<style>
 .lp-foot a,.lp-foot .linklike{color:var(--ink);display:inline-block;padding:8px 0}
 .lp-foot .linklike{background:none;border:0;font:inherit;font-weight:500;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
-.lp-danke .n{background:var(--green-d)}
+.lp-danke .tli p{color:var(--ink);font-size:16.5px;max-width:40em}
+.lp-danke .lp-cta{margin-top:24px}
 .scta .wa{background:transparent;color:var(--green-d);box-shadow:none;border:1.5px solid var(--green)}
 @media(min-width:600px){body:has(.consent:not([hidden])) .lp-foot{padding-bottom:130px}}
 @media(min-width:760px){
-  .lp-cta{flex-direction:row}.lp-cta .btn{width:auto}
-  .lp-trust{grid-template-columns:1fr 1fr}
-  .lp-cards{grid-template-columns:repeat(3,1fr)}
-  .lp-steps{grid-template-columns:repeat(3,1fr)}.lp-steps li{flex-direction:column}
-  .lp-quotes{grid-template-columns:repeat(2,1fr)}
+  .lp-cta{flex-direction:row;align-items:center;gap:16px}.lp-cta .btn{width:auto}
   .lp-gallery{grid-template-columns:repeat(2,1fr)}
   .lp-form .row{grid-template-columns:1fr 1fr}
   .lp-form .row .full{grid-column:1/-1}
   .lp-form .btn{width:auto}
-  .lp-sec{padding:60px 0}
 }
 </style>`;
 
@@ -137,8 +108,14 @@ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'applica
 // Danke: lead_confirmed nur, wenn die Seite über den Formular-Redirect (#ok) erreicht wurde; Fragment wird sofort entfernt (Reload zählt nicht).
 const DANKE_JS = `<script>(function(){try{if(location.hash==='#ok'){history.replaceState(null,'',location.pathname);if(window.dataLayer){window.dataLayer.push({event:'lead_confirmed'})}}}catch(e){}})();</script>`;
 
+// Vorher/Nachher-Regler: initBA aus assets/js/site.js (Z.41–53) inline, weil LPs kein site.js laden. Nur angehängt, wenn die Seite ein .ba enthält.
+const LP_BA_JS = `<script>(function(){function initBA(ba){if(!ba||ba.__baInit)return;ba.__baInit=true;var range=ba.querySelector('input[type=range]');if(!range)return;function set(){ba.style.setProperty('--pos',range.value+'%')}range.addEventListener('input',function(){set();var stage=ba.closest('.hero-stage');if(stage)stage.classList.add('dragged')});set()}Array.prototype.slice.call(document.querySelectorAll('.ba')).forEach(initBA)})();</script>`;
+// site.css setzt .rv{opacity:0} (sichtbar erst mit .in, das site.js per IntersectionObserver setzt). LPs laden kein site.js → jede importierte
+// Komponente bekommt ' in' sofort: kein Reveal, kein Layout-Shift. Auf JEDE Komponentenausgabe anwenden (accept.mjs prüft: kein rv ohne in).
+const rvIn = html => html.replace(/class="([^"]*)"/g, (m, c) => { const t = c.split(' '); return t.includes('rv') && !t.includes('in') ? `class="${c} in"` : m; });
+
 export function buildLp(d) {
-  const { head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema, reviews, config, CP, isReal, pic } = d;
+  const { head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema, reviews, config, CP, isReal, pic, leaf, proof } = d;
   const consentKey = CONSENT_KEY || 'consent_v2';
   const cp = CP('lp.json');
   if (!cp || !Array.isArray(cp.lps)) return 0;
@@ -154,10 +131,33 @@ export function buildLp(d) {
 
   const lpFooter = `<footer class="lp-foot"><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street || '')}, ${esc(nap.zip || '')} ${esc(nap.city)} · <a href="tel:${tel}">${telDisp}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a></p><p>Servicegebiet: ${GEBIET.map(esc).join(' · ')}</p><div class="legal"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><button type="button" class="linklike" id="consent-reset">Cookie-Einstellungen</button><a href="/">Zur Website</a></div></div></footer>`;
 
-  const trustList = items => `<ul class="lp-trust">${items.map((t, i) => `<li${i === 0 ? ' class="star"' : ''}>${i === 0 ? STAR_SVG : CHECK_SVG}<span>${esc(t)}</span></li>`).join('')}</ul>`;
+  // Trust-Zeile wie Home/Hub (.trust-row > .t > b + span). Google-Kennzahl aus proof.google_reviews mit derselben Live-Schwelle wie
+  // trustLine in generate.mjs (Prinzip 6: keine hartcodierten Zahlen in lp.json).
+  const gr = (proof && proof.google_reviews) || {};
+  const grLive = !!(reviews && reviews.enabled) && (gr.count || 0) >= ((reviews && reviews.block_ab_count) || 5) && !!gr.rating;
+  const trustGoogle = grLive ? { b: `${Number(gr.rating).toFixed(1).replace('.', ',')} ★`, t: `bei Google · ${gr.count} Bewertungen` } : null;
+  const trustRow = items => {
+    const all = [trustGoogle, ...(Array.isArray(items) ? items : [])].filter(t => t && t.b && t.t);
+    return all.length ? `<div class="trust-row">${all.map(t => `<div class="t"><b>${esc(t.b)}</b><span>${esc(t.t)}</span></div>`).join('')}</div>` : '';
+  };
+
+  // Vorher/Nachher-Slider aus components.mjs (JPG-768: baSlider setzt <img src>, kein <picture>; Hochformat 864/1036 = .ba-Aspect).
+  // Der Alt-Suffix der Komponente ist heckenspezifisch („nach dem Schnitt") → für Räumungen ersetzt.
+  const imgSrc = slug => `/assets/img/${slug}-768.jpg`;
+  const baLp = o => baSlider(o).replace(/ — nach dem Schnitt"/g, ' — nach der Räumung"').replace(/ — vor dem Schnitt"/g, ' — vor der Räumung"');
+  const baPair = (f, { lcp = false } = {}) => baLp({ vorher: imgSrc(f.vorher), nachher: imgSrc(f.nachher), alt: f.alt || f.cap || 'Entrümpelung', cap: f.cap || '', sub: f.sub || '', hint: true, lcp, w: 864, h: 1036 });
+  const pairOk = f => !!(f && f.vorher && f.nachher && pic(f.vorher) && pic(f.nachher));
+  // Hero-Schalter je LP (lp.json hero.typ): ba = echte Vorher/Nachher-Fotos als Slider, foto = Manifest-Bild als Fotokarte (.shot .main),
+  // text = einspaltig ohne Karte. Fallback ohne hero-Feld: erstes fotos-Paar → ba, sonst text.
+  const heroOf = lp => {
+    const h = lp.hero || (Array.isArray(lp.fotos) && lp.fotos[0] ? { typ: 'ba', ...lp.fotos[0] } : { typ: 'text' });
+    if (h.typ === 'ba' && pairOk(h)) return { cls: 'lp-hero-ba', shot: `<div class="shot">${baPair(h, { lcp: true })}</div>`, key: `${h.vorher}|${h.nachher}` };
+    if (h.typ === 'foto' && h.slug && pic(h.slug)) return { cls: 'lp-hero-foto', shot: `<div class="shot">${pic(h.slug, { cls: 'main', alt: h.alt || `${lp.name} im Havelland – ${nap.name}`, sizes: '(max-width:900px) 92vw, 46vw', lcp: true })}</div>`, key: '' };
+    return { cls: 'lp-hero-text', shot: '', key: '' };
+  };
 
   const fmtDate = iso => { const m = String(iso || '').match(/^(\d{4})-(\d{2})(?:-(\d{2}))?/); return m ? (m[3] ? `${m[3]}.${m[2]}.${m[1]}` : `${m[2]}/${m[1]}`) : ''; };
-  const quotes = idx => {
+  const quotes = (idx, h2) => {
     if (!reviews || !reviews.enabled || !Array.isArray(reviews.reviews)) return '';
     const picked = (idx || []).map(i => reviews.reviews[i]).filter(Boolean);
     if (!picked.length) return '';
@@ -167,17 +167,19 @@ export function buildLp(d) {
       const t = String(r.text || '').replace(/\s+/g, ' ').trim();
       const cut = t.length > 260 ? t.slice(0, t.lastIndexOf(' ', 260)) + ' …' : t;
       const stars = Math.max(1, Math.min(5, r.rating || 5));
-      return `<figure class="lp-quote"><div class="stars" role="img" aria-label="${stars} von 5 Sternen">${STAR_SVG.repeat(stars)}</div><blockquote><p>${esc(cut)}</p></blockquote><figcaption>${esc(r.author)} · Google-Bewertung${r.date ? ', ' + esc(fmtDate(String(r.date).slice(0, 7))) : ''}</figcaption></figure>`;
+      return `<figure class="review-card"><div class="rc-stars" role="img" aria-label="${stars} von 5 Sternen">${'★'.repeat(stars)}</div><blockquote>${esc(cut)}</blockquote><figcaption><b>${esc(r.author)}</b><span>${r.date ? esc(fmtDate(String(r.date).slice(0, 7))) + ' · ' : ''}Google-Bewertung</span></figcaption></figure>`;
     }).join('');
-    return `<section class="lp-sec lp-alt" id="bewertungen"><div class="wrap"><h2>Was Kunden über unseren Haus- &amp; Gartenservice sagen</h2><p class="hint" style="margin:-8px 0 18px;color:var(--muted)">${rating} von 5 Sternen bei Google · ${esc(agg.count || '')} Bewertungen (Stand ${esc(fmtDate(agg.as_of))}). Auszug, wörtlich.</p><div class="lp-quotes">${items}</div></div></section>`;
+    // .review-grid/.review-card wie /bewertungen/ (generate.mjs); 2 Karten → auto-fit statt 3-Spalten-Raster mit Leerspalte. Kein Link auf /bewertungen/ (LP ohne Ausstiegsrampen).
+    return `<section class="sec section-alt" id="bewertungen"><div class="wrap"><div class="head"><h2>${esc(h2 || 'Was Kunden über uns sagen')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${rating} von 5 Sternen bei Google · ${esc(agg.count || '')} Bewertungen (Stand ${esc(fmtDate(agg.as_of))}). Auszug, wörtlich.</p><div class="review-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));max-width:920px">${items}</div></div></section>`;
   };
 
-  // Galerie: nur echte Fotos als Vorher/Nachher-Paare ({vorher, nachher, cap}); Slugs müssen im Manifest stehen, sonst wird das Paar übersprungen.
-  const gallery = lp => {
-    const pairs = (Array.isArray(lp.fotos) ? lp.fotos : []).filter(f => f && f.vorher && f.nachher && pic(f.vorher) && pic(f.nachher));
+  // Galerie: nur echte Fotos als Vorher/Nachher-Slider ({vorher, nachher, cap, sub}); Slugs müssen im Manifest stehen, sonst wird das Paar übersprungen.
+  // Das Hero-Paar wird nicht wiederholt (skipKey). Ein einzelnes Paar bleibt einspaltig und begrenzt.
+  const gallery = (lp, skipKey) => {
+    const pairs = (Array.isArray(lp.fotos) ? lp.fotos : []).filter(f => pairOk(f) && `${f.vorher}|${f.nachher}` !== skipKey);
     if (!pairs.length) return '';
-    const items = pairs.map(f => `<figure class="lp-ba"><div class="lp-ba-grid"><div class="lp-ba-cell"><span class="lp-ba-tag">Vorher</span>${pic(f.vorher, { alt: `${f.cap || 'Entrümpelung'} vor der Räumung – Einsatzfoto ${nap.name}`, sizes: '(max-width:760px) 46vw, 300px' })}</div><div class="lp-ba-cell"><span class="lp-ba-tag lp-ba-tag-n">Nachher</span>${pic(f.nachher, { alt: `${f.cap || 'Entrümpelung'} nach der Räumung – besenrein`, sizes: '(max-width:760px) 46vw, 300px' })}</div></div>${f.cap ? `<figcaption>${esc(f.cap)}</figcaption>` : ''}</figure>`).join('');
-    return `<section class="lp-sec" id="fotos"><div class="wrap"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2><p class="hint" style="margin:-8px 0 18px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery">${items}</div></div></section>`;
+    const items = pairs.map(f => `<div>${baPair(f)}</div>`).join('');
+    return `<section class="sec" id="fotos"><div class="wrap"><div class="head"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery"${pairs.length === 1 ? ' style="grid-template-columns:1fr;max-width:560px"' : ''}>${items}</div></div></section>`;
   };
 
   const form = lp => {
@@ -215,31 +217,35 @@ export function buildLp(d) {
       ? esc(lp.h1).replace(esc(lp.h1_em), `<em>${esc(lp.h1_em)}</em>`)
       : esc(lp.h1);
     const wa = waHref(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.');
+    const H = heroOf(lp);
     const main = `<main id="top">
-<section class="lp-hero"><div class="wrap"><span class="kick"><span class="dot"></span> ${esc(lp.kick)}</span><h1>${h1}</h1><p class="lead">${esc(lp.lead)}</p>
-<div class="lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>
-${trustList(lp.trust || [])}</div></section>
-<section class="lp-sec"><div class="wrap"><h2>Drei Zusagen für Ihre ${esc(lp.name)}</h2><div class="lp-cards">${(lp.nutzen || []).map(x => `<div class="lp-card"><h3>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div></div></section>
-<section class="lp-sec lp-alt"><div class="wrap"><h2>So läuft es ab</h2><ol class="lp-steps">${(lp.ablauf || []).map((x, i) => `<li><span class="n" aria-hidden="true">${i + 1}</span><div><h3>${esc(x.h)}</h3><p>${esc(x.p)}</p></div></li>`).join('')}</ol><div class="lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
-${gallery(lp)}
-<section class="lp-sec"><div class="wrap"><h2>${esc(lp.preis.h)}</h2><div class="lp-preis">${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div></div></section>
-${quotes(lp.testimonials)}
-<section class="lp-sec"><div class="wrap"><h2>Häufige Fragen</h2><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
-<section class="lp-sec lp-alt" id="kontakt"><div class="wrap"><h2>Kostenlose Besichtigung anfragen</h2><p class="hint" style="margin:-6px 0 16px;color:var(--muted)">Zwei Schritte, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp)}</div></section>
+<section class="phero lp-hero ${H.cls}">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${esc(lp.kick)}</span><h1>${h1}</h1><p class="lead">${esc(lp.lead)}</p>
+<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>
+${trustRow(lp.trust)}</div>${H.shot}</div></section>
+${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) })), { label: `Drei Zusagen für Ihre ${lp.name}` }))}
+<section class="sec section-alt"><div class="wrap"><div class="head"><h2>So läuft es ab</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
+${gallery(lp, H.key)}
+<section class="sec"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div></div></section>
+${quotes(lp.testimonials, lp.testimonials_h2)}
+<section class="sec"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
+<section class="sec section-alt" id="kontakt"><div class="wrap"><div class="head"><h2>Kostenlose Besichtigung anfragen</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Zwei Schritte, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp)}</div></section>
 <section class="zone-deep end"><div class="wrap"><h2>Sie zeigen, wir räumen.</h2><p>Kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, besenreine Übergabe – im Havelland und in Berlin-Spandau.</p><div class="cta-row"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${telDisp}</a></div></div></section>
 </main>`;
-    const html = head(lp.title, lp.meta, url, orgSchema(), { noindex: true, extraHead: LP_CSS + lpAttribJS(consentKey) })
-      + lpHeader(url) + main + lpFooter + lpScta(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')
-      + CONSENT_BANNER + TRACK_EVENTS + lpFormJS(lp.slug, dankeUrl, consentKey) + resetJS + '</body></html>';
+    const baJs = /class="ba[ "]/.test(main) ? LP_BA_JS : '';
+    const html = head(lp.title, lp.meta, url, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS + lpAttribJS(consentKey) })
+      + lpHeader('/') + main + lpFooter + lpScta(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')
+      + CONSENT_BANNER + TRACK_EVENTS + lpFormJS(lp.slug, dankeUrl, consentKey) + resetJS + baJs + '</body></html>';
     write(url, html);
     n++;
   }
 
   // Danke-Seite (Conversion-Ziel der LPs; noindex; lead_confirmed nur über #ok-Fragment)
   const dk = cp.danke || {};
-  const main = `<main class="lp-danke"><section class="lp-hero"><div class="wrap"><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>${esc(dk.h1 || 'Danke für Ihre Anfrage.')}</h1><p class="lead">${esc(dk.lead || '')}</p></div></section>
-<section class="lp-sec"><div class="wrap"><h2>So geht es weiter</h2><ol class="lp-steps">${(dk.next || []).map((t, i) => `<li><span class="n" aria-hidden="true">${i + 1}</span><div><p style="color:var(--ink);font-size:16.5px">${esc(t)}</p></div></li>`).join('')}</ol><p class="hint" style="margin-top:20px">${esc(dk.eilig || '')}</p><div class="lp-cta"><a class="btn btn-acc" href="tel:${tel}">☎ ${telDisp}</a><a class="btn btn-line" href="${waHref('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')}">Foto per WhatsApp nachschicken</a></div></div></section></main>`;
-  write(dankeUrl, head(`${dk.title || 'Danke'} – Havelland`, 'Ihre Anfrage ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns meist noch am selben Werktag.', dankeUrl, orgSchema(), { noindex: true, extraHead: LP_CSS })
+  // Schritte als Timeline (gleiche Komponente wie der Ablauf; Sätze ohne Titel/Zeitchip). Text-Hero ohne Fotokarte.
+  const dkSteps = (dk.next || []).map(t => typeof t === 'string' ? { h: '', p: esc(t) } : { when: t.when ? esc(t.when) : '', h: esc(t.h || ''), p: esc(t.p || '') });
+  const main = `<main class="lp-danke"><section class="phero lp-hero lp-hero-text">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>${esc(dk.h1 || 'Danke für Ihre Anfrage.')}</h1><p class="lead">${esc(dk.lead || '')}</p></div></div></section>
+<section class="sec"><div class="wrap"><div class="head"><h2>So geht es weiter</h2></div>${rvIn(timelineFrom(dkSteps))}<p class="hint" style="margin-top:24px;color:var(--muted)">${esc(dk.eilig || '')}</p><div class="cta-row lp-cta"><a class="btn btn-acc" href="tel:${tel}">☎ ${telDisp}</a><a class="btn btn-line" href="${waHref('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')}">Foto per WhatsApp nachschicken</a></div></div></section></main>`;
+  write(dankeUrl, head(`${dk.title || 'Danke'} – Havelland`, 'Ihre Anfrage ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns meist noch am selben Werktag.', dankeUrl, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS })
     + lpHeader('/') + main + lpFooter + lpScta('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')
     + CONSENT_BANNER + TRACK_EVENTS + DANKE_JS + resetJS + '</body></html>');
   return n + 1;

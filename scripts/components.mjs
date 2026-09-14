@@ -64,14 +64,26 @@ export function baSlider({ slug = '', vorher = '', nachher = '', alt = '', cap =
 }
 
 // ---------------------------------------------------------------------------
-// garantienStrip — feste 3-Zusagen-Leiste (identisch zur generate.mjs gstrip-Konstante). Ohne Bild/Label.
+// gstripFrom — generischer 3-Zusagen-Renderer (LP-v2, 14.09.): .gstrip > .wrap > .gstrip-grid > .gs[.rv[.dN]] > span.gn(01..) + div(h3 + p).
+// items: [{h, p}] — Werte werden ROH eingesetzt (Aufrufer escapt), damit garantienStrip() byte-identisch bleibt.
+// rv=false: ohne Reveal-Klassen (Seiten ohne site.js). Ads-LPs nutzen rv=true + rvIn() in lp.mjs.
 // ---------------------------------------------------------------------------
+export function gstripFrom(items, { label = 'Unsere drei Zusagen', rv = true } = {}) {
+  const rows = arr(items).map((it, i) =>
+    `<div class="gs${rv ? ' rv' + (i ? ` d${i}` : '') : ''}"><span class="gn">${String(i + 1).padStart(2, '0')}</span><div><h3>${it.h}</h3><p>${it.p}</p></div></div>`).join('');
+  return `<section class="gstrip" aria-label="${esc(label)}"><div class="wrap"><div class="gstrip-grid">${rows}</div></div></section>`;
+}
+
+// ---------------------------------------------------------------------------
+// garantienStrip — feste 3-Zusagen-Leiste (identisch zur generate.mjs gstrip-Konstante). Ohne Bild/Label. Delegiert an gstripFrom().
+// ---------------------------------------------------------------------------
+const GSTRIP_3 = [
+  { h: 'Festpreis ist Endpreis', p: 'Nach der kostenlosen Besichtigung steht Ihr Preis — inklusive Abfuhr, ohne Nachforderung.' },
+  { h: 'Foto-Nachweis', p: 'Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.' },
+  { h: 'Ein Ansprechpartner', p: 'Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.' }
+];
 export function garantienStrip() {
-  return `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid">` +
-    `<div class="gs rv"><span class="gn">01</span><div><h3>Festpreis ist Endpreis</h3><p>Nach der kostenlosen Besichtigung steht Ihr Preis — inklusive Abfuhr, ohne Nachforderung.</p></div></div>` +
-    `<div class="gs rv d1"><span class="gn">02</span><div><h3>Foto-Nachweis</h3><p>Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.</p></div></div>` +
-    `<div class="gs rv d2"><span class="gn">03</span><div><h3>Ein Ansprechpartner</h3><p>Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.</p></div></div>` +
-    `</div></div></section>`;
+  return gstripFrom(GSTRIP_3);
 }
 
 // ---------------------------------------------------------------------------
@@ -333,12 +345,17 @@ const TL_PARTNER_WINTER = [
   ['Bei Schnee und Glätte', 'Einsätze mit Nachweis', 'Räumen und Streuen übernimmt der Fachbetrieb mit eigener Technik und Absicherung, jeder Einsatz wird festgehalten — wir bleiben Ihr fester Draht.']
 ];
 const TL_PARTNER = TL_PARTNER_DACH;
+// timelineFrom — generischer Timeline-Renderer (LP-v2, 14.09.): .tl[.rv] > .tli > span.tn + .tbody > [.twhen wenn when] + h3 + p.
+// items: [{when?, h?, p}] — Werte ROH (Aufrufer escapt); when/h optional (z. B. Danke-Seite: Satz-Schritte ohne Zeitchip/Titel).
+export function timelineFrom(items, { rv = true } = {}) {
+  const rows = arr(items).map((it, i) =>
+    `<div class="tli"><span class="tn">${i + 1}</span><div class="tbody">` +
+    `${it.when ? `<span class="twhen">${it.when}</span>` : ''}${it.h ? `<h3>${it.h}</h3>` : ''}<p>${it.p}</p></div></div>`).join('');
+  return `<div class="tl${rv ? ' rv' : ''}">${rows}</div>`;
+}
 export function auftragsTimeline(partner = false, slug = '') {
   const base = partner ? (slug === 'winterdienst' ? TL_PARTNER_WINTER : TL_PARTNER_DACH) : TL.map((row, i) => i === 2 ? [row[0], row[1], tlStep3(slug)] : row);
-  const items = base.map(([when, h, p], i) =>
-    `<div class="tli"><span class="tn">${i + 1}</span><div class="tbody">` +
-    `<span class="twhen">${when}</span><h3>${h}</h3><p>${p}</p></div></div>`).join('');
-  return `<div class="tl rv">${items}</div>`;
+  return timelineFrom(base.map(([when, h, p]) => ({ when, h, p })));
 }
 
 // ---------------------------------------------------------------------------

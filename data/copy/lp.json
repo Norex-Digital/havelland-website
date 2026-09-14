@@ -1,5 +1,5 @@
 {
-  "_meta": "Ads-Landingpages (Google Ads, Entrümpelung über HuG — Owner-Entscheid 14.09.2026). Gerendert von scripts/lp.mjs als /lp/<slug>/, noindex,follow, nicht in Sitemaps. Regeln (Review 14.09. eingearbeitet): kein 'versichert' (Nachweis fehlt), kein 'zertifiziert'/'Entsorgungsfachbetrieb', keine Ab-Preise (Owner E5), keine Superlative, kein 'kostenlos bei Wertanrechnung' (UWG Anh. Nr. 20), keine erfundenen Referenzen/Häufigkeiten, keine Fotos ohne Herkunftsnachweis (fotos: [] rendert keine Galerie). Festpreis IMMER als 'Festpreis für Räumung und Abtransport'; Entsorgungsgebühren nach Beleg zzgl. MwSt. (= Angebots-/Rechnungspraxis, Rechnung 2026-160). Kein 'Sondermüll' (nur nicht gefährliche Abfälle, §53 KrWG). Partner nur mit Vermittlungs-Wording. Reaktionszeit einheitlich 'meist am selben Werktag'. Fotos (14.09.): Auftrag gutzke-monika-2026-09-01, Kundenakte kunden/hausgarten/_aktiv/… — EINWILLIGUNG DER KUNDIN ZUR VERÖFFENTLICHUNG VOR MERGE EINHOLEN (Gate E4); EXIF entfernt, kein Name, keine Adresse.",
+  "_meta": "Ads-Landingpages (Google Ads, Entrümpelung über HuG — Owner-Entscheid 14.09.2026). Gerendert von scripts/lp.mjs als /lp/<slug>/, noindex,follow, nicht in Sitemaps. Regeln (Review 14.09. eingearbeitet): kein 'versichert' (Nachweis fehlt), kein 'zertifiziert'/'Entsorgungsfachbetrieb', keine Ab-Preise (Owner E5), keine Superlative, kein 'kostenlos bei Wertanrechnung' (UWG Anh. Nr. 20), keine erfundenen Referenzen/Häufigkeiten, keine Fotos ohne Herkunftsnachweis (fotos: [] rendert keine Galerie). Festpreis IMMER als 'Festpreis für Räumung und Abtransport'; Entsorgungsgebühren nach Beleg zzgl. MwSt. (= Angebots-/Rechnungspraxis, Rechnung 2026-160). Kein 'Sondermüll' (nur nicht gefährliche Abfälle, §53 KrWG). Partner nur mit Vermittlungs-Wording. Reaktionszeit einheitlich 'meist am selben Werktag'. Fotos (14.09.): Auftrag gutzke-monika-2026-09-01, Kundenakte kunden/hausgarten/_aktiv/… — EINWILLIGUNG DER KUNDIN ZUR VERÖFFENTLICHUNG VOR MERGE EINHOLEN (Gate E4); EXIF entfernt, kein Name, keine Adresse. v2 (14.09. abends, Owner-Entscheide): hero je LP — typ 'ba' (echte Vorher/Nachher-Slugs aus dem Manifest, Hochformat), 'foto' (KI-Stimmungsbild svc-entruempelung-hero: nie als Kundenergebnis, nie in der Galerie) oder 'text'; trust als [{b,t}] — die Google-Kennzahl kommt aus data/proof.json (nicht hier pflegen); fotos-Paare {vorher,nachher,cap,sub}; testimonials_h2 neutral (Zitate wörtlich, branchenfremd bis echte Entrümpelungs-Reviews vorliegen); Wertanrechnung in preis.p ohne 'kostenlos'.",
   "danke": {
     "title": "Danke – Anfrage eingegangen",
     "h1": "Danke, Ihre Anfrage ist angekommen.",
@@ -25,10 +25,18 @@
       "cta": "Kostenlose Besichtigung anfragen",
       "wa_text": "Hallo, ich brauche eine Haushaltsauflösung im Havelland. Können Sie mir ein Angebot machen?",
       "trust": [
-        "5,0 ★ bei Google · 19 Bewertungen",
-        "Fester Ansprechpartner aus Falkensee",
-        "Festpreis für Räumung & Abtransport nach Besichtigung",
-        "Foto-Nachweis aufs Handy"
+        {
+          "b": "Falkensee",
+          "t": "fester Ansprechpartner aus der Region"
+        },
+        {
+          "b": "Festpreis",
+          "t": "für Räumung & Abtransport nach Besichtigung"
+        },
+        {
+          "b": "Foto-Nachweis",
+          "t": "aufs Handy nach der Räumung"
+        }
       ],
       "nutzen": [
         {
@@ -103,16 +111,27 @@
         {
           "vorher": "lp-gutzke-kammer-vorher",
           "nachher": "lp-gutzke-kammer-nachher",
-          "cap": "Abstellkammer unter der Treppe: ausgeräumt und besenrein."
+          "cap": "Abstellkammer unter der Treppe",
+          "sub": "ausgeräumt und besenrein"
         },
         {
           "vorher": "lp-gutzke-schuppen-vorher",
           "nachher": "lp-gutzke-schuppen-nachher",
-          "cap": "Gartenschuppen: leer, Regale frei, bereit für die neue Nutzung."
+          "cap": "Gartenschuppen",
+          "sub": "leer, Regale frei, bereit für die neue Nutzung"
         }
       ],
       "fotos_h2": "So sieht unsere Arbeit aus",
-      "fotos_hint": "Echte Fotos aus einem Auftrag im Havelland, September 2026, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy."
+      "fotos_hint": "Echte Fotos aus einem Auftrag im Havelland, September 2026, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.",
+      "hero": {
+        "typ": "ba",
+        "vorher": "lp-gutzke-kammer-vorher",
+        "nachher": "lp-gutzke-kammer-nachher",
+        "cap": "Abstellkammer unter der Treppe",
+        "sub": "ausgeräumt und besenrein übergeben",
+        "alt": "Abstellkammer unter der Treppe – Haushaltsauflösung im Havelland"
+      },
+      "testimonials_h2": "Was Kunden über uns sagen"
     },
     {
       "slug": "messie-wohnung-raeumung",
@@ -127,10 +146,18 @@
       "cta": "Vertraulich anfragen",
       "wa_text": "Hallo, ich brauche eine diskrete Wohnungsräumung. Können wir kurz sprechen?",
       "trust": [
-        "5,0 ★ bei Google · 19 Bewertungen",
-        "Fester Ansprechpartner, kein Callcenter",
-        "Festpreis für Räumung & Abtransport nach Besichtigung",
-        "Vertraulich – wir reden mit niemandem darüber"
+        {
+          "b": "Ein",
+          "t": "fester Ansprechpartner, kein Callcenter"
+        },
+        {
+          "b": "Festpreis",
+          "t": "für Räumung & Abtransport nach Besichtigung"
+        },
+        {
+          "b": "Vertraulich",
+          "t": "wir reden mit niemandem darüber"
+        }
       ],
       "nutzen": [
         {
@@ -164,6 +191,7 @@
         "h": "Was kostet die Räumung?",
         "p": [
           "Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert.",
+          "Gut erhaltene Möbel oder Geräte prüfen wir auf ihren Wert und rechnen sie auf den Räumungspreis an.",
           "Entsorgungsgebühren der Annahmestellen rechnen wir transparent nach Beleg ab, zuzüglich der gesetzlichen Mehrwertsteuer – ohne eigenen Aufschlag."
         ]
       },
@@ -195,7 +223,13 @@
         0,
         6
       ],
-      "fotos": []
+      "fotos": [],
+      "hero": {
+        "typ": "foto",
+        "slug": "svc-entruempelung-hero",
+        "alt": "Entrümpelung im Havelland – Haus- & Gartenservice Havelland"
+      },
+      "testimonials_h2": "Was Kunden über uns sagen"
     },
     {
       "slug": "gewerbe-entruempelung",
@@ -205,15 +239,23 @@
       "meta": "Entrümpelung, Wohnungsräumung und Betriebsauflösung für Hausverwaltungen, Vermieter und Gewerbe im Havelland: feste Termine, Festpreis je Objekt.",
       "kick": "Hausverwaltungen · Vermieter · Gewerbe",
       "h1": "Entrümpelung und Betriebsauflösung für Hausverwaltungen und Gewerbe im Havelland",
-      "h1_em": "Hausverwaltungen und Gewerbe",
+      "h1_em": "Hausverwaltungen",
       "lead": "Wohnungsräumung nach Auszug, Kellerräumung im Mehrfamilienhaus, Büro- oder Betriebsauflösung: ein regionaler Ansprechpartner, feste Termine, schriftlicher Festpreis je Objekt und auf Wunsch eine Sammelrechnung.",
       "cta": "Angebot für Ihr Objekt anfordern",
       "wa_text": "Hallo, ich brauche ein Angebot für eine Entrümpelung / Räumung für ein Objekt im Havelland.",
       "trust": [
-        "5,0 ★ bei Google · 19 Bewertungen",
-        "Regionaler Betrieb aus Falkensee",
-        "Schriftlicher Festpreis je Objekt",
-        "Foto-Dokumentation je Einsatz"
+        {
+          "b": "Falkensee",
+          "t": "regionaler Betrieb vor Ort"
+        },
+        {
+          "b": "Festpreis",
+          "t": "schriftlich je Objekt"
+        },
+        {
+          "b": "Fotos",
+          "t": "Dokumentation nach jedem Einsatz"
+        }
       ],
       "nutzen": [
         {
@@ -247,6 +289,7 @@
         "h": "Wie wird abgerechnet?",
         "p": [
           "Je Objekt ein Festpreis für Räumung und Abtransport, schriftlich nach Besichtigung, netto zuzüglich gesetzlicher Mehrwertsteuer. Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus.",
+          "Verwertbare Möbel, Technik oder Warenbestände prüfen wir auf ihren Wert und rechnen sie auf den Festpreis an.",
           "Für wiederkehrende Einsätze bieten wir feste Konditionen und eine monatliche Sammelrechnung an. Sprechen Sie uns auf einen Rahmenvertrag an."
         ]
       },
@@ -279,7 +322,13 @@
         0,
         6
       ],
-      "fotos": []
+      "fotos": [],
+      "hero": {
+        "typ": "foto",
+        "slug": "svc-entruempelung-hero",
+        "alt": "Entrümpelung für Hausverwaltungen und Gewerbe im Havelland – Haus- & Gartenservice Havelland"
+      },
+      "testimonials_h2": "Was Kunden über uns sagen"
     }
   ]
 }
