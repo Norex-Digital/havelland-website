@@ -1,0 +1,285 @@
+{
+  "_meta": "Ads-Landingpages (Google Ads, Entrümpelung über HuG — Owner-Entscheid 14.09.2026). Gerendert von scripts/lp.mjs als /lp/<slug>/, noindex,follow, nicht in Sitemaps. Regeln (Review 14.09. eingearbeitet): kein 'versichert' (Nachweis fehlt), kein 'zertifiziert'/'Entsorgungsfachbetrieb', keine Ab-Preise (Owner E5), keine Superlative, kein 'kostenlos bei Wertanrechnung' (UWG Anh. Nr. 20), keine erfundenen Referenzen/Häufigkeiten, keine Fotos ohne Herkunftsnachweis (fotos: [] rendert keine Galerie). Festpreis IMMER als 'Festpreis für Räumung und Abtransport'; Entsorgungsgebühren nach Beleg zzgl. MwSt. (= Angebots-/Rechnungspraxis, Rechnung 2026-160). Kein 'Sondermüll' (nur nicht gefährliche Abfälle, §53 KrWG). Partner nur mit Vermittlungs-Wording. Reaktionszeit einheitlich 'meist am selben Werktag'. Fotos (14.09.): Auftrag gutzke-monika-2026-09-01, Kundenakte kunden/hausgarten/_aktiv/… — EINWILLIGUNG DER KUNDIN ZUR VERÖFFENTLICHUNG VOR MERGE EINHOLEN (Gate E4); EXIF entfernt, kein Name, keine Adresse.",
+  "danke": {
+    "title": "Danke – Anfrage eingegangen",
+    "h1": "Danke, Ihre Anfrage ist angekommen.",
+    "lead": "Wir melden uns meist noch am selben Werktag – telefonisch oder per WhatsApp, je nachdem, was Sie angegeben haben.",
+    "next": [
+      "Wir rufen Sie an oder schreiben per WhatsApp und klären kurz, was ansteht.",
+      "Wir vereinbaren die kostenlose Besichtigung vor Ort.",
+      "Nach der Besichtigung bekommen Sie den schriftlichen Festpreis für Räumung und Abtransport."
+    ],
+    "eilig": "Wenn es eilig ist: rufen Sie direkt an oder schicken Sie ein Foto per WhatsApp."
+  },
+  "lps": [
+    {
+      "slug": "haushaltsaufloesung-havelland",
+      "ag": "AG1 Haushaltsauflösung / Nachlass",
+      "name": "Haushaltsauflösung",
+      "title": "Haushaltsauflösung Havelland – Festpreis nach Besichtigung",
+      "meta": "Haushaltsauflösung und Wohnungsauflösung im Havelland: diskret, besenrein, Festpreis für Räumung und Abtransport nach kostenloser Besichtigung. Falkensee, Nauen.",
+      "kick": "Haushaltsauflösung · Wohnungsauflösung",
+      "h1": "Haushaltsauflösung im Havelland – diskret, besenrein, zum Festpreis",
+      "h1_em": "diskret",
+      "lead": "Nach einem Todesfall, dem Umzug ins Pflegeheim oder einem Auszug: Wir räumen Wohnung oder Haus vollständig, sichern Dokumente und Erinnerungsstücke und übergeben besenrein. Kostenlose Besichtigung in Falkensee, Dallgow-Döberitz, Brieselang, Nauen und im Havelland.",
+      "cta": "Kostenlose Besichtigung anfragen",
+      "wa_text": "Hallo, ich brauche eine Haushaltsauflösung im Havelland. Können Sie mir ein Angebot machen?",
+      "trust": [
+        "5,0 ★ bei Google · 19 Bewertungen",
+        "Fester Ansprechpartner aus Falkensee",
+        "Festpreis für Räumung & Abtransport nach Besichtigung",
+        "Foto-Nachweis aufs Handy"
+      ],
+      "nutzen": [
+        {
+          "h": "Festpreis nach Besichtigung",
+          "p": "Wir schauen uns Räume, Mengen und Zugang vor Ort an. Danach steht Ihr Preis für Räumung und Abtransport schriftlich fest – ohne nachträgliche Änderung. Entsorgungsgebühren weisen wir nach Beleg aus."
+        },
+        {
+          "h": "Diskret und einfühlsam",
+          "p": "Wir arbeiten leise und mit Respekt. Wichtige Papiere, Schmuck und Erinnerungsstücke legen wir für Sie zur Seite, bevor etwas das Haus verlässt. Sie müssen nicht dabei sein."
+        },
+        {
+          "h": "Besenrein mit Foto-Nachweis",
+          "p": "Am Ende ist die Wohnung leer und gefegt, bereit für Vermieter oder Käufer. Die Vorher-Nachher-Fotos schicken wir Ihnen direkt aufs Handy."
+        }
+      ],
+      "ablauf": [
+        {
+          "h": "Anfrage in zwei Minuten",
+          "p": "Formular, Anruf oder ein Handy-Foto per WhatsApp – wir melden uns meist noch am selben Werktag."
+        },
+        {
+          "h": "Kostenlose Besichtigung und Festpreis",
+          "p": "Wir kommen vorbei, besprechen, was bleiben soll, und nennen Ihnen einen schriftlichen Festpreis für Räumung und Abtransport."
+        },
+        {
+          "h": "Räumung, Entsorgung, besenreine Übergabe",
+          "p": "Zum vereinbarten Termin räumen wir aus, trennen Verwertbares, entsorgen den Rest über zugelassene Annahmestellen und übergeben besenrein."
+        }
+      ],
+      "preis": {
+        "h": "Was kostet eine Haushaltsauflösung?",
+        "p": [
+          "Der Preis hängt von Wohnungsgröße, Menge, Demontagen und dem Zugang ab. Deshalb nennen wir ihn erst nach der kostenlosen Besichtigung – dafür dann als schriftlichen Festpreis für Räumung und Abtransport.",
+          "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihre Kosten.",
+          "Entsorgungsgebühren der Annahmestellen weisen wir transparent nach Beleg aus, zuzüglich der gesetzlichen Mehrwertsteuer – Sie sehen jeden Posten, ohne eigenen Aufschlag."
+        ]
+      },
+      "faqs": [
+        {
+          "q": "Muss ich bei der Haushaltsauflösung anwesend sein?",
+          "a": "Nein. Viele Angehörige wohnen weiter weg oder möchten nicht dabei sein. Wir übernehmen die Schlüssel, halten Sie per WhatsApp oder Telefon auf dem Laufenden und schicken zum Schluss den Foto-Nachweis der leeren Wohnung."
+        },
+        {
+          "q": "Wie schnell bekomme ich einen Termin?",
+          "a": "Die Besichtigung schaffen wir meist innerhalb weniger Werktage, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Kündigungsfrist drückt, sagen Sie es uns – wir planen danach."
+        },
+        {
+          "q": "Was passiert mit Wertgegenständen und Dokumenten?",
+          "a": "Verträge, Ausweise, Sparbücher, Fotos und Schmuck sichern wir vor der Räumung und übergeben sie Ihnen. Verwertbare Möbel und Geräte rechnen wir auf Ihren Preis an oder führen sie der Wiederverwendung zu."
+        },
+        {
+          "q": "Wird die Wohnung wirklich besenrein übergeben?",
+          "a": "Ja. Böden gefegt, Klebereste und Haken entfernt, Räume leer. Auf Wunsch reinigen wir zusätzlich Bad, Küche und Fenster für eine übergabefertige Wohnung."
+        },
+        {
+          "q": "Wie wird die Entsorgung abgerechnet?",
+          "a": "Räumung und Abtransport stehen als Festpreis im Angebot. Die Gebühren der Annahmestellen für Sperrmüll, Altholz oder Elektroschrott rechnen wir nach tatsächlicher Menge gegen Beleg ab, zuzüglich der gesetzlichen Mehrwertsteuer – ohne eigenen Aufschlag. Bei Schadstoffen wie Farben, Chemikalien oder Asbest stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab; das gehört nicht in einen Pauschalpreis."
+        }
+      ],
+      "objekte": [
+        "Wohnung",
+        "Haus",
+        "Keller / Dachboden",
+        "Garage / Schuppen"
+      ],
+      "form_subject": "Neue Anfrage (Ads-LP Haushaltsauflösung)",
+      "testimonials": [
+        0,
+        6
+      ],
+      "fotos": [
+        {
+          "vorher": "lp-gutzke-kammer-vorher",
+          "nachher": "lp-gutzke-kammer-nachher",
+          "cap": "Abstellkammer unter der Treppe: ausgeräumt und besenrein."
+        },
+        {
+          "vorher": "lp-gutzke-schuppen-vorher",
+          "nachher": "lp-gutzke-schuppen-nachher",
+          "cap": "Gartenschuppen: leer, Regale frei, bereit für die neue Nutzung."
+        }
+      ],
+      "fotos_h2": "So sieht unsere Arbeit aus",
+      "fotos_hint": "Echte Fotos aus einem Auftrag im Havelland, September 2026, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy."
+    },
+    {
+      "slug": "messie-wohnung-raeumung",
+      "ag": "AG2 Messie / Extremfall",
+      "name": "Wohnungsräumung",
+      "title": "Messie-Wohnung räumen lassen – diskret, Havelland/Spandau",
+      "meta": "Messie-Wohnung oder vermüllte Wohnung räumen lassen: diskret, ohne Vorwürfe, Festpreis für Räumung und Abtransport nach Besichtigung. Havelland und Spandau.",
+      "kick": "Wohnungsräumung · diskret · Havelland & Spandau",
+      "h1": "Messie-Wohnung räumen lassen – diskret, ohne Vorwürfe, zum Festpreis",
+      "h1_em": "ohne Vorwürfe",
+      "lead": "Ob für Sie selbst, für Angehörige oder als Vermieter: Wir räumen auch stark vermüllte Wohnungen ruhig, gründlich und vertraulich. Sie müssen nicht dabei sein und nichts erklären. Kostenlose Besichtigung im Havelland und in Berlin-Spandau.",
+      "cta": "Vertraulich anfragen",
+      "wa_text": "Hallo, ich brauche eine diskrete Wohnungsräumung. Können wir kurz sprechen?",
+      "trust": [
+        "5,0 ★ bei Google · 19 Bewertungen",
+        "Fester Ansprechpartner, kein Callcenter",
+        "Festpreis für Räumung & Abtransport nach Besichtigung",
+        "Vertraulich – wir reden mit niemandem darüber"
+      ],
+      "nutzen": [
+        {
+          "h": "Wir helfen, ohne zu urteilen",
+          "p": "Jede Wohnung hat eine Geschichte. Wir kommen ohne Vorwürfe, arbeiten ruhig und behandeln alles vertraulich – auch gegenüber Nachbarn."
+        },
+        {
+          "h": "Festpreis nach Besichtigung",
+          "p": "Wir sehen uns die Wohnung an und nennen danach einen schriftlichen Festpreis für Räumung und Abtransport. Keine Überraschung beim Räumungspreis – Entsorgungsgebühren weisen wir nach Beleg aus."
+        },
+        {
+          "h": "Gründlich bis zur Übergabe",
+          "p": "Wir räumen vollständig, trennen Wertstoffe, entsorgen über zugelassene Annahmestellen und übergeben besenrein – mit Foto-Nachweis, falls Sie nicht vor Ort sind."
+        }
+      ],
+      "ablauf": [
+        {
+          "h": "Kurz melden",
+          "p": "Ein Satz per Formular oder WhatsApp genügt. Sie müssen nichts beschreiben, was Ihnen unangenehm ist – wir fragen nur, was wir für die Planung brauchen."
+        },
+        {
+          "h": "Besichtigung und Festpreis",
+          "p": "Wir kommen unauffällig vorbei und planen Besichtigung und Abtransport so, dass sie nicht auffallen. Danach steht der Festpreis für Räumung und Abtransport schriftlich fest."
+        },
+        {
+          "h": "Räumung zum vereinbarten Termin",
+          "p": "Wir räumen zügig und vollständig, sichern persönliche Papiere und übergeben die Wohnung besenrein."
+        }
+      ],
+      "preis": {
+        "h": "Was kostet die Räumung?",
+        "p": [
+          "Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert.",
+          "Entsorgungsgebühren der Annahmestellen rechnen wir transparent nach Beleg ab, zuzüglich der gesetzlichen Mehrwertsteuer – ohne eigenen Aufschlag."
+        ]
+      },
+      "faqs": [
+        {
+          "q": "Erfährt jemand davon?",
+          "a": "Nein. Wir sprechen mit niemandem über den Auftrag und planen Besichtigung und Abtransport so, dass sie nicht auffallen."
+        },
+        {
+          "q": "Muss ich während der Räumung dabei sein?",
+          "a": "Nein. Viele Kunden übergeben uns den Schlüssel. Persönliche Papiere, Fotos und Wertsachen legen wir zur Seite und übergeben sie Ihnen. Den Zustand nach der Räumung dokumentieren wir mit Fotos."
+        },
+        {
+          "q": "Räumen Sie auch, wenn die Wohnung stark verschmutzt ist?",
+          "a": "Ja. Wir räumen vollständig aus und übergeben besenrein. Bei Schadstoffen oder Gesundheitsgefahr (z. B. Schimmel, Fäkalien, Chemikalien) stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab – das gehört nicht in einen Pauschalpreis."
+        },
+        {
+          "q": "Wie schnell können Sie kommen?",
+          "a": "Die Besichtigung schaffen wir meist innerhalb weniger Werktage. Wenn ein Vermieter oder eine Behörde eine Frist gesetzt hat, sagen Sie uns das Datum – wir planen danach."
+        }
+      ],
+      "objekte": [
+        "Wohnung",
+        "Haus",
+        "Einzelne Räume"
+      ],
+      "form_subject": "Neue Anfrage (Ads-LP Wohnungsräumung)",
+      "testimonials": [
+        0,
+        6
+      ],
+      "fotos": []
+    },
+    {
+      "slug": "gewerbe-entruempelung",
+      "ag": "AG3 B2B / Gewerbe",
+      "name": "Gewerbe-Entrümpelung",
+      "title": "Entrümpelung für Hausverwaltungen & Gewerbe – Havelland",
+      "meta": "Entrümpelung, Wohnungsräumung und Betriebsauflösung für Hausverwaltungen, Vermieter und Gewerbe im Havelland: feste Termine, Festpreis je Objekt.",
+      "kick": "Hausverwaltungen · Vermieter · Gewerbe",
+      "h1": "Entrümpelung und Betriebsauflösung für Hausverwaltungen und Gewerbe im Havelland",
+      "h1_em": "Hausverwaltungen und Gewerbe",
+      "lead": "Wohnungsräumung nach Auszug, Kellerräumung im Mehrfamilienhaus, Büro- oder Betriebsauflösung: ein regionaler Ansprechpartner, feste Termine, schriftlicher Festpreis je Objekt und auf Wunsch eine Sammelrechnung.",
+      "cta": "Angebot für Ihr Objekt anfordern",
+      "wa_text": "Hallo, ich brauche ein Angebot für eine Entrümpelung / Räumung für ein Objekt im Havelland.",
+      "trust": [
+        "5,0 ★ bei Google · 19 Bewertungen",
+        "Regionaler Betrieb aus Falkensee",
+        "Schriftlicher Festpreis je Objekt",
+        "Foto-Dokumentation je Einsatz"
+      ],
+      "nutzen": [
+        {
+          "h": "Feste Termine, dokumentierte Ergebnisse",
+          "p": "Sie bekommen einen Termin, der hält, und nach jedem Einsatz Fotos vom leeren, besenreinen Objekt – direkt für Ihre Akte oder den Eigentümer."
+        },
+        {
+          "h": "Festpreis und Sammelrechnung",
+          "p": "Je Objekt ein schriftlicher Festpreis für Räumung und Abtransport nach Besichtigung. Bei mehreren Einsätzen im Monat fassen wir alles auf einer Sammelrechnung zusammen."
+        },
+        {
+          "h": "Ein Ansprechpartner für das ganze Objekt",
+          "p": "Neben der Räumung übernehmen wir Grünpflege, Laub und Treppenhaus. Winterdienst koordinieren wir über einen regionalen Partner-Fachbetrieb."
+        }
+      ],
+      "ablauf": [
+        {
+          "h": "Objekt nennen",
+          "p": "Adresse, Art des Objekts und ungefähre Menge – per Formular oder kurzer Mail. Wir melden uns meist am selben Werktag."
+        },
+        {
+          "h": "Besichtigung und schriftliches Angebot",
+          "p": "Anhand Ihrer Fotos nennen wir einen Richtpreis; den schriftlichen Festpreis für Räumung und Abtransport gibt es nach der Besichtigung vor Ort."
+        },
+        {
+          "h": "Ausführung mit Foto-Dokumentation",
+          "p": "Räumung zum vereinbarten Termin, besenreine Übergabe, Fotos und auf Wunsch Entsorgungsbelege für Ihre Unterlagen."
+        }
+      ],
+      "preis": {
+        "h": "Wie wird abgerechnet?",
+        "p": [
+          "Je Objekt ein Festpreis für Räumung und Abtransport, schriftlich nach Besichtigung, netto zuzüglich gesetzlicher Mehrwertsteuer. Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus.",
+          "Für wiederkehrende Einsätze bieten wir feste Konditionen und eine monatliche Sammelrechnung an. Sprechen Sie uns auf einen Rahmenvertrag an."
+        ]
+      },
+      "faqs": [
+        {
+          "q": "Räumen Sie auch einzelne Keller oder Abstellräume im Mehrfamilienhaus?",
+          "a": "Ja. Kellerräumungen nach Mieterwechsel, verwaiste Abstellräume oder Fahrradkeller übernehmen wir für Verwaltungen und Eigentümer – auch einzelne Räume."
+        },
+        {
+          "q": "Bekommen wir Entsorgungsnachweise?",
+          "a": "Ja. Auf Wunsch legen wir die Belege der Annahmestellen bei, damit Sie die Entsorgung gegenüber Eigentümern oder Mietern dokumentieren können."
+        },
+        {
+          "q": "Können Sie kurzfristig, etwa vor einer Neuvermietung?",
+          "a": "Meist ja. Nennen Sie uns das Übergabedatum – wir planen den Termin danach und bestätigen ihn schriftlich."
+        },
+        {
+          "q": "Übernehmen Sie auch Büro- und Betriebsauflösungen?",
+          "a": "Ja: Büro, Praxis, Laden oder Lager. Möbel, Technik und Akten räumen wir vollständig, Verwertbares rechnen wir an. Für die Aktenvernichtung vermitteln wir Ihnen auf Wunsch einen Fachdienstleister."
+        }
+      ],
+      "objekte": [
+        "Wohnung nach Auszug",
+        "Keller / Nebenräume",
+        "Büro / Praxis / Laden",
+        "Mehrere Objekte"
+      ],
+      "form_subject": "Neue Anfrage (Ads-LP Gewerbe)",
+      "testimonials": [
+        0,
+        6
+      ],
+      "fotos": []
+    }
+  ]
+}

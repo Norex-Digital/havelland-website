@@ -67,7 +67,8 @@ for(const f of files){
   if(/&amp;amp;/.test(h)) FAIL('DoppelEntity', `${url} enthält &amp;amp; (Doppel-Escape)`);
   if(/&lt;\/?em&gt;/.test(h)) FAIL('EscapedEm', `${url} escaptes <em> als sichtbarer Text`);
   if(!/class="scta"/.test(h)) noScta++;
-  if(!/class="hamb"/.test(h)) noHamb++;
+  if(!/class="hamb"/.test(h) && !url.startsWith('/lp/')) noHamb++; // Ads-LPs (/lp/) bewusst ohne Menü/Hamburger (reduzierte Navigation)
+  if(url.startsWith('/lp/')){ if(!/name="robots" content="noindex/.test(h)) FAIL('LpNoindex', `${url} ohne noindex`); if(url!=='/lp/danke/' && !/<form id="anfrage"/.test(h)) FAIL('LpForm', `${url} ohne Anfrage-Formular`); if(url!=='/lp/danke/' && !/name="gclid"/.test(h)) FAIL('LpGclid', `${url} ohne gclid-Feld`); }
   if(!/property="og:image"/.test(h)) noOg++;
   if(/hero-garten\.png|terrasse\.png/.test(h)) FAIL('AltPlatzhalter', `${url} referenziert Mockup-Platzhalter (hero-garten/terrasse)`);
   if(/srcset="\s*"/.test(h)) FAIL('LeeresSrcset', `${url} hat leeres srcset (Bild fehlt im Manifest)`);
@@ -110,6 +111,7 @@ if(imgNoDim===0) OK('width+height auf allen <img>'); else FAIL('ImgDim', `${imgN
 if(noScta===0) OK('Sticky-Mobile-CTA (.scta) auf allen Seiten'); else FAIL('StickyCTA', `${noScta} Seiten ohne .scta`);
 if(noHamb===0) OK('Mobile-Hamburger (.hamb) auf allen Seiten'); else FAIL('Hamburger', `${noHamb} Seiten ohne .hamb`);
 if(noOg===0) OK('og:image auf allen Seiten'); else FAIL('OgImage', `${noOg} Seiten ohne og:image`);
+{ const sm = fs.readdirSync(ROOT).filter(f=>/^sitemap.*\.xml$/.test(f)).map(f=>fs.readFileSync(path.join(ROOT,f),'utf8')).join(''); if(/\/lp\//.test(sm)) FAIL('LpSitemap', '/lp/-URL in einer Sitemap'); else OK('Keine /lp/-URL in Sitemaps'); }
 { const kf = files.find(f=>urlOf(f)==='/kontakt/'); if(kf && /<form id="anfrage"/.test(fs.readFileSync(kf,'utf8'))) OK('Kontakt-Formular vorhanden'); else FAIL('KontaktForm','/kontakt/ ohne Anfrage-Formular'); }
 
 // Title-Uniqueness
