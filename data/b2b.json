@@ -1,12 +1,12 @@
 {
-  "_meta": "Daten-Block für die B2B-Seite /fuer-hausverwaltungen/. Überarbeitet 2026-09-03 (Herbst/Winter-Offensive, Aufgabe C4). objektklassen/leistungen/zusagen bleiben String-Arrays, weil generate.mjs b2bPage() sie so rendert. NEU und noch ohne Generator-Anbindung: title_tag, meta, kick, h1, h1_em, lead, intro, objektklassen_detail, leistungen_detail (mit ausfuehrung eigen|partner), zusagen_detail, band_lead, ablauf, faqs, cta, partnermodell_hinweis. Partnermodell (Tippgeber, §5 UWG): Winterdienst und Dachrinne führt ein Partner-Fachbetrieb aus, Vertrag Kunde-Fachbetrieb, Preis vom Fachbetrieb nach Objekttermin, keine Reaktionszeit-Zusage, Partner nie namentlich. Laub, Grünpflege, Treppenhaus = Eigenleistung (wir). Umbau 03.09. abends: gekürzt auf Referenzmaß (alte Seite 536bf206 + Timeline + kurze FAQ); objektklassen_detail 6 Kurzlabels, leistungen_detail 6 × ≤28 W mit Chip, zusagen ≤16 W, ablauf 4 × {when,h,p}, faqs 4, cta ≤25 W, endband. Keine Fristzusage, kein Festpreis, kein Vorher/Nachher-Foto.",
+  "_meta": "Daten-Block für die B2B-Seite /fuer-hausverwaltungen/. Überarbeitet 2026-09-03 (Herbst/Winter-Offensive, Aufgabe C4). objektklassen/leistungen/zusagen bleiben String-Arrays, weil generate.mjs b2bPage() sie so rendert. NEU und noch ohne Generator-Anbindung: title_tag, meta, kick, h1, h1_em, lead, intro, objektklassen_detail, leistungen_detail (mit ausfuehrung eigen|partner), zusagen_detail, band_lead, ablauf, faqs, cta, partnermodell_hinweis. Partnermodell (Tippgeber, §5 UWG): Winterdienst und Dachrinne führt ein Partner-Fachbetrieb aus, Vertrag Kunde-Fachbetrieb, Preis vom Fachbetrieb nach Objekttermin, keine Reaktionszeit-Zusage, Partner nie namentlich. Laub, Grünpflege, Treppenhaus = Eigenleistung (wir). Umbau 03.09. abends: gekürzt auf Referenzmaß (alte Seite 536bf206 + Timeline + kurze FAQ); objektklassen_detail 6 Kurzlabels, leistungen_detail 6 × ≤28 W mit Chip, zusagen ≤16 W, ablauf 4 × {when,h,p}, faqs 4, cta ≤25 W, endband. Keine Fristzusage, kein Festpreis, kein Vorher/Nachher-Foto. Nachtrag 2026-09-14 (B2B-Ansprache, Owner Maurice): Treppenhaus-/Unterhaltsreinigung raus aus dem aktiven Angebot (nur auf Nachfrage, dann Partner) — ersetzt durch Entrümpelung/Wohnungsräumung als Eigenleistung (Hauptfokus der B2B-Mails); Lead/Intro/Objektklassen/Ablauf/FAQ entsprechend angepasst.",
   "title": "Für Hausverwaltungen, Gewerbe und große Flächen im Havelland",
   "title_tag": "Winterdienst für WEG, Hausverwaltung und Gewerbe – Havelland",
-  "meta": "Winterdienst für Eigentümergemeinschaft, Hausverwaltung und Gewerbe im Havelland: Partner-Fachbetrieb mit Nachweis je Einsatz, dazu Laub und Dachrinne.",
+  "meta": "Winterdienst für WEG, Hausverwaltung und Gewerbe im Havelland: Partner-Fachbetrieb mit Nachweis je Einsatz, dazu Laub, Grünpflege und Räumung von uns.",
   "kick": "Hausverwaltungen · WEG · Gewerbe",
   "h1": "Winterdienst und Objektpflege für Hausverwaltungen, WEG und Gewerbe im Havelland",
   "h1_em": "Hausverwaltungen",
-  "lead": "Ein Ansprechpartner für Winterdienst, Laub, Dachrinne, Grünpflege und Treppenhaus. Winterdienst und Dachrinne führt ein Partner-Fachbetrieb aus, Laub und Grün erledigen wir selbst – mit Nachweis je Einsatz.",
+  "lead": "Ein Ansprechpartner für Winterdienst, Laub, Dachrinne, Grünpflege und Wohnungsräumung. Winterdienst und Dachrinne führt ein Partner-Fachbetrieb aus, Laub, Grün und Entrümpelung erledigen wir selbst – mit Nachweis je Einsatz.",
   "intro": {
     "h2": "Für wen wir arbeiten",
     "body": "Wir betreuen Objekte, bei denen mehrere Gewerke zusammenkommen und jemand den Überblick behalten muss. Noah Telo nimmt Ihre Objekte auf, plant Begehung und Termine und schickt den Nachweis je Einsatz. Wer welche Leistung ausführt, steht bei jeder Leistung dabei."
@@ -26,11 +26,11 @@
     },
     {
       "name": "Mehrfamilienhaus und Vermieter",
-      "body": "Gehwege, Zugänge, Müllplatz und Treppenhaus in einem Turnus"
+      "body": "Gehwege, Zugänge, Müllplatz und Grün in einem Turnus; Wohnung und Keller nach Auszug geräumt"
     },
     {
       "name": "Hausverwaltung mit mehreren Objekten",
-      "body": "Eine Begehung je Objekt, Nachweise objektweise sortiert"
+      "body": "Eine Begehung je Objekt, Nachweise objektweise sortiert – auch für Räumungen nach Auszug oder Todesfall"
     },
     {
       "name": "Kundenparkplatz und Einzelhandel",
@@ -50,7 +50,7 @@
     "Laub auf Parkplätzen und Außenanlagen",
     "Dachrinnenreinigung an Wohnanlagen und Hallen",
     "Grünpflege und Heckenschnitt",
-    "Treppenhaus- und Unterhaltsreinigung",
+    "Entrümpelung und Wohnungsräumung",
     "Objektkontrolle und Kleinreparaturen"
   ],
   "leistungen_detail": [
@@ -87,12 +87,12 @@
       "label": "Mehr zum Heckenschnitt"
     },
     {
-      "h3": "Treppenhaus- und Unterhaltsreinigung",
+      "h3": "Entrümpelung und Wohnungsräumung",
       "ausfuehrung": "eigen",
       "chip": "Eigene Leistung",
-      "body": "Treppen, Geländer, Briefkastenanlage und Eingangsbereich im Turnus, außen Höfe, Zuwege und Mülltonnenboxen.",
-      "link_to": "unterhaltsreinigung",
-      "label": "Mehr zur Unterhaltsreinigung"
+      "body": "Wohnung, Keller oder Bodenkammer nach Auszug oder Todesfall leer und besenrein, Entsorgung über zugelassene Annahmestellen, Nachweis auf Wunsch. Angebot nach Besichtigung.",
+      "link_to": "entruempelung",
+      "label": "Mehr zur Entrümpelung"
     },
     {
       "h3": "Objektkontrolle und Kleinreparaturen",
@@ -139,7 +139,7 @@
     },
     {
       "h3": "Schriftliches Angebot",
-      "p": "Nach der Begehung – von uns für Laub, Grün und Treppenhaus, vom Fachbetrieb für Winterdienst und Dachrinne."
+      "p": "Nach der Begehung – von uns für Laub, Grün und Räumung, vom Fachbetrieb für Winterdienst und Dachrinne."
     }
   ],
   "ablauf": {
@@ -158,7 +158,7 @@
       {
         "when": "Nach der Begehung",
         "h": "Schriftliches Angebot",
-        "p": "Laub, Grünpflege und Treppenhaus von uns, Winterdienst und Dachrinne vom ausführenden Betrieb."
+        "p": "Laub, Grünpflege und Räumung von uns, Winterdienst und Dachrinne vom ausführenden Betrieb."
       },
       {
         "when": "Zum vereinbarten Termin",
@@ -183,13 +183,17 @@
     {
       "q": "Betreuen Sie auch mehrere Objekte einer Hausverwaltung?",
       "a": "Ja. Jedes Objekt nehmen wir bei einer Begehung auf und legen ein Leistungsverzeichnis an. Sie bekommen ein Angebot je Objekt oder eine Gesamtübersicht; die Nachweise kommen objektweise, damit Sie sie den Eigentümern zuordnen können."
+    },
+    {
+      "q": "Räumen Sie auch Wohnungen und Keller nach Auszug oder Todesfall?",
+      "a": "Ja, das machen wir selbst. Wir räumen Wohnung, Keller oder Bodenkammer leer und übergeben besenrein; Verwertbares wird getrennt, der Rest geht über zugelassene Annahmestellen – auf Wunsch mit Entsorgungsnachweis für Ihre Akte. Sie bekommen nach der Besichtigung ein schriftliches Angebot und nach dem Einsatz die Fotos."
     }
   ],
   "cta": {
     "h2": "Angebot per E-Mail anfordern",
     "body": "Senden Sie uns Objektadresse, Flächen und die gewünschten Leistungen. Wir melden uns zur Begehung; das Angebot für Winterdienst und Dachrinne stellt der Fachbetrieb.",
     "mail_subject": "Angebot Objektbetreuung / Winterdienst",
-    "mail_body": "Guten Tag,\n\nwir sind eine Hausverwaltung / ein Gewerbebetrieb und interessieren uns für Ihre Objektbetreuung.\n\nObjekt(e) und Adresse(n): \nArt der Fläche (Parkplatz, Hof, Wohnanlage): \nGewünschte Leistungen (Winterdienst, Laub, Dachrinne, Grünpflege, Treppenhaus): \nGewünschter Beginn: \n\nBitte melden Sie sich zur Begehung.\n\nMit freundlichen Grüßen"
+    "mail_body": "Guten Tag,\n\nwir sind eine Hausverwaltung / ein Gewerbebetrieb und interessieren uns für Ihre Objektbetreuung.\n\nObjekt(e) und Adresse(n): \nArt der Fläche (Parkplatz, Hof, Wohnanlage): \nGewünschte Leistungen (Winterdienst, Laub, Dachrinne, Grünpflege, Räumung): \nGewünschter Beginn: \n\nBitte melden Sie sich zur Begehung.\n\nMit freundlichen Grüßen"
   },
   "endband": {
     "h2": "Sagen Sie uns, welche Objekte anstehen — wir kümmern uns.",
