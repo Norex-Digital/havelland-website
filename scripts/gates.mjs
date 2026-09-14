@@ -58,6 +58,7 @@ for(const f of files){
   const visEarly = visibleText(h);
   if(/cdn\.tailwindcss\.com/.test(h)) FAIL('CDN', `${url} nutzt cdn.tailwindcss.com`);
   if(/fonts\.googleapis\.com|fonts\.gstatic\.com/.test(h)) FAIL('FontCDN', `${url} lädt externe Google-Fonts (DSGVO)`);
+  if(/\[object Object\]|\bundefined\b|\bNaN\b/.test(visEarly)) FAIL('PlatzhalterText', `${url} rendert [object Object]/undefined/NaN im sichtbaren Text`);  // 14.09.: B2B-Ablauf stand 10 Tage so live
   if(/\{\{|\}\}/.test(visEarly)) FAIL('Mustache', `${url} enthält {{ }} im Text`);
   const tok = visEarly.match(/\{(ort|plz|nachbarorte|service|[a-z_]{2,})\}/);
   if(tok) FAIL('Token', `${url} unausgefüllter Platzhalter ${tok[0]}`);

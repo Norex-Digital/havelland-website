@@ -670,6 +670,9 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 .card .n{font-family:var(--font-display);font-style:italic;color:var(--accent-d);font-size:15px}
 .card h3{font-family:var(--font-display);font-weight:600;font-size:18.5px;line-height:1.22;color:var(--green-d);margin:6px 0 7px}
 .card p{font-size:13.5px;color:var(--muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+/* 14.09.: Ausführungs-Chip auf Leistungskarten (B2B-Seite: "Eigene Leistung" / "Partner-Fachbetrieb" aus b2b.json) */
+.card .chip{display:inline-block;margin:0 0 8px;padding:3px 9px;border-radius:999px;font:600 11.5px "Inter",system-ui,sans-serif;letter-spacing:.02em;line-height:1.4;color:var(--green-d);background:#fff;border:1px solid var(--green)}
+.card .chip-partner{color:var(--muted);border-color:var(--hair)}
 .card .go{margin-top:auto;padding-top:14px;color:var(--green);font-weight:600;font-size:14px}
 .card.guide .n{display:block;margin-bottom:2px}
 
