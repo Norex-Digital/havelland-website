@@ -713,7 +713,7 @@ body:has(.consent:not([hidden])) .scta{display:none}
 .consent-btns .btn-line{color:#fff;border-color:rgba(255,255,255,.55)}
 .consent-btns .btn-line:hover{background:rgba(255,255,255,.1)}
 /* Home-Indicator/Gesten-Leiste freihalten, sonst sitzt "Akzeptieren" darunter */
-@media(max-width:600px){.consent-in{padding:14px 20px calc(14px + env(safe-area-inset-bottom,0px));flex-direction:column;align-items:stretch}.consent-btns .btn{flex:1;justify-content:center}}
+@media(max-width:600px){.consent-in{padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));flex-direction:column;align-items:stretch;gap:10px}.consent-in p{font-size:13.5px;line-height:1.4}.consent-btns{flex-direction:row;gap:10px}.consent-btns .btn{flex:1;justify-content:center;min-height:46px;padding:10px 12px;font-size:14px}}
 
 /* ---- Bilder: Prozess-Steps / Media-Band / Mini-Illustration ---- */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
