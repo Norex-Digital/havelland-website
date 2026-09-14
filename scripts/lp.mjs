@@ -18,12 +18,19 @@ const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 // Servicegebiet laut Report Kap. 3.4 / GBP-Servicegebiet (A0 #8)
 const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Berlin-Spandau'];
 const ATTR_KEYS = ['gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-// Kursiv-Schnitt (H1-Akzent, .gs .gn, .tli .tn, .ba-cap b): site.css deklariert ihn per unicode-range; Preload verhindert den Swap-Reflow im Hero.
-const ITALIC_FONT = '/assets/fonts/fraunces-italic-latin.woff2';
-const FONT_PRELOAD = `<link rel="preload" href="${ITALIC_FONT}" as="font" type="font/woff2" crossorigin>`;
+// Kursiv-Schnitt (H1-Akzent wght 500; .gs .gn/.tli .tn/.ba-cap b wght 600): statt der variablen fraunces-italic-latin.woff2 (81 KB, gvar) zwei statische
+// Instanzen (fontTools instancer wght 500/opsz 48 bzw. wght 600/opsz 22, Latin-Subset ohne Hinting, je ~20 KB). Die @font-face in LP_CSS stehen hinter
+// site.css unter EIGENEM Familiennamen „Fraunces LP“ (eine zweite @font-face „Fraunces“ verliert in Chromium gegen die Range-Face 400–700 aus
+// site.css — gemessen 14.09.: Preload geladen, variable Datei trotzdem benutzt). Die vier Italic-Selektoren zeigen in LP_CSS auf „Fraunces LP“.
+// Preload nur der 500er (H1 im Fold); die 600er lädt beim ersten .gn ohne Layout-Shift (feste Breiten). Variable-Datei kostete ~250 ms LCP.
+const ITALIC_500 = '/assets/fonts/fraunces-italic-500-lp.woff2';
+const ITALIC_600 = '/assets/fonts/fraunces-italic-600-lp.woff2';
+const FONT_PRELOAD = `<link rel="preload" href="${ITALIC_500}" as="font" type="font/woff2" crossorigin>`;
+const FONT_FACE = `@font-face{font-family:"Fraunces LP";font-style:italic;font-weight:500;font-display:swap;src:url(${ITALIC_500}) format("woff2")}@font-face{font-family:"Fraunces LP";font-style:italic;font-weight:600;font-display:swap;src:url(${ITALIC_600}) format("woff2")}\n.lp-hero h1 em,.gs .gn,.tli .tn,.ba-cap b{font-family:"Fraunces LP","Fraunces",Georgia,serif}`;
 
 // LP-eigenes CSS (mobile-first). Nutzt die Tokens/Klassen aus site.css (.btn, .kf, .faq, .scta, .consent, footer, .zone-deep).
 const LP_CSS = `<style>
+${FONT_FACE}
 .lp-head .nav{justify-content:space-between;min-height:66px}
 .lp-head .logo img{height:52px;width:auto}
 .lp-head .callpill{font-size:15px;padding:10px 14px}
@@ -37,7 +44,7 @@ const LP_CSS = `<style>
 .tl+.lp-cta{margin-top:36px}
 main .sec .head h2{max-width:22em}
 .lp-gallery{display:grid;gap:18px}
-.lp-preis{background:var(--paper);border-left:3px solid var(--hair);border-radius:0 var(--r-el) var(--r-el) 0;padding:18px 20px}
+.lp-preis{background:var(--paper);border:1px solid var(--hair);border-left:3px solid var(--green);border-radius:0 var(--r-el) var(--r-el) 0;padding:18px 20px}
 .lp-preis p{color:var(--ink);font-size:16px;line-height:1.55;margin-bottom:10px}
 .lp-preis p:last-child{margin-bottom:0}
 .lp-form{margin-top:6px}
@@ -47,13 +54,15 @@ main .sec .head h2{max-width:22em}
 .kf .lp-chips label{margin:0;display:inline-flex;flex-direction:row;align-items:center;gap:8px;min-height:44px;border:1.5px solid var(--border-visible,var(--hair));border-radius:var(--r-button);padding:10px 16px;background:#fff;font-weight:600;font-size:15px;color:var(--ink);cursor:pointer}
 .kf .lp-chips input[type=radio]{width:18px;height:18px;min-height:0;margin:0;padding:0;border:0;background:none;box-shadow:none;accent-color:var(--green-d);flex:0 0 auto}
 .lp-chips label:has(input:checked){border-color:var(--green-d);background:var(--paper)}
+.lp-chips label:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
+.kf .lp-chips input[type=radio]:focus-visible{outline:none}
 .lp-form .row{display:grid;gap:10px}
 .lp-form.js .step2{display:none}
 .lp-form.js.s2 .step2{display:block}
 .lp-form.js.s2 .step1{display:none}
 .lp-form:not(.js) [data-next],.lp-form:not(.js) .back,.lp-form:not(.js) .step1 .hint{display:none}
 .lp-form .hint{font-size:14px;color:var(--muted);margin-top:8px}
-.lp-form .err{display:none;color:#a4321c;font-size:14.5px;margin:6px 0 10px;font-weight:600}
+.lp-form .err{display:none;color:var(--error);font-size:14.5px;margin:6px 0 10px;font-weight:600}
 .lp-form .err.show{display:block}
 .lp-form .back{background:none;border:0;color:var(--green-d);font-weight:600;font-size:15px;min-height:44px;padding:10px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .lp-form .btn{width:100%}
@@ -141,9 +150,9 @@ export function buildLp(d) {
     return all.length ? `<div class="trust-row">${all.map(t => `<div class="t"><b>${esc(t.b)}</b><span>${esc(t.t)}</span></div>`).join('')}</div>` : '';
   };
 
-  // Vorher/Nachher-Slider aus components.mjs (JPG-768: baSlider setzt <img src>, kein <picture>; Hochformat 864/1036 = .ba-Aspect).
+  // Vorher/Nachher-Slider aus components.mjs (WebP-768: baSlider setzt <img src>, kein <picture>; WebP statt JPG spart ~120 KB je Paar — Perf-Messung 14.09.; Hochformat 864/1036 = .ba-Aspect).
   // Der Alt-Suffix der Komponente ist heckenspezifisch („nach dem Schnitt") → für Räumungen ersetzt.
-  const imgSrc = slug => `/assets/img/${slug}-768.jpg`;
+  const imgSrc = slug => `/assets/img/${slug}-768.webp`;
   const baLp = o => baSlider(o).replace(/ — nach dem Schnitt"/g, ' — nach der Räumung"').replace(/ — vor dem Schnitt"/g, ' — vor der Räumung"');
   const baPair = (f, { lcp = false } = {}) => baLp({ vorher: imgSrc(f.vorher), nachher: imgSrc(f.nachher), alt: f.alt || f.cap || 'Entrümpelung', cap: f.cap || '', sub: f.sub || '', hint: true, lcp, w: 864, h: 1036 });
   const pairOk = f => !!(f && f.vorher && f.nachher && pic(f.vorher) && pic(f.nachher));
@@ -179,7 +188,7 @@ export function buildLp(d) {
     const pairs = (Array.isArray(lp.fotos) ? lp.fotos : []).filter(f => pairOk(f) && `${f.vorher}|${f.nachher}` !== skipKey);
     if (!pairs.length) return '';
     const items = pairs.map(f => `<div>${baPair(f)}</div>`).join('');
-    return `<section class="sec" id="fotos"><div class="wrap"><div class="head"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery"${pairs.length === 1 ? ' style="grid-template-columns:1fr;max-width:560px"' : ''}>${items}</div></div></section>`;
+    return `<section class="sec" id="fotos"><div class="wrap"><div class="head"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery"${pairs.length === 1 ? ' style="grid-template-columns:1fr;max-width:560px;margin:0 auto"' : ''}>${items}</div></div></section>`;
   };
 
   const form = lp => {
@@ -222,7 +231,7 @@ export function buildLp(d) {
 <section class="phero lp-hero ${H.cls}">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${esc(lp.kick)}</span><h1>${h1}</h1><p class="lead">${esc(lp.lead)}</p>
 <div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>
 ${trustRow(lp.trust)}</div>${H.shot}</div></section>
-${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) })), { label: `Drei Zusagen für Ihre ${lp.name}` }))}
+${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2>So läuft es ab</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
 <section class="sec"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div></div></section>
@@ -243,7 +252,9 @@ ${quotes(lp.testimonials, lp.testimonials_h2)}
   const dk = cp.danke || {};
   // Schritte als Timeline (gleiche Komponente wie der Ablauf; Sätze ohne Titel/Zeitchip). Text-Hero ohne Fotokarte.
   const dkSteps = (dk.next || []).map(t => typeof t === 'string' ? { h: '', p: esc(t) } : { when: t.when ? esc(t.when) : '', h: esc(t.h || ''), p: esc(t.p || '') });
-  const main = `<main class="lp-danke"><section class="phero lp-hero lp-hero-text">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>${esc(dk.h1 || 'Danke für Ihre Anfrage.')}</h1><p class="lead">${esc(dk.lead || '')}</p></div></div></section>
+  const dkH1Raw = dk.h1 || 'Danke für Ihre Anfrage.';
+  const dkH1 = dk.h1_em && dkH1Raw.includes(dk.h1_em) ? esc(dkH1Raw).replace(esc(dk.h1_em), `<em>${esc(dk.h1_em)}</em>`) : esc(dkH1Raw);
+  const main = `<main class="lp-danke"><section class="phero lp-hero lp-hero-text">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>${dkH1}</h1><p class="lead">${esc(dk.lead || '')}</p></div></div></section>
 <section class="sec"><div class="wrap"><div class="head"><h2>So geht es weiter</h2></div>${rvIn(timelineFrom(dkSteps))}<p class="hint" style="margin-top:24px;color:var(--muted)">${esc(dk.eilig || '')}</p><div class="cta-row lp-cta"><a class="btn btn-acc" href="tel:${tel}">☎ ${telDisp}</a><a class="btn btn-line" href="${waHref('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')}">Foto per WhatsApp nachschicken</a></div></div></section></main>`;
   write(dankeUrl, head(`${dk.title || 'Danke'} – Havelland`, 'Ihre Anfrage ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns meist noch am selben Werktag.', dankeUrl, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS })
     + lpHeader('/') + main + lpFooter + lpScta('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')
