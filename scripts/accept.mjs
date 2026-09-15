@@ -171,6 +171,30 @@ page('fuer-hausverwaltungen/index.html', 'B2B fuer-hausverwaltungen', h => {
   check('b2b', 'E-Mail', has(h, 'E-Mail') || has(h, 'mailto:'));
 });
 
+// ---- ADS-LANDINGPAGES /lp/ (v2 14.09.: Site-Komponenten statt .lp-*-Nachbauten; LPs laden kein site.js -> jedes rv braucht in) ----
+const rvOhneIn = h => { const re = /class="([^"]*)"/g; let m, n = 0; while ((m = re.exec(h)) !== null) { const t = m[1].split(/\s+/); if (t.includes('rv') && !t.includes('in')) n++; } return n; };
+const lpAltKlassen = h => (h.match(/\b(lp-card|lp-steps|lp-quote|lp-ba-grid|lp-trust)\b/g) || []).length;
+const LPS = [
+  ['lp/haushaltsaufloesung-havelland/index.html', 'LP haushaltsaufloesung', { reviews: true, ba: 2 }],
+  ['lp/messie-wohnung-raeumung/index.html', 'LP messie', { reviews: true }],
+  ['lp/gewerbe-entruempelung/index.html', 'LP gewerbe', { reviews: true }],
+  ['lp/danke/index.html', 'LP danke', { danke: true }],
+];
+for (const [rel, label, o] of LPS) page(rel, label, h => {
+  const id = label.replace(/\s+/g, '-').toLowerCase();
+  check(id, 'phero>=1', classCount(h, 'phero') >= 1);
+  check(id, 'tl>=1', classCount(h, 'tl') >= 1);
+  if (!o.danke) {
+    check(id, 'gstrip>=1', classCount(h, 'gstrip') >= 1);
+    check(id, 'trust-row>=1', classCount(h, 'trust-row') >= 1);
+    check(id, 'form id="anfrage"', has(h, 'id="anfrage"'));
+  }
+  if (o.reviews) check(id, 'review-card>=2', classCount(h, 'review-card') >= 2);
+  if (o.ba) check(id, `ba>=${o.ba}`, classCount(h, 'ba') >= o.ba);
+  check(id, 'kein rv ohne in', rvOhneIn(h) === 0);
+  check(id, 'keine lp-card/lp-steps/lp-quote/lp-ba-grid/lp-trust', lpAltKlassen(h) === 0);
+});
+
 // ---- GLOBAL Stichprobe (5 Seiten) ----
 P('GLOBAL Stichprobe (5 Seiten)');
 const sample = ['index.html', 'heckenschnitt/index.html', 'gartenpflege/index.html', 'standorte/falkensee/index.html', 'ratgeber/index.html'];
