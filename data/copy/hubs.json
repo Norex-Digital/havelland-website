@@ -200,7 +200,7 @@
     },
     {
      "q": "Was kostet Winterdienst für ein Einfamilienhaus?",
-     "a": "Den Preis nennt der Partner-Fachbetrieb nach der Besichtigung, weil Gehweglänge, Zufahrt, Stufen und Lage den Aufwand bestimmen. Zur Orientierung aus fremden Preisübersichten (profirechner.de, mdl-group.de, Stand 2026, keine Angaben unseres Partners): Beispielrechnungen mit Bereitschaft und einzeln gezählten Einsätzen liegen dort bei rund 1.000 bis 1.300 Euro je Saison. Ihr Angebot kann darüber oder darunter liegen."
+     "a": "Den Preis nennt der Partner-Fachbetrieb nach der Besichtigung, weil Gehweglänge, Zufahrt, Stufen und Lage den Aufwand bestimmen. Zur Orientierung aus fremden Preisübersichten (profirechner.de, mdl-group.de, Stand 2026, keine Angaben unseres Partners): Beispielrechnungen mit Bereitschaft und einzeln gezählten Einsätzen liegen dort bei rund 1.000 bis 1.300 Euro je Saison (Endpreise inklusive Mehrwertsteuer). Ihr Angebot kann darüber oder darunter liegen."
     },
     {
      "q": "Bis wann muss der Gehweg geräumt sein?",
@@ -468,7 +468,7 @@
     {
      "hub_only": true,
      "q": "Was kostet eine Dachreinigung pro Quadratmeter?",
-     "a": "Verbindlich rechnet der ausführende Partner-Fachbetrieb nach der Besichtigung ab. Zur Orientierung nennen Branchen- und Vergleichsportale je nach Verfahren rund 8 bis 15 Euro pro Quadratmeter für die reine Reinigung, mit anschließender Imprägnierung oder Beschichtung eher 15 bis 25 Euro pro Quadratmeter. Der tatsächliche Preis hängt von Dachgröße, Neigung, Verschmutzung und Zugang ab — den verbindlichen Preis nennt der Fachbetrieb nach der kostenlosen Besichtigung."
+     "a": "Verbindlich rechnet der ausführende Partner-Fachbetrieb nach der Besichtigung ab. Zur Orientierung nennen Branchen- und Vergleichsportale je nach Verfahren rund 8 bis 15 Euro pro Quadratmeter für die reine Reinigung, mit anschließender Imprägnierung oder Beschichtung eher 15 bis 25 Euro pro Quadratmeter (jeweils inklusive Mehrwertsteuer). Der tatsächliche Preis hängt von Dachgröße, Neigung, Verschmutzung und Zugang ab — den verbindlichen Preis nennt der Fachbetrieb nach der kostenlosen Besichtigung."
     },
     {
      "q": "Wer führt die Dachreinigung aus?",
@@ -1033,7 +1033,7 @@
     },
     {
      "q": "Was kostet es, eine Hecke entfernen zu lassen?",
-     "a": "Länge, Höhe, Heckenart und der Aufwand für die Wurzeln bestimmen den Preis — deshalb nennen wir keine Pauschale ins Blaue. Sie erhalten nach einer kostenlosen Besichtigung vor Ort einen Festpreis inklusive Abfuhr und Entsorgung, der Ihr Endpreis bleibt. Orientierungswerte finden Sie in unserem Ratgeber zu den Kosten der Heckenentfernung. Zur Orientierung (Stand 2026): komplett mit Wurzel meist etwa 40 bis 90 Euro pro laufendem Meter — den verbindlichen Festpreis gibt es nach der Besichtigung."
+     "a": "Länge, Höhe, Heckenart und der Aufwand für die Wurzeln bestimmen den Preis — deshalb nennen wir keine Pauschale ins Blaue. Sie erhalten nach einer kostenlosen Besichtigung vor Ort einen Festpreis inklusive Abfuhr und Entsorgung, der Ihr Endpreis bleibt. Orientierungswerte finden Sie in unserem Ratgeber zu den Kosten der Heckenentfernung. Zur Orientierung (Stand 2026): komplett mit Wurzel meist etwa 40 bis 90 Euro pro laufendem Meter, Endpreise inklusive Mehrwertsteuer — den verbindlichen Festpreis gibt es nach der Besichtigung."
     },
     {
      "q": "Braucht man eine Genehmigung, um eine Hecke zu entfernen?",
@@ -1116,7 +1116,7 @@
    "faqs": [
     {
      "q": "Was kostet es, einen Baumstumpf entfernen zu lassen?",
-     "a": "Der Preis richtet sich vor allem nach dem Stammdurchmesser, der Anzahl der Stubben und dem Zugang zum Grundstück. Wir besichtigen kostenlos und nennen Ihnen danach einen Festpreis inklusive Abfuhr des Fräsguts — der Endpreis bleibt, ohne Aufschlag. Zur Orientierung (Stand 2026): meist 2 bis 5 Euro pro Zentimeter Stammdurchmesser — ein 40-cm-Stumpf liegt damit oft bei 80 bis 200 Euro, Details in unserem Kosten-Ratgeber."
+     "a": "Der Preis richtet sich vor allem nach dem Stammdurchmesser, der Anzahl der Stubben und dem Zugang zum Grundstück. Wir besichtigen kostenlos und nennen Ihnen danach einen Festpreis inklusive Abfuhr des Fräsguts — der Endpreis bleibt, ohne Aufschlag. Zur Orientierung (Stand 2026): meist 2 bis 5 Euro pro Zentimeter Stammdurchmesser — ein 40-cm-Stumpf liegt damit oft bei 80 bis 200 Euro, Endpreise inklusive Mehrwertsteuer. Details in unserem Kosten-Ratgeber."
     },
     {
      "q": "Ist das Entfernen eines Baumstumpfs ganzjährig erlaubt?",

@@ -471,7 +471,8 @@ export function trustBadges() {
   return `<div class="trustbadges">` +
     `<span class="tb">${CHECK_SVG}angemeldetes Gewerbe</span>` +
     `<span class="tb">${CHECK_SVG}aus Falkensee</span>` +
-    `<!-- VERIFIZIEREN: Versicherungsstatus vor Freischaltung bestaetigen -->` +
+    // Betriebshaftpflicht: Owner 15.09.2026 bestaetigt; Police-PDF liegt noch nicht im Repo (gbr-firma → Versicherungen/Betriebshaftpflicht/) — dann data-verify entfernen.
+    `<!-- Versicherung: Betriebshaftpflicht, bestaetigt 15.09.2026 -->` +
     `<span class="tb" data-verify>${CHECK_SVG}versichert bei Schäden</span>` +
     `</div>`;
 }

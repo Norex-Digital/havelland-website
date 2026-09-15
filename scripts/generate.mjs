@@ -390,7 +390,7 @@ function hub(s) {
   const title = clampTitle(c && c.title ? c.title : `${s.name} im Havelland — ${nap.name}`);
   const meta = mkMeta(c && c.meta ? c.meta : `${s.name} im Havelland und Falkensee: Festpreis nach Besichtigung, Foto-Nachweis, ein fester Ansprechpartner.`);
 
-  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","provider":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
+  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
 
   // ---- Gewerk-abhaengige Voll-Print-Komposition ----
   const gk = gewerkClass(s.slug);
@@ -459,7 +459,7 @@ function ortsseite(s, o) {
   const nahCards = rotate(nachbarn, seed, 4);
 
   const place = `{"@type":"Place","name":"${sj(o.name)}"${o.plz?`,"address":{"@type":"PostalAddress","postalCode":"${sj(o.plz)}","addressLocality":"${sj(o.name)}","addressCountry":"DE"}`:''}}`;
-  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)} ${sj(o.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","provider":{"@id":"${DOMAIN}/#organization"},"areaServed":${place}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url:`/${s.slug}/`},{name:o.name,url}])}`;
+  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)} ${sj(o.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${place}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url:`/${s.slug}/`},{name:o.name,url}])}`;
 
   // Body aus Copy-Schicht (mit Fallback) — Archetyp-Bausteine aus POOLS per Seed (Near-Duplicate-Reduktion)
   const pickPool = (arr, i) => Array.isArray(arr) && arr.length ? arr[((i % arr.length) + arr.length) % arr.length] : (typeof arr === 'string' ? arr : '');
@@ -548,7 +548,7 @@ function ortsHub(o) {
 <section class="phero">${leaf('hleaf')}<div class="wrap"><span class="kick rv in" style="color:var(--green)">Standort</span><h1 class="rv in d1" style="max-width:14em">Haus- &amp; Gartenservice <em>in ${esc(o.name)}</em></h1>${intro}<div class="cta-row rv in d3">${ctaA}</div>${trustBadges()}</div></section>
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name, sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 <section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Leistungen in ${esc(o.name)}</h2></div><div class="cards rv">${cards}</div>${teile.length?`<p class="intro rv" style="margin-top:30px">Auch in ${esc(teile.join(', '))} und Umgebung.</p>`:''}</div></section>
-${gstrip}
+${svcs[0] && svcs[0].partner_modell ? gstripPartner(svcs[0]) : gstrip}
 <section class="sec"><div class="wrap">${whatsappFlow({ ort: o.name, gewerk: 'meinem Anliegen' })}</div></section>
 ${gebietskarte({ activeSlug: o.slug })}
 ${endBand}`;
@@ -740,7 +740,7 @@ ${formScript}
   const impressumBody = `<div class="prose rv">
 <h2>Angaben gemäß § 5 DDG</h2>
 <p>Haus- &amp; Gartenservice Havelland GbR<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}</p>
-<p>Vertreten durch die Gesellschafter: ${esc((nap.gesellschafter || [nap.inhaber]).join(' und '))}.</p>
+<p>Vertreten durch die Gesellschafter: ${esc((nap.gesellschafter_impressum || nap.gesellschafter || [nap.inhaber]).join(' und '))}.</p>
 <h2>Kontakt</h2>
 <p>Telefon: <a href="tel:${tel}">${esc(nap.phone_display)}</a><br>E-Mail: <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a></p>
 <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
@@ -763,7 +763,7 @@ ${formScript}
 <p>Wir nehmen den Schutz Ihrer persönlichen Daten ernst und behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO, BDSG) sowie dieser Datenschutzerklärung. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
 <h2>2. Verantwortlicher</h2>
 <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
-<p>Haus- &amp; Gartenservice Havelland GbR<br>vertreten durch ${esc((nap.gesellschafter || [nap.inhaber]).join(' und '))}<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}<br>Telefon: ${esc(nap.phone_display)}<br>E-Mail: ${esc(nap.email)}</p>
+<p>Haus- &amp; Gartenservice Havelland GbR<br>vertreten durch ${esc((nap.gesellschafter_impressum || nap.gesellschafter || [nap.inhaber]).join(' und '))}<br>${esc(nap.street)}<br>${esc(nap.zip)} ${esc(nap.city)}<br>Telefon: ${esc(nap.phone_display)}<br>E-Mail: ${esc(nap.email)}</p>
 <h2>3. SSL-/TLS-Verschlüsselung</h2>
 <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt.</p>
 <h2>4. Hosting</h2>
@@ -881,7 +881,8 @@ function b2bPage() {
   const b2b = J('b2b.json');
   // 03.09.2026 (Herbst/Winter-Offensive, C4): Hero, Intro, Leistungs-/Zusagen-Details, Ablauf, FAQ und CTA kommen aus b2b.json.
   // Partner-Framing: Winterdienst + Dachrinne = Partner-Fachbetrieb (Vertrag Kunde<->Betrieb, Preis vom Betrieb); Laub/Grün/Entrümpelung = Eigenleistung.
-  // 14.09.2026 (B2B-Ansprache): Treppenhaus/Unterhaltsreinigung nicht mehr aktiv auf dieser Seite (nur auf Nachfrage, Partner) — Entrümpelung/Wohnungsräumung als Eigenleistung ergänzt (Karte, Detail-Links, Schema).
+  // 14.09.2026 (B2B-Ansprache): Treppenhaus/Unterhaltsreinigung nicht Fokus dieser Seite — Entrümpelung/Wohnungsräumung als Eigenleistung ergänzt (Karte, Detail-Links, Schema).
+  // 15.09.2026 (Owner C=2): Treppenhaus-/Unterhaltsreinigung bleibt EIGENLEISTUNG (Hubs /unterhaltsreinigung/, /hausmeisterservice/, /gebaeudereinigung/ unverändert); nur Winterdienst/Dachreinigung/Grundreinigung laufen über Partner.
   // Fallbacks halten die Seite baubar, falls b2b.json wieder nur objektklassen/leistungen/zusagen trägt.
   const h1 = (b2b.h1 && b2b.h1_em && b2b.h1.includes(b2b.h1_em))
     ? esc(b2b.h1).replace(esc(b2b.h1_em), `<em>${esc(b2b.h1_em)}</em>`)

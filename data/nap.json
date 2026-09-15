@@ -1,7 +1,7 @@
 {
-  "_meta": "Single Source fuer NAP. Schema + Footer + Impressum ziehen NUR hieraus. street/zip=null -> Generator baut KEINEN PostalAddress-Block, #organization bleibt valide. NAP-Aenderung nach Bau = Re-Generierung aller Seiten -> VOR Bau locken (harter P0-Blocker).",
+  "_meta": "Single Source fuer NAP. 15.09.2026: gesellschafter = Rufnamen (Ueber-uns), gesellschafter_impressum = volle Namen (Impressum/Datenschutz, § 5 DDG); inhaber = voller Name (Datenschutz-Verantwortlicher). kleinunternehmer_19 seit 04.09. false (Regelbesteuerung). Schema + Footer + Impressum ziehen NUR hieraus. street/zip=null -> Generator baut KEINEN PostalAddress-Block, #organization bleibt valide. NAP-Aenderung nach Bau = Re-Generierung aller Seiten -> VOR Bau locken (harter P0-Blocker).",
   "name": "Haus- & Gartenservice Havelland",
-  "inhaber": "Noah Telo",
+  "inhaber": "Noah Telo Boughenou",
   "street": "Darmstädter Str. 15",
   "zip": "14612",
   "city": "Falkensee",
@@ -9,7 +9,7 @@
   "phone_display": "01515 6198195",
   "email": "hausgartenservicehvl@gmail.com",
   "domain": "https://haus-und-gartenservice-havelland.de",
-  "kleinunternehmer_19": true,
+  "kleinunternehmer_19": false,
   "openingHours": [
     { "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00" },
     { "dayOfWeek": ["Saturday"], "opens": "08:00", "closes": "14:00" }
@@ -24,5 +24,9 @@
   "gesellschafter": [
     "Noah Telo",
     "Maurice Brehm"
+  ],
+  "gesellschafter_impressum": [
+    "Noah Telo Boughenou",
+    "Pierre Maurice Brehm"
   ]
 }
