@@ -17,7 +17,7 @@ const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 
 // Servicegebiet laut Report Kap. 3.4 / GBP-Servicegebiet (A0 #8)
 const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Berlin-Spandau'];
-const ATTR_KEYS = ['gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+export const ATTR_KEYS = ['gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']; // auch /kontakt/ (generate.mjs basis())
 // Kursiv-Schnitt (H1-Akzent wght 500; .gs .gn/.tli .tn/.ba-cap b wght 600): statt der variablen fraunces-italic-latin.woff2 (81 KB, gvar) zwei statische
 // Instanzen (fontTools instancer wght 500/opsz 48 bzw. wght 600/opsz 22, Latin-Subset ohne Hinting, je ~20 KB). Die @font-face in LP_CSS stehen hinter
 // site.css unter EIGENEM Familiennamen „Fraunces LP“ (eine zweite @font-face „Fraunces“ verliert in Chromium gegen die Range-Face 400–700 aus
@@ -62,7 +62,7 @@ main .sec .head h2{max-width:22em}
 .lp-form.js.s2 .step1{display:none}
 .lp-form:not(.js) [data-next],.lp-form:not(.js) .back,.lp-form:not(.js) .step1 .hint{display:none}
 .lp-form .hint{font-size:14px;color:var(--muted);margin-top:8px}
-.lp-form .err{display:none;color:var(--error);font-size:14.5px;margin:6px 0 10px;font-weight:600}
+.lp-form .err{display:none;color:var(--error-ink);font-size:14.5px;margin:6px 0 10px;font-weight:600}
 .lp-form .err.show{display:block}
 .lp-form .back{background:none;border:0;color:var(--green-d);font-weight:600;font-size:15px;min-height:44px;padding:10px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .lp-form .btn{width:100%}
@@ -90,7 +90,7 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 // nur, wenn die Einwilligung vorliegt oder im Banner erteilt wird (§ 25 TDDDG). Merge statt Replace: Klick-IDs werden nur durch
 // eine neue Klick-ID ersetzt; reine UTM-Besuche löschen keine gespeicherte gclid. url_passthrough/ads_data_redaction setzt das
 // Head-Snippet in generate.mjs site-weit.
-function lpAttribJS(consentKey) {
+export function lpAttribJS(consentKey) {
   return `<script>(function(){var K=${JSON.stringify(ATTR_KEYS)},S='hg_attrib',C='${consentKey}';function allowed(){try{var v=JSON.parse(localStorage.getItem(C)||'null');return !!(v&&v.c==='allow')}catch(e){return false}}
 function load(){try{var a=JSON.parse(localStorage.getItem(S)||'null');if(a&&a.ts&&Date.now()-a.ts>90*864e5){localStorage.removeItem(S);return null}return a}catch(e){return null}}
 var q=new URLSearchParams(location.search),n={},hit=false,click=false;K.forEach(function(k){var v=q.get(k);if(v){n[k]=v.slice(0,200);hit=true;if(k==='gclid'||k==='wbraid'||k==='gbraid')click=true}});
