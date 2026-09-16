@@ -3,7 +3,7 @@
   "danke": {
     "title": "Danke – Anfrage eingegangen",
     "h1": "Danke, Ihre Anfrage ist angekommen.",
-    "lead": "Wir melden uns meist noch am selben Werktag – telefonisch oder per WhatsApp, je nachdem, was Sie angegeben haben.",
+    "lead": "Wir melden uns meist noch am selben Werktag – telefonisch oder per WhatsApp, je nachdem, was Sie angegeben haben. Der Rückruf kommt von 01515 6198195 – speichern Sie die Nummer, damit Sie ihn erkennen.",
     "next": [
       "Wir rufen Sie an oder schreiben per WhatsApp und klären kurz, was ansteht.",
       "Wir vereinbaren die kostenlose Besichtigung vor Ort.",
@@ -20,11 +20,11 @@
       "title": "Haushaltsauflösung & Entrümpelung im Havelland – Festpreis",
       "meta": "Haushaltsauflösung und Entrümpelung im Havelland: diskret, besenrein, Festpreis für Räumung und Abtransport nach kostenloser Besichtigung. Falkensee, Nauen.",
       "kick": "Haushaltsauflösung im Havelland · Festpreis",
-      "h1": "Aus einem vollen Haus wird eine übergabefertige Immobilie. Was Ihnen wichtig ist, bleibt bei Ihnen.",
+      "h1": "Aus einem vollen Haus wird ein übergabefertiges. Was Ihnen wichtig ist, bleibt bei Ihnen.",
       "h1_em": "Was Ihnen wichtig ist, bleibt bei Ihnen",
-      "lead": "Nach einem Todesfall, dem Umzug ins Pflegeheim oder einem Auszug: Wir räumen Wohnung, Haus, Keller oder Dachboden vollständig, sichern vorher Dokumente und Erinnerungsstücke und übergeben besenrein – auf Wunsch gereinigt und geruchsfrei. Kostenlose Besichtigung in Falkensee, Dallgow-Döberitz, Brieselang, Nauen und im Havelland.",
+      "lead": "Nach Todesfall, Pflegeheim-Umzug oder Auszug: Wir räumen vollständig und übergeben besenrein – auf Wunsch gereinigt und geruchsfrei. Kostenlose Besichtigung im Havelland und in Berlin-Spandau.",
       "cta": "Kostenlose Besichtigung anfragen",
-      "wa_text": "Hallo, ich brauche eine Haushaltsauflösung im Havelland. Können Sie mir ein Angebot machen?",
+      "wa_text": "Hallo, ich brauche eine Haushaltsauflösung. Wann könnten Sie zur Besichtigung kommen?",
       "trust": [
         {
           "b": "Falkensee",
@@ -42,11 +42,11 @@
       "nutzen": [
         {
           "h": "Festpreis nach Besichtigung",
-          "p": "Wir schauen uns Räume, Mengen und Zugang vor Ort an. Danach steht Ihr Preis für Räumung und Abtransport schriftlich fest – ohne nachträgliche Änderung. Entsorgungsgebühren weisen wir nach Beleg aus."
+          "p": "Wir schauen uns Räume, Mengen und Zugang vor Ort an. Danach steht Ihr Festpreis für Räumung und Abtransport schriftlich fest – der bleibt, auch wenn es am Tag selbst länger dauert. Entsorgungsgebühren weisen wir nach Beleg aus."
         },
         {
-          "h": "Diskret und einfühlsam",
-          "p": "Wir arbeiten leise und mit Respekt. Wichtige Papiere, Schmuck und Erinnerungsstücke legen wir für Sie zur Seite, bevor etwas das Haus verlässt. Sie müssen nicht dabei sein."
+          "h": "Erst sichern, dann räumen",
+          "p": "Wichtige Papiere, Schmuck und Erinnerungsstücke legen wir für Sie zur Seite, bevor etwas das Haus verlässt. Sie müssen nicht dabei sein."
         },
         {
           "h": "Besenrein mit Foto-Nachweis",
@@ -75,7 +75,7 @@
         "p": [
           "Der Preis hängt von Wohnungsgröße, Menge, Demontagen und dem Zugang ab. Deshalb nennen wir ihn erst nach der kostenlosen Besichtigung – dafür dann als schriftlichen Festpreis für Räumung und Abtransport.",
           "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihre Kosten.",
-          "Entsorgungsgebühren der Annahmestellen weisen wir transparent nach Beleg aus, zuzüglich der gesetzlichen Mehrwertsteuer – Sie sehen jeden Posten, ohne eigenen Aufschlag."
+          "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus, zuzüglich der gesetzlichen Mehrwertsteuer – Sie sehen jeden Posten, ohne eigenen Aufschlag."
         ]
       },
       "faqs": [
@@ -97,15 +97,15 @@
         },
         {
           "q": "Wie wird die Entsorgung abgerechnet?",
-          "a": "Räumung und Abtransport stehen als Festpreis im Angebot. Die Gebühren der Annahmestellen für Sperrmüll, Altholz oder Elektroschrott rechnen wir nach tatsächlicher Menge gegen Beleg ab, zuzüglich der gesetzlichen Mehrwertsteuer – ohne eigenen Aufschlag. Bei Schadstoffen wie Farben, Chemikalien oder Asbest stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab; das gehört nicht in einen Pauschalpreis."
+          "a": "Räumung und Abtransport stehen als Festpreis im Angebot. Die Gebühren der Annahmestellen für Sperrmüll, Altholz oder Elektroschrott rechnen wir nach tatsächlicher Menge gegen Beleg ab, zuzüglich der gesetzlichen Mehrwertsteuer – ohne eigenen Aufschlag. Bei Schadstoffen wie Farben, Chemikalien oder Asbest stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab; das gehört nicht in den Festpreis."
         },
         {
           "q": "Riecht die Wohnung nach der Räumung noch?",
-          "a": "Nein. Gerüche und leichten Schimmel behandeln wir auf Wunsch direkt im Zuge der Räumung mit – als eigene Position im Angebot, damit die Wohnung übergabefertig ist. Bei tieferliegenden Schäden in der Wandsubstanz stimmen wir das weitere Vorgehen mit einem Fachbetrieb ab."
+          "a": "In der Regel nicht. Gerüche und oberflächlichen Schimmel behandeln wir auf Wunsch im Zuge der Räumung mit – als eigene Position im Angebot, damit Sie vorher wissen, was es kostet. Bei tieferliegenden Schäden in der Wandsubstanz stimmen wir das weitere Vorgehen mit einem Fachbetrieb ab."
         },
         {
           "q": "Können Sie nach der Räumung auch renovieren?",
-          "a": "Kleinere Ausbesserungen wie das Verschließen von Bohrlöchern übernehmen wir. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region – Sie haben weiterhin einen Ansprechpartner, bis die Wohnung übergabefertig ist."
+          "a": "Zum Teil. Bohrlöcher schließen, Haken und Klebereste entfernen: ja. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region – für die Räumung bleiben wir Ihr Ansprechpartner."
         }
       ],
       "objekte": [
@@ -152,9 +152,9 @@
       "title": "Messie-Wohnung räumen lassen – diskret, Havelland/Spandau",
       "meta": "Messie-Wohnung oder vermüllte Wohnung räumen lassen: diskret, ohne Vorwürfe, Festpreis für Räumung und Abtransport nach Besichtigung. Havelland und Spandau.",
       "kick": "Messie-Wohnung räumen lassen · diskret · Festpreis",
-      "h1": "Die Wohnung muss wieder bewohnbar werden. Wir räumen, reinigen, behandeln Gerüche – ohne Fragen.",
+      "h1": "Die Wohnung soll wieder bewohnbar werden. Wir räumen, reinigen, behandeln Gerüche – ohne Fragen.",
       "h1_em": "ohne Fragen",
-      "lead": "Ob Vermieter, Angehörige oder Sie selbst: Wir arbeiten ruhig, gründlich und vertraulich – auch gegenüber Nachbarn. Sie müssen nicht dabei sein und nichts erklären. Kostenlose Besichtigung im Havelland und in Berlin-Spandau.",
+      "lead": "Ob Vermieter, Angehörige oder Sie selbst: Wir arbeiten ruhig und gründlich. Sie müssen nicht dabei sein und nichts erklären. Kostenlose Besichtigung im Havelland und in Berlin-Spandau.",
       "cta": "Vertraulich anfragen",
       "wa_text": "Hallo, ich brauche eine diskrete Wohnungsräumung. Können wir kurz sprechen?",
       "trust": [
@@ -174,11 +174,11 @@
       "nutzen": [
         {
           "h": "Wir helfen, ohne zu urteilen",
-          "p": "Jede Wohnung hat eine Geschichte. Wir kommen ohne Vorwürfe, arbeiten ruhig und behandeln alles vertraulich – auch gegenüber Nachbarn."
+          "p": "Jede Wohnung hat eine Geschichte. Wir müssen sie nicht kennen, klären nur Größe und Termin und sprechen im Haus mit niemandem über den Auftrag."
         },
         {
           "h": "Festpreis nach Besichtigung",
-          "p": "Wir sehen uns die Wohnung an und nennen danach einen schriftlichen Festpreis für Räumung und Abtransport. Keine Überraschung beim Räumungspreis – Entsorgungsgebühren weisen wir nach Beleg aus."
+          "p": "Wir sehen uns die Wohnung an und nennen danach einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert. Entsorgungsgebühren weisen wir nach Beleg aus."
         },
         {
           "h": "Gründlich bis zur Übergabe",
@@ -188,7 +188,7 @@
       "ablauf": [
         {
           "h": "Kurz melden",
-          "p": "Ein Satz per Formular oder WhatsApp genügt. Sie müssen nichts beschreiben, was Ihnen unangenehm ist – wir fragen nur, was wir für die Planung brauchen.",
+          "p": "Ein Satz per Formular oder WhatsApp genügt. Sie müssen nichts beschreiben, was Ihnen unangenehm ist – wir klären nur Größe und Termin.",
           "when": "Tag 1 · vertraulich"
         },
         {
@@ -206,8 +206,8 @@
         "h": "Was kostet die Räumung?",
         "p": [
           "Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert.",
-          "Gut erhaltene Möbel oder Geräte prüfen wir auf ihren Wert und rechnen sie auf den Räumungspreis an.",
-          "Entsorgungsgebühren der Annahmestellen rechnen wir transparent nach Beleg ab, zuzüglich der gesetzlichen Mehrwertsteuer – ohne eigenen Aufschlag."
+          "Gut erhaltene Möbel oder Geräte prüfen wir auf ihren Wert und rechnen sie auf den Festpreis an.",
+          "Entsorgungsgebühren der Annahmestellen rechnen wir nach Beleg ab, zuzüglich der gesetzlichen Mehrwertsteuer – ohne eigenen Aufschlag."
         ]
       },
       "faqs": [
@@ -217,19 +217,27 @@
         },
         {
           "q": "Muss ich während der Räumung dabei sein?",
-          "a": "Nein. Viele Kunden übergeben uns den Schlüssel. Persönliche Papiere, Fotos und Wertsachen legen wir zur Seite und übergeben sie Ihnen. Den Zustand nach der Räumung dokumentieren wir mit Fotos."
+          "a": "Nein. Sie können uns einfach den Schlüssel übergeben. Persönliche Papiere, Fotos und Wertsachen legen wir zur Seite und übergeben sie Ihnen. Den Zustand nach der Räumung dokumentieren wir mit Fotos."
         },
         {
           "q": "Räumen Sie auch, wenn die Wohnung stark verschmutzt ist?",
-          "a": "Ja. Wir räumen vollständig aus und übergeben besenrein. Geruch und Schimmel behandeln wir auf Wunsch im Zuge der Räumung mit – als eigene Position im Angebot, damit Sie vorher wissen, was es kostet. Bei tiefergehenden Fällen ziehen wir bei Bedarf spezialisierte Ausrüstung hinzu; bei Gesundheitsgefahr durch andere Schadstoffe (Fäkalien, Chemikalien) stimmen wir das weitere Vorgehen zusätzlich mit einem Fachbetrieb ab."
+          "a": "Ja. Wir räumen vollständig aus und übergeben besenrein. Geruch und oberflächlichen Schimmel behandeln wir auf Wunsch im Zuge der Räumung mit – als eigene Position im Angebot, damit Sie vorher wissen, was es kostet. Wo eine Gesundheitsgefahr besteht, etwa durch Chemikalien oder starke hygienische Belastung, stimmen wir das Vorgehen vorher mit einem Fachbetrieb ab."
         },
         {
           "q": "Wie schnell können Sie kommen?",
           "a": "Die Besichtigung schaffen wir meist innerhalb weniger Werktage. Wenn ein Vermieter oder eine Behörde eine Frist gesetzt hat, sagen Sie uns das Datum – wir planen danach."
         },
         {
+          "q": "Muss ich vorher etwas aussortieren?",
+          "a": "Nein. Sie müssen nichts vorsortieren. Sagen Sie uns, was bleiben soll – den Rest übernehmen wir."
+        },
+        {
+          "q": "Zeigen Sie Fotos von anderen Messie-Wohnungen?",
+          "a": "Nein. Diskretion gilt auch für frühere Kunden – aus solchen Aufträgen veröffentlichen wir keine Fotos."
+        },
+        {
           "q": "Können Sie nach der Räumung auch renovieren?",
-          "a": "Kleinere Ausbesserungen wie das Verschließen von Bohrlöchern übernehmen wir. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region – Sie haben weiterhin einen Ansprechpartner."
+          "a": "Zum Teil. Bohrlöcher schließen, Haken und Klebereste entfernen: ja. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region – für die Räumung bleiben wir Ihr Ansprechpartner."
         }
       ],
       "objekte": [
@@ -257,23 +265,23 @@
       "title": "Entrümpelung für Hausverwaltungen & Gewerbe – Havelland",
       "meta": "Entrümpelung, Wohnungsräumung und Betriebsauflösung für Hausverwaltungen, Vermieter und Gewerbe im Havelland: feste Termine, Festpreis je Objekt.",
       "kick": "Entrümpelung für Hausverwaltungen & Gewerbe · Havelland",
-      "h1": "Übergabe in zwei Wochen, Wohnung voll und ungeputzt? Wir liefern sie leer, gereinigt, geruchsfrei.",
+      "h1": "Übergabe in zwei Wochen, Wohnung voll und ungeputzt? Wir übergeben sie leer, gereinigt, geruchsfrei.",
       "h1_em": "leer, gereinigt, geruchsfrei",
       "lead": "Wohnungsräumung nach Auszug, Kellerräumung im Mehrfamilienhaus, Büro- oder Betriebsauflösung: ein regionaler Ansprechpartner, feste Termine, schriftlicher Festpreis je Objekt und auf Wunsch eine Sammelrechnung.",
       "cta": "Angebot für Ihr Objekt anfordern",
-      "wa_text": "Hallo, ich brauche ein Angebot für eine Entrümpelung / Räumung für ein Objekt im Havelland.",
+      "wa_text": "Hallo, ich brauche ein Angebot für die Räumung eines Objekts. Adresse und Fotos schicke ich gleich mit.",
       "trust": [
+        {
+          "b": "Richtpreis per Foto",
+          "t": "Festpreis für Räumung & Abtransport nach Besichtigung"
+        },
+        {
+          "b": "Feste Termine",
+          "t": "Foto-Dokumentation nach jedem Einsatz"
+        },
         {
           "b": "Falkensee",
           "t": "regionaler Betrieb vor Ort"
-        },
-        {
-          "b": "Festpreis",
-          "t": "schriftlich je Objekt"
-        },
-        {
-          "b": "Fotos",
-          "t": "Dokumentation nach jedem Einsatz"
         }
       ],
       "nutzen": [
@@ -287,7 +295,7 @@
         },
         {
           "h": "Ein Ansprechpartner für das ganze Objekt",
-          "p": "Neben der Räumung übernehmen wir Grünpflege, Laub und Treppenhaus. Winterdienst koordinieren wir über einen regionalen Partner-Fachbetrieb."
+          "p": "Neben der Räumung übernehmen wir Grünpflege, Laub und Treppenhausreinigung. Winterdienst koordinieren wir über einen regionalen Partner-Fachbetrieb."
         }
       ],
       "ablauf": [
@@ -325,7 +333,7 @@
           "a": "Ja. Auf Wunsch legen wir die Belege der Annahmestellen bei, damit Sie die Entsorgung gegenüber Eigentümern oder Mietern dokumentieren können."
         },
         {
-          "q": "Können Sie kurzfristig, etwa vor einer Neuvermietung?",
+          "q": "Können Sie kurzfristig räumen, etwa vor einer Neuvermietung?",
           "a": "Meist ja. Nennen Sie uns das Übergabedatum – wir planen den Termin danach und bestätigen ihn schriftlich."
         },
         {
@@ -334,11 +342,11 @@
         },
         {
           "q": "Übernehmen Sie auch Grundreinigung oder Geruchsbehandlung vor der Neuvermietung?",
-          "a": "Ja. Nach der Räumung reinigen wir das Objekt und behandeln Gerüche oder oberflächlichen Schimmel auf Wunsch gleich mit – als eigene Position im Angebot, damit es direkt neu vermietet werden kann."
+          "a": "Ja, auf Wunsch. Grundreinigung und Geruchsbehandlung, auch bei oberflächlichem Schimmel, stehen dann als eigene Positionen im Angebot, damit Sie den Preis vorher kennen – und das Objekt direkt neu vermietet werden kann."
         },
         {
-          "q": "Vermitteln Sie auch Maler oder Bodenleger für die Neuvermietung?",
-          "a": "Ja. Kleinere Ausbesserungen übernehmen wir selbst; Malerarbeiten und Bodenbeläge vermitteln wir auf Wunsch an Partnerbetriebe aus der Region. Sie behalten einen Ansprechpartner für das ganze Objekt."
+          "q": "Machen Sie auch Malerarbeiten und Böden?",
+          "a": "Nicht selbst. Malerarbeiten und Bodenbeläge vermitteln wir auf Wunsch an Partnerbetriebe aus der Region; kleinere Ausbesserungen übernehmen wir. Für die Räumung bleiben wir Ihr Ansprechpartner."
         }
       ],
       "objekte": [
