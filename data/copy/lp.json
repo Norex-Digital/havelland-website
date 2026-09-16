@@ -101,7 +101,11 @@
         },
         {
           "q": "Riecht die Wohnung nach der Räumung noch?",
-          "a": "Nein. Gerüche und leichten Schimmel behandeln wir direkt im Zuge der Räumung mit, damit die Wohnung übergabefertig ist. Bei tieferliegenden Schäden in der Wandsubstanz stimmen wir das weitere Vorgehen mit einem Fachbetrieb ab."
+          "a": "Nein. Gerüche und leichten Schimmel behandeln wir auf Wunsch direkt im Zuge der Räumung mit – als eigene Position im Angebot, damit die Wohnung übergabefertig ist. Bei tieferliegenden Schäden in der Wandsubstanz stimmen wir das weitere Vorgehen mit einem Fachbetrieb ab."
+        },
+        {
+          "q": "Können Sie nach der Räumung auch renovieren?",
+          "a": "Kleinere Ausbesserungen wie das Verschließen von Bohrlöchern übernehmen wir. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region – Sie haben weiterhin einen Ansprechpartner, bis die Wohnung übergabefertig ist."
         }
       ],
       "objekte": [
@@ -178,7 +182,7 @@
         },
         {
           "h": "Gründlich bis zur Übergabe",
-          "p": "Wir räumen vollständig, trennen Wertstoffe, entsorgen über zugelassene Annahmestellen und übergeben besenrein – mit Foto-Nachweis, falls Sie nicht vor Ort sind. Gerüche und Schimmel behandeln wir dabei gleich mit."
+          "p": "Wir räumen vollständig, trennen Wertstoffe, entsorgen über zugelassene Annahmestellen und übergeben besenrein – mit Foto-Nachweis, falls Sie nicht vor Ort sind. Gerüche und Schimmel behandeln wir auf Wunsch gleich mit."
         }
       ],
       "ablauf": [
@@ -217,11 +221,15 @@
         },
         {
           "q": "Räumen Sie auch, wenn die Wohnung stark verschmutzt ist?",
-          "a": "Ja. Wir räumen vollständig aus und übergeben besenrein. Geruch und Schimmel behandeln wir im Zuge der Räumung mit – bei tiefergehenden Fällen ziehen wir bei Bedarf spezialisierte Ausrüstung hinzu. Bei Gesundheitsgefahr durch andere Schadstoffe (Fäkalien, Chemikalien) stimmen wir das weitere Vorgehen zusätzlich mit einem Fachbetrieb ab."
+          "a": "Ja. Wir räumen vollständig aus und übergeben besenrein. Geruch und Schimmel behandeln wir auf Wunsch im Zuge der Räumung mit – als eigene Position im Angebot, damit Sie vorher wissen, was es kostet. Bei tiefergehenden Fällen ziehen wir bei Bedarf spezialisierte Ausrüstung hinzu; bei Gesundheitsgefahr durch andere Schadstoffe (Fäkalien, Chemikalien) stimmen wir das weitere Vorgehen zusätzlich mit einem Fachbetrieb ab."
         },
         {
           "q": "Wie schnell können Sie kommen?",
           "a": "Die Besichtigung schaffen wir meist innerhalb weniger Werktage. Wenn ein Vermieter oder eine Behörde eine Frist gesetzt hat, sagen Sie uns das Datum – wir planen danach."
+        },
+        {
+          "q": "Können Sie nach der Räumung auch renovieren?",
+          "a": "Kleinere Ausbesserungen wie das Verschließen von Bohrlöchern übernehmen wir. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region – Sie haben weiterhin einen Ansprechpartner."
         }
       ],
       "objekte": [
@@ -326,7 +334,11 @@
         },
         {
           "q": "Übernehmen Sie auch Grundreinigung oder Geruchsbehandlung vor der Neuvermietung?",
-          "a": "Ja. Nach der Räumung reinigen wir das Objekt und behandeln Gerüche oder oberflächlichen Schimmel auf Wunsch gleich mit, damit es direkt neu vermietet werden kann."
+          "a": "Ja. Nach der Räumung reinigen wir das Objekt und behandeln Gerüche oder oberflächlichen Schimmel auf Wunsch gleich mit – als eigene Position im Angebot, damit es direkt neu vermietet werden kann."
+        },
+        {
+          "q": "Vermitteln Sie auch Maler oder Bodenleger für die Neuvermietung?",
+          "a": "Ja. Kleinere Ausbesserungen übernehmen wir selbst; Malerarbeiten und Bodenbeläge vermitteln wir auf Wunsch an Partnerbetriebe aus der Region. Sie behalten einen Ansprechpartner für das ganze Objekt."
         }
       ],
       "objekte": [
