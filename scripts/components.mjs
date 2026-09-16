@@ -281,7 +281,10 @@ export function archivGrid(slugs, { ctaHref = '#kontakt' } = {}) {
 // whatsappFlow — .wa-grid, 3 Schritte + wa.me-CTA (Kontext vorausgefuellt) + Noah-Arbeitsbild (kein Label).
 // ---------------------------------------------------------------------------
 export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
-  heading = 'Ein Handy-Foto <em>reicht.</em>', partner = false, fotoNeutral = false, winter = false } = {}) {
+  heading = 'Ein Handy-Foto <em>reicht.</em>', partner = false, fotoNeutral = false, winter = false,
+  // foto (Zaunbau 16.09.): optionales Service-eigenes Motiv statt Heckenschnitt-Default — { src, alt, cap, sub, w, h }
+  foto = null } = {}) {
+  const f = foto || { src: `${ARB}/hecke-hinten-schere-noah.jpg`, alt: fotoNeutral ? 'Sorgfältige Handarbeit im Grünen — Haus- &amp; Gartenservice Havelland' : 'Heckenschnitt mit der Heckenschere an einer Hecke', cap: 'Handarbeit, wo es drauf ankommt', sub: fotoNeutral ? 'Sorgfalt im Detail' : 'Kanten &amp; Ecken', w: 2400, h: 2979 };
   // winter (Umbau 04.09.): Winterdienst = Partnermodell ohne Foto-Zusage — Adresse und Flächen statt Handy-Foto, Saisonvertrag vom Betrieb.
   if (winter) heading = 'Adresse und Flächenbeschreibung <em>reichen.</em>';
   const ortTeil = ort ? ` in ${ort}` : '';
@@ -308,8 +311,8 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
     `<div class="wa-stage rv d2"><div class="pframe" style="box-shadow:var(--sh-photo)">` +
     // fotoNeutral (Audit 2026-08, P2-b): auf Services ohne Hecken-Bezug (baumstumpf-entfernen) Alt/Untertitel
     // neutral auf Sorgfalt/Handarbeit — das Foto zeigt Heckenschnitt, darf dort nicht als Service-Beweis wirken.
-    `<img src="${ARB}/hecke-hinten-schere-noah.jpg" alt="${fotoNeutral ? 'Sorgfältige Handarbeit im Grünen — Haus- &amp; Gartenservice Havelland' : 'Heckenschnitt mit der Heckenschere an einer Hecke'}" loading="lazy" decoding="async" width="2400" height="2979"></div>` +
-    `<p class="ba-cap"><b>Handarbeit, wo es drauf ankommt</b><span>${fotoNeutral ? 'Sorgfalt im Detail' : 'Kanten &amp; Ecken'}</span></p></div></div>`;
+    `<img src="${f.src}" alt="${f.alt}" loading="lazy" decoding="async" width="${f.w}" height="${f.h}"></div>` +
+    `<p class="ba-cap"><b>${f.cap}</b><span>${f.sub}</span></p></div></div>`;
 }
 
 // ---------------------------------------------------------------------------
