@@ -98,6 +98,10 @@
         {
           "q": "Wie wird die Entsorgung abgerechnet?",
           "a": "Räumung und Abtransport stehen als Festpreis im Angebot. Die Gebühren der Annahmestellen für Sperrmüll, Altholz oder Elektroschrott rechnen wir nach tatsächlicher Menge gegen Beleg ab, zuzüglich der gesetzlichen Mehrwertsteuer – ohne eigenen Aufschlag. Bei Schadstoffen wie Farben, Chemikalien oder Asbest stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab; das gehört nicht in einen Pauschalpreis."
+        },
+        {
+          "q": "Riecht die Wohnung nach der Räumung noch?",
+          "a": "Nein. Gerüche und leichten Schimmel behandeln wir direkt im Zuge der Räumung mit, damit die Wohnung übergabefertig ist. Bei tieferliegenden Schäden in der Wandsubstanz stimmen wir das weitere Vorgehen mit einem Fachbetrieb ab."
         }
       ],
       "objekte": [
@@ -174,7 +178,7 @@
         },
         {
           "h": "Gründlich bis zur Übergabe",
-          "p": "Wir räumen vollständig, trennen Wertstoffe, entsorgen über zugelassene Annahmestellen und übergeben besenrein – mit Foto-Nachweis, falls Sie nicht vor Ort sind."
+          "p": "Wir räumen vollständig, trennen Wertstoffe, entsorgen über zugelassene Annahmestellen und übergeben besenrein – mit Foto-Nachweis, falls Sie nicht vor Ort sind. Gerüche und Schimmel behandeln wir dabei gleich mit."
         }
       ],
       "ablauf": [
@@ -213,7 +217,7 @@
         },
         {
           "q": "Räumen Sie auch, wenn die Wohnung stark verschmutzt ist?",
-          "a": "Ja. Wir räumen vollständig aus und übergeben besenrein. Bei Schadstoffen oder Gesundheitsgefahr (z. B. Schimmel, Fäkalien, Chemikalien) stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab – das gehört nicht in einen Pauschalpreis."
+          "a": "Ja. Wir räumen vollständig aus und übergeben besenrein. Geruch und Schimmel behandeln wir im Zuge der Räumung mit – bei tiefergehenden Fällen ziehen wir bei Bedarf spezialisierte Ausrüstung hinzu. Bei Gesundheitsgefahr durch andere Schadstoffe (Fäkalien, Chemikalien) stimmen wir das weitere Vorgehen zusätzlich mit einem Fachbetrieb ab."
         },
         {
           "q": "Wie schnell können Sie kommen?",
@@ -319,6 +323,10 @@
         {
           "q": "Übernehmen Sie auch Büro- und Betriebsauflösungen?",
           "a": "Ja: Büro, Praxis, Laden oder Lager. Möbel, Technik und Akten räumen wir vollständig, Verwertbares rechnen wir an. Für die Aktenvernichtung vermitteln wir Ihnen auf Wunsch einen Fachdienstleister."
+        },
+        {
+          "q": "Übernehmen Sie auch Grundreinigung oder Geruchsbehandlung vor der Neuvermietung?",
+          "a": "Ja. Nach der Räumung reinigen wir das Objekt und behandeln Gerüche oder oberflächlichen Schimmel auf Wunsch gleich mit, damit es direkt neu vermietet werden kann."
         }
       ],
       "objekte": [
