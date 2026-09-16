@@ -66,7 +66,7 @@ const ratgeberByService = {}; for (const r of ratCopy) { if (!r.cta_service) con
 const _ueb = CP('uebersicht.json') || {}; const uebL = _ueb.leistungen || {}; const uebS = _ueb.standorte || {};
 // Gruppierung: Service-Slug → Themen-Block (Portfolio-Refokus 2026-07-22: Garten & Außen · Entrümpelung & Auflösung · Dach · Für Gewerbe & Hausverwaltungen). Reihenfolge = Anzeige-Reihenfolge. b2b_only-Services (hausmeisterservice) leben im Gewerbe-Block.
 const LEISTUNGEN_KATEGORIEN = [
-  { key: 'garten', label: 'Garten & Außen', slugs: ['gartenpflege', 'heckenschnitt', 'winterdienst', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau', 'steinreinigung', 'fensterreinigung'] },
+  { key: 'garten', label: 'Garten & Außen', slugs: ['gartenpflege', 'heckenschnitt', 'winterdienst', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau', 'zaunbau', 'steinreinigung', 'fensterreinigung'] },
   { key: 'aufloesung', label: 'Entrümpelung & Auflösung', slugs: ['entruempelung', 'haushaltsaufloesung', 'grundreinigung'] },
   { key: 'dach', label: 'Dach', slugs: ['dachrinnenreinigung', 'dachreinigung'] },
   { key: 'gewerbe', label: 'Für Gewerbe & Hausverwaltungen', slugs: ['hausmeisterservice', 'gebaeudereinigung', 'unterhaltsreinigung', 'objektbetreuung', 'ferienwohnung-reinigung'] }
@@ -86,7 +86,7 @@ const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','ent
 //  REINIGUNG = Reinigungs-Gewerke -> beweisMechanik (Gegenlicht) statt Slider, kein Teleskop/Osmose
 //  Rest      = generische Rich-Variante (Entruempelung/Umzug/Hausmeister/Objekt ...)
 const VOLL_VN = new Set(['heckenschnitt']);
-const GARTEN = new Set(['gartenpflege', 'winterdienst', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau']);
+const GARTEN = new Set(['gartenpflege', 'winterdienst', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau', 'zaunbau']);
 const REINIGUNG = new Set(['fensterreinigung', 'steinreinigung', 'dachrinnenreinigung', 'photovoltaikreinigung', 'grundreinigung', 'gebaeudereinigung', 'unterhaltsreinigung', 'ferienwohnung-reinigung']);
 const BEWEIS_KEY = { fensterreinigung: 'fensterreinigung', steinreinigung: 'steinreinigung', dachrinnenreinigung: 'dachrinnenreinigung' }; // eigene Beweis-Copy vorhanden
 const gewerkClass = slug => VOLL_VN.has(slug) ? 'voll' : GARTEN.has(slug) ? 'garten' : REINIGUNG.has(slug) ? 'reinigung' : 'generisch';
@@ -158,16 +158,24 @@ const rlen = s => (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace
 function clampTitle(s) { s = (s || '').replace(/\s+/g, ' ').trim(); while (rlen(s) > 60) { const sp = s.lastIndexOf(' '); if (sp < 30) { s = s.slice(0, s.length - 1); continue; } s = s.slice(0, sp); } s = s.replace(/[ ,;:–-]+$/, ''); while (DANGLE.test(s)) s = s.replace(DANGLE, '').replace(/[ ,;:–-]+$/, ''); return s; } // kein hängendes "im/und" nach dem Kürzen (Umbau 03.09.)
 const META_TAIL = ' Ein fester Ansprechpartner im Havelland und Berliner Umland, telefonisch oder per WhatsApp erreichbar, mit kostenloser Vor-Ort-Besichtigung.';
 const DANGLE = /\s+(per|und|mit|nach|für|im|in|zu|von|der|die|das|ein|eine|einen|am|an|auf|bei|als|wie|oder|aus|über|unter|vor|jetzt|noch|so|dem|den)$/i;
+// Tail klauselweise (16.09., Audit Zaunbau): vorher wurde der ganze META_TAIL angehängt und hart bei 158 gekürzt →
+// bei Copy-Metas um 140–150 Zeichen blieb „… Ein fester." als Rest (19 Seiten betroffen). Jetzt nur ganze Klauseln, die passen.
+// Article-Schema (Audit Zaunbau 16.09.): datePublished/dateModified fehlten sitewide. Copy-Feld date_published/date_modified je Ratgeber, sonst Default = Launch der Ratgeber-Welle.
+const RATGEBER_DEFAULT_DATE = '2026-07-01';
+const META_CLAUSES = ['Ein fester Ansprechpartner im Havelland und Berliner Umland', 'telefonisch oder per WhatsApp erreichbar', 'mit kostenloser Vor-Ort-Besichtigung'];
 function mkMeta(s) {
   s = (s || '').replace(/\s+/g, ' ').trim();
-  let t = rlen(s) < 150 ? s + META_TAIL : s;            // zu kurz → langen Tail anhängen
-  while (rlen(t) > 158) { const sp = t.lastIndexOf(' '); if (sp < 110) break; t = t.slice(0, sp); }
-  // bevorzugt an Klausel-/Satz-Grenze (Komma/Punkt im hinteren Drittel) kürzen → sauberes Ende
-  const cl = Math.max(t.lastIndexOf(', '), t.lastIndexOf('. '));
-  if (cl >= 150) t = t.slice(0, cl);
-  t = t.replace(/[ ,;:.–-]+$/, '');
-  while (DANGLE.test(t)) t = t.replace(DANGLE, '').replace(/[ ,;:.–-]+$/, '');
-  return t + '.';
+  const finish = t => { t = t.replace(/[ ,;:.–-]+$/, ''); while (DANGLE.test(t)) t = t.replace(DANGLE, '').replace(/[ ,;:.–-]+$/, ''); return t + '.'; };
+  if (rlen(s) >= 150) {                                   // lang genug → nur kürzen, bevorzugt an Klausel-/Satz-Grenze
+    let t = s;
+    while (rlen(t) > 158) { const sp = t.lastIndexOf(' '); if (sp < 110) break; t = t.slice(0, sp); }
+    const cl = Math.max(t.lastIndexOf(', '), t.lastIndexOf('. '));
+    if (cl >= 150) t = t.slice(0, cl);
+    return finish(t);
+  }
+  let t = s.replace(/[ ,;:.–-]+$/, '');                    // zu kurz → Tail-Klauseln anhängen, solange sie ganz passen
+  META_CLAUSES.forEach((c, i) => { const cand = t + (i === 0 ? '. ' : ', ') + c; if (rlen(cand) <= 157) t = cand; });
+  return finish(t);
 }
 // deterministische Rotation (Uniqueness ohne Zufall)
 const seedOf = s => { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; };
@@ -195,7 +203,7 @@ const ARCH_C3 = new Set(['falkensee', 'dallgow-doeberitz', 'nauen', 'hennigsdorf
 const ARCH_C6 = new Set(['ketzin', 'werder-havel', 'schwielowsee', 'phoeben', 'gross-kreutz', 'milower-land']);
 const ortArchImg = o => 'region-' + (ARCH_C2.has(o.slug) ? 'villenvorort' : ARCH_C3.has(o.slug) ? 'kleinstadt' : ARCH_C6.has(o.slug) ? 'havel-umland' : 'brandenburg-gemeinde');
 // Ratgeber -> Header-Bild (d*), sonst Service-Hero-Fallback
-const RAT_IMG = { 'wann-hecke-schneiden': 'ratgeber-heckenschnitt-zeitpunkt', 'hecke-schneiden-erlaubt': 'ratgeber-heckenschnitt-zeitpunkt', 'heckenschnitt-kosten': 'ratgeber-heckenschnitt-zeitpunkt', 'hecke-entfernen-erlaubt': 'ratgeber-heckenschnitt-zeitpunkt', 'hecke-entfernen-kosten': 'ratgeber-heckenschnitt-zeitpunkt', 'entruempelung-kosten': 'ratgeber-entruempelung-kosten', 'was-kostet-entruempelung': 'ratgeber-entruempelung-kosten', 'haushaltsaufloesung-kosten': 'ratgeber-haushaltsaufloesung-checkliste', 'haushaltsaufloesung-checkliste': 'ratgeber-haushaltsaufloesung-checkliste', 'fensterreinigung-preise': 'ratgeber-fensterreinigung-preise', 'fenster-putzen-streifenfrei': 'ratgeber-fensterreinigung-preise', 'winterdienst-streupflicht-brandenburg': 'ratgeber-winterdienst-pflichten', 'winterdienst-kosten': 'ratgeber-winterdienst-pflichten', 'dachrinne-reinigen-kosten': 'ratgeber-dachrinne-herbst', 'dachrinne-reinigen-wie-oft': 'ratgeber-dachrinne-herbst', 'terrasse-reinigen': 'ratgeber-pflaster-gruenbelag', 'pflaster-reinigen': 'ratgeber-pflaster-gruenbelag', 'rasen-maehen-wie-oft': 'ratgeber-rasenpflege-kalender', 'rasen-vertikutieren-wann': 'ratgeber-rasenpflege-kalender', 'laub-entfernen-pflicht': 'ratgeber-rasenpflege-kalender', 'gartenpflege-kosten': 'ratgeber-rasenpflege-kalender', 'pv-reinigung-lohnt-sich': 'ratgeber-photovoltaik-reinigung', 'ferienwohnung-endreinigung-kosten': 'ratgeber-ferienwohnung-wechsel', 'umzug-checkliste': 'ratgeber-umzug-tipps', 'baumstumpf-entfernen-kosten': 'svc-baumstumpf-entfernen-hero', 'verwilderten-garten-roden': 'svc-gartenrodung-hero' };
+const RAT_IMG = { 'wann-hecke-schneiden': 'ratgeber-heckenschnitt-zeitpunkt', 'hecke-schneiden-erlaubt': 'ratgeber-heckenschnitt-zeitpunkt', 'heckenschnitt-kosten': 'ratgeber-heckenschnitt-zeitpunkt', 'hecke-entfernen-erlaubt': 'ratgeber-heckenschnitt-zeitpunkt', 'hecke-entfernen-kosten': 'ratgeber-heckenschnitt-zeitpunkt', 'entruempelung-kosten': 'ratgeber-entruempelung-kosten', 'was-kostet-entruempelung': 'ratgeber-entruempelung-kosten', 'haushaltsaufloesung-kosten': 'ratgeber-haushaltsaufloesung-checkliste', 'haushaltsaufloesung-checkliste': 'ratgeber-haushaltsaufloesung-checkliste', 'fensterreinigung-preise': 'ratgeber-fensterreinigung-preise', 'fenster-putzen-streifenfrei': 'ratgeber-fensterreinigung-preise', 'winterdienst-streupflicht-brandenburg': 'ratgeber-winterdienst-pflichten', 'winterdienst-kosten': 'ratgeber-winterdienst-pflichten', 'dachrinne-reinigen-kosten': 'ratgeber-dachrinne-herbst', 'dachrinne-reinigen-wie-oft': 'ratgeber-dachrinne-herbst', 'terrasse-reinigen': 'ratgeber-pflaster-gruenbelag', 'pflaster-reinigen': 'ratgeber-pflaster-gruenbelag', 'rasen-maehen-wie-oft': 'ratgeber-rasenpflege-kalender', 'rasen-vertikutieren-wann': 'ratgeber-rasenpflege-kalender', 'laub-entfernen-pflicht': 'ratgeber-rasenpflege-kalender', 'gartenpflege-kosten': 'ratgeber-rasenpflege-kalender', 'pv-reinigung-lohnt-sich': 'ratgeber-photovoltaik-reinigung', 'ferienwohnung-endreinigung-kosten': 'ratgeber-ferienwohnung-wechsel', 'umzug-checkliste': 'ratgeber-umzug-tipps', 'baumstumpf-entfernen-kosten': 'svc-baumstumpf-entfernen-hero', 'verwilderten-garten-roden': 'svc-gartenrodung-hero', 'zaun-kosten': 'ratgeber-zaun-kosten', 'doppelstabmattenzaun-montage-kosten': 'ratgeber-doppelstab-montage', 'zaun-genehmigung-brandenburg': 'ratgeber-zaun-genehmigung-brandenburg' };
 const ratHeaderImg = r => RAT_IMG[r.slug] || svcHero(r.cta_service);
 // Saison-Hero Home: config.saison_monat überschreibt, sonst Build-Monat (Sommer -> Standard-Hero a1)
 const HERO_HOME = (() => { const m = config.saison_monat || (new Date()).getMonth() + 1; if (m >= 3 && m <= 5) return IMG['hero-home-fruehjahr'] ? 'hero-home-fruehjahr' : 'hero-home'; if (m >= 9 && m <= 11) return IMG['hero-home-herbst'] ? 'hero-home-herbst' : 'hero-home'; if (m === 12 || m <= 2) return IMG['hero-home-winter'] ? 'hero-home-winter' : 'hero-home'; return 'hero-home'; })();
@@ -256,7 +264,7 @@ const header = `<header><div class="wrap nav"><a class="logo" href="/"><picture 
 const sctaBar = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ Anrufen</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav>`;
 const SCTA_DEFAULT = sctaBar('Hallo, ich hätte gern eine kostenlose Besichtigung.');
 // Footer — lock-v2 fcols-Sitemap (hell): Leistungen A–H / H–W / Unternehmen (inkl. /fuer-hausverwaltungen/) + legal
-const footer = `<footer><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · <a href="tel:${tel}">${esc(nap.phone_display)}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>${ohDisplay()?`<br>${esc(ohDisplay())}`:''}</p><div class="fcols"><div><h4>Garten &amp; Reinigung</h4><ul><li><a href="/gartenpflege/">Gartenpflege</a></li><li><a href="/gartenpflege/#herbst-paket">Herbst-Paket (Laub)</a></li><li><a href="/winterdienst/">Winterdienst</a></li><li><a href="/heckenschnitt/">Heckenschnitt</a></li><li><a href="/heckenentfernung/">Heckenentfernung</a></li><li><a href="/baumstumpf-entfernen/">Baumstumpf-Entfernung</a></li><li><a href="/gartenrodung/">Gartenrodung</a></li><li><a href="/baumschnitt/">Baumschnitt</a></li><li><a href="/galabau/">GaLaBau-Arbeiten</a></li><li><a href="/steinreinigung/">Steinreinigung</a></li><li><a href="/fensterreinigung/">Fensterreinigung</a></li><li><a href="/dachrinnenreinigung/">Dachrinnenreinigung</a></li><li><a href="/dachreinigung/">Dachreinigung</a></li></ul></div><div><h4>Entrümpelung &amp; Auflösung</h4><ul><li><a href="/entruempelung/">Entrümpelung</a></li><li><a href="/haushaltsaufloesung/">Haushaltsauflösung</a></li><li><a href="/grundreinigung/">Grundreinigung</a></li><li><a href="/ferienwohnung-reinigung/">Ferienwohnung-Reinigung</a></li></ul><h4 style="margin-top:22px">Für Gewerbe &amp; Hausverwaltungen</h4><ul><li><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a></li><li><a href="/hausmeisterservice/">Hausmeisterservice</a></li><li><a href="/gebaeudereinigung/">Gebäudereinigung</a></li><li><a href="/unterhaltsreinigung/">Unterhaltsreinigung</a></li><li><a href="/objektbetreuung/">Objektbetreuung</a></li></ul></div><div><h4>Unternehmen</h4><ul><li><a href="/leistungen/">Alle Leistungen</a></li><li><a href="/standorte/">Standorte</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/bewertungen/">Bewertungen</a></li><li><a href="/kontakt/">Kontakt</a></li></ul></div></div><div class="legal"><span>${esc(nap.name)} (${esc(nap.rechtsform||'GbR')})</span><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="#" id="consent-reset">Cookie-Einstellungen</a></div></div></footer>`;
+const footer = `<footer><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · <a href="tel:${tel}">${esc(nap.phone_display)}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>${ohDisplay()?`<br>${esc(ohDisplay())}`:''}</p><div class="fcols"><div><h4>Garten &amp; Reinigung</h4><ul><li><a href="/gartenpflege/">Gartenpflege</a></li><li><a href="/gartenpflege/#herbst-paket">Herbst-Paket (Laub)</a></li><li><a href="/winterdienst/">Winterdienst</a></li><li><a href="/heckenschnitt/">Heckenschnitt</a></li><li><a href="/heckenentfernung/">Heckenentfernung</a></li><li><a href="/baumstumpf-entfernen/">Baumstumpf-Entfernung</a></li><li><a href="/gartenrodung/">Gartenrodung</a></li><li><a href="/baumschnitt/">Baumschnitt</a></li><li><a href="/galabau/">GaLaBau-Arbeiten</a></li><li><a href="/zaunbau/">Zaunbau</a></li><li><a href="/steinreinigung/">Steinreinigung</a></li><li><a href="/fensterreinigung/">Fensterreinigung</a></li><li><a href="/dachrinnenreinigung/">Dachrinnenreinigung</a></li><li><a href="/dachreinigung/">Dachreinigung</a></li></ul></div><div><h4>Entrümpelung &amp; Auflösung</h4><ul><li><a href="/entruempelung/">Entrümpelung</a></li><li><a href="/haushaltsaufloesung/">Haushaltsauflösung</a></li><li><a href="/grundreinigung/">Grundreinigung</a></li><li><a href="/ferienwohnung-reinigung/">Ferienwohnung-Reinigung</a></li></ul><h4 style="margin-top:22px">Für Gewerbe &amp; Hausverwaltungen</h4><ul><li><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a></li><li><a href="/hausmeisterservice/">Hausmeisterservice</a></li><li><a href="/gebaeudereinigung/">Gebäudereinigung</a></li><li><a href="/unterhaltsreinigung/">Unterhaltsreinigung</a></li><li><a href="/objektbetreuung/">Objektbetreuung</a></li></ul></div><div><h4>Unternehmen</h4><ul><li><a href="/leistungen/">Alle Leistungen</a></li><li><a href="/standorte/">Standorte</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/bewertungen/">Bewertungen</a></li><li><a href="/kontakt/">Kontakt</a></li></ul></div></div><div class="legal"><span>${esc(nap.name)} (${esc(nap.rechtsform||'GbR')})</span><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="#" id="consent-reset">Cookie-Einstellungen</a></div></div></footer>`;
 const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script><script src="/assets/js/site.js?v=${ASSET_VER}" defer></script>` + CONSENT_BANNER + TRACK_EVENTS + CONSENT_RESET_JS;
 const endBand = `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, was ansteht — wir kümmern uns.</h2><p class="rv d1">Kostenlose Besichtigung, Festpreis, dann erledigt.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
 // Partner-/Tippgeber-Variante (Dach): kein eigener Festpreis — Besichtigung + Angebot über den Fachbetrieb, wir koordinieren.
@@ -401,7 +409,9 @@ function hub(s) {
     : pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' im Havelland — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true });
   const faqData = (c && c.faqs && c.faqs.length) ? c.faqs : null;   // sonst faqFilter-Default
   // Winterdienst: WA-Flow ohne Foto-Zusage (Partner) — "Adresse und Flächenbeschreibung reichen" (Umbau 03.09.)
-  const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug), winter: s.slug === 'winterdienst' })}</div></section>`;
+  // Zaunbau (16.09.): eigenes Flow-Motiv statt Heckenschnitt-Default (KI-Szene mit Element, Logo per logo-composite.py — Foto Assets §0: Szene erlaubt, kein Beweis).
+  const flowFoto = s.slug === 'zaunbau' ? { src: '/assets/img/arbeit/zaun-hinten-matte-noah.jpg', alt: 'Doppelstabmatte am Pfosten ausrichten — Haus- &amp; Gartenservice Havelland', cap: 'Handarbeit, wo es drauf ankommt', sub: 'Pfosten &amp; Matten', w: 1856, h: 2304 } : null;
+  const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug), winter: s.slug === 'winterdienst', foto: flowFoto })}</div></section>`;
   const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline(!!s.partner_modell, s.slug)}</div></section>`;
   const faqSection = `<section class="sec"><div class="wrap">${faqFilter(faqData)}</div></section>`;
   const cardOrteSection = cardOrte.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div><div class="cards rv">${cards}</div></div></section>` : '';
@@ -428,7 +438,9 @@ function hub(s) {
   // Optionale Copy-Blöcke (H2 + Fließtext, optionale Service-Querverlinkung): Wohnungsauflösungs-H2 + Kannibalisierungs-Firewall Entrümpelung↔Haushaltsauflösung (Design §4). Nur Hubs mit copy.blocks; sonst ''.
   // Blocks: optionales id (Anker-Ziel, z. B. /gartenpflege/#herbst-paket) + zweiter Link link2_to/link2_text; Ziele auch mit #anker oder ratgeber/… (Umbau 03.09.).
   const extraBlocks = (c && Array.isArray(c.blocks) ? c.blocks : []).map((b, i) =>
-    `<section class="sec${i % 2 ? '' : ' section-alt'}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2><p>${esc(b.body)}${copyLinksHtml(b)}</p></div></div></section>`).join('');
+    `<section class="sec${i % 2 ? '' : ' section-alt'}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2><p>${esc(b.body)}${copyLinksHtml(b)}</p></div></div></section>` + (b.cta_after ? ctaZwischen(s) : '')).join('');   // cta_after (CRO 16.09.): kontextueller CTA direkt nach dem Block mit höchster Kaufabsicht (Zaunbau: Referenzprojekt)
+  // Zaunarten-Vergleich (Zaunbau, 16.09.): Karten aus copy.zaunarten — Produktszenen (KI, gleiches Grundstück), kein Projektbezug; Preisfeld = Projektspanne oder "nach Besichtigung", nie €/lfm. Nur Hubs mit copy.zaunarten; sonst ''.
+  const zaunarten = (c && Array.isArray(c.zaunarten) && c.zaunarten.length) ? `<section class="sec section-alt" id="zaunarten"><div class="wrap"><div class="head"><h2 class="serif rv">Welcher Zaun passt zu Ihrem Grundstück?</h2><p class="rv">Fünf Systeme an fünf typischen Havelland-Grundstücken — vom Siedlungshaus bis zum Neubau. Die drei oberen sind unsere Standardsysteme, Alu und Schmuckzaun bauen wir auf Anfrage. Die Bilder zeigen die Zaunart, nicht ein Kundenprojekt.</p></div><div class="cards zaunarten rv">${c.zaunarten.map(z => `<div class="card${z.fokus ? '' : ' card-muted'}">${IMG[z.img] ? pic(z.img, { alt: esc(z.name) + ' — Beispiel im Vorgarten', sizes: '(max-width:700px) 92vw, 33vw' }) : ''}<h3>${esc(z.name)}${z.fokus ? '' : ' <span class="chip chip-muted">auf Anfrage</span>'}</h3><p><strong>Sichtschutz:</strong> ${esc(z.sichtschutz)}<br><strong>Haltbarkeit:</strong> ${esc(z.haltbarkeit)}<br><strong>Lieferzeit:</strong> ${esc(z.lieferzeit)}<br><strong>Für wen:</strong> ${esc(z.passend)}</p><p><strong>20 m inkl. Montage:</strong> ${esc(z.spanne)}</p></div>`).join('')}</div></div></section>` : '';
   // Zwischen-CTA nach der Prose auf allen Hubs ohne Galerie-CTA (voll = Heckenschnitt hat die Galerie)
   const zwischen = (s.partner_modell || gk !== 'voll') ? ctaZwischen(s) : '';
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
@@ -436,13 +448,14 @@ function hub(s) {
 <div class="shot rv in d2">${heroShot}</div></div></section>
 ${s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv">${definition}<h2>${esc(s.name)} im Havelland — was dazugehört</h2>${sektionenHtml}${naehe}${ablauf}<h3>${(s.garantie && !s.partner_modell) ? 'Unsere Garantie' : 'Unser Versprechen'}</h3><p>${esc(garantieTxt)}</p></div></div></section>
+${zaunarten}
 ${zwischen}
 ${IMG['svc-' + s.slug + '-detail'] ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic('svc-' + s.slug + '-detail', { alt: s.name + ' im Detail — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>` : ''}
 ${extraBlocks}
 ${rich}
 ${b2bCross}
 ${s.partner_modell ? endBandPartner(s) : endBand}`;
-  write(url, head(title, meta, url, schema) + header + main + footer + sctaBar(`Hallo, ich interessiere mich für ${s.name} im Havelland.`) + revealJS + '</body></html>');
+  write(url, head(title, meta, url, schema, { og: svcHero(s.slug) }) + header + main + footer + sctaBar(`Hallo, ich interessiere mich für ${s.name} im Havelland.`) + revealJS + '</body></html>');
   written.hubs.push(url);
 }
 
@@ -578,7 +591,7 @@ function ratgeberPage(r) {
   const KAL_RATGEBER = new Set(['wann-hecke-schneiden', 'hecke-schneiden-erlaubt', 'hecke-entfernen-erlaubt']);
   const kalEmbed = KAL_RATGEBER.has(r.slug) ? `<section class="sec section-alt"><div class="wrap">${schnittkalender()}</div></section>` : '';
   const faqSection = (r.faqs && r.faqs.length) ? `<section class="sec"><div class="wrap">${faqFilter(r.faqs)}</div></section>` : '';
-  const schema = `${orgSchema()},{"@type":"Article","@id":"${DOMAIN}${url}#article","headline":"${esc(r.title)}","image":"${imgAbs(ratHeaderImg(r))}","inLanguage":"de","author":{"@id":"${DOMAIN}/#organization"},"publisher":{"@id":"${DOMAIN}/#organization"},"mainEntityOfPage":"${DOMAIN}${url}"},${breadcrumb([{name:'Start',url:'/'},{name:'Ratgeber',url:'/ratgeber/'},{name:r.title,url}])}`;
+  const schema = `${orgSchema()},{"@type":"Article","@id":"${DOMAIN}${url}#article","headline":"${esc(r.title)}","image":"${imgAbs(ratHeaderImg(r))}","inLanguage":"de","author":{"@id":"${DOMAIN}/#organization"},"publisher":{"@id":"${DOMAIN}/#organization"},"mainEntityOfPage":"${DOMAIN}${url}","datePublished":"${sj(r.date_published || RATGEBER_DEFAULT_DATE)}","dateModified":"${sj(r.date_modified || r.date_published || RATGEBER_DEFAULT_DATE)}"},${breadcrumb([{name:'Start',url:'/'},{name:'Ratgeber',url:'/ratgeber/'},{name:r.title,url}])}`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/ratgeber/">Ratgeber</a><span class="sep">›</span>${esc(r.title)}</div>
 <section class="phero" style="border-bottom:none;padding-bottom:20px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Ratgeber</span><h1 class="rv in d1" style="max-width:16em">${esc(r.title)}</h1><p class="lead rv in d2">${esc(r.lead)}</p></div></section>
 <section class="sec" style="padding:14px 0 0"><div class="wrap"><div class="media-band rv">${pic(ratHeaderImg(r), { alt: r.title + ' — Ratgeber Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px', lcp: true })}</div></div></section>
@@ -589,7 +602,7 @@ ${faqSection}
 ${related.length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Das könnte Sie auch interessieren</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${related.map(x=>`<a class="card" href="/ratgeber/${x.slug}/"><h3>${esc(x.title)}</h3><p>${esc(x.lead||'')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : ''}
 ${(svc && svc.partner_modell) ? endBandPartner(svc) : endBand}`;
   const ni = svcNoindexBySlug(r.cta_service);
-  write(url, head(clampTitle(r.title), mkMeta(r.meta || r.lead), url, schema, { noindex: ni }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  write(url, head(clampTitle(r.title), mkMeta(r.meta || r.lead), url, schema, { noindex: ni, og: ratHeaderImg(r) }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.ratgeber.push(url); if (!ni) written.ratgeberIdx.push(url);
 }
 
@@ -951,7 +964,7 @@ function ratgeberIndex() {
   const url = '/ratgeber/';
   const list = ratCopy.length ? ratCopy : RATGEBER_FALLBACK;
   const cats = [
-    { label: 'Garten & Heckenpflege', svcs: ['gartenpflege', 'heckenschnitt', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau'], teaser: 'Wann geschnitten wird, was der Naturschutz erlaubt und wie regelmäßige Pflege im Havelland aussieht.' },
+    { label: 'Garten & Heckenpflege', svcs: ['gartenpflege', 'heckenschnitt', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau', 'zaunbau'], teaser: 'Wann geschnitten wird, was der Naturschutz erlaubt und wie regelmäßige Pflege im Havelland aussieht.' },
     { label: 'Reinigung & Außenflächen', svcs: ['fensterreinigung', 'steinreinigung', 'dachrinnenreinigung', 'dachreinigung', 'photovoltaikreinigung', 'gebaeudereinigung', 'grundreinigung', 'unterhaltsreinigung'], teaser: 'Von der streifenfreien Scheibe bis zum moosfreien Dach — Kosten, Turnus und worauf es beim Ergebnis ankommt.' },
     { label: 'Entrümpelung & Umzug', svcs: ['entruempelung', 'haushaltsaufloesung', 'umzugshilfe'], teaser: 'Was Entrümpelung und Haushaltsauflösung kosten, wie ein Festpreis zustande kommt und wie der Ablauf ist.' },
     { label: 'Winterdienst & Hausservice', svcs: ['winterdienst', 'hausmeisterservice', 'ferienwohnung-reinigung', 'objektbetreuung', 'renovierung'], teaser: 'Streupflicht, Saisonverträge und laufende Betreuung rund ums Haus im Havelland und Berliner Umland.' },

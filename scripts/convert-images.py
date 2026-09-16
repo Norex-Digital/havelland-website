@@ -25,16 +25,26 @@ BG_W     = [1024, 1376]
 def slug_for(rel):
     """rel = 'hubs/01-gartenpflege-hero' -> Ziel-Slug + Kategorie-Config."""
     folder, name = rel.split("/", 1)
+    # Slug-Mapping (16.09.): Dateiname 'NN-<slug>-hero' → Slug aus dem Namen, wenn er in services.json existiert;
+    # die Positionsnummer ist dann nur noch Sortierung. Fallback auf die alte positionale Zuordnung für Altbestand
+    # (z. B. 07-photovoltaik-hero, 11-umzug-hero stammen aus der Vor-Refokus-Zeit und tragen keinen gültigen Slug).
+    def _svc_from_name(nm, suffix):
+        body = nm[3:] if nm[2] == "-" else nm
+        cand = body[:-len(suffix)] if body.endswith(suffix) else body
+        return cand if cand in SVC else SVC[int(nm[:2]) - 1]
     if folder == "hubs":
-        n = int(name[:2]); return f"svc-{SVC[n-1]}-hero", HERO_W, True, None, 1024
+        return f"svc-{_svc_from_name(name, '-hero')}-hero", HERO_W, True, None, 1024
     if folder == "details":
-        n = int(name[:2]); return f"svc-{SVC[n-1]}-detail", DETAIL_W, True, None, 800
+        return f"svc-{_svc_from_name(name, '-detail')}-detail", DETAIL_W, True, None, 800
     if folder == "regional":
         # c1-brandenburg-gemeinde -> region-brandenburg-gemeinde
         return "region-" + name.split("-", 1)[1], REGION_W, True, None, 640
     if folder == "ratgeber":
         # d01-rasenpflege-kalender -> ratgeber-rasenpflege-kalender
         return "ratgeber-" + name.split("-", 1)[1], RAT_W, True, None, 768
+    if folder == "zaunarten":
+        # 01-doppelstab -> zaunart-doppelstab (Zaunarten-Vergleich auf /zaunbau/, 16.09.)
+        return "zaunart-" + name.split("-", 1)[1], DETAIL_W, True, None, 800
     if folder == "prozess":
         # e1-anfrage -> prozess-anfrage
         return "prozess-" + name.split("-", 1)[1], PROZ_W, True, None, 440
@@ -72,7 +82,7 @@ def resize_to(im, w, crop):
 
 manifest = {}
 count = {"avif":0,"webp":0,"jpg":0}
-for folder in ["marke","hubs","details","regional","ratgeber","prozess"]:
+for folder in ["marke","hubs","details","regional","ratgeber","prozess","zaunarten"]:
     d = os.path.join(SRC, folder)
     for fn in sorted(os.listdir(d)):
         if not fn.endswith(".png"): continue

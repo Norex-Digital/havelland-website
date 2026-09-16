@@ -665,6 +665,14 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 
 /* ---- Karten-Grid (.cards/.card — Hub->Ortsseiten / Orts-Hub->Services) ---- */
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+/* Zaunarten-Vergleich (16.09.): 3 Fokus-Karten oben, 2 „auf Anfrage“ darunter; gedämpft */
+.cards.zaunarten{grid-template-columns:repeat(3,1fr);gap:var(--s-lg,24px)}
+.cards.zaunarten .card-muted{opacity:.8}
+.cards.zaunarten .chip-muted{font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--muted);border:1px solid var(--hair);border-radius:var(--r-chip);padding:2px 9px;margin-left:8px;vertical-align:middle;white-space:nowrap}
+.cards.zaunarten .card p{display:block;-webkit-line-clamp:unset;overflow:visible}
+.cards.zaunarten .card img{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:var(--r-el);margin-bottom:var(--s-md,12px)}
+@media(max-width:900px){.cards.zaunarten{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.cards.zaunarten{grid-template-columns:1fr}}
 .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--hair);border-radius:16px;padding:22px 22px 20px;transition:transform .15s var(--ease),box-shadow .2s,border-color .2s}
 .card:hover{transform:translateY(-3px);box-shadow:0 18px 36px -22px rgba(14,46,31,.45);border-color:var(--green)}
 .card .n{font-family:var(--font-display);font-style:italic;color:var(--accent-d);font-size:15px}
@@ -734,3 +742,5 @@ body:has(.consent:not([hidden])) .scta{display:none}
 .cat{display:flex;align-items:baseline;gap:14px;margin-bottom:10px}
 .cat .cat-n{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:22px;color:var(--accent-d);line-height:1;flex:none}
 .cat h2{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,3.2vw,38px);color:var(--green-d);letter-spacing:-.015em}
+/* Audit 16.09.: Mobile-Menü erzeugte scrollWidth 780 bei 390 — horizontales Scrollen sitewide unterbinden (clip statt hidden: bricht position:sticky des Headers nicht) */
+html,body{overflow-x:clip}
