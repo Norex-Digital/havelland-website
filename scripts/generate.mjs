@@ -69,7 +69,8 @@ const ratgeberByService = {}; for (const r of ratCopy) { if (!r.cta_service) con
 const _ueb = CP('uebersicht.json') || {}; const uebL = _ueb.leistungen || {}; const uebS = _ueb.standorte || {};
 // Gruppierung: Service-Slug → Themen-Block (Portfolio-Refokus 2026-07-22: Garten & Außen · Entrümpelung & Auflösung · Dach · Für Gewerbe & Hausverwaltungen). Reihenfolge = Anzeige-Reihenfolge. b2b_only-Services (hausmeisterservice) leben im Gewerbe-Block.
 const LEISTUNGEN_KATEGORIEN = [
-  { key: 'garten', label: 'Garten & Außen', slugs: ['gartenpflege', 'heckenschnitt', 'winterdienst', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau', 'zaunbau', 'steinreinigung', 'fensterreinigung'] },
+  { key: 'garten', label: 'Garten & Außen', slugs: ['gartenpflege', 'heckenschnitt', 'winterdienst', 'baumschnitt', 'steinreinigung', 'fensterreinigung'] },
+  { key: 'galabau', label: 'GaLaBau & Rodung', slugs: ['galabau', 'zaunbau', 'heckenentfernung', 'gartenrodung', 'baumstumpf-entfernen'] },
   { key: 'aufloesung', label: 'Entrümpelung & Auflösung', slugs: ['entruempelung', 'haushaltsaufloesung', 'grundreinigung'] },
   { key: 'dach', label: 'Dach', slugs: ['dachrinnenreinigung', 'dachreinigung'] },
   { key: 'gewerbe', label: 'Für Gewerbe & Hausverwaltungen', slugs: ['hausmeisterservice', 'gebaeudereinigung', 'unterhaltsreinigung', 'objektbetreuung', 'ferienwohnung-reinigung'] }
@@ -988,14 +989,22 @@ ${endBand}`;
 function sitemaps() {
   // lastmod ist Pflicht, nicht Deko: ohne Änderungssignal crawlt Google freigeschaltete Seiten nicht neu
   // und behält den alten noindex-Stand (Vorfall 08.08.2026: 36 Seiten seit 13.07. nicht neu gecrawlt).
-  const LASTMOD = new Date().toISOString().slice(0, 10);
-  const sm = (name, urls) => { const x = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`<url><loc>${DOMAIN}${u}</loc><lastmod>${LASTMOD}</lastmod></url>`).join('\n')}\n</urlset>\n`; fs.writeFileSync(`website/${name}`, x); };
+  // lastmod je URL aus Content-Hash (W2, 17.09.): nur wenn sich der Seiteninhalt geändert hat, bekommt die URL ein neues Datum.
+  // Volatile Teile (Asset-Version ?v=…) werden vor dem Hashen entfernt. Persistenz in data/lastmod.json (committen!).
+  // Erstlauf setzt alle URLs auf das Build-Datum — ehrlich, weil W1/W2 Footer/Schema site-weit geändert haben.
+  const LM_FILE = 'data/lastmod.json';
+  const lm = fs.existsSync(LM_FILE) ? JSON.parse(fs.readFileSync(LM_FILE, 'utf8')) : {};
+  const today = new Date().toISOString().slice(0, 10);
+  const hashOf = u => { const p = `website${u}index.html`; if (!fs.existsSync(p)) return null; const h = fs.readFileSync(p, 'utf8').replace(/\?v=[a-f0-9]+/g, '').replace(/\r\n/g, '\n'); return crypto.createHash('sha1').update(h).digest('hex'); };
+  const lastmodOf = u => { const h = hashOf(u); if (!h) return today; const e = lm[u]; if (!e || e.hash !== h) lm[u] = { hash: h, date: today }; return lm[u].date; };
+  const sm = (name, urls) => { const dates = urls.map(lastmodOf); const x = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u, i) => `<url><loc>${DOMAIN}${u}</loc><lastmod>${dates[i]}</lastmod></url>`).join('\n')}\n</urlset>\n`; fs.writeFileSync(`website/${name}`, x); return dates.length ? dates.reduce((a, b) => a > b ? a : b) : today; };
   // Wellen-Gate: Hubs + Kern-Basis immer indexiert. Ortsseiten/Ratgeber service-scharf (nur wenn service.wave <= aktive_welle → in *Idx gesammelt). Orts-Hubs am globalen Gate. Bei aktive_welle=0 sind *Idx leer → Output wie bisher.
   const gate = (config.aktive_welle || 0) < 2; // Orts-Hubs erst ab Welle 2 (Welle 1 = nur service-scharfe Ortsseiten via *Idx)
-  sm('sitemap-services.xml', [...written.basis.filter(u=>['/','/leistungen/','/ueber-uns/','/bewertungen/','/kontakt/', ...((config.aktive_welle || 0) >= 2 ? ['/fuer-hausverwaltungen/'] : [])].includes(u)), ...written.hubs, ...written.ortsseitenIdx]);  // 14.09.: B2B-Seite ab Welle 2 in die Sitemap
-  sm('sitemap-standorte.xml', gate ? [] : [...written.orts_hubs, '/standorte/']);
-  sm('sitemap-ratgeber.xml', written.ratgeberIdx.length ? [...written.ratgeberIdx, '/ratgeber/'] : []);
-  const idx = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${['sitemap-services.xml','sitemap-standorte.xml','sitemap-ratgeber.xml'].map(f=>`<sitemap><loc>${DOMAIN}/${f}</loc><lastmod>${LASTMOD}</lastmod></sitemap>`).join('\n')}\n</sitemapindex>\n`;
+  const lmServices = sm('sitemap-services.xml', [...written.basis.filter(u=>['/','/leistungen/','/ueber-uns/','/bewertungen/','/kontakt/', ...((config.aktive_welle || 0) >= 2 ? ['/fuer-hausverwaltungen/'] : [])].includes(u)), ...written.hubs, ...written.ortsseitenIdx]);  // 14.09.: B2B-Seite ab Welle 2 in die Sitemap
+  const lmStandorte = sm('sitemap-standorte.xml', gate ? [] : [...written.orts_hubs, '/standorte/']);
+  const lmRatgeber = sm('sitemap-ratgeber.xml', written.ratgeberIdx.length ? [...written.ratgeberIdx, '/ratgeber/'] : []);
+  fs.writeFileSync(LM_FILE, JSON.stringify(lm, null, 0) + '\n');
+  const idx = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[['sitemap-services.xml',lmServices],['sitemap-standorte.xml',lmStandorte],['sitemap-ratgeber.xml',lmRatgeber]].map(([f,d])=>`<sitemap><loc>${DOMAIN}/${f}</loc><lastmod>${d}</lastmod></sitemap>`).join('\n')}\n</sitemapindex>\n`;
   fs.writeFileSync('website/sitemap.xml', idx);
   fs.writeFileSync('website/robots.txt', `User-agent: *\nAllow: /\n\n# AI-Crawler erlaubt (AEO/GEO)\nUser-agent: GPTBot\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
   // llms.txt (GEO)
