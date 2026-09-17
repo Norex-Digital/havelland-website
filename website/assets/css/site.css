@@ -438,6 +438,8 @@ footer{background:var(--cream);border-top:1px solid var(--hair);padding:50px 0 4
 footer .fnap{font-weight:600;color:var(--ink);margin-bottom:6px}
 footer .fcols{display:grid;gap:34px;margin-top:34px}
 footer h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:12px}
+footer h4 a{color:inherit;text-decoration:none}
+footer h4 a:hover{text-decoration:underline}
 footer ul{list-style:none}
 footer li{padding:4px 0}
 footer a{color:var(--ink);font-weight:500}
