@@ -157,11 +157,12 @@
       "schema_types": [
         "HomeAndConstructionBusiness",
         "Service",
+        "Person",
         "BreadcrumbList"
       ],
       "faq_count": 10,
-      "internal_links": 76,
-      "word_count": 3563
+      "internal_links": 77,
+      "word_count": 3610
     },
     "/haushaltsaufloesung/": {
       "title": "Haushaltsauflösung im Havelland: Erbfall, Pflegefall, Umzug",
@@ -175,11 +176,12 @@
       "schema_types": [
         "HomeAndConstructionBusiness",
         "Service",
+        "Person",
         "BreadcrumbList"
       ],
       "faq_count": 9,
       "internal_links": 73,
-      "word_count": 2698
+      "word_count": 2700
     },
     "/grundreinigung/": {
       "title": "Grundreinigung / Auszugsreinigung Havelland",
@@ -362,22 +364,22 @@
       "word_count": 1727
     },
     "/galabau/": {
-      "title": "GaLaBau Falkensee | Kleinere Garten- &amp; Pflasterarbeiten",
-      "title_len": 59,
-      "meta": "Kleinere GaLaBau-Arbeiten in Falkensee &amp; im Havelland: Pflaster ausbessern, Kantensteine, Beeteinfassungen, Hochbeete. Kostenlose Besichtigung, Festpreis.",
+      "title": "GaLaBau Falkensee &amp; Havelland: Zaun, Rodung, Pflaster",
+      "title_len": 57,
+      "meta": "Kleinere GaLaBau-Arbeiten in Falkensee und im Havelland: Zaunbau, Heckenentfernung, Rodung, Stubben fräsen, Pflaster. Festpreis nach kostenloser Besichtigung.",
       "meta_len": 158,
-      "h1": "Kleinere GaLaBau-Arbeiten in Falkensee und im Havelland",
+      "h1": "Kleinere GaLaBau-Arbeiten in Falkensee und im Havelland — Zaun, Rodung, Stubben, Pflaster",
       "h1_count": 1,
-      "h2_count": 8,
+      "h2_count": 11,
       "canonical": "https://haus-und-gartenservice-havelland.de/galabau/",
       "schema_types": [
         "HomeAndConstructionBusiness",
         "Service",
         "BreadcrumbList"
       ],
-      "faq_count": 5,
-      "internal_links": 67,
-      "word_count": 1361
+      "faq_count": 8,
+      "internal_links": 73,
+      "word_count": 3107
     }
   }
 }

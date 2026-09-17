@@ -1,0 +1,383 @@
+- generic [active] [ref=f11e1]:
+  - banner [ref=f11e2]:
+    - generic [ref=f11e3]:
+      - link [ref=f11e4] [cursor=pointer]:
+        - /url: /
+        - img "Haus- & Gartenservice Havelland" [ref=f11e6]
+      - link [ref=f11e7] [cursor=pointer]:
+        - /url: tel:+4915156198195
+      - checkbox "Menü öffnen und schließen"
+      - generic [aria-hidden] [ref=f11e10] [cursor=pointer]
+      - navigation "Hauptmenü" [ref=f11e14]:
+        - link "Leistungen" [ref=f11e15] [cursor=pointer]:
+          - /url: /leistungen/
+        - link "Standorte" [ref=f11e16] [cursor=pointer]:
+          - /url: /standorte/
+        - link "Ratgeber" [ref=f11e17] [cursor=pointer]:
+          - /url: /ratgeber/
+        - link "Über uns" [ref=f11e18] [cursor=pointer]:
+          - /url: /ueber-uns/
+        - link "Bewertungen" [ref=f11e19] [cursor=pointer]:
+          - /url: /bewertungen/
+        - link "Für Hausverwaltungen" [ref=f11e20] [cursor=pointer]:
+          - /url: /fuer-hausverwaltungen/
+        - link "Kontakt" [ref=f11e21] [cursor=pointer]:
+          - /url: /kontakt/
+        - link "☎ 01515 6198195" [ref=f11e22] [cursor=pointer]:
+          - /url: tel:+4915156198195
+        - link "Kostenlose Besichtigung" [ref=f11e23] [cursor=pointer]:
+          - /url: /kontakt/
+  - generic [ref=f11e24]:
+    - link "Start" [ref=f11e25] [cursor=pointer]:
+      - /url: /
+    - text: ›Für Hausverwaltungen
+  - generic [ref=f11e29]:
+    - generic [ref=f11e30]:
+      - generic [ref=f11e31]: Für Hausverwaltungen, WEG & Gewerbe
+      - heading [level=1] [ref=f11e32]:
+        - text: Objektpflege für Hausverwaltungen, WEG und Gewerbe im Havelland —
+        - emphasis [ref=f11e33]: ein Vertrag, ein Ansprechpartner
+      - paragraph [ref=f11e34]: Grünpflege, Laub, Treppenhaus und Kleinreparaturen führen wir selbst aus, Winterdienst und Dachrinne übernimmt ein Partner-Fachbetrieb. Nachweis nach jedem Einsatz, für Objekte in Falkensee, im Havelland und in Spandau.
+      - generic [ref=f11e35]:
+        - link "Angebot für Ihr Objekt anfordern" [ref=f11e36] [cursor=pointer]:
+          - /url: mailto:hausgartenservicehvl@gmail.com?subject=Angebot%20Objektpflege&body=Guten%20Tag%2C%0A%0Awir%20sind%20eine%20Hausverwaltung%20%2F%20eine%20WEG%20%2F%20ein%20Gewerbebetrieb%20und%20interessieren%20uns%20f%C3%BCr%20die%20Objektpflege.%0A%0AObjektadresse(n)%3A%20%0AArt%20des%20Objekts%20(WEG%2C%20Mehrfamilienhaus%2C%20Gewerbe)%3A%20%0AGew%C3%BCnschte%20Bausteine%20(Gr%C3%BCnpflege%2C%20Winterdienst%2C%20Treppenhaus%2C%20Kleinreparaturen%2C%20Dachrinne%2C%20R%C3%A4umung)%3A%20%0AGew%C3%BCnschter%20Turnus%3A%20%0AGew%C3%BCnschter%20Beginn%3A%20%0A%0ABitte%20senden%20Sie%20uns%20ein%20schriftliches%20Angebot.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen
+        - link "☎ 01515 6198195" [ref=f11e37] [cursor=pointer]:
+          - /url: tel:+4915156198195
+    - img "Wohnanlage im Havelland — Objektbetreuung durch den Haus- & Gartenservice Havelland" [ref=f11e40]
+  - region "Unsere drei Zusagen" [ref=f11e41]:
+    - generic [ref=f11e43]:
+      - generic [ref=f11e44]:
+        - generic [ref=f11e45]: "01"
+        - generic [ref=f11e46]:
+          - heading "Ein Ansprechpartner" [level=3] [ref=f11e47]
+          - paragraph [ref=f11e48]: Noah Telo kennt Ihre Objekte — Begehung, Termine und Nachweise laufen über eine Nummer.
+      - generic [ref=f11e49]:
+        - generic [ref=f11e50]: "02"
+        - generic [ref=f11e51]:
+          - heading "Nachweis je Einsatz" [level=3] [ref=f11e52]
+          - paragraph [ref=f11e53]: Fotos bei unserer Ausführung, Einsatznachweis mit Datum und Uhrzeit beim Partner-Betrieb bei Winterdienst und Dachrinne.
+      - generic [ref=f11e54]:
+        - generic [ref=f11e55]: "03"
+        - generic [ref=f11e56]:
+          - heading "Schriftliches Angebot je Objekt" [level=3] [ref=f11e57]
+          - paragraph [ref=f11e58]: Grünpflege, Reinigung, Kleinreparaturen und Entrümpelung von uns — Winterdienst und Dachrinne vom Partner-Fachbetrieb.
+  - generic [ref=f11e61]:
+    - heading "Für wen wir arbeiten" [level=2] [ref=f11e62]
+    - paragraph [ref=f11e63]: Wir betreuen bereits Objekte im Havelland in festen Pflegeverträgen. Sobald mehrere Gewerke an einem Objekt zusammenkommen, braucht es jemanden, der den Überblick behält. Noah Telo nimmt Ihre Objekte auf, plant Begehung und Termine und schickt Ihnen den Nachweis nach jedem Einsatz. Wer welche Leistung ausführt, steht bei jeder Leistung dabei.
+    - list [ref=f11e64]:
+      - listitem [ref=f11e65]:
+        - strong [ref=f11e66]: Wohnungseigentümergemeinschaft (WEG)
+        - text: — Ein Saisonvertrag statt Einzelaufträge, Nachweis für alle Eigentümer.
+      - listitem [ref=f11e67]:
+        - strong [ref=f11e68]: Mehrfamilienhaus und Vermieter
+        - text: — Gehwege, Grünflächen und Müllplatz im festen Turnus, dazu die Wohnung leer nach Auszug.
+      - listitem [ref=f11e69]:
+        - strong [ref=f11e70]: Hausverwaltung mit mehreren Objekten
+        - text: — Eine Begehung je Objekt, Angebote und Nachweise objektweise sortiert.
+      - listitem [ref=f11e71]:
+        - strong [ref=f11e72]: Gewerbehof und Autohaus
+        - text: — Zufahrt, Ladezone und Ausstellungsfläche vor der Öffnung frei und gepflegt.
+      - listitem [ref=f11e73]:
+        - strong [ref=f11e74]: Einzelhandel und Kundenparkplatz
+        - text: — Stellflächen, Wege und Eingang begehbar, bevor die ersten Kunden kommen.
+      - listitem [ref=f11e75]:
+        - strong [ref=f11e76]: Praxis und Büro
+        - text: — Eingang, Treppenhaus und Außenanlage im vereinbarten Rhythmus gepflegt.
+    - paragraph [ref=f11e77]:
+      - text: "Einzelne Leistungen im Detail:"
+      - link "Winterdienst" [ref=f11e78] [cursor=pointer]:
+        - /url: /winterdienst/
+      - text: ","
+      - link "Gartenpflege und Laub" [ref=f11e79] [cursor=pointer]:
+        - /url: /gartenpflege/
+      - text: ","
+      - link "Dachrinnenreinigung" [ref=f11e80] [cursor=pointer]:
+        - /url: /dachrinnenreinigung/
+      - text: ","
+      - link "Entrümpelung" [ref=f11e81] [cursor=pointer]:
+        - /url: /entruempelung/
+      - text: ","
+      - link "Haushaltsauflösung" [ref=f11e82] [cursor=pointer]:
+        - /url: /haushaltsaufloesung/
+      - text: ","
+      - link "Hausmeisterservice" [ref=f11e83] [cursor=pointer]:
+        - /url: /hausmeisterservice/
+      - text: .
+  - generic [ref=f11e85]:
+    - heading "Unsere Leistungen für Ihr Objekt" [level=2] [ref=f11e87]
+    - generic [ref=f11e88]:
+      - link "01 Grünpflege und Laub Eigene Ausführung Rasen, Hecken, Beete und Gehölze pflegen wir im festen Turnus, dazu im Herbst mehrere Laubeinsätze auf Wegen, Stellflächen und Grünstreifen. Grünschnitt und Laub laden wir auf und fahren sie ab. Nach jedem Einsatz bekommen Sie Fotos, damit Eigentümer und Verwaltung den Zustand jederzeit nachvollziehen können. Mehr zur Gartenpflege →" [ref=f11e89] [cursor=pointer]:
+        - /url: /gartenpflege/
+        - generic [ref=f11e90]: "01"
+        - heading "Grünpflege und Laub" [level=3] [ref=f11e91]
+        - generic [ref=f11e92]: Eigene Ausführung
+        - paragraph [ref=f11e93]: Rasen, Hecken, Beete und Gehölze pflegen wir im festen Turnus, dazu im Herbst mehrere Laubeinsätze auf Wegen, Stellflächen und Grünstreifen. Grünschnitt und Laub laden wir auf und fahren sie ab. Nach jedem Einsatz bekommen Sie Fotos, damit Eigentümer und Verwaltung den Zustand jederzeit nachvollziehen können.
+        - generic [ref=f11e94]: Mehr zur Gartenpflege →
+      - link "02 Winterdienst Partner-Fachbetrieb Ein Partner-Fachbetrieb räumt und streut Parkplatz, Hof, Zufahrt und Gehweg maschinell, schmale Wege und Eingänge von Hand. Den Saisonvertrag schließen Sie direkt mit dem ausführenden Betrieb, wir koordinieren Begehung und Ablauf. Jeder Einsatz kommt mit Einsatznachweis, Datum und Uhrzeit, für jedes Objekt einzeln. Mehr zum Winterdienst →" [ref=f11e95] [cursor=pointer]:
+        - /url: /winterdienst/
+        - generic [ref=f11e96]: "02"
+        - heading "Winterdienst" [level=3] [ref=f11e97]
+        - generic [ref=f11e98]: Partner-Fachbetrieb
+        - paragraph [ref=f11e99]: Ein Partner-Fachbetrieb räumt und streut Parkplatz, Hof, Zufahrt und Gehweg maschinell, schmale Wege und Eingänge von Hand. Den Saisonvertrag schließen Sie direkt mit dem ausführenden Betrieb, wir koordinieren Begehung und Ablauf. Jeder Einsatz kommt mit Einsatznachweis, Datum und Uhrzeit, für jedes Objekt einzeln.
+        - generic [ref=f11e100]: Mehr zum Winterdienst →
+      - link "03 Treppenhaus- und Unterhaltsreinigung Eigene Ausführung Treppenhaus, Eingang, Müllplatz und Gemeinschaftsflächen reinigen wir im vereinbarten Turnus, wöchentlich oder nach Ihrem Rhythmus. Handläufe, Fenster im Treppenhaus und Böden gehören dazu. Nach jedem Termin dokumentieren wir den gereinigten Zustand mit Foto, damit Sie ihn nachvollziehen können, ohne selbst vor Ort zu sein. Mehr zur Unterhaltsreinigung →" [ref=f11e101] [cursor=pointer]:
+        - /url: /unterhaltsreinigung/
+        - generic [ref=f11e102]: "03"
+        - heading "Treppenhaus- und Unterhaltsreinigung" [level=3] [ref=f11e103]
+        - generic [ref=f11e104]: Eigene Ausführung
+        - paragraph [ref=f11e105]: Treppenhaus, Eingang, Müllplatz und Gemeinschaftsflächen reinigen wir im vereinbarten Turnus, wöchentlich oder nach Ihrem Rhythmus. Handläufe, Fenster im Treppenhaus und Böden gehören dazu. Nach jedem Termin dokumentieren wir den gereinigten Zustand mit Foto, damit Sie ihn nachvollziehen können, ohne selbst vor Ort zu sein.
+        - generic [ref=f11e106]: Mehr zur Unterhaltsreinigung →
+      - 'link "04 Kleinreparaturen und Objektkontrolle Eigene Ausführung Bei regelmäßigen Kontrollgängen prüfen wir Beleuchtung, Zugänge, Briefkästen und Außenanlagen und beheben kleine Mängel direkt: klemmende Türen, lose Fliesen, defekte Leuchtmittel. Arbeiten, die einen Fachbetrieb brauchen, Elektro- oder Sanitärinstallation, melden wir an die Verwaltung, statt sie selbst anzufassen. Jeden Kontrollgang halten wir mit Foto fest. Mehr zur Objektbetreuung →" [ref=f11e107] [cursor=pointer]':
+        - /url: /objektbetreuung/
+        - generic [ref=f11e108]: "04"
+        - heading "Kleinreparaturen und Objektkontrolle" [level=3] [ref=f11e109]
+        - generic [ref=f11e110]: Eigene Ausführung
+        - paragraph [ref=f11e111]: "Bei regelmäßigen Kontrollgängen prüfen wir Beleuchtung, Zugänge, Briefkästen und Außenanlagen und beheben kleine Mängel direkt: klemmende Türen, lose Fliesen, defekte Leuchtmittel. Arbeiten, die einen Fachbetrieb brauchen, Elektro- oder Sanitärinstallation, melden wir an die Verwaltung, statt sie selbst anzufassen. Jeden Kontrollgang halten wir mit Foto fest."
+        - generic [ref=f11e112]: Mehr zur Objektbetreuung →
+      - link "05 Dachrinnenreinigung Partner-Fachbetrieb Ein Partner-Fachbetrieb befreit Rinne und Fallrohr vor dem Winter von Laub und Moos und prüft danach die Funktion. Das Angebot stellt der ausführende Betrieb nach der Objektbegehung, wir koordinieren Termin und Ablauf und bleiben über Noah Telo Ihr fester Ansprechpartner im Havelland. Mehr zur Dachrinnenreinigung →" [ref=f11e113] [cursor=pointer]:
+        - /url: /dachrinnenreinigung/
+        - generic [ref=f11e114]: "05"
+        - heading "Dachrinnenreinigung" [level=3] [ref=f11e115]
+        - generic [ref=f11e116]: Partner-Fachbetrieb
+        - paragraph [ref=f11e117]: Ein Partner-Fachbetrieb befreit Rinne und Fallrohr vor dem Winter von Laub und Moos und prüft danach die Funktion. Das Angebot stellt der ausführende Betrieb nach der Objektbegehung, wir koordinieren Termin und Ablauf und bleiben über Noah Telo Ihr fester Ansprechpartner im Havelland.
+        - generic [ref=f11e118]: Mehr zur Dachrinnenreinigung →
+      - link "06 Räumung nach Auszug Eigene Ausführung Wohnung, Keller oder Dachboden räumen wir nach Auszug oder Todesfall leer und besenrein, den Abtransport übernehmen wir komplett. Nach der Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, Entsorgungsgebühren weisen wir nach Beleg zuzüglich Mehrwertsteuer aus. Nach dem Einsatz bekommen Sie die Fotos. Mehr zur Entrümpelung →" [ref=f11e119] [cursor=pointer]:
+        - /url: /entruempelung/
+        - generic [ref=f11e120]: "06"
+        - heading "Räumung nach Auszug" [level=3] [ref=f11e121]
+        - generic [ref=f11e122]: Eigene Ausführung
+        - paragraph [ref=f11e123]: Wohnung, Keller oder Dachboden räumen wir nach Auszug oder Todesfall leer und besenrein, den Abtransport übernehmen wir komplett. Nach der Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, Entsorgungsgebühren weisen wir nach Beleg zuzüglich Mehrwertsteuer aus. Nach dem Einsatz bekommen Sie die Fotos.
+        - generic [ref=f11e124]: Mehr zur Entrümpelung →
+    - paragraph [ref=f11e125]: "Winterdienst und Dachrinnenreinigung führt ein Partner-Fachbetrieb aus: Vertrag und Angebot schließen Sie direkt mit diesem Betrieb, wir koordinieren Besichtigung, Termin und Ablauf."
+  - generic [ref=f11e127]:
+    - heading "Angebot für Ihr Objekt anfordern" [level=2] [ref=f11e129]
+    - paragraph [ref=f11e130]: Senden Sie uns Objektadresse, Art des Objekts und die gewünschten Bausteine. Wir melden uns zur Begehung; das Angebot für Winterdienst und Dachrinne stellt der ausführende Partner-Fachbetrieb.
+    - generic [ref=f11e131]:
+      - link "Angebot für Ihr Objekt anfordern" [ref=f11e132] [cursor=pointer]:
+        - /url: mailto:hausgartenservicehvl@gmail.com?subject=Angebot%20Objektpflege&body=Guten%20Tag%2C%0A%0Awir%20sind%20eine%20Hausverwaltung%20%2F%20eine%20WEG%20%2F%20ein%20Gewerbebetrieb%20und%20interessieren%20uns%20f%C3%BCr%20die%20Objektpflege.%0A%0AObjektadresse(n)%3A%20%0AArt%20des%20Objekts%20(WEG%2C%20Mehrfamilienhaus%2C%20Gewerbe)%3A%20%0AGew%C3%BCnschte%20Bausteine%20(Gr%C3%BCnpflege%2C%20Winterdienst%2C%20Treppenhaus%2C%20Kleinreparaturen%2C%20Dachrinne%2C%20R%C3%A4umung)%3A%20%0AGew%C3%BCnschter%20Turnus%3A%20%0AGew%C3%BCnschter%20Beginn%3A%20%0A%0ABitte%20senden%20Sie%20uns%20ein%20schriftliches%20Angebot.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen
+      - link "☎ 01515 6198195" [ref=f11e133] [cursor=pointer]:
+        - /url: tel:+4915156198195
+  - generic [ref=f11e137]:
+    - paragraph [ref=f11e138]: Ein Vertrag, ein Ansprechpartner für alle Objekte — Nachweis nach jedem Einsatz.
+    - generic [ref=f11e139]:
+      - generic [ref=f11e140]:
+        - 'heading "01 Fester Ansprechpartner: Noah Telo" [level=4] [ref=f11e141]':
+          - generic [ref=f11e142]: "01"
+          - text: "Fester Ansprechpartner: Noah Telo"
+        - paragraph [ref=f11e143]: Ein Kontakt für alle Objekte, keine Warteschleife, Vertretung steht vorab fest.
+      - generic [ref=f11e144]:
+        - heading "02 Schriftliches Angebot nach Begehung" [level=4] [ref=f11e145]:
+          - generic [ref=f11e146]: "02"
+          - text: Schriftliches Angebot nach Begehung
+        - paragraph [ref=f11e147]: Eigenleistungen von uns, Winterdienst und Dachrinne vom ausführenden Fachbetrieb.
+      - generic [ref=f11e148]:
+        - heading "03 Nachweis je Einsatz" [level=4] [ref=f11e149]:
+          - generic [ref=f11e150]: "03"
+          - text: Nachweis je Einsatz
+        - paragraph [ref=f11e151]: Fotos bei Eigenleistung, Einsatznachweis mit Datum und Uhrzeit vom Partner-Betrieb bei Winterdienst und Dachrinne.
+      - generic [ref=f11e152]:
+        - heading "04 Vertrag mit dem, der ausführt" [level=4] [ref=f11e153]:
+          - generic [ref=f11e154]: "04"
+          - text: Vertrag mit dem, der ausführt
+        - paragraph [ref=f11e155]: "Winterdienst und Dachrinne: Vertrag und Preis direkt vom Partner-Fachbetrieb."
+  - generic [ref=f11e157]:
+    - heading "So kommen Sie zum Angebot" [level=2] [ref=f11e159]
+    - generic [ref=f11e160]:
+      - generic [ref=f11e161]:
+        - generic [ref=f11e162]: "1"
+        - generic [ref=f11e163]:
+          - generic [ref=f11e164]: Tag 1
+          - heading "Anfrage per E-Mail oder Telefon" [level=3] [ref=f11e165]
+          - paragraph [ref=f11e166]: Objektadresse, Art des Objekts und die gewünschten Bausteine genügen für den Anfang.
+      - generic [ref=f11e167]:
+        - generic [ref=f11e168]: "2"
+        - generic [ref=f11e169]:
+          - generic [ref=f11e170]: Kurzfristig · kostenlos
+          - heading "Begehung mit Noah Telo" [level=3] [ref=f11e171]
+          - paragraph [ref=f11e172]: Noah Telo nimmt die Objekte vor Ort auf; bei Winterdienst und Dachrinne kommt der Partner-Fachbetrieb dazu.
+      - generic [ref=f11e173]:
+        - generic [ref=f11e174]: "3"
+        - generic [ref=f11e175]:
+          - generic [ref=f11e176]: Nach der Begehung
+          - heading "Schriftliches Angebot je Objekt" [level=3] [ref=f11e177]
+          - paragraph [ref=f11e178]: "Ein Angebot je Baustein: Grünpflege, Reinigung und Kleinreparaturen von uns, Winterdienst und Dachrinne vom ausführenden Fachbetrieb."
+      - generic [ref=f11e179]:
+        - generic [ref=f11e180]: "4"
+        - generic [ref=f11e181]:
+          - generic [ref=f11e182]: Vor dem ersten Einsatz
+          - heading "Vertrag mit Turnus und Vertretung" [level=3] [ref=f11e183]
+          - paragraph [ref=f11e184]: Turnus, Ansprechpartner und Vertretung stehen schriftlich fest, bevor der erste Termin startet.
+      - generic [ref=f11e185]:
+        - generic [ref=f11e186]: "5"
+        - generic [ref=f11e187]:
+          - generic [ref=f11e188]: Ab dem ersten Einsatz
+          - heading "Foto-Reporting je Einsatz" [level=3] [ref=f11e189]
+          - paragraph [ref=f11e190]: Fotos oder Einsatznachweis, je Objekt zugeordnet, für Eigentümer, Verwaltung und Versicherung.
+  - generic [ref=f11e192]:
+    - heading [level=2] [ref=f11e194]:
+      - text: Häufige
+      - emphasis [ref=f11e195]: Fragen.
+    - paragraph [ref=f11e196]:
+      - text: Kurz und ehrlich beantwortet. Ihre Frage fehlt?
+      - link "Schreiben Sie uns per WhatsApp." [ref=f11e197] [cursor=pointer]:
+        - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20habe%20eine%20Frage.
+    - generic [ref=f11e198]:
+      - searchbox "Fragen durchsuchen" [ref=f11e200]
+      - paragraph
+      - group [ref=f11e201]:
+        - generic "Betreuen Sie auch mehrere Objekte einer Hausverwaltung?" [ref=f11e202] [cursor=pointer]
+      - group [ref=f11e204]:
+        - generic "Wer führt den Winterdienst aus?" [ref=f11e205] [cursor=pointer]
+      - group [ref=f11e207]:
+        - generic "Übernehmen Sie unsere Räum- und Streupflicht?" [ref=f11e208] [cursor=pointer]
+      - group [ref=f11e210]:
+        - generic "Wie läuft die Abrechnung bei mehreren Objekten?" [ref=f11e211] [cursor=pointer]
+      - group [ref=f11e213]:
+        - generic "Räumen Sie auch Wohnungen und Keller nach Auszug oder Todesfall?" [ref=f11e214] [cursor=pointer]
+      - group [ref=f11e216]:
+        - generic "Wie schnell reagieren Sie bei Meldungen?" [ref=f11e217] [cursor=pointer]
+  - generic [ref=f11e220]:
+    - heading "Sagen Sie uns, welche Objekte anstehen — wir melden uns zur Begehung." [level=2] [ref=f11e221]
+    - paragraph [ref=f11e222]: Angebot je Objekt, Nachweis je Einsatz, ein Ansprechpartner.
+    - generic [ref=f11e223]:
+      - link "Angebot für Ihr Objekt anfordern" [ref=f11e224] [cursor=pointer]:
+        - /url: mailto:hausgartenservicehvl@gmail.com?subject=Angebot%20Objektpflege&body=Guten%20Tag%2C%0A%0Awir%20sind%20eine%20Hausverwaltung%20%2F%20eine%20WEG%20%2F%20ein%20Gewerbebetrieb%20und%20interessieren%20uns%20f%C3%BCr%20die%20Objektpflege.%0A%0AObjektadresse(n)%3A%20%0AArt%20des%20Objekts%20(WEG%2C%20Mehrfamilienhaus%2C%20Gewerbe)%3A%20%0AGew%C3%BCnschte%20Bausteine%20(Gr%C3%BCnpflege%2C%20Winterdienst%2C%20Treppenhaus%2C%20Kleinreparaturen%2C%20Dachrinne%2C%20R%C3%A4umung)%3A%20%0AGew%C3%BCnschter%20Turnus%3A%20%0AGew%C3%BCnschter%20Beginn%3A%20%0A%0ABitte%20senden%20Sie%20uns%20ein%20schriftliches%20Angebot.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen
+      - link "☎ 01515 6198195" [ref=f11e225] [cursor=pointer]:
+        - /url: tel:+4915156198195
+  - contentinfo [ref=f11e226]:
+    - generic [ref=f11e227]:
+      - paragraph [ref=f11e228]: Haus- & Gartenservice Havelland
+      - paragraph [ref=f11e229]:
+        - text: Darmstädter Str. 15, 14612 Falkensee ·
+        - link "01515 6198195" [ref=f11e230] [cursor=pointer]:
+          - /url: tel:+4915156198195
+        - text: ·
+        - link "hausgartenservicehvl@gmail.com" [ref=f11e231] [cursor=pointer]:
+          - /url: mailto:hausgartenservicehvl@gmail.com
+        - text: Mo–Fr 7–19 Uhr · Sa 8–16 Uhr · So geschlossen
+      - generic [ref=f11e232]:
+        - generic [ref=f11e233]:
+          - heading [level=4] [ref=f11e234]:
+            - link "Garten & Grundstück" [ref=f11e235] [cursor=pointer]:
+              - /url: /gartenpflege/
+          - list [ref=f11e236]:
+            - listitem [ref=f11e237]:
+              - link "Gartenpflege" [ref=f11e238] [cursor=pointer]:
+                - /url: /gartenpflege/
+            - listitem [ref=f11e239]:
+              - link "Herbst-Paket (Laub)" [ref=f11e240] [cursor=pointer]:
+                - /url: /gartenpflege/#herbst-paket
+            - listitem [ref=f11e241]:
+              - link "Heckenschnitt" [ref=f11e242] [cursor=pointer]:
+                - /url: /heckenschnitt/
+            - listitem [ref=f11e243]:
+              - link "Baumschnitt" [ref=f11e244] [cursor=pointer]:
+                - /url: /baumschnitt/
+            - listitem [ref=f11e245]:
+              - link "Dachrinnenreinigung" [ref=f11e246] [cursor=pointer]:
+                - /url: /dachrinnenreinigung/
+            - listitem [ref=f11e247]:
+              - link "Fensterreinigung" [ref=f11e248] [cursor=pointer]:
+                - /url: /fensterreinigung/
+            - listitem [ref=f11e249]:
+              - link "Winterdienst" [ref=f11e250] [cursor=pointer]:
+                - /url: /winterdienst/
+            - listitem [ref=f11e251]:
+              - link "Dachreinigung" [ref=f11e252] [cursor=pointer]:
+                - /url: /dachreinigung/
+            - listitem [ref=f11e253]:
+              - link "Steinreinigung" [ref=f11e254] [cursor=pointer]:
+                - /url: /steinreinigung/
+        - generic [ref=f11e255]:
+          - heading [level=4] [ref=f11e256]:
+            - link "GaLaBau & Rodung" [ref=f11e257] [cursor=pointer]:
+              - /url: /galabau/
+          - list [ref=f11e258]:
+            - listitem [ref=f11e259]:
+              - link "Zaunbau" [ref=f11e260] [cursor=pointer]:
+                - /url: /zaunbau/
+            - listitem [ref=f11e261]:
+              - link "Heckenentfernung" [ref=f11e262] [cursor=pointer]:
+                - /url: /heckenentfernung/
+            - listitem [ref=f11e263]:
+              - link "Gartenrodung" [ref=f11e264] [cursor=pointer]:
+                - /url: /gartenrodung/
+            - listitem [ref=f11e265]:
+              - link "Baumstumpf-Entfernung" [ref=f11e266] [cursor=pointer]:
+                - /url: /baumstumpf-entfernen/
+            - listitem [ref=f11e267]:
+              - link "GaLaBau-Arbeiten" [ref=f11e268] [cursor=pointer]:
+                - /url: /galabau/
+          - heading [level=4] [ref=f11e269]:
+            - link "Entrümpelung & Auflösung" [ref=f11e270] [cursor=pointer]:
+              - /url: /entruempelung/
+          - list [ref=f11e271]:
+            - listitem [ref=f11e272]:
+              - link "Entrümpelung" [ref=f11e273] [cursor=pointer]:
+                - /url: /entruempelung/
+            - listitem [ref=f11e274]:
+              - link "Haushaltsauflösung" [ref=f11e275] [cursor=pointer]:
+                - /url: /haushaltsaufloesung/
+            - listitem [ref=f11e276]:
+              - link "Grundreinigung" [ref=f11e277] [cursor=pointer]:
+                - /url: /grundreinigung/
+            - listitem [ref=f11e278]:
+              - link "Ferienwohnung-Reinigung" [ref=f11e279] [cursor=pointer]:
+                - /url: /ferienwohnung-reinigung/
+        - generic [ref=f11e280]:
+          - heading [level=4] [ref=f11e281]:
+            - link "Hausverwaltungen & Objekte" [ref=f11e282] [cursor=pointer]:
+              - /url: /fuer-hausverwaltungen/
+          - list [ref=f11e283]:
+            - listitem [ref=f11e284]:
+              - link "Für Hausverwaltungen" [ref=f11e285] [cursor=pointer]:
+                - /url: /fuer-hausverwaltungen/
+            - listitem [ref=f11e286]:
+              - link "Objektbetreuung" [ref=f11e287] [cursor=pointer]:
+                - /url: /objektbetreuung/
+            - listitem [ref=f11e288]:
+              - link "Hausmeisterservice" [ref=f11e289] [cursor=pointer]:
+                - /url: /hausmeisterservice/
+            - listitem [ref=f11e290]:
+              - link "Unterhaltsreinigung" [ref=f11e291] [cursor=pointer]:
+                - /url: /unterhaltsreinigung/
+            - listitem [ref=f11e292]:
+              - link "Gebäudereinigung" [ref=f11e293] [cursor=pointer]:
+                - /url: /gebaeudereinigung/
+          - heading "Unternehmen" [level=4] [ref=f11e294]
+          - list [ref=f11e295]:
+            - listitem [ref=f11e296]:
+              - link "Alle Leistungen" [ref=f11e297] [cursor=pointer]:
+                - /url: /leistungen/
+            - listitem [ref=f11e298]:
+              - link "Standorte" [ref=f11e299] [cursor=pointer]:
+                - /url: /standorte/
+            - listitem [ref=f11e300]:
+              - link "Ratgeber" [ref=f11e301] [cursor=pointer]:
+                - /url: /ratgeber/
+            - listitem [ref=f11e302]:
+              - link "Über uns" [ref=f11e303] [cursor=pointer]:
+                - /url: /ueber-uns/
+            - listitem [ref=f11e304]:
+              - link "Bewertungen" [ref=f11e305] [cursor=pointer]:
+                - /url: /bewertungen/
+            - listitem [ref=f11e306]:
+              - link "Kontakt" [ref=f11e307] [cursor=pointer]:
+                - /url: /kontakt/
+      - generic [ref=f11e308]:
+        - generic [ref=f11e309]: Haus- & Gartenservice Havelland (GbR)
+        - link "Impressum" [ref=f11e310] [cursor=pointer]:
+          - /url: /impressum/
+        - link "Datenschutz" [ref=f11e311] [cursor=pointer]:
+          - /url: /datenschutz/
+        - link "Cookie-Einstellungen" [ref=f11e312] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=f11e314]:
+    - paragraph [ref=f11e315]:
+      - text: Wir nutzen Cookies für Statistik (Google Analytics) und die Erfolgsmessung unserer Google-Werbung — Daten gehen an Google, auch in die USA. Details und Widerruf in der
+      - link "Datenschutzerklärung" [ref=f11e316] [cursor=pointer]:
+        - /url: /datenschutz/
+      - text: .
+    - generic [ref=f11e317]:
+      - button "Ablehnen" [ref=f11e318] [cursor=pointer]
+      - button "Akzeptieren" [ref=f11e319] [cursor=pointer]

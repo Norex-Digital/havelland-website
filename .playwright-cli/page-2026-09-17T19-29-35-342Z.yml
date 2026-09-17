@@ -1,0 +1,341 @@
+- generic [active] [ref=f12e1]:
+  - banner [ref=f12e2]:
+    - generic [ref=f12e3]:
+      - link [ref=f12e4] [cursor=pointer]:
+        - /url: /
+        - img "Haus- & Gartenservice Havelland" [ref=f12e6]
+      - link [ref=f12e7] [cursor=pointer]:
+        - /url: tel:+4915156198195
+      - checkbox "Menü öffnen und schließen"
+      - generic [aria-hidden] [ref=f12e10] [cursor=pointer]
+      - navigation "Hauptmenü" [ref=f12e14]:
+        - link "Leistungen" [ref=f12e15] [cursor=pointer]:
+          - /url: /leistungen/
+        - link "Standorte" [ref=f12e16] [cursor=pointer]:
+          - /url: /standorte/
+        - link "Ratgeber" [ref=f12e17] [cursor=pointer]:
+          - /url: /ratgeber/
+        - link "Über uns" [ref=f12e18] [cursor=pointer]:
+          - /url: /ueber-uns/
+        - link "Bewertungen" [ref=f12e19] [cursor=pointer]:
+          - /url: /bewertungen/
+        - link "Für Hausverwaltungen" [ref=f12e20] [cursor=pointer]:
+          - /url: /fuer-hausverwaltungen/
+        - link "Kontakt" [ref=f12e21] [cursor=pointer]:
+          - /url: /kontakt/
+        - link "☎ 01515 6198195" [ref=f12e22] [cursor=pointer]:
+          - /url: tel:+4915156198195
+        - link "Kostenlose Besichtigung" [ref=f12e23] [cursor=pointer]:
+          - /url: /kontakt/
+  - generic [ref=f12e24]:
+    - link "Start" [ref=f12e25] [cursor=pointer]:
+      - /url: /
+    - text: ›
+    - link "Ratgeber" [ref=f12e26] [cursor=pointer]:
+      - /url: /ratgeber/
+    - text: "›Wertstoffhof Falkensee: Öffnungszeiten, Gebühren, Annahme"
+  - generic [ref=f12e28]:
+    - generic [ref=f12e29]: Ratgeber
+    - 'heading "Wertstoffhof Falkensee: Öffnungszeiten, Gebühren, Annahme" [level=1] [ref=f12e30]'
+    - paragraph [ref=f12e31]: Adresse, Öffnungszeiten und Gebühren des Wertstoffhofs Falkensee im Überblick — mit den aktuellen Sätzen der Abfallgebührensatzung 2026.
+  - 'img "Wertstoffhof Falkensee: Öffnungszeiten, Gebühren, Annahme — Ratgeber Haus- & Gartenservice Havelland" [ref=f12e36]'
+  - generic [ref=f12e39]:
+    - generic [ref=f12e40]:
+      - generic [ref=f12e41]: Die kurze Antwort
+      - paragraph [ref=f12e42]: Der Wertstoffhof Falkensee liegt in der Nauener Straße 97. Geöffnet ist montags von 9 bis 18 Uhr, dienstags bis freitags von 9 bis 17 Uhr und samstags von 8 bis 13 Uhr. Sperrmüll, Schrott, Elektroaltgeräte, Leuchtstoffröhren und Schadstoffe nehmen die Mitarbeiter von Privathaushalten kostenfrei an, alle übrigen Abfälle werden auf der Fahrzeugwaage gewogen und nach Gewicht abgerechnet. Angaben laut Betreiber, Stand 17.09.2026. Bitte vor der Fahrt prüfen.
+    - heading "Adresse und Öffnungszeiten" [level=2] [ref=f12e43]
+    - paragraph [ref=f12e44]: "Der Wertstoffhof Falkensee, umgangssprachlich auch Recyclinghof Falkensee genannt, wird von der Abfallbehandlungsgesellschaft Havelland mbH (Schwanebecker Weg 25, 14641 Nauen) im Auftrag des Landkreises Havelland, Sachgebiet Abfallentsorgung, betrieben. Die Adresse des Hofs selbst: Nauener Straße 97, 14612 Falkensee, im Gewerbegebiet Nord an der Straße Richtung Brieselang und Nauen."
+    - table [ref=f12e45]:
+      - rowgroup [ref=f12e46]:
+        - row [ref=f12e47]:
+          - columnheader "Tag" [ref=f12e48]
+          - columnheader "Uhrzeit" [ref=f12e49]
+        - row [ref=f12e50]:
+          - cell "Montag" [ref=f12e51]
+          - cell "9–18 Uhr" [ref=f12e52]
+        - row [ref=f12e53]:
+          - cell "Dienstag–Freitag" [ref=f12e54]
+          - cell "9–17 Uhr" [ref=f12e55]
+        - row [ref=f12e56]:
+          - cell "Samstag" [ref=f12e57]
+          - cell "8–13 Uhr" [ref=f12e58]
+    - paragraph [ref=f12e59]:
+      - text: Für Rückfragen zur Anlieferung ist die Abfallberatung des Betreibers unter 03321 748946 erreichbar, die des Landkreises Havelland unter 03321 4035418. Getrennte Sommer- oder Winteröffnungszeiten nennt die Betreiberseite nicht. Die oben genannten Zeiten gelten laut aktueller Veröffentlichung ganzjährig. Feiertage und kurzfristige Änderungen prüfen Sie am besten direkt beim Betreiber; die jeweils aktuellen Zeiten stehen auf
+      - link "abfall-havelland.de" [ref=f12e60] [cursor=pointer]:
+        - /url: https://www.abfall-havelland.de/index.php?page_id=544
+      - text: .
+    - 'heading "Annahmeliste: Was der Wertstoffhof annimmt und was nicht" [level=2] [ref=f12e61]'
+    - paragraph [ref=f12e62]: "Der Wertstoffhof Falkensee nimmt alle Abfallarten laut Gebührensatzung in haushaltsüblichen Mengen an. Dazu zählen laut Betreiber:"
+    - list [ref=f12e63]:
+      - listitem [ref=f12e64]: Sperrmüll
+      - listitem [ref=f12e65]: Schrott
+      - listitem [ref=f12e66]: Papier und Pappe
+      - listitem [ref=f12e67]: Elektroaltgeräte
+      - listitem [ref=f12e68]: Leuchtstoffröhren und Energiesparlampen
+      - listitem [ref=f12e69]: Schadstoffe
+      - listitem [ref=f12e70]: Althandys, CDs und DVDs
+      - listitem [ref=f12e71]: Druckerpatronen und Kartuschen
+      - listitem [ref=f12e72]: Gartenabfälle und kompostierbare Abfälle
+    - paragraph [ref=f12e73]: "Nicht angenommen werden dagegen:"
+    - list [ref=f12e74]:
+      - listitem [ref=f12e75]: Gelbe Säcke
+      - listitem [ref=f12e76]: Gasflaschen und weitere Druckbehälter
+    - paragraph [ref=f12e77]: "Wer unsicher ist, ob eine bestimmte Abfallart dazugehört, fragt am besten vorab telefonisch beim Betreiber nach: Die Annahmeliste kann sich ändern, und eine vergebliche Fahrt kostet Zeit. Die obige Liste bildet den Stand der Betreiberveröffentlichung vom 17.09.2026 ab und gilt für Anlieferungen in haushaltsüblicher Menge; bei größeren Mengen nimmt der Betreiber vor Ort eine eigene Einordnung vor."
+    - 'heading "Gebühren 2026: was kostenlos ist und was gewogen wird" [level=2] [ref=f12e78]'
+    - paragraph [ref=f12e79]: "Aus privaten Haushalten sind diese Abfallarten kostenfrei, weil sie über die Basisgebühr abgegolten sind (§ 3 Abs. 1.1 Abfallgebührensatzung 2026):"
+    - list [ref=f12e80]:
+      - listitem [ref=f12e81]: Sperrmüll
+      - listitem [ref=f12e82]: Schrott
+      - listitem [ref=f12e83]: Papier und Pappe
+      - listitem [ref=f12e84]: Elektroaltgeräte
+      - listitem [ref=f12e85]: Leuchtstoffröhren
+      - listitem [ref=f12e86]: Schadstoffe
+    - paragraph [ref=f12e87]: "Alle anderen Anlieferungen werden auf der Fahrzeugwaage gewogen und nach Gewicht abgerechnet (§ 3 Abs. 3.2); für Kleinmengen unter der Mindestlast gilt eine Volumenpauschale je Abfallart (Anlage 3 Teil II). Die Gebührensätze 2026 laut Anlage 3 Teil I:"
+    - table [ref=f12e88]:
+      - rowgroup [ref=f12e89]:
+        - row [ref=f12e90]:
+          - columnheader "Abfallart" [ref=f12e91]
+          - columnheader "€/kg" [ref=f12e92]
+        - row [ref=f12e93]:
+          - cell "Gemischte Siedlungsabfälle" [ref=f12e94]
+          - cell "0,32" [ref=f12e95]
+        - row [ref=f12e96]:
+          - cell "Altholz A1–A4" [ref=f12e97]
+          - cell "0,36" [ref=f12e98]
+        - row [ref=f12e99]:
+          - cell "Sperrmüll, sonstige Herkunft" [ref=f12e100]
+          - cell "0,31" [ref=f12e101]
+        - row [ref=f12e102]:
+          - cell "Schrott" [ref=f12e103]
+          - cell "0,00" [ref=f12e104]
+        - row [ref=f12e105]:
+          - cell "Teer-/Bitumenpappe mit Nachweis" [ref=f12e106]
+          - cell "0,70" [ref=f12e107]
+        - row [ref=f12e108]:
+          - cell "Kunststoffe a. n. g." [ref=f12e109]
+          - cell "0,40" [ref=f12e110]
+    - paragraph [ref=f12e111]: "Vor Ort gilt: nur Barzahlung, Müllsäcke 5,50 € je Stück, Big Bags 9,00 € je Stück. Stand: Abfallgebührensatzung 2026, Kreistag Havelland vom 15.12.2025."
+    - heading "So läuft die Anlieferung ab" [level=2] [ref=f12e112]
+    - paragraph [ref=f12e113]: "Jedes Fahrzeug wird auf der Waage erfasst: beladen bei der Einfahrt, leer bei der Ausfahrt, die Differenz ergibt das abzurechnende Gewicht. Kostenfreie Fraktionen wie Sperrmüll oder Elektroschrott sortieren Sie vor Ort in den zugehörigen Container, kostenpflichtige Fraktionen weist der Betreiber nach Gewicht auf dem Beleg aus."
+    - paragraph [ref=f12e114]: Aus einem eigenen Auftrag in Falkensee liegen uns zwei solcher Belege vor. Auf ihnen standen zusammen 458 € für Siedlungsabfall und Altholz aus einer Abstellkammer und einem Gartenschuppen, verteilt auf zwei Fahrten zum Hof. Das zeigt, wie schnell sich Gewicht bei Renovierungs- oder Räumgut summiert. Allein Altholz kostet 0,36 € pro Kilogramm.
+    - paragraph [ref=f12e115]: Wer die Menge vorab realistisch einschätzen will, wiegt zuhause grob nach (Kofferraum, Anhänger) oder fragt vor dem Abladen am Hof nach einer Einschätzung.
+    - heading "Zu viel für den Anhänger? Wir holen ab" [level=2] [ref=f12e116]
+    - paragraph [ref=f12e117]: "Nicht jede Räumung passt auf einen Anhänger oder in mehrere Fahrten zum Wertstoffhof: vollgestellte Keller, aufgelöste Haushalte oder ganze Schuppen brauchen oft mehr Ladefläche und Zeit, als ein Wochenende erlaubt. Solche Mengen betreffen häufig Nachlassauflösungen, Kellerentrümpelungen oder das Räumen eines Gartenhauses vor dem Verkauf: Situationen, in denen mehrere Fahrten zum Hof allein aus Zeitgründen nicht praktikabel sind."
+    - paragraph [ref=f12e118]: Haus- & Gartenservice Havelland übernimmt Räumung und Abtransport zum Festpreis nach einer kostenlosen Besichtigung. Die Entsorgungsgebühren der Annahmestellen rechnen wir danach nach Beleg ab, zuzüglich Mehrwertsteuer und ohne eigenen Aufschlag. Sie müssen dafür nicht selbst zum Hof fahren, warten oder wiegen.
+    - paragraph [ref=f12e119]:
+      - text: "Ablauf und Preisfaktoren im Detail:"
+      - link "Entrümpelung im Havelland" [ref=f12e120] [cursor=pointer]:
+        - /url: /entruempelung/
+      - text: .
+    - heading "Andere Wertstoffhöfe im Landkreis" [level=2] [ref=f12e121]
+    - paragraph [ref=f12e122]: "Der Landkreis Havelland betreibt neben Falkensee zwei weitere Wertstoffhöfe:"
+    - list [ref=f12e123]:
+      - listitem [ref=f12e124]:
+        - strong [ref=f12e125]: Nauen/Schwanebeck
+        - text: ": Schwanebecker Weg 25, 14641 Nauen OT Schwanebeck (mit Deponie Schwanebeck). Öffnungszeiten laut Betreiber nicht veröffentlicht, Auskunft vor Ort."
+      - listitem [ref=f12e126]:
+        - strong [ref=f12e127]: Rathenow/Bölkershof
+        - text: ": Bölkershof 8, Rathenow. Öffnungszeiten laut Betreiber nicht veröffentlicht, Auskunft vor Ort."
+    - paragraph [ref=f12e128]: Für Falkensee, Dallgow-Döberitz, Schönwalde-Glien und Brieselang ist der Hof in Falkensee der nächstgelegene; Wustermark und Brieselang liegen etwa zwischen Falkensee und Nauen/Schwanebeck. Da sich die Zeiten der beiden anderen Höfe von Falkensee unterscheiden können, fragen Sie am besten direkt beim Betreiber nach, bevor Sie losfahren.
+  - generic [ref=f12e130]:
+    - heading [level=2] [ref=f12e132]:
+      - text: Häufige
+      - emphasis [ref=f12e133]: Fragen.
+    - paragraph [ref=f12e134]:
+      - text: Kurz und ehrlich beantwortet. Ihre Frage fehlt?
+      - link "Schreiben Sie uns per WhatsApp." [ref=f12e135] [cursor=pointer]:
+        - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20habe%20eine%20Frage.
+    - generic [ref=f12e136]:
+      - searchbox "Fragen durchsuchen" [ref=f12e138]
+      - paragraph
+      - group [ref=f12e139]:
+        - generic "Hat der Wertstoffhof Falkensee samstags geöffnet?" [ref=f12e140] [cursor=pointer]
+      - group [ref=f12e142]:
+        - generic "Kostet die Anlieferung am Wertstoffhof Falkensee etwas?" [ref=f12e143] [cursor=pointer]
+      - group [ref=f12e145]:
+        - generic "Was kostet die Anlieferung von Altholz?" [ref=f12e146] [cursor=pointer]
+      - group [ref=f12e148]:
+        - generic "Nimmt der Wertstoffhof Sperrmüll aus Haushaltsauflösungen an?" [ref=f12e149] [cursor=pointer]
+      - group [ref=f12e151]:
+        - generic "Was kostet die Anlieferung kleiner Mengen?" [ref=f12e152] [cursor=pointer]
+      - group [ref=f12e154]:
+        - generic "Kann ich Elektrogeräte am Wertstoffhof Falkensee abgeben?" [ref=f12e155] [cursor=pointer]
+  - generic [ref=f12e158]:
+    - heading "Lieber machen lassen?" [level=2] [ref=f12e159]
+    - paragraph [ref=f12e160]: Zu viel für den Wertstoffhof? Wir übernehmen Entrümpelung im Havelland zum Festpreis nach kostenloser Besichtigung. Entsorgung rechnen wir nach Beleg ab.
+    - generic [ref=f12e161]:
+      - link "Kostenlose Besichtigung anfragen" [ref=f12e162] [cursor=pointer]:
+        - /url: /kontakt/#anfrage
+      - link "☎ 01515 6198195" [ref=f12e163] [cursor=pointer]:
+        - /url: tel:+4915156198195
+      - link "WhatsApp" [ref=f12e164] [cursor=pointer]:
+        - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Entr%C3%BCmpelung.
+    - paragraph [ref=f12e165]:
+      - link "Mehr zu Entrümpelung im Havelland →" [ref=f12e166] [cursor=pointer]:
+        - /url: /entruempelung/
+  - generic [ref=f12e168]:
+    - generic [ref=f12e169]:
+      - heading "Das könnte Sie auch interessieren" [level=2] [ref=f12e170]
+      - link "Alle Ratgeber →" [ref=f12e171] [cursor=pointer]:
+        - /url: /ratgeber/
+    - generic [ref=f12e172]:
+      - 'link "Sperrmüll im Havelland anmelden: Regeln, Fristen, Ausnahmen So melden Sie Sperrmüll in Falkensee und im übrigen Havelland an: mit Fristen, Ausnahmen und der Frage, wann der Wertstoffhof die schnellere Lösung ist. Lesen →" [ref=f12e173] [cursor=pointer]':
+        - /url: /ratgeber/sperrmuell-havelland-anmelden/
+        - 'heading "Sperrmüll im Havelland anmelden: Regeln, Fristen, Ausnahmen" [level=3] [ref=f12e174]'
+        - paragraph [ref=f12e175]: "So melden Sie Sperrmüll in Falkensee und im übrigen Havelland an: mit Fristen, Ausnahmen und der Frage, wann der Wertstoffhof die schnellere Lösung ist."
+        - generic [ref=f12e176]: Lesen →
+      - 'link "Keller, Garage oder Dachboden entrümpeln: Kosten und Ablauf Was Keller, Garage oder Dachboden beim Entrümpeln kosten, hängt von Volumen, Zugang und Entsorgung ab. Ein echtes Preisbeispiel aus Falkensee zeigt die Größenordnung, dazu die ehrliche Rechnung: selbst fahren oder Firma beauftragen. Lesen →" [ref=f12e177] [cursor=pointer]':
+        - /url: /ratgeber/keller-garage-dachboden-entruempeln/
+        - 'heading "Keller, Garage oder Dachboden entrümpeln: Kosten und Ablauf" [level=3] [ref=f12e178]'
+        - paragraph [ref=f12e179]: "Was Keller, Garage oder Dachboden beim Entrümpeln kosten, hängt von Volumen, Zugang und Entsorgung ab. Ein echtes Preisbeispiel aus Falkensee zeigt die Größenordnung, dazu die ehrliche Rechnung: selbst fahren oder Firma beauftragen."
+        - generic [ref=f12e180]: Lesen →
+      - 'link "Gartenhaus abreißen und entsorgen: Kosten, Ablauf, Regeln Was beim Abriss eines Gartenhauses zu klären ist, was die getrennte Entsorgung von Holz, Metall und Dachpappe kostet und wann eine Anzeige beim Bauamt nötig wird. Lesen →" [ref=f12e181] [cursor=pointer]':
+        - /url: /ratgeber/gartenhaus-abreissen-entsorgen/
+        - 'heading "Gartenhaus abreißen und entsorgen: Kosten, Ablauf, Regeln" [level=3] [ref=f12e182]'
+        - paragraph [ref=f12e183]: Was beim Abriss eines Gartenhauses zu klären ist, was die getrennte Entsorgung von Holz, Metall und Dachpappe kostet und wann eine Anzeige beim Bauamt nötig wird.
+        - generic [ref=f12e184]: Lesen →
+  - generic [ref=f12e186]:
+    - heading "Sagen Sie uns, was ansteht — wir kümmern uns." [level=2] [ref=f12e187]
+    - paragraph [ref=f12e188]: Kostenlose Besichtigung, Festpreis, dann erledigt.
+    - generic [ref=f12e189]:
+      - link "Kostenlose Besichtigung anfragen" [ref=f12e190] [cursor=pointer]:
+        - /url: /kontakt/#anfrage
+      - link "☎ 01515 6198195" [ref=f12e191] [cursor=pointer]:
+        - /url: tel:+4915156198195
+  - contentinfo [ref=f12e192]:
+    - generic [ref=f12e193]:
+      - paragraph [ref=f12e194]: Haus- & Gartenservice Havelland
+      - paragraph [ref=f12e195]:
+        - text: Darmstädter Str. 15, 14612 Falkensee ·
+        - link "01515 6198195" [ref=f12e196] [cursor=pointer]:
+          - /url: tel:+4915156198195
+        - text: ·
+        - link "hausgartenservicehvl@gmail.com" [ref=f12e197] [cursor=pointer]:
+          - /url: mailto:hausgartenservicehvl@gmail.com
+        - text: Mo–Fr 7–19 Uhr · Sa 8–16 Uhr · So geschlossen
+      - generic [ref=f12e198]:
+        - generic [ref=f12e199]:
+          - heading [level=4] [ref=f12e200]:
+            - link "Garten & Grundstück" [ref=f12e201] [cursor=pointer]:
+              - /url: /gartenpflege/
+          - list [ref=f12e202]:
+            - listitem [ref=f12e203]:
+              - link "Gartenpflege" [ref=f12e204] [cursor=pointer]:
+                - /url: /gartenpflege/
+            - listitem [ref=f12e205]:
+              - link "Herbst-Paket (Laub)" [ref=f12e206] [cursor=pointer]:
+                - /url: /gartenpflege/#herbst-paket
+            - listitem [ref=f12e207]:
+              - link "Heckenschnitt" [ref=f12e208] [cursor=pointer]:
+                - /url: /heckenschnitt/
+            - listitem [ref=f12e209]:
+              - link "Baumschnitt" [ref=f12e210] [cursor=pointer]:
+                - /url: /baumschnitt/
+            - listitem [ref=f12e211]:
+              - link "Dachrinnenreinigung" [ref=f12e212] [cursor=pointer]:
+                - /url: /dachrinnenreinigung/
+            - listitem [ref=f12e213]:
+              - link "Fensterreinigung" [ref=f12e214] [cursor=pointer]:
+                - /url: /fensterreinigung/
+            - listitem [ref=f12e215]:
+              - link "Winterdienst" [ref=f12e216] [cursor=pointer]:
+                - /url: /winterdienst/
+            - listitem [ref=f12e217]:
+              - link "Dachreinigung" [ref=f12e218] [cursor=pointer]:
+                - /url: /dachreinigung/
+            - listitem [ref=f12e219]:
+              - link "Steinreinigung" [ref=f12e220] [cursor=pointer]:
+                - /url: /steinreinigung/
+        - generic [ref=f12e221]:
+          - heading [level=4] [ref=f12e222]:
+            - link "GaLaBau & Rodung" [ref=f12e223] [cursor=pointer]:
+              - /url: /galabau/
+          - list [ref=f12e224]:
+            - listitem [ref=f12e225]:
+              - link "Zaunbau" [ref=f12e226] [cursor=pointer]:
+                - /url: /zaunbau/
+            - listitem [ref=f12e227]:
+              - link "Heckenentfernung" [ref=f12e228] [cursor=pointer]:
+                - /url: /heckenentfernung/
+            - listitem [ref=f12e229]:
+              - link "Gartenrodung" [ref=f12e230] [cursor=pointer]:
+                - /url: /gartenrodung/
+            - listitem [ref=f12e231]:
+              - link "Baumstumpf-Entfernung" [ref=f12e232] [cursor=pointer]:
+                - /url: /baumstumpf-entfernen/
+            - listitem [ref=f12e233]:
+              - link "GaLaBau-Arbeiten" [ref=f12e234] [cursor=pointer]:
+                - /url: /galabau/
+          - heading [level=4] [ref=f12e235]:
+            - link "Entrümpelung & Auflösung" [ref=f12e236] [cursor=pointer]:
+              - /url: /entruempelung/
+          - list [ref=f12e237]:
+            - listitem [ref=f12e238]:
+              - link "Entrümpelung" [ref=f12e239] [cursor=pointer]:
+                - /url: /entruempelung/
+            - listitem [ref=f12e240]:
+              - link "Haushaltsauflösung" [ref=f12e241] [cursor=pointer]:
+                - /url: /haushaltsaufloesung/
+            - listitem [ref=f12e242]:
+              - link "Grundreinigung" [ref=f12e243] [cursor=pointer]:
+                - /url: /grundreinigung/
+            - listitem [ref=f12e244]:
+              - link "Ferienwohnung-Reinigung" [ref=f12e245] [cursor=pointer]:
+                - /url: /ferienwohnung-reinigung/
+        - generic [ref=f12e246]:
+          - heading [level=4] [ref=f12e247]:
+            - link "Hausverwaltungen & Objekte" [ref=f12e248] [cursor=pointer]:
+              - /url: /fuer-hausverwaltungen/
+          - list [ref=f12e249]:
+            - listitem [ref=f12e250]:
+              - link "Für Hausverwaltungen" [ref=f12e251] [cursor=pointer]:
+                - /url: /fuer-hausverwaltungen/
+            - listitem [ref=f12e252]:
+              - link "Objektbetreuung" [ref=f12e253] [cursor=pointer]:
+                - /url: /objektbetreuung/
+            - listitem [ref=f12e254]:
+              - link "Hausmeisterservice" [ref=f12e255] [cursor=pointer]:
+                - /url: /hausmeisterservice/
+            - listitem [ref=f12e256]:
+              - link "Unterhaltsreinigung" [ref=f12e257] [cursor=pointer]:
+                - /url: /unterhaltsreinigung/
+            - listitem [ref=f12e258]:
+              - link "Gebäudereinigung" [ref=f12e259] [cursor=pointer]:
+                - /url: /gebaeudereinigung/
+          - heading "Unternehmen" [level=4] [ref=f12e260]
+          - list [ref=f12e261]:
+            - listitem [ref=f12e262]:
+              - link "Alle Leistungen" [ref=f12e263] [cursor=pointer]:
+                - /url: /leistungen/
+            - listitem [ref=f12e264]:
+              - link "Standorte" [ref=f12e265] [cursor=pointer]:
+                - /url: /standorte/
+            - listitem [ref=f12e266]:
+              - link "Ratgeber" [ref=f12e267] [cursor=pointer]:
+                - /url: /ratgeber/
+            - listitem [ref=f12e268]:
+              - link "Über uns" [ref=f12e269] [cursor=pointer]:
+                - /url: /ueber-uns/
+            - listitem [ref=f12e270]:
+              - link "Bewertungen" [ref=f12e271] [cursor=pointer]:
+                - /url: /bewertungen/
+            - listitem [ref=f12e272]:
+              - link "Kontakt" [ref=f12e273] [cursor=pointer]:
+                - /url: /kontakt/
+      - generic [ref=f12e274]:
+        - generic [ref=f12e275]: Haus- & Gartenservice Havelland (GbR)
+        - link "Impressum" [ref=f12e276] [cursor=pointer]:
+          - /url: /impressum/
+        - link "Datenschutz" [ref=f12e277] [cursor=pointer]:
+          - /url: /datenschutz/
+        - link "Cookie-Einstellungen" [ref=f12e278] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=f12e280]:
+    - paragraph [ref=f12e281]:
+      - text: Wir nutzen Cookies für Statistik (Google Analytics) und die Erfolgsmessung unserer Google-Werbung — Daten gehen an Google, auch in die USA. Details und Widerruf in der
+      - link "Datenschutzerklärung" [ref=f12e282] [cursor=pointer]:
+        - /url: /datenschutz/
+      - text: .
+    - generic [ref=f12e283]:
+      - button "Ablehnen" [ref=f12e284] [cursor=pointer]
+      - button "Akzeptieren" [ref=f12e285] [cursor=pointer]

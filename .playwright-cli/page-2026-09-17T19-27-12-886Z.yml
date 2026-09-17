@@ -1,0 +1,361 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Haus- & Gartenservice Havelland" [ref=e6]
+      - navigation "Hauptnavigation" [ref=e7]:
+        - link "Leistungen" [ref=e8] [cursor=pointer]:
+          - /url: /leistungen/
+        - link "Standorte" [ref=e9] [cursor=pointer]:
+          - /url: /standorte/
+        - link "Ratgeber" [ref=e10] [cursor=pointer]:
+          - /url: /ratgeber/
+        - link "Hausverwaltungen" [ref=e11] [cursor=pointer]:
+          - /url: /fuer-hausverwaltungen/
+        - link "Über uns" [ref=e12] [cursor=pointer]:
+          - /url: /ueber-uns/
+        - link "Kontakt" [ref=e13] [cursor=pointer]:
+          - /url: /kontakt/
+      - link "01515 6198195" [ref=e14] [cursor=pointer]:
+        - /url: tel:+4915156198195
+      - link "Kostenlose Besichtigung" [ref=e18] [cursor=pointer]:
+        - /url: /kontakt/
+      - checkbox "Menü öffnen und schließen"
+  - generic [ref=e19]:
+    - link "Start" [ref=e20] [cursor=pointer]:
+      - /url: /
+    - text: ›
+    - link "Entrümpelung" [ref=e21] [cursor=pointer]:
+      - /url: /entruempelung/
+    - text: ›Falkensee
+  - generic [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e27]: Falkensee · 14612
+      - heading [level=1] [ref=e28]:
+        - text: Entrümpelung
+        - emphasis [ref=e29]: in Falkensee
+      - paragraph [ref=e30]: "Ihre Entrümpelung in Falkensee: Keller, Garage, Dachboden, Schuppen oder Wohnung — ausgeräumt und besenrein übergeben. Festpreis für Räumung und Abtransport nach kostenloser Besichtigung in Falkensee, Entsorgung nach Beleg, Foto-Nachweis."
+      - generic [ref=e31]:
+        - link "Kostenlose Besichtigung anfragen" [ref=e32] [cursor=pointer]:
+          - /url: /kontakt/#anfrage
+        - link "WhatsApp" [ref=e33] [cursor=pointer]:
+          - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20brauche%20Entr%C3%BCmpelung%20in%20Falkensee.
+    - img "Entrümpelung in Falkensee — Haus- & Gartenservice Havelland" [ref=e36]
+  - region "Unsere drei Zusagen" [ref=e37]:
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: "01"
+        - generic [ref=e42]:
+          - heading "Festpreis für Räumung & Abtransport" [level=3] [ref=e43]
+          - paragraph [ref=e44]: Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest. Entsorgungsgebühren weisen wir nach Beleg aus.
+      - generic [ref=e45]:
+        - generic [ref=e46]: "02"
+        - generic [ref=e47]:
+          - heading "Foto-Nachweis" [level=3] [ref=e48]
+          - paragraph [ref=e49]: Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.
+      - generic [ref=e50]:
+        - generic [ref=e51]: "03"
+        - generic [ref=e52]:
+          - heading "Ein Ansprechpartner" [level=3] [ref=e53]
+          - paragraph [ref=e54]: Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.
+  - generic [ref=e57]:
+    - heading "Entrümpelung in Falkensee — zuverlässig & lokal" [level=2] [ref=e58]
+    - paragraph [ref=e59]: Falkensee ist die größte Stadt im Havelland, direkt an der Grenze zu Berlin-Spandau und mit Brieselang und Dallgow-Döberitz als Nachbarn. Hinter den vielen Einfamilienhäusern und den älteren Siedlungshäusern stecken über die Jahre volle Keller, Dachböden und Garagen. Wird ein Haushalt gelöst, steht ein Umzug an oder ist einfach über Jahrzehnte zu viel zusammengekommen, räumen wir das diskret aus. Von der Anfrage bis zur besenreinen Übergabe bleibt dieselbe Hand zuständig, und die kurzen Wege aus dem Havelland halten den Termin nah. Ausgeräumt, nicht ausgesessen.
+    - paragraph [ref=e60]: In Falkensee treffen wir vom schmalen Reihenhauskeller bis zum vollgestellten Einfamilienhaus alles an. Wir sortieren vor Ort, trennen Brauchbares vom Müll und tragen auch aus dem Dachgeschoss und engen Treppenhäusern heraus, ohne dass Sie mit anpacken. Alt-Möbel, Elektrogeräte, Metall und Problemstoffe führen wir getrennt der richtigen Entsorgung zu. Wertgegenstände rechnen wir vorher offen vom Preis ab. Am Ende steht die Fläche besenrein bereit — für die Übergabe an Käufer, Vermieter oder die eigene Weiternutzung.
+    - heading "Festpreis & Foto-Nachweis" [level=3] [ref=e61]
+    - paragraph [ref=e62]: Nach der kostenlosen Besichtigung in Falkensee steht ein Festpreis für Räumung und Abtransport, Entsorgungsgebühren nach Beleg. Sie erhalten die Räume besenrein zurück und auf Wunsch Vorher-Nachher-Fotos aufs Handy, auch wenn Sie am Termin selbst nicht dabei sind.
+    - paragraph [ref=e63]:
+      - text: "Mehr zum Thema lesen Sie in unserem Ratgeber:"
+      - 'link "Sperrmüll im Havelland anmelden: Regeln, Fristen, Ausnahmen" [ref=e64] [cursor=pointer]':
+        - /url: /ratgeber/sperrmuell-havelland-anmelden/
+      - text: .
+  - generic [ref=e67]:
+    - heading "Entrümpelung in Falkensee — Keller, Garage, Dachboden, Wohnung" [level=2] [ref=e68]
+    - 'heading "Falkenseer Siedlungshäuser: Keller und Dachboden" [level=3] [ref=e69]'
+    - paragraph [ref=e70]: "Die Deutsche Ansiedlungsbank kaufte 1898 das Rittergut Seegefeld und teilte es in Parzellen. Daraus wuchsen Waldheim, Falkenhain und Neu-Finkenkrug, 1907 kam die Gartenstadt Falkenhagen-West dazu, 1922 Falkenhöh. Viele Häuser aus dieser Zeit stehen noch und sind seit Jahrzehnten in Familienhand. Typisch für sie: ein niedriger Keller mit steiler, schmaler Treppe, darüber ein Spitzboden mit Luke. In beiden Etagen lagert, was seit Jahren niemand angefasst hat: Einmachgläser, Skier, Stühle mit gebrochener Lehne, die Kartons vom Einzug. Wir holen das Stück für Stück heraus, zu zweit bei Sperrigem, und tragen es direkt zum Anhänger vor dem Haus. Auf dem Weg sortieren wir Altholz, Schrott, Elektrogeräte und Restabfall getrennt, weil der Wertstoffhof jede Fraktion einzeln wiegt. Brauchbares bleibt stehen und geht vom Preis ab. Dosen mit Farbe oder Lösungsmittel lassen wir im Keller und nennen Ihnen die Schadstoffannahme am Wertstoffhof Falkensee, wo Privathaushalte sie kostenfrei abgeben."
+    - heading "Garage und Schuppen in Falkensee" [level=3] [ref=e71]
+    - paragraph [ref=e72]:
+      - text: "Bei einer Garage oder einem Gartenschuppen reicht uns für den ersten Schritt ein Foto per WhatsApp: Tor auf, einmal draufhalten, abschicken. Wir schätzen daraus Menge und Abfallarten ab und melden uns meist am selben Werktag mit einer ersten, unverbindlichen Einschätzung. Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, weil Zufahrt, Untergrund und die Dinge hinter dem Regal auf dem Foto selten zu sehen sind. Im September 2026 haben wir in Falkensee so einen Schuppen zusammen mit einer Abstellkammer geräumt: ein Tag, zwei Fahrten zum Wertstoffhof an der Nauener Straße, danach die Fotos aufs Handy der Kundin. Der Hof nimmt Schrott, Altholz und Restabfall an getrennten Stellen an, deshalb sortieren wir schon beim Beladen. Ölreste, Autobatterien und Gasflaschen bleiben draußen; dafür nennen wir Ihnen die Annahmestelle."
+      - link "Gartenhaus abreißen und entsorgen" [ref=e73] [cursor=pointer]:
+        - /url: /entruempelung/#gartenhaus
+      - text: .
+    - heading "Wohnung und Haus in Falkensee — auch ohne Ihre Anwesenheit" [level=3] [ref=e74]
+    - paragraph [ref=e75]:
+      - text: Wer ein Elternhaus in Finkenkrug verkauft oder eine leer stehende Wohnung in Seegefeld abgibt, wohnt nicht unbedingt in Falkensee. Sie müssen für die Räumung nicht anreisen. Den Schlüssel übernehmen wir von einer Vertrauensperson, einem Nachbarn oder der Hausverwaltung; eine kurze schriftliche Vollmacht regelt, was weg darf und was bleibt. Was Sie behalten wollen, markieren Sie vorher mit Klebeband oder schicken uns eine Liste per WhatsApp. Wir räumen Zimmer für Zimmer, laden Möbel, Elektrogeräte und Hausrat sortiert auf und fahren so oft zum Wertstoffhof, wie es braucht; der liegt in Falkensee wenige Minuten entfernt. Nach jeder Etappe bekommen Sie Fotos, nach der Übergabe die Rechnung mit allen Entsorgungsbelegen per Mail. Geht es um den kompletten Haushalt nach einem Todesfall oder dem Umzug ins Pflegeheim, mit Sichten von Dokumenten und Wertsachen vorab, ist das eine Haushaltsauflösung mit eigener Seite für Falkensee.
+      - link "Haushaltsauflösung in Falkensee" [ref=e76] [cursor=pointer]:
+        - /url: /haushaltsaufloesung-falkensee/
+      - text: .
+    - 'heading "Gewerbe in Falkensee: Büro, Praxis, Lager" [level=3] [ref=e77]'
+    - paragraph [ref=e78]:
+      - text: "Gewerberäume in Falkensee räumen wir außerhalb Ihrer Öffnungszeiten, nach Feierabend oder samstags, damit Kunden und Patienten nichts davon mitbekommen: die Praxis, die den Standort wechselt, das Ladenlokal vor der Rückgabe an den Vermieter, das volle Lager. Büromöbel, Regalsysteme, Ladentheken, Rechner und Restbestände nehmen wir sortiert mit und fahren sie zum Wertstoffhof Falkensee. Jeden Beleg von dort bekommt Ihre Buchhaltung als Entsorgungsnachweis, unsere Rechnung weist die Mehrwertsteuer aus; bei mehreren Objekten fassen wir alles auf einer Sammelrechnung zusammen, wenn Sie das wollen. Aktenordner mit Kundendaten vernichten wir nicht selbst, damit die Datenschutzkette geschlossen bleibt; dafür vermitteln wir einen Fachbetrieb für Aktenvernichtung und stimmen den Termin mit ab. Bei einer Räumung zur Rückgabe an den Vermieter halten wir den leeren Zustand mit Fotos fest. Der Weg ist derselbe wie beim Privathaushalt: Fotos oder Grundriss per Mail, kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, Entsorgung nach Beleg."
+      - link "Mehr zur Gewerbe-Entrümpelung" [ref=e79] [cursor=pointer]:
+        - /url: /entruempelung/#gewerbe
+      - text: .
+  - generic [ref=e82]:
+    - 'heading "Entsorgung in Falkensee: Wertstoffhof, Sperrmüll, Anfahrt" [level=2] [ref=e83]'
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - term [ref=e86]: Wertstoffhof
+        - definition [ref=e87]: Wertstoffhof Falkensee, Nauener Straße 97, 14612 Falkensee, im Gewerbegebiet Nord im Nordwesten der Stadt, an der Straße Richtung Brieselang. Geöffnet Montag 9–18 Uhr, Dienstag bis Freitag 9–17 Uhr, Samstag 8–13 Uhr. Sperrmüll, Schrott, Elektroaltgeräte und Schadstoffe aus Privathaushalten nimmt der Hof kostenfrei an; alles andere wiegt er und rechnet nach der Gebührensatzung 2026 ab.
+      - generic [ref=e88]:
+        - term [ref=e89]: Sperrmüll
+        - definition [ref=e90]: Die Sperrmüllabfuhr des Landkreises Havelland holt bei Privathaushalten zweimal im Jahr kostenlos ab, nach Anmeldung bei der HAW mbH und mit bis zu vier Wochen Wartezeit. Bauabfälle, Fenster, Türen, Laminat, Bretter aus dem Garten und größere Mengen aus Haushaltsauflösungen lässt sie stehen.
+      - generic [ref=e91]:
+        - term [ref=e92]: Anfahrt
+        - definition [ref=e93]: Der Haus- & Gartenservice Havelland sitzt in Falkensee, Darmstädter Straße. Bis zum Wertstoffhof sind es rund 1,4 km, in jedes der sieben Wohngebiete wenige Minuten. Eine Anfahrtszeit, die Sie bezahlen, gibt es nicht.
+      - generic [ref=e94]:
+        - term [ref=e95]: Ortsteile
+        - definition [ref=e96]: Falkenhagen, Seegefeld, Finkenkrug, Alter Finkenkrug, Falkenhain, Falkenhöh und Waldheim; 43,3 km² Stadtgebiet, 46.906 Einwohner (Stand November 2025), PLZ 14612.
+    - paragraph [ref=e97]: "Quelle: abfall-havelland.de (Betreiberseite Wertstoffhof Falkensee), Abfallgebührensatzung Landkreis Havelland 2026, haw-mbh.de (Sperrmüll), falkensee.de (Zahlen & Fakten), Stand 09/2026"
+  - generic [ref=e100]:
+    - heading "Falkenhagen, Finkenkrug, Seegefeld, Waldheim — wo wir unterwegs sind" [level=2] [ref=e101]
+    - paragraph [ref=e102]: "Die Stadt Falkensee führt sieben Wohngebiete. Falkenhagen, 1336 erstmals erwähnt, ist einer der beiden Gründungsorte von 1923, mit dem alten Dorf und der Gartenstadt Falkenhagen-West von 1907. Seegefeld, schon 1265 erwähnt, bekam 1846 die Bahnstation an der Strecke Berlin–Hamburg, aus der der heutige Bahnhof Falkensee wurde, und ist mit 6,88 km² das größte Wohngebiet. Finkenkrug geht auf das Gasthaus Alter Finkenkrug von 1777 an der Nauener Straße zurück, die Kolonie Neu-Finkenkrug folgte 1898; der Alte Finkenkrug ist mit 0,21 km² das kleinste Gebiet. Waldheim, Falkenhain und Falkenhöh entstanden als Kolonien auf den Parzellen von 1898 und 1922. Für uns heißt das: Jedes Wohngebiet liegt von der Darmstädter Straße aus wenige Minuten entfernt, und der Wertstoffhof im Gewerbegebiet Nord ist auf fast jeder Strecke nah. Ob Kellerräumung in Finkenkrug, Garage in Falkenhöh oder Dachboden in Waldheim: Wir kommen mit dem Anhänger direkt vors Grundstück, und bei mehreren Fahrten geht keine Stunde für die Strecke verloren."
+  - generic [ref=e105]:
+    - heading "Was eine Entrümpelung in Falkensee kostet — ein echtes Beispiel" [level=2] [ref=e106]
+    - paragraph [ref=e107]:
+      - text: "Ein Auftrag aus Falkensee vom September 2026, Abstellkammer und Gartenschuppen: Der Festpreis für Räumung und Abtransport lag bei 1.190 € inkl. MwSt., ein Tag Arbeit, zwei Fahrten zum Wertstoffhof Falkensee. Auf den beiden Belegen des Wertstoffhofs standen zusammen 458 € Entsorgungsgebühren, darunter gemischter Siedlungsabfall und Altholz nach Gewicht. Diese Gebühren geben wir nach Beleg weiter, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag; sie stehen im Angebot und in der Rechnung als eigene Zeile. Das ist ein Beispiel, kein Pauschalpreis. Bei Ihnen entscheiden vier Dinge über den Betrag: die Menge, der Zugang (Kellertreppe, Dachluke, Weg zum Anhänger), die Zahl der Fahrten und der Anteil an Brauchbarem, den wir anrechnen. Weil der Wertstoffhof in Falkensee liegt, kostet eine dritte oder vierte Fahrt wenig Zeit, und das merken Sie bei größeren Kellern oder ganzen Wohnungen im Festpreis. Den Preis für Ihre Räumung nennen wir nach der kostenlosen Besichtigung schriftlich."
+      - link "Mehr zu den Preisfaktoren" [ref=e108] [cursor=pointer]:
+        - /url: /ratgeber/entruempelung-kosten/
+      - text: .
+  - generic [ref=e110]:
+    - heading "So sah das zuletzt in Falkensee aus." [level=2] [ref=e112]
+    - paragraph [ref=e113]: Echte Aufträge aus dem Havelland, ohne Namen und Adresse. Wo wir Fotos oder Zahlen zeigen, liegt die Einwilligung der Kunden vor. Genau so bekommen Sie Ihren Foto-Nachweis.
+    - generic [ref=e115]:
+      - generic [ref=e116]:
+        - heading "Abstellkammer und Gartenschuppen in Falkensee" [level=3] [ref=e117]
+        - paragraph [ref=e118]: September 2026 · ein Tag · zwei Fahrten zum Wertstoffhof Falkensee
+        - paragraph [ref=e119]: Eine vollgestellte Abstellkammer unter der Treppe und ein Gartenschuppen, aus dem Altholz, ein paar Steinplatten und gemischter Restabfall kamen. Wir haben beides an einem Tag ausgeräumt und den Anhänger zweimal zum Wertstoffhof an der Nauener Straße gefahren. Vereinbart war ein Festpreis von 1.190 € inkl. MwSt. für Räumung und Abtransport; die Wertstoffhof-Belege über 458 € haben wir getrennt davon weitergegeben. Die Kundin wohnte nicht in Falkensee, den Schlüssel bekamen wir über eine Vertrauensperson, und die Fotos vom leeren Schuppen gingen am selben Abend aufs Handy.
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - img "Abstellkammer und Gartenschuppen in Falkensee — vorher und nachher — nach der Räumung"
+          - img "Abstellkammer und Gartenschuppen in Falkensee — vorher und nachher — vor der Räumung"
+          - generic: Vorher
+          - generic: Nachher
+          - slider "Vorher-Nachher-Vergleich Abstellkammer und Gartenschuppen in Falkensee — vorher und nachher" [ref=e122]: "50"
+        - paragraph [ref=e123]:
+          - generic [ref=e124]: Abstellkammer und Gartenschuppen in Falkensee
+          - generic [ref=e125]: vorher / nachher
+  - img "Haus- & Gartenservice in Falkensee und Umgebung" [ref=e130]
+  - generic [ref=e133]:
+    - generic [ref=e134]:
+      - generic [ref=e135]: Der schnellste Weg
+      - heading [level=2] [ref=e138]:
+        - text: Ein Handy-Foto
+        - emphasis [ref=e139]: reicht.
+      - paragraph [ref=e140]: Sie müssen nichts ausmessen und kein Formular ausfüllen. Drei Schritte, dann kümmern wir uns.
+      - list [ref=e141]:
+        - listitem [ref=e142]:
+          - generic [ref=e143]: "1"
+          - generic [ref=e144]:
+            - heading "Fotografieren" [level=3] [ref=e145]
+            - paragraph [ref=e146]: Einmal längs, einmal von vorn — so sehen wir Höhe, Länge und Zugang.
+        - listitem [ref=e147]:
+          - generic [ref=e148]: "2"
+          - generic [ref=e149]:
+            - heading "Per WhatsApp senden" [level=3] [ref=e150]
+            - paragraph [ref=e151]: "An 01515 6198195, gern mit zwei Sätzen dazu: Was soll passieren, wo stehen Sie?"
+        - listitem [ref=e152]:
+          - generic [ref=e153]: "3"
+          - generic [ref=e154]:
+            - heading "Antwort in Stunden" [level=3] [ref=e155]
+            - paragraph [ref=e156]: Erste Einschätzung und Termin für die kostenlose Besichtigung — danach steht Ihr Festpreis.
+      - generic [ref=e157]:
+        - link "Foto per WhatsApp senden" [ref=e158] [cursor=pointer]:
+          - /url: https://wa.me/4915156198195?text=Hallo%2C%20hier%20ein%20Foto%20von%20meinem%20Anliegen%20(Entr%C3%BCmpelung)%20in%20Falkensee%20%E2%80%94%20was%20w%C3%BCrde%20das%20kosten%3F
+        - 'link "lieber anrufen: 01515 6198195" [ref=e159] [cursor=pointer]':
+          - /url: tel:+4915156198195
+    - generic [ref=e160]:
+      - img "Sorgfältige Handarbeit im Grünen — Haus- & Gartenservice Havelland" [ref=e162]
+      - paragraph [ref=e163]:
+        - generic [ref=e164]: Handarbeit, wo es drauf ankommt
+        - generic [ref=e165]: Sorgfalt im Detail
+  - generic [ref=e167]:
+    - heading [level=2] [ref=e169]:
+      - text: Häufige
+      - emphasis [ref=e170]: Fragen.
+    - paragraph [ref=e171]:
+      - text: Kurz und ehrlich beantwortet. Ihre Frage fehlt?
+      - link "Schreiben Sie uns per WhatsApp." [ref=e172] [cursor=pointer]:
+        - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20habe%20eine%20Frage.
+    - generic [ref=e173]:
+      - searchbox "Fragen durchsuchen" [ref=e175]
+      - paragraph
+      - group [ref=e176]:
+        - generic "Was kostet eine Entrümpelung in Falkensee?" [ref=e177] [cursor=pointer]
+      - group [ref=e179]:
+        - generic "Wie schnell können Sie in Falkensee entrümpeln?" [ref=e180] [cursor=pointer]
+      - group [ref=e182]:
+        - generic "Muss ich in Falkensee vor Ort sein?" [ref=e183] [cursor=pointer]
+      - group [ref=e185]:
+        - generic "Wohin bringen Sie den Sperrmüll aus Falkensee?" [ref=e186] [cursor=pointer]
+      - group [ref=e188]:
+        - generic "Räumen Sie in Falkensee auch nur die Garage?" [ref=e189] [cursor=pointer]
+  - generic [ref=e192]:
+    - heading "Entrümpelung in der Nähe" [level=2] [ref=e194]
+    - generic [ref=e195]:
+      - link "Entrümpelung Schönwalde-Glien Mehr →" [ref=e196] [cursor=pointer]:
+        - /url: /entruempelung-schoenwalde-glien/
+        - heading "Entrümpelung Schönwalde-Glien" [level=3] [ref=e197]
+        - generic [ref=e198]: Mehr →
+      - link "Entrümpelung Wustermark Mehr →" [ref=e199] [cursor=pointer]:
+        - /url: /entruempelung-wustermark/
+        - heading "Entrümpelung Wustermark" [level=3] [ref=e200]
+        - generic [ref=e201]: Mehr →
+      - link "Entrümpelung Dallgow-Döberitz Mehr →" [ref=e202] [cursor=pointer]:
+        - /url: /entruempelung-dallgow-doeberitz/
+        - heading "Entrümpelung Dallgow-Döberitz" [level=3] [ref=e203]
+        - generic [ref=e204]: Mehr →
+      - link "Entrümpelung Brieselang Mehr →" [ref=e205] [cursor=pointer]:
+        - /url: /entruempelung-brieselang/
+        - heading "Entrümpelung Brieselang" [level=3] [ref=e206]
+        - generic [ref=e207]: Mehr →
+      - link "Alle Leistungen in Falkensee Zum Ort →" [ref=e208] [cursor=pointer]:
+        - /url: /standorte/falkensee/
+        - heading "Alle Leistungen in Falkensee" [level=3] [ref=e209]
+        - generic [ref=e210]: Zum Ort →
+  - generic [ref=e212]:
+    - heading "Sagen Sie uns, was ansteht — wir kümmern uns." [level=2] [ref=e213]
+    - paragraph [ref=e214]: Kostenlose Besichtigung, Festpreis, dann erledigt.
+    - generic [ref=e215]:
+      - link "Kostenlose Besichtigung anfragen" [ref=e216] [cursor=pointer]:
+        - /url: /kontakt/#anfrage
+      - link "☎ 01515 6198195" [ref=e217] [cursor=pointer]:
+        - /url: tel:+4915156198195
+  - contentinfo [ref=e218]:
+    - generic [ref=e219]:
+      - paragraph [ref=e220]: Haus- & Gartenservice Havelland
+      - paragraph [ref=e221]:
+        - text: Darmstädter Str. 15, 14612 Falkensee ·
+        - link "01515 6198195" [ref=e222] [cursor=pointer]:
+          - /url: tel:+4915156198195
+        - text: ·
+        - link "hausgartenservicehvl@gmail.com" [ref=e223] [cursor=pointer]:
+          - /url: mailto:hausgartenservicehvl@gmail.com
+        - text: Mo–Fr 7–19 Uhr · Sa 8–16 Uhr · So geschlossen
+      - generic [ref=e224]:
+        - generic [ref=e225]:
+          - heading [level=4] [ref=e226]:
+            - link "Garten & Grundstück" [ref=e227] [cursor=pointer]:
+              - /url: /gartenpflege/
+          - list [ref=e228]:
+            - listitem [ref=e229]:
+              - link "Gartenpflege" [ref=e230] [cursor=pointer]:
+                - /url: /gartenpflege/
+            - listitem [ref=e231]:
+              - link "Herbst-Paket (Laub)" [ref=e232] [cursor=pointer]:
+                - /url: /gartenpflege/#herbst-paket
+            - listitem [ref=e233]:
+              - link "Heckenschnitt" [ref=e234] [cursor=pointer]:
+                - /url: /heckenschnitt/
+            - listitem [ref=e235]:
+              - link "Baumschnitt" [ref=e236] [cursor=pointer]:
+                - /url: /baumschnitt/
+            - listitem [ref=e237]:
+              - link "Dachrinnenreinigung" [ref=e238] [cursor=pointer]:
+                - /url: /dachrinnenreinigung/
+            - listitem [ref=e239]:
+              - link "Fensterreinigung" [ref=e240] [cursor=pointer]:
+                - /url: /fensterreinigung/
+            - listitem [ref=e241]:
+              - link "Winterdienst" [ref=e242] [cursor=pointer]:
+                - /url: /winterdienst/
+            - listitem [ref=e243]:
+              - link "Dachreinigung" [ref=e244] [cursor=pointer]:
+                - /url: /dachreinigung/
+            - listitem [ref=e245]:
+              - link "Steinreinigung" [ref=e246] [cursor=pointer]:
+                - /url: /steinreinigung/
+        - generic [ref=e247]:
+          - heading [level=4] [ref=e248]:
+            - link "GaLaBau & Rodung" [ref=e249] [cursor=pointer]:
+              - /url: /galabau/
+          - list [ref=e250]:
+            - listitem [ref=e251]:
+              - link "Zaunbau" [ref=e252] [cursor=pointer]:
+                - /url: /zaunbau/
+            - listitem [ref=e253]:
+              - link "Heckenentfernung" [ref=e254] [cursor=pointer]:
+                - /url: /heckenentfernung/
+            - listitem [ref=e255]:
+              - link "Gartenrodung" [ref=e256] [cursor=pointer]:
+                - /url: /gartenrodung/
+            - listitem [ref=e257]:
+              - link "Baumstumpf-Entfernung" [ref=e258] [cursor=pointer]:
+                - /url: /baumstumpf-entfernen/
+            - listitem [ref=e259]:
+              - link "GaLaBau-Arbeiten" [ref=e260] [cursor=pointer]:
+                - /url: /galabau/
+          - heading [level=4] [ref=e261]:
+            - link "Entrümpelung & Auflösung" [ref=e262] [cursor=pointer]:
+              - /url: /entruempelung/
+          - list [ref=e263]:
+            - listitem [ref=e264]:
+              - link "Entrümpelung" [ref=e265] [cursor=pointer]:
+                - /url: /entruempelung/
+            - listitem [ref=e266]:
+              - link "Haushaltsauflösung" [ref=e267] [cursor=pointer]:
+                - /url: /haushaltsaufloesung/
+            - listitem [ref=e268]:
+              - link "Grundreinigung" [ref=e269] [cursor=pointer]:
+                - /url: /grundreinigung/
+            - listitem [ref=e270]:
+              - link "Ferienwohnung-Reinigung" [ref=e271] [cursor=pointer]:
+                - /url: /ferienwohnung-reinigung/
+        - generic [ref=e272]:
+          - heading [level=4] [ref=e273]:
+            - link "Hausverwaltungen & Objekte" [ref=e274] [cursor=pointer]:
+              - /url: /fuer-hausverwaltungen/
+          - list [ref=e275]:
+            - listitem [ref=e276]:
+              - link "Für Hausverwaltungen" [ref=e277] [cursor=pointer]:
+                - /url: /fuer-hausverwaltungen/
+            - listitem [ref=e278]:
+              - link "Objektbetreuung" [ref=e279] [cursor=pointer]:
+                - /url: /objektbetreuung/
+            - listitem [ref=e280]:
+              - link "Hausmeisterservice" [ref=e281] [cursor=pointer]:
+                - /url: /hausmeisterservice/
+            - listitem [ref=e282]:
+              - link "Unterhaltsreinigung" [ref=e283] [cursor=pointer]:
+                - /url: /unterhaltsreinigung/
+            - listitem [ref=e284]:
+              - link "Gebäudereinigung" [ref=e285] [cursor=pointer]:
+                - /url: /gebaeudereinigung/
+          - heading "Unternehmen" [level=4] [ref=e286]
+          - list [ref=e287]:
+            - listitem [ref=e288]:
+              - link "Alle Leistungen" [ref=e289] [cursor=pointer]:
+                - /url: /leistungen/
+            - listitem [ref=e290]:
+              - link "Standorte" [ref=e291] [cursor=pointer]:
+                - /url: /standorte/
+            - listitem [ref=e292]:
+              - link "Ratgeber" [ref=e293] [cursor=pointer]:
+                - /url: /ratgeber/
+            - listitem [ref=e294]:
+              - link "Über uns" [ref=e295] [cursor=pointer]:
+                - /url: /ueber-uns/
+            - listitem [ref=e296]:
+              - link "Bewertungen" [ref=e297] [cursor=pointer]:
+                - /url: /bewertungen/
+            - listitem [ref=e298]:
+              - link "Kontakt" [ref=e299] [cursor=pointer]:
+                - /url: /kontakt/
+      - generic [ref=e300]:
+        - generic [ref=e301]: Haus- & Gartenservice Havelland (GbR)
+        - link "Impressum" [ref=e302] [cursor=pointer]:
+          - /url: /impressum/
+        - link "Datenschutz" [ref=e303] [cursor=pointer]:
+          - /url: /datenschutz/
+        - link "Cookie-Einstellungen" [ref=e304] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=e306]:
+    - paragraph [ref=e307]:
+      - text: Wir nutzen Cookies für Statistik (Google Analytics) und die Erfolgsmessung unserer Google-Werbung — Daten gehen an Google, auch in die USA. Details und Widerruf in der
+      - link "Datenschutzerklärung" [ref=e308] [cursor=pointer]:
+        - /url: /datenschutz/
+      - text: .
+    - generic [ref=e309]:
+      - button "Ablehnen" [ref=e310] [cursor=pointer]
+      - button "Akzeptieren" [ref=e311] [cursor=pointer]

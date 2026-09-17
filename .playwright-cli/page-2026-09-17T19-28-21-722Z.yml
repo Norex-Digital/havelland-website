@@ -1,0 +1,335 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - generic [ref=f2e3]:
+      - link [ref=f2e4] [cursor=pointer]:
+        - /url: /
+        - img "Haus- & Gartenservice Havelland" [ref=f2e6]
+      - navigation "Hauptnavigation" [ref=f2e7]:
+        - link "Leistungen" [ref=f2e8] [cursor=pointer]:
+          - /url: /leistungen/
+        - link "Standorte" [ref=f2e9] [cursor=pointer]:
+          - /url: /standorte/
+        - link "Ratgeber" [ref=f2e10] [cursor=pointer]:
+          - /url: /ratgeber/
+        - link "Hausverwaltungen" [ref=f2e11] [cursor=pointer]:
+          - /url: /fuer-hausverwaltungen/
+        - link "Über uns" [ref=f2e12] [cursor=pointer]:
+          - /url: /ueber-uns/
+        - link "Kontakt" [ref=f2e13] [cursor=pointer]:
+          - /url: /kontakt/
+      - link "01515 6198195" [ref=f2e14] [cursor=pointer]:
+        - /url: tel:+4915156198195
+      - link "Kostenlose Besichtigung" [ref=f2e18] [cursor=pointer]:
+        - /url: /kontakt/
+      - checkbox "Menü öffnen und schließen"
+  - generic [ref=f2e19]:
+    - link "Start" [ref=f2e20] [cursor=pointer]:
+      - /url: /
+    - text: ›
+    - link "Entrümpelung" [ref=f2e21] [cursor=pointer]:
+      - /url: /entruempelung/
+    - text: ›Brieselang
+  - generic [ref=f2e25]:
+    - generic [ref=f2e26]:
+      - generic [ref=f2e27]: Brieselang · 14656
+      - heading [level=1] [ref=f2e28]:
+        - text: Entrümpelung
+        - emphasis [ref=f2e29]: in Brieselang
+      - paragraph [ref=f2e30]: "Ihre Entrümpelung in Brieselang: Keller, Garage, Dachboden, Schuppen oder Wohnung — ausgeräumt und besenrein übergeben. Festpreis für Räumung und Abtransport nach kostenloser Besichtigung in Brieselang, Entsorgung nach Beleg, Foto-Nachweis."
+      - generic [ref=f2e31]:
+        - link "Kostenlose Besichtigung anfragen" [ref=f2e32] [cursor=pointer]:
+          - /url: /kontakt/#anfrage
+        - link "WhatsApp" [ref=f2e33] [cursor=pointer]:
+          - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20brauche%20Entr%C3%BCmpelung%20in%20Brieselang.
+    - img "Entrümpelung in Brieselang — Haus- & Gartenservice Havelland" [ref=f2e36]
+  - region "Unsere drei Zusagen" [ref=f2e37]:
+    - generic [ref=f2e39]:
+      - generic [ref=f2e40]:
+        - generic [ref=f2e41]: "01"
+        - generic [ref=f2e42]:
+          - heading "Festpreis für Räumung & Abtransport" [level=3] [ref=f2e43]
+          - paragraph [ref=f2e44]: Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest. Entsorgungsgebühren weisen wir nach Beleg aus.
+      - generic [ref=f2e45]:
+        - generic [ref=f2e46]: "02"
+        - generic [ref=f2e47]:
+          - heading "Foto-Nachweis" [level=3] [ref=f2e48]
+          - paragraph [ref=f2e49]: Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.
+      - generic [ref=f2e50]:
+        - generic [ref=f2e51]: "03"
+        - generic [ref=f2e52]:
+          - heading "Ein Ansprechpartner" [level=3] [ref=f2e53]
+          - paragraph [ref=f2e54]: Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.
+  - generic [ref=f2e57]:
+    - heading "Entrümpelung in Brieselang — zuverlässig & lokal" [level=2] [ref=f2e58]
+    - paragraph [ref=f2e59]: Brieselang liegt zwischen Falkensee und Wustermark am Rand des Brieselanger Forsts, mit Nauen als westlichem Nachbarn. Viele Bewohner pendeln nach Berlin und haben abends wenig Zeit für die großen Aufräumaktionen, die sich in Keller, Schuppen und Dachboden ansammeln. Wenn ein Haus den Besitzer wechselt, ein Angehöriger versorgt werden muss oder der Gartenschuppen überquillt, räumen wir das für Sie aus. Wir kennen die Wege nach Falkensee, Wustermark und Nauen und sind schnell vor Ort. Ihr Feierabend bleibt Ihrer.
+    - paragraph [ref=f2e60]: In Brieselang reicht die Bandbreite vom Gartenschuppen am Waldrand bis zum kompletten Hausrat. Wir räumen Keller, Dachboden, Garage und Nebengebäude, tragen selbst heraus und laden auf. Alles Brauchbare trennen wir vom Müll; Sperrmüll, Alt-Elektro, Metall und Problemstoffe führen wir jeweils der richtigen Stelle zu. Wertgegenstände rechnen wir offen an. Container, Transport und Entsorgung übernehmen wir komplett, damit Sie sich um nichts kümmern müssen. Zurück bleibt eine besenreine Fläche.
+    - heading "Festpreis & Foto-Nachweis" [level=3] [ref=f2e61]
+    - paragraph [ref=f2e62]: Nach der kostenlosen Besichtigung in Brieselang bekommen Sie einen Festpreis für Räumung und Abtransport; Entsorgungsgebühren nach Beleg. Auf Wunsch dokumentieren wir das Ergebnis mit Vorher-Nachher-Fotos, damit Sie auch aus dem Büro oder von unterwegs sehen, dass alles erledigt ist.
+    - paragraph [ref=f2e63]:
+      - text: "Mehr zum Thema lesen Sie in unserem Ratgeber:"
+      - 'link "Gartenhaus abreißen und entsorgen: Kosten, Ablauf, Regeln" [ref=f2e64] [cursor=pointer]':
+        - /url: /ratgeber/gartenhaus-abreissen-entsorgen/
+      - text: .
+  - generic [ref=f2e67]:
+    - heading "Entrümpelung in Brieselang — Keller, Garage, Dachboden, Wohnung" [level=2] [ref=f2e68]
+    - 'heading "Brieselang: Pendlerort mit Alt- und Neubestand" [level=3] [ref=f2e69]'
+    - paragraph [ref=f2e70]: "Brieselang ist eine junge Gemeinde: am 14. Januar 1925 als Landgemeinde gegründet, gewachsen aus den Siedlungsgesellschaften, die sich ab 1920 am Rand des Brieselanger Forsts zusammenfanden. Seit 2003 gehören die alten Dörfer Bredow und Zeestow dazu, heute leben rund 13.500 Menschen in der Gemeinde. Der Bahnhof Brieselang hat Regionalbahn-Anschluss Richtung Berlin, und wer dort arbeitet, ist tagsüber nicht zu Hause. Der Ort hat deshalb zwei Gesichter: Siedlungshäuser aus den ersten Jahrzehnten mit Keller, Spitzboden und Schuppen, und neuere Einfamilienhäuser mit Carport und Garage. Wenn Sie tagsüber in Berlin oder unterwegs sind, räumen wir in beiden das, was sich angesammelt hat. Sie geben uns den Schlüssel oder sind am Samstag dabei; auf Ihr Foto per WhatsApp melden wir uns meist am selben Werktag."
+    - heading "Keller und Dachboden im Altbestand" [level=3] [ref=f2e71]
+    - paragraph [ref=f2e72]: "Ein Siedlungshaus aus den Gründungsjahren hat meist einen niedrigen Keller mit schmaler Treppe und darüber einen Spitzboden mit Stiege oder Luke. Beides zusammen ergibt die Räumung, die Sie sich als Pendler am Feierabend nicht antun wollen: Regale voller Gläser, Koffer, Matratzen, das Kinderbett, alte Vorhänge. Wir kommen zu zweit, tragen alles über Treppe und Luke nach unten und laden es vor dem Haus auf den Anhänger. Loses Material wie alte Isolierung oder Staub packen wir in Säcke, Möbel zerlegen wir, wenn sie sonst nicht durch die Tür passen. Platten mit Asbestverdacht oder alte Mineralwolle rühren wir nicht an und nennen Ihnen einen Fachbetrieb. Am Ende fegen wir Keller und Boden aus und schicken Ihnen die Fotos am selben Tag, damit Sie das Ergebnis schon in der Bahn sehen."
+    - heading "Garage, Carport und Schuppen" [level=3] [ref=f2e73]
+    - paragraph [ref=f2e74]:
+      - text: "Am Waldrand steht der Schuppen, unter dem Carport stapeln sich Bretter, Reifen und die Fahrräder, die niemand mehr fährt. Für diese Räumungen brauchen wir am Anfang kein Aufmaß: Ein Foto mit dem Handy, einmal quer durch den Schuppen, reicht für eine erste, unverbindliche Einschätzung. Nach der kostenlosen Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest. Beim Beladen trennen wir Altholz, Schrott und Restabfall, weil der Wertstoffhof jede Sorte auf der Waage einzeln abrechnet und Schrott ohne Gebühr annimmt. Ölreste, Autobatterien und Gasflaschen nehmen wir nicht mit; wir sagen Ihnen, wo Sie sie abgeben. Ist der Schuppen selbst hinüber, kommt er nach dem Ausräumen mit weg, Holz und Dachpappe getrennt nach Beleg. Anschließend fegen wir durch, und das Auto passt wieder unters Dach."
+      - link "Warum Nebengebäude unsere häufigsten Aufträge sind" [ref=f2e75] [cursor=pointer]:
+        - /url: /entruempelung/#nebengebaeude
+      - text: .
+    - heading "Wohnung und Haus in Brieselang, auch per Vollmacht" [level=3] [ref=f2e76]
+    - paragraph [ref=f2e77]:
+      - text: "Ein Haus in Brieselang wechselt den Besitzer, die Kinder wohnen in Berlin oder weiter weg, und die Räumung soll laufen, ohne dass jemand Urlaub nimmt. Das geht: Sie hinterlegen den Schlüssel bei einem Nachbarn oder übergeben ihn uns bei der Besichtigung, dazu eine kurze schriftliche Vollmacht, welche Räume leer werden und was stehen bleibt. Wir räumen Zimmer für Zimmer, laden Möbel, Teppiche, Hausrat und Elektrogeräte sortiert auf und fahren zum Wertstoffhof nach Falkensee, zehn Minuten entfernt. Nach jeder Etappe bekommen Sie Fotos, am Ende die Aufnahmen der leeren, gefegten Räume und per Mail die Rechnung samt Entsorgungsbelegen. Soll vorher der Nachlass gesichtet werden, mit Dokumenten, Schmuck und Fotoalben, die zu Ihnen kommen, ist das eine Haushaltsauflösung mit eigenem Ablauf."
+      - link "Zur Haushaltsauflösung" [ref=f2e78] [cursor=pointer]:
+        - /url: /haushaltsaufloesung/
+      - text: .
+  - generic [ref=f2e81]:
+    - 'heading "Entsorgung in Brieselang: Wertstoffhof, Sperrmüll, Anfahrt" [level=2] [ref=f2e82]'
+    - generic [ref=f2e83]:
+      - generic [ref=f2e84]:
+        - term [ref=f2e85]: Wertstoffhof
+        - definition [ref=f2e86]: "Der nächstgelegene Wertstoffhof ist Falkensee, Nauener Straße 97: vom Brieselanger Ortskern rund 6 km, etwa 10 Minuten Fahrt. Nauen/Schwanebeck (Schwanebecker Weg 25) liegt rund 19 km entfernt; nur von Bredow aus sind beide ähnlich weit. Falkensee ist geöffnet Montag 9–18 Uhr, Dienstag bis Freitag 9–17 Uhr, Samstag 8–13 Uhr; Gebühren nach Gewicht laut Satzung 2026."
+      - generic [ref=f2e87]:
+        - term [ref=f2e88]: Sperrmüll
+        - definition [ref=f2e89]: Zweimal im Jahr kostenlos für Privathaushalte, angemeldet bei der HAW mbH, Wartezeit bis zu vier Wochen, Bereitstellung frühestens am Vorabend vor dem Grundstück. Bauabfälle, Fenster, Türen, Laminat, Bretter aus dem Garten und größere Mengen aus Haushaltsauflösungen lässt die Abfuhr stehen.
+      - generic [ref=f2e90]:
+        - term [ref=f2e91]: Anfahrt
+        - definition [ref=f2e92]: Vom Sitz des Haus- & Gartenservice Havelland in Falkensee bis nach Brieselang sind es rund 7 km, etwa 10 Minuten Fahrt; nach Bredow gut 12 km. Der Wertstoffhof Falkensee liegt im Nordwesten der Stadt, also auf dem Weg nach Brieselang.
+      - generic [ref=f2e93]:
+        - term [ref=f2e94]: Ortsteile
+        - definition [ref=f2e95]: Brieselang mit Bahnhof und Regionalbahn-Anschluss Richtung Berlin, dazu die Ortsteile Bredow (1208 erstmals erwähnt) und Zeestow (1346), seit 2003 eine Gemeinde mit 44,39 km²; rund 13.500 Einwohner (Stand Mai 2024), PLZ 14656.
+    - paragraph [ref=f2e96]: "Quelle: abfall-havelland.de, Abfallgebührensatzung Landkreis Havelland 2026, haw-mbh.de, gemeindebrieselang.de (Unsere Gemeinde, Geschichte der drei Ortsteile), Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 09/2026"
+  - generic [ref=f2e99]:
+    - heading "Was wir in Brieselang typischerweise vorfinden" [level=2] [ref=f2e100]
+    - paragraph [ref=f2e101]: "Einen abgeschlossenen Auftrag aus Brieselang mit Fotos und Zahlen können wir noch nicht zeigen. Zeigen können wir den Auftrag aus dem Nachbarort Falkensee vom September 2026: Abstellkammer und Gartenschuppen, 1.190 € inkl. MwSt. Festpreis für Räumung und Abtransport, dazu 458 € Wertstoffhof-Gebühren nach Beleg. Die Häuser in Brieselang stammen aus derselben Siedlungszeit wie viele in Falkensee, Falkenhöh entstand 1922, die Brieselanger Siedlungsgesellschaften begannen 1920. Deshalb erwarten wir in Brieselang dieselben Aufgaben: der Keller, in dem seit dem Einzug die Kartons stehen; die Garage, in der kein Auto mehr Platz hat; der Schuppen am Waldrand mit Gartengeräten, Farbresten und Brennholz; das Elternhaus, das nach dem Verkauf leer übergeben wird. Und weil der nächste Wertstoffhof in Falkensee liegt, zehn Minuten entfernt, fahren wir bei einem Brieselanger Auftrag denselben Weg wie bei uns zu Hause. Sobald wir einen Auftrag aus Brieselang mit Einwilligung zeigen dürfen, steht er hier."
+  - generic [ref=f2e104]:
+    - heading "So läuft eine Entrümpelung in Brieselang ab" [level=2] [ref=f2e105]
+    - paragraph [ref=f2e106]: "Erstens schicken Sie ein Foto per WhatsApp oder rufen an, gern aus dem Zug. Zweitens melden wir uns meist am selben Werktag mit einer ersten, unverbindlichen Einschätzung; bei einer einzelnen Garage oder einem Schuppen reicht das Foto dafür oft aus. Drittens kommt Noah Telo zur kostenlosen Besichtigung nach Brieselang, nach Feierabend oder am Samstag, wenn Sie das brauchen; wir sehen uns Menge, Zugang, Zufahrt und die Abfallarten an. Viertens bekommen Sie den Festpreis für Räumung und Abtransport schriftlich, die Entsorgungsgebühren des Wertstoffhofs kommen nach Beleg dazu, zuzüglich Mehrwertsteuer, ohne Aufschlag. Fünftens der Termin: Wir räumen aus, sortieren Brauchbares heraus und rechnen es an, fahren nach Falkensee zum Wertstoffhof und übergeben besenrein. Sechstens landen die Vorher-Nachher-Fotos auf Ihrem Handy, die Rechnung mit den Belegen per Mail. Bei keinem dieser Schritte müssen Sie persönlich dabei sein; Schlüssel und Vollmacht reichen."
+  - img "Haus- & Gartenservice in Brieselang und Umgebung" [ref=f2e111]
+  - generic [ref=f2e114]:
+    - generic [ref=f2e115]:
+      - generic [ref=f2e116]: Der schnellste Weg
+      - heading [level=2] [ref=f2e119]:
+        - text: Ein Handy-Foto
+        - emphasis [ref=f2e120]: reicht.
+      - paragraph [ref=f2e121]: Sie müssen nichts ausmessen und kein Formular ausfüllen. Drei Schritte, dann kümmern wir uns.
+      - list [ref=f2e122]:
+        - listitem [ref=f2e123]:
+          - generic [ref=f2e124]: "1"
+          - generic [ref=f2e125]:
+            - heading "Fotografieren" [level=3] [ref=f2e126]
+            - paragraph [ref=f2e127]: Einmal längs, einmal von vorn — so sehen wir Höhe, Länge und Zugang.
+        - listitem [ref=f2e128]:
+          - generic [ref=f2e129]: "2"
+          - generic [ref=f2e130]:
+            - heading "Per WhatsApp senden" [level=3] [ref=f2e131]
+            - paragraph [ref=f2e132]: "An 01515 6198195, gern mit zwei Sätzen dazu: Was soll passieren, wo stehen Sie?"
+        - listitem [ref=f2e133]:
+          - generic [ref=f2e134]: "3"
+          - generic [ref=f2e135]:
+            - heading "Antwort in Stunden" [level=3] [ref=f2e136]
+            - paragraph [ref=f2e137]: Erste Einschätzung und Termin für die kostenlose Besichtigung — danach steht Ihr Festpreis.
+      - generic [ref=f2e138]:
+        - link "Foto per WhatsApp senden" [ref=f2e139] [cursor=pointer]:
+          - /url: https://wa.me/4915156198195?text=Hallo%2C%20hier%20ein%20Foto%20von%20meinem%20Anliegen%20(Entr%C3%BCmpelung)%20in%20Brieselang%20%E2%80%94%20was%20w%C3%BCrde%20das%20kosten%3F
+        - 'link "lieber anrufen: 01515 6198195" [ref=f2e140] [cursor=pointer]':
+          - /url: tel:+4915156198195
+    - generic [ref=f2e141]:
+      - img "Sorgfältige Handarbeit im Grünen — Haus- & Gartenservice Havelland" [ref=f2e143]
+      - paragraph [ref=f2e144]:
+        - generic [ref=f2e145]: Handarbeit, wo es drauf ankommt
+        - generic [ref=f2e146]: Sorgfalt im Detail
+  - generic [ref=f2e148]:
+    - heading [level=2] [ref=f2e150]:
+      - text: Häufige
+      - emphasis [ref=f2e151]: Fragen.
+    - paragraph [ref=f2e152]:
+      - text: Kurz und ehrlich beantwortet. Ihre Frage fehlt?
+      - link "Schreiben Sie uns per WhatsApp." [ref=f2e153] [cursor=pointer]:
+        - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20habe%20eine%20Frage.
+    - generic [ref=f2e154]:
+      - searchbox "Fragen durchsuchen" [ref=f2e156]
+      - paragraph
+      - group [ref=f2e157]:
+        - generic "Was kostet eine Entrümpelung in Brieselang?" [ref=f2e158] [cursor=pointer]
+      - group [ref=f2e160]:
+        - generic "Wie schnell sind Sie in Brieselang?" [ref=f2e161] [cursor=pointer]
+      - group [ref=f2e163]:
+        - generic "Muss ich bei der Entrümpelung in Brieselang vor Ort sein?" [ref=f2e164] [cursor=pointer]
+      - group [ref=f2e166]:
+        - 'generic "Sperrmüll oder Wertstoffhof: Was ist in Brieselang der bessere Weg?" [ref=f2e167] [cursor=pointer]'
+      - group [ref=f2e169]:
+        - generic "Räumen Sie in Brieselang auch Carport und Schuppen?" [ref=f2e170] [cursor=pointer]
+  - generic [ref=f2e173]:
+    - heading "Entrümpelung in der Nähe" [level=2] [ref=f2e175]
+    - generic [ref=f2e176]:
+      - link "Entrümpelung Falkensee Mehr →" [ref=f2e177] [cursor=pointer]:
+        - /url: /entruempelung-falkensee/
+        - heading "Entrümpelung Falkensee" [level=3] [ref=f2e178]
+        - generic [ref=f2e179]: Mehr →
+      - link "Entrümpelung Dallgow-Döberitz Mehr →" [ref=f2e180] [cursor=pointer]:
+        - /url: /entruempelung-dallgow-doeberitz/
+        - heading "Entrümpelung Dallgow-Döberitz" [level=3] [ref=f2e181]
+        - generic [ref=f2e182]: Mehr →
+      - link "Entrümpelung Schönwalde-Glien Mehr →" [ref=f2e183] [cursor=pointer]:
+        - /url: /entruempelung-schoenwalde-glien/
+        - heading "Entrümpelung Schönwalde-Glien" [level=3] [ref=f2e184]
+        - generic [ref=f2e185]: Mehr →
+      - link "Entrümpelung Wustermark Mehr →" [ref=f2e186] [cursor=pointer]:
+        - /url: /entruempelung-wustermark/
+        - heading "Entrümpelung Wustermark" [level=3] [ref=f2e187]
+        - generic [ref=f2e188]: Mehr →
+      - link "Alle Leistungen in Brieselang Zum Ort →" [ref=f2e189] [cursor=pointer]:
+        - /url: /standorte/brieselang/
+        - heading "Alle Leistungen in Brieselang" [level=3] [ref=f2e190]
+        - generic [ref=f2e191]: Zum Ort →
+  - generic [ref=f2e193]:
+    - heading "Sagen Sie uns, was ansteht — wir kümmern uns." [level=2] [ref=f2e194]
+    - paragraph [ref=f2e195]: Kostenlose Besichtigung, Festpreis, dann erledigt.
+    - generic [ref=f2e196]:
+      - link "Kostenlose Besichtigung anfragen" [ref=f2e197] [cursor=pointer]:
+        - /url: /kontakt/#anfrage
+      - link "☎ 01515 6198195" [ref=f2e198] [cursor=pointer]:
+        - /url: tel:+4915156198195
+  - contentinfo [ref=f2e199]:
+    - generic [ref=f2e200]:
+      - paragraph [ref=f2e201]: Haus- & Gartenservice Havelland
+      - paragraph [ref=f2e202]:
+        - text: Darmstädter Str. 15, 14612 Falkensee ·
+        - link "01515 6198195" [ref=f2e203] [cursor=pointer]:
+          - /url: tel:+4915156198195
+        - text: ·
+        - link "hausgartenservicehvl@gmail.com" [ref=f2e204] [cursor=pointer]:
+          - /url: mailto:hausgartenservicehvl@gmail.com
+        - text: Mo–Fr 7–19 Uhr · Sa 8–16 Uhr · So geschlossen
+      - generic [ref=f2e205]:
+        - generic [ref=f2e206]:
+          - heading [level=4] [ref=f2e207]:
+            - link "Garten & Grundstück" [ref=f2e208] [cursor=pointer]:
+              - /url: /gartenpflege/
+          - list [ref=f2e209]:
+            - listitem [ref=f2e210]:
+              - link "Gartenpflege" [ref=f2e211] [cursor=pointer]:
+                - /url: /gartenpflege/
+            - listitem [ref=f2e212]:
+              - link "Herbst-Paket (Laub)" [ref=f2e213] [cursor=pointer]:
+                - /url: /gartenpflege/#herbst-paket
+            - listitem [ref=f2e214]:
+              - link "Heckenschnitt" [ref=f2e215] [cursor=pointer]:
+                - /url: /heckenschnitt/
+            - listitem [ref=f2e216]:
+              - link "Baumschnitt" [ref=f2e217] [cursor=pointer]:
+                - /url: /baumschnitt/
+            - listitem [ref=f2e218]:
+              - link "Dachrinnenreinigung" [ref=f2e219] [cursor=pointer]:
+                - /url: /dachrinnenreinigung/
+            - listitem [ref=f2e220]:
+              - link "Fensterreinigung" [ref=f2e221] [cursor=pointer]:
+                - /url: /fensterreinigung/
+            - listitem [ref=f2e222]:
+              - link "Winterdienst" [ref=f2e223] [cursor=pointer]:
+                - /url: /winterdienst/
+            - listitem [ref=f2e224]:
+              - link "Dachreinigung" [ref=f2e225] [cursor=pointer]:
+                - /url: /dachreinigung/
+            - listitem [ref=f2e226]:
+              - link "Steinreinigung" [ref=f2e227] [cursor=pointer]:
+                - /url: /steinreinigung/
+        - generic [ref=f2e228]:
+          - heading [level=4] [ref=f2e229]:
+            - link "GaLaBau & Rodung" [ref=f2e230] [cursor=pointer]:
+              - /url: /galabau/
+          - list [ref=f2e231]:
+            - listitem [ref=f2e232]:
+              - link "Zaunbau" [ref=f2e233] [cursor=pointer]:
+                - /url: /zaunbau/
+            - listitem [ref=f2e234]:
+              - link "Heckenentfernung" [ref=f2e235] [cursor=pointer]:
+                - /url: /heckenentfernung/
+            - listitem [ref=f2e236]:
+              - link "Gartenrodung" [ref=f2e237] [cursor=pointer]:
+                - /url: /gartenrodung/
+            - listitem [ref=f2e238]:
+              - link "Baumstumpf-Entfernung" [ref=f2e239] [cursor=pointer]:
+                - /url: /baumstumpf-entfernen/
+            - listitem [ref=f2e240]:
+              - link "GaLaBau-Arbeiten" [ref=f2e241] [cursor=pointer]:
+                - /url: /galabau/
+          - heading [level=4] [ref=f2e242]:
+            - link "Entrümpelung & Auflösung" [ref=f2e243] [cursor=pointer]:
+              - /url: /entruempelung/
+          - list [ref=f2e244]:
+            - listitem [ref=f2e245]:
+              - link "Entrümpelung" [ref=f2e246] [cursor=pointer]:
+                - /url: /entruempelung/
+            - listitem [ref=f2e247]:
+              - link "Haushaltsauflösung" [ref=f2e248] [cursor=pointer]:
+                - /url: /haushaltsaufloesung/
+            - listitem [ref=f2e249]:
+              - link "Grundreinigung" [ref=f2e250] [cursor=pointer]:
+                - /url: /grundreinigung/
+            - listitem [ref=f2e251]:
+              - link "Ferienwohnung-Reinigung" [ref=f2e252] [cursor=pointer]:
+                - /url: /ferienwohnung-reinigung/
+        - generic [ref=f2e253]:
+          - heading [level=4] [ref=f2e254]:
+            - link "Hausverwaltungen & Objekte" [ref=f2e255] [cursor=pointer]:
+              - /url: /fuer-hausverwaltungen/
+          - list [ref=f2e256]:
+            - listitem [ref=f2e257]:
+              - link "Für Hausverwaltungen" [ref=f2e258] [cursor=pointer]:
+                - /url: /fuer-hausverwaltungen/
+            - listitem [ref=f2e259]:
+              - link "Objektbetreuung" [ref=f2e260] [cursor=pointer]:
+                - /url: /objektbetreuung/
+            - listitem [ref=f2e261]:
+              - link "Hausmeisterservice" [ref=f2e262] [cursor=pointer]:
+                - /url: /hausmeisterservice/
+            - listitem [ref=f2e263]:
+              - link "Unterhaltsreinigung" [ref=f2e264] [cursor=pointer]:
+                - /url: /unterhaltsreinigung/
+            - listitem [ref=f2e265]:
+              - link "Gebäudereinigung" [ref=f2e266] [cursor=pointer]:
+                - /url: /gebaeudereinigung/
+          - heading "Unternehmen" [level=4] [ref=f2e267]
+          - list [ref=f2e268]:
+            - listitem [ref=f2e269]:
+              - link "Alle Leistungen" [ref=f2e270] [cursor=pointer]:
+                - /url: /leistungen/
+            - listitem [ref=f2e271]:
+              - link "Standorte" [ref=f2e272] [cursor=pointer]:
+                - /url: /standorte/
+            - listitem [ref=f2e273]:
+              - link "Ratgeber" [ref=f2e274] [cursor=pointer]:
+                - /url: /ratgeber/
+            - listitem [ref=f2e275]:
+              - link "Über uns" [ref=f2e276] [cursor=pointer]:
+                - /url: /ueber-uns/
+            - listitem [ref=f2e277]:
+              - link "Bewertungen" [ref=f2e278] [cursor=pointer]:
+                - /url: /bewertungen/
+            - listitem [ref=f2e279]:
+              - link "Kontakt" [ref=f2e280] [cursor=pointer]:
+                - /url: /kontakt/
+      - generic [ref=f2e281]:
+        - generic [ref=f2e282]: Haus- & Gartenservice Havelland (GbR)
+        - link "Impressum" [ref=f2e283] [cursor=pointer]:
+          - /url: /impressum/
+        - link "Datenschutz" [ref=f2e284] [cursor=pointer]:
+          - /url: /datenschutz/
+        - link "Cookie-Einstellungen" [ref=f2e285] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=f2e287]:
+    - paragraph [ref=f2e288]:
+      - text: Wir nutzen Cookies für Statistik (Google Analytics) und die Erfolgsmessung unserer Google-Werbung — Daten gehen an Google, auch in die USA. Details und Widerruf in der
+      - link "Datenschutzerklärung" [ref=f2e289] [cursor=pointer]:
+        - /url: /datenschutz/
+      - text: .
+    - generic [ref=f2e290]:
+      - button "Ablehnen" [ref=f2e291] [cursor=pointer]
+      - button "Akzeptieren" [ref=f2e292] [cursor=pointer]

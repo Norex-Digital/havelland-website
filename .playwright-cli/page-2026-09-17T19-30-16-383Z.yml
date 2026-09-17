@@ -1,0 +1,394 @@
+- generic [active] [ref=f14e1]:
+  - banner [ref=f14e2]:
+    - generic [ref=f14e3]:
+      - link [ref=f14e4] [cursor=pointer]:
+        - /url: /
+        - img "Haus- & Gartenservice Havelland" [ref=f14e6]
+      - navigation "Hauptnavigation" [ref=f14e7]:
+        - link "Leistungen" [ref=f14e8] [cursor=pointer]:
+          - /url: /leistungen/
+        - link "Standorte" [ref=f14e9] [cursor=pointer]:
+          - /url: /standorte/
+        - link "Ratgeber" [ref=f14e10] [cursor=pointer]:
+          - /url: /ratgeber/
+        - link "Hausverwaltungen" [ref=f14e11] [cursor=pointer]:
+          - /url: /fuer-hausverwaltungen/
+        - link "Über uns" [ref=f14e12] [cursor=pointer]:
+          - /url: /ueber-uns/
+        - link "Kontakt" [ref=f14e13] [cursor=pointer]:
+          - /url: /kontakt/
+      - link "01515 6198195" [ref=f14e14] [cursor=pointer]:
+        - /url: tel:+4915156198195
+      - link "Kostenlose Besichtigung" [ref=f14e18] [cursor=pointer]:
+        - /url: /kontakt/
+      - checkbox "Menü öffnen und schließen"
+  - generic [ref=f14e19]:
+    - link "Start" [ref=f14e20] [cursor=pointer]:
+      - /url: /
+    - text: ›Kleinere GaLaBau-Arbeiten
+  - generic [ref=f14e24]:
+    - generic [ref=f14e25]:
+      - generic [ref=f14e26]: Leistung
+      - heading [level=1] [ref=f14e27]:
+        - emphasis [ref=f14e28]: Kleinere GaLaBau-Arbeiten
+        - text: im Havelland — Zaun, Rodung, Stubben, Pflaster
+      - paragraph [ref=f14e29]: "Schicken Sie uns ein Foto oder eine Skizze per WhatsApp, die erste Einschätzung kommt meist am selben Werktag. Danach besichtigen wir kostenlos, nennen einen schriftlichen Festpreis und legen den Termin fest. Zaun, Hecke, Rodung, Stubben, Pflaster: kleinere GaLaBau-Arbeiten in Falkensee und im ganzen Havelland, aus einer Hand."
+      - generic [ref=f14e30]:
+        - link "Kostenlose Besichtigung anfragen" [ref=f14e31] [cursor=pointer]:
+          - /url: /kontakt/#anfrage
+        - link "WhatsApp" [ref=f14e32] [cursor=pointer]:
+          - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Kleinere%20GaLaBau-Arbeiten.
+        - link "☎ 01515 6198195" [ref=f14e33] [cursor=pointer]:
+          - /url: tel:+4915156198195
+      - paragraph [ref=f14e34]:
+        - link "5,0 ★ bei Google · 19 Bewertungen" [ref=f14e35] [cursor=pointer]:
+          - /url: /bewertungen/
+    - img "Kleinere GaLaBau-Arbeiten im Havelland — Haus- & Gartenservice Havelland" [ref=f14e38]
+  - region "Unsere drei Zusagen" [ref=f14e39]:
+    - generic [ref=f14e41]:
+      - generic [ref=f14e42]:
+        - generic [ref=f14e43]: "01"
+        - generic [ref=f14e44]:
+          - heading "Festpreis steht schriftlich" [level=3] [ref=f14e45]
+          - paragraph [ref=f14e46]: Nach der kostenlosen Besichtigung steht Ihr Preis fest. Grünschnitt und Fräsgut sind darin enthalten, Rückbau und Sperriges rechnen wir nach Beleg ab.
+      - generic [ref=f14e47]:
+        - generic [ref=f14e48]: "02"
+        - generic [ref=f14e49]:
+          - heading "Foto-Nachweis" [level=3] [ref=f14e50]
+          - paragraph [ref=f14e51]: Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.
+      - generic [ref=f14e52]:
+        - generic [ref=f14e53]: "03"
+        - generic [ref=f14e54]:
+          - heading "Ein Ansprechpartner" [level=3] [ref=f14e55]
+          - paragraph [ref=f14e56]: Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.
+  - generic [ref=f14e59]:
+    - paragraph [ref=f14e60]:
+      - strong [ref=f14e61]: "Kleinere Garten- und Landschaftsbauarbeiten sind Zäune setzen, Hecken entfernen, Flächen roden, Stubben fräsen, Pflaster und Kanten ausbessern und Beete einfassen: alles unterhalb des Großprojekts. Der Haus- & Gartenservice Havelland aus Falkensee führt sie mit einem festen Zwei-Mann-Team aus, zum schriftlichen Festpreis nach kostenloser Besichtigung."
+    - heading "GaLaBau im Havelland — was wir bauen und was wir wegmachen" [level=2] [ref=f14e62]
+    - 'heading "Zaunbau: Doppelstab, Sichtschutz, Staketen" [level=3] [ref=f14e63]'
+    - paragraph [ref=f14e64]:
+      - text: "Wir montieren genormte Zaunsysteme: Doppelstabmatten als Standard für Vorgarten und Grenze, blickdichten Sichtschutz aus WPC oder Holz zur Terrasse, Staketenzaun aus Kastanie als günstigen Einstieg, dazu passende Gehtore. Bei der Besichtigung zeigt eine Spatenprobe, ob die Pfosten in Einschlaghülsen stehen können oder ob Eck-, End- und Torpfosten Beton brauchen. Die Leitungsauskunft holen wir ein, bevor das erste Loch entsteht. Den alten Zaun bauen wir auf Wunsch vorher zurück, auch wenn er einbetoniert ist. Sie erhalten einen Festpreis mit ausgewiesenem Materialanteil, keinen Meterpreis und kein Nachverhandeln. Zaunbau ist unsere jüngste Leistung; das erste Projekt in Falkensee mit 33 Laufmetern Staketenzaun ist auf der Zaunbau-Seite mit Zahlen dokumentiert. Dort steht auch der Vergleich der fünf Zaunarten mit Haltbarkeit, Lieferzeit und Projektspanne für 20 Meter."
+      - link "Alle Zaunarten und Spannen" [ref=f14e65] [cursor=pointer]:
+        - /url: /zaunbau/
+      - text: .
+    - heading "Heckenentfernung und Rodung" [level=3] [ref=f14e66]
+    - paragraph [ref=f14e67]:
+      - text: "Soll eine Hecke dauerhaft weg oder ein ganzes Grundstück wieder nutzbar werden, schneiden wir zurück, roden das Wurzelwerk und fahren alles ab. Für Hecken und Gehölze gilt das Zeitfenster vom 1. Oktober bis 28. Februar; von März bis September verbietet § 39 des Bundesnaturschutzgesetzes das Beseitigen zum Schutz brütender Vögel. Gras, Kraut und Wildwuchs ohne Gehölz räumen wir das ganze Jahr über. Vor jedem Termin sehen wir die Hecke auf Nester durch. Typische Fälle: die vertrocknete Thuja-Reihe an der Grenze, der Kirschlorbeer, der nach jedem Schnitt wieder zur Wand wird, oder der geerbte Garten, den seit Jahren niemand betreten hat. Bei der Besichtigung nehmen wir Länge, Höhe, Heckenart und Zufahrt auf und nennen danach einen Festpreis, in dem Abfuhr und Entsorgung des Grünschnitts enthalten sind; zur Orientierung liegt eine Hecke komplett mit Wurzel meist bei 40 bis 90 Euro je laufendem Meter inkl. MwSt. (Stand 2026). Die freie Fläche übergeben wir eben und besenrein, bereit für Zaun, Rasen oder Neupflanzung."
+      - link "Zur Heckenentfernung" [ref=f14e68] [cursor=pointer]:
+        - /url: /heckenentfernung/
+      - text: ·
+      - link "Zur Gartenrodung" [ref=f14e69] [cursor=pointer]:
+        - /url: /gartenrodung/
+      - text: .
+    - heading "Stubben fräsen und Wurzeln entfernen" [level=3] [ref=f14e70]
+    - paragraph [ref=f14e71]:
+      - text: "Ein Baumstumpf im Rasen, die Stubbenreihe der gerodeten Hecke, der Wurzelstock des abgestorbenen Obstbaums: Wir fräsen rund 20 bis 30 Zentimeter unter Bodenniveau, ebnen ein und nehmen das Fräsgut mit; Abfuhr und Entsorgung stecken im Festpreis. Das geht ganzjährig, denn das Fräsen bereits gefällter Stümpfe fällt nicht unter das Winterfenster für Hecken. Ein einzelner Stubben dauert selten länger als eine Stunde, mehrere Stümpfe erledigen wir in einem Termin, was pro Stück günstiger ist als getrennte Anfahrten. Der Preis hängt vor allem am Stammdurchmesser: zur Orientierung 2 bis 5 Euro je Zentimeter inkl. MwSt. (Stand 2026), den verbindlichen Festpreis nennen wir nach der kostenlosen Besichtigung. Dort klären wir auch, ob die Fräse durchs Gartentor passt und ob Leitungen im Boden liegen. Soll an der Stelle gebaut werden, graben wir den Wurzelstock stattdessen komplett aus. Den Baum selbst fällen wir nicht; große Fällungen vermitteln wir an Fachpartner und übernehmen danach die Wurzelarbeit."
+      - link "Zum Baumstumpf entfernen" [ref=f14e72] [cursor=pointer]:
+        - /url: /baumstumpf-entfernen/
+      - text: .
+    - heading "Pflaster ausbessern, Kantensteine, Wegeplatten" [level=3] [ref=f14e73]
+    - paragraph [ref=f14e74]:
+      - text: "Abgesackte Stellen in Einfahrt oder Gartenweg nehmen wir auf, richten den Unterbau neu, verdichten und setzen die Steine wieder ein; gebrochene Platten tauschen wir einzeln aus. Dazu kommen Kantensteine und Rasenkanten, die Beet und Rasen sauber trennen, sowie kurze Wege aus Wegeplatten zum Schuppen oder zur Tonne. Solche Aufträge sind für einen großen Pflasterbetrieb zu klein und für Sie zu mühsam: die Stolperkante vor der Garage, die fehlende Reihe Kantensteine, die drei Platten, die im letzten Winter hochgefroren sind. Wir setzen sie zum Festpreis, ohne Mindestfläche. Ist Ihr Pflaster intakt und nur vermoost oder verschmutzt, reicht statt der Neuverlegung meist eine Steinreinigung; auch die machen wir im Haus. Neue Pflasterflächen ab Neubau und komplette Einfahrten legen wir nicht, dafür sind Erdbau und Unterbau zu groß für unser Team."
+      - link "Zur Steinreinigung" [ref=f14e75] [cursor=pointer]:
+        - /url: /steinreinigung/
+      - text: .
+    - heading "Beeteinfassungen und Hochbeete" [level=3] [ref=f14e76]
+    - paragraph [ref=f14e77]: "Beeteinfassungen aus Stein, Metall oder Holz geben Beeten eine feste Kante, die das jährliche Nachstechen spart und den Rasenmäher vom Beet fernhält. Wir setzen sie in ein verdichtetes Sand- oder Splittbett und richten sie an der Schnur aus, damit die Linie auch nach dem ersten Winter gerade bleibt. Hochbeete bauen wir aus Holz- oder Metallbausätzen komplett auf, auf Wunsch mit Wühlmausgitter am Boden. Die Befüllung in Schichten aus Grobschnitt, Kompost und Erde übernehmen wir gleich mit, sodass Sie direkt pflanzen können. Solche Arbeiten sind oft der letzte Schritt nach einer Rodung oder einem Zaunbau: erst die freie Fläche, dann die neue Struktur. Wer beides bei uns beauftragt, bekommt einen Festpreis und aufeinander abgestimmte Termine. Das Material stimmen wir vor der Bestellung mit Ihnen ab, damit Farbe und Format zum Haus passen und nichts doppelt gekauft wird."
+    - heading "Erst freiräumen, dann bauen" [level=3] [ref=f14e78]
+    - paragraph [ref=f14e79]:
+      - text: "Auf vielen Grundstücken steht dem neuen Zaun oder Beet noch etwas im Weg: der volle Schuppen, das morsche Gartenhaus, der Hühnerstall vom Vorbesitzer, der Holzhaufen hinter der Garage. Das räumen wir vorher weg, als Entrümpelung mit Abriss und sortenreiner Entsorgung über den Wertstoffhof. Anders als beim Grünschnitt gilt hier: Für Altholz, Metallzaun, Betonfundamente und Sperriges weisen wir die Entsorgungsgebühren nach Beleg aus, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag. Im Sommer 2026 haben wir im Havelland einen solchen Auftrag in drei Positionen umgesetzt: Schuppen und Garage ausgeräumt, einen Holzhaufen abgefahren, Holzschuppen und Hühnerstall abgerissen und den alten Metallzaun zurückgebaut. Danach war die Fläche frei für das, was der Eigentümer vorhatte. Der Vorteil für Sie: eine Besichtigung, ein Angebot, ein Team, das Räumung, Rückbau und den anschließenden Bau kennt. Sie müssen nicht zwischen Entrümpler, Gärtner und Zaunbauer vermitteln, und niemand steht vor einer Fläche, die der andere noch nicht freigeräumt hat. Was die Entrümpelung genau umfasst, steht auf der eigenen Seite."
+      - link "Gartenhaus und Schuppen abreißen" [ref=f14e80] [cursor=pointer]:
+        - /url: /entruempelung/#gartenhaus
+      - text: .
+    - heading "Was wir bewusst nicht anbieten" [level=3] [ref=f14e81]
+    - paragraph [ref=f14e82]: "Wir sind ein Zwei-Mann-Team, und das setzt Grenzen, die wir lieber vorher nennen. Komplette Gartenneuanlagen mit Erdbau, Terrassenbau, Poolbau und große Pflasterflächen ab Neubau übernehmen wir nicht. Tiefbau, Drainagen und Leitungsgräben ebenfalls nicht. Stützmauern, gemauerte Sockel und alles, was Statik braucht, gehört zum Maurer- und Bauhandwerk. Beton verarbeiten wir nur dort, wo der Zaunbau ihn braucht: für Eck-, End- und Torpfosten. Bäume fällen wir nicht; Arbeiten mit Seilklettertechnik oder Hubarbeitsbühne und große Fällungen vermitteln wir an Fachpartner und übernehmen danach Stubben und Wurzeln. Zäune über 2 Meter Höhe bauen wir nicht. Passt Ihr Vorhaben nicht zu uns, sagen wir das bei der ersten Rückmeldung per WhatsApp, nicht erst nach der Besichtigung. Kennen wir einen passenden Betrieb aus der Region, nennen wir ihn Ihnen."
+    - heading "Kleinere GaLaBau-Arbeiten in Ihrer Nähe" [level=3] [ref=f14e83]
+    - paragraph [ref=f14e84]: Der Haus- & Gartenservice Havelland sitzt in Falkensee. GaLaBau-Anfragen aus Falkensee, Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Wustermark, Nauen und Berlin-Spandau haben deshalb kurze Wege, die Anfahrt steckt im Festpreis. Für die erste Einschätzung reicht ein Foto der Stelle per WhatsApp, bei Zaun oder Rodung dazu die ungefähre Länge oder Fläche.
+    - heading "So läuft es ab" [level=3] [ref=f14e85]
+    - paragraph [ref=f14e86]: Schicken Sie Fotos oder eine Skizze per WhatsApp oder rufen Sie an; die Rückmeldung kommt meist am selben Werktag. Bei der kostenlosen Besichtigung messen wir auf, prüfen Untergrund, Zugang und Leitungen und besprechen das Material. Danach erhalten Sie den Festpreis schriftlich. Bei Grünschnitt, Bewuchs und Fräsgut sind Abfuhr und Entsorgung darin enthalten; bei Rückbau und Sperrigem wie Zaun, Beton oder Altholz weisen wir die Entsorgungsgebühren nach Beleg aus, zuzüglich Mehrwertsteuer. Den Termin legen wir so, dass Hecken- und Gehölzarbeiten im Fenster vom 1. Oktober bis 28. Februar liegen. Nach der Arbeit bekommen Sie die Vorher-Nachher-Fotos aufs Handy.
+    - heading "Unsere Garantie" [level=3] [ref=f14e87]
+    - paragraph [ref=f14e88]: "Gerade Kanten, fest sitzende Steine, aufgeräumte Baustelle — ist etwas nicht wie besprochen, bessern wir kostenlos nach. Der schriftliche Festpreis bleibt der Endpreis: Grünschnitt und Fräsgut entsorgen wir darin, Entsorgungsgebühren für Rückbau und Sperriges rechnen wir nach Beleg ab, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag."
+  - generic [ref=f14e90]:
+    - heading "Lieber machen lassen?" [level=2] [ref=f14e91]
+    - paragraph [ref=f14e92]: Kostenlose Besichtigung, Festpreis, dann erledigt.
+    - generic [ref=f14e93]:
+      - link "Kostenlose Besichtigung anfragen" [ref=f14e94] [cursor=pointer]:
+        - /url: /kontakt/#anfrage
+      - link "☎ 01515 6198195" [ref=f14e95] [cursor=pointer]:
+        - /url: tel:+4915156198195
+  - img "Kleinere GaLaBau-Arbeiten im Detail — Haus- & Gartenservice Havelland" [ref=f14e100]
+  - generic [ref=f14e103]:
+    - heading "Rodung, Zaun, Pflege — die richtige Reihenfolge" [level=2] [ref=f14e104]
+    - paragraph [ref=f14e105]:
+      - strong [ref=f14e106]: "Erst weg, dann neu, dann gepflegt: ein Ansprechpartner, ein Termin."
+    - paragraph [ref=f14e107]:
+      - text: "Die Reihenfolge entscheidet über den Preis. Wer den Zaun setzt, bevor die alte Hecke samt Wurzeln raus ist, zahlt später doppelt: Die Stubbenfräse kommt nicht mehr an die Wurzelreihe heran, und der neue Zaun steht auf Wurzelwerk, das sich beim Verrotten setzt. Deshalb arbeiten wir in fester Abfolge. Erst die Rodung im Winterfenster, dann das Fräsen der Stubben und Wurzeln, bis die Fläche eben ist. Danach kommen Kanten, Pflaster oder der Zaun auf tragfähigen Grund, zuletzt Rasen und Beete. Alles in einem Auftrag geplant heißt: eine Besichtigung, ein schriftlicher Festpreis für alle Positionen, weniger Anfahrten und kein Leerlauf zwischen Gewerken, die aufeinander warten. Wer die fertige Fläche danach in die regelmäßige Gartenpflege im 14-tägigen Rhythmus gibt, behält dieselbe Nummer und dasselbe Team, das schon gerodet und montiert hat."
+      - link "Zur regelmäßigen Gartenpflege" [ref=f14e108] [cursor=pointer]:
+        - /url: /gartenpflege/
+      - text: .
+  - generic [ref=f14e111]:
+    - heading "Wann welche Arbeit sinnvoll ist" [level=2] [ref=f14e112]
+    - paragraph [ref=f14e113]: "Hecken und Gehölze roden wir vom 1. Oktober bis 28. Februar; von März bis September ist das Beseitigen nach § 39 BNatSchG untersagt. Der Formschnitt an einer Hecke, die bleiben soll, ist davon nicht betroffen und läuft ganzjährig. Stubben fräsen geht das ganze Jahr, weil bereits gefällte Stümpfe nicht unter das Fenster fallen. Zaunbau läuft auch im Winter: Pfosten in Einschlaghülsen brauchen kein Aushärten und sind frostunabhängig, nur einbetonierte Eck-, End- und Torpfosten wollen frostfreie Tage. Pflaster, Kantensteine und Beeteinfassungen legen wir auf frostfreie Zeiten, weil sich gefrorener Unterbau nicht sauber verdichten lässt. Für ein Kombiprojekt heißt das: Anfrage im Herbst, Rodung und Stubben zwischen Oktober und Februar, Zaun direkt im Anschluss, Kanten und Beete ab dem Frühjahr. Wer erst im Februar anfragt, konkurriert mit allen, die ihre Rodung noch vor dem Fristende erledigt haben wollen."
+  - generic [ref=f14e116]:
+    - 'heading "Zaun, Hecke, Rodung: was Sie vorher klären sollten" [level=2] [ref=f14e117]'
+    - paragraph [ref=f14e118]:
+      - text: "Drei Dinge lohnen sich vor der Anfrage. Erstens der Zaun: Ob er eine Genehmigung braucht, hängt von Höhe, Lage des Grundstücks und der örtlichen Satzung ab; in Falkensee gelten im Ortskern Falkenhagen eigene Gestaltungsregeln. Was für Ihr Grundstück gilt und wer den Grenzzaun zahlt, erklärt unser Ratgeber zur Zaungenehmigung in Brandenburg; eine Rechtsberatung ersetzt er nicht. Zweitens die Hecke: Auf dem eigenen Grundstück ist die Entfernung im Fenster vom 1. Oktober bis 28. Februar der Regelfall, Ausnahmen gibt es bei geschützten Landschaftsbestandteilen und kommunalen Satzungen. Drittens der Nachbar: Steht die Hecke oder der Zaun auf der Grenze, sprechen Sie vorher mit der anderen Seite; das erspart Streit, den kein Handwerker auflöst. Was uns bei der Besichtigung auffällt, sagen wir Ihnen. Die Entscheidung und die Anfragen bei Gemeinde oder Naturschutzbehörde bleiben bei Ihnen."
+      - link "Ratgeber Zaun-Genehmigung Brandenburg" [ref=f14e119] [cursor=pointer]:
+        - /url: /ratgeber/zaun-genehmigung-brandenburg/
+      - text: ·
+      - 'link "Ratgeber Hecke entfernen: was erlaubt ist" [ref=f14e120] [cursor=pointer]':
+        - /url: /ratgeber/hecke-entfernen-erlaubt/
+      - text: .
+  - generic [ref=f14e123]:
+    - 'heading "Ehrlich: kleinere Arbeiten, kein Großprojekt" [level=2] [ref=f14e124]'
+    - paragraph [ref=f14e125]: "Ein GaLaBau-Großbetrieb plant Ihren Garten neu, fährt mit Bagger und Radlader auf und rechnet in Wochen. Wir sind zwei Leute aus Falkensee mit eigenem Gerät, die die überschaubaren Aufträge übernehmen, für die ein solcher Betrieb selten kommt: die Hecke an der Grenze, der Zaun dahinter, die vier Stubben im Rasen, die abgesackte Ecke der Einfahrt. Diese Größe ist der Grund, warum wir einen Festpreis nennen können: Bei der Besichtigung überblicken wir den Aufwand komplett, und wir führen alles selbst aus, ohne Subunternehmer. Was zu groß für uns ist, sagen wir vorher, nicht auf der Baustelle. Für Sie heißt das: keine Mindestauftragsgröße, kein wochenlanges Warten auf ein Angebot, aber auch kein Poolbau und keine Terrasse auf Betonplatte. Dazwischen liegt alles, was diese Seite beschreibt, und das machen wir gründlich."
+  - generic [ref=f14e127]:
+    - heading "So sah das zuletzt aus." [level=2] [ref=f14e129]
+    - paragraph [ref=f14e130]: Echte Aufträge aus dem Havelland, ohne Namen und Adresse. Wo wir Fotos oder Zahlen zeigen, liegt die Einwilligung der Kunden vor. Genau so bekommen Sie Ihren Foto-Nachweis.
+    - generic [ref=f14e132]:
+      - generic [ref=f14e133]:
+        - heading "Flächenräumung 1.300 m², Falkensee" [level=3] [ref=f14e134]
+        - paragraph [ref=f14e135]: September 2026 · 3 Tage · ca. 1.300 m²
+        - paragraph [ref=f14e136]: "Ein Grundstück in Falkensee, rund 1.300 Quadratmeter Wiese und Wildkraut. Der Auftrag: die oberflächige Entfernung des gesamten Bewuchses, keine Gehölze, keine Baumfällung. Wir haben an drei Tagen vom 7. bis 9. September 2026 gearbeitet, den Aufwuchs abgefahren und entsorgt; beides steckte im Festpreis. Übergeben haben wir eine offene, freigeräumte Fläche, auf der der Eigentümer jetzt planen kann. Als Folgeauftrag ist der Rückbau des alten Zauns samt Betonfundamenten besprochen; dort rechnen wir die Entsorgung nach Beleg ab, zuzüglich Mehrwertsteuer. Die Vorher-Nachher-Fotos zeigen wir mit Einwilligung des Kunden."
+      - generic [ref=f14e137]:
+        - generic [ref=f14e138]:
+          - img "Flächenräumung 1.300 m², Falkensee — vorher und nachher — nach der Räumung"
+          - img "Flächenräumung 1.300 m², Falkensee — vorher und nachher — vor der Räumung"
+          - generic: Vorher
+          - generic: Nachher
+          - slider "Vorher-Nachher-Vergleich Flächenräumung 1.300 m², Falkensee — vorher und nachher" [ref=f14e139]: "50"
+        - paragraph [ref=f14e140]:
+          - generic [ref=f14e141]: Flächenräumung 1.300 m²
+          - generic [ref=f14e142]: vorher / nachher
+  - generic [ref=f14e145]:
+    - generic [ref=f14e146]:
+      - generic [ref=f14e147]: Der schnellste Weg
+      - heading [level=2] [ref=f14e150]:
+        - text: Ein Handy-Foto
+        - emphasis [ref=f14e151]: reicht.
+      - paragraph [ref=f14e152]: Sie müssen nichts ausmessen und kein Formular ausfüllen. Drei Schritte, dann kümmern wir uns.
+      - list [ref=f14e153]:
+        - listitem [ref=f14e154]:
+          - generic [ref=f14e155]: "1"
+          - generic [ref=f14e156]:
+            - heading "Fotografieren" [level=3] [ref=f14e157]
+            - paragraph [ref=f14e158]: Einmal längs, einmal von vorn — so sehen wir Höhe, Länge und Zugang.
+        - listitem [ref=f14e159]:
+          - generic [ref=f14e160]: "2"
+          - generic [ref=f14e161]:
+            - heading "Per WhatsApp senden" [level=3] [ref=f14e162]
+            - paragraph [ref=f14e163]: "An 01515 6198195, gern mit zwei Sätzen dazu: Was soll passieren, wo stehen Sie?"
+        - listitem [ref=f14e164]:
+          - generic [ref=f14e165]: "3"
+          - generic [ref=f14e166]:
+            - heading "Antwort in Stunden" [level=3] [ref=f14e167]
+            - paragraph [ref=f14e168]: Erste Einschätzung und Termin für die kostenlose Besichtigung — danach steht Ihr Festpreis.
+      - generic [ref=f14e169]:
+        - link "Foto per WhatsApp senden" [ref=f14e170] [cursor=pointer]:
+          - /url: https://wa.me/4915156198195?text=Hallo%2C%20hier%20ein%20Foto%20von%20meinem%20Garten%20%E2%80%94%20was%20w%C3%BCrde%20das%20kosten%3F
+        - 'link "lieber anrufen: 01515 6198195" [ref=f14e171] [cursor=pointer]':
+          - /url: tel:+4915156198195
+    - generic [ref=f14e172]:
+      - img "Heckenschnitt mit der Heckenschere an einer Hecke" [ref=f14e174]
+      - paragraph [ref=f14e175]:
+        - generic [ref=f14e176]: Handarbeit, wo es drauf ankommt
+        - generic [ref=f14e177]: Kanten & Ecken
+  - generic [ref=f14e179]:
+    - heading "So läuft ein Auftrag" [level=2] [ref=f14e181]
+    - generic [ref=f14e182]:
+      - generic [ref=f14e183]:
+        - generic [ref=f14e184]: "1"
+        - generic [ref=f14e185]:
+          - generic [ref=f14e186]: Tag 1 · Antwort meist in Stunden
+          - heading "Anfrage" [level=3] [ref=f14e187]
+          - paragraph [ref=f14e188]: Per Telefon oder WhatsApp kurz schildern, was ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.
+      - generic [ref=f14e189]:
+        - generic [ref=f14e190]: "2"
+        - generic [ref=f14e191]:
+          - generic [ref=f14e192]: Kurzfristig · kostenlos
+          - heading "Besichtigung & Festpreis" [level=3] [ref=f14e193]
+          - paragraph [ref=f14e194]: Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis — inklusive Abfuhr. Der Preis steht, bevor wir anfangen.
+      - generic [ref=f14e195]:
+        - generic [ref=f14e196]: "3"
+        - generic [ref=f14e197]:
+          - generic [ref=f14e198]: Zum vereinbarten Termin
+          - heading "Saubere Ausführung" [level=3] [ref=f14e199]
+          - paragraph [ref=f14e200]: Pünktlich, gründlich, terminlich sauber geplant. Wir räumen hinter uns auf — besenrein ist Teil des Preises.
+      - generic [ref=f14e201]:
+        - generic [ref=f14e202]: "4"
+        - generic [ref=f14e203]:
+          - generic [ref=f14e204]: Direkt nach der Arbeit
+          - heading "Foto-Nachweis aufs Handy" [level=3] [ref=f14e205]
+          - paragraph [ref=f14e206]: Vorher-/Nachher-Fotos Ihres Auftrags, direkt aufs Handy. Sie sehen das Ergebnis auch dann, wenn Sie nicht zu Hause waren.
+  - generic [ref=f14e208]:
+    - heading [level=2] [ref=f14e210]:
+      - text: Häufige
+      - emphasis [ref=f14e211]: Fragen.
+    - paragraph [ref=f14e212]:
+      - text: Kurz und ehrlich beantwortet. Ihre Frage fehlt?
+      - link "Schreiben Sie uns per WhatsApp." [ref=f14e213] [cursor=pointer]:
+        - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20habe%20eine%20Frage.
+    - generic [ref=f14e214]:
+      - searchbox "Fragen durchsuchen" [ref=f14e216]
+      - paragraph
+      - group [ref=f14e217]:
+        - generic "Welche GaLaBau-Arbeiten übernehmen Sie — und welche nicht?" [ref=f14e218] [cursor=pointer]
+      - group [ref=f14e220]:
+        - generic "Was kosten Pflasterarbeiten oder Kantensteine?" [ref=f14e221] [cursor=pointer]
+      - group [ref=f14e223]:
+        - generic "Können Sie nach einer Heckenentfernung direkt den Zaun setzen?" [ref=f14e224] [cursor=pointer]
+      - group [ref=f14e226]:
+        - generic "Wann darf eine Hecke entfernt werden?" [ref=f14e227] [cursor=pointer]
+      - group [ref=f14e229]:
+        - generic "Was kostet ein 20-m-Doppelstabmattenzaun?" [ref=f14e230] [cursor=pointer]
+      - group [ref=f14e232]:
+        - generic "Fräsen Sie Stubben auch im Sommer?" [ref=f14e233] [cursor=pointer]
+      - group [ref=f14e235]:
+        - generic "Räumen Sie auch den alten Schuppen mit weg?" [ref=f14e236] [cursor=pointer]
+      - group [ref=f14e238]:
+        - generic "Wer macht GaLaBau-Arbeiten in Falkensee?" [ref=f14e239] [cursor=pointer]
+  - generic [ref=f14e242]:
+    - heading "Sagen Sie uns, was ansteht — wir kümmern uns." [level=2] [ref=f14e243]
+    - paragraph [ref=f14e244]: Kostenlose Besichtigung, Festpreis, dann erledigt.
+    - generic [ref=f14e245]:
+      - link "Kostenlose Besichtigung anfragen" [ref=f14e246] [cursor=pointer]:
+        - /url: /kontakt/#anfrage
+      - link "☎ 01515 6198195" [ref=f14e247] [cursor=pointer]:
+        - /url: tel:+4915156198195
+  - contentinfo [ref=f14e248]:
+    - generic [ref=f14e249]:
+      - paragraph [ref=f14e250]: Haus- & Gartenservice Havelland
+      - paragraph [ref=f14e251]:
+        - text: Darmstädter Str. 15, 14612 Falkensee ·
+        - link "01515 6198195" [ref=f14e252] [cursor=pointer]:
+          - /url: tel:+4915156198195
+        - text: ·
+        - link "hausgartenservicehvl@gmail.com" [ref=f14e253] [cursor=pointer]:
+          - /url: mailto:hausgartenservicehvl@gmail.com
+        - text: Mo–Fr 7–19 Uhr · Sa 8–16 Uhr · So geschlossen
+      - generic [ref=f14e254]:
+        - generic [ref=f14e255]:
+          - heading [level=4] [ref=f14e256]:
+            - link "Garten & Grundstück" [ref=f14e257] [cursor=pointer]:
+              - /url: /gartenpflege/
+          - list [ref=f14e258]:
+            - listitem [ref=f14e259]:
+              - link "Gartenpflege" [ref=f14e260] [cursor=pointer]:
+                - /url: /gartenpflege/
+            - listitem [ref=f14e261]:
+              - link "Herbst-Paket (Laub)" [ref=f14e262] [cursor=pointer]:
+                - /url: /gartenpflege/#herbst-paket
+            - listitem [ref=f14e263]:
+              - link "Heckenschnitt" [ref=f14e264] [cursor=pointer]:
+                - /url: /heckenschnitt/
+            - listitem [ref=f14e265]:
+              - link "Baumschnitt" [ref=f14e266] [cursor=pointer]:
+                - /url: /baumschnitt/
+            - listitem [ref=f14e267]:
+              - link "Dachrinnenreinigung" [ref=f14e268] [cursor=pointer]:
+                - /url: /dachrinnenreinigung/
+            - listitem [ref=f14e269]:
+              - link "Fensterreinigung" [ref=f14e270] [cursor=pointer]:
+                - /url: /fensterreinigung/
+            - listitem [ref=f14e271]:
+              - link "Winterdienst" [ref=f14e272] [cursor=pointer]:
+                - /url: /winterdienst/
+            - listitem [ref=f14e273]:
+              - link "Dachreinigung" [ref=f14e274] [cursor=pointer]:
+                - /url: /dachreinigung/
+            - listitem [ref=f14e275]:
+              - link "Steinreinigung" [ref=f14e276] [cursor=pointer]:
+                - /url: /steinreinigung/
+        - generic [ref=f14e277]:
+          - heading [level=4] [ref=f14e278]:
+            - link "GaLaBau & Rodung" [ref=f14e279] [cursor=pointer]:
+              - /url: /galabau/
+          - list [ref=f14e280]:
+            - listitem [ref=f14e281]:
+              - link "Zaunbau" [ref=f14e282] [cursor=pointer]:
+                - /url: /zaunbau/
+            - listitem [ref=f14e283]:
+              - link "Heckenentfernung" [ref=f14e284] [cursor=pointer]:
+                - /url: /heckenentfernung/
+            - listitem [ref=f14e285]:
+              - link "Gartenrodung" [ref=f14e286] [cursor=pointer]:
+                - /url: /gartenrodung/
+            - listitem [ref=f14e287]:
+              - link "Baumstumpf-Entfernung" [ref=f14e288] [cursor=pointer]:
+                - /url: /baumstumpf-entfernen/
+            - listitem [ref=f14e289]:
+              - link "GaLaBau-Arbeiten" [ref=f14e290] [cursor=pointer]:
+                - /url: /galabau/
+          - heading [level=4] [ref=f14e291]:
+            - link "Entrümpelung & Auflösung" [ref=f14e292] [cursor=pointer]:
+              - /url: /entruempelung/
+          - list [ref=f14e293]:
+            - listitem [ref=f14e294]:
+              - link "Entrümpelung" [ref=f14e295] [cursor=pointer]:
+                - /url: /entruempelung/
+            - listitem [ref=f14e296]:
+              - link "Haushaltsauflösung" [ref=f14e297] [cursor=pointer]:
+                - /url: /haushaltsaufloesung/
+            - listitem [ref=f14e298]:
+              - link "Grundreinigung" [ref=f14e299] [cursor=pointer]:
+                - /url: /grundreinigung/
+            - listitem [ref=f14e300]:
+              - link "Ferienwohnung-Reinigung" [ref=f14e301] [cursor=pointer]:
+                - /url: /ferienwohnung-reinigung/
+        - generic [ref=f14e302]:
+          - heading [level=4] [ref=f14e303]:
+            - link "Hausverwaltungen & Objekte" [ref=f14e304] [cursor=pointer]:
+              - /url: /fuer-hausverwaltungen/
+          - list [ref=f14e305]:
+            - listitem [ref=f14e306]:
+              - link "Für Hausverwaltungen" [ref=f14e307] [cursor=pointer]:
+                - /url: /fuer-hausverwaltungen/
+            - listitem [ref=f14e308]:
+              - link "Objektbetreuung" [ref=f14e309] [cursor=pointer]:
+                - /url: /objektbetreuung/
+            - listitem [ref=f14e310]:
+              - link "Hausmeisterservice" [ref=f14e311] [cursor=pointer]:
+                - /url: /hausmeisterservice/
+            - listitem [ref=f14e312]:
+              - link "Unterhaltsreinigung" [ref=f14e313] [cursor=pointer]:
+                - /url: /unterhaltsreinigung/
+            - listitem [ref=f14e314]:
+              - link "Gebäudereinigung" [ref=f14e315] [cursor=pointer]:
+                - /url: /gebaeudereinigung/
+          - heading "Unternehmen" [level=4] [ref=f14e316]
+          - list [ref=f14e317]:
+            - listitem [ref=f14e318]:
+              - link "Alle Leistungen" [ref=f14e319] [cursor=pointer]:
+                - /url: /leistungen/
+            - listitem [ref=f14e320]:
+              - link "Standorte" [ref=f14e321] [cursor=pointer]:
+                - /url: /standorte/
+            - listitem [ref=f14e322]:
+              - link "Ratgeber" [ref=f14e323] [cursor=pointer]:
+                - /url: /ratgeber/
+            - listitem [ref=f14e324]:
+              - link "Über uns" [ref=f14e325] [cursor=pointer]:
+                - /url: /ueber-uns/
+            - listitem [ref=f14e326]:
+              - link "Bewertungen" [ref=f14e327] [cursor=pointer]:
+                - /url: /bewertungen/
+            - listitem [ref=f14e328]:
+              - link "Kontakt" [ref=f14e329] [cursor=pointer]:
+                - /url: /kontakt/
+      - generic [ref=f14e330]:
+        - generic [ref=f14e331]: Haus- & Gartenservice Havelland (GbR)
+        - link "Impressum" [ref=f14e332] [cursor=pointer]:
+          - /url: /impressum/
+        - link "Datenschutz" [ref=f14e333] [cursor=pointer]:
+          - /url: /datenschutz/
+        - link "Cookie-Einstellungen" [ref=f14e334] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=f14e336]:
+    - paragraph [ref=f14e337]:
+      - text: Wir nutzen Cookies für Statistik (Google Analytics) und die Erfolgsmessung unserer Google-Werbung — Daten gehen an Google, auch in die USA. Details und Widerruf in der
+      - link "Datenschutzerklärung" [ref=f14e338] [cursor=pointer]:
+        - /url: /datenschutz/
+      - text: .
+    - generic [ref=f14e339]:
+      - button "Ablehnen" [ref=f14e340] [cursor=pointer]
+      - button "Akzeptieren" [ref=f14e341] [cursor=pointer]
