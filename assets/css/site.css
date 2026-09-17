@@ -272,7 +272,7 @@ body.menu-open .mnav{display:block}
 @media(min-width:900px){.echt-grid{grid-template-columns:1fr 1fr}.echt-grid .echt-card{grid-template-columns:1fr}}
 
 /* ===== Fallbeispiele (Pillar-Hubs, 17.09.) ===== */
-.faelle{display:grid;grid-template-columns:1fr;gap:22px}
+.faelle{display:grid;grid-template-columns:1fr;gap:22px;align-items:start}
 .fall{display:grid;grid-template-columns:1fr;gap:16px;background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:22px}
 .fall h3{font-family:var(--font-display);font-weight:600;font-size:21px;color:var(--green-d);margin-bottom:4px}
 .fall .fmeta{font-size:13px;color:var(--accent-d);letter-spacing:.04em;margin-bottom:8px}
