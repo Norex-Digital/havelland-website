@@ -271,6 +271,18 @@ body.menu-open .mnav{display:block}
 .echt-grid{display:grid;grid-template-columns:1fr;gap:22px}
 @media(min-width:900px){.echt-grid{grid-template-columns:1fr 1fr}.echt-grid .echt-card{grid-template-columns:1fr}}
 
+/* ===== Fallbeispiele (Pillar-Hubs, 17.09.) ===== */
+.faelle{display:grid;grid-template-columns:1fr;gap:22px}
+.fall{display:grid;grid-template-columns:1fr;gap:16px;background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:22px}
+.fall h3{font-family:var(--font-display);font-weight:600;font-size:21px;color:var(--green-d);margin-bottom:4px}
+.fall .fmeta{font-size:13px;color:var(--accent-d);letter-spacing:.04em;margin-bottom:8px}
+.fall .fzitat{margin:12px 0 0;padding-left:14px;border-left:3px solid var(--accent);color:var(--muted);font-style:italic}
+.fall .fzitat cite{display:block;font-style:normal;font-size:13px;margin-top:4px}
+@media(min-width:900px){.faelle{grid-template-columns:1fr 1fr}}
+/* Optionales Bild in Copy-Blöcken (blocks[].img, z. B. Ansprechpartner) */
+.block-fig{margin:18px 0 0;max-width:480px;border-radius:var(--r-el);overflow:hidden}
+.block-fig img{display:block;width:100%;height:auto}
+
 /* ===== Karussell ===== */
 .car{position:relative}
 .car-track{display:grid;grid-auto-flow:column;grid-auto-columns:min(80%,360px);gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 22px;scrollbar-width:none}

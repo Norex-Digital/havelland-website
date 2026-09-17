@@ -9,7 +9,7 @@ const ASSET_VER = crypto.createHash('md5').update(fs.readFileSync('assets/css/si
 import {
   baSlider, garantienStrip, schnittkalender, heckenKompass, jahreszeiten, echtProjekt,
   karussell, archivGrid, whatsappFlow, auftragsTimeline, uspBand, faqFilter, gebietskarte,
-  trustBadges, fristband, aeoKapsel, beweisMechanik, saisonTeaser, clusterKacheln
+  trustBadges, fristband, aeoKapsel, beweisMechanik, saisonTeaser, clusterKacheln, faelleBlock
 } from './components.mjs';
 import { buildLp, lpAttribJS, ATTR_KEYS } from './lp.mjs';
 
@@ -47,7 +47,7 @@ const fixHtml = s => {
   return p;
 };
 const _pa = v => Array.isArray(v) ? v.map(plain) : (v != null ? plain(v) : v);
-function sanHub(h) { for (const k of ['title','meta','h1','h1_em','intro','definition','naehe','ablauf','garantie_text','ortsseite_lead']) if (h[k] != null) h[k] = plain(h[k]); if (h.sections) for (const s of h.sections) { s.h3 = plain(s.h3); s.body = plain(s.body); } if (h.faqs) for (const f of h.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return h; }
+function sanHub(h) { for (const k of ['title','meta','h1','h1_em','intro','definition','naehe','ablauf','garantie_text','ortsseite_lead']) if (h[k] != null) h[k] = plain(h[k]); if (h.sections) for (const s of h.sections) { s.h3 = plain(s.h3); s.body = plain(s.body); } if (h.faqs) for (const f of h.faqs) { f.q = plain(f.q); f.a = plain(f.a); } if (h.faelle) for (const f of h.faelle) { for (const k of ['h3','meta','body','zitat','zitat_von']) if (f[k] != null) f[k] = plain(f[k]); } if (h.blocks) for (const b of h.blocks) { for (const k of ['h2','lead','body','img_alt']) if (b[k] != null) b[k] = plain(b[k]); } return h; }   // faelle/blocks[].lead|img_alt (Pillar-Hub 17.09.)
 function sanArch(a) { a.rahmen = _pa(a.rahmen); a.trust = _pa(a.trust); if (a.faqs) for (const f of a.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return a; }
 function sanRat(r) { for (const k of ['title','meta','lead','intro','cta_text']) if (r[k] != null) r[k] = plain(r[k]); if (r.sections) for (const s of r.sections) { s.h2 = plain(s.h2); s.body_html = fixHtml(s.body_html); } if (r.faqs) for (const f of r.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return r; }
 function sanOrt(o) { if (o.hook) o.hook = plain(o.hook); if (o.nachbarorte) o.nachbarorte = o.nachbarorte.map(plain); return o; }
@@ -57,7 +57,7 @@ const _archArr = CP('archetypes.json'); const archCopy = {}; if (_archArr) for (
 const _ratArr = CP('ratgeber.json'); const ratCopy = ((_ratArr && (_ratArr.ratgeber || _ratArr)) || []).map(sanRat);
 const _orteCp = CP('orte.json'); const orteCopy = (_orteCp && _orteCp.orte) || {}; for (const k in orteCopy) sanOrt(orteCopy[k]);
 // Welle-1a: bespoke Ortsseiten-Copy (service×ort) — ersetzt Archetyp/Ort-Hook + Archetyp-FAQ auf der Ortsseite (Fallback bleibt Archetyp). Dach: Partner-Framing (gu-modell.md, §5 UWG).
-function sanOrtsSvc(o) { if (o.meta != null) o.meta = plain(o.meta); if (o.faqs) for (const f of o.faqs) { f.q = plain(f.q); f.a = plain(f.a); } if (o.orte) for (const k in o.orte) { const e = o.orte[k]; for (const kk of ['hook', 'rahmen', 'trust']) if (e[kk] != null) e[kk] = plain(e[kk]); } return o; }
+function sanOrtsSvc(o) { if (o.meta != null) o.meta = plain(o.meta); if (o.faqs) for (const f of o.faqs) { f.q = plain(f.q); f.a = plain(f.a); } if (o.orte) for (const k in o.orte) { const e = o.orte[k]; for (const kk of ['hook', 'rahmen', 'trust', 'fakt']) if (e[kk] != null) e[kk] = plain(e[kk]); } return o; }   // fakt (17.09.): Ein-Satz-Ortsfakt für die Hub-Ortskarten
 const _ortsSvcCp = CP('ortsseiten.json'); const ortsSvcCopy = (_ortsSvcCp && _ortsSvcCp.services) || {}; for (const k in ortsSvcCopy) sanOrtsSvc(ortsSvcCopy[k]);
 // Reverse-Index Service → Ratgeber (interne Verlinkung, seiten-architektur §7)
 const ratgeberByService = {}; for (const r of ratCopy) { if (!r.cta_service) continue; (ratgeberByService[r.cta_service] = ratgeberByService[r.cta_service] || []).push(r); }
@@ -361,7 +361,9 @@ function hub(s) {
   const c = hubCopy[s.slug];
   const orteList = orteForService(s);
   const cardOrte = orteList.filter(o => hasOrt(s.slug, o.slug)).slice(0, FULL ? 999 : 12);
-  const cardSub = o => s.partner_modell ? `${esc(s.name)} in ${esc(o.name)} — koordiniert über einen Partner-Fachbetrieb.` : `${esc(s.name)} in ${esc(o.name)} — lokal, Festpreis, Foto-Nachweis.`;
+  // Ortskarten-Text (17.09.): bespoke Ein-Satz-Ortsfakt aus ortsseiten.json (services.<slug>.orte.<ort>.fakt) hat Vorrang vor dem generischen Satz.
+  const soHub = ortsSvcCopy[s.slug] || null;
+  const cardSub = o => { const f = soHub && soHub.orte && soHub.orte[o.slug] && soHub.orte[o.slug].fakt; return f ? esc(f) : (s.partner_modell ? `${esc(s.name)} in ${esc(o.name)} — koordiniert über einen Partner-Fachbetrieb.` : `${esc(s.name)} in ${esc(o.name)} — lokal, Festpreis, Foto-Nachweis.`); };
   const cards = cardOrte.map(o => `<a class="card" href="/${s.slug}-${o.slug}/"><h3>${esc(s.name)} ${esc(o.name)}</h3><p>${cardSub(o)}</p><span class="go">Mehr →</span></a>`).join('');
 
   const h1 = c ? emH1(c.h1, c.h1_em) : `${esc(s.name)} <em>im Havelland</em>`;
@@ -414,8 +416,11 @@ function hub(s) {
   const b2bCross = s.b2b_only ? `<section class="sec section-alt"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} für Hausverwaltungen &amp; Gewerbe</h2><p>${esc(s.name)} bieten wir im Havelland vor allem für Hausverwaltungen, WEG und Gewerbeobjekte an — mit festem Ansprechpartner, schriftlichem Angebot und Foto-Reporting nach jedem Einsatz. Den vollständigen Überblick über unser Objekt-Angebot finden Sie unter <a href="/fuer-hausverwaltungen/">Für Hausverwaltungen &amp; Gewerbe</a>.</p></div></div></section>` : '';
   // Optionale Copy-Blöcke (H2 + Fließtext, optionale Service-Querverlinkung): Wohnungsauflösungs-H2 + Kannibalisierungs-Firewall Entrümpelung↔Haushaltsauflösung (Design §4). Nur Hubs mit copy.blocks; sonst ''.
   // Blocks: optionales id (Anker-Ziel, z. B. /gartenpflege/#herbst-paket) + zweiter Link link2_to/link2_text; Ziele auch mit #anker oder ratgeber/… (Umbau 03.09.).
+  // Pillar-Hub (17.09.): optionales b.lead (fetter Kernsatz vor dem Body, z. B. Übergabe-Garantie) + optionales Bild b.img/b.img_alt (Manifest-Slug, z. B. Ansprechpartner-Arbeitsfoto).
   const extraBlocks = (c && Array.isArray(c.blocks) ? c.blocks : []).map((b, i) =>
-    `<section class="sec${i % 2 ? '' : ' section-alt'}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2><p>${esc(b.body)}${copyLinksHtml(b)}</p></div></div></section>` + (b.cta_after ? ctaZwischen(s) : '')).join('');   // cta_after (CRO 16.09.): kontextueller CTA direkt nach dem Block mit höchster Kaufabsicht (Zaunbau: Referenzprojekt)
+    `<section class="sec${i % 2 ? '' : ' section-alt'}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2>${b.lead ? `<p class="lead-p"><strong>${esc(b.lead)}</strong></p>` : ''}<p>${esc(b.body)}${copyLinksHtml(b)}</p>${(b.img && IMG[b.img]) ? `<figure class="block-fig">${pic(b.img, { alt: b.img_alt || b.h2, sizes: '(max-width:900px) 92vw, 480px' })}</figure>` : ''}</div></div></section>` + (b.cta_after ? ctaZwischen(s) : '')).join('');   // cta_after (CRO 16.09.): kontextueller CTA direkt nach dem Block mit höchster Kaufabsicht (Zaunbau: Referenzprojekt)
+  // Fallbeispiele (echte Aufträge, anonymisiert) — nur Hubs mit copy.faelle; sonst ''.
+  const faelleHtml = (c && c.faelle) ? faelleBlock(c.faelle) : '';
   // Zaunarten-Vergleich (Zaunbau, 16.09.): Karten aus copy.zaunarten — Produktszenen (KI, gleiches Grundstück), kein Projektbezug; Preisfeld = Projektspanne oder "nach Besichtigung", nie €/lfm. Nur Hubs mit copy.zaunarten; sonst ''.
   const zaunarten = (c && Array.isArray(c.zaunarten) && c.zaunarten.length) ? `<section class="sec section-alt" id="zaunarten"><div class="wrap"><div class="head"><h2 class="serif rv">Welcher Zaun passt zu Ihrem Grundstück?</h2><p class="rv">Fünf Systeme an fünf typischen Havelland-Grundstücken — vom Siedlungshaus bis zum Neubau. Die drei oberen sind unsere Standardsysteme, Alu und Schmuckzaun bauen wir auf Anfrage. Die Bilder zeigen die Zaunart, nicht ein Kundenprojekt.</p></div><div class="cards zaunarten rv">${c.zaunarten.map(z => `<div class="card${z.fokus ? '' : ' card-muted'}">${IMG[z.img] ? pic(z.img, { alt: esc(z.name) + ' — Beispiel im Vorgarten', sizes: '(max-width:700px) 92vw, 33vw' }) : ''}<h3>${esc(z.name)}${z.fokus ? '' : ' <span class="chip chip-muted">auf Anfrage</span>'}</h3><p><strong>Sichtschutz:</strong> ${esc(z.sichtschutz)}<br><strong>Haltbarkeit:</strong> ${esc(z.haltbarkeit)}<br><strong>Lieferzeit:</strong> ${esc(z.lieferzeit)}<br><strong>Für wen:</strong> ${esc(z.passend)}</p><p><strong>20 m inkl. Montage:</strong> ${esc(z.spanne)}</p></div>`).join('')}</div></div></section>` : '';
   // Zwischen-CTA nach der Prose auf allen Hubs ohne Galerie-CTA (voll = Heckenschnitt hat die Galerie)
@@ -429,6 +434,7 @@ ${zaunarten}
 ${zwischen}
 ${IMG['svc-' + s.slug + '-detail'] ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic('svc-' + s.slug + '-detail', { alt: s.name + ' im Detail — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>` : ''}
 ${extraBlocks}
+${faelleHtml}
 ${rich}
 ${b2bCross}
 ${s.partner_modell ? endBandPartner(s) : endBand}`;

@@ -66,6 +66,15 @@ page('heckenschnitt/index.html', 'HUB heckenschnitt', h => {
   check('heckenschnitt', 'echt-card', classCount(h, 'echt-card') >= 1);
 });
 
+// ---- SERVICE-HUB entruempelung (Pillar, 17.09.) ----
+page('entruempelung/index.html', 'HUB entruempelung', h => {
+  check('entruempelung', 'fall>=2', classCount(h, 'fall') >= 2);
+  check('entruempelung', 'anker nebengebaeude/gartenhaus/gewerbe', has(h, 'id="nebengebaeude"') && has(h, 'id="gartenhaus"') && has(h, 'id="gewerbe"'));
+  check('entruempelung', 'gstrip Beleg', has(h, 'Entsorgungsgebühren weisen wir nach Beleg aus'));
+  check('entruempelung', 'kein inklusive Entsorgung', !hasI(h, 'inklusive Entsorgung') && !hasI(h, 'Entsorgung inklusive'));
+  check('entruempelung', 'faq', classCount(h, 'faq') >= 1);
+});
+
 // ---- SERVICE-HUB gartenpflege (kein Hecken-Material) ----
 page('gartenpflege/index.html', 'HUB gartenpflege', h => {
   check('gartenpflege', 'gstrip', classCount(h, 'gstrip') >= 1);

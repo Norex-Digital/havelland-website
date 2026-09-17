@@ -1,0 +1,89 @@
+{
+ "_meta": "Lokale Fakten für Hub-Ortskarten, Tier-1-Ortsseiten und W2-Ratgeber. Jeder Fakt mit Quelle + Stand. Keine Zahl ohne Beleg. Recherche 17.09.2026 (WebFetch Betreiberseite abfall-havelland.de, HAW mbH, Abfallgebührensatzung 2026 als PDF). Nicht belegbare Werte stehen als 'nicht veröffentlicht — Auskunft vor Ort'.",
+ "wertstoffhof": {
+  "falkensee": {
+   "name": "Wertstoffhof Falkensee",
+   "betreiber": "Abfallbehandlungsgesellschaft Havelland mbH (Schwanebecker Weg 25, 14641 Nauen) im Auftrag des Landkreises Havelland, Sachgebiet Abfallentsorgung",
+   "adresse": "Nauener Straße 97, 14612 Falkensee",
+   "telefon_abfallberatung": "03321 748946 (Betreiber) · 03321 4035418 (Landkreis)",
+   "oeffnungszeiten": "Montag 9–18 Uhr, Dienstag bis Freitag 9–17 Uhr, Samstag 8–13 Uhr (laut Betreiberseite; keine getrennten Sommer-/Winterzeiten angegeben)",
+   "annahme": [
+    "Alle Abfallarten laut Gebührensatzung in haushaltsüblichen Mengen",
+    "Sperrmüll",
+    "Schrott",
+    "Papier / Pappe",
+    "Elektroaltgeräte",
+    "Leuchtstoffröhren / Energiesparlampen",
+    "Schadstoffe",
+    "Althandys / CDs / DVDs",
+    "Druckerpatronen / Kartuschen",
+    "Gartenabfälle / kompostierbare Abfälle"
+   ],
+   "nicht_angenommen": [
+    "Gelbe Säcke",
+    "Gasflaschen und weitere Druckbehälter"
+   ],
+   "kostenfrei_private_haushalte": [
+    "Sperrmüll",
+    "Schrott",
+    "Papier / Pappe",
+    "Elektroaltgeräte",
+    "Leuchtstoffröhren / Energiesparlampen",
+    "Schadstoffe"
+   ],
+   "gebuehren_hinweis": "Aus privaten Haushalten kostenfrei (über die Basisgebühr abgegolten, § 3 Abs. 1.1 Abfallgebührensatzung): Sperrmüll, Schrott, Papier/Pappe, Elektroaltgeräte, Leuchtstoffröhren, Schadstoffe. Alle anderen Anlieferungen werden auf der Fahrzeugwaage gewogen und nach Gewicht abgerechnet (§ 3 Abs. 3.2); Kleinmengen unter der Mindestlast nach Volumenpauschale je Abfallart (Anlage 3 Teil II). Gebührensätze 2026 (Anlage 3 Teil I): gemischte Siedlungsabfälle 0,32 €/kg · Altholz A1–A4 0,36 €/kg · Sperrmüll aus sonstigen Herkunftsbereichen (nicht private Haushalte) 0,31 €/kg · Schrott 0,00 €/kg · Teer-/Bitumenpappe mit Nachweis 0,70 €/kg · Kunststoffe a.n.g. 0,40 €/kg. Vor Ort: Müllsäcke 5,50 €/Stück, Big Bags 9,00 €/Stück, nur Barzahlung.",
+   "quelle": "https://www.abfall-havelland.de/index.php?page_id=544 (Betreiberseite: Adresse, Zeiten, Annahme) · https://www.abfall-havelland.de/UserFiles/Files/Abfallgebuehrensatzung_2026.pdf (Abfallgebührensatzung für den Landkreis Havelland 2026, Kreistag 15.12.2025, in Kraft 01.01.2026, § 3 Abs. 1.1 + Abs. 3, Anlage 3)",
+   "stand": "2026-09-17"
+  },
+  "nauen-schwanebeck": {
+   "name": "Wertstoffhof Nauen/Schwanebeck (mit Deponie Schwanebeck)",
+   "betreiber": "Abfallbehandlungsgesellschaft Havelland mbH",
+   "adresse": "Schwanebecker Weg 25, 14641 Nauen OT Schwanebeck",
+   "oeffnungszeiten": "nicht veröffentlicht — Auskunft vor Ort (Betreiber-Übersichtsseite nennt keine Zeiten; Flyer-Zeiten von 2017 nicht mehr belastbar)",
+   "quelle": "https://www.abfall-havelland.de/index.php?page_id=519 (Übersicht: Standorte Schwanebeck, Bölkershof, Falkensee; Betreiberanschrift) · Abfallgebührensatzung 2026 Anlage 3 Tabelle 1 (Direktanlieferung Deponie Schwanebeck)",
+   "stand": "2026-09-17"
+  },
+  "landkreis_standorte": "Der Landkreis Havelland betreibt drei Wertstoffhöfe: Falkensee (Nauener Straße 97), Nauen/Schwanebeck (Schwanebecker Weg 25) und Rathenow/Bölkershof (Bölkershof 8). Für das östliche Havelland (Falkensee, Dallgow-Döberitz, Schönwalde-Glien, Brieselang) ist Falkensee der nächstgelegene; Wustermark und Brieselang liegen zwischen Falkensee und Nauen/Schwanebeck. Quelle: abfall-havelland.de page_id=519 + Flyer Pauschalen (Adressen), Stand 2026-09-17."
+ },
+ "sperrmuell": {
+  "landkreis_havelland": {
+   "abholer": "HAW mbH (Hausmüllabfuhr Havelland) im Auftrag des Landkreises Havelland",
+   "anmeldung": "Online-Formular auf haw-mbh.de, telefonisch 03321 74620 oder per E-Mail haw-auftrag@alba.info; bei Anmeldung über das Kontaktformular kommt die Rückantwort ausschließlich als Antwortkarte per Post mit dem Abholtermin",
+   "regel": "Private Haushalte (auch Wochenendgrundstücke und Kleingärten) können zweimal pro Jahr Sperrmüll samt haushaltstypischem Schrott und Elektrogeräten kostenlos abholen lassen; die Kosten sind über die Basisgebühr abgegolten. Von der Anmeldung bis zur Abholung können bis zu 4 Wochen vergehen. Bereitstellung unverpackt und unfallsicher vor dem Grundstück, frühestens am Vorabend, spätestens bis 6 Uhr am Abholtag.",
+   "menge_pro_abholung": "nicht veröffentlicht — Auskunft vor Ort (Betreiber nennt nur 'haushaltsübliche Mengen')",
+   "nicht_mitgenommen": [
+    "Bauabfälle",
+    "Türen und Fenster",
+    "Autoteile und Autoreifen",
+    "Alttextilien",
+    "Töpfe, Pfannen und Geschirr",
+    "Bücher",
+    "Badewanne oder Duschabtrennung",
+    "Laminat und Linoleum",
+    "Paletten und Bretter aus dem Garten",
+    "größere Mengen aus Haushaltsauflösungen",
+    "aus Sicherheitsgründen: verglaste Bilder, Aquarien, Lampen mit Glasschirm"
+   ],
+   "quelle": "http://www.haw-mbh.de/haushalte/entsorgung/sperrmuell.html (HAW mbH: zweimal jährlich kostenlos, Anmeldewege, Antwortkarte, Ausschlussliste, Bereitstellung) · https://www.abfall-havelland.de/index.php?page_id=536 (bis zu 4 Wochen Wartezeit, größere Mengen aus Haushaltsauflösungen ausgeschlossen) · Abfallgebührensatzung 2026 § 3 Abs. 1.1 (haushaltsüblicher Sperrmüll in der Basisgebühr enthalten)",
+   "stand": "2026-09-17"
+  }
+ },
+ "eigene_belege": [
+  {
+   "datum": "2026-09-10",
+   "ort": "Falkensee",
+   "auftrag": "Abstellkammer + Gartenschuppen",
+   "wertstoffhof": "Falkensee",
+   "gebuehren_eur": 458.0,
+   "belege_eur": [
+    115.84,
+    342.16
+   ],
+   "fahrten": 2,
+   "festpreis_brutto_eur": 1190.0,
+   "festpreis_netto_eur": 1000.0,
+   "hinweis": "458,00 € = Summe der beiden Wertstoffhof-Belege (Sofortrechnung 115,84 € + Gebührenbescheid 342,16 €, darin 644 kg Siedlungsabfall und 378 kg Altholz). An die Kundin weiterberechnet wurden 405,94 € netto Entsorgung zzgl. 19 % USt (Altholz-Anteil eines Dritten abgezogen, plus Eigenbeleg Steinplatten) — Rechnung 2026-160. In Copy nur als 'auf den Belegen standen 458 €' verwenden, nicht als 'die Kundin zahlte 458 €'.",
+   "quelle": "kunden/hausgarten/_aktiv/gutzke-monika-2026-09-01/belege/ + kunde.md (Doku-Repo gbr-firma)"
+  }
+ ]
+}
