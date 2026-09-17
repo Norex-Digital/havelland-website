@@ -9,3 +9,6 @@ _src4k/
 
 # Visual-Companion Brainstorm (lokal, nicht committen)
 .superpowers/
+
+# Playwright-CLI Debug-Snapshots (Prüf-Artefakte, nicht deployen)
+.playwright-cli/
