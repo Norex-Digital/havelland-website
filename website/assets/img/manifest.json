@@ -1257,5 +1257,27 @@
 "avif": true,
 "fb_ext": "jpg",
 "fb_w": 1280
+},
+"fall-flaeche-falkensee-nachher": {
+"w": 768,
+"h": 1024,
+"widths": [
+480,
+768
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"fall-flaeche-falkensee-vorher": {
+"w": 768,
+"h": 1024,
+"widths": [
+480,
+768
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 768
 }
 }

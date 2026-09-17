@@ -75,6 +75,33 @@ page('entruempelung/index.html', 'HUB entruempelung', h => {
   check('entruempelung', 'faq', classCount(h, 'faq') >= 1);
 });
 
+// ---- SERVICE-HUB galabau (Cluster-Pillar GaLaBau & Rodung, W2+W3 Task 4, 17.09.) ----
+page('galabau/index.html', 'HUB galabau', h => {
+  check('galabau', 'anker', has(h, 'id="reihenfolge"') && has(h, 'id="saison"') && has(h, 'id="genehmigung"') && has(h, 'id="grenzen"'));
+  check('galabau', 'links sub-hubs', has(h, 'href="/zaunbau/"') && has(h, 'href="/heckenentfernung/"') && has(h, 'href="/gartenrodung/"') && has(h, 'href="/baumstumpf-entfernen/"'));
+  check('galabau', 'fall', classCount(h, 'fall') >= 1);
+  check('galabau', 'kein inklusive', !hasI(h, 'inklusive Entsorgung'));
+});
+
+// ---- TIER1-ORTSSEITEN (W2): Tiefen-Block. Scharf nur wenn tiefBlock vorhanden ODER TIER1=1 gesetzt ist —
+// Task 2 liefert die tief-Copy in ortsseiten.json und schaltet die Checks mit `TIER1=1 node scripts/accept.mjs` scharf.
+for (const rel of ['entruempelung-falkensee/index.html', 'entruempelung-brieselang/index.html', 'haushaltsaufloesung-falkensee/index.html']) {
+  page(rel, `TIER1 ${rel.split('/')[0]}`, h => {
+    if (process.env.TIER1 || classCount(h, 'tief')) {
+      check(rel, 'tief', classCount(h, 'tief') >= 1);
+      check(rel, 'ortsblock', classCount(h, 'ortsblock') >= 1);
+      check(rel, 'kein inklusive Entsorgung', !hasI(h, 'inklusive Entsorgung') && !hasI(h, 'Entsorgung inklusive'));
+      check(rel, 'kein Kundenname', !hasI(h, 'gutzke'));
+    }
+  });
+}
+
+// ---- RATGEBER lokal (W2) ----
+page('ratgeber/wertstoffhof-falkensee/index.html', 'RATGEBER wertstoffhof', h => { check('rat-wsh', 'table', has(h, '<table')); check('rat-wsh', 'cta hub', has(h, 'href="/entruempelung/"')); check('rat-wsh', 'aeo', classCount(h, 'aeo') >= 1 || has(h, 'class="aeo')); });
+page('ratgeber/sperrmuell-havelland-anmelden/index.html', 'RATGEBER sperrmuell', h => { check('rat-sm', 'ausschluss', hasI(h, 'Haushaltsauflösung')); check('rat-sm', 'cta hub', has(h, 'href="/entruempelung/"')); });
+page('ratgeber/keller-garage-dachboden-entruempeln/index.html','RATGEBER keller', h => { check('rat-kgd','table', has(h,'<table')); check('rat-kgd','beispiel', has(h,'1.190')); check('rat-kgd','cta hub', has(h,'href="/entruempelung/"')); });
+page('ratgeber/gartenhaus-abreissen-entsorgen/index.html','RATGEBER gartenhaus', h => { check('rat-gh','table', has(h,'<table')); check('rat-gh','keine rechtsberatung', hasI(h,'keine Rechtsberatung')); check('rat-gh','link galabau', has(h,'href="/galabau/"')); });
+
 // ---- SERVICE-HUB gartenpflege (kein Hecken-Material) ----
 page('gartenpflege/index.html', 'HUB gartenpflege', h => {
   check('gartenpflege', 'gstrip', classCount(h, 'gstrip') >= 1);
@@ -175,10 +202,14 @@ page('kontakt/index.html', 'KONTAKT', h => {
   check('kontakt', 'DSGVO-Checkbox', has(h, 'type="checkbox"'));
 });
 
-// ---- B2B fuer-hausverwaltungen ----
+// ---- B2B fuer-hausverwaltungen (17.09. Umbau Objektpflege: Referenz-Satz, 6 Leistungskarten, CTA-Text, kein Preis) ----
 page('fuer-hausverwaltungen/index.html', 'B2B fuer-hausverwaltungen', h => {
   check('b2b', 'Angebot', hasI(h, 'Angebot'));
   check('b2b', 'E-Mail', has(h, 'E-Mail') || has(h, 'mailto:'));
+  check('b2b', 'referenz', has(h, 'Wir betreuen bereits Objekte im Havelland in festen Pflegeverträgen.'));
+  check('b2b', 'karten', classCount(h, 'card') >= 6);
+  check('b2b', 'cta angebot', hasI(h, 'Angebot für Ihr Objekt'));
+  check('b2b', 'kein preis', !/\d+ ?€/.test(h.replace(/<script[\s\S]*?<\/script>/g, '')));
 });
 
 // ---- ADS-LANDINGPAGES /lp/ (v2 14.09.: Site-Komponenten statt .lp-*-Nachbauten; LPs laden kein site.js -> jedes rv braucht in) ----
