@@ -386,7 +386,9 @@ function hub(s) {
 
   // Schema (17.09.): Service + hasOfferCatalog aus den Copy-Sektionen (Konkurrenz-Standard). Bewusst OHNE price/priceSpecification —
   // Festpreis entsteht erst nach Besichtigung. Kein FAQPage (Gate). areaServed = Orte des Service.
-  const offers = (c && Array.isArray(c.sections) ? c.sections : []).slice(0, 6).map(x => `{"@type":"Offer","itemOffered":{"@type":"Service","name":"${sj(x.h3)}","serviceType":"${sj(s.name)}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}}}`).join(',');
+  // Fix (17.09., Review): Opt-in statt Positions-Heuristik — nur Sections mit offer:true (Redaktionsentscheidung in hubs.json) werden Offers.
+  // Default ist kein Offer: Prozessschritte/Rechtslage/USP/Disclaimer/Preis-Erklärung/Referenzen/Verweise sind KEINE buchbaren Leistungen.
+  const offers = (c && Array.isArray(c.sections) ? c.sections : []).filter(x => x.offer === true).slice(0, 6).map(x => `{"@type":"Offer","itemOffered":{"@type":"Service","name":"${sj(x.h3)}","serviceType":"${sj(s.name)}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}}}`).join(',');
   const catalog = offers ? `,"hasOfferCatalog":{"@type":"OfferCatalog","name":"${sj(s.name)} — Leistungen","itemListElement":[${offers}]}` : '';
   const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}${catalog}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
 
