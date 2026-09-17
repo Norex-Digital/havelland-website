@@ -51,7 +51,7 @@ export function baSlider({ slug = '', vorher = '', nachher = '', alt = '', cap =
   const base = esc(alt || cap || 'Heckenschnitt');
   const pr = lcp ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
   const ba =
-    `<div class="ba${quer ? ' ba-quer' : ''}" style="--pos:50%">` +
+    `<div class="ba${quer ? ' ba-quer' : ''}" style="--pos:50%${(w && h) ? `;aspect-ratio:${W}/${H}` : ''}">` +
     `<img src="${esc(nSrc)}" alt="${base} — ${esc(nachTxt)}" width="${W}" height="${H}" ${pr}>` +
     `<img class="ba-top" src="${esc(vSrc)}" alt="${base} — ${esc(vorTxt)}" width="${W}" height="${H}" ${pr}>` +
     `<div class="ba-line"></div><div class="ba-knob" aria-hidden="true"></div>` +
@@ -201,18 +201,20 @@ export function jahreszeiten({ heading = 'Ein Garten durch <em>vier Jahreszeiten
 // ---------------------------------------------------------------------------
 // echtProjekt — .echt-card mit dem ECHTEN Paar (quer). OHNE Gold-Badge, Text neutral.
 // ---------------------------------------------------------------------------
-export function echtProjekt() {
-  return `<div class="echt-grid">` +
+export function echtProjekt({ nur = null } = {}) {
+  const thuja =
     `<div class="echt-card rv"><div class="ebody">` +
     `<h3>Thuja-Rückschnitt, dokumentiert vom Einsatz.</h3>` +
     `<p>Mit dem Handy direkt vom Einsatz fotografiert. Kein Studio, kein Nachbearbeiten: Die Plane mit dem Schnittgut liegt noch im Bild. Genau so sieht der Foto-Nachweis aus, den Sie nach jedem Auftrag aufs Handy bekommen.</p></div>` +
-    `<div>${baSlider({ vorher: `${ARB}/echt-heckenschnitt-vorher.jpg`, nachher: `${ARB}/echt-heckenschnitt-nachher.jpg`, alt: 'Thuja-Rückschnitt vom Einsatz', cap: 'Thuja-Rückschnitt', sub: 'vom Einsatz fotografiert', quer: true })}</div></div>` +
+    `<div>${baSlider({ vorher: `${ARB}/echt-heckenschnitt-vorher.jpg`, nachher: `${ARB}/echt-heckenschnitt-nachher.jpg`, alt: 'Thuja-Rückschnitt vom Einsatz', cap: 'Thuja-Rückschnitt', sub: 'vom Einsatz fotografiert', quer: true })}</div></div>`;
+  if (nur === 'thuja') return `<div class="echt-grid">${thuja}</div>`;
+  const schuppen =
     `<div class="echt-card rv d1"><div class="ebody">` +
     `<h3>Gartenschuppen leer, Falkensee — an einem Tag.</h3>` +
     `<p>Abstellkammer unter der Treppe und Gartenschuppen ausgeräumt, zwei Fahrten zum Wertstoffhof Falkensee, Gebühren nach Beleg. Vorher/Nachher ging am selben Abend an die Kundin — mit Einwilligung hier zu sehen.</p>` +
     `<div class="echt-next"><a href="/entruempelung/">Entrümpelung rund ums Haus →</a></div></div>` +
-    `<div>${baSlider({ vorher: '/assets/img/lp-gutzke-schuppen-vorher-768.jpg', nachher: '/assets/img/lp-gutzke-schuppen-nachher-768.jpg', w: 768, h: 1024, alt: 'Gartenschuppen in Falkensee vor und nach der Entrümpelung', cap: 'Gartenschuppen', sub: 'Falkensee, 1 Tag', vorTxt: 'vor der Räumung', nachTxt: 'nach der Räumung' })}</div></div>` +
-    `</div>`;
+    `<div>${baSlider({ vorher: '/assets/img/lp-gutzke-schuppen-vorher-768.jpg', nachher: '/assets/img/lp-gutzke-schuppen-nachher-768.jpg', w: 768, h: 1024, alt: 'Gartenschuppen in Falkensee vor und nach der Entrümpelung', cap: 'Gartenschuppen', sub: 'Falkensee, 1 Tag', vorTxt: 'vor der Räumung', nachTxt: 'nach der Räumung' })}</div></div>`;
+  return `<div class="echt-grid">${thuja}${schuppen}</div>`;
 }
 
 // ---------------------------------------------------------------------------

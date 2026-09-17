@@ -334,7 +334,7 @@ function home() {
 <div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref('Hallo, ich interessiere mich für Ihre Leistungen.')}">WhatsApp schreiben</a></div>
 <div class="trust-row rv in d4"><div class="t"><b>Ein</b><span>fester Ansprechpartner</span></div><div class="t"><b>Festpreis</b><span>nach Besichtigung</span></div><div class="t"><b>Foto</b><span>-Nachweis nach jedem Auftrag</span></div></div></div>
 <div class="shot rv in d2">${baSlider({ slug: '06-02-thuja-grenze', alt: 'Thuja-Hecke an der Grundstücksgrenze', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })}</div>
-<div class="hero-strip rv in d3" aria-label="Drei Bereiche, drei echte Aufträge"><a href="/entruempelung/">${pic('strip-schuppen', { alt: 'Leerer Gartenschuppen nach der Entrümpelung in Falkensee', sizes: '(max-width:760px) 30vw, 200px' })}<span>Entrümpelung</span></a><a href="/zaunbau/">${pic('strip-zaun', { alt: 'Doppelstabmatte wird am Pfosten ausgerichtet', sizes: '(max-width:760px) 30vw, 200px' })}<span>Zaunbau</span></a><a href="/fuer-hausverwaltungen/">${pic('strip-hecke', { alt: 'Heckenschnitt mit der Schere im Havelland', sizes: '(max-width:760px) 30vw, 200px' })}<span>Objektpflege</span></a></div>
+<div class="hero-strip rv in d3" role="group" aria-label="Drei Bereiche, drei echte Aufträge"><a href="/entruempelung/">${pic('strip-schuppen', { alt: 'Leerer Gartenschuppen nach der Entrümpelung in Falkensee', sizes: '(max-width:760px) 30vw, 200px' })}<span>Entrümpelung</span></a><a href="/zaunbau/">${pic('strip-zaun', { alt: 'Doppelstabmatte wird am Pfosten ausgerichtet', sizes: '(max-width:760px) 30vw, 200px' })}<span>Zaunbau</span></a><a href="/fuer-hausverwaltungen/">${pic('strip-hecke', { alt: 'Heckenschnitt mit der Schere im Havelland', sizes: '(max-width:760px) 30vw, 200px' })}<span>Objektpflege</span></a></div>
 </div></section>
 ${gstrip}
 ${saisonTeaser(saisonMonat)}
@@ -398,7 +398,7 @@ function hub(s) {
     rich =
       `<section class="sec"><div class="wrap">${schnittkalender()}</div></section>` +
       heckenKompass() +
-      `<section class="sec"><div class="wrap">${echtProjekt()}</div></section>` +
+      `<section class="sec"><div class="wrap">${echtProjekt({ nur: 'thuja' })}</div></section>` +
       `<section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Ergebnisse zum Durchziehen</h2></div>${karussell()}${archivGrid({ ctaHref: '/kontakt/#anfrage' })}</div></section>` +
       flowBlock + timelineBlock + faqSection + cardOrteSection + gebietskarte() + ratgeberSection;
   } else {
