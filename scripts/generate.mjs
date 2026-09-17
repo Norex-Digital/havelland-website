@@ -334,15 +334,14 @@ function home() {
 <div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref('Hallo, ich interessiere mich für Ihre Leistungen.')}">WhatsApp schreiben</a></div>
 <div class="trust-row rv in d4"><div class="t"><b>Ein</b><span>fester Ansprechpartner</span></div><div class="t"><b>Festpreis</b><span>nach Besichtigung</span></div><div class="t"><b>Foto</b><span>-Nachweis nach jedem Auftrag</span></div></div></div>
 <div class="shot rv in d2">${baSlider({ slug: '06-02-thuja-grenze', alt: 'Thuja-Hecke an der Grundstücksgrenze', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })}</div>
+<div class="hero-strip rv in d3" aria-label="Drei Bereiche, drei echte Aufträge"><a href="/entruempelung/">${pic('strip-schuppen', { alt: 'Leerer Gartenschuppen nach der Entrümpelung in Falkensee', sizes: '(max-width:760px) 30vw, 200px' })}<span>Entrümpelung</span></a><a href="/zaunbau/">${pic('strip-zaun', { alt: 'Doppelstabmatte wird am Pfosten ausgerichtet', sizes: '(max-width:760px) 30vw, 200px' })}<span>Zaunbau</span></a><a href="/fuer-hausverwaltungen/">${pic('strip-hecke', { alt: 'Heckenschnitt mit der Schere im Havelland', sizes: '(max-width:760px) 30vw, 200px' })}<span>Objektpflege</span></a></div>
 </div></section>
 ${gstrip}
 ${saisonTeaser(saisonMonat)}
 <section class="sec" id="kernleistungen"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Kernleistungen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Vier Bereiche, ein Ansprechpartner — vom regelmäßigen Garten über die leere Garage bis zum betreuten Mehrfamilienhaus.</p>${clusterKacheln(CLUSTER)}</div></section>
 <section class="sec section-alt"><div class="wrap">${jahreszeiten()}</div></section>
-<section class="sec"><div class="wrap">${schnittkalender()}</div></section>
-${heckenKompass()}
 <section class="sec"><div class="wrap">${echtProjekt()}</div></section>
-<section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Echte Ergebnisse zum Durchziehen</h2></div><p class="intro rv">Ziehen Sie den Regler — jedes Bild ist ein dokumentierter Schnitt aus dem Havelland.</p>${karussell()}${archivGrid({ ctaHref: '/kontakt/#anfrage' })}</div></section>
+<section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Echte Ergebnisse zum Durchziehen</h2></div><p class="intro rv">Ziehen Sie den Regler — jedes Bild ist ein dokumentierter Auftrag aus dem Havelland.</p>${karussell()}${archivGrid({ ctaHref: '/kontakt/#anfrage' })}</div></section>
 <section class="sec"><div class="wrap">${whatsappFlow()}</div></section>
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline()}</div></section>
 <section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>${uspBand()}</div></section>

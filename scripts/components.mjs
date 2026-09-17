@@ -42,7 +42,7 @@ const arr = v => Array.isArray(v) ? v : (v == null ? [] : [v]);
 // slug baut VN-Pfade; alternativ vorher/nachher als fertige src.
 // ---------------------------------------------------------------------------
 export function baSlider({ slug = '', vorher = '', nachher = '', alt = '', cap = '', sub = '',
-  quer = false, hint = false, lcp = false, w, h } = {}) {
+  quer = false, hint = false, lcp = false, w, h, vorTxt = 'vor dem Schnitt', nachTxt = 'nach dem Schnitt' } = {}) {
   const nSrc = nachher || (slug ? `${VN}/${slug}_nachher.jpg` : '');
   const vSrc = vorher || (slug ? `${VN}/${slug}_vorher.jpg` : '');
   if (!nSrc || !vSrc) return '';
@@ -52,8 +52,8 @@ export function baSlider({ slug = '', vorher = '', nachher = '', alt = '', cap =
   const pr = lcp ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
   const ba =
     `<div class="ba${quer ? ' ba-quer' : ''}" style="--pos:50%">` +
-    `<img src="${esc(nSrc)}" alt="${base} — nach dem Schnitt" width="${W}" height="${H}" ${pr}>` +
-    `<img class="ba-top" src="${esc(vSrc)}" alt="${base} — vor dem Schnitt" width="${W}" height="${H}" ${pr}>` +
+    `<img src="${esc(nSrc)}" alt="${base} — ${esc(nachTxt)}" width="${W}" height="${H}" ${pr}>` +
+    `<img class="ba-top" src="${esc(vSrc)}" alt="${base} — ${esc(vorTxt)}" width="${W}" height="${H}" ${pr}>` +
     `<div class="ba-line"></div><div class="ba-knob" aria-hidden="true"></div>` +
     `<span class="ba-tag tag-v">Vorher</span><span class="ba-tag tag-n">Nachher</span>` +
     `<input type="range" min="0" max="100" value="50" step="1" aria-label="Vorher-Nachher-Vergleich ${base}">` +
@@ -202,11 +202,16 @@ export function jahreszeiten({ heading = 'Ein Garten durch <em>vier Jahreszeiten
 // echtProjekt — .echt-card mit dem ECHTEN Paar (quer). OHNE Gold-Badge, Text neutral.
 // ---------------------------------------------------------------------------
 export function echtProjekt() {
-  return `<div class="echt-card rv"><div class="ebody">` +
-    `<h3>Ein dokumentiertes Kundenprojekt.</h3>` +
-    `<p>Thuja-Rückschnitt bei einem Kunden — mit dem Handy direkt vom Einsatz fotografiert. Kein Studio, kein Nachbearbeiten: Die Plane mit dem Schnittgut liegt noch im Bild. Genau so sieht der Foto-Nachweis aus, den Sie nach jedem Auftrag aufs Handy bekommen.</p>` +
-    `<div class="echt-next"><b>Platz reserviert.</b> Hier dokumentieren wir laufend weitere Aufträge — der nächste könnte Ihrer sein.</div></div>` +
-    `<div>${baSlider({ vorher: `${ARB}/echt-heckenschnitt-vorher.jpg`, nachher: `${ARB}/echt-heckenschnitt-nachher.jpg`, alt: 'Thuja-Rückschnitt vom Einsatz', cap: 'Thuja-Rückschnitt', sub: 'vom Einsatz fotografiert', quer: true })}</div>` +
+  return `<div class="echt-grid">` +
+    `<div class="echt-card rv"><div class="ebody">` +
+    `<h3>Thuja-Rückschnitt, dokumentiert vom Einsatz.</h3>` +
+    `<p>Mit dem Handy direkt vom Einsatz fotografiert. Kein Studio, kein Nachbearbeiten: Die Plane mit dem Schnittgut liegt noch im Bild. Genau so sieht der Foto-Nachweis aus, den Sie nach jedem Auftrag aufs Handy bekommen.</p></div>` +
+    `<div>${baSlider({ vorher: `${ARB}/echt-heckenschnitt-vorher.jpg`, nachher: `${ARB}/echt-heckenschnitt-nachher.jpg`, alt: 'Thuja-Rückschnitt vom Einsatz', cap: 'Thuja-Rückschnitt', sub: 'vom Einsatz fotografiert', quer: true })}</div></div>` +
+    `<div class="echt-card rv d1"><div class="ebody">` +
+    `<h3>Gartenschuppen leer, Falkensee — an einem Tag.</h3>` +
+    `<p>Abstellkammer unter der Treppe und Gartenschuppen ausgeräumt, zwei Fahrten zum Wertstoffhof Falkensee, Gebühren nach Beleg. Vorher/Nachher ging am selben Abend an die Kundin — mit Einwilligung hier zu sehen.</p>` +
+    `<div class="echt-next"><a href="/entruempelung/">Entrümpelung rund ums Haus →</a></div></div>` +
+    `<div>${baSlider({ vorher: '/assets/img/lp-gutzke-schuppen-vorher-768.jpg', nachher: '/assets/img/lp-gutzke-schuppen-nachher-768.jpg', w: 768, h: 1024, alt: 'Gartenschuppen in Falkensee vor und nach der Entrümpelung', cap: 'Gartenschuppen', sub: 'Falkensee, 1 Tag', vorTxt: 'vor der Räumung', nachTxt: 'nach der Räumung' })}</div></div>` +
     `</div>`;
 }
 

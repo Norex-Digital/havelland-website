@@ -268,6 +268,8 @@ body.menu-open .mnav{display:block}
 .echt-note{margin-top:18px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--paper);border-radius:0 var(--r-el) var(--r-el) 0;font-size:var(--fs-small);color:var(--ink)}
 .echt-next{margin-top:18px;border:1.5px dashed var(--border-visible);border-radius:var(--r-el);padding:14px 18px;font-size:var(--fs-small);color:var(--muted)}
 .echt-next b{font-family:var(--font-display);font-style:italic;font-weight:600;color:var(--ink);font-size:16px}
+.echt-grid{display:grid;grid-template-columns:1fr;gap:22px}
+@media(min-width:900px){.echt-grid{grid-template-columns:1fr 1fr}.echt-grid .echt-card{grid-template-columns:1fr}}
 
 /* ===== Karussell ===== */
 .car{position:relative}
@@ -599,6 +601,11 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 .shot .badge .t span{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
 .shot .chip2{position:absolute;top:22px;right:-18px;background:var(--accent);color:var(--accent-ink);font:700 13px "Inter",system-ui,sans-serif;padding:10px 16px;border-radius:var(--r-button);box-shadow:0 16px 34px -14px rgba(224,162,59,.9)}
 @media(max-width:900px){.hero .grid{grid-template-columns:1fr;gap:40px}.shot .badge{left:0}}
+.hero-strip{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.hero-strip a{position:relative;display:block;border-radius:var(--r-el);overflow:hidden;aspect-ratio:4/3;background:var(--hair)}
+.hero-strip img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-strip span{position:absolute;left:10px;bottom:8px;font-size:13px;font-weight:600;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+@media(max-width:760px){.hero-strip{gap:8px}.hero-strip span{font-size:12px}}
 
 /* ---- Dunkles Wert-Band (Home .band) ---- */
 .band{background:var(--green-d);color:#eef4f0;position:relative;overflow:hidden}

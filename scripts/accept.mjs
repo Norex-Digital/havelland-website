@@ -39,10 +39,9 @@ page('index.html', 'HOME', h => {
   check('home', 'ba>=3', classCount(h, 'ba') >= 3);
   check('home', 'gstrip', classCount(h, 'gstrip') >= 1);
   check('home', 'jz-grid', classCount(h, 'jz-grid') >= 1);
-  check('home', 'cal', classCount(h, 'cal') >= 1);
-  check('home', 'pills', classCount(h, 'pills') >= 1);
-  check('home', 'kpanel', classCount(h, 'kpanel') >= 1);
-  check('home', 'echt-card', classCount(h, 'echt-card') >= 1);
+  check('home', 'echt-card>=2', classCount(h, 'echt-card') >= 2);   // 17.09.: Thuja + Gutzke-Gartenschuppen
+  check('home', 'hero-strip', classCount(h, 'hero-strip') >= 1);
+  check('home', 'kein heckenarten', !has(h, 'id="heckenarten"'));
   check('home', 'car-track', classCount(h, 'car-track') >= 1);
   check('home', 'pgrid', classCount(h, 'pgrid') >= 1);
   check('home', 'wa-grid', classCount(h, 'wa-grid') >= 1);
