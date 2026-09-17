@@ -653,6 +653,7 @@
    "meta": "Haushaltsauflösung im Havelland bei Erbfall, Pflegefall oder Umzug: Nachlass sichten, verwerten, besenrein übergeben. Festpreis nach kostenloser Besichtigung.",
    "h1": "Haushaltsauflösung im Havelland — Schritt für Schritt, wenn es schwerfällt",
    "h1_em": "Schritt für Schritt",
+   "sections_h2": "Haushaltsauflösung im Havelland — in vier Schritten",
    "intro": "Ein Erbfall oder der Umzug ins Pflegeheim kommt selten zur passenden Zeit, und die Kündigungsfrist beim Vermieter läuft trotzdem weiter. Wir übernehmen die Haushaltsauflösung in Falkensee und im ganzen Havelland: sichten, sichern, räumen, übergeben. Sie müssen nicht vor Ort sein. Schreiben Sie uns per WhatsApp, wir melden uns innerhalb von Stunden.",
    "definition": "Eine Haushaltsauflösung ist die vollständige Räumung einer Wohnung oder eines Hauses nach einem Erbfall, dem Umzug ins Pflegeheim oder einem Wegzug. Wir sichten den Nachlass, trennen Verwertbares und Wertgegenstände vom Rest, entsorgen fachgerecht und übergeben am Ende besenrein an Vermieter oder Käufer. Der Unterschied zur Entrümpelung: Dort räumen Sie selbst weiter in Ihrem Zuhause, hier geben Angehörige eine Wohnung ab, in der niemand mehr wohnen wird.",
    "sections": [
@@ -666,7 +667,7 @@
     },
     {
      "h3": "Schritt 3 — Verwerten, spenden, entsorgen",
-     "body": "Bei der Besichtigung prüfen wir, was noch einen Wert hat: Möbel, Elektrogeräte, Werkzeug, Geschirr. Was verwertbar ist, rechnen wir auf den Festpreis an, statt es zu entsorgen. Auf Wunsch fahren wir gut erhaltene Stücke zu einem Sozialkaufhaus oder einer Spendenstelle, statt sie wegzuwerfen. Für den Rest gilt im Landkreis Havelland eine feste Regel: Private Haushalte können zweimal im Jahr kostenlos Sperrmüll abholen lassen, nach Anmeldung und mit bis zu vier Wochen Wartezeit. Größere Mengen aus Haushaltsauflösungen nimmt die Sperrmüllabfuhr aber nicht mit. Deshalb fahren wir stattdessen direkt zum Wertstoffhof Falkensee und laden dort ab, sortiert nach Holz, Metall, Elektroschrott und Restabfall. Die Gebühren des Wertstoffhofs weisen wir nach Beleg aus, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag. So sehen Sie genau, wofür Sie zahlen, und verwertbare Stücke senken am Ende die Summe."
+     "body": "Bei der Besichtigung prüfen wir, was noch einen Wert hat: Möbel, Elektrogeräte, Werkzeug, Geschirr. Verwertbares zieht Noah Telo zuerst heraus, oft schon während der Besichtigung, und rechnet es auf den Festpreis an. Was Sie selbst verschenken oder spenden wollen, kommt vorher weg; auf Wunsch fahren wir gut erhaltene Stücke direkt zu einem Sozialkaufhaus. Größere Mengen aus Haushaltsauflösungen nimmt die Sperrmüllabfuhr des Landkreises nicht mit — deshalb fahren wir bei uns immer selbst zum Wertstoffhof Falkensee, auch wenn private Haushalte sonst zweimal im Jahr kostenlos abholen lassen können (nach Anmeldung, bis zu vier Wochen Wartezeit). Am Wertstoffhof laden wir sortiert nach Holz, Metall, Elektroschrott und Restabfall ab, die Gebühren weisen wir nach Beleg aus, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag. So bleibt am Ende nur der Teil übrig, für den wirklich niemand mehr Verwendung hat."
     },
     {
      "h3": "Schritt 4 — Besenrein übergeben, mit Foto-Nachweis",
@@ -706,7 +707,7 @@
     },
     {
      "q": "Was bedeutet besenrein?",
-     "a": "Besenrein bedeutet: Die Wohnung ist komplett leergeräumt, Böden sind gefegt, sichtbarer Schmutz und Staub sind entfernt, Klebereste und Haken kommen weg. Das ist der Zustand, den die meisten Mietverträge bei der Übergabe verlangen. Wollen Sie zusätzlich Böden, Bäder oder Küche grundreinigen lassen, bieten wir das als eigene Position mit eigenem Preis an. Den fertigen Zustand halten wir mit Fotos fest und schicken sie Ihnen aufs Handy."
+     "a": "Besenrein bedeutet: Die Wohnung ist komplett leergeräumt, Böden sind gefegt, sichtbarer Schmutz und Staub sind entfernt, Klebereste und Haken kommen weg. Das ist der Zustand, den die meisten Mietverträge bei der Übergabe verlangen. Bei der Übergabe an Vermieter oder Käufer halten wir den Zustand mit Fotos fest und dokumentieren ihn auf Wunsch zusätzlich in einem Übergabeprotokoll. So haben Sie einen Nachweis, falls es später Rückfragen zur Kaution oder zum Übergabetermin gibt."
     },
     {
      "q": "Was passiert mit Dokumenten und Wertgegenständen?",
@@ -737,7 +738,7 @@
     },
     {
      "h2": "Unterschied Haushaltsauflösung und Entrümpelung",
-     "body": "Als Angehörige merken Sie den Unterschied vor allem am Anlass. Steht ein Zimmer, ein Keller oder eine Garage einfach voll und soll wieder nutzbar werden, ist das eine Entrümpelung, und Sie wohnen währenddessen weiter im Haus. Geht es dagegen um die komplette Wohnung eines verstorbenen oder ins Heim gezogenen Angehörigen, mit Sichten von Dokumenten und Übergabe an Vermieter oder Käufer, ist das eine Haushaltsauflösung.",
+     "body": "Ein Beispiel macht den Unterschied greifbar. Ihr Vater lebt noch im Haus, nur der Keller soll leer werden, damit wieder Platz ist: Das ist eine Entrümpelung, er bleibt wohnen. Die Wohnung Ihrer verstorbenen Mutter wird dagegen gekündigt, nichts soll bleiben, am Ende steht die Übergabe an den Vermieter: Das ist eine Haushaltsauflösung. Für Räumung und Abtransport gilt bei beidem derselbe Festpreis-Rahmen, nur der Umfang unterscheidet sich.",
      "link_to": "entruempelung",
      "link_text": "Zur Entrümpelung rund ums Haus"
     }
