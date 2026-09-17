@@ -81,7 +81,7 @@ page('entruempelung/index.html', 'HUB entruempelung', h => {
 
 // ---- SERVICE-HUB galabau (Cluster-Pillar GaLaBau & Rodung, W2+W3 Task 4, 17.09.) ----
 page('galabau/index.html', 'HUB galabau', h => {
-  check('galabau', 'anker', has(h, 'id="genehmigung"') && has(h, 'id="freeraeumen"'));
+  check('galabau', 'anker', has(h, 'id="genehmigung"') && has(h, 'id="freiraeumen"'));
   check('galabau', 'links sub-hubs', has(h, 'href="/zaunbau/"') && has(h, 'href="/heckenentfernung/"') && has(h, 'href="/gartenrodung/"') && has(h, 'href="/baumstumpf-entfernen/"'));
   check('galabau', 'fall', classCount(h, 'fall') >= 1);
   check('galabau', 'kein inklusive', !hasI(h, 'inklusive Entsorgung'));
