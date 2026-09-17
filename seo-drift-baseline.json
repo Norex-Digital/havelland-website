@@ -3,29 +3,30 @@
   "captured_at": "lokal",
   "pages": {
     "/": {
-      "title": "Gartenpflege Falkensee | Haus- &amp; Gartenservice Havelland",
-      "title_len": 60,
-      "meta": "Gartenpflege, Heckenschnitt und Hausservice in Falkensee und Umgebung. Fester Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.",
-      "meta_len": 157,
+      "title": "Gartenpflege Falkensee · Entrümpelung · Objektbetreuung",
+      "title_len": 55,
+      "meta": "Gartenpflege, Entrümpelung und Objektbetreuung in Falkensee und im Havelland — ein Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis inklusive.",
+      "meta_len": 153,
       "h1": "Haus und Garten — aus einer Hand gepflegt.",
       "h1_count": 1,
       "h2_count": 9,
       "canonical": "https://haus-und-gartenservice-havelland.de/",
       "schema_types": [
-        "HomeAndConstructionBusiness"
+        "HomeAndConstructionBusiness",
+        "WebSite"
       ],
       "faq_count": 8,
-      "internal_links": 72,
-      "word_count": 1852
+      "internal_links": 100,
+      "word_count": 1526
     },
     "/gartenpflege/": {
-      "title": "Gartenpflege Havelland – Haus- &amp; Gartenservice",
-      "title_len": 50,
-      "meta": "Gartenpflege im Havelland: Rasen, Grünschnitt, Laub und kleiner Baumschnitt aus einer Hand. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem.",
-      "meta_len": 158,
+      "title": "Gartenpflege Havelland – Rasen, Laub &amp; Herbst-Paket",
+      "title_len": 55,
+      "meta": "Gartenpflege im Havelland: Rasen, Grünschnitt, Laub entfernen und Baumschnitt aus einer Hand. Herbst-Paket mit Laub, Dachrinne und Hecke an einem Termin.",
+      "meta_len": 153,
       "h1": "Ihre regelmäßige Gartenpflege im Havelland – verlässlich und sauber",
       "h1_count": 1,
-      "h2_count": 9,
+      "h2_count": 12,
       "canonical": "https://haus-und-gartenservice-havelland.de/gartenpflege/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -33,8 +34,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 82,
-      "word_count": 1741
+      "internal_links": 93,
+      "word_count": 1877
     },
     "/heckenschnitt/": {
       "title": "Heckenschnitt Havelland | Festpreis vom Gartenservice",
@@ -51,17 +52,17 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 85,
-      "word_count": 2600
+      "internal_links": 92,
+      "word_count": 2601
     },
     "/winterdienst/": {
-      "title": "Winterdienst Havelland | Saisonvertrag &amp; Streupflicht",
-      "title_len": 57,
-      "meta": "Winterdienst im Havelland: Schneeräumen und Streuen durch einen geprüften Partner-Fachbetrieb, koordiniert über einen festen Ansprechpartner. Jetzt anfragen.",
-      "meta_len": 157,
-      "h1": "Winterdienst im Havelland — organisiert, bevor der erste Schnee fällt",
+      "title": "Winterdienst Havelland – Räumen und Streuen im Saisonvertrag",
+      "title_len": 60,
+      "meta": "Winterdienst im Havelland: Räumen und Streuen durch einen Partner-Fachbetrieb, Saisonvertrag mit Einsatznachweis für Privatgrundstück, WEG und Gewerbe.",
+      "meta_len": 151,
+      "h1": "Winterdienst im Havelland – geregelt, bevor es glatt wird",
       "h1_count": 1,
-      "h2_count": 7,
+      "h2_count": 10,
       "canonical": "https://haus-und-gartenservice-havelland.de/winterdienst/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -69,8 +70,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 81,
-      "word_count": 1549
+      "internal_links": 97,
+      "word_count": 1798
     },
     "/steinreinigung/": {
       "title": "Steinreinigung Falkensee &amp; Havelland | Festpreis",
@@ -79,7 +80,7 @@
       "meta_len": 149,
       "h1": "Steinreinigung im Havelland — Pflaster, Terrasse und Einfahrt wieder sauber",
       "h1_count": 1,
-      "h2_count": 8,
+      "h2_count": 9,
       "canonical": "https://haus-und-gartenservice-havelland.de/steinreinigung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -87,8 +88,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 79,
-      "word_count": 1571
+      "internal_links": 87,
+      "word_count": 1604
     },
     "/fensterreinigung/": {
       "title": "Fensterreinigung Falkensee &amp; Havelland — Festpreis",
@@ -97,7 +98,7 @@
       "meta_len": 146,
       "h1": "Streifenfreie Fenster, garantiert sauber",
       "h1_count": 1,
-      "h2_count": 8,
+      "h2_count": 9,
       "canonical": "https://haus-und-gartenservice-havelland.de/fensterreinigung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -105,17 +106,17 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 79,
-      "word_count": 1714
+      "internal_links": 87,
+      "word_count": 1747
     },
     "/dachrinnenreinigung/": {
       "title": "Dachrinnenreinigung Havelland – Partner-Fachbetrieb",
       "title_len": 51,
-      "meta": "Dachrinnenreinigung im Havelland: Rinne und Fallrohr frei von Laub und Moos. Ausführung durch geprüften Partner-Fachbetrieb — wir koordinieren Besichtigung.",
-      "meta_len": 156,
+      "meta": "Dachrinnenreinigung im Havelland: Rinne und Fallrohr frei von Laub und Moos. Ausführung durch Partner-Fachbetrieb — wir koordinieren Besichtigung, Termin.",
+      "meta_len": 154,
       "h1": "Dachrinnenreinigung im Havelland – Rinne und Fallrohr frei",
       "h1_count": 1,
-      "h2_count": 7,
+      "h2_count": 10,
       "canonical": "https://haus-und-gartenservice-havelland.de/dachrinnenreinigung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -123,17 +124,17 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 64,
-      "word_count": 1432
+      "internal_links": 74,
+      "word_count": 1562
     },
     "/dachreinigung/": {
       "title": "Dachreinigung im Havelland – Partner-Fachbetrieb",
       "title_len": 48,
-      "meta": "Dachreinigung im Havelland: Moos und Grünbelag vom Dach, Dachziegel reinigen. Ausführung durch geprüften Partner-Fachbetrieb — wir koordinieren Besichtigung.",
-      "meta_len": 157,
+      "meta": "Dachreinigung im Havelland: Moos und Grünbelag vom Dach, Dachziegel reinigen. Ausführung durch Partner-Fachbetrieb — wir koordinieren Besichtigung, Termin.",
+      "meta_len": 155,
       "h1": "Dachreinigung im Havelland – Moos und Grünbelag entfernen",
       "h1_count": 1,
-      "h2_count": 7,
+      "h2_count": 8,
       "canonical": "https://haus-und-gartenservice-havelland.de/dachreinigung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -141,44 +142,44 @@
         "BreadcrumbList"
       ],
       "faq_count": 6,
-      "internal_links": 64,
-      "word_count": 1317
+      "internal_links": 72,
+      "word_count": 1353
     },
     "/entruempelung/": {
-      "title": "Entrümpelung Falkensee &amp; Havelland — Festpreis",
-      "title_len": 50,
-      "meta": "Entrümpelung im Havelland vom Haus- &amp; Gartenservice: Festpreis nach kostenloser Besichtigung, kein Aufpreis, Foto-Nachweis aufs Handy. Diskret.",
-      "meta_len": 147,
-      "h1": "Ihre Entrümpelung im Havelland — diskret und zum Festpreis",
+      "title": "Entrümpelung Falkensee &amp; Havelland: Keller, Garage, Haus",
+      "title_len": 60,
+      "meta": "Entrümpelung in Falkensee und im Havelland: Keller, Garage, Dachboden, Schuppen oder Wohnung. Festpreis für Räumung und Abtransport, Entsorgung nach Beleg.",
+      "meta_len": 155,
+      "h1": "Entrümpelung rund ums Haus — in Falkensee und im Havelland",
       "h1_count": 1,
-      "h2_count": 8,
+      "h2_count": 15,
       "canonical": "https://haus-und-gartenservice-havelland.de/entruempelung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
         "Service",
         "BreadcrumbList"
       ],
-      "faq_count": 5,
-      "internal_links": 65,
-      "word_count": 1462
+      "faq_count": 10,
+      "internal_links": 76,
+      "word_count": 3563
     },
     "/haushaltsaufloesung/": {
-      "title": "Haushaltsauflösung &amp; Wohnungsauflösung Havelland",
-      "title_len": 52,
-      "meta": "Haushaltsauflösung und Wohnungsauflösung im Havelland: leer und besenrein zum Festpreis nach Besichtigung. Diskret bei Erb- und Pflegefall, mit Foto-Nachweis.",
+      "title": "Haushaltsauflösung im Havelland: Erbfall, Pflegefall, Umzug",
+      "title_len": 59,
+      "meta": "Haushaltsauflösung im Havelland bei Erbfall, Pflegefall oder Umzug: Nachlass sichten, verwerten, besenrein übergeben. Festpreis nach kostenloser Besichtigung.",
       "meta_len": 158,
-      "h1": "Haushaltsauflösung &amp; Wohnungsauflösung im Havelland — diskret und besenrein",
+      "h1": "Haushaltsauflösung im Havelland — Schritt für Schritt, wenn es schwerfällt",
       "h1_count": 1,
-      "h2_count": 9,
+      "h2_count": 13,
       "canonical": "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
         "Service",
         "BreadcrumbList"
       ],
-      "faq_count": 7,
-      "internal_links": 65,
-      "word_count": 1761
+      "faq_count": 9,
+      "internal_links": 73,
+      "word_count": 2698
     },
     "/grundreinigung/": {
       "title": "Grundreinigung / Auszugsreinigung Havelland",
@@ -187,7 +188,7 @@
       "meta_len": 150,
       "h1": "Besenrein war gestern — Ihre Auszugsreinigung im Havelland",
       "h1_count": 1,
-      "h2_count": 6,
+      "h2_count": 7,
       "canonical": "https://haus-und-gartenservice-havelland.de/grundreinigung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -195,17 +196,17 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 59,
-      "word_count": 1302
+      "internal_links": 67,
+      "word_count": 1335
     },
     "/hausmeisterservice/": {
       "title": "Hausmeisterservice Havelland | Festpreis &amp; Foto",
       "title_len": 51,
-      "meta": "Hausmeisterservice im Havelland: Grünpflege, Winterdienst, Kleinreparaturen, Kontrollgänge. Ein Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis.",
-      "meta_len": 156,
+      "meta": "Hausmeisterservice im Havelland: Grünpflege, Kleinreparaturen, Kontrollgänge, Foto-Nachweis nach jedem Einsatz. Winterdienst koordiniert.",
+      "meta_len": 137,
       "h1": "Ihr Hausmeisterservice im Havelland – ein Ansprechpartner für alles",
       "h1_count": 1,
-      "h2_count": 7,
+      "h2_count": 8,
       "canonical": "https://haus-und-gartenservice-havelland.de/hausmeisterservice/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -213,8 +214,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 59,
-      "word_count": 1364
+      "internal_links": 69,
+      "word_count": 1435
     },
     "/gebaeudereinigung/": {
       "title": "Gebäudereinigung Havelland – Service vom Nachbarn",
@@ -223,7 +224,7 @@
       "meta_len": 155,
       "h1": "Gebäudereinigung im Havelland, auf die sich Ihre Objekte verlassen",
       "h1_count": 1,
-      "h2_count": 7,
+      "h2_count": 8,
       "canonical": "https://haus-und-gartenservice-havelland.de/gebaeudereinigung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -231,8 +232,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 61,
-      "word_count": 1370
+      "internal_links": 69,
+      "word_count": 1403
     },
     "/unterhaltsreinigung/": {
       "title": "Unterhaltsreinigung Havelland | Festpreis &amp; Foto",
@@ -241,7 +242,7 @@
       "meta_len": 155,
       "h1": "Laufende Unterhaltsreinigung für Gewerbe und Hausverwaltung im Havelland",
       "h1_count": 1,
-      "h2_count": 6,
+      "h2_count": 7,
       "canonical": "https://haus-und-gartenservice-havelland.de/unterhaltsreinigung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -249,8 +250,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 59,
-      "word_count": 1328
+      "internal_links": 67,
+      "word_count": 1361
     },
     "/objektbetreuung/": {
       "title": "Objektbetreuung Havelland | Haus- &amp; Gartenservice",
@@ -259,7 +260,7 @@
       "meta_len": 152,
       "h1": "Objektbetreuung im Havelland — Ihr fester Ansprechpartner vor Ort",
       "h1_count": 1,
-      "h2_count": 5,
+      "h2_count": 6,
       "canonical": "https://haus-und-gartenservice-havelland.de/objektbetreuung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -267,8 +268,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 56,
-      "word_count": 1354
+      "internal_links": 64,
+      "word_count": 1391
     },
     "/ferienwohnung-reinigung/": {
       "title": "Ferienwohnung-Reinigung Werder &amp; Schwielowsee",
@@ -277,7 +278,7 @@
       "meta_len": 147,
       "h1": "Ihre Ferienwohnung in Werder &amp; Schwielowsee — sauber zum nächsten Check-in",
       "h1_count": 1,
-      "h2_count": 7,
+      "h2_count": 8,
       "canonical": "https://haus-und-gartenservice-havelland.de/ferienwohnung-reinigung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -285,8 +286,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 60,
-      "word_count": 1293
+      "internal_links": 68,
+      "word_count": 1326
     },
     "/heckenentfernung/": {
       "title": "Heckenentfernung Havelland | Hecke komplett entfernen",
@@ -295,7 +296,7 @@
       "meta_len": 153,
       "h1": "Heckenentfernung im Havelland — Hecke weg, Wurzel raus, Fläche frei",
       "h1_count": 1,
-      "h2_count": 11,
+      "h2_count": 12,
       "canonical": "https://haus-und-gartenservice-havelland.de/heckenentfernung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -303,8 +304,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 6,
-      "internal_links": 69,
-      "word_count": 1947
+      "internal_links": 78,
+      "word_count": 1986
     },
     "/baumstumpf-entfernen/": {
       "title": "Baumstumpf entfernen Havelland | Fräsen zum Festpreis",
@@ -313,7 +314,7 @@
       "meta_len": 152,
       "h1": "Baumstumpf und Wurzel entfernen im Havelland — gefräst, entsorgt, eingeebnet",
       "h1_count": 1,
-      "h2_count": 9,
+      "h2_count": 10,
       "canonical": "https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -321,8 +322,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 7,
-      "internal_links": 66,
-      "word_count": 1764
+      "internal_links": 74,
+      "word_count": 1800
     },
     "/gartenrodung/": {
       "title": "Gartenrodung Havelland | Verwilderten Garten roden",
@@ -331,7 +332,7 @@
       "meta_len": 154,
       "h1": "Gartenrodung im Havelland — aus verwildert wird wieder Grundstück",
       "h1_count": 1,
-      "h2_count": 9,
+      "h2_count": 10,
       "canonical": "https://haus-und-gartenservice-havelland.de/gartenrodung/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -339,8 +340,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 6,
-      "internal_links": 61,
-      "word_count": 1646
+      "internal_links": 69,
+      "word_count": 1679
     },
     "/baumschnitt/": {
       "title": "Baumschnitt Havelland | Obstbaum- &amp; Gehölzschnitt",
@@ -349,7 +350,7 @@
       "meta_len": 151,
       "h1": "Baumschnitt im Havelland — fachgerecht geschnitten, komplett abgefahren",
       "h1_count": 1,
-      "h2_count": 7,
+      "h2_count": 8,
       "canonical": "https://haus-und-gartenservice-havelland.de/baumschnitt/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -357,17 +358,17 @@
         "BreadcrumbList"
       ],
       "faq_count": 6,
-      "internal_links": 58,
-      "word_count": 1694
+      "internal_links": 66,
+      "word_count": 1727
     },
     "/galabau/": {
       "title": "GaLaBau Falkensee | Kleinere Garten- &amp; Pflasterarbeiten",
       "title_len": 59,
-      "meta": "Kleinere GaLaBau-Arbeiten in Falkensee &amp; im Havelland: Pflaster ausbessern, Kantensteine, Zaunmontage, Beeteinfassung. Kostenlose Besichtigung, Festpreis.",
+      "meta": "Kleinere GaLaBau-Arbeiten in Falkensee &amp; im Havelland: Pflaster ausbessern, Kantensteine, Beeteinfassungen, Hochbeete. Kostenlose Besichtigung, Festpreis.",
       "meta_len": 158,
       "h1": "Kleinere GaLaBau-Arbeiten in Falkensee und im Havelland",
       "h1_count": 1,
-      "h2_count": 7,
+      "h2_count": 8,
       "canonical": "https://haus-und-gartenservice-havelland.de/galabau/",
       "schema_types": [
         "HomeAndConstructionBusiness",
@@ -375,8 +376,8 @@
         "BreadcrumbList"
       ],
       "faq_count": 5,
-      "internal_links": 58,
-      "word_count": 1335
+      "internal_links": 67,
+      "word_count": 1361
     }
   }
 }
