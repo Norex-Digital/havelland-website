@@ -211,6 +211,19 @@ export function echtProjekt() {
 }
 
 // ---------------------------------------------------------------------------
+// clusterKacheln — 4 Cluster als .cluster > .cl (a.cl-main = Hub) + ul.cl-sub (Unterleistungen). Ersetzt seit 17.09.
+// die 6 Einzelkarten (.list > a.it) auf der Startseite: vier Käufergruppen (Garten / GaLaBau / Entrümpelung / Objekte)
+// bekommen je einen Einstieg, kein Käufer wird bevorzugt (Plan organisch-entruempelung §2 E2).
+// items: [{ href, kick, h3, p, subs:[{href,label}] }]
+// ---------------------------------------------------------------------------
+export function clusterKacheln(items) {
+  return `<div class="cluster">` + items.map((c, i) =>
+    `<div class="cl rv d${i + 1}"><a class="cl-main" href="${esc(c.href)}"><span class="kick">${esc(c.kick)}</span><h3>${esc(c.h3)}</h3><p>${esc(c.p)}</p><span class="arr">Zur Leistung →</span></a>` +
+    `<ul class="cl-sub">${c.subs.map(s => `<li><a href="${esc(s.href)}">${esc(s.label)}</a></li>`).join('')}</ul></div>`
+  ).join('') + `</div>`;
+}
+
+// ---------------------------------------------------------------------------
 // VN-Metadaten (Slug -> cap/sub/tcap/alt) — Quelle lock-v2 pgrid Z.940-959.
 // ---------------------------------------------------------------------------
 const VN_META = {

@@ -50,6 +50,8 @@ page('index.html', 'HOME', h => {
   check('home', 'vals', classCount(h, 'vals') >= 1);
   check('home', 'faq-search', classCount(h, 'faq-search') >= 1);
   check('home', 'gebiet-wrap', classCount(h, 'gebiet-wrap') >= 1);
+  check('home', 'cluster', classCount(h, 'cluster') >= 1);      // 17.09.: 4 Cluster-Kacheln statt 6 Einzelkarten
+  check('home', 'cl', classCount(h, 'cl') === 4);
   check('home', 'kein fonts.googleapis', !has(h, 'fonts.googleapis'));
 });
 

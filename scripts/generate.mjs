@@ -9,7 +9,7 @@ const ASSET_VER = crypto.createHash('md5').update(fs.readFileSync('assets/css/si
 import {
   baSlider, garantienStrip, schnittkalender, heckenKompass, jahreszeiten, echtProjekt,
   karussell, archivGrid, whatsappFlow, auftragsTimeline, uspBand, faqFilter, gebietskarte,
-  trustBadges, fristband, aeoKapsel, beweisMechanik, saisonTeaser
+  trustBadges, fristband, aeoKapsel, beweisMechanik, saisonTeaser, clusterKacheln
 } from './components.mjs';
 import { buildLp, lpAttribJS, ATTR_KEYS } from './lp.mjs';
 
@@ -311,40 +311,21 @@ function write(url, html) {
 
 // ---------- HOME ----------
 function home() {
-  // Kernleistungen (Portfolio-Refokus 2026-07-22): 6 Plätze. Versprechen-Zeilen im Marken-Stil;
-  // Dach- und Winterdienst-Einträge Tippgeber-konform — keine Eigenleistung, kein "ein Preis".
-  const KERN_BASIS = [
-    { slug: 'heckenschnitt', label: 'Heckenschnitt', promise: 'Geradlinien-Garantie — bleiben Schnittreste liegen, kommen wir kostenlos nach.' },
-    { slug: 'heckenentfernung', label: 'Heckenentfernung', promise: 'Hecke komplett weg, Wurzeln gefräst, Fläche frei — erlaubt vom 1. Oktober bis 28. Februar.' },
-    { slug: 'gartenpflege', label: 'Gartenpflege', promise: 'Fällt ein Termin ohne Vorankündigung aus, geht der nächste auf uns.' },
-    { slug: 'entruempelung', label: 'Entrümpelung & Haushaltsauflösung', promise: 'Festpreis nach Besichtigung — besenrein zum vereinbarten Termin.' },
-    { slug: 'dachrinnenreinigung', label: 'Dachrinnenreinigung', promise: 'Rinne frei vor dem Winter — ein Termin, ein Ansprechpartner.' },
-    { slug: 'baumstumpf-entfernen', label: 'Baumstumpf- & Wurzelentfernung', promise: 'Stubben bodeneben gefräst, Wurzeln raus — ganzjährig möglich, meist an einem Termin.' }
-  ];
-  // Saisontausch Oktober–Februar: Winterdienst auf Platz 1, Gartenpflege raus. Begruendung in
-  // wissen/website/saisonalitaet.md — Winterdienst hat mit 49.500 Suchen im Januar den groessten
-  // Peak des Portfolios; Gartenpflege hat den schwaechsten Winter-Fit (Rasen ruht Nov–Feb),
-  // die Marken-Identitaet bleibt ueber Hero/Title/Nav sichtbar. (Bis 08/2026 flog hier
-  // Dachreinigung raus — die Kachel wurde durch Baumstumpf- & Wurzelentfernung ersetzt.)
-  // Steuerung wie beim Saison-Hero ueber config.saison_monat (Override zum Testen), sonst der Build-Monat.
-  // Umbau 03.09.: Saison dreiteilig — Herbst (9–11) mit Herbst-Paket/Winterdienst-Kacheln, Winter (12–2) Winterdienst vorn, sonst Basis.
+  // Saison-Hero-Steuerung ueber config.saison_monat (Override zum Testen), sonst der Build-Monat — wird von saisonTeaser gebraucht.
   const saisonMonat = config.saison_monat || (new Date()).getMonth() + 1;
-  const istHerbst = saisonMonat >= 9 && saisonMonat <= 11;
-  const istWinter = saisonMonat === 12 || saisonMonat <= 2;
-  const K = Object.fromEntries(KERN_BASIS.map(k => [k.slug, k]));
-  const WD = { slug: 'winterdienst', label: 'Winterdienst', promise: 'Saisonvertrag vor dem ersten Schnee — geräumt wird von einem Partner-Fachbetrieb.' };
-  const KERN_HERBST = [
-    { slug: 'gartenpflege', label: 'Gartenpflege & Laub', promise: 'Herbst-Paket: Laub, Rasen, letzter Heckenschnitt — ein Termin, Festpreis nach Besichtigung.', href: '/gartenpflege/#herbst-paket' },
-    K.heckenschnitt,
-    { slug: 'dachrinnenreinigung', label: 'Dachrinnenreinigung', promise: 'Rinne frei vor dem Winter — Partner-Fachbetrieb, ein Ansprechpartner.' },
-    WD,
-    K.heckenentfernung,
-    K.entruempelung
-  ];
-  const KERN = istHerbst ? KERN_HERBST : istWinter ? [WD, ...KERN_BASIS.filter(k => k.slug !== 'gartenpflege')] : KERN_BASIS;
   // Hero-Lead (17.09.): drei Cluster in einem Satz, Partner-Framing Winterdienst bleibt. Saisonales lebt im saisonTeaser.
   const homeLead = 'Garten, Entrümpelung, Objektbetreuung — ein fester Ansprechpartner im Havelland. Heckenschnitt und Gartenpflege, Keller und Schuppen ausräumen, Grünpflege und Winterdienst für Ihr Objekt: Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Auftrag.';
-  const fokusCards = KERN.map((k, i) => `<a class="it rv d${i + 1}" href="${k.href || '/' + k.slug + '/'}"><span class="no">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(k.label)}</h3><p>${esc(k.promise)}</p></div><span class="arr">→</span></a>`).join('');
+  // Kernleistungen = 4 Cluster (17.09., Plan organisch-entruempelung §2). Reihenfolge saisonneutral; Saisonales im saisonTeaser.
+  const CLUSTER = [
+    { href: '/gartenpflege/', kick: 'Garten & Grundstück', h3: 'Gepflegt durchs Jahr', p: 'Rasen, Hecke, Laub, Dachrinne — im Abo oder einmalig, mit festem Termin und Foto-Nachweis.',
+      subs: [{ href: '/heckenschnitt/', label: 'Heckenschnitt' }, { href: '/baumschnitt/', label: 'Baumschnitt' }, { href: '/dachrinnenreinigung/', label: 'Dachrinne' }, { href: '/fensterreinigung/', label: 'Fensterreinigung' }, { href: '/winterdienst/', label: 'Winterdienst' }] },
+    { href: '/galabau/', kick: 'GaLaBau & Rodung', h3: 'Weg damit, neu gemacht', p: 'Hecke raus, Stubben gefräst, Zaun gesetzt, Fläche frei — kleinere Bau- und Rodungsarbeiten zum Festpreis.',
+      subs: [{ href: '/zaunbau/', label: 'Zaunbau' }, { href: '/heckenentfernung/', label: 'Heckenentfernung' }, { href: '/gartenrodung/', label: 'Gartenrodung' }, { href: '/baumstumpf-entfernen/', label: 'Baumstumpf' }] },
+    { href: '/entruempelung/', kick: 'Entrümpelung & Haushaltsauflösung', h3: 'Rund ums Haus ausgeräumt', p: 'Keller, Garage, Dachboden, Schuppen oder die ganze Wohnung — Festpreis für Räumung und Abtransport, Entsorgung nach Beleg.',
+      subs: [{ href: '/haushaltsaufloesung/', label: 'Haushaltsauflösung' }, { href: '/entruempelung/#nebengebaeude', label: 'Keller · Garage · Dachboden' }, { href: '/entruempelung/#gartenhaus', label: 'Gartenhaus-Abriss' }, { href: '/entruempelung/#gewerbe', label: 'Gewerbe' }] },
+    { href: '/fuer-hausverwaltungen/', kick: 'Hausverwaltungen & Objekte', h3: 'Ein Vertrag, ein Ansprechpartner', p: 'Grünpflege, Winterdienst, Treppenhaus und Kleinreparaturen für Ihre Objekte — Foto-Reporting nach jedem Einsatz.',
+      subs: [{ href: '/objektbetreuung/', label: 'Objektbetreuung' }, { href: '/unterhaltsreinigung/', label: 'Unterhaltsreinigung' }, { href: '/gartenpflege/', label: 'Grünpflege im Vertrag' }, { href: '/winterdienst/', label: 'Winterdienst' }] }
+  ];
   const main = `
 <section class="hero">${leaf('hleaf')}<div class="wrap grid">
 <div><span class="kick rv in"><span class="dot"></span> ${esc(nap.city)} · Havelland</span>
@@ -356,7 +337,7 @@ function home() {
 </div></section>
 ${gstrip}
 ${saisonTeaser(saisonMonat)}
-<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Kernleistungen</h2><span class="rv" style="display:flex;gap:18px;flex-wrap:wrap"><a href="/leistungen/">Alle Leistungen →</a><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen &amp; Gewerbe →</a></span></div><p class="intro rv">Sechs Leistungen, ein Ansprechpartner — vom regelmäßigen Garten bis zum besenreinen Keller.</p><div class="list">${fokusCards}</div></div></section>
+<section class="sec" id="kernleistungen"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Kernleistungen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Vier Bereiche, ein Ansprechpartner — vom regelmäßigen Garten über die leere Garage bis zum betreuten Mehrfamilienhaus.</p>${clusterKacheln(CLUSTER)}</div></section>
 <section class="sec section-alt"><div class="wrap">${jahreszeiten()}</div></section>
 <section class="sec"><div class="wrap">${schnittkalender()}</div></section>
 ${heckenKompass()}
