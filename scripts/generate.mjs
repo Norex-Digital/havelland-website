@@ -342,12 +342,8 @@ function home() {
     K.entruempelung
   ];
   const KERN = istHerbst ? KERN_HERBST : istWinter ? [WD, ...KERN_BASIS.filter(k => k.slug !== 'gartenpflege')] : KERN_BASIS;
-  // Hero-Lead je Saison (≤35 W): Herbst = Herbst-Paket mit Partner-Framing, Winter = Winterdienst/Heckenentfernung, sonst Bestandstext.
-  const homeLead = istHerbst
-    ? 'Laub, Rasen und der letzte Heckenschnitt vor dem Winter: erledigen wir selbst, zum Festpreis nach Besichtigung. Dachrinne und Winterdienst organisieren wir gleich mit — Ausführung durch einen Partner-Fachbetrieb, Saisonvertrag vor dem ersten Schnee.'
-    : istWinter
-      ? 'Winterdienst über Partner-Fachbetrieb — Saisonvertrag mit Einsatznachweis. Heckenentfernung bis 28. Februar, Entrümpelung zum Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.'
-      : 'Garten, Reinigung, Entrümpelung: Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag. Winterdienst über Partner-Fachbetrieb — ein Ansprechpartner, der zurückruft.';
+  // Hero-Lead (17.09.): drei Cluster in einem Satz, Partner-Framing Winterdienst bleibt. Saisonales lebt im saisonTeaser.
+  const homeLead = 'Garten, Entrümpelung, Objektbetreuung — ein fester Ansprechpartner im Havelland. Heckenschnitt und Gartenpflege, Keller und Schuppen ausräumen, Grünpflege und Winterdienst für Ihr Objekt: Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Auftrag.';
   const fokusCards = KERN.map((k, i) => `<a class="it rv d${i + 1}" href="${k.href || '/' + k.slug + '/'}"><span class="no">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(k.label)}</h3><p>${esc(k.promise)}</p></div><span class="arr">→</span></a>`).join('');
   const main = `
 <section class="hero">${leaf('hleaf')}<div class="wrap grid">
@@ -355,7 +351,7 @@ function home() {
 <h1 class="rv in d1">Haus und Garten — <em>aus einer Hand</em> gepflegt.</h1>
 <p class="lead rv in d2">${homeLead}</p>
 <div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref('Hallo, ich interessiere mich für Ihre Leistungen.')}">WhatsApp schreiben</a></div>
-<div class="trust-row rv in d4"><div class="t"><b>Ein</b><span>fester Ansprechpartner</span></div><div class="t"><b>Festpreis</b><span>nach Besichtigung</span></div><div class="t"><b>Stunden</b><span>statt Tage bis zur Antwort</span></div></div></div>
+<div class="trust-row rv in d4"><div class="t"><b>Ein</b><span>fester Ansprechpartner</span></div><div class="t"><b>Festpreis</b><span>nach Besichtigung</span></div><div class="t"><b>Foto</b><span>-Nachweis nach jedem Auftrag</span></div></div></div>
 <div class="shot rv in d2">${baSlider({ slug: '06-02-thuja-grenze', alt: 'Thuja-Hecke an der Grundstücksgrenze', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })}</div>
 </div></section>
 ${gstrip}
@@ -372,9 +368,10 @@ ${heckenKompass()}
 <section class="sec"><div class="wrap">${faqFilter()}</div></section>
 ${gebietskarte()}
 ${endBand}`;
-  // Title führt mit "Gartenpflege Falkensee": stärkste Query der Domain (154 Impressionen, Pos. 2,5),
-  // aber CTR nur 2,6 % statt ~15 % — das Suchwort kam im alten Title gar nicht vor (GSC 08.08.2026).
-  write('/', head('Gartenpflege Falkensee | Haus- & Gartenservice Havelland', mkMeta('Gartenpflege, Heckenschnitt und Hausservice in Falkensee und Umgebung. Fester Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.'), '/', orgSchema()) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  // Title (17.09.): "Gartenpflege Falkensee" bleibt vorn (Pos. 2,1 / 377 Impr. GSC 90 Tage), dahinter die zwei
+  // anderen Cluster — Startseite rankt fuer "entruempelung falkensee" (Pos. 7,5) mit Garten-Snippet -> 0 Klicks.
+  // Marke kommt ab Task 7 ueber WebSite-Schema + og:site_name (Title-Gate <= 60 Zeichen).
+  write('/', head('Gartenpflege Falkensee · Entrümpelung · Objektbetreuung', mkMeta('Gartenpflege, Entrümpelung und Objektbetreuung in Falkensee und im Havelland — ein Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis inklusive.'), '/', orgSchema()) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push('/');
 }
 
