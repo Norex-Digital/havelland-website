@@ -1633,7 +1633,11 @@
      ],
      "mehr": "Im Sommer 2026 haben wir im Havelland einen solchen Auftrag in drei Positionen umgesetzt: Schuppen und Garage ausgeräumt, einen Holzhaufen abgefahren, Holzschuppen und Hühnerstall abgerissen und den alten Metallzaun zurückgebaut. Sie müssen nicht zwischen Entrümpler, Gärtner und Zaunbauer vermitteln.",
      "link_to": "entruempelung#gartenhaus",
-     "link_text": "Gartenhaus und Schuppen abreißen"
+     "link_text": "Gartenhaus und Schuppen abreißen",
+     "cta_after": {
+      "h2": "Zaun, Rodung, Pflaster: ein Angebot.",
+      "txt": "Foto oder Skizze per WhatsApp, kostenlose Besichtigung mit Aufmaß, schriftlicher Festpreis für alle Positionen."
+     }
     },
     {
      "id": "genehmigung",
