@@ -75,6 +75,14 @@ page('entruempelung/index.html', 'HUB entruempelung', h => {
   check('entruempelung', 'faq', classCount(h, 'faq') >= 1);
 });
 
+// ---- SERVICE-HUB galabau (Cluster-Pillar GaLaBau & Rodung, W2+W3 Task 4, 17.09.) ----
+page('galabau/index.html', 'HUB galabau', h => {
+  check('galabau', 'anker', has(h, 'id="reihenfolge"') && has(h, 'id="saison"') && has(h, 'id="genehmigung"') && has(h, 'id="grenzen"'));
+  check('galabau', 'links sub-hubs', has(h, 'href="/zaunbau/"') && has(h, 'href="/heckenentfernung/"') && has(h, 'href="/gartenrodung/"') && has(h, 'href="/baumstumpf-entfernen/"'));
+  check('galabau', 'fall', classCount(h, 'fall') >= 1);
+  check('galabau', 'kein inklusive', !hasI(h, 'inklusive Entsorgung'));
+});
+
 // ---- TIER1-ORTSSEITEN (W2): Tiefen-Block. Scharf nur wenn tiefBlock vorhanden ODER TIER1=1 gesetzt ist —
 // Task 2 liefert die tief-Copy in ortsseiten.json und schaltet die Checks mit `TIER1=1 node scripts/accept.mjs` scharf.
 for (const rel of ['entruempelung-falkensee/index.html', 'entruempelung-brieselang/index.html', 'haushaltsaufloesung-falkensee/index.html']) {
