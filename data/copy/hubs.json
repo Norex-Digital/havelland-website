@@ -620,7 +620,10 @@
       "Übergabe an den Vermieter dokumentieren wir mit Fotos"
      ],
      "mehr": "Fotos oder ein Grundriss per Mail reichen für die erste Einschätzung, danach folgt die kostenlose Besichtigung vor Ort.",
-     "cta_after": true
+     "cta_after": {
+      "h2": "Büro, Lager oder Praxis räumen?",
+      "txt": "Fotos oder Grundriss per Mail, kostenlose Besichtigung außerhalb Ihrer Geschäftszeiten, Rechnung mit ausgewiesener Mehrwertsteuer."
+     }
     },
     {
      "id": "wertanrechnung",
@@ -770,7 +773,10 @@
       "Diskret, ohne Aufsehen in der Nachbarschaft"
      ],
      "mehr": "Danach lösen wir den übrigen Haushalt auf: Möbel, Hausrat und alles, was nicht mit umzieht, damit Umzugstermin und Räumungstermin zusammenpassen.",
-     "cta_after": true
+     "cta_after": {
+      "h2": "Wohnung auflösen, ohne alles wegzuwerfen.",
+      "txt": "Wir sichten mit Ihnen, was bleibt, verwerten, was noch gut ist, und übergeben besenrein — Festpreis nach kostenloser Besichtigung."
+     }
     },
     {
      "id": "vollmacht",
@@ -1654,7 +1660,10 @@
      "link_text": "Ratgeber Zaun-Genehmigung Brandenburg",
      "link2_to": "ratgeber/hecke-entfernen-erlaubt",
      "link2_text": "Ratgeber Hecke entfernen: was erlaubt ist",
-     "cta_after": true
+     "cta_after": {
+      "h2": "Unsicher, was bei Ihnen geht? Wir sehen es uns an.",
+      "txt": "Kostenlose Besichtigung vor Ort, was uns auffällt, sagen wir Ihnen offen — den Festpreis bekommen Sie schriftlich."
+     }
     }
    ],
    "faelle": [
