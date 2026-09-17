@@ -200,10 +200,14 @@ page('kontakt/index.html', 'KONTAKT', h => {
   check('kontakt', 'DSGVO-Checkbox', has(h, 'type="checkbox"'));
 });
 
-// ---- B2B fuer-hausverwaltungen ----
+// ---- B2B fuer-hausverwaltungen (17.09. Umbau Objektpflege: Referenz-Satz, 6 Leistungskarten, CTA-Text, kein Preis) ----
 page('fuer-hausverwaltungen/index.html', 'B2B fuer-hausverwaltungen', h => {
   check('b2b', 'Angebot', hasI(h, 'Angebot'));
   check('b2b', 'E-Mail', has(h, 'E-Mail') || has(h, 'mailto:'));
+  check('b2b', 'referenz', has(h, 'Wir betreuen bereits Objekte im Havelland in festen Pflegeverträgen.'));
+  check('b2b', 'karten', classCount(h, 'card') >= 6);
+  check('b2b', 'cta angebot', hasI(h, 'Angebot für Ihr Objekt'));
+  check('b2b', 'kein preis', !/\d+ ?€/.test(h.replace(/<script[\s\S]*?<\/script>/g, '')));
 });
 
 // ---- ADS-LANDINGPAGES /lp/ (v2 14.09.: Site-Komponenten statt .lp-*-Nachbauten; LPs laden kein site.js -> jedes rv braucht in) ----
