@@ -243,6 +243,19 @@ export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.' } = {}
 }
 
 // ---------------------------------------------------------------------------
+// tiefBlock — Tiefen-Inhalt für Tier-1-Ortsseiten (W2): eigene H2 + H3-Sektionen, Faktenkasten (.ortsblock), optionale
+// Blocks mit Anker/Link. Fallbeispiele (faelleBlock) und bespoke FAQs setzt der Aufrufer ein. Nur wenn
+// ortsseiten.json → services.<svc>.orte.<ort>.tief existiert. Eigene Sections → NearDup-Gate (erster Prose-Block) bleibt unberührt.
+// ---------------------------------------------------------------------------
+export function tiefBlock(t, { linkHtml = () => '' } = {}) {
+  if (!t) return '';
+  const secs = (t.sections || []).map(x => `<h3>${esc(x.h3)}</h3><p>${esc(x.body)}${linkHtml(x)}</p>`).join('');
+  const ob = t.ortsblock ? `<section class="sec section-alt"><div class="wrap"><div class="ortsblock rv"><h2>${esc(t.ortsblock.h2)}</h2><dl>${(t.ortsblock.items || []).map(i => `<div><dt>${esc(i.k)}</dt><dd>${esc(i.v)}</dd></div>`).join('')}</dl>${t.ortsblock.quelle ? `<p class="oq">Quelle: ${esc(t.ortsblock.quelle)}</p>` : ''}</div></div></section>` : '';
+  const blocks = (t.blocks || []).map((b, i) => `<section class="sec${i % 2 ? ' section-alt' : ''}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2><p>${esc(b.body)}${linkHtml(b)}</p></div></div></section>`).join('');
+  return `<section class="sec tief"><div class="wrap"><div class="prose wide rv"><h2>${esc(t.h2)}</h2>${secs}</div></div></section>${ob}${blocks}`;
+}
+
+// ---------------------------------------------------------------------------
 // VN-Metadaten (Slug -> cap/sub/tcap/alt) — Quelle lock-v2 pgrid Z.940-959.
 // ---------------------------------------------------------------------------
 const VN_META = {

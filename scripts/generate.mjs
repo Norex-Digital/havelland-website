@@ -9,7 +9,7 @@ const ASSET_VER = crypto.createHash('md5').update(fs.readFileSync('assets/css/si
 import {
   baSlider, garantienStrip, schnittkalender, heckenKompass, jahreszeiten, echtProjekt,
   karussell, archivGrid, whatsappFlow, auftragsTimeline, uspBand, faqFilter, gebietskarte,
-  trustBadges, fristband, aeoKapsel, beweisMechanik, saisonTeaser, clusterKacheln, faelleBlock
+  trustBadges, fristband, aeoKapsel, beweisMechanik, saisonTeaser, clusterKacheln, faelleBlock, tiefBlock
 } from './components.mjs';
 import { buildLp, lpAttribJS, ATTR_KEYS } from './lp.mjs';
 
@@ -57,7 +57,10 @@ const _archArr = CP('archetypes.json'); const archCopy = {}; if (_archArr) for (
 const _ratArr = CP('ratgeber.json'); const ratCopy = ((_ratArr && (_ratArr.ratgeber || _ratArr)) || []).map(sanRat);
 const _orteCp = CP('orte.json'); const orteCopy = (_orteCp && _orteCp.orte) || {}; for (const k in orteCopy) sanOrt(orteCopy[k]);
 // Welle-1a: bespoke Ortsseiten-Copy (service×ort) — ersetzt Archetyp/Ort-Hook + Archetyp-FAQ auf der Ortsseite (Fallback bleibt Archetyp). Dach: Partner-Framing (gu-modell.md, §5 UWG).
-function sanOrtsSvc(o) { if (o.meta != null) o.meta = plain(o.meta); if (o.faqs) for (const f of o.faqs) { f.q = plain(f.q); f.a = plain(f.a); } if (o.orte) for (const k in o.orte) { const e = o.orte[k]; for (const kk of ['hook', 'rahmen', 'trust', 'fakt']) if (e[kk] != null) e[kk] = plain(e[kk]); } return o; }   // fakt (17.09.): Ein-Satz-Ortsfakt für die Hub-Ortskarten
+function sanOrtsSvc(o) { if (o.meta != null) o.meta = plain(o.meta); if (o.faqs) for (const f of o.faqs) { f.q = plain(f.q); f.a = plain(f.a); } if (o.orte) for (const k in o.orte) { const e = o.orte[k]; for (const kk of ['hook', 'rahmen', 'trust', 'fakt']) if (e[kk] != null) e[kk] = plain(e[kk]);
+  // tief (W2): Tiefen-Block für Tier-1-Ortsseiten — h2/sections/ortsblock/blocks/faelle/faqs sanitizen.
+  if (e.tief) { const t = e.tief; if (t.h2 != null) t.h2 = plain(t.h2); for (const x of (t.sections || [])) { x.h3 = plain(x.h3); x.body = plain(x.body); if (x.link_text != null) x.link_text = plain(x.link_text); } if (t.ortsblock) { t.ortsblock.h2 = plain(t.ortsblock.h2); for (const i of (t.ortsblock.items || [])) { i.k = plain(i.k); i.v = plain(i.v); } if (t.ortsblock.quelle != null) t.ortsblock.quelle = plain(t.ortsblock.quelle); } for (const b of (t.blocks || [])) { b.h2 = plain(b.h2); b.body = plain(b.body); if (b.link_text != null) b.link_text = plain(b.link_text); } for (const f of (t.faelle || [])) for (const k of ['h3','meta','body','zitat','zitat_von']) if (f[k] != null) f[k] = plain(f[k]); for (const f of (t.faqs || [])) { f.q = plain(f.q); f.a = plain(f.a); } }
+} return o; }   // fakt (17.09.): Ein-Satz-Ortsfakt für die Hub-Ortskarten
 const _ortsSvcCp = CP('ortsseiten.json'); const ortsSvcCopy = (_ortsSvcCp && _ortsSvcCp.services) || {}; for (const k in ortsSvcCopy) sanOrtsSvc(ortsSvcCopy[k]);
 // Reverse-Index Service → Ratgeber (interne Verlinkung, seiten-architektur §7)
 const ratgeberByService = {}; for (const r of ratCopy) { if (!r.cta_service) continue; (ratgeberByService[r.cta_service] = ratgeberByService[r.cta_service] || []).push(r); }
@@ -459,6 +462,7 @@ function ortsseite(s, o) {
   const oc = orteCopy[o.slug];
   const so = ortsSvcCopy[s.slug] || null;
   const soOrt = (so && so.orte && so.orte[o.slug]) || null;
+  const tief = soOrt && soOrt.tief ? soOrt.tief : null;   // W2: Tiefen-Block für Tier-1-Ortsseiten
   // Guard (03.09., C5 Nr. 60): Partner-Service ohne bespoke Copy rendert keine Orts-Hooks/Archetyp-Pools — die tragen Festpreis-/Foto-/Eigenleistungs-Zusagen.
   const partnerNoCopy = !!s.partner_modell && !soOrt;
   const arch = oc ? (partnerNoCopy ? (archCopy['partner-winterdienst'] || null) : archCopy[oc.archetype]) : null; // Partner-Pool statt Festpreis-Pools
@@ -495,7 +499,8 @@ function ortsseite(s, o) {
   // so.hub_faq_fill = N (Umbau 03.09., winterdienst): bespoke Pool liefert 2, der Hub füllt auf N auf; ohne das Feld bleibt bespoke = Hub-FAQ aus.
   const faqFill = so && so.faqs ? Math.max(0, (so.hub_faq_fill || 0) - archFaqs.length) : (archFaqs.length ? 2 : 4);
   const hubFaqs = (so && so.faqs && !faqFill) ? [] : (c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), (s.partner_modell ? idxP : idx) + 1, faqFill) : []);
-  const faqs = [...archFaqs, ...hubFaqs];
+  // W2: bespoke Tiefen-FAQs (tief.faqs) ersetzen archFaqs+hubFaqs komplett, wenn gesetzt.
+  const faqs = (tief && tief.faqs && tief.faqs.length) ? tief.faqs : [...archFaqs, ...hubFaqs];
   const ortRatPool = ratgeberByService[s.slug] || [];
   const ortRat = (soOrt && soOrt.ratgeber && ratCopy.find(r => r.slug === soOrt.ratgeber)) || (ortRatPool.length ? ortRatPool[idx % ortRatPool.length] : null); // soOrt.ratgeber = fester Ratgeber je Ort (Falkensee → Uhrzeiten)
   const ortRatLink = ortRat ? `<p>Mehr zum Thema lesen Sie in unserem Ratgeber: <a href="/ratgeber/${ortRat.slug}/">${esc(ortRat.title)}</a>.</p>` : '';
@@ -531,7 +536,7 @@ function ortsseite(s, o) {
 <div class="shot rv in d2">${heroShotO}</div></div></section>
 ${s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
-${crossSection}
+${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.' }) : ''}${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 <section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst' })}</div></section>
 <section class="sec section-alt"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>

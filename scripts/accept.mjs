@@ -75,6 +75,19 @@ page('entruempelung/index.html', 'HUB entruempelung', h => {
   check('entruempelung', 'faq', classCount(h, 'faq') >= 1);
 });
 
+// ---- TIER1-ORTSSEITEN (W2): Tiefen-Block. Scharf nur wenn tiefBlock vorhanden ODER TIER1=1 gesetzt ist —
+// Task 2 liefert die tief-Copy in ortsseiten.json und schaltet die Checks mit `TIER1=1 node scripts/accept.mjs` scharf.
+for (const rel of ['entruempelung-falkensee/index.html', 'entruempelung-brieselang/index.html', 'haushaltsaufloesung-falkensee/index.html']) {
+  page(rel, `TIER1 ${rel.split('/')[0]}`, h => {
+    if (process.env.TIER1 || classCount(h, 'tief')) {
+      check(rel, 'tief', classCount(h, 'tief') >= 1);
+      check(rel, 'ortsblock', classCount(h, 'ortsblock') >= 1);
+      check(rel, 'kein inklusive Entsorgung', !hasI(h, 'inklusive Entsorgung') && !hasI(h, 'Entsorgung inklusive'));
+      check(rel, 'kein Kundenname', !hasI(h, 'gutzke'));
+    }
+  });
+}
+
 // ---- SERVICE-HUB gartenpflege (kein Hecken-Material) ----
 page('gartenpflege/index.html', 'HUB gartenpflege', h => {
   check('gartenpflege', 'gstrip', classCount(h, 'gstrip') >= 1);

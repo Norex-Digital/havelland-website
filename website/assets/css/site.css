@@ -279,6 +279,14 @@ body.menu-open .mnav{display:block}
 .fall .fzitat{margin:12px 0 0;padding-left:14px;border-left:3px solid var(--accent);color:var(--muted);font-style:italic}
 .fall .fzitat cite{display:block;font-style:normal;font-size:13px;margin-top:4px}
 @media(min-width:900px){.faelle{grid-template-columns:1fr 1fr}}
+
+/* Tier-1-Ortsseiten (W2): Faktenkasten Entsorgung/Anfahrt */
+.ortsblock{background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:24px}
+.ortsblock h2{font-family:var(--font-display);font-size:clamp(22px,2.4vw,28px);margin-bottom:14px}
+.ortsblock dl{display:grid;grid-template-columns:1fr;gap:10px 18px;margin:0}
+.ortsblock dt{font-weight:700;color:var(--green-d)}.ortsblock dd{margin:0;color:var(--muted)}
+.ortsblock .oq{font-size:13px;color:var(--muted);margin-top:12px}
+@media(min-width:760px){.ortsblock dl{grid-template-columns:1fr 1fr}}
 /* Optionales Bild in Copy-Blöcken (blocks[].img, z. B. Ansprechpartner) */
 .block-fig{margin:18px 0 0;max-width:480px;border-radius:var(--r-el);overflow:hidden}
 .block-fig img{display:block;width:100%;height:auto}
