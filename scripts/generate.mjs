@@ -433,8 +433,7 @@ ${s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : g
 ${zaunarten}
 ${zwischen}
 ${IMG['svc-' + s.slug + '-detail'] ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic('svc-' + s.slug + '-detail', { alt: s.name + ' im Detail — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>` : ''}
-${extraBlocks}
-${faelleHtml}
+${extraBlocks}${faelleHtml}
 ${rich}
 ${b2bCross}
 ${s.partner_modell ? endBandPartner(s) : endBand}`;

@@ -83,7 +83,9 @@
    "festpreis_brutto_eur": 1190.0,
    "festpreis_netto_eur": 1000.0,
    "hinweis": "458,00 € = Summe der beiden Wertstoffhof-Belege (Sofortrechnung 115,84 € + Gebührenbescheid 342,16 €, darin 644 kg Siedlungsabfall und 378 kg Altholz). An die Kundin weiterberechnet wurden 405,94 € netto Entsorgung zzgl. 19 % USt (Altholz-Anteil eines Dritten abgezogen, plus Eigenbeleg Steinplatten) — Rechnung 2026-160. In Copy nur als 'auf den Belegen standen 458 €' verwenden, nicht als 'die Kundin zahlte 458 €'.",
-   "quelle": "kunden/hausgarten/_aktiv/gutzke-monika-2026-09-01/belege/ + kunde.md (Doku-Repo gbr-firma)"
+   "quelle": "kunden/hausgarten/_aktiv/gutzke-monika-2026-09-01/belege/ + kunde.md (Doku-Repo gbr-firma)",
+   "stand": "2026-09-14",
+   "quelle_typ": "intern"
   }
  ]
 }

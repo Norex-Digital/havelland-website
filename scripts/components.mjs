@@ -213,7 +213,7 @@ export function echtProjekt({ nur = null } = {}) {
     `<h3>Gartenschuppen leer, Falkensee — an einem Tag.</h3>` +
     `<p>Abstellkammer unter der Treppe und Gartenschuppen ausgeräumt, zwei Fahrten zum Wertstoffhof Falkensee, Gebühren nach Beleg. Vorher/Nachher ging am selben Abend an die Kundin — mit Einwilligung hier zu sehen.</p>` +
     `<div class="echt-next"><a href="/entruempelung/">Entrümpelung rund ums Haus →</a></div></div>` +
-    `<div>${baSlider({ vorher: '/assets/img/lp-gutzke-schuppen-vorher-768.jpg', nachher: '/assets/img/lp-gutzke-schuppen-nachher-768.jpg', w: 768, h: 1024, alt: 'Gartenschuppen in Falkensee vor und nach der Entrümpelung', cap: 'Gartenschuppen', sub: 'Falkensee, 1 Tag', vorTxt: 'vor der Räumung', nachTxt: 'nach der Räumung' })}</div></div>`;
+    `<div>${baSlider({ vorher: '/assets/img/fall-schuppen-falkensee-vorher-768.jpg', nachher: '/assets/img/fall-schuppen-falkensee-nachher-768.jpg', w: 768, h: 1024, alt: 'Gartenschuppen in Falkensee vor und nach der Entrümpelung', cap: 'Gartenschuppen', sub: 'Falkensee, 1 Tag', vorTxt: 'vor der Räumung', nachTxt: 'nach der Räumung' })}</div></div>`;
   return `<div class="echt-grid">${thuja}${schuppen}</div>`;
 }
 
@@ -232,7 +232,7 @@ export function clusterKacheln(items) {
 
 // ---------------------------------------------------------------------------
 // faelleBlock — Fallbeispiele (echte Aufträge, anonymisiert) für Pillar-Hubs. .faelle > .fall (h3/meta/p + optional Slider + optional Zitat).
-// img = Manifest-Basis-Slug eines Vorher/Nachher-Paars ('lp-gutzke-schuppen' -> -vorher-768.jpg/-nachher-768.jpg) oder ''.
+// img = Manifest-Basis-Slug eines Vorher/Nachher-Paars ('fall-schuppen-falkensee' -> -vorher-768.jpg/-nachher-768.jpg) oder ''.
 // zitat/zitat_von rendern nur, wenn gefüllt (17.09.: leer, bis eine echte Entrümpelungs-Bewertung vorliegt — kein Zitat erfinden).
 // ---------------------------------------------------------------------------
 export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.' } = {}) {

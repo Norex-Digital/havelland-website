@@ -121,14 +121,14 @@
       ],
       "fotos": [
         {
-          "vorher": "lp-gutzke-kammer-vorher",
-          "nachher": "lp-gutzke-kammer-nachher",
+          "vorher": "fall-kammer-falkensee-vorher",
+          "nachher": "fall-kammer-falkensee-nachher",
           "cap": "Abstellkammer unter der Treppe",
           "sub": "ausgeräumt und besenrein"
         },
         {
-          "vorher": "lp-gutzke-schuppen-vorher",
-          "nachher": "lp-gutzke-schuppen-nachher",
+          "vorher": "fall-schuppen-falkensee-vorher",
+          "nachher": "fall-schuppen-falkensee-nachher",
           "cap": "Gartenschuppen",
           "sub": "leer, Regale frei, bereit für die neue Nutzung"
         }
@@ -137,8 +137,8 @@
       "fotos_hint": "Echte Fotos aus einem Auftrag im Havelland, September 2026, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.",
       "hero": {
         "typ": "ba",
-        "vorher": "lp-gutzke-kammer-vorher",
-        "nachher": "lp-gutzke-kammer-nachher",
+        "vorher": "fall-kammer-falkensee-vorher",
+        "nachher": "fall-kammer-falkensee-nachher",
         "cap": "Abstellkammer unter der Treppe",
         "sub": "besenrein übergeben",
         "alt": "Abstellkammer unter der Treppe – Haushaltsauflösung im Havelland"
