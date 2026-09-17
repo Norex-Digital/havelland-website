@@ -99,6 +99,8 @@ for (const rel of ['entruempelung-falkensee/index.html', 'entruempelung-briesela
 // ---- RATGEBER lokal (W2) ----
 page('ratgeber/wertstoffhof-falkensee/index.html', 'RATGEBER wertstoffhof', h => { check('rat-wsh', 'table', has(h, '<table')); check('rat-wsh', 'cta hub', has(h, 'href="/entruempelung/"')); check('rat-wsh', 'aeo', classCount(h, 'aeo') >= 1 || has(h, 'class="aeo')); });
 page('ratgeber/sperrmuell-havelland-anmelden/index.html', 'RATGEBER sperrmuell', h => { check('rat-sm', 'ausschluss', hasI(h, 'Haushaltsauflösung')); check('rat-sm', 'cta hub', has(h, 'href="/entruempelung/"')); });
+page('ratgeber/keller-garage-dachboden-entruempeln/index.html','RATGEBER keller', h => { check('rat-kgd','table', has(h,'<table')); check('rat-kgd','beispiel', has(h,'1.190')); check('rat-kgd','cta hub', has(h,'href="/entruempelung/"')); });
+page('ratgeber/gartenhaus-abreissen-entsorgen/index.html','RATGEBER gartenhaus', h => { check('rat-gh','table', has(h,'<table')); check('rat-gh','keine rechtsberatung', hasI(h,'keine Rechtsberatung')); check('rat-gh','link galabau', has(h,'href="/galabau/"')); });
 
 // ---- SERVICE-HUB gartenpflege (kein Hecken-Material) ----
 page('gartenpflege/index.html', 'HUB gartenpflege', h => {
