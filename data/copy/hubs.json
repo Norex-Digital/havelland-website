@@ -523,26 +523,26 @@
    "meta": "Entrümpelung in Falkensee und im Havelland: Keller, Garage, Dachboden, Schuppen oder Wohnung. Festpreis für Räumung und Abtransport, Entsorgung nach Beleg.",
    "h1": "Entrümpelung rund ums Haus — in Falkensee und im Havelland",
    "h1_em": "rund ums Haus",
-   "intro": "Schicken Sie uns ein Foto per WhatsApp: vom vollen Keller, der Garage, dem Schuppen. Rückmeldung innerhalb von Stunden, danach kostenlose Besichtigung und schriftlicher Festpreis für Räumung und Abtransport. Ausgeräumt, nach Beleg entsorgt, besenrein übergeben. Sie müssen dafür nicht vor Ort sein.",
+   "intro": "Schicken Sie uns ein Foto per WhatsApp von Keller, Garage oder Schuppen. Sie bekommen eine Rückmeldung, eine kostenlose Besichtigung und einen schriftlichen Festpreis.",
    "definition": "Eine Entrümpelung ist das Ausräumen und die fachgerechte Entsorgung von allem, was aus Keller, Garage, Dachboden, Schuppen, Wohnung oder Haus weg soll, mit besenreiner Übergabe am Ende. Anders als bei einer Haushaltsauflösung bleibt das Zuhause dabei bewohnt: Es geht um Platz, nicht um Abschied.",
    "sections": [
     {
      "h3": "Keller entrümpeln",
      "offer": true,
      "kurz": "Einweckgläser, Farbeimer, das alte Fahrrad: Wir tragen alles über die schmale Kellertreppe nach oben, trennen nach Holz, Metall und Elektro, der Keller wird besenrein.",
-     "body": "Kartons vom letzten Umzug, die Waschmaschine ohne Anschluss, alte Farben und Chemikalien: Wir tragen alles selbst über die Treppe, auch bei einem engen Siedlungshaus, und sortieren schon beim Tragen nach Holz, Metall, Elektro und Restabfall. Schadstoffe fassen wir nicht an, nennen aber die passende Annahmestelle. Verwertbares rechnen wir auf den Festpreis an. Bei der kostenlosen Besichtigung sehen wir Menge, Treppe und Zufahrt, danach steht der Festpreis für Räumung und Abtransport schriftlich fest, die Wertstoffhof-Gebühren weisen wir nach Beleg aus."
+     "body": "Kartons vom letzten Umzug, die Waschmaschine ohne Anschluss, Farben und Chemikalien: Wir tragen alles über die Treppe und sortieren beim Tragen nach Holz, Metall, Elektro und Restabfall. Schadstoffe fassen wir nicht an, nennen die passende Annahmestelle. Verwertbares rechnen wir auf den Festpreis an. Bei der kostenlosen Besichtigung sehen wir Menge, Treppe und Zufahrt, danach steht der Festpreis für Räumung und Abtransport schriftlich fest, die Wertstoffhof-Gebühren weisen wir nach Beleg aus."
     },
     {
      "h3": "Garage entrümpeln",
      "offer": true,
      "kurz": "Rasenmäher, Altreifen, Kinderfahrräder, Kisten seit dem Einzug: An einem Termin räumen wir die Garage leer, sortieren getrennt vor, abends steht das Auto wieder drin.",
-     "body": "In Falkensee, Dallgow-Döberitz oder Brieselang steht neben dem Rasenmäher oft ein Regal mit Altreifen, dazu Bretter, Farbreste und Kisten seit dem Einzug. Reifen, Metall und Altholz nimmt der Wertstoffhof getrennt an, deshalb laden wir schon getrennt. Bei einer einzelnen Garage reicht oft ein Foto per WhatsApp für eine erste Einschätzung, den Festpreis für Räumung und Abtransport nennen wir nach der Besichtigung. Autoteile mit Öl oder Kraftstoff, Batterien und Gasflaschen bleiben draußen, dafür nennen wir die passende Annahmestelle."
+     "body": "In Falkensee, Dallgow-Döberitz oder Brieselang steht neben dem Rasenmäher ein Regal mit Altreifen, dazu Bretter, Farbreste und Kisten seit dem Einzug. Reifen, Metall und Altholz nimmt der Wertstoffhof getrennt an, deshalb laden wir getrennt. Oft reicht ein Foto per WhatsApp für eine Einschätzung, den Festpreis für Räumung und Abtransport nennen wir nach der Besichtigung. Autoteile mit Öl oder Kraftstoff, Batterien und Gasflaschen bleiben draußen, dafür nennen wir die passende Annahmestelle."
     },
     {
      "h3": "Dachboden entrümpeln",
      "offer": true,
      "kurz": "Enge Luke, steile Stiege, Weihnachtskisten und die Möbel der Großeltern: Wir tragen alles selbst nach unten, Sperriges zu zweit, der Dachboden wird leer und besenrein.",
-     "body": "Der Dachboden ist der schwerste Teil einer Entrümpelung: enge Luke, steile Stiege, wenig Licht. Alte Mineralwolle, Platten mit Asbestverdacht oder Teerpappe ohne Schadstoff-Nachweis fassen wir nicht an, dafür vermitteln wir einen Fachbetrieb. Die kommunale Sperrmüllabfuhr holt Möbel nur zweimal im Jahr, mit bis zu vier Wochen Wartezeit, wir nehmen alles direkt mit. Nach der kostenlosen Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, Entsorgungsgebühren weisen wir nach Beleg aus."
+     "body": "Der Dachboden ist der schwerste Teil einer Entrümpelung: enge Luke, steile Stiege, wenig Licht. Alte Mineralwolle, Platten mit Asbestverdacht oder Teerpappe ohne Schadstoff-Nachweis fassen wir nicht an, dafür vermitteln wir einen Fachbetrieb. Die kommunale Sperrmüllabfuhr holt Möbel nur zweimal im Jahr, mit bis zu vier Wochen Wartezeit, wir nehmen alles direkt mit. Nach der Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, Entsorgungsgebühren weisen wir nach Beleg aus."
     },
     {
      "h3": "Schuppen und Gartenhaus entrümpeln — oder gleich abreißen",
@@ -557,22 +557,21 @@
      "h3": "Wohnung und Haus entrümpeln",
      "offer": true,
      "kurz": "Ein Zimmer voller Kartons oder die komplette Wohnung: Wir räumen Möbel, Hausrat und Teppiche, besenrein für Vermieter, Käufer oder den nächsten Bewohner.",
-     "body": "Bei Wohnung und Haus unterscheiden wir Teilräumung, etwa das Gästezimmer oder die Einbauküche vor der Renovierung, und die komplette Räumung aller Räume. Beides zum schriftlichen Festpreis für Räumung und Abtransport nach kostenloser Besichtigung. Sie müssen nicht vor Ort sein: Schlüsselübergabe und eine kurze Vollmacht reichen, die Fotos vom leeren Raum kommen aufs Handy. Was bleiben soll, markieren Sie vorher. Geht es um einen Todesfall oder den Umzug ins Pflegeheim, ist das eine Haushaltsauflösung.",
+     "body": "Bei Wohnung und Haus unterscheiden wir Teilräumung, etwa das Gästezimmer oder die Einbauküche vor der Renovierung, und die komplette Räumung aller Räume. Beides zum schriftlichen Festpreis nach kostenloser Besichtigung. Sie müssen nicht vor Ort sein: Schlüsselübergabe und eine kurze Vollmacht reichen. Was bleiben soll, markieren Sie vorher. Geht es um einen Todesfall oder den Umzug ins Pflegeheim, ist das eine Haushaltsauflösung.",
      "link_to": "haushaltsaufloesung",
      "link_text": "Haushaltsauflösung im Erb- oder Pflegefall"
     }
    ],
-   "naehe": "Wir sitzen in Falkensee, dort liegt auch der Wertstoffhof. Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Wustermark, Nauen und Berlin-Spandau sind kurze Wege: keine lange Anfahrt, die im Preis stecken müsste, dieselbe Nummer vom ersten Foto bis zum Foto-Nachweis.",
+   "naehe": "Suchen Sie eine Entrümpelung in der Nähe? Wir sitzen in Falkensee, dort liegt auch der Wertstoffhof. Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Wustermark, Nauen und Berlin-Spandau sind kurze Wege, die Anfahrt steckt im Festpreis.",
    "ablauf": "Foto per WhatsApp oder Anruf, Rückmeldung innerhalb von Stunden. Kostenlose Besichtigung vor Ort, danach der schriftliche Festpreis für Räumung und Abtransport, Entsorgungsgebühren nach Beleg. Am Termin räumen wir aus, sortieren Verwertbares, fahren zum Wertstoffhof und übergeben besenrein. Die Vorher-Nachher-Fotos folgen direkt aufs Handy.",
    "garantie_text": "Ihr Preis bleibt Ihr Preis — auch wenn der Tag länger wird. Entsorgungsgebühren weisen wir nach Beleg aus.",
    "blocks": [
     {
      "id": "nebengebaeude",
-     "h2": "Nebengebäude zuerst: Warum Keller, Garage und Schuppen unsere häufigsten Aufträge sind",
-     "lead": "Keller, Garage und Schuppen sind unsere häufigsten Aufträge im Havelland.",
-     "body": "Fast jedes Einfamilienhaus hat einen Nebenraum, in dem sich sammelt, was im Wohnhaus stört, die kommunale Sperrmüllabfuhr nimmt weder Gartenbretter noch Bauabfälle mit. Ein Zwei-Mann-Team und ein Anhänger reichen, die Besichtigung geht schnell.",
+     "h2": "Keller, Garage, Schuppen: unsere häufigsten Aufträge",
+     "lead": "Fast jedes Einfamilienhaus im Havelland hat einen solchen Nebenraum.",
+     "body": "Die kommunale Sperrmüllabfuhr nimmt weder Gartenbretter noch Bauabfälle mit, wir schon. Ein Zwei-Mann-Team und ein Anhänger reichen für jeden Auftrag.",
      "bullets": [
-      "Zwei-Mann-Team und Anhänger für jeden Auftrag",
       "Vom Foto lässt sich vieles schon einschätzen",
       "Verwertbares rechnen wir an, der Rest geht zum Wertstoffhof"
      ],
@@ -587,8 +586,9 @@
       "Sperrmüllabfuhr: zweimal jährlich, bis vier Wochen Wartezeit",
       "Wertstoffhof Falkensee, Nauener Straße 97: Mo 9–18, Di–Fr 9–17, Sa 8–13 Uhr",
       "Gewogen nach Gebührensatzung: Altholz 0,36 €/kg (Stand 2026)",
-      "Letzter Auftrag Falkensee: 458 € auf zwei Belegen",
-      "Schadstoffe fahren wir nicht, Annahmestelle nennen wir"
+      "Schadstoffe fahren wir nicht, Annahmestelle nennen wir",
+      "Gut erhaltene Möbel, Geräte, Werkzeug rechnen wir an",
+      "Geruch, oberflächlicher Schimmel, Grundreinigung: eigene Position mit eigenem Preis"
      ],
      "cta_after": {
       "h2": "Foto schicken, Festpreis bekommen.",
@@ -599,7 +599,7 @@
      "id": "gartenhaus",
      "h2": "Gartenhaus abreißen und entsorgen",
      "lead": "Steht das Gartenhaus nicht mehr sicher, reißen wir es zurück und entsorgen sortenrein.",
-     "body": "Holz geht zum Altholz, Dachpappe getrennt, Metallteile zum Schrott, jede Fraktion einzeln gewogen. Im Sommer 2026 haben wir so einen Auftrag in drei Positionen umgesetzt, mit Metallzaun-Rückbau, Entsorgung nach Beleg. Ob der Abriss eine Genehmigung braucht, klären Sie vorab mit der Gemeinde.",
+     "body": "Im Sommer 2026 haben wir so einen Auftrag in drei Positionen umgesetzt, mit Metallzaun-Rückbau, Entsorgung nach Beleg. Ob der Abriss eine Genehmigung braucht, klären Sie vorab mit der Gemeinde.",
      "bullets": [
       "Holz, Dachpappe und Metall getrennt zum Wertstoffhof",
       "Wertstoffhof wiegt jede Abfallart einzeln, Schrott ohne Gebühr",
@@ -615,32 +615,19 @@
      "lead": "Wir räumen außerhalb Ihrer Geschäftszeiten, damit der Betrieb weiterläuft.",
      "body": "Schreibtische, Regale, Ladeneinrichtung und Restbestände laden wir sortiert und fahren zum Wertstoffhof. Jeden Entsorgungsbeleg bekommen Sie für die Buchhaltung, dazu die Rechnung mit ausgewiesener Mehrwertsteuer. Akten mit personenbezogenen Daten vernichten wir nicht selbst, dafür vermitteln wir einen Fachbetrieb.",
      "bullets": [
-      "Abends oder am Wochenende, der Betrieb läuft weiter",
       "Ablauf wie beim Privathaushalt: Besichtigung, Festpreis, Beleg",
       "Übergabe an den Vermieter dokumentieren wir mit Fotos"
      ],
      "mehr": "Fotos oder ein Grundriss per Mail reichen für die erste Einschätzung, danach folgt die kostenlose Besichtigung vor Ort.",
      "cta_after": {
-      "h2": "Büro, Lager oder Praxis räumen?",
-      "txt": "Fotos oder Grundriss per Mail, kostenlose Besichtigung außerhalb Ihrer Geschäftszeiten, Rechnung mit ausgewiesener Mehrwertsteuer."
+      "h2": "Termin außerhalb der Öffnungszeiten? Sagen Sie uns wann.",
+      "txt": "Fotos oder Grundriss per Mail, kostenlose Besichtigung, schriftlicher Festpreis mit ausgewiesener Mehrwertsteuer."
      }
-    },
-    {
-     "id": "wertanrechnung",
-     "h2": "Wertanrechnung und Zusatzleistungen",
-     "body": "Gut erhaltene Möbel, Elektrogeräte, Werkzeug oder Sammlerstücke rechnen wir bei der Besichtigung auf den Festpreis an, statt sie zu entsorgen. Geruchsbehandlung, oberflächlichen Schimmel entfernen und eine Grundreinigung bieten wir als eigene Position mit eigenem Preis an."
     },
     {
      "id": "ansprechpartner",
      "h2": "Ihr Ansprechpartner im Havelland: Noah Telo",
-     "body": "Noah Telo führt den Haus- & Gartenservice Havelland und ist für die Entrümpelung zuständig. Er meldet sich persönlich auf Ihr Foto, kommt zur Besichtigung und steht am Räumungstag mit am Anhänger. Sie haben ein Gesicht und eine Nummer, kein Callcenter. Bei größeren Räumungen arbeitet er im Zwei-Mann-Team mit seinem Mitgründer."
-    },
-    {
-     "id": "unterschied",
-     "h2": "Unterschied Entrümpelung und Haushaltsauflösung",
-     "body": "Eine Entrümpelung schafft Platz in einem bewohnten Zuhause: Keller, Garage oder Dachboden werden leer. Eine Haushaltsauflösung beendet einen Haushalt komplett, oft im Erb- oder Pflegefall, mit Übergabe an Vermieter oder Käufer. Der Preisrahmen ist derselbe, nur Umfang und Fristen unterscheiden sich.",
-     "link_to": "haushaltsaufloesung",
-     "link_text": "Zur Haushaltsauflösung"
+     "body": "Noah Telo meldet sich persönlich auf Ihr Foto, kommt zur Besichtigung und steht am Räumungstag mit am Anhänger. Ein Gesicht, eine Nummer, kein Callcenter."
     }
    ],
    "faelle": [
@@ -720,8 +707,8 @@
    "h1": "Haushaltsauflösung im Havelland — Schritt für Schritt, wenn es schwerfällt",
    "h1_em": "Schritt für Schritt",
    "sections_h2": "Haushaltsauflösung im Havelland — in vier Schritten",
-   "intro": "Ein Erbfall oder der Umzug ins Pflegeheim kommt selten zur passenden Zeit, die Kündigungsfrist beim Vermieter läuft weiter. Wir übernehmen die Haushaltsauflösung in Falkensee und im Havelland: sichten, sichern, räumen, übergeben. Sie müssen nicht vor Ort sein, wir melden uns per WhatsApp innerhalb von Stunden.",
-   "definition": "Eine Haushaltsauflösung ist die vollständige Räumung einer Wohnung oder eines Hauses nach einem Erbfall, dem Umzug ins Pflegeheim oder einem Wegzug. Wir sichten den Nachlass, trennen Verwertbares und Wertgegenstände vom Rest, entsorgen fachgerecht und übergeben am Ende besenrein an Vermieter oder Käufer. Der Unterschied zur Entrümpelung: Dort räumen Sie selbst weiter in Ihrem Zuhause, hier geben Angehörige eine Wohnung ab, in der niemand mehr wohnen wird.",
+   "intro": "Melden Sie sich per Anruf oder WhatsApp bei Erbfall oder Umzug ins Pflegeheim. Sie bekommen eine Rückmeldung, eine kostenlose Besichtigung und einen schriftlichen Festpreis.",
+   "definition": "Eine Haushaltsauflösung ist die vollständige Räumung einer Wohnung oder eines Hauses nach einem Erbfall, dem Umzug ins Pflegeheim oder einem Wegzug. Wir sichten den Nachlass, trennen Verwertbares und Wertgegenstände vom Rest, entsorgen fachgerecht und übergeben am Ende besenrein an Vermieter oder Käufer.",
    "sections": [
     {
      "h3": "Schritt 1 — Sichten: Dokumente, Erinnerungen, Wertgegenstände",
@@ -731,13 +718,13 @@
     {
      "h3": "Schritt 2 — Fristen: Kündigung, Übergabe, Nachlass",
      "kurz": "Die Kündigungsfrist beim Vermieter gibt den Räumungstermin vor, Fragen zum Erbschein klärt das Nachlassgericht, nicht wir.",
-     "body": "Den Übergabetermin vereinbaren wir mit Ihnen und, wenn gewünscht, direkt mit Hausverwaltung oder Vermieter, inklusive Übergabeprotokoll. Bei einem Erbfall kommen oft Fragen zum Erbschein oder zur Erbengemeinschaft dazu, diese klären Sie mit dem Nachlassgericht oder einer Rechtsberatung, eine Rechtsauskunft geben wir dazu nicht. Steht die Erbengemeinschaft noch nicht vollständig, warten wir mit dem Räumungstermin, bis alle zugestimmt haben. Sobald der Termin feststeht, arbeiten wir darauf hin: Besichtigung, schriftlicher Festpreis, Räumung, Übergabe."
+     "body": "Den Übergabetermin vereinbaren wir mit Ihnen und, wenn gewünscht, direkt mit Hausverwaltung oder Vermieter, inklusive Übergabeprotokoll. Bei einem Erbfall kommen oft Fragen zum Erbschein oder zur Erbengemeinschaft dazu, diese klären Sie mit dem Nachlassgericht oder einer Rechtsberatung. Steht die Erbengemeinschaft noch nicht vollständig, warten wir mit dem Räumungstermin, bis alle zugestimmt haben."
     },
     {
      "h3": "Schritt 3 — Verwerten, spenden, entsorgen",
      "offer": true,
      "kurz": "Möbel, Geräte und Werkzeug rechnen wir bei der Besichtigung an, den Rest fahren wir sortiert zum Wertstoffhof.",
-     "body": "Verwertbares zieht Noah Telo zuerst heraus, oft schon bei der Besichtigung, und rechnet es auf den Festpreis an. Was Sie verschenken wollen, fahren wir auf Wunsch zu einem Sozialkaufhaus. Größere Mengen aus Haushaltsauflösungen nimmt die Sperrmüllabfuhr des Landkreises nicht mit (Stand 09/2026), deshalb fahren wir immer selbst zum Wertstoffhof Falkensee. Dort laden wir sortiert nach Holz, Metall, Elektroschrott und Restabfall ab, die Gebühren weisen wir nach Beleg aus, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag."
+     "body": "Verwertbares zieht Noah Telo zuerst heraus, oft schon bei der Besichtigung, und rechnet es auf den Festpreis an. Was Sie verschenken wollen, fahren wir auf Wunsch zu einem Sozialkaufhaus. Größere Mengen aus Haushaltsauflösungen nimmt die Sperrmüllabfuhr des Landkreises nicht mit (Stand 09/2026), deshalb fahren wir immer selbst zum Wertstoffhof Falkensee. Die Gebühren weisen wir nach Beleg aus, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag."
     },
     {
      "h3": "Schritt 4 — Besenrein übergeben, mit Foto-Nachweis",
@@ -754,7 +741,7 @@
      "id": "erbfall",
      "h2": "Haushaltsauflösung im Erbfall: Was Angehörige wissen sollten",
      "lead": "Erst sichten, dann räumen. Nichts geht ohne Ihre Freigabe.",
-     "body": "Sind mehrere Erben beteiligt, sprechen wir den Ablauf mit allen ab, bevor der Räumungstermin steht. Rechtliche Fragen zum Erbschein oder zur Erbengemeinschaft beantwortet das Nachlassgericht oder eine Rechtsberatung, nicht wir. Wir dokumentieren mit Fotos, was aus der Wohnung geht, damit alle Erben nachvollziehen können, was passiert ist, auch über größere Entfernungen hinweg.",
+     "body": "So können alle Erben nachvollziehen, was aus der Wohnung ging, auch über größere Entfernungen hinweg.",
      "bullets": [
       "Ablauf mit allen Erben abgesprochen, vor dem Räumungstermin",
       "Erbschein und Erbengemeinschaft klärt das Nachlassgericht, nicht wir",
@@ -766,23 +753,22 @@
      "id": "pflegefall",
      "h2": "Umzug ins Pflegeheim: Wohnung auflösen, ohne alles wegzuwerfen",
      "lead": "Erst das Nötigste ins Heim, dann der Rest der Wohnung.",
-     "body": "Wir packen zuerst zusammen mit Ihnen, was mit ins Heim soll: Möbelstück, Kleidung, persönliche Gegenstände, oft ein Lieblingssessel oder Fotos fürs neue Zimmer. Diese Stücke liefern wir auf Wunsch direkt an, bevor wir mit der restlichen Wohnung weitermachen. Termine stimmen wir mit Ihnen und, wenn nötig, mit dem Pflegeheim ab. Wir arbeiten diskret, ohne dass es in der Nachbarschaft auffällt.",
+     "body": "Möbelstück, Kleidung oder ein Lieblingssessel liefern wir auf Wunsch direkt ins neue Zimmer, bevor wir mit der restlichen Wohnung weitermachen.",
      "bullets": [
-      "Erst das Nötigste ins Heim, dann der Rest",
       "Termine mit Pflegeheim oder Betreuung abgestimmt",
       "Diskret, ohne Aufsehen in der Nachbarschaft"
      ],
      "mehr": "Danach lösen wir den übrigen Haushalt auf: Möbel, Hausrat und alles, was nicht mit umzieht, damit Umzugstermin und Räumungstermin zusammenpassen.",
      "cta_after": {
-      "h2": "Wohnung auflösen, ohne alles wegzuwerfen.",
-      "txt": "Wir sichten mit Ihnen, was bleibt, verwerten, was noch gut ist, und übergeben besenrein — Festpreis nach kostenloser Besichtigung."
+      "h2": "Erbfall oder Pflegeheim? Wir kommen kostenlos vorbei.",
+      "txt": "Wir sichten mit Ihnen, was bleibt, verwerten, was noch gut ist, und nennen danach den schriftlichen Festpreis."
      }
     },
     {
      "id": "vollmacht",
-     "h2": "Sie wohnen nicht im Havelland? Auflösung ohne Ihre Anwesenheit",
+     "h2": "Nicht im Havelland? Auflösung ohne Ihre Anwesenheit",
      "lead": "Schlüssel übergeben, Vollmacht unterschreiben, den Rest übernehmen wir.",
-     "body": "Den Schlüssel übergeben Sie direkt, über die Hausverwaltung oder eine Vertrauensperson vor Ort. Für die Übergabe an Vermieter oder Käufer reicht eine kurze schriftliche Vollmacht. Jede Etappe halten wir mit Fotos fest, von der Besichtigung bis zur leeren Wohnung, und schicken sie Ihnen aufs Handy. Rechnung und Entsorgungsbelege bekommen Sie zusätzlich per Mail.",
+     "body": "Rechnung und Entsorgungsbelege bekommen Sie zusätzlich per Mail.",
      "bullets": [
       "Schlüssel über Hausverwaltung oder Vertrauensperson vor Ort",
       "Kurze schriftliche Vollmacht reicht für die Übergabe",
@@ -790,19 +776,14 @@
      ],
      "mehr": "Viele Erben und Angehörige wohnen nicht im Havelland und können nicht zu jedem Termin anreisen. Das ist bei uns kein Hindernis für Besichtigung, Räumung und Übergabe.",
      "cta_after": {
-      "h2": "Sie müssen nicht vor Ort sein.",
-      "txt": "Schlüssel, kurze Vollmacht, Fotos vom leeren Raum aufs Handy — kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport."
+      "h2": "Termin drückt? Wir planen rückwärts.",
+      "txt": "Wir richten Besichtigung und Räumungstermin nach Ihrer Kündigungsfrist aus, danach steht der schriftliche Festpreis."
      }
-    },
-    {
-     "id": "wohnungsaufloesung",
-     "h2": "Wohnungsauflösung im Havelland",
-     "body": "Wohnungsauflösung und Haushaltsauflösung meinen dasselbe: das vollständige Räumen einer Wohnung samt Möbeln und Hausrat, mit Übergabe an den Vermieter. Der Begriff wird meist bei Mietwohnungen verwendet, etwa nach Auszug, Erbfall oder Umzug ins Pflegeheim. Wir übernehmen sie in Falkensee und im Havelland zum Festpreis nach kostenloser Besichtigung."
     },
     {
      "id": "unterschied",
      "h2": "Unterschied Haushaltsauflösung und Entrümpelung",
-     "body": "Bleibt ein Zuhause bewohnt und nur der Keller wird leer, ist das eine Entrümpelung. Wird die ganze Wohnung gekündigt und an den Vermieter übergeben, ist das eine Haushaltsauflösung. Für Räumung und Abtransport gilt bei beidem derselbe Festpreis-Rahmen, nur der Umfang unterscheidet sich.",
+     "body": "Bleibt ein Zuhause bewohnt und nur der Keller wird leer, ist das eine Entrümpelung. Wird die ganze Wohnung gekündigt und an den Vermieter übergeben, ist das eine Haushaltsauflösung, mit demselben Festpreis-Rahmen für Räumung und Abtransport.",
      "link_to": "entruempelung",
      "link_text": "Zur Entrümpelung rund ums Haus"
     }
@@ -1578,8 +1559,8 @@
    "meta": "Kleinere GaLaBau-Arbeiten in Falkensee und im Havelland: Zaunbau, Heckenentfernung, Rodung, Stubben fräsen, Pflaster. Festpreis nach kostenloser Besichtigung.",
    "h1": "Kleinere GaLaBau-Arbeiten in Falkensee und im Havelland — Zaun, Rodung, Stubben, Pflaster",
    "h1_em": "Kleinere GaLaBau-Arbeiten",
-   "sections_h2": "GaLaBau im Havelland — was wir bauen und was wir wegmachen",
-   "intro": "Schicken Sie uns ein Foto oder eine Skizze per WhatsApp, die erste Einschätzung kommt meist am selben Werktag. Danach besichtigen wir kostenlos, nennen einen schriftlichen Festpreis und legen den Termin fest. Zaun, Hecke, Rodung, Stubben, Pflaster: kleinere GaLaBau-Arbeiten in Falkensee und im Havelland.",
+   "sections_h2": "GaLaBau im Havelland: Zaun bis Pflaster",
+   "intro": "Schicken Sie uns ein Foto oder eine Skizze per WhatsApp. Wir melden uns, besichtigen kostenlos und nennen einen schriftlichen Festpreis.",
    "definition": "Kleinere Garten- und Landschaftsbauarbeiten sind Zäune setzen, Hecken entfernen, Flächen roden, Stubben fräsen, Pflaster und Kanten ausbessern und Beete einfassen: alles unterhalb des Großprojekts. Der Haus- & Gartenservice Havelland aus Falkensee führt sie mit einem festen Zwei-Mann-Team aus, zum schriftlichen Festpreis nach kostenloser Besichtigung.",
    "sections": [
     {
@@ -1594,7 +1575,7 @@
      "h3": "Heckenentfernung und Rodung",
      "offer": true,
      "kurz": "Hecke komplett raus oder ganzes Grundstück roden: Wir schneiden zurück, roden das Wurzelwerk und fahren alles ab, im gesetzlichen Fenster Oktober bis Februar.",
-     "body": "Für Hecken und Gehölze gilt das Zeitfenster vom 1. Oktober bis 28. Februar; von März bis September verbietet § 39 BNatSchG das Beseitigen zum Schutz brütender Vögel. Gras und Wildwuchs ohne Gehölz räumen wir ganzjährig. Typische Fälle: die vertrocknete Thuja-Reihe an der Grenze, der Kirschlorbeer, der nach jedem Schnitt wieder zur Wand wird, oder der geerbte Garten, den niemand mehr betreten hat. Zur Orientierung liegt eine Hecke komplett mit Wurzel meist bei 40 bis 90 Euro je laufendem Meter inkl. MwSt. (Stand 2026); Abfuhr und Grünschnitt-Entsorgung stecken im Festpreis.",
+     "body": "Für Hecken gilt das Zeitfenster vom 1. Oktober bis 28. Februar; von März bis September verbietet § 39 BNatSchG das Beseitigen zum Vogelschutz. Gras und Wildwuchs ohne Gehölz räumen wir ganzjährig. Typische Fälle: die vertrocknete Thuja-Reihe oder der geerbte Garten, den niemand mehr betreten hat. Zur Orientierung: eine Hecke mit Wurzel liegt bei 40 bis 90 Euro je laufendem Meter inkl. MwSt. (Stand 2026), Abfuhr und Grünschnitt-Entsorgung stecken im Festpreis.",
      "link_to": "heckenentfernung",
      "link_text": "Zur Heckenentfernung",
      "link2_to": "gartenrodung",
@@ -1604,7 +1585,7 @@
      "h3": "Stubben fräsen und Wurzeln entfernen",
      "offer": true,
      "kurz": "Baumstumpf im Rasen oder Wurzelstock vom Obstbaum: Wir fräsen rund 20 bis 30 Zentimeter unter Bodenniveau, ebnen ein und nehmen das Fräsgut mit.",
-     "body": "Das geht ganzjährig, denn das Fräsen bereits gefällter Stümpfe fällt nicht unter das Winterfenster für Hecken. Mehrere Stümpfe erledigen wir in einem Termin, das ist günstiger als getrennte Anfahrten. Der Preis hängt am Stammdurchmesser: zur Orientierung 2 bis 5 Euro je Zentimeter inkl. MwSt. (Stand 2026), den verbindlichen Festpreis nennen wir nach der Besichtigung. Dort klären wir auch, ob die Fräse durchs Gartentor passt und ob Leitungen im Boden liegen. Den Baum selbst fällen wir nicht; große Fällungen vermitteln wir an Fachpartner.",
+     "body": "Das geht ganzjährig, denn das Fräsen bereits gefällter Stümpfe fällt nicht unter das Winterfenster für Hecken. Mehrere Stümpfe erledigen wir in einem Termin, das ist günstiger als getrennte Anfahrten. Der Preis hängt am Stammdurchmesser: zur Orientierung 2 bis 5 Euro je Zentimeter inkl. MwSt. (Stand 2026). Dort klären wir auch, ob die Fräse durchs Gartentor passt und ob Leitungen im Boden liegen. Große Fällungen vermitteln wir an Fachpartner.",
      "link_to": "baumstumpf-entfernen",
      "link_text": "Zum Baumstumpf entfernen"
     },
@@ -1612,7 +1593,7 @@
      "h3": "Pflaster ausbessern, Kantensteine, Wegeplatten",
      "offer": true,
      "kurz": "Abgesackte Einfahrt, fehlende Kantensteine, hochgefrorene Platten: Wir richten den Unterbau neu, verdichten und setzen die Steine wieder ein, ohne Mindestfläche.",
-     "body": "Gebrochene Platten tauschen wir einzeln aus, dazu Kantensteine und Rasenkanten, die Beet und Rasen trennen, sowie kurze Wege aus Wegeplatten zum Schuppen oder zur Tonne. Solche Aufträge sind für einen großen Pflasterbetrieb zu klein und für Sie zu mühsam. Ist Ihr Pflaster intakt und nur vermoost, reicht statt der Neuverlegung meist eine Steinreinigung, auch die machen wir im Haus. Neue Pflasterflächen ab Neubau und komplette Einfahrten legen wir nicht, dafür ist der Erdbau zu groß für unser Team.",
+     "body": "Gebrochene Platten tauschen wir einzeln aus, dazu Kantensteine und Rasenkanten sowie kurze Wege aus Wegeplatten zum Schuppen oder zur Tonne. Solche Aufträge sind für einen großen Pflasterbetrieb zu klein und für Sie zu mühsam. Ist Ihr Pflaster intakt und nur vermoost, reicht meist eine Steinreinigung, auch die machen wir im Haus. Neue Pflasterflächen ab Neubau legen wir nicht, dafür ist der Erdbau zu groß für unser Team.",
      "link_to": "steinreinigung",
      "link_text": "Zur Steinreinigung"
     },
@@ -1620,7 +1601,7 @@
      "h3": "Beeteinfassungen und Hochbeete",
      "offer": true,
      "kurz": "Stein-, Metall- oder Holzkante fürs Beet, Hochbeet aus dem Bausatz: Wir setzen, befüllen in Schichten, danach können Sie direkt pflanzen.",
-     "body": "Wir setzen Einfassungen in ein verdichtetes Sand- oder Splittbett und richten sie an der Schnur aus, damit die Linie auch nach dem ersten Winter gerade bleibt. Hochbeete bauen wir aus Holz- oder Metallbausätzen komplett auf, auf Wunsch mit Wühlmausgitter am Boden, die Befüllung aus Grobschnitt, Kompost und Erde übernehmen wir gleich mit. Solche Arbeiten sind oft der letzte Schritt nach einer Rodung oder einem Zaunbau: erst die freie Fläche, dann die neue Struktur, ein Festpreis für beides."
+     "body": "Wir setzen Einfassungen in ein verdichtetes Sand- oder Splittbett und richten sie an der Schnur aus, damit die Linie auch nach dem ersten Winter gerade bleibt. Hochbeete bauen wir aus Holz- oder Metallbausätzen komplett auf, auf Wunsch mit Wühlmausgitter am Boden, die Befüllung übernehmen wir gleich mit. Solche Arbeiten sind oft der letzte Schritt nach einer Rodung oder einem Zaunbau."
     }
    ],
    "naehe": "Der Haus- & Gartenservice Havelland sitzt in Falkensee. Anfragen aus Falkensee, Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Wustermark, Nauen und Berlin-Spandau haben kurze Wege, die Anfahrt steckt im Festpreis. Für die erste Einschätzung reicht ein Foto der Stelle per WhatsApp.",
@@ -1631,7 +1612,7 @@
      "id": "freiraeumen",
      "h2": "Erst freiräumen, dann bauen",
      "lead": "Schuppen, Zaun, Holzhaufen: das räumen wir weg, bevor gebaut wird.",
-     "body": "Auf vielen Grundstücken steht dem neuen Zaun oder Beet noch etwas im Weg: der volle Schuppen, das morsche Gartenhaus, der Hühnerstall vom Vorbesitzer. Das räumen wir vorher weg, als Entrümpelung mit Abriss und sortenreiner Entsorgung über den Wertstoffhof.",
+     "body": "Auf vielen Grundstücken steht dem neuen Zaun oder Beet noch etwas im Weg: der volle Schuppen, das morsche Gartenhaus, der Hühnerstall vom Vorbesitzer.",
      "bullets": [
       "Ausräumen und Abriss, sortenrein über den Wertstoffhof",
       "Rückbau und Sperriges nach Beleg zzgl. MwSt., Grünschnitt im Festpreis",
@@ -1640,6 +1621,8 @@
      "mehr": "Im Sommer 2026 haben wir im Havelland einen solchen Auftrag in drei Positionen umgesetzt: Schuppen und Garage ausgeräumt, einen Holzhaufen abgefahren, Holzschuppen und Hühnerstall abgerissen und den alten Metallzaun zurückgebaut. Sie müssen nicht zwischen Entrümpler, Gärtner und Zaunbauer vermitteln.",
      "link_to": "entruempelung#gartenhaus",
      "link_text": "Gartenhaus und Schuppen abreißen",
+     "link2_to": "gartenpflege",
+     "link2_text": "Danach in die regelmäßige Gartenpflege",
      "cta_after": {
       "h2": "Zaun, Rodung, Pflaster: ein Angebot.",
       "txt": "Foto oder Skizze per WhatsApp, kostenlose Besichtigung mit Aufmaß, schriftlicher Festpreis für alle Positionen."
@@ -1648,8 +1631,8 @@
     {
      "id": "genehmigung",
      "h2": "Vorher klären: Zaun, Hecke, Nachbar",
-     "lead": "Drei Dinge vor der Anfrage klären: Zaun, Hecke, Nachbar.",
-     "body": "Mehr dazu in unseren Ratgebern.",
+     "lead": "Wer das vorher weiß, bekommt schneller einen Termin.",
+     "body": "Bei Zaun und Hecke entscheiden oft Satzung und Winterfenster darüber, ob eine Anfrage sofort startet oder noch wartet.",
      "bullets": [
       "Zaun: Höhe, Lage und örtliche Satzung entscheiden über die Genehmigung",
       "Hecke: Rodung nur 1. Oktober bis 28. Februar, § 39 BNatSchG",
