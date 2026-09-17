@@ -88,6 +88,10 @@ for (const rel of ['entruempelung-falkensee/index.html', 'entruempelung-briesela
   });
 }
 
+// ---- RATGEBER lokal (W2) ----
+page('ratgeber/wertstoffhof-falkensee/index.html', 'RATGEBER wertstoffhof', h => { check('rat-wsh', 'table', has(h, '<table')); check('rat-wsh', 'cta hub', has(h, 'href="/entruempelung/"')); check('rat-wsh', 'aeo', classCount(h, 'aeo') >= 1 || has(h, 'class="aeo')); });
+page('ratgeber/sperrmuell-havelland-anmelden/index.html', 'RATGEBER sperrmuell', h => { check('rat-sm', 'ausschluss', hasI(h, 'Haushaltsauflösung')); check('rat-sm', 'cta hub', has(h, 'href="/entruempelung/"')); });
+
 // ---- SERVICE-HUB gartenpflege (kein Hecken-Material) ----
 page('gartenpflege/index.html', 'HUB gartenpflege', h => {
   check('gartenpflege', 'gstrip', classCount(h, 'gstrip') >= 1);
