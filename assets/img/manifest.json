@@ -1243,21 +1243,6 @@
 "fb_ext": "jpg",
 "fb_w": 1280
 },
-"strip-zaun": {
-"w": 1856,
-"h": 1392,
-"widths": [
-480,
-768,
-1024,
-1376,
-1600,
-1856
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 1280
-},
 "fall-flaeche-falkensee-nachher": {
 "w": 768,
 "h": 1024,
