@@ -7,6 +7,8 @@
    "meta": "Wertstoffhof Falkensee: Öffnungszeiten, Annahmeliste und Gebühren 2026 im Überblick — kostenfrei für Privathaushalte bei Sperrmüll und Elektroschrott.",
    "lead": "Adresse, Öffnungszeiten und Gebühren des Wertstoffhofs Falkensee im Überblick — mit den aktuellen Sätzen der Abfallgebührensatzung 2026.",
    "intro": "Der Wertstoffhof Falkensee liegt in der Nauener Straße 97. Geöffnet ist montags von 9 bis 18 Uhr, dienstags bis freitags von 9 bis 17 Uhr und samstags von 8 bis 13 Uhr. Sperrmüll, Schrott, Elektroaltgeräte, Leuchtstoffröhren und Schadstoffe nehmen die Mitarbeiter von Privathaushalten kostenfrei an, alle übrigen Abfälle werden auf der Fahrzeugwaage gewogen und nach Gewicht abgerechnet. Angaben laut Betreiber, Stand 17.09.2026. Bitte vor der Fahrt prüfen.",
+   "about": [{ "type": "Place", "name": "Falkensee" }],
+   "mentions": [{ "type": "Organization", "name": "Abfallbehandlungsgesellschaft Havelland mbH" }, { "type": "Place", "name": "Wertstoffhof Falkensee" }],
    "sections": [
     {
      "h2": "Adresse und Öffnungszeiten",
@@ -76,6 +78,8 @@
    "meta": "Sperrmüll im Havelland anmelden: 2× jährlich kostenlos, bis zu vier Wochen Wartezeit — Anmeldewege, Ausnahmen und Alternativen wie der Wertstoffhof Falkensee.",
    "lead": "So melden Sie Sperrmüll in Falkensee und im übrigen Havelland an: mit Fristen, Ausnahmen und der Frage, wann der Wertstoffhof die schnellere Lösung ist.",
    "intro": "Sperrmüll holt die HAW mbH im Auftrag des Landkreises Havelland zweimal pro Jahr kostenlos ab, angemeldet online, telefonisch oder per E-Mail. Von der Anmeldung bis zur Abholung können bis zu vier Wochen vergehen; bereitgestellt wird unverpackt vor dem Grundstück, spätestens bis 6 Uhr am Abholtag. Angaben laut Landkreis Havelland und HAW mbH, Stand 17.09.2026.",
+   "about": [{ "type": "Place", "name": "Landkreis Havelland" }],
+   "mentions": [{ "type": "Organization", "name": "HAW mbH (Hausmüllabfuhr Havelland)" }],
    "sections": [
     {
      "h2": "So melden Sie Sperrmüll an",

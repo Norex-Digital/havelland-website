@@ -234,7 +234,9 @@ function orgSchema() {
   const addr = nap.street ? `,"address":{"@type":"PostalAddress","streetAddress":"${sj(nap.street)}","postalCode":"${sj(nap.zip)}","addressLocality":"${sj(nap.city)}","addressCountry":"DE"}` : '';
   const geo = (nap.geo && nap.geo.lat != null) ? `,"geo":{"@type":"GeoCoordinates","latitude":${nap.geo.lat},"longitude":${nap.geo.lng}}` : '';
   const oh = ohSpecJson ? `,"openingHoursSpecification":[${ohSpecJson}]` : '';
-  return `{"@type":"HomeAndConstructionBusiness","@id":"${DOMAIN}/#organization","name":"${sj(nap.name)}","telephone":"${tel}","url":"${DOMAIN}/","image":"${imgAbs('og-default')}","logo":"${DOMAIN}/assets/img/logo.png"${addr}${geo}${oh},"areaServed":${JSON.stringify(haupt.map(o => o.name))}}`;
+  // GEO (W3-Audit 17.09.): sameAs verankert die Organization am Google-Unternehmensprofil (nap.same_as) — nur rendern, wenn das Array nicht leer ist.
+  const sameAs = (Array.isArray(nap.same_as) && nap.same_as.length) ? `,"sameAs":${JSON.stringify(nap.same_as)}` : '';
+  return `{"@type":"HomeAndConstructionBusiness","@id":"${DOMAIN}/#organization","name":"${sj(nap.name)}","telephone":"${tel}","url":"${DOMAIN}/","image":"${imgAbs('og-default')}","logo":"${DOMAIN}/assets/img/logo.png"${addr}${geo}${oh}${sameAs},"areaServed":${JSON.stringify(haupt.map(o => o.name))}}`;
 }
 function breadcrumb(items) { // [{name,url}]
   const li = items.map((it,i)=>`{"@type":"ListItem","position":${i+1},"name":"${sj(it.name)}"${it.url?`,"item":"${DOMAIN}${it.url}"`:''}}`).join(',');
@@ -593,7 +595,10 @@ function ratgeberPage(r) {
   const KAL_RATGEBER = new Set(['wann-hecke-schneiden', 'hecke-schneiden-erlaubt', 'hecke-entfernen-erlaubt']);
   const kalEmbed = KAL_RATGEBER.has(r.slug) ? `<section class="sec section-alt"><div class="wrap">${schnittkalender()}</div></section>` : '';
   const faqSection = (r.faqs && r.faqs.length) ? `<section class="sec"><div class="wrap">${faqFilter(r.faqs)}</div></section>` : '';
-  const schema = `${orgSchema()},{"@type":"Article","@id":"${DOMAIN}${url}#article","headline":"${esc(r.title)}","image":"${imgAbs(ratHeaderImg(r))}","inLanguage":"de","author":{"@id":"${DOMAIN}/#organization"},"publisher":{"@id":"${DOMAIN}/#organization"},"mainEntityOfPage":"${DOMAIN}${url}","datePublished":"${sj(r.date_published || RATGEBER_DEFAULT_DATE)}","dateModified":"${sj(r.date_modified || r.date_published || RATGEBER_DEFAULT_DATE)}"},${breadcrumb([{name:'Start',url:'/'},{name:'Ratgeber',url:'/ratgeber/'},{name:r.title,url}])}`;
+  // GEO (W3-Audit 17.09.): optionale about/mentions aus ratgeber.json verankern Ort/Betreiber als Entität im Article-Schema statt nur im Fließtext.
+  const entList = arr => Array.isArray(arr) && arr.length ? arr.map(e => `{"@type":"${sj(e.type)}","name":"${sj(e.name)}"}`).join(',') : '';
+  const aboutJson = entList(r.about); const mentionsJson = entList(r.mentions);
+  const schema = `${orgSchema()},{"@type":"Article","@id":"${DOMAIN}${url}#article","headline":"${esc(r.title)}","image":"${imgAbs(ratHeaderImg(r))}","inLanguage":"de","author":{"@id":"${DOMAIN}/#organization"},"publisher":{"@id":"${DOMAIN}/#organization"},"mainEntityOfPage":"${DOMAIN}${url}","datePublished":"${sj(r.date_published || RATGEBER_DEFAULT_DATE)}","dateModified":"${sj(r.date_modified || r.date_published || RATGEBER_DEFAULT_DATE)}"${aboutJson ? `,"about":[${aboutJson}]` : ''}${mentionsJson ? `,"mentions":[${mentionsJson}]` : ''}},${breadcrumb([{name:'Start',url:'/'},{name:'Ratgeber',url:'/ratgeber/'},{name:r.title,url}])}`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/ratgeber/">Ratgeber</a><span class="sep">›</span>${esc(r.title)}</div>
 <section class="phero" style="border-bottom:none;padding-bottom:20px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Ratgeber</span><h1 class="rv in d1" style="max-width:16em">${esc(r.title)}</h1><p class="lead rv in d2">${esc(r.lead)}</p></div></section>
 <section class="sec" style="padding:14px 0 0"><div class="wrap"><div class="media-band rv">${pic(ratHeaderImg(r), { alt: r.title + ' — Ratgeber Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px', lcp: true })}</div></div></section>

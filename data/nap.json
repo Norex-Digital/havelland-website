@@ -2,6 +2,7 @@
   "_meta": "Single Source fuer NAP. 15.09.2026: gesellschafter = Rufnamen (Ueber-uns), gesellschafter_impressum = volle Namen (Impressum/Datenschutz, § 5 DDG); inhaber = voller Name (Datenschutz-Verantwortlicher). kleinunternehmer_19 seit 04.09. false (Regelbesteuerung). Schema + Footer + Impressum ziehen NUR hieraus. street/zip=null -> Generator baut KEINEN PostalAddress-Block, #organization bleibt valide. NAP-Aenderung nach Bau = Re-Generierung aller Seiten -> VOR Bau locken (harter P0-Blocker).",
   "name": "Haus- & Gartenservice Havelland",
   "inhaber": "Noah Telo Boughenou",
+  "ansprechpartner": { "name": "Noah Telo", "rolle": "Inhaber" },
   "street": "Darmstädter Str. 15",
   "zip": "14612",
   "city": "Falkensee",
@@ -18,6 +19,7 @@
     "lat": 52.585035,
     "lng": 13.079492
   },
+  "same_as": ["https://www.google.com/maps?cid=17746606392988466405"],
   "service_radius_km": 30,
   "areaServed_pattern": "PostalAddress IMMER Falkensee-Zentrale; je Ortsseite nur areaServed{name + amtlich verifizierte PLZ}",
   "rechtsform": "GbR",
