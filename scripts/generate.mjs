@@ -236,6 +236,11 @@ function breadcrumb(items) { // [{name,url}]
   const li = items.map((it,i)=>`{"@type":"ListItem","position":${i+1},"name":"${sj(it.name)}"${it.url?`,"item":"${DOMAIN}${it.url}"`:''}}`).join(',');
   return `{"@type":"BreadcrumbList","itemListElement":[${li}]}`;
 }
+// WebSite-Schema nur auf der Startseite (Google Site-Name-Richtlinie): name + publisher-Verknuepfung zur Organization, kein SearchAction (keine Site-Suche).
+// nap.name ist bereits die Kurzform ("Haus- & Gartenservice Havelland", keine "GbR"-Endung) -> kein alternateName, sonst Duplikat zu name.
+function websiteSchema() {
+  return `{"@type":"WebSite","@id":"${DOMAIN}/#website","url":"${DOMAIN}/","name":"${sj(nap.name)}","publisher":{"@id":"${DOMAIN}/#organization"},"inLanguage":"de-DE"}`;
+}
 
 function head(title, desc, canonical, schemaGraph, opts = {}) {
   const ogSlug = (opts.og && IMG[opts.og]) ? opts.og : 'og-default';
@@ -246,7 +251,7 @@ function head(title, desc, canonical, schemaGraph, opts = {}) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">${opts.noindex ? '\n<meta name="robots" content="noindex, follow">' : ''}
 <link rel="canonical" href="${DOMAIN}${canonical}">
-<meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${DOMAIN}${canonical}"><meta property="og:type" content="website"><meta property="og:locale" content="de_DE">${ogImg}
+<meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${DOMAIN}${canonical}"><meta property="og:type" content="website"><meta property="og:locale" content="de_DE"><meta property="og:site_name" content="${esc(nap.name)}">${ogImg}
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
@@ -351,7 +356,7 @@ ${endBand}`;
   // Title (17.09.): "Gartenpflege Falkensee" bleibt vorn (Pos. 2,1 / 377 Impr. GSC 90 Tage), dahinter die zwei
   // anderen Cluster — Startseite rankt fuer "entruempelung falkensee" (Pos. 7,5) mit Garten-Snippet -> 0 Klicks.
   // Marke kommt ab Task 7 ueber WebSite-Schema + og:site_name (Title-Gate <= 60 Zeichen).
-  write('/', head('Gartenpflege Falkensee · Entrümpelung · Objektbetreuung', mkMeta('Gartenpflege, Entrümpelung und Objektbetreuung in Falkensee und im Havelland — ein Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis inklusive.'), '/', orgSchema()) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  write('/', head('Gartenpflege Falkensee · Entrümpelung · Objektbetreuung', mkMeta('Gartenpflege, Entrümpelung und Objektbetreuung in Falkensee und im Havelland — ein Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis inklusive.'), '/', orgSchema() + ',' + websiteSchema()) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push('/');
 }
 
@@ -379,7 +384,11 @@ function hub(s) {
   const title = clampTitle(c && c.title ? c.title : `${s.name} im Havelland — ${nap.name}`);
   const meta = mkMeta(c && c.meta ? c.meta : `${s.name} im Havelland und Falkensee: Festpreis nach Besichtigung, Foto-Nachweis, ein fester Ansprechpartner.`);
 
-  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
+  // Schema (17.09.): Service + hasOfferCatalog aus den Copy-Sektionen (Konkurrenz-Standard). Bewusst OHNE price/priceSpecification —
+  // Festpreis entsteht erst nach Besichtigung. Kein FAQPage (Gate). areaServed = Orte des Service.
+  const offers = (c && Array.isArray(c.sections) ? c.sections : []).slice(0, 6).map(x => `{"@type":"Offer","itemOffered":{"@type":"Service","name":"${sj(x.h3)}","serviceType":"${sj(s.name)}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}}}`).join(',');
+  const catalog = offers ? `,"hasOfferCatalog":{"@type":"OfferCatalog","name":"${sj(s.name)} — Leistungen","itemListElement":[${offers}]}` : '';
+  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}${catalog}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
 
   // ---- Gewerk-abhaengige Voll-Print-Komposition ----
   const gk = gewerkClass(s.slug);
