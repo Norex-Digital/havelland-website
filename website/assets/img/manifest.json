@@ -1016,31 +1016,7 @@
 "fb_ext": "jpg",
 "fb_w": 1280
 },
-"lp-gutzke-kammer-vorher": {
-"w": 1080,
-"h": 1440,
-"widths": [
-480,
-768,
-1080
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 768
-},
 "fall-kammer-falkensee-vorher": {
-"w": 1080,
-"h": 1440,
-"widths": [
-480,
-768,
-1080
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 768
-},
-"lp-gutzke-kammer-nachher": {
 "w": 1080,
 "h": 1440,
 "widths": [
@@ -1064,31 +1040,7 @@
 "fb_ext": "jpg",
 "fb_w": 768
 },
-"lp-gutzke-schuppen-vorher": {
-"w": 1080,
-"h": 1440,
-"widths": [
-480,
-768,
-1080
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 768
-},
 "fall-schuppen-falkensee-vorher": {
-"w": 1080,
-"h": 1440,
-"widths": [
-480,
-768,
-1080
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 768
-},
-"lp-gutzke-schuppen-nachher": {
 "w": 1080,
 "h": 1440,
 "widths": [

@@ -502,7 +502,7 @@
    "meta": "Entrümpelung in Falkensee und im Havelland: Keller, Garage, Dachboden, Schuppen oder Wohnung. Festpreis für Räumung und Abtransport, Entsorgung nach Beleg.",
    "h1": "Entrümpelung rund ums Haus — in Falkensee und im Havelland",
    "h1_em": "rund ums Haus",
-   "intro": "Schicken Sie uns ein Foto per WhatsApp: vom vollen Keller, der Garage, dem Schuppen. Sie bekommen eine Rückmeldung innerhalb von Stunden, danach eine kostenlose Besichtigung und einen schriftlichen Festpreis für Räumung und Abtransport. Ihre Entrümpelung in Falkensee und im ganzen Havelland: ausgeräumt, nach Beleg entsorgt, und zum Schluss die Vorher-Nachher-Fotos aufs Handy.",
+   "intro": "Schicken Sie uns ein Foto per WhatsApp: vom vollen Keller, der Garage, dem Schuppen. Sie bekommen eine Rückmeldung innerhalb von Stunden, danach eine kostenlose Besichtigung und einen schriftlichen Festpreis für Räumung und Abtransport. Ihre Entrümpelung in Falkensee und im ganzen Havelland: ausgeräumt, nach Beleg entsorgt, und zum Schluss die Vorher-Nachher-Fotos aufs Handy. Sie müssen dafür nicht vor Ort sein.",
    "definition": "Eine Entrümpelung ist das Ausräumen und die fachgerechte Entsorgung von allem, was aus Keller, Garage, Dachboden, Schuppen, Wohnung oder Haus weg soll, mit besenreiner Übergabe am Ende. Anders als bei einer Haushaltsauflösung bleibt das Zuhause dabei bewohnt: Es geht um Platz, nicht um Abschied.",
    "sections": [
     {
@@ -515,11 +515,11 @@
     },
     {
      "h3": "Dachboden entrümpeln",
-     "body": "Der Dachboden ist der schwerste Teil einer Entrümpelung: enge Luke, steile Stiege, wenig Licht, dazu Weihnachtskisten, Koffer, Matratzen und die Möbel der Großeltern. Wir bringen alles über die Treppe nach unten, packen losen Staub und Kleinteile in Säcke und tragen Sperriges zu zweit. Alte Mineralwolle, Platten mit Asbestverdacht oder Teerpappe ohne Schadstoff-Nachweis fassen wir nicht an; dafür vermitteln wir einen Fachbetrieb. Die kommunale Sperrmüllabfuhr holt Möbel und Matratzen nur zweimal im Jahr und nach bis zu vier Wochen Wartezeit ab, wir nehmen alles direkt mit. Nach der kostenlosen Besichtigung bekommen Sie den Festpreis für Räumung und Abtransport schriftlich, Entsorgungsgebühren weisen wir nach Beleg aus. Ist der Dachboden leer, kommt der Foto-Nachweis aufs Handy."
+     "body": "Der Dachboden ist der schwerste Teil einer Entrümpelung: enge Luke, steile Stiege, wenig Licht, dazu Weihnachtskisten, Koffer, Matratzen und die Möbel der Großeltern. Wir bringen alles über die Treppe nach unten, packen losen Staub und Kleinteile in Säcke und tragen Sperriges zu zweit. Alte Mineralwolle, Platten mit Asbestverdacht oder Teerpappe ohne Schadstoff-Nachweis fassen wir nicht an; dafür vermitteln wir einen Fachbetrieb. Die kommunale Sperrmüllabfuhr holt Möbel und Matratzen nur zweimal im Jahr und nach bis zu vier Wochen Wartezeit ab, wir nehmen alles direkt mit. Nach der kostenlosen Besichtigung bekommen Sie den Preis für Räumung und Abtransport schriftlich zugesagt, Entsorgungsgebühren weisen wir nach Beleg aus. Ist der Dachboden leer, kommt der Foto-Nachweis aufs Handy."
     },
     {
      "h3": "Schuppen und Gartenhaus entrümpeln — oder gleich abreißen",
-     "body": "Gartenschuppen im Havelland stehen oft seit den Siedlungsjahren: Holz, Dachpappe, ein Betonsockel, innen Gartengeräte, Dünger, Farbe, Fahrräder und alles, was im Haus keinen Platz mehr hatte. Wir räumen den Schuppen aus, trennen Holz, Metall und Restabfall und fahren es zum Wertstoffhof. Steht der Schuppen selbst nicht mehr sicher, reißen wir ihn nach dem Ausräumen ab und entsorgen Holz, Dachpappe und Metall getrennt, weil der Wertstoffhof jede Abfallart einzeln wiegt und abrechnet. Auch ein Hühnerstall, ein alter Metallzaun oder der Holzhaufen hinter dem Schuppen kommen mit weg. Bleibt danach ein verwilderter Garten übrig, übernehmen wir die Gartenrodung gleich mit. Bei der kostenlosen Besichtigung sehen wir uns Zufahrt, Untergrund und Menge an. Danach steht der Festpreis für Räumung und Abtransport schriftlich fest, Entsorgungsgebühren weisen wir nach Beleg aus.",
+     "body": "Gartenschuppen im Havelland stehen oft seit den Siedlungsjahren: Holz, Dachpappe, ein Betonsockel, innen Gartengeräte, Dünger, Farbe, Fahrräder und alles, was im Haus keinen Platz mehr hatte. Wir räumen den Schuppen aus, trennen Holz, Metall und Restabfall und fahren es zum Wertstoffhof. Steht der Schuppen selbst nicht mehr sicher, reißen wir ihn nach dem Ausräumen ab und entsorgen Holz, Dachpappe und Metall getrennt, weil der Wertstoffhof jede Abfallart einzeln wiegt und abrechnet. Auch ein Hühnerstall, ein alter Metallzaun oder der Holzhaufen hinter dem Schuppen kommen mit weg. Bleibt danach ein verwilderter Garten übrig, übernehmen wir die Gartenrodung gleich mit. Bei der kostenlosen Besichtigung sehen wir uns Zufahrt, Untergrund und Menge an. Danach steht der Preis aus der Besichtigung schriftlich fest, Entsorgungsgebühren weisen wir nach Beleg aus.",
      "link_to": "gartenrodung",
      "link_text": "Mehr zur Gartenrodung"
     },
@@ -531,11 +531,11 @@
     },
     {
      "h3": "Sperrmüll, Wertstoffhof und Entsorgung nach Beleg",
-     "body": "Sie müssen keine Sperrmüllkarte ziehen und nichts an die Straße stellen. Die Sperrmüllabfuhr des Landkreises Havelland kommt für Privathaushalte zweimal im Jahr nach Anmeldung, mit bis zu vier Wochen Wartezeit. Bauabfälle, Fenster, Türen, Laminat und größere Mengen aus Haushaltsauflösungen nimmt sie nicht mit (Stand 09/2026). Wir fahren stattdessen direkt zum Wertstoffhof Falkensee an der Nauener Straße 97. Geöffnet ist er Montag 9 bis 18 Uhr, Dienstag bis Freitag 9 bis 17 Uhr und Samstag 8 bis 13 Uhr. Dort wird jede Ladung gewogen und nach der Abfallgebührensatzung des Landkreises abgerechnet, Altholz zum Beispiel mit 0,36 € je Kilogramm (Stand 2026). Genau diese Belege bekommen Sie zu sehen: 458 € Entsorgungsgebühren, zwei Fahrten zum Wertstoffhof Falkensee — so stand es beim letzten Auftrag auf den Belegen, im Angebot getrennt vom Festpreis ausgewiesen. Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus, zuzüglich der gesetzlichen Mehrwertsteuer, ohne eigenen Aufschlag. Schadstoffe wie Farben, Chemikalien oder Asbest transportieren wir nicht; dafür nennen wir Ihnen die Annahmestelle oder einen Fachbetrieb."
+     "body": "Sie müssen keine Sperrmüllkarte ziehen und nichts an die Straße stellen. Die Sperrmüllabfuhr des Landkreises Havelland kommt für Privathaushalte zweimal im Jahr nach Anmeldung, mit bis zu vier Wochen Wartezeit. Bauabfälle, Fenster, Türen, Laminat und größere Mengen aus Haushaltsauflösungen nimmt sie nicht mit (Stand 09/2026). Wir fahren stattdessen direkt zum Wertstoffhof Falkensee an der Nauener Straße 97. Geöffnet ist er Montag 9 bis 18 Uhr, Dienstag bis Freitag 9 bis 17 Uhr und Samstag 8 bis 13 Uhr. Dort wird jede Ladung gewogen und nach der Abfallgebührensatzung des Landkreises abgerechnet, Altholz zum Beispiel mit 0,36 € je Kilogramm (Stand 2026). Beim letzten Auftrag in Falkensee, Abstellkammer und Gartenschuppen, standen auf den Belegen 458 € Entsorgungsgebühren (zwei Fahrten zum Wertstoffhof Falkensee). Grundsätzlich rechnen wir Entsorgungsgebühren nach Beleg ab, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag. Schadstoffe wie Farben, Chemikalien oder Asbest transportieren wir nicht; dafür nennen wir Ihnen die Annahmestelle oder einen Fachbetrieb."
     },
     {
      "h3": "Wertanrechnung und was wir nicht anbieten",
-     "body": "Gut erhaltene Möbel, funktionierende Elektrogeräte, Werkzeug oder Sammlerstücke prüfen wir bei der Besichtigung und rechnen sie auf Ihren Festpreis an, statt sie zu entsorgen. Wir sagen Ihnen offen, was einen Wert hat und was nur Gewicht ist. Geruchsbehandlung, das Entfernen von oberflächlichem Schimmel und eine Grundreinigung nach der Räumung führen wir auf Wunsch aus. Sie stehen als eigene Positionen mit eigenem Preis im Angebot, damit Sie vorher wissen, was Sie zahlen. Drei Dinge bieten wir nicht an: Malern und Tapezieren, das Verlegen von Böden und die Sanierung von Schimmel in der Bausubstanz. Dafür vermitteln wir Ihnen einen Fachbetrieb und stimmen den Termin mit ab, wenn Sie das wollen. So bleibt unser Angebot bei dem, was wir mit eigenen Händen und eigenem Anhänger leisten."
+     "body": "Gut erhaltene Möbel, funktionierende Elektrogeräte, Werkzeug oder Sammlerstücke prüfen wir bei der Besichtigung und ziehen sie von der vereinbarten Summe ab, statt sie zu entsorgen. Wir sagen Ihnen offen, was einen Wert hat und was nur Gewicht ist. Geruchsbehandlung, das Entfernen von oberflächlichem Schimmel und eine Grundreinigung nach der Räumung führen wir auf Wunsch aus. Sie stehen als eigene Positionen mit eigenem Preis im Angebot, damit Sie vorher wissen, was Sie zahlen. Drei Dinge bieten wir nicht an: Malern und Tapezieren, das Verlegen von Böden und die Sanierung von Schimmel in der Bausubstanz. Dafür vermitteln wir Ihnen einen Fachbetrieb und stimmen den Termin mit ab, wenn Sie das wollen. So bleibt unser Angebot bei dem, was wir mit eigenen Händen und eigenem Anhänger leisten."
     }
    ],
    "naehe": "Wir sitzen in Falkensee. Von dort sind Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Wustermark, Nauen und Berlin-Spandau kurze Wege, und der Wertstoffhof Falkensee liegt auf der Strecke. Für Sie heißt das: keine lange Anfahrt, die im Preis stecken müsste, und dieselbe Nummer vom ersten Foto bis zum Foto-Nachweis. Suchen Sie eine Entrümpelung in der Nähe, sind wir im östlichen Havelland meist schon in der Nachbarschaft unterwegs.",
@@ -557,7 +557,7 @@
     {
      "id": "gewerbe",
      "h2": "Gewerbe-Entrümpelung: Büro, Lager, Praxis",
-     "body": "Für Büros, Lager, Läden und Praxen im Havelland räumen wir außerhalb Ihrer Geschäftszeiten, abends oder am Wochenende, damit der Betrieb weiterläuft. Schreibtische, Regale, Ladeneinrichtung, Elektrogeräte und Restbestände laden wir sortiert und fahren sie zum Wertstoffhof. Jeden Entsorgungsbeleg bekommen Sie als Nachweis für die Buchhaltung, dazu unsere Rechnung mit ausgewiesener Mehrwertsteuer. Akten mit personenbezogenen Daten vernichten wir nicht selbst; dafür vermitteln wir einen Fachbetrieb für Aktenvernichtung, damit die Datenschutzkette geschlossen bleibt. Der Ablauf ist derselbe wie beim Privathaushalt: Fotos oder Grundriss per Mail, kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, Entsorgungsgebühren nach Beleg. Bei einer Räumung zur Übergabe an den Vermieter dokumentieren wir den leeren Zustand mit Fotos."
+     "body": "Für Büros, Lager, Läden und Praxen im Havelland räumen wir außerhalb Ihrer Geschäftszeiten, abends oder am Wochenende, damit der Betrieb weiterläuft. Schreibtische, Regale, Ladeneinrichtung, Elektrogeräte und Restbestände laden wir sortiert und fahren sie zum Wertstoffhof. Jeden Entsorgungsbeleg bekommen Sie als Nachweis für die Buchhaltung, dazu unsere Rechnung mit ausgewiesener Mehrwertsteuer. Akten mit personenbezogenen Daten vernichten wir nicht selbst; dafür vermitteln wir einen Fachbetrieb für Aktenvernichtung, damit die Datenschutzkette geschlossen bleibt. Der Ablauf ist derselbe wie beim Privathaushalt: Fotos oder Grundriss per Mail, kostenlose Besichtigung, schriftlich zugesagter Preis für Räumung und Abtransport, Entsorgungsgebühren nach Beleg. Bei einer Räumung zur Übergabe an den Vermieter dokumentieren wir den leeren Zustand mit Fotos."
     },
     {
      "id": "ansprechpartner",
@@ -569,7 +569,7 @@
     {
      "id": "garantie",
      "h2": "Unsere Übergabe-Garantie",
-     "lead": "Der Festpreis für Räumung und Abtransport aus der Besichtigung bleibt, egal wie lange es am Ende dauert. Entsorgungsgebühren weisen wir nach Beleg aus.",
+     "lead": "Ihr Preis bleibt Ihr Preis — auch wenn der Tag länger wird.",
      "body": "Konkret heißt das: Dauert die Räumung länger als gedacht, weil hinter dem Regal noch ein zweites stand, zahlen Sie trotzdem den vereinbarten Preis. Für die Entsorgung sehen Sie die Wiegescheine des Wertstoffhofs und zahlen die dort ausgewiesene Gebühr zuzüglich der gesetzlichen Mehrwertsteuer, ohne Aufschlag von uns. Übergeben wird besenrein zu dem Termin, den wir vereinbart haben; sind Sie nicht vor Ort, bekommen Sie die Vorher-Nachher-Fotos aufs Handy und prüfen in Ruhe."
     },
     {
@@ -583,7 +583,7 @@
     {
      "h3": "Abstellkammer und Gartenschuppen, Falkensee",
      "meta": "September 2026 · 1 Tag · 2 Fahrten Wertstoffhof",
-     "body": "Eine Abstellkammer unter der Treppe und ein voller Gartenschuppen, beides an einem Tag ausgeräumt, verladen und zum Wertstoffhof Falkensee gefahren, in zwei Fahrten. Vereinbart waren 1.190 € inkl. MwSt. als Festpreis für Räumung und Abtransport. Auf den beiden Wertstoffhof-Belegen standen zusammen 458 € Entsorgungsgebühren, die wir zuzüglich Mehrwertsteuer und ohne Aufschlag weiterreichen, im Angebot und in der Rechnung getrennt vom Festpreis ausgewiesen. Die Kundin wohnt nicht vor Ort; Schlüssel und Absprachen liefen über eine Vertrauensperson, die Vorher-Nachher-Fotos gingen am selben Abend aufs Handy.",
+     "body": "Eine Abstellkammer unter der Treppe und ein voller Gartenschuppen, beides an einem Tag ausgeräumt, verladen und zum Wertstoffhof Falkensee gefahren, in zwei Fahrten. Vereinbart waren 1.190 € inkl. MwSt. für Räumung und Abtransport. Auf den beiden Wertstoffhof-Belegen standen zusammen 458 € Entsorgungsgebühren, im Angebot und in der Rechnung getrennt ausgewiesen. Entsorgungsgebühren rechnen wir nach Beleg ab, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag. Die Kundin wohnt nicht vor Ort; Schlüssel und Absprachen liefen über eine Vertrauensperson, die Vorher-Nachher-Fotos gingen am selben Abend aufs Handy.",
      "img": "fall-schuppen-falkensee",
      "zitat": "",
      "zitat_von": ""
@@ -591,7 +591,7 @@
     {
      "h3": "Schuppen, Garage und Rückbau, Havelland",
      "meta": "Sommer 2026 · 3 Positionen",
-     "body": "Ein Grundstück im Havelland mit vollem Schuppen und voller Garage, dazu ein Holzschuppen und ein Hühnerstall, die weg sollten. Angeboten in drei Positionen: erstens Schuppen und Garage ausräumen samt Demontage von Schränken und Einbauten, zweitens einen Holzhaufen verladen und abtransportieren, drittens Holzschuppen und Hühnerstall abreißen und den Metallzaun zurückbauen. Holz, Metall und Restabfall gingen getrennt zum Wertstoffhof, die Entsorgung nach Beleg. Für diesen Auftrag liegt keine Freigabe für Preise und Fotos vor, deshalb hier nur der Ablauf.",
+     "body": "Ein Grundstück im Havelland mit vollem Schuppen und voller Garage, dazu ein Holzschuppen und ein Hühnerstall, die weg sollten. Angeboten in drei Positionen: erstens Schuppen und Garage ausräumen samt Demontage von Schränken und Einbauten, zweitens einen Holzhaufen verladen und abtransportieren, drittens Holzschuppen und Hühnerstall abreißen und den Metallzaun zurückbauen. Holz, Metall und Restabfall gingen getrennt zum Wertstoffhof, die Entsorgung nach Beleg.",
      "img": "",
      "zitat": "",
      "zitat_von": ""
@@ -624,7 +624,7 @@
     },
     {
      "q": "Was kostet eine Entrümpelung im Havelland?",
-     "a": "Als Orientierung ein echter Auftrag aus Falkensee, September 2026: Abstellkammer und Gartenschuppen, ein Tag, zwei Fahrten zum Wertstoffhof. Festpreis für Räumung und Abtransport: 1.190 € inkl. MwSt. Auf den Wertstoffhof-Belegen standen 458 € Entsorgungsgebühren, die wir getrennt vom Festpreis und zuzüglich Mehrwertsteuer ausweisen. Das ist ein Beispiel aus einem Auftrag, kein Pauschalpreis: Ihr Preis hängt von Menge, Zugang und Abfallart ab und steht nach der kostenlosen Besichtigung schriftlich fest."
+     "a": "Als Orientierung ein echter Auftrag aus Falkensee, September 2026: Abstellkammer und Gartenschuppen, ein Tag, zwei Fahrten zum Wertstoffhof. Festpreis für Räumung und Abtransport: 1.190 € inkl. MwSt. Auf den Belegen dieses Auftrags standen 458 € Entsorgungsgebühren (zwei Fahrten zum Wertstoffhof Falkensee). Grundsätzlich rechnen wir Entsorgungsgebühren nach Beleg ab, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag. Das ist ein Beispiel aus einem Auftrag, kein Pauschalpreis: Ihr Preis hängt von Menge, Zugang und Abfallart ab und steht nach der kostenlosen Besichtigung schriftlich fest."
     },
     {
      "q": "Übernehmen Sie auch den Sperrmüll und die Entsorgung?",

@@ -237,7 +237,7 @@ export function clusterKacheln(items) {
 // ---------------------------------------------------------------------------
 export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.' } = {}) {
   if (!Array.isArray(faelle) || !faelle.length) return '';
-  return `<section class="sec section-alt" id="faelle"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(heading)}</h2></div><p class="intro rv">Echte Aufträge aus dem Havelland, ohne Namen und Adresse — mit Einwilligung der Kunden. Genau so bekommen Sie Ihren Foto-Nachweis.</p><div class="faelle">` +
+  return `<section class="sec section-alt" id="faelle"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(heading)}</h2></div><p class="intro rv">Echte Aufträge aus dem Havelland, ohne Namen und Adresse. Wo wir Fotos oder Zahlen zeigen, liegt die Einwilligung der Kunden vor. Genau so bekommen Sie Ihren Foto-Nachweis.</p><div class="faelle">` +
     faelle.map((f, i) => `<div class="fall rv d${i + 1}"><div class="fbody"><h3>${esc(f.h3)}</h3><p class="fmeta">${esc(f.meta || '')}</p><p>${esc(f.body)}</p>${f.zitat ? `<blockquote class="fzitat"><p>${esc(f.zitat)}</p>${f.zitat_von ? `<cite>${esc(f.zitat_von)}</cite>` : ''}</blockquote>` : ''}</div>${f.img ? `<div>${baSlider({ vorher: `/assets/img/${f.img}-vorher-768.jpg`, nachher: `/assets/img/${f.img}-nachher-768.jpg`, w: 768, h: 1024, alt: f.h3 + ' — vorher und nachher', cap: f.h3.split(',')[0], sub: 'vorher / nachher', vorTxt: 'vor der Räumung', nachTxt: 'nach der Räumung' })}</div>` : ''}</div>`).join('') +
     `</div></div></section>`;
 }
