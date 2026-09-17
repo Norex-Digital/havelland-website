@@ -1,0 +1,443 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - link [ref=f3e4] [cursor=pointer]:
+        - /url: /
+        - img "Haus- & Gartenservice Havelland" [ref=f3e6]
+      - link [ref=f3e7] [cursor=pointer]:
+        - /url: tel:+4915156198195
+      - checkbox "Menü öffnen und schließen"
+      - generic [aria-hidden] [ref=f3e10] [cursor=pointer]
+      - navigation "Hauptmenü" [ref=f3e14]:
+        - link "Leistungen" [ref=f3e15] [cursor=pointer]:
+          - /url: /leistungen/
+        - link "Standorte" [ref=f3e16] [cursor=pointer]:
+          - /url: /standorte/
+        - link "Ratgeber" [ref=f3e17] [cursor=pointer]:
+          - /url: /ratgeber/
+        - link "Über uns" [ref=f3e18] [cursor=pointer]:
+          - /url: /ueber-uns/
+        - link "Bewertungen" [ref=f3e19] [cursor=pointer]:
+          - /url: /bewertungen/
+        - link "Für Hausverwaltungen" [ref=f3e20] [cursor=pointer]:
+          - /url: /fuer-hausverwaltungen/
+        - link "Kontakt" [ref=f3e21] [cursor=pointer]:
+          - /url: /kontakt/
+        - link "☎ 01515 6198195" [ref=f3e22] [cursor=pointer]:
+          - /url: tel:+4915156198195
+        - link "Kostenlose Besichtigung" [ref=f3e23] [cursor=pointer]:
+          - /url: /kontakt/
+  - generic [ref=f3e24]:
+    - link "Start" [ref=f3e25] [cursor=pointer]:
+      - /url: /
+    - text: ›Entrümpelung
+  - generic [ref=f3e29]:
+    - generic [ref=f3e30]:
+      - generic [ref=f3e31]: Leistung
+      - heading [level=1] [ref=f3e32]:
+        - text: Entrümpelung
+        - emphasis [ref=f3e33]: rund ums Haus
+        - text: — in Falkensee und im Havelland
+      - paragraph [ref=f3e34]: "Schicken Sie uns ein Foto per WhatsApp: vom vollen Keller, der Garage, dem Schuppen. Sie bekommen eine Rückmeldung innerhalb von Stunden, danach eine kostenlose Besichtigung und einen schriftlichen Festpreis für Räumung und Abtransport. Ihre Entrümpelung in Falkensee und im ganzen Havelland: ausgeräumt, nach Beleg entsorgt, und zum Schluss die Vorher-Nachher-Fotos aufs Handy. Sie müssen dafür nicht vor Ort sein."
+      - generic [ref=f3e35]:
+        - link "Kostenlose Besichtigung anfragen" [ref=f3e36] [cursor=pointer]:
+          - /url: /kontakt/#anfrage
+        - link "WhatsApp" [ref=f3e37] [cursor=pointer]:
+          - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Entr%C3%BCmpelung.
+        - link "☎ 01515 6198195" [ref=f3e38] [cursor=pointer]:
+          - /url: tel:+4915156198195
+      - paragraph [ref=f3e39]:
+        - link "5,0 ★ bei Google · 19 Bewertungen" [ref=f3e40] [cursor=pointer]:
+          - /url: /bewertungen/
+    - img "Entrümpelung im Havelland — Haus- & Gartenservice Havelland" [ref=f3e43]
+  - region "Unsere drei Zusagen" [ref=f3e44]:
+    - generic [ref=f3e46]:
+      - generic [ref=f3e47]:
+        - generic [ref=f3e48]: "01"
+        - generic [ref=f3e49]:
+          - heading "Festpreis für Räumung & Abtransport" [level=3] [ref=f3e50]
+          - paragraph [ref=f3e51]: Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest. Entsorgungsgebühren weisen wir nach Beleg aus.
+      - generic [ref=f3e52]:
+        - generic [ref=f3e53]: "02"
+        - generic [ref=f3e54]:
+          - heading "Foto-Nachweis" [level=3] [ref=f3e55]
+          - paragraph [ref=f3e56]: Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.
+      - generic [ref=f3e57]:
+        - generic [ref=f3e58]: "03"
+        - generic [ref=f3e59]:
+          - heading "Ein Ansprechpartner" [level=3] [ref=f3e60]
+          - paragraph [ref=f3e61]: Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.
+  - generic [ref=f3e64]:
+    - paragraph [ref=f3e65]:
+      - strong [ref=f3e66]: "Eine Entrümpelung ist das Ausräumen und die fachgerechte Entsorgung von allem, was aus Keller, Garage, Dachboden, Schuppen, Wohnung oder Haus weg soll, mit besenreiner Übergabe am Ende. Anders als bei einer Haushaltsauflösung bleibt das Zuhause dabei bewohnt: Es geht um Platz, nicht um Abschied."
+    - heading "Entrümpelung im Havelland — was dazugehört" [level=2] [ref=f3e67]
+    - heading "Keller entrümpeln" [level=3] [ref=f3e68]
+    - paragraph [ref=f3e69]: "Ein Keller im Havelland füllt sich über Jahrzehnte: Einweckgläser, Farbeimer, das Fahrrad ohne Reifen, Kartons vom letzten Umzug und die Waschmaschine, die niemand mehr angeschlossen hat. Wir tragen alles selbst nach oben, auch über die schmale Kellertreppe eines Siedlungshauses, und stellen nichts vor Ihre Tür. Was noch brauchbar ist, legen wir beiseite und rechnen es an. Den Rest trennen wir schon beim Tragen nach Holz, Metall, Elektro und Restabfall, damit der Wertstoffhof jede Ladung sauber annimmt. Alte Farben, Lacke und Chemikalien lassen wir stehen und sagen Ihnen, wo Sie sie als Privathaushalt kostenfrei abgeben können. Bei der kostenlosen Besichtigung sehen wir uns Menge, Treppe und den Weg zum Anhänger an. Danach steht Ihr Festpreis für Räumung und Abtransport schriftlich fest, die Entsorgungsgebühren des Wertstoffhofs weisen wir nach Beleg aus. Am Ende ist der Keller besenrein, und Sie haben die Fotos auf dem Handy."
+    - heading "Garage entrümpeln" [level=3] [ref=f3e70]
+    - paragraph [ref=f3e71]: Eine Garage ist selten nur eine Garage. In Falkensee, Dallgow-Döberitz oder Brieselang steht darin der Rasenmäher neben dem Regal mit Altreifen, dazu Bretter, Farbreste, zwei Kinderfahrräder und die Kisten, die seit dem Einzug niemand geöffnet hat. Wir räumen die Garage an einem Termin leer, sortieren Werkzeug und Brauchbares aus und fahren den Rest zum Wertstoffhof. Reifen, Metall und Altholz nimmt der Hof getrennt an, deshalb laden wir schon getrennt. Bei einer einzelnen Garage reicht oft ein Foto vom Inhalt per WhatsApp für eine erste, unverbindliche Einschätzung; den Festpreis für Räumung und Abtransport nennen wir nach der Besichtigung. Zum Schluss fegen wir durch, und Sie stellen abends das Auto wieder hinein. Autoteile mit Öl oder Kraftstoff, Batterien und Gasflaschen bleiben draußen, dafür nennen wir Ihnen die passende Annahmestelle.
+    - heading "Dachboden entrümpeln" [level=3] [ref=f3e72]
+    - paragraph [ref=f3e73]: "Der Dachboden ist der schwerste Teil einer Entrümpelung: enge Luke, steile Stiege, wenig Licht, dazu Weihnachtskisten, Koffer, Matratzen und die Möbel der Großeltern. Wir bringen alles über die Treppe nach unten, packen losen Staub und Kleinteile in Säcke und tragen Sperriges zu zweit. Alte Mineralwolle, Platten mit Asbestverdacht oder Teerpappe ohne Schadstoff-Nachweis fassen wir nicht an; dafür vermitteln wir einen Fachbetrieb. Die kommunale Sperrmüllabfuhr holt Möbel und Matratzen nur zweimal im Jahr und nach bis zu vier Wochen Wartezeit ab, wir nehmen alles direkt mit. Nach der kostenlosen Besichtigung bekommen Sie den Preis für Räumung und Abtransport schriftlich zugesagt, Entsorgungsgebühren weisen wir nach Beleg aus. Ist der Dachboden leer, kommt der Foto-Nachweis aufs Handy."
+    - heading "Schuppen und Gartenhaus entrümpeln — oder gleich abreißen" [level=3] [ref=f3e74]
+    - paragraph [ref=f3e75]:
+      - text: "Gartenschuppen im Havelland stehen oft seit den Siedlungsjahren: Holz, Dachpappe, ein Betonsockel, innen Gartengeräte, Dünger, Farbe, Fahrräder und alles, was im Haus keinen Platz mehr hatte. Wir räumen den Schuppen aus, trennen Holz, Metall und Restabfall und fahren es zum Wertstoffhof. Steht der Schuppen selbst nicht mehr sicher, reißen wir ihn nach dem Ausräumen ab und entsorgen Holz, Dachpappe und Metall getrennt, weil der Wertstoffhof jede Abfallart einzeln wiegt und abrechnet. Auch ein Hühnerstall, ein alter Metallzaun oder der Holzhaufen hinter dem Schuppen kommen mit weg. Bleibt danach ein verwilderter Garten übrig, übernehmen wir die Gartenrodung gleich mit. Bei der kostenlosen Besichtigung sehen wir uns Zufahrt, Untergrund und Menge an. Danach steht der Preis aus der Besichtigung schriftlich fest, Entsorgungsgebühren weisen wir nach Beleg aus."
+      - link "Mehr zur Gartenrodung" [ref=f3e76] [cursor=pointer]:
+        - /url: /gartenrodung/
+      - text: .
+    - heading "Wohnung und Haus entrümpeln" [level=3] [ref=f3e77]
+    - paragraph [ref=f3e78]:
+      - text: "Bei Wohnung und Haus unterscheiden wir zwei Fälle. Die Teilräumung: ein Zimmer, das Gästezimmer voller Kartons, der Hobbyraum, die Einbauküche vor der Renovierung. Und die komplette Räumung: Möbel, Hausrat, Teppiche, Elektrogeräte und Kleinkram aus allen Räumen, besenrein für Vermieter, Käufer oder den nächsten Bewohner. Beides bekommen Sie zum schriftlichen Festpreis für Räumung und Abtransport nach kostenloser Besichtigung. Sie müssen nicht vor Ort sein: Schlüsselübergabe und eine kurze schriftliche Vollmacht reichen, die Fotos vom leeren Raum kommen aufs Handy. Was bleiben soll, markieren Sie vorher mit Zettel oder Klebeband, alles andere geht mit. Wir arbeiten ruhig und ohne Kommentar gegenüber Nachbarn. Wechselt das Haus nach einem Todesfall oder dem Umzug ins Pflegeheim den Besitzer und sollen vorher Dokumente und Wertsachen gesichert werden, ist das eine Haushaltsauflösung. Dafür haben wir eine eigene Seite."
+      - link "Haushaltsauflösung im Erb- oder Pflegefall" [ref=f3e79] [cursor=pointer]:
+        - /url: /haushaltsaufloesung/
+      - text: .
+    - heading "Sperrmüll, Wertstoffhof und Entsorgung nach Beleg" [level=3] [ref=f3e80]
+    - paragraph [ref=f3e81]: Sie müssen keine Sperrmüllkarte ziehen und nichts an die Straße stellen. Die Sperrmüllabfuhr des Landkreises Havelland kommt für Privathaushalte zweimal im Jahr nach Anmeldung, mit bis zu vier Wochen Wartezeit. Bauabfälle, Fenster, Türen, Laminat und größere Mengen aus Haushaltsauflösungen nimmt sie nicht mit (Stand 09/2026). Wir fahren stattdessen direkt zum Wertstoffhof Falkensee an der Nauener Straße 97. Geöffnet ist er Montag 9 bis 18 Uhr, Dienstag bis Freitag 9 bis 17 Uhr und Samstag 8 bis 13 Uhr. Dort wird jede Ladung gewogen und nach der Abfallgebührensatzung des Landkreises abgerechnet, Altholz zum Beispiel mit 0,36 € je Kilogramm (Stand 2026). Beim letzten Auftrag in Falkensee, Abstellkammer und Gartenschuppen, standen auf den Belegen 458 € Entsorgungsgebühren (zwei Fahrten zum Wertstoffhof Falkensee). Grundsätzlich rechnen wir Entsorgungsgebühren nach Beleg ab, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag. Schadstoffe wie Farben, Chemikalien oder Asbest transportieren wir nicht; dafür nennen wir Ihnen die Annahmestelle oder einen Fachbetrieb.
+    - heading "Wertanrechnung und was wir nicht anbieten" [level=3] [ref=f3e82]
+    - paragraph [ref=f3e83]: "Gut erhaltene Möbel, funktionierende Elektrogeräte, Werkzeug oder Sammlerstücke prüfen wir bei der Besichtigung und ziehen sie von der vereinbarten Summe ab, statt sie zu entsorgen. Wir sagen Ihnen offen, was einen Wert hat und was nur Gewicht ist. Geruchsbehandlung, das Entfernen von oberflächlichem Schimmel und eine Grundreinigung nach der Räumung führen wir auf Wunsch aus. Sie stehen als eigene Positionen mit eigenem Preis im Angebot, damit Sie vorher wissen, was Sie zahlen. Drei Dinge bieten wir nicht an: Malern und Tapezieren, das Verlegen von Böden und die Sanierung von Schimmel in der Bausubstanz. Dafür vermitteln wir Ihnen einen Fachbetrieb und stimmen den Termin mit ab, wenn Sie das wollen. So bleibt unser Angebot bei dem, was wir mit eigenen Händen und eigenem Anhänger leisten."
+    - heading "Entrümpelung in Ihrer Nähe" [level=3] [ref=f3e84]
+    - paragraph [ref=f3e85]: "Wir sitzen in Falkensee. Von dort sind Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Wustermark, Nauen und Berlin-Spandau kurze Wege, und der Wertstoffhof Falkensee liegt auf der Strecke. Für Sie heißt das: keine lange Anfahrt, die im Preis stecken müsste, und dieselbe Nummer vom ersten Foto bis zum Foto-Nachweis. Suchen Sie eine Entrümpelung in der Nähe, sind wir im östlichen Havelland meist schon in der Nachbarschaft unterwegs."
+    - heading "So läuft es ab" [level=3] [ref=f3e86]
+    - paragraph [ref=f3e87]: "Schritt eins: ein Foto per WhatsApp oder ein Anruf. Schritt zwei: Rückmeldung innerhalb von Stunden; bei einem einzelnen Keller oder einer Garage reicht das Foto oft für eine erste, unverbindliche Einschätzung. Schritt drei: kostenlose Besichtigung vor Ort, wir sehen uns Menge, Zugang und Abfallarten an. Schritt vier: Sie bekommen den schriftlichen Festpreis für Räumung und Abtransport, Entsorgungsgebühren weisen wir nach Beleg aus. Schritt fünf: Termin, wir räumen aus, sortieren Verwertbares, fahren zum Wertstoffhof und übergeben besenrein. Schritt sechs: die Vorher-Nachher-Fotos landen direkt nach der Übergabe auf Ihrem Handy."
+    - heading "Unsere Garantie" [level=3] [ref=f3e88]
+    - paragraph [ref=f3e89]: Der Festpreis für Räumung und Abtransport aus der Besichtigung bleibt, egal wie lange es am Ende dauert. Entsorgungsgebühren weisen wir nach Beleg aus.
+  - generic [ref=f3e91]:
+    - heading "Lieber machen lassen?" [level=2] [ref=f3e92]
+    - paragraph [ref=f3e93]: Kostenlose Besichtigung, Festpreis, dann erledigt.
+    - generic [ref=f3e94]:
+      - link "Kostenlose Besichtigung anfragen" [ref=f3e95] [cursor=pointer]:
+        - /url: /kontakt/#anfrage
+      - link "☎ 01515 6198195" [ref=f3e96] [cursor=pointer]:
+        - /url: tel:+4915156198195
+  - img "Entrümpelung im Detail — Haus- & Gartenservice Havelland" [ref=f3e101]
+  - generic [ref=f3e104]:
+    - 'heading "Nebengebäude zuerst: Warum Keller, Garage und Schuppen unsere häufigsten Aufträge sind" [level=2] [ref=f3e105]'
+    - paragraph [ref=f3e106]: "Das Havelland ist eine Region der Einfamilienhäuser, und zu fast jedem gehören Keller, Garage, Schuppen oder Gartenhaus. Dort sammelt sich, was im Wohnhaus stört, aber zu schade zum Wegwerfen scheint. Nach zwanzig Jahren ist der Schuppen voll, und die kommunale Sperrmüllabfuhr nimmt weder Bretter aus dem Garten noch Bauabfälle mit. Genau diese Aufträge bekommen wir am häufigsten, und dafür sind wir ausgerüstet: ein Zwei-Mann-Team und ein Anhänger. In Falkensee haben wir zuletzt eine Abstellkammer unter der Treppe und einen vollen Gartenschuppen an einem Tag geräumt, mit zwei Fahrten zum Wertstoffhof Falkensee. Der Vorteil für Sie: Nebengebäude lassen sich vom Foto aus gut einschätzen, die Besichtigung geht schnell, und Sie müssen den Wohnbereich nicht freiräumen. Was verwertbar ist, rechnen wir an, der Rest geht sortiert zum Wertstoffhof, die Gebühren weisen wir nach Beleg aus."
+  - generic [ref=f3e109]:
+    - heading "Gartenhaus abreißen und entsorgen" [level=2] [ref=f3e110]
+    - paragraph [ref=f3e111]:
+      - text: "Ein Gartenhaus, das nicht mehr sicher steht, bauen wir nach dem Ausräumen zurück und entsorgen es sortenrein: Holz zum Altholz, Dachpappe getrennt, Metallteile zum Schrott. Der Wertstoffhof wiegt jede Abfallart einzeln und rechnet sie nach eigenem Satz ab, Schrott zum Beispiel ohne Gebühr. Getrennt geladen sehen Sie auf dem Beleg, was welche Fraktion gekostet hat. Im Sommer 2026 haben wir im Havelland einen solchen Auftrag in drei Positionen umgesetzt. Erst Schuppen und Garage ausgeräumt, samt Demontage von Schränken und Einbauten, dazu einen Holzhaufen verladen und abtransportiert. Danach Holzschuppen und Hühnerstall abgerissen und den alten Metallzaun zurückgebaut, die Entsorgung nach Wertstoffhof-Beleg. Ob der Abriss eine Genehmigung braucht, hängt von Größe und Lage ab; das klären Sie vorab mit Ihrer Gemeinde, wir sagen Ihnen, was uns bei der Besichtigung auffällt. Soll danach eine Terrasse, ein Weg oder ein neuer Zaun entstehen, übernehmen wir auch kleinere GaLaBau-Arbeiten."
+      - link "Kleinere GaLaBau-Arbeiten" [ref=f3e112] [cursor=pointer]:
+        - /url: /galabau/
+      - text: .
+  - generic [ref=f3e115]:
+    - 'heading "Gewerbe-Entrümpelung: Büro, Lager, Praxis" [level=2] [ref=f3e116]'
+    - paragraph [ref=f3e117]: "Für Büros, Lager, Läden und Praxen im Havelland räumen wir außerhalb Ihrer Geschäftszeiten, abends oder am Wochenende, damit der Betrieb weiterläuft. Schreibtische, Regale, Ladeneinrichtung, Elektrogeräte und Restbestände laden wir sortiert und fahren sie zum Wertstoffhof. Jeden Entsorgungsbeleg bekommen Sie als Nachweis für die Buchhaltung, dazu unsere Rechnung mit ausgewiesener Mehrwertsteuer. Akten mit personenbezogenen Daten vernichten wir nicht selbst; dafür vermitteln wir einen Fachbetrieb für Aktenvernichtung, damit die Datenschutzkette geschlossen bleibt. Der Ablauf ist derselbe wie beim Privathaushalt: Fotos oder Grundriss per Mail, kostenlose Besichtigung, schriftlich zugesagter Preis für Räumung und Abtransport, Entsorgungsgebühren nach Beleg. Bei einer Räumung zur Übergabe an den Vermieter dokumentieren wir den leeren Zustand mit Fotos."
+  - generic [ref=f3e120]:
+    - 'heading "Ihr Ansprechpartner im Havelland: Noah Telo" [level=2] [ref=f3e121]'
+    - paragraph [ref=f3e122]: "Noah Telo führt den Haus- & Gartenservice Havelland und ist für die Entrümpelung zuständig. Er meldet sich persönlich auf Ihr Foto, kommt selbst zur Besichtigung, schreibt das Angebot und steht am Räumungstag mit am Anhänger. Vom ersten Anruf bis zur Abnahme haben Sie also ein Gesicht und eine Nummer, kein Callcenter und keine wechselnden Kolonnen. Bei größeren Räumungen arbeitet er im Zwei-Mann-Team mit seinem Mitgründer. Das Foto zeigt ihn bei der Arbeit im Havelland, beim Heckenschnitt. Wenn Sie vorher wissen wollen, wer bei Ihnen im Keller steht: Das ist er."
+    - figure [ref=f3e123]:
+      - img "Noah Telo beim Heckenschnitt im Havelland" [ref=f3e125]
+  - generic [ref=f3e128]:
+    - heading "Unsere Übergabe-Garantie" [level=2] [ref=f3e129]
+    - paragraph [ref=f3e130]:
+      - strong [ref=f3e131]: Ihr Preis bleibt Ihr Preis — auch wenn der Tag länger wird.
+    - paragraph [ref=f3e132]: "Konkret heißt das: Dauert die Räumung länger als gedacht, weil hinter dem Regal noch ein zweites stand, zahlen Sie trotzdem den vereinbarten Preis. Für die Entsorgung sehen Sie die Wiegescheine des Wertstoffhofs und zahlen die dort ausgewiesene Gebühr zuzüglich der gesetzlichen Mehrwertsteuer, ohne Aufschlag von uns. Übergeben wird besenrein zu dem Termin, den wir vereinbart haben; sind Sie nicht vor Ort, bekommen Sie die Vorher-Nachher-Fotos aufs Handy und prüfen in Ruhe."
+  - generic [ref=f3e135]:
+    - heading "Unterschied Entrümpelung und Haushaltsauflösung" [level=2] [ref=f3e136]
+    - paragraph [ref=f3e137]:
+      - text: "Eine Entrümpelung schafft Platz in einem Zuhause, das bewohnt bleibt: Der Keller wird leer, die Garage wieder befahrbar, der Dachboden begehbar, und Sie entscheiden Stück für Stück, was bleibt. Eine Haushaltsauflösung beendet einen Haushalt: Wir räumen die Wohnung oder das Haus komplett zur Übergabe an Vermieter oder Käufer, oft im Erb- oder Pflegefall. Vorher sichern wir Dokumente, Erinnerungsstücke und Wertgegenstände. Preislich gilt bei beidem derselbe Rahmen: Festpreis für Räumung und Abtransport nach kostenloser Besichtigung, Entsorgung nach Beleg. Der Unterschied liegt im Umfang, in der Sorgfalt beim Sichten und in den Fristen, die bei einer Auflösung meist Vermieter oder Notar vorgeben."
+      - link "Zur Haushaltsauflösung" [ref=f3e138] [cursor=pointer]:
+        - /url: /haushaltsaufloesung/
+      - text: .
+  - generic [ref=f3e140]:
+    - heading "So sah das zuletzt aus." [level=2] [ref=f3e142]
+    - paragraph [ref=f3e143]: Echte Aufträge aus dem Havelland, ohne Namen und Adresse. Wo wir Fotos oder Zahlen zeigen, liegt die Einwilligung der Kunden vor. Genau so bekommen Sie Ihren Foto-Nachweis.
+    - generic [ref=f3e144]:
+      - generic [ref=f3e145]:
+        - generic [ref=f3e146]:
+          - heading "Abstellkammer und Gartenschuppen, Falkensee" [level=3] [ref=f3e147]
+          - paragraph [ref=f3e148]: September 2026 · 1 Tag · 2 Fahrten Wertstoffhof
+          - paragraph [ref=f3e149]: Eine Abstellkammer unter der Treppe und ein voller Gartenschuppen, beides an einem Tag ausgeräumt, verladen und zum Wertstoffhof Falkensee gefahren, in zwei Fahrten. Vereinbart waren 1.190 € inkl. MwSt. für Räumung und Abtransport. Auf den beiden Wertstoffhof-Belegen standen zusammen 458 € Entsorgungsgebühren, im Angebot und in der Rechnung getrennt ausgewiesen. Entsorgungsgebühren rechnen wir nach Beleg ab, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag. Die Kundin wohnt nicht vor Ort; Schlüssel und Absprachen liefen über eine Vertrauensperson, die Vorher-Nachher-Fotos gingen am selben Abend aufs Handy.
+        - generic [ref=f3e150]:
+          - generic [ref=f3e151]:
+            - img "Abstellkammer und Gartenschuppen, Falkensee — vorher und nachher — nach der Räumung"
+            - img "Abstellkammer und Gartenschuppen, Falkensee — vorher und nachher — vor der Räumung"
+            - generic: Vorher
+            - generic: Nachher
+            - slider "Vorher-Nachher-Vergleich Abstellkammer und Gartenschuppen, Falkensee — vorher und nachher" [ref=f3e152]: "50"
+          - paragraph [ref=f3e153]:
+            - generic [ref=f3e154]: Abstellkammer und Gartenschuppen
+            - generic [ref=f3e155]: vorher / nachher
+      - generic [ref=f3e157]:
+        - heading "Schuppen, Garage und Rückbau, Havelland" [level=3] [ref=f3e158]
+        - paragraph [ref=f3e159]: Sommer 2026 · 3 Positionen
+        - paragraph [ref=f3e160]: "Ein Grundstück im Havelland mit vollem Schuppen und voller Garage, dazu ein Holzschuppen und ein Hühnerstall, die weg sollten. Angeboten in drei Positionen: erstens Schuppen und Garage ausräumen samt Demontage von Schränken und Einbauten, zweitens einen Holzhaufen verladen und abtransportieren, drittens Holzschuppen und Hühnerstall abreißen und den Metallzaun zurückbauen. Holz, Metall und Restabfall gingen getrennt zum Wertstoffhof, die Entsorgung nach Beleg."
+  - generic [ref=f3e163]:
+    - generic [ref=f3e164]:
+      - generic [ref=f3e165]: Der schnellste Weg
+      - heading [level=2] [ref=f3e168]:
+        - text: Ein Handy-Foto
+        - emphasis [ref=f3e169]: reicht.
+      - paragraph [ref=f3e170]: Sie müssen nichts ausmessen und kein Formular ausfüllen. Drei Schritte, dann kümmern wir uns.
+      - list [ref=f3e171]:
+        - listitem [ref=f3e172]:
+          - generic [ref=f3e173]: "1"
+          - generic [ref=f3e174]:
+            - heading "Fotografieren" [level=3] [ref=f3e175]
+            - paragraph [ref=f3e176]: Einmal längs, einmal von vorn — so sehen wir Höhe, Länge und Zugang.
+        - listitem [ref=f3e177]:
+          - generic [ref=f3e178]: "2"
+          - generic [ref=f3e179]:
+            - heading "Per WhatsApp senden" [level=3] [ref=f3e180]
+            - paragraph [ref=f3e181]: "An 01515 6198195, gern mit zwei Sätzen dazu: Was soll passieren, wo stehen Sie?"
+        - listitem [ref=f3e182]:
+          - generic [ref=f3e183]: "3"
+          - generic [ref=f3e184]:
+            - heading "Antwort in Stunden" [level=3] [ref=f3e185]
+            - paragraph [ref=f3e186]: Erste Einschätzung und Termin für die kostenlose Besichtigung — danach steht Ihr Festpreis.
+      - generic [ref=f3e187]:
+        - link "Foto per WhatsApp senden" [ref=f3e188] [cursor=pointer]:
+          - /url: https://wa.me/4915156198195?text=Hallo%2C%20hier%20ein%20Foto%20von%20meinem%20Anliegen%20(Entr%C3%BCmpelung)%20%E2%80%94%20was%20w%C3%BCrde%20das%20kosten%3F
+        - 'link "lieber anrufen: 01515 6198195" [ref=f3e189] [cursor=pointer]':
+          - /url: tel:+4915156198195
+    - generic [ref=f3e190]:
+      - img "Sorgfältige Handarbeit im Grünen — Haus- & Gartenservice Havelland" [ref=f3e192]
+      - paragraph [ref=f3e193]:
+        - generic [ref=f3e194]: Handarbeit, wo es drauf ankommt
+        - generic [ref=f3e195]: Sorgfalt im Detail
+  - generic [ref=f3e197]:
+    - heading "So läuft ein Auftrag" [level=2] [ref=f3e199]
+    - generic [ref=f3e200]:
+      - generic [ref=f3e201]:
+        - generic [ref=f3e202]: "1"
+        - generic [ref=f3e203]:
+          - generic [ref=f3e204]: Tag 1 · Antwort meist in Stunden
+          - heading "Anfrage" [level=3] [ref=f3e205]
+          - paragraph [ref=f3e206]: Per Telefon oder WhatsApp kurz schildern, was ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.
+      - generic [ref=f3e207]:
+        - generic [ref=f3e208]: "2"
+        - generic [ref=f3e209]:
+          - generic [ref=f3e210]: Kurzfristig · kostenlos
+          - heading "Besichtigung & Festpreis" [level=3] [ref=f3e211]
+          - paragraph [ref=f3e212]: Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis — inklusive Abfuhr. Der Preis steht, bevor wir anfangen.
+      - generic [ref=f3e213]:
+        - generic [ref=f3e214]: "3"
+        - generic [ref=f3e215]:
+          - generic [ref=f3e216]: Zum vereinbarten Termin
+          - heading "Saubere Ausführung" [level=3] [ref=f3e217]
+          - paragraph [ref=f3e218]: Pünktlich, gründlich, terminlich sauber geplant. Wir räumen hinter uns auf — besenrein ist Teil des Preises.
+      - generic [ref=f3e219]:
+        - generic [ref=f3e220]: "4"
+        - generic [ref=f3e221]:
+          - generic [ref=f3e222]: Direkt nach der Arbeit
+          - heading "Foto-Nachweis aufs Handy" [level=3] [ref=f3e223]
+          - paragraph [ref=f3e224]: Vorher-/Nachher-Fotos Ihres Auftrags, direkt aufs Handy. Sie sehen das Ergebnis auch dann, wenn Sie nicht zu Hause waren.
+  - generic [ref=f3e226]:
+    - heading [level=2] [ref=f3e228]:
+      - text: Häufige
+      - emphasis [ref=f3e229]: Fragen.
+    - paragraph [ref=f3e230]:
+      - text: Kurz und ehrlich beantwortet. Ihre Frage fehlt?
+      - link "Schreiben Sie uns per WhatsApp." [ref=f3e231] [cursor=pointer]:
+        - /url: https://wa.me/4915156198195?text=Hallo%2C%20ich%20habe%20eine%20Frage.
+    - generic [ref=f3e232]:
+      - searchbox "Fragen durchsuchen" [ref=f3e234]
+      - paragraph
+      - group [ref=f3e235]:
+        - generic "Wie berechnet man eine Entrümpelung?" [ref=f3e236] [cursor=pointer]
+      - group [ref=f3e238]:
+        - generic "Was ist der Unterschied zwischen einer Entrümpelung und einer Haushaltsauflösung?" [ref=f3e239] [cursor=pointer]
+      - group [ref=f3e241]:
+        - generic "Was kostet eine Haushaltsauflösung 70 qm?" [ref=f3e242] [cursor=pointer]
+      - group [ref=f3e244]:
+        - generic "Wie entsorgt man eine Haushaltsauflösung?" [ref=f3e245] [cursor=pointer]
+      - group [ref=f3e247]:
+        - generic "Muss ich persönlich vor Ort sein?" [ref=f3e248] [cursor=pointer]
+      - group [ref=f3e250]:
+        - generic "Räumen Sie auch nur die Garage oder nur den Keller?" [ref=f3e251] [cursor=pointer]
+      - group [ref=f3e253]:
+        - generic "Was kostet eine Entrümpelung im Havelland?" [ref=f3e254] [cursor=pointer]
+      - group [ref=f3e256]:
+        - generic "Übernehmen Sie auch den Sperrmüll und die Entsorgung?" [ref=f3e257] [cursor=pointer]
+      - group [ref=f3e259]:
+        - generic "Rechnen Sie verwertbare Gegenstände an?" [ref=f3e260] [cursor=pointer]
+      - group [ref=f3e262]:
+        - generic "Gehen Sie bei sensiblen Entrümpelungen diskret vor?" [ref=f3e263] [cursor=pointer]
+  - generic [ref=f3e266]:
+    - heading "Entrümpelung in Ihrem Ort" [level=2] [ref=f3e268]
+    - generic [ref=f3e269]:
+      - 'link "Entrümpelung Falkensee Der Wertstoffhof des Landkreises liegt in Falkensee selbst, Nauener Straße 97: kurze Fahrten, Gebühren nach Beleg, Festpreis für Räumung und Abtransport. Mehr →" [ref=f3e270] [cursor=pointer]':
+        - /url: /entruempelung-falkensee/
+        - heading "Entrümpelung Falkensee" [level=3] [ref=f3e271]
+        - paragraph [ref=f3e272]: "Der Wertstoffhof des Landkreises liegt in Falkensee selbst, Nauener Straße 97: kurze Fahrten, Gebühren nach Beleg, Festpreis für Räumung und Abtransport."
+        - generic [ref=f3e273]: Mehr →
+      - link "Entrümpelung Dallgow-Döberitz Von Dallgow-Döberitz, Seeburg und Rohrbeck ist Falkensee der nächste Wertstoffhof des Landkreises; wir laden getrennt und weisen die Gebühren nach Beleg aus. Mehr →" [ref=f3e274] [cursor=pointer]:
+        - /url: /entruempelung-dallgow-doeberitz/
+        - heading "Entrümpelung Dallgow-Döberitz" [level=3] [ref=f3e275]
+        - paragraph [ref=f3e276]: Von Dallgow-Döberitz, Seeburg und Rohrbeck ist Falkensee der nächste Wertstoffhof des Landkreises; wir laden getrennt und weisen die Gebühren nach Beleg aus.
+        - generic [ref=f3e277]: Mehr →
+      - link "Entrümpelung Brieselang Brieselang liegt zwischen den Wertstoffhöfen Falkensee und Nauen/Schwanebeck; welchen wir anfahren, hängt von Abfallart und Menge ab, abgerechnet nach Beleg. Mehr →" [ref=f3e278] [cursor=pointer]:
+        - /url: /entruempelung-brieselang/
+        - heading "Entrümpelung Brieselang" [level=3] [ref=f3e279]
+        - paragraph [ref=f3e280]: Brieselang liegt zwischen den Wertstoffhöfen Falkensee und Nauen/Schwanebeck; welchen wir anfahren, hängt von Abfallart und Menge ab, abgerechnet nach Beleg.
+        - generic [ref=f3e281]: Mehr →
+      - link "Entrümpelung Schönwalde-Glien Große Grundstücke in Schönwalde-Glien, Pausin und Paaren heißen oft Schuppen, Stall und Keller zugleich; wir räumen alles zum Festpreis, Entsorgung nach Beleg. Mehr →" [ref=f3e282] [cursor=pointer]:
+        - /url: /entruempelung-schoenwalde-glien/
+        - heading "Entrümpelung Schönwalde-Glien" [level=3] [ref=f3e283]
+        - paragraph [ref=f3e284]: Große Grundstücke in Schönwalde-Glien, Pausin und Paaren heißen oft Schuppen, Stall und Keller zugleich; wir räumen alles zum Festpreis, Entsorgung nach Beleg.
+        - generic [ref=f3e285]: Mehr →
+      - link "Entrümpelung Wustermark Für Wustermark und Elstal fahren wir je nach Ladung zum Wertstoffhof Nauen/Schwanebeck oder nach Falkensee; die Wiegescheine bekommen Sie zur Rechnung. Mehr →" [ref=f3e286] [cursor=pointer]:
+        - /url: /entruempelung-wustermark/
+        - heading "Entrümpelung Wustermark" [level=3] [ref=f3e287]
+        - paragraph [ref=f3e288]: Für Wustermark und Elstal fahren wir je nach Ladung zum Wertstoffhof Nauen/Schwanebeck oder nach Falkensee; die Wiegescheine bekommen Sie zur Rechnung.
+        - generic [ref=f3e289]: Mehr →
+  - generic [ref=f3e291]:
+    - generic [ref=f3e292]:
+      - heading "Ratgeber rund um Entrümpelung" [level=2] [ref=f3e293]
+      - link "Alle Ratgeber →" [ref=f3e294] [cursor=pointer]:
+        - /url: /ratgeber/
+    - generic [ref=f3e295]:
+      - 'link "Entrümpelung Kosten: Was bestimmt den Preis? Was eine Entrümpelung kostet, hängt von Volumen, Zugang und Entsorgungsaufwand ab — kein seriöser Anbieter nennt einen Pauschalpreis ohne Vor-Ort-Besichtigung. Lesen →" [ref=f3e296] [cursor=pointer]':
+        - /url: /ratgeber/entruempelung-kosten/
+        - 'heading "Entrümpelung Kosten: Was bestimmt den Preis?" [level=3] [ref=f3e297]'
+        - paragraph [ref=f3e298]: Was eine Entrümpelung kostet, hängt von Volumen, Zugang und Entsorgungsaufwand ab — kein seriöser Anbieter nennt einen Pauschalpreis ohne Vor-Ort-Besichtigung.
+        - generic [ref=f3e299]: Lesen →
+      - link "Was kostet Entrümpelung? Festpreis im Havelland Der Preis einer Entrümpelung hängt von fünf konkreten Faktoren ab — kein Auftrag gleicht dem anderen. Lesen →" [ref=f3e300] [cursor=pointer]:
+        - /url: /ratgeber/was-kostet-entruempelung/
+        - heading "Was kostet Entrümpelung? Festpreis im Havelland" [level=3] [ref=f3e301]
+        - paragraph [ref=f3e302]: Der Preis einer Entrümpelung hängt von fünf konkreten Faktoren ab — kein Auftrag gleicht dem anderen.
+        - generic [ref=f3e303]: Lesen →
+  - generic [ref=f3e305]:
+    - heading "Sagen Sie uns, was ansteht — wir kümmern uns." [level=2] [ref=f3e306]
+    - paragraph [ref=f3e307]: Kostenlose Besichtigung, Festpreis, dann erledigt.
+    - generic [ref=f3e308]:
+      - link "Kostenlose Besichtigung anfragen" [ref=f3e309] [cursor=pointer]:
+        - /url: /kontakt/#anfrage
+      - link "☎ 01515 6198195" [ref=f3e310] [cursor=pointer]:
+        - /url: tel:+4915156198195
+  - contentinfo [ref=f3e311]:
+    - generic [ref=f3e312]:
+      - paragraph [ref=f3e313]: Haus- & Gartenservice Havelland
+      - paragraph [ref=f3e314]:
+        - text: Darmstädter Str. 15, 14612 Falkensee ·
+        - link "01515 6198195" [ref=f3e315] [cursor=pointer]:
+          - /url: tel:+4915156198195
+        - text: ·
+        - link "hausgartenservicehvl@gmail.com" [ref=f3e316] [cursor=pointer]:
+          - /url: mailto:hausgartenservicehvl@gmail.com
+        - text: Mo–Fr 7–19 Uhr · Sa 8–16 Uhr · So geschlossen
+      - generic [ref=f3e317]:
+        - generic [ref=f3e318]:
+          - heading [level=4] [ref=f3e319]:
+            - link "Garten & Grundstück" [ref=f3e320] [cursor=pointer]:
+              - /url: /gartenpflege/
+          - list [ref=f3e321]:
+            - listitem [ref=f3e322]:
+              - link "Gartenpflege" [ref=f3e323] [cursor=pointer]:
+                - /url: /gartenpflege/
+            - listitem [ref=f3e324]:
+              - link "Herbst-Paket (Laub)" [ref=f3e325] [cursor=pointer]:
+                - /url: /gartenpflege/#herbst-paket
+            - listitem [ref=f3e326]:
+              - link "Heckenschnitt" [ref=f3e327] [cursor=pointer]:
+                - /url: /heckenschnitt/
+            - listitem [ref=f3e328]:
+              - link "Baumschnitt" [ref=f3e329] [cursor=pointer]:
+                - /url: /baumschnitt/
+            - listitem [ref=f3e330]:
+              - link "Dachrinnenreinigung" [ref=f3e331] [cursor=pointer]:
+                - /url: /dachrinnenreinigung/
+            - listitem [ref=f3e332]:
+              - link "Fensterreinigung" [ref=f3e333] [cursor=pointer]:
+                - /url: /fensterreinigung/
+            - listitem [ref=f3e334]:
+              - link "Winterdienst" [ref=f3e335] [cursor=pointer]:
+                - /url: /winterdienst/
+            - listitem [ref=f3e336]:
+              - link "Dachreinigung" [ref=f3e337] [cursor=pointer]:
+                - /url: /dachreinigung/
+            - listitem [ref=f3e338]:
+              - link "Steinreinigung" [ref=f3e339] [cursor=pointer]:
+                - /url: /steinreinigung/
+        - generic [ref=f3e340]:
+          - heading [level=4] [ref=f3e341]:
+            - link "GaLaBau & Rodung" [ref=f3e342] [cursor=pointer]:
+              - /url: /galabau/
+          - list [ref=f3e343]:
+            - listitem [ref=f3e344]:
+              - link "Zaunbau" [ref=f3e345] [cursor=pointer]:
+                - /url: /zaunbau/
+            - listitem [ref=f3e346]:
+              - link "Heckenentfernung" [ref=f3e347] [cursor=pointer]:
+                - /url: /heckenentfernung/
+            - listitem [ref=f3e348]:
+              - link "Gartenrodung" [ref=f3e349] [cursor=pointer]:
+                - /url: /gartenrodung/
+            - listitem [ref=f3e350]:
+              - link "Baumstumpf-Entfernung" [ref=f3e351] [cursor=pointer]:
+                - /url: /baumstumpf-entfernen/
+            - listitem [ref=f3e352]:
+              - link "GaLaBau-Arbeiten" [ref=f3e353] [cursor=pointer]:
+                - /url: /galabau/
+          - heading [level=4] [ref=f3e354]:
+            - link "Entrümpelung & Auflösung" [ref=f3e355] [cursor=pointer]:
+              - /url: /entruempelung/
+          - list [ref=f3e356]:
+            - listitem [ref=f3e357]:
+              - link "Entrümpelung" [ref=f3e358] [cursor=pointer]:
+                - /url: /entruempelung/
+            - listitem [ref=f3e359]:
+              - link "Haushaltsauflösung" [ref=f3e360] [cursor=pointer]:
+                - /url: /haushaltsaufloesung/
+            - listitem [ref=f3e361]:
+              - link "Grundreinigung" [ref=f3e362] [cursor=pointer]:
+                - /url: /grundreinigung/
+            - listitem [ref=f3e363]:
+              - link "Ferienwohnung-Reinigung" [ref=f3e364] [cursor=pointer]:
+                - /url: /ferienwohnung-reinigung/
+        - generic [ref=f3e365]:
+          - heading [level=4] [ref=f3e366]:
+            - link "Hausverwaltungen & Objekte" [ref=f3e367] [cursor=pointer]:
+              - /url: /fuer-hausverwaltungen/
+          - list [ref=f3e368]:
+            - listitem [ref=f3e369]:
+              - link "Für Hausverwaltungen" [ref=f3e370] [cursor=pointer]:
+                - /url: /fuer-hausverwaltungen/
+            - listitem [ref=f3e371]:
+              - link "Objektbetreuung" [ref=f3e372] [cursor=pointer]:
+                - /url: /objektbetreuung/
+            - listitem [ref=f3e373]:
+              - link "Hausmeisterservice" [ref=f3e374] [cursor=pointer]:
+                - /url: /hausmeisterservice/
+            - listitem [ref=f3e375]:
+              - link "Unterhaltsreinigung" [ref=f3e376] [cursor=pointer]:
+                - /url: /unterhaltsreinigung/
+            - listitem [ref=f3e377]:
+              - link "Gebäudereinigung" [ref=f3e378] [cursor=pointer]:
+                - /url: /gebaeudereinigung/
+          - heading "Unternehmen" [level=4] [ref=f3e379]
+          - list [ref=f3e380]:
+            - listitem [ref=f3e381]:
+              - link "Alle Leistungen" [ref=f3e382] [cursor=pointer]:
+                - /url: /leistungen/
+            - listitem [ref=f3e383]:
+              - link "Standorte" [ref=f3e384] [cursor=pointer]:
+                - /url: /standorte/
+            - listitem [ref=f3e385]:
+              - link "Ratgeber" [ref=f3e386] [cursor=pointer]:
+                - /url: /ratgeber/
+            - listitem [ref=f3e387]:
+              - link "Über uns" [ref=f3e388] [cursor=pointer]:
+                - /url: /ueber-uns/
+            - listitem [ref=f3e389]:
+              - link "Bewertungen" [ref=f3e390] [cursor=pointer]:
+                - /url: /bewertungen/
+            - listitem [ref=f3e391]:
+              - link "Kontakt" [ref=f3e392] [cursor=pointer]:
+                - /url: /kontakt/
+      - generic [ref=f3e393]:
+        - generic [ref=f3e394]: Haus- & Gartenservice Havelland (GbR)
+        - link "Impressum" [ref=f3e395] [cursor=pointer]:
+          - /url: /impressum/
+        - link "Datenschutz" [ref=f3e396] [cursor=pointer]:
+          - /url: /datenschutz/
+        - link "Cookie-Einstellungen" [ref=f3e397] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=f3e399]:
+    - paragraph [ref=f3e400]:
+      - text: Wir nutzen Cookies für Statistik (Google Analytics) und die Erfolgsmessung unserer Google-Werbung — Daten gehen an Google, auch in die USA. Details und Widerruf in der
+      - link "Datenschutzerklärung" [ref=f3e401] [cursor=pointer]:
+        - /url: /datenschutz/
+      - text: .
+    - generic [ref=f3e402]:
+      - button "Ablehnen" [ref=f3e403] [cursor=pointer]
+      - button "Akzeptieren" [ref=f3e404] [cursor=pointer]

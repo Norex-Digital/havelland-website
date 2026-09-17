@@ -12,7 +12,7 @@
 
 **Harte Regeln (aus CLAUDE.md gbr-firma):** kein Commit/Push ohne Owner-OK · keine neuen Dependencies · echte Fotos nur mit dokumentierter Einwilligung (Gutzke: `kunden/hausgarten/_aktiv/gutzke-monika-2026-09-01/kunde.md` §Foto-Freigabe) · Leistungsdefinition = Ads-LP (Festpreis nach Besichtigung für Räumung + Abtransport; Entsorgungsgebühren nach Beleg; Geruch/Schimmel/Grundreinigung = eigene Position; keine „inklusive"-Versprechen) · **kein FAQPage-Schema** (Gate) · Skills werden per Skill-Tool **geladen**, nicht gelesen.
 
-**Skills je Task (laden, im Chat nennen):** T5–T6 Copy: `seo-web-copy` → `llm-optimisation` → `copy-audit` (Gate) · T2–T4 Design: `havelland-design`, `page-cro` · T7: `seo-schema` · T8: `seo-technical` · T10: `seo-local`-Agent optional (Sonnet).
+**Skills je Task (laden, im Chat nennen — validiert 17.09. gegen die Skill-Beschreibungen):** T2–T4 Design: `havelland-design` (Pflicht bei jedem HuG-Bauteil), `page-cro` · T5–T6 Copy: `seo-web-copy` → `stop-slop` → `llm-optimisation` → `copy-audit` (**Gate nach größeren Copy-Updates**) · T5 Step 0: Agent `claude-seo:seo-sxo` (Sonnet) · T7: `seo-schema` · T8: `seo-technical` + **`page-audit` (Launch-Gate, mandatory)** + **`page-cro` (mandatory before go-live)** · T9: MCP `gbp` (`gbp_get_location`, `gbp_update_location` mit `updateMask`, `gbp_set_description` — Schemas geprüft) · T10: MCP `mcp-gsc` (`submit_sitemap`, `batch_url_inspection` — geprüft), Skript `seo-drift-baseline.mjs`. Nicht nötig in W1: `programmatic-seo` (keine Ortsseiten), `seo-local`-Agent (Item-Split ist kein Audit-Fall), `seo-geo` (Mini-Strang W3).
 
 ---
 
@@ -64,7 +64,7 @@ Expected: Gates `GRÜN`, Accept ohne FAIL, Seitenzahl ≈ 228.
 ```bash
 cat > /tmp/w1-t1.sh <<'EOF'
 h=website/index.html
-grep -q '<title>Gartenpflege Falkensee · Entrümpelung · Objektbetreuung | Haus- &amp; Gartenservice Havelland</title>' $h || { echo FAIL title; exit 1; }
+grep -q '<title>Gartenpflege Falkensee · Entrümpelung · Objektbetreuung</title>' $h || { echo FAIL title; exit 1; }
 grep -q 'Garten, Entrümpelung, Objektbetreuung' $h || { echo FAIL lead; exit 1; }
 grep -qv 'Welche Hecke steht bei' $h || true
 echo OK T1
@@ -78,9 +78,9 @@ Expected: `FAIL title`.
 ```js
   // Title (17.09.): "Gartenpflege Falkensee" bleibt vorn (Pos. 2,1 / 377 Impr. GSC 90 Tage), dahinter die zwei
   // anderen Cluster — Startseite rankt fuer "entruempelung falkensee" (Pos. 7,5) mit Garten-Snippet -> 0 Klicks.
-  write('/', head('Gartenpflege Falkensee · Entrümpelung · Objektbetreuung | Haus- & Gartenservice Havelland', mkMeta('Gartenpflege, Entrümpelung und Objektbetreuung in Falkensee und im Havelland: ein Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis nach jedem Auftrag.'), '/', orgSchema()) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  write('/', head('Gartenpflege Falkensee · Entrümpelung · Objektbetreuung', mkMeta('Gartenpflege, Entrümpelung und Objektbetreuung in Falkensee und im Havelland — ein Ansprechpartner, Festpreis nach Besichtigung, Foto-Nachweis inklusive.'), '/', orgSchema()) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
 ```
-Hinweis: `clampTitle` wird auf der Startseite nicht angewandt; Title ist 87 Zeichen — Google kürzt hinter dem Pipe, „Gartenpflege Falkensee · Entrümpelung · Objektbetreuung" (56 Z.) bleibt sichtbar. Meta 152 Zeichen (Gate 150–158).
+Validiert 17.09.: Title 55 Zeichen (Gate WARN ab 60, `gates.mjs:54`), Meta 153 (Gate 150–158, `gates.mjs:55`). Der Markenname fällt aus dem Title — Google zeigt den Site-Namen seit 2023 separat aus `WebSite`-Schema/`og:site_name`; beides fehlt heute (`head()` hat kein `og:site_name`, `orgSchema()` kein `WebSite`). Wird in **Task 7 Step 2a** ergänzt; dort auch `orgSchema() + ',' + websiteSchema()` in dieser Zeile aktivieren.
 
 - [ ] **Step 3: Hero-Lead saisonneutral verbreitern** — `homeLead` ersetzen (Herbst-Bezug bleibt über `saisonTeaser`):
 
@@ -342,7 +342,9 @@ Expected: `1`.
 - Modify: `assets/css/site.css` (`.faelle`)
 - Modify: `scripts/accept.mjs`
 
-**Skills laden (Pflicht, im Chat nennen):** `seo-web-copy` → `llm-optimisation` → `copy-audit`.
+**Skills laden (Pflicht, im Chat nennen):** `seo-web-copy` → `stop-slop` → `llm-optimisation` → `copy-audit` (Gate). Vorab ein Agent `claude-seo:seo-sxo` (Sonnet) — Step 0.
+
+- [ ] **Step 0: SERP-Backwards-Check (Agent `claude-seo:seo-sxo`, model sonnet)** — Auftrag: „Für `https://haus-und-gartenservice-havelland.de/entruempelung/` und die Queries `entrümpelung falkensee`, `entrümpelung havelland`, `keller entrümpeln` prüfen: Seitentyp-Match zur SERP (Local Pack + Ortsseiten + Portale), fehlende Intent-Blöcke, Persona-Sicht (Erbe 50+ am Desktop; Hausbesitzer mit voller Garage). Ergebnis: max. 8 konkrete Ergänzungen für die Pillar-Copy, keine Allgemeinplätze." Befunde in Step 2 einarbeiten; Report nach `docs/superpowers/plans/w1-sxo-entruempelung.md` (Repo-intern, nicht deployt).
 
 - [ ] **Step 1: Lokalfakten recherchieren und belegen** — Datei `data/lokalfakten.json` anlegen. Quellen per WebFetch: Landkreis Havelland → Abfallentsorgung/Wertstoffhöfe (Suche „Wertstoffhof Falkensee Öffnungszeiten Gebühren site:havelland.de" bzw. Betreiber-Seite), Sperrmüll-Anmeldung Landkreis Havelland. Jeder Fakt mit `quelle` (URL) und `stand` (Datum). Eigene Belege: Gutzke 10.09. — zwei Wertstoffhof-Belege 115,84 € + 342,16 € = 458,00 € Entsorgung für Abstellkammer + Gartenschuppen (aus `kunde.md`/`belege/`).
 
@@ -367,8 +369,8 @@ Leere Strings sind **nur** in diesem Schritt erlaubt und müssen vor Step 3 gef�
 ```json
 {
   "slug": "entruempelung",
-  "title": "Entrümpelung Falkensee & Havelland — Keller, Garage, Schuppen, Wohnung",
-  "meta": "Entrümpelung in Falkensee und im Havelland: Keller, Garage, Dachboden, Schuppen oder Wohnung — Festpreis für Räumung und Abtransport nach kostenloser Besichtigung, Entsorgung nach Beleg, Foto-Nachweis.",
+  "title": "Entrümpelung Falkensee & Havelland: Keller, Garage, Wohnung",
+  "meta": "Entrümpelung in Falkensee und im Havelland: Keller, Garage, Dachboden, Schuppen oder Wohnung. Festpreis für Räumung und Abtransport, Entsorgung nach Beleg.",
   "h1": "Entrümpelung rund ums Haus — in Falkensee und im Havelland",
   "h1_em": "rund ums Haus",
   "definition": "Eine Entrümpelung ist das Ausräumen und fachgerechte Entsorgen von Gegenständen aus Keller, Garage, Dachboden, Schuppen, Wohnung oder Haus durch einen Dienstleister, der besenrein übergibt. Im Unterschied zur Haushaltsauflösung bleibt das Zuhause bewohnt — es geht um Platz, nicht um Abschied.",
@@ -408,7 +410,7 @@ Leere Strings sind **nur** in diesem Schritt erlaubt und müssen vor Step 3 gef�
   "skills_applied": ["seo-web-copy", "llm-optimisation", "copy-audit"]
 }
 ```
-`faelle[1].img` bleibt leer (Axe-Fotos nicht freigegeben) — Komponente rendert ohne Bild. Wortziel Hub gesamt ≥ 2.000 sichtbare Wörter (Messung Step 7). Keine „inklusive"-Formulierung, kein „Festpreis inklusive Entsorgung". Jede Zahl mit Herkunft im Text („nach Beleg", „Landkreis Havelland, Stand 09/2026").
+`faelle[1].img` bleibt leer (Axe-Fotos nicht freigegeben) — Komponente rendert ohne Bild. Title 59 Z. (Hubs laufen durch `clampTitle` ≤ 60 — nie länger schreiben, sonst schneidet der Generator), Meta 155 Z. Wortziel Hub gesamt ≥ 2.000 sichtbare Wörter (Messung Step 7). Nach jeder JSON-Änderung: `node scripts/validate-data.mjs` (Pre-Build-Datengate, Exit 1 bei hartem Fehler). Keine „inklusive"-Formulierung, kein „Festpreis inklusive Entsorgung". Jede Zahl mit Herkunft im Text („nach Beleg", „Landkreis Havelland, Stand 09/2026").
 
 - [ ] **Step 3: copy-audit als Gate** — Skill `copy-audit` auf die neue Copy (Title/Meta/H1/Sections/Blocks/FAQs) laufen lassen; Befunde mit Schwere ≥ „mittel" vor dem Build beheben. Ergebnis kurz im Chat.
 
@@ -486,7 +488,7 @@ git add data/copy/hubs.json data/copy/ortsseiten.json data/lokalfakten.json scri
 **Files:**
 - Modify: `data/copy/hubs.json` (Eintrag `haushaltsaufloesung`)
 
-**Skills:** `seo-web-copy` → `llm-optimisation` → `copy-audit`.
+**Skills:** `seo-web-copy` → `stop-slop` → `llm-optimisation` → `copy-audit` (Gate). Nach JSON-Änderung `node scripts/validate-data.mjs`.
 
 - [ ] **Step 1: Failing check** — Near-Duplicate-Messung zwischen beiden Hubs (Ziel: Overlap sinkt, aktuell 16 % Jaccard-8):
 
@@ -509,8 +511,8 @@ Expected jetzt: ~16 % (Basis). Ziel nach Umbau: ≤ 12 % (Header/Footer/Timeline
 ```json
 {
   "slug": "haushaltsaufloesung",
-  "title": "Haushaltsauflösung Havelland — Erbfall, Pflegefall, Umzug ins Heim",
-  "meta": "Haushaltsauflösung im Havelland, wenn ein Erb- oder Pflegefall drückt: Nachlass sichten, Wertgegenstände sichern, Fristen mit dem Vermieter halten, besenrein übergeben. Festpreis nach Besichtigung.",
+  "title": "Haushaltsauflösung & Wohnungsauflösung Havelland — Erbfall",
+  "meta": "Haushaltsauflösung im Havelland bei Erbfall, Pflegefall oder Umzug: Nachlass sichten, verwerten, besenrein übergeben. Festpreis nach kostenloser Besichtigung.",
   "h1": "Haushaltsauflösung im Havelland — Schritt für Schritt, wenn es schwerfällt",
   "h1_em": "Schritt für Schritt",
   "definition": "Eine Haushaltsauflösung ist die vollständige Räumung einer Wohnung oder eines Hauses nach Erbfall, Umzug ins Pflegeheim oder Wegzug — vom Sichten des Nachlasses über die Verwertung und Entsorgung bis zur besenreinen Übergabe an Vermieter oder Käufer.",
@@ -535,7 +537,7 @@ Expected jetzt: ~16 % (Basis). Ziel nach Umbau: ≤ 12 % (Header/Footer/Timeline
   "skills_applied": ["seo-web-copy", "llm-optimisation", "copy-audit"]
 }
 ```
-Keine Rechtsberatung (Erbschein, Nachlassgericht nur als Hinweis „klären Sie mit …"), keine Zusagen zur Verwertung in €.
+Keine Rechtsberatung (Erbschein, Nachlassgericht nur als Hinweis „klären Sie mit …"), keine Zusagen zur Verwertung in €. Title 58 Z. (behält „Wohnungsauflösung", 3.600 Suchen national), Meta 158 Z.
 
 - [ ] **Step 3: copy-audit Gate**, dann bauen + Duplikat-Messung:
 
@@ -575,6 +577,14 @@ Expected: `0`.
   const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}${catalog}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
 ```
 
+- [ ] **Step 2a: Site-Name-Signal** (Google zeigt den Site-Namen aus `WebSite`-Schema / `og:site_name`) — in `generate.mjs` neben `orgSchema()`:
+
+```js
+// WebSite-Schema nur auf der Startseite (Google Site-Name-Richtlinie): name + alternateName, kein SearchAction (keine Site-Suche).
+function websiteSchema() { return `{"@type":"WebSite","@id":"${DOMAIN}/#website","url":"${DOMAIN}/","name":"${sj(nap.name)}","alternateName":"Haus- & Gartenservice Havelland","publisher":{"@id":"${DOMAIN}/#organization"},"inLanguage":"de-DE"}`; }
+```
+In `head()` nach `og:locale` ergänzen: `<meta property="og:site_name" content="${esc(nap.name)}">`. Dann in `home()` (Task-1-Zeile) `orgSchema()` durch `orgSchema() + ',' + websiteSchema()` ersetzen. Check: `grep -c '"@type":"WebSite"' website/index.html` → `1`, `grep -c 'og:site_name' website/gartenpflege/index.html` → `1`.
+
 - [ ] **Step 3: Bauen + Gates (Schema-Validität) + Rich-Results-Test**
 
 ```bash
@@ -588,7 +598,7 @@ node -e "const h=require('fs').readFileSync('website/entruempelung/index.html','
 - [ ] **Step 4: Commit**
 
 ```bash
-git add scripts/generate.mjs && git commit -m "schema: Service + hasOfferCatalog auf allen Hubs (Offer ohne Preis), kein FAQPage"
+git add scripts/generate.mjs && git commit -m "schema: Service + hasOfferCatalog auf allen Hubs (Offer ohne Preis), WebSite-Schema + og:site_name, kein FAQPage"
 ```
 
 ---
@@ -597,7 +607,17 @@ git add scripts/generate.mjs && git commit -m "schema: Service + hasOfferCatalog
 
 **Files:** keine Änderung außer Build-Output.
 
-**Skill:** `seo-technical` (Checkliste vor Deploy).
+**Skills (Pflicht-Gates laut Skill-Beschreibung):** `seo-technical` (Checkliste vor Deploy) · `page-audit` (**Launch-Gate, mandatory**) auf `/`, `/entruempelung/`, `/haushaltsaufloesung/` · `page-cro` (**mandatory before go-live**) auf `/` und `/entruempelung/`. Befunde ≥ „mittel" vor Deploy beheben, Rest als Liste in `status.md`.
+
+- [ ] **Step 0: SEO-Drift-Vergleich (gewollte Änderungen sichtbar machen)** — Baseline sichern, neu ziehen, diffen:
+```bash
+cd /c/Norex/havelland-website && cp seo-drift-baseline.json /tmp/w1-drift-vorher.json && node scripts/seo-drift-baseline.mjs && python3 -c "
+import json;a=json.load(open('/tmp/w1-drift-vorher.json'))['pages'];b=json.load(open('seo-drift-baseline.json'))['pages']
+for u in a:
+  for k in a[u]:
+    if a[u].get(k)!=b.get(u,{}).get(k): print(u,k,'|',str(a[u].get(k))[:70],'->',str(b.get(u,{}).get(k))[:70])"
+```
+Expected: Änderungen nur bei `/`, `/entruempelung/`, `/haushaltsaufloesung/` (Title/Meta/H1) und site-weit nur bei Schema-Feldern (OfferCatalog). Jede andere Zeile = ungewollte Regression → vor Deploy klären. Die neue Baseline wird mit dem Merge committet (Step 7).
 
 - [ ] **Step 1: FULL-Build + alle Gates**
 
@@ -623,6 +643,8 @@ Expected: `1 1 1 1`, keine `TOT:`-Zeile.
 - [ ] **Step 4: Near-Duplicate Ortsseiten unverändert (Gate ≤ 35 %)** — `node scripts/gates.mjs` deckt es ab; zusätzlich Hub-Paar: `python /tmp/w1-dup.py website/entruempelung/index.html website/entruempelung-falkensee/index.html` → Expected ≤ 20 %.
 
 - [ ] **Step 5: Sichtprüfung Startseite + beide Hubs** — Browser, Desktop + 390 px: Hero-Strip, Cluster-Kacheln, Fallbeispiele (Slider funktioniert, Bilder laden), Footer 3 Spalten, kein horizontaler Scroll, Consent-Banner unverändert. Screenshot-Notiz im Chat.
+
+- [ ] **Step 5a: Launch-Gates `page-audit` + `page-cro`** — Skills laden, auf die gebauten Seiten anwenden (`website/index.html`, `website/entruempelung/index.html`, `website/haushaltsaufloesung/index.html`; bei URL-Pflicht die Vercel-Preview des Branches). Ergebnis: Score + Befundliste; alles ≥ „mittel" jetzt fixen (Copy zurück ins T5/T6-Muster, Design nach `havelland-design`). Ohne diesen Nachweis kein Step 6.
 
 - [ ] **Step 6: Owner-Freigabe einholen** — Diff-Zusammenfassung im Chat (Commits, geänderte Dateien, Sichtprüfung). **Kein Push ohne „go".**
 
@@ -689,6 +711,8 @@ Beschreibungen ≤ 300 Zeichen (GBP-Limit) — mit `python -c "print(len('…'))
   (4–6 sind noch die alten Tier-1-Seiten — der Antrag holt den Juli-`noindex`-Stand aus dem Index-Cache, W2 bringt die Tiefe.)
 
 - [ ] **Step 3: Kontrolle nach 7 Tagen** — `batch_url_inspection` für 1–3: `last_crawled` ≥ Deploy-Datum, `/haushaltsaufloesung/` Status ≠ „Crawled – currently not indexed" (sonst W2-Copy nachschärfen, nicht pushen).
+
+- [ ] **Step 3a: Bekannte Grenzen dokumentieren (nicht in W1 lösen)** — in `status.md` unter „Offen": (a) `lastmod` ist ein globales Build-Datum (`generate.mjs:990`) — alle 207 URLs melden bei jedem Build „geändert"; für W2 ein `lastmod` je Seite aus Content-Hash der Copy vorsehen, sonst verwässert das Änderungssignal, das der Index-Pilot braucht. (b) `/leistungen/` gruppiert in `uebersicht.json` nach garten/aufloesung/dach/gewerbe — GaLaBau fehlt als Kategorie, W3 mit dem GaLaBau-Pillar nachziehen.
 
 - [ ] **Step 4: Status-Doku** — `status.md` Eintrag (Datum, Commit-Hash Merge, was live ist, Gates grün, Live-Check) und in `organisch-entruempelung-plan.md` §6 W1 → `live <Datum>, Merge <hash>`. Auto-Save committet; kein manueller Commit nötig.
 

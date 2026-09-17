@@ -42,7 +42,7 @@ const arr = v => Array.isArray(v) ? v : (v == null ? [] : [v]);
 // slug baut VN-Pfade; alternativ vorher/nachher als fertige src.
 // ---------------------------------------------------------------------------
 export function baSlider({ slug = '', vorher = '', nachher = '', alt = '', cap = '', sub = '',
-  quer = false, hint = false, lcp = false, w, h } = {}) {
+  quer = false, hint = false, lcp = false, w, h, vorTxt = 'vor dem Schnitt', nachTxt = 'nach dem Schnitt' } = {}) {
   const nSrc = nachher || (slug ? `${VN}/${slug}_nachher.jpg` : '');
   const vSrc = vorher || (slug ? `${VN}/${slug}_vorher.jpg` : '');
   if (!nSrc || !vSrc) return '';
@@ -51,9 +51,9 @@ export function baSlider({ slug = '', vorher = '', nachher = '', alt = '', cap =
   const base = esc(alt || cap || 'Heckenschnitt');
   const pr = lcp ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
   const ba =
-    `<div class="ba${quer ? ' ba-quer' : ''}" style="--pos:50%">` +
-    `<img src="${esc(nSrc)}" alt="${base} — nach dem Schnitt" width="${W}" height="${H}" ${pr}>` +
-    `<img class="ba-top" src="${esc(vSrc)}" alt="${base} — vor dem Schnitt" width="${W}" height="${H}" ${pr}>` +
+    `<div class="ba${quer ? ' ba-quer' : ''}" style="--pos:50%${(w && h) ? `;aspect-ratio:${W}/${H}` : ''}">` +
+    `<img src="${esc(nSrc)}" alt="${base} — ${esc(nachTxt)}" width="${W}" height="${H}" ${pr}>` +
+    `<img class="ba-top" src="${esc(vSrc)}" alt="${base} — ${esc(vorTxt)}" width="${W}" height="${H}" ${pr}>` +
     `<div class="ba-line"></div><div class="ba-knob" aria-hidden="true"></div>` +
     `<span class="ba-tag tag-v">Vorher</span><span class="ba-tag tag-n">Nachher</span>` +
     `<input type="range" min="0" max="100" value="50" step="1" aria-label="Vorher-Nachher-Vergleich ${base}">` +
@@ -201,13 +201,45 @@ export function jahreszeiten({ heading = 'Ein Garten durch <em>vier Jahreszeiten
 // ---------------------------------------------------------------------------
 // echtProjekt — .echt-card mit dem ECHTEN Paar (quer). OHNE Gold-Badge, Text neutral.
 // ---------------------------------------------------------------------------
-export function echtProjekt() {
-  return `<div class="echt-card rv"><div class="ebody">` +
-    `<h3>Ein dokumentiertes Kundenprojekt.</h3>` +
-    `<p>Thuja-Rückschnitt bei einem Kunden — mit dem Handy direkt vom Einsatz fotografiert. Kein Studio, kein Nachbearbeiten: Die Plane mit dem Schnittgut liegt noch im Bild. Genau so sieht der Foto-Nachweis aus, den Sie nach jedem Auftrag aufs Handy bekommen.</p>` +
-    `<div class="echt-next"><b>Platz reserviert.</b> Hier dokumentieren wir laufend weitere Aufträge — der nächste könnte Ihrer sein.</div></div>` +
-    `<div>${baSlider({ vorher: `${ARB}/echt-heckenschnitt-vorher.jpg`, nachher: `${ARB}/echt-heckenschnitt-nachher.jpg`, alt: 'Thuja-Rückschnitt vom Einsatz', cap: 'Thuja-Rückschnitt', sub: 'vom Einsatz fotografiert', quer: true })}</div>` +
-    `</div>`;
+export function echtProjekt({ nur = null } = {}) {
+  const thuja =
+    `<div class="echt-card rv"><div class="ebody">` +
+    `<h3>Thuja-Rückschnitt, dokumentiert vom Einsatz.</h3>` +
+    `<p>Mit dem Handy direkt vom Einsatz fotografiert. Kein Studio, kein Nachbearbeiten: Die Plane mit dem Schnittgut liegt noch im Bild. Genau so sieht der Foto-Nachweis aus, den Sie nach jedem Auftrag aufs Handy bekommen.</p></div>` +
+    `<div>${baSlider({ vorher: `${ARB}/echt-heckenschnitt-vorher.jpg`, nachher: `${ARB}/echt-heckenschnitt-nachher.jpg`, alt: 'Thuja-Rückschnitt vom Einsatz', cap: 'Thuja-Rückschnitt', sub: 'vom Einsatz fotografiert', quer: true })}</div></div>`;
+  if (nur === 'thuja') return `<div class="echt-grid">${thuja}</div>`;
+  const schuppen =
+    `<div class="echt-card rv d1"><div class="ebody">` +
+    `<h3>Gartenschuppen leer, Falkensee — an einem Tag.</h3>` +
+    `<p>Abstellkammer unter der Treppe und Gartenschuppen ausgeräumt, zwei Fahrten zum Wertstoffhof Falkensee, Gebühren nach Beleg. Vorher/Nachher ging am selben Abend an die Kundin — mit Einwilligung hier zu sehen.</p>` +
+    `<div class="echt-next"><a href="/entruempelung/">Entrümpelung rund ums Haus →</a></div></div>` +
+    `<div>${baSlider({ vorher: '/assets/img/fall-schuppen-falkensee-vorher-768.jpg', nachher: '/assets/img/fall-schuppen-falkensee-nachher-768.jpg', w: 768, h: 1024, alt: 'Gartenschuppen in Falkensee vor und nach der Entrümpelung', cap: 'Gartenschuppen', sub: 'Falkensee, 1 Tag', vorTxt: 'vor der Räumung', nachTxt: 'nach der Räumung' })}</div></div>`;
+  return `<div class="echt-grid">${thuja}${schuppen}</div>`;
+}
+
+// ---------------------------------------------------------------------------
+// clusterKacheln — 4 Cluster als .cluster > .cl (a.cl-main = Hub) + ul.cl-sub (Unterleistungen). Ersetzt seit 17.09.
+// die 6 Einzelkarten (.list > a.it) auf der Startseite: vier Käufergruppen (Garten / GaLaBau / Entrümpelung / Objekte)
+// bekommen je einen Einstieg, kein Käufer wird bevorzugt (Plan organisch-entruempelung §2 E2).
+// items: [{ href, kick, h3, p, subs:[{href,label}] }]
+// ---------------------------------------------------------------------------
+export function clusterKacheln(items) {
+  return `<div class="cluster">` + items.map((c, i) =>
+    `<div class="cl rv d${i + 1}"><a class="cl-main" href="${esc(c.href)}"><span class="kick">${esc(c.kick)}</span><h3>${esc(c.h3)}</h3><p>${esc(c.p)}</p><span class="arr">Zur Leistung →</span></a>` +
+    `<ul class="cl-sub">${c.subs.map(s => `<li><a href="${esc(s.href)}">${esc(s.label)}</a></li>`).join('')}</ul></div>`
+  ).join('') + `</div>`;
+}
+
+// ---------------------------------------------------------------------------
+// faelleBlock — Fallbeispiele (echte Aufträge, anonymisiert) für Pillar-Hubs. .faelle > .fall (h3/meta/p + optional Slider + optional Zitat).
+// img = Manifest-Basis-Slug eines Vorher/Nachher-Paars ('fall-schuppen-falkensee' -> -vorher-768.jpg/-nachher-768.jpg) oder ''.
+// zitat/zitat_von rendern nur, wenn gefüllt (17.09.: leer, bis eine echte Entrümpelungs-Bewertung vorliegt — kein Zitat erfinden).
+// ---------------------------------------------------------------------------
+export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.' } = {}) {
+  if (!Array.isArray(faelle) || !faelle.length) return '';
+  return `<section class="sec section-alt" id="faelle"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(heading)}</h2></div><p class="intro rv">Echte Aufträge aus dem Havelland, ohne Namen und Adresse. Wo wir Fotos oder Zahlen zeigen, liegt die Einwilligung der Kunden vor. Genau so bekommen Sie Ihren Foto-Nachweis.</p><div class="faelle">` +
+    faelle.map((f, i) => `<div class="fall rv d${i + 1}"><div class="fbody"><h3>${esc(f.h3)}</h3><p class="fmeta">${esc(f.meta || '')}</p><p>${esc(f.body)}</p>${f.zitat ? `<blockquote class="fzitat"><p>${esc(f.zitat)}</p>${f.zitat_von ? `<cite>${esc(f.zitat_von)}</cite>` : ''}</blockquote>` : ''}</div>${f.img ? `<div>${baSlider({ vorher: `/assets/img/${f.img}-vorher-768.jpg`, nachher: `/assets/img/${f.img}-nachher-768.jpg`, w: 768, h: 1024, alt: f.h3 + ' — vorher und nachher', cap: f.h3.split(',')[0], sub: 'vorher / nachher', vorTxt: 'vor der Räumung', nachTxt: 'nach der Räumung' })}</div>` : ''}</div>`).join('') +
+    `</div></div></section>`;
 }
 
 // ---------------------------------------------------------------------------

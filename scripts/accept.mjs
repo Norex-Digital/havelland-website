@@ -39,10 +39,9 @@ page('index.html', 'HOME', h => {
   check('home', 'ba>=3', classCount(h, 'ba') >= 3);
   check('home', 'gstrip', classCount(h, 'gstrip') >= 1);
   check('home', 'jz-grid', classCount(h, 'jz-grid') >= 1);
-  check('home', 'cal', classCount(h, 'cal') >= 1);
-  check('home', 'pills', classCount(h, 'pills') >= 1);
-  check('home', 'kpanel', classCount(h, 'kpanel') >= 1);
-  check('home', 'echt-card', classCount(h, 'echt-card') >= 1);
+  check('home', 'echt-card>=2', classCount(h, 'echt-card') >= 2);   // 17.09.: Thuja + Gutzke-Gartenschuppen
+  check('home', 'hero-strip', classCount(h, 'hero-strip') >= 1);
+  check('home', 'kein heckenarten', !has(h, 'id="heckenarten"'));
   check('home', 'car-track', classCount(h, 'car-track') >= 1);
   check('home', 'pgrid', classCount(h, 'pgrid') >= 1);
   check('home', 'wa-grid', classCount(h, 'wa-grid') >= 1);
@@ -50,6 +49,8 @@ page('index.html', 'HOME', h => {
   check('home', 'vals', classCount(h, 'vals') >= 1);
   check('home', 'faq-search', classCount(h, 'faq-search') >= 1);
   check('home', 'gebiet-wrap', classCount(h, 'gebiet-wrap') >= 1);
+  check('home', 'cluster', classCount(h, 'cluster') >= 1);      // 17.09.: 4 Cluster-Kacheln statt 6 Einzelkarten
+  check('home', 'cl', classCount(h, 'cl') === 4);
   check('home', 'kein fonts.googleapis', !has(h, 'fonts.googleapis'));
 });
 
@@ -63,6 +64,15 @@ page('heckenschnitt/index.html', 'HUB heckenschnitt', h => {
   check('heckenschnitt', 'tl', classCount(h, 'tl') >= 1);
   check('heckenschnitt', 'faq', classCount(h, 'faq') >= 1);
   check('heckenschnitt', 'echt-card', classCount(h, 'echt-card') >= 1);
+});
+
+// ---- SERVICE-HUB entruempelung (Pillar, 17.09.) ----
+page('entruempelung/index.html', 'HUB entruempelung', h => {
+  check('entruempelung', 'fall>=2', classCount(h, 'fall') >= 2);
+  check('entruempelung', 'anker nebengebaeude/gartenhaus/gewerbe', has(h, 'id="nebengebaeude"') && has(h, 'id="gartenhaus"') && has(h, 'id="gewerbe"'));
+  check('entruempelung', 'gstrip Beleg', has(h, 'Entsorgungsgebühren weisen wir nach Beleg aus'));
+  check('entruempelung', 'kein inklusive Entsorgung', !hasI(h, 'inklusive Entsorgung') && !hasI(h, 'Entsorgung inklusive'));
+  check('entruempelung', 'faq', classCount(h, 'faq') >= 1);
 });
 
 // ---- SERVICE-HUB gartenpflege (kein Hecken-Material) ----

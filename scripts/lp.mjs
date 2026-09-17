@@ -124,7 +124,7 @@ const LP_BA_JS = `<script>(function(){function initBA(ba){if(!ba||ba.__baInit)re
 const rvIn = html => html.replace(/class="([^"]*)"/g, (m, c) => { const t = c.split(' '); return t.includes('rv') && !t.includes('in') ? `class="${c} in"` : m; });
 
 export function buildLp(d) {
-  const { head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema, reviews, config, CP, isReal, pic, leaf, proof } = d;
+  const { head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema, reviews, config, CP, isReal, pic, leaf, proof, IMG } = d;
   const consentKey = CONSENT_KEY || 'consent_v2';
   const cp = CP('lp.json');
   if (!cp || !Array.isArray(cp.lps)) return 0;
@@ -154,7 +154,8 @@ export function buildLp(d) {
   // Der Alt-Suffix der Komponente ist heckenspezifisch („nach dem Schnitt") → für Räumungen ersetzt.
   const imgSrc = slug => `/assets/img/${slug}-768.webp`;
   const baLp = o => baSlider(o).replace(/ — nach dem Schnitt"/g, ' — nach der Räumung"').replace(/ — vor dem Schnitt"/g, ' — vor der Räumung"');
-  const baPair = (f, { lcp = false } = {}) => baLp({ vorher: imgSrc(f.vorher), nachher: imgSrc(f.nachher), alt: f.alt || f.cap || 'Entrümpelung', cap: f.cap || '', sub: f.sub || '', hint: true, lcp, w: 864, h: 1036 });
+  // Aspect-Ratio aus dem Manifest (Fall-Fotos sind 768/1024 = 3:4, nicht 864/1036) — sonst wird das Bild in der falschen Box beschnitten.
+  const baPair = (f, { lcp = false } = {}) => { const m = (IMG && IMG[f.vorher]) || {}; return baLp({ vorher: imgSrc(f.vorher), nachher: imgSrc(f.nachher), alt: f.alt || f.cap || 'Entrümpelung', cap: f.cap || '', sub: f.sub || '', hint: true, lcp, w: m.w || 864, h: m.h || 1036 }); };
   const pairOk = f => !!(f && f.vorher && f.nachher && pic(f.vorher) && pic(f.nachher));
   // Hero-Schalter je LP (lp.json hero.typ): ba = echte Vorher/Nachher-Fotos als Slider, foto = Manifest-Bild als Fotokarte (.shot .main),
   // text = einspaltig ohne Karte. Fallback ohne hero-Feld: erstes fotos-Paar → ba, sonst text.
