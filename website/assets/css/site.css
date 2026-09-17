@@ -715,6 +715,25 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 .cards.zaunarten .chip-muted{font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--muted);border:1px solid var(--hair);border-radius:var(--r-chip);padding:2px 9px;margin-left:8px;vertical-align:middle;white-space:nowrap}
 .cards.zaunarten .card p{display:block;-webkit-line-clamp:unset;overflow:visible}
 .cards.zaunarten .card img{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:var(--r-el);margin-bottom:var(--s-md,12px)}
+/* Leistungs-Überblick (W3b, 17.09.): Kachel = h3 + Kurztext, Tiefe im <details>. Kein line-clamp wie bei .card p. */
+.cards.leist{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--s-lg,24px)}
+.cards.leist .card{padding:24px 24px 18px}
+.cards.leist .card>p{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:15px;color:#33392f;margin:0 0 12px}
+.cards.leist .card .go{padding-top:10px}
+.mehr{margin-top:auto;border-top:1px solid var(--hair)}
+.mehr summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 4px;font-weight:600;font-size:14px;color:var(--green-d)}
+.mehr summary::-webkit-details-marker{display:none}
+.mehr summary::after{content:"+";font-size:18px;line-height:1;color:var(--green)}
+.mehr[open] summary::after{content:"−"}
+.mehr>div{padding:6px 0 4px;font-size:14.5px;line-height:1.6;color:#33392f}
+.mehr>div p{margin:0 0 10px}
+.mehr>div p:last-child{margin-bottom:0}
+.prose .mehr{max-width:78ch;margin-top:6px}
+.prose .mehr>div{font-size:16px}
+.prose ul.bl{margin:0 0 18px}
+.versprechen{max-width:78ch;margin:22px auto 0;padding:14px 18px;border:1px solid var(--hair);border-left:4px solid var(--accent);border-radius:var(--r-el,12px);background:#fff;font-size:15px;color:#33392f}
+.versprechen strong{color:var(--green-d)}
+.sec-lead{max-width:60ch;margin:-4px 0 22px;color:var(--muted);font-size:16px;line-height:1.6}
 @media(max-width:900px){.cards.zaunarten{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.cards.zaunarten{grid-template-columns:1fr}}
 .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--hair);border-radius:16px;padding:22px 22px 20px;transition:transform .15s var(--ease),box-shadow .2s,border-color .2s}

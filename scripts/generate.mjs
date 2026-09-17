@@ -287,11 +287,11 @@ const PARTNER_TXT = {
 const partnerTxt = s => (s && s.slug === 'winterdienst') ? PARTNER_TXT.winterdienst : PARTNER_TXT.dach;
 const endBandPartner = s => { const t = partnerTxt(s); return `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, ${t.was} — wir koordinieren.</h2><p class="rv d1">Kostenlose Besichtigung durch den Partner-Fachbetrieb — ein Ansprechpartner für Termin und Ablauf.</p><div class="cta-row rv d2">${ctaPrim(primLabel(s))}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`; };
 // Zwischen-CTA nach der Prose (Umbau 03.09.): Markup wie die Ratgeber-Sektion "Lieber machen lassen?". Erster Inhalts-CTA damit nach ≤600 W statt ~1.400.
-const ctaZwischen = s => {
+const ctaZwischen = (s, o = {}) => {
   const p = !!(s && s.partner_modell); const t = partnerTxt(s);
-  const h2 = p ? `Sagen Sie uns, ${t.was} — wir koordinieren.` : 'Lieber machen lassen?';
-  const txt = p ? (s.slug === 'winterdienst' ? 'Kostenlose Besichtigung durch den Partner-Fachbetrieb, Saisonvertrag vor dem ersten Schnee — ein Ansprechpartner für Termin und Ablauf.' : 'Kostenlose Besichtigung durch den Partner-Fachbetrieb, Angebot vom ausführenden Betrieb — ein Ansprechpartner für Termin und Ablauf.') : 'Kostenlose Besichtigung, Festpreis, dann erledigt.';
-  return `<section class="sec section-alt"><div class="wrap center"><h2 class="serif rv">${h2}</h2><p class="rv d1" style="max-width:44em;margin-inline:auto">${txt}</p><div class="cta-row rv d2" style="justify-content:center">${ctaPrim(primLabel(s))}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
+  const h2 = o.h2 || (p ? `Sagen Sie uns, ${t.was} — wir koordinieren.` : 'Lieber machen lassen?');
+  const txt = o.txt || (p ? (s.slug === 'winterdienst' ? 'Kostenlose Besichtigung durch den Partner-Fachbetrieb, Saisonvertrag vor dem ersten Schnee — ein Ansprechpartner für Termin und Ablauf.' : 'Kostenlose Besichtigung durch den Partner-Fachbetrieb, Angebot vom ausführenden Betrieb — ein Ansprechpartner für Termin und Ablauf.') : 'Kostenlose Besichtigung, Festpreis, dann erledigt.');
+  return `<section class="sec section-alt"><div class="wrap center"><h2 class="serif rv">${esc(h2)}</h2><p class="rv d1" style="max-width:44em;margin-inline:auto">${esc(txt)}</p><div class="cta-row rv d2" style="justify-content:center">${ctaPrim(primLabel(s))}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
 };
 // Dunkles Wert-Band (4 Werte) — auf Home + Übersichtsseiten wiederverwendet
 const valueBand = `<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>
@@ -385,10 +385,21 @@ function hub(s) {
   const sektionenHtml = c
     ? (c.sections || []).map(x => `<h3>${esc(x.h3)}</h3><p>${esc(x.body)}${copyLinksHtml(x)}</p>`).join('')   // optionale link_to/link2_to je Sektion (Umbau 03.09.), kein rohes HTML
     : (s.sektionen || []).map(x => `<h3>${esc(x)}</h3><p>${esc(x)} als Teil unserer ${esc(s.name)} — sauber ausgeführt, mit Foto-Nachweis.</p>`).join('');
+  // W3b (17.09.): Layout "ueberblick" — Sections als Kachel-Grid (h3 + kurz + <details>-Tiefe) statt Prose-Wand.
+  // Owner-Feedback: "Überblick der Leistungen, kurz dazu lesen, kein Paragraph". Tiefe bleibt im DOM (SEO), nur eingeklappt.
+  const ueberblick = !!(c && c.layout === 'ueberblick');
+  const kachelHtml = ueberblick ? (c.sections || []).map(x => {
+    const kurz = x.kurz || (x.body.split(/(?<=\.)\s/)[0] || '');
+    const tiefe = x.body ? `<details class="mehr"><summary>Mehr dazu</summary><div><p>${esc(x.body)}${copyLinksHtml(x)}</p></div></details>` : '';
+    return `<div class="card"${x.id ? ` id="${esc(x.id)}"` : ''}><h3>${esc(x.h3)}</h3><p>${esc(kurz)}</p>${tiefe}</div>`;
+  }).join('') : '';
   const definition = c && c.definition ? `<p class="lead-p"><strong>${esc(c.definition)}</strong></p>` : '';
-  const naehe = c && c.naehe ? `<h3>${esc(s.name)} in Ihrer Nähe</h3><p>${esc(c.naehe)}</p>` : '';
-  const ablauf = c && c.ablauf ? `<h3>So läuft es ab</h3><p>${esc(c.ablauf)}</p>` : '';
+  const naehe = (c && c.naehe && !ueberblick) ? `<h3>${esc(s.name)} in Ihrer Nähe</h3><p>${esc(c.naehe)}</p>` : '';
+  const ablauf = (c && c.ablauf && !ueberblick) ? `<h3>So läuft es ab</h3><p>${esc(c.ablauf)}</p>` : '';
   const garantieTxt = c && c.garantie_text ? c.garantie_text : (s.garantie || 'Kostenlose Besichtigung, danach ein Festpreis als Endpreis.');
+  // ueberblick: naehe -> Lead der Ortskarten-Sektion, ablauf -> Lead der Timeline, garantie -> Zeile unter dem Grid
+  const naeheLead = (ueberblick && c.naehe) ? `<p class="sec-lead rv">${esc(c.naehe)}</p>` : '';
+  const ablaufLead = (ueberblick && c.ablauf) ? `<p class="sec-lead rv">${esc(c.ablauf)}</p>` : '';
 
   const title = clampTitle(c && c.title ? c.title : `${s.name} im Havelland — ${nap.name}`);
   const meta = mkMeta(c && c.meta ? c.meta : `${s.name} im Havelland und Falkensee: Festpreis nach Besichtigung, Foto-Nachweis, ein fester Ansprechpartner.`);
@@ -413,9 +424,9 @@ function hub(s) {
   // Zaunbau (16.09.): eigenes Flow-Motiv statt Heckenschnitt-Default (KI-Szene mit Element, Logo per logo-composite.py — Foto Assets §0: Szene erlaubt, kein Beweis).
   const flowFoto = s.slug === 'zaunbau' ? { src: '/assets/img/arbeit/zaun-hinten-matte-noah.jpg', alt: 'Doppelstabmatte am Pfosten ausrichten — Haus- &amp; Gartenservice Havelland', cap: 'Handarbeit, wo es drauf ankommt', sub: 'Pfosten &amp; Matten', w: 1856, h: 2304 } : null;
   const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug), winter: s.slug === 'winterdienst', foto: flowFoto })}</div></section>`;
-  const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline(!!s.partner_modell, s.slug)}</div></section>`;
+  const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${ablaufLead}${auftragsTimeline(!!s.partner_modell, s.slug)}</div></section>`;
   const faqSection = `<section class="sec"><div class="wrap">${faqFilter(faqData)}</div></section>`;
-  const cardOrteSection = cardOrte.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div><div class="cards rv">${cards}</div></div></section>` : '';
+  const cardOrteSection = cardOrte.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div>${naeheLead}<div class="cards rv">${cards}</div></div></section>` : '';
   const ratgeberSection = (ratgeberByService[s.slug] || []).length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Ratgeber rund um ${esc(s.name)}</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${(ratgeberByService[s.slug] || []).slice(0, 3).map(r => `<a class="card" href="/ratgeber/${r.slug}/"><h3>${esc(r.title)}</h3><p>${esc(r.lead || '')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : '';
   let rich;
   if (gk === 'voll') {
@@ -439,19 +450,26 @@ function hub(s) {
   // Optionale Copy-Blöcke (H2 + Fließtext, optionale Service-Querverlinkung): Wohnungsauflösungs-H2 + Kannibalisierungs-Firewall Entrümpelung↔Haushaltsauflösung (Design §4). Nur Hubs mit copy.blocks; sonst ''.
   // Blocks: optionales id (Anker-Ziel, z. B. /gartenpflege/#herbst-paket) + zweiter Link link2_to/link2_text; Ziele auch mit #anker oder ratgeber/… (Umbau 03.09.).
   // Pillar-Hub (17.09.): optionales b.lead (fetter Kernsatz vor dem Body, z. B. Übergabe-Garantie) + optionales Bild b.img/b.img_alt (Manifest-Slug, z. B. Ansprechpartner-Arbeitsfoto).
+  // cta_after (CRO 16.09.; W3b 17.09.: Objekt = eigener CTA-Text statt Standard-Zwischen-CTA) — kontextueller CTA direkt nach dem Block mit höchster Kaufabsicht (Zaunbau: Referenzprojekt).
+  const ctaAfter = (b) => !b.cta_after ? '' : (typeof b.cta_after === 'object' ? ctaZwischen(s, b.cta_after) : ctaZwischen(s));
   const extraBlocks = (c && Array.isArray(c.blocks) ? c.blocks : []).map((b, i) =>
-    `<section class="sec${i % 2 ? '' : ' section-alt'}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2>${b.lead ? `<p class="lead-p"><strong>${esc(b.lead)}</strong></p>` : ''}<p>${esc(b.body)}${copyLinksHtml(b)}</p>${(b.img && IMG[b.img]) ? `<figure class="block-fig">${pic(b.img, { alt: b.img_alt || b.h2, sizes: '(max-width:900px) 92vw, 480px' })}</figure>` : ''}</div></div></section>` + (b.cta_after ? ctaZwischen(s) : '')).join('');   // cta_after (CRO 16.09.): kontextueller CTA direkt nach dem Block mit höchster Kaufabsicht (Zaunbau: Referenzprojekt)
+    `<section class="sec${i % 2 ? '' : ' section-alt'}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2>${b.lead ? `<p class="lead-p"><strong>${esc(b.lead)}</strong></p>` : ''}<p>${esc(b.body)}${copyLinksHtml(b)}</p>${Array.isArray(b.bullets) && b.bullets.length ? `<ul class="bl">${b.bullets.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}${b.mehr ? `<details class="mehr"><summary>Mehr dazu</summary><div><p>${esc(b.mehr)}</p></div></details>` : ''}${(b.img && IMG[b.img]) ? `<figure class="block-fig">${pic(b.img, { alt: b.img_alt || b.h2, sizes: '(max-width:900px) 92vw, 480px' })}</figure>` : ''}</div></div></section>` + ctaAfter(b)).join('');
   // Fallbeispiele (echte Aufträge, anonymisiert) — nur Hubs mit copy.faelle; sonst ''.
   const faelleHtml = (c && c.faelle) ? faelleBlock(c.faelle) : '';
   // Zaunarten-Vergleich (Zaunbau, 16.09.): Karten aus copy.zaunarten — Produktszenen (KI, gleiches Grundstück), kein Projektbezug; Preisfeld = Projektspanne oder "nach Besichtigung", nie €/lfm. Nur Hubs mit copy.zaunarten; sonst ''.
   const zaunarten = (c && Array.isArray(c.zaunarten) && c.zaunarten.length) ? `<section class="sec section-alt" id="zaunarten"><div class="wrap"><div class="head"><h2 class="serif rv">Welcher Zaun passt zu Ihrem Grundstück?</h2><p class="rv">Fünf Systeme an fünf typischen Havelland-Grundstücken — vom Siedlungshaus bis zum Neubau. Die drei oberen sind unsere Standardsysteme, Alu und Schmuckzaun bauen wir auf Anfrage. Die Bilder zeigen die Zaunart, nicht ein Kundenprojekt.</p></div><div class="cards zaunarten rv">${c.zaunarten.map(z => `<div class="card${z.fokus ? '' : ' card-muted'}">${IMG[z.img] ? pic(z.img, { alt: esc(z.name) + ' — Beispiel im Vorgarten', sizes: '(max-width:700px) 92vw, 33vw' }) : ''}<h3>${esc(z.name)}${z.fokus ? '' : ' <span class="chip chip-muted">auf Anfrage</span>'}</h3><p><strong>Sichtschutz:</strong> ${esc(z.sichtschutz)}<br><strong>Haltbarkeit:</strong> ${esc(z.haltbarkeit)}<br><strong>Lieferzeit:</strong> ${esc(z.lieferzeit)}<br><strong>Für wen:</strong> ${esc(z.passend)}</p><p><strong>20 m inkl. Montage:</strong> ${esc(z.spanne)}</p></div>`).join('')}</div></div></section>` : '';
   // Zwischen-CTA nach der Prose auf allen Hubs ohne Galerie-CTA (voll = Heckenschnitt hat die Galerie)
   const zwischen = (s.partner_modell || gk !== 'voll') ? ctaZwischen(s) : '';
+  // W3b (17.09.): Layout "ueberblick" — Kachel-Grid + Versprechen-Zeile statt Prose-Wand; Legacy-Hubs ohne layout unverändert.
+  const versprechenH = (s.garantie && !s.partner_modell) ? 'Unsere Garantie' : 'Unser Versprechen';
+  const leistungsSection = ueberblick
+    ? `<section class="sec" id="leistungen"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(c.sections_h2 || (s.name + ' im Havelland — was dazugehört'))}</h2></div>${c.definition ? `<p class="sec-lead rv">${esc(c.definition)}</p>` : ''}<div class="cards leist rv">${kachelHtml}</div><p class="versprechen rv"><strong>${versprechenH}:</strong> ${esc(garantieTxt)}</p></div></section>`
+    : `<section class="sec"><div class="wrap"><div class="prose wide rv">${definition}<h2>${esc((c && c.sections_h2) || (s.name + ' im Havelland — was dazugehört'))}</h2>${sektionenHtml}${naehe}${ablauf}<h3>${versprechenH}</h3><p>${esc(garantieTxt)}</p></div></div></section>`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || s.b2b_only) ? CTA_ANGEBOT : primLabel(s))}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div>${trustLine}</div>
 <div class="shot rv in d2">${heroShot}</div></div></section>
 ${s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : GRUEN_BELEG_SVCS.has(s.slug) ? gstripGruenBeleg : gstrip}
-<section class="sec"><div class="wrap"><div class="prose wide rv">${definition}<h2>${esc((c && c.sections_h2) || (s.name + ' im Havelland — was dazugehört'))}</h2>${sektionenHtml}${naehe}${ablauf}<h3>${(s.garantie && !s.partner_modell) ? 'Unsere Garantie' : 'Unser Versprechen'}</h3><p>${esc(garantieTxt)}</p></div></div></section>
+${leistungsSection}
 ${zaunarten}
 ${zwischen}
 ${IMG['svc-' + s.slug + '-detail'] ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic('svc-' + s.slug + '-detail', { alt: s.name + ' im Detail — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>` : ''}
@@ -544,7 +562,7 @@ function ortsseite(s, o) {
 <div class="shot rv in d2">${heroShotO}</div></div></section>
 ${s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : GRUEN_BELEG_SVCS.has(s.slug) ? gstripGruenBeleg : gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
-${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.' }) : ''}${crossSection}
+${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml }) : ''}${tief ? ctaZwischen(s, { h2: 'Foto schicken, Festpreis bekommen.', txt: 'Rückmeldung meist am selben Werktag, kostenlose Besichtigung in ' + o.name + ', schriftlicher Festpreis für Räumung und Abtransport.' }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.' }) : ''}${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 <section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst' })}</div></section>
 <section class="sec section-alt"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>

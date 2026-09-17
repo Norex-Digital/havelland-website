@@ -73,14 +73,29 @@ page('entruempelung/index.html', 'HUB entruempelung', h => {
   check('entruempelung', 'gstrip Beleg', has(h, 'Entsorgungsgebühren weisen wir nach Beleg aus'));
   check('entruempelung', 'kein inklusive Entsorgung', !hasI(h, 'inklusive Entsorgung') && !hasI(h, 'Entsorgung inklusive'));
   check('entruempelung', 'faq', classCount(h, 'faq') >= 1);
+  check('entruempelung', 'layout ueberblick: kacheln', classCount(h, 'leist') >= 1 && (h.match(/<details class="mehr">/g) || []).length >= 5);
+  check('entruempelung', 'cta >= 3 (zwischen + endband + sticky)', (h.match(/class="cta-row/g) || []).length >= 4);
+  check('entruempelung', 'kein nicht-anbieten-Abschnitt', !hasI(h, 'was wir nicht anbieten'));
+  check('entruempelung', 'KI-Szene nicht als Noah-Foto', !hasI(h, 'Noah Telo beim Heckenschnitt') && !hasI(h, 'Das Foto zeigt ihn'));
 });
 
 // ---- SERVICE-HUB galabau (Cluster-Pillar GaLaBau & Rodung, W2+W3 Task 4, 17.09.) ----
 page('galabau/index.html', 'HUB galabau', h => {
-  check('galabau', 'anker', has(h, 'id="reihenfolge"') && has(h, 'id="saison"') && has(h, 'id="genehmigung"') && has(h, 'id="grenzen"'));
+  check('galabau', 'anker', has(h, 'id="genehmigung"') && has(h, 'id="freeraeumen"'));
   check('galabau', 'links sub-hubs', has(h, 'href="/zaunbau/"') && has(h, 'href="/heckenentfernung/"') && has(h, 'href="/gartenrodung/"') && has(h, 'href="/baumstumpf-entfernen/"'));
   check('galabau', 'fall', classCount(h, 'fall') >= 1);
   check('galabau', 'kein inklusive', !hasI(h, 'inklusive Entsorgung'));
+  check('galabau', 'layout ueberblick: kacheln', classCount(h, 'leist') >= 1 && (h.match(/<details class="mehr">/g) || []).length >= 5);
+  check('galabau', 'keine nicht-anbieten/grenzen/reihenfolge/saison-Abschnitte', !hasI(h, 'bewusst nicht anbieten') && !has(h, 'id="grenzen"') && !has(h, 'id="reihenfolge"') && !has(h, 'id="saison"'));
+  check('galabau', 'cta >= 3', (h.match(/class="cta-row/g) || []).length >= 4);
+});
+
+// ---- SERVICE-HUB haushaltsaufloesung (W3b, 17.09.) ----
+page('haushaltsaufloesung/index.html', 'HUB haushaltsaufloesung', h => {
+  check('haushaltsaufloesung', 'layout ueberblick: kacheln', classCount(h, 'leist') >= 1 && (h.match(/<details class="mehr">/g) || []).length >= 4);
+  check('haushaltsaufloesung', 'anker erbfall/pflegefall/vollmacht', has(h, 'id="erbfall"') && has(h, 'id="pflegefall"') && has(h, 'id="vollmacht"'));
+  check('haushaltsaufloesung', 'cta >= 3', (h.match(/class="cta-row/g) || []).length >= 4);
+  check('haushaltsaufloesung', 'kein inklusive Entsorgung', !hasI(h, 'inklusive Entsorgung') && !hasI(h, 'Entsorgung inklusive'));
 });
 
 // ---- TIER1-ORTSSEITEN (W2): Tiefen-Block. Scharf nur wenn tiefBlock vorhanden ODER TIER1=1 gesetzt ist —
@@ -92,6 +107,8 @@ for (const rel of ['entruempelung-falkensee/index.html', 'entruempelung-briesela
       check(rel, 'ortsblock', classCount(h, 'ortsblock') >= 1);
       check(rel, 'kein inklusive Entsorgung', !hasI(h, 'inklusive Entsorgung') && !hasI(h, 'Entsorgung inklusive'));
       check(rel, 'kein Kundenname', !hasI(h, 'gutzke'));
+      check(rel, 'tief kacheln', classCount(h, 'leist') >= 1);
+      check(rel, 'cta nach tief', hasI(h, 'Foto schicken, Festpreis bekommen'));
     }
   });
 }
