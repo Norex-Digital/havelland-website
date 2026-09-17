@@ -1,5 +1,5 @@
 {
- "_meta": "Lokale Fakten für Hub-Ortskarten, Tier-1-Ortsseiten und W2-Ratgeber. Jeder Fakt mit Quelle + Stand. Keine Zahl ohne Beleg. Recherche 17.09.2026 (WebFetch Betreiberseite abfall-havelland.de, HAW mbH, Abfallgebührensatzung 2026 als PDF). Nicht belegbare Werte stehen als 'nicht veröffentlicht — Auskunft vor Ort'.",
+ "_meta": "Lokale Fakten für Hub-Ortskarten, Tier-1-Ortsseiten und W2-Ratgeber. Jeder Fakt mit Quelle + Stand. Keine Zahl ohne Beleg. Recherche 17.09.2026 (WebFetch Betreiberseite abfall-havelland.de, HAW mbH, Abfallgebührensatzung 2026 als PDF). Nicht belegbare Werte stehen als 'nicht veröffentlicht — Auskunft vor Ort'. Ergänzung 17.09.2026 (Task 2 W2): orte.falkensee / orte.brieselang (Stadt-/Gemeinde-Websites, Stadtchronik), Fahrzeiten aus OSRM-Routing (OpenStreetMap) — in Copy nur als 'ca.'.",
  "wertstoffhof": {
   "falkensee": {
    "name": "Wertstoffhof Falkensee",
@@ -41,7 +41,8 @@
    "adresse": "Schwanebecker Weg 25, 14641 Nauen OT Schwanebeck",
    "oeffnungszeiten": "nicht veröffentlicht — Auskunft vor Ort (Betreiber-Übersichtsseite nennt keine Zeiten; Flyer-Zeiten von 2017 nicht mehr belastbar)",
    "quelle": "https://www.abfall-havelland.de/index.php?page_id=519 (Übersicht: Standorte Schwanebeck, Bölkershof, Falkensee; Betreiberanschrift) · Abfallgebührensatzung 2026 Anlage 3 Tabelle 1 (Direktanlieferung Deponie Schwanebeck)",
-   "stand": "2026-09-17"
+   "stand": "2026-09-17",
+   "entfernung_brieselang": "vom Brieselanger Ortskern (Am Markt) ca. 19 km / ca. 25 Min. Fahrt; von Bredow ca. 10 km / ca. 18 Min.; von Zeestow ca. 15 km / ca. 21 Min. (OSRM-Routing auf OpenStreetMap-Daten, Stand 2026-09-17)"
   },
   "landkreis_standorte": "Der Landkreis Havelland betreibt drei Wertstoffhöfe: Falkensee (Nauener Straße 97), Nauen/Schwanebeck (Schwanebecker Weg 25) und Rathenow/Bölkershof (Bölkershof 8). Für das östliche Havelland (Falkensee, Dallgow-Döberitz, Schönwalde-Glien, Brieselang) ist Falkensee der nächstgelegene; Wustermark und Brieselang liegen zwischen Falkensee und Nauen/Schwanebeck. Quelle: abfall-havelland.de page_id=519 + Flyer Pauschalen (Adressen), Stand 2026-09-17."
  },
@@ -97,5 +98,47 @@
    "quelle_typ": "intern",
    "stand": "2026-09-17"
   }
- ]
+ ],
+ "orte": {
+  "falkensee": {
+   "name": "Falkensee",
+   "plz": "14612",
+   "einwohner": "46.906 (Stand 7. November 2025)",
+   "flaeche_km2": "43,3",
+   "wohngebiete": [
+    "Falkenhagen",
+    "Seegefeld",
+    "Finkenkrug",
+    "Alter Finkenkrug",
+    "Falkenhain",
+    "Falkenhöh",
+    "Waldheim"
+   ],
+   "wohngebiete_hinweis": "Die Stadt Falkensee führt sieben Wohngebiete (keine amtlichen Ortsteile): Falkenhain 5,23 km², Falkenhagen 5,64 km², Falkenhöh 3,17 km², Seegefeld 6,88 km², Finkenkrug 5,27 km², Waldheim 0,51 km², Alter Finkenkrug 0,21 km².",
+   "geschichte": "1265 erste urkundliche Erwähnung Seegefelds, 1336 Falkenhagens. 1777 Bau des 'Alten Finkenkrug' an der Nauener Straße (Gasthaus, später Ausflugsziel). 1846 Bahnverbindung Berlin–Hamburg mit Bahnstation Seegefeld (heute Bahnhof Falkensee). 1898 kauft die Deutsche Ansiedlungsbank das Rittergut Seegefeld und parzelliert es: Kolonien Neu-Finkenkrug, Neu-Seegefeld, Waldheim und Falkenhain (1898), Falkenhagener See (1902), Gartenstadt Falkenhagen-West (1907), Falkenhagener Alpen und Falkenhöh (1922). 1. April 1923 Zusammenschluss der Dörfer Falkenhagen und Seegefeld zur Gemeinde Falkensee. 7. Oktober 1961 Stadtrecht (bis dahin größte Landgemeinde Deutschlands). Einwohner: ca. 32.000 (1945), 30.000 (1999), über 40.000 (2005), 46.000 (2024).",
+   "siedlungsstruktur_hinweis": "Keine belegte Aussage zu 'Nachkriegssiedlungen' — die Siedlungsstruktur stammt laut Stadtchronik aus den Kolonien 1898–1922 (Gartenstadt-Parzellen) plus Zuzug seit 1990 (Einwohnerzahl seit 1999 um gut 50 % gestiegen). In Copy nur so verwenden.",
+   "wertstoffhof_naechster": "Wertstoffhof Falkensee, Nauener Straße 97 (Gewerbegebiet Nord, Wohngebiet Falkenhain, im Nordwesten des Stadtgebiets an der Nauener Straße Richtung Brieselang/Nauen; Stadt-Bounding-Box lt. Nominatim 52,544–52,613 N / 13,001–13,154 O, Hof bei 52,587 N / 13,068 O). Vom Firmensitz Darmstädter Str. 15: ca. 1,4 km / ca. 4 Min. (OSRM-Routing).",
+   "quelle": "https://www.falkensee.de/seite/457886/zahlen-fakten.html (Stadt Falkensee: Einwohner, Fläche, sieben Wohngebiete mit km², PLZ, Stadtrecht) · https://www.geschichte-falkensee.de/chronik (Stadt Falkensee / Museum und Galerie Falkensee: Chronik mit Ersterwähnungen, Bahn 1846, Kolonien 1898–1922, Gründung 1923, Stadtrecht 1961, Einwohnerreihe) · Lage Wertstoffhof: OpenStreetMap/Nominatim (Gewerbegebiet Nord, Falkenhain) · Fahrzeiten: OSRM-Routing (router.project-osrm.org) auf OpenStreetMap-Daten",
+   "stand": "2026-09-17"
+  },
+  "brieselang": {
+   "name": "Brieselang",
+   "plz": "14656",
+   "einwohner": "ca. 13.500 (Stand Mai 2024)",
+   "flaeche_km2": "44,39",
+   "ortsteile": [
+    "Brieselang",
+    "Bredow",
+    "Zeestow"
+   ],
+   "ortsteile_hinweis": "Gemeinde Brieselang = Hauptort Brieselang plus die Ortsteile Bredow (1208 erstmals erwähnt) und Zeestow (1346 erstmals erwähnt); beide seit der Gemeindegebietsreform 2003 Teil der Gemeinde.",
+   "geschichte": "Erste Bewohner um 1726 (Forstarbeiter, Alt-Brieselang), 1821 '15 Seelen'. Reichssiedlungsgesetz 1919, ab 1920 Siedlungsgesellschaften. Offizielle Gründung als selbständige Landgemeinde Brieselang am 14. Januar 1925 aus den Gemarkungen Bredow Gut, Brieselang, Zeestow, Falkenhagen Luch und Falkenhagen Forst. 2025 feierte die Gemeinde '100 Jahre Brieselang'.",
+   "bahn": "Bahnhof Brieselang (Wustermarker Str., nicht personalbesetzt, Fahrradstellplätze); laut Gemeinde-Website halten RE8-Züge Richtung Berlin-Spandau. Keine belegte Angabe zur Fahrzeit nach Berlin — nicht in Copy verwenden.",
+   "wertstoffhof_naechster": "Wertstoffhof Falkensee, Nauener Straße 97: vom Brieselanger Ortskern (Am Markt) ca. 6 km / ca. 9–10 Min.; von Zeestow ca. 9 km / ca. 11 Min.; von Bredow ca. 12 km / ca. 15 Min. (Bredow → Nauen/Schwanebeck ca. 10 km / ca. 18 Min., also ähnlich weit). Nauen/Schwanebeck vom Ortskern ca. 19 km / ca. 25 Min. Für Brieselang und Zeestow ist Falkensee eindeutig der nächstgelegene Wertstoffhof.",
+   "anfahrt_aus_falkensee": "Firmensitz Darmstädter Str. 15, Falkensee → Brieselang Am Markt: ca. 7 km / ca. 10 Min.; → Bredow: ca. 13 km / ca. 17 Min. (OSRM-Routing). Wertstoffhof Falkensee liegt auf dem Weg (Darmstädter Str. → Hof 1,4 km, Hof → Brieselang 6,3 km, direkt 7,2 km).",
+   "anfahrt_min_aus_falkensee": 10,
+   "quelle": "https://www.gemeindebrieselang.de/Seiten/Unsere-Gemeinde.html (Einwohner ca. 13.500 Stand Mai 2024, Fläche 44,39 km², Hauptort + 2 Ortsteile) · https://www.gemeindebrieselang.de/Seiten/Geschichte-zu-den-drei-Ortsteilen-Brieselang-Bredow-und-Zeestow.html (Gründung 14.01.1925, Gemarkungen, Bredow 1208, Zeestow 1346, Reform 2003, Siedlungsgesellschaften ab 1920) · https://www.gemeindebrieselang.de/ (Startseite: Ortsteile Brieselang/Bredow/Zeestow, Anschrift Am Markt 3, 14656, RE8 Berlin-Spandau, 100 Jahre Brieselang) · https://www.bahnhof.de/brieselang (Bahnhof Brieselang, Wustermarker Str.) · Fahrzeiten: OSRM-Routing (router.project-osrm.org) auf OpenStreetMap-Daten, Geokodierung Nominatim",
+   "stand": "2026-09-17"
+  }
+ }
 }

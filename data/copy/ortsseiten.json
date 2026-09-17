@@ -25,7 +25,102 @@
           "hook": "Falkensee ist die größte Stadt im Havelland, direkt an der Grenze zu Berlin-Spandau und mit Brieselang und Dallgow-Döberitz als Nachbarn. Hinter den vielen Einfamilienhäusern und den älteren Siedlungshäusern stecken über die Jahre volle Keller, Dachböden und Garagen. Wird ein Haushalt gelöst, steht ein Umzug an oder ist einfach über Jahrzehnte zu viel zusammengekommen, räumen wir das diskret aus. Von der Anfrage bis zur besenreinen Übergabe bleibt dieselbe Hand zuständig, und die kurzen Wege aus dem Havelland halten den Termin nah. Ausgeräumt, nicht ausgesessen.",
           "rahmen": "In Falkensee treffen wir vom schmalen Reihenhauskeller bis zum vollgestellten Einfamilienhaus alles an. Wir sortieren vor Ort, trennen Brauchbares vom Müll und tragen auch aus dem Dachgeschoss und engen Treppenhäusern heraus, ohne dass Sie mit anpacken. Alt-Möbel, Elektrogeräte, Metall und Problemstoffe führen wir getrennt der richtigen Entsorgung zu. Wertgegenstände rechnen wir vorher offen vom Preis ab. Am Ende steht die Fläche besenrein bereit — für die Übergabe an Käufer, Vermieter oder die eigene Weiternutzung.",
           "trust": "Nach der kostenlosen Besichtigung in Falkensee steht ein Festpreis für Räumung und Abtransport, Entsorgungsgebühren nach Beleg. Sie erhalten die Räume besenrein zurück und auf Wunsch Vorher-Nachher-Fotos aufs Handy, auch wenn Sie am Termin selbst nicht dabei sind.",
-          "fakt": "Der Wertstoffhof des Landkreises liegt in Falkensee selbst, Nauener Straße 97: kurze Fahrten, Gebühren nach Beleg, Festpreis für Räumung und Abtransport."
+          "fakt": "Der Wertstoffhof des Landkreises liegt in Falkensee selbst, Nauener Straße 97: kurze Fahrten, Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
+          "tief": {
+            "h2": "Entrümpelung in Falkensee — Keller, Garage, Dachboden, Wohnung",
+            "sections": [
+              {
+                "h3": "Falkenseer Siedlungshäuser: Keller und Dachboden",
+                "body": "Die Deutsche Ansiedlungsbank kaufte 1898 das Rittergut Seegefeld und teilte es in Parzellen. Daraus wuchsen Waldheim, Falkenhain und Neu-Finkenkrug, 1907 kam die Gartenstadt Falkenhagen-West dazu, 1922 Falkenhöh. Viele Häuser aus dieser Zeit stehen noch und sind seit Jahrzehnten in Familienhand. Typisch für sie: ein niedriger Keller mit steiler, schmaler Treppe, darüber ein Spitzboden mit Luke. In beiden Etagen lagert, was seit Jahren niemand angefasst hat: Einmachgläser, Skier, Stühle mit gebrochener Lehne, die Kartons vom Einzug. Wir holen das Stück für Stück heraus, zu zweit bei Sperrigem, und tragen es direkt zum Anhänger vor dem Haus. Auf dem Weg sortieren wir Altholz, Schrott, Elektrogeräte und Restabfall getrennt, weil der Wertstoffhof jede Fraktion einzeln wiegt. Brauchbares bleibt stehen und geht vom Preis ab. Dosen mit Farbe oder Lösungsmittel lassen wir im Keller und nennen Ihnen die Schadstoffannahme am Wertstoffhof Falkensee, wo Privathaushalte sie kostenfrei abgeben."
+              },
+              {
+                "h3": "Garage und Schuppen in Falkensee",
+                "body": "Bei einer Garage oder einem Gartenschuppen reicht uns für den ersten Schritt ein Foto per WhatsApp: Tor auf, einmal draufhalten, abschicken. Wir schätzen daraus Menge und Abfallarten ab und melden uns meist am selben Werktag mit einer ersten, unverbindlichen Einschätzung. Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, weil Zufahrt, Untergrund und die Dinge hinter dem Regal auf dem Foto selten zu sehen sind. Im September 2026 haben wir in Falkensee so einen Schuppen zusammen mit einer Abstellkammer geräumt: ein Tag, zwei Fahrten zum Wertstoffhof an der Nauener Straße, danach die Fotos aufs Handy der Kundin. Der Hof nimmt Schrott, Altholz und Restabfall an getrennten Stellen an, deshalb sortieren wir schon beim Beladen. Ölreste, Autobatterien und Gasflaschen bleiben draußen; dafür nennen wir Ihnen die Annahmestelle.",
+                "link_to": "entruempelung#gartenhaus",
+                "link_text": "Gartenhaus abreißen und entsorgen"
+              },
+              {
+                "h3": "Wohnung und Haus in Falkensee — auch ohne Ihre Anwesenheit",
+                "body": "Wer ein Elternhaus in Finkenkrug verkauft oder eine leer stehende Wohnung in Seegefeld abgibt, wohnt nicht unbedingt in Falkensee. Sie müssen für die Räumung nicht anreisen. Den Schlüssel übernehmen wir von einer Vertrauensperson, einem Nachbarn oder der Hausverwaltung; eine kurze schriftliche Vollmacht regelt, was weg darf und was bleibt. Was Sie behalten wollen, markieren Sie vorher mit Klebeband oder schicken uns eine Liste per WhatsApp. Wir räumen Zimmer für Zimmer, laden Möbel, Elektrogeräte und Hausrat sortiert auf und fahren so oft zum Wertstoffhof, wie es braucht; der liegt in Falkensee wenige Minuten entfernt. Nach jeder Etappe bekommen Sie Fotos, nach der Übergabe die Rechnung mit allen Entsorgungsbelegen per Mail. Geht es um den kompletten Haushalt nach einem Todesfall oder dem Umzug ins Pflegeheim, mit Sichten von Dokumenten und Wertsachen vorab, ist das eine Haushaltsauflösung mit eigener Seite für Falkensee.",
+                "link_to": "haushaltsaufloesung-falkensee",
+                "link_text": "Haushaltsauflösung in Falkensee"
+              },
+              {
+                "h3": "Gewerbe in Falkensee: Büro, Praxis, Lager",
+                "body": "Gewerberäume in Falkensee räumen wir außerhalb Ihrer Öffnungszeiten, nach Feierabend oder samstags, damit Kunden und Patienten nichts davon mitbekommen: die Praxis, die den Standort wechselt, das Ladenlokal vor der Rückgabe an den Vermieter, das volle Lager im Gewerbegebiet. Büromöbel, Regalsysteme, Ladentheken, Rechner und Restbestände nehmen wir sortiert mit und fahren sie zum Wertstoffhof im Gewerbegebiet Nord. Jeden Beleg von dort bekommt Ihre Buchhaltung, unsere Rechnung weist die Mehrwertsteuer aus. Aktenordner mit Kundendaten gehen an einen Fachbetrieb für Aktenvernichtung, den wir Ihnen vermitteln. Der Weg ist derselbe wie beim Privathaushalt: Fotos oder Grundriss per Mail, kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, Entsorgung nach Beleg.",
+                "link_to": "entruempelung#gewerbe",
+                "link_text": "Mehr zur Gewerbe-Entrümpelung"
+              }
+            ],
+            "ortsblock": {
+              "h2": "Entsorgung in Falkensee: Wertstoffhof, Sperrmüll, Anfahrt",
+              "items": [
+                {
+                  "k": "Wertstoffhof",
+                  "v": "Wertstoffhof Falkensee, Nauener Straße 97, 14612 Falkensee, im Gewerbegebiet Nord im Nordwesten der Stadt, an der Straße Richtung Brieselang. Geöffnet Montag 9–18 Uhr, Dienstag bis Freitag 9–17 Uhr, Samstag 8–13 Uhr. Sperrmüll, Schrott, Elektroaltgeräte und Schadstoffe aus Privathaushalten nimmt der Hof kostenfrei an; alles andere wiegt er und rechnet nach der Gebührensatzung 2026 ab."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Die Sperrmüllabfuhr des Landkreises Havelland holt bei Privathaushalten zweimal im Jahr kostenlos ab, nach Anmeldung bei der HAW mbH und mit bis zu vier Wochen Wartezeit. Bauabfälle, Fenster, Türen, Laminat, Bretter aus dem Garten und größere Mengen aus Haushaltsauflösungen lässt sie stehen."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Der Haus- & Gartenservice Havelland sitzt in Falkensee, Darmstädter Straße. Bis zum Wertstoffhof sind es rund 1,5 km, in jedes der sieben Wohngebiete wenige Minuten. Eine Anfahrtszeit, die Sie bezahlen, gibt es nicht."
+                },
+                {
+                  "k": "Ortsteile",
+                  "v": "Falkenhagen, Seegefeld, Finkenkrug, Alter Finkenkrug, Falkenhain, Falkenhöh und Waldheim; 43,3 km² Stadtgebiet, 46.906 Einwohner (Stand November 2025), PLZ 14612."
+                }
+              ],
+              "quelle": "abfall-havelland.de (Betreiberseite Wertstoffhof Falkensee), Abfallgebührensatzung Landkreis Havelland 2026, haw-mbh.de (Sperrmüll), falkensee.de (Zahlen & Fakten), Stand 09/2026"
+            },
+            "blocks": [
+              {
+                "id": "ortsteile",
+                "h2": "Falkenhagen, Finkenkrug, Seegefeld, Waldheim — wo wir unterwegs sind",
+                "body": "Die Stadt Falkensee führt sieben Wohngebiete. Falkenhagen, 1336 erstmals erwähnt, ist einer der beiden Gründungsorte von 1923, mit dem alten Dorf und der Gartenstadt Falkenhagen-West von 1907. Seegefeld, schon 1265 erwähnt, bekam 1846 die Bahnstation an der Strecke Berlin–Hamburg, aus der der heutige Bahnhof Falkensee wurde, und ist mit 6,88 km² das größte Wohngebiet. Finkenkrug geht auf das Gasthaus Alter Finkenkrug von 1777 an der Nauener Straße zurück, die Kolonie Neu-Finkenkrug folgte 1898; der Alte Finkenkrug ist mit 0,21 km² das kleinste Gebiet. Waldheim, Falkenhain und Falkenhöh entstanden als Kolonien auf den Parzellen von 1898 und 1922. Für uns heißt das: Jedes Wohngebiet liegt von der Darmstädter Straße aus wenige Minuten entfernt, und der Wertstoffhof im Gewerbegebiet Nord ist auf fast jeder Strecke nah. Ob Kellerräumung in Finkenkrug, Garage in Falkenhöh oder Dachboden in Waldheim: Wir kommen mit dem Anhänger direkt vors Grundstück, und bei mehreren Fahrten geht keine Stunde für die Strecke verloren."
+              },
+              {
+                "id": "preise-falkensee",
+                "h2": "Was eine Entrümpelung in Falkensee kostet — ein echtes Beispiel",
+                "body": "Ein Auftrag aus Falkensee vom September 2026, Abstellkammer und Gartenschuppen: Der Festpreis für Räumung und Abtransport lag bei 1.190 € inkl. MwSt., ein Tag Arbeit, zwei Fahrten zum Wertstoffhof Falkensee. Auf den beiden Belegen des Wertstoffhofs standen zusammen 458 € Entsorgungsgebühren, darunter gemischter Siedlungsabfall und Altholz nach Gewicht. Diese Gebühren geben wir nach Beleg weiter, zuzüglich Mehrwertsteuer, ohne eigenen Aufschlag; sie stehen im Angebot und in der Rechnung als eigene Zeile. Das ist ein Beispiel, kein Pauschalpreis. Bei Ihnen entscheiden vier Dinge über den Betrag: die Menge, der Zugang (Kellertreppe, Dachluke, Weg zum Anhänger), die Zahl der Fahrten und der Anteil an Brauchbarem, den wir anrechnen. Weil der Wertstoffhof in Falkensee liegt, kostet eine dritte oder vierte Fahrt wenig Zeit, und das merken Sie bei größeren Kellern oder ganzen Wohnungen im Festpreis. Den Preis für Ihre Räumung nennen wir nach der kostenlosen Besichtigung schriftlich.",
+                "link_to": "ratgeber/entruempelung-kosten",
+                "link_text": "Mehr zu den Preisfaktoren"
+              }
+            ],
+            "faelle": [
+              {
+                "h3": "Abstellkammer und Gartenschuppen in Falkensee",
+                "meta": "September 2026 · ein Tag · zwei Fahrten zum Wertstoffhof Falkensee",
+                "body": "Eine vollgestellte Abstellkammer unter der Treppe und ein Gartenschuppen, aus dem Altholz, ein paar Steinplatten und gemischter Restabfall kamen. Wir haben beides an einem Tag ausgeräumt und den Anhänger zweimal zum Wertstoffhof an der Nauener Straße gefahren. Vereinbart war ein Festpreis von 1.190 € inkl. MwSt. für Räumung und Abtransport; die Wertstoffhof-Belege über 458 € haben wir getrennt davon weitergegeben. Die Kundin wohnte nicht in Falkensee, den Schlüssel bekamen wir über eine Vertrauensperson, und die Fotos vom leeren Schuppen gingen am selben Abend aufs Handy.",
+                "img": "fall-schuppen-falkensee",
+                "zitat": "",
+                "zitat_von": ""
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Was kostet eine Entrümpelung in Falkensee?",
+                "a": "In Falkensee haben wir zuletzt eine Abstellkammer und einen Gartenschuppen für 1.190 € inkl. MwSt. geräumt, Festpreis für Räumung und Abtransport, dazu 458 € Wertstoffhof-Gebühren nach Beleg. Ihr Preis kann darunter oder darüber liegen, je nach Menge, Zugang und Zahl der Fahrten; brauchbare Stücke rechnen wir an. Nach der kostenlosen Besichtigung steht die Zahl schriftlich fest."
+              },
+              {
+                "q": "Wie schnell können Sie in Falkensee entrümpeln?",
+                "a": "Auf Ihr Foto per WhatsApp antworten wir meist am selben Werktag, und die kostenlose Besichtigung legen wir in die folgenden Tage, weil wir selbst in Falkensee sitzen. Der Räumungstermin richtet sich nach Umfang und Auslastung. Abstellkammer und Gartenschuppen haben wir zuletzt an einem Tag geschafft; ein ganzes Haus braucht mehr. Termin und Festpreis bestätigen wir schriftlich."
+              },
+              {
+                "q": "Muss ich in Falkensee vor Ort sein?",
+                "a": "Nein. Sie geben den Schlüssel an uns, an eine Vertrauensperson oder die Hausverwaltung und schreiben in einer kurzen Vollmacht, was weg darf. Wir schicken Fotos vor und nach der Räumung aufs Handy, Rechnung und Entsorgungsbelege kommen per Mail. Der letzte Falkenseer Auftrag lief so ab: Die Kundin wohnte in einem anderen Bundesland, den Schlüssel gab uns eine Vertrauensperson."
+              },
+              {
+                "q": "Wohin bringen Sie den Sperrmüll aus Falkensee?",
+                "a": "Zum Wertstoffhof Falkensee an der Nauener Straße 97, im Gewerbegebiet Nord. Der Betreiber wiegt jede Ladung und rechnet nach Abfallart ab; beim letzten Auftrag standen auf den Belegen gemischter Siedlungsabfall mit 0,32 € je Kilogramm und Altholz mit 0,36 € (Satzung 2026), Schrott nimmt der Hof ohne Gebühr. Wir laden schon getrennt, Sie bekommen die Belege und zahlen die Gebühr zuzüglich Mehrwertsteuer, ohne Aufschlag."
+              },
+              {
+                "q": "Räumen Sie in Falkensee auch nur die Garage?",
+                "a": "Ja, eine einzelne Garage, ein Carport oder ein Schuppen ist bei uns ein normaler Auftrag, ohne Mindestumfang. Schicken Sie ein Foto vom Inhalt per WhatsApp, wir geben eine erste Einschätzung und kommen zur kostenlosen Besichtigung. Sie sortieren nichts vor und stellen nichts an die Straße; abends steht das Auto wieder drin."
+              }
+            ]
+          }
         },
         "dallgow-doeberitz": {
           "hook": "Dallgow-Döberitz liegt zwischen Falkensee und Berlin-Spandau, mit Wustermark im Westen und den Ortsteilen Seeburg und Rohrbeck. Die Gemeinde ist in den letzten Jahren stark gewachsen; neben den Neubaugebieten stehen ältere Höfe und Siedlungshäuser. Gerade beim Einzug ins neue Haus oder beim Verkauf des alten bleibt oft ein voller Keller oder eine Garage zurück, die niemand mehr braucht. Wir räumen solche Flächen diskret aus und übergeben sie besenrein. Von Falkensee und Spandau sind die Wege kurz, ein Termin lässt sich schnell einschieben. Platz geschafft, sauber übergeben.",
@@ -37,7 +132,88 @@
           "hook": "Brieselang liegt zwischen Falkensee und Wustermark am Rand des Brieselanger Forsts, mit Nauen als westlichem Nachbarn. Viele Bewohner pendeln nach Berlin und haben abends wenig Zeit für die großen Aufräumaktionen, die sich in Keller, Schuppen und Dachboden ansammeln. Wenn ein Haus den Besitzer wechselt, ein Angehöriger versorgt werden muss oder der Gartenschuppen überquillt, räumen wir das für Sie aus. Wir kennen die Wege nach Falkensee, Wustermark und Nauen und sind schnell vor Ort. Ihr Feierabend bleibt Ihrer.",
           "rahmen": "In Brieselang reicht die Bandbreite vom Gartenschuppen am Waldrand bis zum kompletten Hausrat. Wir räumen Keller, Dachboden, Garage und Nebengebäude, tragen selbst heraus und laden auf. Alles Brauchbare trennen wir vom Müll; Sperrmüll, Alt-Elektro, Metall und Problemstoffe führen wir jeweils der richtigen Stelle zu. Wertgegenstände rechnen wir offen an. Container, Transport und Entsorgung übernehmen wir komplett, damit Sie sich um nichts kümmern müssen. Zurück bleibt eine besenreine Fläche.",
           "trust": "Nach der kostenlosen Besichtigung in Brieselang bekommen Sie einen Festpreis für Räumung und Abtransport; Entsorgungsgebühren nach Beleg. Auf Wunsch dokumentieren wir das Ergebnis mit Vorher-Nachher-Fotos, damit Sie auch aus dem Büro oder von unterwegs sehen, dass alles erledigt ist.",
-          "fakt": "Brieselang liegt zwischen den Wertstoffhöfen Falkensee und Nauen/Schwanebeck; welchen wir anfahren, hängt von Abfallart und Menge ab, abgerechnet nach Beleg."
+          "fakt": "Brieselang liegt zwischen den Wertstoffhöfen Falkensee und Nauen/Schwanebeck; welchen wir anfahren, hängt von Abfallart und Menge ab, abgerechnet nach Beleg.",
+          "tief": {
+            "h2": "Entrümpelung in Brieselang — Keller, Garage, Dachboden, Wohnung",
+            "sections": [
+              {
+                "h3": "Brieselang: Pendlerort mit Alt- und Neubestand",
+                "body": "Brieselang ist eine junge Gemeinde: am 14. Januar 1925 als Landgemeinde gegründet, gewachsen aus den Siedlungsgesellschaften, die sich ab 1920 am Rand des Brieselanger Forsts zusammenfanden. Seit 2003 gehören die alten Dörfer Bredow und Zeestow dazu, heute leben rund 13.500 Menschen in der Gemeinde. Vom Bahnhof Brieselang fahren die Züge des RE8 nach Berlin-Spandau, und viele Brieselanger verbringen ihren Arbeitstag genau dort. Der Ort hat deshalb zwei Gesichter: Siedlungshäuser aus den ersten Jahrzehnten mit Keller, Spitzboden und Schuppen, und neuere Einfamilienhäuser mit Carport und Garage. In beiden räumen wir das, was sich angesammelt hat, während Sie in Berlin arbeiten. Sie geben uns den Schlüssel oder sind am Samstag dabei; auf Ihr Foto per WhatsApp melden wir uns meist am selben Werktag."
+              },
+              {
+                "h3": "Keller und Dachboden im Altbestand",
+                "body": "Ein Siedlungshaus aus den Gründungsjahren hat meist einen niedrigen Keller mit schmaler Treppe und darüber einen Spitzboden mit Stiege oder Luke. Beides zusammen ergibt die Räumung, die Sie sich als Pendler am Feierabend nicht antun wollen: Regale voller Gläser, Koffer, Matratzen, das Kinderbett, alte Vorhänge. Wir kommen zu zweit, tragen alles über Treppe und Luke nach unten und laden es vor dem Haus auf den Anhänger. Loses Material wie alte Isolierung oder Staub packen wir in Säcke, Möbel zerlegen wir, wenn sie sonst nicht durch die Tür passen. Platten mit Asbestverdacht oder alte Mineralwolle rühren wir nicht an und nennen Ihnen einen Fachbetrieb. Am Ende fegen wir Keller und Boden aus und schicken Ihnen die Fotos am selben Tag, damit Sie das Ergebnis schon in der Bahn sehen."
+              },
+              {
+                "h3": "Garage, Carport und Schuppen",
+                "body": "Am Waldrand steht der Schuppen, unter dem Carport stapeln sich Bretter, Reifen und die Fahrräder, die niemand mehr fährt. Für diese Räumungen brauchen wir am Anfang kein Aufmaß: Ein Foto mit dem Handy, einmal quer durch den Schuppen, reicht für eine erste, unverbindliche Einschätzung. Nach der kostenlosen Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest. Beim Beladen trennen wir Altholz, Schrott und Restabfall, weil der Wertstoffhof jede Sorte auf der Waage einzeln abrechnet und Schrott ohne Gebühr annimmt. Ölreste, Autobatterien und Gasflaschen nehmen wir nicht mit; wir sagen Ihnen, wo Sie sie abgeben. Ist der Schuppen selbst hinüber, kommt er nach dem Ausräumen mit weg, Holz und Dachpappe getrennt nach Beleg. Anschließend fegen wir durch, und das Auto passt wieder unters Dach.",
+                "link_to": "entruempelung#nebengebaeude",
+                "link_text": "Warum Nebengebäude unsere häufigsten Aufträge sind"
+              },
+              {
+                "h3": "Wohnung und Haus in Brieselang, auch per Vollmacht",
+                "body": "Ein Haus in Brieselang wechselt den Besitzer, die Kinder wohnen in Berlin oder weiter weg, und die Räumung soll laufen, ohne dass jemand Urlaub nimmt. Das geht: Sie hinterlegen den Schlüssel bei einem Nachbarn oder übergeben ihn uns bei der Besichtigung, dazu eine kurze schriftliche Vollmacht, welche Räume leer werden und was stehen bleibt. Wir räumen Zimmer für Zimmer, laden Möbel, Teppiche, Hausrat und Elektrogeräte sortiert auf und fahren zum Wertstoffhof nach Falkensee, zehn Minuten entfernt. Nach jeder Etappe bekommen Sie Fotos, am Ende die Aufnahmen der leeren, gefegten Räume und per Mail die Rechnung samt Entsorgungsbelegen. Soll vorher der Nachlass gesichtet werden, mit Dokumenten, Schmuck und Fotoalben, die zu Ihnen kommen, ist das eine Haushaltsauflösung mit eigenem Ablauf.",
+                "link_to": "haushaltsaufloesung",
+                "link_text": "Zur Haushaltsauflösung"
+              }
+            ],
+            "ortsblock": {
+              "h2": "Entsorgung in Brieselang: Wertstoffhof, Sperrmüll, Anfahrt",
+              "items": [
+                {
+                  "k": "Wertstoffhof",
+                  "v": "Der nächstgelegene Wertstoffhof ist Falkensee, Nauener Straße 97: vom Brieselanger Ortskern rund 6 km, etwa 10 Minuten Fahrt. Nauen/Schwanebeck (Schwanebecker Weg 25) liegt rund 19 km entfernt; nur von Bredow aus sind beide ähnlich weit. Falkensee ist geöffnet Montag 9–18 Uhr, Dienstag bis Freitag 9–17 Uhr, Samstag 8–13 Uhr; Gebühren nach Gewicht laut Satzung 2026."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Zweimal im Jahr kostenlos für Privathaushalte, angemeldet bei der HAW mbH, Wartezeit bis zu vier Wochen, Bereitstellung frühestens am Vorabend vor dem Grundstück. Bauabfälle, Fenster, Türen, Laminat, Bretter aus dem Garten und größere Mengen aus Haushaltsauflösungen lässt die Abfuhr stehen."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Vom Sitz des Haus- & Gartenservice Havelland in Falkensee bis nach Brieselang sind es rund 7 km, etwa 10 Minuten Fahrt; nach Bredow gut 12 km. Der Wertstoffhof Falkensee liegt im Nordwesten der Stadt, also auf dem Weg nach Brieselang."
+                },
+                {
+                  "k": "Ortsteile",
+                  "v": "Brieselang mit dem Bahnhof (RE8 nach Berlin-Spandau), dazu die Ortsteile Bredow (1208 erstmals erwähnt) und Zeestow (1346), seit 2003 eine Gemeinde mit 44,39 km²; rund 13.500 Einwohner (Stand Mai 2024), PLZ 14656."
+                }
+              ],
+              "quelle": "abfall-havelland.de, Abfallgebührensatzung Landkreis Havelland 2026, haw-mbh.de, gemeindebrieselang.de (Unsere Gemeinde, Geschichte der drei Ortsteile), Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 09/2026"
+            },
+            "blocks": [
+              {
+                "id": "typisch-brieselang",
+                "h2": "Was wir in Brieselang typischerweise vorfinden",
+                "body": "Einen abgeschlossenen Auftrag aus Brieselang mit Fotos und Zahlen können wir noch nicht zeigen. Zeigen können wir den Auftrag aus dem Nachbarort Falkensee vom September 2026: Abstellkammer und Gartenschuppen, 1.190 € inkl. MwSt. Festpreis für Räumung und Abtransport, dazu 458 € Wertstoffhof-Gebühren nach Beleg. Die Häuser in Brieselang stammen aus derselben Siedlungszeit wie viele in Falkensee, Falkenhöh entstand 1922, die Brieselanger Siedlungsgesellschaften begannen 1920. Deshalb erwarten wir in Brieselang dieselben Aufgaben: der Keller, in dem seit dem Einzug die Kartons stehen; die Garage, in der kein Auto mehr Platz hat; der Schuppen am Waldrand mit Gartengeräten, Farbresten und Brennholz; das Elternhaus, das nach dem Verkauf leer übergeben wird. Und weil der nächste Wertstoffhof in Falkensee liegt, zehn Minuten entfernt, fahren wir bei einem Brieselanger Auftrag denselben Weg wie bei uns zu Hause. Sobald wir einen Auftrag aus Brieselang mit Einwilligung zeigen dürfen, steht er hier."
+              },
+              {
+                "id": "ablauf-brieselang",
+                "h2": "So läuft eine Entrümpelung in Brieselang ab",
+                "body": "Erstens schicken Sie ein Foto per WhatsApp oder rufen an, gern aus dem Zug. Zweitens melden wir uns meist am selben Werktag mit einer ersten, unverbindlichen Einschätzung; bei einer einzelnen Garage oder einem Schuppen reicht das Foto dafür oft aus. Drittens kommt Noah Telo zur kostenlosen Besichtigung nach Brieselang, nach Feierabend oder am Samstag, wenn Sie das brauchen; wir sehen uns Menge, Zugang, Zufahrt und die Abfallarten an. Viertens bekommen Sie den Festpreis für Räumung und Abtransport schriftlich, die Entsorgungsgebühren des Wertstoffhofs kommen nach Beleg dazu, zuzüglich Mehrwertsteuer, ohne Aufschlag. Fünftens der Termin: Wir räumen aus, sortieren Brauchbares heraus und rechnen es an, fahren nach Falkensee zum Wertstoffhof und übergeben besenrein. Sechstens landen die Vorher-Nachher-Fotos auf Ihrem Handy, die Rechnung mit den Belegen per Mail. Bei keinem dieser Schritte müssen Sie persönlich dabei sein; Schlüssel und Vollmacht reichen."
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Was kostet eine Entrümpelung in Brieselang?",
+                "a": "Für Brieselang können wir noch kein eigenes Beispiel nennen, aber eines aus dem Nachbarort Falkensee: Abstellkammer plus Gartenschuppen, 1.190 € inkl. MwSt. Festpreis für Räumung und Abtransport, dazu 458 € Wertstoffhof-Gebühren nach Beleg. In Brieselang gelten dieselben Faktoren: Menge, Zugang, Zahl der Fahrten, Anrechnung von Brauchbarem. Den Festpreis bekommen Sie nach der kostenlosen Besichtigung schriftlich."
+              },
+              {
+                "q": "Wie schnell sind Sie in Brieselang?",
+                "a": "Von Falkensee nach Brieselang fahren wir etwa zehn Minuten. Auf Ihr Foto antworten wir meist am selben Werktag, die kostenlose Besichtigung legen wir auf einen Termin nach Feierabend oder am Samstag, wenn Sie pendeln. Der Räumungstag hängt vom Umfang ab: Keller oder Garage allein planen wir mit einem Tag, ein ganzes Haus braucht mehr. Den Termin bestätigen wir schriftlich."
+              },
+              {
+                "q": "Muss ich bei der Entrümpelung in Brieselang vor Ort sein?",
+                "a": "Nein. Viele Brieselanger sind tagsüber in Berlin, deshalb arbeiten wir mit Schlüssel und einer kurzen schriftlichen Vollmacht, in der steht, was weg darf und was bleibt. Die Vorher-Nachher-Fotos schicken wir aufs Handy, Rechnung und Belege per Mail. Wollen Sie dabei sein, legen wir den Termin auf den Samstag."
+              },
+              {
+                "q": "Sperrmüll oder Wertstoffhof: Was ist in Brieselang der bessere Weg?",
+                "a": "Für ein paar Möbelstücke reicht die Sperrmüllabfuhr des Landkreises: zweimal im Jahr kostenlos, Anmeldung bei der HAW mbH, bis zu vier Wochen Wartezeit, Bereitstellung am Vorabend vor dem Grundstück. Für alles, was die Abfuhr nicht mitnimmt, also Bauabfall, Fenster, Türen, Laminat, Bretter und größere Mengen, fahren wir zum Wertstoffhof Falkensee, zehn Minuten von Brieselang; die Gebühren dort weisen wir nach Beleg aus."
+              },
+              {
+                "q": "Räumen Sie in Brieselang auch Carport und Schuppen?",
+                "a": "Ja. Carport, Schuppen, Gartenhaus und Garage räumen wir auch einzeln, ohne dass ein Haus dazugehören muss. Ein Foto vom Inhalt per WhatsApp genügt für die erste Einschätzung, der Festpreis für Räumung und Abtransport kommt nach der kostenlosen Besichtigung. Soll das Gartenhaus danach ganz weg, bauen wir es zurück und entsorgen Holz, Dachpappe und Metall getrennt nach Beleg."
+              }
+            ]
+          }
         },
         "schoenwalde-glien": {
           "hook": "Schönwalde-Glien reicht mit den Ortsteilen Pausin und Paaren weit ins ländliche Havelland, zwischen Hennigsdorf und Oberkrämer. Die Grundstücke sind hier groß, oft mit Scheune, Stall oder mehreren Nebengebäuden, in denen sich über Generationen einiges ansammelt. Steht eine Hofübergabe, ein Verkauf oder die Auflösung eines Nachlasses an, kommt schnell mehr zusammen, als ein Anhänger fasst. Wir räumen auch weitläufige Anwesen komplett und mit dem passenden Gerät. Von Falkensee aus sind die Wege kurz, auch bis in die Ortsteile. Große Fläche, klarer Plan.",
@@ -77,7 +253,86 @@
           "hook": "In Falkensee, der größten Stadt im Havelland an der Grenze zu Berlin-Spandau, stehen viele Häuser seit den Siedlungsjahren in Familienhand. Wechselt ein Elternhaus in den Wohnvierteln Richtung Finkenkrug den Besitzer, steht oft die komplette Auflösung des Haushalts an. Wir lösen Wohnung oder Haus vollständig auf, entsorgen fachgerecht und übergeben besenrein — diskret, gerade im Erb- oder Pflegefall. Die kurzen Wege aus dem Havelland machen einen Termin schnell möglich. Ein Haushalt, ein Ansprechpartner.",
           "rahmen": "Eine Haushaltsauflösung in Falkensee betrifft den ganzen Hausstand: Möbel, Küche, Kleidung, Hausrat und die vielen Kleinigkeiten über Jahrzehnte. Sie sichten in Ruhe, was bleiben soll; Fotos, Unterlagen und Erinnerungsstücke legen wir beiseite, statt sie zu entsorgen. Den Rest lösen wir vollständig auf, trennen Wertstoffe und führen alles der richtigen Entsorgung zu. Gut erhaltene Möbel und Antiquitäten rechnen wir offen an. Ob Eigenheim, geerbtes Elternhaus oder die Wohnungsauflösung einer Mietwohnung: Am Ende ist der Haushalt aufgelöst und die Räume sind besenrein.",
           "trust": "Nach der kostenlosen Besichtigung in Falkensee steht ein Festpreis für Räumung und Abtransport der gesamten Auflösung; Entsorgungsgebühren weisen wir nach Beleg aus. Wir halten die vereinbarte Zeit ein — wichtig, wenn ein Übergabetermin beim Notar oder Vermieter drängt — und dokumentieren das Ergebnis auf Wunsch per Foto.",
-          "fakt": "Wohnen Sie nicht in Falkensee, reichen Vollmacht und Schlüsselübergabe; größere Mengen aus Auflösungen nimmt die Sperrmüllabfuhr nicht mit, wir fahren sie zum Wertstoffhof."
+          "fakt": "Wohnen Sie nicht in Falkensee, reichen Vollmacht und Schlüsselübergabe; größere Mengen aus Auflösungen nimmt die Sperrmüllabfuhr nicht mit, wir fahren sie zum Wertstoffhof.",
+          "tief": {
+            "h2": "Haushaltsauflösung in Falkensee — Schritt für Schritt, auch aus der Ferne",
+            "sections": [
+              {
+                "h3": "Sichten und sichern in Falkensee",
+                "body": "Bevor in Falkensee ein Karton den Haushalt verlässt, gehen wir mit Ihnen durch die Wohnung, ob Elternhaus in Falkenhagen oder Mietwohnung in Seegefeld. Sie zeigen, was zu Ihnen kommt, was an Geschwister oder Enkel geht und was weg darf. Wir suchen dabei gezielt nach dem, was in Schubladen und Schrankfächern liegt: Sparbücher, Versicherungsordner, Ausweise, Schmuck, Münzen, Fotoalben und Briefe. Alles davon kommt in eine Kiste, die Sie mitnehmen oder die bis zur Übergabe verschlossen in der Wohnung bleibt. Können Sie nicht kommen, fotografiert Noah Telo jedes auffällige Fundstück und schickt Ihnen das Bild per WhatsApp; Sie entscheiden, wir handeln danach. Nichts geht in die Verwertung oder auf den Anhänger, bevor Sie es freigegeben haben. Bei einer Erbengemeinschaft holen wir die Zustimmung aller Beteiligten ein, bevor wir den Räumungstermin festlegen."
+              },
+              {
+                "h3": "Fristen und Übergabe an Falkenseer Vermieter und Hausverwaltungen",
+                "body": "Bei einer Mietwohnung in Falkensee setzt der Mietvertrag die Frist: Die Kündigungsfrist läuft, und am letzten Tag will der Vermieter oder die Hausverwaltung die Wohnung leer und besenrein sehen, mit Übergabeprotokoll. Wir planen von diesem Datum rückwärts: Besichtigung, schriftlicher Festpreis, Räumungstage, ein Puffer für die Nachkontrolle. Den Übergabetermin stimmen wir auf Wunsch direkt mit der Verwaltung ab und nehmen ihn mit Ihrer Vollmacht wahr, wenn Sie nicht anreisen können. Was die Frist rechtlich bedeutet, ob im Erbfall eine Sonderkündigung greift oder wie eine Erbengemeinschaft entscheidet, klären Sie mit dem Nachlassgericht oder einem Anwalt; dazu geben wir keine Auskunft. Bei einem Haus, das verkauft wird, ist der Notartermin der Fixpunkt, und wir übergeben davor an Sie oder den Käufer."
+              },
+              {
+                "h3": "Verwerten und entsorgen — der Wertstoffhof liegt direkt vor Ort",
+                "body": "Ein kompletter Haushalt in Falkensee bedeutet mehrere Fahrten mit dem Anhänger. Der Wertstoffhof an der Nauener Straße 97 liegt im Stadtgebiet, von jedem Wohngebiet aus wenige Minuten. Jede Fahrt kostet uns damit kaum Zeit, und das rechnet sich für Sie im Festpreis. Die Sperrmüllabfuhr des Landkreises ist bei einer Auflösung keine Alternative: Sie lässt größere Mengen aus Haushaltsauflösungen ausdrücklich stehen und braucht bis zu vier Wochen Vorlauf. Bevor etwas auf den Anhänger kommt, ziehen wir heraus, was noch einen Wert hat: die Schrankwand in gutem Zustand, die Waschmaschine, das Werkzeug aus dem Keller. Das rechnen wir auf den Festpreis an oder fahren es, wenn Sie das wollen, zu einer Spendenstelle. Am Wertstoffhof laden wir nach Fraktionen ab; auf dem Beleg stehen Gewicht und Satz je Abfallart, zum Beispiel gemischter Siedlungsabfall 0,32 € und Altholz 0,36 € je Kilogramm (2026). Diese Belege geben wir ohne Aufschlag weiter, zuzüglich Mehrwertsteuer."
+              },
+              {
+                "h3": "Übergabe besenrein, mit Foto-Nachweis",
+                "body": "Am Übergabetag sind die Räume leer, die Böden gefegt, Haken und Klebereste entfernt, und das gilt auch für Kellerabteil und Bodenkammer, denn die Hausverwaltung prüft sie bei der Abnahme mit. Wir fotografieren jeden Raum und schicken Ihnen die Bilder direkt aufs Handy, dazu die Rechnung und alle Wertstoffhof-Belege per Mail. Damit haben Sie gegenüber Vermieter, Käufer, Miterben oder dem Nachlassgericht einen Nachweis, ohne selbst in Falkensee gewesen zu sein. Wollen Sie mehr als besenrein, also Bad, Küche und Böden grundgereinigt, bieten wir das als eigene Position mit eigenem Preis an. Das steht vorher im Angebot, nie als stiller Aufschlag auf den Festpreis. Malerarbeiten, Bodenbeläge und die Sanierung von Schimmel in der Bausubstanz übernehmen wir nicht; dafür vermitteln wir einen Fachbetrieb und stimmen den Termin mit ab."
+              }
+            ],
+            "ortsblock": {
+              "h2": "Haushaltsauflösung in Falkensee: Wertstoffhof, Sperrmüll, Übergabe",
+              "items": [
+                {
+                  "k": "Wertstoffhof",
+                  "v": "Wertstoffhof Falkensee, Nauener Straße 97, im Gewerbegebiet Nord. Montag 9–18 Uhr, Dienstag bis Freitag 9–17 Uhr, Samstag 8–13 Uhr. Der Betreiber wiegt jede Ladung und rechnet nach der Abfallgebührensatzung 2026 des Landkreises ab; Schrott ohne Gebühr, gemischter Siedlungsabfall 0,32 € je Kilogramm, Altholz 0,36 €."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Die kommunale Abfuhr holt bei Privathaushalten zweimal jährlich kostenlos ab, nach Anmeldung bei der HAW mbH und mit bis zu vier Wochen Wartezeit. Größere Mengen aus Haushaltsauflösungen schließt sie ausdrücklich aus, ebenso Bauabfälle, Fenster, Türen und Laminat. Bei einer Auflösung fahren wir deshalb alles selbst zum Wertstoffhof."
+                },
+                {
+                  "k": "Übergabe",
+                  "v": "Den Termin mit Vermieter, Hausverwaltung oder Käufer stimmen wir ab und nehmen ihn auf Wunsch mit Ihrer Vollmacht wahr; Ihr Ansprechpartner ist Noah Telo vom Haus- & Gartenservice Havelland. Übergabeprotokoll und Fotos der leeren Räume bekommen Sie per Mail."
+                },
+                {
+                  "k": "Ortsteile",
+                  "v": "Wir lösen Haushalte in allen sieben Wohngebieten auf: Falkenhagen, Seegefeld, Finkenkrug, Alter Finkenkrug, Falkenhain, Falkenhöh und Waldheim. Falkensee hat 46.906 Einwohner (Stand November 2025), PLZ 14612."
+                }
+              ],
+              "quelle": "abfall-havelland.de (Betreiberseite Wertstoffhof Falkensee), Abfallgebührensatzung Landkreis Havelland 2026, haw-mbh.de (Sperrmüll), falkensee.de (Zahlen & Fakten), Stand 09/2026"
+            },
+            "blocks": [
+              {
+                "id": "aus-der-ferne",
+                "h2": "Sie wohnen nicht in Falkensee? Auflösung ohne Ihre Anwesenheit",
+                "body": "Wer ein Elternhaus in Falkensee auflöst, wohnt nicht unbedingt in der Nähe. Der Ablauf ohne Anreise sieht so aus: Den Schlüssel bekommen wir von einer Vertrauensperson vor Ort oder von der Hausverwaltung. Sie schicken uns eine kurze schriftliche Vollmacht, in der steht, was weg darf, was zu Ihnen soll und wer bei der Übergabe unterschreibt. Fundstücke aus Schränken und Schubladen fotografieren wir und fragen per WhatsApp nach, bevor sie in eine Kiste oder auf den Anhänger gehen. Nach jeder Etappe kommen Fotos: die gesichtete Wohnung, die halb geräumte, die leere und gefegte. Rechnung und alle Entsorgungsbelege schicken wir per Mail. So lief zuletzt eine Räumung in Falkensee, Abstellkammer und Gartenschuppen: Die Kundin wohnte in einem anderen Bundesland, den Schlüssel gab uns eine Vertrauensperson, und die Fotos vom Ergebnis gingen am selben Abend aufs Handy. Bei einer Erbengemeinschaft mit mehreren Wohnorten schicken wir die Bilder an alle, die sie sehen sollen."
+              },
+              {
+                "id": "erbfall-falkensee",
+                "h2": "Erbfall in Falkensee: erst sichten, dann räumen",
+                "body": "Nach einem Todesfall in Falkensee stehen Angehörige vor einem Haus voller Dinge und einer Frist, die nicht wartet. Der erste Termin ist deshalb ein Rundgang ohne Anhänger: Was hat Bedeutung, was hat Wert, was kann weg. Erst wenn Sie das entschieden haben, planen wir die Räumungstage. Sind mehrere Erben beteiligt, holen wir vor dem Termin die Zustimmung aller ein und dokumentieren mit Fotos, was die Wohnung verlässt, damit später niemand raten muss. Fragen zum Erbschein, zur Ausschlagung oder zur Haftung für Mietschulden beantwortet das Nachlassgericht oder ein Anwalt, nicht wir. Was wir zusagen: ein schriftlicher Festpreis für Räumung und Abtransport nach der kostenlosen Besichtigung, Entsorgung nach Beleg zuzüglich Mehrwertsteuer, und eine besenreine Übergabe zum vereinbarten Datum. Den ganzen Ablauf in vier Schritten, vom Sichten bis zur Übergabe, beschreibt unsere Hauptseite.",
+                "link_to": "haushaltsaufloesung",
+                "link_text": "Der ganze Ablauf auf der Hauptseite"
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Was kostet eine Haushaltsauflösung in Falkensee?",
+                "a": "Einen Preis pro Quadratmeter nennen wir nicht, weil zwei Wohnungen mit gleicher Fläche völlig verschieden voll sein können. Zur Orientierung: Eine Räumung von Abstellkammer und Gartenschuppen in Falkensee lag zuletzt bei 1.190 € inkl. MwSt. plus 458 € Entsorgung nach Beleg; bei einem ganzen Haushalt kommen mehr Fahrten und die Sichtung dazu. Nach der kostenlosen Besichtigung steht Ihr Festpreis für Räumung und Abtransport schriftlich fest, Verwertbares rechnen wir an."
+              },
+              {
+                "q": "Muss ich bei der Haushaltsauflösung in Falkensee dabei sein?",
+                "a": "Nein. Schlüssel über eine Vertrauensperson oder die Hausverwaltung, dazu eine kurze schriftliche Vollmacht, mehr brauchen wir nicht. Fundstücke klären wir per Foto und WhatsApp, jede Etappe dokumentieren wir mit Bildern, Rechnung und Belege kommen per Mail. Die Übergabe an den Vermieter nehmen wir mit Ihrer Vollmacht wahr, wenn Sie nicht anreisen können."
+              },
+              {
+                "q": "Wie lange dauert eine Haushaltsauflösung in Falkensee?",
+                "a": "Eine Zeitangabe bekommen Sie nach der kostenlosen Besichtigung. Die Dauer hängt an der Menge, an Etage und Zugang, an der Zahl der Fahrten zum Wertstoffhof und daran, wie viel Sie vorher sichten wollen. Der Vorteil in Falkensee: Der Wertstoffhof liegt im Stadtgebiet, jede Fahrt dauert Minuten statt einer Stunde. Den Übergabetag bestätigen wir schriftlich und halten ihn."
+              },
+              {
+                "q": "Was passiert mit den Möbeln aus der Wohnung in Falkensee?",
+                "a": "Gut erhaltene Möbel, funktionierende Geräte und Werkzeug prüfen wir bei der Besichtigung und ziehen ihren Wert vom Festpreis ab. Auf Wunsch fahren wir einzelne Stücke zu einer Spendenstelle, statt sie zu entsorgen. Was Sie oder andere Erben behalten wollen, markieren Sie vorher, und es bleibt stehen. Der Rest geht sortiert nach Holz, Metall, Elektro und Restabfall zum Wertstoffhof Falkensee, Gebühren nach Beleg."
+              },
+              {
+                "q": "Übergabe an den Vermieter in Falkensee — wer ist dabei?",
+                "a": "Sie, wenn Sie kommen können; sonst wir mit Ihrer Vollmacht. Den Termin stimmen wir mit der Hausverwaltung ab, gehen mit dem Vermieter durch die leeren Räume, Keller und Boden eingeschlossen, und lassen das Übergabeprotokoll unterschreiben. Fotos von jedem Raum machen wir vorher, damit Sie den Zustand belegen können, falls es später um die Kaution geht."
+              }
+            ]
+          }
         },
         "dallgow-doeberitz": {
           "hook": "Dallgow-Döberitz mit den Ortsteilen Seeburg und Rohrbeck liegt zwischen Falkensee und Berlin-Spandau. Neben den neuen Wohngebieten stehen ältere Häuser, die heute an die nächste Generation übergehen. Zieht ein Angehöriger ins Heim oder wird ein Nachlass geregelt, muss der komplette Haushalt aufgelöst werden. Wir übernehmen das vollständig — von der ersten Sichtung bis zur besenreinen Übergabe — und behandeln persönliche Dinge mit dem nötigen Feingefühl. Von Falkensee und Spandau sind wir schnell da. Behutsam und vollständig.",
