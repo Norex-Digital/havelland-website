@@ -248,12 +248,12 @@ export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.', alt =
 // Blocks mit Anker/Link. Fallbeispiele (faelleBlock) und bespoke FAQs setzt der Aufrufer ein. Nur wenn
 // ortsseiten.json → services.<svc>.orte.<ort>.tief existiert. Eigene Sections → NearDup-Gate (erster Prose-Block) bleibt unberührt.
 // ---------------------------------------------------------------------------
-export function tiefBlock(t, { linkHtml = () => '' } = {}) {
+export function tiefBlock(t, { linkHtml = () => '', hrefOf = null } = {}) {
   if (!t) return '';
   // W3b (17.09.): Kachel-Grid, sobald eine Section ein `kurz` hat — sonst bisheriges Prose-Layout.
   const kacheln = (t.sections || []).some(x => x.kurz);
   const secs = kacheln
-    ? `<div class="cards leist rv">${(t.sections || []).map(x => `<div class="card"${x.id ? ` id="${esc(x.id)}"` : ''}><h3>${esc(x.h3)}</h3><p>${esc(x.kurz)}</p>${x.body ? `<details class="mehr"><summary>Mehr dazu</summary><div><p>${esc(x.body)}${linkHtml(x)}</p></div></details>` : ''}</div>`).join('')}</div>`
+    ? `<div class="cards leist rv">${(t.sections || []).map(x => { const href = (x.link_to && hrefOf) ? hrefOf(x.link_to) : ''; return `<div class="card"${x.id ? ` id="${esc(x.id)}"` : ''}><h3>${(href && x.seite) ? `<a href="${href}">${esc(x.h3)}</a>` : esc(x.h3)}</h3><p>${esc(x.kurz)}</p>${href ? `<a class="go" href="${href}">${esc(x.link_text || 'Zur Seite')} →</a>` : ''}${x.body ? `<details class="mehr"><summary>Mehr dazu</summary><div><p>${esc(x.body)}${href ? '' : linkHtml(x)}</p></div></details>` : ''}</div>`; }).join('')}</div>`
     : (t.sections || []).map(x => `<h3>${esc(x.h3)}</h3><p>${esc(x.body)}${linkHtml(x)}</p>`).join('');
   const ob = t.ortsblock ? `<section class="sec section-alt"><div class="wrap"><div class="ortsblock rv"><h2>${esc(t.ortsblock.h2)}</h2><dl>${(t.ortsblock.items || []).map(i => `<div><dt>${esc(i.k)}</dt><dd>${esc(i.v)}</dd></div>`).join('')}</dl>${t.ortsblock.quelle ? `<p class="oq">Quelle: ${esc(t.ortsblock.quelle)}</p>` : ''}</div></div></section>` : '';
   const blocks = (t.blocks || []).map((b, i) => `<section class="sec${i % 2 ? ' section-alt' : ''}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2>${b.lead ? `<p class="lead-p"><strong>${esc(b.lead)}</strong></p>` : ''}<p>${esc(b.body)}${(Array.isArray(b.bullets) && b.bullets.length) ? '' : linkHtml(b)}</p>${Array.isArray(b.bullets) && b.bullets.length ? `<ul class="bl">${b.bullets.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${linkHtml(b).trim() ? `<p>${linkHtml(b).trim()}</p>` : ''}` : ''}${b.mehr ? `<details class="mehr"><summary>Mehr dazu</summary><div><p>${esc(b.mehr)}</p></div></details>` : ''}</div></div></section>`).join('');

@@ -491,7 +491,12 @@ footer a:hover{color:var(--green-d)}
 .scta .wa{background:var(--accent);color:var(--accent-ink);box-shadow:var(--sh-cta);transition:background .2s,color .2s,box-shadow .2s}
 .scta.scta-muted .wa{background:transparent;color:var(--green-d);box-shadow:none;border:1.5px solid var(--green)}
 body{padding-bottom:76px}
+/* Desktop-WhatsApp-Button unten rechts (Owner 18.09.) — mobil übernimmt die Sticky-Bar */
+.wa-fab{display:none}
 @media (min-width:900px){
+  .wa-fab{display:inline-flex;align-items:center;gap:.5em;position:fixed;right:22px;bottom:22px;z-index:70;padding:0 18px;min-height:50px;border-radius:999px;background:var(--green-d);color:#fff;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 14px 30px -14px rgba(14,46,31,.6);transition:transform .15s var(--ease),background .2s}
+  .wa-fab::before{content:"";width:20px;height:20px;border-radius:50%;background:#25d366;box-shadow:inset 0 0 0 4px var(--green-d)}
+  .wa-fab:hover{transform:translateY(-2px);background:var(--green)}
   .scta{display:none}
   body{padding-bottom:0}
 }
@@ -723,7 +728,9 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 .cards.leist .card>p{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:15px;color:#33392f;margin:0 0 12px}
 /* Review #1 (P1): .card p{line-clamp:3} greift sonst auch im aufgeklappten Details-Text */
 .cards.leist .mehr>div p{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:14.5px;line-height:1.6;color:#33392f}
-.cards.leist .card .go{padding-top:10px}
+.cards.leist .card .go{margin-top:0;padding:0 0 12px}
+.cards.leist .card h3 a{color:inherit;text-decoration:none}
+.cards.leist .card h3 a:hover{text-decoration:underline}
 .mehr{margin-top:auto;border-top:1px solid var(--hair)}
 .mehr summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 8px;min-height:44px;font-weight:600;font-size:14px;color:var(--green-d)}
 .mehr summary::-webkit-details-marker{display:none}
@@ -735,8 +742,9 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 .prose .mehr{max-width:78ch;margin-top:6px}
 .prose .mehr>div{font-size:16px}
 .prose ul.bl{margin:0 0 18px}
-.versprechen{max-width:78ch;margin:22px auto 0;padding:14px 18px;border:1px solid var(--hair);border-left:4px solid var(--accent);border-radius:var(--r-el,12px);background:#fff;font-size:15px;color:#33392f}
-.versprechen strong{color:var(--green-d)}
+/* Garantie-Zeile unter dem Grid: schlichter Text statt Callout-Box (Owner 18.09.) */
+.garantie-line{max-width:78ch;margin:26px 0 0;font-size:16px;line-height:1.6;color:#33392f}
+.garantie-line strong{color:var(--green-d)}
 .sec-lead{max-width:60ch;margin:-4px 0 22px;color:var(--muted);font-size:16px;line-height:1.6}
 @media(max-width:900px){.cards.zaunarten{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.cards.zaunarten{grid-template-columns:1fr}.cards.leist:has(> .card:nth-child(4):last-child){grid-template-columns:1fr}}
@@ -779,7 +787,7 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 .consent[hidden]{display:none}
 /* Solange die Entscheidung aussteht, ruht die Sticky-CTA — sonst ueberlagern sich zwei
    fixierte Leisten am selben Rand. Einmalig: nach der Wahl ist der Banner weg (localStorage). */
-body:has(.consent:not([hidden])) .scta{display:none}
+body:has(.consent:not([hidden])) .scta,body:has(.consent:not([hidden])) .wa-fab{display:none}
 .consent-in{max-width:var(--maxw);margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
 .consent-in p{font-size:14px;line-height:1.5;color:#dceae1;max-width:62ch;margin:0}
 .consent-in a{color:#fff;border-bottom:1px solid var(--accent)}

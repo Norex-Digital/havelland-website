@@ -1679,7 +1679,8 @@
      "kurz": "Doppelstabmatten, Sichtschutz aus WPC oder Holz, Staketenzaun aus Kastanie: Wir montieren zum Festpreis mit ausgewiesenem Materialanteil, kein Meterpreis, kein Nachverhandeln.",
      "body": "Bei der Besichtigung zeigt eine Spatenprobe, ob Pfosten in Einschlaghülsen stehen können oder Eck-, End- und Torpfosten Beton brauchen; die Leitungsauskunft holen wir vorher ein. Den alten Zaun bauen wir auf Wunsch zurück, auch einbetoniert. Zaunbau ist unsere jüngste Leistung: das erste Projekt in Falkensee mit 33 Laufmetern Staketenzaun ist auf der Zaunbau-Seite dokumentiert, dort auch der Vergleich der fünf Zaunarten mit Haltbarkeit, Lieferzeit und Projektspanne für 20 Meter.",
      "link_to": "zaunbau",
-     "link_text": "Alle Zaunarten und Spannen"
+     "link_text": "Alle Zaunarten und Spannen",
+     "seite": true
     },
     {
      "h3": "Heckenentfernung und Rodung",
@@ -1689,7 +1690,8 @@
      "link_to": "heckenentfernung",
      "link_text": "Zur Heckenentfernung",
      "link2_to": "gartenrodung",
-     "link2_text": "Zur Gartenrodung"
+     "link2_text": "Zur Gartenrodung",
+     "seite": true
     },
     {
      "h3": "Stubben fräsen und Wurzeln entfernen",
@@ -1697,7 +1699,8 @@
      "kurz": "Baumstumpf im Rasen oder Wurzelstock vom Obstbaum: Wir fräsen rund 20 bis 30 Zentimeter unter Bodenniveau, ebnen ein und nehmen das Fräsgut mit.",
      "body": "Das geht ganzjährig, denn das Fräsen bereits gefällter Stümpfe fällt nicht unter das Winterfenster für Hecken. Mehrere Stümpfe erledigen wir in einem Termin, das ist günstiger als getrennte Anfahrten. Der Preis hängt am Stammdurchmesser: zur Orientierung 2 bis 5 Euro je Zentimeter inkl. MwSt. (Stand 2026). Dort klären wir auch, ob die Fräse durchs Gartentor passt und ob Leitungen im Boden liegen. Große Fällungen vermitteln wir an Fachpartner.",
      "link_to": "baumstumpf-entfernen",
-     "link_text": "Zum Baumstumpf entfernen"
+     "link_text": "Zum Baumstumpf entfernen",
+     "seite": true
     },
     {
      "h3": "Pflaster ausbessern, Kantensteine, Wegeplatten",
