@@ -1214,35 +1214,6 @@
 "fb_ext": "jpg",
 "fb_w": 1280
 },
-"strip-hecke": {
-"w": 2400,
-"h": 1800,
-"widths": [
-480,
-768,
-1024,
-1376,
-1600,
-1920
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 1280
-},
-"strip-schuppen": {
-"w": 1500,
-"h": 1125,
-"widths": [
-480,
-768,
-1024,
-1376,
-1500
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 1280
-},
 "fall-flaeche-falkensee-nachher": {
 "w": 768,
 "h": 1024,
