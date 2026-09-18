@@ -499,10 +499,13 @@ function gebietMap(activeSlug) {
   const img = `<picture><source type="image/webp" srcset="/assets/img/servicegebiet-karte-640.webp 640w, /assets/img/servicegebiet-karte-900.webp 900w, /assets/img/servicegebiet-karte-1200.webp 1200w" sizes="(max-width:900px) 92vw, 560px"><img src="/assets/img/servicegebiet-karte-900.jpg" width="1200" height="1200" alt="Karte des Servicegebiets im Havelland und Berliner Umland mit den bedienten Orten" loading="lazy" decoding="async"></picture>`;
   return `<figure class="svc-map" id="svc-map">${img}<div class="svc-map-pins">${pins}</div><figcaption class="svc-map-attr">Kartendaten © OpenStreetMap-Mitwirkende</figcaption></figure>`;
 }
-export function gebietskarte({ activeSlug = null, heading = 'Wir fahren dorthin, wo wir <em>pünktlich</em> sein können.' } = {}) {
+export function gebietskarte({ activeSlug = null, heading = 'Wir fahren dorthin, wo wir <em>pünktlich</em> sein können.', linkOrte = null } = {}) {
+  // linkOrte (Owner 18.09.): Set von Ort-Slugs mit eigenem Orts-Hub -> Listeneintrag wird <a href="/standorte/<slug>/"> (interne Links, SEO); ohne Hub bleibt es ein Button.
   const groups = GEBIET_REGIONEN.map(reg => {
     const btns = reg.orts.map(o =>
-      `<button class="ortbtn" data-ort="${esc(o.name)}" data-slug="${o.slug}" aria-pressed="${o.slug === activeSlug ? 'true' : 'false'}"><span class="on2">•</span>${esc(o.name)}</button>`).join('');
+      (linkOrte && linkOrte.has(o.slug))
+        ? `<a class="ortbtn" href="/standorte/${o.slug}/" data-ort="${esc(o.name)}" data-slug="${o.slug}" aria-pressed="${o.slug === activeSlug ? 'true' : 'false'}"><span class="on2">•</span>${esc(o.name)}</a>`
+        : `<button class="ortbtn" data-ort="${esc(o.name)}" data-slug="${o.slug}" aria-pressed="${o.slug === activeSlug ? 'true' : 'false'}"><span class="on2">•</span>${esc(o.name)}</button>`).join('');
     return `<div class="ortgroup"><h3 class="ortgroup-h">${esc(reg.label)}</h3>${btns}</div>`;
   }).join('');
   const activeName = (() => { for (const r of GEBIET_REGIONEN) for (const o of r.orts) if (o.slug === activeSlug) return o.name; return null; })();
@@ -511,7 +514,7 @@ export function gebietskarte({ activeSlug = null, heading = 'Wir fahren dorthin,
     : 'Falkensee ist unser Standort — von hier fahren wir ins ganze Havelland und ans Berliner Umland.';
   return `<section class="sec sec-alt" id="gebiet"><div class="wrap">` +
     `<div class="head"><h2 class="rv">${heading}</h2></div>` +
-    `<p class="intro rv">Von Falkensee ins West-Havelland, nach Oberhavel, an den Berliner Westrand und an die Havelseen — kurze Wege, verlässliche Termine. Fahren Sie über einen Ort oder tippen Sie ihn an:</p>` +
+    `<p class="intro rv">Von Falkensee ins West-Havelland, nach Oberhavel, an den Berliner Westrand und an die Havelseen — kurze Wege, verlässliche Termine. ${linkOrte ? 'Tippen Sie Ihren Ort an, dort stehen alle Leistungen für Ihren Ort:' : 'Fahren Sie über einen Ort oder tippen Sie ihn an:'}</p>` +
     `<div class="gebiet-wrap rv"><div class="map-card">${gebietMap(activeSlug)}` +
     `<p class="map-info" id="map-info">${info}</p></div>` +
     `<div><div class="ortlist ortlist-grouped" id="ortlist">${groups}</div>` +
