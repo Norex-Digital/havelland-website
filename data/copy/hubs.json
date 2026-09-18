@@ -1740,26 +1740,6 @@
       "h2": "Zaun, Rodung, Pflaster: ein Angebot.",
       "txt": "Foto oder Skizze per WhatsApp, kostenlose Besichtigung mit Aufmaß, schriftlicher Festpreis für alle Positionen."
      }
-    },
-    {
-     "id": "genehmigung",
-     "h2": "Vorher klären: Zaun, Hecke, Nachbar",
-     "lead": "Wer das vorher weiß, bekommt schneller einen Termin.",
-     "body": "Bei Zaun und Hecke entscheiden oft Satzung und Winterfenster darüber, ob eine Anfrage sofort startet oder noch wartet.",
-     "bullets": [
-      "Zaun: Höhe, Lage und örtliche Satzung entscheiden über die Genehmigung",
-      "Hecke: Rodung nur 1. Oktober bis 28. Februar, § 39 BNatSchG",
-      "Grenze: vorher mit dem Nachbarn sprechen"
-     ],
-     "mehr": "In Falkensee gelten im Ortskern Falkenhagen eigene Gestaltungsregeln. Eine Rechtsberatung ersetzt unseren Hinweis nicht, die Entscheidung und Anfragen bei Gemeinde oder Naturschutzbehörde bleiben bei Ihnen.",
-     "link_to": "ratgeber/zaun-genehmigung-brandenburg",
-     "link_text": "Ratgeber Zaun-Genehmigung Brandenburg",
-     "link2_to": "ratgeber/hecke-entfernen-erlaubt",
-     "link2_text": "Ratgeber Hecke entfernen: was erlaubt ist",
-     "cta_after": {
-      "h2": "Unsicher, was bei Ihnen geht? Wir sehen es uns an.",
-      "txt": "Kostenlose Besichtigung vor Ort, was uns auffällt, sagen wir Ihnen offen — den Festpreis bekommen Sie schriftlich."
-     }
     }
    ],
    "faelle": [
@@ -1952,24 +1932,6 @@
      "body": "September 2026, ein Grundstück in Falkensee: 33 Laufmeter Staketenzaun aus Kastanie, drei Ecken, ein Gehtor. Dazu kam der Rückbau des alten Zauns samt Entsorgung und ein Durchgang Gartenpflege auf derselben Fläche, ein Termin, ein Team. Endpreis: 3.950 Euro brutto, als Festpreis vereinbart und ohne Nachtrag abgerechnet.",
      "cta_after": true,
      "lead": "33 Laufmeter Staketenzaun in Falkensee, zum Festpreis montiert und abgerechnet."
-    },
-    {
-     "id": "recht",
-     "h2": "Genehmigung, Grenzabstand, Nachbar — kurz erklärt",
-     "body": "Bis 2 Meter Höhe sind Zäune in Brandenburg meist verfahrensfrei, außer im Außenbereich (§ 61 Abs. 2 Nr. 7 BbgBO). Zur Straße hin friedet der rechte Nachbar ein, rückwärtig gemeinsam beide Seiten (§ 28 BbgNRG), angezeigt mindestens zwei Wochen vorher (§ 29 BbgNRG).",
-     "link_to": "ratgeber/zaun-genehmigung-brandenburg",
-     "link_text": "Ratgeber: Zaungenehmigung in Brandenburg",
-     "lead": "Bis 2 Meter meist ohne Genehmigung, Nachbarpflichten klar geregelt.",
-     "bullets": [
-      "Ohne Einigung: 1,25 m hoher Maschendrahtzaun, Kosten je zur Hälfte (§§ 32, 34 BbgNRG).",
-      "Ortskern Falkenhagen: nur Staketenzaun bis 1,30 m, Hecke oder Ziegelmauer."
-     ],
-     "mehr": "Doppelstab oder Sichtschutz aus WPC gehören im Ortskern Falkenhagen nicht zu den zugelassenen Ausführungen, das prüfen wir für Sie mit."
-    },
-    {
-     "h2": "Was wir nicht machen",
-     "body": "Wir montieren fertige, genormte Zaunsysteme, keine individuelle Schmiedearbeit, kein Schweißen vor Ort. Gemauerte Sockel und Stützmauern gehören zum Maurerhandwerk, nicht zu unserem Angebot. Torantriebe mit Elektroinstallation vermitteln wir an einen Elektrofachbetrieb. Zäune über 2 Meter Höhe brauchen eine Baugenehmigung, die wir nicht beantragen.",
-     "lead": "Wir montieren fertige, genormte Zaunsysteme, keine individuelle Schmiedearbeit."
     }
    ],
    "ortsseite_lead": "Ihr Zaunbau in {ort}: Doppelstab, Sichtschutz oder Staketen, montiert vom festen Zwei-Mann-Team. Festpreis nach kostenloser Besichtigung mit Spatenprobe in {ort}, Foto-Abnahme nach der Montage.",
