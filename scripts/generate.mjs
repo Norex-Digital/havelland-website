@@ -428,8 +428,8 @@ function hub(s) {
   const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug), winter: s.slug === 'winterdienst', foto: flowFoto })}</div></section>`;
   const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline(!!s.partner_modell, s.slug)}</div></section>`;
   const faqSection = `<section class="sec"><div class="wrap">${faqFilter(faqData)}</div></section>`;
-  const cardOrteSection = cardOrte.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div>${naeheLead}<div class="cards rv">${cards}</div></div></section>` : '';
-  const ratgeberSection = (ratgeberByService[s.slug] || []).length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Ratgeber rund um ${esc(s.name)}</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${(ratgeberByService[s.slug] || []).slice(0, 3).map(r => `<a class="card" href="/ratgeber/${r.slug}/"><h3>${esc(r.title)}</h3><p>${esc(r.lead || '')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : '';
+  const cardOrteSection = cardOrte.length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div>${naeheLead}<div class="cards rv">${cards}</div></div></section>` : '';
+  const ratgeberSection = (ratgeberByService[s.slug] || []).length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">Ratgeber rund um ${esc(s.name)}</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${(ratgeberByService[s.slug] || []).slice(0, 3).map(r => `<a class="card" href="/ratgeber/${r.slug}/"><h3>${esc(r.title)}</h3><p>${esc(r.lead || '')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : '';
   let rich;
   if (gk === 'voll') {
     rich =
@@ -437,14 +437,14 @@ function hub(s) {
       heckenKompass() +
       `<section class="sec"><div class="wrap">${echtProjekt({ nur: 'thuja' })}</div></section>` +
       `<section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Ergebnisse zum Durchziehen</h2></div>${karussell()}${archivGrid({ ctaHref: '/kontakt/#anfrage' })}</div></section>` +
-      flowBlock + timelineBlock + faqSection + cardOrteSection + gebietskarte() + ratgeberSection;
+      flowBlock + timelineBlock + cardOrteSection + gebietskarte() + ratgeberSection + faqSection;   // Owner 18.09.: FAQ ganz unten, nach den Orten
   } else {
     // Beweis-Mechanik (eigene Vorher/Nachher-Doku) NICHT bei Partner-/Tippgeber-Services (Dach) — wäre Eigenleistungs-Beweis (Design §3).
     const beweis = (gk === 'reinigung' && BEWEIS_KEY[s.slug] && !s.partner_modell)
       ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Woran Sie ein sauberes Ergebnis erkennen</h2></div>${beweisMechanik(BEWEIS_KEY[s.slug])}</div></section>`
       : '';
     // Garten/Generisch: mit Ortskarten; Reinigung: ohne Gebietskarte, Ortskarten bleiben (interne Links)
-    rich = beweis + flowBlock + timelineBlock + faqSection + cardOrteSection + ratgeberSection;
+    rich = beweis + flowBlock + timelineBlock + cardOrteSection + ratgeberSection + faqSection;   // Owner 18.09.: FAQ ganz unten, nach den Orten
   }
 
   // b2b_only-Hub (hausmeisterservice): Querverlinkung zu /fuer-hausverwaltungen/ (Design §2 — beide Richtungen)
@@ -570,8 +570,7 @@ function ortsseite(s, o) {
   };
   const cx = ORT_CROSS[s.slug];
   const crossSection = cx ? `<section class="sec section-alt"><div class="wrap"><div class="prose wide rv"><h2>${esc(cx.h2)}</h2><p>${esc(cx.p)} <a href="${cx.href}">${esc(cx.a)}</a>.</p></div></div></section>` : '';
-  // W3b Re-Review (P3): weiß statt paper, weil die FAQ davor bereits paper ist (kein paper-auf-paper).
-  const nachbarSection = `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}${servicesForOrt(o).length>=3?`<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a>`:`<a class="card" href="/${s.slug}/"><h3>Mehr zu ${esc(s.name)}</h3><span class="go">Zur Leistung →</span></a>`}</div></div></section>`;
+  const nachbarSection = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}${servicesForOrt(o).length>=3?`<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a>`:`<a class="card" href="/${s.slug}/"><h3>Mehr zu ${esc(s.name)}</h3><span class="go">Zur Leistung →</span></a>`}</div></div></section>`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/${s.slug}/">${esc(s.name)}</a><span class="sep">›</span>${esc(o.name)}</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(o.name)}${o.plz?` · ${esc(o.plz)}`:''}</span><h1 class="rv in d1">${esc(s.name)} <em>in ${esc(o.name)}</em></h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || isB2Bonly(o.typ)) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich brauche ${s.name} in ${o.name}.`)}">WhatsApp</a></div></div>
 <div class="shot rv in d2">${heroShotO}</div></div></section>
@@ -580,8 +579,8 @@ ${s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : G
 ${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml }) : ''}${tief ? ctaZwischen(s, { h2: 'Foto schicken, Festpreis bekommen.', txt: 'Rückmeldung meist am selben Werktag, kostenlose Besichtigung in ' + o.name + ', schriftlicher Festpreis für Räumung und Abtransport.', alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.', alt: tiefPaper }) : ''}${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 <section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst' })}</div></section>
-<section class="sec section-alt"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
 ${nachbarSection}
+<section class="sec"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
 ${s.partner_modell ? endBandPartner(s) : endBand}`;
   const ni = svcWaveNoindex(s);
   write(url, head(title, meta, url, schema, { noindex: ni }) + header + main + footer + sctaBar(`Hallo, ich brauche ${s.name} in ${o.name}.`) + revealJS + '</body></html>');
@@ -953,7 +952,7 @@ function b2bPage() {
     : (b2b.objektklassen || []).map(o => `<li>${esc(o)}</li>`).join('');
   const leistDetail = b2b.leistungen_detail || [];
   const leist = leistDetail.length
-    ? leistDetail.map((l, i) => `<a class="card" href="${hrefOf(l.link_to)}"><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(l.h3)}</h3>${l.chip ? `<span class="chip${l.ausfuehrung === 'partner' ? ' chip-partner' : ''}">${esc(l.chip)}</span>` : ''}<p>${esc(l.body)}</p><span class="go">${esc(l.label || 'Mehr erfahren')} →</span></a>`).join('')
+    ? leistDetail.map((l, i) => `<a class="card" href="${hrefOf(l.link_to)}"><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(l.h3)}</h3><p>${esc(l.body)}</p><span class="go">${esc(l.label || 'Mehr erfahren')} →</span></a>`).join('')
   // 14.09. Fix: hrefOf statt /${link_to}/ (Anker #laub landete als "#laub/"), Chip eigen/Partner aus b2b.json sichtbar (Intro verspricht ihn).
     : (b2b.leistungen || []).map((l, i) => `<div class="card"><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(l)}</h3></div>`).join('');
   const zusList = (b2b.zusagen_detail || []).length ? b2b.zusagen_detail : (b2b.zusagen || []).map(z => ({ h4: z }));
