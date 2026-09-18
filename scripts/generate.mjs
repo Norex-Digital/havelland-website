@@ -363,8 +363,8 @@ ${saisonTeaser(saisonMonat)}
 <section class="sec"><div class="wrap">${whatsappFlow()}</div></section>
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline()}</div></section>
 <section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>${uspBand()}</div></section>
-<section class="sec"><div class="wrap">${faqFilter()}</div></section>
 ${gebietskarte({ linkOrte: ortsHubSlugs })}
+<section class="sec"><div class="wrap">${faqFilter()}</div></section>
 ${endBand}`;
   // Title (17.09.): "Gartenpflege Falkensee" bleibt vorn (Pos. 2,1 / 377 Impr. GSC 90 Tage), dahinter die zwei
   // anderen Cluster — Startseite rankt fuer "entruempelung falkensee" (Pos. 7,5) mit Garten-Snippet -> 0 Klicks.
