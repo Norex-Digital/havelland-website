@@ -248,7 +248,7 @@ export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.', alt =
 // Blocks mit Anker/Link. Fallbeispiele (faelleBlock) und bespoke FAQs setzt der Aufrufer ein. Nur wenn
 // ortsseiten.json → services.<svc>.orte.<ort>.tief existiert. Eigene Sections → NearDup-Gate (erster Prose-Block) bleibt unberührt.
 // ---------------------------------------------------------------------------
-export function tiefBlock(t, { linkHtml = () => '', hrefOf = null } = {}) {
+export function tiefBlock(t, { linkHtml = () => '', hrefOf = null, ctaAfterGrid = '' } = {}) {
   if (!t) return '';
   // W3b (17.09.): Kachel-Grid, sobald eine Section ein `kurz` hat — sonst bisheriges Prose-Layout.
   const kacheln = (t.sections || []).some(x => x.kurz);
@@ -260,7 +260,8 @@ export function tiefBlock(t, { linkHtml = () => '', hrefOf = null } = {}) {
   const head = kacheln
     ? `<section class="sec tief"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(t.h2)}</h2></div>${secs}</div></section>`
     : `<section class="sec tief"><div class="wrap"><div class="prose wide rv"><h2>${esc(t.h2)}</h2>${secs}</div></div></section>`;
-  return `${head}${ob}${blocks}`;
+  // W4 (21.09.): optionaler CTA direkt nach dem Kachel-Grid (Owner: "zu viel Text, zu wenig CTA") — Aufrufer liefert das fertige Band, nur wenn t.cta_grid gesetzt ist.
+  return `${head}${ctaAfterGrid}${ob}${blocks}`;
 }
 
 // ---------------------------------------------------------------------------
