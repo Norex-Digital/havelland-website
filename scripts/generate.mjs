@@ -505,6 +505,7 @@ function ortsseite(s, o) {
   const so = ortsSvcCopy[s.slug] || null;
   const soOrt = (so && so.orte && so.orte[o.slug]) || null;
   const tief = soOrt && soOrt.tief ? soOrt.tief : null;   // W2: Tiefen-Block für Tier-1-Ortsseiten
+  // W4 (21.09.): Tier-1 auch für Partner-Services (winterdienst/falkensee) — CTA nach dem Tiefen-Block dann ohne Festpreis-Text (Partner-Default aus ctaZwischen), UWG-Framing.
   // Zonen-Parität nach tiefBlock (Kopf weiß -> ortsblock paper -> blocks i%2): letzte Zone paper? (Review #2)
   const tiefPaper = tief ? ((tief.blocks && tief.blocks.length) ? ((tief.blocks.length - 1) % 2 === 1) : !!tief.ortsblock) : false;
   // Guard (03.09., C5 Nr. 60): Partner-Service ohne bespoke Copy rendert keine Orts-Hooks/Archetyp-Pools — die tragen Festpreis-/Foto-/Eigenleistungs-Zusagen.
@@ -581,7 +582,7 @@ function ortsseite(s, o) {
 <div class="shot rv in d2">${heroShotO}</div></div></section>
 ${s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : GRUEN_BELEG_SVCS.has(s.slug) ? gstripGruenBeleg : gstrip}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
-${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml, hrefOf }) : ''}${tief ? ctaZwischen(s, { h2: 'Foto schicken, Festpreis bekommen.', txt: 'Rückmeldung meist am selben Werktag, kostenlose Besichtigung in ' + o.name + ', schriftlicher Festpreis für Räumung und Abtransport.', alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.', alt: tiefPaper }) : ''}${crossSection}
+${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml, hrefOf }) : ''}${tief ? ctaZwischen(s, s.slug === 'winterdienst' ? { h2: 'Flächen nennen, Saisonangebot bekommen.', txt: 'Kostenlose Besichtigung in ' + o.name + ' durch den Partner-Fachbetrieb, Saisonpreis vor der Zusage, Einsatznachweis nach jeder Räumung.', alt: !tiefPaper } : s.partner_modell ? { alt: !tiefPaper } : { h2: 'Foto schicken, Festpreis bekommen.', txt: 'Rückmeldung meist am selben Werktag, kostenlose Besichtigung in ' + o.name + ', schriftlicher Festpreis für Räumung und Abtransport.', alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.', alt: tiefPaper }) : ''}${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 <section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst' })}</div></section>
 ${nachbarSection}

@@ -688,6 +688,123 @@
           "rahmen": "Die Falkenseer Satzung verlangt: tagsüber zwischen 7 und 20 Uhr unverzüglich räumen, Nachtschnee werktags bis 7 Uhr und sonntags bis 9 Uhr, Räumbreite 1 m, in verkehrsberuhigten Straßen 1,5 m, Salz nur bei Eisregen und an Treppen und Rampen. Dazu kommen Zufahrt, Weg zur Haustür und Tonnenstellplatz; für Betriebe im Gewerbegebiet Süd und Nord nimmt der Fachbetrieb Kundenparkplätze und Hofflächen mit auf. Das Angebot kommt als Saisonvertrag von ihm.",
           "trust": "Wer die Räumpflicht in Falkensee auf einen Dritten übertragen will, braucht nach § 3 Abs. 4 der Satzung eine schriftliche Erklärung, die Zustimmung der Stadt und einen Haftpflichtnachweis. Ohne diesen Schritt bleibt die Kontrollpflicht bei Ihnen; der Einsatznachweis zeigt, wann geräumt wurde. Bußgeld bei ungeräumtem Gehweg: bis 1.000 Euro.",
           "ratgeber": "raeumpflicht-havelland-uhrzeiten",
+          "tief": {
+            "h2": "Winterdienst in Falkensee: Gehweg, Zufahrt, Hof im Saisonvertrag",
+            "sections": [
+              {
+                "id": "gehweg",
+                "h3": "Gehweg vor dem Siedlungshaus",
+                "kurz": "Die Falkenseer Satzung verlangt einen Meter Räumbreite, werktags bis 7 Uhr. Der Partner-Fachbetrieb nimmt beide Fronten eines Eckgrundstücks in den Vertrag.",
+                "body": "In den Reinigungsklassen 1 bis 3 räumen die Anlieger den Gehweg, die Fahrbahn übernimmt die Stadt; in den Klassen 4 und 5 räumt die Stadt beides. Welche Klasse Ihre Straße hat, steht im Straßenverzeichnis der Satzung, Auskunft gibt das Bauamt. Fehlt ein Gehweg, gilt ein Streifen von einem Meter am Fahrbahnrand, in Spielstraßen 1,50 Meter. Hinterlieger ohne eigene Straßenfront sind in Falkensee mit verpflichtet. Der Fachbetrieb misst bei der Besichtigung die Frontlänge, an Ecken beide Seiten, und schreibt sie in den Saisonvertrag.",
+                "link_to": "ratgeber/raeumpflicht-havelland-uhrzeiten",
+                "link_text": "Uhrzeiten und Räumbreiten im Havelland"
+              },
+              {
+                "id": "zufahrt",
+                "h3": "Zufahrt, Hauseingang, Tonnenstellplatz",
+                "kurz": "Für den Weg zur Haustür gilt keine Satzung, aber Ihre Verkehrssicherungspflicht gegenüber Postbote und Besuch. Der Fachbetrieb nimmt diese Flächen auf Wunsch mit auf.",
+                "body": "Die Fläche ist der stärkste Kostentreiber: Ein Gehweg von zehn Metern kostet in der Saison weniger als Gehweg, Zufahrt und Stellplatz zusammen. Der Partner-Fachbetrieb bietet nach der Besichtigung eine Bereitschaftspauschale für die Saison oder einen Preis je Einsatz an und nennt das Modell im Angebot. Treppen und Rampen brauchen mehr Zeit und ein anderes Streugut, das steht als eigene Position im Vertrag. Wir nennen selbst keine Preise, das Angebot kommt vom ausführenden Betrieb.",
+                "link_to": "ratgeber/winterdienst-kosten",
+                "link_text": "Preisfaktoren beim Winterdienst"
+              },
+              {
+                "id": "streugut",
+                "h3": "Streuen ohne Salz: Sand und Granulat",
+                "kurz": "Falkensee schreibt abstumpfende Streumittel vor. Salz ist nur bei Eisregen an Treppen, Rampen und Gefällestrecken erlaubt. Der Fachbetrieb lagert das Streugut selbst.",
+                "body": "Die Stadt nennt Sand und Granulat, Baumscheiben und begrünte Flächen bleiben frei. Salzwasser zieht in Pflasterfugen und Klinker, läuft in Beete und an den Straßenbaum, der der Stadt gehört; für Schäden dort haften Sie. Der Partner-Fachbetrieb streut nach der Vorgabe der Satzung, bringt Sand oder Granulat mit und braucht auf Ihrem Grundstück keinen Lagerplatz. Auf Zufahrt und Hof hinter der Grenze schreibt keine Satzung ein Mittel vor, aus denselben Gründen bleibt es auch dort bei Sand.",
+                "link_to": "ratgeber/streusalz-brandenburg-verboten",
+                "link_text": "Streusalz in Brandenburg: was erlaubt ist"
+              },
+              {
+                "id": "gewerbe",
+                "h3": "Gewerbe, Hausverwaltung, Mehrfamilienhaus",
+                "kurz": "Kundenparkplätze, Hofflächen und Zuwege in den Gewerbegebieten Süd und Nord, Mehrfamilienhäuser mit mehreren Eingängen: ein Vertrag, ein Einsatznachweis je Räumung.",
+                "body": "Für größere Flächen bringt der Partner-Fachbetrieb Räumtechnik mit, die Besichtigung erfasst alle Flächen eines Objekts in einem Termin. Hausverwaltungen bekommen den Saisonvertrag mit den Flächen einzeln benannt. Nach jedem Einsatz kommt ein Nachweis mit Datum und Uhrzeit für die Akte, damit belegen Sie gegenüber Eigentümern und Mietern, wann geräumt wurde. Ansprechpartner über die Saison bleibt Noah Telo, die Ausführung liegt beim Betrieb.",
+                "link_to": "fuer-hausverwaltungen",
+                "link_text": "Angebot für Hausverwaltungen und Gewerbe"
+              }
+            ],
+            "ortsblock": {
+              "h2": "Räumpflicht in Falkensee: die Satzung in Zahlen",
+              "items": [
+                {
+                  "k": "Zeitfenster",
+                  "v": "Tagsüber zwischen 7 und 20 Uhr Schnee und Glätte unverzüglich nach Ende des Schneefalls beseitigen, bei anhaltendem Schneefall in Abständen. Schnee nach 20 Uhr: werktags bis 7 Uhr, an Sonn- und Feiertagen bis 9 Uhr des Folgetags."
+                },
+                {
+                  "k": "Räumbreite",
+                  "v": "Gehweg mindestens 1,00 Meter. Ohne Gehweg ein Streifen von 1,00 Meter am Fahrbahnrand, in Spielstraßen 1,50 Meter."
+                },
+                {
+                  "k": "Streumittel",
+                  "v": "Abstumpfend: Sand und Granulat. Salz und auftauende Stoffe nur bei Eisregen an gefährlichen Stellen wie Treppen, Rampen und Gefällestrecken. Baumscheiben und begrünte Flächen bleiben frei."
+                },
+                {
+                  "k": "Wer räumt",
+                  "v": "Reinigungsklassen 1 bis 3: Anlieger räumen den Gehweg, die Stadt die Fahrbahn. Klassen 4 und 5: die Stadt räumt Gehweg und Fahrbahn. Hinterlieger sind mit verpflichtet, Mieter kennt die Satzung nicht."
+                },
+                {
+                  "k": "Übertragung",
+                  "v": "Nach § 3 Abs. 4 der Satzung mit schriftlicher Erklärung, Zustimmung der Stadt und Haftpflichtnachweis auf einen Dritten übertragbar. Die Kontrollpflicht bleibt beim Eigentümer."
+                },
+                {
+                  "k": "Bußgeld",
+                  "v": "5 bis 1.000 Euro bei ungeräumtem oder ungestreutem Gehweg. Auskunft zur Reinigungsklasse Ihrer Straße: Bauamt, Straßenunterhaltung, 03322 281443."
+                }
+              ],
+              "quelle": "Straßenreinigungssatzung der Stadt Falkensee; falkensee.de, Seite Straßenreinigung und Winterdienst; Stand 09/2026, keine Rechtsberatung"
+            },
+            "blocks": [
+              {
+                "id": "wohngebiete",
+                "h2": "Finkenkrug, Falkenhöh, Seegefeld, Waldheim: wo die Gehwege lang sind",
+                "lead": "Sieben Wohngebiete auf 43 Quadratkilometern, Gartenstadt-Parzellen von 1898 bis 1922: lange Straßenfronten und viele Eckgrundstücke.",
+                "body": "Die Kolonien Neu-Finkenkrug, Neu-Seegefeld, Waldheim und Falkenhain entstanden ab 1898 auf parzelliertem Gutsland, Falkenhöh folgte 1922. Aus dieser Zeit stammen die Parzellen mit Gehweg über die ganze Front, an der Ecke über zwei Seiten. Der Partner-Fachbetrieb plant seine Touren nach Wohngebiet. Wer den Saisonvertrag zwischen September und November abschließt, bekommt einen festen Platz in der Reihenfolge. Beim ersten Schnee kommen die Anfragen aus dem ganzen Havelland auf einmal.",
+                "bullets": [
+                  "Eckgrundstück: beide Straßenfronten stehen im Vertrag",
+                  "Straße ohne Gehweg: 1-Meter-Streifen am Rand, in Spielstraßen 1,50 Meter",
+                  "Hinterlieger: mit verpflichtet, Aufteilung mit dem Vorderlieger vorher klären",
+                  "Gewerbegebiete Süd und Nord: Parkplätze und Hofflächen im selben Vertrag"
+                ]
+              },
+              {
+                "id": "ablauf-falkensee",
+                "h2": "So kommt der Saisonvertrag in Falkensee zustande",
+                "lead": "Flächen per WhatsApp beschreiben, Besichtigung durch den Partner-Fachbetrieb, Angebot als Saisonvertrag von ihm, Einsatznachweis nach jeder Räumung.",
+                "body": "Sie schicken Adresse und eine kurze Beschreibung der Flächen, ein Foto vom Gehweg hilft. Wir organisieren die Besichtigung mit dem Partner-Fachbetrieb, sie ist kostenlos und unverbindlich. Der Betrieb misst Gehweg, Zufahrt und Hof, nennt den Saisonpreis und das Abrechnungsmodell im Angebot; der Vertrag kommt zwischen Ihnen und ihm zustande. Für die Übertragung nach § 3 Abs. 4 reichen Sie die Erklärung bei der Stadt ein, den Nachweis seiner Haftpflicht legt der Fachbetrieb bei. Über die Saison bleibt Noah Telo Ihr Ansprechpartner für Rückfragen.",
+                "bullets": [
+                  "Adresse und Flächen per WhatsApp oder Telefon nennen",
+                  "Besichtigung in Falkensee durch den Partner-Fachbetrieb, kostenlos",
+                  "Angebot als Saisonvertrag vom Betrieb, Preis vor der Zusage",
+                  "Einsatznachweis mit Datum und Uhrzeit nach jeder Räumung"
+                ],
+                "link_to": "winterdienst",
+                "link_text": "Winterdienst im Havelland: alle Orte und Leistungen"
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Bis wann muss der Gehweg in Falkensee geräumt sein?",
+                "a": "Tagsüber zwischen 7 und 20 Uhr verlangt die Falkenseer Satzung, Schnee und Glätte unverzüglich nach Ende des Schneefalls zu beseitigen. Schnee, der nach 20 Uhr fällt, muss werktags bis 7 Uhr und an Sonn- und Feiertagen bis 9 Uhr weg sein. Der Saisonvertrag mit dem Partner-Fachbetrieb bildet diese Fristen ab, jeder Einsatz wird mit Datum und Uhrzeit festgehalten."
+              },
+              {
+                "q": "Was kostet der Winterdienst in Falkensee?",
+                "a": "Den Preis nennt der ausführende Fachbetrieb nach der Besichtigung als Saisonpreis, entweder als Bereitschaftspauschale für die ganze Saison oder als Preis je Einsatz. Gehweglänge, Zufahrt, Stellplätze, Treppen und die Zahl der Eingänge bestimmen den Aufwand. Die Besichtigung in Falkensee organisieren wir, sie ist kostenlos; der Saisonpreis steht schriftlich, bevor Sie zusagen. Wir selbst nennen keine Preise, weil das Angebot vom Betrieb kommt."
+              },
+              {
+                "q": "Räumt die Stadt Falkensee meinen Gehweg?",
+                "a": "In den Reinigungsklassen 1 bis 3 nicht: Dort räumen die Anlieger den Gehweg und die Stadt die Fahrbahn. Nur in den Klassen 4 und 5 übernimmt die Stadt beides. Welche Klasse Ihre Straße hat, steht im Straßenverzeichnis der Satzung; das Bauamt gibt unter 03322 281443 Auskunft. Grundstücke ohne eigene Straßenfront sind als Hinterlieger mit verpflichtet."
+              },
+              {
+                "q": "Darf ich in Falkensee Streusalz verwenden?",
+                "a": "Auf dem Gehweg nur bei Eisregen und an gefährlichen Stellen wie Treppen, Rampen und Gefällestrecken. Die Satzung schreibt abstumpfende Mittel vor, die Stadt nennt Sand und Granulat; Baumscheiben bleiben frei. Auf Ihrer Zufahrt hinter der Grundstücksgrenze gilt keine Satzung, für Schäden an Pflaster, Beeten oder dem Straßenbaum haften Sie trotzdem. Der Partner-Fachbetrieb streut nach der Vorgabe der Stadt."
+              },
+              {
+                "q": "Muss die Stadt Falkensee zustimmen, wenn ein Fachbetrieb für mich räumt?",
+                "a": "Ja. § 3 Abs. 4 der Satzung verlangt für die Übertragung auf einen Dritten eine schriftliche Erklärung, die Zustimmung der Stadt und einen Haftpflichtnachweis. Ohne diesen Schritt bleibt die Pflicht in vollem Umfang bei Ihnen, mit ihm bleibt die Kontrollpflicht: Sie müssen prüfen, ob geräumt wurde. Dafür bekommen Sie vom Fachbetrieb nach jedem Einsatz einen Nachweis mit Datum und Uhrzeit."
+              }
+            ]
+          },
           "meta": "Winterdienst Falkensee: Räumen und Streuen durch einen Partner-Fachbetrieb, Saisonvertrag nach kostenloser Besichtigung, Einsatznachweis, ein Ansprechpartner."
         },
         "nauen": {
