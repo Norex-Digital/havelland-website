@@ -215,7 +215,7 @@ export function buildLp(d) {
 <label class="chk lp-legal"><input type="checkbox" name="dsgvo" required> <span>Ich bin mit der Verarbeitung meiner Angaben zur Kontaktaufnahme und Angebotserstellung einverstanden (siehe <a href="/datenschutz/">Datenschutzerklärung</a>). Die Einwilligung kann ich jederzeit widerrufen.</span></label>
 <button class="btn btn-acc" type="submit">${esc(lp.cta || 'Anfrage absenden')}</button>
 <button class="back" type="button" data-back>← zurück</button>
-<p class="hint">Wir melden uns meist noch am selben Werktag. Ihre Angaben gehen über den Formulardienst Web3Forms an unser Postfach. Nur wenn Sie im Cookie-Banner zugestimmt haben, übermitteln wir E-Mail und Telefonnummer verschlüsselt (gehasht) an Google, um den Erfolg unserer Anzeigen zu messen – Details in der Datenschutzerklärung.</p></fieldset>
+<p class="hint">Wir melden uns noch am selben Werktag. Ihre Angaben gehen über den Formulardienst Web3Forms an unser Postfach. Nur wenn Sie im Cookie-Banner zugestimmt haben, übermitteln wir E-Mail und Telefonnummer verschlüsselt (gehasht) an Google, um den Erfolg unserer Anzeigen zu messen – Details in der Datenschutzerklärung.</p></fieldset>
 <p class="kf-alt">Lieber direkt? <a href="tel:${tel}">Anrufen: ${telDisp}</a> · <a href="${waHref(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">WhatsApp schreiben</a></p>
 </form>`;
   };
@@ -235,7 +235,7 @@ ${trustRow(lp.trust)}</div>${H.shot}</div></section>
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2>So läuft es ab</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
-<section class="sec"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div></div></section>
+<section class="sec"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${lp.preis.anker ? `<p style="font-size:1.15rem;line-height:1.6;margin-bottom:14px">${lp.preis.anker.items.map(x => `<b>${esc(x)}</b>`).join(' &middot; ')}<br><span style="font-size:.95rem;color:var(--muted)">${esc(lp.preis.anker.note)}</span></p>` : ''}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div></div></section>
 ${quotes(lp.testimonials, lp.testimonials_h2)}
 <section class="sec"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
 <section class="sec section-alt" id="kontakt"><div class="wrap"><div class="head"><h2>Kostenlose Besichtigung anfragen</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Zwei Schritte, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp)}</div></section>
@@ -257,7 +257,7 @@ ${quotes(lp.testimonials, lp.testimonials_h2)}
   const dkH1 = dk.h1_em && dkH1Raw.includes(dk.h1_em) ? esc(dkH1Raw).replace(esc(dk.h1_em), `<em>${esc(dk.h1_em)}</em>`) : esc(dkH1Raw);
   const main = `<main class="lp-danke"><section class="phero lp-hero lp-hero-text">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>${dkH1}</h1><p class="lead">${esc(dk.lead || '')}</p></div></div></section>
 <section class="sec"><div class="wrap"><div class="head"><h2>So geht es weiter</h2></div>${rvIn(timelineFrom(dkSteps))}<p class="hint" style="margin-top:24px;color:var(--muted)">${esc(dk.eilig || '')}</p><div class="cta-row lp-cta"><a class="btn btn-acc" href="tel:${tel}">☎ ${telDisp}</a><a class="btn btn-line" href="${waHref('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')}">Foto per WhatsApp nachschicken</a></div></div></section></main>`;
-  write(dankeUrl, head(`${dk.title || 'Danke'} – Havelland`, 'Ihre Anfrage ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns meist noch am selben Werktag.', dankeUrl, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS })
+  write(dankeUrl, head(`${dk.title || 'Danke'} – Havelland`, 'Ihre Anfrage ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns noch am selben Werktag.', dankeUrl, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS })
     + lpHeader('/') + main + lpFooter + lpScta('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')
     + CONSENT_BANNER + TRACK_EVENTS + DANKE_JS + resetJS + '</body></html>');
   return n + 1;

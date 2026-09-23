@@ -1,9 +1,9 @@
 {
-  "_meta": "Ads-Landingpages (Google Ads, Entrümpelung über HuG — Owner-Entscheid 14.09.2026). Gerendert von scripts/lp.mjs als /lp/<slug>/, noindex,follow, nicht in Sitemaps. Regeln (Review 14.09. eingearbeitet): kein 'versichert' (Nachweis fehlt), kein 'zertifiziert'/'Entsorgungsfachbetrieb', keine Ab-Preise (Owner E5), keine Superlative, kein 'kostenlos bei Wertanrechnung' (UWG Anh. Nr. 20), keine erfundenen Referenzen/Häufigkeiten, keine Fotos ohne Herkunftsnachweis (fotos: [] rendert keine Galerie). Festpreis IMMER als 'Festpreis für Räumung und Abtransport'; Entsorgungsgebühren nach Beleg zzgl. MwSt. (= Angebots-/Rechnungspraxis, Rechnung 2026-160). Kein 'Sondermüll' (nur nicht gefährliche Abfälle, §53 KrWG). Partner nur mit Vermittlungs-Wording. Reaktionszeit einheitlich 'meist am selben Werktag'. Fotos (14.09.): Einwilligung der Kundin liegt vor (Owner Maurice, 17.09.2026; Doku gbr-firma kunden/hausgarten/_aktiv/gutzke-monika-2026-09-01/kunde.md §Foto-Freigabe). Assets seit 17.09. ohne Kundenname (fall-*). EXIF entfernt, kein Name, keine Adresse. v2 (14.09. abends, Owner-Entscheide): hero je LP — typ 'ba' (echte Vorher/Nachher-Slugs aus dem Manifest, Hochformat), 'foto' (KI-Stimmungsbild svc-entruempelung-hero: nie als Kundenergebnis, nie in der Galerie) oder 'text'; trust als [{b,t}] — die Google-Kennzahl kommt aus data/proof.json (nicht hier pflegen); fotos-Paare {vorher,nachher,cap,sub}; testimonials_h2 neutral (Zitate wörtlich, branchenfremd bis echte Entrümpelungs-Reviews vorliegen); Wertanrechnung in preis.p ohne 'kostenlos'.",
+  "_meta": "Ads-Landingpages (Google Ads, Entrümpelung über HuG — Owner-Entscheid 14.09.2026). Gerendert von scripts/lp.mjs als /lp/<slug>/, noindex,follow, nicht in Sitemaps. Regeln (Review 14.09. eingearbeitet): kein 'versichert' (Nachweis fehlt), kein 'zertifiziert'/'Entsorgungsfachbetrieb', Ab-Preise nur im preis.anker der Haushalts-LP (Owner Maurice 23.09.2026, ersetzt E5), immer inkl. MwSt., keine Superlative, kein 'kostenlos bei Wertanrechnung' (UWG Anh. Nr. 20), keine erfundenen Referenzen/Häufigkeiten, keine Fotos ohne Herkunftsnachweis (fotos: [] rendert keine Galerie). Festpreis IMMER als 'Festpreis für Räumung und Abtransport'; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag, OHNE 'zzgl. MwSt.' (PAngV § 3, Korrektur 23.09.2026 — Gebühren der Annahmestellen sind brutto). Kein 'Sondermüll' (nur nicht gefährliche Abfälle, §53 KrWG). Partner nur mit Vermittlungs-Wording. Reaktionszeit einheitlich 'am selben Werktag'. Fotos (14.09.): Einwilligung der Kundin liegt vor (Owner Maurice, 17.09.2026; Doku gbr-firma kunden/hausgarten/_aktiv/gutzke-monika-2026-09-01/kunde.md §Foto-Freigabe). Assets seit 17.09. ohne Kundenname (fall-*). EXIF entfernt, kein Name, keine Adresse. v2 (14.09. abends, Owner-Entscheide): hero je LP — typ 'ba' (echte Vorher/Nachher-Slugs aus dem Manifest, Hochformat), 'foto' (KI-Stimmungsbild svc-entruempelung-hero: nie als Kundenergebnis, nie in der Galerie) oder 'text'; trust als [{b,t}] — die Google-Kennzahl kommt aus data/proof.json (nicht hier pflegen); fotos-Paare {vorher,nachher,cap,sub}; testimonials_h2 neutral (Zitate wörtlich, branchenfremd bis echte Entrümpelungs-Reviews vorliegen); Wertanrechnung in preis.p ohne 'kostenlos'.",
   "danke": {
     "title": "Danke – Anfrage eingegangen",
     "h1": "Danke, Ihre Anfrage ist angekommen.",
-    "lead": "Wir melden uns meist noch am selben Werktag – telefonisch oder per WhatsApp, je nachdem, was Sie angegeben haben. Der Rückruf kommt von 01515 6198195 – speichern Sie die Nummer, damit Sie ihn erkennen.",
+    "lead": "Wir melden uns noch am selben Werktag – telefonisch oder per WhatsApp, je nachdem, was Sie angegeben haben. Der Rückruf kommt von 01515 6198195 – speichern Sie die Nummer, damit Sie ihn erkennen.",
     "next": [
       "Wir rufen Sie an oder schreiben per WhatsApp und klären kurz, was ansteht.",
       "Wir vereinbaren die kostenlose Besichtigung vor Ort.",
@@ -19,8 +19,8 @@
       "name": "Haushaltsauflösung",
       "title": "Haushaltsauflösung & Entrümpelung im Havelland – Festpreis",
       "meta": "Haushaltsauflösung und Entrümpelung im Havelland: diskret, besenrein, Festpreis für Räumung und Abtransport nach kostenloser Besichtigung. Falkensee, Nauen.",
-      "kick": "Haushaltsauflösung im Havelland · Festpreis",
-      "h1": "Aus einem vollen Haus wird ein übergabefertiges. Was Ihnen wichtig ist, bleibt bei Ihnen.",
+      "kick": "Festpreis · Sie müssen nicht dabei sein",
+      "h1": "Haushaltsauflösung & Entrümpelung im Havelland. Was Ihnen wichtig ist, bleibt bei Ihnen.",
       "h1_em": "Was Ihnen wichtig ist, bleibt bei Ihnen",
       "lead": "Nach Todesfall, Pflegeheim-Umzug oder Auszug: Wir räumen vollständig und übergeben besenrein – auf Wunsch gereinigt und geruchsfrei. Kostenlose Besichtigung im Havelland, in Berlin-Spandau und Potsdam.",
       "cta": "Kostenlose Besichtigung anfragen",
@@ -56,8 +56,8 @@
       "ablauf": [
         {
           "h": "Anfrage in zwei Minuten",
-          "p": "Formular, Anruf oder ein Handy-Foto per WhatsApp – wir melden uns meist noch am selben Werktag.",
-          "when": "Tag 1 · Antwort meist am selben Werktag"
+          "p": "Formular, Anruf oder ein Handy-Foto per WhatsApp – wir melden uns noch am selben Werktag.",
+          "when": "Tag 1 · Antwort am selben Werktag"
         },
         {
           "h": "Kostenlose Besichtigung und Festpreis",
@@ -72,10 +72,11 @@
       ],
       "preis": {
         "h": "Was kostet eine Haushaltsauflösung?",
+        "anker": { "items": ["Entrümpelung ab 99 €", "Wohnungsauflösung ab 499 €", "Komplettes Haus ab 749 €"], "note": "Alle Preise inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot." },
         "p": [
-          "Der Preis hängt von Wohnungsgröße, Menge, Demontagen und dem Zugang ab. Deshalb nennen wir ihn erst nach der kostenlosen Besichtigung – dafür dann als schriftlichen Festpreis für Räumung und Abtransport.",
+          "Die Einstiegspreise gelten für kleine, gut zugängliche Objekte – etwa ein einzelnes Kellerabteil oder einen Raum mit wenig Inhalt, der Wohnungspreis für eine kleine 1-Zimmer-Wohnung. Was Ihr Objekt kostet, hängt von Menge, Zugang und Entsorgungsaufwand ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung – schriftlich.",
           "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihre Kosten.",
-          "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus, zuzüglich der gesetzlichen Mehrwertsteuer – Sie sehen jeden Posten, ohne eigenen Aufschlag."
+          "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus – Sie sehen jeden Posten, ohne eigenen Aufschlag."
         ]
       },
       "faqs": [
@@ -97,7 +98,7 @@
         },
         {
           "q": "Wie wird die Entsorgung abgerechnet?",
-          "a": "Räumung und Abtransport stehen als Festpreis im Angebot. Die Gebühren der Annahmestellen für Sperrmüll, Altholz oder Elektroschrott rechnen wir nach tatsächlicher Menge gegen Beleg ab, zuzüglich der gesetzlichen Mehrwertsteuer – ohne eigenen Aufschlag. Bei Schadstoffen wie Farben, Chemikalien oder Asbest stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab; das gehört nicht in den Festpreis."
+          "a": "Räumung und Abtransport stehen als Festpreis im Angebot. Die Gebühren der Annahmestellen für Sperrmüll, Altholz oder Elektroschrott rechnen wir nach tatsächlicher Menge gegen Beleg ab – ohne eigenen Aufschlag. Bei Schadstoffen wie Farben, Chemikalien oder Asbest stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab; das gehört nicht in den Festpreis."
         },
         {
           "q": "Riecht die Wohnung nach der Räumung noch?",
@@ -207,7 +208,7 @@
         "p": [
           "Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert.",
           "Gut erhaltene Möbel oder Geräte prüfen wir auf ihren Wert und rechnen sie auf den Festpreis an.",
-          "Entsorgungsgebühren der Annahmestellen rechnen wir nach Beleg ab, zuzüglich der gesetzlichen Mehrwertsteuer – ohne eigenen Aufschlag."
+          "Entsorgungsgebühren der Annahmestellen rechnen wir nach Beleg ab – ohne eigenen Aufschlag."
         ]
       },
       "faqs": [
@@ -301,8 +302,8 @@
       "ablauf": [
         {
           "h": "Objekt nennen",
-          "p": "Adresse, Art des Objekts und ungefähre Menge – per Formular oder kurzer Mail. Wir melden uns meist noch am selben Werktag.",
-          "when": "Tag 1 · Antwort meist am selben Werktag"
+          "p": "Adresse, Art des Objekts und ungefähre Menge – per Formular oder kurzer Mail. Wir melden uns noch am selben Werktag.",
+          "when": "Tag 1 · Antwort am selben Werktag"
         },
         {
           "h": "Besichtigung und schriftliches Angebot",

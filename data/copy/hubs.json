@@ -637,7 +637,7 @@
      ],
      "cta_after": {
       "h2": "Foto schicken, Festpreis bekommen.",
-      "txt": "Rückmeldung meist am selben Werktag, kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport."
+      "txt": "Rückmeldung am selben Werktag, kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport."
      }
     },
     {
@@ -1718,7 +1718,7 @@
     }
    ],
    "naehe": "Der Haus- & Gartenservice Havelland sitzt in Falkensee. Anfragen aus Falkensee, Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Wustermark, Nauen und Berlin-Spandau haben kurze Wege, die Anfahrt steckt im Festpreis. Für die erste Einschätzung reicht ein Foto der Stelle per WhatsApp.",
-   "ablauf": "Fotos oder Skizze per WhatsApp, Rückmeldung meist am selben Werktag. Bei der kostenlosen Besichtigung messen wir auf und prüfen Untergrund, Zugang und Leitungen, danach der schriftliche Festpreis. Grünschnitt und Fräsgut stecken darin, Rückbau und Sperriges wie Zaun oder Beton rechnen wir nach Beleg ab, zuzüglich Mehrwertsteuer. Nach der Arbeit: Vorher-Nachher-Fotos aufs Handy.",
+   "ablauf": "Fotos oder Skizze per WhatsApp, Rückmeldung am selben Werktag. Bei der kostenlosen Besichtigung messen wir auf und prüfen Untergrund, Zugang und Leitungen, danach der schriftliche Festpreis. Grünschnitt und Fräsgut stecken darin, Rückbau und Sperriges wie Zaun oder Beton rechnen wir nach Beleg ab, zuzüglich Mehrwertsteuer. Nach der Arbeit: Vorher-Nachher-Fotos aufs Handy.",
    "garantie_text": "Ist etwas nicht wie besprochen, bessern wir kostenlos nach. Grünschnitt und Fräsgut stecken im Festpreis, Rückbau und Sperriges rechnen wir nach Beleg ab, zuzüglich Mehrwertsteuer.",
    "blocks": [
     {
@@ -1783,7 +1783,7 @@
     },
     {
      "q": "Wer macht GaLaBau-Arbeiten in Falkensee?",
-     "a": "Der Haus- & Gartenservice Havelland aus Falkensee übernimmt kleinere GaLaBau-Arbeiten in Falkensee und im gesamten Havelland: Zaunbau, Heckenentfernung, Gartenrodung, Stubbenfräsen, Pflaster-Ausbesserung, Kantensteine, Beeteinfassungen und Hochbeete. Es arbeitet immer dasselbe Zwei-Mann-Team ohne Subunternehmer, mit kostenloser Besichtigung vor Ort, schriftlichem Festpreis und Vorher-Nachher-Fotos nach jedem Auftrag. Anfragen laufen per WhatsApp oder Telefon, die erste Einschätzung kommt meist am selben Werktag."
+     "a": "Der Haus- & Gartenservice Havelland aus Falkensee übernimmt kleinere GaLaBau-Arbeiten in Falkensee und im gesamten Havelland: Zaunbau, Heckenentfernung, Gartenrodung, Stubbenfräsen, Pflaster-Ausbesserung, Kantensteine, Beeteinfassungen und Hochbeete. Es arbeitet immer dasselbe Zwei-Mann-Team ohne Subunternehmer, mit kostenloser Besichtigung vor Ort, schriftlichem Festpreis und Vorher-Nachher-Fotos nach jedem Auftrag. Anfragen laufen per WhatsApp oder Telefon, die erste Einschätzung kommt am selben Werktag."
     }
    ],
    "ortsseite_lead": "Kleinere GaLaBau-Arbeiten in {ort}: Zaun, Rodung, Stubben, Pflaster ausbessern, Kantensteine, Beeteinfassungen und Hochbeete. Festpreis nach kostenloser Besichtigung in {ort}, Vorher-Nachher-Fotos inklusive.",

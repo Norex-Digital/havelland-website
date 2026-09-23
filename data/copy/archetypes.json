@@ -57,7 +57,7 @@
     },
     {
      "q": "Wie schnell bekomme ich nach meiner Anfrage eine Rückmeldung?",
-     "a": "Wenn Sie uns aus {ort} über WhatsApp schreiben, melden wir uns meist noch am selben Tag, oft innerhalb weniger Stunden. Wir stimmen dann ab, wann eine kostenlose Besichtigung passt. Weil wir ohnehin regelmäßig in der Umgebung unterwegs sind, lässt sich ein Termin häufig kurzfristig einrichten."
+     "a": "Wenn Sie uns aus {ort} über WhatsApp schreiben, melden wir uns noch am selben Werktag, oft innerhalb weniger Stunden. Wir stimmen dann ab, wann eine kostenlose Besichtigung passt. Weil wir ohnehin regelmäßig in der Umgebung unterwegs sind, lässt sich ein Termin häufig kurzfristig einrichten."
     },
     {
      "q": "Übernehmen Sie die regelmäßige Pflege übers ganze Jahr?",
@@ -145,7 +145,7 @@
    "trust": [
     "Ein Ansprechpartner für Besichtigung, Angebot und Saison — das Angebot kommt vom ausführenden Fachbetrieb, die Besichtigung ist kostenlos und unverbindlich.",
     "Der Vertrag entsteht zwischen Ihnen und dem ausführenden Betrieb; wir koordinieren, erinnern und bleiben erreichbar, wenn im Winter Fragen aufkommen.",
-    "Anfragen aus {ort} beantworten wir meist noch am selben Werktag. Die Besichtigung durch den Partner-Fachbetrieb ist kostenlos und unverbindlich.",
+    "Anfragen aus {ort} beantworten wir noch am selben Werktag. Die Besichtigung durch den Partner-Fachbetrieb ist kostenlos und unverbindlich.",
     "Kein Räumdienst-Vergleich auf eigene Faust: Sie bekommen über uns einen Partner-Fachbetrieb mit eigener Technik, der Ihre Straße in {ort} kennt und die Satzungsfristen im Vertrag festhält."
    ],
    "faqs": [],
