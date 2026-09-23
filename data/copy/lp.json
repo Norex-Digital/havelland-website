@@ -152,8 +152,8 @@
       "name": "Wohnungsräumung",
       "title": "Messie-Wohnung räumen lassen – diskret, Havelland/Spandau",
       "meta": "Messie-Wohnung oder vermüllte Wohnung räumen lassen: diskret, ohne Vorwürfe, Festpreis für Räumung und Abtransport nach Besichtigung. Havelland und Spandau.",
-      "kick": "Messie-Wohnung räumen lassen · diskret · Festpreis",
-      "h1": "Die Wohnung soll wieder bewohnbar werden. Wir räumen, reinigen, behandeln Gerüche – ohne Fragen.",
+      "kick": "Diskret · Festpreis · Sie müssen nicht dabei sein",
+      "h1": "Messie-Wohnung räumen lassen: Wir räumen, reinigen, behandeln Gerüche – ohne Fragen.",
       "h1_em": "ohne Fragen",
       "lead": "Ob Vermieter, Angehörige oder Sie selbst: Wir arbeiten ruhig und gründlich. Sie müssen nicht dabei sein und nichts erklären. Kostenlose Besichtigung im Havelland, in Berlin-Spandau und Potsdam.",
       "cta": "Vertraulich anfragen",
@@ -205,8 +205,9 @@
       ],
       "preis": {
         "h": "Was kostet die Räumung?",
+        "anker": { "items": ["Messie-Wohnung ab 1.500 €"], "note": "Inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot." },
         "p": [
-          "Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert.",
+          "Der Einstiegspreis gilt für eine kleine 1-Zimmer-Wohnung. Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert.",
           "Gut erhaltene Möbel oder Geräte prüfen wir auf ihren Wert und rechnen sie auf den Festpreis an.",
           "Entsorgungsgebühren der Annahmestellen rechnen wir nach Beleg ab – ohne eigenen Aufschlag."
         ]
@@ -265,8 +266,8 @@
       "name": "Gewerbe-Entrümpelung",
       "title": "Entrümpelung für Hausverwaltungen & Gewerbe – Havelland",
       "meta": "Entrümpelung, Wohnungsräumung und Betriebsauflösung für Hausverwaltungen, Vermieter und Gewerbe im Havelland: feste Termine, Festpreis je Objekt.",
-      "kick": "Entrümpelung für Hausverwaltungen & Gewerbe · Havelland",
-      "h1": "Übergabe in zwei Wochen, Wohnung voll und ungeputzt? Wir übergeben sie leer, gereinigt, geruchsfrei.",
+      "kick": "Festpreis je Objekt · Sammelrechnung · Havelland",
+      "h1": "Entrümpelung für Hausverwaltungen & Gewerbe: Wir übergeben leer, gereinigt, geruchsfrei.",
       "h1_em": "leer, gereinigt, geruchsfrei",
       "lead": "Wohnungsräumung nach Auszug, Kellerräumung im Mehrfamilienhaus, Büro- oder Betriebsauflösung: ein regionaler Ansprechpartner, feste Termine, schriftlicher Festpreis je Objekt und auf Wunsch eine Sammelrechnung.",
       "cta": "Angebot für Ihr Objekt anfordern",
