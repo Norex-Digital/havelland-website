@@ -16,7 +16,7 @@ import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
 
 // Servicegebiet laut Report Kap. 3.4 / GBP-Servicegebiet (A0 #8)
-const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Berlin-Spandau'];
+const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Berlin-Spandau', 'Potsdam'];
 export const ATTR_KEYS = ['gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']; // auch /kontakt/ (generate.mjs basis())
 // Kursiv-Schnitt (H1-Akzent wght 500; .gs .gn/.tli .tn/.ba-cap b wght 600): statt der variablen fraunces-italic-latin.woff2 (81 KB, gvar) zwei statische
 // Instanzen (fontTools instancer wght 500/opsz 48 bzw. wght 600/opsz 22, Latin-Subset ohne Hinting, je ~20 KB). Die @font-face in LP_CSS stehen hinter
@@ -239,7 +239,7 @@ ${gallery(lp, H.key)}
 ${quotes(lp.testimonials, lp.testimonials_h2)}
 <section class="sec"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
 <section class="sec section-alt" id="kontakt"><div class="wrap"><div class="head"><h2>Kostenlose Besichtigung anfragen</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Zwei Schritte, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp)}</div></section>
-<section class="zone-deep end"><div class="wrap"><h2>Sie zeigen, wir räumen.</h2><p>Kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, besenreine Übergabe – im Havelland und in Berlin-Spandau.</p><div class="cta-row"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${telDisp}</a></div></div></section>
+<section class="zone-deep end"><div class="wrap"><h2>Sie zeigen, wir räumen.</h2><p>Kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, besenreine Übergabe – im Havelland, in Berlin-Spandau und Potsdam.</p><div class="cta-row"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${telDisp}</a></div></div></section>
 </main>`;
     const baJs = /class="ba[ "]/.test(main) ? LP_BA_JS : '';
     const html = head(lp.title, lp.meta, url, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS + lpAttribJS(consentKey) })
