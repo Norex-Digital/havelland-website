@@ -1,5 +1,5 @@
 {
-  "_meta": "Ads-Landingpages (Google Ads, Entrümpelung über HuG — Owner-Entscheid 14.09.2026). Gerendert von scripts/lp.mjs als /lp/<slug>/, noindex,follow, nicht in Sitemaps. Regeln (Review 14.09. eingearbeitet): kein 'versichert' (Nachweis fehlt), kein 'zertifiziert'/'Entsorgungsfachbetrieb', Ab-Preise nur im preis.anker der Haushalts-LP (Owner Maurice 23.09.2026, ersetzt E5), immer inkl. MwSt., keine Superlative, kein 'kostenlos bei Wertanrechnung' (UWG Anh. Nr. 20), keine erfundenen Referenzen/Häufigkeiten, keine Fotos ohne Herkunftsnachweis (fotos: [] rendert keine Galerie). Festpreis IMMER als 'Festpreis für Räumung und Abtransport'; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag, OHNE 'zzgl. MwSt.' (PAngV § 3, Korrektur 23.09.2026 — Gebühren der Annahmestellen sind brutto). Kein 'Sondermüll' (nur nicht gefährliche Abfälle, §53 KrWG). Partner nur mit Vermittlungs-Wording. Reaktionszeit einheitlich 'am selben Werktag'. Fotos (14.09.): Einwilligung der Kundin liegt vor (Owner Maurice, 17.09.2026; Doku gbr-firma kunden/hausgarten/_aktiv/gutzke-monika-2026-09-01/kunde.md §Foto-Freigabe). Assets seit 17.09. ohne Kundenname (fall-*). EXIF entfernt, kein Name, keine Adresse. v2 (14.09. abends, Owner-Entscheide): hero je LP — typ 'ba' (echte Vorher/Nachher-Slugs aus dem Manifest, Hochformat), 'foto' (KI-Stimmungsbild svc-entruempelung-hero: nie als Kundenergebnis, nie in der Galerie) oder 'text'; trust als [{b,t}] — die Google-Kennzahl kommt aus data/proof.json (nicht hier pflegen); fotos-Paare {vorher,nachher,cap,sub}; testimonials_h2 neutral (Zitate wörtlich, branchenfremd bis echte Entrümpelungs-Reviews vorliegen); Wertanrechnung in preis.p ohne 'kostenlos'.",
+  "_meta": "Ads-Landingpages (Google Ads, Entrümpelung über HuG — Owner-Entscheid 14.09.2026). Gerendert von scripts/lp.mjs als /lp/<slug>/, noindex,follow, nicht in Sitemaps. Regeln (Review 14.09. eingearbeitet): kein 'versichert' (Nachweis fehlt), kein 'zertifiziert'/'Entsorgungsfachbetrieb', Ab-Preise nur im preis.anker der Haushalts-LP (Owner Maurice 23.09.2026, ersetzt E5), immer inkl. MwSt., keine Superlative, kein 'kostenlos bei Wertanrechnung' (UWG Anh. Nr. 20), keine erfundenen Referenzen/Häufigkeiten, keine Fotos ohne Herkunftsnachweis (fotos: [] rendert keine Galerie). Festpreis IMMER als 'Festpreis für Räumung und Abtransport'; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag, OHNE 'zzgl. MwSt.' (PAngV § 3, Korrektur 23.09.2026 — Gebühren der Annahmestellen sind brutto). Kein 'Sondermüll' (nur nicht gefährliche Abfälle, §53 KrWG). Partner nur mit Vermittlungs-Wording. Reaktionszeit einheitlich 'am selben Werktag'. Fotos (14.09.): Einwilligung der Kundin liegt vor (Owner Maurice, 17.09.2026; Doku gbr-firma kunden/hausgarten/_aktiv/gutzke-monika-2026-09-01/kunde.md §Foto-Freigabe). Assets seit 17.09. ohne Kundenname (fall-*). EXIF entfernt, kein Name, keine Adresse. v2 (14.09. abends, Owner-Entscheide): hero je LP — typ 'ba' (echte Vorher/Nachher-Slugs aus dem Manifest, Hochformat), 'foto' (KI-Stimmungsbild svc-entruempelung-hero: nie als Kundenergebnis, nie in der Galerie) oder 'text'; trust als [{b,t}] — die Google-Kennzahl kommt aus data/proof.json (nicht hier pflegen); fotos-Paare {vorher,nachher,cap,sub}; testimonials_h2 neutral (Zitate wörtlich, branchenfremd bis echte Entrümpelungs-Reviews vorliegen); Wertanrechnung in preis.p ohne 'kostenlos'. v3 (01.10.2026, ads-check 1 Formularstart auf 58 Klicks): Ab-Preise aus preis.anker zusätzlich im Hero (Hinweiszeile preis.hero_note, Default inkl. MwSt. + Entsorgung nach Beleg), Schnellstart-Chips aus objekte im Hero (quick_label), CTA unter dem Preisblock (preis.cta, preis.cta_hint), Formular vor den FAQ.",
   "danke": {
     "title": "Danke – Anfrage eingegangen",
     "h1": "Danke, Ihre Anfrage ist angekommen.",
@@ -22,7 +22,7 @@
       "kick": "Festpreis · Sie müssen nicht dabei sein",
       "h1": "Haushaltsauflösung & Entrümpelung im Havelland. Was Ihnen wichtig ist, bleibt bei Ihnen.",
       "h1_em": "Was Ihnen wichtig ist, bleibt bei Ihnen",
-      "lead": "Nach Todesfall, Pflegeheim-Umzug oder Auszug: Wir räumen vollständig und übergeben besenrein – auf Wunsch gereinigt und geruchsfrei. Kostenlose Besichtigung im Havelland, in Berlin-Spandau und Potsdam.",
+      "lead": "Nach Todesfall, Pflegeheim-Umzug oder Auszug räumen wir besenrein: im Havelland, in Berlin-Spandau und Potsdam.",
       "cta": "Kostenlose Besichtigung anfragen",
       "wa_text": "Hallo, ich brauche eine Haushaltsauflösung. Wann könnten Sie zur Besichtigung kommen?",
       "trust": [
@@ -72,6 +72,7 @@
       ],
       "preis": {
         "h": "Was kostet eine Haushaltsauflösung?",
+        "cta": "Festpreis für Ihr Objekt anfragen",
         "anker": { "items": ["Entrümpelung ab 99 €", "Wohnungsauflösung ab 499 €", "Komplettes Haus ab 749 €"], "note": "Alle Preise inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot." },
         "p": [
           "Die Einstiegspreise gelten für kleine, gut zugängliche Objekte – etwa ein einzelnes Kellerabteil oder einen Raum mit wenig Inhalt, der Wohnungspreis für eine kleine 1-Zimmer-Wohnung. Was Ihr Objekt kostet, hängt von Menge, Zugang und Entsorgungsaufwand ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung – schriftlich.",
@@ -155,7 +156,7 @@
       "kick": "Diskret · Festpreis · Sie müssen nicht dabei sein",
       "h1": "Messie-Wohnung räumen lassen: Wir räumen, reinigen, behandeln Gerüche – ohne Fragen.",
       "h1_em": "ohne Fragen",
-      "lead": "Ob Vermieter, Angehörige oder Sie selbst: Wir arbeiten ruhig und gründlich. Sie müssen nicht dabei sein und nichts erklären. Kostenlose Besichtigung im Havelland, in Berlin-Spandau und Potsdam.",
+      "lead": "Ob Vermieter, Angehörige oder Sie selbst: Wir arbeiten ruhig und gründlich, Sie müssen weder dabei sein noch etwas erklären. Kostenlose Besichtigung im Havelland, in Berlin-Spandau und Potsdam.",
       "cta": "Vertraulich anfragen",
       "wa_text": "Hallo, ich brauche eine diskrete Wohnungsräumung. Können wir kurz sprechen?",
       "trust": [
@@ -205,6 +206,7 @@
       ],
       "preis": {
         "h": "Was kostet die Räumung?",
+        "cta": "Festpreis vertraulich anfragen",
         "anker": { "items": ["Messie-Wohnung ab 1.500 €"], "note": "Inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot." },
         "p": [
           "Der Einstiegspreis gilt für eine kleine 1-Zimmer-Wohnung. Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert.",
