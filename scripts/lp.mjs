@@ -134,6 +134,19 @@ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'applica
 const DANKE_JS = `<script>(function(){try{if(location.hash==='#ok'){history.replaceState(null,'',location.pathname);if(window.dataLayer){window.dataLayer.push({event:'lead_confirmed'})}}}catch(e){}})();</script>`;
 
 // Vorher/Nachher-Regler: initBA aus assets/js/site.js (Z.41–53) inline, weil LPs kein site.js laden. Nur angehängt, wenn die Seite ein .ba enthält.
+// v4 (01.10.): Ort im Hero passend zum Standort des Suchenden. Google Ads hängt per Final-URL-Suffix der Kampagne
+// loc_physical_ms={loc_physical_ms} an (Kriteriums-ID des physischen Standorts, meist PLZ/Stadtteil). Die IDs unten stammen aus
+// geographic_view + geo_target_constant (Konto 5818024627, 17.09.–01.10.2026): P = Potsdam (Stadt, Stadtteile, PLZ 14467–14482),
+// B = Spandau inkl. Kladow/Gatow (PLZ 13581–13599, 13629, 14089). Unbekannte ID / kein Parameter → Standardtext („im Havelland").
+// Kein Speichern im Endgerät (nur URL lesen), läuft synchron direkt nach dem Hero → kein sichtbarer Textwechsel.
+// Neue Gebiete: IDs per GAQL (geo_target_constant) ergänzen. Ersetzt wird nur, was lp.ort_swap markiert (h1: Form „in …", kick: Name).
+const ORT_IDS = {
+  P: [1003886, 9193451, 9214326, 9043185, 9043186, 9043183, 9043184, 9043187, 9068443, 9043159, 9043160, 9226520, 9211295, 9193521, 9211863, 9213567, 9219685, 9219864, 9220924, 9230190, 9236578, 9241239],
+  B: [1003854, 9061138, 9210414, 9258317, 9191153, 9192284, 9193553, 9210882, 9214403, 9214627, 9043137, 9068352, 9043140, 9043193, 9043189, 9043188, 9068272, 9043143, 9043138, 9043139, 9043141, 9043144],
+};
+const ORT_FORM = { P: { in: 'in Potsdam', n: 'Potsdam' }, B: { in: 'in Berlin-Spandau', n: 'Berlin-Spandau' } };
+const ORT_JS = `<script>(function(){try{var id=new URLSearchParams(location.search).get('loc_physical_ms');if(!id)return;var I=${JSON.stringify(ORT_IDS)},F=${JSON.stringify(ORT_FORM)},k=null;for(var g in I){if(I[g].indexOf(+id)>-1){k=g;break}}if(!k)return;Array.prototype.forEach.call(document.querySelectorAll('[data-ort]'),function(el){el.textContent=F[k][el.getAttribute('data-ort')]||el.textContent});document.documentElement.setAttribute('data-ort-gebiet',k)}catch(e){}})();</script>`;
+
 const LP_BA_JS = `<script>(function(){function initBA(ba){if(!ba||ba.__baInit)return;ba.__baInit=true;var range=ba.querySelector('input[type=range]');if(!range)return;function set(){ba.style.setProperty('--pos',range.value+'%')}range.addEventListener('input',function(){set();var stage=ba.closest('.hero-stage');if(stage)stage.classList.add('dragged')});set()}Array.prototype.slice.call(document.querySelectorAll('.ba')).forEach(initBA)})();</script>`;
 // site.css setzt .rv{opacity:0} (sichtbar erst mit .in, das site.js per IntersectionObserver setzt). LPs laden kein site.js → jede importierte
 // Komponente bekommt ' in' sofort: kein Reveal, kein Layout-Shift. Auf JEDE Komponentenausgabe anwenden (accept.mjs prüft: kein rv ohne in).
@@ -244,6 +257,10 @@ export function buildLp(d) {
       : esc(lp.h1);
     const wa = waHref(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.');
     const H = heroOf(lp);
+    const os = lp.ort_swap || {};
+    const ortWrap = (html, t, form) => t && html.includes(esc(t)) ? html.replace(esc(t), `<span data-ort="${form}">${esc(t)}</span>`) : html;
+    const h1o = ortWrap(h1, os.h1, 'in'), kicko = ortWrap(esc(lp.kick), os.kick, 'n');
+    const ortJs = (h1o !== h1 || kicko !== esc(lp.kick)) ? ORT_JS : '';
     // v3 (01.10., ads-check: 1 Formularstart auf 58 Klicks): Ab-Preise im Fold (Preis-Suchende, Sitelink #preise = 20 % der Klicks),
     // Schnellstart-Chips = Formular-Schritt 1 im Fold (Tippen wählt das Objekt im Formular vor, löst form_start aus, springt zum Ort-Feld),
     // CTA direkt unter dem Preisblock, Formular vor den FAQ. Preis-Zeile nur aus lp.preis.anker (keine Zahl doppelt pflegen).
@@ -251,9 +268,9 @@ export function buildLp(d) {
     const heroPreis = anker ? `<p class="lp-hero-preis">${anker.items.map(x => `<b>${esc(x)}</b>`).join(' &middot; ')}<span>${esc(lp.preis.hero_note || 'inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag')}</span></p>` : '';
     const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${esc(lp.slug)}">${esc(lp.quick_label || 'Was soll geräumt werden?')}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${esc(lp.slug)}">${lp.objekte.map(o => { const k = String(o).split(' / ')[0]; return `<a href="#anfrage" data-obj="${esc(o)}">${k !== o ? `<span class="ql">${esc(o)}</span><span class="qs" aria-hidden="true">${esc(k)}</span>` : esc(o)}</a>`; }).join('')}</div></div>` : '';
     const main = `<main id="top">
-<section class="phero lp-hero ${H.cls}">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${esc(lp.kick)}</span><h1>${h1}</h1><p class="lead">${esc(lp.lead)}</p>
+<section class="phero lp-hero ${H.cls}">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span><h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
 ${quick}${heroPreis}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>
-${trustRow(lp.trust)}</div>${H.shot}</div></section>
+${trustRow(lp.trust)}</div>${H.shot}</div></section>${ortJs}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2>So läuft es ab</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
