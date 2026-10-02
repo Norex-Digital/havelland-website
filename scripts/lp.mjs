@@ -79,6 +79,9 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-hero-preis{margin:14px 0 0;font-size:16px;line-height:1.5;color:var(--ink);text-wrap:pretty}
 .lp-hero-preis span{display:block;font-size:14.5px;color:var(--muted)}
 .lp-hero-preis b{white-space:nowrap}
+.lp-aktion{margin:12px 0 0;padding:10px 14px;border-left:3px solid var(--green);background:var(--paper);border-radius:0 var(--r-el) var(--r-el) 0;font-size:15px;line-height:1.5;color:var(--ink);text-wrap:pretty}
+.lp-aktion b{color:var(--green-d)}
+.lp-preis .lp-aktion{margin:0 0 14px}
 .lp-quick{margin:20px 0 16px}
 .lp-quick-l{font-weight:700;font-size:15px;color:var(--green-d);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
 .lp-quick-c{display:flex;flex-wrap:wrap;gap:8px}
@@ -161,6 +164,11 @@ export function buildLp(d) {
   const dankeUrl = '/lp/danke/';
   const telDisp = esc(nap.phone_display);
   const resetJS = CONSENT_RESET_JS || '';
+  // v5 (02.10.): Aktion aus lp.json (Root „aktion“ {label,text,bis}) — Pflicht-Gegenstück zum Angebots-Asset der Kampagne (Google prüft das Angebot
+  // auf der Final-URL). Nach „bis“ rendert der Generator nichts mehr; für bereits ausgelieferte Seiten blendet AKTION_JS sie clientseitig aus.
+  const akt = cp.aktion && cp.aktion.bis && Date.now() <= new Date(cp.aktion.bis + 'T23:59:59+01:00').getTime() ? cp.aktion : null;
+  const aktHtml = akt ? `<p class="lp-aktion" data-bis="${esc(akt.bis)}"><b>${esc(akt.label)}</b> ${esc(akt.text)}</p>` : '';
+  const AKTION_JS = akt ? `<script>(function(){var n=Date.now();Array.prototype.forEach.call(document.querySelectorAll('.lp-aktion[data-bis]'),function(el){if(n>new Date(el.getAttribute('data-bis')+'T23:59:59+01:00').getTime())el.remove()})})();</script>` : '';
 
   const lpHeader = href => `<header class="lp-head"><div class="wrap nav"><a class="logo" href="${href}" aria-label="${esc(nap.name)}"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-lp-360.webp"><img src="/assets/img/logo-lp-180.png" alt="${esc(nap.name)}" width="180" height="193" decoding="async"></picture></a><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${telDisp}</span></a></div></header>`;
 
@@ -269,12 +277,12 @@ export function buildLp(d) {
     const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${esc(lp.slug)}">${esc(lp.quick_label || 'Was soll geräumt werden?')}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${esc(lp.slug)}">${lp.objekte.map(o => { const k = String(o).split(' / ')[0]; return `<a href="#anfrage" data-obj="${esc(o)}">${k !== o ? `<span class="ql">${esc(o)}</span><span class="qs" aria-hidden="true">${esc(k)}</span>` : esc(o)}</a>`; }).join('')}</div></div>` : '';
     const main = `<main id="top">
 <section class="phero lp-hero ${H.cls}">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span><h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
-${quick}${heroPreis}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>
+${quick}${heroPreis}${aktHtml}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>
 ${trustRow(lp.trust)}</div>${H.shot}</div></section>${ortJs}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2>So läuft es ab</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
-<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${lp.preis.anker ? `<p style="font-size:1.15rem;line-height:1.6;margin-bottom:14px">${lp.preis.anker.items.map(x => `<b>${esc(x)}</b>`).join(' &middot; ')}<br><span style="font-size:.95rem;color:var(--muted)">${esc(lp.preis.anker.note)}</span></p>` : ''}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
+<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${aktHtml}${lp.preis.anker ? `<p style="font-size:1.15rem;line-height:1.6;margin-bottom:14px">${lp.preis.anker.items.map(x => `<b>${esc(x)}</b>`).join(' &middot; ')}<br><span style="font-size:.95rem;color:var(--muted)">${esc(lp.preis.anker.note)}</span></p>` : ''}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
 ${quotes(lp.testimonials, lp.testimonials_h2)}
 <section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>Kostenlose Besichtigung anfragen</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Zwei Schritte, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp)}</div></section>
 <section class="sec section-alt" id="fragen"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
@@ -283,7 +291,7 @@ ${quotes(lp.testimonials, lp.testimonials_h2)}
     const baJs = /class="ba[ "]/.test(main) ? LP_BA_JS : '';
     const html = head(lp.title, lp.meta, url, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS + lpAttribJS(consentKey) })
       + lpHeader('/') + main + lpFooter + lpScta(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')
-      + CONSENT_BANNER + TRACK_EVENTS + lpFormJS(lp.slug, dankeUrl, consentKey) + resetJS + baJs + '</body></html>';
+      + CONSENT_BANNER + TRACK_EVENTS + lpFormJS(lp.slug, dankeUrl, consentKey) + resetJS + baJs + AKTION_JS + '</body></html>';
     write(url, html);
     n++;
   }
