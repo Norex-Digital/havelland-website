@@ -1,0 +1,2 @@
+# Shell-Skripte immer mit LF (core.autocrlf=true würde sie sonst unter Windows mit CRLF auschecken, bash bricht dann ab)
+*.sh text eol=lf

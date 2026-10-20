@@ -107,6 +107,7 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-hero-form .kf{padding:14px 16px;border-radius:var(--r-card);background:#fff;border:1px solid var(--hair)}
 .lp-hero-form .step1 .lp-chips{gap:8px;margin-bottom:8px}
 .lp-hero-form .step1 .row{margin-top:2px}
+.lp-hero-form [data-next]{margin-top:8px}
 .lp-hero-form .lp-chips .ql{display:none}
 .lp-hero-form .lp-chips .qs{display:inline}
 .lp-alt{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}

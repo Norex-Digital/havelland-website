@@ -13,6 +13,16 @@ function classCount(html, token) {
 }
 const rvOhneIn = h => { const re = /class="([^"]*)"/g; let m, n = 0; while ((m = re.exec(h)) !== null) { const t = m[1].split(/\s+/); if (t.includes('rv') && !t.includes('in')) n++; } return n; };
 const lpAltKlassen = h => (h.match(/\b(lp-card|lp-steps|lp-quote|lp-ba-grid|lp-trust)\b/g) || []).length;
+// Fokus-Check: nur foc(sel) darf .focus( enthalten (und nur mit preventScroll), aufgerufen nur auf die legend des Schritts.
+// foc() wird per Regex herausgenommen (nicht per exaktem String), damit Umformatierungen den Check nicht still aushebeln;
+// die Regex endet am ersten "}" (dem von {preventScroll:true}), der Rest ")}" ist harmlos. Jedes andere .focus( bleibt rot.
+const FOC_RE = /function foc\(sel\)\{[^}]*\}/;
+function focusOk(js) {
+  const m = js.match(FOC_RE);
+  if (!m || !m[0].includes('preventScroll:true')) return false;
+  const rest = js.replace(FOC_RE, '').replace(/foc\('\.step[12] legend'\)/g, '');
+  return js.length > 500 && !/\.focus\(/.test(rest) && js.includes("foc('.step2 legend')");
+}
 
 const fails = []; const lines = [];
 const P = label => lines.push(`\n${label}`);
@@ -70,9 +80,9 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     const formJs = h.match(/<script>\(function\(\)\{var f=document\.getElementById\('anfrage'\)[\s\S]*?<\/script>/)?.[0] || '';
     check(id, 'Formular-Skript gefunden', formJs.length > 500);
     // Fokus nur über foc(sel) auf die legend des Schritts (kein Tastatur-Sprung, preventScroll); jedes andere .focus( bleibt rot
-    const focOhneLegend = formJs.replace("function foc(sel){var l=f.querySelector(sel);if(l)l.focus({preventScroll:true})}", '')
-      .replace(/foc\('\.step[12] legend'\)/g, '');
-    check(id, 'kein .focus( im Formular-Skript außer auf legend (keine Tastatur-Sprünge)', formJs.length > 500 && !/\.focus\(/.test(focOhneLegend) && has(formJs, "foc('.step2 legend')"));
+    check(id, 'kein .focus( im Formular-Skript außer auf legend (keine Tastatur-Sprünge)', focusOk(formJs));
+    // Selbsttest: ein eingefügtes Input-.focus( muss den Fokus-Check rot färben (sonst prüft er nichts)
+    check(id, 'Selbsttest Fokus-Check: eingefügtes ort.focus() → ✗', formJs.length > 500 && !focusOk(formJs + ";f.elements['ort'].focus()"));
     check(id, 'beide Schritt-legends mit tabindex="-1"', (h.match(/<legend tabindex="-1">/g) || []).length === 2);
     for (const e of EREIGNISSE) check(id, `Formular-Skript enthält ${e}`, has(formJs, e));
     // --- Pflichtfelder, Ziele
