@@ -56,6 +56,16 @@
      "q": "Wer macht Gartenpflege in Falkensee und in der Nähe?",
      "a": "Der Haus- & Gartenservice Havelland sitzt in Falkensee und pflegt Privatgärten im ganzen Havelland, in Brieselang, Dallgow-Döberitz, Nauen, Wustermark und Schönwalde-Glien ebenso wie in Spandau, Gatow und Kladow. Schicken Sie uns Ihre Adresse per WhatsApp, wir sagen Ihnen ehrlich, ob wir kommen.",
      "hub_only": true
+    },
+    {
+     "q": "Was gehört zur Rasen- und Gehölzpflege?",
+     "a": "Wir mähen den Rasen gleichmäßig, entfernen Moos und können kahle Stellen nachsäen, damit wieder dichtes Gras entsteht. Sträucher und Ziergehölze schneiden wir fachgerecht in Form, Obstbäume werden ausgelichtet und Totholz wird entfernt. Der gesamte Grünschnitt wird zusammen mit dem Laub abgefahren und entsorgt, die Fläche bleibt besenrein. Bevor Sie selbst zum Mäher greifen, schreiben Sie uns kurz, was ansteht.",
+     "hub_only": true
+    },
+    {
+     "q": "Was passiert mit gefällten Bäumen und ihren Wurzeln?",
+     "a": "Stehen nach einer Fällung noch Baumstümpfe im Garten, ebnen wir die Fläche ein: Wurzeln werden mitgefräst, das Fräsgut fahren wir ab. Große Fällungen vermitteln wir an einen Fachpartner, kleine Pflegeschnitte an Obstbäumen und Ziergehölzen erledigen wir selbst. Auch Wege und Beete, auf die Laub oder Schnittgut gefallen sind, werden gesäubert.",
+     "hub_only": true
     }
    ],
    "garantie_text": "Fällt ein vereinbarter Pflegetermin ohne Vorankündigung aus, ist Ihr nächster Termin kostenlos.",
@@ -133,7 +143,7 @@
   {
    "slug": "heckenschnitt",
    "title": "Heckenschnitt Havelland | Festpreis vom Gartenservice",
-   "meta": "Heckenschnitt im Havelland: kostenlose Besichtigung, Festpreis als Endpreis, Foto-Nachweis nach jedem Auftrag. Anfrage auch per WhatsApp, Antwort am selben Tag.",
+   "meta": "Heckenschnitt im Havelland: kostenlose Besichtigung, Festpreis als Endpreis, Foto-Nachweis nach jedem Auftrag. Anfrage per WhatsApp, Antwort am selben Tag.",
    "h1": "Heckenschnitt im Havelland — sauber geschnitten, ordentlich abgefahren",
    "h1_em": "sauber",
    "intro": "Heckenschnitt im Havelland vom Gartenservice aus Falkensee: Formschnitt, Radikalschnitt zur erlaubten Zeit und Abfuhr des Grünschnitts. Fragen Sie per WhatsApp an, wir antworten am selben Tag. Nach der kostenlosen Besichtigung erhalten Sie einen schriftlichen Festpreis.",
@@ -162,7 +172,7 @@
    "faqs": [
     {
      "q": "Wann darf man eine Hecke schneiden?",
-     "a": "Den schonenden Formschnitt dürfen Sie ganzjährig durchführen. Einen starken Rückschnitt oder das Auf-den-Stock-Setzen erlaubt § 39 BNatSchG nur vom 1. Oktober bis 28. Februar, vom 1. März bis 30. September sind solche radikalen Eingriffe zum Schutz brütender Vögel untersagt. Die Regel gilt bundesweit, auch in Brandenburg und Berlin."
+     "a": "Den schonenden Formschnitt dürfen Sie das ganze Jahr über durchführen, um die Hecke in Form zu halten. Einen starken Rückschnitt oder das Auf-den-Stock-Setzen setzen wir zwischen Oktober und Februar an, wenn das Bundesnaturschutzgesetz (§ 39 BNatSchG) ihn zulässt, also vom 1. Oktober bis 28. Februar. Das Gesetz schützt brütende Vögel: Vom 1. März bis 30. September dürfen Hecken nur schonend in Form gehalten, aber nicht stark zurückgeschnitten oder auf den Stock gesetzt werden. Prüfen Sie das Datum, bevor Sie die Heckenschere ansetzen. Die Regel gilt bundesweit, auch in Brandenburg und Berlin. Verkahlte oder zu breit gewordene Hecken bauen wir über einen oder mehrere Winter zurück, statt sie in einem Schritt radikal zu kappen. Wir planen jeden Schnitt passend zu diesen Fristen."
     },
     {
      "q": "Wie oft sollte eine Hecke geschnitten werden?",
@@ -175,19 +185,44 @@
     },
     {
      "q": "Was kostet ein Heckenschnitt im Havelland?",
-     "a": "Länge, Höhe, Heckenart und Zugang bestimmen den Aufwand, deshalb nennen wir keinen Pauschalpreis ins Blaue. Den Festpreis erhalten Sie nach der kostenlosen Besichtigung, er bleibt Ihr Endpreis."
+     "a": "Länge, Höhe, Heckenart und Zugang bestimmen den Aufwand, deshalb nennen wir keinen Pauschalpreis ins Blaue. Den Festpreis erhalten Sie nach der kostenlosen Besichtigung, er bleibt Ihr Endpreis. Länge, Höhe, Heckenart, Zustand und Abtransport bestimmen den Preis. Wer diese fünf kennt, erkennt ein faires Angebot."
     },
     {
      "q": "Fahren Sie den Grünschnitt nach dem Schnitt ab?",
-     "a": "Ja, die Abfuhr und Entsorgung des gesamten Grünschnitts gehört zum Festpreis, ohne spätere Zusatzposten. Wir laden Äste und Laub auf, kehren die Fläche besenrein und entsorgen das Material ordnungsgemäß. Sollten doch Reste liegen bleiben, kommen wir im Rahmen unserer Geradlinien-Garantie kostenlos nach."
+     "a": "Ja, die Abfuhr und Entsorgung des gesamten Grünschnitts gehört bei uns zum Festpreis. Wir laden Äste und Laub auf, kehren die Fläche besenrein und entsorgen das Material ordnungsgemäß. Sie bleiben auf nichts sitzen. Bleiben wider Erwarten Schnittreste liegen, kommen wir kostenlos nach und räumen sie weg, das ist unsere Geradlinien-Garantie."
     },
     {
      "q": "Wie schnell bekomme ich einen Termin für den Heckenschnitt?",
-     "a": "Eine erste Rückmeldung erhalten Sie nach Ihrer WhatsApp-Anfrage am selben Tag. Die Besichtigung findet meist innerhalb weniger Tage statt, den Termin stimmen wir kurzfristig mit Ihnen ab."
+     "a": "Eine erste Rückmeldung erhalten Sie nach Ihrer WhatsApp-Anfrage am selben Tag, nicht erst nach Tagen. Die Besichtigung findet meist innerhalb weniger Tage statt, den Termin stimmen wir kurzfristig mit Ihnen ab. Im Februar ist die Nachfrage am höchsten, weil viele den Radikalschnitt noch vor dem Fristbeginn am 1. März erledigen wollen. Fragen Sie früh an, dann sichern Sie sich Ihren Wunschtermin."
     },
     {
      "q": "Wer schneidet Hecken in meiner Nähe, auch in Oranienburg und Hohen Neuendorf?",
-     "a": "Der Haus- & Gartenservice Havelland aus Falkensee schneidet Hecken im ganzen Havelland, in Oberhavel mit Oranienburg, Hohen Neuendorf und Birkenwerder sowie am Berliner Westrand in Spandau, Gatow und Kladow. Schicken Sie Ihre Adresse per WhatsApp, wir sagen Ihnen ehrlich, ob wir kommen.",
+     "a": "Der Haus- & Gartenservice Havelland aus Falkensee schneidet Hecken im ganzen Havelland, in Oberhavel mit Oranienburg, Hohen Neuendorf und Birkenwerder sowie am Berliner Westrand in Spandau, Gatow und Kladow. Schicken Sie Ihre Adresse per WhatsApp, wir sagen Ihnen ehrlich, ob wir kommen. Von Falkensee ins West-Havelland, nach Oberhavel, an den Berliner Westrand und an die Havelseen sind die Wege kurz und die Termine verlässlich, auch in vielen Ortsteilen und Nachbargemeinden sind wir im Einsatz.",
+     "hub_only": true
+    },
+    {
+     "q": "Was passiert mit dem Wurzelstock, wenn die Hecke weg ist?",
+     "a": "Nach einer gerodeten Hecke oder einem gefällten Baum bleibt oft der Wurzelstock zurück. Wir fräsen Stubben und Hauptwurzeln bis unter das Bodenniveau, ebnen die Fläche ein und nehmen das Fräsgut mit. Danach können Sie mähen, pflanzen oder den Zaun setzen. Ist die Thuja braun und verkahlt oder soll ein Zaun an die Grenze, entfernen wir die Hecke komplett: Rückschnitt im erlaubten Fenster vom 1. Oktober bis 28. Februar, Wurzeln gefräst, alles abgefahren und entsorgt, die Fläche eben und besenrein.",
+     "hub_only": true
+    },
+    {
+     "q": "Wann ist das ideale Schnittfenster, und was ist gesetzlich gesperrt?",
+     "a": "Der Formschnitt hat je nach Art sein ideales Fenster zwischen Juni und September, der Radikalschnitt zwischen Oktober und Februar. Gesetzlich gesperrt ist der starke Rückschnitt vom 1. März bis 30. September, zulässig bleiben schonende Form- und Pflegeschnitte zur Beseitigung des Zuwachses. Wer die Schnittzeiten und den Naturschutz im Blick behält, schneidet rechtssicher. Von Falkensee aus fahren wir dorthin, wo wir pünktlich sein können, bis ins Berliner Umland.",
+     "hub_only": true
+    },
+    {
+     "q": "Wie schneidet man eine Hecke richtig, und welche Form ist ideal?",
+     "a": "Ideal ist eine leicht trapezförmige Hecke: unten breiter als oben, damit die unteren Triebe genug Licht bekommen und die Hecke gleichmäßig dicht bleibt. Wir kürzen zuerst die obere Leiste und schneiden dann die Seiten. Jede Sorte verträgt den Schnitt anders: Kräftig wachsende Arten wie Liguster brauchen früh im Jahr den ersten Schnitt, bei Thuja behandeln wir kahle Stellen vorsichtig, weil sie aus altem Holz nicht wieder austreibt.",
+     "hub_only": true
+    },
+    {
+     "q": "Ist der Festpreis komplett, oder kommen Zusatzkosten dazu?",
+     "a": "Im Festpreis ist der komplette Heckenschnitt samt Abfuhr des Schnittguts enthalten. Zusatzposten oder spätere Zusatzkosten gibt es nicht: Von Ästen und Resten auf dem Grundstück befreien wir die Fläche, und das Ergebnis dokumentieren wir mit Fotos.",
+     "hub_only": true
+    },
+    {
+     "q": "Warum ist radikaler Heckenschnitt im Sommer verboten?",
+     "a": "Laut § 39 BNatSchG sind radikale Eingriffe vom 1. März bis 30. September untersagt, weil Hecken brütenden Vögeln Schutz bieten. Der schonende Formschnitt bleibt erlaubt. Unser Schnittkalender richtet sich danach: Eine Rodung samt Wurzel ist nur im Winterfenster zulässig, dann verschwinden Hecke und Stubben in einem Termin.",
      "hub_only": true
     }
    ],
@@ -196,7 +231,9 @@
     {
      "id": "definition",
      "h2": "Was ist Heckenschnitt?",
-     "body": "Heckenschnitt ist das fachgerechte Kürzen und Formen von Gartenhecken, das die Pflanze dicht und gesund hält und die Grundstücksgrenze sauber abgrenzt. Dazu zählen der regelmäßige Formschnitt, der starke Verjüngungsschnitt im Winterhalbjahr und das Abfahren des anfallenden Grünschnitts."
+     "body": "Heckenschnitt ist das fachgerechte Kürzen und Formen von Gartenhecken, das die Pflanze dicht und gesund hält und die Grundstücksgrenze sauber abgrenzt. Dazu zählen der regelmäßige Formschnitt, der starke Verjüngungsschnitt im Winterhalbjahr und das Abfahren des anfallenden Grünschnitts.",
+     "link_to": "baumstumpf-entfernen",
+     "link_text": "Wurzelstock im Boden? Baumstumpf entfernen lassen"
     },
     {
      "id": "heckenarten",
@@ -317,6 +354,16 @@
     {
      "q": "Gibt es Winterdienst auch für Hausverwaltungen, WEG und Gewerbe?",
      "a": "Ja. Für Mehrfamilienhäuser und WEG gilt ein gemeinsamer Saisonvertrag für das ganze Objekt. Bei Gewerbe räumt der Betrieb Parkplätze, Zufahrten und Laderampen maschinell, Eingänge und schmale Wege von Hand. Hausverwaltungen bündeln mehrere Objekte in einer Anfrage und erhalten je Objekt einen Nachweis."
+    },
+    {
+     "q": "Wer klärt Zugang, Räumzeiten und Einsatz an Feiertagen?",
+     "a": "Wir koordinieren den Ablauf: Der Partner-Fachbetrieb klärt mit Ihnen Haustür, Gehweg und Zufahrt, auch wenn der Zugang enger ist oder früher geräumt werden soll, weil Bewohner oder Kunden kommen. Einsatzzeiten an Feiertagen und am Wochenende variieren von Objekt zu Objekt, deshalb legen wir sie vorab für jedes Objekt fest und halten sie schriftlich fest.",
+     "hub_only": true
+    },
+    {
+     "q": "Lässt sich Winterdienst mit Laub und Dachrinne verbinden?",
+     "a": "Ja. Unsere eigene Leistung ist das Laub von Rasen, Wegen und Terrasse im Oktober, danach reinigt der Partner-Fachbetrieb die Dachrinne. Statt fünf Betriebe zu sortieren, haben Sie einen Ansprechpartner, der die Termine verbindet und das schriftliche Angebot des ausführenden Betriebs einholt.",
+     "hub_only": true
     }
    ],
    "garantie_text": "Besichtigung, Angebot und Saison koordinieren wir, Räumen und Streuen übernimmt der Partner-Fachbetrieb.",
@@ -384,8 +431,8 @@
     }
    ],
    "orte_foto": {
-    "src": "svc-winterdienst-orte",
-    "alt": "Schnee räumen auf dem Gehweg vor einem Einfamilienhaus"
+    "src": "ratgeber-winterdienst-pflichten",
+    "alt": "Geräumter Gehweg mit aufgehäuftem Schnee vor einem Mehrfamilienhaus"
    },
    "sections_h2": "Winterdienst in Falkensee und im Havelland: Schneeräumung und Streudienst"
   },
@@ -428,19 +475,19 @@
    "faqs": [
     {
      "q": "Was bringt eine professionelle Steinreinigung?",
-     "a": "Sie entfernt Moos, Algen und Grünbelag aus Fugen und von der Oberfläche, die mit Besen und Schrubber kaum ganz weggehen. Wir reinigen materialschonend, auf Wunsch mit Fugen-Schutz."
+     "a": "Eine professionelle Steinreinigung entfernt Moos, Algen und Grünbelag aus Fugen und von der Oberfläche, die mit Besen und Schrubber kaum vollständig weggehen. Das macht rutschige Pflaster, Terrassen und Einfahrten wieder trittsicher und ansehnlich. Wir reinigen materialschonend und schützen auf Wunsch die Fugen, damit der Bewuchs langsamer zurückkommt."
     },
     {
      "q": "Wie läuft die Steinreinigung bei Ihnen ab?",
-     "a": "Wir besichtigen Ihre Flächen kostenlos vor Ort und nennen danach einen Festpreis. Zum vereinbarten Termin reinigen wir Pflaster, Terrasse oder Einfahrt von Moos und Algen und spülen den Belag heraus."
+     "a": "Wir besichtigen Ihre Flächen kostenlos vor Ort und nennen Ihnen danach einen Festpreis. Zum vereinbarten Termin reinigen wir Pflaster, Terrasse oder Einfahrt von Moos und Algen und spülen den Belag heraus. Nach dem Auftrag erhalten Sie Vorher-Nachher-Fotos aufs Handy. So sehen Sie das Ergebnis, auch wenn Sie nicht dabei waren."
     },
     {
      "q": "Wann ist die beste Zeit für die Steinreinigung?",
-     "a": "Frühjahr und Spätsommer eignen sich am besten, weil das Wetter mild und trocken genug ist. Grundsätzlich reinigen wir die ganze Saison über, solange kein Frost herrscht."
+     "a": "Frühjahr und Spätsommer eignen sich am besten, weil das Wetter mild und trocken genug ist und Sie die Flächen danach wieder nutzen. Grundsätzlich reinigen wir im Havelland die ganze Saison über, solange kein Frost herrscht. Schreiben Sie uns per WhatsApp, dann finden wir gemeinsam einen passenden Termin und Sie hören am selben Tag von uns."
     },
     {
      "q": "Wie oft sollte man Pflaster und Terrasse reinigen lassen?",
-     "a": "Einmal im Jahr reicht für die meisten Flächen, schattige und feuchte Nordseiten vergrünen schneller und brauchen oft eine zweite Runde. Mit Fugen-Schutz wächst der Belag langsamer nach, auf Wunsch reinigen wir wiederkehrend."
+     "a": "Einmal im Jahr reicht für die meisten Steinflächen, um Moos und Algen in Schach zu halten. Schattige, feuchte Ecken auf der Nordseite vergrünen schneller und brauchen oft eine zweite Runde. Mit einem Fugen-Schutz wächst der Belag langsamer nach. Auf Wunsch vereinbaren wir eine wiederkehrende Reinigung, damit Ihre Flächen dauerhaft gepflegt bleiben."
     },
     {
      "q": "Reinigen Sie auch Fassaden und Mauerwerk?",
@@ -449,11 +496,26 @@
     },
     {
      "q": "Was kostet eine Steinreinigung im Havelland?",
-     "a": "Fläche, Verschmutzung und Material bestimmen den Aufwand, deshalb nennen wir den Preis nach der kostenlosen Besichtigung. Der Festpreis ist der Endpreis."
+     "a": "Den Preis nennen wir Ihnen erst nach einer kostenlosen Besichtigung vor Ort, weil Fläche, Verschmutzung und Material den Aufwand bestimmen. Sie bekommen dann einen Festpreis, und der Festpreis ist der Endpreis. So wissen Sie vorher genau, was die Reinigung kostet, ohne Überraschung auf der Rechnung."
     },
     {
      "q": "Steinreinigung in der Nähe: Welche Firma reinigt Pflastersteine, Terrassen und Fassaden?",
      "a": "Wir sind die Firma vor Ort: Wir sitzen in Falkensee und fahren das ganze Havelland und den Berliner Rand an, etwa Nauen, Dallgow-Döberitz, Brieselang und Wustermark. Wir reinigen Pflastersteine, Terrassen, Einfahrten und Fassaden, die Anfahrt ist inklusive. Eine WhatsApp mit Foto genügt, wir antworten am selben Tag.",
+     "hub_only": true
+    },
+    {
+     "q": "Was gehört bei Pflaster, Terrasse und Einfahrt zur Reinigung?",
+     "a": "Bei Pflaster holen wir Moos, Algen und Grünbelag aus den Fugen und von der Steinoberfläche, spülen den gelösten Bewuchs heraus und prüfen jede Fuge. Auf Wunsch füllen wir ausgespülte Fugen wieder auf und versehen sie mit einem Fugen-Schutz, damit Moos langsamer nachwächst. Grünbelag von Beton-, Naturstein- oder Keramikplatten lösen wir materialschonend, ohne die Oberfläche aufzurauen, danach ist die Sitzecke wieder einladend. Die Einfahrt nimmt täglich Reifen, Regen und Laub auf, dadurch bildet sich schnell ein dunkler Grünschleier. Wir reinigen sie von der Garage bis zum Gehweg und arbeiten die Kanten zur Straße sauber aus. Das Ergebnis ist eine helle, rutschfeste Zufahrt, die Ihr Grundstück aufgeräumter wirken lässt. Grünbelag, Moos und Algen auf der Terrasse lassen sich mit der richtigen Methode entfernen, vorausgesetzt, Sie wählen das Verfahren passend zum Belag.",
+     "hub_only": true
+    },
+    {
+     "q": "Warum wird Pflaster in schattigen Ecken so schnell glatt?",
+     "a": "In schattigen Ecken und auf Flächen, an die Nässe grenzt, etwa vor dem Hauseingang, wächst grüner Belag am schnellsten und macht Platten glatt. Nach der Reinigung sind die Plattenflächen wieder sicher begehbar und hell, weil Moos und Algen gelöst und abgespült sind. Mit Fugen-Schutz hält das Ergebnis länger, oft bis zur nächsten Gartensaison. Die Abfuhr des gelösten Belags gehört dazu.",
+     "hub_only": true
+    },
+    {
+     "q": "Reinigen Sie auch Außenwände und Sockel mit?",
+     "a": "Gerade am Sockel und an Außenwänden bleibt Feuchte länger stehen. Ein Hinweis bei der Anfrage genügt, dann nehmen wir diese Flächen in die Besichtigung auf und nennen den Festpreis für alles zusammen.",
      "hub_only": true
     }
    ],
@@ -710,28 +772,33 @@
    "faqs": [
     {
      "q": "Was kostet eine Dachrinnenreinigung im Havelland?",
-     "a": "Das Angebot erstellt der ausführende Partner-Fachbetrieb nach der kostenlosen und unverbindlichen Besichtigung. Rinnenlänge, Haushöhe, Verschmutzungsgrad und Zugang bestimmen den Preis. Wir koordinieren den Termin."
+     "a": "Das Angebot erstellt der ausführende Partner-Fachbetrieb nach einer Besichtigung — es hängt von der Länge der Rinne, der Höhe des Hauses, dem Verschmutzungsgrad und der Zugänglichkeit ab. Die Besichtigung ist für Sie kostenlos und unverbindlich. Wir koordinieren den Termin, damit Sie nur einen Ansprechpartner haben und nicht mehrere Betriebe vergleichen müssen."
     },
     {
      "q": "Wer führt die Dachrinnenreinigung aus?",
-     "a": "Die Arbeit an Rinne und Fallrohr übernimmt ein Partner-Fachbetrieb mit der passenden Ausrüstung und Absicherung. Wir koordinieren Besichtigung, Termin und Ablauf und begleiten den Einsatz."
+     "a": "Die Arbeit an Rinne und Fallrohr übernimmt ein Partner-Fachbetrieb mit der passenden Ausrüstung und Absicherung. Wir sind Ihr fester Ansprechpartner: Wir koordinieren Besichtigung, Termin und Ablauf und begleiten den Einsatz, damit Sie sich um nichts kümmern müssen."
     },
     {
      "q": "Wie oft und wann ist die beste Zeit für die Dachrinnenreinigung?",
-     "a": "Mindestens zweimal im Jahr, im Frühjahr und im Spätherbst (Oktober und November), wenn das meiste Laub gefallen ist. So läuft Schmelzwasser vor dem Winter ungehindert ab und es bilden sich keine Eiszapfen. Bei Bäumen am Haus sagt der Fachbetrieb vor Ort, ob öfter nötig ist."
+     "a": "Mindestens zweimal im Jahr, im Frühjahr und im Spätherbst (Oktober und November), wenn das meiste Laub gefallen ist. So läuft Schmelzwasser vor dem Winter ungehindert ab und es bilden sich keine Eiszapfen. Bei Bäumen am Haus sagt der Fachbetrieb vor Ort, ob öfter nötig ist. Stehen Laub- oder Nadelbäume direkt am Haus, sind zwei Reinigungen sinnvoll: eine im Frühsommer, eine nach dem Herbstlaub. Zur Hauptsaison im Herbst ist die Nachfrage am höchsten, fragen Sie den Termin also früh an, dann koordinieren wir die Besichtigung rechtzeitig."
     },
     {
      "q": "Was passiert, wenn die Dachrinne verstopft bleibt?",
-     "a": "Die Rinne läuft über, das Wasser durchnässt Fassade und Mauerwerk bis ins Fundament. Im Winter friert stehendes Wasser zu Eis, es drohen Feuchteschäden und Schimmel."
+     "a": "Eine verstopfte Rinne läuft bei Regen über, das Wasser durchnässt Fassade und Mauerwerk und kann bis ins Fundament ziehen. Daraus entstehen Feuchteschäden, Schimmel und teure Reparaturen; im Winter frieren stehende Reste zu Eis. Deshalb koordinieren wir den Termin einer regelmäßigen Reinigung rechtzeitig vor der nassen Jahreszeit."
     },
     {
      "q": "Gibt es eine Firma oder einen Fachbetrieb für Dachrinnenreinigung in meiner Nähe?",
-     "a": "Ja. Der Partner-Fachbetrieb reinigt Dachrinnen in Falkensee, Nauen, Dallgow-Döberitz, Brieselang, Wustermark und Schönwalde-Glien sowie im übrigen Havelland. Schreiben Sie uns per WhatsApp, wir antworten am selben Tag.",
+     "a": "Ja. Der Partner-Fachbetrieb reinigt Dachrinnen in Falkensee, Nauen, Dallgow-Döberitz, Brieselang, Wustermark und Schönwalde-Glien sowie im übrigen Havelland. Schreiben Sie uns per WhatsApp, wir antworten am selben Tag. Wir koordinieren Fachbetriebe im gesamten Havelland und Berliner Umland.",
      "hub_only": true
     },
     {
      "q": "Kann ich Dachrinne, Laub und Winterdienst in einem Zug erledigen lassen?",
-     "a": "Ja. Im Oktober und November holen wir das Laub von Rasen, Wegen und Terrasse weg und schneiden die Hecke ein letztes Mal, das ist unsere eigene Leistung. Danach reinigt der Partner-Fachbetrieb die Dachrinne. Für den Winter fehlt dann nur der Saisonvertrag: Räumen und Streuen übernimmt ein Partner-Fachbetrieb, am besten vereinbaren Sie die Besichtigung vor dem ersten Frost."
+     "a": "Ja. Im Oktober und November holen wir das Laub von Rasen, Wegen und Terrasse weg und schneiden die Hecke ein letztes Mal, das ist unsere eigene Leistung. Danach reinigt der Partner-Fachbetrieb die Dachrinne. Für den Winter fehlt dann nur der Saisonvertrag: Räumen und Streuen übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik, jeder Einsatz wird mit Datum und Uhrzeit festgehalten. Am besten vereinbaren Sie die Besichtigung vor dem ersten Frost."
+    },
+    {
+     "q": "Merken Sie sich meinen Turnus?",
+     "a": "Auf Wunsch ja: Wir merken uns Ihren Turnus und melden uns vor der nächsten Saison, damit Sie nicht selbst daran denken müssen. Die Koordination liegt bei uns, die Ausführung an Rinne und Fallrohr beim Partner-Fachbetrieb. Wir sind Ihr fester Ansprechpartner und begleiten den Einsatz, damit Sie sich um nichts kümmern müssen.",
+     "hub_only": true
     }
    ],
    "garantie_text": "Besichtigung, Termin und Ablauf koordinieren wir, das Angebot kommt vom ausführenden Betrieb.",
@@ -783,8 +850,8 @@
     }
    ],
    "orte_foto": {
-    "src": "svc-dachrinnenreinigung-orte",
-    "alt": "Dachrinne von Laub befreien, Leiter wird gesichert"
+    "src": "ratgeber-dachrinne-herbst",
+    "alt": "Dachrinne voller Herbstlaub"
    },
    "sections_h2": "Dachrinnenreinigung im Havelland: Rinne, Regenrinne und Fallrohr"
   },
@@ -1211,7 +1278,7 @@
   {
    "slug": "grundreinigung",
    "title": "Grundreinigung / Auszugsreinigung Havelland",
-   "meta": "Grundreinigung und Auszugsreinigung im Havelland vom Haus- & Gartenservice Havelland: Festpreis nach Besichtigung, Foto-Nachweis nach dem Auftrag, 24-h-Garantie.",
+   "meta": "Grundreinigung und Auszugsreinigung im Havelland vom Haus- & Gartenservice Havelland: Festpreis nach Besichtigung, Foto-Nachweis nach dem Auftrag und kostenlose Besichtigung.",
    "h1": "Besenrein war gestern — Ihre Auszugsreinigung im Havelland",
    "h1_em": "Besenrein",
    "intro": "Melden Sie sich vor dem Auszug bei uns. Sie erhalten eine kostenlose Besichtigung und einen schriftlichen Festpreis für die Übergabereinigung.",
@@ -2013,7 +2080,7 @@
    "meta": "Kostenlose Besichtigung, fester Preis: Baumstumpf und Wurzel entfernen im Havelland — fräsen statt graben, ganzjährig möglich, Fräsgut-Abfuhr inklusive.",
    "h1": "Baumstumpf und Wurzel entfernen im Havelland — gefräst, entsorgt, eingeebnet",
    "h1_em": "gefräst",
-   "intro": "Stubbenfräsen ist das maschinelle Abtragen eines Baumstumpfs samt Hauptwurzeln bis unter das Bodenniveau, das aus einem gefällten oder abgestorbenen Baum wieder eine ebene, nutzbare Fläche macht. Anders als die Heckenrodung ist es ganzjährig erlaubt. Ein Foto per WhatsApp reicht für die Ersteinschätzung, nach der kostenlosen Besichtigung erhalten Sie einen schriftlichen Festpreis.",
+   "intro": "Stubbenfräsen das ganze Jahr: Stumpf und Hauptwurzeln bis unter das Bodenniveau, danach ebene Fläche. Foto per WhatsApp, kostenlose Besichtigung, schriftlicher Festpreis.",
    "definition": "Stubbenfräsen ist das maschinelle Abtragen eines Baumstumpfs samt Hauptwurzeln bis unter das Bodenniveau, das aus einem gefällten oder abgestorbenen Baum wieder eine ebene, nutzbare Fläche macht. Anders als die Heckenrodung ist das Fräsen bereits gefällter Stümpfe ganzjährig erlaubt.",
    "sections": [
     {
@@ -2048,23 +2115,28 @@
    "faqs": [
     {
      "q": "Was kostet es, einen Baumstumpf entfernen zu lassen?",
-     "a": "Zur Orientierung (Stand 2026) meist 2 bis 5 Euro pro Zentimeter Stammdurchmesser inkl. MwSt., ein 40-cm-Stumpf liegt oft bei 80 bis 200 Euro. Den Festpreis nennen wir nach der kostenlosen Besichtigung."
+     "a": "Der Preis richtet sich vor allem nach dem Stammdurchmesser, der Anzahl der Stubben und dem Zugang zum Grundstück. Wir besichtigen kostenlos und nennen Ihnen danach einen Festpreis inklusive Abfuhr des Fräsguts — der Endpreis bleibt, ohne Aufschlag. Zur Orientierung (Stand 2026): meist 2 bis 5 Euro pro Zentimeter Stammdurchmesser — ein 40-cm-Stumpf liegt damit oft bei 80 bis 200 Euro, Endpreise inklusive Mehrwertsteuer. Details in unserem Kosten-Ratgeber."
     },
     {
      "q": "Ist das Entfernen eines Baumstumpfs ganzjährig erlaubt?",
-     "a": "Ja, das Verbot des § 39 BNatSchG (1. März bis 30. September) betrifft Hecken und Gebüsche, nicht das Fräsen bereits gefällter Stümpfe. Hecken dürfen nur vom 1. Oktober bis 28. Februar gerodet werden."
+     "a": "Ja. Das Verbotsfenster des § 39 BNatSchG vom 1. März bis 30. September betrifft Hecken und Gebüsche — nicht das Fräsen bereits gefällter Stümpfe. Einen Baumstumpf entfernen wir deshalb das ganze Jahr über. Nur wenn zusätzlich Hecken oder Gehölze gerodet werden sollen, gilt für diesen Teil das Winterfenster vom 1. Oktober bis 28. Februar. Was in Ihrem Fall gilt, prüfen wir bei der kostenlosen Besichtigung."
     },
     {
      "q": "Kann ich eine Stubbenfräse nicht einfach selbst mieten?",
-     "a": "Möglich, aber selten günstiger: Zur Miete kommen Transport, Einarbeitung und Leitungsrisiko. Bei ein bis drei Stubben ist der Profi meist schneller."
+     "a": "Möglich, aber selten günstiger: Zur Tagesmiete kommen Transport, Einarbeitung, das Risiko von Steinschlag und die Entsorgung des Fräsguts. Bei ein bis drei Stubben ist der Profi-Einsatz meist schneller und in Summe kaum teurer — und Sie tragen kein Risiko an Maschine und Leitungen. Den Rechenvergleich finden Sie in unserem Kosten-Ratgeber."
     },
     {
-     "q": "Wie tief geht die Wurzelentfernung, und treibt der Stumpf wieder aus?",
-     "a": "Bei Robinie, Pappel oder Kirschlorbeer fräsen wir tiefer als die üblichen 20 bis 30 Zentimeter, weil sie aus Wurzelresten austreiben können. Feinwurzeln bleiben im Boden und verrotten."
+     "q": "Wie tief wird der Baumstumpf ausgefräst?",
+     "a": "Standard sind rund 20 bis 30 Zentimeter unter dem Bodenniveau — das reicht für Rasen, Beet oder eine neue Pflanzung. Soll an der Stelle gebaut oder tief gepflanzt werden, fräsen wir tiefer oder graben den Wurzelstock komplett aus. Die passende Tiefe legen wir bei der kostenlosen Besichtigung fest.",
+     "hub_only": true
+    },
+    {
+     "q": "Treibt ein gefräster Baumstumpf wieder aus?",
+     "a": "Nach dem Fräsen bis unter das Bodenniveau in der Regel nicht mehr. Ausschlagfreudige Arten wie Robinie, Pappel oder Kirschlorbeer können aus verbliebenen Wurzelresten treiben — bei ihnen fräsen wir von vornherein tiefer und sagen Ihnen, worauf Sie im ersten Jahr achten sollten. Feinwurzeln verrotten von selbst im Boden."
     },
     {
      "q": "Kann man einen Baumstumpf mit Salz oder Essig entfernen?",
-     "a": "Nein. Hausmittel wie Salz oder Essig beschleunigen die Verrottung kaum und schädigen den Boden. Ein Stumpf verrottet auf natürlichem Weg erst nach vielen Jahren und treibt bei manchen Arten sogar wieder aus. Auch Wurzel-Ex und ähnliche Mittel sind Biozide, deren Wirkung unsicher bleibt. Fräsen löst das Problem in der Regel in unter einer Stunde.",
+     "a": "Nein. Hausmittel wie Salz oder Essig beschleunigen die Verrottung kaum, schädigen den Boden und sind teils gar nicht zulässig. Ein Stumpf verrottet auf natürlichem Weg erst nach vielen Jahren — und treibt bei manchen Arten sogar wieder aus. Auch Wurzel-Ex und ähnliche Mittel sind Biozide, deren Wirkung sich über Jahre hinzieht und unsicher bleibt. Fräsen löst das Problem in der Regel in unter einer Stunde.",
      "hub_only": true
     },
     {
@@ -2133,8 +2205,8 @@
     }
    ],
    "orte_foto": {
-    "src": "svc-baumstumpf-entfernen-orte",
-    "alt": "Baumstumpf mit der Stubbenfräse entfernen"
+    "src": "svc-baumfaellung-orte",
+    "alt": "Holz und Äste in den Transporter laden"
    }
   },
   {
@@ -2216,21 +2288,25 @@
     {
      "id": "zeitpunkt",
      "h2": "Bester Zeitpunkt für die Rodung: Oktober bis Februar",
-     "body": "Die Vegetationsruhe ist die arbeitsbeste Zeit für die Rodung: kein Laub und ein tragfähiger Boden. Gras- und Krautflächen räumen wir dagegen das ganze Jahr frei."
+     "body": "Die Vegetationsruhe ist die arbeitsbeste Zeit für die Rodung: kein Laub und ein tragfähiger Boden. Gras- und Krautflächen räumen wir dagegen das ganze Jahr frei.",
+     "gruppe": "zeitpunkt-kosten-pflege",
+     "gruppe_h2": "Zeitpunkt, Kosten und Pflege danach"
     },
     {
      "id": "preise",
      "h2": "Was kostet eine Gartenrodung?",
      "body": "Den Aufwand bestimmen die Fläche, die Dichte des Bewuchses, der Anteil an Gehölz und Wurzeln und die Entsorgungsmenge, auch die Zufahrt spielt hinein. Eine Quadratmeter-Pauschale gibt es deshalb nicht: Den Festpreis nennen wir nach der kostenlosen Besichtigung.",
      "link_to": "ratgeber/verwilderten-garten-roden",
-     "link_text": "Ratgeber: Verwilderten Garten roden, Kosten"
+     "link_text": "Ratgeber: Verwilderten Garten roden, Kosten",
+     "gruppe": "zeitpunkt-kosten-pflege"
     },
     {
      "id": "pflege",
      "h2": "Danach in Pflege nehmen",
      "body": "Damit das freigeräumte Grundstück nicht wieder zuwächst, übernehmen wir auf Wunsch die regelmäßige Pflege mit Rasen, Grünschnitt und Laub.",
      "link_to": "gartenpflege",
-     "link_text": "Zur regelmäßigen Gartenpflege im Havelland"
+     "link_text": "Zur regelmäßigen Gartenpflege im Havelland",
+     "gruppe": "zeitpunkt-kosten-pflege"
     }
    ],
    "ortsseite_lead": "Gartenrodung in {ort}: Wir roden verwilderte Gärten und Grundstücke — Gestrüpp, Sträucher und Wurzeln raus, Grünschnitt abgefahren. Festpreis nach kostenloser Besichtigung in {ort}, Vorher-Nachher-Fotos inklusive.",
@@ -2380,10 +2456,10 @@
      "link_text": "Zum Heckenschnitt"
     },
     {
-     "to": "baumfaellung",
-     "h3": "Schnitt reicht nicht mehr?",
-     "p": "Ist ein Baum zu groß, krank oder im Weg, klären wir die Genehmigung vorab.",
-     "link_text": "Zur Baumfällung"
+     "to": "gartenpflege",
+     "h3": "Mehr als nur die Bäume?",
+     "p": "Auch Rasen, Hecke und Laub übernehmen wir, auf Wunsch im 14-Tage-Rhythmus.",
+     "link_text": "Zur Gartenpflege"
     }
    ],
    "vorteile": [
@@ -2566,7 +2642,9 @@
      "link_to": "heckenentfernung",
      "link_text": "Zur Heckenentfernung",
      "link2_to": "baumstumpf-entfernen",
-     "link2_text": "Zum Baumstumpf entfernen"
+     "link2_text": "Zum Baumstumpf entfernen",
+     "gruppe": "hecke-und-zaun",
+     "gruppe_h2": "Hecke entfernen und Zaun setzen"
     },
     {
      "id": "zaun",
@@ -2578,7 +2656,8 @@
       "Zaunbau ist unsere jüngste Leistung: Das erste Projekt (33 Laufmeter Staketenzaun in Falkensee) und der Vergleich der fünf Zaunarten stehen auf der Zaunbau-Seite"
      ],
      "link_to": "zaunbau",
-     "link_text": "Alle Zaunarten und Preise"
+     "link_text": "Alle Zaunarten und Preise",
+     "gruppe": "hecke-und-zaun"
     },
     {
      "id": "freiraeumen",
@@ -2591,7 +2670,9 @@
       "Eine Besichtigung, ein Angebot für Räumung und Bau, so im Sommer 2026 im Havelland: Schuppen und Garage ausgeräumt, Holzschuppen und Hühnerstall abgerissen, alten Metallzaun zurückgebaut"
      ],
      "link_to": "gartenpflege",
-     "link_text": "Danach in die regelmäßige Gartenpflege in Falkensee"
+     "link_text": "Danach in die regelmäßige Gartenpflege in Falkensee",
+     "gruppe": "freiraeumen-und-einfassen",
+     "gruppe_h2": "Freiräumen, ausbessern und einfassen"
     },
     {
      "id": "beete",
@@ -2606,7 +2687,8 @@
      "link_to": "pflasterarbeiten#kantensteine",
      "link_text": "Kantensteine und Rasenkanten",
      "link2_to": "steinreinigung",
-     "link2_text": "Pflaster intakt, aber vermoost? Zur Steinreinigung"
+     "link2_text": "Pflaster intakt, aber vermoost? Zur Steinreinigung",
+     "gruppe": "freiraeumen-und-einfassen"
     }
    ],
    "faelle": [
@@ -2725,8 +2807,8 @@
    },
    "vorteile": [],
    "orte_foto": {
-    "src": "svc-galabau-orte",
-    "alt": "Grundstück vermessen und Pflasterbett prüfen"
+    "src": "svc-galabau-detail",
+    "alt": "Pflasterstein wird mit dem Gummihammer gesetzt"
    }
   },
   {
@@ -2792,7 +2874,7 @@
     },
     {
      "q": "Wer zahlt den Zaun zum Nachbargrundstück?",
-     "a": "Zur Straße friedet der rechte Nachbar ein, an rückwärtigen Grenzen beide gemeinsam (§ 28 BbgNRG). Ohne Einigung gilt als Mindeststandard ein 1,25 Meter hoher Maschendrahtzaun, die Kosten teilen sich beide je zur Hälfte (§§ 32, 34 BbgNRG). Den Bau müssen Sie dem Nachbarn mindestens zwei Wochen vorher anzeigen (§ 29 BbgNRG)."
+     "a": "Zur Straße friedet der rechte Nachbar ein, an rückwärtigen Grenzen beide gemeinsam (§ 28 BbgNRG). Ohne Einigung gilt als Mindeststandard ein 1,25 Meter hoher Maschendrahtzaun, die Kosten teilen sich beide je zur Hälfte (§§ 32, 34 BbgNRG). Den Bau müssen Sie dem Nachbarn mindestens zwei Wochen vorher anzeigen (§ 29 BbgNRG). Wer einfrieden muss, zu welcher Grenze und wer die Kosten trägt, regelt zusätzlich das Brandenburgische Nachbarrechtsgesetz."
     },
     {
      "q": "Brauche ich für meinen Zaun eine Genehmigung?",
@@ -2813,6 +2895,42 @@
      "q": "Welche Gewährleistung gibt es auf Zaun und Montage?",
      "a": "Auf unsere Montageleistung gilt die gesetzliche Gewährleistung, auf das Material die Herstellergarantie des jeweiligen Zaunsystems. Mängel bei der Abnahme halten wir mit Fotos fest, damit beide Seiten denselben Stand haben.",
      "hub_only": true
+    },
+    {
+     "q": "Warum muss ich das Material vorab bezahlen?",
+     "a": "Wir bestellen erst nach Zahlungseingang, weil wir größere Materialmengen nicht auf eigenes Risiko vorstrecken. Im Angebot weisen wir den Materialanteil offen aus, die Montage zahlen Sie erst nach der Abnahme."
+    },
+    {
+     "q": "Wie lange dauert die Lieferung bei Alu-Zäunen?",
+     "a": "Rechnen Sie mit vier bis zwölf Wochen ab Bestellung, je nach Serie, Farbe und Toranteil. Wir nennen die Lieferzeit vor Ihrer Zusage, damit Sie realistisch planen können."
+    },
+    {
+     "q": "Was ist, wenn der Boden Sand oder Bauschutt enthält?",
+     "a": "Der Boden entscheidet über Hülse oder Beton. Auf natürlich gewachsenem Sand, wie im Havelland verbreitet, reichen bei den meisten Pfosten Hülsen. Liegt Bauschutt oder aufgeschütteter Boden darunter, wie bei manchen in den 1990ern erschlossenen Grundstücken, betonieren wir stattdessen. Die Spatenprobe bei der Besichtigung zeigt, welcher Fall bei Ihnen vorliegt."
+    },
+    {
+     "q": "Wer haftet, wenn beim Setzen der Pfosten eine Leitung beschädigt wird?",
+     "a": "Vor jedem Pfostenloch prüfen wir den Leitungsverlauf über die Leitungsauskunft BIL — eine Nachfrage beim Bauamt allein reicht dafür nicht. Wer ohne diese Sorgfalt gräbt und eine Leitung beschädigt, haftet in aller Regel voll."
+    },
+    {
+     "q": "Wann darf eine alte Hecke weg, bevor der Zaun kommt?",
+     "a": "Nur zwischen dem 1. Oktober und dem 28. Februar — § 39 Abs. 5 Nr. 2 BNatSchG schützt brütende Vögel den Rest des Jahres. Wir legen Rodung und Zaunmontage in dieses Fenster, oft in einem Auftrag."
+    },
+    {
+     "q": "Zaun oder Hecke — was ist besser?",
+     "a": "Ein Zaun steht sofort blickdicht, eine Hecke braucht je nach Sorte mehrere Jahre, bis sie dieselbe Wirkung erreicht. Dafür braucht der Zaun praktisch keine Pflege, während eine Hecke regelmäßigen Schnitt verlangt — komplett roden dürfen wir sie ohnehin nur zwischen 1. Oktober und 28. Februar (§ 39 Abs. 5 Nr. 2 BNatSchG). In der Anschaffung liegt ein fertiges Zaunsystem meist über einer jungen Heckenpflanzung, dafür summiert sich bei der Hecke der Pflegeaufwand über die Jahre. Am Ende ist es eine Abwägung zwischen sofortiger Wirkung und laufendem Aufwand — wir beraten dazu bei der Besichtigung."
+    },
+    {
+     "q": "Kastanie oder Haselnuss beim Staketenzaun?",
+     "a": "Wir verbauen ausschließlich Staketenzaun aus Kastanie. Das Holz enthält Gerbsäure — deshalb befestigen wir ausschließlich mit Edelstahlschrauben statt Krampen, die sich sonst lösen würden. Zu Haselnuss als Alternative haben wir keine eigene Verarbeitungserfahrung und bieten sie deshalb nicht an."
+    },
+    {
+     "q": "Sie zeigen nur ein Referenzprojekt — wie erfahren sind Sie im Zaunbau?",
+     "a": "Ehrlich: Zaunbau ist unsere jüngste Leistung. Wir montieren Zäune seit 2026 als Ergänzung zu Gartenpflege und Heckenentfernung, die wir seit dem Start im Havelland machen — dieselben zwei Leute, dieselbe Sorgfalt, dieselben Google-Bewertungen. Das erste Zaunprojekt in Falkensee ist mit Zahlen dokumentiert, jedes weitere kommt mit Fotos auf diese Seite. Und weil wir genormte Fertigsysteme montieren, hängt das Ergebnis an Ausrichtung, Fundament und Sorgfalt — nicht an zwanzig Jahren Schmiedekunst."
+    },
+    {
+     "q": "Liefern und montieren Sie auch Tore?",
+     "a": "Ja. Wir liefern und montieren mechanische Tore passend zum Zaunsystem, mit Scharnieren und Schließmechanik, die auch nach Jahren leichtgängig bleiben. Breite und Öffnungsrichtung legen wir bei der Besichtigung fest. Alu-Tore sind der größte Kostentreiber im gesamten Zaunprojekt. Tor-, End- und Eckpfosten setzen wir in Beton, dort wirken die größten Kräfte."
     }
    ],
    "garantie_text": "Mehraufwand wie Bauschutt im Boden sprechen wir vorher an.",

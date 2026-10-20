@@ -475,7 +475,7 @@ export function auftragsTimeline(partner = false, slug = '', legacy = false) {
 // uspBand — .vals, 4 USP (preview-kit .v h3 .vn).
 // ---------------------------------------------------------------------------
 const USP = [
-  ['01', 'Aus einer Hand', 'Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles.'],
+  ['01', 'Aus einer Hand', 'Garten, Reinigung, Entrümpelung — ein Ansprechpartner. Winterdienst und Dachrinne laufen über Partner-Fachbetriebe.'],
   ['02', 'Nachweis statt Versprechen', 'Foto-Dokumentation nach jedem Auftrag, direkt aufs Handy.'],
   ['03', 'Festpreis', 'Kostenlose Besichtigung, klarer Preis — kein Nachkommen.'],
   ['04', 'Schnell erreichbar', 'WhatsApp-Antwort am selben Tag.']
@@ -679,11 +679,18 @@ export function saisonTeaser(monat) {
 // Spec: gbr-firma websites/havelland/website/leistungen-galabau-2026-10/05-design-spec-paket1.md §3.3
 // ===========================================================================
 
+// Spec (04-design-entscheidungen): Titel + 1 Satz sichtbar, kein Aufklapper. Der ausführliche Text bleibt in hubs.json (sections[].kurz) für Ortsseiten/Ratgeber.
+const kurzHtml = k => {
+  if (!k) return '';
+  const m = String(k).match(/^([\s\S]+?[.!?])\s+(?=[A-ZÄÖÜ])([\s\S]+)$/);
+  if (!m) return `<span>${esc(k)}</span>`;
+  return `<span>${esc(m[1])}</span>`;
+};
 // leistungsListe — Foto links, Leistungen als sichtbare Liste rechts (kein Aufklapper). Ohne Foto: nummerierte Liste.
 export function leistungsListe({ h2 = '', fotoHtml = '', items = [], garantie = '', garantieLabel = 'Unsere Garantie' } = {}) {
   const li = arr(items).map((x, i) => fotoHtml
-    ? `<li${x.id ? ` id="${esc(x.id)}"` : ''}><b>${esc(x.h3)}</b>${x.kurz ? `<span>${esc(x.kurz)}</span>` : ''}</li>`
-    : `<li class="ls-num"${x.id ? ` id="${esc(x.id)}"` : ''}><span class="nr">${String(i + 1).padStart(2, '0')}</span><div><b>${esc(x.h3)}</b>${x.kurz ? `<span>${esc(x.kurz)}</span>` : ''}</div></li>`).join('');
+    ? `<li${x.id ? ` id="${esc(x.id)}"` : ''}><b>${esc(x.h3)}</b>${kurzHtml(x.kurz)}</li>`
+    : `<li class="ls-num"${x.id ? ` id="${esc(x.id)}"` : ''}><span class="nr">${String(i + 1).padStart(2, '0')}</span><div><b>${esc(x.h3)}</b>${kurzHtml(x.kurz)}</div></li>`).join('');
   // Beginnt der Text selbst mit „…Garantie:“ (z. B. „Geradlinien-Garantie: …“), trägt er das Label — Präfix nicht doppelt rendern.
   const gm = String(garantie || '').match(/^([^:.]{2,40}[Gg]arantie):\s*([\s\S]+)$/);
   const g = garantie ? `<p class="garantie-line rv"><strong>${esc(gm ? gm[1] : garantieLabel)}:</strong> ${esc(gm ? gm[2] : garantie)}</p>` : '';
@@ -718,8 +725,8 @@ export function orteBlock({ name = '', fotoHtml = '', orte = [], weitere = [], p
 }
 
 // soLaeufts — EIN Ablauf (Timeline) + WhatsApp/Telefon UNTER der Zeitleiste (außerhalb der Linie).
-export function soLaeufts({ partner = false, slug = '', name = '', waText = '', alt = true, items = null, reihe = false } = {}) {   // reihe (Paket 3 Standorte): die Schritte stehen als 4-Spalten-Reihe mit Haarlinie oben statt als vertikale Zeitleiste   // items (Paket 3): eigene Schritte [{when?,h?,p}] (Werte ROH wie timelineFrom) statt der Leistungs-Timeline
-  return `<section class="sec${alt ? ' section-alt' : ''}" id="ablauf"><div class="wrap"><div class="head"><h2 class="serif rv">${name ? `So läuft ${esc(name)} ab` : 'So läuft’s'}</h2></div>${items ? (reihe ? timelineFrom(items).replace('<div class="tl rv">', '<div class="tl tl-reihe rv">') : timelineFrom(items)) : auftragsTimeline(partner, slug)}<div class="cta-row sl-cta rv">${slug === 'winterdienst' ? `<a class="btn btn-acc" href="${waHref(waText || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">Flächen per WhatsApp schicken</a><a class="btn btn-line" href="tel:${TEL}">☎ ${TEL_DISP}</a>` : `<a class="btn btn-acc" href="tel:${TEL}">☎ ${TEL_DISP}</a><a class="btn btn-line" href="${waHref(waText || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">Per WhatsApp anfragen</a>`}</div></div></section>`;
+export function soLaeufts({ partner = false, slug = '', name = '', waText = '', alt = true, items = null, reihe = false, hint = '' } = {}) {   // reihe (Paket 3 Standorte): die Schritte stehen als 4-Spalten-Reihe mit Haarlinie oben statt als vertikale Zeitleiste   // items (Paket 3): eigene Schritte [{when?,h?,p}] (Werte ROH wie timelineFrom) statt der Leistungs-Timeline
+  return `<section class="sec${alt ? ' section-alt' : ''}${reihe ? '' : ' tl-row'}" id="ablauf"><div class="wrap"><div class="head"><h2 class="serif rv">${name ? `So läuft ${esc(name)} ab` : 'So läuft’s'}</h2></div>${items ? (reihe ? timelineFrom(items).replace('<div class="tl rv">', '<div class="tl tl-reihe rv">') : timelineFrom(items)) : auftragsTimeline(partner, slug)}${hint ? `<p class="sl-hint rv">${hint}</p>` : ''}<div class="cta-row sl-cta rv">${slug === 'winterdienst' ? `<a class="btn btn-acc" href="${waHref(waText || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">Flächen per WhatsApp schicken</a><a class="btn btn-line" href="tel:${TEL}">☎ ${TEL_DISP}</a>` : `<a class="btn btn-acc" href="tel:${TEL}">☎ ${TEL_DISP}</a><a class="btn btn-line" href="${waHref(waText || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">Per WhatsApp anfragen</a>`}</div></div></section>`;
 }
 
 // galabauKarten — Hub mit Unterseiten: Fotokarten (ganze Karte = Link) + Kasten „Außerdem für Sie da“.

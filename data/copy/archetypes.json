@@ -5,13 +5,13 @@
    "key": "brandenburg",
    "rahmen": [
     "Wer in {ort} ein Eigenheim bewohnt, kennt die Mischung aus ruhiger Wohnlage und einem Garten, der das ganze Jahr Arbeit macht. Hecken wachsen, Pflasterfugen veralgen, Laub sammelt sich auf Rasen und Wegen. Wir nehmen diese wiederkehrenden Arbeiten am Stück ab – vom kleinen Vorgarten bis zum weitläufigen Grundstück Richtung {nachbarorte}. Dieselbe Hand bleibt von der Anfrage bis zur Abnahme zuständig, sodass Sie am Wochenende nicht selbst zur Heckenschere greifen. Gepflegt, ohne Ihren Sonntag.",
-    "Kurze Wege zählen hier mehr als große Worte. Von Falkensee aus erreichen wir {ort} und die Nachbarorte {nachbarorte} schnell, deshalb klappt ein Termin oft schon in derselben Woche und die Anfahrt steckt im Festpreis. Eine Nachricht per WhatsApp genügt, und Sie hören binnen weniger Stunden von uns. Das spart Ihnen das lange Warten auf Rückruf – und lässt uns auch für einen kurzen Pflegeschnitt vorbeischauen, ohne dass daraus ein Tagesprojekt wird. Nah dran, schnell da.",
+    "Kurze Wege zählen hier mehr als große Worte. Von Falkensee aus erreichen wir {ort} und die Nachbarorte {nachbarorte} schnell, deshalb klappt ein Termin oft schon in derselben Woche und die Anfahrt steckt im Festpreis. Eine Nachricht per WhatsApp genügt, und Sie hören am selben Tag von uns. Das spart Ihnen das lange Warten auf Rückruf – und lässt uns auch für einen kurzen Pflegeschnitt vorbeischauen, ohne dass daraus ein Tagesprojekt wird. Nah dran, schnell da.",
     "Die Aufträge in {ort} ähneln sich übers Jahr: Rasen mähen und vertikutieren im Frühjahr, Hecken und Sträucher in Form halten, im Herbst Laub räumen; Dachrinne und Winterdienst laufen über einen Partner-Fachbetrieb. Dazu die kleinen Dinge am Haus, für die sich kein eigener Handwerker lohnt – eine lockere Zaunlatte, ein verstopfter Ablauf, ein wackelndes Vordach. All das läuft über eine Nummer, statt für jede Kleinigkeit einen neuen Betrieb zu suchen. Eine Liste, ein Termin.",
     "Sie wissen bei uns, mit wem Sie es zu tun haben: In {ort} bleibt Ihr Ansprechpartner von der Anfrage bis zur Abnahme derselbe, keine wechselnden Kräfte. Wir sehen uns die Sache vor Ort gemeinsam an, nennen vorab einen festen Preis und zeigen das Ergebnis danach per Foto. So bleibt nachvollziehbar, was gemacht wurde – ob es um Ihr Grundstück geht oder das eines Angehörigen in {nachbarorte}. Nachweis per Bild, kein Vertrauensvorschuss nötig."
    ],
    "trust": [
     "In {ort} gilt ein einfacher Grundsatz: Was vereinbart ist, wird gehalten. Nach der kostenlosen Besichtigung steht der Festpreis, und der genannte Betrag ist der Endbetrag, ohne Aufschlag am Ende. Der Preis steht.",
-    "Ihr Auftrag in {ort} läuft von der Anfrage bis zur Abnahme über eine Person – kein Durchstellen, kein wechselndes Personal. Auf eine WhatsApp-Nachricht melden wir uns meist binnen weniger Stunden, sodass Sie schnell wissen, woran Sie sind. Eine Nachricht genügt.",
+    "Ihr Auftrag in {ort} läuft von der Anfrage bis zur Abnahme über eine Person – kein Durchstellen, kein wechselndes Personal. Auf eine WhatsApp-Nachricht melden wir uns am selben Tag, sodass Sie schnell wissen, woran Sie sind. Eine Nachricht genügt.",
     "Nach jedem Auftrag in {ort} bekommen Sie Fotos vom Vorher und Nachher. So sehen Sie schwarz auf weiß, was erledigt wurde – praktisch, wenn Sie selbst nicht dabei waren oder das Grundstück für Angehörige betreuen lassen. Nachweis statt Zusagen."
    ],
    "faqs": [
@@ -21,7 +21,7 @@
     },
     {
      "q": "Wie schnell bekomme ich in {ort} einen Termin?",
-     "a": "Da wir aus Falkensee kommen und im gesamten Havelland kurze Wege haben, lässt sich ein Termin in {ort} oft schon innerhalb derselben Woche einrichten. Bei dringenden Dingen wie einem verstopften Ablauf versuchen wir, früher vorbeizukommen. Schreiben Sie uns Ihr Anliegen, und wir melden uns meist binnen weniger Stunden mit einem Vorschlag zurück."
+     "a": "Da wir aus Falkensee kommen und im gesamten Havelland kurze Wege haben, lässt sich ein Termin in {ort} oft schon innerhalb derselben Woche einrichten. Bei dringenden Dingen wie einem verstopften Ablauf versuchen wir, früher vorbeizukommen. Schreiben Sie uns Ihr Anliegen, und wir melden uns am selben Tag mit einem Vorschlag zurück."
     },
     {
      "q": "Übernehmen Sie in {ort} die Gartenpflege auch das ganze Jahr über?",

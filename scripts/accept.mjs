@@ -654,6 +654,24 @@ for (const rel of sample) {
   check('global', `${rel}: scta vorhanden`, classCount(h, 'scta') >= 1);
 }
 
+// ---- SITEWEIT (Owner-Regeln 20.10.): alle Seiten, kein Stichproben-Ausschnitt ----
+// Reaktionszeit nur "am selben Tag" / "Besichtigung meist innerhalb weniger Tage" (keine Stunden-Varianten, auch nicht "binnen");
+// "kein/ohne Subunternehmer" ist sitewide angreifbar (UWG), weil Winterdienst/Dachrinne/Dachreinigung/Bauendreinigung über Partner laufen.
+P('SITEWEIT (alle Seiten)');
+{
+  const walkHtml = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walkHtml(`${d}/${e.name}`) : e.name.endsWith('.html') ? [`${d}/${e.name}`] : []);
+  const reaktion = /(antworten|antwort|rückmeldung|melden|hören|zurück)[^.]{0,80}(binnen|innerhalb|in)\s+(weniger|wenigen|einigen|ein paar|\d+)?\s*Stunden/i;
+  const subu = /(kein|ohne|nicht von (einem )?)\s*Subunternehmer/i;
+  const badStd = [], badSub = [];
+  for (const f of walkHtml('website')) {
+    const t = fs.readFileSync(f, 'utf8').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+    if (reaktion.test(t) || /Antwort meist in Stunden|meist binnen weniger Stunden|binnen weniger Stunden/i.test(t)) badStd.push(f.replace('website/', ''));
+    if (subu.test(t)) badSub.push(f.replace('website/', ''));
+  }
+  check('sitewide', `keine Stunden-Zusage zur Reaktionszeit (${badStd.length} Treffer${badStd.length ? ': ' + badStd.slice(0, 3).join(', ') : ''})`, badStd.length === 0);
+  check('sitewide', `kein „kein/ohne Subunternehmer“ (${badSub.length} Treffer${badSub.length ? ': ' + badSub.slice(0, 3).join(', ') : ''})`, badSub.length === 0);
+}
+
 // ---- Ausgabe ----
 console.log(lines.join('\n'));
 if (fails.length) {

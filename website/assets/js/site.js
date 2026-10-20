@@ -286,7 +286,7 @@
   })();
 
   /* ===== Sticky-Leiste erst nach dem Hero (Paket 1, Runde 2, 20.10.) =====
-     Solange die Hero-Button-Zeile im Bild ist (oder noch darunter liegt), bleibt die
+     Solange die Hero-Button-Zeile mindestens zur Hälfte im Bild ist, bleibt die
      Sticky-Leiste "Anrufen / WhatsApp" ausgeblendet: sie verdeckt sonst den Hero-Button
      und doppelt dessen Anruf-/WhatsApp-Knöpfe. Ohne JS bleibt sie sichtbar. */
   (function () {
@@ -294,8 +294,8 @@
     if (!scta || !row || !('IntersectionObserver' in window)) return;
     var io = new IntersectionObserver(function (es) {
       var e = es[es.length - 1];
-      scta.classList.toggle('scta-wait', e.isIntersecting || e.boundingClientRect.top > 0);
-    }, { threshold: 0 });
+      scta.classList.toggle('scta-wait', e.isIntersecting && e.intersectionRatio >= .5);
+    }, { threshold: [0, .5, 1] });
     io.observe(row);
   })();
 
