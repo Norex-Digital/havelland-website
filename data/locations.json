@@ -514,6 +514,26 @@
       "typ": [
         "B2C"
       ]
+    },
+    {
+      "name": "Potsdam",
+      "slug": "potsdam",
+      "plz": "14467",
+      "geo": "B",
+      "typ": [
+        "B2C"
+      ],
+      "nur_seiten": true,
+      "ortsteile": [
+        "Fahrland",
+        "Neu Fahrland",
+        "Groß Glienicke",
+        "Marquardt",
+        "Satzkorn",
+        "Golm",
+        "Bornstedt",
+        "Eiche"
+      ]
     }
   ]
 }

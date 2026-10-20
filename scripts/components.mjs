@@ -315,7 +315,7 @@ export function karussell(slugs) {
 // ---------------------------------------------------------------------------
 // archivGrid — .pgrid mit .thumb-Buttons (data-slug/cap/sub) + thumb-cta + Lightbox (#lightbox).
 // ---------------------------------------------------------------------------
-export function archivGrid(slugs, { ctaHref = '#kontakt' } = {}) {
+export function archivGrid(slugs, { ctaHref = '/kontakt/#anfrage' } = {}) {   // 20.10. (Copy H5): '#kontakt' hat auf keiner Seite ein Ziel
   const list = (arr(slugs).length ? arr(slugs) : VN_ALL).filter(s => VN_META[s]);
   const thumbs = list.map(s => {
     const m = VN_META[s];
@@ -376,7 +376,7 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
 const TL = [
   ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
   ['Kurzfristig · kostenlos', 'Besichtigung &amp; Festpreis', 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis — inklusive Abfuhr. Der Preis steht, bevor wir anfangen.'],
-  ['Zum vereinbarten Termin', 'Saubere Ausführung', 'Pünktlich, gründlich, terminlich sauber geplant. Wir räumen hinter uns auf — besenrein ist Teil des Preises.'],
+  ['Zum vereinbarten Termin', 'Saubere Ausführung', 'Pünktlich und gründlich zum vereinbarten Termin. Wir räumen hinter uns auf, besenrein ist Teil des Preises.'],
   ['Direkt nach der Arbeit', 'Foto-Nachweis aufs Handy', 'Vorher-/Nachher-Fotos Ihres Auftrags, direkt aufs Handy. Sie sehen das Ergebnis auch dann, wenn Sie nicht zu Hause waren.']
 ];
 // P0-1 (Audit 2026-08): Der §39-Satz in Schritt 3 erscheint NUR auf Services mit echtem §39-Bezug —
@@ -387,6 +387,16 @@ const tlStep3 = slug => TL_39.has(slug)
   : slug === 'baumstumpf-entfernen'
     ? 'Pünktlich, gründlich — Stubbenfräsen ist ganzjährig möglich. Wir räumen hinter uns auf — besenrein ist Teil des Preises.'
     : TL[2][2];
+// Ablauf-Schritt 2 (20.10., Copy K1/H7): „inklusive Abfuhr“ nur dort, wo die Abfuhr wirklich im Festpreis steckt. Aushub/Altbelag/Gartenbau: Entsorgung nach Beleg. Baumfällung: Abtransport inklusive, Stadtgebühren nicht. Fenster/Stein: keine Abfuhr.
+const TL2_BELEG = new Set(['erdarbeiten', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'gartengestaltung', 'rollrasen-verlegen', 'galabau']);
+const TL2_OHNE_ABFUHR = new Set(['fensterreinigung', 'steinreinigung']);
+const tlStep2 = slug => TL2_BELEG.has(slug)
+  ? 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis. Entsorgungsgebühren rechnen wir nach Beleg ab, ohne Aufschlag. Der Preis steht, bevor wir anfangen.'
+  : slug === 'baumfaellung'
+    ? 'Wir kommen vorbei, schauen uns den Baum an und nennen Ihnen einen Festpreis inklusive Abtransport. Gebühren der Stadt für die Fällgenehmigung und Ersatzpflanzungen sind nicht enthalten. Der Preis steht, bevor wir anfangen.'
+    : TL2_OHNE_ABFUHR.has(slug)
+      ? 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis. Der Preis steht, bevor wir anfangen.'
+      : TL[1][2];
 // Partner-/Tippgeber-Variante (Dach): keine Eigenleistung, kein eigener Festpreis, kein eigener Foto-Nachweis — Ausführung + Angebot beim Fachbetrieb.
 const TL_PARTNER_DACH = [
   ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was am Dach ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
@@ -411,7 +421,7 @@ export function timelineFrom(items, { rv = true } = {}) {
   return `<div class="tl${rv ? ' rv' : ''}">${rows}</div>`;
 }
 export function auftragsTimeline(partner = false, slug = '') {
-  const base = partner ? (slug === 'winterdienst' ? TL_PARTNER_WINTER : TL_PARTNER_DACH) : TL.map((row, i) => i === 2 ? [row[0], row[1], tlStep3(slug)] : row);
+  const base = partner ? (slug === 'winterdienst' ? TL_PARTNER_WINTER : TL_PARTNER_DACH) : TL.map((row, i) => i === 2 ? [row[0], row[1], tlStep3(slug)] : i === 1 ? [row[0], row[1], tlStep2(slug)] : row);
   return timelineFrom(base.map(([when, h, p]) => ({ when, h, p })));
 }
 
@@ -617,3 +627,63 @@ export function saisonTeaser(monat) {
   return `<section class="sec section-alt" id="saison"><div class="wrap"><div class="head"><h2 class="serif rv">${h2}</h2></div><p class="intro rv">${esc(intro)}</p><div class="list">${list}</div><p class="rv" style="margin-top:18px">Hausverwaltung oder Gewerbe? <a href="/fuer-hausverwaltungen/">Objektbetreuung mit Winterdienst und Laub →</a></p></div></section>`;
 }
 
+
+// ===========================================================================
+// Paket 1 (20.10.2026) — Hub-Grundgerüst. Bilder kommen als fertiges HTML (pic() aus generate.mjs).
+// Spec: gbr-firma websites/havelland/website/leistungen-galabau-2026-10/05-design-spec-paket1.md §3.3
+// ===========================================================================
+
+// leistungsListe — Foto links, Leistungen als sichtbare Liste rechts (kein Aufklapper). Ohne Foto: nummerierte Liste.
+export function leistungsListe({ h2 = '', fotoHtml = '', items = [], garantie = '', garantieLabel = 'Unsere Garantie' } = {}) {
+  const li = arr(items).map((x, i) => fotoHtml
+    ? `<li${x.id ? ` id="${esc(x.id)}"` : ''}><b>${esc(x.h3)}</b>${x.kurz ? `<span>${esc(x.kurz)}</span>` : ''}</li>`
+    : `<li class="ls-num"${x.id ? ` id="${esc(x.id)}"` : ''}><span class="nr">${String(i + 1).padStart(2, '0')}</span><div><b>${esc(x.h3)}</b>${x.kurz ? `<span>${esc(x.kurz)}</span>` : ''}</div></li>`).join('');
+  // Beginnt der Text selbst mit „…Garantie:“ (z. B. „Geradlinien-Garantie: …“), trägt er das Label — Präfix nicht doppelt rendern.
+  const gm = String(garantie || '').match(/^([^:.]{2,40}[Gg]arantie):\s*([\s\S]+)$/);
+  const g = garantie ? `<p class="garantie-line rv"><strong>${esc(gm ? gm[1] : garantieLabel)}:</strong> ${esc(gm ? gm[2] : garantie)}</p>` : '';
+  return `<section class="sec" id="leistungen"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(h2)}</h2></div><div class="ls-split${fotoHtml ? '' : ' ls-nofoto'} rv">${fotoHtml ? `<div class="ls-foto">${fotoHtml}</div>` : ''}<ul class="ls-list">${li}</ul></div>${g}</div></section>`;
+}
+
+// vorteileBlock — „Was Sie davon haben“ (4 nummerierte Vorteile); mit frist → dunkelgrüner Frist-Kasten links.
+export function vorteileBlock({ items = [], frist = null, alt = false } = {}) {
+  const v = arr(items).map((x, i) => `<div class="it"><span class="nr">0${i + 1}</span><div><h3>${esc(x.h3)}</h3><p>${esc(x.p)}</p></div></div>`).join('');
+  if (frist) {
+    return `<section class="sec${alt ? ' section-alt' : ''}" id="frist"><div class="wrap"><div class="fx rv"><div class="fx-band"><span class="kick">Gesetzliches Zeitfenster</span><h2>${frist.h2}</h2><p>${esc(frist.text)}</p><a class="btn btn-acc" href="/kontakt/#anfrage">${esc(frist.cta)}</a></div><div><h2 class="serif">Was Sie davon haben</h2><div class="vt-list">${v}</div></div></div></div></section>`;
+  }
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="vorteile"><div class="wrap"><div class="head"><h2 class="serif rv">Was Sie davon haben</h2></div><div class="vt-list vt-grid rv">${v}</div></div></section>`;
+}
+
+// passtBlock — „Passt oft dazu“: Karten mit Bild (ganze Karte = Link).
+export function passtBlock({ items = [], alt = true } = {}) {
+  const it = arr(items);
+  if (!it.length) return '';
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="passt"><div class="wrap"><div class="head"><h2 class="serif rv">Passt oft dazu</h2></div><div class="px rv">${it.map(x => `<a class="pxc" href="${esc(x.href)}">${x.imgHtml || ''}<div><h3>${esc(x.h3)}</h3><p>${esc(x.p)}</p><span class="go">${esc(x.link_text || 'Mehr erfahren')} →</span></div></a>`).join('')}</div></div></section>`;
+}
+
+// orteBlock — „Unterwegs im Havelland“: echtes Arbeitsfoto + Top-Orte als Buttons + „Alle Orte“.
+export function orteBlock({ name = '', fotoHtml = '', orte = [], weitere = [], partner = false, alt = false } = {}) {
+  const o = arr(orte);
+  if (!o.length) return '';
+  const w = arr(weitere);   // Owner 20.10. „Verlinkung komplett“: alle übrigen indexierbaren Ortsseiten als schlichte Textlinks
+  const satz = partner
+    ? 'Wir sitzen in Falkensee und koordinieren den Einsatz im ganzen Havelland, von Nauen bis Spandau.'
+    : 'Wir sitzen in Falkensee und kommen selbst zu Ihnen, von Nauen bis Spandau. Die Anfahrt steckt im Festpreis.';
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="orte"><div class="wrap"><div class="ox rv">${fotoHtml ? `<div class="ox-foto">${fotoHtml}</div>` : ''}<div><span class="kick">Unterwegs im Havelland</span><h2 class="serif">${esc(name)} in Ihrem Ort</h2><p class="ox-satz">${satz}</p><div class="ox-chips">${o.map(x => `<a href="${esc(x.href)}">${esc(x.name)}</a>`).join('')}</div>${w.length ? `<p class="ox-weitere"><span>Weitere Orte:</span> ${w.map(x => `<a href="${esc(x.href)}">${esc(x.name)}</a>`).join(', ')}</p>` : ''}<p class="ox-alle"><a href="/standorte/">Alle Orte →</a></p></div></div></div></section>`;
+}
+
+// soLaeufts — EIN Ablauf (Timeline) + WhatsApp/Telefon UNTER der Zeitleiste (außerhalb der Linie).
+export function soLaeufts({ partner = false, slug = '', name = '', waText = '', alt = true } = {}) {
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="ablauf"><div class="wrap"><div class="head"><h2 class="serif rv">${name ? `So läuft ${esc(name)} ab` : 'So läuft’s'}</h2></div>${auftragsTimeline(partner, slug)}<div class="cta-row sl-cta rv">${slug === 'winterdienst' ? `<a class="btn btn-acc" href="${waHref(waText || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">Flächen per WhatsApp schicken</a><a class="btn btn-line" href="tel:${TEL}">☎ ${TEL_DISP}</a>` : `<a class="btn btn-acc" href="tel:${TEL}">☎ ${TEL_DISP}</a><a class="btn btn-line" href="${waHref(waText || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">Per WhatsApp anfragen</a>`}</div></div></section>`;
+}
+
+// galabauKarten — Hub mit Unterseiten: Fotokarten (ganze Karte = Link) + Kasten „Außerdem für Sie da“.
+export function galabauKarten({ h2 = '', lead = '', kern = [], ausserdem = [] } = {}) {
+  return `<section class="sec" id="leistungen"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(h2)}</h2></div>${lead ? `<p class="sec-lead rv">${esc(lead)}</p>` : ''}<div class="gx-grid rv">${arr(kern).map(x => `<a href="${esc(x.href)}">${x.imgHtml || ''}<div><h3>${esc(x.h3)}</h3><p>${esc(x.p)}</p><span class="go">Mehr erfahren →</span></div></a>`).join('')}</div>${arr(ausserdem).length ? `<div class="gx-mehr rv"><h3>Außerdem für Sie da</h3><div class="gx-chips">${arr(ausserdem).map(x => `<a href="${esc(x.href)}">${esc(x.label)}</a>`).join('')}</div></div>` : ''}</div></section>`;
+}
+
+// ergebnisPaare — echte Vorher/Nachher-Paare (z. B. Steinreinigung) als Regler-Reihe.
+export function ergebnisPaare({ paare = [], h2 = 'Ergebnisse zum Durchziehen' } = {}) {
+  const p = arr(paare);
+  if (!p.length) return '';
+  return `<section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(h2)}</h2></div><div class="ep-grid rv">${p.map(x => `<figure class="ep">${baSlider({ vorher: x.vorher, nachher: x.nachher, w: x.w, h: x.h, alt: x.alt, cap: x.cap, sub: x.sub, vorTxt: x.vorTxt || 'vor der Reinigung', nachTxt: x.nachTxt || 'nach der Reinigung' })}</figure>`).join('')}</div></div></section>`;
+}

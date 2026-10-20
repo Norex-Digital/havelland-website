@@ -1,29 +1,30 @@
 {
   "_meta": "Copy für die Übersichtsseiten /leistungen/ + /standorte/ (2026-06-16). Faktenbasiert, Marken-Stimme, keine erfundenen Reviews/Zahlen/Landmarks. Umlaute korrekt (Translit-Gate). Gruppen-Labels stehen im Generator (LEISTUNGEN_KATEGORIEN / STANDORT_REGIONEN), die Intros hier.",
   "leistungen": {
-    "lead": "Vom regelmäßigen Garten bis zum einmaligen Großeinsatz: Garten, Reinigung, Entrümpelung und Hausmeisterdienste mit Festpreis nach kostenloser Besichtigung und Foto-Nachweis; Winterdienst und Dachrinne koordiniert über einen Partner-Fachbetrieb.",
-    "meta": "Alle Leistungen im Havelland mit einem Ansprechpartner — Garten, Reinigung, Entrümpelung, Hausmeisterdienste; Winterdienst über Partner-Fachbetrieb",
+    "lead": "Gartenpflege, Heckenschnitt, Winterdienst, Pflaster und Entrümpelung im Havelland: kostenlose Besichtigung, klares Angebot, ein Ansprechpartner.",
+    "meta": "Alle Leistungen im Havelland: Gartenpflege, Heckenschnitt, Dachrinne, Winterdienst, Pflaster, Zaun, Entrümpelung — Festpreis nach kostenloser Besichtigung.",
     "intro": "Wir bündeln die Arbeiten rund um Haus und Grundstück, damit Sie nicht für jede Aufgabe einen eigenen Betrieb suchen und koordinieren müssen. Hier sind unsere Leistungen nach Bereichen sortiert — von der laufenden Gartenpflege bis zur Betreuung von Gewerbeobjekten.",
     "kategorien": {
-      "garten": "Pflege und Sauberkeit rund ums Haus — Rasen und Grünschnitt, Hecken in Form, Laub, Pflaster, Terrasse und streifenfreie Fenster; Winterdienst über Partner-Fachbetrieb.",
-      "galabau": "Wegmachen und neu bauen: Hecke raus, Stubben gefräst, Fläche geräumt, Zaun gesetzt, Pflaster ausgebessert — kleinere GaLaBau-Arbeiten zum Festpreis nach Besichtigung.",
+      "garten": "Pflege rund ums Jahr — Rasen und Grünschnitt, Hecken in Form, Baum- und Obstbaumschnitt, Laub im Herbst; Winterdienst über Partner-Fachbetrieb.",
+      "galabau": "Pflaster, Einfahrt, Terrasse, Zaun, Rollrasen, Gartengestaltung und Erdarbeiten — dazu Rodung, Heckenentfernung und Baumfällung. Festpreis nach kostenloser Besichtigung, auf Wunsch alles in einem Angebot.",
       "aufloesung": "Einmalige Großeinsätze mit Festpreis nach Besichtigung — entrümpelt, aufgelöst und besenrein übergeben.",
       "dach": "Rund ums Dach: die Dachrinne frei vor dem Herbst und die Dachreinigung. Für Arbeiten auf dem Dach koordinieren wir einen Partner-Fachbetrieb — ein Ansprechpartner für Besichtigung, Termin und Ablauf.",
-      "gewerbe": "Für Eigentümer, Hausverwaltungen und Betriebe: Hausmeisterdienst, Gebäude- und Unterhaltsreinigung, Objektbetreuung und Ferienwohnungs-Reinigung im festen Turnus.",
+      "gewerbe": "Für Eigentümer, Hausverwaltungen und Betriebe: Objektbetreuung, Hausmeisterdienst, Unterhalts- und Gebäudereinigung im festen Turnus.",
       "saison_herbst": "Drei Dinge vor dem Winter: Laub und letzter Schnitt erledigen wir selbst, Dachrinne und Winterdienst laufen über einen Partner-Fachbetrieb – ein Ansprechpartner, ein Ablauf.",
-      "saison_winter": "Jetzt im Winter: Winterdienst über den Partner-Fachbetrieb, Heckenentfernung im gesetzlichen Fenster bis 28. Februar und Entrümpelung zum Festpreis nach Besichtigung."
+      "saison_winter": "Jetzt im Winter: Winterdienst über den Partner-Fachbetrieb, Heckenentfernung im gesetzlichen Fenster bis 28. Februar und Entrümpelung zum Festpreis nach Besichtigung.",
+      "haus": "Sauber rund ums Haus: Dachrinne frei vor dem Herbst, Dachreinigung über einen Partner-Fachbetrieb, streifenfreie Fenster, Pflaster- und Steinreinigung sowie Grund- und Ferienwohnungs-Reinigung."
     },
     "faqs": [
       {
         "q": "Bekomme ich alle Leistungen aus einer Hand?",
-        "a": "Ja. Garten, Reinigung, Entrümpelung und Hausmeisterdienste übernehmen wir selbst, Winterdienst und Dachrinne koordinieren wir über einen Partner-Fachbetrieb — Sie müssen nicht für jede Aufgabe einen eigenen Betrieb suchen."
+        "a": "Ja. Garten, Reinigung, Entrümpelung und Hausmeisterdienste führen wir aus. Winterdienst, Dachrinne und Dachreinigung koordinieren wir über einen Partner-Fachbetrieb."
       },
       {
         "q": "Was kostet eine Besichtigung?",
         "a": "Die Vor-Ort-Besichtigung ist für Sie kostenlos. Wir schauen uns an, was ansteht, und nennen Ihnen danach einen Festpreis. Der vereinbarte Betrag ist der Endbetrag, ohne Aufschlag am Ende."
       },
       {
-        "q": "Übernehmen Sie auch einzelne, kleinere Aufträge?",
+        "q": "Übernehmen Sie auch einzelne Aufträge?",
         "a": "Ja. Ob nur die Hecke geschnitten oder die Dachrinne gereinigt werden soll — auch einzelne Arbeiten sind möglich. Schreiben Sie uns kurz per WhatsApp, worum es geht, dann stimmen wir einen Termin ab."
       },
       {

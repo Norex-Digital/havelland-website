@@ -7,8 +7,22 @@
    "meta": "Wertstoffhof Falkensee: Öffnungszeiten, Annahmeliste und Gebühren 2026 im Überblick — kostenfrei für Privathaushalte bei Sperrmüll und Elektroschrott.",
    "lead": "Adresse, Öffnungszeiten und Gebühren des Wertstoffhofs Falkensee im Überblick — mit den aktuellen Sätzen der Abfallgebührensatzung 2026.",
    "intro": "Der Wertstoffhof Falkensee liegt in der Nauener Straße 97. Geöffnet ist montags von 9 bis 18 Uhr, dienstags bis freitags von 9 bis 17 Uhr und samstags von 8 bis 13 Uhr. Sperrmüll, Schrott, Elektroaltgeräte, Leuchtstoffröhren und Schadstoffe nehmen die Mitarbeiter von Privathaushalten kostenfrei an, alle übrigen Abfälle werden auf der Fahrzeugwaage gewogen und nach Gewicht abgerechnet. Angaben laut Betreiber, Stand 17.09.2026. Bitte vor der Fahrt prüfen.",
-   "about": [{ "type": "Place", "name": "Falkensee" }],
-   "mentions": [{ "type": "Organization", "name": "Abfallbehandlungsgesellschaft Havelland mbH" }, { "type": "Place", "name": "Wertstoffhof Falkensee" }],
+   "about": [
+    {
+     "type": "Place",
+     "name": "Falkensee"
+    }
+   ],
+   "mentions": [
+    {
+     "type": "Organization",
+     "name": "Abfallbehandlungsgesellschaft Havelland mbH"
+    },
+    {
+     "type": "Place",
+     "name": "Wertstoffhof Falkensee"
+    }
+   ],
    "sections": [
     {
      "h2": "Adresse und Öffnungszeiten",
@@ -28,7 +42,7 @@
     },
     {
      "h2": "Zu viel für den Anhänger? Wir holen ab",
-     "body_html": "<p>Nicht jede Räumung passt auf einen Anhänger oder in mehrere Fahrten zum Wertstoffhof: vollgestellte Keller, aufgelöste Haushalte oder ganze Schuppen brauchen oft mehr Ladefläche und Zeit, als ein Wochenende erlaubt. Solche Mengen betreffen häufig Nachlassauflösungen, Kellerentrümpelungen oder das Räumen eines Gartenhauses vor dem Verkauf: Situationen, in denen mehrere Fahrten zum Hof allein aus Zeitgründen nicht praktikabel sind.</p><p>Haus- &amp; Gartenservice Havelland übernimmt Räumung und Abtransport zum Festpreis nach einer kostenlosen Besichtigung. Die Entsorgungsgebühren der Annahmestellen rechnen wir danach nach Beleg ab, zuzüglich Mehrwertsteuer und ohne eigenen Aufschlag. Sie müssen dafür nicht selbst zum Hof fahren, warten oder wiegen.</p><p>Ablauf und Preisfaktoren im Detail: <a href=\"/entruempelung/\">Entrümpelung im Havelland</a>.</p>"
+     "body_html": "<p>Nicht jede Räumung passt auf einen Anhänger oder in mehrere Fahrten zum Wertstoffhof: vollgestellte Keller, aufgelöste Haushalte oder ganze Schuppen brauchen oft mehr Ladefläche und Zeit, als ein Wochenende erlaubt. Solche Mengen betreffen häufig Nachlassauflösungen, Kellerentrümpelungen oder das Räumen eines Gartenhauses vor dem Verkauf: Situationen, in denen mehrere Fahrten zum Hof allein aus Zeitgründen nicht praktikabel sind.</p><p>Haus- &amp; Gartenservice Havelland übernimmt Räumung und Abtransport zum Festpreis nach einer kostenlosen Besichtigung. Die Entsorgungsgebühren der Annahmestellen rechnen wir danach nach Beleg ab, ohne eigenen Aufschlag. Sie müssen dafür nicht selbst zum Hof fahren, warten oder wiegen.</p><p>Ablauf und Preisfaktoren im Detail: <a href=\"/entruempelung/\">Entrümpelung im Havelland</a>.</p>"
     },
     {
      "h2": "Andere Wertstoffhöfe im Landkreis",
@@ -78,8 +92,18 @@
    "meta": "Sperrmüll im Havelland anmelden: 2× jährlich kostenlos, bis zu vier Wochen Wartezeit — Anmeldewege, Ausnahmen und Alternativen wie der Wertstoffhof Falkensee.",
    "lead": "So melden Sie Sperrmüll in Falkensee und im übrigen Havelland an: mit Fristen, Ausnahmen und der Frage, wann der Wertstoffhof die schnellere Lösung ist.",
    "intro": "Sperrmüll holt die HAW mbH im Auftrag des Landkreises Havelland zweimal pro Jahr kostenlos ab, angemeldet online, telefonisch oder per E-Mail. Von der Anmeldung bis zur Abholung können bis zu vier Wochen vergehen; bereitgestellt wird unverpackt vor dem Grundstück, spätestens bis 6 Uhr am Abholtag. Angaben laut Landkreis Havelland und HAW mbH, Stand 17.09.2026.",
-   "about": [{ "type": "Place", "name": "Landkreis Havelland" }],
-   "mentions": [{ "type": "Organization", "name": "HAW mbH (Hausmüllabfuhr Havelland)" }],
+   "about": [
+    {
+     "type": "Place",
+     "name": "Landkreis Havelland"
+    }
+   ],
+   "mentions": [
+    {
+     "type": "Organization",
+     "name": "HAW mbH (Hausmüllabfuhr Havelland)"
+    }
+   ],
    "sections": [
     {
      "h2": "So melden Sie Sperrmüll an",
@@ -152,7 +176,7 @@
     },
     {
      "h2": "Selbst machen oder Firma: die ehrliche Rechnung",
-     "body_html": "<p>Wer Zeit und einen Anhänger hat, kann Keller, Garage oder Dachboden selbst räumen und zum Wertstoffhof Falkensee fahren. Sperrmüll, Schrott, Elektroaltgeräte und Schadstoffe sind dort für Privathaushalte kostenfrei; alles andere wiegt die Fahrzeugwaage und rechnet nach der <a href=\"https://www.abfall-havelland.de/index.php?page_id=544\" rel=\"noopener\" target=\"_blank\">Abfallgebührensatzung 2026</a> ab:</p><table><tr><th>Abfallart</th><th>€/kg</th></tr><tr><td>Gemischte Siedlungsabfälle</td><td>0,32</td></tr><tr><td>Altholz A1–A4</td><td>0,36</td></tr><tr><td>Kunststoffe a. n. g.</td><td>0,40</td></tr><tr><td>Teer-/Bitumenpappe mit Nachweis</td><td>0,70</td></tr><tr><td>Schrott</td><td>0,00</td></tr></table><p>Dazu kommt die Zeit: beladen, zum Hof fahren, an der Waage warten, oft in mehreren Fahrten, weil ein Anhänger schnell voll ist. Öffnungszeiten und Annahmeliste stehen im <a href=\"/ratgeber/wertstoffhof-falkensee/\">Ratgeber zum Wertstoffhof Falkensee</a>. Eine Firma übernimmt Beladen, Fahrten und Entsorgung zum Festpreis nach Besichtigung; Sie sparen die eigene Zeit und zahlen die Entsorgungsgebühren nach Beleg zuzüglich Mehrwertsteuer weiter.</p>"
+     "body_html": "<p>Wer Zeit und einen Anhänger hat, kann Keller, Garage oder Dachboden selbst räumen und zum Wertstoffhof Falkensee fahren. Sperrmüll, Schrott, Elektroaltgeräte und Schadstoffe sind dort für Privathaushalte kostenfrei; alles andere wiegt die Fahrzeugwaage und rechnet nach der <a href=\"https://www.abfall-havelland.de/index.php?page_id=544\" rel=\"noopener\" target=\"_blank\">Abfallgebührensatzung 2026</a> ab:</p><table><tr><th>Abfallart</th><th>€/kg</th></tr><tr><td>Gemischte Siedlungsabfälle</td><td>0,32</td></tr><tr><td>Altholz A1–A4</td><td>0,36</td></tr><tr><td>Kunststoffe a. n. g.</td><td>0,40</td></tr><tr><td>Teer-/Bitumenpappe mit Nachweis</td><td>0,70</td></tr><tr><td>Schrott</td><td>0,00</td></tr></table><p>Dazu kommt die Zeit: beladen, zum Hof fahren, an der Waage warten, oft in mehreren Fahrten, weil ein Anhänger schnell voll ist. Öffnungszeiten und Annahmeliste stehen im <a href=\"/ratgeber/wertstoffhof-falkensee/\">Ratgeber zum Wertstoffhof Falkensee</a>. Eine Firma übernimmt Beladen, Fahrten und Entsorgung zum Festpreis nach Besichtigung; Sie sparen die eigene Zeit und zahlen die Entsorgungsgebühren nach Beleg weiter, ohne eigenen Aufschlag.</p>"
     },
     {
      "h2": "Ablauf in fünf Schritten",
@@ -190,7 +214,7 @@
     },
     {
      "q": "Wohin kommt der Rest?",
-     "a": "Verwertbares rechnen wir an, der Rest geht sortiert zum Wertstoffhof Falkensee: Altholz, Schrott, Elektroaltgeräte und Siedlungsabfall jeweils in den passenden Container. Öltanks, asbestverdächtige Bauteile und Chemikalien fassen wir nicht selbst an, dafür vermitteln wir einen Fachbetrieb. Die Entsorgungsgebühren weisen wir nach Beleg aus, zuzüglich Mehrwertsteuer."
+     "a": "Verwertbares rechnen wir an, der Rest geht sortiert zum Wertstoffhof Falkensee: Altholz, Schrott, Elektroaltgeräte und Siedlungsabfall jeweils in den passenden Container. Öltanks, asbestverdächtige Bauteile und Chemikalien fassen wir nicht selbst an, dafür vermitteln wir einen Fachbetrieb. Die Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag."
     },
     {
      "q": "Wie lange dauert eine Garage?",
@@ -213,7 +237,7 @@
    "title": "Gartenhaus abreißen und entsorgen: Kosten, Ablauf, Regeln",
    "meta": "Gartenhaus abreißen und entsorgen: Rückbau, getrennte Entsorgung von Holz, Metall und Dachpappe sowie die Anzeigepflicht nach der Bauvorlagenverordnung.",
    "lead": "Was beim Abriss eines Gartenhauses zu klären ist, was die getrennte Entsorgung von Holz, Metall und Dachpappe kostet und wann eine Anzeige beim Bauamt nötig wird.",
-   "intro": "Ein Gartenhaus abzureißen heißt: erst ausräumen, dann rückbauen, dann Holz, Metall und Dachpappe getrennt entsorgen, weil der Wertstoffhof jede Abfallart einzeln wiegt und abrechnet. Ob der Abbruch anzeige- oder genehmigungspflichtig ist, hängt von der Größe der Anlage und der Lage des Grundstücks ab. Für die meisten Gartenhäuser ist er nach der Brandenburgischen Bauvorlagenverordnung anzeigefrei, mit Ausnahmen bei Baudenkmälern oder gesundheitsgefährdenden Baustoffen wie asbesthaltiger Dachpappe. Das ist keine Rechtsberatung, die Einzelfall-Prüfung macht das Bauamt Ihrer Gemeinde. Preislich gilt: Festpreis für Rückbau und Abtransport nach kostenloser Besichtigung, Entsorgung nach Beleg zuzüglich Mehrwertsteuer.",
+   "intro": "Ein Gartenhaus abzureißen heißt: erst ausräumen, dann rückbauen, dann Holz, Metall und Dachpappe getrennt entsorgen, weil der Wertstoffhof jede Abfallart einzeln wiegt und abrechnet. Ob der Abbruch anzeige- oder genehmigungspflichtig ist, hängt von der Größe der Anlage und der Lage des Grundstücks ab. Für die meisten Gartenhäuser ist er nach der Brandenburgischen Bauvorlagenverordnung anzeigefrei, mit Ausnahmen bei Baudenkmälern oder gesundheitsgefährdenden Baustoffen wie asbesthaltiger Dachpappe. Das ist keine Rechtsberatung, die Einzelfall-Prüfung macht das Bauamt Ihrer Gemeinde. Preislich gilt: Festpreis für Rückbau und Abtransport nach kostenloser Besichtigung, Entsorgung nach Beleg, ohne eigenen Aufschlag.",
    "sections": [
     {
      "h2": "Genehmigung oder Anzeige? Was vor dem Abbruch zu klären ist",
@@ -225,11 +249,11 @@
     },
     {
      "h2": "Entsorgung getrennt: Holz, Metall, Dachpappe, Bauschutt",
-     "body_html": "<p>Der Wertstoffhof Falkensee wiegt jede Abfallart einzeln und rechnet nach der Abfallgebührensatzung 2026 des Landkreises Havelland ab:</p><table><tr><th>Abfallart</th><th>€/kg</th></tr><tr><td>Altholz A1–A4</td><td>0,36</td></tr><tr><td>Teer-/Bitumenpappe mit Nachweis</td><td>0,70</td></tr><tr><td>Kunststoffe a. n. g.</td><td>0,40</td></tr><tr><td>Gemischte Siedlungsabfälle</td><td>0,32</td></tr><tr><td>Schrott</td><td>0,00</td></tr></table><p>Der Unterschied zwischen den Sätzen zeigt, warum sich Trennen lohnt: Schrott ist gebührenfrei, Teer- und Bitumenpappe mit Nachweis dagegen die teuerste Fraktion. Ohne Nachweis über die Zusammensetzung stuft der Wertstoffhof Dachpappe womöglich in eine andere, ebenfalls kostenpflichtige Kategorie ein. Wir laden Holz, Metall, Dachpappe und Restschutt darum getrennt und fahren die Fraktionen einzeln zum Hof. Stand auf dem Grundstück noch ein Betonsockel oder Fundamentreste, kommt zusätzlich Bauschutt hinzu, den der Wertstoffhof ebenfalls separat wiegt und abrechnet. Die Gebühren rechnen wir nach den Belegen weiter, zuzüglich der gesetzlichen Mehrwertsteuer und ohne eigenen Aufschlag.</p>"
+     "body_html": "<p>Der Wertstoffhof Falkensee wiegt jede Abfallart einzeln und rechnet nach der Abfallgebührensatzung 2026 des Landkreises Havelland ab:</p><table><tr><th>Abfallart</th><th>€/kg</th></tr><tr><td>Altholz A1–A4</td><td>0,36</td></tr><tr><td>Teer-/Bitumenpappe mit Nachweis</td><td>0,70</td></tr><tr><td>Kunststoffe a. n. g.</td><td>0,40</td></tr><tr><td>Gemischte Siedlungsabfälle</td><td>0,32</td></tr><tr><td>Schrott</td><td>0,00</td></tr></table><p>Der Unterschied zwischen den Sätzen zeigt, warum sich Trennen lohnt: Schrott ist gebührenfrei, Teer- und Bitumenpappe mit Nachweis dagegen die teuerste Fraktion. Ohne Nachweis über die Zusammensetzung stuft der Wertstoffhof Dachpappe womöglich in eine andere, ebenfalls kostenpflichtige Kategorie ein. Wir laden Holz, Metall, Dachpappe und Restschutt darum getrennt und fahren die Fraktionen einzeln zum Hof. Stand auf dem Grundstück noch ein Betonsockel oder Fundamentreste, kommt zusätzlich Bauschutt hinzu, den der Wertstoffhof ebenfalls separat wiegt und abrechnet. Die Gebühren rechnen wir nach den Belegen ohne eigenen Aufschlag weiter.</p>"
     },
     {
      "h2": "Was es kostet — ehrlich",
-     "body_html": "<p>Einen Pauschalpreis für den Abriss eines Gartenhauses nennen wir ohne Besichtigung nicht, weil Größe, Material und Zugang von Grundstück zu Grundstück stark schwanken. Sie bekommen den Festpreis für Rückbau und Abtransport erst nach der kostenlosen Besichtigung, schriftlich und verbindlich.</p><p>Die Entsorgungsgebühren kommen dazu, abgerechnet nach den Wertstoffhof-Belegen und zuzüglich Mehrwertsteuer, wie in der Tabelle oben. Zur Einordnung: Bei einem Entrümpelungs-Auftrag in Falkensee, Abstellkammer und Gartenschuppen, lagen Räumung und Abtransport bei 1.190 € inklusive Mehrwertsteuer, die Entsorgung auf den Belegen bei 458 €. Das ist ein Beispiel aus einer Entrümpelung, kein Pauschalpreis für Ihren Abriss — der reine Rückbau kommt je nach Material und Fundament als eigener Posten hinzu. Eine Einordnung zu Preisen bei Keller, Garage und Dachboden ohne Abriss finden Sie im <a href=\"/ratgeber/keller-garage-dachboden-entruempeln/\">Ratgeber zu Keller, Garage und Dachboden</a>.</p>"
+     "body_html": "<p>Einen Pauschalpreis für den Abriss eines Gartenhauses nennen wir ohne Besichtigung nicht, weil Größe, Material und Zugang von Grundstück zu Grundstück stark schwanken. Sie bekommen den Festpreis für Rückbau und Abtransport erst nach der kostenlosen Besichtigung, schriftlich und verbindlich.</p><p>Die Entsorgungsgebühren kommen dazu, abgerechnet nach den Wertstoffhof-Belegen ohne eigenen Aufschlag, wie in der Tabelle oben. Zur Einordnung: Bei einem Entrümpelungs-Auftrag in Falkensee, Abstellkammer und Gartenschuppen, lagen Räumung und Abtransport bei 1.190 € inklusive Mehrwertsteuer, die Entsorgung auf den Belegen bei 458 €. Das ist ein Beispiel aus einer Entrümpelung, kein Pauschalpreis für Ihren Abriss — der reine Rückbau kommt je nach Material und Fundament als eigener Posten hinzu. Eine Einordnung zu Preisen bei Keller, Garage und Dachboden ohne Abriss finden Sie im <a href=\"/ratgeber/keller-garage-dachboden-entruempeln/\">Ratgeber zu Keller, Garage und Dachboden</a>.</p>"
     },
     {
      "h2": "Danach: Fläche nutzen",
@@ -247,7 +271,7 @@
     },
     {
      "q": "Was kostet der Abriss eines Gartenhauses?",
-     "a": "Einen Pauschalpreis nennen wir ohne Besichtigung nicht, weil Größe, Material und Fundament stark schwanken. Sie erhalten den Festpreis für Rückbau und Abtransport nach der kostenlosen Besichtigung schriftlich, die Entsorgung rechnen wir nach den Wertstoffhof-Belegen zuzüglich Mehrwertsteuer ab. Ein Vergleichswert aus einer Entrümpelung: 1.190 € inklusive Mehrwertsteuer für Räumung und Abtransport bei einer Abstellkammer und einem Gartenschuppen in Falkensee."
+     "a": "Einen Pauschalpreis nennen wir ohne Besichtigung nicht, weil Größe, Material und Fundament stark schwanken. Sie erhalten den Festpreis für Rückbau und Abtransport nach der kostenlosen Besichtigung schriftlich, die Entsorgung rechnen wir nach den Wertstoffhof-Belegen ohne eigenen Aufschlag ab. Ein Vergleichswert aus einer Entrümpelung: 1.190 € inklusive Mehrwertsteuer für Räumung und Abtransport bei einer Abstellkammer und einem Gartenschuppen in Falkensee."
     },
     {
      "q": "Was passiert mit Dachpappe und Metallresten?",
@@ -1661,7 +1685,7 @@
     },
     {
      "h2": "Wann ist die Entfernung am günstigsten?",
-     "body_html": "<p>Rechtlich gibt es kein Rabattfenster, aber ein Zeitfenster: Hecken dürfen nur vom 1. Oktober bis 28. Februar beseitigt werden — die Details stehen im Ratgeber <a href=\"/ratgeber/hecke-entfernen-erlaubt/\">Hecke entfernen: Was ist erlaubt?</a> Für Ihre Planung heißt das: Wer im Oktober oder November bucht, bekommt Wunschtermine und arbeitet ohne Zeitdruck. Gegen Fristende im Februar wird es eng — dann wollen alle noch schnell vor dem 28. fertig werden.</p><p>Ein zweiter Spareffekt: Wer die Folgearbeiten gleich mitdenkt, spart doppelte Anfahrten. Soll nach der Hecke ein Zaun, eine Neubepflanzung oder eine Rasenfläche entstehen, planen wir <a href=\"/galabau/\">kleinere GaLaBau-Arbeiten</a> direkt mit. Die komplette Leistung mit Ablauf finden Sie auf der Seite <a href=\"/heckenentfernung/\">Heckenentfernung</a>.</p>"
+     "body_html": "<p>Rechtlich gibt es kein Rabattfenster, aber ein Zeitfenster: Hecken dürfen nur vom 1. Oktober bis 28. Februar beseitigt werden — die Details stehen im Ratgeber <a href=\"/ratgeber/hecke-entfernen-erlaubt/\">Hecke entfernen: Was ist erlaubt?</a> Für Ihre Planung heißt das: Wer im Oktober oder November bucht, bekommt Wunschtermine und arbeitet ohne Zeitdruck. Gegen Fristende im Februar wird es eng — dann wollen alle noch schnell vor dem 28. fertig werden.</p><p>Ein zweiter Spareffekt: Wer die Folgearbeiten gleich mitdenkt, spart doppelte Anfahrten. Soll nach der Hecke ein Zaun, eine Neubepflanzung oder eine Rasenfläche entstehen, planen wir <a href=\"/galabau/\">Garten- und Landschaftsbau</a> direkt mit. Die komplette Leistung mit Ablauf finden Sie auf der Seite <a href=\"/heckenentfernung/\">Heckenentfernung</a>.</p>"
     }
    ],
    "faqs": [
@@ -1931,12 +1955,12 @@
    "slug": "zaun-kosten",
    "title": "Zaun Kosten 2026: Preise pro Meter, Material & Montage",
    "meta": "Was kostet ein Zaun? Marktpreise pro Meter nach Zaunart, ein Rechenbeispiel aus Falkensee und die Preistreiber bei Material, Boden und Montage.",
-   "lead": "Ein Zaun kostet je nach Art meist zwischen 60 und 150 Euro pro laufendem Meter inklusive Montage — Doppelstabmatten liegen eher am unteren Ende, Staketenzäune in der Mitte. Für Sichtschutzsysteme aus WPC oder Holz gibt es bislang nur einen groben Einstiegswert. Die Tabelle unten zeigt die Marktspannen je Zaunart, dazu ein echtes Rechenbeispiel aus Falkensee.",
+   "lead": "Ein Zaun kostet montiert für 20 Meter zwischen 1.300 und 8.200 Euro inkl. MwSt.: Staketenzaun am unteren Ende, Doppelstabmatten in der Mitte, WPC-Sichtschutz oben.",
    "intro": "Was ein Zaun am Ende kostet, hängt von mehr ab als vom laufenden Meter: Länge, Ecken, Tore, der Boden unter der Grasnarbe und die Frage, ob ein alter Zaun erst raus muss, verschieben den Preis in beide Richtungen. Das gilt für den klassischen Gartenzaun ebenso wie für einen reinen Holzzaun ohne Sichtschutzfunktion. Die folgenden Marktspannen orientieren sich an sichtbaren Angeboten aus der Region Berlin-Brandenburg und an unserer eigenen Kalkulation aus einem Referenzprojekt in Falkensee. Sie ersetzen keine Besichtigung — dafür geben sie eine erste Hausnummer, bevor Sie überhaupt anfragen. Üblich ist außerdem die Materialvorkasse: Sie zahlen das Material vorab, die Montage wird nach der Abnahme fällig.",
    "sections": [
     {
      "h2": "Marktpreise pro laufendem Meter im Überblick",
-     "body_html": "<p>Die folgenden Werte sind Marktspannen, keine Festpreise — sichtbare Angebote aus der Region und unsere eigene Kalkulation ergeben diese Bandbreiten. Ihren tatsächlichen Preis nennen wir erst nach der kostenlosen Besichtigung.</p><table><thead><tr><th>Zaunart</th><th>Spanne €/m inkl. Montage</th><th>Haltbarkeit</th></tr></thead><tbody><tr><td>Doppelstabmattenzaun</td><td>60–150 € / m</td><td>feuerverzinkt und beschichtet, witterungsbeständig, kaum Pflege</td></tr><tr><td>Sichtschutzzaun (WPC/Holz)</td><td>ab ca. 80 € / m</td><td>WPC pflegearm, Holzelemente brauchen Nachbehandlung</td></tr><tr><td>Staketenzaun Kastanie</td><td>90–120 € / m</td><td>Naturprodukt mit Farb- und Höhentoleranz; Pfosten in Einschlaghülse hält deutlich länger als Pfosten direkt im Erdreich</td></tr></tbody></table><p>Für Sichtschutzzäune aus WPC oder Holz haben wir bislang nur einen einzelnen Vergleichswert gefunden (ab rund 80 Euro pro Meter) — eine verlässliche Obergrenze nennen wir erst, sobald unsere eigene Kalkulation für dieses System steht. Maschendraht gilt als preisgünstigste Variante am Markt, wird im Havelland aber kaum noch nachgefragt. Belastbare Vergleichspreise dafür haben wir in unserer Marktbeobachtung nicht gefunden — hier lohnt der Vergleich mehrerer Angebote.</p>"
+     "body_html": "<p>Die folgenden Werte sind Richtspannen für 20 Meter montiert, inkl. MwSt., keine Festpreise. Ihren tatsächlichen Preis nennen wir erst nach der kostenlosen Besichtigung.</p><table><thead><tr><th>Zaunart</th><th>20 m montiert, inkl. MwSt.</th><th>ca. € / m inkl. MwSt.</th><th>Haltbarkeit</th></tr></thead><tbody><tr><td>Staketenzaun Kastanie</td><td>1.300–2.400 €</td><td>65–120 €</td><td>Naturprodukt mit Farb- und Höhentoleranz; Pfosten in Einschlaghülse hält deutlich länger als Pfosten direkt im Erdreich</td></tr><tr><td>Doppelstabmattenzaun</td><td>2.100–3.600 €</td><td>105–180 €</td><td>feuerverzinkt und beschichtet, witterungsbeständig, kaum Pflege</td></tr><tr><td>Sichtschutzzaun WPC, 1,80 m hoch</td><td>6.500–8.200 €</td><td>325–410 €</td><td>WPC pflegearm</td></tr></tbody></table><p>Die untere Grenze gilt für eine gerade Linie ohne Tor auf Sandboden, die obere für Ecken, Gehtor und Punktfundamente. Maschendraht gilt als preisgünstigste Variante am Markt, wird im Havelland aber kaum noch nachgefragt. Belastbare Vergleichspreise dafür haben wir in unserer Marktbeobachtung nicht gefunden — hier lohnt der Vergleich mehrerer Angebote.</p>"
     },
     {
      "h2": "Die Preistreiber im Detail",
@@ -1944,7 +1968,7 @@
     },
     {
      "h2": "Rechenbeispiel: Ein Zaunprojekt aus Falkensee",
-     "body_html": "<p>Ein konkretes Beispiel aus dem Havelland, September 2026: 33 laufende Meter Staketenzaun aus Kastanienholz, drei Ecken, ein Gehtor, dazu der komplette Rückbau des alten Zauns und ein Durchgang Gartenpflege auf derselben Fläche, alles in einem Termin. Gesamtpreis: <strong>3.950 Euro brutto</strong>, als Festpreis nach der Besichtigung.</p><p>Rein rechnerisch ergibt das rund 120 Euro je laufendem Meter — darin steckt aber mehr als der reine Zaun: drei Ecken mit Zusatzpfosten, ein Tor, die Rückbau-Pauschale für den Altzaun und die Gartenpflege obendrauf. Ohne diese vier Posten hätte der Staketenzaun allein näher an der Marktspanne aus der Tabelle oben gelegen. Genau deshalb lohnt sich die Besichtigung vor jedem Angebot: Zwei Grundstücke mit derselben Länge können unterschiedlich kosten.</p>"
+     "body_html": "<p>Ein konkretes Beispiel aus dem Havelland, September 2026: 33 laufende Meter Staketenzaun aus Kastanienholz, drei Ecken, ein Gehtor, dazu der komplette Rückbau des alten Zauns und ein Durchgang Gartenpflege auf derselben Fläche, alles in einem Termin. Gesamtpreis: <strong>3.950 Euro brutto</strong>, als Festpreis nach der Besichtigung.</p><p>Rein rechnerisch ergibt das rund 120 Euro je laufendem Meter — darin steckt aber mehr als der reine Zaun: drei Ecken mit Zusatzpfosten, ein Tor, die Rückbau-Pauschale für den Altzaun und die Gartenpflege obendrauf. Ohne diese vier Posten läge der Staketenzaun allein unter den rund 120 Euro je Meter. Genau deshalb lohnt sich die Besichtigung vor jedem Angebot: Zwei Grundstücke mit derselben Länge können unterschiedlich kosten.</p>"
     },
     {
      "h2": "Zaunmontage: Was die reine Arbeitsleistung kostet",
@@ -1966,7 +1990,7 @@
    "faqs": [
     {
      "q": "Was kostet ein Zaun pro Meter?",
-     "a": "Die Marktspannen liegen inklusive Montage meist zwischen 60 und 150 Euro pro laufendem Meter, je nach Zaunart — Details in der Tabelle oben. Für Sichtschutzsysteme aus WPC oder Holz gibt es bislang nur einen groben Einstiegswert. Den genauen Preis für Ihr Grundstück nennen wir nach der kostenlosen Besichtigung als Festpreis."
+     "a": "Montiert und inkl. MwSt. liegt ein Staketenzaun bei etwa 65 bis 120 Euro pro Meter, ein Doppelstabmattenzaun bei 105 bis 180 Euro und ein WPC-Sichtschutz bei 325 bis 410 Euro, jeweils abgeleitet aus 20 Metern. Den genauen Preis für Ihr Grundstück nennen wir nach der kostenlosen Besichtigung als Festpreis."
     },
     {
      "q": "Was kostet ein Zaun bauen lassen inklusive Rückbau?",
@@ -1974,7 +1998,7 @@
     },
     {
      "q": "Ist die Montage im Meterpreis schon enthalten?",
-     "a": "In den Marktspannen oben ja. Üblich ist trotzdem die Materialvorkasse: Sie zahlen das Material vorab, die Montage wird nach der Abnahme fällig."
+     "a": "In den Spannen oben ja. Üblich ist trotzdem die Materialvorkasse: Sie zahlen das Material vorab, die Montage wird nach der Abnahme fällig."
     },
     {
      "q": "Warum kostet ein Zaun vom Fachbetrieb mehr als das Set aus dem Baumarkt?",
@@ -2085,12 +2109,12 @@
    "slug": "doppelstabmattenzaun-montage-kosten",
    "title": "Doppelstabmattenzaun Montage: Kosten & Ablauf",
    "meta": "Doppelstabmattenzaun montieren: Kosten pro Meter, Ablauf Schritt für Schritt, Hülse vs. Beton und die richtige Höhe. Mit Referenz aus dem Havelland.",
-   "lead": "Die Montage eines Doppelstabmattenzauns kostet inklusive Material meist zwischen 60 und 150 Euro pro laufendem Meter — Ecken, Tore und der Untergrund treiben den Preis nach oben. Der Ablauf folgt einem festen Schema aus Pfostenraster, Hülse und Klemmhaltern.",
+   "lead": "Ein Doppelstabmattenzaun kostet montiert für 20 Meter etwa 2.100 bis 3.600 Euro inkl. MwSt. Ecken, Tore und Untergrund treiben den Preis nach oben.",
    "intro": "Ein Doppelstabmattenzaun gehört zu den am häufigsten montierten Zaunarten im Havelland: robust, pflegearm und mit einem festen Elementraster, das die Montage planbar macht — solange Pfostenabstand und Untergrund von Anfang an stimmen. Dieser Ratgeber zeigt, was die Montage kostet, wie sie Schritt für Schritt abläuft und wo typische Fehler passieren.",
    "sections": [
     {
      "h2": "Was kostet die Montage eines Doppelstabmattenzauns?",
-     "body_html": "<p>Am Markt liegen Doppelstabmattenzäune inklusive Montage meist zwischen etwa <strong>60 und 150 Euro pro laufendem Meter</strong>, je nach Höhe, Boden und Anzahl der Ecken. Sichtbare Angebote in der Region starten bei rund 55 bis 90 Euro pro Meter für einfache, gerade Streckenabschnitte auf gutem Untergrund; Ecken, Tore und schwieriger Boden schieben den Preis nach oben. Genaue Zahlen für Ihr Grundstück gibt es nach der kostenlosen Besichtigung als Festpreis.</p>"
+     "body_html": "<p>Ein montierter Doppelstabmattenzaun kostet für 20 Meter etwa <strong>2.100 bis 3.600 Euro inkl. MwSt.</strong>, das sind rund 105 bis 180 Euro pro laufendem Meter. Die untere Grenze gilt für eine gerade Linie ohne Tor auf Sandboden, die obere für Ecken, Gehtor und Punktfundamente; Höhe und Boden verschieben den Preis zusätzlich. Genaue Zahlen für Ihr Grundstück gibt es nach der kostenlosen Besichtigung als Festpreis.</p>"
     },
     {
      "h2": "So läuft die Montage Schritt für Schritt ab",
@@ -2124,7 +2148,7 @@
    "faqs": [
     {
      "q": "Was kostet ein Doppelstabmattenzaun inklusive Montage pro Meter?",
-     "a": "Am Markt liegen die Preise inklusive Montage meist zwischen 60 und 150 Euro pro laufendem Meter, je nach Höhe, Boden und Anzahl der Ecken. Den genauen Preis für Ihr Grundstück nennen wir nach der kostenlosen Besichtigung als Festpreis."
+     "a": "Montiert und inkl. MwSt. etwa 105 bis 180 Euro pro laufendem Meter, abgeleitet aus 2.100 bis 3.600 Euro für 20 Meter. Höhe, Boden und Anzahl der Ecken verschieben den Preis. Den genauen Preis für Ihr Grundstück nennen wir nach der kostenlosen Besichtigung als Festpreis."
     },
     {
      "q": "Muss ich die Zaunpfosten einbetonieren?",
@@ -2161,6 +2185,70 @@
    ],
    "date_published": "2026-09-16",
    "date_modified": "2026-09-16"
+  },
+  {
+   "slug": "pflasterarbeiten-kosten",
+   "title": "Pflasterarbeiten Kosten 2026: Preise pro m² im Überblick",
+   "meta": "Was kosten Pflasterarbeiten 2026? Preise pro m² für Hof, Weg und Einfahrt, Betonstein und Naturstein, zwei Rechenbeispiele und Tipps zum Pflaster ausbessern.",
+   "lead": "Preise je Quadratmeter nach Material, zwei Rechenbeispiele und die Frage, ob Ausbessern reicht.",
+   "intro": "Pflasterarbeiten kosten 2026 inklusive Aushub, Unterbau und Verlegung etwa 70 bis 120 Euro pro Quadratmeter (Betonstein) oder 120 bis 190 Euro (Naturstein), eine Einfahrt mit befahrbarem Unterbau 90 bis 150 Euro. Alle Preise inkl. MwSt. Beispiele: 30 m² Gartenweg 2.100 bis 3.600 Euro ohne Kantensteine, 50 m² Einfahrt 4.500 bis 7.500 Euro. Den Festpreis gibt es nach der kostenlosen Besichtigung.",
+   "sections": [
+    {
+     "h2": "Pflasterarbeiten Kosten 2026: Preise pro Quadratmeter nach Material",
+     "body_html": "<p>Orientierungsspannen für das Havelland, Stand Oktober 2026, jeweils inkl. 19 % MwSt. Es sind keine Festpreise.</p><table><thead><tr><th>Leistung</th><th>Preis inkl. MwSt.</th><th>Enthalten</th></tr></thead><tbody><tr><td>Pflaster neu, Betonstein (Hof, Gartenweg)</td><td>70–120 € / m²</td><td>Aushub, Schotter, Splittbett, Verlegung, Fugen</td></tr><tr><td>Pflaster neu, Naturstein (Granit, Basalt)</td><td>120–190 € / m²</td><td>wie Betonstein, dazu Zuschnitt</td></tr><tr><td>Einfahrt pflastern, befahrbarer Unterbau</td><td>90–150 € / m²</td><td>stärkere Tragschicht, 8-cm-Stein, Gefälle</td></tr><tr><td>Terrasse, Platten oder Beton im Splittbett</td><td>90–160 € / m²</td><td>Aushub, Unterbau, Verlegung</td></tr><tr><td>Kantensteine, Rasenkante, Beeteinfassung</td><td>25–45 € / lfm</td><td>gesetzt und ausgerichtet</td></tr><tr><td>Pflaster ausbessern, kleine Stelle</td><td>ab 250 € pauschal</td><td>aufnehmen, Unterbau neu, wieder verlegen</td></tr></tbody></table><p>Vergleichen Sie Angebote nach der Leistungsliste: Manche rechnen nur die Verlegung, andere Aushub, Schotter und Fugen mit. Mehr dazu: <a href=\"/pflasterarbeiten/\">Pflasterarbeiten im Havelland</a>.</p>"
+    },
+    {
+     "h2": "Pflaster verlegen: Kosten und was im Quadratmeterpreis steckt",
+     "body_html": "<p>Bei Betonstein macht das Material meist weniger als die Hälfte aus. Im Preis stecken Aushub und Abfuhr, die verdichtete Schottertragschicht (Gartenweg 15 bis 25 cm, Einfahrt 25 bis 40 cm), das Splittbett, der Stein (6 cm, an befahrenen Flächen 8 cm), Verlegung und Fugen. Kantensteine, Rinnen und Altbelag weisen wir im Festpreis einzeln aus. Innerhalb der Spanne entscheiden drei Faktoren:</p><ul><li><strong>Unterbau:</strong> Eine befahrene Einfahrt braucht mehr Schotter als ein Gartenweg. Lehm, Wurzeln und Bauschutt kosten mehr Zeit als Sandboden.</li><li><strong>Fläche und Zugang:</strong> Große Flächen sind pro m² günstiger. Kommt der Bagger nicht heran, steigt der Aufwand.</li><li><strong>Stein und Muster:</strong> Naturstein und Fischgrät mit Bögen brauchen mehr Zeit als Betonstein im Läuferverband.</li></ul><p>Alten Belag und Aushub rechnen wir nach Beleg ab, ohne eigenen Aufschlag. Mehr zur Einfahrt: <a href=\"/einfahrt-pflastern/\">Einfahrt pflastern</a>.</p>"
+    },
+    {
+     "h2": "Rechenbeispiel 1: 30 m² Gartenweg oder Hof",
+     "body_html": "<p>Gartenweg, 15 m lang und 2 m breit, Betonstein, Kantensteine auf beiden Seiten:</p><ul><li>Pflaster: 30 m² × 70–120 € = <strong>2.100–3.600 €</strong></li><li>Kantensteine beidseitig: 30 lfm × 25–45 € = <strong>750–1.350 €</strong></li><li>Gesamt: <strong>2.850–4.950 € inkl. MwSt.</strong></li></ul><p>Ein 30-m²-Hof in Naturstein (120–190 € pro m²) kostet 3.600 bis 5.700 Euro. Ein alter Belag kommt mit Entsorgung nach Beleg dazu.</p>"
+    },
+    {
+     "h2": "Rechenbeispiel 2: 50 m² Einfahrt",
+     "body_html": "<p>Hofeinfahrt, Betonstein mit 8 cm Dicke, befahrbarer Unterbau mit Gefälle:</p><ul><li>Einfahrt: 50 m² × 90–150 € = <strong>4.500–7.500 € inkl. MwSt.</strong></li></ul><p>Eine Entwässerungsrinne, ein Altbelag oder ein enges Grundstück ohne Bagger erhöhen den Preis, Naturstein liegt darüber. Soll vorher Boden bewegt werden, helfen die <a href=\"/erdarbeiten/\">Erdarbeiten</a>.</p>"
+    },
+    {
+     "h2": "Wann sich Ausbessern statt Neuverlegen lohnt",
+     "body_html": "<p>Größere Teilflächen rechnen wir nach Aufmaß. Wir nehmen die Steine auf, bauen Schotter und Splittbett neu auf, verdichten und verlegen die vorhandenen Steine wieder.</p><ul><li><strong>Ausbessern:</strong> einzelne abgesackte Stellen, klappernde Steine, ausgewaschene Fugen.</li><li><strong>Neu verlegen:</strong> die ganze Fläche ist wellig, die Ränder wandern oder die Tragschicht fehlt.</li><li><strong>Nur reinigen:</strong> Moos und Algen auf ebener Fläche brauchen eine <a href=\"/steinreinigung/\">Steinreinigung</a>.</li></ul>"
+    },
+    {
+     "h2": "Selbst pflastern oder pflastern lassen?",
+     "body_html": "<p>Eine kleine Fläche am Gartenweg lässt sich mit gemieteter Rüttelplatte selbst pflastern. Bei Einfahrt und Hof zeigen sich Fehler im Unterbau nach dem ersten Frost als Wellen und Spurrinnen.</p>"
+    },
+    {
+     "h2": "Pflasterarbeiten Kosten in Falkensee und im Havelland",
+     "body_html": "<p>Für Falkensee und das Havelland gelten dieselben Spannen. Die Seite <a href=\"/pflasterarbeiten-falkensee/\">Pflasterarbeiten in Falkensee</a> nennt die Wohngebiete, Beläge für die Terrasse finden Sie unter <a href=\"/terrassenbau/\">Terrassenbau</a>.</p>"
+    }
+   ],
+   "faqs": [
+    {
+     "q": "Was kosten Pflasterarbeiten pro Quadratmeter?",
+     "a": "Betonsteinpflaster inklusive Aushub, Unterbau und Verlegung kostet 2026 etwa 70 bis 120 Euro pro Quadratmeter, Naturstein 120 bis 190 Euro, jeweils inkl. MwSt."
+    },
+    {
+     "q": "Was kostet es, einen Hof pflastern zu lassen?",
+     "a": "Ein Hof ohne regelmäßigen Fahrzeugverkehr kostet 70 bis 120 Euro pro m² Betonstein, bei 40 m² also rund 2.800 bis 4.800 Euro inkl. MwSt. Wird er befahren, gilt der Einfahrt-Aufbau."
+    },
+    {
+     "q": "Was kostet es, Pflaster ausbessern zu lassen?",
+     "a": "Eine kleine abgesackte Stelle kostet ab 250 Euro pauschal inkl. MwSt., größere Teilflächen rechnen wir nach Aufmaß. Ist das Pflaster nur verschmutzt, aber eben, genügt eine Reinigung."
+    }
+   ],
+   "cta_service": "pflasterarbeiten",
+   "cta_text": "Sie möchten wissen, was Ihre Fläche kostet? Wir besichtigen kostenlos, machen die Spatenprobe und nennen einen schriftlichen Festpreis inkl. MwSt. Ein Foto per WhatsApp genügt für die erste Einschätzung.",
+   "skills_applied": [
+    "stop-slop (geladen via Skill-Tool)",
+    "ogilvy (geladen via Skill-Tool)",
+    "headline-writer (geladen via Skill-Tool)",
+    "page-cro (geladen via Skill-Tool)",
+    "seo-web-copy (geladen via Skill-Tool)",
+    "llm-optimisation (geladen via Skill-Tool)",
+    "havelland-design (geladen via Skill-Tool)"
+   ],
+   "date_published": "2026-10-20",
+   "date_modified": "2026-10-20"
   }
  ]
 }

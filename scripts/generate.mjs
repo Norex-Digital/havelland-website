@@ -9,7 +9,8 @@ const ASSET_VER = crypto.createHash('md5').update(fs.readFileSync('assets/css/si
 import {
   baSlider, garantienStrip, schnittkalender, heckenKompass, jahreszeiten, echtProjekt,
   karussell, archivGrid, whatsappFlow, auftragsTimeline, uspBand, faqFilter, gebietskarte,
-  trustBadges, fristband, aeoKapsel, beweisMechanik, saisonTeaser, clusterKacheln, faelleBlock, tiefBlock
+  trustBadges, fristband, aeoKapsel, beweisMechanik, saisonTeaser, clusterKacheln, faelleBlock, tiefBlock,
+  leistungsListe, vorteileBlock, passtBlock, orteBlock, soLaeufts, galabauKarten, ergebnisPaare
 } from './components.mjs';
 import { buildLp, lpAttribJS, ATTR_KEYS } from './lp.mjs';
 
@@ -63,18 +64,49 @@ function sanOrtsSvc(o) { if (o.meta != null) o.meta = plain(o.meta); if (o.faqs)
 } return o; }   // fakt (17.09.): Ein-Satz-Ortsfakt für die Hub-Ortskarten
 const _ortsSvcCp = CP('ortsseiten.json'); const ortsSvcCopy = (_ortsSvcCp && _ortsSvcCp.services) || {}; for (const k in ortsSvcCopy) sanOrtsSvc(ortsSvcCopy[k]);
 // Reverse-Index Service → Ratgeber (interne Verlinkung, seiten-architektur §7)
+// Erster Satz eines Fließtexts; Abkürzungen (ca., z. B., inkl., bzw., Nr. …) und Ordnungszahlen vor Monatsnamen (1. Oktober) zählen nicht als Satzende.
+const ABKUERZ = /(?:^|[\s(„"])(?:ca|z\. ?B|d\. ?h|u\. ?a|u\. ?U|inkl|bzw|Nr|ggf|ggfs|evtl|vgl|max|min|Abs|Std|Mio|Tsd|bzgl|usw|etc|zzgl|Str|Dr|Prof|St)\.$/i;
+const MONAT = /^(?:Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\b/;
+function ersterSatz(txt) {
+  const s = String(txt == null ? '' : txt).replace(/\s+/g, ' ').trim();
+  const re = /[.!?](?=\s|$)/g; let m;
+  while ((m = re.exec(s)) !== null) {
+    const head = s.slice(0, m.index + 1), rest = s.slice(m.index + 1).trim();
+    if (!rest) return s;
+    if (m[0] === '.' && (ABKUERZ.test(head) || (/(?:^|\s)\d{1,2}\.$/.test(head) && (MONAT.test(rest) || /^[a-zäöüß]/.test(rest))))) continue;
+    return head;
+  }
+  return s;
+}
+const RATGEBER_AUSBLENDEN = { heckenschnitt: ['hecke-schneiden-erlaubt'] };   // fast gleich zu wann-hecke-schneiden (Copy M4)
 const ratgeberByService = {}; for (const r of ratCopy) { if (!r.cta_service) continue; (ratgeberByService[r.cta_service] = ratgeberByService[r.cta_service] || []).push(r); }
 
 // Übersichtsseiten-Copy (/leistungen/ + /standorte/) — Intros/FAQ; Labels stehen in den Maps unten
 const _ueb = CP('uebersicht.json') || {}; const uebL = _ueb.leistungen || {}; const uebS = _ueb.standorte || {};
 // Gruppierung: Service-Slug → Themen-Block (Portfolio-Refokus 2026-07-22: Garten & Außen · Entrümpelung & Auflösung · Dach · Für Gewerbe & Hausverwaltungen). Reihenfolge = Anzeige-Reihenfolge. b2b_only-Services (hausmeisterservice) leben im Gewerbe-Block.
+// Paket 1 (20.10., Owner-Reihenfolge): EINE Gliederung für Menü, /leistungen/, Fußzeile, Startseite.
+// kern = groß (Menü, Buttons), auf_anfrage = kleine Textlinks („Auf Anfrage auch“). Einträge: Service-Slug oder {href,label}.
 const LEISTUNGEN_KATEGORIEN = [
-  { key: 'garten', label: 'Garten & Außen', slugs: ['gartenpflege', 'heckenschnitt', 'winterdienst', 'baumschnitt', 'steinreinigung', 'fensterreinigung'] },
-  { key: 'galabau', label: 'GaLaBau & Rodung', slugs: ['galabau', 'zaunbau', 'heckenentfernung', 'gartenrodung', 'baumstumpf-entfernen'] },
-  { key: 'aufloesung', label: 'Entrümpelung & Auflösung', slugs: ['entruempelung', 'haushaltsaufloesung', 'grundreinigung'] },
-  { key: 'dach', label: 'Dach', slugs: ['dachrinnenreinigung', 'dachreinigung'] },
-  { key: 'gewerbe', label: 'Für Gewerbe & Hausverwaltungen', slugs: ['hausmeisterservice', 'gebaeudereinigung', 'unterhaltsreinigung', 'objektbetreuung', 'ferienwohnung-reinigung'] }
+  { key: 'garten', label: 'Garten & Pflege', href: '/gartenpflege/', satz: 'Damit der Garten das ganze Jahr ordentlich aussieht.', foto: 'svc-baumschnitt-hero',
+    kern: ['gartenpflege', 'heckenschnitt', 'baumschnitt', 'heckenentfernung', { href: '/gartenpflege/#herbst-paket', label: 'Herbst-Paket' }], auf_anfrage: [] },
+  { key: 'haus', label: 'Haus & Reinigung', href: '/leistungen/#haus', satz: 'Rund ums Haus sauber und sicher, auch im Winter.', foto: 'svc-dachrinnenreinigung-hero',
+    kern: ['dachrinnenreinigung', 'winterdienst', 'steinreinigung'], auf_anfrage: ['fensterreinigung', 'dachreinigung'] },
+  { key: 'galabau', label: 'Garten- und Landschaftsbau', href: '/galabau/', satz: 'Bauen, pflastern, neu anlegen — und vorher roden.', foto: 'svc-pflasterarbeiten-hero',
+    kern: ['pflasterarbeiten', 'terrassenbau', 'zaunbau', 'erdarbeiten', 'gartenrodung', 'rollrasen-verlegen'], auf_anfrage: ['einfahrt-pflastern', 'gartengestaltung', 'baumstumpf-entfernen', 'baumfaellung', { href: '/pflasterarbeiten/#kantensteine', label: 'Kantensteine & Hochbeete' }] },
+  { key: 'aufloesung', label: 'Entrümpelung & Auflösung', href: '/entruempelung/', satz: 'Ausräumen, abfahren, besenrein übergeben.', foto: 'svc-haushaltsaufloesung-hero',
+    kern: ['entruempelung', 'haushaltsaufloesung', 'grundreinigung'], auf_anfrage: [] },
+  { key: 'gewerbe', label: 'Hausverwaltungen & Gewerbe', href: '/fuer-hausverwaltungen/', satz: 'Ein Vertrag, ein Ansprechpartner für Ihre Objekte.', foto: 'svc-objektbetreuung-hero',
+    kern: ['objektbetreuung', 'hausmeisterservice', 'unterhaltsreinigung', 'gebaeudereinigung'], auf_anfrage: ['ferienwohnung-reinigung'] }
 ];
+for (const k of LEISTUNGEN_KATEGORIEN) k.slugs = [...k.kern, ...k.auf_anfrage].filter(x => typeof x === 'string');   // alle Service-Slugs (ItemList, Prüfungen)
+// Kurzlabels für Menü + Fußzeile (Service-Namen sind teils lang, z. B. "Baumstumpf- & Wurzelentfernung")
+const NAV_LABEL = { 'baumstumpf-entfernen': 'Baumstumpf entfernen', grundreinigung: 'Auszugsreinigung', 'ferienwohnung-reinigung': 'Ferienwohnung-Reinigung', baumschnitt: 'Baumschnitt', 'rollrasen-verlegen': 'Rollrasen verlegen', 'einfahrt-pflastern': 'Einfahrt pflastern', heckenentfernung: 'Hecke entfernen', dachrinnenreinigung: 'Dachrinne' };
+const navLabel = s => NAV_LABEL[s.slug] || s.name;
+// Eintrag → {href,label,slug}; unbekannte Slugs fallen raus (kein toter Link).
+const katItem = x => { if (typeof x !== 'string') return { href: x.href, label: x.label, slug: null }; const s = services.find(v => v.slug === x); return s ? { href: `/${s.slug}/`, label: navLabel(s), slug: s.slug } : null; };
+const katKern = k => k.kern.map(katItem).filter(Boolean);
+const katAnfrage = k => k.auf_anfrage.map(katItem).filter(Boolean);
+const katServices = k => k.slugs.map(sl => services.find(s => s.slug === sl)).filter(Boolean);
 // Ort-Slug → geografische Region (nur Money-Page-Orte werden gerendert; Schnittmenge im Builder)
 const STANDORT_REGIONEN = [
   { key: 'west', label: 'Falkensee & westliches Havelland', slugs: ['falkensee', 'dallgow-doeberitz', 'brieselang', 'schoenwalde-glien', 'wustermark', 'nauen', 'ketzin'] },
@@ -83,28 +115,34 @@ const STANDORT_REGIONEN = [
   { key: 'seen', label: 'Havelseen & Ferienlagen', slugs: ['werder-havel', 'schwielowsee'] }
 ];
 
-const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','haushaltsaufloesung','winterdienst','steinreinigung','dachrinnenreinigung','dachreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung','heckenentfernung','baumstumpf-entfernen']);
+const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','haushaltsaufloesung','winterdienst','steinreinigung','dachrinnenreinigung','dachreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung','heckenentfernung','baumstumpf-entfernen','pflasterarbeiten','erdarbeiten','baumfaellung','galabau']);   // GaLaBau-Ausbau 20.10.: Ortsseiten nur über service.seiten_orte
+// Paket 1 (20.10.): Hubs im Grundgerüst (Spec 05-design-spec-paket1.md §3.3). Entrümpelung/Gewerbe bleiben bis Paket 2/3 im alten Aufbau.
+const GRUNDGERUEST = new Set(['gartenpflege', 'heckenschnitt', 'baumschnitt', 'heckenentfernung', 'dachrinnenreinigung', 'winterdienst', 'steinreinigung', 'fensterreinigung', 'dachreinigung', 'galabau', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'zaunbau', 'gartengestaltung', 'rollrasen-verlegen', 'erdarbeiten', 'gartenrodung', 'baumfaellung', 'baumstumpf-entfernen']);
+const ORTE_TOP = (() => { try { return J('orte-top.json'); } catch { return { fallback: ['falkensee'] }; } })();
 // Gewerk-Klassen fuer die Voll-Print-Komposition der Hubs/Ortsseiten:
 //  VOLL_VN   = echtes Vorher/Nachher-Material -> Slider + Heckenkompass + Schnittkalender
 //  GARTEN    = Garten ohne V/N-Material -> kein Slider/Kompass, Ortskarten + Foto-Flow
 //  REINIGUNG = Reinigungs-Gewerke -> beweisMechanik (Gegenlicht) statt Slider, kein Teleskop/Osmose
 //  Rest      = generische Rich-Variante (Entruempelung/Umzug/Hausmeister/Objekt ...)
 const VOLL_VN = new Set(['heckenschnitt']);
-const GARTEN = new Set(['gartenpflege', 'winterdienst', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau', 'zaunbau']);
+const GARTEN = new Set(['gartenpflege', 'winterdienst', 'heckenentfernung', 'baumstumpf-entfernen', 'gartenrodung', 'baumschnitt', 'galabau', 'zaunbau', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'rollrasen-verlegen', 'gartengestaltung', 'erdarbeiten', 'baumfaellung']);
 const REINIGUNG = new Set(['fensterreinigung', 'steinreinigung', 'dachrinnenreinigung', 'photovoltaikreinigung', 'grundreinigung', 'gebaeudereinigung', 'unterhaltsreinigung', 'ferienwohnung-reinigung']);
 const BEWEIS_KEY = { fensterreinigung: 'fensterreinigung', steinreinigung: 'steinreinigung', dachrinnenreinigung: 'dachrinnenreinigung' }; // eigene Beweis-Copy vorhanden
 const gewerkClass = slug => VOLL_VN.has(slug) ? 'voll' : GARTEN.has(slug) ? 'garten' : REINIGUNG.has(slug) ? 'reinigung' : 'generisch';
 // WhatsApp-Block: das Foto zeigt Heckenschnitt — auf Services ohne Hecken-Bezug neutrale Alt-/Unterzeile (Audit 2026-08 P2-b; 15.09. + Entrümpelung/Haushaltsauflösung, Review 14.09.)
-const FOTO_NEUTRAL = new Set(['baumstumpf-entfernen', 'winterdienst', 'entruempelung', 'haushaltsaufloesung']);
+const FOTO_NEUTRAL = new Set(['baumstumpf-entfernen', 'winterdienst', 'entruempelung', 'haushaltsaufloesung', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'rollrasen-verlegen', 'gartengestaltung', 'erdarbeiten', 'baumfaellung']);
 const waGewerk = s => VOLL_VN.has(s.slug) ? 'meiner Hecke' : REINIGUNG.has(s.slug) ? `meiner Fläche für ${s.name}` : GARTEN.has(s.slug) ? 'meinem Garten' : `meinem Anliegen (${s.name})`;
 const PREMIUM = new Set(['gross-glienicke','berlin-kladow','berlin-gatow']);
 const sectionOT = new Set(Object.keys(ortsteileVon).filter(s => !PREMIUM.has(s)));
 const launch = orte.filter(o => o.geo === 'A' || o.geo === 'B');
-const haupt = launch.filter(o => !sectionOT.has(o.slug));
+// nur_seiten-Orte (GaLaBau-Ausbau 20.10., z. B. Potsdam): kein Teil des Servicegebiets-Rasters (keine Orts-Hubs, kein areaServed, kein Segment-Matching) — nur über service.seiten_orte erreichbar.
+const haupt = launch.filter(o => !sectionOT.has(o.slug) && !o.nur_seiten);
 const segMatch = (s, o) => s.segment.some(x => o.typ.includes(x));
 // b2b_only-Services (hausmeisterservice): raus aus Privatkunden-Kontexten → keine Ortsseiten, nicht in Orts-Hubs/Kernleistungen. Getragen von /fuer-hausverwaltungen/ + Footer-B2B-Block.
 const orteForService = s => s.b2b_only ? [] : haupt.filter(o => s.orte_fix ? s.orte_fix.includes(o.slug) : segMatch(s, o));
-const servicesForOrt = o => services.filter(s => PAGE_SVC.has(s.slug) && !s.b2b_only && (s.orte_fix ? s.orte_fix.includes(o.slug) : segMatch(s, o)));
+// seiten_orte (20.10.): gezielte Ortsseiten je Service, unabhängig vom areaServed-Raster (orteForService bleibt fürs Schema).
+const seitenOrte = s => s.seiten_orte ? s.seiten_orte.map(sl => orte.find(o => o.slug === sl)).filter(Boolean) : orteForService(s);
+const servicesForOrt = o => services.filter(s => PAGE_SVC.has(s.slug) && !s.b2b_only && (s.seiten_orte ? s.seiten_orte.includes(o.slug) : s.orte_fix ? s.orte_fix.includes(o.slug) : segMatch(s, o)));
 const ortsHubSlugs = new Set(haupt.filter(o => servicesForOrt(o).length >= 3).map(o => o.slug));   // Orte mit /standorte/<slug>/ (Gebietskarten-Links, Owner 18.09.)
 // Service-scharfes Wellen-Gate: Ortsseiten/Ratgeber eines Service indexierbar erst wenn aktive_welle >= service.wave; wave null = globales Gate (<1). Rückwärtskompatibel: bei aktive_welle 0 bleibt ALLES noindex.
 const svcWaveNoindex = s => (config.aktive_welle || 0) < (s && s.wave != null ? s.wave : 1);
@@ -113,7 +151,7 @@ const svcNoindexBySlug = slug => svcWaveNoindex(services.find(x => x.slug === sl
 // Welche Ortsseiten werden TATSÄCHLICH gerendert? (Manifest-First → Link-Graph geschlossen, keine 404)
 const SAMPLE_ORTSSEITEN = [['heckenschnitt','falkensee'],['gartenpflege','berlin-kladow'],['steinreinigung','dallgow-doeberitz'],['fensterreinigung','nauen'],['entruempelung','wustermark'],['haushaltsaufloesung','brieselang'],['winterdienst','falkensee'],['dachreinigung','schoenwalde-glien'],['gebaeudereinigung','berlin-spandau'],['ferienwohnung-reinigung','werder-havel'],['dachrinnenreinigung','dallgow-doeberitz']];
 const PAGE_ORTS = [];
-for (const s of services) if (PAGE_SVC.has(s.slug)) for (const o of orteForService(s)) PAGE_ORTS.push([s.slug, o.slug]);
+for (const s of services) if (PAGE_SVC.has(s.slug)) for (const o of seitenOrte(s)) PAGE_ORTS.push([s.slug, o.slug]);
 const genOrts = new Set((FULL ? PAGE_ORTS : SAMPLE_ORTSSEITEN).map(([a, b]) => a + '|' + b));
 const hasOrt = (ss, os) => genOrts.has(ss + '|' + os);
 // per-Archetyp Ort-Index → gleichmäßige Pool-Verteilung (eindeutige rahmen/trust-Tupel statt Seed-Kollisionen)
@@ -189,13 +227,13 @@ function rotate(arr, seed, n) { if (!arr || !arr.length) return []; const out = 
 // ---------- BILDER: Manifest + zentrale <picture>-Komponente (AVIF/WebP/Fallback, responsive) ----------
 const IMG = JSON.parse(fs.readFileSync('assets/img/manifest.json', 'utf8'));
 // pic(): <picture style="display:contents"> -> bestehende .main/.pic-CSS-Regeln greifen weiter aufs <img>. LCP-Bild: fetchpriority statt fehleranfälligem preload bei <picture>.
-function pic(slug, { cls = '', alt = '', sizes = '100vw', lcp = false, decorative = false } = {}) {
+function pic(slug, { cls = '', alt = '', sizes = '100vw', lcp = false, eager = false, decorative = false } = {}) {
   const m = IMG[slug];
   if (!m) return '';
   const ss = ext => m.widths.map(w => `/assets/img/${slug}-${w}.${ext} ${w}w`).join(', ');
   const sources = (m.avif ? `<source type="image/avif" srcset="${ss('avif')}" sizes="${sizes}">` : '') + `<source type="image/webp" srcset="${ss('webp')}" sizes="${sizes}">`;
   const aAttr = decorative ? 'alt="" role="presentation"' : `alt="${esc(alt)}"`;
-  const lAttr = lcp ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
+  const lAttr = lcp ? 'fetchpriority="high" decoding="async"' : eager ? 'decoding="async"' : 'loading="lazy" decoding="async"';   // eager: sichtbar im ersten Bildschirm, nicht lazy (kein fetchpriority)
   return `<picture style="display:contents">${sources}<img${cls ? ` class="${cls}"` : ''} src="/assets/img/${slug}-${m.fb_w}.${m.fb_ext}" width="${m.w}" height="${m.h}" ${aAttr} ${lAttr}></picture>`;
 }
 const imgAbs = slug => { const m = IMG[slug]; return m ? `${DOMAIN}/assets/img/${slug}-${m.fb_w}.${m.fb_ext}` : ''; };
@@ -272,12 +310,19 @@ function head(title, desc, canonical, schemaGraph, opts = {}) {
 }
 // Header — lock-v2: Logo + Site-Nav + Callpill (sichtbare Nummer) + Besichtigungs-CTA + Progress-Bar (#progress) + gate-sichere .hamb/#nvt/.navmenu-Mechanik
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
-const header = `<header><div class="wrap nav"><a class="logo" href="/"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-176.webp"><img src="/assets/img/logo-176.png" alt="${esc(nap.name)}" width="176" height="176"></picture></a><nav class="links nav-links" aria-label="Hauptnavigation"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/fuer-hausverwaltungen/">Hausverwaltungen</a><a href="/ueber-uns/">Über uns</a><a href="/kontakt/">Kontakt</a></nav><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${esc(nap.phone_display)}</span></a><a class="cta nav-cta" href="/kontakt/">Kostenlose Besichtigung</a><input type="checkbox" id="nvt" class="nvt" aria-label="Menü öffnen und schließen"><label for="nvt" class="hamb" aria-hidden="true"><span></span><span></span><span></span></label><nav class="navmenu mnav" aria-label="Hauptmenü"><a href="/leistungen/">Leistungen</a><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/bewertungen/">Bewertungen</a><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a><a href="/kontakt/">Kontakt</a><a href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung</a></nav></div><div class="progress" id="progress" aria-hidden="true"></div></header>`;
+// Leistungs-Dropdown (20.10.): Desktop = Panel bei Hover/Fokus (CSS .nav-dd), Mobil = aufklappbare Gruppe (<details>) im Burger-Menü. Quelle: LEISTUNGEN_KATEGORIEN.
+const navDdPanel = `<div class="nav-dd-panel">${LEISTUNGEN_KATEGORIEN.map(k => `<div class="nav-dd-col"><a class="nav-dd-h" href="${k.href}">${esc(k.label)}</a>${katKern(k).map(it => `<a href="${it.href}">${esc(it.label)}</a>`).join('')}<a class="nav-dd-more" href="${k.href}">Alle →</a></div>`).join('')}<a class="nav-dd-all" href="/leistungen/">Alle Leistungen im Überblick →</a></div>`;
+const mnavLeistungen = `<details class="mnav-dd"><summary>Leistungen</summary>${LEISTUNGEN_KATEGORIEN.map(k => `<details class="mnav-grp"><summary>${esc(k.label)}</summary>${katKern(k).map(it => `<a href="${it.href}">${esc(it.label)}</a>`).join('')}<a class="mnav-grp-h" href="${k.href}">Alle: ${esc(k.label)} →</a></details>`).join('')}<a class="mnav-grp-h" href="/leistungen/">Alle Leistungen →</a></details>`;
+const header = `<header><div class="wrap nav"><a class="logo" href="/"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-176.webp"><img src="/assets/img/logo-176.png" alt="${esc(nap.name)}" width="176" height="176"></picture></a><nav class="links nav-links" aria-label="Hauptnavigation"><div class="nav-dd"><a href="/leistungen/" aria-haspopup="true">Leistungen</a>${navDdPanel}</div><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/fuer-hausverwaltungen/">Hausverwaltungen</a><a href="/ueber-uns/">Über uns</a><a href="/kontakt/">Kontakt</a></nav><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${esc(nap.phone_display)}</span></a><a class="cta nav-cta" href="/kontakt/">Kostenlose Besichtigung</a><input type="checkbox" id="nvt" class="nvt" aria-label="Menü öffnen und schließen"><label for="nvt" class="hamb" aria-hidden="true"><span></span><span></span><span></span></label><nav class="navmenu mnav" aria-label="Hauptmenü">${mnavLeistungen}<a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/bewertungen/">Bewertungen</a><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a><a href="/kontakt/">Kontakt</a><a href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung</a></nav></div><div class="progress" id="progress" aria-hidden="true"></div></header>`;
 const WA_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.16c-.25.69-1.45 1.32-1.99 1.36-.53.05-.53.42-3.34-.7-2.81-1.12-4.6-3.98-4.74-4.16-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.03.97-2.31.25-.28.55-.35.74-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.25.6.83 2.07.9 2.22.07.14.12.31.02.5-.09.18-.14.3-.28.46-.14.16-.29.36-.42.48-.14.14-.28.28-.12.55.16.28.71 1.18 1.53 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.18-.21.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.12.07.66-.18 1.35Z"/></svg>`;
 const sctaBar = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ Anrufen</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav><a class="wa-fab" href="${waHref(waText)}" aria-label="WhatsApp schreiben" title="WhatsApp schreiben">${WA_SVG}</a>`;   // wa-fab (Owner 18.09.): runder WhatsApp-Button mit Logo wie im Vor-Phase-3-Build (gbr-firma/websites/havelland/website/deploy-preview), Desktop-Pendant zur mobilen Sticky-Bar
 const SCTA_DEFAULT = sctaBar('Hallo, ich hätte gern eine kostenlose Besichtigung.');
 // Footer — lock-v2 fcols-Sitemap (hell): Leistungen A–H / H–W / Unternehmen (inkl. /fuer-hausverwaltungen/) + legal
-const footer = `<footer><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · <a href="tel:${tel}">${esc(nap.phone_display)}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>${ohDisplay()?`<br>${esc(ohDisplay())}`:''}</p><div class="fcols"><div><h4><a href="/gartenpflege/">Garten &amp; Grundstück</a></h4><ul><li><a href="/gartenpflege/">Gartenpflege</a></li><li><a href="/gartenpflege/#herbst-paket">Herbst-Paket (Laub)</a></li><li><a href="/heckenschnitt/">Heckenschnitt</a></li><li><a href="/baumschnitt/">Baumschnitt</a></li><li><a href="/dachrinnenreinigung/">Dachrinnenreinigung</a></li><li><a href="/fensterreinigung/">Fensterreinigung</a></li><li><a href="/winterdienst/">Winterdienst</a></li><li><a href="/dachreinigung/">Dachreinigung</a></li><li><a href="/steinreinigung/">Steinreinigung</a></li></ul></div><div><h4><a href="/galabau/">GaLaBau &amp; Rodung</a></h4><ul><li><a href="/zaunbau/">Zaunbau</a></li><li><a href="/heckenentfernung/">Heckenentfernung</a></li><li><a href="/gartenrodung/">Gartenrodung</a></li><li><a href="/baumstumpf-entfernen/">Baumstumpf-Entfernung</a></li><li><a href="/galabau/">GaLaBau-Arbeiten</a></li></ul><h4 style="margin-top:22px"><a href="/entruempelung/">Entrümpelung &amp; Auflösung</a></h4><ul><li><a href="/entruempelung/">Entrümpelung</a></li><li><a href="/haushaltsaufloesung/">Haushaltsauflösung</a></li><li><a href="/grundreinigung/">Grundreinigung</a></li><li><a href="/ferienwohnung-reinigung/">Ferienwohnung-Reinigung</a></li></ul></div><div><h4><a href="/fuer-hausverwaltungen/">Hausverwaltungen &amp; Objekte</a></h4><ul><li><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a></li><li><a href="/objektbetreuung/">Objektbetreuung</a></li><li><a href="/hausmeisterservice/">Hausmeisterservice</a></li><li><a href="/unterhaltsreinigung/">Unterhaltsreinigung</a></li><li><a href="/gebaeudereinigung/">Gebäudereinigung</a></li></ul><h4 style="margin-top:22px">Unternehmen</h4><ul><li><a href="/leistungen/">Alle Leistungen</a></li><li><a href="/standorte/">Standorte</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/bewertungen/">Bewertungen</a></li><li><a href="/kontakt/">Kontakt</a></li></ul></div></div><div class="legal"><span>${esc(nap.name)} (${esc(nap.rechtsform||'GbR')})</span><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="#" id="consent-reset">Cookie-Einstellungen</a></div></div></footer>`;
+// Fußzeile (20.10.): Spalten aus LEISTUNGEN_KATEGORIEN — gleiche Gliederung wie Menü und /leistungen/.
+const fkGroup = (k, extra = '') => `<h4><a href="${k.href}">${esc(k.label)}</a></h4><ul>${extra}${[...katKern(k), ...katAnfrage(k)].map(it => `<li><a href="${it.href}">${esc(it.label)}</a></li>`).join('')}</ul>`;
+const fkBy = key => LEISTUNGEN_KATEGORIEN.find(k => k.key === key);
+const footerCols = `<div class="fcols"><div>${fkGroup(fkBy('garten'))}<div style="margin-top:22px">${fkGroup(fkBy('haus'))}</div></div><div>${fkGroup(fkBy('galabau'))}</div><div>${fkGroup(fkBy('aufloesung'))}<div style="margin-top:22px">${fkGroup(fkBy('gewerbe'), '<li><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a></li>')}</div></div><div><h4>Unternehmen</h4><ul><li><a href="/leistungen/">Alle Leistungen</a></li><li><a href="/standorte/">Standorte</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/bewertungen/">Bewertungen</a></li><li><a href="/kontakt/">Kontakt</a></li></ul></div></div>`;
+const footer = `<footer><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · <a href="tel:${tel}">${esc(nap.phone_display)}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>${ohDisplay()?`<br>${esc(ohDisplay())}`:''}</p>${footerCols}<div class="legal"><span>${esc(nap.name)} (${esc(nap.rechtsform||'GbR')})</span><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="#" id="consent-reset">Cookie-Einstellungen</a></div></div></footer>`;
 const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script><script src="/assets/js/site.js?v=${ASSET_VER}" defer></script>` + CONSENT_BANNER + TRACK_EVENTS + CONSENT_RESET_JS;
 const endBand = `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, was ansteht — wir kümmern uns.</h2><p class="rv d1">Kostenlose Besichtigung, Festpreis, dann erledigt.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
 // Partner-/Tippgeber-Variante (Dach): kein eigener Festpreis — Besichtigung + Angebot über den Fachbetrieb, wir koordinieren.
@@ -288,12 +333,25 @@ const PARTNER_TXT = {
 };
 const partnerTxt = s => (s && s.slug === 'winterdienst') ? PARTNER_TXT.winterdienst : PARTNER_TXT.dach;
 const endBandPartner = s => { const t = partnerTxt(s); return `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, ${t.was} — wir koordinieren.</h2><p class="rv d1">Kostenlose Besichtigung durch den Partner-Fachbetrieb — ein Ansprechpartner für Termin und Ablauf.</p><div class="cta-row rv d2">${ctaPrim(primLabel(s))}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`; };
+// Leistungsname für H2 von FAQ/Ablauf (20.10., SEO M-6): „Häufige Fragen zu {Name}“, „So läuft {Name} ab“. Name aus services.json; Ausnahme GaLaBau (Kurzform, grammatisch tragfähig).
+const H2_NAME = { galabau: 'GaLaBau' };
+const h2Name = s => H2_NAME[s.slug] || s.name;
+// Zwischen-CTA-Texte Paket 1 (20.10., Copy H16): mit Preise-Block „Passt der Rahmen?“, sonst eigener Kurztext (nie wortgleich zum Abschluss-Band). Partner: kein „Festpreis“. Immer genau ein Button (WhatsApp).
+const zwischenOpts = (s, mitPreise) => {
+  const wa = `Hallo, ich interessiere mich für ${s.name}.`;
+  if (s.partner_modell) return s.slug === 'winterdienst'
+    ? { h2: 'Flächen schicken, Rückmeldung bekommen', txt: 'Adresse und Flächen per WhatsApp genügen. Die Besichtigung durch den Partner-Fachbetrieb ist kostenlos und unverbindlich.', wa, waLabel: 'Flächen per WhatsApp schicken' }
+    : { h2: 'Foto schicken, Rückmeldung bekommen', txt: 'Ein Foto per WhatsApp genügt. Die Besichtigung durch den Partner-Fachbetrieb ist kostenlos und unverbindlich.', wa, waLabel: 'Foto per WhatsApp schicken' };
+  return mitPreise
+    ? { h2: 'Passt der Rahmen?', txt: 'Schicken Sie uns ein Foto, wir besichtigen kostenlos und nennen den Festpreis.', wa, waLabel: 'Foto per WhatsApp schicken' }
+    : { h2: 'Foto schicken, Festpreis bekommen', txt: 'Ein Bild per WhatsApp genügt für die erste Einschätzung, die Besichtigung ist kostenlos.', wa, waLabel: 'Foto per WhatsApp schicken' };
+};
 // Zwischen-CTA nach der Prose (Umbau 03.09.): Markup wie die Ratgeber-Sektion "Lieber machen lassen?". Erster Inhalts-CTA damit nach ≤600 W statt ~1.400.
 const ctaZwischen = (s, o = {}) => {
   const p = !!(s && s.partner_modell); const t = partnerTxt(s);
   const h2 = o.h2 || (p ? `Sagen Sie uns, ${t.was} — wir koordinieren.` : 'Lieber machen lassen?');
   const txt = o.txt || (p ? (s.slug === 'winterdienst' ? 'Kostenlose Besichtigung durch den Partner-Fachbetrieb, Saisonvertrag vor dem ersten Schnee — ein Ansprechpartner für Termin und Ablauf.' : 'Kostenlose Besichtigung durch den Partner-Fachbetrieb, Angebot vom ausführenden Betrieb — ein Ansprechpartner für Termin und Ablauf.') : 'Kostenlose Besichtigung, Festpreis, dann erledigt.');
-  return `<section class="sec${o.alt === false ? '' : ' section-alt'}"><div class="wrap center"><h2 class="serif rv">${esc(h2)}</h2><p class="rv d1" style="max-width:44em;margin-inline:auto">${esc(txt)}</p><div class="cta-row rv d2" style="justify-content:center">${ctaPrim(primLabel(s))}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
+  return `<section class="sec${o.alt === false ? '' : ' section-alt'}"><div class="wrap center"><h2 class="serif rv">${esc(h2)}</h2><p class="rv d1" style="max-width:44em;margin-inline:auto">${esc(txt)}</p><div class="cta-row rv d2" style="justify-content:center">${o.wa ? `<a class="btn btn-acc" href="${waHref(o.wa)}">${esc(o.waLabel || 'Per WhatsApp schreiben')}</a>` : `${ctaPrim(primLabel(s))}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a>`}</div></div></section>`;
 };
 // Dunkles Wert-Band (4 Werte) — auf Home + Übersichtsseiten wiederverwendet
 const valueBand = `<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">Kein Suchen, kein Koordinieren, kein Risiko mit Fremden — <em>ein Anruf, alles erledigt.</em></p>
@@ -317,6 +375,18 @@ const gstripHome = gstrip.replace('inklusive Abfuhr, ohne Nachforderung.', 'Abfu
 const gstripBeleg = `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Festpreis für Räumung &amp; Abtransport</h3><p>Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest. Entsorgungsgebühren weisen wir nach Beleg aus.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Foto-Nachweis</h3><p>Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Ein Ansprechpartner</h3><p>Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.</p></div></div></div></div></section>`;
 // Hybrid-Variante (galabau, 17.09.): Grünschnitt/Fräsgut im Festpreis, Rückbau/Sperriges nach Beleg — Text unter dem Strip differenziert genauso; Standard-„ohne Nachforderung“ wäre ein Widerspruch.
 const GRUEN_BELEG_SVCS = new Set(['galabau']);
+// Weitere Varianten der Zusage 01 (20.10., Copy K1/H7): „inklusive Abfuhr, ohne Nachforderung“ nur dort, wo es stimmt.
+// Aushub/Altbelag/Gartenbau: Entsorgung nach Beleg · Baumfällung: Abtransport inklusive, Stadtgebühren nicht · Fenster/Stein: keine Abfuhr.
+const ZUSAGE_STD = '<h3>Festpreis ist Endpreis</h3><p>Nach der kostenlosen Besichtigung steht Ihr Preis — inklusive Abfuhr, ohne Nachforderung.</p>';
+const zusageVariante = (h3, p) => { if (!gstrip.includes(ZUSAGE_STD)) throw new Error('gstrip: Zusage 01 nicht gefunden'); return gstrip.replace(ZUSAGE_STD, `<h3>${h3}</h3><p>${p}</p>`); };
+const AUSHUB_BELEG_SVCS = new Set(['erdarbeiten', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'gartengestaltung', 'rollrasen-verlegen']);
+const ZUSAGE_ENTSORGUNG = { 'rollrasen-verlegen': 'Altrasen und Aushub', gartengestaltung: 'Aushub und Grünschnitt', erdarbeiten: 'des Aushubs' };
+const gstripAushubBeleg = slug => { const w = ZUSAGE_ENTSORGUNG[slug]; const ent = w === 'des Aushubs' ? 'Entsorgung des Aushubs' : `Entsorgung von ${w || 'Aushub und Altbelag'}`; return zusageVariante('Festpreis steht schriftlich', `Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest. ${ent} rechnen wir nach Beleg ab, ohne eigenen Aufschlag.`); };
+const gstripBaumfaellung = zusageVariante('Festpreis steht schriftlich', 'Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest, inklusive Abtransport. Nicht enthalten: Gebühren der Stadt für die Fällgenehmigung und Ersatzpflanzungen.');
+const OHNE_ABFUHR_SVCS = new Set(['fensterreinigung', 'steinreinigung']);
+const gstripOhneAbfuhr = zusageVariante('Festpreis ist Endpreis', 'Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest, ohne Nachforderung.');
+// Zusagen-Leiste je Service: Partner > Beleg (Entrümpelung) > Hybrid (galabau) > Aushub-Beleg > Baumfällung > Reinigung ohne Abfuhr > Standard
+const gstripFor = s => s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : GRUEN_BELEG_SVCS.has(s.slug) ? gstripGruenBeleg : AUSHUB_BELEG_SVCS.has(s.slug) ? gstripAushubBeleg(s.slug) : s.slug === 'baumfaellung' ? gstripBaumfaellung : OHNE_ABFUHR_SVCS.has(s.slug) ? gstripOhneAbfuhr : gstrip;
 const gstripGruenBeleg = `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Festpreis steht schriftlich</h3><p>Nach der kostenlosen Besichtigung steht Ihr Preis fest. Grünschnitt und Fräsgut sind darin enthalten, Rückbau und Sperriges rechnen wir nach Beleg ab.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Foto-Nachweis</h3><p>Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Ein Ansprechpartner</h3><p>Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.</p></div></div></div></div></section>`;
 // Partner-/Tippgeber-Variante (Dach): keine Eigenleistungs- oder Festpreis-Zusage — Ausführung + Angebot beim Fachbetrieb, wir koordinieren.
 const gstripPartner = s => { const t = partnerTxt(s); return `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Ein Ansprechpartner</h3><p>Von der Anfrage bis zur Abnahme koordinieren wir alles für Sie — Sie müssen nicht ${t.vergleich} selbst vergleichen.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Partner-Fachbetrieb</h3><p>${t.arbeit} übernimmt ein Fachbetrieb mit passender Ausrüstung und Absicherung.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Angebot vom Fachbetrieb</h3><p>Nach der kostenlosen Besichtigung erstellt der ausführende Betrieb Ihr Angebot — transparent und unverbindlich.</p></div></div></div></div></section>`; };
@@ -332,17 +402,19 @@ function home() {
   // Saison-Hero-Steuerung ueber config.saison_monat (Override zum Testen), sonst der Build-Monat — wird von saisonTeaser gebraucht.
   const saisonMonat = config.saison_monat || (new Date()).getMonth() + 1;
   // Hero-Lead (17.09.): drei Cluster in einem Satz, Partner-Framing Winterdienst bleibt. Saisonales lebt im saisonTeaser.
-  const homeLead = 'Garten, Entrümpelung, Objektbetreuung — ein fester Ansprechpartner im Havelland. Heckenschnitt und Gartenpflege, Keller und Schuppen ausräumen, Grünpflege und Winterdienst für Ihr Objekt: Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Auftrag.';
+  const homeLead = 'Garten, GaLaBau, Entrümpelung, Objektbetreuung — ein fester Ansprechpartner im Havelland. Heckenschnitt und Gartenpflege, Pflaster, Terrasse und Zaun, Keller und Schuppen ausräumen, Grünpflege und Winterdienst für Ihr Objekt: Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Auftrag.';
   // Kernleistungen = 4 Cluster (17.09., Plan organisch-entruempelung §2). Reihenfolge saisonneutral; Saisonales im saisonTeaser.
   const CLUSTER = [
-    { href: '/gartenpflege/', kick: 'Garten & Grundstück', h3: 'Gepflegt durchs Jahr', p: 'Rasen, Hecke, Laub, Dachrinne — im Abo oder einmalig, mit festem Termin und Foto-Nachweis.',
-      subs: [{ href: '/heckenschnitt/', label: 'Heckenschnitt' }, { href: '/baumschnitt/', label: 'Baumschnitt' }, { href: '/dachrinnenreinigung/', label: 'Dachrinne' }, { href: '/fensterreinigung/', label: 'Fensterreinigung' }, { href: '/winterdienst/', label: 'Winterdienst' }] },
-    { href: '/galabau/', kick: 'GaLaBau & Rodung', h3: 'Weg damit, neu gemacht', p: 'Hecke raus, Stubben gefräst, Zaun gesetzt, Fläche frei — kleinere Bau- und Rodungsarbeiten zum Festpreis.',
-      subs: [{ href: '/zaunbau/', label: 'Zaunbau' }, { href: '/heckenentfernung/', label: 'Heckenentfernung' }, { href: '/gartenrodung/', label: 'Gartenrodung' }, { href: '/baumstumpf-entfernen/', label: 'Baumstumpf' }] },
+    { href: '/gartenpflege/', kick: 'Garten & Pflege', h3: 'Gepflegt durchs Jahr', p: 'Rasen, Hecke, Laub und Baumschnitt — im Abo oder einmalig, mit festem Termin und Foto-Nachweis.',
+      subs: [{ href: '/heckenschnitt/', label: 'Heckenschnitt' }, { href: '/baumschnitt/', label: 'Baumschnitt' }, { href: '/heckenentfernung/', label: 'Hecke entfernen' }, { href: '/gartenpflege/#herbst-paket', label: 'Herbst-Paket' }] },
+    { href: '/leistungen/#haus', kick: 'Haus & Reinigung', h3: 'Rund ums Haus sauber', p: 'Dachrinne, Winterdienst und Steinreinigung — ein Termin, ein Ansprechpartner.',
+      subs: [{ href: '/dachrinnenreinigung/', label: 'Dachrinne' }, { href: '/winterdienst/', label: 'Winterdienst' }, { href: '/steinreinigung/', label: 'Steinreinigung' }] },
+    { href: '/galabau/', kick: 'Garten- und Landschaftsbau', h3: 'Gebaut, gepflastert, neu angelegt', p: 'Pflaster, Terrasse, Zaun, Erdarbeiten und Rollrasen — dazu Gartenrodung. Festpreis nach kostenloser Besichtigung.',
+      subs: [{ href: '/pflasterarbeiten/', label: 'Pflasterarbeiten' }, { href: '/terrassenbau/', label: 'Terrassenbau' }, { href: '/zaunbau/', label: 'Zaunbau' }, { href: '/erdarbeiten/', label: 'Erdarbeiten' }, { href: '/rollrasen-verlegen/', label: 'Rollrasen' }] },
     { href: '/entruempelung/', kick: 'Entrümpelung & Haushaltsauflösung', h3: 'Rund ums Haus ausgeräumt', p: 'Keller, Garage, Dachboden, Schuppen oder die ganze Wohnung — Festpreis für Räumung und Abtransport, Entsorgung nach Beleg.',
-      subs: [{ href: '/haushaltsaufloesung/', label: 'Haushaltsauflösung' }, { href: '/entruempelung/#nebengebaeude', label: 'Keller · Garage · Dachboden' }, { href: '/entruempelung/#gartenhaus', label: 'Gartenhaus-Abriss' }, { href: '/entruempelung/#gewerbe', label: 'Gewerbe' }] },
+      subs: [{ href: '/haushaltsaufloesung/', label: 'Haushaltsauflösung' }, { href: '/entruempelung/#nebengebaeude', label: 'Keller · Garage · Dachboden' }, { href: '/grundreinigung/', label: 'Auszugsreinigung' }] },
     { href: '/fuer-hausverwaltungen/', kick: 'Hausverwaltungen & Objekte', h3: 'Ein Vertrag, ein Ansprechpartner', p: 'Grünpflege, Winterdienst, Treppenhaus und Kleinreparaturen für Ihre Objekte — Foto-Reporting nach jedem Einsatz.',
-      subs: [{ href: '/objektbetreuung/', label: 'Objektbetreuung' }, { href: '/unterhaltsreinigung/', label: 'Unterhaltsreinigung' }, { href: '/gartenpflege/', label: 'Grünpflege im Vertrag' }, { href: '/winterdienst/', label: 'Winterdienst' }] }
+      subs: [{ href: '/objektbetreuung/', label: 'Objektbetreuung' }, { href: '/unterhaltsreinigung/', label: 'Unterhaltsreinigung' }, { href: '/gebaeudereinigung/', label: 'Gebäudereinigung' }, { href: '/winterdienst/', label: 'Winterdienst' }] }
   ];
   const main = `
 <section class="hero">${leaf('hleaf')}<div class="wrap grid">
@@ -356,7 +428,7 @@ function home() {
 </div></section>
 ${gstripHome}
 ${saisonTeaser(saisonMonat)}
-<section class="sec" id="kernleistungen"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Kernleistungen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Vier Bereiche, ein Ansprechpartner — vom regelmäßigen Garten über die leere Garage bis zum betreuten Mehrfamilienhaus.</p>${clusterKacheln(CLUSTER)}</div></section>
+<section class="sec" id="kernleistungen"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Kernleistungen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Fünf Bereiche, ein Ansprechpartner — vom neuen Pflaster über den gepflegten Garten und die leere Garage bis zum betreuten Mehrfamilienhaus.</p>${clusterKacheln(CLUSTER)}</div></section>
 <section class="sec section-alt"><div class="wrap">${jahreszeiten()}</div></section>
 <section class="sec"><div class="wrap">${echtProjekt()}</div></section>
 <section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Echte Ergebnisse zum Durchziehen</h2></div><p class="intro rv">Ziehen Sie den Regler — jedes Bild ist ein dokumentierter Auftrag aus dem Havelland.</p>${karussell()}${archivGrid({ ctaHref: '/kontakt/#anfrage' })}</div></section>
@@ -378,7 +450,7 @@ function hub(s) {
   const url = `/${s.slug}/`;
   const c = hubCopy[s.slug];
   const orteList = orteForService(s);
-  const cardOrte = orteList.filter(o => hasOrt(s.slug, o.slug)).slice(0, FULL ? 999 : 12);
+  const cardOrte = seitenOrte(s).filter(o => hasOrt(s.slug, o.slug)).slice(0, FULL ? 999 : 12);
   // Ortskarten-Text (17.09.): bespoke Ein-Satz-Ortsfakt aus ortsseiten.json (services.<slug>.orte.<ort>.fakt) hat Vorrang vor dem generischen Satz.
   const soHub = ortsSvcCopy[s.slug] || null;
   const cardSub = o => { const f = soHub && soHub.orte && soHub.orte[o.slug] && soHub.orte[o.slug].fakt; return f ? esc(f) : (s.partner_modell ? `${esc(s.name)} in ${esc(o.name)} — koordiniert über einen Partner-Fachbetrieb.` : `${esc(s.name)} in ${esc(o.name)} — lokal, Festpreis, Foto-Nachweis.`); };
@@ -415,7 +487,9 @@ function hub(s) {
   // Festpreis entsteht erst nach Besichtigung. Kein FAQPage (Gate). areaServed = Orte des Service.
   // Fix (17.09., Review): Opt-in statt Positions-Heuristik — nur Sections mit offer:true (Redaktionsentscheidung in hubs.json) werden Offers.
   // Default ist kein Offer: Prozessschritte/Rechtslage/USP/Disclaimer/Preis-Erklärung/Referenzen/Verweise sind KEINE buchbaren Leistungen.
-  const offers = (c && Array.isArray(c.sections) ? c.sections : []).filter(x => x.offer === true).slice(0, 6).map(x => `{"@type":"Offer","itemOffered":{"@type":"Service","name":"${sj(x.h3)}","serviceType":"${sj(s.name)}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}}}`).join(',');
+  // SEO H-5 (20.10.): Hub-Karten-Layout (galabau) leitet die Offers aus den sichtbaren Kern-Karten ab (eine Quelle, keine zweite Liste); sonst offer:true-Sektionen wie bisher.
+  const offerSrc = (c && c.layout === 'hub-karten' && c.karten && Array.isArray(c.karten.kern)) ? c.karten.kern.map(k => ({ h3: k.h3, link_to: k.to, seite: true })) : (c && Array.isArray(c.sections) ? c.sections : []).filter(x => x.offer === true);
+  const offers = offerSrc.slice(0, 6).map(x => `{"@type":"Offer"${(x.link_to && x.seite) ? `,"url":"${DOMAIN}${hrefOf(x.link_to)}"` : ''},"itemOffered":{"@type":"Service","name":"${sj(x.h3)}","serviceType":"${sj(s.name)}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}}}`).join(',');
   const catalog = offers ? `,"hasOfferCatalog":{"@type":"OfferCatalog","name":"${sj(s.name)} — Leistungen","itemListElement":[${offers}]}` : '';
   // GEO (W3-Audit 17.09.): Person-Schema für den textlich genannten Ansprechpartner — Opt-in über hubs.json (c.person:true), Daten aus nap.ansprechpartner (Single-Source).
   const personSchema = (c && c.person && nap.ansprechpartner) ? `,{"@type":"Person","@id":"${DOMAIN}/#${nap.ansprechpartner.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}","name":"${sj(nap.ansprechpartner.name)}","jobTitle":"${sj(nap.ansprechpartner.rolle)}","worksFor":{"@id":"${DOMAIN}/#organization"}}` : '';
@@ -434,7 +508,10 @@ function hub(s) {
   const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline(!!s.partner_modell, s.slug)}</div></section>`;
   const faqSection = `<section class="sec"><div class="wrap">${faqFilter(faqData)}</div></section>`;
   const cardOrteSection = cardOrte.length ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in Ihrem Ort</h2></div>${naeheLead}<div class="cards rv">${cards}</div></div></section>` : '';
-  const ratgeberSection = (ratgeberByService[s.slug] || []).length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">Ratgeber rund um ${esc(s.name)}</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${(ratgeberByService[s.slug] || []).slice(0, 3).map(r => `<a class="card" href="/ratgeber/${r.slug}/"><h3>${esc(r.title)}</h3><p>${esc(r.lead || '')}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : '';
+  // Ratgeber-Teaser (20.10., Copy H15/M4): nur der erste Satz von lead; ausgeblendete Artikel je Hub (Daten: hub.ratgeber_ausblenden, sonst RATGEBER_AUSBLENDEN)
+  const ratAus = new Set([...(RATGEBER_AUSBLENDEN[s.slug] || []), ...((c && c.ratgeber_ausblenden) || [])]);
+  const ratList = (ratgeberByService[s.slug] || []).filter(r => !ratAus.has(r.slug) && !svcNoindexBySlug(r.cta_service)).slice(0, 3);   // noindex-Ratgeber (Wellen-Gate) nicht von Hubs verlinken
+  const ratgeberSection = ratList.length ? `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">Ratgeber rund um ${esc(s.name)}</h2><a class="rv" href="/ratgeber/">Alle Ratgeber →</a></div><div class="cards rv">${ratList.map(r => `<a class="card" href="/ratgeber/${r.slug}/"><h3>${esc(r.title)}</h3><p>${esc(ersterSatz(r.lead || ''))}</p><span class="go">Lesen →</span></a>`).join('')}</div></div></section>` : '';
   let rich;
   if (gk === 'voll') {
     rich =
@@ -459,7 +536,7 @@ function hub(s) {
   // Pillar-Hub (17.09.): optionales b.lead (fetter Kernsatz vor dem Body, z. B. Übergabe-Garantie) + optionales Bild b.img/b.img_alt (Manifest-Slug, z. B. Ansprechpartner-Arbeitsfoto).
   const hasDetail = !!IMG['svc-' + s.slug + '-detail'];
   // Zaunarten-Vergleich (Zaunbau, 16.09.): Karten aus copy.zaunarten — Produktszenen (KI, gleiches Grundstück), kein Projektbezug; Preisfeld = Projektspanne oder "nach Besichtigung", nie €/lfm. Nur Hubs mit copy.zaunarten; sonst ''.
-  const zaunarten = (c && Array.isArray(c.zaunarten) && c.zaunarten.length) ? `<section class="sec section-alt" id="zaunarten"><div class="wrap"><div class="head"><h2 class="serif rv">Welcher Zaun passt zu Ihrem Grundstück?</h2><p class="rv">Fünf Systeme an fünf typischen Havelland-Grundstücken — vom Siedlungshaus bis zum Neubau. Die drei oberen sind unsere Standardsysteme, Alu und Schmuckzaun bauen wir auf Anfrage. Die Bilder zeigen die Zaunart, nicht ein Kundenprojekt.</p></div><div class="cards zaunarten rv">${c.zaunarten.map(z => `<div class="card${z.fokus ? '' : ' card-muted'}">${IMG[z.img] ? pic(z.img, { alt: esc(z.name) + ' — Beispiel im Vorgarten', sizes: '(max-width:700px) 92vw, 33vw' }) : ''}<h3>${esc(z.name)}${z.fokus ? '' : ' <span class="chip chip-muted">auf Anfrage</span>'}</h3><p><strong>Sichtschutz:</strong> ${esc(z.sichtschutz)}<br><strong>Haltbarkeit:</strong> ${esc(z.haltbarkeit)}<br><strong>Lieferzeit:</strong> ${esc(z.lieferzeit)}<br><strong>Für wen:</strong> ${esc(z.passend)}</p><p><strong>20 m inkl. Montage:</strong> ${esc(z.spanne)}</p></div>`).join('')}</div></div></section>` : '';
+  const zaunarten = (c && Array.isArray(c.zaunarten) && c.zaunarten.length) ? `<section class="sec section-alt" id="zaunarten"><div class="wrap"><div class="head"><h2 class="serif rv">Welcher Zaun passt zu Ihrem Grundstück?</h2><p class="rv">Fünf Systeme an fünf typischen Havelland-Grundstücken — vom Siedlungshaus bis zum Neubau. Die drei oberen sind unsere Standardsysteme, Alu und Schmuckzaun bauen wir auf Anfrage. Die Bilder zeigen die Zaunart, nicht ein Kundenprojekt.</p></div><div class="cards zaunarten rv">${c.zaunarten.map(z => `<div class="card${z.fokus ? '' : ' card-muted'}">${IMG[z.img] ? pic(z.img, { alt: esc(z.name) + ' — Beispiel im Vorgarten', sizes: '(max-width:700px) 92vw, 33vw' }) : ''}<h3>${esc(z.name)}${z.fokus ? '' : ' <span class="chip chip-muted">auf Anfrage</span>'}</h3><p><strong>Sichtschutz:</strong> ${esc(z.sichtschutz)}<br><strong>Haltbarkeit:</strong> ${esc(z.haltbarkeit)}<br><strong>Lieferzeit:</strong> ${esc(z.lieferzeit)}<br><strong>Für wen:</strong> ${esc(z.passend)}</p><p><strong>20 m montiert:</strong> ${esc(z.spanne)}</p></div>`).join('')}</div></div></section>` : '';
   // Zwischen-CTA nach der Prose auf allen Hubs ohne Galerie-CTA (voll = Heckenschnitt hat die Galerie)
   const zwischen = (s.partner_modell || gk !== 'voll') ? ctaZwischen(s) : '';
   // Zonen-Parität (W3b Review #2): paper/weiß wechseln fortlaufend, Zwischen-CTAs zählen mit — kein paper-auf-paper.
@@ -474,6 +551,17 @@ function hub(s) {
     const links = copyLinksHtml(b).trim();
     return `<section class="sec${zone()}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2>${b.lead ? `<p class="lead-p"><strong>${esc(b.lead)}</strong></p>` : ''}<p>${esc(b.body)}${hasBul ? '' : copyLinksHtml(b)}</p>${hasBul ? `<ul class="bl">${b.bullets.map(t => `<li>${esc(t)}</li>`).join('')}</ul>${links ? `<p>${links}</p>` : ''}` : ''}${b.mehr ? `<details class="mehr"><summary>Mehr dazu</summary><div><p>${esc(b.mehr)}</p></div></details>` : ''}${(b.img && IMG[b.img]) ? `<figure class="block-fig">${pic(b.img, { alt: b.img_alt || b.h2, sizes: '(max-width:900px) 92vw, 480px' })}</figure>` : ''}</div></div></section>` + ctaAfter(b);
   }).join('');
+  // Hub-Querverweis (20.10., page-audit #5): Bestands-Hubs verlinken die passende neue GaLaBau-Seite.
+  const HUB_CROSS = {
+    gartenrodung: { h2: 'Nach der Rodung: Boden und Neuanlage', p: 'Ist die Fläche frei, planieren wir, bringen Mutterboden ein und legen auf Wunsch Rasen, Wege oder Beete neu an.', href: '/erdarbeiten/', a: 'Zu den Erdarbeiten', href2: '/gartengestaltung/', a2: 'Zur Gartengestaltung' },
+    'baumstumpf-entfernen': { h2: 'Der Baum steht noch?', p: 'Wir fällen ihn auch, prüfen vorher die Baumschutzsatzung und fräsen den Stumpf im selben Einsatz weg.', href: '/baumfaellung/', a: 'Zur Baumfällung' },
+    baumschnitt: { h2: 'Schnitt reicht nicht mehr?', p: 'Ist ein Baum zu groß, krank oder steht im Weg, fällen wir ihn in Teilstücken und klären vorher die Genehmigung.', href: '/baumfaellung/', a: 'Zur Baumfällung' },
+    heckenentfernung: { h2: 'Hecke weg, und dann?', p: 'Auf die freie Fläche kommt neuer Rollrasen, ein Zaun oder ein frisch angelegtes Beet, aus einer Hand.', href: '/rollrasen-verlegen/', a: 'Zum Rollrasen', href2: '/gartengestaltung/', a2: 'Zur Gartengestaltung' },
+    gartenpflege: { h2: 'Rasen nicht mehr zu retten?', p: 'Dann legen wir ihn neu an: Altrasen raus, Boden vorbereiten, Rollrasen verlegen.', href: '/rollrasen-verlegen/', a: 'Zum Rollrasen verlegen' },
+    steinreinigung: { h2: 'Pflaster abgesackt oder kaputt?', p: 'Reinigen hilft dann nicht mehr. Wir setzen Steine neu, richten den Unterbau und pflastern auch neue Wege und Einfahrten.', href: '/pflasterarbeiten/', a: 'Zu den Pflasterarbeiten' }
+  };
+  const hx = HUB_CROSS[s.slug];
+  const hubCross = hx ? `<section class="sec${zone()}"><div class="wrap"><div class="prose wide rv"><h2>${esc(hx.h2)}</h2><p>${esc(hx.p)} <a href="${hx.href}">${esc(hx.a)}</a>${hx.href2 ? ` · <a href="${hx.href2}">${esc(hx.a2)}</a>` : ''}.</p></div></div></section>` : '';
   // Fallbeispiele (echte Aufträge, anonymisiert) — nur Hubs mit copy.faelle; sonst ''. Parität weiterführen.
   const faelleHtml = (c && c.faelle) ? faelleBlock(c.faelle, { alt: (paper = !paper) }) : '';
   // W3b (17.09.): Layout "ueberblick" — Kachel-Grid + Versprechen-Zeile statt Prose-Wand; Legacy-Hubs ohne layout unverändert.
@@ -481,15 +569,82 @@ function hub(s) {
   const leistungsSection = ueberblick
     ? `<section class="sec" id="leistungen"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(c.sections_h2 || (s.name + ' im Havelland — was dazugehört'))}</h2></div>${c.definition ? `<p class="sec-lead rv">${esc(c.definition)}</p>` : ''}<div class="cards leist rv">${kachelHtml}</div><p class="garantie-line rv"><strong>${versprechenH}:</strong> ${esc(garantieTxt)}</p></div></section>`
     : `<section class="sec"><div class="wrap"><div class="prose wide rv">${definition}<h2>${esc((c && c.sections_h2) || (s.name + ' im Havelland — was dazugehört'))}</h2>${sektionenHtml}${naehe}${ablauf}<h3>${versprechenH}</h3><p>${esc(garantieTxt)}</p></div></div></section>`;
+  // ---- Paket 1: Grundgerüst (Kopf → Zusagen → Leistungen → Beweis → Zwischen-CTA → Blöcke → Passt → Orte → Ablauf → Ratgeber → FAQ → Ende) ----
+  if (GRUNDGERUEST.has(s.slug)) {
+    const partner = !!s.partner_modell;
+    let z = false; const alt = () => (z = !z);   // Zonen-Parität: weiß/paper im Wechsel ab dem Leistungsteil
+    const slugOfTo = to => String(to || '').split('#')[0].replace(/^\/|\/$/g, '').split('/').pop();
+    const heroOf = sl => IMG['svc-' + sl + '-hero'] ? 'svc-' + sl + '-hero' : (sl === 'fuer-hausverwaltungen' ? 'svc-objektbetreuung-hero' : null);
+    const fotoOf = (src, alt) => { if (!src) return ''; if (IMG[src]) return pic(src, { alt, sizes: '(max-width:900px) 92vw, 46vw' }); if (!/\.(jpe?g|png|webp)$/i.test(src)) return pic('ueber-uns', { alt: 'Noah Telo und Maurice Brehm am Einsatzfahrzeug', sizes: '(max-width:900px) 92vw, 46vw' }); return `<img src="/assets/img/${esc(src)}" alt="${esc(alt)}" width="1200" height="900" loading="lazy" decoding="async">`; };
+    const h2Leist = (c && c.sections_h2) || (s.name + ' im Havelland — was dazugehört');
+    const leist = (c && c.layout === 'hub-karten' && c.karten)
+      ? galabauKarten({ h2: h2Leist, lead: c.definition || '', kern: c.karten.kern.map(k => ({ href: hrefOf(k.to), h3: k.h3, p: k.p, imgHtml: heroOf(slugOfTo(k.to)) ? pic(heroOf(slugOfTo(k.to)), { alt: k.h3 + ' im Havelland', sizes: '(max-width:560px) 92vw, (max-width:900px) 46vw, 31vw' }) : '' })), ausserdem: (c.karten.ausserdem || []).map(a => ({ href: hrefOf(a.to), label: a.label })) })
+      : leistungsListe({ h2: h2Leist, fotoHtml: IMG['svc-' + s.slug + '-detail'] ? pic('svc-' + s.slug + '-detail', { alt: s.name + ' im Detail — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 46vw' }) : '', items: (c && c.sections) || (s.sektionen || []).map(x => ({ h3: x, kurz: '' })), garantie: garantieTxt, garantieLabel: versprechenH });
+    z = false;   // Leistungsteil = weiß
+    // Frist-Block zeitunabhängig (Runde 2): kein Monat, kein „jetzt“, kein Datum-Button.
+    const fristData = (c && c.frist) ? { h2: 'Hecken entfernen ist nur vom <em>1. Oktober bis 28. Februar</em> erlaubt.', text: 'Rodung von Hecken ist nur vom 1. Oktober bis 28. Februar erlaubt (§ 39 BNatSchG). Besichtigung und Angebot gibt es das ganze Jahr.', cta: 'Termin im Fenster sichern' } : null;
+    let beweis = '';
+    if (c && c.ergebnisse === 'karussell') beweis = `<section class="sec${alt() ? ' section-alt' : ''}" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Ergebnisse zum Durchziehen</h2></div>${karussell()}${archivGrid({ ctaHref: '/kontakt/#anfrage' })}</div></section>`;
+    else if (c && c.ergebnisse && Array.isArray(c.ergebnisse.paare)) { alt(); beweis = ergebnisPaare({ paare: c.ergebnisse.paare }); }
+    else if (c && Array.isArray(c.vorteile) && c.vorteile.length) beweis = vorteileBlock({ items: c.vorteile, frist: fristData, alt: alt() });
+    // Zwischen-CTA (20.10., Spec §3.3 Pkt. 4, Copy H5/H16): entfällt, wenn der Beweis einen eigenen Button hat (Karussell-CTA-Kachel, Frist-Block).
+    // Mit Preise-Block steht er HINTER dem Preise-Block (bei Referenzprojekt hinter dem späteren von beiden, Beweis vor CTA), mit Ein-Button-Text; ohne Preise-Block an der alten Stelle, Text weicht vom Abschluss-Band ab.
+    const blocksArr = (c && Array.isArray(c.blocks)) ? c.blocks : [];
+    const preisIdx = (i => i >= 0 ? i : blocksArr.findIndex(b => /preis|kosten(?!los)/i.test(b.h2 || '')))(blocksArr.findIndex(b => b.id === 'preise'));
+    const refIdx = blocksArr.findIndex(b => b.id === 'referenzprojekt');
+    const ctaIdx = preisIdx >= 0 ? Math.max(preisIdx, refIdx) : -1;
+    const zwHatBeweisButton = !!fristData || (c && c.ergebnisse === 'karussell');
+    const zwOpts = zwischenOpts(s, preisIdx >= 0);
+    const zw = (zwHatBeweisButton || ctaIdx >= 0) ? '' : ctaZwischen(s, { ...zwOpts, alt: alt() });
+    // übrige Copy-Blöcke (Preise, Herbst-Paket …) — Querverweise sind nach `passt` gewandert
+    const restBlocks = blocksArr.map((b, bi) => {
+      const hasBul = Array.isArray(b.bullets) && b.bullets.length > 0; const links = copyLinksHtml(b).trim();
+      const html = `<section class="sec${alt() ? ' section-alt' : ''}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2>${b.lead ? `<p class="lead-p"><strong>${esc(b.lead)}</strong></p>` : ''}<p>${esc(b.body)}${hasBul ? '' : copyLinksHtml(b)}</p>${hasBul ? `<ul class="bl">${b.bullets.map(t => `<li>${esc(t)}</li>`).join('')}</ul>${links ? `<p>${links}</p>` : ''}` : ''}</div></div></section>`;
+      return html + ((bi === ctaIdx && !zwHatBeweisButton) ? ctaZwischen(s, { ...zwOpts, alt: alt() }) : '');
+    }).join('');
+    const faelle = (c && c.faelle) ? faelleBlock(c.faelle, { alt: alt() }) : '';
+    const passt = passtBlock({ items: ((c && c.passt) || []).map(x => { const sl = slugOfTo(x.to); const hk = heroOf(sl); return { href: hrefOf(x.to), h3: x.h3, p: x.p, link_text: x.link_text, imgHtml: hk ? pic(hk, { alt: x.h3, sizes: '(max-width:560px) 92vw, 340px' }) : '' }; }), alt: alt() });
+    if (!passt) alt();
+    // Orte: Falkensee zuerst, dann GSC-Top, aufgefüllt mit Fallback, nur gerenderte Ortsseiten
+    const kand = [...(ORTE_TOP[s.slug] || []), ...(ORTE_TOP.fallback || []), ...seitenOrte(s).map(o => o.slug)];
+    // M-7 (SEO): Orte-Block nur mit indexierbaren Ortsseiten (Wellen-Gate), sonst ganz weglassen. H-4 + Owner „Verlinkung komplett“: Top 6 als Buttons, alle übrigen als Textzeile „Weitere Orte“.
+    const orteIdx = svcWaveNoindex(s) ? [] : [...new Set(kand)].filter(sl => hasOrt(s.slug, sl));
+    const ortLink = sl => ({ href: `/${s.slug}-${sl}/`, name: (orte.find(o => o.slug === sl) || {}).name || sl });
+    const topOrte = orteIdx.slice(0, 6).map(ortLink);
+    const weitereOrte = orteIdx.slice(6).map(ortLink).sort((a, b) => a.name.localeCompare(b.name, 'de'));
+    const of = (c && c.orte_foto) || { src: 'ueber-uns', alt: 'Noah Telo und Maurice Brehm am Einsatzfahrzeug' };
+    const orteHtml = orteBlock({ name: s.name, fotoHtml: fotoOf(of.src, of.alt), orte: topOrte, weitere: weitereOrte, partner, alt: alt() });
+    if (!orteHtml) alt();
+    const faqSectionGG = `<section class="sec"><div class="wrap">${faqFilter(faqData, { heading: `Häufige Fragen zu <em>${esc(h2Name(s))}</em>` })}</div></section>`;
+    const ablauf = soLaeufts({ partner, slug: s.slug, name: h2Name(s), waText: `Hallo, ich interessiere mich für ${s.name}.`, alt: alt() });
+    const mainGG = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
+<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || s.b2b_only) ? CTA_ANGEBOT : primLabel(s))}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div>${trustLine}</div>
+<div class="shot rv in d2">${heroShot}</div></div></section>
+${gstripFor(s)}
+${leist}
+${zaunarten}
+${beweis}
+${zw}
+${restBlocks}${faelle}
+${passt}
+${orteHtml}
+${ablauf}
+${ratgeberSection}
+${faqSectionGG}
+${partner ? endBandPartner(s) : endBand}`;
+    write(url, head(title, meta, url, schema, { og: svcHero(s.slug) }) + header + mainGG + footer + sctaBar(`Hallo, ich interessiere mich für ${s.name} im Havelland.`) + revealJS + '</body></html>');
+    written.hubs.push(url);
+    return;
+  }
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">Leistung</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${lead}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || s.b2b_only) ? CTA_ANGEBOT : primLabel(s))}<a class="btn btn-line" href="${waHref(`Hallo, ich interessiere mich für ${s.name}.`)}">WhatsApp</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div>${trustLine}</div>
 <div class="shot rv in d2">${heroShot}</div></div></section>
-${s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : GRUEN_BELEG_SVCS.has(s.slug) ? gstripGruenBeleg : gstrip}
+${gstripFor(s)}
 ${leistungsSection}
 ${zaunarten}
 ${zwischen}
 ${IMG['svc-' + s.slug + '-detail'] ? `<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic('svc-' + s.slug + '-detail', { alt: s.name + ' im Detail — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>` : ''}
-${extraBlocks}${faelleHtml}
+${extraBlocks}${hubCross}${faelleHtml}
 ${rich}
 ${b2bCross}
 ${s.partner_modell ? endBandPartner(s) : endBand}`;
@@ -514,7 +669,7 @@ function ortsseite(s, o) {
   const partnerNoCopy = !!s.partner_modell && !soOrt;
   const arch = oc ? (partnerNoCopy ? (archCopy['partner-winterdienst'] || null) : archCopy[oc.archetype]) : null; // Partner-Pool statt Festpreis-Pools
   const seed = seedOf(url);
-  const nachbarn = orteForService(s).filter(x => x.slug !== o.slug && hasOrt(s.slug, x.slug));
+  const nachbarn = seitenOrte(s).filter(x => x.slug !== o.slug && hasOrt(s.slug, x.slug));
   const nahCards = rotate(nachbarn, seed, 4);
 
   const place = `{"@type":"Place","name":"${sj(o.name)}"${o.plz?`,"address":{"@type":"PostalAddress","postalCode":"${sj(o.plz)}","addressLocality":"${sj(o.name)}","addressCountry":"DE"}`:''}}`;
@@ -536,17 +691,17 @@ function ortsseite(s, o) {
   // W3b (Review #9): rahmen eingeklappt — Intro nach dem Hero wird halb so lang, Text bleibt im DOM (NearDup-Gate misst den Block weiterhin).
   const rahmen = rahmenTxt ? `<details class="mehr"><summary>Mehr über unsere Arbeit in ${esc(o.name)}</summary><div><p>${esc(fillTok(rahmenTxt, o, oc))}</p></div></details>` : '';
   const sektionen = (s.sektionen || []).map(x => `<li>${esc(x)}</li>`).join('');
-  const ortsteile = (o.ortsteile && o.ortsteile.length) ? `<p>Auch in ${esc(o.ortsteile.join(', '))} und Umgebung sind wir für Sie da.</p>` : '';
+  const ortsteile = (o.ortsteile && o.ortsteile.length && !s.seiten_orte) ? `<p>Auch in ${esc(o.ortsteile.join(', '))} und Umgebung sind wir für Sie da.</p>` : '';
   const trust = trustTxt ? `<p>${esc(fillTok(trustTxt, o, oc))}</p>` : (s.partner_modell ? `<p>Kostenlose Besichtigung durch den Partner-Fachbetrieb, das Angebot kommt vom ausführenden Betrieb — wir koordinieren Termin und Ablauf.</p>` : `<p>Kostenlose Besichtigung, danach ein Festpreis ohne Nachkommen — und nach dem Auftrag Vorher/Nachher-Fotos per WhatsApp.</p>`);
 
   // FAQ: bespoke Service-Ort-Pool (falls vorhanden) ersetzt Archetyp-FAQ UND Hub-FAQ auf der Ortsseite (volle Compliance-Kontrolle, u.a. Dach-Partner-Framing); sonst 2 Archetyp-FAQ + 2 Hub-FAQ wie bisher
   const _faqPool = so && so.faqs ? so.faqs : (partnerNoCopy ? null : (arch && arch.faqs));
   // Partner-Ortsseiten (04.09.): zwei FAQs als paarweise eindeutiges Paar aus dem Pool (je zwei Seiten teilen höchstens eine Frage) — NearDup-Gate.
   const faqPaar = (pool, k) => { const n = pool.length; if (n < 3) return pool; const runde = Math.floor(k / n); const i = k % n; const j = (i + 1 + 2 * runde) % n; return j === i ? [pool[i]] : [pool[i], pool[j]]; };
-  const archFaqs = _faqPool ? (s.partner_modell ? faqPaar(_faqPool, idxP) : rotate(_faqPool, idx, 2)).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
+  const archFaqs = _faqPool ? (s.partner_modell ? faqPaar(_faqPool, idxP) : (_faqPool.length >= 3 ? faqPaar(_faqPool, idx) : rotate(_faqPool, idx, 2))).map(f => ({ q: fillTok(f.q, o, oc), a: fillTok(f.a, o, oc) })) : [];
   // so.hub_faq_fill = N (Umbau 03.09., winterdienst): bespoke Pool liefert 2, der Hub füllt auf N auf; ohne das Feld bleibt bespoke = Hub-FAQ aus.
   const faqFill = so && so.faqs ? Math.max(0, (so.hub_faq_fill || 0) - archFaqs.length) : (archFaqs.length ? 2 : 4);
-  const hubFaqs = (so && so.faqs && !faqFill) ? [] : (c && c.faqs ? rotate(c.faqs.filter(f => !f.hub_only), (s.partner_modell ? idxP : idx) + 1, faqFill) : []);
+  const hubFaqs = (so && so.faqs && !faqFill) ? [] : (c && c.faqs ? ((hp => (hp.length <= 4 && faqFill === 2 && !s.partner_modell) ? (hp.length < 3 ? rotate(hp, idx + 1, 1) : faqPaar(hp, idx * 5 + 2 + Math.floor(idx / 4))) : rotate(hp, (s.partner_modell ? idxP : idx) + 1, faqFill))(c.faqs.filter(f => !f.hub_only))) : []);   // R2: gekürzter Hub-FAQ-Pool (≤4): paarweise verschiedene Paare statt Rotation (NearDup)
   // W2: bespoke Tiefen-FAQs (tief.faqs) ersetzen archFaqs+hubFaqs komplett, wenn gesetzt.
   const faqs = (tief && tief.faqs && tief.faqs.length) ? tief.faqs : [...archFaqs, ...hubFaqs];
   const ortRatPool = ratgeberByService[s.slug] || [];
@@ -560,7 +715,7 @@ function ortsseite(s, o) {
     : ((s.name.length + o.name.length) < 34 ? ' – Havelland' : '');
   // Passt der volle Suffix nicht in 60 Zeichen, greift title_suffix_short (services.json) statt eines abgeschnittenen Titels.
   const tShort = (s.title_suffix && s.title_suffix_short && rlen(`${s.name} ${o.name}${tSuffix}`) > 60) ? ` – ${s.title_suffix_short}` : tSuffix;
-  const title = clampTitle(`${s.name} ${o.name}${tShort}`);
+  const title = clampTitle(soOrt && soOrt.title ? fillTok(soOrt.title, o, oc) : `${s.name} ${o.name}${tShort}`);   // 20.10.: bespoke Title je Ort (z. B. „Gartenbau Spandau“ statt Service-Name + Ort)
   const meta = mkMeta(soOrt && soOrt.meta ? fillTok(soOrt.meta, o, oc) : so && so.meta ? fillTok(so.meta, o, oc) : (s.partner_modell ? `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''}: Ausführung durch einen Partner-Fachbetrieb, koordiniert über einen festen Ansprechpartner vom Haus- & Gartenservice Havelland.` : `${s.name} in ${o.name}${o.plz?` (${o.plz})`:''} vom Haus- & Gartenservice Havelland: Festpreis nach kostenloser Besichtigung und Foto-Nachweis nach jedem Auftrag.`));
 
   // Heckenschnitt-Ort: Vorher/Nachher-Slider im Hero; andere Gewerke: Standard-Bild (kein Slider)
@@ -578,11 +733,11 @@ function ortsseite(s, o) {
   };
   const cx = ORT_CROSS[s.slug];
   const crossSection = cx ? `<section class="sec section-alt"><div class="wrap"><div class="prose wide rv"><h2>${esc(cx.h2)}</h2><p>${esc(cx.p)} <a href="${cx.href}">${esc(cx.a)}</a>.</p></div></div></section>` : '';
-  const nachbarSection = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}${servicesForOrt(o).length>=3?`<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a>`:`<a class="card" href="/${s.slug}/"><h3>Mehr zu ${esc(s.name)}</h3><span class="go">Zur Leistung →</span></a>`}</div></div></section>`;
+  const nachbarSection = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}${ortsHubSlugs.has(o.slug)?`<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a>`:`<a class="card" href="/${s.slug}/"><h3>Mehr zu ${esc(s.name)}</h3><span class="go">Zur Leistung →</span></a>`}</div></div></section>`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/${s.slug}/">${esc(s.name)}</a><span class="sep">›</span>${esc(o.name)}</div>
-<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(o.name)}${o.plz?` · ${esc(o.plz)}`:''}</span><h1 class="rv in d1">${esc(s.name)} <em>in ${esc(o.name)}</em></h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || isB2Bonly(o.typ)) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich brauche ${s.name} in ${o.name}.`)}">WhatsApp</a></div></div>
+<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(o.name)}${o.plz?` · ${esc(o.plz)}`:''}</span><h1 class="rv in d1">${esc(s.name)} <em>in ${esc(o.name)}</em></h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || (isB2Bonly(o.typ) && !s.seiten_orte)) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich brauche ${s.name} in ${o.name}.`)}">WhatsApp</a></div></div>
 <div class="shot rv in d2">${heroShotO}</div></div></section>
-${s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : GRUEN_BELEG_SVCS.has(s.slug) ? gstripGruenBeleg : gstrip}
+${gstripFor(s)}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
 ${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml, hrefOf, ctaAfterGrid: tief.cta_grid ? ctaZwischen(s, { ...tief.cta_grid }) : '' }) : ''}${tief ? ctaZwischen(s, { ...(tief.cta_after || tiefCtaDefault), alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.', alt: tiefPaper }) : ''}${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
@@ -591,7 +746,7 @@ ${nachbarSection}
 <section class="sec"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
 ${s.partner_modell ? endBandPartner(s) : endBand}`;
   const ni = svcWaveNoindex(s);
-  write(url, head(title, meta, url, schema, { noindex: ni }) + header + main + footer + sctaBar(`Hallo, ich brauche ${s.name} in ${o.name}.`) + revealJS + '</body></html>');
+  write(url, head(title, meta, url, schema, { noindex: ni, og: svcHero(s.slug) }) + header + main + footer + sctaBar(`Hallo, ich brauche ${s.name} in ${o.name}.`) + revealJS + '</body></html>');
   written.ortsseiten.push(url); if (!ni) written.ortsseitenIdx.push(url);
 }
 
@@ -668,53 +823,27 @@ const catHead = (n, label) => `<div class="cat rv"><span class="cat-n">${String(
 
 // ---------- ÜBERSICHT: /leistungen/ (Themen-Blöcke) ----------
 function leistungenPage() {
+  // Paket 1 (20.10., Entwurf leistungen-entwurf-5): kurzer Kopf → Top 4 → 5 Bereiche (Kern-Buttons + „Auf Anfrage auch“) → 3 FAQ → Ende. Keine Preise.
   const url = '/leistungen/';
-  const bySlug = Object.fromEntries(services.map(s => [s.slug, s]));
-  const seen = new Set();
-  const ordered = [];   // für ItemList-Schema in Anzeige-Reihenfolge
-  const blocks = [];
-  let n = 0;
-  // Saison-Kategorie (Umbau 04.09.): Herbst 9–11 / Winter 12–2 oben, ohne Doppelung im ItemList-Schema (Services bleiben in ihrer Stammkategorie).
-  const saisonM = config.saison_monat || (new Date()).getMonth() + 1;
-  const SAISON = (saisonM >= 9 && saisonM <= 11)
-    ? { key: 'saison', label: 'Jetzt im Herbst: Laub, Dachrinne, Winterdienst', slugs: ['gartenpflege', 'dachrinnenreinigung', 'winterdienst'], saison: true,
-        href: { gartenpflege: '/gartenpflege/#herbst-paket' }, text: { gartenpflege: 'Herbst-Paket: Laub · letzter Heckenschnitt · Rinne (Partner-Fachbetrieb) · ein Termin' },
-        intro: 'Drei Dinge vor dem Winter: Laub und letzter Schnitt machen wir selbst, Dachrinne und Winterdienst laufen über Partner-Fachbetriebe — ein Ansprechpartner für alles.' }
-    : (saisonM === 12 || saisonM <= 2)
-      ? { key: 'saison', label: 'Jetzt im Winter: Winterdienst, letzte Schnittfrist, Entrümpelung', slugs: ['winterdienst', 'heckenentfernung', 'entruempelung'], saison: true, href: {}, text: {},
-          intro: 'Schnee und Glätte über den Partner-Fachbetrieb, Heckenentfernung nur bis Ende Februar, Entrümpelung zum Festpreis nach Besichtigung.' }
-      : null;
-  const HV_CARD = `<a class="card" href="/fuer-hausverwaltungen/"><h3>Für Hausverwaltungen &amp; Gewerbe</h3><p>Winterdienst · Laub · Dachrinne · Grünpflege · Entrümpelung — ein Ansprechpartner, Nachweis je Einsatz</p><span class="go">Zur Übersicht →</span></a>`;
-  const renderCards = (svcs, cat = {}) => svcs.map(s => {
-    if (!cat.saison) ordered.push(s);
-    const desc = (cat.text && cat.text[s.slug]) || (s.sektionen || []).slice(0, 4).join(' · ') || s.garantie || 'Festpreis nach Besichtigung.';
-    const href = (cat.href && cat.href[s.slug]) || `/${s.slug}/`;
-    return `<a class="card" href="${href}"><h3>${esc(s.name)}</h3><p>${esc(desc)}</p><span class="go">Mehr →</span></a>`;
+  const TOP = [['gartenpflege', 'Rasen, Beete, Laub, einmalig oder im Abo.'], ['entruempelung', 'Keller, Garage, Dachboden, ganze Wohnung.'], ['heckenschnitt', 'Form- und Rückschnitt, Grünschnitt nehmen wir mit.'], ['zaunbau', 'Doppelstab, Sichtschutz, Staketen.']];
+  const topHtml = TOP.map(([sl, p], ti) => { const sv = services.find(x => x.slug === sl); return sv ? `<a href="/${sl}/">${pic(svcHero(sl), { alt: sv.name + ' im Havelland', sizes: '(max-width:900px) 46vw, 23vw', lcp: ti === 0, eager: ti === 1 })}<div><h3>${esc(sv.name)}</h3><p>${esc(p)}</p></div></a>` : ''; }).join('');
+  const bereiche = LEISTUNGEN_KATEGORIEN.map(k => {
+    const kern = katKern(k).map(it => `<a href="${it.href}">${esc(it.label)}</a>`).join('');
+    const anf = katAnfrage(k);
+    const satz = (uebL.kategorien && uebL.kategorien[k.key + '_kurz']) || k.satz;
+    return `<div class="lx-b" id="${k.key}">${IMG[k.foto] ? pic(k.foto, { alt: k.label + ' — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 220px' }) : ''}<div><h3>${k.href.startsWith('/leistungen/') ? esc(k.label) : `<a href="${k.href}">${esc(k.label)}</a>`}</h3><p>${esc(satz)}</p><div class="lx-chips">${kern}</div>${anf.length ? `<p class="lx-more">Auf Anfrage auch: ${anf.map(it => `<a href="${it.href}">${esc(it.label)}</a>`).join(' · ')}</p>` : ''}</div></div>`;
   }).join('');
-  for (const cat of [SAISON, ...LEISTUNGEN_KATEGORIEN].filter(Boolean)) {
-    const svcs = cat.slugs.map(sl => bySlug[sl]).filter(Boolean);
-    if (!svcs.length) continue;
-    if (!cat.saison) svcs.forEach(s => seen.add(s.slug));
-    n++;
-    const introTxt = cat.intro || (uebL.kategorien && uebL.kategorien[cat.key]);
-    const intro = introTxt ? `<p class="intro rv">${esc(introTxt)}</p>` : '';
-    blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}"${cat.saison ? ' id="saison"' : ''} style="padding:64px 0"><div class="wrap">${catHead(n, cat.label)}${intro}<div class="cards rv">${cat.key === 'gewerbe' ? HV_CARD : ''}${renderCards(svcs, cat)}</div></div></section>`);
-  }
-  const rest = services.filter(s => !seen.has(s.slug));   // Schutz: künftige Services ohne Kategorie
-  if (rest.length) { n++; blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}" style="padding:64px 0"><div class="wrap">${catHead(n, 'Weitere Leistungen')}<div class="cards rv">${renderCards(rest)}</div></div></section>`); }
-
-  const lead = uebL.lead || 'Alles rund um Haus und Garten im Havelland — aus einer Hand.';
-  const introProse = uebL.intro ? `<section class="sec" style="padding:44px 0 0"><div class="wrap"><div class="prose wide rv"><p>${esc(uebL.intro)}</p></div></div></section>` : '';
-  const items = ordered.map((s, i) => `{"@type":"ListItem","position":${i + 1},"name":"${sj(s.name)}","item":"${DOMAIN}/${s.slug}/"}`).join(',');
+  const ordered = LEISTUNGEN_KATEGORIEN.flatMap(k => k.slugs).map(sl => services.find(x => x.slug === sl)).filter(Boolean);
+  const rest = services.filter(sv => !ordered.includes(sv) && sv.slug !== 'galabau');
+  const items = [...ordered, ...rest].map((sv, i) => `{"@type":"ListItem","position":${i + 1},"name":"${sj(sv.name)}","item":"${DOMAIN}/${sv.slug}/"}`).join(',');
   const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Unsere Leistungen","about":{"@id":"${DOMAIN}/#organization"}},{"@type":"ItemList","@id":"${DOMAIN}${url}#leistungen","name":"Leistungen im Havelland","itemListElement":[${items}]},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Leistungen', url }])}`;
+  const lead = uebL.lead || 'Garten, Haus, Bau und Entrümpelung im Havelland — kostenlose Besichtigung, schriftlicher Festpreis, ein Ansprechpartner.';
+  const faqs = (uebL.faqs || []).slice(0, 3);
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Leistungen</div>
-<section class="phero" style="padding-bottom:24px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Leistungen</span><h1 class="rv in d1">Unsere Leistungen</h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref('Hallo, ich interessiere mich für Ihre Leistungen.')}">WhatsApp</a></div></div></section>
-<section class="sec" style="padding:28px 0 0"><div class="wrap"><div class="media-band rv">${pic('leistungen-band', { alt: 'Das Team des Haus- & Gartenservice Havelland lädt Werkzeug aus dem Firmenwagen', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
-${introProse}
-${blocks.join('\n')}
-${stepsSektion(n % 2 !== 0)}
-${valueBand}
-${faqBlock(uebL.faqs)}
+<section class="lx-hero"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Leistungen</span><h1 class="rv in d1">Was dürfen wir für Sie <em>erledigen</em>?</h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref('Hallo, ich interessiere mich für Ihre Leistungen.')}">WhatsApp</a></div>${trustLine}</div></section>
+<section class="sec"><div class="wrap"><h2 class="lx-h2 rv">Am häufigsten angefragt</h2><div class="lx-top rv">${topHtml}</div></div></section>
+<section class="sec section-alt"><div class="wrap"><h2 class="lx-h2 rv">Alle Leistungen nach Bereich</h2>${bereiche}</div></section>
+${faqBlock(faqs)}
 ${endBand}`;
   write(url, head(clampTitle(`Unsere Leistungen — ${nap.name}`), mkMeta(uebL.meta || lead), url, schema) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push(url);
@@ -1081,7 +1210,7 @@ danke();
 buildLp({ head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema, reviews, config, CP, isReal, pic, leaf, proof, IMG });
 notFound();
 if (FULL) {
-  for (const s of services) if (PAGE_SVC.has(s.slug)) for (const o of orteForService(s)) ortsseite(s, o);
+  for (const s of services) if (PAGE_SVC.has(s.slug)) for (const o of seitenOrte(s)) ortsseite(s, o);
 } else {
   for (const [ss, os] of SAMPLE_ORTSSEITEN) { const s = services.find(x=>x.slug===ss), o = orte.find(x=>x.slug===os); if (s && o) ortsseite(s, o); }
 }
