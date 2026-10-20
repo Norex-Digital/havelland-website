@@ -285,6 +285,30 @@
     accs.forEach(function (a) { io.observe(a); });
   })();
 
+  /* ===== Sticky-Leiste erst nach dem Hero (Paket 1, Runde 2, 20.10.) =====
+     Solange die Hero-Button-Zeile im Bild ist (oder noch darunter liegt), bleibt die
+     Sticky-Leiste "Anrufen / WhatsApp" ausgeblendet: sie verdeckt sonst den Hero-Button
+     und doppelt dessen Anruf-/WhatsApp-Knöpfe. Ohne JS bleibt sie sichtbar. */
+  (function () {
+    var scta = $('.scta'); var row = $('.phero:not(.lp-hero) .cta-row, .hero .cta-row, .lx-hero .cta-row');
+    if (!scta || !row || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      var e = es[es.length - 1];
+      scta.classList.toggle('scta-wait', e.isIntersecting || e.boundingClientRect.top > 0);
+    }, { threshold: 0 });
+    io.observe(row);
+  })();
+
+  /* ===== FAQ-Suchfeld: kurzer Platzhalter auf schmalen Bildschirmen (UI-Text) ===== */
+  (function () {
+    var i = $('#faq-input'); var k = i && i.getAttribute('data-ph-kurz');
+    if (!i || !k || !window.matchMedia) return;
+    var full = i.placeholder; var mq = window.matchMedia('(max-width:560px)');
+    function sync() { i.placeholder = mq.matches ? k : full; }
+    sync();
+    if (mq.addEventListener) mq.addEventListener('change', sync); else if (mq.addListener) mq.addListener(sync);
+  })();
+
   /* ===== Reveal on scroll =====
      GUARD .rv:not(.in): der Generator emittiert bereits einen Inline-Reveal-
      Observer über .rv:not(.in). Hier NICHT doppeln — nur noch offene .rv
