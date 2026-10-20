@@ -3,8 +3,10 @@
 # Server vorher: python -m http.server -d website 4173   (Standard-Port 4173; PORT als 3. Argument oder Umgebungsvariable)
 # Mockt Web3Forms (Antwort {"success":true}), GTM, GA4, Google Ads; alles andere ausserhalb von localhost wird abgebrochen
 # (kein echter Versand, keine echten Messpunkte). NIE gegen die Live-Domain starten (Host muss localhost sein).
-# SCENARIO=voll zusaetzlich: Fehler in Schritt 1 (form_error objekt + ort) und Kurzstart ueber [data-obj] (form_quickstart;
-# gibt es auf der Seite keinen Preiszeilen-Link, wird ein synthetischer eingehaengt und im Protokoll als solcher vermerkt).
+# SCENARIO=voll zusaetzlich: Fehler in Schritt 1 (form_error objekt + ort) und Kurzstart ueber den echten Preiszeilen-Link (a[data-obj], form_quickstart:preis).
+# Hat die Seite keinen solchen Link (Nachlass, Messie, Gewerbe), wird KEIN synthetischer eingehaengt: form_quickstart wird dort nicht erwartet (0 Ereignisse),
+# das Protokoll sagt "Quickstart-Preiszeile: nicht vorhanden". Ein eingehaengtes Element (#__synthetisch) waere ein Fehler.
+# Der Server muss genau website/lp/<slug>/index.html ausliefern (CR/LF-Unterschiede zaehlen nicht), sonst Exit 2. form_pos != hero in lp.json: SKIP (Exit 0).
 # Ereignisse werden ueber sessionStorage ueber die Weiterleitung gerettet, weil window.dataLayer auf /lp/danke/ neu beginnt.
 # Exit 0 = FORM GRUEN, 1 = FORM ROT, 2 = Server-/Browser-Fehler.
 set -euo pipefail
@@ -13,7 +15,18 @@ SLUG="${1:?Aufruf: lp-form-test.sh <slug> <deny|allow> [PORT]}"; C="${2:?deny|al
 SCENARIO="${SCENARIO:-happy}"; S="form-$C-$$"
 case "$C" in deny|allow) ;; *) echo "Consent muss deny oder allow sein" >&2; exit 2 ;; esac
 case "$SCENARIO" in happy|voll) ;; *) echo "SCENARIO muss happy oder voll sein" >&2; exit 2 ;; esac
-curl -sf -m 5 "http://localhost:$PORT/lp/$SLUG/" >/dev/null || { echo "Server nicht erreichbar: http://localhost:$PORT/lp/$SLUG/" >&2; exit 2; }
+URL="http://localhost:$PORT/lp/$SLUG/"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+RW="$ROOT"; command -v cygpath >/dev/null 2>&1 && RW="$(cygpath -m "$ROOT")"
+FP="$(node -e 'const l=(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).lps||[]).find(x=>x.slug===process.argv[2]);process.stdout.write(l?(l.form_pos||"hero"):"")' "$RW/data/copy/lp.json" "$SLUG")"
+[ -n "$FP" ] || { echo "Slug $SLUG steht nicht in data/copy/lp.json" >&2; exit 2; }
+SERVED="$(curl -sf -m 5 "$URL" | tr -d '\r')" || { echo "Server nicht erreichbar: $URL" >&2; exit 2; }
+[ -f "$ROOT/website/lp/$SLUG/index.html" ] || { echo "website/lp/$SLUG/index.html fehlt (erst FULL=1 node scripts/generate.mjs)" >&2; exit 2; }
+FILE="$(tr -d '\r' < "$ROOT/website/lp/$SLUG/index.html")"
+[ "$SERVED" = "$FILE" ] || { echo "Server liefert nicht website/lp/$SLUG/index.html aus (anderer Stand/anderes Verzeichnis auf Port $PORT)" >&2; exit 2; }
+# Echter Preiszeilen-Link vorhanden? (aus der ausgelieferten Seite; nur dann wird form_quickstart:preis getestet und erwartet)
+case "$FILE" in *'data-via="preis"'*) HASLINK=1 ;; *) HASLINK=0 ;; esac
+if [ "$FP" != hero ]; then echo "SKIP $SLUG (Variante A, form_pos=$FP: kein Hero-Formular, der Hero-Durchlauf gilt nicht)"; exit 0; fi
 T="$(mktemp -d)"
 trap 'playwright-cli -s="$S" close >/dev/null 2>&1 || true; rm -rf "$T"' EXIT
 cd "$T"
@@ -25,7 +38,8 @@ PW route "https://api.web3forms.com/**" --body='{"success":true}' --content-type
 PW route "https://www.googletagmanager.com/**" --status=204 --body='' >/dev/null
 PW route "https://*.google-analytics.com/**" --status=204 --body='' >/dev/null
 PW route "https://*.googleadservices.com/**" --status=204 --body='' >/dev/null
-PW route-list | grep -q web3forms || { echo "ABBRUCH: Web3Forms nicht gemockt"; exit 1; }
+RL="$(PW route-list)"
+case "$RL" in *web3forms*) ;; *) echo "ABBRUCH: Web3Forms nicht gemockt"; exit 1 ;; esac
 # dataLayer-Ereignisse mitschreiben (sessionStorage ueberlebt die Weiterleitung auf /lp/danke/)
 PW run-code "async page => { await page.addInitScript(() => { try { var k='__dl'; var dl = window.dataLayer = window.dataLayer || []; var p = dl.push.bind(dl); dl.push = function(){ for (var i=0;i<arguments.length;i++){ var a=arguments[i]; if(a && a.event){ var s=JSON.parse(sessionStorage.getItem(k)||'[]'); s.push(a); sessionStorage.setItem(k,JSON.stringify(s)); } } return p.apply(null, arguments); }; } catch(e){} }); }" >/dev/null
 PW goto "http://localhost:$PORT/lp/$SLUG/?gclid=TEST123" >/dev/null
@@ -34,8 +48,7 @@ if [ "$SCENARIO" = voll ]; then
   VOLL_A="await page.click('.lp-hero-form [data-next]');
   await page.click('.lp-hero-form label:has(input[name=objekt]) >> nth=0');
   await page.click('.lp-hero-form [data-next]');
-  if (!(await page.locator('a[data-obj]').count())) { await page.evaluate(() => { const a = document.createElement('a'); a.href = '#anfrage'; a.setAttribute('data-obj', document.querySelectorAll('input[name=objekt]')[1].value); a.setAttribute('data-via', 'preis'); a.id = '__synthetisch'; a.textContent = 'synthetische Preiszeile'; document.querySelector('.lp-hero-form').before(a); }); }
-  await page.locator('a[data-obj]').first().click({ force: true });"
+  if (await page.locator('a[data-obj]').count()) { await page.locator('a[data-obj]').first().click({ force: true }); }"
 else
   VOLL_A=""
 fi
@@ -51,7 +64,7 @@ OUTRUN=$(PW run-code "async page => {
   await page.check('input[name=dsgvo]');
   await Promise.all([page.waitForURL('**/lp/danke/**', { timeout: 8000 }), page.click('button[type=submit]')]);
 }" 2>&1) || true
-if grep -q '^### Error' <<<"$OUTRUN"; then echo "FORM ROT: Durchlauf abgebrochen:"; grep -A6 '^### Error' <<<"$OUTRUN" | head -12; exit 1; fi
+case "$OUTRUN" in *'### Error'*) echo "FORM ROT: Durchlauf abgebrochen:"; printf '%s\n' "$OUTRUN" | sed -n '/^### Error/,+6p' | head -12 || true; exit 1 ;; esac
 sleep 1
 # Zustand auf der Danke-Seite, dann Neuladen (darf kein zweites lead_confirmed ausloesen)
 STATE='JSON.stringify({loc: location.pathname + location.hash, dl: JSON.parse(sessionStorage.getItem("__dl") || "[]"), cookie: document.cookie, hg: localStorage.getItem("hg_attrib"), consent: localStorage.getItem("consent_v2")})'
@@ -66,7 +79,7 @@ PW request-body "$N" | tr -d '\r' > "$T/post.txt"
 
 cat > "$T/check.js" <<'EOF'
 const fs = require('fs');
-const [T, C, SLUG, SCEN] = process.argv.slice(2);
+const [T, C, SLUG, SCEN, HASLINK] = process.argv.slice(2);
 const rd = f => fs.readFileSync(T + '/' + f, 'utf8');
 const js = f => { let r = JSON.parse(rd(f)); if (typeof r === 'string') r = JSON.parse(r); return r; };
 const s1 = js('state1.json'), s2 = js('state2.json');
@@ -91,7 +104,8 @@ if (SCEN === 'happy') {
   const fe = ev.filter(e => e.event === 'form_error').map(e => e.field).sort().join(',');
   if (fe !== 'objekt,ort') bad.push('form_error erwartet objekt,ort, war: ' + fe);
   const q = ev.filter(e => e.event === 'form_quickstart');
-  if (q.length !== 1 || q[0].start_via !== 'preis') bad.push('form_quickstart:preis x' + q.length);
+  if (HASLINK === '1') { if (q.length !== 1 || q[0].start_via !== 'preis') bad.push('form_quickstart:preis x' + q.length); }
+  else if (q.length !== 0) bad.push('form_quickstart x' + q.length + ' obwohl die Seite keinen Preiszeilen-Link hat');
 }
 // Reihenfolge: consent_choice < form_start < form_step < generate_lead < lead_confirmed
 const idx = k => ev.findIndex(e => e.event === k);
@@ -140,6 +154,7 @@ if (posts.length !== 1) bad.push('POST-Anzahl ' + posts.length);
 else if (!/=> \[200\]/.test(posts[0])) bad.push('POST ohne 200 vom Mock: ' + posts[0]);
 // --- Protokoll
 console.log('Ereignisse (' + SCEN + ', ' + C + '): ' + ev.map(tag).join(' '));
+if (SCEN === 'voll') console.log('Quickstart-Preiszeile: ' + (HASLINK === '1' ? 'echter Link der Seite, getestet (form_quickstart:preis x1)' : 'nicht vorhanden auf dieser Seite, nicht getestet und nicht erwartet (kein synthetischer Link)'));
 const gp = Object.assign({}, gl); delete gp.eventTimeout;
 console.log('generate_lead: ' + JSON.stringify(gp));
 const show = Object.keys(f).map(k => k + '=' + (k === 'access_key' ? f[k].slice(0, 8) + '…' : JSON.stringify(f[k]))).join('  ');
@@ -150,5 +165,5 @@ if (bad.length) { console.error('FORM ROT: ' + bad.join(' | ')); process.exit(1)
 EOF
 # Windows: node ist nativ und versteht /tmp/… nicht, daher Pfad umwandeln (auf dem Mac gibt es kein cygpath)
 TW="$T"; command -v cygpath >/dev/null 2>&1 && TW="$(cygpath -m "$T")"
-node "$TW/check.js" "$TW" "$C" "$SLUG" "$SCENARIO"
+node "$TW/check.js" "$TW" "$C" "$SLUG" "$SCENARIO" "$HASLINK"
 echo "FORM GRÜN $SLUG $C ($SCENARIO; POST gemockt, gclid=TEST123, ads_consent=$C)"

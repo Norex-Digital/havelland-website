@@ -4,6 +4,9 @@
     "label": "Herbst-Aktion:",
     "text": "10 % auf den Festpreis für Räumung und Abtransport bei Auftragserteilung bis 30.11.2026. Entsorgungsgebühren nach Beleg sind ausgenommen.",
     "bis": "2026-11-30",
+    "label_kurz": "Aktion:",
+    "kurz": "10 % auf den Festpreis bis 30.11.*",
+    "kurz_fuss": "* Ohne Entsorgungsgebühren (nach Beleg)",
     "_quelle": "Owner-Entscheid Maurice 02.10.2026 (Chat: 10 % auf den Festpreis, bis 30.11.2026). Gegenstück zum Angebots-Asset der Search-Kampagne. Jeder Auftrag im Zeitraum bekommt den Rabatt (UWG: kein Scheinrabatt)."
   },
   "danke": {
@@ -21,7 +24,7 @@
   "lps": [
     {
       "slug": "haushaltsaufloesung-havelland",
-      "ag": "AG1 Haushaltsauflösung / Nachlass",
+      "ag": "G1 Haushaltsauflösung",
       "name": "Haushaltsauflösung",
       "title": "Haushaltsauflösung & Entrümpelung im Havelland – Festpreis",
       "meta": "Haushaltsauflösung und Entrümpelung im Havelland: diskret, besenrein, Festpreis für Räumung und Abtransport nach kostenloser Besichtigung. Falkensee, Nauen.",
@@ -34,10 +37,11 @@
       "cta_step1": "Weiter – kostenlos anfragen",
       "form_pos": "hero",
       "wa_text": "Hallo, ich brauche eine Haushaltsauflösung. Wann könnten Sie zur Besichtigung kommen?",
+      "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
         {
-          "b": "Falkensee",
-          "t": "fester Ansprechpartner aus der Region"
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
         },
         {
           "b": "Festpreis",
@@ -71,7 +75,7 @@
         {
           "h": "Kostenlose Besichtigung und Festpreis",
           "p": "Wir kommen vorbei, besprechen, was bleiben soll, und nennen Ihnen einen schriftlichen Festpreis für Räumung und Abtransport.",
-          "when": "Kurzfristig · kostenlos"
+          "when": "Termin meist in 2–3 Werktagen · kostenlos"
         },
         {
           "h": "Räumung, Entsorgung, besenreine Übergabe",
@@ -80,20 +84,21 @@
         }
       ],
       "preis": {
+        "hero_note": "Einstiegspreise für kleine, gut zugängliche Objekte · inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
         "h": "Was kostet eine Haushaltsauflösung?",
         "cta": "Festpreis für Ihr Objekt anfragen",
         "cta_hint": "Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich. Keine Vorkasse, keine Verpflichtung.",
         "anker": {
           "items": [
-            { "t": "Entrümpelung ab 99 €", "obj": "Keller / Dachboden" },
-            { "t": "Wohnungsauflösung ab 499 €", "obj": "Wohnung" },
-            { "t": "Komplettes Haus ab 749 €", "obj": "Haus" }
+            { "t": "Entrümpelung ab 99 €", "obj": "Keller / Dachboden", "k": "Entrümpelung" },
+            { "t": "Wohnungsauflösung ab 499 €", "obj": "Wohnung", "k": "Wohnung" },
+            { "t": "Komplettes Haus ab 749 €", "obj": "Haus", "k": "Ganzes Haus" }
           ],
           "note": "Alle Preise inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot."
         },
         "p": [
           "Die Einstiegspreise gelten für kleine, gut zugängliche Objekte – etwa ein einzelnes Kellerabteil oder einen Raum mit wenig Inhalt, der Wohnungspreis für eine kleine 1-Zimmer-Wohnung. Was Ihr Objekt kostet, hängt von Menge, Zugang und Entsorgungsaufwand ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung – schriftlich.",
-          "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihre Kosten.",
+          "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihre Kosten.",
           "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus – Sie sehen jeden Posten, ohne eigenen Aufschlag."
         ]
       },
@@ -104,7 +109,7 @@
         },
         {
           "q": "Wie schnell bekomme ich einen Termin?",
-          "a": "Die Besichtigung schaffen wir meist innerhalb weniger Werktage, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Kündigungsfrist drückt, sagen Sie es uns – wir planen danach."
+          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Kündigungsfrist drückt, sagen Sie es uns – wir planen danach."
         },
         {
           "q": "Was passiert mit Wertgegenständen und Dokumenten?",
@@ -170,20 +175,22 @@
     },
     {
       "slug": "messie-wohnung-raeumung",
-      "ag": "AG2 Messie / Extremfall",
+      "ag": "G8 Messie / Extremfall",
       "name": "Wohnungsräumung",
       "title": "Messie-Wohnung räumen lassen – diskret, Havelland/Spandau",
       "meta": "Messie-Wohnung oder vermüllte Wohnung räumen lassen: diskret, ohne Vorwürfe, Festpreis für Räumung und Abtransport nach Besichtigung. Havelland und Spandau.",
       "kick": "Diskret · Festpreis nach Besichtigung · Sie müssen nicht dabei sein",
-      "h1": "Messie-Wohnung räumen lassen: Wir räumen, reinigen, behandeln Gerüche – ohne Fragen.",
-      "h1_em": "ohne Fragen",
+      "h1": "Messie-Wohnung räumen lassen im Havelland: gründlich und ohne Fragen",
+      "h1_em": "gründlich und ohne Fragen",
+      "ort_swap": { "h1": "im Havelland" },
       "lead": "Messie-Wohnung entrümpeln oder eine vermüllte, verwahrloste Wohnung räumen: Ob Vermieter, Angehörige oder Sie selbst, wir arbeiten ruhig und gründlich. Sie müssen weder dabei sein noch etwas erklären. Kostenlose Besichtigung im Havelland, in Berlin-Spandau und Potsdam.",
       "cta": "Vertraulich anfragen",
       "cta_step1": "Weiter – kostenlos anfragen",
       "wa_text": "Hallo, ich brauche eine diskrete Wohnungsräumung. Können wir kurz sprechen?",
+      "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
         {
-          "b": "Persönlich",
+          "b": "Betrieb aus Falkensee",
           "t": "fester Ansprechpartner, kein Callcenter"
         },
         {
@@ -218,7 +225,7 @@
         {
           "h": "Besichtigung und Festpreis",
           "p": "Wir kommen unauffällig vorbei und planen Besichtigung und Abtransport so, dass sie nicht auffallen. Danach steht der Festpreis für Räumung und Abtransport schriftlich fest.",
-          "when": "Kurzfristig · kostenlos · unauffällig"
+          "when": "Termin meist in 2–3 Werktagen · kostenlos · unauffällig"
         },
         {
           "h": "Räumung zum vereinbarten Termin",
@@ -233,7 +240,7 @@
         "anker": { "items": ["Messie-Wohnung ab 1.500 €"], "note": "Inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot." },
         "p": [
           "Der Einstiegspreis gilt für eine kleine 1-Zimmer-Wohnung. Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert.",
-          "Gut erhaltene Möbel oder Geräte prüfen wir auf ihren Wert und rechnen sie auf den Festpreis an.",
+          "Wertanrechnung: Gut erhaltene Möbel oder Geräte prüfen wir auf ihren Wert und rechnen sie auf den Festpreis an.",
           "Entsorgungsgebühren der Annahmestellen rechnen wir nach Beleg ab – ohne eigenen Aufschlag."
         ]
       },
@@ -252,7 +259,7 @@
         },
         {
           "q": "Wie schnell können Sie kommen?",
-          "a": "Die Besichtigung schaffen wir meist innerhalb weniger Werktage. Wenn ein Vermieter oder eine Behörde eine Frist gesetzt hat, sagen Sie uns das Datum – wir planen danach."
+          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen. Wenn ein Vermieter oder eine Behörde eine Frist gesetzt hat, sagen Sie uns das Datum – wir planen danach."
         },
         {
           "q": "Muss ich vorher etwas aussortieren?",
@@ -287,7 +294,7 @@
     },
     {
       "slug": "gewerbe-entruempelung",
-      "ag": "AG3 B2B / Gewerbe",
+      "ag": "pausiert (B2B / Gewerbe, keine aktive Gruppe)",
       "name": "Gewerbe-Entrümpelung",
       "title": "Entrümpelung für Hausverwaltungen & Gewerbe – Havelland",
       "meta": "Entrümpelung, Wohnungsräumung und Betriebsauflösung für Hausverwaltungen, Vermieter und Gewerbe im Havelland: feste Termine, Festpreis je Objekt.",
@@ -298,6 +305,7 @@
       "lead": "Wohnungsräumung nach Auszug, Kellerräumung im Mehrfamilienhaus, Büro- oder Betriebsauflösung: ein regionaler Ansprechpartner, feste Termine, schriftlicher Festpreis je Objekt und auf Wunsch eine Sammelrechnung.",
       "cta": "Angebot für Ihr Objekt anfordern",
       "wa_text": "Hallo, ich brauche ein Angebot für die Räumung eines Objekts. Adresse und Fotos schicke ich gleich mit.",
+      "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
         {
           "b": "Richtpreis per Foto",
@@ -335,7 +343,7 @@
         {
           "h": "Besichtigung und schriftliches Angebot",
           "p": "Anhand Ihrer Fotos nennen wir einen Richtpreis; den schriftlichen Festpreis für Räumung und Abtransport gibt es nach der Besichtigung vor Ort.",
-          "when": "Kurzfristig · kostenlos"
+          "when": "Termin meist in 2–3 Werktagen · kostenlos"
         },
         {
           "h": "Ausführung mit Foto-Dokumentation",
@@ -400,12 +408,13 @@
       "slug": "nachlass-aufloesung",
       "ag": "G2 Nachlass / nach Todesfall",
       "name": "Nachlass-Auflösung",
-      "title": "Haushaltsauflösung nach Todesfall – Nachlass diskret räumen",
+      "title": "Nachlassauflösung im Havelland – Haushalt diskret räumen",
       "meta": "Haushaltsauflösung nach Todesfall: diskret, besenrein, mit Foto-Nachweis. Sie müssen nicht dabei sein. Besichtigung kostenlos. Havelland, Spandau, Potsdam.",
-      "kick": "Nachlassauflösung · Sie müssen nicht dabei sein",
-      "h1": "Haushaltsauflösung nach Todesfall: diskret und besenrein",
+      "kick": "Haushaltsauflösung nach Todesfall · Sie müssen nicht dabei sein",
+      "h1": "Nachlassauflösung im Havelland: diskret und besenrein",
       "h1_em": "diskret und besenrein",
-      "lead": "Es gibt jetzt genug zu regeln. Wir räumen, Sie müssen nicht dabei sein.",
+      "ort_swap": { "h1": "im Havelland" },
+      "lead": "Nach Todesfall: Wir lösen den Haushalt auf. Sie müssen nicht dabei sein.",
       "lead_mobil": true,
       "cta": "Besichtigung anfragen",
       "cta_step1": "Weiter – kostenlos anfragen",
@@ -414,6 +423,7 @@
       "kontakt_h2": "Besichtigung anfragen",
       "aktion": false,
       "wa_text": "Hallo, ich brauche eine Haushaltsauflösung nach einem Todesfall. Wann könnten Sie zur Besichtigung kommen?",
+      "trust_zeile": "Betrieb aus Falkensee",
       "trust": [
         {
           "b": "Diskret",
@@ -424,8 +434,8 @@
           "t": "aufs Handy nach der Räumung"
         },
         {
-          "b": "Falkensee",
-          "t": "fester Ansprechpartner aus der Region"
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
         }
       ],
       "nutzen": [
@@ -439,7 +449,7 @@
         },
         {
           "h": "Brauchbares rechnen wir an",
-          "p": "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis."
+          "p": "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis."
         }
       ],
       "abschnitt_ablauf": "So läuft eine Nachlassauflösung ab",
@@ -452,7 +462,7 @@
         {
           "h": "Besichtigung und schriftliches Angebot",
           "p": "Wir sehen uns die Räume an und besprechen mit Ihnen, was bleiben soll. Danach bekommen Sie den Festpreis für Räumung und Abtransport schriftlich.",
-          "when": "Nach Absprache · Besichtigung kostenlos"
+          "when": "Termin meist in 2–3 Werktagen · nach Absprache, kostenlos"
         },
         {
           "h": "Räumung zum vereinbarten Termin",
@@ -467,7 +477,7 @@
         "p": [
           "Der Preis hängt von Größe, Menge und Zugang ab, zum Beispiel von Etage und Aufzug. Deshalb sehen wir uns die Räume an und nennen Ihnen danach einen schriftlichen Festpreis für Räumung und Abtransport, inkl. MwSt. Der bleibt, auch wenn es am Tag selbst länger dauert.",
           "Zur Orientierung: „Wohnungsauflösung ab 499 €“ gilt für eine kleine 1-Zimmer-Wohnung, „Komplettes Haus ab 749 €“ für ein kleines, gut zugängliches Haus. Alle Preise inkl. MwSt.",
-          "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
+          "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
           "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus. Sie sehen jeden Posten, ohne eigenen Aufschlag. Anfahrt, Besichtigung und Angebot kosten nichts."
         ]
       },
@@ -475,6 +485,10 @@
         {
           "q": "Was gehört zu einer Nachlassauflösung?",
           "a": "Wir räumen den Nachlass vollständig leer: die Wohnung oder das Haus eines Verstorbenen mit Möbeln, Hausrat, Keller und Dachboden. Papiere, Schmuck, Fotos und Erinnerungsstücke legen wir vorher zur Seite. Den Rest entrümpeln wir und entsorgen ihn über zugelassene Annahmestellen."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen Nachlassauflösung und Nachlassentrümpelung?",
+          "a": "Im Alltag meinen beide Begriffe dasselbe: Wir räumen die Wohnung oder das Haus eines Verstorbenen leer, entsorgen, was nicht bleiben soll, und übergeben besenrein. Ob Sie von Nachlassauflösung, Nachlassentrümpelung oder Haushaltsauflösung nach einem Todesfall sprechen: Der Ablauf ist derselbe, Sie müssen nicht dabei sein."
         },
         {
           "q": "Lösen Sie Nachlässe in Falkensee und im Havelland auf?",
@@ -494,7 +508,7 @@
         },
         {
           "q": "Wann findet die Räumung statt?",
-          "a": "Den Termin vereinbaren wir mit Ihnen. Die Besichtigung schaffen wir meist innerhalb weniger Werktage. Wenn Sie eine Frist beachten müssen, etwa die Kündigung der Wohnung, nennen Sie uns das Datum. Wir planen danach."
+          "a": "Den Termin vereinbaren wir mit Ihnen. Die Besichtigung schaffen wir meist in 2–3 Werktagen. Wenn Sie eine Frist beachten müssen, etwa die Kündigung der Wohnung, nennen Sie uns das Datum. Wir planen danach."
         },
         {
           "q": "Wie wird die Entsorgung abgerechnet?",
@@ -539,10 +553,11 @@
       "cta_step1": "Weiter – kostenlos anfragen",
       "form_legend": "Wie groß ist die Wohnung – und wo?",
       "wa_text": "Hallo, ich brauche eine Wohnungsauflösung. Wann könnten Sie zur Besichtigung kommen?",
+      "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
         {
-          "b": "Falkensee",
-          "t": "fester Ansprechpartner aus der Region"
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
         },
         {
           "b": "Schriftlich",
@@ -577,7 +592,7 @@
         {
           "h": "Besichtigung und schriftliches Angebot",
           "p": "Wir kommen vorbei, besprechen, was bleiben soll, und nennen Ihnen einen schriftlichen Festpreis für Räumung und Abtransport.",
-          "when": "Nach Absprache · Besichtigung kostenlos"
+          "when": "Termin meist in 2–3 Werktagen · kostenlos"
         },
         {
           "h": "Räumung, Entsorgung, besenreine Übergabe",
@@ -601,7 +616,7 @@
         },
         "p": [
           "Der Einstiegspreis gilt für kleine, gut zugängliche Objekte, hier eine kleine 1-Zimmer-Wohnung. Was Ihre Wohnung kostet, hängt von Menge, Etage, Aufzug und Entsorgungsaufwand ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.",
-          "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
+          "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
           "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus. Sie sehen jeden Posten, ohne eigenen Aufschlag."
         ]
       },
@@ -624,7 +639,7 @@
         },
         {
           "q": "Wie schnell bekomme ich einen Termin?",
-          "a": "Die Besichtigung schaffen wir meist innerhalb weniger Werktage, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn Ihr Vermieter oder eine Kündigungsfrist ein Datum vorgibt, nennen Sie es uns. Wir planen danach."
+          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn Ihr Vermieter oder eine Kündigungsfrist ein Datum vorgibt, nennen Sie es uns. Wir planen danach."
         },
         {
           "q": "Wo bieten Sie die Wohnungsauflösung an?",
@@ -681,10 +696,11 @@
       "cta": "Kostenlose Besichtigung anfragen",
       "cta_step1": "Weiter – kostenlos anfragen",
       "wa_text": "Hallo, ich möchte ein Haus entrümpeln lassen. Wann könnten Sie zur Besichtigung kommen?",
+      "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
         {
-          "b": "Falkensee",
-          "t": "fester Ansprechpartner aus der Region"
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
         },
         {
           "b": "Schriftlich",
@@ -719,7 +735,7 @@
         {
           "h": "Besichtigung und schriftliches Angebot",
           "p": "Wir gehen das Haus mit Ihnen durch, besprechen, was bleiben soll, und nennen Ihnen einen schriftlichen Festpreis für Räumung und Abtransport.",
-          "when": "Nach Absprache · Besichtigung kostenlos"
+          "when": "Termin meist in 2–3 Werktagen · kostenlos"
         },
         {
           "h": "Räumung, Entsorgung, besenreine Übergabe",
@@ -743,7 +759,7 @@
         },
         "p": [
           "Der Einstiegspreis gilt für kleine, gut zugängliche Objekte, hier ein kleines Haus. Was Ihr Haus kostet, hängt von Menge, Zugang und Entsorgungsaufwand ab, zum Beispiel davon, ob Keller, Dachboden und Garage mitgeräumt werden. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.",
-          "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
+          "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
           "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus. Sie sehen jeden Posten, ohne eigenen Aufschlag."
         ]
       },
@@ -774,7 +790,7 @@
         },
         {
           "q": "Wie schnell bekomme ich einen Termin?",
-          "a": "Die Besichtigung schaffen wir meist innerhalb weniger Werktage, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Frist ein Datum vorgibt, nennen Sie es uns. Wir planen danach."
+          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Frist ein Datum vorgibt, nennen Sie es uns. Wir planen danach."
         },
         {
           "q": "Wo entrümpeln Sie Häuser?",
@@ -830,10 +846,11 @@
       "cta": "Kostenlose Besichtigung anfragen",
       "cta_step1": "Weiter – kostenlos anfragen",
       "wa_text": "Hallo, ich möchte einen Keller, Dachboden oder eine Garage entrümpeln lassen. Wann könnten Sie zur Besichtigung kommen?",
+      "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
         {
-          "b": "Falkensee",
-          "t": "fester Ansprechpartner aus der Region"
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
         },
         {
           "b": "Schriftlich",
@@ -867,7 +884,7 @@
         {
           "h": "Besichtigung und schriftliches Angebot",
           "p": "Wir sehen uns Keller, Dachboden oder Garage an, besprechen, was bleiben soll, und nennen Ihnen einen schriftlichen Festpreis für Räumung und Abtransport.",
-          "when": "Nach Absprache · Besichtigung kostenlos"
+          "when": "Termin meist in 2–3 Werktagen · kostenlos"
         },
         {
           "h": "Räumung, Entsorgung, besenreine Übergabe",
@@ -891,7 +908,7 @@
         },
         "p": [
           "Der Einstiegspreis gilt für kleine, gut zugängliche Objekte, hier ein einzelnes Kellerabteil. Dachboden und Garage hängen von Menge, Zugang und Entsorgungsaufwand ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.",
-          "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
+          "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
           "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus. Sie sehen jeden Posten, ohne eigenen Aufschlag."
         ]
       },
@@ -922,7 +939,7 @@
         },
         {
           "q": "Wie schnell bekomme ich einen Termin?",
-          "a": "Die Besichtigung schaffen wir meist innerhalb weniger Werktage, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Frist ein Datum vorgibt, nennen Sie es uns. Wir planen danach."
+          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Frist ein Datum vorgibt, nennen Sie es uns. Wir planen danach."
         }
       ],
       "objekte": [
@@ -979,10 +996,11 @@
       "cta": "Kostenlose Besichtigung anfragen",
       "cta_step1": "Weiter – kostenlos anfragen",
       "wa_text": "Hallo, ich brauche eine Entrümpelung. Wann könnten Sie zur Besichtigung kommen?",
+      "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
         {
-          "b": "Falkensee",
-          "t": "fester Ansprechpartner aus der Region"
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
         },
         {
           "b": "Schriftlich",
@@ -1011,7 +1029,7 @@
           },
           {
             "h": "Verwertbares anrechnen",
-            "p": "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis."
+            "p": "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis."
           }
         ]
       },
@@ -1038,7 +1056,7 @@
         {
           "h": "Besichtigung und schriftliches Angebot",
           "p": "Wir kommen vorbei, besprechen, was bleiben soll, und nennen Ihnen einen schriftlichen Festpreis für Räumung und Abtransport.",
-          "when": "Nach Absprache · Besichtigung kostenlos"
+          "when": "Termin meist in 2–3 Werktagen · kostenlos"
         },
         {
           "h": "Räumung, Entsorgung, besenreine Übergabe",
@@ -1055,22 +1073,25 @@
           "items": [
             {
               "t": "Kellerabteil ab 99 €",
-              "obj": "Keller / Dachboden"
+              "obj": "Keller / Dachboden",
+              "k": "Keller"
             },
             {
               "t": "Wohnungsauflösung ab 499 €",
-              "obj": "Wohnung"
+              "obj": "Wohnung",
+              "k": "Wohnung"
             },
             {
               "t": "Komplettes Haus ab 749 €",
-              "obj": "Haus"
+              "obj": "Haus",
+              "k": "Ganzes Haus"
             }
           ],
           "note": "Alle Preise inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot."
         },
         "p": [
           "Die Einstiegspreise gelten für kleine, gut zugängliche Objekte: ein einzelnes Kellerabteil, eine kleine 1-Zimmer-Wohnung, ein kleines Haus. Was Ihr Objekt kostet, hängt von Menge, Zugang und Entsorgungsaufwand ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.",
-          "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
+          "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
           "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus. Sie sehen jeden Posten, ohne eigenen Aufschlag."
         ]
       },
@@ -1093,7 +1114,7 @@
         },
         {
           "q": "Wie schnell bekomme ich einen Termin?",
-          "a": "Die Besichtigung schaffen wir meist innerhalb weniger Werktage, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Frist ein Datum vorgibt, nennen Sie es uns. Wir planen danach."
+          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Frist ein Datum vorgibt, nennen Sie es uns. Wir planen danach."
         },
         {
           "q": "Können Sie nach der Räumung auch renovieren?",

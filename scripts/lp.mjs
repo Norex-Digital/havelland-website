@@ -9,13 +9,15 @@
 // v2 (14.09. abends, ads/audit.md §10b): Site-Komponenten statt .lp-*-Nachbauten — .phero/.shot/.hleaf, gstripFrom(), timelineFrom(),
 // .trust-row (Google-Kennzahl aus proof.json), baSlider(), .review-card, .sec/.section-alt; kursiver H1-Akzent + Fraunces-Italic-Preload
 // (der Schnitt wird durch .gs .gn / .tli .tn / .ba-cap b ohnehin geladen; pyftsubset-Subset blieb bei 78 KB wegen gvar → Originaldatei).
+// v6 (20.10., AV-Korrekturen): einzeilige Trust-Zeile (.lp-trust1) an der Kick-Position im Handy-Hero (Zahl aus proof.google_reviews), Preiszeilen mobil als
+// 44-px-Zellen (Objekt klein, Preis fett), Aktion mobil in Kurzfassung (Sternchen + Fußzeile direkt darunter: Bedingung „ohne Entsorgungsgebühren“ sichtbar), Tipp-Ziele ≥ 44 px, eigenes Attribut-Escaping (escA), Token statt #fff.
 // Copy: data/copy/lp.json — hero je LP ({typ:'ba'|'foto'|'text'}), trust als [{b,t}], Fotos nur aus dem Manifest (fotos: [] → keine Galerie).
 
 import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
 
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
 
-// Servicegebiet laut Report Kap. 3.4 / GBP-Servicegebiet (A0 #8)
+// Servicegebiet laut Report Kap. 3.4 / GBP-Servicegebiet (A0 #8), Rathenow + Premnitz seit Maßnahme M8 (Quelle data/locations.json)
 const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Rathenow', 'Premnitz', 'Berlin-Spandau', 'Potsdam'];
 export const ATTR_KEYS = ['gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']; // auch /kontakt/ (generate.mjs basis())
 // Kursiv-Schnitt (H1-Akzent wght 500; .gs .gn/.tli .tn/.ba-cap b wght 600): statt der variablen fraunces-italic-latin.woff2 (81 KB, gvar) zwei statische
@@ -31,13 +33,14 @@ const FONT_FACE = `@font-face{font-family:"Fraunces LP";font-style:italic;font-w
 // LP-eigenes CSS (mobile-first). Nutzt die Tokens/Klassen aus site.css (.btn, .kf, .faq, .scta, .consent, footer, .zone-deep).
 const LP_CSS = `<style>
 ${FONT_FACE}
+:root{--lp-surface:#fff}
 .lp-head .nav{justify-content:space-between;min-height:66px}
 .lp-head .logo img{height:52px;width:auto}
 .lp-head .callpill{font-size:15px;padding:10px 14px}
 .lp-head .callpill .num{display:inline}
 .lp-hero .kick{margin-bottom:12px;align-items:flex-start;line-height:1.35}
 .lp-hero .kick .dot{margin-top:.5em}
-.lp-hero-text .grid{grid-template-columns:1fr;max-width:46em}
+.lp-hero-text:not(:has(.lp-hero-form)) .grid{grid-template-columns:1fr;max-width:46em}
 .lp-cta{flex-direction:column;align-items:stretch;gap:12px}
 .lp-cta .btn{width:100%}
 .lp-cta .btn svg,.end .btn svg{width:18px;height:18px;flex:0 0 auto}
@@ -51,7 +54,7 @@ main .sec .head h2{max-width:22em}
 .lp-form fieldset{border:0;padding:0;margin:0 0 6px}
 .lp-form legend{font-weight:700;font-size:15px;color:var(--green-d);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
 .lp-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.kf .lp-chips label{margin:0;display:inline-flex;flex-direction:row;align-items:center;gap:8px;min-height:44px;border:1.5px solid var(--border-visible,var(--hair));border-radius:var(--r-button);padding:10px 16px;background:#fff;font-weight:600;font-size:15px;color:var(--ink);cursor:pointer}
+.kf .lp-chips label{margin:0;display:inline-flex;flex-direction:row;align-items:center;gap:8px;min-height:44px;border:1.5px solid var(--border-visible,var(--hair));border-radius:var(--r-button);padding:10px 16px;background:var(--lp-surface);font-weight:600;font-size:15px;color:var(--ink);cursor:pointer}
 .kf .lp-chips input[type=radio]{width:18px;height:18px;min-height:0;margin:0;padding:0;border:0;background:none;box-shadow:none;accent-color:var(--green-d);flex:0 0 auto}
 .lp-chips label:has(input:checked){border-color:var(--green-d);background:var(--paper)}
 .lp-chips label:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
@@ -76,16 +79,23 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-danke .tli p{color:var(--ink);font-size:16.5px;max-width:40em}
 .lp-danke .lp-cta{margin-top:24px}
 .scta .wa{background:transparent;color:var(--green-d);box-shadow:none;border:1.5px solid var(--green)}
-.lp-hero-preis{margin:14px 0 0;font-size:16px;line-height:1.5;color:var(--ink);text-wrap:pretty}
-.lp-hero-preis span{display:block;font-size:14.5px;color:var(--muted)}
+.lp-trust1{display:none;margin:0 0 6px;font-size:clamp(11.5px,3.5vw,13px);font-weight:600;line-height:1.3;color:var(--green-d);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.005em}
+.lp-trust1 .st{color:var(--green)}
+.lp-hero-preis{margin:14px 0 0;color:var(--ink)}
+.lp-hero-preis p{margin:0}
+.lp-hero-preis .pzs{font-size:16px;line-height:1.5;text-wrap:pretty}
+.lp-hero-preis .pn{display:block;font-size:14.5px;line-height:1.5;color:var(--muted);text-wrap:pretty}
 .lp-hero-preis b{white-space:nowrap}
+.lp-hero-preis .pk{display:none}
+.lp-hero-preis .sep{margin:0 .45em;font-style:normal;color:var(--muted)}
 .lp-aktion{margin:12px 0 0;padding:10px 14px;border-left:3px solid var(--green);background:var(--paper);border-radius:0 var(--r-el) var(--r-el) 0;font-size:15px;line-height:1.5;color:var(--ink);text-wrap:pretty}
 .lp-aktion b{color:var(--green-d)}
+.lp-aktion .kz{display:none}
 .lp-preis .lp-aktion{margin:0 0 14px}
 .lp-quick{margin:20px 0 16px}
 .lp-quick-l{font-weight:700;font-size:15px;color:var(--green-d);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
 .lp-quick-c{display:flex;flex-wrap:wrap;gap:8px}
-.lp-quick-c a{display:inline-flex;align-items:center;min-height:44px;border:1.5px solid var(--green);border-radius:var(--r-button);padding:10px 16px;background:#fff;font-weight:600;font-size:15px;color:var(--green-d);text-decoration:none;transition:background-color .2s,scale .15s}
+.lp-quick-c a{display:inline-flex;align-items:center;min-height:44px;border:1.5px solid var(--green);border-radius:var(--r-button);padding:10px 16px;background:var(--lp-surface);font-weight:600;font-size:15px;color:var(--green-d);text-decoration:none;transition:background-color .2s,scale .15s}
 .lp-quick-c a:hover{background:var(--paper)}
 .lp-quick-c a:active{scale:.96}
 .lp-chips .qs,.lp-quick-c .qs{display:none}
@@ -93,7 +103,7 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-preis+.lp-cta{margin-top:22px}
 .lp-preis+.lp-cta+.hint{margin-top:10px;font-size:14.5px;color:var(--muted)}
 @media(max-width:899px){body:not(:has(.consent:not([hidden]))) .lp-hero .lp-cta .btn-line{display:none}}
-@media(max-width:599px){.lp-hero .lead{font-size:17px;line-height:1.5}.lp-hero-preis{font-size:15px;margin-top:10px}.lp-hero-preis span{font-size:13.5px}.lp-quick{margin:16px 0 14px}.lp-quick-l{font-size:13.5px;margin-bottom:8px}.lp-quick-c{gap:6px}.lp-quick-c a{padding:8px 11px;font-size:14px}.lp-quick-c .ql{display:none}.lp-quick-c .qs{display:inline}.lp-chips .ql{display:none}.lp-chips .qs{display:inline}}
+@media(max-width:599px){.lp-hero .lead{font-size:17px;line-height:1.5}.lp-quick{margin:16px 0 14px}.lp-quick-l{font-size:13.5px;margin-bottom:8px}.lp-quick-c{gap:6px}.lp-quick-c a{padding:8px 11px;font-size:14px}.lp-quick-c .ql{display:none}.lp-quick-c .qs{display:inline}.lp-chips .ql{display:none}.lp-chips .qs{display:inline}}
 @media(min-width:600px){body:has(.consent:not([hidden])) .lp-foot{padding-bottom:130px}}
 @media(min-width:760px){
   .lp-cta{flex-direction:row;align-items:center;gap:16px}.lp-cta .btn{width:auto}
@@ -104,7 +114,7 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 }
 .lp-hero .hleaf{pointer-events:none}
 .lp-hero-form{margin:14px 0 6px}
-.lp-hero-form .kf{padding:14px 16px;border-radius:var(--r-card);background:#fff;border:1px solid var(--hair)}
+.lp-hero-form .kf{padding:14px 16px;border-radius:var(--r-card);background:var(--lp-surface);border:1px solid var(--hair)}
 .lp-hero-form .step1 .lp-chips{gap:8px;margin-bottom:8px}
 .lp-hero-form .step1 .row{margin-top:2px}
 .lp-hero-form [data-next]{margin-top:8px}
@@ -115,8 +125,12 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-alt .btn svg{width:18px;height:18px;flex:0 0 auto}
 @media(max-width:599px){.lp-alt .btn{white-space:nowrap;padding-left:10px;padding-right:10px;font-size:15px}}
 @media(max-width:399px){.lp-alt .btn{font-size:14px;flex:1 1 auto;padding-left:8px;padding-right:8px}.lp-alt .btn svg{display:none}}
-.lp-hero-preis a,.lp-preis a[data-obj]{display:inline;position:relative;color:inherit;text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:1.5px;text-underline-offset:3px}
-.lp-hero-preis a::after,.lp-preis a[data-obj]::after{content:"";position:absolute;inset:-11px -4px}
+.lp-hero-preis a.pz{display:inline;position:relative;color:inherit;text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.lp-hero-preis a.pz::after{content:"";position:absolute;inset:-13px -4px}
+.lp-anker{display:flex;flex-wrap:wrap;gap:0 24px}
+.lp-anker .lp-ar{display:inline-flex;align-items:center;min-height:44px;font-size:1.15rem;line-height:1.3;color:var(--ink)}
+.lp-anker a.lp-ar{text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.lp-preis .lp-anker-note{font-size:.95rem;line-height:1.5;color:var(--muted);margin:0 0 14px}
 .lp-preisverweis a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:var(--green-d)}
 #anfrage{scroll-margin-top:82px}
 .lp-form legend:focus{outline:none}
@@ -127,13 +141,31 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 @media(max-width:599px){
 .lp-head .nav{min-height:56px}
 .lp-head .logo img{height:42px}
-.lp-hero:has(.lp-hero-form){padding:12px 0 36px}
+.lp-hero:has(.lp-hero-form){padding:8px 0 36px}
 .lp-hero:has(.lp-hero-form) .kick{display:none}
-.lp-hero:has(.lp-hero-form) h1{font-size:clamp(21px,6.1vw,24px);line-height:1.1;margin-bottom:4px}
+.lp-hero:has(.lp-hero-form) .lp-trust1{display:block;margin-bottom:4px}
+.lp-hero[data-lead-mobil] .lead{font-size:16px;line-height:1.4;margin:6px 0 4px}
+.lp-hero[data-h1-lang]:has(.lp-hero-form) h1{font-size:clamp(19px,5.6vw,22px)}
+.lp-hero:has(.lp-hero-form) h1{font-size:clamp(21px,6.1vw,24px);line-height:1.1;margin-bottom:2px}
+.lp-hero-preis{margin-top:10px}
+.lp-hero-preis .pzs{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;font-size:16px;line-height:1.15}
+.lp-hero-preis .sep,.lp-hero-preis a.pz::after{display:none}
+.lp-hero-preis .pz{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:3px 6px;border:1.5px solid var(--hair);border-radius:var(--r-el);background:var(--lp-surface);text-decoration:none;white-space:normal}
+.lp-hero-preis a.pz{display:flex;border-color:var(--green);text-decoration:none}
+.lp-hero-preis .pz:only-child{flex-direction:row;justify-content:flex-start;gap:6px;padding:3px 12px}
+.lp-hero-preis .pl,.lp-hero-preis .pk{font-size:12px;font-weight:500;color:var(--muted);line-height:1.2}
+.lp-hero-preis .pk{display:block;order:-1}
+.lp-hero-preis .pz:has(.pk) .pl{display:none}
+.lp-hero-preis .pp{font-size:16px;font-weight:700;color:var(--ink)}
+.lp-hero-preis .pn{margin-top:6px;font-size:12.5px;line-height:1.35}
+.lp-hero .lp-aktion{margin-top:8px;padding:6px 10px;font-size:12.5px;line-height:1.35;white-space:nowrap;overflow:hidden}
+.lp-hero .lp-aktion .lg{display:none}
+.lp-hero .lp-aktion .kz{display:inline}
+.lp-hero .lp-aktion .kfn{display:block;margin-top:2px;font-size:12px;font-weight:500;color:var(--muted)}
 .lp-hero-form{margin-top:8px}
 .lp-hero-form .kf{padding:12px;gap:8px}
 .lp-hero-form .step1 .hint{display:none}
-.lp-hero-form .step1 legend{font-size:13px;letter-spacing:.04em;margin-bottom:8px}
+.lp-hero-form .step1 legend{font-size:13px;letter-spacing:.04em;margin-bottom:6px}
 .lp-hero-form .step1 .lp-chips{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px}
 .lp-hero-form .step1 .lp-chips label{padding:8px 10px;font-size:14.5px}
 .lp-hero-form .step1 .row{margin-top:2px}
@@ -141,7 +173,7 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-alt .btn{min-height:44px;padding-top:8px;padding-bottom:8px}
 }
 @media(min-width:900px){.lp-hero:has(.lp-hero-form) .grid{align-items:start;grid-template-columns:1.4fr .6fr;gap:40px}.lp-hero:has(.lp-hero-form) .shot{position:sticky;top:90px}.lp-hero:has(.lp-hero-form){overflow:clip;padding-top:18px}.lp-hero:has(.lp-hero-form) .kick{margin-bottom:6px}.lp-hero:has(.lp-hero-form) .lead{margin-top:8px}.lp-hero-form{margin-top:12px}.lp-hero:has(.lp-hero-form) h1{font-size:clamp(36px,3.5vw,46px);line-height:1.04}.lp-hero:has(.lp-hero-form) .lead{font-size:18px;margin-bottom:0;max-width:40em}.lp-hero-form .kf{max-width:42em;gap:10px}}
-@media(min-width:900px){.lp-hero-text.lp-hero:has(.lp-hero-form) .grid{grid-template-columns:1fr;max-width:62em}}
+@media(min-width:900px){.lp-hero-text.lp-hero:has(.lp-hero-form) .grid{grid-template-columns:1fr;max-width:1180px}}
 </style>`;
 
 // Attribution beim Einstieg: Klick-IDs/UTM aus der URL in den Seiten-Speicher (window.__hg). Ins Endgerät (localStorage, 90 Tage)
@@ -203,6 +235,10 @@ const rvIn = html => html.replace(/class="([^"]*)"/g, (m, c) => { const t = c.sp
 export function buildLp(d) {
   const { head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema, reviews, config, CP, isReal, pic, leaf, proof, IMG } = d;
   const consentKey = CONSENT_KEY || 'consent_v2';
+  // esc aus generate.mjs maskiert kein Anführungszeichen: für Attributwerte hier ein eigenes Escaping, damit ein " in lp.json das Attribut nicht aufbricht.
+  const escA = v => esc(v).replace(/"/g, '&quot;');
+  // pic() aus generate.mjs maskiert in alt="…" kein Anführungszeichen (und escaped selbst): gerade " vorher durch ein typografisches ” ersetzen.
+  const altQ = v => String(v).replace(/"/g, '”');
   const cp = CP('lp.json');
   if (!cp || !Array.isArray(cp.lps)) return 0;
   const W3F = isReal(config.web3forms_key);
@@ -212,10 +248,12 @@ export function buildLp(d) {
   // v5 (02.10.): Aktion aus lp.json (Root „aktion“ {label,text,bis}) — Pflicht-Gegenstück zum Angebots-Asset der Kampagne (Google prüft das Angebot
   // auf der Final-URL). Nach „bis“ rendert der Generator nichts mehr; für bereits ausgelieferte Seiten blendet AKTION_JS sie clientseitig aus.
   const akt = cp.aktion && cp.aktion.bis && Date.now() <= new Date(cp.aktion.bis + 'T23:59:59+01:00').getTime() ? cp.aktion : null;
-  const aktHtml = akt ? `<p class="lp-aktion" data-bis="${esc(akt.bis)}"><b>${esc(akt.label)}</b> ${esc(akt.text)}</p>` : '';
+  const aktHtml = akt ? `<p class="lp-aktion" data-bis="${escA(akt.bis)}"><b>${esc(akt.label)}</b> ${esc(akt.text)}</p>` : '';
+  // Hero-Fassung: Handy zeigt die Kurzform (akt.kurz), Desktop und der Preisblock (#preise) den vollen Wortlaut inkl. Ausnahme. Beide stehen im HTML, das CSS schaltet um.
+  const aktHero = akt ? (akt.kurz ? `<p class="lp-aktion" data-bis="${escA(akt.bis)}"><b><span class="lg">${esc(akt.label)}</span><span class="kz">${esc(akt.label_kurz || akt.label)}</span></b> <span class="lg">${esc(akt.text)}</span><span class="kz">${esc(akt.kurz)}</span>${akt.kurz_fuss ? `<span class="kz kfn">${esc(akt.kurz_fuss)}</span>` : ''}</p>` : aktHtml) : '';
   const AKTION_JS = akt ? `<script>(function(){var n=Date.now();Array.prototype.forEach.call(document.querySelectorAll('.lp-aktion[data-bis]'),function(el){if(n>new Date(el.getAttribute('data-bis')+'T23:59:59+01:00').getTime())el.remove()})})();</script>` : '';
 
-  const lpHeader = href => `<header class="lp-head"><div class="wrap nav"><a class="logo" href="${href}" aria-label="${esc(nap.name)}"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-lp-360.webp"><img src="/assets/img/logo-lp-180.png" alt="${esc(nap.name)}" width="180" height="193" decoding="async"></picture></a><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${telDisp}</span></a></div></header>`;
+  const lpHeader = href => `<header class="lp-head"><div class="wrap nav"><a class="logo" href="${href}" aria-label="${escA(nap.name)}"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-lp-360.webp"><img src="/assets/img/logo-lp-180.png" alt="${escA(nap.name)}" width="180" height="193" decoding="async"></picture></a><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${telDisp}</span></a></div></header>`;
 
   // Sticky-Bar mit sichtbarer Nummer (Anruf-Conversion: Google ersetzt den sichtbaren Nummerntext) und gedämpftem WhatsApp (ein Gold je Viewport)
   const lpScta = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ ${telDisp}</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav>`;
@@ -232,6 +270,15 @@ export function buildLp(d) {
     return all.length ? `<div class="trust-row">${all.map(t => `<div class="t"><b>${esc(t.b)}</b><span>${esc(t.t)}</span></div>`).join('')}</div>` : '';
   };
 
+  // Einzeilige Trust-Zeile für den Handy-Hero (Position des dort ausgeblendeten Kicks): „★ 5,0 bei Google (19) · <trust_zeile>“.
+  // Zahl und Note aus proof.google_reviews (gleiche Live-Schwelle wie trustGoogle), der Zusatz je LP aus lp.json (trust_zeile).
+  const trustLine = lp => {
+    const bits = [];
+    if (grLive) bits.push(`<span class="st" aria-hidden="true">★</span> ${esc(Number(gr.rating).toFixed(1).replace('.', ','))} bei Google (${esc(gr.count)})`);
+    if (lp.trust_zeile) bits.push(esc(lp.trust_zeile));
+    return bits.length ? `<p class="lp-trust1">${bits.join(' · ')}</p>` : '';
+  };
+
   // Vorher/Nachher-Slider aus components.mjs (WebP-768: baSlider setzt <img src>, kein <picture>; WebP statt JPG spart ~120 KB je Paar — Perf-Messung 14.09.; Hochformat 864/1036 = .ba-Aspect).
   // Der Alt-Suffix der Komponente ist heckenspezifisch („nach dem Schnitt") → für Räumungen ersetzt.
   const imgSrc = slug => `/assets/img/${slug}-768.webp`;
@@ -244,7 +291,7 @@ export function buildLp(d) {
   const heroOf = lp => {
     const h = lp.hero || (Array.isArray(lp.fotos) && lp.fotos[0] ? { typ: 'ba', ...lp.fotos[0] } : { typ: 'text' });
     if (h.typ === 'ba' && pairOk(h)) return { cls: 'lp-hero-ba', shot: `<div class="shot">${baPair(h, { lcp: true })}</div>`, key: `${h.vorher}|${h.nachher}` };
-    if (h.typ === 'foto' && h.slug && pic(h.slug)) return { cls: 'lp-hero-foto', shot: `<div class="shot">${pic(h.slug, { cls: 'main', alt: h.alt || `${lp.name} im Havelland – ${nap.name}`, sizes: '(max-width:900px) 92vw, 46vw', lcp: true })}</div>`, key: '' };
+    if (h.typ === 'foto' && h.slug && pic(h.slug)) return { cls: 'lp-hero-foto', shot: `<div class="shot">${pic(h.slug, { cls: 'main', alt: altQ(h.alt || `${lp.name} im Havelland – ${nap.name}`), sizes: '(max-width:900px) 92vw, 46vw', lcp: true })}</div>`, key: '' };
     return { cls: 'lp-hero-text', shot: '', key: '' };
   };
 
@@ -278,12 +325,12 @@ export function buildLp(d) {
   const objLabel = o => { const k = shortLabel(o); return k !== o ? `<span class="ql">${esc(o)}</span><span class="qs">${esc(k)}</span>` : esc(o); };
   const form = (lp, pos, wa) => {
     const hidden = W3F
-      ? `<input type="hidden" name="access_key" value="${esc(config.web3forms_key)}"><input type="hidden" name="subject" value="${esc(lp.form_subject || 'Neue Anfrage (Ads-LP)')}"><input type="hidden" name="from_name" value="${esc(nap.name)}"><input type="hidden" name="redirect" value="${DOMAIN}${dankeUrl}"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">`
+      ? `<input type="hidden" name="access_key" value="${escA(config.web3forms_key)}"><input type="hidden" name="subject" value="${escA(lp.form_subject || 'Neue Anfrage (Ads-LP)')}"><input type="hidden" name="from_name" value="${escA(nap.name)}"><input type="hidden" name="redirect" value="${DOMAIN}${dankeUrl}"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">`
       : '';
     const attrib = ['quelle', 'lp', ...ATTR_KEYS, 'landing_url', 'ads_consent']
-      .map(n => `<input type="hidden" name="${n}" value="${n === 'quelle' ? 'ads-lp' : n === 'lp' ? esc(lp.slug) : ''}">`).join('');
+      .map(n => `<input type="hidden" name="${n}" value="${n === 'quelle' ? 'ads-lp' : n === 'lp' ? escA(lp.slug) : ''}">`).join('');
     // Chips mit Kurzlabel („Keller / Dachboden“ → „Keller“ auf dem Handy); .qs ohne aria-hidden, damit ein zugänglicher Name bleibt
-    const chips = (lp.objekte || []).map((o, i) => `<label><input type="radio" name="objekt" value="${esc(o)}"${i === 0 ? ' required' : ''}> ${objLabel(o)}</label>`).join('');
+    const chips = (lp.objekte || []).map((o, i) => `<label><input type="radio" name="objekt" value="${escA(o)}"${i === 0 ? ' required' : ''}> ${objLabel(o)}</label>`).join('');
     const alt = pos === 'hero'
       ? `<p class="lp-alt"><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></p>`
       : `<p class="kf-alt">Lieber direkt? <a href="tel:${tel}">Anrufen: ${telDisp}</a> · <a href="${wa}">WhatsApp schreiben</a></p>`;
@@ -310,7 +357,17 @@ ${alt}
   };
 
   const normItem = x => typeof x === 'string' ? { t: x } : x;
-  const ankerHtml = items => items.map(normItem).map(x => x.obj ? `<a href="#anfrage" data-obj="${esc(x.obj)}" data-via="preis" aria-label="${esc(x.t)} – Anfrage zu ${esc(x.obj)} starten"><b>${esc(x.t)}</b></a>` : `<b>${esc(x.t)}</b>`).join(' &middot; ');
+  const ankerLabel = x => `aria-label="${escA(x.t)} – Anfrage zu ${escA(x.obj)} starten"`;
+  // Preisblock (#preise): eine Zeile je Preis, jede Zeile 44 px hoch (echte Höhe, keine überlappenden Tippziele).
+  const ankerList = items => items.map(normItem).map(x => x.obj ? `<a class="lp-ar" href="#anfrage" data-obj="${escA(x.obj)}" data-via="preis" ${ankerLabel(x)}><b>${esc(x.t)}</b></a>` : `<b class="lp-ar">${esc(x.t)}</b>`).join('');
+  // Hero-Preiszeilen: Text bleibt zusammenhängend („Kellerabteil ab 99 €“), nur Label und Preis stehen in Spans. Handy: Zelle mit Kurzlabel (k) klein über dem Preis.
+  const pzParts = x => /^(.*?)\s+(ab\s+[\d.]+(?:,\d+)?\s?€)\s*$/.exec(x.t);
+  const pzHtml = x => {
+    const m = pzParts(x);
+    const inner = m ? `<span class="pl">${esc(m[1])}</span> <span class="pp">${esc(m[2])}</span>${x.k ? `<span class="pk" aria-hidden="true">${esc(x.k)}</span>` : ''}` : esc(x.t);
+    return x.obj ? `<a class="pz" href="#anfrage" data-obj="${escA(x.obj)}" data-via="preis" ${ankerLabel(x)}><b>${inner}</b></a>` : `<b class="pz">${inner}</b>`;
+  };
+  const heroPz = items => items.map(normItem).map(pzHtml).join('<i class="sep" aria-hidden="true">&middot;</i>');
 
   let n = 0;
   for (const lp of cp.lps) {
@@ -330,15 +387,15 @@ ${alt}
     // Schnellstart-Chips = Formular-Schritt 1 im Fold (Tippen wählt das Objekt im Formular vor, löst form_start aus, springt zum Ort-Feld),
     // CTA direkt unter dem Preisblock, Formular vor den FAQ. Preis-Zeile nur aus lp.preis.anker (keine Zahl doppelt pflegen).
     const anker = lp.preis && lp.preis.anker;
-    const heroPreis = anker ? `<p class="lp-hero-preis">${ankerHtml(anker.items)}<span>${esc(lp.preis.hero_note || 'inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag')}</span></p>` : '';
-    const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${esc(lp.slug)}">${esc(lp.quick_label || 'Was soll geräumt werden?')}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${esc(lp.slug)}">${lp.objekte.map(o => `<a href="#anfrage" data-obj="${esc(o)}">${objLabel(o)}</a>`).join('')}</div></div>` : '';
+    const heroPreis = anker ? `<div class="lp-hero-preis"><p class="pzs">${heroPz(anker.items)}</p><p class="pn">${esc(lp.preis.hero_note || 'inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag')}</p></div>` : '';
+    const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${escA(lp.slug)}">${esc(lp.quick_label || 'Was soll geräumt werden?')}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${escA(lp.slug)}">${lp.objekte.map(o => `<a href="#anfrage" data-obj="${escA(o)}">${objLabel(o)}</a>`).join('')}</div></div>` : '';
     const pos = lp.form_pos === 'nach-preis' ? 'nach-preis' : 'hero';
     const heroForm = pos === 'hero' ? `<div class="lp-hero-form">${form(lp, 'hero', wa)}</div>` : '';
-    const aktLp = lp.aktion === false ? '' : aktHtml;
+    const aktLp = lp.aktion === false ? '' : aktHtml, aktLpHero = lp.aktion === false ? '' : aktHero;
     const heroCta = pos === 'nach-preis' ? `<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>` : '';
     const person = lp.kontaktperson && lp.kontaktperson.zeigen && lp.kontaktperson.slug && pic(lp.kontaktperson.slug)
-      ? `<p class="lp-person">${pic(lp.kontaktperson.slug, { cls: 'av', alt: lp.kontaktperson.alt || '', sizes: '56px' })}<span>${esc(lp.kontaktperson.zeile)}</span></p>` : '';
-    const preisVerweis = lp.preis && lp.preis.verweis ? `<p class="lp-preisverweis"><a href="/lp/${esc(lp.preis.verweis.slug)}/#preise">${esc(lp.preis.verweis.t || 'Preise ansehen')}</a></p>` : '';
+      ? `<p class="lp-person">${pic(lp.kontaktperson.slug, { cls: 'av', alt: altQ(lp.kontaktperson.alt || ''), sizes: '56px' })}<span>${esc(lp.kontaktperson.zeile)}</span></p>` : '';
+    const preisVerweis = lp.preis && lp.preis.verweis ? `<p class="lp-preisverweis"><a href="/lp/${escA(lp.preis.verweis.slug)}/#preise">${esc(lp.preis.verweis.t || 'Preise ansehen')}</a></p>` : '';
     const kontaktSec = pos === 'nach-preis' ? `<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>${esc(lp.kontakt_h2 || 'Kostenlose Besichtigung anfragen')}</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Zwei Schritte, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp, 'nach-preis', wa)}</div></section>` : '';
     // was_wir_tun {h, p, items:[{h,p}]} (optional, z. B. Allgemein-LP): Abschnitt direkt nach dem Hero. Gleiche Komponenten wie die Startseite (.sec/.head, .sec-lead, .vals/.v mit kursiver Nummer .vn),
     // Reveal-Klassen über rvIn(). Kein eigenes CSS.
@@ -346,14 +403,14 @@ ${alt}
     const wwt = wwtd && Array.isArray(wwtd.items) && wwtd.items.length
       ? `<section class="sec" id="was-wir-tun"><div class="wrap"><div class="head"><h2>${esc(wwtd.h || 'Was wir tun')}</h2></div>${wwtd.p ? `<p class="sec-lead">${esc(wwtd.p)}</p>` : ''}${rvIn(`<div class="vals">${wwtd.items.map((x, i) => `<div class="v rv${i ? ` d${i}` : ''}"><h3><span class="vn">${String(i + 1).padStart(2, '0')}</span>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div>`)}</div></section>` : '';
     const main = `<main id="top">
-<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span><h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
-${heroForm || quick}${heroPreis}${aktLp}${heroCta}
+<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustLine(lp)}<h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
+${heroForm || quick}${heroPreis}${aktLpHero}${heroCta}
 ${trustRow(lp.trust)}${person}</div>${H.shot}</div></section>${ortJs}
 ${wwt}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
-<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${aktLp}${lp.preis.anker ? `<p style="font-size:1.15rem;line-height:1.6;margin-bottom:14px">${ankerHtml(lp.preis.anker.items)}<br><span style="font-size:.95rem;color:var(--muted)">${esc(lp.preis.anker.note)}</span></p>` : ''}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
+<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${aktLp}${lp.preis.anker ? `<div class="lp-anker">${ankerList(lp.preis.anker.items)}</div><p class="lp-anker-note">${esc(lp.preis.anker.note)}</p>` : ''}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
 ${quotes(lp.testimonials, lp.testimonials_h2)}
 ${kontaktSec}
 <section class="sec section-alt" id="fragen"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
