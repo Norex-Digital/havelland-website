@@ -4,6 +4,7 @@
 // Run: node scripts/accept.mjs   (setzt voraus: FULL=1 node scripts/generate.mjs lief bereits)
 import fs from 'fs';
 import { execFileSync } from 'child_process';
+import crypto from 'crypto';
 
 const read = rel => { try { return fs.readFileSync(`website/${rel}`, 'utf8'); } catch { return null; } };
 
@@ -55,12 +56,12 @@ page('index.html', 'HOME', h => {
   check('home', 'kein fonts.googleapis', !has(h, 'fonts.googleapis'));
 });
 
-// ---- SERVICE-HUB heckenschnitt (Paket 1, 20.10.: Grundgerüst; Kalender/Kompass/Projekt raus, Ergebnisse bleiben) ----
+// ---- SERVICE-HUB heckenschnitt (Paket 1, 20.10.: Grundgerüst; Kalender/Kompass/Projekt raus, Ergebnisse bleiben; kompakter Heckenarten-Block id=heckenarten (h2 + Bullets) erlaubt, alte Komponenten verboten) ----
 page('heckenschnitt/index.html', 'HUB heckenschnitt', h => {
   check('heckenschnitt', 'ba>=1', classCount(h, 'ba') >= 1);
   check('heckenschnitt', 'gstrip', classCount(h, 'gstrip') >= 1);
   check('heckenschnitt', 'galerie', has(h, 'id="galerie"'));
-  check('heckenschnitt', 'kein Kalender/Kompass/Projekt', classCount(h, 'cal') === 0 && !has(h, 'id="heckenarten"') && classCount(h, 'echt-card') === 0);
+  check('heckenschnitt', 'kein Kalender/Kompass/Projekt', classCount(h, 'cal') === 0 && classCount(h, 'cal-months') === 0 && !has(h, 'id="kalender"') && !has(h, 'id="ktab-') && !has(h, 'id="kp-') && classCount(h, 'pills') === 0 && classCount(h, 'echt-card') === 0 && (!has(h, 'id="heckenarten"') || classCount(h, 'bl') >= 1));
   check('heckenschnitt', 'kein Stubben-Querverweis', !has(h, 'Stubben und Wurzeln noch im Boden?'));
   check('heckenschnitt', 'tl', classCount(h, 'tl') >= 1);
   check('heckenschnitt', 'faq', classCount(h, 'faq') >= 1);
@@ -170,7 +171,7 @@ for (const sl of ['gartenpflege', 'heckenschnitt', 'baumschnitt', 'heckenentfern
     check(sl, 'kein Aufklapper im Leistungsteil', !leist.includes('<details'));
     check(sl, 'kein Detail-Band', classCount(h, 'media-band') === 0);
     check(sl, 'keine Gebietskarte', !has(h, 'id="gebiet"') && classCount(h, 'gebiet-wrap') === 0);
-    check(sl, 'kein Schnittkalender/Kompass', classCount(h, 'cal') === 0 && !has(h, 'id="heckenarten"'));
+    check(sl, 'kein Schnittkalender/Kompass', classCount(h, 'cal') === 0 && classCount(h, 'cal-months') === 0 && !has(h, 'id="kalender"') && !has(h, 'id="ktab-') && !has(h, 'id="kp-'));
     check(sl, 'genau 1 Ablauf', classCount(h, 'tl') === 1 && classCount(h, 'wa-grid') === 0);
     check(sl, 'Orte-Block ≤ 6 Orte', !has(h, 'id="orte"') || ((h.match(/<div class="ox-chips">([\s\S]*?)<\/div>/) || ['', ''])[1].match(/<a /g) || []).length <= 6);
     check(sl, 'kein Ortskarten-Raster', !/<h2[^>]*>[^<]* in Ihrem Ort<\/h2><\/div>(<p[^>]*>[^<]*<\/p>)?<div class="cards/.test(h));
@@ -235,7 +236,7 @@ for (const sl of GG_SLUGS) {
 }
 page('pflasterarbeiten/index.html', 'PAKET-1 pflasterarbeiten Anker', h => check('pflasterarbeiten', 'id="kantensteine" vorhanden (SEO H-1)', has(h, 'id="kantensteine"')));
 page('heckenschnitt/index.html', 'PAKET-1 heckenschnitt Ergebnisse', h => {
-  check('heckenschnitt', 'Ergebnisse-CTA zeigt auf /kontakt/#anfrage', /<div class="thumb-cta">[\s\S]*?<a href="\/kontakt\/#anfrage">/.test(h));
+  check('heckenschnitt', 'Ergebnisse-CTA zeigt auf /kontakt/#anfrage', /<div class="(?:thumb-cta|car-cta rv)">[\s\S]*?<a (?:class="btn btn-acc" )?href="\/kontakt\/#anfrage">/.test(h));   // Layout-Runde 20.10.: Button-Zeile (car-cta) statt verwaister Platzhalterkarte
   check('heckenschnitt', 'Ratgeber-Teaser hecke-schneiden-erlaubt ausgeblendet', !has((h.match(/Ratgeber rund um[\s\S]*?<\/section>/) || [''])[0], '/ratgeber/hecke-schneiden-erlaubt/'));
 });
 page('steinreinigung/index.html', 'PAKET-1 steinreinigung Ergebnisse (V/N-Paare)', h => {
@@ -256,6 +257,11 @@ const BILD_HUBS = ['gartenpflege', 'heckenschnitt', 'baumschnitt', 'heckenentfer
       const list = [hero, leist, orte].filter(Boolean);
       check(sl, `kein Foto doppelt (Hero ${hero || '-'} / Leistung ${leist || '-'} / Orte ${orte || '-'})`, new Set(list).size === list.length);
       check(sl, 'Orte-Foto kein Platzhalter "ueber-uns"', orte !== 'ueber-uns');
+      // Layout-Runde 20.10.: Dubletten auch am Dateiinhalt erkennen (zaunbau: -detail und zaunart-doppelstab hatten verschiedene Namen, gleichen MD5)
+      const srcs = [...new Set([...h.matchAll(/<img[^>]*src="(\/assets\/img\/[^"]+)"/g)].map(m => m[1]).filter(u => !/\/(logo|favicon)/.test(u)))];
+      const seen = new Map(); const dup = [];
+      for (const u of srcs) { let d; try { d = fs.readFileSync('website' + u); } catch { continue; } const k = crypto.createHash('md5').update(d).digest('hex'); if (seen.has(k)) dup.push(`${seen.get(k)} = ${u}`); else seen.set(k, u); }
+      check(sl, 'kein Foto doppelt (Dateiinhalt/MD5)' + (dup.length ? ': ' + dup.join('; ') : ''), dup.length === 0);
     });
   }
 }

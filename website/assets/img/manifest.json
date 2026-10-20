@@ -367,18 +367,6 @@
 "fb_ext": "jpg",
 "fb_w": 800
 },
-"svc-winterdienst-detail": {
-"w": 1200,
-"h": 896,
-"widths": [
-480,
-800,
-1200
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 800
-},
 "svc-steinreinigung-detail": {
 "w": 1200,
 "h": 896,
@@ -1068,21 +1056,6 @@
 "svc-zaunbau-hero": {
 "w": 2752,
 "h": 1536,
-"widths": [
-480,
-768,
-1024,
-1376,
-1600,
-1920
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 1280
-},
-"svc-zaunbau-detail": {
-"w": 2400,
-"h": 1792,
 "widths": [
 480,
 768,

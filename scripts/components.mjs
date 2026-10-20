@@ -315,7 +315,7 @@ export function karussell(slugs) {
 // ---------------------------------------------------------------------------
 // archivGrid — .pgrid mit .thumb-Buttons (data-slug/cap/sub) + thumb-cta + Lightbox (#lightbox).
 // ---------------------------------------------------------------------------
-export function archivGrid(slugs, { ctaHref = '/kontakt/#anfrage' } = {}) {   // 20.10. (Copy H5): '#kontakt' hat auf keiner Seite ein Ziel
+export function archivGrid(slugs, { ctaHref = '/kontakt/#anfrage', compact = false } = {}) {   // 20.10. (Copy H5): '#kontakt' hat auf keiner Seite ein Ziel
   const list = (arr(slugs).length ? arr(slugs) : VN_ALL).filter(s => VN_META[s]);
   const thumbs = list.map(s => {
     const m = VN_META[s];
@@ -323,6 +323,8 @@ export function archivGrid(slugs, { ctaHref = '/kontakt/#anfrage' } = {}) {   //
       `<img src="${VN}/${s}_nachher.jpg" alt="${esc(m.alt)} — Vorher-Nachher-Vergleich öffnen" loading="lazy" decoding="async" width="864" height="1036">` +
       `<span class="tvn">Vorher ↔ Nachher</span><span class="tcap">${esc(m.tcap)}</span></button>`;
   }).join('');
+  // compact (Layout-Runde 20.10.): Hubs ohne Thumbnail-Raster — keine verwaiste gestrichelte Platzhalterkarte, sondern eine Button-Zeile unter dem Karussell.
+  if (compact) return `<div class="car-cta rv"><a class="btn btn-acc" href="${esc(ctaHref)}">Kostenlose Besichtigung anfragen</a></div>`;
   const cta = `<div class="thumb-cta"><b>Ihr Projekt?</b><p>Dieser Platz ist für das nächste Kundenprojekt reserviert — dokumentiert mit Vorher/Nachher-Fotos.</p><a href="${esc(ctaHref)}">Kostenlose Besichtigung →</a></div>`;
   const lightbox = `<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Vorher-Nachher-Ansicht" hidden>` +
     `<button class="lb-back" data-close tabindex="-1" aria-label="Schließen"></button>` +
@@ -337,7 +339,7 @@ export function archivGrid(slugs, { ctaHref = '/kontakt/#anfrage' } = {}) {   //
 export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
   heading = 'Ein Handy-Foto <em>reicht.</em>', partner = false, fotoNeutral = false, winter = false,
   // foto (Zaunbau 16.09.): optionales Service-eigenes Motiv statt Heckenschnitt-Default — { src, alt, cap, sub, w, h }
-  foto = null } = {}) {
+  foto = null , legacy = false } = {}) {
   const f = foto || { src: `${ARB}/hecke-hinten-schere-noah.jpg`, alt: fotoNeutral ? 'Sorgfältige Handarbeit im Grünen — Haus- &amp; Gartenservice Havelland' : 'Heckenschnitt mit der Heckenschere an einer Hecke', cap: 'Handarbeit, wo es drauf ankommt', sub: fotoNeutral ? 'Sorgfalt im Detail' : 'Kanten &amp; Ecken', w: 2400, h: 2979 };
   // winter (Umbau 04.09.): Winterdienst = Partnermodell ohne Foto-Zusage — Adresse und Flächen statt Handy-Foto, Saisonvertrag vom Betrieb.
   if (winter) heading = 'Adresse und Flächenbeschreibung <em>reichen.</em>';
@@ -345,8 +347,8 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
   const text = winter ? `Hallo, ich brauche Winterdienst für ${gewerk}${ortTeil} — was ist der nächste Schritt?` : `Hallo, hier ein Foto von ${gewerk}${ortTeil} — was würde das kosten?`;
   // Partner-/Tippgeber-Services (Dach): Schritt 3 nennt keinen eigenen Festpreis — das Angebot kommt vom ausführenden Fachbetrieb.
   const step3 = partner
-    ? `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort in Stunden</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung durch den Partner-Fachbetrieb — das verbindliche Angebot kommt vom ausführenden Betrieb.</p></div></li>`
-    : `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort in Stunden</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung — danach steht Ihr Festpreis.</p></div></li>`;
+    ? `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort am selben Tag</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung durch den Partner-Fachbetrieb — das verbindliche Angebot kommt vom ausführenden Betrieb.</p></div></li>`
+    : `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort am selben Tag</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung — danach steht Ihr Festpreis.</p></div></li>`;
   return `<div class="wa-grid"><div>` +
     `<span class="kick rv"><span class="dot"></span> Der schnellste Weg</span>` +
     `<div class="head" style="margin-top:14px"><h2 class="rv">${heading}</h2></div>` +
@@ -374,10 +376,10 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
 // Ohne .timg-Bilder (optionale Deko, vermeidet 404).
 // ---------------------------------------------------------------------------
 const TL = [
-  ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
-  ['Kurzfristig · kostenlos', 'Besichtigung &amp; Festpreis', 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis — inklusive Abfuhr. Der Preis steht, bevor wir anfangen.'],
+  ['Tag 1 · Antwort am selben Tag', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
+  ['Kurzfristig · kostenlos', 'Besichtigung &amp; Festpreis', 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen den Preis, inklusive Abfuhr. Er steht, bevor wir anfangen.'],
   ['Zum vereinbarten Termin', 'Saubere Ausführung', 'Pünktlich und gründlich zum vereinbarten Termin. Wir räumen hinter uns auf, besenrein ist Teil des Preises.'],
-  ['Direkt nach der Arbeit', 'Foto-Nachweis aufs Handy', 'Vorher-/Nachher-Fotos Ihres Auftrags, direkt aufs Handy. Sie sehen das Ergebnis auch dann, wenn Sie nicht zu Hause waren.']
+  ['Direkt nach der Arbeit', 'Foto-Nachweis aufs Handy', 'Fotos von vorher und nachher gehen direkt aufs Handy.']
 ];
 // P0-1 (Audit 2026-08): Der §39-Satz in Schritt 3 erscheint NUR auf Services mit echtem §39-Bezug —
 // auf Stubben-/Reinigungs-/übrigen Services wäre er eine falsche bzw. irrelevante Rechtsaussage.
@@ -388,28 +390,30 @@ const tlStep3 = slug => TL_39.has(slug)
     ? 'Pünktlich, gründlich — Stubbenfräsen ist ganzjährig möglich. Wir räumen hinter uns auf — besenrein ist Teil des Preises.'
     : TL[2][2];
 // Ablauf-Schritt 2 (20.10., Copy K1/H7): „inklusive Abfuhr“ nur dort, wo die Abfuhr wirklich im Festpreis steckt. Aushub/Altbelag/Gartenbau: Entsorgung nach Beleg. Baumfällung: Abtransport inklusive, Stadtgebühren nicht. Fenster/Stein: keine Abfuhr.
-const TL2_BELEG = new Set(['erdarbeiten', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'gartengestaltung', 'rollrasen-verlegen', 'galabau']);
+const TL2_BELEG = new Set(['zaunbau', 'erdarbeiten', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'gartengestaltung', 'rollrasen-verlegen', 'galabau']);
 const TL2_OHNE_ABFUHR = new Set(['fensterreinigung', 'steinreinigung', 'unterhaltsreinigung', 'gebaeudereinigung', 'ferienwohnung-reinigung', 'objektbetreuung', 'hausmeisterservice']);   // Paket 3: Reinigungs- und Kontrollgang-Hubs ohne Abfuhr (Spec A §4.2)
-const tlStep2 = slug => TL2_BELEG.has(slug)
-  ? 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis. Entsorgungsgebühren rechnen wir nach Beleg ab, ohne Aufschlag. Der Preis steht, bevor wir anfangen.'
+const tlStep2 = slug => slug === 'gartenrodung'
+  ? 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen den Preis. Grünschnitt und Wurzelholz sind enthalten, Unrat und Sperriges rechnen wir nach Beleg ab. Er steht, bevor wir anfangen.'
+  : TL2_BELEG.has(slug)
+  ? 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen den Preis. Entsorgungsgebühren rechnen wir nach Beleg ab, ohne Aufschlag. Er steht, bevor wir anfangen.'
   : slug === 'baumfaellung'
-    ? 'Wir kommen vorbei, schauen uns den Baum an und nennen Ihnen einen Festpreis inklusive Abtransport. Gebühren der Stadt für die Fällgenehmigung und Ersatzpflanzungen sind nicht enthalten. Der Preis steht, bevor wir anfangen.'
+    ? 'Wir kommen vorbei, schauen uns den Baum an und nennen Ihnen den Preis inklusive Abtransport. Gebühren der Stadt für die Fällgenehmigung und Ersatzpflanzungen sind nicht enthalten. Er steht, bevor wir anfangen.'
     : TL2_OHNE_ABFUHR.has(slug)
-      ? 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis. Der Preis steht, bevor wir anfangen.'
+      ? 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen den Preis. Er steht, bevor wir anfangen.'
       : TL[1][2];
 // Partner-/Tippgeber-Variante (Dach): keine Eigenleistung, kein eigener Festpreis, kein eigener Foto-Nachweis — Ausführung + Angebot beim Fachbetrieb.
 const TL_PARTNER_DACH = [
-  ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was am Dach ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
+  ['Tag 1 · Antwort am selben Tag', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was am Dach ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
   ['Kurzfristig · kostenlos', 'Besichtigung durch den Fachbetrieb', 'Der Partner-Fachbetrieb sieht sich Dach, Zugang und Umfang an. Die Besichtigung ist für Sie kostenlos und unverbindlich.'],
   ['Nach der Besichtigung', 'Angebot vom Fachbetrieb', 'Das verbindliche Angebot erstellt der ausführende Betrieb. Sagen Sie zu, stimmen wir Termin und Ablauf mit Ihnen ab.'],
-  ['Zum vereinbarten Termin', 'Ausführung, ein Ansprechpartner', 'Die Arbeit am Dach übernimmt der Fachbetrieb mit passender Absicherung — wir begleiten den Einsatz als Ihr fester Draht.']
+  ['Zum vereinbarten Termin', 'Ausführung durch den Fachbetrieb', 'Die Arbeit am Dach übernimmt der Fachbetrieb mit passender Absicherung, wir begleiten den Einsatz.']
 ];
 // Winterdienst-Variante (01.09.): gleiche Mechanik, Wording ohne „Dach" — Saisonvertrag statt Einmalauftrag.
 const TL_PARTNER_WINTER = [
-  ['Tag 1 · Antwort meist in Stunden', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, welche Flächen im Winter frei sein müssen — Gehweg, Zufahrt, Stellplätze. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
+  ['Tag 1 · Antwort am selben Tag', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, welche Flächen im Winter frei sein müssen — Gehweg, Zufahrt, Stellplätze. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
   ['Kurzfristig · kostenlos', 'Besichtigung durch den Fachbetrieb', 'Der Partner-Fachbetrieb sieht sich Flächen, Zugänge und den Platz für Streugut an. Die Besichtigung ist für Sie kostenlos und unverbindlich.'],
   ['Nach der Besichtigung', 'Saisonvertrag vom Fachbetrieb', 'Das verbindliche Angebot als Saisonvertrag erstellt der ausführende Betrieb. Sagen Sie zu, steht der Winterdienst vor dem ersten Schnee.'],
-  ['Bei Schnee und Glätte', 'Einsätze mit Nachweis', 'Räumen und Streuen übernimmt der Fachbetrieb mit eigener Technik und Absicherung, jeder Einsatz wird festgehalten — wir bleiben Ihr fester Draht.']
+  ['Bei Schnee und Glätte', 'Einsätze mit Nachweis', 'Räumen und Streuen übernimmt der Fachbetrieb mit eigener Technik und Absicherung, jeder Einsatz wird festgehalten.']
 ];
 const TL_PARTNER = TL_PARTNER_DACH;
 // timelineFrom — generischer Timeline-Renderer (LP-v2, 14.09.): .tl[.rv] > .tli > span.tn + .tbody > [.twhen wenn when] + h3 + p.
@@ -454,7 +458,15 @@ const tlGewerbe = (row, i, slug) => {
   if (i === 2) return [row[0], row[1], g.s3];
   return ['Nach jedem Einsatz', row[1], g.s4];
 };
-export function auftragsTimeline(partner = false, slug = '') {
+// Startseite bleibt inhaltlich unverändert (Owner-Vorgabe Paket 1): legacy = Fassung vor Runde 1.
+const TL_HOME = [
+  ['Tag 1 · Antwort am selben Tag', 'Anfrage', 'Per Telefon oder WhatsApp kurz schildern, was ansteht — gern mit Fotos. Sie bekommen eine erste Rückmeldung, keine Warteschleife.'],
+  ['Kurzfristig · kostenlos', 'Besichtigung &amp; Festpreis', 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis. Entsorgungsgebühren rechnen wir nach Beleg ab, ohne Aufschlag. Der Preis steht, bevor wir anfangen.'],
+  TL[2],
+  ['Direkt nach der Arbeit', 'Foto-Nachweis aufs Handy', 'Vorher-/Nachher-Fotos Ihres Auftrags, direkt aufs Handy. Sie sehen das Ergebnis auch dann, wenn Sie nicht zu Hause waren.']
+];
+export function auftragsTimeline(partner = false, slug = '', legacy = false) {
+  if (legacy && !partner) return timelineFrom(TL_HOME.map(([when, h, p]) => ({ when, h, p })));
   const base = partner ? (slug === 'winterdienst' ? TL_PARTNER_WINTER : TL_PARTNER_DACH) : TL.map((row, i) => { const r = i === 2 ? [row[0], row[1], tlStep3(slug)] : i === 1 ? [row[0], row[1], tlStep2(slug)] : row; return TL_GEWERBE_HUBS.has(slug) ? tlGewerbe(r, i, slug) : r; });
   return timelineFrom(base.map(([when, h, p]) => ({ when, h, p })));
 }
@@ -466,7 +478,7 @@ const USP = [
   ['01', 'Aus einer Hand', 'Garten, Reinigung, Winterdienst, Entrümpelung — ein Ansprechpartner für alles.'],
   ['02', 'Nachweis statt Versprechen', 'Foto-Dokumentation nach jedem Auftrag, direkt aufs Handy.'],
   ['03', 'Festpreis', 'Kostenlose Besichtigung, klarer Preis — kein Nachkommen.'],
-  ['04', 'Schnell erreichbar', 'WhatsApp-Antwort in Stunden, nicht in Tagen.']
+  ['04', 'Schnell erreichbar', 'WhatsApp-Antwort am selben Tag.']
 ];
 export function uspBand() {
   const vals = USP.map(([n, h, p], i) =>
@@ -485,16 +497,16 @@ const FAQ_DEFAULT = [
   { q: 'Bekomme ich alle Leistungen aus einer Hand?', a: 'Ja. Garten, Reinigung, Entrümpelung und Hausmeisterdienste übernehmen wir selbst, Winterdienst und Dachrinne koordinieren wir über einen Partner-Fachbetrieb — Sie müssen nicht für jede Aufgabe einen eigenen Betrieb suchen.' },
   { q: 'Gibt es die Gartenpflege auch regelmäßig im Abo?', a: 'Ja. Auf Wunsch kommen wir im festen 14-tägigen Rhythmus: Rasen, Hecke, Beete, Laub — was die Jahreszeit eben verlangt. Der Rhythmus lässt sich jederzeit anpassen.' },
   { q: 'Was passiert, wenn nach der Reinigung Schlieren bleiben?', a: 'Dann kommen wir am selben Tag noch einmal vorbei und ziehen die betroffenen Scheiben nach — ohne Zusatzkosten. Schlierenfreies Glas ist der Kern unserer Arbeit, deshalb prüfen wir jede Scheibe im Gegenlicht, bevor wir gehen.' },
-  { q: 'Wie schnell bekomme ich einen Termin für den Heckenschnitt?', a: 'Eine erste Rückmeldung erhalten Sie nach Ihrer WhatsApp-Anfrage meist innerhalb weniger Stunden. Den Termin für die kostenlose Besichtigung stimmen wir kurzfristig ab. Im Februar ist die Nachfrage am höchsten — fragen Sie früh an.' }
+  { q: 'Wie schnell bekomme ich einen Termin für den Heckenschnitt?', a: 'Eine erste Rückmeldung erhalten Sie nach Ihrer WhatsApp-Anfrage am selben Tag. Den Termin für die kostenlose Besichtigung stimmen wir kurzfristig ab. Im Februar ist die Nachfrage am höchsten — fragen Sie früh an.' }
 ];
-export function faqFilter(faqs, { heading = 'Häufige <em>Fragen.</em>' } = {}) {
+export function faqFilter(faqs, { heading = 'Häufige <em>Fragen.</em>', legacy = false } = {}) {
   const list = arr(faqs).length ? arr(faqs) : FAQ_DEFAULT;
   const items = list.map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('');
   return `<div class="head"><h2 class="rv">${heading}</h2></div>` +
     `<p class="intro rv">Kurz und ehrlich beantwortet. Ihre Frage fehlt? <a href="${waHref('Hallo, ich habe eine Frage.')}">Schreiben Sie uns per WhatsApp.</a></p>` +
     `<div class="faq rv"><div class="faq-search">` +
     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>` +
-    `<input type="search" id="faq-input" placeholder="Frage eintippen, z. B. „Kosten“ oder „Termin“" aria-label="Fragen durchsuchen" autocomplete="off"></div>` +
+    `<input type="search" id="faq-input" placeholder="${legacy ? 'Frage eintippen, z. B. „Kosten“ oder „Termin“' : 'Frage eintippen, z. B. „Kosten“'}"${legacy ? ' data-ph-kurz="Frage eintippen, z. B. „Kosten“"' : ''} aria-label="Fragen durchsuchen" autocomplete="off"></div>` +
     `<p class="faq-count" id="faq-count" aria-live="polite"></p>${items}` +
     `<p class="faq-empty" id="faq-empty">Dazu haben wir noch keine Antwort notiert. <a href="${waHref('Hallo, ich habe eine Frage.')}">Fragen Sie uns per WhatsApp</a>, wir antworten am selben Tag.</p>` +
     `</div>`;
@@ -695,14 +707,14 @@ export function passtBlock({ items = [], alt = true } = {}) {
 }
 
 // orteBlock — „Unterwegs im Havelland“: echtes Arbeitsfoto + Top-Orte als Buttons + „Alle Orte“.
-export function orteBlock({ name = '', fotoHtml = '', orte = [], weitere = [], partner = false, alt = false } = {}) {
+export function orteBlock({ name = '', fotoHtml = '', orte = [], weitere = [], partner = false, alt = false, ankerPrefix = '' } = {}) {
   const o = arr(orte);
   if (!o.length) return '';
   const w = arr(weitere);   // Owner 20.10. „Verlinkung komplett“: alle übrigen indexierbaren Ortsseiten als schlichte Textlinks
   const satz = partner
     ? 'Wir sitzen in Falkensee und koordinieren den Einsatz im ganzen Havelland, von Nauen bis Spandau.'
     : 'Wir sitzen in Falkensee und kommen selbst zu Ihnen, von Nauen bis Spandau. Die Anfahrt steckt im Festpreis.';
-  return `<section class="sec${alt ? ' section-alt' : ''}" id="orte"><div class="wrap"><div class="ox rv">${fotoHtml ? `<div class="ox-foto">${fotoHtml}</div>` : ''}<div><span class="kick">Unterwegs im Havelland</span><h2 class="serif">${esc(name)} in Ihrem Ort</h2><p class="ox-satz">${satz}</p><div class="ox-chips">${o.map(x => `<a href="${esc(x.href)}">${esc(x.name)}</a>`).join('')}</div>${w.length ? `<p class="ox-weitere"><span>Weitere Orte:</span> ${w.map(x => `<a href="${esc(x.href)}">${esc(x.name)}</a>`).join(', ')}</p>` : ''}<p class="ox-alle"><a href="/standorte/">Alle Orte →</a></p></div></div></div></section>`;
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="orte"><div class="wrap"><div class="ox rv">${fotoHtml ? `<div class="ox-foto">${fotoHtml}</div>` : ''}<div><span class="kick">Unterwegs im Havelland</span><h2 class="serif">${esc(name)} in Ihrem Ort</h2><p class="ox-satz">${satz}</p><div class="ox-chips">${o.map(x => `<a href="${esc(x.href)}">${esc(ankerPrefix + x.name)}</a>`).join('')}</div>${w.length ? `<p class="ox-weitere"><span>Weitere Orte:</span> ${w.map(x => `<a href="${esc(x.href)}">${esc(ankerPrefix + x.name)}</a>`).join(' ')}</p>` : ''}<p class="ox-alle"><a href="/standorte/">Alle Orte →</a></p></div></div></div></section>`;
 }
 
 // soLaeufts — EIN Ablauf (Timeline) + WhatsApp/Telefon UNTER der Zeitleiste (außerhalb der Linie).
