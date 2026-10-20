@@ -40,13 +40,15 @@ const entryOf = rel => (lpJson.lps || []).find(x => x.slug === rel.split('/')[1]
 const posOf = rel => entryOf(rel).form_pos || 'hero';
 
 // Optionen: reviews/ba wie bisher · mitAktion = Ziel-URL des Angebots-Assets (bis 30.11.) · ohneAktion = Nachlass (A7)
-// · keinAbPreis = [S2] JE_LP: nur Nachlass ohne „ab …€“-Anker; Haus/Keller/Wohnung/Entrümpelung zeigen ihren Ab-Preis selbst
+// · keinAbPreis = [S2] JE_LP: Nachlass ohne „ab …€“ im Hero (Bereich bis Ende der lp-hero-Section) und ohne Preis-Anker (data-via="preis");
+//   der Abschnitt #preise darf die sachliche Preis-Orientierung tragen (Owner Maurice 20.10.). Haus/Keller/Wohnung/Entrümpelung zeigen ihren Ab-Preis selbst
 // · ortSwap = ort_swap Pflicht (data-ort im Hero)
+// · reviewsMin = Mindestzahl Bewertungskarten (Standard 2; Nachlass 1: nur Index 0, Index 6 nennt den Preis, Audit O7)
 const LPS = [
   ['lp/haushaltsaufloesung-havelland/index.html', 'LP haushaltsaufloesung', { reviews: true, ba: 2, mitAktion: true }],
   ['lp/messie-wohnung-raeumung/index.html', 'LP messie', { reviews: true }],
   ['lp/gewerbe-entruempelung/index.html', 'LP gewerbe', { reviews: true }],
-  ['lp/nachlass-aufloesung/index.html', 'LP nachlass', { reviews: true, ohneAktion: true, keinAbPreis: true }],
+  ['lp/nachlass-aufloesung/index.html', 'LP nachlass', { reviews: true, reviewsMin: 1, ohneAktion: true, keinAbPreis: true }],
   ['lp/wohnungsaufloesung/index.html', 'LP wohnung', { reviews: true }],
   ['lp/haus-entruempeln/index.html', 'LP haus', { reviews: true, ortSwap: true }],
   ['lp/keller-dachboden-garage/index.html', 'LP keller', { reviews: true }],
@@ -61,7 +63,7 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
   // --- Grund-Checks (aus accept.mjs übernommen)
   check(id, 'phero>=1', classCount(h, 'phero') >= 1);
   check(id, 'tl>=1', classCount(h, 'tl') >= 1);
-  if (o.reviews) check(id, 'review-card>=2', classCount(h, 'review-card') >= 2);
+  if (o.reviews) check(id, `review-card>=${o.reviewsMin || 2}`, classCount(h, 'review-card') >= (o.reviewsMin || 2));
   if (o.ba) check(id, `ba>=${o.ba}`, classCount(h, 'ba') >= o.ba);
   check(id, 'kein rv ohne in', rvOhneIn(h) === 0);
   check(id, 'keine lp-card/lp-steps/lp-quote/lp-ba-grid/lp-trust', lpAltKlassen(h) === 0);
@@ -105,7 +107,13 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     if (o.ohneAktion) check(id, 'keine Aktion (A7)', !has(h, 'class="lp-aktion"'));
     if (o.mitAktion) check(id, 'Aktion vorhanden (Ziel-URL des Angebots-Assets, bis 30.11.)', has(h, 'class="lp-aktion"'));
     // --- Preise [S2]
-    if (o.keinAbPreis) check(id, '[S2] keine Ab-Preise (Regel 23.09.)', !/\bab\s+\d[\d.]*\s?€/i.test(h));
+    if (o.keinAbPreis) {
+      const AB = /\bab\s+\d[\d.]*\s?€/i, hero = heroStart > -1 && heroEnd > heroStart ? h.slice(heroStart, heroEnd) : '';
+      check(id, '[S2] Hero gefunden (Bereich für den Ab-Preis-Check)', hero.length > 200);
+      check(id, '[S2] kein Ab-Preis im Hero (Preise nur im Abschnitt #preise)', hero.length > 200 && !AB.test(hero));
+      check(id, '[S2] Selbsttest: „ab 499 €“ im Hero → ✗', hero.length > 200 && AB.test(hero + ' ab 499 €'));
+      check(id, '[S2] kein Preis-Anker (data-via="preis") und keine Hero-Preiszeile', !has(h, 'data-via="preis"') && !has(h, 'class="lp-hero-preis"'));
+    }
     if (o.ortSwap) check(id, 'ort_swap gesetzt (data-ort im Hero)', has(h, 'data-ort="'));
     // --- Nachlass-Lead auf dem Handy (Attribut an der Hero-Section prüfen, nicht das CSS-Selektor-Vorkommen im <head>)
     check(id, 'data-lead-mobil gleich lead_mobil in lp.json', (entryOf(rel).lead_mobil === true) === /<section class="phero lp-hero[^"]*"[^>]*data-lead-mobil/.test(h));

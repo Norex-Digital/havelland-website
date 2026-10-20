@@ -16,7 +16,7 @@ import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
 
 // Servicegebiet laut Report Kap. 3.4 / GBP-Servicegebiet (A0 #8)
-const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Berlin-Spandau', 'Potsdam'];
+const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Rathenow', 'Premnitz', 'Berlin-Spandau', 'Potsdam'];
 export const ATTR_KEYS = ['gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']; // auch /kontakt/ (generate.mjs basis())
 // Kursiv-Schnitt (H1-Akzent wght 500; .gs .gn/.tli .tn/.ba-cap b wght 600): statt der variablen fraunces-italic-latin.woff2 (81 KB, gvar) zwei statische
 // Instanzen (fontTools instancer wght 500/opsz 48 bzw. wght 600/opsz 22, Latin-Subset ohne Hinting, je ~20 KB). Die @font-face in LP_CSS stehen hinter
@@ -141,6 +141,7 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-alt .btn{min-height:44px;padding-top:8px;padding-bottom:8px}
 }
 @media(min-width:900px){.lp-hero:has(.lp-hero-form) .grid{align-items:start;grid-template-columns:1.4fr .6fr;gap:40px}.lp-hero:has(.lp-hero-form) .shot{position:sticky;top:90px}.lp-hero:has(.lp-hero-form){overflow:clip;padding-top:18px}.lp-hero:has(.lp-hero-form) .kick{margin-bottom:6px}.lp-hero:has(.lp-hero-form) .lead{margin-top:8px}.lp-hero-form{margin-top:12px}.lp-hero:has(.lp-hero-form) h1{font-size:clamp(36px,3.5vw,46px);line-height:1.04}.lp-hero:has(.lp-hero-form) .lead{font-size:18px;margin-bottom:0;max-width:40em}.lp-hero-form .kf{max-width:42em;gap:10px}}
+@media(min-width:900px){.lp-hero-text.lp-hero:has(.lp-hero-form) .grid{grid-template-columns:1fr;max-width:62em}}
 </style>`;
 
 // Attribution beim Einstieg: Klick-IDs/UTM aus der URL in den Seiten-Speicher (window.__hg). Ins Endgerät (localStorage, 90 Tage)
@@ -339,14 +340,20 @@ ${alt}
       ? `<p class="lp-person">${pic(lp.kontaktperson.slug, { cls: 'av', alt: lp.kontaktperson.alt || '', sizes: '56px' })}<span>${esc(lp.kontaktperson.zeile)}</span></p>` : '';
     const preisVerweis = lp.preis && lp.preis.verweis ? `<p class="lp-preisverweis"><a href="/lp/${esc(lp.preis.verweis.slug)}/#preise">${esc(lp.preis.verweis.t || 'Preise ansehen')}</a></p>` : '';
     const kontaktSec = pos === 'nach-preis' ? `<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>${esc(lp.kontakt_h2 || 'Kostenlose Besichtigung anfragen')}</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Zwei Schritte, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp, 'nach-preis', wa)}</div></section>` : '';
+    // was_wir_tun {h, p, items:[{h,p}]} (optional, z. B. Allgemein-LP): Abschnitt direkt nach dem Hero. Gleiche Komponenten wie die Startseite (.sec/.head, .sec-lead, .vals/.v mit kursiver Nummer .vn),
+    // Reveal-Klassen über rvIn(). Kein eigenes CSS.
+    const wwtd = lp.was_wir_tun;
+    const wwt = wwtd && Array.isArray(wwtd.items) && wwtd.items.length
+      ? `<section class="sec" id="was-wir-tun"><div class="wrap"><div class="head"><h2>${esc(wwtd.h || 'Was wir tun')}</h2></div>${wwtd.p ? `<p class="sec-lead">${esc(wwtd.p)}</p>` : ''}${rvIn(`<div class="vals">${wwtd.items.map((x, i) => `<div class="v rv${i ? ` d${i}` : ''}"><h3><span class="vn">${String(i + 1).padStart(2, '0')}</span>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div>`)}</div></section>` : '';
     const main = `<main id="top">
 <section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span><h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
 ${heroForm || quick}${heroPreis}${aktLp}${heroCta}
 ${trustRow(lp.trust)}${person}</div>${H.shot}</div></section>${ortJs}
+${wwt}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
-<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${aktLp}${lp.preis.anker ? `<p style="font-size:1.15rem;line-height:1.6;margin-bottom:14px">${ankerHtml(lp.preis.anker.items)}<br><span style="font-size:.95rem;color:var(--muted)">${esc(lp.preis.anker.note)}</span></p>` : ''}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
+<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${aktLp}${lp.preis.anker ? `<p style="font-size:1.15rem;line-height:1.6;margin-bottom:14px">${ankerHtml(lp.preis.anker.items)}<br><span style="font-size:.95rem;color:var(--muted)">${esc(lp.preis.anker.note)}</span></p>` : ''}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
 ${quotes(lp.testimonials, lp.testimonials_h2)}
 ${kontaktSec}
 <section class="sec section-alt" id="fragen"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
