@@ -537,7 +537,7 @@ page('kontakt/index.html', 'KONTAKT', h => {
         const fw = sectionOf(h, 'fuer-wen');
         check(T, `Objektklassen aus den Daten stehen auf der Seite (${namen.length})`, namen.length >= 4 && namen.every(n => has(fw, eh(n))) && classCount(fw, 'gw-ob') === 1);
         const det = z.leistungen_detail || [];
-        check(T, `Leistungen mit Ausführungs-Chip (eigen/Partner) und Link: ${det.length} Einträge`, det.length >= 5 && classCount(ls, 'gw-li') === det.length && classCount(ls, 'gw-chip') === det.length && has(ls, 'gw-chip p'));
+        check(T, `Leistungen mit Link, OHNE Ausführungs-Etikett (Owner 20.10.): ${det.length} Einträge`, det.length >= 5 && classCount(ls, 'gw-li') === det.length && classCount(ls, 'gw-chip') === 0);
         check(T, 'Hauptbutton „Begehung anfragen“ → Formular (Hero + Ablauf + Abschluss), E-Mail nur als Nebenweg „Objektliste per Mail senden“ (Hero + Abschluss)', (h.match(/<a class="btn btn-acc" href="\/kontakt\/#anfrage">Begehung anfragen<\/a>/g) || []).length === 3 && (h.match(/<a class="btn btn-line" href="mailto:[^"]+">Objektliste per Mail senden<\/a>/g) || []).length === 2 && !has(h, 'Angebot für Ihr Objekt anfordern'));
         check(T, 'Partner-Hinweis steht unter den Leistungen', has(ls, 'class="gw-note') && has(ls, 'Partner-Fachbetrieb'));
         check(T, 'Hausmeisterservice-Hub wird von hier verlinkt (kein Waise)', has(h, 'href="/hausmeisterservice/"'));
@@ -673,6 +673,10 @@ P('SITEWEIT (alle Seiten)');
 }
 
 // ---- Ausgabe ----
+// ---- SITEWEIT: keine Ausführungs-Etiketten (Owner 20.10.: keine eigene Leistung / Partnerbetrieb dazuschreiben, gilt überall) ----
+{ const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(`${d}/${e.name}`) : e.name === 'index.html' ? [`${d}/${e.name}`] : []);
+  const hits = walk('website').filter(f => !f.includes('/lp/')).filter(f => { const h = fs.readFileSync(f, 'utf8'); return classCount(h, 'gw-chip') > 0 || />Eigene Ausführung</.test(h) || /<h3>Partner-Fachbetrieb<\/h3>/.test(h) || /<span[^>]*>Partner-Fachbetrieb<\/span>/.test(h); });
+  P('SITEWEIT Ausführungs-Etiketten'); check('siteweit', `keine Etiketten Eigene Ausführung / Partner-Fachbetrieb (${hits.length} Seiten${hits.length ? ': ' + hits.slice(0, 3).join(', ') : ''})`, hits.length === 0); }
 console.log(lines.join('\n'));
 if (fails.length) {
   console.log(`\nACCEPT ROT: ${fails.length} fehlend — ${fails.join(', ')}`);

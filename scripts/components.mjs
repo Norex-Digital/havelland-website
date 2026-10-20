@@ -841,7 +841,7 @@ export function zielgruppenKarten({ h2 = '', sub = '', items = [], dark = false,
 // gwListe — nummerierte 2-Spalten-Liste, Titel verlinkt auf den Hub. Keine Ausführungs-Labels (Owner 20.10.), außer item.chip wird ausdrücklich übergeben (nur /fuer-hausverwaltungen/).
 //   items: [{href, h3, p, chip?, partner?, linkLabel?}]
 export function gwListe({ h2 = '', sub = '', items = [], alt = false, id = 'leistungen', note = '' } = {}) {
-  const li = arr(items).map((x, i) => `<div class="gw-li rv"><span class="n">${String(i + 1).padStart(2, '0')}</span><div><h3>${x.href ? `<a href="${esc(x.href)}">${esc(x.h3)}</a>` : esc(x.h3)}${x.chip ? ` <span class="gw-chip${x.partner ? ' p' : ''}">${esc(x.chip)}</span>` : ''}</h3><p>${esc(x.p)}</p>${(x.href && x.linkLabel) ? `<p class="gw-go"><a href="${esc(x.href)}">${esc(x.linkLabel)} <span aria-hidden="true">→</span></a></p>` : ''}</div></div>`).join('');
+  const li = arr(items).map((x, i) => `<div class="gw-li rv"><span class="n">${String(i + 1).padStart(2, '0')}</span><div><h3>${x.href ? `<a href="${esc(x.href)}">${esc(x.h3)}</a>` : esc(x.h3)}</h3><p>${esc(x.p)}</p>${(x.href && x.linkLabel) ? `<p class="gw-go"><a href="${esc(x.href)}">${esc(x.linkLabel)} <span aria-hidden="true">→</span></a></p>` : ''}</div></div>`).join('');
   if (!li) return '';
   return `<section class="sec${alt ? ' section-alt' : ''}" id="${esc(id)}"><div class="wrap"><h2 class="serif rv">${h2}</h2>${sub ? `<p class="sx-sub rv">${esc(sub)}</p>` : ''}<div class="gw-list">${li}</div>${note ? `<p class="gw-note rv">${note}</p>` : ''}</div></section>`;
 }
