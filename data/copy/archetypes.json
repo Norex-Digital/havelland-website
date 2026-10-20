@@ -5,13 +5,13 @@
    "key": "brandenburg",
    "rahmen": [
     "Wer in {ort} ein Eigenheim bewohnt, kennt die Mischung aus ruhiger Wohnlage und einem Garten, der das ganze Jahr Arbeit macht. Hecken wachsen, Pflasterfugen veralgen, Laub sammelt sich auf Rasen und Wegen. Wir nehmen diese wiederkehrenden Arbeiten am Stück ab – vom kleinen Vorgarten bis zum weitläufigen Grundstück Richtung {nachbarorte}. Dieselbe Hand bleibt von der Anfrage bis zur Abnahme zuständig, sodass Sie am Wochenende nicht selbst zur Heckenschere greifen. Gepflegt, ohne Ihren Sonntag.",
-    "Kurze Wege zählen hier mehr als große Worte. Von Falkensee aus erreichen wir {ort} und die Nachbarorte {nachbarorte} schnell, deshalb klappt ein Termin oft schon in derselben Woche und die Anfahrt steckt im Festpreis. Eine Nachricht per WhatsApp genügt, und Sie hören binnen weniger Stunden von uns. Das spart Ihnen das lange Warten auf Rückruf – und lässt uns auch für einen kurzen Pflegeschnitt vorbeischauen, ohne dass daraus ein Tagesprojekt wird. Nah dran, schnell da.",
+    "Kurze Wege zählen hier mehr als große Worte. Von Falkensee aus erreichen wir {ort} und die Nachbarorte {nachbarorte} schnell, deshalb klappt ein Termin oft schon in derselben Woche und die Anfahrt steckt im Festpreis. Eine Nachricht per WhatsApp genügt, und Sie hören am selben Tag von uns. Das spart Ihnen das lange Warten auf Rückruf – und lässt uns auch für einen kurzen Pflegeschnitt vorbeischauen, ohne dass daraus ein Tagesprojekt wird. Nah dran, schnell da.",
     "Die Aufträge in {ort} ähneln sich übers Jahr: Rasen mähen und vertikutieren im Frühjahr, Hecken und Sträucher in Form halten, im Herbst Laub räumen; Dachrinne und Winterdienst laufen über einen Partner-Fachbetrieb. Dazu die kleinen Dinge am Haus, für die sich kein eigener Handwerker lohnt – eine lockere Zaunlatte, ein verstopfter Ablauf, ein wackelndes Vordach. All das läuft über eine Nummer, statt für jede Kleinigkeit einen neuen Betrieb zu suchen. Eine Liste, ein Termin.",
     "Sie wissen bei uns, mit wem Sie es zu tun haben: In {ort} bleibt Ihr Ansprechpartner von der Anfrage bis zur Abnahme derselbe, keine wechselnden Kräfte. Wir sehen uns die Sache vor Ort gemeinsam an, nennen vorab einen festen Preis und zeigen das Ergebnis danach per Foto. So bleibt nachvollziehbar, was gemacht wurde – ob es um Ihr Grundstück geht oder das eines Angehörigen in {nachbarorte}. Nachweis per Bild, kein Vertrauensvorschuss nötig."
    ],
    "trust": [
     "In {ort} gilt ein einfacher Grundsatz: Was vereinbart ist, wird gehalten. Nach der kostenlosen Besichtigung steht der Festpreis, und der genannte Betrag ist der Endbetrag, ohne Aufschlag am Ende. Der Preis steht.",
-    "Ihr Auftrag in {ort} läuft von der Anfrage bis zur Abnahme über eine Person – kein Durchstellen, kein wechselndes Personal. Auf eine WhatsApp-Nachricht melden wir uns meist binnen weniger Stunden, sodass Sie schnell wissen, woran Sie sind. Eine Nachricht genügt.",
+    "Ihr Auftrag in {ort} läuft von der Anfrage bis zur Abnahme über eine Person – kein Durchstellen, kein wechselndes Personal. Auf eine WhatsApp-Nachricht melden wir uns am selben Tag, sodass Sie schnell wissen, woran Sie sind. Eine Nachricht genügt.",
     "Nach jedem Auftrag in {ort} bekommen Sie Fotos vom Vorher und Nachher. So sehen Sie schwarz auf weiß, was erledigt wurde – praktisch, wenn Sie selbst nicht dabei waren oder das Grundstück für Angehörige betreuen lassen. Nachweis statt Zusagen."
    ],
    "faqs": [
@@ -21,7 +21,7 @@
     },
     {
      "q": "Wie schnell bekomme ich in {ort} einen Termin?",
-     "a": "Da wir aus Falkensee kommen und im gesamten Havelland kurze Wege haben, lässt sich ein Termin in {ort} oft schon innerhalb derselben Woche einrichten. Bei dringenden Dingen wie einem verstopften Ablauf versuchen wir, früher vorbeizukommen. Schreiben Sie uns Ihr Anliegen, und wir melden uns meist binnen weniger Stunden mit einem Vorschlag zurück."
+     "a": "Da wir aus Falkensee kommen und im gesamten Havelland kurze Wege haben, lässt sich ein Termin in {ort} oft schon innerhalb derselben Woche einrichten. Bei dringenden Dingen wie einem verstopften Ablauf versuchen wir, früher vorbeizukommen. Schreiben Sie uns Ihr Anliegen, und wir melden uns am selben Tag mit einem Vorschlag zurück."
     },
     {
      "q": "Übernehmen Sie in {ort} die Gartenpflege auch das ganze Jahr über?",
@@ -57,7 +57,7 @@
     },
     {
      "q": "Wie schnell bekomme ich nach meiner Anfrage eine Rückmeldung?",
-     "a": "Wenn Sie uns aus {ort} über WhatsApp schreiben, melden wir uns noch am selben Werktag, oft innerhalb weniger Stunden. Wir stimmen dann ab, wann eine kostenlose Besichtigung passt. Weil wir ohnehin regelmäßig in der Umgebung unterwegs sind, lässt sich ein Termin häufig kurzfristig einrichten."
+     "a": "Wenn Sie uns aus {ort} über WhatsApp schreiben, melden wir uns noch am selben Tag. Wir stimmen dann ab, wann eine kostenlose Besichtigung passt. Weil wir ohnehin regelmäßig in der Umgebung unterwegs sind, lässt sich ein Termin häufig kurzfristig einrichten."
     },
     {
      "q": "Übernehmen Sie die regelmäßige Pflege übers ganze Jahr?",
@@ -71,12 +71,12 @@
     "Rund um {ort} prägen Gewerbeflächen, Verwaltungen und größere Objekte das Bild – Standorte, an denen gepflegte Außenanlagen zum Eindruck beim Kunden gehören. Hier zählt nicht das einmalige Aufräumen, sondern ein Turnus, der ohne Nachfragen läuft: regelmäßige Pflege von Grünflächen, Wegen und Einfahrten, abgestimmt auf Ihren Betrieb. Ein fester Ablauf, eine klare Zuständigkeit. Außenanlagen, die durchgehend ordentlich wirken.",
     "Von {ort} aus erreichen wir die Standorte in {nachbarorte} ohne lange Wege, und kurze Wege bedeuten Termintreue – die Anfahrt bleibt im Festpreis kalkuliert. Wer ein Objekt verwaltet, kennt das Problem: Ein Dienstleister sagt kurzfristig ab, der nächste kommt nicht zur vereinbarten Zeit. Wir halten den Turnus, weil die Strecke kalkulierbar bleibt. Heckenschnitt, Rasen, Wegereinigung, kleinere Reparaturen – terminiert, dokumentiert, erledigt. Kein Hinterhertelefonieren.",
     "Die Aufträge in und um {ort} sehen anders aus als im privaten Garten: wiederkehrende Pflege übers Jahr, mehrere Gewerke an einem Standort, klare Erwartung an Termine und Nachweis. Eine Hausverwaltung braucht keinen Bastler für den Einzelfall, sondern jemanden, der Grünpflege, Wegereinigung und saisonale Arbeiten zuverlässig zusammen abdeckt. Wir übernehmen das als Rahmenvereinbarung – ein Turnus, eine Rechnung, ein Verantwortlicher. Auch bei Urlaub oder Krankheit ist die Vertretung gesichert. Ihr Objekt steht nie unversorgt da.",
-    "Was die Zusammenarbeit an Gewerbestandorten in {ort} trägt, ist Berechenbarkeit. Sie sprechen mit Noah Telo – nicht mit wechselnden Subunternehmern, nicht mit einer Hotline. Was vereinbart ist, steht; was erledigt wurde, halten wir per Foto fest. Statt mehrere Dienstleister zu koordinieren, läuft alles über einen Verantwortlichen, der Ihren Standort kennt und den Turnus im Kopf hat. Eine Vereinbarung regelt die wiederkehrenden Arbeiten, damit Pflege, Reinigung und Wegekontrolle ohne ständige Abstimmung laufen. Ein Name, eine Zuständigkeit."
+    "Was die Zusammenarbeit an Gewerbestandorten in {ort} trägt, ist Berechenbarkeit. Sie sprechen mit Maurice Brehm und Noah Telo, nicht mit einer Hotline. Was vereinbart ist, steht; was erledigt wurde, halten wir per Foto fest. Statt mehrere Dienstleister zu koordinieren, läuft alles über einen Verantwortlichen, der Ihren Standort kennt und den Turnus im Kopf hat. Eine Vereinbarung regelt die wiederkehrenden Arbeiten, damit Pflege, Reinigung und Wegekontrolle ohne ständige Abstimmung laufen. Ein Name, eine Zuständigkeit."
    ],
    "trust": [
     "An Gewerbestandorten in {ort} zählt der Nachweis: Nach jedem Einsatz erhalten Sie Fotos vom Vorher und Nachher, auch wenn Sie selbst nicht vor Ort waren. So sieht Ihre Verwaltung schwarz auf weiß, dass der vereinbarte Turnus eingehalten wurde. Kein Nachhaken nötig.",
     "Den Preis für Ihr Objekt in {ort} legen wir nach kostenloser Besichtigung als Festpreis fest, und dieser bleibt der Endpreis. Das macht die Kalkulation für wiederkehrende Pflege planbar, ohne Überraschungen auf der Rechnung. Planbar bis zur letzten Position.",
-    "In {ort} sprechen Sie durchgehend mit Noah Telo – er kennt Ihren Standort und Ihren Turnus. Statt mehrere Firmen zu koordinieren, läuft alles über eine Zuständigkeit. Bei Urlaub oder Krankheit ist die Vertretung geregelt. Kein Einsatz fällt ersatzlos aus."
+    "In {ort} sprechen Sie durchgehend mit Maurice Brehm und Noah Telo, beide kennen Ihren Standort und Ihren Turnus. Statt mehrere Firmen zu koordinieren, läuft alles über eine Zuständigkeit. Bei Urlaub oder Krankheit ist die Vertretung geregelt. Kein Einsatz fällt ersatzlos aus."
    ],
    "faqs": [
     {
@@ -85,7 +85,7 @@
     },
     {
      "q": "Wie schnell bekomme ich in {ort} eine Rückmeldung auf eine Anfrage?",
-     "a": "Schreiben Sie uns per WhatsApp, melden wir uns für gewöhnlich innerhalb weniger Stunden zurück. Gerade für Verwaltungen in {ort} ist das hilfreich, wenn kurzfristig etwas ansteht. Den genauen Umfang klären wir bei einer kostenlosen Besichtigung vor Ort und halten ihn dann verbindlich fest."
+     "a": "Schreiben Sie uns per WhatsApp, melden wir uns am selben Tag zurück. Gerade für Verwaltungen in {ort} ist das hilfreich, wenn kurzfristig etwas ansteht. Den genauen Umfang klären wir bei einer kostenlosen Besichtigung vor Ort und halten ihn dann verbindlich fest."
     },
     {
      "q": "Was passiert bei Urlaub oder Krankheit — bleibt mein Standort in {ort} versorgt?",
@@ -108,7 +108,7 @@
    "trust": [
     "In {ort} betreuen wir mehrere Grundstücke, deren Eigentümer selten vor Ort sind. Nach jedem Einsatz schicken wir Fotos vom Vorher und Nachher per WhatsApp. So sehen Sie aus der Ferne genau, was getan wurde. Geprüft, nicht geglaubt.",
     "Sie erhalten in {ort} einen Festpreis, der nach kostenloser Besichtigung feststeht und der Endpreis bleibt. Was wir nennen, zahlen Sie – ohne Nachträge nach dem Einsatz. Keine Überraschung auf der Rechnung.",
-    "Für Ihr Objekt in {ort} bleiben Sie bei einer Person, die den Schlüssel verwahrt und nach festem Turnus vorbeischaut. Auf eine Nachricht melden wir uns innerhalb weniger Stunden. So bleibt die Abstimmung kurz, auch wenn Sie weit entfernt wohnen und nur zur Saison anreisen. Kurze Abstimmung, feste Runde."
+    "Für Ihr Objekt in {ort} bleiben Sie bei einer Person, die den Schlüssel verwahrt und nach festem Turnus vorbeischaut. Auf eine Nachricht melden wir uns am selben Tag. So bleibt die Abstimmung kurz, auch wenn Sie weit entfernt wohnen und nur zur Saison anreisen. Kurze Abstimmung, feste Runde."
    ],
    "faqs": [
     {

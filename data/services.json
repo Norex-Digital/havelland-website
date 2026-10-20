@@ -248,7 +248,7 @@
       "wave": 1,
       "price": null,
       "offer_ref": "G3.3",
-      "garantie": "Vermieter-Mängel im Auftrag? Wir kommen innerhalb 24 h kostenlos nach",
+      "garantie": "Vermieter-Mängel aus unserem Auftrag? Wir bessern kostenlos nach",
       "element_status": "teilweise",
       "faq": null
     },
@@ -268,7 +268,7 @@
       "b2b_only": true,
       "price": null,
       "offer_ref": "G4.1",
-      "garantie": "Termin-Ausfall ohne Vorankündigung — nächster Einsatz kostenlos",
+      "garantie": null,
       "element_status": "teilweise",
       "faq": null,
       "kd": 1,
@@ -288,13 +288,12 @@
       "wave": 1,
       "price": null,
       "offer_ref": "G4.3",
-      "garantie": "Ausfall? Innerhalb 48 h nachgeholt — kostenlos",
+      "garantie": null,
       "element_status": "geplant",
       "faq": null,
       "sektionen": [
         "Treppenhausreinigung",
-        "Büroreinigung",
-        "Bauendreinigung"
+        "Büroreinigung"
       ]
     },
     {
@@ -311,7 +310,7 @@
       "wave": 1,
       "price": null,
       "offer_ref": "G4.2",
-      "garantie": "Ausfall? Innerhalb 48 h nachgeholt — kostenlos",
+      "garantie": null,
       "element_status": "geplant",
       "faq": null
     },
@@ -347,7 +346,7 @@
       "wave": 1,
       "price": null,
       "offer_ref": "G5.2",
-      "garantie": "Nicht rechtzeitig vor Check-in fertig? Reinigungspreis zurück",
+      "garantie": null,
       "element_status": "geplant",
       "faq": null,
       "orte_fix": [
@@ -473,7 +472,7 @@
     },
     {
       "slug": "galabau",
-      "name": "Kleinere GaLaBau-Arbeiten",
+      "name": "Garten- und Landschaftsbau",
       "strang": "A",
       "segment": [
         "B2C"
@@ -492,6 +491,10 @@
         "Pflaster ausbessern",
         "Beeteinfassungen & Hochbeete",
         "Wegeplatten & Kantensteine"
+      ],
+      "seiten_orte": [
+        "berlin-spandau",
+        "potsdam"
       ]
     },
     {
@@ -532,6 +535,203 @@
         "berlin-spandau",
         "berlin-kladow",
         "berlin-gatow"
+      ]
+    },
+    {
+      "slug": "pflasterarbeiten",
+      "name": "Pflasterarbeiten",
+      "strang": "A",
+      "segment": [
+        "B2C"
+      ],
+      "farbe": "gruen",
+      "tier_global": null,
+      "tier_lokal": null,
+      "vol_lokal": null,
+      "wave": 2,
+      "price": null,
+      "offer_ref": null,
+      "element_status": "geplant",
+      "faq": null,
+      "garantie": "Festpreis aus der Besichtigung ist der Endpreis; was beim Abnahme-Rundgang nicht wie besprochen ist, wird kostenlos nachgebessert",
+      "sektionen": [
+        "Hofpflaster",
+        "Gartenwege pflastern",
+        "Einfahrt pflastern",
+        "Terrassenpflaster",
+        "Pflaster ausbessern",
+        "Kantensteine & Beeteinfassung"
+      ],
+      "peak": "Mär",
+      "seiten_orte": [
+        "falkensee"
+      ]
+    },
+    {
+      "slug": "einfahrt-pflastern",
+      "name": "Einfahrt pflastern",
+      "strang": "A",
+      "segment": [
+        "B2C"
+      ],
+      "farbe": "gruen",
+      "tier_global": null,
+      "tier_lokal": null,
+      "vol_lokal": null,
+      "wave": 2,
+      "price": null,
+      "offer_ref": null,
+      "element_status": "geplant",
+      "faq": null,
+      "garantie": "Befahrbarer Unterbau zum schriftlichen Festpreis; was beim Abnahme-Rundgang nicht wie besprochen ist, wird kostenlos nachgebessert",
+      "sektionen": [
+        "Befahrbarer Unterbau",
+        "Pflasterstein 8 cm",
+        "Entwässerung und Gefälle",
+        "Rasengitter und Rasenfuge",
+        "Naturstein-Einfahrt"
+      ],
+      "peak": "Mär"
+    },
+    {
+      "slug": "terrassenbau",
+      "name": "Terrassenbau",
+      "strang": "A",
+      "segment": [
+        "B2C"
+      ],
+      "farbe": "gruen",
+      "tier_global": null,
+      "tier_lokal": null,
+      "vol_lokal": null,
+      "wave": 2,
+      "price": null,
+      "offer_ref": null,
+      "element_status": "geplant",
+      "faq": null,
+      "garantie": "Festpreis nach kostenloser Besichtigung gilt für die Arbeit, Entsorgung nach Beleg ohne eigenen Aufschlag; bessert sich etwas nicht wie besprochen, wird kostenlos nachgebessert, Foto-Nachweis nach dem Auftrag",
+      "sektionen": [
+        "Plattenterrasse im Splittbett",
+        "Natursteinterrasse",
+        "Holzterrasse",
+        "WPC-Terrasse",
+        "Terrasse erneuern",
+        "Terrassenüberdachung"
+      ],
+      "peak": "Apr"
+    },
+    {
+      "slug": "rollrasen-verlegen",
+      "name": "Rollrasen verlegen",
+      "strang": "A",
+      "segment": [
+        "B2C"
+      ],
+      "farbe": "gruen",
+      "tier_global": null,
+      "tier_lokal": null,
+      "vol_lokal": null,
+      "wave": 2,
+      "price": null,
+      "offer_ref": null,
+      "element_status": "geplant",
+      "faq": null,
+      "garantie": "Festpreis nach kostenloser Besichtigung gilt für die Arbeit, Entsorgung nach Beleg ohne eigenen Aufschlag; bessert sich etwas nicht wie besprochen, wird kostenlos nachgebessert, Foto-Nachweis nach dem Auftrag",
+      "sektionen": [
+        "Rollrasen verlegen",
+        "Bodenvorbereitung",
+        "Rasen neu anlegen durch Aussaat",
+        "Altrasen entfernen",
+        "Rasenkante",
+        "Bewässerung und Anwachspflege"
+      ],
+      "peak": "Apr"
+    },
+    {
+      "slug": "gartengestaltung",
+      "name": "Gartengestaltung",
+      "strang": "A",
+      "segment": [
+        "B2C"
+      ],
+      "farbe": "gruen",
+      "tier_global": null,
+      "tier_lokal": null,
+      "vol_lokal": null,
+      "wave": 2,
+      "price": null,
+      "offer_ref": null,
+      "element_status": "geplant",
+      "faq": null,
+      "garantie": "Schriftlicher Festpreis nach Besichtigung und Planung gilt für die Arbeit, Entsorgung nach Beleg ohne eigenen Aufschlag; bessert sich etwas nicht wie besprochen, wird kostenlos nachgebessert, Foto-Nachweis nach dem Auftrag",
+      "sektionen": [
+        "Gartenplanung",
+        "Gartenneuanlage",
+        "Vorgarten",
+        "Beete und Bepflanzung",
+        "Wege und Terrasse",
+        "Hochbeete und Einfassungen"
+      ],
+      "peak": "Apr"
+    },
+    {
+      "slug": "erdarbeiten",
+      "name": "Erdarbeiten",
+      "strang": "A",
+      "segment": [
+        "B2C"
+      ],
+      "farbe": "gruen",
+      "tier_global": null,
+      "tier_lokal": null,
+      "vol_lokal": null,
+      "wave": 2,
+      "price": null,
+      "offer_ref": null,
+      "element_status": "geplant",
+      "faq": null,
+      "garantie": "Festpreis nach kostenloser Besichtigung gilt für die Arbeit; Entsorgung nach Beleg ohne eigenen Aufschlag, Foto-Nachweis nach dem Auftrag",
+      "sektionen": [
+        "Aushub mit Minibagger",
+        "Planum und Geländemodellierung",
+        "Mutterboden liefern und einbauen",
+        "Fundamente für Gartenhaus und Carport",
+        "Drainage verlegen",
+        "Erdaushub abfahren"
+      ],
+      "peak": "Apr",
+      "seiten_orte": [
+        "falkensee"
+      ]
+    },
+    {
+      "slug": "baumfaellung",
+      "name": "Baumfällung",
+      "strang": "A",
+      "segment": [
+        "B2C"
+      ],
+      "farbe": "gruen",
+      "tier_global": null,
+      "tier_lokal": null,
+      "vol_lokal": null,
+      "wave": 2,
+      "price": null,
+      "offer_ref": null,
+      "element_status": "geplant",
+      "faq": null,
+      "garantie": "Festpreis nach kostenloser Besichtigung gilt für die Fällung, Abtransport und Entsorgung des Schnittguts inklusive, Gebühren der Stadt und Ersatzpflanzungen kommen dazu, Foto-Nachweis nach dem Auftrag",
+      "sektionen": [
+        "Fällung kleiner und mittlerer Bäume",
+        "Fällung im engen Garten",
+        "Genehmigung prüfen und Antrag vorbereiten",
+        "Stubben fräsen",
+        "Abtransport und Entsorgung",
+        "Sturmschaden und Gefahrenbaum"
+      ],
+      "peak": "Feb",
+      "seiten_orte": [
+        "falkensee"
       ]
     }
   ]

@@ -7,8 +7,22 @@
    "meta": "Wertstoffhof Falkensee: Öffnungszeiten, Annahmeliste und Gebühren 2026 im Überblick — kostenfrei für Privathaushalte bei Sperrmüll und Elektroschrott.",
    "lead": "Adresse, Öffnungszeiten und Gebühren des Wertstoffhofs Falkensee im Überblick — mit den aktuellen Sätzen der Abfallgebührensatzung 2026.",
    "intro": "Der Wertstoffhof Falkensee liegt in der Nauener Straße 97. Geöffnet ist montags von 9 bis 18 Uhr, dienstags bis freitags von 9 bis 17 Uhr und samstags von 8 bis 13 Uhr. Sperrmüll, Schrott, Elektroaltgeräte, Leuchtstoffröhren und Schadstoffe nehmen die Mitarbeiter von Privathaushalten kostenfrei an, alle übrigen Abfälle werden auf der Fahrzeugwaage gewogen und nach Gewicht abgerechnet. Angaben laut Betreiber, Stand 17.09.2026. Bitte vor der Fahrt prüfen.",
-   "about": [{ "type": "Place", "name": "Falkensee" }],
-   "mentions": [{ "type": "Organization", "name": "Abfallbehandlungsgesellschaft Havelland mbH" }, { "type": "Place", "name": "Wertstoffhof Falkensee" }],
+   "about": [
+    {
+     "type": "Place",
+     "name": "Falkensee"
+    }
+   ],
+   "mentions": [
+    {
+     "type": "Organization",
+     "name": "Abfallbehandlungsgesellschaft Havelland mbH"
+    },
+    {
+     "type": "Place",
+     "name": "Wertstoffhof Falkensee"
+    }
+   ],
    "sections": [
     {
      "h2": "Adresse und Öffnungszeiten",
@@ -28,7 +42,7 @@
     },
     {
      "h2": "Zu viel für den Anhänger? Wir holen ab",
-     "body_html": "<p>Nicht jede Räumung passt auf einen Anhänger oder in mehrere Fahrten zum Wertstoffhof: vollgestellte Keller, aufgelöste Haushalte oder ganze Schuppen brauchen oft mehr Ladefläche und Zeit, als ein Wochenende erlaubt. Solche Mengen betreffen häufig Nachlassauflösungen, Kellerentrümpelungen oder das Räumen eines Gartenhauses vor dem Verkauf: Situationen, in denen mehrere Fahrten zum Hof allein aus Zeitgründen nicht praktikabel sind.</p><p>Haus- &amp; Gartenservice Havelland übernimmt Räumung und Abtransport zum Festpreis nach einer kostenlosen Besichtigung. Die Entsorgungsgebühren der Annahmestellen rechnen wir danach nach Beleg ab, zuzüglich Mehrwertsteuer und ohne eigenen Aufschlag. Sie müssen dafür nicht selbst zum Hof fahren, warten oder wiegen.</p><p>Ablauf und Preisfaktoren im Detail: <a href=\"/entruempelung/\">Entrümpelung im Havelland</a>.</p>"
+     "body_html": "<p>Nicht jede Räumung passt auf einen Anhänger oder in mehrere Fahrten zum Wertstoffhof: vollgestellte Keller, aufgelöste Haushalte oder ganze Schuppen brauchen oft mehr Ladefläche und Zeit, als ein Wochenende erlaubt. Solche Mengen betreffen häufig Nachlassauflösungen, Kellerentrümpelungen oder das Räumen eines Gartenhauses vor dem Verkauf: Situationen, in denen mehrere Fahrten zum Hof allein aus Zeitgründen nicht praktikabel sind.</p><p>Haus- &amp; Gartenservice Havelland übernimmt Räumung und Abtransport zum Festpreis nach einer kostenlosen Besichtigung. Die Entsorgungsgebühren der Annahmestellen rechnen wir danach nach Beleg ab, ohne eigenen Aufschlag. Sie müssen dafür nicht selbst zum Hof fahren, warten oder wiegen.</p><p>Ablauf und Preisfaktoren im Detail: <a href=\"/entruempelung/\">Entrümpelung im Havelland</a>.</p>"
     },
     {
      "h2": "Andere Wertstoffhöfe im Landkreis",
@@ -78,8 +92,18 @@
    "meta": "Sperrmüll im Havelland anmelden: 2× jährlich kostenlos, bis zu vier Wochen Wartezeit — Anmeldewege, Ausnahmen und Alternativen wie der Wertstoffhof Falkensee.",
    "lead": "So melden Sie Sperrmüll in Falkensee und im übrigen Havelland an: mit Fristen, Ausnahmen und der Frage, wann der Wertstoffhof die schnellere Lösung ist.",
    "intro": "Sperrmüll holt die HAW mbH im Auftrag des Landkreises Havelland zweimal pro Jahr kostenlos ab, angemeldet online, telefonisch oder per E-Mail. Von der Anmeldung bis zur Abholung können bis zu vier Wochen vergehen; bereitgestellt wird unverpackt vor dem Grundstück, spätestens bis 6 Uhr am Abholtag. Angaben laut Landkreis Havelland und HAW mbH, Stand 17.09.2026.",
-   "about": [{ "type": "Place", "name": "Landkreis Havelland" }],
-   "mentions": [{ "type": "Organization", "name": "HAW mbH (Hausmüllabfuhr Havelland)" }],
+   "about": [
+    {
+     "type": "Place",
+     "name": "Landkreis Havelland"
+    }
+   ],
+   "mentions": [
+    {
+     "type": "Organization",
+     "name": "HAW mbH (Hausmüllabfuhr Havelland)"
+    }
+   ],
    "sections": [
     {
      "h2": "So melden Sie Sperrmüll an",
@@ -152,7 +176,7 @@
     },
     {
      "h2": "Selbst machen oder Firma: die ehrliche Rechnung",
-     "body_html": "<p>Wer Zeit und einen Anhänger hat, kann Keller, Garage oder Dachboden selbst räumen und zum Wertstoffhof Falkensee fahren. Sperrmüll, Schrott, Elektroaltgeräte und Schadstoffe sind dort für Privathaushalte kostenfrei; alles andere wiegt die Fahrzeugwaage und rechnet nach der <a href=\"https://www.abfall-havelland.de/index.php?page_id=544\" rel=\"noopener\" target=\"_blank\">Abfallgebührensatzung 2026</a> ab:</p><table><tr><th>Abfallart</th><th>€/kg</th></tr><tr><td>Gemischte Siedlungsabfälle</td><td>0,32</td></tr><tr><td>Altholz A1–A4</td><td>0,36</td></tr><tr><td>Kunststoffe a. n. g.</td><td>0,40</td></tr><tr><td>Teer-/Bitumenpappe mit Nachweis</td><td>0,70</td></tr><tr><td>Schrott</td><td>0,00</td></tr></table><p>Dazu kommt die Zeit: beladen, zum Hof fahren, an der Waage warten, oft in mehreren Fahrten, weil ein Anhänger schnell voll ist. Öffnungszeiten und Annahmeliste stehen im <a href=\"/ratgeber/wertstoffhof-falkensee/\">Ratgeber zum Wertstoffhof Falkensee</a>. Eine Firma übernimmt Beladen, Fahrten und Entsorgung zum Festpreis nach Besichtigung; Sie sparen die eigene Zeit und zahlen die Entsorgungsgebühren nach Beleg zuzüglich Mehrwertsteuer weiter.</p>"
+     "body_html": "<p>Wer Zeit und einen Anhänger hat, kann Keller, Garage oder Dachboden selbst räumen und zum Wertstoffhof Falkensee fahren. Sperrmüll, Schrott, Elektroaltgeräte und Schadstoffe sind dort für Privathaushalte kostenfrei; alles andere wiegt die Fahrzeugwaage und rechnet nach der <a href=\"https://www.abfall-havelland.de/index.php?page_id=544\" rel=\"noopener\" target=\"_blank\">Abfallgebührensatzung 2026</a> ab:</p><table><tr><th>Abfallart</th><th>€/kg</th></tr><tr><td>Gemischte Siedlungsabfälle</td><td>0,32</td></tr><tr><td>Altholz A1–A4</td><td>0,36</td></tr><tr><td>Kunststoffe a. n. g.</td><td>0,40</td></tr><tr><td>Teer-/Bitumenpappe mit Nachweis</td><td>0,70</td></tr><tr><td>Schrott</td><td>0,00</td></tr></table><p>Dazu kommt die Zeit: beladen, zum Hof fahren, an der Waage warten, oft in mehreren Fahrten, weil ein Anhänger schnell voll ist. Öffnungszeiten und Annahmeliste stehen im <a href=\"/ratgeber/wertstoffhof-falkensee/\">Ratgeber zum Wertstoffhof Falkensee</a>. Eine Firma übernimmt Beladen, Fahrten und Entsorgung zum Festpreis nach Besichtigung; Sie sparen die eigene Zeit und zahlen die Entsorgungsgebühren nach Beleg weiter, ohne eigenen Aufschlag.</p>"
     },
     {
      "h2": "Ablauf in fünf Schritten",
@@ -190,7 +214,7 @@
     },
     {
      "q": "Wohin kommt der Rest?",
-     "a": "Verwertbares rechnen wir an, der Rest geht sortiert zum Wertstoffhof Falkensee: Altholz, Schrott, Elektroaltgeräte und Siedlungsabfall jeweils in den passenden Container. Öltanks, asbestverdächtige Bauteile und Chemikalien fassen wir nicht selbst an, dafür vermitteln wir einen Fachbetrieb. Die Entsorgungsgebühren weisen wir nach Beleg aus, zuzüglich Mehrwertsteuer."
+     "a": "Verwertbares rechnen wir an, der Rest geht sortiert zum Wertstoffhof Falkensee: Altholz, Schrott, Elektroaltgeräte und Siedlungsabfall jeweils in den passenden Container. Öltanks, asbestverdächtige Bauteile und Chemikalien fassen wir nicht selbst an, dafür vermitteln wir einen Fachbetrieb. Die Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag."
     },
     {
      "q": "Wie lange dauert eine Garage?",
@@ -213,7 +237,7 @@
    "title": "Gartenhaus abreißen und entsorgen: Kosten, Ablauf, Regeln",
    "meta": "Gartenhaus abreißen und entsorgen: Rückbau, getrennte Entsorgung von Holz, Metall und Dachpappe sowie die Anzeigepflicht nach der Bauvorlagenverordnung.",
    "lead": "Was beim Abriss eines Gartenhauses zu klären ist, was die getrennte Entsorgung von Holz, Metall und Dachpappe kostet und wann eine Anzeige beim Bauamt nötig wird.",
-   "intro": "Ein Gartenhaus abzureißen heißt: erst ausräumen, dann rückbauen, dann Holz, Metall und Dachpappe getrennt entsorgen, weil der Wertstoffhof jede Abfallart einzeln wiegt und abrechnet. Ob der Abbruch anzeige- oder genehmigungspflichtig ist, hängt von der Größe der Anlage und der Lage des Grundstücks ab. Für die meisten Gartenhäuser ist er nach der Brandenburgischen Bauvorlagenverordnung anzeigefrei, mit Ausnahmen bei Baudenkmälern oder gesundheitsgefährdenden Baustoffen wie asbesthaltiger Dachpappe. Das ist keine Rechtsberatung, die Einzelfall-Prüfung macht das Bauamt Ihrer Gemeinde. Preislich gilt: Festpreis für Rückbau und Abtransport nach kostenloser Besichtigung, Entsorgung nach Beleg zuzüglich Mehrwertsteuer.",
+   "intro": "Ein Gartenhaus abzureißen heißt: erst ausräumen, dann rückbauen, dann Holz, Metall und Dachpappe getrennt entsorgen, weil der Wertstoffhof jede Abfallart einzeln wiegt und abrechnet. Ob der Abbruch anzeige- oder genehmigungspflichtig ist, hängt von der Größe der Anlage und der Lage des Grundstücks ab. Für die meisten Gartenhäuser ist er nach der Brandenburgischen Bauvorlagenverordnung anzeigefrei, mit Ausnahmen bei Baudenkmälern oder gesundheitsgefährdenden Baustoffen wie asbesthaltiger Dachpappe. Das ist keine Rechtsberatung, die Einzelfall-Prüfung macht das Bauamt Ihrer Gemeinde. Preislich gilt: Festpreis für Rückbau und Abtransport nach kostenloser Besichtigung, Entsorgung nach Beleg, ohne eigenen Aufschlag.",
    "sections": [
     {
      "h2": "Genehmigung oder Anzeige? Was vor dem Abbruch zu klären ist",
@@ -225,11 +249,11 @@
     },
     {
      "h2": "Entsorgung getrennt: Holz, Metall, Dachpappe, Bauschutt",
-     "body_html": "<p>Der Wertstoffhof Falkensee wiegt jede Abfallart einzeln und rechnet nach der Abfallgebührensatzung 2026 des Landkreises Havelland ab:</p><table><tr><th>Abfallart</th><th>€/kg</th></tr><tr><td>Altholz A1–A4</td><td>0,36</td></tr><tr><td>Teer-/Bitumenpappe mit Nachweis</td><td>0,70</td></tr><tr><td>Kunststoffe a. n. g.</td><td>0,40</td></tr><tr><td>Gemischte Siedlungsabfälle</td><td>0,32</td></tr><tr><td>Schrott</td><td>0,00</td></tr></table><p>Der Unterschied zwischen den Sätzen zeigt, warum sich Trennen lohnt: Schrott ist gebührenfrei, Teer- und Bitumenpappe mit Nachweis dagegen die teuerste Fraktion. Ohne Nachweis über die Zusammensetzung stuft der Wertstoffhof Dachpappe womöglich in eine andere, ebenfalls kostenpflichtige Kategorie ein. Wir laden Holz, Metall, Dachpappe und Restschutt darum getrennt und fahren die Fraktionen einzeln zum Hof. Stand auf dem Grundstück noch ein Betonsockel oder Fundamentreste, kommt zusätzlich Bauschutt hinzu, den der Wertstoffhof ebenfalls separat wiegt und abrechnet. Die Gebühren rechnen wir nach den Belegen weiter, zuzüglich der gesetzlichen Mehrwertsteuer und ohne eigenen Aufschlag.</p>"
+     "body_html": "<p>Der Wertstoffhof Falkensee wiegt jede Abfallart einzeln und rechnet nach der Abfallgebührensatzung 2026 des Landkreises Havelland ab:</p><table><tr><th>Abfallart</th><th>€/kg</th></tr><tr><td>Altholz A1–A4</td><td>0,36</td></tr><tr><td>Teer-/Bitumenpappe mit Nachweis</td><td>0,70</td></tr><tr><td>Kunststoffe a. n. g.</td><td>0,40</td></tr><tr><td>Gemischte Siedlungsabfälle</td><td>0,32</td></tr><tr><td>Schrott</td><td>0,00</td></tr></table><p>Der Unterschied zwischen den Sätzen zeigt, warum sich Trennen lohnt: Schrott ist gebührenfrei, Teer- und Bitumenpappe mit Nachweis dagegen die teuerste Fraktion. Ohne Nachweis über die Zusammensetzung stuft der Wertstoffhof Dachpappe womöglich in eine andere, ebenfalls kostenpflichtige Kategorie ein. Wir laden Holz, Metall, Dachpappe und Restschutt darum getrennt und fahren die Fraktionen einzeln zum Hof. Stand auf dem Grundstück noch ein Betonsockel oder Fundamentreste, kommt zusätzlich Bauschutt hinzu, den der Wertstoffhof ebenfalls separat wiegt und abrechnet. Die Gebühren rechnen wir nach den Belegen ohne eigenen Aufschlag weiter.</p>"
     },
     {
      "h2": "Was es kostet — ehrlich",
-     "body_html": "<p>Einen Pauschalpreis für den Abriss eines Gartenhauses nennen wir ohne Besichtigung nicht, weil Größe, Material und Zugang von Grundstück zu Grundstück stark schwanken. Sie bekommen den Festpreis für Rückbau und Abtransport erst nach der kostenlosen Besichtigung, schriftlich und verbindlich.</p><p>Die Entsorgungsgebühren kommen dazu, abgerechnet nach den Wertstoffhof-Belegen und zuzüglich Mehrwertsteuer, wie in der Tabelle oben. Zur Einordnung: Bei einem Entrümpelungs-Auftrag in Falkensee, Abstellkammer und Gartenschuppen, lagen Räumung und Abtransport bei 1.190 € inklusive Mehrwertsteuer, die Entsorgung auf den Belegen bei 458 €. Das ist ein Beispiel aus einer Entrümpelung, kein Pauschalpreis für Ihren Abriss — der reine Rückbau kommt je nach Material und Fundament als eigener Posten hinzu. Eine Einordnung zu Preisen bei Keller, Garage und Dachboden ohne Abriss finden Sie im <a href=\"/ratgeber/keller-garage-dachboden-entruempeln/\">Ratgeber zu Keller, Garage und Dachboden</a>.</p>"
+     "body_html": "<p>Einen Pauschalpreis für den Abriss eines Gartenhauses nennen wir ohne Besichtigung nicht, weil Größe, Material und Zugang von Grundstück zu Grundstück stark schwanken. Sie bekommen den Festpreis für Rückbau und Abtransport erst nach der kostenlosen Besichtigung, schriftlich und verbindlich.</p><p>Die Entsorgungsgebühren kommen dazu, abgerechnet nach den Wertstoffhof-Belegen ohne eigenen Aufschlag, wie in der Tabelle oben. Zur Einordnung: Bei einem Entrümpelungs-Auftrag in Falkensee, Abstellkammer und Gartenschuppen, lagen Räumung und Abtransport bei 1.190 € inklusive Mehrwertsteuer, die Entsorgung auf den Belegen bei 458 €. Das ist ein Beispiel aus einer Entrümpelung, kein Pauschalpreis für Ihren Abriss — der reine Rückbau kommt je nach Material und Fundament als eigener Posten hinzu. Eine Einordnung zu Preisen bei Keller, Garage und Dachboden ohne Abriss finden Sie im <a href=\"/ratgeber/keller-garage-dachboden-entruempeln/\">Ratgeber zu Keller, Garage und Dachboden</a>.</p>"
     },
     {
      "h2": "Danach: Fläche nutzen",
@@ -247,7 +271,7 @@
     },
     {
      "q": "Was kostet der Abriss eines Gartenhauses?",
-     "a": "Einen Pauschalpreis nennen wir ohne Besichtigung nicht, weil Größe, Material und Fundament stark schwanken. Sie erhalten den Festpreis für Rückbau und Abtransport nach der kostenlosen Besichtigung schriftlich, die Entsorgung rechnen wir nach den Wertstoffhof-Belegen zuzüglich Mehrwertsteuer ab. Ein Vergleichswert aus einer Entrümpelung: 1.190 € inklusive Mehrwertsteuer für Räumung und Abtransport bei einer Abstellkammer und einem Gartenschuppen in Falkensee."
+     "a": "Einen Pauschalpreis nennen wir ohne Besichtigung nicht, weil Größe, Material und Fundament stark schwanken. Sie erhalten den Festpreis für Rückbau und Abtransport nach der kostenlosen Besichtigung schriftlich, die Entsorgung rechnen wir nach den Wertstoffhof-Belegen ohne eigenen Aufschlag ab. Ein Vergleichswert aus einer Entrümpelung: 1.190 € inklusive Mehrwertsteuer für Räumung und Abtransport bei einer Abstellkammer und einem Gartenschuppen in Falkensee."
     },
     {
      "q": "Was passiert mit Dachpappe und Metallresten?",
@@ -276,7 +300,7 @@
   {
    "slug": "wann-hecke-schneiden",
    "title": "Wann Hecke schneiden? Termine & Regeln",
-   "meta": "Wann darf man die Hecke schneiden? Gesetzliche Fristen, BNatSchG §39, beste Schnitttermine und Tipps vom Havelland-Profi Noah Telo.",
+   "meta": "Wann darf man die Hecke schneiden? Gesetzliche Fristen, BNatSchG §39, beste Schnitttermine und Tipps von Maurice Brehm und Noah Telo.",
    "lead": "Prüfen Sie das Datum, bevor Sie die Heckenschere ansetzen: Der kräftige Rückschnitt ist nur vom 1. Oktober bis 28. Februar erlaubt. Dazwischen bleibt der schonende Formschnitt.",
    "intro": "Die Hecke schneiden dürfen Sie das ganze Jahr — mit einer wichtigen Einschränkung: Starke Rückschnitte und Kahlschnitte sind laut BNatSchG §39 Abs. 5 Nr. 2 vom 1. März bis zum 30. September verboten. Erlaubt bleibt in dieser Zeit ein schonender Formschnitt, der das Erscheinungsbild pflegt, ohne in die Substanz einzugreifen. Den kräftigen Schnitt führen Sie am besten im Februar (vor dem Brutbeginn) oder im Oktober (nach der Brutzeit) durch. Wer das Schnittfenster kennt, schützt Vögel und Insekten und hält die Hecke dauerhaft in Form.",
    "sections": [
@@ -321,7 +345,8 @@
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
-   ]
+   ],
+   "teaser": "Termine und Regeln: Formschnitt ganzjährig, kräftiger Rückschnitt nur im Winterhalbjahr."
   },
   {
    "slug": "hecke-schneiden-erlaubt",
@@ -386,7 +411,7 @@
     },
     {
      "h2": "Einmalschnitt oder Wartungsvertrag — was rechnet sich?",
-     "body_html": "<p>Ein einzelner Heckenschnitt ist die unkomplizierte Lösung für alle, die gelegentliche Hilfe benötigen. Für Gärten mit mehreren Heckenmeter oder schwer zugänglichen Bereichen lohnt sich ein Wartungsvertrag:</p><ul><li>Regelmäßige Pflege hält den Aufwand pro Termin niedrig — verwachsene Hecken kosten beim Rückschnitt mehr Zeit.</li><li>Sie sprechen jedes Mal mit demselben Duo, das Ihren Garten schon kennt und keine neue Einweisung braucht.</li><li>Saisonale Abstimmung: Der erste Frühjahrsschnitt (Formschnitt im erlaubten Zeitraum) und der Herbstschnitt werden automatisch eingeplant.</li><li>Foto-Dokumentation nach jedem Termin direkt aufs Handy.</li></ul><p>Wir bieten Gartenverträge mit 14-tägigem Rhythmus sowie saisonale Vereinbarungen für den Heckenschnitt. Sprechen Sie uns darauf an — wir besprechen das bei der kostenlosen Besichtigung.</p><h3>Wer übernimmt den Schnitt im Havelland?</h3><p>Von Falkensee aus betreuen wir das gesamte Havelland und das Berliner Umland — kurze Wege, schnelle Termine. Sie sprechen mit dem Duo, das auch die Hecke schneidet: kein Subunternehmer, kein wechselndes Team. Anfrage per WhatsApp, Rückmeldung in Stunden.</p>"
+     "body_html": "<p>Ein einzelner Heckenschnitt ist die unkomplizierte Lösung für alle, die gelegentliche Hilfe benötigen. Für Gärten mit mehreren Heckenmeter oder schwer zugänglichen Bereichen lohnt sich ein Wartungsvertrag:</p><ul><li>Regelmäßige Pflege hält den Aufwand pro Termin niedrig — verwachsene Hecken kosten beim Rückschnitt mehr Zeit.</li><li>Sie sprechen jedes Mal mit demselben Duo, das Ihren Garten schon kennt und keine neue Einweisung braucht.</li><li>Saisonale Abstimmung: Der erste Frühjahrsschnitt (Formschnitt im erlaubten Zeitraum) und der Herbstschnitt werden automatisch eingeplant.</li><li>Foto-Dokumentation nach jedem Termin direkt aufs Handy.</li></ul><p>Wir bieten Gartenverträge mit 14-tägigem Rhythmus sowie saisonale Vereinbarungen für den Heckenschnitt. Sprechen Sie uns darauf an — wir besprechen das bei der kostenlosen Besichtigung.</p><h3>Wer übernimmt den Schnitt im Havelland?</h3><p>Von Falkensee aus betreuen wir das gesamte Havelland und das Berliner Umland — kurze Wege, schnelle Termine. Sie sprechen mit Maurice Brehm und/oder Noah Telo, die auch die Hecke schneiden, ohne wechselndes Team. Anfrage per WhatsApp, Rückmeldung am selben Tag.</p>"
     }
    ],
    "faqs": [
@@ -428,7 +453,7 @@
     },
     {
      "h2": "So läuft eine Entrümpelung bei uns ab",
-     "body_html": "<h3>1. Kostenloses Besichtigungsgespräch</h3><p>Sie melden sich per WhatsApp oder Telefon. Wir kommen zum Objekt, schauen uns alles an und besprechen mit Ihnen, was bleibt und was geht. Innerhalb von Stunden, nicht Tagen.</p><h3>2. Verbindlicher Festpreis</h3><p>Sie erhalten ein konkretes Angebot auf Basis der Besichtigung. Kein Stundensatz-Risiko, keine offene Kalkulation.</p><h3>3. Durchführung mit Foto-Dokumentation</h3><p>Wir entrümpeln termingerecht, entsorgen fachgerecht und dokumentieren den Auftrag mit Vorher-Nachher-Fotos — direkt auf Ihr Handy. Sie sehen den Zustand vor und nach der Arbeit, ohne selbst vor Ort sein zu müssen.</p><h3>4. Fachgerechte Entsorgung</h3><p>Sperrmüll, Elektroschrott, Altholz: Wir kennen die Entsorgungswege im Havelland und erledigen das regelkonform. Schadstoffe wie Farben, Chemikalien oder Asbest nehmen wir nicht mit, sondern nennen Ihnen die richtige Annahmestelle oder einen Fachbetrieb. Was sich weitergeben lässt, geht an Sozialkaufhäuser oder ähnliche Stellen.</p><p>Von Falkensee aus arbeiten wir im gesamten Havelland und im Berliner Umland — kurze Anfahrt, ein Festpreis, ein Termin.</p>"
+     "body_html": "<h3>1. Kostenloses Besichtigungsgespräch</h3><p>Sie melden sich per WhatsApp oder Telefon. Wir kommen zum Objekt, schauen uns alles an und besprechen mit Ihnen, was bleibt und was geht. Antwort am selben Tag.</p><h3>2. Verbindlicher Festpreis</h3><p>Sie erhalten ein konkretes Angebot auf Basis der Besichtigung. Kein Stundensatz-Risiko, keine offene Kalkulation.</p><h3>3. Durchführung mit Foto-Dokumentation</h3><p>Wir entrümpeln termingerecht, entsorgen fachgerecht und dokumentieren den Auftrag mit Vorher-Nachher-Fotos — direkt auf Ihr Handy. Sie sehen den Zustand vor und nach der Arbeit, ohne selbst vor Ort sein zu müssen.</p><h3>4. Fachgerechte Entsorgung</h3><p>Sperrmüll, Elektroschrott, Altholz: Wir kennen die Entsorgungswege im Havelland und erledigen das regelkonform. Schadstoffe wie Farben, Chemikalien oder Asbest nehmen wir nicht mit, sondern nennen Ihnen die richtige Annahmestelle oder einen Fachbetrieb. Was sich weitergeben lässt, geht an Sozialkaufhäuser oder ähnliche Stellen.</p><p>Von Falkensee aus arbeiten wir im gesamten Havelland und im Berliner Umland — kurze Anfahrt, ein Festpreis, ein Termin.</p>"
     },
     {
      "h2": "Wann lohnt sich eine professionelle Entrümpelung?",
@@ -450,7 +475,7 @@
     }
    ],
    "cta_service": "entruempelung",
-   "cta_text": "Sie möchten wissen, was Ihre Entrümpelung kostet? Vereinbaren Sie eine kostenlose Vor-Ort-Besichtigung im Havelland — wir melden uns per WhatsApp innerhalb von Stunden.",
+   "cta_text": "Sie möchten wissen, was Ihre Entrümpelung kostet? Vereinbaren Sie eine kostenlose Vor-Ort-Besichtigung im Havelland — wir melden uns per WhatsApp am selben Tag.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
@@ -470,7 +495,7 @@
     },
     {
      "h2": "Wie läuft eine Entrümpelung bei uns ab?",
-     "body_html": "<p>Wir arbeiten nach einem festen Ablauf — damit Sie wissen, was Sie erwartet, bevor der erste Karton getragen wird.</p><ul><li><strong>Kostenlose Vor-Ort-Besichtigung:</strong> Wir kommen zu Ihnen nach Falkensee oder in die umliegende Region, schauen uns alles an und stellen gezielte Fragen zu Sondermaterialien.</li><li><strong>Festpreisangebot:</strong> Sie erhalten ein schriftliches Angebot. Dieser Preis gilt für Räumung und Abtransport; Entsorgungsgebühren der Annahmestellen kommen nach Beleg dazu.</li><li><strong>Terminvereinbarung:</strong> Wir stimmen einen Termin ab, der zu Ihrer Situation passt. WhatsApp-Erstreaktion in Stunden, nicht Tagen.</li><li><strong>Durchführung:</strong> Das Team räumt, sortiert und entsorgt fachgerecht. Verwertbares landet nicht auf dem Müll, wenn es sich vermeiden lässt.</li><li><strong>Foto-Dokumentation:</strong> Nach Abschluss erhalten Sie Vorher/Nachher-Fotos direkt aufs Handy — ohne Nachfragen.</li></ul><p>Der gesamte Prozess läuft über einen Ansprechpartner. Kein Weitergeben, kein Erklären beim nächsten Telefongespräch von vorn.</p>"
+     "body_html": "<p>Wir arbeiten nach einem festen Ablauf — damit Sie wissen, was Sie erwartet, bevor der erste Karton getragen wird.</p><ul><li><strong>Kostenlose Vor-Ort-Besichtigung:</strong> Wir kommen zu Ihnen nach Falkensee oder in die umliegende Region, schauen uns alles an und stellen gezielte Fragen zu Sondermaterialien.</li><li><strong>Festpreisangebot:</strong> Sie erhalten ein schriftliches Angebot. Dieser Preis gilt für Räumung und Abtransport; Entsorgungsgebühren der Annahmestellen kommen nach Beleg dazu.</li><li><strong>Terminvereinbarung:</strong> Wir stimmen einen Termin ab, der zu Ihrer Situation passt. WhatsApp-Antwort am selben Tag.</li><li><strong>Durchführung:</strong> Das Team räumt, sortiert und entsorgt fachgerecht. Verwertbares landet nicht auf dem Müll, wenn es sich vermeiden lässt.</li><li><strong>Foto-Dokumentation:</strong> Nach Abschluss erhalten Sie Vorher/Nachher-Fotos direkt aufs Handy — ohne Nachfragen.</li></ul><p>Der gesamte Prozess läuft über einen Ansprechpartner. Kein Weitergeben, kein Erklären beim nächsten Telefongespräch von vorn.</p>"
     },
     {
      "h2": "Was Sie vor der Entrümpelung selbst regeln sollten",
@@ -632,13 +657,13 @@
     },
     {
      "h2": "Festpreis nach Vor-Ort-Besichtigung — so funktioniert es",
-     "body_html": "<p>Fensterreinigung Preise lassen sich ohne Augenschein nicht seriös nennen. Zu verschieden sind Objekte, Zustand und Umfang. Deshalb kommen wir vor Ort, schauen uns Fensteranzahl, Typ, Stockwerke und Zugänglichkeit an — und legen dann einen Festpreis fest.</p><p><strong>Der Festpreis ist der Endpreis.</strong> Was im Angebot steht, zahlen Sie. Keine Nachforderungen, keine Überraschungen.</p><p>Die Besichtigung ist kostenlos und unverbindlich. Melden Sie sich per WhatsApp — Sie erhalten eine Rückmeldung in Stunden, nicht Tagen.</p>"
+     "body_html": "<p>Fensterreinigung Preise lassen sich ohne Augenschein nicht seriös nennen. Zu verschieden sind Objekte, Zustand und Umfang. Deshalb kommen wir vor Ort, schauen uns Fensteranzahl, Typ, Stockwerke und Zugänglichkeit an — und legen dann einen Festpreis fest.</p><p><strong>Der Festpreis ist der Endpreis.</strong> Was im Angebot steht, zahlen Sie. Keine Nachforderungen, keine Überraschungen.</p><p>Die Besichtigung ist kostenlos und unverbindlich. Melden Sie sich per WhatsApp — Sie erhalten eine Rückmeldung am selben Tag.</p>"
     }
    ],
    "faqs": [
     {
      "q": "Wie viel kostet eine Fensterreinigung im Havelland?",
-     "a": "Den genauen Preis für Fensterreinigung nennen wir nach einer kostenlosen Vor-Ort-Besichtigung. Die Kosten hängen von Fensteranzahl, Typ, Stockwerkhöhe und Verschmutzungsgrad ab. Sie erhalten einen Festpreis, der der Endpreis ist — ohne Aufschlag, ohne Nachforderung. Anfrage per WhatsApp, Rückmeldung in Stunden."
+     "a": "Den genauen Preis für Fensterreinigung nennen wir nach einer kostenlosen Vor-Ort-Besichtigung. Die Kosten hängen von Fensteranzahl, Typ, Stockwerkhöhe und Verschmutzungsgrad ab. Sie erhalten einen Festpreis, der der Endpreis ist — ohne Aufschlag, ohne Nachforderung. Anfrage per WhatsApp, Rückmeldung am selben Tag."
     },
     {
      "q": "Wie oft sollte man Fenster reinigen lassen?",
@@ -822,7 +847,7 @@
     },
     {
      "h2": "Winterdienst im Havelland: Was regional zu beachten ist",
-     "body_html": "<p>Das Havelland und das Berliner Umland, darunter Falkensee, Dallgow-Döberitz, Brieselang und Wustermark, erleben im Winter Frost- und Schneephasen, die oft mit Temperaturschwankungen um den Gefrierpunkt verbunden sind. Gefrierender Regen auf Schneeresten ist rutschiger als frischer Schnee und erfordert schnelle Reaktion.</p><p>Ein Betrieb mit kurzen Anfahrtswegen erreicht Ihre Fläche schneller als ein überregionaler Anbieter. Der Partner-Fachbetrieb arbeitet mit eigener Räumtechnik in der Region; wir koordinieren als fester Ansprechpartner.</p><p>Buchen Sie Ihren Winterdienst vor der ersten Frostperiode. Wer erst anruft, wenn der erste Schnee liegt, findet kaum noch freie Kapazitäten. Anfragen per WhatsApp erhalten eine Rückmeldung in Stunden.</p>"
+     "body_html": "<p>Das Havelland und das Berliner Umland, darunter Falkensee, Dallgow-Döberitz, Brieselang und Wustermark, erleben im Winter Frost- und Schneephasen, die oft mit Temperaturschwankungen um den Gefrierpunkt verbunden sind. Gefrierender Regen auf Schneeresten ist rutschiger als frischer Schnee und erfordert schnelle Reaktion.</p><p>Ein Betrieb mit kurzen Anfahrtswegen erreicht Ihre Fläche schneller als ein überregionaler Anbieter. Der Partner-Fachbetrieb arbeitet mit eigener Räumtechnik in der Region; wir koordinieren als fester Ansprechpartner.</p><p>Buchen Sie Ihren Winterdienst vor der ersten Frostperiode. Wer erst anruft, wenn der erste Schnee liegt, findet kaum noch freie Kapazitäten. Anfragen per WhatsApp erhalten eine Rückmeldung am selben Tag.</p>"
     }
    ],
    "faqs": [
@@ -920,7 +945,7 @@
     },
     {
      "h2": "Dachrinnenreinigung: Eigenleistung oder Fachbetrieb?",
-     "body_html": "<p>Die Dachrinne lässt sich im Prinzip selbst reinigen — mit Leiter, Handschuhen und einem Eimer. Die Risiken sind bekannt: Sturz von der Leiter, unterschätzte Dachneigung, mangelnde Standsicherheit auf unebenem Untergrund.</p><p>Hinzu kommt: Wer selbst reinigt, sieht oft nur das Grobe. Risse in der Rinne, lose Haken, korrodierte Abflussrohre oder ein beginnendes Mooswachstum auf der Dachhaut fallen Laien selten auf.</p><p>Der Partner-Fachbetrieb hält das Ergebnis fest — auf Wunsch mit Fotos vom Vorher und Nachher. Sie sehen, was gefunden und behoben wurde und wo eventuell Handwerkerbedarf besteht. So haben Sie Gewissheit, ohne selbst auf die Leiter zu steigen.</p><p>Wir koordinieren Einsätze im Havelland und Berliner Umland: Falkensee, Nauen, Rathenow, Spandau, Potsdam und die umliegenden Gemeinden. Anfrage per WhatsApp — Erstreaktion in Stunden, nicht Tagen.</p>"
+     "body_html": "<p>Die Dachrinne lässt sich im Prinzip selbst reinigen — mit Leiter, Handschuhen und einem Eimer. Die Risiken sind bekannt: Sturz von der Leiter, unterschätzte Dachneigung, mangelnde Standsicherheit auf unebenem Untergrund.</p><p>Hinzu kommt: Wer selbst reinigt, sieht oft nur das Grobe. Risse in der Rinne, lose Haken, korrodierte Abflussrohre oder ein beginnendes Mooswachstum auf der Dachhaut fallen Laien selten auf.</p><p>Der Partner-Fachbetrieb hält das Ergebnis fest — auf Wunsch mit Fotos vom Vorher und Nachher. Sie sehen, was gefunden und behoben wurde und wo eventuell Handwerkerbedarf besteht. So haben Sie Gewissheit, ohne selbst auf die Leiter zu steigen.</p><p>Wir koordinieren Einsätze im Havelland und Berliner Umland: Falkensee, Nauen, Rathenow, Spandau, Potsdam und die umliegenden Gemeinden. Anfrage per WhatsApp — Antwort am selben Tag.</p>"
     }
    ],
    "faqs": [
@@ -1120,7 +1145,7 @@
     },
     {
      "h2": "Wann ist professionelle Steinreinigung sinnvoll?",
-     "body_html": "<p>Selbst reinigen funktioniert gut bei kleinen, gut zugänglichen Flächen mit leichtem Bewuchs. Profis sind sinnvoll, wenn:</p><ul><li>die Fläche größer als ca. 30 m² ist und Sie keinen Hochdruckreiniger besitzen</li><li>Naturstein auf der Fläche ist, der falsch behandelt dauerhaft Schaden nimmt</li><li>Fugen gerissen oder eingesunken sind und gleichzeitig erneuert werden sollen</li><li>der Bewuchs mehrjährig und tief ins Fugenmaterial eingewachsen ist</li><li>Sie die Fläche anschließend versiegeln lassen möchten, um die Reinigung länger zu halten</li></ul><p>Wir übernehmen Pflasterreinigung in Falkensee, Nauen, Brieselang, Dallgow-Döberitz und dem übrigen Havelland — kurze Wege, schnelle Termine. Rufen Sie an oder schreiben Sie eine WhatsApp: 01515 6198195. Sie hören innerhalb weniger Stunden von uns.</p>"
+     "body_html": "<p>Selbst reinigen funktioniert gut bei kleinen, gut zugänglichen Flächen mit leichtem Bewuchs. Profis sind sinnvoll, wenn:</p><ul><li>die Fläche größer als ca. 30 m² ist und Sie keinen Hochdruckreiniger besitzen</li><li>Naturstein auf der Fläche ist, der falsch behandelt dauerhaft Schaden nimmt</li><li>Fugen gerissen oder eingesunken sind und gleichzeitig erneuert werden sollen</li><li>der Bewuchs mehrjährig und tief ins Fugenmaterial eingewachsen ist</li><li>Sie die Fläche anschließend versiegeln lassen möchten, um die Reinigung länger zu halten</li></ul><p>Wir übernehmen Pflasterreinigung in Falkensee, Nauen, Brieselang, Dallgow-Döberitz und dem übrigen Havelland — kurze Wege, schnelle Termine. Rufen Sie an oder schreiben Sie eine WhatsApp: 01515 6198195. Sie hören am selben Tag von uns.</p>"
     }
    ],
    "faqs": [
@@ -1304,7 +1329,7 @@
     },
     {
      "h2": "Foto-Dokumentation und Festpreis: So arbeiten wir",
-     "body_html": "<p>Wir sitzen in Falkensee und arbeiten im gesamten Havelland — kurze Wege, schnelle Termine. Sie sprechen mit dem Duo, das den Auftrag auch ausführt: per WhatsApp erreichbar, Antwort in Stunden.</p><p>Nach jedem Reinigungsauftrag dokumentieren wir den Zustand mit Vorher- und Nachher-Fotos. Die Bilder erhalten Sie direkt auf Ihr Mobiltelefon. So haben Sie einen Nachweis über die geleistete Arbeit — ohne Rückfragen.</p><p>Der Ablauf ist klar:</p><ul><li>Sie melden sich per Telefon oder WhatsApp (01515 6198195).</li><li>Wir besichtigen das Objekt kostenlos und unverbindlich.</li><li>Sie erhalten einen Festpreis. Dieser Preis ist der Endpreis.</li><li>Nach dem Auftrag: Foto-Doku direkt auf Ihr Handy.</li></ul>"
+     "body_html": "<p>Wir sitzen in Falkensee und arbeiten im gesamten Havelland — kurze Wege, schnelle Termine. Sie sprechen mit dem Duo, das den Auftrag auch ausführt: per WhatsApp erreichbar, Antwort am selben Tag.</p><p>Nach jedem Reinigungsauftrag dokumentieren wir den Zustand mit Vorher- und Nachher-Fotos. Die Bilder erhalten Sie direkt auf Ihr Mobiltelefon. So haben Sie einen Nachweis über die geleistete Arbeit — ohne Rückfragen.</p><p>Der Ablauf ist klar:</p><ul><li>Sie melden sich per Telefon oder WhatsApp (01515 6198195).</li><li>Wir besichtigen das Objekt kostenlos und unverbindlich.</li><li>Sie erhalten einen Festpreis. Dieser Preis ist der Endpreis.</li><li>Nach dem Auftrag: Foto-Doku direkt auf Ihr Handy.</li></ul>"
     }
    ],
    "faqs": [
@@ -1396,7 +1421,7 @@
     },
     {
      "h2": "Endreinigung selbst oder Dienstleister beauftragen?",
-     "body_html": "<p>Einige Vermieter übernehmen die Endreinigung selbst, besonders bei niedrigem Belegungsgrad. Das funktioniert, solange Zeitaufwand und Qualitätsanspruch passen.</p><p>Sobald Buchungsfrequenz und Gäste-Ansprüche steigen, wird die Eigenreinigung zum Engpass. Gäste auf Buchungsplattformen bewerten Sauberkeit als eigenständige Kategorie. Eine schlechte Reinigungsbewertung kostet mehr als eine professionelle Endreinigung.</p><p>Wir sind im Havelland und im Berliner Umland tätig und kennen die kurzen Umschlagzeiten zwischen Gästeabreise und nächstem Check-in. Über WhatsApp erhalten Sie eine Erstreaktion innerhalb weniger Stunden, damit Terminplanung und Reinigung reibungslos ineinandergreifen.</p>"
+     "body_html": "<p>Einige Vermieter übernehmen die Endreinigung selbst, besonders bei niedrigem Belegungsgrad. Das funktioniert, solange Zeitaufwand und Qualitätsanspruch passen.</p><p>Sobald Buchungsfrequenz und Gäste-Ansprüche steigen, wird die Eigenreinigung zum Engpass. Gäste auf Buchungsplattformen bewerten Sauberkeit als eigenständige Kategorie. Eine schlechte Reinigungsbewertung kostet mehr als eine professionelle Endreinigung.</p><p>Wir sind im Havelland und im Berliner Umland tätig und kennen die kurzen Umschlagzeiten zwischen Gästeabreise und nächstem Check-in. Über WhatsApp erhalten Sie eine Antwort am selben Tag, damit Terminplanung und Reinigung reibungslos ineinandergreifen.</p>"
     }
    ],
    "faqs": [
@@ -1410,7 +1435,7 @@
     },
     {
      "q": "Wie schnell ist ein Reinigungstermin nach Abreise möglich?",
-     "a": "Wir reagieren auf WhatsApp-Anfragen in Stunden, nicht Tagen. Für Vermieter mit regelmäßiger Belegung empfehlen sich Wartungsverträge, bei denen Reinigungstermine direkt an Buchungszeiträume gekoppelt werden. So entfällt die Terminfindung nach jeder Abreise."
+     "a": "Wir antworten auf WhatsApp-Anfragen am selben Tag. Für Vermieter mit regelmäßiger Belegung empfehlen sich Wartungsverträge, bei denen Reinigungstermine direkt an Buchungszeiträume gekoppelt werden. So entfällt die Terminfindung nach jeder Abreise."
     }
    ],
    "cta_service": "ferienwohnung-reinigung",
@@ -1626,15 +1651,16 @@
     },
     {
      "q": "Wer entfernt Hecken legal im Havelland?",
-     "a": "Der Haus- & Gartenservice Havelland aus Falkensee entfernt Hecken im erlaubten Fenster vom 1. Oktober bis 28. Februar — mit Nest-Check vor dem Termin, Wurzelentfernung und Entsorgung. Nach der kostenlosen Besichtigung erhalten Sie einen Festpreis als Endpreis. Das Duo arbeitet ohne Subunternehmer im Havelland und Berliner Umland."
+     "a": "Der Haus- & Gartenservice Havelland aus Falkensee entfernt Hecken im erlaubten Fenster vom 1. Oktober bis 28. Februar — mit Nest-Check vor dem Termin, Wurzelentfernung und Entsorgung. Nach der kostenlosen Besichtigung erhalten Sie einen Festpreis als Endpreis. Maurice Brehm und/oder Noah Telo arbeiten im Havelland und Berliner Umland selbst."
     }
    ],
    "cta_service": "heckenentfernung",
-   "cta_text": "Sie wollen die Hecke loswerden, ohne sich um Fristen, Nester und Entsorgung zu kümmern? Wir legen den Termin ins erlaubte Fenster, prüfen vorab auf Nester und entfernen die Hecke samt Wurzel — nach kostenloser Besichtigung zum Festpreis. Anfrage per WhatsApp, Rückmeldung in Stunden, nicht Tagen. Jetzt Heckenentfernung anfragen.",
+   "cta_text": "Sie wollen die Hecke loswerden, ohne sich um Fristen, Nester und Entsorgung zu kümmern? Wir legen den Termin ins erlaubte Fenster, prüfen vorab auf Nester und entfernen die Hecke samt Wurzel — nach kostenloser Besichtigung zum Festpreis. Anfrage per WhatsApp, Rückmeldung am selben Tag. Jetzt Heckenentfernung anfragen.",
    "skills_applied": [
     "seo-web-copy (geladen via Skill-Tool, Copythat-Kette)",
     "llm-optimisation (geladen via Skill-Tool, Copythat-Kette)"
-   ]
+   ],
+   "teaser": "Fristen, Ausnahmen und Bußgeld, bevor Sie die Säge ansetzen."
   },
   {
    "slug": "hecke-entfernen-kosten",
@@ -1657,11 +1683,11 @@
     },
     {
      "h2": "Mit Minibagger oder von Hand?",
-     "body_html": "<p>Für die Wurzelentfernung gibt es zwei Wege. Der <strong>Minibagger</strong> zieht Wurzelballen komplett aus dem Boden — schnell und gründlich, aber er braucht eine Zufahrt und Platz zum Rangieren. Bei langen Hecken mit gutem Zugang ist er die wirtschaftlichste Lösung und drückt den Meterpreis.</p><p><strong>Handarbeit plus Wurzelfräse</strong> ist der Weg bei Grenzbebauung, schmalen Durchgängen und Flächen, auf denen Beete, Leitungen oder Pflaster geschont werden müssen. Das dauert länger und kostet pro Meter mehr, hinterlässt aber keine Fahrspuren.</p><p>Welche Methode bei Ihnen passt, entscheiden wir bei der kostenlosen Besichtigung — im Festpreis ist sie enthalten, egal welche. Sie sprechen dabei direkt mit dem Duo, das die Arbeit auch ausführt, nicht mit einem Subunternehmer.</p>"
+     "body_html": "<p>Für die Wurzelentfernung gibt es zwei Wege. Der <strong>Minibagger</strong> zieht Wurzelballen komplett aus dem Boden — schnell und gründlich, aber er braucht eine Zufahrt und Platz zum Rangieren. Bei langen Hecken mit gutem Zugang ist er die wirtschaftlichste Lösung und drückt den Meterpreis.</p><p><strong>Handarbeit plus Wurzelfräse</strong> ist der Weg bei Grenzbebauung, schmalen Durchgängen und Flächen, auf denen Beete, Leitungen oder Pflaster geschont werden müssen. Das dauert länger und kostet pro Meter mehr, hinterlässt aber keine Fahrspuren.</p><p>Welche Methode bei Ihnen passt, entscheiden wir bei der kostenlosen Besichtigung — im Festpreis ist sie enthalten, egal welche. Sie sprechen dabei direkt mit Maurice Brehm und/oder Noah Telo, die die Arbeit auch ausführen.</p>"
     },
     {
      "h2": "Wann ist die Entfernung am günstigsten?",
-     "body_html": "<p>Rechtlich gibt es kein Rabattfenster, aber ein Zeitfenster: Hecken dürfen nur vom 1. Oktober bis 28. Februar beseitigt werden — die Details stehen im Ratgeber <a href=\"/ratgeber/hecke-entfernen-erlaubt/\">Hecke entfernen: Was ist erlaubt?</a> Für Ihre Planung heißt das: Wer im Oktober oder November bucht, bekommt Wunschtermine und arbeitet ohne Zeitdruck. Gegen Fristende im Februar wird es eng — dann wollen alle noch schnell vor dem 28. fertig werden.</p><p>Ein zweiter Spareffekt: Wer die Folgearbeiten gleich mitdenkt, spart doppelte Anfahrten. Soll nach der Hecke ein Zaun, eine Neubepflanzung oder eine Rasenfläche entstehen, planen wir <a href=\"/galabau/\">kleinere GaLaBau-Arbeiten</a> direkt mit. Die komplette Leistung mit Ablauf finden Sie auf der Seite <a href=\"/heckenentfernung/\">Heckenentfernung</a>.</p>"
+     "body_html": "<p>Rechtlich gibt es kein Rabattfenster, aber ein Zeitfenster: Hecken dürfen nur vom 1. Oktober bis 28. Februar beseitigt werden — die Details stehen im Ratgeber <a href=\"/ratgeber/hecke-entfernen-erlaubt/\">Hecke entfernen: Was ist erlaubt?</a> Für Ihre Planung heißt das: Wer im Oktober oder November bucht, bekommt Wunschtermine und arbeitet ohne Zeitdruck. Gegen Fristende im Februar wird es eng — dann wollen alle noch schnell vor dem 28. fertig werden.</p><p>Ein zweiter Spareffekt: Wer die Folgearbeiten gleich mitdenkt, spart doppelte Anfahrten. Soll nach der Hecke ein Zaun, eine Neubepflanzung oder eine Rasenfläche entstehen, planen wir <a href=\"/galabau/\">Garten- und Landschaftsbau</a> direkt mit. Die komplette Leistung mit Ablauf finden Sie auf der Seite <a href=\"/heckenentfernung/\">Heckenentfernung</a>.</p>"
     }
    ],
    "faqs": [
@@ -1687,7 +1713,7 @@
     }
    ],
    "cta_service": "heckenentfernung",
-   "cta_text": "Sie möchten wissen, was Ihre Hecke genau kostet? Wir kommen zur kostenlosen Besichtigung nach Falkensee und ins übrige Havelland, messen nach und nennen Ihnen einen Festpreis als Endpreis — inklusive Wurzelentfernung, Abfuhr und Entsorgung. Der Preis steht. Anfrage per WhatsApp, Rückmeldung in Stunden, nicht Tagen.",
+   "cta_text": "Sie möchten wissen, was Ihre Hecke genau kostet? Wir kommen zur kostenlosen Besichtigung nach Falkensee und ins übrige Havelland, messen nach und nennen Ihnen einen Festpreis als Endpreis — inklusive Wurzelentfernung, Abfuhr und Entsorgung. Der Preis steht. Anfrage per WhatsApp, Rückmeldung am selben Tag.",
    "skills_applied": [
     "seo-web-copy (geladen via Skill-Tool, Copythat-Kette)",
     "llm-optimisation (geladen via Skill-Tool, Copythat-Kette)"
@@ -1714,11 +1740,11 @@
     },
     {
      "h2": "Was den Preis beeinflusst",
-     "body_html": "<p>Warum die Spanne von 2 bis 5 € pro Zentimeter so breit ist:</p><ul><li><strong>Holzart:</strong> Harthölzer wie Eiche, Robinie oder alte Obstbäume fräsen sich deutlich langsamer als Fichte oder Birke.</li><li><strong>Anzahl der Stubben:</strong> Mehrere Stümpfe in einem Termin drücken den Stückpreis — der Mengeneffekt aus dem Rechenbeispiel.</li><li><strong>Zugänglichkeit:</strong> Passt die Fräse durchs Gartentor? Hanglage, Beete direkt daneben oder enge Durchgänge kosten Zeit.</li><li><strong>Frästiefe:</strong> Für Rasen reichen rund 20 cm unter Niveau, für eine Neupflanzung an gleicher Stelle oder ein Bauvorhaben muss tiefer gefräst werden.</li><li><strong>Wurzelteller und Ausläufer:</strong> Flachwurzler wie Fichte bilden breite Teller — mehr Fläche, mehr Fräsarbeit.</li><li><strong>Entsorgung des Fräsguts:</strong> Bleibt das Späne-Erde-Gemisch vor Ort, spart das Kosten; Abfuhr und Entsorgung kommen sonst dazu.</li></ul><p>Bei Haus- &amp; Gartenservice Havelland steckt die Anfahrt im Havelland und Berliner Umland im Festpreis. Sie sprechen mit dem Duo, das auch fräst — kein Subunternehmer, kein wechselndes Team. Und im Rahmen einer kompletten <a href=\"/gartenrodung/\">Gartenrodung</a> nehmen wir Stubben und Wurzeln gleich flächig mit.</p>"
+     "body_html": "<p>Warum die Spanne von 2 bis 5 € pro Zentimeter so breit ist:</p><ul><li><strong>Holzart:</strong> Harthölzer wie Eiche, Robinie oder alte Obstbäume fräsen sich deutlich langsamer als Fichte oder Birke.</li><li><strong>Anzahl der Stubben:</strong> Mehrere Stümpfe in einem Termin drücken den Stückpreis — der Mengeneffekt aus dem Rechenbeispiel.</li><li><strong>Zugänglichkeit:</strong> Passt die Fräse durchs Gartentor? Hanglage, Beete direkt daneben oder enge Durchgänge kosten Zeit.</li><li><strong>Frästiefe:</strong> Für Rasen reichen rund 20 cm unter Niveau, für eine Neupflanzung an gleicher Stelle oder ein Bauvorhaben muss tiefer gefräst werden.</li><li><strong>Wurzelteller und Ausläufer:</strong> Flachwurzler wie Fichte bilden breite Teller — mehr Fläche, mehr Fräsarbeit.</li><li><strong>Entsorgung des Fräsguts:</strong> Bleibt das Späne-Erde-Gemisch vor Ort, spart das Kosten; Abfuhr und Entsorgung kommen sonst dazu.</li></ul><p>Bei Haus- &amp; Gartenservice Havelland steckt die Anfahrt im Havelland und Berliner Umland im Festpreis. Sie sprechen mit Maurice Brehm und/oder Noah Telo, die auch selbst fräsen, ohne wechselndes Team. Und im Rahmen einer kompletten <a href=\"/gartenrodung/\">Gartenrodung</a> nehmen wir Stubben und Wurzeln gleich flächig mit.</p>"
     },
     {
      "h2": "Hausmittel: Salz, Essig und Co. — warum das nichts wird",
-     "body_html": "<p>Zu Salz, Essig, Epsomsalz und „Wurzelvernichtern“ kursieren viele Anleitungen. Die ehrliche Bilanz:</p><ul><li><strong>Salz und Essig</strong> beschleunigen die Verrottung kaum, versalzen beziehungsweise versauern aber den Boden ringsum — Nachbarpflanzen leiden mit, und rechtlich ist der Einsatz solcher Mittel im Garten heikel (Bodenschutz- und Pflanzenschutzrecht).</li><li><strong>Epsomsalz und Stickstoffdünger</strong> gelten als „sanfte“ Variante — der Effekt ist nach Jahren messbar, nicht nach Monaten.</li><li><strong>Verrotten lassen</strong> funktioniert tatsächlich: Stumpf anbohren, Löcher mit Kompost füllen, abdecken, feucht halten. Wer die Fläche nicht braucht und 5 bis 15 Jahre Zeit hat, kann das so machen.</li></ul><p>Wer den Platz jetzt braucht — für Rasen, Beet, Zaun oder Pflasterfläche —, kommt am Fräsen nicht vorbei: Ein durchschnittlicher Stumpf ist in unter einer Stunde weg, die Fläche eingeebnet und besenrein. Anfrage per WhatsApp mit Foto und Zollstock daneben, Rückmeldung in Stunden, nicht Tagen — danach kostenlose Besichtigung vor Ort und Festpreis. Nach dem Einsatz kommt die Vorher-Nachher-Foto-Doku direkt aufs Handy.</p>"
+     "body_html": "<p>Zu Salz, Essig, Epsomsalz und „Wurzelvernichtern“ kursieren viele Anleitungen. Die ehrliche Bilanz:</p><ul><li><strong>Salz und Essig</strong> beschleunigen die Verrottung kaum, versalzen beziehungsweise versauern aber den Boden ringsum — Nachbarpflanzen leiden mit, und rechtlich ist der Einsatz solcher Mittel im Garten heikel (Bodenschutz- und Pflanzenschutzrecht).</li><li><strong>Epsomsalz und Stickstoffdünger</strong> gelten als „sanfte“ Variante — der Effekt ist nach Jahren messbar, nicht nach Monaten.</li><li><strong>Verrotten lassen</strong> funktioniert tatsächlich: Stumpf anbohren, Löcher mit Kompost füllen, abdecken, feucht halten. Wer die Fläche nicht braucht und 5 bis 15 Jahre Zeit hat, kann das so machen.</li></ul><p>Wer den Platz jetzt braucht — für Rasen, Beet, Zaun oder Pflasterfläche —, kommt am Fräsen nicht vorbei: Ein durchschnittlicher Stumpf ist in unter einer Stunde weg, die Fläche eingeebnet und besenrein. Anfrage per WhatsApp mit Foto und Zollstock daneben, Rückmeldung am selben Tag — danach kostenlose Besichtigung vor Ort und Festpreis. Nach dem Einsatz kommt die Vorher-Nachher-Foto-Doku direkt aufs Handy.</p>"
     }
    ],
    "faqs": [
@@ -1748,7 +1774,7 @@
     }
    ],
    "cta_service": "baumstumpf-entfernen",
-   "cta_text": "Schicken Sie uns ein Foto Ihres Baumstumpfs per WhatsApp — Zollstock daneben genügt. Wir melden uns in Stunden, nicht Tagen, kommen zur kostenlosen Besichtigung ins Havelland und nennen Ihnen einen verbindlichen Festpreis fürs Fräsen.",
+   "cta_text": "Schicken Sie uns ein Foto Ihres Baumstumpfs per WhatsApp — Zollstock daneben genügt. Wir melden uns am selben Tag, kommen zur kostenlosen Besichtigung ins Havelland und nennen Ihnen einen verbindlichen Festpreis fürs Fräsen.",
    "skills_applied": [
     "seo-web-copy (geladen via Skill-Tool, Copythat-Kette)",
     "llm-optimisation (geladen via Skill-Tool, Copythat-Kette)"
@@ -1759,11 +1785,11 @@
    "title": "Verwilderten Garten roden: Kosten & Vorher-Nachher",
    "meta": "Verwilderten Garten roden: So läuft die Rodung ab, welche Kosten realistisch sind und was Vorher-Nachher-Bilder zeigen. Mit Beispielen aus dem Havelland.",
    "lead": "Eine Rodung läuft in fünf Schritten ab — von den WhatsApp-Fotos bis zur besenreinen, eingeebneten Fläche. Was sie kostet, hängt vor allem am Verwilderungsgrad und an der Entsorgungsmenge.",
-   "intro": "Einen verwilderten Garten roden zu lassen heißt: Gestrüpp, Brombeeren, alte Hecken und Wildaufwuchs kommen samt Wurzeln raus, die Fläche wird eingeebnet und ist danach wieder nutzbar. Haus- & Gartenservice Havelland aus Falkensee übernimmt das im gesamten Havelland und Berliner Umland — als eingespieltes Duo, ohne Subunternehmer, zum Festpreis nach kostenloser Besichtigung vor Ort. Auf dieser Seite finden Sie den Ablauf in fünf Schritten, realistische Kosten-Spannen (Orientierungswerte, Stand 2026) und den besten Zeitpunkt für die Rodung.",
+   "intro": "Einen verwilderten Garten roden zu lassen heißt: Gestrüpp, Brombeeren, alte Hecken und Wildaufwuchs kommen samt Wurzeln raus, die Fläche wird eingeebnet und ist danach wieder nutzbar. Haus- & Gartenservice Havelland aus Falkensee übernimmt das im gesamten Havelland und Berliner Umland — durch Maurice Brehm und/oder Noah Telo selbst, zum Festpreis nach kostenloser Besichtigung vor Ort. Auf dieser Seite finden Sie den Ablauf in fünf Schritten, realistische Kosten-Spannen (Orientierungswerte, Stand 2026) und den besten Zeitpunkt für die Rodung.",
    "sections": [
     {
      "h2": "So läuft die Rodung ab: 5 Schritte",
-     "body_html": "<p>Von der ersten Nachricht bis zur nutzbaren Fläche läuft jede Rodung bei uns nach demselben Muster:</p><ol><li><strong>Fotos per WhatsApp + kostenlose Besichtigung:</strong> Sie schicken ein paar Handybilder — Rückmeldung in Stunden, nicht Tagen. Danach kommen wir zur kostenlosen Besichtigung vor Ort.</li><li><strong>Festpreis inklusive Entsorgung:</strong> Nach der Besichtigung erhalten Sie einen verbindlichen Festpreis — Abfuhr und Entsorgung von Grünschnitt, Holz und Wurzeln stecken drin. Der Preis steht.</li><li><strong>Grobrodung:</strong> Gestrüpp, Sträucher, Brombeerdickicht und alte Hecken kommen weg — bei allen Gehölzen im erlaubten Fenster vom 1. Oktober bis 28. Februar.</li><li><strong>Wurzeln und Stubben fräsen:</strong> Damit nichts wieder austreibt, fräsen wir Wurzelstöcke und Altstubben — wie beim einzelnen <a href=\"/baumstumpf-entfernen/\">Baumstumpf entfernen</a>, nur flächig.</li><li><strong>Einebnen, besenrein, Foto-Doku:</strong> Die Fläche wird eingeebnet und besenrein übergeben, die Vorher-Nachher-Fotos kommen direkt auf Ihr Handy.</li></ol><p>Typische Dauer: Eine überwucherte Gartenecke schafft das Duo in einem halben Tag, ein stark verwildertes Grundstück braucht ein bis mehrere Tage. Alle Leistungsdetails stehen auf der Seite <a href=\"/gartenrodung/\">Gartenrodung</a>.</p>"
+     "body_html": "<p>Von der ersten Nachricht bis zur nutzbaren Fläche läuft jede Rodung bei uns nach demselben Muster:</p><ol><li><strong>Fotos per WhatsApp + kostenlose Besichtigung:</strong> Sie schicken ein paar Handybilder — Rückmeldung am selben Tag. Danach kommen wir zur kostenlosen Besichtigung vor Ort.</li><li><strong>Festpreis inklusive Entsorgung:</strong> Nach der Besichtigung erhalten Sie einen verbindlichen Festpreis — Abfuhr und Entsorgung von Grünschnitt, Holz und Wurzeln stecken drin. Der Preis steht.</li><li><strong>Grobrodung:</strong> Gestrüpp, Sträucher, Brombeerdickicht und alte Hecken kommen weg — bei allen Gehölzen im erlaubten Fenster vom 1. Oktober bis 28. Februar.</li><li><strong>Wurzeln und Stubben fräsen:</strong> Damit nichts wieder austreibt, fräsen wir Wurzelstöcke und Altstubben — wie beim einzelnen <a href=\"/baumstumpf-entfernen/\">Baumstumpf entfernen</a>, nur flächig.</li><li><strong>Einebnen, besenrein, Foto-Doku:</strong> Die Fläche wird eingeebnet und besenrein übergeben, die Vorher-Nachher-Fotos kommen direkt auf Ihr Handy.</li></ol><p>Typische Dauer: Eine überwucherte Gartenecke schafft das Duo in einem halben Tag, ein stark verwildertes Grundstück braucht ein bis mehrere Tage. Alle Leistungsdetails stehen auf der Seite <a href=\"/gartenrodung/\">Gartenrodung</a>.</p>"
     },
     {
      "h2": "Was kostet es, einen verwilderten Garten herrichten zu lassen?",
@@ -1805,7 +1831,7 @@
     }
    ],
    "cta_service": "gartenrodung",
-   "cta_text": "Schicken Sie uns ein paar Fotos Ihres verwilderten Gartens per WhatsApp — wir melden uns in Stunden, nicht Tagen, kommen kostenlos zur Besichtigung ins Havelland und nennen Ihnen einen verbindlichen Festpreis inklusive Abfuhr und Entsorgung.",
+   "cta_text": "Schicken Sie uns ein paar Fotos Ihres verwilderten Gartens per WhatsApp — wir melden uns am selben Tag, kommen kostenlos zur Besichtigung ins Havelland und nennen Ihnen einen verbindlichen Festpreis inklusive Abfuhr und Entsorgung.",
    "skills_applied": [
     "seo-web-copy (geladen via Skill-Tool, Copythat-Kette)",
     "llm-optimisation (geladen via Skill-Tool, Copythat-Kette)"
@@ -1832,7 +1858,7 @@
     },
     {
      "h2": "Übertragung auf einen Winterdienst: Was die Satzungen verlangen",
-     "body_html": "<p>Sie dürfen die Durchführung an einen Dritten geben. Wie weit Sie dadurch aus der Verantwortung kommen, regelt jede Gemeinde anders.</p><table><thead><tr><th>Gemeinde</th><th>Regel zur Übertragung auf Dritte</th></tr></thead><tbody><tr><td>Falkensee</td><td>Schriftliche Erklärung des Dritten gegenüber der Stadt, nur mit deren Zustimmung; Haftpflichtversicherung nachweisen; widerruflich</td></tr><tr><td>Nauen</td><td>Auf Antrag per schriftlicher Erklärung mit Zustimmung der Stadt; Haftpflichtversicherung nachweisen; widerruflich</td></tr><tr><td>Oranienburg</td><td>Schriftlicher Antrag; die eigene Verantwortung entfällt nur mit schriftlicher Zustimmung der Stadt; Haftpflicht mindestens 2 Mio. € je Schadensfall; Ende der Beauftragung binnen 14 Tagen anzeigen</td></tr><tr><td>Wustermark</td><td>Dritte erlaubt, sofern eine Haftpflichtversicherung besteht; Nachweis auf Anforderung; keine Zustimmung nötig</td></tr><tr><td>Brieselang</td><td>Dritte erlaubt, keine Zustimmung nötig, aber keine Befreiung von der eigenen Pflicht</td></tr><tr><td>Schönwalde-Glien</td><td>Übertragung per Vertrag möglich; Sie bleiben gegenüber der Gemeinde verpflichtet</td></tr><tr><td>Dallgow-Döberitz</td><td>Keine Regel in der Satzung gefunden: Satzung prüfen oder bei der Gemeinde nachfragen</td></tr><tr><td>Hennigsdorf</td><td>Keine Regel in der Satzung gefunden; die Stadt verweist auf ihrer Website auf Winterdienstfirmen: Satzung prüfen</td></tr><tr><td>Berlin</td><td>§ 6 StrReinG: Wer nicht selbst räumt, muss unverzüglich einen Geeigneten beauftragen; die eigene Verantwortung entfällt nicht; bei Untätigkeit droht die Ersatzvornahme</td></tr></tbody></table><p>Für Sie folgt daraus: Die Durchführung wird übertragen, die Kontrollpflicht bleibt bei Ihnen. Sie müssen nachsehen können, ob und wann geräumt wurde. Verlangen Sie deshalb vom ausführenden Betrieb einen Einsatznachweis mit Datum und Uhrzeit je Einsatz, eine Betriebshaftpflichtversicherung und eine schriftliche Leistungsbeschreibung mit Flächen, Zeitfenstern und Streumittel.</p><p>So läuft es über den Haus- &amp; Gartenservice Havelland: Unser Partner-Fachbetrieb mit eigener Räumtechnik übernimmt die Durchführung. Der Vertrag kommt zwischen Ihnen und dem Fachbetrieb zustande. Noah Telo bleibt über die Saison Ihr fester Ansprechpartner, organisiert Besichtigung und Angebot und geht Rückfragen nach. Ob Sie zusätzlich die förmliche Übertragung bei der Stadt beantragen, wie Falkensee, Nauen und Oranienburg sie vorsehen, klären Sie mit dem Fachbetrieb im Vertrag.</p>"
+     "body_html": "<p>Sie dürfen die Durchführung an einen Dritten geben. Wie weit Sie dadurch aus der Verantwortung kommen, regelt jede Gemeinde anders.</p><table><thead><tr><th>Gemeinde</th><th>Regel zur Übertragung auf Dritte</th></tr></thead><tbody><tr><td>Falkensee</td><td>Schriftliche Erklärung des Dritten gegenüber der Stadt, nur mit deren Zustimmung; Haftpflichtversicherung nachweisen; widerruflich</td></tr><tr><td>Nauen</td><td>Auf Antrag per schriftlicher Erklärung mit Zustimmung der Stadt; Haftpflichtversicherung nachweisen; widerruflich</td></tr><tr><td>Oranienburg</td><td>Schriftlicher Antrag; die eigene Verantwortung entfällt nur mit schriftlicher Zustimmung der Stadt; Haftpflicht mindestens 2 Mio. € je Schadensfall; Ende der Beauftragung binnen 14 Tagen anzeigen</td></tr><tr><td>Wustermark</td><td>Dritte erlaubt, sofern eine Haftpflichtversicherung besteht; Nachweis auf Anforderung; keine Zustimmung nötig</td></tr><tr><td>Brieselang</td><td>Dritte erlaubt, keine Zustimmung nötig, aber keine Befreiung von der eigenen Pflicht</td></tr><tr><td>Schönwalde-Glien</td><td>Übertragung per Vertrag möglich; Sie bleiben gegenüber der Gemeinde verpflichtet</td></tr><tr><td>Dallgow-Döberitz</td><td>Keine Regel in der Satzung gefunden: Satzung prüfen oder bei der Gemeinde nachfragen</td></tr><tr><td>Hennigsdorf</td><td>Keine Regel in der Satzung gefunden; die Stadt verweist auf ihrer Website auf Winterdienstfirmen: Satzung prüfen</td></tr><tr><td>Berlin</td><td>§ 6 StrReinG: Wer nicht selbst räumt, muss unverzüglich einen Geeigneten beauftragen; die eigene Verantwortung entfällt nicht; bei Untätigkeit droht die Ersatzvornahme</td></tr></tbody></table><p>Für Sie folgt daraus: Die Durchführung wird übertragen, die Kontrollpflicht bleibt bei Ihnen. Sie müssen nachsehen können, ob und wann geräumt wurde. Verlangen Sie deshalb vom ausführenden Betrieb einen Einsatznachweis mit Datum und Uhrzeit je Einsatz, eine Betriebshaftpflichtversicherung und eine schriftliche Leistungsbeschreibung mit Flächen, Zeitfenstern und Streumittel.</p><p>So läuft es über den Haus- &amp; Gartenservice Havelland: Unser Partner-Fachbetrieb mit eigener Räumtechnik übernimmt die Durchführung. Der Vertrag kommt zwischen Ihnen und dem Fachbetrieb zustande. Maurice Brehm und Noah Telo bleiben über die Saison Ihre festen Ansprechpartner, organisiert Besichtigung und Angebot und geht Rückfragen nach. Ob Sie zusätzlich die förmliche Übertragung bei der Stadt beantragen, wie Falkensee, Nauen und Oranienburg sie vorsehen, klären Sie mit dem Fachbetrieb im Vertrag.</p>"
     },
     {
      "h2": "Bußgeld und Haftung bei Verstößen",
@@ -1858,18 +1884,19 @@
     },
     {
      "q": "Kann ich die Räum- und Streupflicht auf einen Winterdienst übertragen?",
-     "a": "Sie können die Durchführung übertragen, die Kontrollpflicht bleibt bei Ihnen. Falkensee, Nauen und Oranienburg lassen eine förmliche Übertragung mit Zustimmung der Stadt und Haftpflichtnachweis zu. Brieselang und Schönwalde-Glien erlauben die Beauftragung, Sie bleiben aber gegenüber der Gemeinde verpflichtet. Lassen Sie sich vom ausführenden Betrieb jeden Einsatz mit Datum und Uhrzeit nachweisen. Über den Haus- & Gartenservice Havelland übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik die Durchführung, koordiniert durch Noah Telo als festen Ansprechpartner."
+     "a": "Sie können die Durchführung übertragen, die Kontrollpflicht bleibt bei Ihnen. Falkensee, Nauen und Oranienburg lassen eine förmliche Übertragung mit Zustimmung der Stadt und Haftpflichtnachweis zu. Brieselang und Schönwalde-Glien erlauben die Beauftragung, Sie bleiben aber gegenüber der Gemeinde verpflichtet. Lassen Sie sich vom ausführenden Betrieb jeden Einsatz mit Datum und Uhrzeit nachweisen. Über den Haus- & Gartenservice Havelland übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik die Durchführung, koordiniert durch Maurice Brehm und Noah Telo als feste Ansprechpartner."
     }
    ],
    "cta_service": "winterdienst",
-   "cta_text": "Sie kennen jetzt die Fristen Ihrer Gemeinde. Wenn Sie die Durchführung abgeben möchten: Wir organisieren die kostenlose Besichtigung durch unseren Partner-Fachbetrieb mit eigener Räumtechnik. Sie erhalten dessen Angebot für die Saison mit Flächen, Zeitfenstern und Einsatznachweis je Einsatz, Noah Telo bleibt Ihr fester Ansprechpartner. Jetzt Winterdienst anfragen.",
+   "cta_text": "Sie kennen jetzt die Fristen Ihrer Gemeinde. Wenn Sie die Durchführung abgeben möchten: Wir organisieren die kostenlose Besichtigung durch unseren Partner-Fachbetrieb mit eigener Räumtechnik. Sie erhalten dessen Angebot für die Saison mit Flächen, Zeitfenstern und Einsatznachweis je Einsatz, Maurice Brehm und Noah Telo bleiben Ihre festen Ansprechpartner. Jetzt Winterdienst anfragen.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/seo-web-copy/SKILL.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
     "C:/Users/mobre/.claude/skills/llm-optimisation/SKILL.md"
    ],
    "_integriert": "2026-09-03 Workflow C2",
-   "_umbau": "03.09. abends: H2 als Frage, Gemeinde-Zeilen → Ortsseiten-Links, Links auf Streusalz- und Haftungs-Ratgeber"
+   "_umbau": "03.09. abends: H2 als Frage, Gemeinde-Zeilen → Ortsseiten-Links, Links auf Streusalz- und Haftungs-Ratgeber",
+   "teaser": "Uhrzeiten und Räumbreiten je Gemeinde, so regeln es die Satzungen im Havelland."
   },
   {
    "slug": "streusalz-brandenburg-verboten",
@@ -1896,7 +1923,7 @@
     },
     {
      "h2": "Haftung: Bußgeld, Schadenersatz und die Pflicht zu streuen",
-     "body_html": "<p>Drei Fälle müssen Sie auseinanderhalten.</p><ul><li><strong>Sie streuen Salz, obwohl die Satzung es verbietet.</strong> Das Ordnungsamt kann ein Bußgeld verhängen. Die Rahmen: Falkensee 5 bis 1.000 €, Hennigsdorf 5 bis 500 €, Brieselang, Dallgow-Döberitz, Schönwalde-Glien, Wustermark, Nauen und Oranienburg bis 2.500 €, Berlin bis 10.000 €. Dazu kommt Schadenersatz, wenn der Straßenbaum oder die Hecke des Nachbarn Schaden nimmt.</li><li><strong>Sie streuen gar nicht, weil Salz verboten ist.</strong> Das Verbot betrifft das Mittel, die Streupflicht bleibt. Stürzt jemand auf dem ungestreuten Gehweg, haften Sie nach § 823 BGB für Behandlungskosten, Verdienstausfall und Schmerzensgeld.</li><li><strong>Sie streuen abstumpfend und jemand stürzt trotzdem.</strong> Sie haften nur, wenn Sie Ihre Pflicht verletzt haben. Wer zur vorgeschriebenen Zeit geräumt und gestreut hat und das belegen kann, steht im Streit gut da. Notieren Sie deshalb Datum und Uhrzeit jedes Räumgangs.</li></ul><p>Übertragen Sie die Durchführung an einen Winterdienst, halten Sie das Streumittel im Vertrag fest. Der ausführende Betrieb muss die Satzung Ihrer Gemeinde kennen und einhalten; ein Einsatznachweis mit Datum, Uhrzeit und eingesetztem Streumittel belegt das je Einsatz. Über den Haus- &amp; Gartenservice Havelland übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik die Durchführung, Noah Telo koordiniert als fester Ansprechpartner. Die Kontrollpflicht bleibt bei Ihnen, die Durchführung wird übertragen.</p>"
+     "body_html": "<p>Drei Fälle müssen Sie auseinanderhalten.</p><ul><li><strong>Sie streuen Salz, obwohl die Satzung es verbietet.</strong> Das Ordnungsamt kann ein Bußgeld verhängen. Die Rahmen: Falkensee 5 bis 1.000 €, Hennigsdorf 5 bis 500 €, Brieselang, Dallgow-Döberitz, Schönwalde-Glien, Wustermark, Nauen und Oranienburg bis 2.500 €, Berlin bis 10.000 €. Dazu kommt Schadenersatz, wenn der Straßenbaum oder die Hecke des Nachbarn Schaden nimmt.</li><li><strong>Sie streuen gar nicht, weil Salz verboten ist.</strong> Das Verbot betrifft das Mittel, die Streupflicht bleibt. Stürzt jemand auf dem ungestreuten Gehweg, haften Sie nach § 823 BGB für Behandlungskosten, Verdienstausfall und Schmerzensgeld.</li><li><strong>Sie streuen abstumpfend und jemand stürzt trotzdem.</strong> Sie haften nur, wenn Sie Ihre Pflicht verletzt haben. Wer zur vorgeschriebenen Zeit geräumt und gestreut hat und das belegen kann, steht im Streit gut da. Notieren Sie deshalb Datum und Uhrzeit jedes Räumgangs.</li></ul><p>Übertragen Sie die Durchführung an einen Winterdienst, halten Sie das Streumittel im Vertrag fest. Der ausführende Betrieb muss die Satzung Ihrer Gemeinde kennen und einhalten; ein Einsatznachweis mit Datum, Uhrzeit und eingesetztem Streumittel belegt das je Einsatz. Über den Haus- &amp; Gartenservice Havelland übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik die Durchführung, Maurice Brehm und Noah Telo koordinieren als feste Ansprechpartner. Die Kontrollpflicht bleibt bei Ihnen, die Durchführung wird übertragen.</p>"
     }
    ],
    "faqs": [
@@ -1918,7 +1945,7 @@
     }
    ],
    "cta_service": "winterdienst",
-   "cta_text": "Streumittel, Zeitfenster und Nachweis gehören in den Winterdienstvertrag. Wir organisieren die kostenlose Besichtigung durch unseren Partner-Fachbetrieb mit eigener Räumtechnik, Sie erhalten dessen Angebot für die Saison, Noah Telo bleibt Ihr fester Ansprechpartner. Jetzt Winterdienst anfragen.",
+   "cta_text": "Streumittel, Zeitfenster und Nachweis gehören in den Winterdienstvertrag. Wir organisieren die kostenlose Besichtigung durch unseren Partner-Fachbetrieb mit eigener Räumtechnik, Sie erhalten dessen Angebot für die Saison, Maurice Brehm und Noah Telo bleiben Ihre festen Ansprechpartner. Jetzt Winterdienst anfragen.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/seo-web-copy/SKILL.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
@@ -1931,12 +1958,12 @@
    "slug": "zaun-kosten",
    "title": "Zaun Kosten 2026: Preise pro Meter, Material & Montage",
    "meta": "Was kostet ein Zaun? Marktpreise pro Meter nach Zaunart, ein Rechenbeispiel aus Falkensee und die Preistreiber bei Material, Boden und Montage.",
-   "lead": "Ein Zaun kostet je nach Art meist zwischen 60 und 150 Euro pro laufendem Meter inklusive Montage — Doppelstabmatten liegen eher am unteren Ende, Staketenzäune in der Mitte. Für Sichtschutzsysteme aus WPC oder Holz gibt es bislang nur einen groben Einstiegswert. Die Tabelle unten zeigt die Marktspannen je Zaunart, dazu ein echtes Rechenbeispiel aus Falkensee.",
+   "lead": "Ein Zaun kostet montiert für 20 Meter zwischen 1.300 und 8.200 Euro inkl. MwSt.: Staketenzaun am unteren Ende, Doppelstabmatten in der Mitte, WPC-Sichtschutz oben.",
    "intro": "Was ein Zaun am Ende kostet, hängt von mehr ab als vom laufenden Meter: Länge, Ecken, Tore, der Boden unter der Grasnarbe und die Frage, ob ein alter Zaun erst raus muss, verschieben den Preis in beide Richtungen. Das gilt für den klassischen Gartenzaun ebenso wie für einen reinen Holzzaun ohne Sichtschutzfunktion. Die folgenden Marktspannen orientieren sich an sichtbaren Angeboten aus der Region Berlin-Brandenburg und an unserer eigenen Kalkulation aus einem Referenzprojekt in Falkensee. Sie ersetzen keine Besichtigung — dafür geben sie eine erste Hausnummer, bevor Sie überhaupt anfragen. Üblich ist außerdem die Materialvorkasse: Sie zahlen das Material vorab, die Montage wird nach der Abnahme fällig.",
    "sections": [
     {
      "h2": "Marktpreise pro laufendem Meter im Überblick",
-     "body_html": "<p>Die folgenden Werte sind Marktspannen, keine Festpreise — sichtbare Angebote aus der Region und unsere eigene Kalkulation ergeben diese Bandbreiten. Ihren tatsächlichen Preis nennen wir erst nach der kostenlosen Besichtigung.</p><table><thead><tr><th>Zaunart</th><th>Spanne €/m inkl. Montage</th><th>Haltbarkeit</th></tr></thead><tbody><tr><td>Doppelstabmattenzaun</td><td>60–150 € / m</td><td>feuerverzinkt und beschichtet, witterungsbeständig, kaum Pflege</td></tr><tr><td>Sichtschutzzaun (WPC/Holz)</td><td>ab ca. 80 € / m</td><td>WPC pflegearm, Holzelemente brauchen Nachbehandlung</td></tr><tr><td>Staketenzaun Kastanie</td><td>90–120 € / m</td><td>Naturprodukt mit Farb- und Höhentoleranz; Pfosten in Einschlaghülse hält deutlich länger als Pfosten direkt im Erdreich</td></tr></tbody></table><p>Für Sichtschutzzäune aus WPC oder Holz haben wir bislang nur einen einzelnen Vergleichswert gefunden (ab rund 80 Euro pro Meter) — eine verlässliche Obergrenze nennen wir erst, sobald unsere eigene Kalkulation für dieses System steht. Maschendraht gilt als preisgünstigste Variante am Markt, wird im Havelland aber kaum noch nachgefragt. Belastbare Vergleichspreise dafür haben wir in unserer Marktbeobachtung nicht gefunden — hier lohnt der Vergleich mehrerer Angebote.</p>"
+     "body_html": "<p>Die folgenden Werte sind Richtspannen für 20 Meter montiert, inkl. MwSt., keine Festpreise. Ihren tatsächlichen Preis nennen wir erst nach der kostenlosen Besichtigung.</p><table><thead><tr><th>Zaunart</th><th>20 m montiert, inkl. MwSt.</th><th>ca. € / m inkl. MwSt.</th><th>Haltbarkeit</th></tr></thead><tbody><tr><td>Staketenzaun Kastanie</td><td>1.300–2.400 €</td><td>65–120 €</td><td>Naturprodukt mit Farb- und Höhentoleranz; Pfosten in Einschlaghülse hält deutlich länger als Pfosten direkt im Erdreich</td></tr><tr><td>Doppelstabmattenzaun</td><td>2.100–3.600 €</td><td>105–180 €</td><td>feuerverzinkt und beschichtet, witterungsbeständig, kaum Pflege</td></tr><tr><td>Sichtschutzzaun WPC, 1,80 m hoch</td><td>6.500–8.200 €</td><td>325–410 €</td><td>WPC pflegearm</td></tr></tbody></table><p>Die untere Grenze gilt für eine gerade Linie ohne Tor auf Sandboden, die obere für Ecken, Gehtor und Punktfundamente. Maschendraht gilt als preisgünstigste Variante am Markt, wird im Havelland aber kaum noch nachgefragt. Belastbare Vergleichspreise dafür haben wir in unserer Marktbeobachtung nicht gefunden — hier lohnt der Vergleich mehrerer Angebote.</p>"
     },
     {
      "h2": "Die Preistreiber im Detail",
@@ -1944,7 +1971,7 @@
     },
     {
      "h2": "Rechenbeispiel: Ein Zaunprojekt aus Falkensee",
-     "body_html": "<p>Ein konkretes Beispiel aus dem Havelland, September 2026: 33 laufende Meter Staketenzaun aus Kastanienholz, drei Ecken, ein Gehtor, dazu der komplette Rückbau des alten Zauns und ein Durchgang Gartenpflege auf derselben Fläche, alles in einem Termin. Gesamtpreis: <strong>3.950 Euro brutto</strong>, als Festpreis nach der Besichtigung.</p><p>Rein rechnerisch ergibt das rund 120 Euro je laufendem Meter — darin steckt aber mehr als der reine Zaun: drei Ecken mit Zusatzpfosten, ein Tor, die Rückbau-Pauschale für den Altzaun und die Gartenpflege obendrauf. Ohne diese vier Posten hätte der Staketenzaun allein näher an der Marktspanne aus der Tabelle oben gelegen. Genau deshalb lohnt sich die Besichtigung vor jedem Angebot: Zwei Grundstücke mit derselben Länge können unterschiedlich kosten.</p>"
+     "body_html": "<p>Ein konkretes Beispiel aus dem Havelland, September 2026: 33 laufende Meter Staketenzaun aus Kastanienholz, drei Ecken, ein Gehtor, dazu der komplette Rückbau des alten Zauns und ein Durchgang Gartenpflege auf derselben Fläche, alles in einem Termin. Gesamtpreis: <strong>3.950 Euro brutto</strong>, als Festpreis nach der Besichtigung.</p><p>Rein rechnerisch ergibt das rund 120 Euro je laufendem Meter — darin steckt aber mehr als der reine Zaun: drei Ecken mit Zusatzpfosten, ein Tor, die Rückbau-Pauschale für den Altzaun und die Gartenpflege obendrauf. Ohne diese vier Posten läge der Staketenzaun allein unter den rund 120 Euro je Meter. Genau deshalb lohnt sich die Besichtigung vor jedem Angebot: Zwei Grundstücke mit derselben Länge können unterschiedlich kosten.</p>"
     },
     {
      "h2": "Zaunmontage: Was die reine Arbeitsleistung kostet",
@@ -1966,7 +1993,7 @@
    "faqs": [
     {
      "q": "Was kostet ein Zaun pro Meter?",
-     "a": "Die Marktspannen liegen inklusive Montage meist zwischen 60 und 150 Euro pro laufendem Meter, je nach Zaunart — Details in der Tabelle oben. Für Sichtschutzsysteme aus WPC oder Holz gibt es bislang nur einen groben Einstiegswert. Den genauen Preis für Ihr Grundstück nennen wir nach der kostenlosen Besichtigung als Festpreis."
+     "a": "Montiert und inkl. MwSt. liegt ein Staketenzaun bei etwa 65 bis 120 Euro pro Meter, ein Doppelstabmattenzaun bei 105 bis 180 Euro und ein WPC-Sichtschutz bei 325 bis 410 Euro, jeweils abgeleitet aus 20 Metern. Den genauen Preis für Ihr Grundstück nennen wir nach der kostenlosen Besichtigung als Festpreis."
     },
     {
      "q": "Was kostet ein Zaun bauen lassen inklusive Rückbau?",
@@ -1974,7 +2001,7 @@
     },
     {
      "q": "Ist die Montage im Meterpreis schon enthalten?",
-     "a": "In den Marktspannen oben ja. Üblich ist trotzdem die Materialvorkasse: Sie zahlen das Material vorab, die Montage wird nach der Abnahme fällig."
+     "a": "In den Spannen oben ja. Üblich ist trotzdem die Materialvorkasse: Sie zahlen das Material vorab, die Montage wird nach der Abnahme fällig."
     },
     {
      "q": "Warum kostet ein Zaun vom Fachbetrieb mehr als das Set aus dem Baumarkt?",
@@ -1998,7 +2025,8 @@
     "stop-slop (geladen via Skill-Tool)"
    ],
    "date_published": "2026-09-16",
-   "date_modified": "2026-09-16"
+   "date_modified": "2026-09-16",
+   "teaser": "Was ein Zaun kostet, hängt vom System ab: Staketenzaun am unteren Ende, Doppelstabmatten in der Mitte, WPC-Sichtschutz oben."
   },
   {
    "slug": "zaun-genehmigung-brandenburg",
@@ -2085,12 +2113,12 @@
    "slug": "doppelstabmattenzaun-montage-kosten",
    "title": "Doppelstabmattenzaun Montage: Kosten & Ablauf",
    "meta": "Doppelstabmattenzaun montieren: Kosten pro Meter, Ablauf Schritt für Schritt, Hülse vs. Beton und die richtige Höhe. Mit Referenz aus dem Havelland.",
-   "lead": "Die Montage eines Doppelstabmattenzauns kostet inklusive Material meist zwischen 60 und 150 Euro pro laufendem Meter — Ecken, Tore und der Untergrund treiben den Preis nach oben. Der Ablauf folgt einem festen Schema aus Pfostenraster, Hülse und Klemmhaltern.",
+   "lead": "Ein Doppelstabmattenzaun kostet montiert für 20 Meter etwa 2.100 bis 3.600 Euro inkl. MwSt. Ecken, Tore und Untergrund treiben den Preis nach oben.",
    "intro": "Ein Doppelstabmattenzaun gehört zu den am häufigsten montierten Zaunarten im Havelland: robust, pflegearm und mit einem festen Elementraster, das die Montage planbar macht — solange Pfostenabstand und Untergrund von Anfang an stimmen. Dieser Ratgeber zeigt, was die Montage kostet, wie sie Schritt für Schritt abläuft und wo typische Fehler passieren.",
    "sections": [
     {
      "h2": "Was kostet die Montage eines Doppelstabmattenzauns?",
-     "body_html": "<p>Am Markt liegen Doppelstabmattenzäune inklusive Montage meist zwischen etwa <strong>60 und 150 Euro pro laufendem Meter</strong>, je nach Höhe, Boden und Anzahl der Ecken. Sichtbare Angebote in der Region starten bei rund 55 bis 90 Euro pro Meter für einfache, gerade Streckenabschnitte auf gutem Untergrund; Ecken, Tore und schwieriger Boden schieben den Preis nach oben. Genaue Zahlen für Ihr Grundstück gibt es nach der kostenlosen Besichtigung als Festpreis.</p>"
+     "body_html": "<p>Ein montierter Doppelstabmattenzaun kostet für 20 Meter etwa <strong>2.100 bis 3.600 Euro inkl. MwSt.</strong>, das sind rund 105 bis 180 Euro pro laufendem Meter. Die untere Grenze gilt für eine gerade Linie ohne Tor auf Sandboden, die obere für Ecken, Gehtor und Punktfundamente; Höhe und Boden verschieben den Preis zusätzlich. Genaue Zahlen für Ihr Grundstück gibt es nach der kostenlosen Besichtigung als Festpreis.</p>"
     },
     {
      "h2": "So läuft die Montage Schritt für Schritt ab",
@@ -2124,7 +2152,7 @@
    "faqs": [
     {
      "q": "Was kostet ein Doppelstabmattenzaun inklusive Montage pro Meter?",
-     "a": "Am Markt liegen die Preise inklusive Montage meist zwischen 60 und 150 Euro pro laufendem Meter, je nach Höhe, Boden und Anzahl der Ecken. Den genauen Preis für Ihr Grundstück nennen wir nach der kostenlosen Besichtigung als Festpreis."
+     "a": "Montiert und inkl. MwSt. etwa 105 bis 180 Euro pro laufendem Meter, abgeleitet aus 2.100 bis 3.600 Euro für 20 Meter. Höhe, Boden und Anzahl der Ecken verschieben den Preis. Den genauen Preis für Ihr Grundstück nennen wir nach der kostenlosen Besichtigung als Festpreis."
     },
     {
      "q": "Muss ich die Zaunpfosten einbetonieren?",
@@ -2160,7 +2188,72 @@
     "stop-slop (geladen via Skill-Tool)"
    ],
    "date_published": "2026-09-16",
-   "date_modified": "2026-09-16"
+   "date_modified": "2026-09-16",
+   "teaser": "Ecken, Tore und Untergrund treiben die Kosten eines montierten Doppelstabmattenzauns nach oben."
+  },
+  {
+   "slug": "pflasterarbeiten-kosten",
+   "title": "Pflasterarbeiten Kosten 2026: Preise pro m² im Überblick",
+   "meta": "Was kosten Pflasterarbeiten 2026? Preise pro m² für Hof, Weg und Einfahrt, Betonstein und Naturstein, zwei Rechenbeispiele und Tipps zum Pflaster ausbessern.",
+   "lead": "Preise je Quadratmeter nach Material, zwei Rechenbeispiele und die Frage, ob Ausbessern reicht.",
+   "intro": "Pflasterarbeiten kosten 2026 inklusive Aushub, Unterbau und Verlegung etwa 70 bis 120 Euro pro Quadratmeter (Betonstein) oder 120 bis 190 Euro (Naturstein), eine Einfahrt mit befahrbarem Unterbau 90 bis 150 Euro. Alle Preise inkl. MwSt. Beispiele: 30 m² Gartenweg 2.100 bis 3.600 Euro ohne Kantensteine, 50 m² Einfahrt 4.500 bis 7.500 Euro. Den Festpreis gibt es nach der kostenlosen Besichtigung.",
+   "sections": [
+    {
+     "h2": "Pflasterarbeiten Kosten 2026: Preise pro Quadratmeter nach Material",
+     "body_html": "<p>Orientierungsspannen für das Havelland, Stand Oktober 2026, jeweils inkl. 19 % MwSt. Es sind keine Festpreise.</p><table><thead><tr><th>Leistung</th><th>Preis inkl. MwSt.</th><th>Enthalten</th></tr></thead><tbody><tr><td>Pflaster neu, Betonstein (Hof, Gartenweg)</td><td>70–120 € / m²</td><td>Aushub, Schotter, Splittbett, Verlegung, Fugen</td></tr><tr><td>Pflaster neu, Naturstein (Granit, Basalt)</td><td>120–190 € / m²</td><td>wie Betonstein, dazu Zuschnitt</td></tr><tr><td>Einfahrt pflastern, befahrbarer Unterbau</td><td>90–150 € / m²</td><td>stärkere Tragschicht, 8-cm-Stein, Gefälle</td></tr><tr><td>Terrasse, Platten oder Beton im Splittbett</td><td>90–160 € / m²</td><td>Aushub, Unterbau, Verlegung</td></tr><tr><td>Kantensteine, Rasenkante, Beeteinfassung</td><td>25–45 € / lfm</td><td>gesetzt und ausgerichtet</td></tr><tr><td>Pflaster ausbessern, kleine Stelle</td><td>ab 250 € pauschal</td><td>aufnehmen, Unterbau neu, wieder verlegen</td></tr></tbody></table><p>Vergleichen Sie Angebote nach der Leistungsliste: Manche rechnen nur die Verlegung, andere Aushub, Schotter und Fugen mit. Mehr dazu: <a href=\"/pflasterarbeiten/\">Pflasterarbeiten im Havelland</a>.</p>"
+    },
+    {
+     "h2": "Pflaster verlegen: Kosten und was im Quadratmeterpreis steckt",
+     "body_html": "<p>Bei Betonstein macht das Material meist weniger als die Hälfte aus. Im Preis stecken Aushub und Abfuhr, die verdichtete Schottertragschicht (Gartenweg 15 bis 25 cm, Einfahrt 25 bis 40 cm), das Splittbett, der Stein (6 cm, an befahrenen Flächen 8 cm), Verlegung und Fugen. Kantensteine, Rinnen und Altbelag weisen wir im Festpreis einzeln aus. Innerhalb der Spanne entscheiden drei Faktoren:</p><ul><li><strong>Unterbau:</strong> Eine befahrene Einfahrt braucht mehr Schotter als ein Gartenweg. Lehm, Wurzeln und Bauschutt kosten mehr Zeit als Sandboden.</li><li><strong>Fläche und Zugang:</strong> Große Flächen sind pro m² günstiger. Kommt der Bagger nicht heran, steigt der Aufwand.</li><li><strong>Stein und Muster:</strong> Naturstein und Fischgrät mit Bögen brauchen mehr Zeit als Betonstein im Läuferverband.</li></ul><p>Alten Belag und Aushub rechnen wir nach Beleg ab, ohne eigenen Aufschlag. Mehr zur Einfahrt: <a href=\"/einfahrt-pflastern/\">Einfahrt pflastern</a>.</p>"
+    },
+    {
+     "h2": "Rechenbeispiel 1: 30 m² Gartenweg oder Hof",
+     "body_html": "<p>Gartenweg, 15 m lang und 2 m breit, Betonstein, Kantensteine auf beiden Seiten:</p><ul><li>Pflaster: 30 m² × 70–120 € = <strong>2.100–3.600 €</strong></li><li>Kantensteine beidseitig: 30 lfm × 25–45 € = <strong>750–1.350 €</strong></li><li>Gesamt: <strong>2.850–4.950 € inkl. MwSt.</strong></li></ul><p>Ein 30-m²-Hof in Naturstein (120–190 € pro m²) kostet 3.600 bis 5.700 Euro. Ein alter Belag kommt mit Entsorgung nach Beleg dazu.</p>"
+    },
+    {
+     "h2": "Rechenbeispiel 2: 50 m² Einfahrt",
+     "body_html": "<p>Hofeinfahrt, Betonstein mit 8 cm Dicke, befahrbarer Unterbau mit Gefälle:</p><ul><li>Einfahrt: 50 m² × 90–150 € = <strong>4.500–7.500 € inkl. MwSt.</strong></li></ul><p>Eine Entwässerungsrinne, ein Altbelag oder ein enges Grundstück ohne Bagger erhöhen den Preis, Naturstein liegt darüber. Soll vorher Boden bewegt werden, helfen die <a href=\"/erdarbeiten/\">Erdarbeiten</a>.</p>"
+    },
+    {
+     "h2": "Wann sich Ausbessern statt Neuverlegen lohnt",
+     "body_html": "<p>Größere Teilflächen rechnen wir nach Aufmaß. Wir nehmen die Steine auf, bauen Schotter und Splittbett neu auf, verdichten und verlegen die vorhandenen Steine wieder.</p><ul><li><strong>Ausbessern:</strong> einzelne abgesackte Stellen, klappernde Steine, ausgewaschene Fugen.</li><li><strong>Neu verlegen:</strong> die ganze Fläche ist wellig, die Ränder wandern oder die Tragschicht fehlt.</li><li><strong>Nur reinigen:</strong> Moos und Algen auf ebener Fläche brauchen eine <a href=\"/steinreinigung/\">Steinreinigung</a>.</li></ul>"
+    },
+    {
+     "h2": "Selbst pflastern oder pflastern lassen?",
+     "body_html": "<p>Eine kleine Fläche am Gartenweg lässt sich mit gemieteter Rüttelplatte selbst pflastern. Bei Einfahrt und Hof zeigen sich Fehler im Unterbau nach dem ersten Frost als Wellen und Spurrinnen.</p>"
+    },
+    {
+     "h2": "Pflasterarbeiten Kosten in Falkensee und im Havelland",
+     "body_html": "<p>Für Falkensee und das Havelland gelten dieselben Spannen. Die Seite <a href=\"/pflasterarbeiten-falkensee/\">Pflasterarbeiten in Falkensee</a> nennt die Wohngebiete, Beläge für die Terrasse finden Sie unter <a href=\"/terrassenbau/\">Terrassenbau</a>.</p>"
+    }
+   ],
+   "faqs": [
+    {
+     "q": "Was kosten Pflasterarbeiten pro Quadratmeter?",
+     "a": "Betonsteinpflaster inklusive Aushub, Unterbau und Verlegung kostet 2026 etwa 70 bis 120 Euro pro Quadratmeter, Naturstein 120 bis 190 Euro, jeweils inkl. MwSt."
+    },
+    {
+     "q": "Was kostet es, einen Hof pflastern zu lassen?",
+     "a": "Ein Hof ohne regelmäßigen Fahrzeugverkehr kostet 70 bis 120 Euro pro m² Betonstein, bei 40 m² also rund 2.800 bis 4.800 Euro inkl. MwSt. Wird er befahren, gilt der Einfahrt-Aufbau."
+    },
+    {
+     "q": "Was kostet es, Pflaster ausbessern zu lassen?",
+     "a": "Eine kleine abgesackte Stelle kostet ab 250 Euro pauschal inkl. MwSt., größere Teilflächen rechnen wir nach Aufmaß. Ist das Pflaster nur verschmutzt, aber eben, genügt eine Reinigung."
+    }
+   ],
+   "cta_service": "pflasterarbeiten",
+   "cta_text": "Sie möchten wissen, was Ihre Fläche kostet? Wir besichtigen kostenlos, machen die Spatenprobe und nennen einen schriftlichen Festpreis inkl. MwSt. Ein Foto per WhatsApp genügt für die erste Einschätzung.",
+   "skills_applied": [
+    "stop-slop (geladen via Skill-Tool)",
+    "ogilvy (geladen via Skill-Tool)",
+    "headline-writer (geladen via Skill-Tool)",
+    "page-cro (geladen via Skill-Tool)",
+    "seo-web-copy (geladen via Skill-Tool)",
+    "llm-optimisation (geladen via Skill-Tool)",
+    "havelland-design (geladen via Skill-Tool)"
+   ],
+   "date_published": "2026-10-20",
+   "date_modified": "2026-10-20"
   }
  ]
 }

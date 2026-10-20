@@ -1,0 +1,79 @@
+{
+  "_meta": "Top-Orte je Leistung fuer den Orte-Block der Hubs (Paket 1, 20.10.2026). Quelle: GSC 20.07.-18.10.2026, Impressionen der Ortsseiten; Falkensee immer zuerst; Fallback naechste Geo-A-Orte. Generator filtert auf tatsaechlich gerenderte Ortsseiten.",
+  "fallback": [
+    "falkensee",
+    "brieselang",
+    "dallgow-doeberitz",
+    "nauen",
+    "wustermark",
+    "schoenwalde-glien"
+  ],
+  "winterdienst": [
+    "falkensee",
+    "hohen-neuendorf",
+    "schoenwalde-glien",
+    "brieselang",
+    "oranienburg",
+    "dallgow-doeberitz"
+  ],
+  "gartenpflege": [
+    "falkensee",
+    "brieselang",
+    "dallgow-doeberitz",
+    "nauen",
+    "wustermark",
+    "schoenwalde-glien"
+  ],
+  "baumstumpf-entfernen": [
+    "falkensee",
+    "berlin-spandau",
+    "brieselang",
+    "schoenwalde-glien",
+    "nauen",
+    "dallgow-doeberitz"
+  ],
+  "dachrinnenreinigung": [
+    "falkensee",
+    "dallgow-doeberitz",
+    "schoenwalde-glien",
+    "brieselang",
+    "wustermark"
+  ],
+  "heckenentfernung": [
+    "falkensee",
+    "berlin-spandau",
+    "schoenwalde-glien",
+    "dallgow-doeberitz"
+  ],
+  "entruempelung": [
+    "falkensee",
+    "brieselang",
+    "schoenwalde-glien",
+    "dallgow-doeberitz"
+  ],
+  "fensterreinigung": [
+    "falkensee",
+    "brieselang",
+    "nauen",
+    "werder-havel",
+    "glienicke-nordbahn",
+    "schoenwalde-glien"
+  ],
+  "ferienwohnung-reinigung": [
+    "falkensee",
+    "werder-havel",
+    "schwielowsee"
+  ],
+  "haushaltsaufloesung": [
+    "falkensee",
+    "brieselang",
+    "wustermark",
+    "dallgow-doeberitz",
+    "schoenwalde-glien"
+  ],
+  "unterhaltsreinigung": [
+    "falkensee",
+    "oranienburg",
+    "hennigsdorf"
+  ]
+}
