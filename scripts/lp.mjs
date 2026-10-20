@@ -88,12 +88,12 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-quick-c a{display:inline-flex;align-items:center;min-height:44px;border:1.5px solid var(--green);border-radius:var(--r-button);padding:10px 16px;background:#fff;font-weight:600;font-size:15px;color:var(--green-d);text-decoration:none;transition:background-color .2s,scale .15s}
 .lp-quick-c a:hover{background:var(--paper)}
 .lp-quick-c a:active{scale:.96}
-.lp-quick-c .qs{display:none}
+.lp-chips .qs,.lp-quick-c .qs{display:none}
 .lp-hero-preis+.lp-cta{margin-top:20px}
 .lp-preis+.lp-cta{margin-top:22px}
 .lp-preis+.lp-cta+.hint{margin-top:10px;font-size:14.5px;color:var(--muted)}
 @media(max-width:899px){body:not(:has(.consent:not([hidden]))) .lp-hero .lp-cta .btn-line{display:none}}
-@media(max-width:599px){.lp-hero .lead{font-size:17px;line-height:1.5}.lp-hero-preis{font-size:15px;margin-top:10px}.lp-hero-preis span{font-size:13.5px}.lp-quick{margin:16px 0 14px}.lp-quick-l{font-size:13.5px;margin-bottom:8px}.lp-quick-c{gap:6px}.lp-quick-c a{padding:8px 11px;font-size:14px}.lp-quick-c .ql{display:none}.lp-quick-c .qs{display:inline}}
+@media(max-width:599px){.lp-hero .lead{font-size:17px;line-height:1.5}.lp-hero-preis{font-size:15px;margin-top:10px}.lp-hero-preis span{font-size:13.5px}.lp-quick{margin:16px 0 14px}.lp-quick-l{font-size:13.5px;margin-bottom:8px}.lp-quick-c{gap:6px}.lp-quick-c a{padding:8px 11px;font-size:14px}.lp-quick-c .ql{display:none}.lp-quick-c .qs{display:inline}.lp-chips .ql{display:none}.lp-chips .qs{display:inline}}
 @media(min-width:600px){body:has(.consent:not([hidden])) .lp-foot{padding-bottom:130px}}
 @media(min-width:760px){
   .lp-cta{flex-direction:row;align-items:center;gap:16px}.lp-cta .btn{width:auto}
@@ -102,6 +102,44 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
   .lp-form .row .full{grid-column:1/-1}
   .lp-form .btn{width:auto}
 }
+.lp-hero .hleaf{pointer-events:none}
+.lp-hero-form{margin:14px 0 6px}
+.lp-hero-form .kf{padding:14px 16px;border-radius:var(--r-card);background:#fff;border:1px solid var(--hair)}
+.lp-hero-form .step1 .lp-chips{gap:8px;margin-bottom:8px}
+.lp-hero-form .step1 .row{margin-top:2px}
+.lp-hero-form .lp-chips .ql{display:none}
+.lp-hero-form .lp-chips .qs{display:inline}
+.lp-alt{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.lp-alt .btn{flex:1 1 140px;width:auto;justify-content:center}
+.lp-alt .btn svg{width:18px;height:18px;flex:0 0 auto}
+@media(max-width:599px){.lp-alt .btn{white-space:nowrap;padding-left:10px;padding-right:10px;font-size:15px}}
+@media(max-width:399px){.lp-alt .btn{font-size:14px;flex:1 1 auto;padding-left:8px;padding-right:8px}.lp-alt .btn svg{display:none}}
+.lp-hero-preis a,.lp-preis a[data-obj]{display:inline;position:relative;color:inherit;text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.lp-hero-preis a::after,.lp-preis a[data-obj]::after{content:"";position:absolute;inset:-11px -4px}
+.lp-preisverweis a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:var(--green-d)}
+#anfrage{scroll-margin-top:82px}
+.lp-form legend:focus{outline:none}
+.lp-person{display:flex;align-items:center;gap:12px;margin:14px 0 0;font-size:15px;line-height:1.4;color:var(--ink)}
+.lp-person picture{display:flex;flex:0 0 auto}
+.lp-person .av,.lp-person img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:0 0 auto}
+@media (max-width:899px){.lp-hero:has(.lp-hero-form) .kick{margin-bottom:6px}.lp-hero:has(.lp-hero-form) h1{font-size:clamp(26px,7vw,34px);margin-bottom:8px}.lp-hero:has(.lp-hero-form):not([data-lead-mobil]) .lead{display:none}}
+@media(max-width:599px){
+.lp-head .nav{min-height:56px}
+.lp-head .logo img{height:42px}
+.lp-hero:has(.lp-hero-form){padding:12px 0 36px}
+.lp-hero:has(.lp-hero-form) .kick{display:none}
+.lp-hero:has(.lp-hero-form) h1{font-size:clamp(21px,6.1vw,24px);line-height:1.1;margin-bottom:4px}
+.lp-hero-form{margin-top:8px}
+.lp-hero-form .kf{padding:12px;gap:8px}
+.lp-hero-form .step1 .hint{display:none}
+.lp-hero-form .step1 legend{font-size:13px;letter-spacing:.04em;margin-bottom:8px}
+.lp-hero-form .step1 .lp-chips{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px}
+.lp-hero-form .step1 .lp-chips label{padding:8px 10px;font-size:14.5px}
+.lp-hero-form .step1 .row{margin-top:2px}
+.lp-alt{margin-top:8px}
+.lp-alt .btn{min-height:44px;padding-top:8px;padding-bottom:8px}
+}
+@media(min-width:900px){.lp-hero:has(.lp-hero-form) .grid{align-items:start;grid-template-columns:1.4fr .6fr;gap:40px}.lp-hero:has(.lp-hero-form) .shot{position:sticky;top:90px}.lp-hero:has(.lp-hero-form){overflow:clip;padding-top:18px}.lp-hero:has(.lp-hero-form) .kick{margin-bottom:6px}.lp-hero:has(.lp-hero-form) .lead{margin-top:8px}.lp-hero-form{margin-top:12px}.lp-hero:has(.lp-hero-form) h1{font-size:clamp(36px,3.5vw,46px);line-height:1.04}.lp-hero:has(.lp-hero-form) .lead{font-size:18px;margin-bottom:0;max-width:40em}.lp-hero-form .kf{max-width:42em;gap:10px}}
 </style>`;
 
 // Attribution beim Einstieg: Klick-IDs/UTM aus der URL in den Seiten-Speicher (window.__hg). Ins Endgerät (localStorage, 90 Tage)
@@ -118,19 +156,24 @@ document.addEventListener('click',function(e){var b=e.target.closest('#consent [
 }
 
 function lpFormJS(slug, dankeUrl, consentKey) {
-  return `<script>(function(){var f=document.getElementById('anfrage');if(!f)return;f.classList.add('js');var started=false;function dl(o){if(window.dataLayer){window.dataLayer.push(o)}}
+  return `<script>(function(){var f=document.getElementById('anfrage');if(!f)return;f.classList.add('js');f.noValidate=true;var started=false,sent2=false,errd={},via='',sm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';function dl(o){if(window.dataLayer){window.dataLayer.push(o)}}
+function err1(k){if(errd[k])return;errd[k]=1;dl({event:'form_error',lp:'${slug}',field:k})}
 function consentState(){try{var v=JSON.parse(localStorage.getItem('${consentKey}')||'null');return v&&v.c?v.c:'none'}catch(e){return 'none'}}
-f.addEventListener('input',function(){if(!started){started=true;dl({event:'form_start',lp:'${slug}'})}});
-var next=f.querySelector('[data-next]'),back=f.querySelector('[data-back]'),err=f.querySelector('.err');
-function goStep2(){var r=f.querySelector('input[name=objekt]:checked'),ort=f.elements['ort'];if(!r||!ort||!ort.checkValidity()){err.classList.add('show');if(ort&&!ort.value)ort.focus();return}err.classList.remove('show');f.classList.add('s2');dl({event:'form_step',lp:'${slug}',step:2});var n=f.querySelector('input[name=name]');if(n)n.focus()}
+f.addEventListener('input',function(e){if(err&&err.classList.contains('show')){err.classList.remove('show');if(f.elements['ort'])f.elements['ort'].removeAttribute('aria-invalid')}if(!started){started=true;dl({event:'form_start',lp:'${slug}',start_via:via||(e.target&&e.target.name==='objekt'?'chip':'field')})}});
+var next=f.querySelector('[data-next]'),back=f.querySelector('[data-back]'),err=f.querySelector('.err'),sb=f.querySelector('button[type=submit]'),sbt=sb?sb.textContent:'';
+function foc(sel){var l=f.querySelector(sel);if(l)l.focus({preventScroll:true})}
+function req(){var w=(f.querySelector('input[name=kontaktweg]:checked')||{}).value||'Anruf';Array.prototype.forEach.call(f.querySelectorAll('[data-req-by=kontaktweg]'),function(el){var on=el.getAttribute('data-req-when').split(',').indexOf(w)>-1;el.required=on})}
+Array.prototype.forEach.call(f.querySelectorAll('input[name=kontaktweg]'),function(r){r.addEventListener('change',req)});req();
+function goStep2(){var r=f.querySelector('input[name=objekt]:checked'),ort=f.elements['ort'],ok=ort&&ort.value.trim()&&ort.checkValidity();if(!r||!ok){err.classList.add('show');if(ort&&!ok)ort.setAttribute('aria-invalid','true');err1(!r?'objekt':'ort');return}err.classList.remove('show');ort.removeAttribute('aria-invalid');f.classList.add('s2');if(!sent2){sent2=true;dl({event:'form_step',lp:'${slug}',step:2,objekt:r.value})}f.scrollIntoView({behavior:sm,block:'start'});foc('.step2 legend')}
 if(next){next.addEventListener('click',goStep2)}
-if(back){back.addEventListener('click',function(){f.classList.remove('s2')})}
-document.addEventListener('click',function(e){var q=e.target.closest('[data-obj]');if(!q)return;var v=q.getAttribute('data-obj'),r=Array.prototype.filter.call(f.querySelectorAll('input[name=objekt]'),function(x){return x.value===v})[0];if(!r)return;e.preventDefault();f.classList.remove('s2');r.checked=true;r.dispatchEvent(new Event('input',{bubbles:true}));dl({event:'form_quickstart',lp:'${slug}',objekt:v});f.scrollIntoView({behavior:'smooth',block:'start'});var o=f.elements['ort'];if(o)setTimeout(function(){o.focus({preventScroll:true})},450)});
-f.addEventListener('keydown',function(e){if(e.key==='Enter'&&!f.classList.contains('s2')&&e.target.tagName!=='TEXTAREA'){e.preventDefault();goStep2()}});
+if(back){back.addEventListener('click',function(){f.classList.remove('s2');foc('.step1 legend')})}
+document.addEventListener('click',function(e){var q=e.target.closest('[data-obj]');if(!q)return;var v=q.getAttribute('data-obj'),r=Array.prototype.filter.call(f.querySelectorAll('input[name=objekt]'),function(x){return x.value===v})[0];if(!r)return;e.preventDefault();f.classList.remove('s2');r.checked=true;via=q.getAttribute('data-via')||'chip';r.dispatchEvent(new Event('input',{bubbles:true}));via='';dl({event:'form_quickstart',lp:'${slug}',objekt:v,start_via:q.getAttribute('data-via')||'chip'});var b=f.getBoundingClientRect();if(b.top<0||b.top>window.innerHeight*0.6){f.scrollIntoView({behavior:sm,block:'start'})}});
+f.addEventListener('keydown',function(e){if(e.key==='Enter'&&!f.classList.contains('s2')&&e.target.tagName==='INPUT'&&e.target.type!=='checkbox'){e.preventDefault();goStep2()}});
+window.addEventListener('pageshow',function(e){if(e.persisted&&sb){sb.disabled=false;sb.textContent=sbt}});
 function fill(){try{var a=window.__hg||{};${JSON.stringify(ATTR_KEYS)}.forEach(function(k){var el=f.elements[k];if(el&&a[k])el.value=a[k]});var lu=f.elements['landing_url'];if(lu)lu.value=(a.landing||location.pathname)+(a.ts?' @'+new Date(a.ts).toISOString():'');var ac=f.elements['ads_consent'];if(ac)ac.value=consentState()}catch(e){}}
 function e164(t){t=String(t||'').replace(/\\(\\s*0\\s*\\)/,'').replace(/[^0-9+]/g,'');if(t.indexOf('00')===0)t='+'+t.slice(2);if(t.indexOf('0')===0)t='+49'+t.slice(1);if(t&&t[0]!=='+')t='+49'+t;t=t.replace(/^\\+490/,'+49');return /^\\+\\d{8,15}$/.test(t)?t:''}
 f.addEventListener('submit',function(e){e.preventDefault();if(!f.classList.contains('s2')&&f.classList.contains('js')){goStep2();return}if(!f.checkValidity()){f.reportValidity();return}fill();var b=f.querySelector('button[type=submit]'),o=b.textContent;b.disabled=true;b.textContent='Wird gesendet…';
-fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)}).then(function(r){return r.json()}).then(function(j){if(j&&j.success){var g=function(n){var el=f.elements[n];return el?String(el.value).trim():''};var r=f.querySelector('input[name=objekt]:checked');var cs=consentState();var done=false,go=function(){if(done)return;done=true;window.location.href='${dankeUrl}#ok'};var ev={event:'generate_lead',lead_source:'ads-lp',lp:'${slug}',objekt:r?r.value:'',kontaktweg:g('kontaktweg'),ads_consent:cs,eventCallback:go,eventTimeout:1200};if(cs==='allow'){ev.user_data={email:g('email')||undefined,phone_number:e164(g('tel'))||undefined}}dl(ev);setTimeout(go,1500)}else{b.disabled=false;b.textContent=o;alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')}}).catch(function(){b.disabled=false;b.textContent=o;alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')})});})();</script>`;
+fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)}).then(function(r){return r.json()}).then(function(j){if(j&&j.success){var g=function(n){var el=f.elements[n];return el?String(el.value).trim():''};var r=f.querySelector('input[name=objekt]:checked');var cs=consentState();var done=false,go=function(){if(done)return;done=true;window.location.href='${dankeUrl}#ok'};var ev={event:'generate_lead',lead_source:'ads-lp',lp:'${slug}',objekt:r?r.value:'',kontaktweg:g('kontaktweg'),ads_consent:cs,eventCallback:go,eventTimeout:1200};if(cs==='allow'){ev.user_data={email:g('email')||undefined,phone_number:e164(g('tel'))||undefined}}dl(ev);setTimeout(go,1500)}else{b.disabled=false;b.textContent=o;err1('submit');alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')}}).catch(function(){b.disabled=false;b.textContent=o;err1('submit');alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')})});})();</script>`;
 }
 
 // Danke: lead_confirmed nur, wenn die Seite über den Formular-Redirect (#ok) erreicht wurde; Fragment wird sofort entfernt (Reload zählt nicht).
@@ -229,36 +272,48 @@ export function buildLp(d) {
     return `<section class="sec" id="fotos"><div class="wrap"><div class="head"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery"${pairs.length === 1 ? ' style="grid-template-columns:1fr;max-width:560px;margin:0 auto"' : ''}>${items}</div></div></section>`;
   };
 
-  const form = lp => {
+  const shortLabel = o => String(o).split(' / ')[0];
+  const objLabel = o => { const k = shortLabel(o); return k !== o ? `<span class="ql">${esc(o)}</span><span class="qs">${esc(k)}</span>` : esc(o); };
+  const form = (lp, pos, wa) => {
     const hidden = W3F
       ? `<input type="hidden" name="access_key" value="${esc(config.web3forms_key)}"><input type="hidden" name="subject" value="${esc(lp.form_subject || 'Neue Anfrage (Ads-LP)')}"><input type="hidden" name="from_name" value="${esc(nap.name)}"><input type="hidden" name="redirect" value="${DOMAIN}${dankeUrl}"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">`
       : '';
     const attrib = ['quelle', 'lp', ...ATTR_KEYS, 'landing_url', 'ads_consent']
       .map(n => `<input type="hidden" name="${n}" value="${n === 'quelle' ? 'ads-lp' : n === 'lp' ? esc(lp.slug) : ''}">`).join('');
-    const chips = (lp.objekte || []).map((o, i) => `<label><input type="radio" name="objekt" value="${esc(o)}"${i === 0 ? ' required' : ''}> ${esc(o)}</label>`).join('');
+    // Chips mit Kurzlabel („Keller / Dachboden“ → „Keller“ auf dem Handy); .qs ohne aria-hidden, damit ein zugänglicher Name bleibt
+    const chips = (lp.objekte || []).map((o, i) => `<label><input type="radio" name="objekt" value="${esc(o)}"${i === 0 ? ' required' : ''}> ${objLabel(o)}</label>`).join('');
+    const alt = pos === 'hero'
+      ? `<p class="lp-alt"><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></p>`
+      : `<p class="kf-alt">Lieber direkt? <a href="tel:${tel}">Anrufen: ${telDisp}</a> · <a href="${wa}">WhatsApp schreiben</a></p>`;
     return `<form id="anfrage" class="kf lp-form" action="https://api.web3forms.com/submit" method="POST">${hidden}${attrib}
-<fieldset class="step1"><legend>1. Was und wo?</legend>
+<fieldset class="step1"><legend tabindex="-1">${esc(lp.form_legend || 'Was soll geräumt werden – und wo?')}</legend>
 <div class="lp-chips" role="radiogroup" aria-label="Was soll geräumt werden?">${chips}</div>
-<div class="row"><label>Ort / PLZ<input name="ort" autocomplete="address-level2" required></label>
-<label class="full">Kurz: Was steht an? (optional)<textarea name="anliegen" rows="3" placeholder="z. B. 3-Zimmer-Wohnung, 2. OG ohne Aufzug, bis Ende Oktober"></textarea></label></div>
-<p class="err" role="alert">Bitte wählen Sie, was geräumt werden soll, und geben Sie den Ort an.</p>
-<button class="btn btn-acc" type="button" data-next>Weiter zu Ihren Kontaktdaten</button>
-<p class="hint">Schritt 1 von 2 · dauert unter zwei Minuten</p></fieldset>
-<fieldset class="step2"><legend>2. Wie erreichen wir Sie?</legend>
-<div class="row"><label>Name<input name="name" autocomplete="name" required></label>
-<label>Telefon<input name="tel" type="tel" autocomplete="tel" required></label>
-<label class="full">E-Mail<input name="email" type="email" autocomplete="email" placeholder="optional, für das schriftliche Angebot"></label></div>
+<div class="row"><label>PLZ oder Ort<input name="ort" autocomplete="postal-code" enterkeyhint="next" required></label></div>
+<p class="err" role="alert">Bitte wählen Sie, was geräumt werden soll, und geben Sie PLZ oder Ort an.</p>
+<button class="btn btn-acc" type="button" data-next>${esc(lp.cta_step1 || 'Weiter – Preis anfragen')}</button>
+<p class="hint">Schritt 1 von 2 · Besichtigung und Angebot kostenlos</p></fieldset>
+<fieldset class="step2"><legend tabindex="-1">Wie erreichen wir Sie?</legend>
 <div class="lp-chips" role="radiogroup" aria-label="Kontakt am liebsten per"><label><input type="radio" name="kontaktweg" value="Anruf" checked> Rückruf</label><label><input type="radio" name="kontaktweg" value="WhatsApp"> WhatsApp</label><label><input type="radio" name="kontaktweg" value="E-Mail"> E-Mail</label></div>
+<div class="row"><label>Name<input name="name" autocomplete="name" required></label>
+<label>Telefon<input name="tel" type="tel" autocomplete="tel" data-req-by="kontaktweg" data-req-when="Anruf,WhatsApp" required></label>
+<p class="hint full">Damit wir Sie zur Besichtigung erreichen. Keine Werbeanrufe.</p>
+<label class="full">E-Mail<input name="email" type="email" autocomplete="email" data-req-by="kontaktweg" data-req-when="E-Mail" placeholder="für das schriftliche Angebot"></label>
+<label class="full">Kurz: Was steht an? (optional)<textarea name="anliegen" rows="2" placeholder="z. B. 3 Zimmer, 2. OG ohne Aufzug, bis Ende November"></textarea></label></div>
 <label class="chk lp-legal"><input type="checkbox" name="dsgvo" required> <span>Ich bin mit der Verarbeitung meiner Angaben zur Kontaktaufnahme und Angebotserstellung einverstanden (siehe <a href="/datenschutz/">Datenschutzerklärung</a>). Die Einwilligung kann ich jederzeit widerrufen.</span></label>
 <button class="btn btn-acc" type="submit">${esc(lp.cta || 'Anfrage absenden')}</button>
 <button class="back" type="button" data-back>← zurück</button>
 <p class="hint">Wir melden uns noch am selben Werktag. Ihre Angaben gehen über den Formulardienst Web3Forms an unser Postfach. Nur wenn Sie im Cookie-Banner zugestimmt haben, übermitteln wir E-Mail und Telefonnummer verschlüsselt (gehasht) an Google, um den Erfolg unserer Anzeigen zu messen – Details in der Datenschutzerklärung.</p></fieldset>
-<p class="kf-alt">Lieber direkt? <a href="tel:${tel}">Anrufen: ${telDisp}</a> · <a href="${waHref(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">WhatsApp schreiben</a></p>
+${alt}
 </form>`;
   };
 
+  const normItem = x => typeof x === 'string' ? { t: x } : x;
+  const ankerHtml = items => items.map(normItem).map(x => x.obj ? `<a href="#anfrage" data-obj="${esc(x.obj)}" data-via="preis" aria-label="${esc(x.t)} – Anfrage zu ${esc(x.obj)} starten"><b>${esc(x.t)}</b></a>` : `<b>${esc(x.t)}</b>`).join(' &middot; ');
+
   let n = 0;
   for (const lp of cp.lps) {
+    for (const x of ((lp.preis && lp.preis.anker && lp.preis.anker.items) || []).map(normItem)) if (x.obj && !(lp.objekte || []).includes(x.obj)) throw new Error(`lp ${lp.slug}: preis.anker obj "${x.obj}" steht nicht in objekte`);
+    if (lp.lead_mobil && String(lp.lead || '').length > 90) throw new Error(`lp ${lp.slug}: lead_mobil verlangt lead <= 90 Zeichen`);
     const url = `/lp/${lp.slug}/`;
     const h1 = lp.h1_em && lp.h1.includes(lp.h1_em)
       ? esc(lp.h1).replace(esc(lp.h1_em), `<em>${esc(lp.h1_em)}</em>`)
@@ -273,20 +328,28 @@ export function buildLp(d) {
     // Schnellstart-Chips = Formular-Schritt 1 im Fold (Tippen wählt das Objekt im Formular vor, löst form_start aus, springt zum Ort-Feld),
     // CTA direkt unter dem Preisblock, Formular vor den FAQ. Preis-Zeile nur aus lp.preis.anker (keine Zahl doppelt pflegen).
     const anker = lp.preis && lp.preis.anker;
-    const heroPreis = anker ? `<p class="lp-hero-preis">${anker.items.map(x => `<b>${esc(x)}</b>`).join(' &middot; ')}<span>${esc(lp.preis.hero_note || 'inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag')}</span></p>` : '';
-    const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${esc(lp.slug)}">${esc(lp.quick_label || 'Was soll geräumt werden?')}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${esc(lp.slug)}">${lp.objekte.map(o => { const k = String(o).split(' / ')[0]; return `<a href="#anfrage" data-obj="${esc(o)}">${k !== o ? `<span class="ql">${esc(o)}</span><span class="qs" aria-hidden="true">${esc(k)}</span>` : esc(o)}</a>`; }).join('')}</div></div>` : '';
+    const heroPreis = anker ? `<p class="lp-hero-preis">${ankerHtml(anker.items)}<span>${esc(lp.preis.hero_note || 'inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag')}</span></p>` : '';
+    const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${esc(lp.slug)}">${esc(lp.quick_label || 'Was soll geräumt werden?')}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${esc(lp.slug)}">${lp.objekte.map(o => `<a href="#anfrage" data-obj="${esc(o)}">${objLabel(o)}</a>`).join('')}</div></div>` : '';
+    const pos = lp.form_pos === 'nach-preis' ? 'nach-preis' : 'hero';
+    const heroForm = pos === 'hero' ? `<div class="lp-hero-form">${form(lp, 'hero', wa)}</div>` : '';
+    const aktLp = lp.aktion === false ? '' : aktHtml;
+    const heroCta = pos === 'nach-preis' ? `<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>` : '';
+    const person = lp.kontaktperson && lp.kontaktperson.zeigen && lp.kontaktperson.slug && pic(lp.kontaktperson.slug)
+      ? `<p class="lp-person">${pic(lp.kontaktperson.slug, { cls: 'av', alt: lp.kontaktperson.alt || '', sizes: '56px' })}<span>${esc(lp.kontaktperson.zeile)}</span></p>` : '';
+    const preisVerweis = lp.preis && lp.preis.verweis ? `<p class="lp-preisverweis"><a href="/lp/${esc(lp.preis.verweis.slug)}/#preise">${esc(lp.preis.verweis.t || 'Preise ansehen')}</a></p>` : '';
+    const kontaktSec = pos === 'nach-preis' ? `<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>${esc(lp.kontakt_h2 || 'Kostenlose Besichtigung anfragen')}</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Zwei Schritte, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp, 'nach-preis', wa)}</div></section>` : '';
     const main = `<main id="top">
-<section class="phero lp-hero ${H.cls}">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span><h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
-${quick}${heroPreis}${aktHtml}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>
-${trustRow(lp.trust)}</div>${H.shot}</div></section>${ortJs}
+<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span><h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
+${heroForm || quick}${heroPreis}${aktLp}${heroCta}
+${trustRow(lp.trust)}${person}</div>${H.shot}</div></section>${ortJs}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
-<section class="sec section-alt"><div class="wrap"><div class="head"><h2>So läuft es ab</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
+<section class="sec section-alt"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
-<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${aktHtml}${lp.preis.anker ? `<p style="font-size:1.15rem;line-height:1.6;margin-bottom:14px">${lp.preis.anker.items.map(x => `<b>${esc(x)}</b>`).join(' &middot; ')}<br><span style="font-size:.95rem;color:var(--muted)">${esc(lp.preis.anker.note)}</span></p>` : ''}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
+<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${aktLp}${lp.preis.anker ? `<p style="font-size:1.15rem;line-height:1.6;margin-bottom:14px">${ankerHtml(lp.preis.anker.items)}<br><span style="font-size:.95rem;color:var(--muted)">${esc(lp.preis.anker.note)}</span></p>` : ''}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
 ${quotes(lp.testimonials, lp.testimonials_h2)}
-<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>Kostenlose Besichtigung anfragen</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Zwei Schritte, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp)}</div></section>
+${kontaktSec}
 <section class="sec section-alt" id="fragen"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
-<section class="zone-deep end"><div class="wrap"><h2>Sie zeigen, wir räumen.</h2><p>Kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, besenreine Übergabe – im Havelland, in Berlin-Spandau und Potsdam.</p><div class="cta-row"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${telDisp}</a></div></div></section>
+<section class="zone-deep end"><div class="wrap"><h2>${esc(lp.end_h2 || 'Sie zeigen, wir räumen.')}</h2><p>${esc(lp.end_p || 'Kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, besenreine Übergabe – im Havelland, in Berlin-Spandau und Potsdam.')}</p><div class="cta-row"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${telDisp}</a></div></div></section>
 </main>`;
     const baJs = /class="ba[ "]/.test(main) ? LP_BA_JS : '';
     const html = head(lp.title, lp.meta, url, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS + lpAttribJS(consentKey) })
