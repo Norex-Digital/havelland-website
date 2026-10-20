@@ -1553,5 +1553,149 @@
 "fb_ext": "jpg",
 "fb_w": 1280,
 "alt": "Einfamilienhaus mit moosbewachsenem Dach"
+},
+"standorte-hero": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter von Haus- & Gartenservice Havelland gehen mit Karton und Gartentasche zum Transporter vor einem Einfamilienhaus"
+},
+"gewerbe-hero": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter von Haus- & Gartenservice Havelland mit Werkzeugkoffer und Laubbläser auf dem Weg zu einem Mehrfamilienhaus"
+},
+"zielgruppe-bestatter": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Leer geräumtes, helles Wohnzimmer mit gestapelten Umzugskartons und einer Decke"
+},
+"zielgruppe-firmen": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter von Haus- & Gartenservice Havelland schieben einen Reinigungswagen zum Eingang eines Bürogebäudes im Gewerbegebiet"
+},
+"zielgruppe-pflege": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Helles, leer geräumtes Bewohnerzimmer mit Pflegebett, offenem Schrank und Tisch mit zwei Stühlen"
+},
+"zielgruppe-hausverwaltungen": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter von Haus- & Gartenservice Havelland gehen mit Werkzeugkoffer und Gartensack über den Innenhof eines Mehrfamilienhauses mit Müllplatz"
+},
+"svc-unterhaltsreinigung-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter mit Wischwagen und Staubsauger im Treppenhaus eines Mehrfamilienhauses"
+},
+"svc-gebaeudereinigung-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter mit Reinigungswagen und Wischmopp auf einem hellen Büroflur"
+},
+"svc-ferienwohnung-reinigung-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Frisch bezogenes Bett mit zwei gefalteten Handtüchern und Wäschekorb in einer hellen Ferienwohnung"
 }
 }

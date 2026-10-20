@@ -1,0 +1,792 @@
+{
+ "_meta": "Gewerbe-Copy Paket 3b (Spec Teil B, Plan Task 7). GERÜST mit baubaren Platzhaltern: temp/paket3/apply.mjs legt die Copy-Teilbäume aus gbr-firma/temp/paket3/copy/gewerbe-*.json per Deep-Merge darüber (Arrays/Strings werden ersetzt). Felder, die die Copy nicht liefert, erbt der Generator: Zielgruppen ohne zusagen/ablauf nehmen uebersicht.zusagen/ablauf. hausverwaltungen: Inhalte aus data/b2b.json (Objektklassen, Leistungen mit Ausführungs-Chip, Ablauf, FAQ), die Copy überschreibt einzelne Felder. Partner-Leistungen (Winterdienst, Dachrinne, Dachreinigung; Bauendreinigung nur im Text; Grundreinigung ist seit 20.10. abends Eigenleistung): Fachbetrieb im Beschreibungssatz, nie namentlich, kein Festpreis-Wording.",
+ "uebersicht": {
+  "title": "Für Gewerbe: Objektpflege und Reinigung im Havelland",
+  "meta": "Haus- & Gartenservice Havelland für Hausverwaltungen, Firmen, Pflegeeinrichtungen und Bestatter: Objektpflege, Reinigung, Räumung. Begehung kostenlos.",
+  "kick": "Für Gewerbe",
+  "h1": "Für Verwaltungen, Firmen und Einrichtungen",
+  "h1_em": "Einrichtungen",
+  "lead": "Der Haus- & Gartenservice Havelland aus Falkensee pflegt Objekte, reinigt Gebäude und räumt Wohnungen für Hausverwaltungen, Firmen, Pflegeeinrichtungen und Bestatter im Havelland und in Spandau. Wir betreuen bereits Objekte im Havelland in festen Pflegeverträgen. Nach einer kostenlosen Begehung erhalten Sie ein schriftliches Angebot.",
+  "sections": {
+   "zielgruppen": {
+    "h2": "Für wen wir arbeiten",
+    "h2_em": "arbeiten",
+    "sub": "Vier Zielgruppen, jede mit eigener Seite: was wir übernehmen und wie es abläuft."
+   },
+   "leistungen": {
+    "h2": "Leistungen für Gewerbe",
+    "h2_em": "Gewerbe",
+    "sub": "Jede Leistung hat eine eigene Seite mit Ablauf und Fragen."
+   },
+   "zusagen": {
+    "h2": "Was bei jedem Auftrag feststeht",
+    "h2_em": "feststeht",
+    "sub": "Vier Zusagen, die für alle Objekte gelten."
+   },
+   "ablauf": {
+    "h2": "So kommen Sie zum Angebot",
+    "h2_em": "Angebot"
+   },
+   "faq": {
+    "h2": "Häufige Fragen zu Aufträgen für Gewerbe",
+    "h2_em": "Gewerbe"
+   }
+  },
+  "karten": [
+   {
+    "key": "hausverwaltungen",
+    "url": "/fuer-hausverwaltungen/",
+    "h3": "Hausverwaltungen & WEG",
+    "p": "Wohnungsräumung, Grünpflege, Laub und Treppenhaus für Ihre Objekte.",
+    "label": "Für Hausverwaltungen ansehen"
+   },
+   {
+    "key": "firmen",
+    "url": "/fuer-firmen/",
+    "h3": "Firmen & Gewerbe",
+    "p": "Unterhaltsreinigung, Außenanlagen und Hausmeisterarbeiten im festen Turnus.",
+    "label": "Für Firmen ansehen"
+   },
+   {
+    "key": "pflegeeinrichtungen",
+    "url": "/fuer-pflegeeinrichtungen/",
+    "h3": "Pflegeeinrichtungen",
+    "p": "Zimmer und Wohnungen in Absprache räumen, wenn Bewohner ausziehen.",
+    "label": "Für Pflegeeinrichtungen ansehen"
+   },
+   {
+    "key": "bestatter",
+    "url": "/fuer-bestatter/",
+    "h3": "Bestatter",
+    "p": "Wohnungsauflösung für die Familien, die Sie begleiten, besenrein übergeben.",
+    "label": "Für Bestatter ansehen"
+   }
+  ],
+  "leistungen": [
+   {
+    "slug": "objektbetreuung",
+    "name": "Objektbetreuung",
+    "p": "Kontrollgänge, Kleinreparaturen und Außenanlagen für Wohn- und Gewerbeobjekte, mit Fotos zu jedem Rundgang."
+   },
+   {
+    "slug": "hausmeisterservice",
+    "name": "Hausmeisterservice",
+    "p": "Hausmeisterarbeiten nach festem Plan: Grünpflege, Laub, Kleinreparaturen und Kontrollgänge für Verwaltungen und Eigentümer."
+   },
+   {
+    "slug": "unterhaltsreinigung",
+    "name": "Unterhaltsreinigung",
+    "p": "Wiederkehrende Reinigung von Büro, Praxis und Treppenhaus im festen Turnus, mit Foto nach jedem Termin."
+   },
+   {
+    "slug": "gebaeudereinigung",
+    "name": "Gebäudereinigung",
+    "p": "Treppenhaus, Büro und Gemeinschaftsflächen für Mehrfamilienhäuser und Gewerbe, mit fester Ansprechperson und Vertretung."
+   },
+   {
+    "slug": "gartenpflege",
+    "name": "Grünpflege und Außenanlagen",
+    "p": "Rasen, Hecken, Beete und Laub auf Wegen und Stellflächen, im Turnus oder als Einzeleinsatz."
+   },
+   {
+    "slug": "entruempelung",
+    "name": "Wohnungsräumung",
+    "p": "Wohnungen, Keller und Dachböden räumen und besenrein übergeben, mit Fotos und Entsorgungsbeleg."
+   },
+   {
+    "slug": "winterdienst",
+    "name": "Winterdienst",
+    "p": "Ein Partner-Fachbetrieb räumt und streut, den Vertrag schließen Sie direkt mit ihm. Wir koordinieren Begehung und Ablauf."
+   },
+   {
+    "slug": "ferienwohnung-reinigung",
+    "name": "Ferienwohnung-Reinigung",
+    "p": "Endreinigung zwischen den Gästen, Wäsche und Schlüsselübergabe, vor allem in Werder (Havel) und am Schwielowsee."
+   }
+  ],
+  "zusagen": [
+   {
+    "h3": "Ein Ansprechpartner",
+    "p": "Eine feste Kontaktperson für alle Adressen, damit Sie nicht mehrere Dienstleister koordinieren."
+   },
+   {
+    "h3": "Angebot nach Begehung",
+    "p": "Die Begehung ist kostenlos. Danach erhalten Sie ein schriftliches Angebot, bei mehreren Objekten je Objekt."
+   },
+   {
+    "h3": "Nachweis mit Fotos",
+    "p": "Nach jedem Einsatz bekommen Sie Fotos. Beim Partner-Fachbetrieb liefert der Einsatznachweis den Beleg."
+   },
+   {
+    "h3": "Rechnung an Sie",
+    "p": "Unsere Rechnung weist die Umsatzsteuer aus und ist bei mehreren Objekten je Objekt aufgeschlüsselt."
+   }
+  ],
+  "ablauf": [
+   {
+    "h": "Anfrage",
+    "p": "Per Mail, Telefon oder WhatsApp, gern mit Objektliste. Wir antworten am selben Tag."
+   },
+   {
+    "h": "Begehung",
+    "p": "Kostenlos vor Ort, je Objekt. Der Termin liegt meist innerhalb weniger Tage."
+   },
+   {
+    "h": "Angebot",
+    "p": "Schriftlich, mit Leistungsumfang und Turnus. Das Angebot für den Winterdienst stellt der Partner-Fachbetrieb."
+   },
+   {
+    "h": "Start",
+    "p": "Feste Termine und Fotos nach jedem Einsatz."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Bekommen wir eine Rechnung mit Umsatzsteuer?",
+    "a": "Ja. Unsere Rechnungen weisen die Umsatzsteuer aus, monatlich oder je Auftrag, bei mehreren Objekten je Objekt aufgeschlüsselt. Die Rechnung für den Winterdienst stellt der Partner-Fachbetrieb direkt aus."
+   },
+   {
+    "q": "Betreuen Sie mehrere Objekte?",
+    "a": "Ja. Wir begehen jedes Objekt einzeln und legen ein Leistungsverzeichnis an. Angebote und Nachweise sortieren wir nach Objekt, auf Wunsch gibt es zusätzlich eine Gesamtübersicht."
+   },
+   {
+    "q": "Wer führt den Winterdienst aus?",
+    "a": "Ein Partner-Fachbetrieb mit eigener Räumtechnik. Den Saisonvertrag schließen Sie direkt mit ihm, wir koordinieren Begehung und Ablauf. Dasselbe gilt für Dachrinnen- und Dachreinigung."
+   },
+   {
+    "q": "Brauchen wir einen Vertrag, oder geht auch ein Einzelauftrag?",
+    "a": "Beides. Eine Räumung oder ein einzelner Einsatz geht ohne laufenden Vertrag. Für Pflege und Reinigung legen wir Turnus, Ansprechpartner und Vertretung schriftlich fest, bevor der erste Termin startet."
+   },
+   {
+    "q": "In welchem Gebiet arbeiten Sie für Gewerbe?",
+    "a": "Von Falkensee aus im Havelland, in Spandau und am Berliner Westrand, dazu in Oberhavel, in Werder (Havel) und in Ketzin. Liegt Ihr Objekt außerhalb, fragen Sie kurz an."
+   }
+  ],
+  "endband": {
+   "h2": "Welche Objekte stehen an? Wir schauen sie uns an.",
+   "p": "Begehung kostenlos, schriftliches Angebot je Objekt."
+  },
+  "home_band": {
+   "h2": "Für Gewerbe und Einrichtungen",
+   "h2_em": "Einrichtungen",
+   "sub": "Hausverwaltungen, Firmen, Pflegeeinrichtungen und Bestatter: ein Ansprechpartner, Angebot nach Begehung.",
+   "link": "Alles für Gewerbe"
+  }
+ },
+ "zielgruppen": {
+  "hausverwaltungen": {
+   "url": "/fuer-hausverwaltungen/",
+   "quelle": "b2b.json, überarbeitet 2026-10-20 (Paket 3)",
+   "title": "Wohnungsräumung und Objektpflege für Hausverwaltungen und WEG im Havelland",
+   "title_tag": "Hausverwaltung & WEG: Räumung und Objektpflege Havelland",
+   "meta": "Wohnungsräumung und Objektpflege für Hausverwaltungen und WEG im Havelland und Spandau: Grünpflege, Laub, Reinigung. Begehung kostenlos, Angebot schriftlich.",
+   "kick": "Für Hausverwaltungen und WEG",
+   "h1": "Wohnungsräumung und Objektpflege für Hausverwaltungen und WEG",
+   "h1_em": "Hausverwaltungen",
+   "lead": "Wir räumen Wohnungen, Keller und Dachböden leer, übergeben besenrein und schicken Fotos und Entsorgungsbeleg. Dazu pflegen wir Außenanlagen und Treppenhäuser Ihrer Objekte im Havelland und in Spandau.",
+   "intro": {
+    "h2": "Für wen wir arbeiten",
+    "body": "Wir sind ein junges Unternehmen aus Falkensee. Wir betreuen bereits Objekte im Havelland in festen Pflegeverträgen und möchten für weitere Verwaltungen auf längere Sicht arbeiten. Maurice Brehm und Noah Telo nehmen Ihre Objekte auf, planen Begehung und Termine und schicken Ihnen den Nachweis nach jedem Einsatz. Bei jeder Leistung steht dabei, wer sie ausführt."
+   },
+   "objektklassen": [
+    "Wohnungseigentümergemeinschaft (WEG)",
+    "Mehrfamilienhaus und Vermieter",
+    "Hausverwaltung mit mehreren Objekten",
+    "Gewerbehof und Autohaus",
+    "Einzelhandel und Kundenparkplatz",
+    "Praxis und Büro"
+   ],
+   "objektklassen_detail": [
+    {
+     "name": "Wohnungseigentümergemeinschaft (WEG)",
+     "body": "Ein Saisonvertrag statt Einzelaufträge, Nachweis für alle Eigentümer."
+    },
+    {
+     "name": "Mehrfamilienhaus und Vermieter",
+     "body": "Gehwege, Grünflächen und Müllplatz im festen Turnus, dazu die Wohnung leer nach Auszug."
+    },
+    {
+     "name": "Hausverwaltung mit mehreren Objekten",
+     "body": "Eine Begehung je Objekt, Angebote und Nachweise objektweise sortiert."
+    },
+    {
+     "name": "Gewerbehof und Autohaus",
+     "body": "Zufahrt, Ladezone und Ausstellungsfläche im vereinbarten Turnus gepflegt."
+    },
+    {
+     "name": "Einzelhandel und Kundenparkplatz",
+     "body": "Stellflächen, Wege und Eingang im vereinbarten Turnus begehbar."
+    },
+    {
+     "name": "Praxis und Büro",
+     "body": "Eingang, Treppenhaus und Außenanlage im vereinbarten Rhythmus gepflegt."
+    }
+   ],
+   "leistungen": [
+    "Räumung nach Auszug",
+    "Grünpflege und Laub",
+    "Treppenhaus- und Unterhaltsreinigung",
+    "Hausmeisterarbeiten und Objektkontrolle",
+    "Winterdienst",
+    "Dachrinnenreinigung",
+    "Grundreinigung nach Auszug"
+   ],
+   "leistungen_detail": [
+    {
+     "h3": "Räumung nach Auszug",
+     "ausfuehrung": "eigen",
+     "chip": "Eigene Ausführung",
+     "body": "Wohnung, Keller oder Dachboden räumen wir nach Auszug, Mieterwechsel oder Todesfall leer und übergeben besenrein, auch vor einer Sanierung. Nach der kostenlosen Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, Entsorgungsgebühren weisen wir nach Beleg ohne eigenen Aufschlag aus. Nach dem Einsatz bekommen Sie die Fotos.",
+     "link_to": "entruempelung",
+     "label": "Mehr zur Entrümpelung"
+    },
+    {
+     "h3": "Grünpflege und Laub",
+     "ausfuehrung": "eigen",
+     "chip": "Eigene Ausführung",
+     "body": "Rasen, Hecken, Beete und Gehölze pflegen wir im festen Turnus. Im Herbst räumen wir das Laub von Wegen, Stellflächen und Grünstreifen, im Turnus oder als Einsatz nach dem Laubfall. Grünschnitt und Laub fahren wir ab, nach jedem Einsatz bekommen Sie Fotos.",
+     "link_to": "gartenpflege",
+     "label": "Mehr zur Gartenpflege"
+    },
+    {
+     "h3": "Treppenhaus- und Unterhaltsreinigung",
+     "ausfuehrung": "eigen",
+     "chip": "Eigene Ausführung",
+     "body": "Treppenhaus, Eingang, Müllplatz und Gemeinschaftsflächen reinigen wir im vereinbarten Turnus, wöchentlich oder nach Ihrem Rhythmus. Handläufe, Treppenhausfenster und Böden gehören dazu. Nach jedem Termin dokumentieren wir den Zustand mit Foto.",
+     "link_to": "unterhaltsreinigung",
+     "label": "Mehr zur Unterhaltsreinigung"
+    },
+    {
+     "h3": "Hausmeisterarbeiten und Objektkontrolle",
+     "ausfuehrung": "eigen",
+     "chip": "Eigene Ausführung",
+     "body": "Bei Kontrollgängen prüfen wir Beleuchtung, Zugänge, Briefkästen und Außenanlagen und beheben kleine Mängel direkt, etwa klemmende Türen, lose Fliesen oder defekte Leuchtmittel. Arbeiten für einen Fachbetrieb, etwa Elektro oder Sanitär, melden wir der Verwaltung. Jeden Kontrollgang halten wir mit Foto fest.",
+     "link_to": "objektbetreuung",
+     "label": "Mehr zur Objektbetreuung"
+    },
+    {
+     "h3": "Winterdienst",
+     "ausfuehrung": "partner",
+     "chip": "Partner-Fachbetrieb",
+     "body": "Ein Partner-Fachbetrieb mit eigener Räumtechnik räumt und streut Parkplatz, Hof, Zufahrt und Gehweg, schmale Wege und Eingänge von Hand. Den Saisonvertrag schließen Sie direkt mit ihm, wir koordinieren Begehung und Ablauf. Jeder Einsatz kommt mit Einsatznachweis, Datum und Uhrzeit, je Objekt einzeln.",
+     "link_to": "winterdienst",
+     "label": "Mehr zum Winterdienst"
+    },
+    {
+     "h3": "Dachrinnenreinigung",
+     "ausfuehrung": "partner",
+     "chip": "Partner-Fachbetrieb",
+     "body": "Ein Partner-Fachbetrieb befreit Rinne und Fallrohr vor dem Winter von Laub und Moos und prüft danach die Funktion. Das Angebot stellt der Betrieb nach der Objektbegehung, wir koordinieren Termin und Ablauf.",
+     "link_to": "dachrinnenreinigung",
+     "label": "Mehr zur Dachrinnenreinigung"
+    },
+    {
+     "h3": "Grundreinigung nach Auszug",
+     "ausfuehrung": "eigen",
+     "chip": "Eigene Ausführung",
+     "body": "Wir reinigen die geräumte Wohnung gründlich von Küche bis Bad und übergeben sie übergabefertig. Nach der kostenlosen Besichtigung bekommen Sie ein schriftliches Angebot, nach dem Einsatz die Fotos.",
+     "link_to": "grundreinigung",
+     "label": "Mehr zur Grundreinigung"
+    }
+   ],
+   "band_lead": "Ein Ansprechpartner für alle Objekte, Nachweis nach jedem Einsatz.",
+   "zusagen": [
+    "Feste Ansprechpartner: Maurice Brehm und Noah Telo",
+    "Schriftliches Angebot nach Begehung",
+    "Nachweis je Einsatz",
+    "Vertrag mit dem, der ausführt"
+   ],
+   "zusagen_detail": [
+    {
+     "h4": "Feste Ansprechpartner: Maurice Brehm und Noah Telo",
+     "body": "Beide kennen alle Objekte, keine Warteschleife, Vertretung steht vorab fest."
+    },
+    {
+     "h4": "Schriftliches Angebot nach Begehung",
+     "body": "Eigene Leistungen von uns, Winterdienst und Dachrinne vom ausführenden Fachbetrieb."
+    },
+    {
+     "h4": "Nachweis je Einsatz",
+     "body": "Fotos bei Eigenleistung, Einsatznachweis mit Datum und Uhrzeit beim Partner-Fachbetrieb."
+    },
+    {
+     "h4": "Vertrag mit dem, der ausführt",
+     "body": "Winterdienst und Dachrinne: Vertrag und Preis direkt mit dem Partner-Fachbetrieb."
+    }
+   ],
+   "partnermodell_hinweis": "Winterdienst sowie Dachrinnen- und Dachreinigung führt ein Partner-Fachbetrieb aus. Vertrag und Angebot schließen Sie direkt mit diesem Betrieb, wir koordinieren Begehung, Termin und Ablauf.",
+   "ablauf": {
+    "h2": "So kommen Sie zum Angebot",
+    "schritte": [
+     {
+      "when": "Tag 1",
+      "h": "Anfrage per Mail, Telefon oder WhatsApp",
+      "p": "Objektadresse, Art des Objekts und die gewünschten Leistungen genügen für den Anfang. Wir antworten am selben Tag."
+     },
+     {
+      "when": "Meist innerhalb weniger Tage · kostenlos",
+      "h": "Begehung mit Maurice Brehm und Noah Telo",
+      "p": "Maurice Brehm und Noah Telo nehmen die Objekte vor Ort auf. Bei Winterdienst und Dachrinne kommt der Partner-Fachbetrieb dazu."
+     },
+     {
+      "when": "Nach der Begehung",
+      "h": "Schriftliches Angebot je Objekt",
+      "p": "Ein Angebot je Leistung: Räumung, Grünpflege, Reinigung samt Grundreinigung und Hausmeisterarbeiten von uns. Winterdienst und Dachrinne kommen vom ausführenden Fachbetrieb."
+     },
+     {
+      "when": "Vor dem ersten Einsatz",
+      "h": "Vertrag mit Turnus und Vertretung",
+      "p": "Turnus, Ansprechpartner und Vertretung stehen schriftlich fest, bevor der erste Termin startet."
+     },
+     {
+      "when": "Ab dem ersten Einsatz",
+      "h": "Foto-Reporting je Einsatz",
+      "p": "Fotos oder Einsatznachweis, je Objekt zugeordnet, für Eigentümer, Verwaltung und Versicherung."
+     }
+    ]
+   },
+   "faqs": [
+    {
+     "q": "Betreuen Sie auch mehrere Objekte einer Hausverwaltung?",
+     "a": "Ja. Jedes Objekt nehmen wir bei einer eigenen Begehung auf und legen ein Leistungsverzeichnis an. Sie bekommen ein Angebot je Objekt oder eine Gesamtübersicht; die Nachweise kommen objektweise, damit Sie sie den Eigentümern zuordnen können."
+    },
+    {
+     "q": "Räumen Sie auch Wohnungen und Keller nach Auszug oder Todesfall?",
+     "a": "Ja, das machen wir selbst: Wohnung, Keller oder Dachboden nach Auszug, Mieterwechsel oder Todesfall, auch ohne bekannte Erben oder vor einer Sanierung. Wir übergeben besenrein; Verwertbares wird getrennt, der Rest geht über zugelassene Annahmestellen, auf Wunsch mit Beleg für Ihre Akte. Nach der kostenlosen Besichtigung bekommen Sie ein schriftliches Angebot, nach dem Einsatz die Fotos."
+    },
+    {
+     "q": "Wer führt den Winterdienst aus, und wer trägt die Räum- und Streupflicht?",
+     "a": "Ein Partner-Fachbetrieb mit eigener Räumtechnik führt ihn aus. Den Saisonvertrag schließen Sie direkt mit ihm, wir koordinieren Begehung und Ablauf. Die Durchführung übertragen Sie mit dem Vertrag, die Kontrollpflicht bleibt je nach Satzung Ihrer Gemeinde bei Ihnen als Eigentümer oder Verwalter; dafür gibt es den Einsatznachweis mit Datum und Uhrzeit. Wir selbst übernehmen die Pflicht nicht."
+    },
+    {
+     "q": "Wie läuft die Abrechnung bei mehreren Objekten?",
+     "a": "Für Räumung, Grünpflege, Reinigung samt Grundreinigung und Hausmeisterarbeiten erhalten Sie eine Sammelrechnung, monatlich und je Objekt aufgeschlüsselt. Winterdienst sowie Dachrinnen- und Dachreinigung rechnet der Partner-Fachbetrieb nach Ihrem Vertrag direkt mit Ihnen ab."
+    },
+    {
+     "q": "Wie schnell antworten Sie?",
+     "a": "Auf Anfragen antworten wir am selben Tag, die Besichtigung findet meist innerhalb weniger Tage statt. In dringenden Fällen erreichen Sie Maurice Brehm und Noah Telo direkt per Telefon oder WhatsApp. Für Winterdienst und Dachrinne gilt das Zeitfenster aus dem Vertrag mit dem Fachbetrieb."
+    }
+   ],
+   "cta": {
+    "h2": "Objektliste per Mail senden",
+    "body": "Senden Sie uns Objektadresse, Art des Objekts und die gewünschten Leistungen. Wir antworten am selben Tag und vereinbaren die Begehung; das Angebot für Winterdienst und Dachrinne stellt der ausführende Partner-Fachbetrieb.",
+    "mail_subject": "Angebot Objektpflege und Räumung",
+    "mail_body": "Guten Tag,\n\nwir sind eine Hausverwaltung / eine WEG / ein Gewerbebetrieb und interessieren uns für Objektpflege oder Wohnungsräumung.\n\nObjektadresse(n): \nArt des Objekts (WEG, Mehrfamilienhaus, Gewerbe): \nGewünschte Leistungen (Räumung, Grünpflege, Reinigung, Hausmeisterarbeiten, Winterdienst, Dachrinne, Grundreinigung): \nGewünschter Turnus: \nGewünschter Beginn: \n\nBitte senden Sie uns ein schriftliches Angebot.\n\nMit freundlichen Grüßen",
+    "mail_label": "Objektliste per Mail senden"
+   },
+   "endband": {
+    "h2": "Sagen Sie uns, welche Objekte anstehen.",
+    "p": "Begehung vor Ort, schriftliches Angebot je Leistung, Nachweis nach jedem Einsatz. Ein Ansprechpartner für alle Adressen."
+   },
+   "scta_text": "Guten Tag, wir sind eine Hausverwaltung / WEG / ein Gewerbebetrieb im Havelland und interessieren uns für Objektpflege oder Wohnungsräumung."
+  },
+  "firmen": {
+   "url": "/fuer-firmen/",
+   "title": "Reinigung & Hausmeister für Firmen in Falkensee",
+   "meta": "Büroreinigung, Gebäudereinigung, Hausmeister und Außenanlagen für Firmen in Falkensee und im Havelland. Ein Ansprechpartner, Angebot nach der Begehung.",
+   "kick": "Für Firmen und Gewerbe",
+   "h1": "Reinigung, Hausmeister und Außenanlagen für Firmen im Havelland",
+   "h1_em": "Firmen",
+   "lead": "Wir reinigen Büro, Praxis und Laden im festen Turnus, betreuen Haus und Gelände und pflegen Ihre Außenanlagen. Sie haben einen Ansprechpartner, das Angebot kommt nach der Begehung, nach jedem Einsatz schicken wir Fotos.",
+   "cta": "Begehung anfragen",
+   "anlaesse": [
+    {
+     "h3": "Der Dienstleister fällt aus",
+     "p": "Bei der Reinigung steht der Turnus im Reinigungsplan, bei Urlaub und Krankheit springt eine Vertretung ein."
+    },
+    {
+     "h3": "Mehrere Firmen für ein Objekt",
+     "p": "Reinigung, Hausmeister und Grünpflege laufen bei uns über einen Ansprechpartner, das Angebot kommt nach einer Begehung."
+    },
+    {
+     "h3": "Sie sind selten vor Ort",
+     "p": "Nach jedem Einsatz schicken wir Fotos aufs Handy, Sie prüfen den Zustand, ohne hinzufahren."
+    }
+   ],
+   "leistungen": [
+    {
+     "slug": "unterhaltsreinigung",
+     "h3": "Unterhaltsreinigung",
+     "p": "Büro, Praxis, Laden und Sanitärräume im festen Turnus, mit Reinigungsplan und Foto nach jedem Termin.",
+     "partner": false
+    },
+    {
+     "slug": "gebaeudereinigung",
+     "h3": "Gebäudereinigung",
+     "p": "Eingang, Treppenhaus und Gemeinschaftsflächen im festen Turnus. Die Bauendreinigung nach Umbau führt ein Partner-Fachbetrieb aus.",
+     "partner": false
+    },
+    {
+     "slug": "gartenpflege",
+     "h3": "Außenanlagen und Gartenpflege",
+     "p": "Rasen, Hecken, Beete und Laub auf Wegen, Stellflächen und Grünstreifen im festen Turnus.",
+     "partner": false
+    },
+    {
+     "slug": "hausmeisterservice",
+     "h3": "Hausmeisterservice",
+     "p": "Kontrollgänge und kleine Reparaturen nach festem Plan, Arbeiten für Fachbetriebe melden wir an Sie.",
+     "partner": false
+    },
+    {
+     "slug": "winterdienst",
+     "h3": "Winterdienst",
+     "p": "Räumen und Streuen führt ein Partner-Fachbetrieb aus. Sie schließen den Vertrag direkt mit ihm, wir koordinieren die Begehung.",
+     "partner": true
+    }
+   ],
+   "faqs": [
+    {
+     "q": "Was ist der Unterschied zwischen Unterhaltsreinigung und Gebäudereinigung?",
+     "a": "Die Unterhaltsreinigung hält Büro, Praxis und Laden im festen Turnus sauber, zum Beispiel täglich oder wöchentlich. Zur Gebäudereinigung zählen Eingang, Treppenhaus und Gemeinschaftsflächen. Die Bauendreinigung nach einem Umbau führt ein Partner-Fachbetrieb aus."
+    },
+    {
+     "q": "Wann reinigen Sie, wenn bei uns der Betrieb läuft?",
+     "a": "Wir legen die Termine in Randzeiten, früh am Morgen, abends oder nach Feierabend. Den Plan stimmen wir bei der Begehung mit Ihnen ab."
+    },
+    {
+     "q": "Was darf der Hausmeister bei uns reparieren?",
+     "a": "Klemmende Türen, lose Fliesen und defekte Leuchtmittel beheben wir direkt. Elektro- und Sanitärinstallation melden wir an Sie, ein Fachbetrieb übernimmt sie."
+    },
+    {
+     "q": "Was kostet die Reinigung für unser Büro?",
+     "a": "Den Preis nennen wir nach der kostenlosen Begehung als Festpreis, je Durchgang oder je Monat. Er hängt von Fläche, Turnus und Art der Räume ab."
+    },
+    {
+     "q": "Wie oft pflegen Sie die Außenanlagen eines Firmengeländes?",
+     "a": "Rasen und Hecken pflegen wir im festen Turnus, im Herbst kommen Laubeinsätze auf Wegen und Stellflächen dazu. Den Rhythmus legen wir bei der Begehung nach Größe und Nutzung des Geländes fest."
+    },
+    {
+     "q": "Kommen Sie auch zu Firmen außerhalb von Falkensee?",
+     "a": "Ja, wir betreuen Firmen in Falkensee, Nauen, Dallgow-Döberitz, Brieselang und Wustermark sowie in Hennigsdorf, Oranienburg und Berlin-Spandau. Schreiben Sie uns den Standort, wir antworten am selben Tag."
+    }
+   ],
+   "anlaesse_h2": "Wann Firmen uns rufen",
+   "leistungen_h2": "Was wir für Firmen übernehmen",
+   "quellen": [
+    "Leistungen und Ausführung (eigen/Partner): data/b2b.json, Spec Teil B2, Owner 20.10.",
+    "Randzeiten, 48-Stunden-Nachholung, Reinigungsplan: Live-Hubs unterhaltsreinigung und gebaeudereinigung (hubs.json)",
+    "Kleinreparaturen und Fachbetrieb-Hinweis: data/b2b.json leistungen_detail (Kleinreparaturen und Objektkontrolle)",
+    "Laub und Turnus Grünpflege: data/b2b.json (Grünpflege und Laub)",
+    "Einsatzorte: Live-Hubs (Nauen, Dallgow-Döberitz, Brieselang, Wustermark) und bestehende Ortsseiten unterhaltsreinigung/gebaeudereinigung in Hennigsdorf, Oranienburg, Berlin-Spandau",
+    "Reaktionszeit: Owner-bestätigt 20.10. (antworten am selben Tag)"
+   ],
+   "zusagen": [
+    {
+     "h3": "Reinigungsplan schriftlich",
+     "p": "Umfang, Turnus und Zeiten stehen vor dem ersten Termin im Reinigungsplan."
+    },
+    {
+     "h3": "Vertretung bei Ausfall",
+     "p": "Bei Urlaub und Krankheit springt eine Vertretung ein, Ihr Ansprechpartner bleibt derselbe."
+    },
+    {
+     "h3": "Foto nach jedem Termin",
+     "p": "Sie sehen den Zustand auf dem Handy, ohne vor Ort zu sein."
+    },
+    {
+     "h3": "Rechnung je Objekt",
+     "p": "Monatlich oder je Auftrag, bei mehreren Objekten je Objekt aufgeschlüsselt, mit ausgewiesener Umsatzsteuer."
+    }
+   ],
+   "ablauf": [
+    {
+     "h": "Anfrage",
+     "p": "Schreiben oder rufen Sie an: Adresse, Flächen und gewünschter Turnus genügen. Wir antworten am selben Tag."
+    },
+    {
+     "h": "Begehung",
+     "p": "Wir sehen uns Räume, Zugänge und Betriebszeiten vor Ort an. Kostenlos, meist innerhalb weniger Tage."
+    },
+    {
+     "h": "Angebot",
+     "p": "Schriftlich mit Reinigungsplan, Turnus und Festpreis, je Durchgang oder je Monat."
+    },
+    {
+     "h": "Start",
+     "p": "Der erste Termin läuft zur vereinbarten Zeit, danach kommt nach jedem Einsatz ein Foto."
+    }
+   ],
+   "endband": {
+    "h2": "Welches Objekt soll sauber bleiben?",
+    "p": "Wir sehen es uns kostenlos an und schicken Ihnen ein schriftliches Angebot."
+   }
+  },
+  "pflegeeinrichtungen": {
+   "url": "/fuer-pflegeeinrichtungen/",
+   "title": "Wohnungsauflösung für Pflegeheime und Pflegedienste",
+   "meta": "Zimmer und Wohnungen räumen für Pflegeeinrichtungen in Falkensee und im Havelland: ruhig und besenrein. Kostenlose Besichtigung, schriftlicher Festpreis.",
+   "kick": "Für Pflegeeinrichtungen",
+   "h1": "Zimmer und Wohnungen räumen für Pflegeeinrichtungen, ruhig und besenrein",
+   "h1_em": "ruhig und besenrein",
+   "lead": "Zieht ein Bewohner aus oder verstirbt, muss das Zimmer oft schnell frei werden, und die Angehörigen brauchen jemanden, der behutsam räumt. Wir sichten mit den Beteiligten, räumen, entsorgen und übergeben besenrein, mit Fotos als Nachweis.",
+   "cta": "Besichtigung anfragen",
+   "zwei_wege": {
+    "h2": "Zwei Wege zu uns",
+    "h2_em": "Wege",
+    "lead": "Ihre Einrichtung beauftragt selbst, oder Sie geben Angehörigen unsere Nummer weiter.",
+    "beauftragen_h3": "Ihre Einrichtung beauftragt",
+    "beauftragen": [
+     "Zimmer oder Wohnung räumen, entsorgen und besenrein übergeben",
+     "Räumungstermin in Absprache mit Ihrer Einrichtung",
+     "Kostenlose Besichtigung, danach schriftlicher Festpreis für Räumung und Abtransport",
+     "Rechnung an die Einrichtung mit ausgewiesener Umsatzsteuer, Entsorgungsgebühren nach Beleg ohne eigenen Aufschlag"
+    ],
+    "beauftragen_button": "Besichtigung anfragen",
+    "verweisen_h3": "Sie verweisen Angehörige an uns",
+    "verweisen": [
+     "Die Angehörigen melden sich selbst per WhatsApp oder Telefon",
+     "Kostenlose Besichtigung, schriftlicher Festpreis für die Angehörigen",
+     "Auf Wunsch stimmen wir den Termin mit Ihrer Einrichtung ab",
+     "Sie geben nur die Nummer weiter, den Rest klären wir mit den Angehörigen"
+    ],
+    "verweisen_button": "WhatsApp-Nummer weitergeben",
+    "verweisen_wa_text": "Haus- & Gartenservice Havelland aus Falkensee: Wohnungsauflösung, Haushaltsauflösung und Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis. WhatsApp und Telefon: 01515 6198195.",
+    "verweisen_hint": "Der Button öffnet WhatsApp mit einem fertigen Text. Sie wählen nur den Kontakt."
+   },
+   "leistungen": [
+    {
+     "slug": "haushaltsaufloesung",
+     "h3": "Zimmer- und Wohnungsauflösung",
+     "p": "Mit den Angehörigen sichten, Dokumente und Wertsachen beiseitelegen, räumen, entsorgen und besenrein übergeben.",
+     "partner": false
+    },
+    {
+     "slug": "entruempelung",
+     "h3": "Entrümpelung von Keller und Lager",
+     "p": "Abstellräume, Keller und Lager der Einrichtung geleert, nach Abfallart getrennt und zum Wertstoffhof gefahren.",
+     "partner": false
+    },
+    {
+     "slug": "grundreinigung",
+     "h3": "Reinigung nach dem Auszug",
+     "p": "Das geräumte Zimmer reinigen wir gründlich und halten das Ergebnis mit Fotos fest.",
+     "partner": false
+    },
+    {
+     "slug": "gartenpflege",
+     "h3": "Außenanlagen",
+     "p": "Rasen, Hecken, Beete und Laub im festen Turnus. Den Winterdienst übernimmt ein Partner-Fachbetrieb.",
+     "partner": false
+    }
+   ],
+   "faqs": [
+    {
+     "q": "Wer beauftragt die Räumung, und an wen geht die Rechnung?",
+     "a": "Auftraggeber kann Ihre Einrichtung sein oder die Angehörigen. Die Rechnung geht an den Auftraggeber und weist die Umsatzsteuer aus. Wer im Erbfall über den Nachlass verfügen darf, klärt das Nachlassgericht, nicht wir."
+    },
+    {
+     "q": "Wie schnell ist ein Zimmer wieder frei?",
+     "a": "Wir antworten am selben Tag und besichtigen meist innerhalb weniger Tage. Den Räumungstermin nennen wir nach der Besichtigung verbindlich, weil Menge und Zugang die Dauer bestimmen."
+    },
+    {
+     "q": "Was geschieht mit persönlichen Dingen und Wertsachen?",
+     "a": "Briefe, Fotos, Dokumente, Schmuck und Wertsachen legen wir beiseite und übergeben sie an die Angehörigen oder an die Person, die Sie nennen. Nichts verlässt das Zimmer ohne Freigabe."
+    },
+    {
+     "q": "Was ist, wenn die Angehörigen weit weg wohnen?",
+     "a": "Für Besichtigung und Räumung reichen eine Schlüsselübergabe und eine kurze schriftliche Vollmacht. Die Angehörigen bekommen Fotos aufs Handy, Rechnung und Entsorgungsbelege per Mail."
+    },
+    {
+     "q": "Was kostet die Räumung eines Zimmers oder einer Wohnung?",
+     "a": "Ohne Besichtigung nennen wir keine feste Zahl, weil Menge, Etage, Aufzug und Zugang den Aufwand bestimmen. Nach der kostenlosen Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, Entsorgungsgebühren kommen nach Beleg dazu, ohne eigenen Aufschlag."
+    },
+    {
+     "q": "Wer reinigt das Zimmer nach der Räumung?",
+     "a": "Die Reinigung nach dem Auszug übernehmen wir selbst, im Anschluss an die Räumung. Das Angebot erhalten Sie nach der kostenlosen Besichtigung schriftlich, den Termin stimmen wir mit der Räumung ab."
+    }
+   ],
+   "cta_wa_text": "Hallo, wir sind eine Pflegeeinrichtung und möchten ein Zimmer bzw. eine Wohnung räumen lassen.",
+   "bild_alt": "Helles, leer geräumtes Zimmer nach einer Zimmerauflösung",
+   "leistungen_h2": "Was wir für Einrichtungen übernehmen",
+   "leistungen_h2_em": "übernehmen",
+   "zusagen": [
+    {
+     "h3": "Ein Ansprechpartner",
+     "p": "Eine Nummer für Einrichtung und Angehörige. Wir antworten am selben Tag."
+    },
+    {
+     "h3": "Angebot nach Besichtigung",
+     "p": "Die Besichtigung ist kostenlos, danach steht der Festpreis für Räumung und Abtransport schriftlich fest."
+    },
+    {
+     "h3": "Nachweis mit Fotos",
+     "p": "Fotos vom geräumten Zimmer und von der Übergabe, für Einrichtung und Angehörige."
+    },
+    {
+     "h3": "Achtsam mit Persönlichem",
+     "p": "Briefe, Fotos und Wertsachen legen wir beiseite und übergeben sie. Nichts verlässt das Zimmer ohne Freigabe."
+    }
+   ],
+   "ablauf": [
+    {
+     "h": "Anfrage",
+     "p": "Per Telefon oder WhatsApp: Wer zieht aus, wie ist der Zugang, bis wann soll das Zimmer frei sein? Wir antworten am selben Tag."
+    },
+    {
+     "h": "Besichtigung",
+     "p": "Kostenlos vor Ort, meist innerhalb weniger Tage."
+    },
+    {
+     "h": "Festpreis",
+     "p": "Schriftlich für Räumung und Abtransport. Verwertbares rechnen wir an, Entsorgungsgebühren weisen wir nach Beleg aus."
+    },
+    {
+     "h": "Räumung und Übergabe",
+     "p": "Wir räumen, entsorgen und übergeben besenrein. Sie bekommen Fotos und die Belege."
+    }
+   ],
+   "endband": {
+    "h2": "Sagen Sie uns, welches Zimmer frei werden soll",
+    "p": "Wir antworten am selben Tag, besichtigen kostenlos und nennen einen schriftlichen Festpreis."
+   },
+   "quellen": [
+    "Räumung, Sichten, Wertsachen beiseite, besenrein, Fotos, Vollmacht und Schlüsselübergabe, Nachlassgericht: Hub haushaltsaufloesung (hubs.json: Blöcke Erbfall und Pflegeheim, FAQ Dokumente/Wertgegenstände, FAQ Muss ich dabei sein)",
+    "Festpreis für Räumung und Abtransport, Entsorgungsgebühren nach Beleg ohne Aufschlag, Verwertbares anrechnen: Hubs haushaltsaufloesung und entruempelung",
+    "Rechnung mit ausgewiesener Umsatzsteuer: Spec Teil B3 (Rechnung an Sie) und Hub entruempelung (Gewerbe-Entrümpelung)",
+    "Reinigung nach Auszug als Eigenleistung: Owner-Entscheid 20.10. abends (Grundreinigung = Eigenleistung, frühere Partner-Angabe aufgehoben)",
+    "Winterdienst als Partner: data/b2b.json, Spec Teil B2",
+    "Reaktionszeiten: Owner bestätigt 20.10. (antworten am selben Tag, Besichtigung meist innerhalb weniger Tage)",
+    "Button WhatsApp-Nummer weitergeben: Owner-Antwort 20.10. Nr. 1, Telefonnummer aus data/nap.json"
+   ]
+  },
+  "bestatter": {
+   "url": "/fuer-bestatter/",
+   "title": "Haushaltsauflösung nach Todesfall: Partner für Bestatter",
+   "meta": "Haushaltsauflösung nach einem Todesfall für Bestatter und Angehörige in Falkensee und im Havelland: ruhig, besenrein, mit Fotos. Besichtigung kostenlos.",
+   "kick": "Für Bestatter",
+   "h1": "Haushaltsauflösung nach dem Todesfall, ruhig und besenrein",
+   "h1_em": "ruhig und besenrein",
+   "lead": "Nach der Bestattung bleibt Angehörigen oft eine Wohnung, die geräumt werden muss. Sie beauftragen uns für Ihre Kunden oder geben Angehörigen unsere Nummer, wir sichten gemeinsam, räumen und übergeben besenrein.",
+   "cta": "Besichtigung anfragen",
+   "zwei_wege": {
+    "h2": "Zwei Wege zu uns",
+    "h2_em": "Wege",
+    "lead": "Ihr Bestattungshaus beauftragt selbst, oder Sie verweisen Angehörige an uns.",
+    "beauftragen_h3": "Ihr Bestattungshaus beauftragt",
+    "beauftragen": [
+     "Wohnung, Haus oder Keller räumen und besenrein übergeben",
+     "Sichten mit den Angehörigen, Dokumente und Wertsachen bleiben bei ihnen",
+     "Kostenlose Besichtigung, danach schriftlicher Festpreis für Räumung und Abtransport",
+     "Rechnung an den Auftraggeber mit ausgewiesener Umsatzsteuer"
+    ],
+    "beauftragen_button": "Besichtigung anfragen",
+    "verweisen_h3": "Sie verweisen Angehörige an uns",
+    "verweisen": [
+     "Die Angehörigen melden sich selbst, Sie geben nur die Nummer weiter",
+     "Auch bei weiter Entfernung lässt sich alles per Schlüsselübergabe und Vollmacht regeln",
+     "Schriftlicher Festpreis, Fotos jeder Etappe aufs Handy der Angehörigen",
+     "Der Termin richtet sich nach den Angehörigen und der Kündigungsfrist"
+    ],
+    "verweisen_button": "WhatsApp-Nummer weitergeben",
+    "verweisen_wa_text": "Haus- & Gartenservice Havelland aus Falkensee: Haushaltsauflösung, Wohnungsauflösung und Entrümpelung nach einem Todesfall. Kostenlose Besichtigung, schriftlicher Festpreis. WhatsApp und Telefon: 01515 6198195.",
+    "verweisen_hint": "Der Button öffnet WhatsApp mit einem fertigen Text. Sie wählen nur den Kontakt."
+   },
+   "leistungen": [
+    {
+     "slug": "haushaltsaufloesung",
+     "h3": "Wohnungs- und Haushaltsauflösung",
+     "p": "Sichten, räumen, entsorgen und besenrein übergeben. Dokumente und Wertsachen legen wir für die Angehörigen beiseite.",
+     "partner": false
+    },
+    {
+     "slug": "entruempelung",
+     "h3": "Keller, Dachboden und Garage",
+     "p": "Wo sich über Jahre Dinge angesammelt haben, räumen wir getrennt nach Holz, Metall und Elektro und fahren zum Wertstoffhof.",
+     "partner": false
+    },
+    {
+     "slug": "grundreinigung",
+     "h3": "Reinigung nach der Räumung",
+     "p": "Die geräumte Wohnung reinigen wir gründlich für die Übergabe und halten das Ergebnis mit Fotos fest.",
+     "partner": false
+    },
+    {
+     "slug": "gartenpflege",
+     "h3": "Haus und Garten bis zur Übergabe",
+     "p": "Rasen, Hecken und Laub gepflegt, solange das Haus noch nicht verkauft oder übergeben ist.",
+     "partner": false
+    }
+   ],
+   "faqs": [
+    {
+     "q": "Müssen die Angehörigen bei der Räumung dabei sein?",
+     "a": "Nein. Für Besichtigung und Räumung reichen eine Schlüsselübergabe und eine kurze schriftliche Vollmacht. Jede Etappe halten wir mit Fotos fest und schicken sie den Angehörigen aufs Handy."
+    },
+    {
+     "q": "Wer darf die Auflösung beauftragen?",
+     "a": "Das entscheiden die Angehörigen oder Erben. Bei mehreren Erben sprechen wir den Ablauf mit allen ab, wenn sie das wünschen. Erbschein und Nachlass klärt das Nachlassgericht, nicht wir."
+    },
+    {
+     "q": "Was geschieht mit Dokumenten, Wertsachen und Erinnerungsstücken?",
+     "a": "Dokumente, Schmuck, Briefe und Fotos legen wir vor der Räumung beiseite. Nichts davon geht in die Entsorgung oder Verwertung, ohne dass die Angehörigen es gesehen haben."
+    },
+    {
+     "q": "Wie schnell kann geräumt werden, wenn der Vermieter drängt?",
+     "a": "Die Kündigungsfrist beim Vermieter gibt den Räumungstermin vor. Wir antworten am selben Tag, besichtigen meist innerhalb weniger Tage und nennen nach der Besichtigung einen verbindlichen Termin."
+    },
+    {
+     "q": "Kostet es uns etwas, wenn wir Ihre Nummer weitergeben?",
+     "a": "Nein. Sie geben nur die Nummer weiter. Die Angehörigen entscheiden nach der kostenlosen Besichtigung und dem schriftlichen Festpreis, ob sie uns beauftragen."
+    },
+    {
+     "q": "Was kostet eine Haushaltsauflösung nach einem Todesfall?",
+     "a": "Ohne Besichtigung nennen wir keine feste Zahl, weil zwei gleich große Wohnungen im Aufwand weit auseinanderliegen können. Nach der kostenlosen Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, Verwertbares rechnen wir an."
+    }
+   ],
+   "cta_wa_text": "Hallo, wir sind ein Bestattungshaus und möchten eine Wohnungsauflösung für Angehörige anfragen.",
+   "bild_alt": "Leer geräumte, helle Wohnung nach der Haushaltsauflösung",
+   "leistungen_h2": "Was wir für Angehörige übernehmen",
+   "leistungen_h2_em": "übernehmen",
+   "zusagen": [
+    {
+     "h3": "Ein Ansprechpartner",
+     "p": "Eine Nummer für Bestattungshaus und Angehörige. Wir antworten am selben Tag."
+    },
+    {
+     "h3": "Respekt vor dem Nachlass",
+     "p": "Briefe, Fotos, Schmuck und Dokumente legen wir beiseite. Nichts verlässt die Wohnung ohne Freigabe."
+    },
+    {
+     "h3": "Festpreis nach Besichtigung",
+     "p": "Schriftlich für Räumung und Abtransport, Entsorgungsgebühren nach Beleg ohne eigenen Aufschlag."
+    },
+    {
+     "h3": "Fotos von jeder Etappe",
+     "p": "Aufs Handy der Angehörigen, auch über größere Entfernung."
+    }
+   ],
+   "ablauf": [
+    {
+     "h": "Anfrage",
+     "p": "Sie oder die Angehörigen melden sich per Telefon oder WhatsApp. Wir antworten am selben Tag."
+    },
+    {
+     "h": "Besichtigung",
+     "p": "Kostenlos vor Ort, meist innerhalb weniger Tage. Wohnen die Angehörigen weit weg, reichen Schlüsselübergabe und eine kurze schriftliche Vollmacht."
+    },
+    {
+     "h": "Festpreis",
+     "p": "Schriftlich für Räumung und Abtransport. Verwertbares rechnen wir an, Entsorgungsgebühren weisen wir nach Beleg ohne eigenen Aufschlag aus."
+    },
+    {
+     "h": "Räumung und Übergabe",
+     "p": "Wir sichten mit den Angehörigen, räumen, entsorgen und übergeben besenrein. Fotos jeder Etappe gehen aufs Handy."
+    }
+   ],
+   "endband": {
+    "h2": "Sagen Sie uns, welche Wohnung geräumt werden soll",
+    "p": "Wir antworten am selben Tag, besichtigen kostenlos und nennen einen schriftlichen Festpreis."
+   },
+   "quellen": [
+    "Sichten, Wertsachen und Dokumente beiseite, besenrein, Fotos je Etappe, Vollmacht und Schlüsselübergabe, Absprache mit allen Erben, Nachlassgericht, Kündigungsfrist des Vermieters: Hub haushaltsaufloesung (hubs.json: Blöcke, FAQ, Sektionen)",
+    "Getrennt nach Holz, Metall und Elektro, Wertstoffhof, Festpreis und Entsorgungsgebühren nach Beleg: Hub entruempelung",
+    "Rechnung mit ausgewiesener Umsatzsteuer: Spec Teil B3 und Hub entruempelung",
+    "Reinigung nach der Räumung als Eigenleistung: Owner-Entscheid 20.10. abends (Grundreinigung = Eigenleistung, frühere Partner-Angabe aufgehoben)",
+    "Keine Provision und keine Verpflichtung beim Weitergeben der Nummer: Spec Teil B1 (keine Provision, Tippgeber-Modell liegt in 07-Vermittlung)",
+    "Reaktionszeiten: Owner bestätigt 20.10.",
+    "Button WhatsApp-Nummer weitergeben: Owner-Antwort 20.10. Nr. 1, Telefonnummer aus data/nap.json"
+   ]
+  }
+ }
+}

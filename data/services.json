@@ -268,7 +268,7 @@
       "b2b_only": true,
       "price": null,
       "offer_ref": "G4.1",
-      "garantie": "Termin-Ausfall ohne Vorankündigung — nächster Einsatz kostenlos",
+      "garantie": null,
       "element_status": "teilweise",
       "faq": null,
       "kd": 1,
@@ -288,13 +288,12 @@
       "wave": 1,
       "price": null,
       "offer_ref": "G4.3",
-      "garantie": "Ausfall? Innerhalb 48 h nachgeholt — kostenlos",
+      "garantie": null,
       "element_status": "geplant",
       "faq": null,
       "sektionen": [
         "Treppenhausreinigung",
-        "Büroreinigung",
-        "Bauendreinigung"
+        "Büroreinigung"
       ]
     },
     {
@@ -311,7 +310,7 @@
       "wave": 1,
       "price": null,
       "offer_ref": "G4.2",
-      "garantie": "Ausfall? Innerhalb 48 h nachgeholt — kostenlos",
+      "garantie": null,
       "element_status": "geplant",
       "faq": null
     },
@@ -347,7 +346,7 @@
       "wave": 1,
       "price": null,
       "offer_ref": "G5.2",
-      "garantie": "Nicht rechtzeitig vor Check-in fertig? Reinigungspreis zurück",
+      "garantie": null,
       "element_status": "geplant",
       "faq": null,
       "orte_fix": [

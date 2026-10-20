@@ -3,6 +3,7 @@
 // Ausgabe: je Regel ✓/✗ + Abschluss "ACCEPT GRÜN" (exit 0) oder "ACCEPT ROT: <fehlende>" (exit 1).
 // Run: node scripts/accept.mjs   (setzt voraus: FULL=1 node scripts/generate.mjs lief bereits)
 import fs from 'fs';
+import { execFileSync } from 'child_process';
 
 const read = rel => { try { return fs.readFileSync(`website/${rel}`, 'utf8'); } catch { return null; } };
 
@@ -304,12 +305,84 @@ page('gartenpflege-falkensee/index.html', 'ORTSSEITE gartenpflege-falkensee', h 
   check('gp-falkensee', 'ba==0', classCount(h, 'ba') === 0);
 });
 
-// ---- ORTS-HUB standorte/falkensee ----
-page('standorte/falkensee/index.html', 'ORTS-HUB standorte/falkensee', h => {
-  check('standorte-falkensee', 'cards', classCount(h, 'card') >= 1);
-  check('standorte-falkensee', 'trustbadges ODER gstrip', classCount(h, 'trustbadges') >= 1 || classCount(h, 'gstrip') >= 1);
-  check('standorte-falkensee', 'wa-grid', classCount(h, 'wa-grid') >= 1);
+// ---- PAKET-3 STANDORTE (Spec Teil A §4/§5/§8, Plan Task 3/4; ersetzt den alten Block ORTS-HUB standorte/falkensee: Karten-Raster + wa-grid entfallen) ----
+const SX_DATA = JSON.parse(fs.readFileSync('data/standorte.json', 'utf8'));
+const SX_ORTE = [...SX_DATA.stufe1, ...SX_DATA.stufe2].flatMap(g => g.orte);
+const SX_KERN = SX_DATA.kern;
+const sxExists = href => { const p = href.split('#')[0].replace(/^\//, ''); return read((p.endsWith('/') ? p : p + '/') + 'index.html') != null; };
+const sxHrefs = html => [...html.matchAll(/href="(\/[^"#?]*)"/g)].map(m => m[1]);
+const sxIndexierbar = rel => { const t = read(rel.replace(/^\//, '') + 'index.html'); return t != null && !/<meta name="robots" content="noindex/i.test(t); };
+// Wörter Hauptinhalt (analog temp/paket1/tools/woerter.mjs): zwischen </header> und <footer, ohne Skripte, Breadcrumb, Ortslinks/Chips/Linkzeilen
+const sxWoerter = h => {
+  h = h.slice(h.indexOf('</header>'), h.indexOf('<footer'));
+  h = h.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ').replace(/<div class="wrap breadcrumb"[\s\S]*?<\/div>/g, ' ')
+    .replace(/<div class="sx-svc"[\s\S]*?<\/div>/g, ' ').replace(/<p class="sx-(?:mehr|nah|places|far-svc)[^>]*>[\s\S]*?<\/p>/g, ' ');
+  const t = h.replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/gi, ' ');
+  return (t.match(/[A-Za-zÄÖÜäöüß0-9€][\wÄÖÜäöüß€.,–-]*/g) || []).length;
+};
+const sxOrtsseitenVon = ort => { try { return fs.readdirSync('website', { withFileTypes: true }).filter(d => d.isDirectory() && d.name.endsWith('-' + ort) && sxIndexierbar(d.name + '/')).map(d => d.name); } catch { return []; } };
+page('standorte/index.html', 'PAKET-3 STANDORTE /standorte/', h => {
+  const T = 'standorte';
+  check(T, 'genau 1 H1', (h.match(/<h1\b/g) || []).length === 1);
+  check(T, 'kein Kachel-Raster (.card entfällt)', classCount(h, 'card') === 0 && classCount(h, 'cards') === 0);
+  check(T, 'kein Stockfoto/Regionen-Bild (region-havelland)', !has(h, 'region-havelland'));
+  check(T, 'Bild im Kopf (.sx-shot) + Badge „Sitz in Falkensee“', classCount(h, 'sx-shot') === 1 && has(h, 'Sitz in Falkensee'));
+  check(T, 'gstrip, Zusage 01 ohne „inklusive Abfuhr“', classCount(h, 'gstrip') === 1 && !hasI(h, 'inklusive Abfuhr'));
+  const kastenChips = ((h.match(/<div class="sx-home rv">[\s\S]*?<div class="sx-svc">([\s\S]*?)<\/div>/) || [])[1] || '');
+  check(T, 'Falkensee-Kasten (.sx-home) mit 8 Chips', classCount(h, 'sx-home') === 1 && kastenChips.split('<a ').length - 1 === 8);
+  const rowPieces = h.split('<div class="sx-row rv">').slice(1).map(x => x.split('<span class="sx-end">')[0]);
+  const rows = rowPieces;
+  check(T, 'Stufe-1-Zeilen = 9 (+ Falkensee-Kasten)', classCount(h, 'sx-row') === 9 && rows.length === 9);
+  check(T, 'je Zeile 4 Kern-Chips', rows.length === 9 && rows.every(r => ((r.match(/<div class="sx-svc">([\s\S]*?)<\/div>/) || ['', ''])[1]).split('<a ').length - 1 === 4));
+  const chipHrefs = [...h.matchAll(/<div class="sx-svc">([\s\S]*?)<\/div>/g)].flatMap(m => sxHrefs(m[1]));
+  const badChip = chipHrefs.filter(x => !sxExists(x));
+  check(T, 'alle Chip-Ziele existieren (8 + 9 × 4 Chips)' + (badChip.length ? ' (' + [...new Set(badChip)].slice(0, 4).join(', ') + ')' : ''), chipHrefs.length === 8 + 9 * 4 && badChip.length === 0);
+  const noidx = chipHrefs.filter(x => !sxIndexierbar(x));
+  check(T, 'keine Chips auf noindex-Seiten' + (noidx.length ? ' (' + noidx.join(', ') + ')' : ''), noidx.length === 0);
+  check(T, 'Zeilen-Chips: Ortsseite wenn vorhanden und indexierbar, sonst Hub (Link-Regel)', SX_ORTE.slice(1, 10).every(sl => {
+    const row = rowPieces.find(x => x.includes('href="/standorte/' + sl + '/"')) || '';
+    return row && SX_KERN.every(sv => { const own = `/${sv}-${sl}/`; return has(row, `href="${sxIndexierbar(own) ? own : '/' + sv + '/'}"`); });
+  }));
+  const far = sectionOf(h, 'auch');
+  check(T, 'Stufe-2-Band (.zone-dark) mit 12 Ortslinks', has(far, 'zone-dark') && (far.match(/href="\/standorte\/[a-z-]+\/"/g) || []).length === 12);
+  check(T, 'Stufe-2: Leistungszeile + WhatsApp-Button', has(far, 'und mehr') && has(far, 'Ort per WhatsApp anfragen'));
+  const alleLinks = new Set(sxHrefs(h));
+  const fehlt = SX_ORTE.filter(sl => !alleLinks.has(`/standorte/${sl}/`));
+  check(T, 'alle 22 Standortseiten verlinkt' + (fehlt.length ? ' (fehlt: ' + fehlt.join(', ') + ')' : ''), SX_ORTE.length === 22 && fehlt.length === 0);
+  check(T, 'FAQ = 3', (sectionOf(h, 'faq').match(/<details/g) || []).length === 3);
+  check(T, 'Abschluss-Band (zone-deep end)', has(h, 'zone-deep end'));
+  check(T, 'kein FAQPage-Schema, ItemList mit 22 Orten', !has(h, '"@type":"FAQPage"') && (h.match(/"@type":"ListItem","position":\d+,"name":"[^"]+","item":"https:\/\/[^"]+\/standorte\/[a-z-]+\//g) || []).length === 22);
+  const w = sxWoerter(h);
+  check(T, `Hauptinhalt ≤ 450 Wörter (${w})`, w <= 450);
 });
+for (const sl of SX_ORTE) {
+  page(`standorte/${sl}/index.html`, `PAKET-3 STANDORTSEITE ${sl}`, h => {
+    const T = 'standort-' + sl;
+    check(T, 'genau 1 H1 „Haus- & Gartenservice in …“', (h.match(/<h1\b/g) || []).length === 1 && /<h1[^>]*>Haus- &amp; Gartenservice in <em>/.test(h));
+    check(T, '≤ 8 Abschnitte', (h.slice(h.indexOf('</header>'), h.indexOf('<footer')).match(/<section\b/g) || []).length <= 8);
+    check(T, 'gstrip ohne „inklusive Abfuhr“', classCount(h, 'gstrip') === 1 && !hasI(h, 'inklusive Abfuhr'));
+    const kern = sectionOf(h, 'leistungen');
+    const kHref = [...((kern.match(/<div class="sx-kern rv">[\s\S]*?<\/div><\/a><\/div>/) || [''])[0]).matchAll(/<a href="(\/[^"]+)"/g)].map(m => m[1]);
+    check(T, '4 Kern-Karten mit gültigem Ziel', kHref.length === 4 && kHref.every(sxExists));
+    check(T, 'Kern-Karten: Ortsseite wenn vorhanden und indexierbar, sonst Hub', SX_KERN.every((sv, i) => kHref[i] === (sxIndexierbar(`/${sv}-${sl}/`) ? `/${sv}-${sl}/` : `/${sv}/`)));
+    const soll = sxOrtsseitenVon(sl).filter(d => !SX_KERN.some(sv => d === `${sv}-${sl}`)).map(d => `/${d}/`).sort();
+    const ist = [...(((kern.match(/<p class="sx-mehr rv">[\s\S]*?<\/p>/) || [''])[0]).matchAll(/href="(\/[^"]+)"/g))].map(m => m[1]).sort();
+    check(T, `„Außerdem“ = alle übrigen indexierbaren Leistungs-Ortsseiten (${soll.length})` + (JSON.stringify(soll) !== JSON.stringify(ist) ? ` [Soll ${soll.join(',')} | Ist ${ist.join(',')}]` : ''), JSON.stringify(soll) === JSON.stringify(ist));
+    check(T, 'Außerdem: keine Links auf noindex-Seiten', ist.every(sxIndexierbar));
+    check(T, '„Was in … anfällt“ vorhanden', has(h, 'id="anfaellt"'));
+    check(T, 'Ablauf „So läuft es in … ab“ (4 Schritte)', has(h, 'So läuft es in ') && (sectionOf(h, 'ablauf').match(/class="tli"/g) || []).length === 4);
+    const nah = sectionOf(h, 'naehe'); const nahL = [...nah.matchAll(/href="\/standorte\/([a-z-]+)\/"/g)].map(m => m[1]);
+    check(T, '„In der Nähe“ ≥ 2 Links auf Standortseiten, Alle Orte', nahL.length >= 2 && nahL.every(x => SX_ORTE.includes(x) && x !== sl) && has(nah, 'href="/standorte/"'));
+    check(T, 'FAQ = 3', (sectionOf(h, 'faq').match(/<details/g) || []).length === 3);
+    check(T, 'kein gebietskarte / wa-grid / media-band', classCount(h, 'gebiet-wrap') === 0 && !has(h, 'id="gebiet"') && classCount(h, 'wa-grid') === 0 && classCount(h, 'media-band') === 0);
+    check(T, 'Abschluss-Band (zone-deep end)', has(h, 'zone-deep end'));
+    check(T, 'indexierbar, Canonical auf sich selbst', !/<meta name="robots" content="noindex/i.test(h) && has(h, `<link rel="canonical" href="https://haus-und-gartenservice-havelland.de/standorte/${sl}/">`));
+    check(T, 'kein FAQPage-Schema, Breadcrumb-Schema', !has(h, '"@type":"FAQPage"') && has(h, '"@type":"BreadcrumbList"'));
+    check(T, 'PLZ im sichtbaren Kopf', /Standort · \d{5} /.test(h));
+    const w = sxWoerter(h);
+    check(T, `Hauptinhalt ≤ 500 Wörter (${w})`, w <= 500);
+  });
+}
 
 // ---- RATGEBER-ARTIKEL wann-hecke-schneiden ----
 page('ratgeber/wann-hecke-schneiden/index.html', 'RATGEBER wann-hecke-schneiden', h => {
@@ -346,15 +419,199 @@ page('kontakt/index.html', 'KONTAKT', h => {
   check('kontakt', 'DSGVO-Checkbox', has(h, 'type="checkbox"'));
 });
 
-// ---- B2B fuer-hausverwaltungen (17.09. Umbau Objektpflege: Referenz-Satz, 6 Leistungskarten, CTA-Text, kein Preis) ----
-page('fuer-hausverwaltungen/index.html', 'B2B fuer-hausverwaltungen', h => {
-  check('b2b', 'Angebot', hasI(h, 'Angebot'));
-  check('b2b', 'E-Mail', has(h, 'E-Mail') || has(h, 'mailto:'));
-  check('b2b', 'referenz', has(h, 'Wir betreuen bereits Objekte im Havelland in festen Pflegeverträgen.'));
-  check('b2b', 'karten', classCount(h, 'card') >= 6);
-  check('b2b', 'cta angebot', hasI(h, 'Angebot für Ihr Objekt'));
-  check('b2b', 'kein preis', !/\d+ ?€/.test(h.replace(/<script[\s\S]*?<\/script>/g, '')));
-});
+// ---- PAKET-3 GEWERBE (Spec Teil B, Plan Task 6/7/8; ersetzt den alten Block „B2B fuer-hausverwaltungen“ — Objektklassen/Leistungen/Ablauf/FAQ kommen jetzt aus gewerbe.json + b2b.json) ----
+{
+  const GWD = JSON.parse(fs.readFileSync('data/copy/gewerbe.json', 'utf8'));
+  const B2B = JSON.parse(fs.readFileSync('data/b2b.json', 'utf8'));
+  const ZGS = { hausverwaltungen: '/fuer-hausverwaltungen/', firmen: '/fuer-firmen/', pflegeeinrichtungen: '/fuer-pflegeeinrichtungen/', bestatter: '/fuer-bestatter/' };
+  const eh = t => String(t).replace(/&/g, '&amp;');
+  const main = h => h.slice(h.indexOf('</header>'), h.indexOf('<footer'));
+  const text = h => main(h).replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/gi, ' ').replace(/\s+/g, ' ');
+  const wortzahl = h => (text(h).match(/[A-Za-zÄÖÜäöüß0-9€][\wÄÖÜäöüß€.,–-]*/g) || []).length;
+  const VERBOTEN = [[/zzgl\.? ?MwSt|zuzüglich (Mehrwertsteuer|MwSt)/i, 'zzgl. MwSt.'], [/ohne Subunternehmer/i, 'ohne Subunternehmer'], [/alles aus einer Hand/i, 'alles aus einer Hand'], [/Kleinunternehmer/i, 'Kleinunternehmer'], [/\bversichert\b/i, 'versichert'], [/Visitenkarten/i, 'Visitenkarten']];
+  const verboten = h => VERBOTEN.filter(([re]) => re.test(text(h))).map(([, n]) => n);
+  const PARTNER = ['winterdienst', 'dachrinnenreinigung', 'dachreinigung'];   // Owner 20.10. abends: Grundreinigung = Eigenleistung, nicht mehr Partner
+  const links = h => [...main(h).matchAll(/href="(\/[^"#?]*)"/g)].map(m => m[1]);
+  const defekt = h => [...new Set(links(h).filter(x => !sxExists(x)))];
+  const schemaOk = h => { try { return [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1])); } catch { return null; } };
+  const sitemap = read('sitemap-services.xml') || '';
+
+  // --- Navigation, Footer, Startseite ---
+  page('index.html', 'PAKET-3 GEWERBE Navigation + Startseiten-Band', h => {
+    const T = 'gw-nav';
+    const hd = h.slice(h.indexOf('<header'), h.indexOf('</header>'));
+    check(T, 'Header: „Für Gewerbe“ → /gewerbe/ mit Dropdown (4 Zielgruppen-Links + „Alles für Gewerbe“)', has(hd, '<div class="nav-dd nav-dd-sm"><a href="/gewerbe/" aria-haspopup="true">Für Gewerbe</a>') && Object.values(ZGS).every(u => (hd.match(new RegExp('<div class="nav-dd-col">[\\s\\S]*?href="' + u + '"')) || []).length === 1) && has(hd, 'Alles für Gewerbe →'));
+    check(T, 'Header: kein alter Menüpunkt „Hausverwaltungen“ mehr in der Hauptnavigation', !has(hd, '<a href="/fuer-hausverwaltungen/">Hausverwaltungen</a>') && !has(hd, '<a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a>'));
+    check(T, 'Mobil-Menü: eigene Gruppe „Für Gewerbe“ (aufklappbar) mit 4 Links', /<details class="mnav-dd"><summary>Für Gewerbe<\/summary>(<a [^>]+>[^<]+<\/a>){4}<a class="mnav-grp-h" href="\/gewerbe\/">/.test(hd));
+    const ft = h.slice(h.indexOf('<footer'));
+    check(T, 'Footer: Kopf-Link /gewerbe/ + 4 Zielgruppen-Links', has(ft, '<h4><a href="/gewerbe/">') && Object.values(ZGS).every(u => has(ft, `<li><a href="${u}">`)));
+    const band = sectionOf(h, 'gewerbe');
+    check(T, 'Startseite: Band .gw-band (zone-dark) mit 4 Karten auf die Zielgruppenseiten + Link /gewerbe/', has(band, 'zone-dark gw-band') && (band.match(/<div class="gw-zg rv">([\s\S]*?)<\/div><\/section>/) || ['', ''])[1].split('<a href="/fuer-').length - 1 === 4 && has(band, 'href="/gewerbe/"'));
+    check(T, 'Startseite: Band steht nach den Kernleistungen', h.indexOf('id="kernleistungen"') > 0 && h.indexOf('id="gewerbe"') > h.indexOf('id="kernleistungen"'));
+    check(T, 'Startseite: Band-Bilder mit Alt-Text, kein Platzhalter-Bild', !/<img[^>]*alt=""/.test(band) && (band.match(/<img /g) || []).length === 4);
+    // Startseiten-Text ±5 % (Ausnahme: das neue Band) gegen den Stand im HEAD des Worktrees
+    let basis = null; try { basis = execFileSync('git', ['show', 'HEAD:website/index.html'], { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 }); } catch { /* ohne Git: Check entfällt */ }
+    if (basis) {
+      const jetzt = wortzahl(h.replace(band, '')), vorher = wortzahl(basis);
+      check(T, `Startseiten-Text ±5 % ohne Band (HEAD ${vorher} → jetzt ${jetzt})`, Math.abs(jetzt - vorher) / vorher <= 0.05);
+      const kern = ['Haus und Garten', 'Unsere Kernleistungen', 'Echte Ergebnisse zum Durchziehen'];
+      check(T, 'Startseiten-Kerntexte unverändert (H1, Kernleistungen, Galerie)', kern.every(s => has(basis, s) === has(h, s)));
+      check(T, 'Startseiten-Title unverändert (Pos. 2,1 „gartenpflege falkensee“)', (basis.match(/<title>([^<]*)<\/title>/) || [])[1] === (h.match(/<title>([^<]*)<\/title>/) || [])[1]);
+    }
+  });
+  page('leistungen/index.html', 'PAKET-3 GEWERBE /leistungen/', h => {
+    check('gw-leist', 'Bereich „Hausverwaltungen & Gewerbe“ verlinkt /gewerbe/', has(h, '<h3><a href="/gewerbe/">Hausverwaltungen &amp; Gewerbe</a></h3>'));
+  });
+
+  // --- /gewerbe/ ---
+  page('gewerbe/index.html', 'PAKET-3 GEWERBE /gewerbe/', h => {
+    const T = 'gewerbe';
+    check(T, 'genau 1 H1, Kopf mit Bild + CTA „Begehung anfragen“ und Telefon', (h.match(/<h1\b/g) || []).length === 1 && classCount(h, 'sx-shot') === 1 && has(h, '>Begehung anfragen</a>') && has(h, 'href="tel:'));
+    const zg = sectionOf(h, 'zielgruppen');
+    check(T, '4 Zielgruppen-Karten mit Bild auf die vier Seiten', Object.values(ZGS).every(u => has(zg, `<a href="${u}">`)) && (zg.match(/<img /g) || []).length === 4);
+    const ls = sectionOf(h, 'leistungen');
+    const lsHrefs = [...ls.matchAll(/<h3><a href="(\/[a-z-]+\/)">/g)].map(m => m[1]);
+    check(T, `Leistungsliste: nummeriert, ≥ 6 Einträge mit Link auf einen Hub (${lsHrefs.length})`, classCount(ls, 'gw-li') >= 6 && lsHrefs.length === classCount(ls, 'gw-li') && lsHrefs.every(sxExists));
+    check(T, 'KEINE Ausführungs-Labels (.gw-chip, „Eigene Ausführung“, „Partner-Fachbetrieb“ als Label)', classCount(h, 'gw-chip') === 0 && !has(h, 'Eigene Ausführung') && !/<span[^>]*>Partner-Fachbetrieb<\/span>/.test(h));
+    check(T, 'Partner-Leistungen ohne „Festpreis“/„wir machen“ im Beschreibungssatz', PARTNER.every(sl => { const li = (ls.match(new RegExp('<div class="gw-li[^"]*"><span class="n">\\d+</span><div><h3><a href="/' + sl + '/">[\\s\\S]*?</div></div>')) || [''])[0]; return !/Festpreis|wir machen/i.test(li); }));
+    const zus = sectionOf(h, 'zusagen');
+    check(T, 'Zusagen-Band dunkelgrün mit 4 Zusagen', has(zus, 'zone-dark gw-zus') && (zus.match(/<span class="n">0[1-4]<\/span>/g) || []).length === 4);
+    check(T, 'Ablauf: 4 Schritte, Telefon + Begehung', (sectionOf(h, 'ablauf').match(/class="tli"/g) || []).length === 4);
+    const faq = (sectionOf(h, 'faq').match(/<details/g) || []).length;
+    check(T, `FAQ ≥ 5 (${faq})`, faq >= 5 && faq <= 7);
+    check(T, 'Abschluss-Band (zone-deep end)', has(h, 'zone-deep end'));
+    const sc = schemaOk(h);
+    const flat = JSON.stringify(sc);
+    check(T, 'Schema parsebar: CollectionPage + ItemList (4 Zielgruppen) + Breadcrumb, kein FAQPage', !!sc && has(flat, '"CollectionPage"') && (flat.match(/"@type":"ListItem","position":\d,"name":"[^"]+","item":"https:\/\/[^"]+\/fuer-/g) || []).length === 4 && has(flat, 'BreadcrumbList') && !has(flat, 'FAQPage'));
+    check(T, 'indexierbar, Canonical auf sich selbst, in sitemap-services.xml', !/<meta name="robots" content="noindex/i.test(h) && has(h, '<link rel="canonical" href="https://haus-und-gartenservice-havelland.de/gewerbe/">') && has(sitemap, '/gewerbe/</loc>'));
+    const d = defekt(h);
+    check(T, 'alle internen Links haben ein Ziel' + (d.length ? ' (' + d.slice(0, 4).join(', ') + ')' : ''), d.length === 0);
+    check(T, 'keine verbotenen Formulierungen' + (verboten(h).length ? ' (' + verboten(h).join(', ') + ')' : ''), verboten(h).length === 0);
+    check(T, 'keine Preise, keine Stunden-Zusagen zur Reaktion', !/\d+ ?€/.test(text(h)) && !/(antworten|Rückmeldung|melden)[^.]{0,60}(binnen|innerhalb)[^.]{0,20}\d+ (Stunden|Minuten)/i.test(text(h)));
+  });
+
+  // --- Zielgruppenseiten ---
+  for (const [key, url] of Object.entries(ZGS)) {
+    page(url.slice(1) + 'index.html', `PAKET-3 GEWERBE ${url}`, h => {
+      const T = 'zg-' + key; const hv = key === 'hausverwaltungen', zw = key === 'pflegeeinrichtungen' || key === 'bestatter';
+      check(T, 'genau 1 H1, Kopf mit Bild (.sx-shot), Breadcrumb „Für Gewerbe“', (h.match(/<h1\b/g) || []).length === 1 && classCount(h, 'sx-shot') === 1 && has(h, '<a href="/gewerbe/">Für Gewerbe</a>'));
+      const ls = sectionOf(h, 'leistungen');
+      const lsN = classCount(ls, 'gw-li');
+      check(T, `Leistungsliste mit ≥ 2 Einträgen (${lsN}), alle Links mit Ziel`, lsN >= 2 && (ls.match(/<h3><a href="\/[a-z-]+\/[^"]*">/g) || []).length === lsN);
+      check(T, 'Zusagen-Band (zone-dark) mit 4 Zusagen', has(sectionOf(h, 'zusagen'), 'zone-dark gw-zus') && (sectionOf(h, 'zusagen').match(/<span class="n">0[1-4]<\/span>/g) || []).length === 4);
+      const ab = (sectionOf(h, 'ablauf').match(/class="tli"/g) || []).length;
+      check(T, `Ablauf ${ab} Schritte (4–5)`, ab >= 4 && ab <= 5);
+      const faq = (sectionOf(h, 'faq').match(/<details/g) || []).length;
+      check(T, `FAQ 4–7 Fragen (${faq})`, faq >= 4 && faq <= 7);
+      check(T, 'Abschluss-Band (zone-deep end), genau 1 primärer Hero-CTA', has(h, 'zone-deep end') && (h.match(/<section class="phero[\s\S]*?<\/section>/) || [''])[0].split('btn btn-acc').length - 1 === 1);
+      const sc = schemaOk(h), flat = JSON.stringify(sc);
+      check(T, 'Schema parsebar: Service + OfferCatalog + Breadcrumb (3 Ebenen), kein FAQPage', !!sc && has(flat, '"@type":"Service"') && has(flat, '"hasOfferCatalog"') && has(flat, 'BreadcrumbList') && (flat.match(/"@type":"ListItem","position":3/g) || []).length === 1 && !has(flat, 'FAQPage'));
+      const offers = (flat.match(/"itemOffered":\{"@type":"Service","name":"[^"]*","serviceType":"[^"]*","(broker|provider)"/g) || []);
+      const partnerOk = PARTNER.every(sl => { const re = new RegExp('"url":"https://[^"]+/' + sl + '/","itemOffered":\\{"@type":"Service","name":"[^"]*","serviceType":"[^"]*","(broker|provider)"'); const m = flat.match(re); return !m || m[1] === 'broker'; });
+      check(T, `Schema: ${offers.length} Offers, Partner-Leistungen mit broker`, offers.length >= 2 && partnerOk);
+      check(T, 'indexierbar, Canonical auf sich selbst', !/<meta name="robots" content="noindex/i.test(h) && has(h, `<link rel="canonical" href="https://haus-und-gartenservice-havelland.de${url}">`));
+      check(T, 'in sitemap-services.xml', has(sitemap, url + '</loc>'));
+      const t = (h.match(/<title>([^<]*)<\/title>/) || [])[1] || '';
+      check(T, `Title ≤ 60 (${t.length}), Zielgruppe im Title (Kannibalisierung zu den Hubs)`, t.length <= 60 && t.length > 0 && ({ hausverwaltungen: /Hausverwaltung|WEG/, firmen: /Firmen|Gewerbe/, pflegeeinrichtungen: /Pflege/, bestatter: /Bestatter/ }[key]).test(t));
+      const d = defekt(h);
+      check(T, 'alle internen Links haben ein Ziel' + (d.length ? ' (' + d.slice(0, 4).join(', ') + ')' : ''), d.length === 0);
+      check(T, 'keine verbotenen Formulierungen' + (verboten(h).length ? ' (' + verboten(h).join(', ') + ')' : ''), verboten(h).length === 0);
+      check(T, 'Partner-Leistungen ohne „Festpreis“/„wir machen“', PARTNER.every(sl => { const li = (ls.match(new RegExp('<div class="gw-li[^"]*"><span class="n">\\d+</span><div><h3><a href="/' + sl + '/[^"]*">[\\s\\S]*?</div></div>')) || [''])[0]; return !/Festpreis|wir machen/i.test(li); }));
+      check(T, 'keine Preise, keine Stunden-Zusage zur Reaktion', !/\d+ ?€/.test(text(h).replace(/01515 6198195/g, '')) && !/(antworten|Rückmeldung|melden)[^.]{0,60}(binnen|innerhalb)[^.]{0,20}\d+ (Stunden|Minuten)/i.test(text(h)));
+      if (zw) {
+        const z = sectionOf(h, 'zwei-wege');
+        check(T, '„Zwei Wege zu uns“ (.zwei-wege): 2 Boxen, Button „WhatsApp-Nummer weitergeben“ mit WhatsApp-Weiterleitungstext', has(z, 'zwei-wege') && (z.match(/<div class="gw-box">/g) || []).length === 2 && /<a class="btn btn-line" href="https:\/\/wa\.me\/\?text=[^"]+">WhatsApp-Nummer weitergeben<\/a>/.test(z));
+        check(T, 'Zwei Wege steht vor der Leistungsliste, Ton ruhig (keine Ausrufezeichen im Text)', h.indexOf('id="zwei-wege"') > 0 && h.indexOf('id="zwei-wege"') < h.indexOf('id="leistungen"') && !/!/.test(text(h)));
+        check(T, 'Hero ohne Bewertungszeile (Tonalität)', !has((h.match(/<section class="phero[\s\S]*?<\/section>/) || [''])[0], 'hub-trust'));
+      }
+      if (key === 'firmen') check(T, 'Firmen: „Wann Firmen uns rufen“ (3 Anlässe)', (sectionOf(h, 'anlaesse').match(/<span class="n">0\d<\/span>/g) || []).length === 3);
+      if (hv) {
+        const z = { ...B2B, ...((GWD.zielgruppen || {}).hausverwaltungen || {}) };
+        const namen = (z.objektklassen_detail || []).map(x => x.name);
+        const fw = sectionOf(h, 'fuer-wen');
+        check(T, `Objektklassen aus den Daten stehen auf der Seite (${namen.length})`, namen.length >= 4 && namen.every(n => has(fw, eh(n))) && classCount(fw, 'gw-ob') === 1);
+        const det = z.leistungen_detail || [];
+        check(T, `Leistungen mit Ausführungs-Chip (eigen/Partner) und Link: ${det.length} Einträge`, det.length >= 5 && classCount(ls, 'gw-li') === det.length && classCount(ls, 'gw-chip') === det.length && has(ls, 'gw-chip p'));
+        check(T, 'Hauptbutton „Begehung anfragen“ → Formular (Hero + Ablauf + Abschluss), E-Mail nur als Nebenweg „Objektliste per Mail senden“ (Hero + Abschluss)', (h.match(/<a class="btn btn-acc" href="\/kontakt\/#anfrage">Begehung anfragen<\/a>/g) || []).length === 3 && (h.match(/<a class="btn btn-line" href="mailto:[^"]+">Objektliste per Mail senden<\/a>/g) || []).length === 2 && !has(h, 'Angebot für Ihr Objekt anfordern'));
+        check(T, 'Partner-Hinweis steht unter den Leistungen', has(ls, 'class="gw-note') && has(ls, 'Partner-Fachbetrieb'));
+        check(T, 'Hausmeisterservice-Hub wird von hier verlinkt (kein Waise)', has(h, 'href="/hausmeisterservice/"'));
+        check(T, 'Schema: Service mit Audience, Breadcrumb Start › Für Gewerbe › Hausverwaltungen', has(flat, '"audience"') && has(flat, '"name":"Hausverwaltungen & WEG"'));
+      }
+    });
+  }
+
+  // --- Gewerbe-Hubs im Grundgerüst (Plan Task 8; Prüfungen wie PAKET-1 GRUNDGERÜST / CODE-BEFUNDE) ---
+  const GW_HUBS = ['objektbetreuung', 'hausmeisterservice', 'unterhaltsreinigung', 'gebaeudereinigung', 'ferienwohnung-reinigung'];
+  const ZG_URLS = Object.values(ZGS).concat(['/gewerbe/']);
+  for (const sl of GW_HUBS) {
+    page(`${sl}/index.html`, `PAKET-3 GEWERBE-HUB ${sl}`, h => {
+      const leist = (h.match(/<section class="sec" id="leistungen">[\s\S]*?<\/section>/) || [''])[0];
+      check(sl, 'Grundgerüst: genau 1 #leistungen, kein Aufklapper im Leistungsteil, 1 Ablauf, kein Detail-Band/Gebietskarte/Kalender', (h.match(/id="leistungen"/g) || []).length === 1 && !leist.includes('<details') && classCount(h, 'tl') === 1 && classCount(h, 'wa-grid') === 0 && classCount(h, 'media-band') === 0 && classCount(h, 'gebiet-wrap') === 0 && classCount(h, 'cal') === 0);
+      check(sl, 'H2 „Häufige Fragen zu …“ und „So läuft … ab“ mit Leistungsname', /<h2[^>]*>Häufige Fragen zu /.test(h) && /<h2[^>]*>So läuft [^<]+ ab<\/h2>/.test(h));
+      const faq = ((h.match(/<div class="faq rv">[\s\S]*?<\/section>/) || [''])[0].match(/<details/g) || []).length;
+      check(sl, `FAQ 5–7 (${faq})`, faq >= 5 && faq <= 7);
+      const passt = sectionOf(h, 'passt');
+      const pl = [...passt.matchAll(/class="pxc" href="([^"]+)"/g)].map(m => m[1]);
+      check(sl, `„Passt oft dazu“ mit Karten (${pl.length}), alle Ziele vorhanden, B2B-Hubs mit einer Karte auf eine Zielgruppenseite/Gewerbe`, pl.length >= 2 && pl.every(sxExists) && (sl === 'ferienwohnung-reinigung' || pl.some(x => ZG_URLS.includes(x))));
+      check(sl, 'Karten mit Bild (kein leerer Bildplatz)', (passt.match(/class="pxc"/g) || []).length === (passt.match(/<picture/g) || []).length);
+      const anker = [...h.matchAll(/href="#([A-Za-z0-9_-]+)"/g)].map(m => m[1]).filter(a => !has(h, `id="${a}"`));
+      check(sl, 'kein Link auf Anker ohne Ziel' + (anker.length ? ' (' + anker.join(',') + ')' : ''), anker.length === 0);
+      check(sl, 'kein „zzgl. MwSt.“, kein „ohne Subunternehmer“, kein „alles aus einer Hand“, kein „versichert“', verboten(h).filter(x => x !== 'Visitenkarten').length === 0);
+      check(sl, 'Zusage 01 ohne „inklusive Abfuhr“ (Reinigung, Kontrollgänge), Ablauf ohne Abfuhr', !hasI(h, 'inklusive Abfuhr') && has(h, 'steht Ihr Preis schriftlich fest, ohne Nachforderung.'));
+      check(sl, 'Ablauf: nur bestätigte Zeitangaben, B2B-Wortlaut (kein „besenrein“, „zu Hause“, „in Stunden“), Garantie ohne 48 h/Erstattung/Gratis-Einsatz', !/Antwort meist in Stunden|antworten meist in Stunden|besenrein ist Teil|nicht zu Hause|Kurzfristig · kostenlos|Direkt nach der Arbeit|48 Stunden|48 h|erstatten|Reinigungspreis zurück|nächster Einsatz kostenlos/i.test(text(h)) && has(h, 'Meist innerhalb weniger Tage · kostenlos') && has(h, 'Nach jedem Einsatz'));
+      const idx = indexierbareOrtsseiten(sl); const orte = sectionOf(h, 'orte');
+      if (!idx.length) check(sl, 'kein Orte-Block (keine indexierbaren Ortsseiten)', !has(h, 'id="orte"'));
+      else {
+        const linked = new Set([...orte.matchAll(new RegExp('href="/' + sl + '-([a-z0-9-]+)/"', 'g'))].map(m => m[1]));
+        const fehlt = idx.filter(o => !linked.has(o));
+        check(sl, 'alle indexierbaren Ortsseiten im Orte-Block verlinkt' + (fehlt.length ? ' (fehlt: ' + fehlt.slice(0, 5).join(',') + ')' : ''), has(h, 'id="orte"') && fehlt.length === 0);
+        check(sl, 'Orte-Block: ≤ 6 Buttons, übrige als „Weitere Orte“', ((orte.match(/<div class="ox-chips">([\s\S]*?)<\/div>/) || ['', ''])[1].match(/<a /g) || []).length <= 6);
+      }
+      const hero = (h.match(/<div class="shot rv in d2">[\s\S]*?<img[^>]*src="\/assets\/img\/([^"]+?)(?:-\d+)?\.(?:jpe?g|webp|png)"/) || [])[1];
+      const lf = (leist.match(/<img[^>]*src="\/assets\/img\/([^"]+?)(?:-\d+)?\.(?:jpe?g|webp|png)"/) || [])[1];
+      const of = ((h.match(/class="ox-foto">[\s\S]*?<img[^>]*src="\/assets\/img\/([^"]+?)(?:-\d+)?\.(?:jpe?g|webp|png)"/) || [])[1]);
+      const l3 = [hero, lf, of].filter(Boolean);
+      check(sl, `kein Foto doppelt (Hero ${hero || '-'} / Leistung ${lf || '-'} / Orte ${of || '-'}), Orte-Foto kein Platzhalter`, new Set(l3).size === l3.length && of !== 'ueber-uns');
+      if (sl !== 'ferienwohnung-reinigung') check(sl, 'Hub verlinkt eine Gewerbe-Seite im Inhalt (Menü zählt nicht)', links(h).some(x => ZG_URLS.includes(x)));
+    });
+  }
+  page('hausmeisterservice/index.html', 'PAKET-3 GEWERBE-HUB hausmeisterservice b2b_only', h => {
+    check('hausmeisterservice', 'b2b_only: keine Ortsseiten verlinkt, kein Orte-Block', !has(h, 'id="orte"') && !/href="\/hausmeisterservice-[a-z-]+\/"/.test(h));
+  });
+  // Sitemap + llms.txt
+  P('PAKET-3 GEWERBE Sitemap + llms.txt');
+  const llms = (() => { try { return fs.readFileSync('website/llms.txt', 'utf8'); } catch { return ''; } })();
+  check('gw-sitemap', 'sitemap-services.xml enthält /gewerbe/ + 4 Zielgruppenseiten + 5 Gewerbe-Hubs', ZG_URLS.every(u => has(sitemap, u + '</loc>')) && GW_HUBS.every(sl => has(sitemap, `/${sl}/</loc>`)));
+  check('gw-sitemap', 'llms.txt: Abschnitt „Für Gewerbe“ mit /gewerbe/ + 4 Zielgruppenseiten', has(llms, '## Für Gewerbe') && ZG_URLS.every(u => has(llms, u + ')')));
+
+  // --- Owner-Entscheide 20.10. abends: alle Gewerbe-Seiten + Gewerbe-Hubs indexierbar; Grundreinigung = Eigenleistung; Bestandsobjekte-Satz; beide Namen; gestrichene Garantien draußen ---
+  P('PAKET-3 GEWERBE Owner-Entscheide 20.10. abends');
+  const GW_ALLE = ZG_URLS.concat(GW_HUBS.map(sl => `/${sl}/`));
+  for (const u of GW_ALLE) {
+    const h = read(u.slice(1) + 'index.html');
+    if (h == null) { check(u, 'Seite vorhanden', false); continue; }
+    check(u, 'kein noindex (Meta robots + X-Robots)', !/<meta name="robots"[^>]*noindex/i.test(h));
+    check(u, 'in sitemap-services.xml', has(sitemap, u + '</loc>'));
+    check(u, 'keine gestrichenen Garantien („48 Stunden“, „Reinigungspreis zurück“, „nächster Einsatz kostenlos“)', !/48 Stunden|Reinigungspreis zurück|nächster Einsatz kostenlos/i.test(text(h)));
+    // Grundreinigung nie mit Partner/Fachbetrieb/vermitteln im selben Satz (Satzgrenze = . ! ?)
+    const saetze = text(h.replace(/<\/(p|div|li|h[1-6]|section|summary)>/gi, '$&¶')).split(/(?<=[.!?])\s+|¶/);
+    const bad = saetze.filter(s => /Grundreinigung|Auszugsreinigung/i.test(s) && /Partner|Fachbetrieb|vermittel/i.test(s));
+    check(u, 'kein Satz verbindet Grundreinigung mit Partner/Fachbetrieb/vermitteln' + (bad.length ? ' (' + bad[0].slice(0, 90) + ')' : ''), bad.length === 0);
+  }
+  for (const u of ['/gewerbe/', '/fuer-hausverwaltungen/']) {
+    const h = read(u.slice(1) + 'index.html');
+    const n = h ? (text(h).match(/Wir betreuen bereits Objekte im Havelland in festen Pflegeverträgen/g) || []).length : 0;
+    check(u, `Bestandsobjekte-Satz genau 1× („Wir betreuen bereits Objekte …“, ohne Zahl) (${n})`, n === 1 && !/\d+ (Objekte|Pflegeverträge)/.test(text(h)));
+  }
+  for (const u of ZG_URLS) {
+    const h = read(u.slice(1) + 'index.html');
+    if (h == null) continue;
+    const t = text(h);
+    check(u, 'Ansprechpartner: nirgends „Noah Telo“ ohne „Maurice Brehm und“ davor', (t.match(/Noah Telo/g) || []).length === (t.match(/Maurice Brehm und Noah Telo/g) || []).length);
+  }
+  { const h = read('fuer-hausverwaltungen/index.html'); check('/fuer-hausverwaltungen/', 'Begehung: „Maurice Brehm und Noah Telo“ genannt', has(text(h || ''), 'Maurice Brehm und Noah Telo')); }
+  { const h = read('fuer-hausverwaltungen/index.html') || '', flat = JSON.stringify(schemaOk(h)); check('/fuer-hausverwaltungen/', 'Schema: Grundreinigung als provider, nicht broker', /"url":"https:\/\/[^"]+\/grundreinigung\/","itemOffered":\{"@type":"Service","name":"[^"]*","serviceType":"[^"]*","provider"/.test(flat)); }
+}
 
 // ---- ADS-LANDINGPAGES /lp/ (v2 14.09.: Site-Komponenten statt .lp-*-Nachbauten; LPs laden kein site.js -> jedes rv braucht in) ----
 const rvOhneIn = h => { const re = /class="([^"]*)"/g; let m, n = 0; while ((m = re.exec(h)) !== null) { const t = m[1].split(/\s+/); if (t.includes('rv') && !t.includes('in')) n++; } return n; };

@@ -389,7 +389,7 @@ const tlStep3 = slug => TL_39.has(slug)
     : TL[2][2];
 // Ablauf-Schritt 2 (20.10., Copy K1/H7): „inklusive Abfuhr“ nur dort, wo die Abfuhr wirklich im Festpreis steckt. Aushub/Altbelag/Gartenbau: Entsorgung nach Beleg. Baumfällung: Abtransport inklusive, Stadtgebühren nicht. Fenster/Stein: keine Abfuhr.
 const TL2_BELEG = new Set(['erdarbeiten', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'gartengestaltung', 'rollrasen-verlegen', 'galabau']);
-const TL2_OHNE_ABFUHR = new Set(['fensterreinigung', 'steinreinigung']);
+const TL2_OHNE_ABFUHR = new Set(['fensterreinigung', 'steinreinigung', 'unterhaltsreinigung', 'gebaeudereinigung', 'ferienwohnung-reinigung', 'objektbetreuung', 'hausmeisterservice']);   // Paket 3: Reinigungs- und Kontrollgang-Hubs ohne Abfuhr (Spec A §4.2)
 const tlStep2 = slug => TL2_BELEG.has(slug)
   ? 'Wir kommen vorbei, schauen uns alles an und nennen Ihnen einen Festpreis. Entsorgungsgebühren rechnen wir nach Beleg ab, ohne Aufschlag. Der Preis steht, bevor wir anfangen.'
   : slug === 'baumfaellung'
@@ -420,8 +420,42 @@ export function timelineFrom(items, { rv = true } = {}) {
     `${it.when ? `<span class="twhen">${it.when}</span>` : ''}${it.h ? `<h3>${it.h}</h3>` : ''}<p>${it.p}</p></div></div>`).join('');
   return `<div class="tl${rv ? ' rv' : ''}">${rows}</div>`;
 }
+// Paket 3: Gewerbe-Hubs nennen nur die vom Owner bestätigte Reaktionszeit (20.10.: „antworten am selben Tag“), nicht „meist in Stunden“.
+const TL_GEWERBE_HUBS = new Set(['objektbetreuung', 'hausmeisterservice', 'unterhaltsreinigung', 'gebaeudereinigung', 'ferienwohnung-reinigung']);
+// Nachbesserung 20.10.: Gewerbe-Hubs ersetzen die B2C-Vorlage (Entrümpelung) je Schritt: nur bestätigte Zeitangaben (selber Tag / Besichtigung meist innerhalb weniger Tage), kein „besenrein“, kein „zu Hause“, kein Gedankenstrich.
+const TL_GEWERBE_S1 = 'Per Telefon, WhatsApp oder Mail kurz schildern, was ansteht, gern mit Fotos oder Objektliste. Sie bekommen eine erste Rückmeldung, keine Warteschleife.';
+const TL_GEWERBE = {
+  objektbetreuung: {
+    s3: 'Wir gehen Ihre Objekte nach festem Plan ab, kümmern uns um die Außenanlagen und beheben Kleinigkeiten gleich.',
+    s4: 'Jeder Rundgang kommt mit Fotos aufs Handy. Sie müssen nicht vor Ort sein.'
+  },
+  hausmeisterservice: {
+    s3: 'Wir kommen zu den festen Terminen: Kontrollgang, Grünpflege, Laub und kleine Reparaturen nach Plan.',
+    s4: 'Nach jedem Einsatz bekommen Sie Fotos aufs Handy, auch wenn Sie nicht vor Ort sind.'
+  },
+  unterhaltsreinigung: {
+    s3: 'Wir reinigen zu den vereinbarten Zeiten, auf Wunsch früh, abends oder nach Feierabend.',
+    s4: 'Sie sehen den Zustand auf dem Handy und müssen niemanden kontrollieren.'
+  },
+  gebaeudereinigung: {
+    s3: 'Wir reinigen Eingang, Treppenhaus und Gemeinschaftsflächen nach dem Reinigungsplan, auf Wunsch zu Randzeiten.',
+    s4: 'Nach jedem Durchgang kommen Fotos aufs Handy. Bei Urlaub und Krankheit springt eine Vertretung ein.'
+  },
+  'ferienwohnung-reinigung': {
+    s3: 'Wir reinigen zwischen Abreise und Anreise, wechseln die Wäsche und übergeben die Schlüssel wie vereinbart.',
+    s4: 'Nach jedem Wechsel sehen Sie per Foto, dass die Wohnung für den nächsten Gast bereit ist.'
+  }
+};
+const tlGewerbe = (row, i, slug) => {
+  const g = TL_GEWERBE[slug];
+  if (!g) return row;
+  if (i === 0) return ['Am selben Tag · Antwort', row[1], TL_GEWERBE_S1];
+  if (i === 1) return ['Meist innerhalb weniger Tage · kostenlos', row[1], row[2]];
+  if (i === 2) return [row[0], row[1], g.s3];
+  return ['Nach jedem Einsatz', row[1], g.s4];
+};
 export function auftragsTimeline(partner = false, slug = '') {
-  const base = partner ? (slug === 'winterdienst' ? TL_PARTNER_WINTER : TL_PARTNER_DACH) : TL.map((row, i) => i === 2 ? [row[0], row[1], tlStep3(slug)] : i === 1 ? [row[0], row[1], tlStep2(slug)] : row);
+  const base = partner ? (slug === 'winterdienst' ? TL_PARTNER_WINTER : TL_PARTNER_DACH) : TL.map((row, i) => { const r = i === 2 ? [row[0], row[1], tlStep3(slug)] : i === 1 ? [row[0], row[1], tlStep2(slug)] : row; return TL_GEWERBE_HUBS.has(slug) ? tlGewerbe(r, i, slug) : r; });
   return timelineFrom(base.map(([when, h, p]) => ({ when, h, p })));
 }
 
@@ -462,7 +496,7 @@ export function faqFilter(faqs, { heading = 'Häufige <em>Fragen.</em>' } = {}) 
     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>` +
     `<input type="search" id="faq-input" placeholder="Frage eintippen, z. B. „Kosten“ oder „Termin“" aria-label="Fragen durchsuchen" autocomplete="off"></div>` +
     `<p class="faq-count" id="faq-count" aria-live="polite"></p>${items}` +
-    `<p class="faq-empty" id="faq-empty">Dazu haben wir noch keine Antwort notiert — <a href="${waHref('Hallo, ich habe eine Frage.')}">fragen Sie uns direkt per WhatsApp</a>, wir antworten meist in Stunden.</p>` +
+    `<p class="faq-empty" id="faq-empty">Dazu haben wir noch keine Antwort notiert. <a href="${waHref('Hallo, ich habe eine Frage.')}">Fragen Sie uns per WhatsApp</a>, wir antworten am selben Tag.</p>` +
     `</div>`;
 }
 
@@ -473,7 +507,7 @@ export function faqFilter(faqs, { heading = 'Häufige <em>Fragen.</em>' } = {}) 
 // GEBIET_REGIONEN — alle bedienten Haupt-Orte, nach Region gruppiert. px/py = Pin-Position in %
 // auf dem selbst gehosteten OSM-Kartenbild (servicegebiet-karte, z11, center 52.55/13.08, 1200x1200).
 // Reproduzierbar via scripts/build-servicegebiet-map.py (0 Laufzeit-Requests, DSGVO-sauber).
-const GEBIET_REGIONEN = [
+export const GEBIET_REGIONEN = [
   { key: 'west', label: 'Falkensee & West-Havelland', orts: [
     { slug: 'falkensee', name: 'Falkensee', px: 51.6, py: 47.9, anchor: true },
     { slug: 'brieselang', name: 'Brieselang', px: 40.7, py: 42.2 },
@@ -657,7 +691,7 @@ export function vorteileBlock({ items = [], frist = null, alt = false } = {}) {
 export function passtBlock({ items = [], alt = true } = {}) {
   const it = arr(items);
   if (!it.length) return '';
-  return `<section class="sec${alt ? ' section-alt' : ''}" id="passt"><div class="wrap"><div class="head"><h2 class="serif rv">Passt oft dazu</h2></div><div class="px rv">${it.map(x => `<a class="pxc" href="${esc(x.href)}">${x.imgHtml || ''}<div><h3>${esc(x.h3)}</h3><p>${esc(x.p)}</p><span class="go">${esc(x.link_text || 'Mehr erfahren')} →</span></div></a>`).join('')}</div></div></section>`;
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="passt"><div class="wrap"><div class="head"><h2 class="serif rv">Passt oft dazu</h2></div><div class="px rv">${it.map(x => `<a class="pxc" href="${esc(x.href)}">${x.imgHtml || ''}<div><h3>${esc(x.h3)}</h3><p>${esc(x.p)}</p><span class="go">${esc(x.link_text || 'Mehr erfahren')}&nbsp;→</span></div></a>`).join('')}</div></div></section>`;
 }
 
 // orteBlock — „Unterwegs im Havelland“: echtes Arbeitsfoto + Top-Orte als Buttons + „Alle Orte“.
@@ -672,8 +706,8 @@ export function orteBlock({ name = '', fotoHtml = '', orte = [], weitere = [], p
 }
 
 // soLaeufts — EIN Ablauf (Timeline) + WhatsApp/Telefon UNTER der Zeitleiste (außerhalb der Linie).
-export function soLaeufts({ partner = false, slug = '', name = '', waText = '', alt = true } = {}) {
-  return `<section class="sec${alt ? ' section-alt' : ''}" id="ablauf"><div class="wrap"><div class="head"><h2 class="serif rv">${name ? `So läuft ${esc(name)} ab` : 'So läuft’s'}</h2></div>${auftragsTimeline(partner, slug)}<div class="cta-row sl-cta rv">${slug === 'winterdienst' ? `<a class="btn btn-acc" href="${waHref(waText || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">Flächen per WhatsApp schicken</a><a class="btn btn-line" href="tel:${TEL}">☎ ${TEL_DISP}</a>` : `<a class="btn btn-acc" href="tel:${TEL}">☎ ${TEL_DISP}</a><a class="btn btn-line" href="${waHref(waText || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">Per WhatsApp anfragen</a>`}</div></div></section>`;
+export function soLaeufts({ partner = false, slug = '', name = '', waText = '', alt = true, items = null, reihe = false } = {}) {   // reihe (Paket 3 Standorte): die Schritte stehen als 4-Spalten-Reihe mit Haarlinie oben statt als vertikale Zeitleiste   // items (Paket 3): eigene Schritte [{when?,h?,p}] (Werte ROH wie timelineFrom) statt der Leistungs-Timeline
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="ablauf"><div class="wrap"><div class="head"><h2 class="serif rv">${name ? `So läuft ${esc(name)} ab` : 'So läuft’s'}</h2></div>${items ? (reihe ? timelineFrom(items).replace('<div class="tl rv">', '<div class="tl tl-reihe rv">') : timelineFrom(items)) : auftragsTimeline(partner, slug)}<div class="cta-row sl-cta rv">${slug === 'winterdienst' ? `<a class="btn btn-acc" href="${waHref(waText || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">Flächen per WhatsApp schicken</a><a class="btn btn-line" href="tel:${TEL}">☎ ${TEL_DISP}</a>` : `<a class="btn btn-acc" href="tel:${TEL}">☎ ${TEL_DISP}</a><a class="btn btn-line" href="${waHref(waText || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')}">Per WhatsApp anfragen</a>`}</div></div></section>`;
 }
 
 // galabauKarten — Hub mit Unterseiten: Fotokarten (ganze Karte = Link) + Kasten „Außerdem für Sie da“.
@@ -686,4 +720,145 @@ export function ergebnisPaare({ paare = [], h2 = 'Ergebnisse zum Durchziehen' } 
   const p = arr(paare);
   if (!p.length) return '';
   return `<section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(h2)}</h2></div><div class="ep-grid rv">${p.map(x => `<figure class="ep">${baSlider({ vorher: x.vorher, nachher: x.nachher, w: x.w, h: x.h, alt: x.alt, cap: x.cap, sub: x.sub, vorTxt: x.vorTxt || 'vor der Reinigung', nachTxt: x.nachTxt || 'nach der Reinigung' })}</figure>`).join('')}</div></div></section>`;
+}
+
+
+// ===========================================================================
+// Paket 3 (21.10.2026) — Teil A: Standorte. Bilder kommen als fertiges HTML (pic() aus generate.mjs).
+// Spec: gbr-firma websites/havelland/website/paket3-standorte-gewerbe-2026-10/01-design-spec.md §4/§5
+// Alle Funktionen geben HTML-Strings zurück; Texte werden hier escaped, Link-Ziele löst der Generator auf.
+// ===========================================================================
+
+// seitenHero — Kopf nach Hub-Muster (.phero): links Kicker/H1/Lead/CTA/Trust, rechts Bild (+ optionales Badge).
+//   h1 = fertiges HTML (mit <em>), lead/kick = Text, cta/trust/bild/badge/leaf = fertiges HTML.
+export function seitenHero({ kick = '', h1 = '', lead = '', cta = '', trust = '', bild = '', badge = '', leaf = '', shotCls = '', cls = '' } = {}) {
+  return `<section class="phero sx-phero${cls ? ' ' + cls : ''}">${leaf}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(kick)}</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${cta}</div>${trust}</div>` +
+    `${bild ? `<div class="shot sx-shot${shotCls ? ' ' + shotCls : ''} rv in d2">${bild}${badge}</div>` : ''}</div></section>`;
+}
+
+// badgeSitz — weißes Badge am Foto (Klassen von der Startseite: .shot .badge).
+export function badgeSitz({ titel = '', zeile = '' } = {}) {
+  return `<div class="badge"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div class="t">${esc(titel)}<span>${esc(zeile)}</span></div></div>`;
+}
+
+// sxChips — kleine Pillen-Links [{href,label}] (Leistungs-Chips in Zeilen und Falkensee-Kasten).
+const sxChips = chips => `<div class="sx-svc">${arr(chips).map(c => `<a href="${esc(c.href)}">${esc(c.label)}</a>`).join('')}</div>`;
+
+// ortZeile — Zeile der Stufe 1: Ortsname (Serif-Link) · Leistungs-Chips · „Zum Ort →“. mehr = {n,href} für „+ n weitere“ (optional).
+export function ortZeile({ slug = '', name = '', plz = '', chips = [], mehr = null } = {}) {
+  return `<div class="sx-row rv"><div class="sx-nm"><a class="sx-name" href="/standorte/${esc(slug)}/">${esc(name)}</a>${plz ? `<span class="sx-plz">${esc(plz)}</span>` : ''}</div>${sxChips(chips)}` +
+    `<span class="sx-end">${mehr ? `<a class="sx-more" href="${esc(mehr.href)}">+ ${esc(mehr.n)} weitere</a>` : ''}<a class="sx-go" href="/standorte/${esc(slug)}/" aria-label="Zum Ort ${esc(name)}">Zum Ort <span aria-hidden="true">→</span></a></span></div>`;
+}
+
+// falkenseeKasten — weißer Kasten für den Sitz: Name, Satz, bis zu 8 Chips, „Alles in Falkensee →“.
+export function falkenseeKasten({ slug = 'falkensee', name = 'Falkensee', plz = '', satz = '', chips = [] } = {}) {
+  return `<div class="sx-home rv"><div><a class="sx-name" href="/standorte/${esc(slug)}/">${esc(name)}</a>${plz ? `<span class="sx-plz">${esc(plz)}</span>` : ''}${satz ? `<p>${esc(satz)}</p>` : ''}</div>` +
+    `<div>${sxChips(chips)}<p class="sx-home-go"><a class="sx-go" href="/standorte/${esc(slug)}/">Alles in ${esc(name)} <span aria-hidden="true">→</span></a></p></div></div>`;
+}
+
+// gruppenKopf — Zwischenzeile „Rund um Falkensee“ über einer Zeilen-Gruppe.
+export const gruppenKopf = label => `<p class="sx-grp rv">${esc(label)}</p>`;
+
+// stufe2Band — dunkelgrünes Band „Hier kommen wir auch hin“: Regionen mit Ortslinks als Textzeile, Leistungszeile, WhatsApp-Button.
+//   regionen: [{label, orte:[{href,name,plz?}]}] · leistungen: [{href,label}] · mehr: {href,label} (z. B. „und mehr“, ohne Trenner angehängt) · h2 = HTML (mit <em>)
+export function stufe2Band({ h2 = 'Hier kommen wir <em>auch</em> hin', sub = '', regionen = [], leistungen = [], mehr = null, waHref: wa = '', waLabel = 'Ort per WhatsApp anfragen' } = {}) {
+  const reg = arr(regionen).map(r => `<div><h3>${esc(r.label)}</h3><p class="sx-places">${arr(r.orte).map(o => `<span class="sx-pl"><a href="${esc(o.href)}">${esc(o.name)}</a>${o.plz ? `<small>${esc(o.plz)}</small>` : ''}</span>`).join('')}</p></div>`).join('');
+  const lst = arr(leistungen);
+  return `<section class="sec zone-dark sx-far" id="auch"><div class="wrap"><h2 class="serif rv">${h2}</h2>${sub ? `<p class="sx-sub rv">${esc(sub)}</p>` : ''}<div class="sx-far-grid rv">${reg}</div>` +
+    `${lst.length ? `<p class="sx-far-svc rv">${lst.map(l => `<a href="${esc(l.href)}">${esc(l.label)}</a>`).join('<span aria-hidden="true"> · </span>')}${mehr ? ` <a href="${esc(mehr.href)}">${esc(mehr.label)}</a>` : ''}</p>` : ''}` +
+    `${wa ? `<div class="cta-row rv"><a class="btn btn-acc" href="${esc(wa)}">${esc(waLabel)}</a></div>` : ''}</div></section>`;
+}
+
+// kernKarten — „Was wir in <Ort> für Sie erledigen“: 4 Fotokarten (ganze Karte = Link) + Zeile „Außerdem in <Ort>:“.
+//   items: [{name, kurz, href, img (fertiges HTML), p, ortsseite:boolean}] · weitere: [{href,label}] · note: Zusatzsatz unter der Zeile (z. B. Partner-Hinweis)
+export function kernKarten({ ort = '', items = [], weitere = [], note = '', lead = '', alt = true } = {}) {
+  const cards = arr(items).map(x => `<a href="${esc(x.href)}">${x.img || ''}<div><h3>${esc(x.name)}</h3><p>${esc(x.p)}</p><span class="go">${x.ortsseite ? `${esc(x.kurz || x.name)} in ${esc(ort)}` : 'Zur Leistung'} <span aria-hidden="true">→</span></span></div></a>`).join('');
+  const w = arr(weitere);
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="leistungen"><div class="wrap"><h2 class="serif rv">Was wir in ${esc(ort)} für Sie <em>erledigen</em></h2>${lead ? `<p class="sx-sub rv">${esc(lead)}</p>` : ''}` +
+    `<div class="sx-kern rv">${cards}</div>` +
+    `${w.length ? `<p class="sx-mehr rv"><b>Außerdem in ${esc(ort)}:</b>${w.map(l => `<a href="${esc(l.href)}">${esc(l.label)}</a>`).join('')}</p>` : ''}${note ? `<p class="sx-note rv">${esc(note)}</p>` : ''}</div></section>`;
+}
+
+// anfaelltBlock — „Was in <Ort> anfällt“: 3 nummerierte Punkte {h3,p}. Fallback prose (nur wenn keine items): ein Textabsatz.
+//   teile: Ortsteile (Namen) → Zeile „Auch in …“ (SEO-Drift: Ortsteile bleiben im sichtbaren Text)
+export function anfaelltBlock({ ort = '', items = [], prose = '', teile = [], alt = false } = {}) {
+  const it = arr(items);
+  if (!it.length && !prose) return '';
+  const body = it.length
+    ? `<div class="sx-ort rv">${it.map((x, i) => `<div><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(x.h3)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div>`
+    : `<div class="prose wide rv" style="margin:22px 0 0"><p>${esc(prose)}</p></div>`;
+  const t = arr(teile);
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="anfaellt"><div class="wrap"><h2 class="serif rv">Was in ${esc(ort)} <em>anfällt</em></h2>${body}` +
+    `${t.length ? `<p class="sx-teile rv">Auch in ${esc(t.join(', '))} und Umgebung.</p>` : ''}</div></section>`;
+}
+
+// naeheZeile — „In der Nähe“: Nachbar-Standortseiten als Textzeile + „Alle Orte →“. orte: [{href,name}]
+export function naeheZeile({ orte = [], alt = false } = {}) {
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="naehe"><div class="wrap"><h2 class="serif rv">In der <em>Nähe</em></h2><p class="sx-nah rv">${arr(orte).map(o => `<a href="${esc(o.href)}">${esc(o.name)}</a>`).join('')}<a class="sx-alle" href="/standorte/">Alle Orte <span aria-hidden="true">→</span></a></p></div></section>`;
+}
+
+// faqKurz — kurze FAQ-Sektion ohne Suchfeld (3 bis 5 Fragen), natives <details>, KEIN FAQPage-Schema. h2 = HTML (mit <em>).
+export function faqKurz({ h2 = 'Häufige <em>Fragen</em>', faqs = [], alt = true, id = 'faq' } = {}) {
+  const items = arr(faqs).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('');
+  if (!items) return '';
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="${esc(id)}"><div class="wrap"><h2 class="serif rv">${h2}</h2><div class="faq rv">${items}</div></div></section>`;
+}
+
+
+// ===========================================================================
+// Paket 3 (21.10.2026) — Teil B: Gewerbe. /gewerbe/, Zielgruppenseiten, Startseiten-Band.
+// Spec: gbr-firma websites/havelland/website/paket3-standorte-gewerbe-2026-10/01-design-spec.md Teil B (B3/B4).
+// Bilder kommen als fertiges HTML (pic() aus generate.mjs). Überschriften (h2) = fertiges HTML mit genau einem <em>; alle übrigen Texte werden hier escaped.
+// ===========================================================================
+
+// zielgruppenKarten — vier Karten (ganze Karte = Link). dark=true: Startseiten-Band (.zone-dark.gw-band) mit Link „Alles für Gewerbe →“.
+//   items: [{href, h3, p, label, imgHtml}]
+export function zielgruppenKarten({ h2 = '', sub = '', items = [], dark = false, link = null, id = 'zielgruppen', alt = true } = {}) {
+  const cards = arr(items).map(x => `<a href="${esc(x.href)}">${x.imgHtml || ''}<div><h3>${esc(x.h3)}</h3><p>${esc(x.p)}</p><span class="go">${esc(x.label || 'Mehr erfahren')}&nbsp;<span aria-hidden="true">→</span></span></div></a>`).join('');
+  return `<section class="sec${dark ? ' zone-dark gw-band' : (alt ? ' section-alt' : '')}" id="${esc(id)}"><div class="wrap"><h2 class="serif rv">${h2}</h2>${sub ? `<p class="sx-sub rv">${esc(sub)}</p>` : ''}` +
+    `<div class="gw-zg rv">${cards}</div>${link ? `<p class="gw-band-link rv"><a href="${esc(link.href)}">${esc(link.label)} <span aria-hidden="true">→</span></a></p>` : ''}</div></section>`;
+}
+
+// gwListe — nummerierte 2-Spalten-Liste, Titel verlinkt auf den Hub. Keine Ausführungs-Labels (Owner 20.10.), außer item.chip wird ausdrücklich übergeben (nur /fuer-hausverwaltungen/).
+//   items: [{href, h3, p, chip?, partner?, linkLabel?}]
+export function gwListe({ h2 = '', sub = '', items = [], alt = false, id = 'leistungen', note = '' } = {}) {
+  const li = arr(items).map((x, i) => `<div class="gw-li rv"><span class="n">${String(i + 1).padStart(2, '0')}</span><div><h3>${x.href ? `<a href="${esc(x.href)}">${esc(x.h3)}</a>` : esc(x.h3)}${x.chip ? ` <span class="gw-chip${x.partner ? ' p' : ''}">${esc(x.chip)}</span>` : ''}</h3><p>${esc(x.p)}</p>${(x.href && x.linkLabel) ? `<p class="gw-go"><a href="${esc(x.href)}">${esc(x.linkLabel)} <span aria-hidden="true">→</span></a></p>` : ''}</div></div>`).join('');
+  if (!li) return '';
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="${esc(id)}"><div class="wrap"><h2 class="serif rv">${h2}</h2>${sub ? `<p class="sx-sub rv">${esc(sub)}</p>` : ''}<div class="gw-list">${li}</div>${note ? `<p class="gw-note rv">${note}</p>` : ''}</div></section>`;
+}
+
+// zusagenBand4 — dunkelgrünes Band mit vier nummerierten Zusagen. items: [{h3, p}]
+export function zusagenBand4({ h2 = '', sub = '', items = [], id = 'zusagen' } = {}) {
+  const it = arr(items);
+  if (!it.length) return '';
+  return `<section class="sec zone-dark gw-zus" id="${esc(id)}"><div class="wrap"><h2 class="serif rv">${h2}</h2>${sub ? `<p class="sx-sub rv">${esc(sub)}</p>` : ''}` +
+    `<div class="gw-why rv">${it.map((x, i) => `<div><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(x.h3)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div></div></section>`;
+}
+
+// zweiWege — Pflege/Bestatter: „Einrichtung beauftragt“ | „Angehörige verweisen“. Beide Seiten: Überschrift, Aufzählung, Button (href vom Aufrufer).
+//   links/rechts: {h3, items:[], button, href, cls?}
+export function zweiWege({ h2 = '', lead = '', beauftragen = {}, verweisen = {}, alt = true } = {}) {
+  const box = (b, primary) => `<div class="gw-box"><h3>${esc(b.h3)}</h3><ul class="bl">${arr(b.items).map(t => `<li>${esc(t)}</li>`).join('')}</ul><a class="btn ${primary ? 'btn-acc' : 'btn-line'}" href="${esc(b.href)}">${esc(b.button)}</a>${b.hint ? `<p class="gw-hint">${esc(b.hint)}</p>` : ''}</div>`;
+  return `<section class="sec${alt ? ' section-alt' : ''} zwei-wege" id="zwei-wege"><div class="wrap"><h2 class="serif rv">${h2}</h2>${lead ? `<p class="sx-sub rv">${esc(lead)}</p>` : ''}<div class="gw-two rv">${box(beauftragen, true)}${box(verweisen, false)}</div></div></section>`;
+}
+
+// anlaesseBlock — „Wann Firmen uns rufen“: 3 nummerierte Punkte {h3, p} (Raster wie „Was in <Ort> anfällt“).
+export function anlaesseBlock({ h2 = '', items = [], alt = false, id = 'anlaesse' } = {}) {
+  const it = arr(items);
+  if (!it.length) return '';
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="${esc(id)}"><div class="wrap"><h2 class="serif rv">${h2}</h2><div class="sx-ort rv">${it.map((x, i) => `<div><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(x.h3)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div></div></section>`;
+}
+
+// fuerWen — „Für wen wir arbeiten“ (Hausverwaltungen): Einleitung links, Objektarten als Haarlinien-Liste rechts. items: [{name, body?}]
+export function fuerWen({ h2 = '', body = '', items = [], alt = false, id = 'fuer-wen' } = {}) {
+  const it = arr(items);
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="${esc(id)}"><div class="wrap"><div class="gw-fw rv"><div><h2 class="serif">${h2}</h2>${body ? `<p>${esc(body)}</p>` : ''}</div>` +
+    `${it.length ? `<ul class="gw-ob">${it.map(x => `<li><b>${esc(x.name)}</b>${x.body ? `<span>${esc(x.body)}</span>` : ''}</li>`).join('')}</ul>` : ''}</div></div></section>`;
+}
+
+// ablaufSektion — Ablauf als Timeline mit eigener H2 + Buttons UNTER der Zeitleiste. items: [{when?, h?, p}] (ROH-Text, wird hier escaped); cta = fertiges HTML.
+export function ablaufSektion({ h2 = '', items = [], cta = '', alt = true, id = 'ablauf' } = {}) {
+  const rows = arr(items).map(x => ({ when: x.when ? esc(x.when) : '', h: x.h ? esc(x.h) : '', p: esc(x.p) }));
+  if (!rows.length) return '';
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="${esc(id)}"><div class="wrap"><div class="head"><h2 class="serif rv">${h2}</h2></div>${timelineFrom(rows)}${cta ? `<div class="cta-row sl-cta rv">${cta}</div>` : ''}</div></section>`;
 }

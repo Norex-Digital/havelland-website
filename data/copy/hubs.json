@@ -1311,106 +1311,158 @@
   },
   {
    "slug": "hausmeisterservice",
-   "title": "Hausmeisterservice Havelland | Festpreis & Foto",
-   "meta": "Hausmeisterservice im Havelland: Grünpflege, Kleinreparaturen, Kontrollgänge, Foto-Nachweis nach jedem Einsatz. Winterdienst über einen Partner koordiniert.",
-   "h1": "Ihr Hausmeisterservice im Havelland – ein Ansprechpartner für alles",
-   "h1_em": "alles",
-   "intro": "Schildern Sie uns kurz, was an Ihrem Objekt anfällt. Sie bekommen eine kostenlose Besichtigung und einen schriftlichen Festpreis für Garten, Reparaturen und Kontrollgänge.",
-   "definition": "Ein Hausmeisterservice ist ein laufender Betreuungsdienst, der wiederkehrende Aufgaben rund um ein Gebäude und Grundstück übernimmt: Grünpflege, Winterdienst, kleine Reparaturen, regelmäßige Kontrollgänge sowie die Reinigung von Treppenhaus und Außenanlagen. Für Eigentümer, Mieter und Verwaltungen ersetzt das viele einzelne Dienstleister durch einen festen Ansprechpartner.",
+   "title": "Hausmeisterservice Falkensee & Havelland | Garten, Haus",
+   "meta": "Hausmeisterservice in Falkensee und im Havelland: Grünpflege, Kleinreparaturen, Kontrollgänge und Treppenhaus im festen Turnus. Festpreis nach Besichtigung.",
+   "h1": "Hausmeisterservice in Falkensee und im Havelland mit festen Terminen",
+   "h1_em": "festen Terminen",
+   "intro": "Garten und Hausmeisterservice für Wohnanlagen, Eigentümer und Gewerbe: Grünpflege, Kleinreparaturen, Kontrollgänge und Treppenhaus im festen Turnus. Sie schildern Ihr Objekt, wir besichtigen kostenlos und nennen einen schriftlichen Festpreis.",
+   "definition": "Ein Hausmeisterservice, auch Hausmeisterdienst genannt, verbindet Hausmeister und Gartenservice: Er übernimmt wiederkehrende Aufgaben rund um Gebäude und Grundstück, nämlich Grünpflege, kleine Reparaturen, Kontrollgänge und die Reinigung von Treppenhaus und Außenanlagen. Eigentümer, Mieter und Verwaltungen haben dafür einen festen Ansprechpartner statt vieler Einzelfirmen.",
    "sections": [
     {
-     "h3": "Grünpflege & Winterdienst",
+     "h3": "Grünpflege und Laub",
      "offer": true,
-     "body": "Wir halten Ihre Grünflächen das ganze Jahr in Form: Rasen mähen, Hecken und Sträucher schneiden, Beete jäten, Laub entfernen, Grünschnitt-Abtransport. Den Winterdienst auf Gehwegen, Hof- und Stellflächen übernimmt ein Partner-Fachbetrieb mit eigener Räumtechnik, jeder Einsatz mit Datum und Uhrzeit dokumentiert; die Kontrollpflicht bleibt beim Eigentümer. Die Grünpflege läuft als 14-tägiger Wartungsvertrag, den Winterdienst schließen Sie als Saisonvertrag mit dem Fachbetrieb, wir koordinieren Besichtigung und Abschluss.",
-     "link_to": "winterdienst",
-     "link_text": "Mehr zum Winterdienst über den Partner-Fachbetrieb",
-     "link2_to": "gartenpflege#laub",
-     "link2_text": "Laub entfernen lassen",
-     "kurz": "Grünpflege 14-tägig als Wartungsvertrag, Winterdienst per Partner-Fachbetrieb dokumentiert, Kontrollpflicht bleibt beim Eigentümer."
+     "body": "Gartenpflege mit Rasen mähen, Hecken schneiden, Beeten und Laub im 14-tägigen Wartungsvertrag, Grünschnitt fahren wir ab.",
+     "kurz": "Gartenpflege: Rasen mähen, Hecken schneiden, Beete und Laub im 14-tägigen Wartungsvertrag, Grünschnitt wird abgefahren."
     },
     {
      "h3": "Kleinreparaturen",
      "offer": true,
-     "body": "Kleine Mängel beheben wir, bevor daraus teure Schäden werden. Dazu zählen tropfende Wasserhähne, klemmende Türen und Fenster, lose Fliesen, defekte Lichtschalter, ausgetauschte Leuchtmittel, nachgezogene Beschläge und Silikonfugen im Bad. Was wir im Rahmen einfacher Handwerksarbeiten erledigen dürfen, machen wir direkt beim Termin. Maler-, Elektro- und Gasarbeiten, die einem Fachbetrieb vorbehalten sind, übernehmen wir nicht, sagen Ihnen das aber klar und nennen den richtigen Ansprechpartner. So bleibt Ihre Mängelliste kurz.",
-     "kurz": "Tropfende Hähne, klemmende Türen, lose Fliesen direkt behoben, Fach-Gewerke nur mit Verweis."
+     "body": "Klemmende Türen, lose Fliesen und defekte Leuchtmittel beheben wir beim Termin. Maler-, Elektro- und Gasarbeiten gehören einem Fachbetrieb, das sagen wir Ihnen klar.",
+     "kurz": "Klemmende Türen, lose Fliesen und defekte Leuchtmittel direkt behoben, Fachgewerke nur mit Hinweis."
     },
     {
      "h3": "Kontrollgänge",
      "offer": true,
-     "body": "Bei regelmäßigen Kontrollgängen prüfen wir Ihr Objekt auf Schäden, Verschmutzung und Auffälligkeiten, bevor sie zum Problem werden. Wir kontrollieren Beleuchtung, Außenanlagen, Briefkästen, Mülltonnenstandplätze, Dachrinnen-Sichtbereich und melden Defekte oder Unregelmäßigkeiten sofort. Für Hausverwaltungen und Eigentümer ohne eigene Präsenz vor Ort ist das die Absicherung, dass jemand verlässlich nach dem Rechten sieht. Jeden Kontrollgang halten wir mit Foto fest, damit Sie den Zustand des Objekts jederzeit nachvollziehen können.",
-     "kurz": "Beleuchtung, Außenanlagen und Briefkästen geprüft, Auffälligkeiten sofort mit Foto gemeldet."
+     "body": "Beleuchtung, Außenanlagen, Briefkästen und Müllplatz prüfen wir regelmäßig. Auffälligkeiten melden wir sofort mit Foto.",
+     "kurz": "Beleuchtung, Außenanlagen, Briefkästen und Müllplatz geprüft, Auffälligkeiten mit Foto gemeldet."
     },
     {
-     "h3": "Treppenhaus & Außenanlagen",
+     "h3": "Treppenhaus und Außenanlagen",
      "offer": true,
-     "body": "Treppenhaus und Außenanlagen halten wir im Turnus sauber und ordentlich. Im Innenbereich reinigen wir Treppen, Geländer, Fensterbänke, Briefkastenanlagen und Eingangsbereiche. Außen kümmern wir uns um Höfe, Zuwege, Stellplätze, Mülltonnenboxen und das Entfernen von Wildwuchs zwischen Pflastersteinen. Das gilt für Mehrfamilienhäuser, Gewerbeobjekte und gepflegte Privatgrundstücke gleichermaßen. Auch hier dokumentieren wir das Ergebnis mit Vorher-Nachher-Fotos, sodass Mieter und Eigentümer den gepflegten Zustand belegt bekommen.",
-     "kurz": "Treppen, Geländer und Eingangsbereiche innen, Höfe und Wildwuchs außen, im Turnus."
+     "body": "Treppen, Geländer und Eingangsbereiche reinigen wir innen, Höfe, Zuwege und Stellplätze außen, jeweils im festen Turnus.",
+     "kurz": "Treppen, Geländer und Eingang innen, Höfe, Zuwege und Stellplätze außen im festen Turnus."
     }
    ],
    "naehe": "Wir sitzen in Falkensee und betreuen Objekte im ganzen Havelland und Berliner Umland, von Nauen und Rathenow bis Dallgow-Döberitz und Brieselang. Anfahrt im Festpreis, Anfragen per WhatsApp beantworten wir zeitnah.",
    "ablauf": "So läuft Ihr Hausmeisterservice ab: Zuerst kommen wir zur kostenlosen Besichtigung vor Ort und nehmen den Umfang auf. Daraus erstellen wir einen Festpreis, bei dauerhafter Betreuung als Rahmenvertrag mit festen Leistungen und Terminen. Der Festpreis ist der Endpreis, kein Aufschlag, keine Nachforderung. Anschließend führen wir die vereinbarten Einsätze zuverlässig und pünktlich aus. Nach jedem Termin erhalten Sie eine Foto-Dokumentation aufs Handy.",
    "faqs": [
     {
-     "q": "Was umfasst ein Hausmeisterservice genau?",
-     "a": "Ein Hausmeisterservice umfasst die laufende Betreuung von Gebäude und Grundstück. Bei uns gehören Grünpflege, Kleinreparaturen, Kontrollgänge sowie die Reinigung von Treppenhaus und Außenanlagen dazu, der Winterdienst läuft über einen Partner-Fachbetrieb. Sie buchen einzelne Leistungen oder ein festes Paket. Statt mehrere Firmen zu koordinieren, haben Sie einen Ansprechpartner für Privathaushalt, Gewerbe oder Hausverwaltung."
-    },
-    {
-     "q": "Wie oft kommt der Hausmeister vorbei?",
-     "a": "Den Rhythmus legen Sie fest. Grünpflege bieten wir im 14-tägigen Turnus an, Kontrollgänge wöchentlich oder monatlich; den Winterdienst schließen Sie als Saisonvertrag mit unserem Partner-Fachbetrieb ab. Bei einem Rahmenvertrag stehen die Termine fest, sodass Sie nicht jedes Mal neu anfragen. Einmalige Einsätze sind ebenso möglich, etwa eine Grundreinigung oder eine einzelne Reparatur."
+     "q": "Was umfasst ein Hausmeisterservice?",
+     "a": "Ein Hausmeisterservice, auch Hausmeisterdienst genannt, betreut Gebäude und Grundstück laufend. Bei uns gehören Grünpflege, Kleinreparaturen, Kontrollgänge sowie Treppenhaus und Außenanlagen dazu. Den Winterdienst übernimmt ein Partner-Fachbetrieb."
     },
     {
      "q": "Was kostet ein Hausmeisterservice im Havelland?",
-     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung als Festpreis, abhängig von Objektgröße, Leistungsumfang und Häufigkeit der Einsätze. Der Festpreis ist der Endpreis, ohne Aufschlag und ohne Nachforderung. Bei laufender Betreuung erhalten Sie einen Rahmenvertrag mit gleichbleibenden Konditionen. So wissen Sie vorab genau, was Sie zahlen, ohne Überraschungen auf der Rechnung."
+     "a": "Nach der kostenlosen Besichtigung nennen wir einen schriftlichen Festpreis. Er hängt von Objektgröße, Leistungsumfang und Häufigkeit der Einsätze ab. Bei laufender Betreuung gilt ein Rahmenvertrag mit gleichbleibenden Konditionen, die Rechnung weist die Umsatzsteuer aus."
     },
     {
-     "q": "Übernehmen Sie auch Hausverwaltungen und Gewerbeobjekte?",
-     "a": "Ja. Wir betreuen Mehrfamilienhäuser, Gewerbeobjekte und Privatgrundstücke gleichermaßen. Für Hausverwaltungen ohne eigene Präsenz vor Ort übernehmen wir Kontrollgänge, Treppenhausreinigung und Kleinreparaturen über einen Rahmenvertrag, den Winterdienst koordiniert über einen Partnerbetrieb. Sie erhalten nach jedem Einsatz eine Foto-Dokumentation, die Sie an Eigentümer und Mieter weitergeben können. Damit haben Sie eine Stelle für mehrere Objekte im Havelland."
+     "q": "Wie oft kommt der Hausmeister vorbei?",
+     "a": "Den Rhythmus legen Sie fest. Die Grünpflege läuft im 14-tägigen Turnus, Kontrollgänge wöchentlich oder monatlich. Einmalige Einsätze wie eine einzelne Reparatur sind ebenfalls möglich."
     },
     {
-     "q": "Wie schnell reagieren Sie auf eine Anfrage?",
-     "a": "Auf eine WhatsApp-Anfrage antworten wir in der Regel innerhalb weniger Stunden am selben Tag, nicht erst nach Tagen. Danach vereinbaren wir einen Termin für die kostenlose Besichtigung. Aus Falkensee heraus haben wir kurze Wege ins gesamte Havelland und Berliner Umland, das hält Besichtigungstermine kurzfristig. Bei laufenden Verträgen erreichen Sie uns direkt über Ihre feste Nummer."
+     "q": "Übernehmen Sie Hausmeisterservice auch für Privathaushalte und Gewerbe?",
+     "a": "Ja. Wir betreuen Mehrfamilienhäuser, Gewerbeobjekte und Privatgrundstücke, für Eigentümer ebenso wie für Verwaltungen. Der Umfang richtet sich nach dem Objekt und steht nach der Besichtigung schriftlich fest."
+    },
+    {
+     "q": "Wer übernimmt den Winterdienst?",
+     "a": "Ein Partner-Fachbetrieb mit eigener Räumtechnik. Den Saisonvertrag schließen Sie direkt mit ihm, wir koordinieren Besichtigung und Ablauf. Die Kontrollpflicht bleibt beim Eigentümer."
+    },
+    {
+     "q": "Wie schnell bekomme ich einen Termin?",
+     "a": "Wir antworten am selben Tag. Die kostenlose Besichtigung findet meist innerhalb weniger Tage statt, danach steht der Festpreis schriftlich fest."
     }
    ],
-   "garantie_text": "Fällt ein vereinbarter Einsatz ohne Vorankündigung aus, ist der nächste Einsatz für Sie kostenlos.",
+   "garantie_text": "Termine und Turnus stehen schriftlich im Vertrag, nach jedem Einsatz bekommen Sie Fotos.",
    "ortsseite_lead": "Ihr Hausmeisterservice in {ort}: Grünpflege, Kleinreparaturen und Treppenhausreinigung mit einem Ansprechpartner für alles, Winterdienst über einen Partner-Fachbetrieb. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Einsatz in {ort}.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
    ],
-   "layout": "ueberblick"
+   "layout": "ueberblick",
+   "blocks": [
+    {
+     "id": "was-ist",
+     "h2": "Was ist ein Hausmeisterservice?",
+     "body": "Ein Hausmeisterservice, auch Hausmeisterdienst genannt, verbindet Hausmeister und Gartenservice: Er übernimmt wiederkehrende Aufgaben rund um Gebäude und Grundstück, nämlich Grünpflege, kleine Reparaturen, Kontrollgänge und die Reinigung von Treppenhaus und Außenanlagen. Eigentümer, Mieter und Verwaltungen haben dafür einen festen Ansprechpartner statt vieler Einzelfirmen."
+    },
+    {
+     "id": "einsatzgebiet",
+     "h2": "Hausmeisterservice in Falkensee, Spandau und Umgebung",
+     "body": "Wir sitzen in Falkensee und sind als Hausmeisterservice in der Nähe: Wir betreuen Objekte in Falkensee, Dallgow-Döberitz, Brieselang, Nauen und Berlin-Spandau, auf Anfrage auch in Hennigsdorf, Oranienburg und Werder (Havel). Die Anfahrt steckt im Festpreis.",
+     "link_to": "standorte",
+     "link_text": "Alle Standorte"
+    }
+   ],
+   "sections_h2": "Garten und Hausmeisterservice: was dazugehört",
+   "vorteile": [
+    {
+     "h3": "Feste Termine statt Nachfragen",
+     "p": "Der Turnus steht im Vertrag, Sie beauftragen nicht jeden Einsatz neu."
+    },
+    {
+     "h3": "Kleine Mängel bleiben klein",
+     "p": "Wir beheben sie beim Termin, bevor Folgeschäden entstehen."
+    },
+    {
+     "h3": "Nachweis ohne Ortstermin",
+     "p": "Fotos nach jedem Einsatz zeigen den Zustand, auch wenn Sie nicht vor Ort sind."
+    },
+    {
+     "h3": "Eine Nummer für alles",
+     "p": "Garten, Reparatur und Reinigung laufen über einen Ansprechpartner."
+    }
+   ],
+   "passt": [
+    {
+     "to": "objektbetreuung",
+     "h3": "Mehrere Objekte oder Kontrolle nach Plan?",
+     "p": "Objektbetreuung mit Kontrollgängen, Außenanlagen und Nachweis je Objekt.",
+     "link_text": "Zur Objektbetreuung"
+    },
+    {
+     "to": "winterdienst",
+     "h3": "Winterdienst für Gehweg und Zufahrt",
+     "p": "Ein Partner-Fachbetrieb räumt und streut, den Saisonvertrag schließen Sie mit ihm.",
+     "link_text": "Zum Winterdienst"
+    },
+    {
+     "to": "fuer-hausverwaltungen",
+     "h3": "Für Hausverwaltungen und WEG",
+     "p": "Begehung je Objekt, Nachweis und Rechnung objektweise sortiert.",
+     "link_text": "Zu den Hausverwaltungen"
+    }
+   ]
   },
   {
    "slug": "gebaeudereinigung",
-   "title": "Gebäudereinigung Havelland – Service vom Nachbarn",
-   "meta": "Gebäudereinigung im Havelland: Treppenhaus, Büro, Bauendreinigung aus einer Hand. Festpreis nach Besichtigung, Foto-Nachweis nach jedem Turnus für Objekte.",
+   "title": "Gebäudereinigung Falkensee, Havelland: Treppenhaus, Büro",
+   "meta": "Gebäudereinigung in Falkensee und im Havelland: Treppenhaus und Büro im festen Turnus. Festpreis nach kostenloser Besichtigung, Foto je Durchgang aufs Handy.",
    "h1": "Gebäudereinigung im Havelland, auf die sich Ihre Objekte verlassen",
    "h1_em": "verlassen",
    "intro": "Schildern Sie uns Ihr Objekt und den gewünschten Turnus. Sie erhalten eine kostenlose Besichtigung und einen schriftlichen Festpreis.",
-   "definition": "Gebäudereinigung ist die regelmäßige und anlassbezogene Reinigung von Innen- und Außenbereichen eines Objekts, vom Treppenhaus über Büroflächen bis zur Bauendreinigung. Sie hält Mietobjekte, Gewerbeflächen und Gemeinschaftsbereiche sauber, sicher begehbar und werterhaltend.",
+   "definition": "Gebäudereinigung ist die regelmäßige Reinigung von Innen- und Außenbereichen eines Objekts, vom Treppenhaus über Büroflächen bis zu Keller und Müllplatz. Sie hält Mietobjekte, Gewerbeflächen und Gemeinschaftsbereiche sauber, sicher begehbar und werterhaltend.",
    "sections": [
     {
      "h3": "Treppenhausreinigung",
      "offer": true,
-     "body": "Die Treppenhausreinigung hält Gemeinschaftsbereiche im Mehrfamilienhaus sauber und verkehrssicher. Wir wischen Treppenläufe, Podeste und Handläufe, reinigen Eingangsbereiche, Briefkastenanlagen und Aufzugkabinen, säubern Fenster und Glasflächen im Hausflur und entfernen Spinnweben. Auf Wunsch übernehmen wir Kellergänge, Waschküchen und Müllstandsplätze mit. Hausverwaltungen erhalten einen festen Turnus, oft 14-tägig oder wöchentlich, und nach jedem Durchgang eine Foto-Doku vorher/nachher.",
+     "body": "Treppenläufe, Podeste, Handläufe, Briefkästen und Aufzug reinigen wir im wöchentlichen oder 14-tägigen Turnus, auf Wunsch auch Keller und Müllplatz.",
      "kurz": "Treppenläufe, Handläufe, Briefkästen und Aufzug im 14-tägigen oder wöchentlichen Turnus."
     },
     {
      "h3": "Büroreinigung",
      "offer": true,
-     "body": "Die Büroreinigung hält Arbeitsplätze, Besprechungsräume und Sanitäranlagen hygienisch sauber, ohne Ihren Betrieb zu stören. Wir reinigen Schreibtische, Böden und Verkehrsflächen, leeren Papierkörbe, pflegen Küchen und desinfizieren Sanitärbereiche samt Auffüllen von Seife und Papier. Termine legen wir in Randzeiten, früh, abends oder nach Feierabend. Eine feste Reinigungskraft kennt Ihre Räume und Zugänge, den Umfang halten wir nach der Besichtigung schriftlich fest.",
-     "kurz": "Schreibtische, Böden und Sanitär in Randzeiten gereinigt, feste Reinigungskraft kennt Ihre Räume."
+     "body": "Schreibtische, Böden und Sanitär reinigen wir nach Absprache in Randzeiten, früh, abends oder nach Feierabend.",
+     "kurz": "Schreibtische, Böden und Sanitär in Randzeiten gereinigt, feste Ansprechperson für Rückfragen."
     },
     {
-     "h3": "Bauendreinigung",
-     "offer": true,
-     "body": "Die Bauendreinigung macht Neubauten, Sanierungen und Umbauten bezugsfertig. Wir entfernen Bauschmutz, Mörtel- und Farbreste, Klebereste, Zementschleier sowie Staub von Fensterrahmen, Heizkörpern, Türen und Böden. Fenster und Glasflächen reinigen wir innen wie außen, Sanitär und Armaturen werden grundgereinigt. Malerarbeiten gehören nicht dazu, die Feinarbeit nach dem Bau schon. Den Aufwand schätzen wir bei der Besichtigung ein und nennen einen Festpreis.",
-     "kurz": "Bauschmutz, Farbreste und Zementschleier entfernt, bezugsfertig, ohne Malerarbeiten."
+     "h3": "Bauendreinigung über Partner",
+     "body": "Bauschmutz, Mörtel- und Farbreste und Zementschleier nach Umbau oder Neubau reinigt ein Partner-Fachbetrieb. Sie schließen den Vertrag direkt mit ihm, wir koordinieren Besichtigung und Termin.",
+     "kurz": "Nach Umbau und Neubau führt ein Partner-Fachbetrieb aus, Vertrag direkt mit ihm, wir koordinieren."
     },
     {
-     "h3": "Turnus & Vertretung",
-     "body": "Bei der Gebäudereinigung zählt Verlässlichkeit über Monate. Sie bekommen einen festen Turnus, wöchentlich, 14-tägig oder monatlich, und eine feste Ansprechperson, die Ihr Objekt kennt. Für Urlaub und Krankheit organisieren wir die Vertretung selbst. Fällt ein Turnus trotzdem aus, holen wir ihn binnen 48 Stunden kostenlos nach. Als Wartungsvertrag läuft alles ohne ständige Einzelbeauftragung, die Foto-Doku belegt jeden Durchgang.",
-     "kurz": "Fester Turnus mit Vertretung bei Ausfall, versäumter Termin binnen 48 Stunden kostenlos nachgeholt."
+     "h3": "Turnus und Vertretung",
+     "body": "Der Turnus ist wöchentlich, 14-tägig oder monatlich. Bei Urlaub und Krankheit sorgen wir für Vertretung, der Reinigungsplan bleibt gleich.",
+     "kurz": "Fester Turnus, bei Urlaub und Krankheit mit Vertretung."
     }
    ],
    "naehe": "Wir sitzen in Falkensee und sind im ganzen Havelland und Berliner Umland vor Ort, von Nauen über Dallgow-Döberitz bis Brieselang und Wustermark. Feste Turnustermine, WhatsApp-Antwort in Stunden.",
@@ -1418,65 +1470,119 @@
    "faqs": [
     {
      "q": "Was umfasst Ihre Gebäudereinigung?",
-     "a": "Wir übernehmen Treppenhausreinigung, Büroreinigung und Bauendreinigung im Havelland und Berliner Umland, dazu Gemeinschaftsflächen wie Keller, Waschküchen und Müllplätze. Den genauen Umfang halten wir nach der kostenlosen Besichtigung schriftlich fest, damit jeder Einsatz gleich gründlich abläuft. Sie haben eine feste Ansprechperson für alles und bekommen nach jedem Durchgang eine Foto-Doku vorher/nachher aufs Handy."
+     "a": "Wir übernehmen Treppenhausreinigung und Büroreinigung, dazu Gemeinschaftsflächen wie Keller, Waschküchen und Müllplätze. Den Umfang halten wir nach der kostenlosen Besichtigung schriftlich fest. Nach jedem Durchgang bekommen Sie Fotos aufs Handy. Die Bauendreinigung nach Umbau oder Neubau führt ein Partner-Fachbetrieb aus."
     },
     {
      "q": "Wie oft sollte ein Treppenhaus gereinigt werden?",
-     "a": "Der passende Turnus hängt von Lage, Nutzung und Anzahl der Parteien ab. Stark genutzte Mehrfamilienhäuser im Havelland reinigen wir oft wöchentlich, ruhigere Häuser 14-tägig oder monatlich. Wir empfehlen Ihnen bei der Besichtigung einen sinnvollen Rhythmus und legen ihn als festen Turnus an. Diesen passen wir an, wenn sich Belegung oder Anforderungen Ihres Objekts ändern."
+     "a": "Das hängt von Lage, Nutzung und Zahl der Parteien ab. Stark genutzte Mehrfamilienhäuser reinigen wir oft wöchentlich, ruhigere Häuser 14-tägig oder monatlich. Wir empfehlen bei der Besichtigung einen Rhythmus und passen ihn an, wenn sich Belegung oder Anforderungen ändern."
     },
     {
      "q": "Was passiert, wenn ein Reinigungstermin ausfällt?",
-     "a": "Fällt ein Turnus aus, holen wir ihn binnen 48 Stunden kostenlos nach. Für planbare Ausfälle durch Urlaub oder Krankheit organisieren wir vorab selbst eine Vertretung, damit Ihr Treppenhaus oder Büro nicht ungereinigt bleibt. Ihre feste Ansprechperson erreichen Sie per WhatsApp mit einer Erstreaktion in Stunden, nicht in Tagen. Jeder erledigte Durchgang wird per Foto-Doku belegt."
+     "a": "Bei Urlaub und Krankheit organisieren wir vorab eine Vertretung, der Reinigungsplan bleibt gleich. Ihre feste Ansprechperson erreichen Sie per WhatsApp, wir antworten am selben Tag."
     },
     {
      "q": "Was kostet eine Gebäudereinigung für ein Objekt im Havelland?",
-     "a": "Einen Pauschalpreis gibt es nicht, weil Flächen, Turnus und Aufwand pro Objekt unterschiedlich sind. Wir besichtigen Ihr Gebäude kostenlos vor Ort und nennen Ihnen danach einen Festpreis. Dieser Festpreis ist der Endpreis. So wissen Sie vor dem ersten Einsatz genau, woran Sie sind, ohne versteckte Zuschläge."
+     "a": "Einen Pauschalpreis gibt es nicht, weil Fläche, Turnus und Aufwand je Objekt verschieden sind. Wir besichtigen Ihr Gebäude kostenlos und nennen für Treppenhaus- und Büroreinigung danach einen Festpreis. Er ist der Endpreis, ohne versteckte Zuschläge. Bei der Bauendreinigung kommt das Angebot vom Partner-Fachbetrieb."
     },
     {
-     "q": "Bietet ihr Reinigung als laufenden Wartungsvertrag an?",
-     "a": "Ja. Für Hausverwaltungen und Gewerbe richten wir die Gebäudereinigung als Wartungs- oder Abovertrag ein, etwa Treppenhaus 14-tägig oder Büroreinigung wöchentlich. Sie sparen sich die ständige Einzelbeauftragung und bekommen einen verbindlichen Turnus mit fester Vertretungsregelung. Den Umfang vereinbaren wir nach der Besichtigung zum Festpreis, und die Foto-Doku dokumentiert jeden Termin nachvollziehbar für Eigentümer und Mieter."
+     "q": "Bieten Sie Reinigung als laufenden Wartungsvertrag an?",
+     "a": "Ja. Für Hausverwaltungen und Gewerbe richten wir die Gebäudereinigung als Wartungsvertrag ein, etwa Treppenhaus 14-tägig oder Büroreinigung wöchentlich. Sie sparen die Einzelbeauftragung und bekommen einen verbindlichen Turnus mit Vertretungsregel."
+    },
+    {
+     "q": "Wer führt die Bauendreinigung aus?",
+     "a": "Ein Partner-Fachbetrieb führt die Bauendreinigung nach Umbau oder Neubau aus, typisch sind Bauschmutz, Mörtel- und Farbreste und Zementschleier. Den Vertrag und das Angebot erhalten Sie direkt von ihm, wir koordinieren Besichtigung und Termin. Die Grundreinigung einer geräumten Wohnung führen wir selbst aus."
+    },
+    {
+     "q": "Kommen Sie als Reinigungsfirma auch nach Spandau, Hennigsdorf und Oranienburg?",
+     "a": "Ja. Neben Falkensee, Nauen, Dallgow-Döberitz, Brieselang und Wustermark betreuen wir Objekte in Berlin-Spandau, Hennigsdorf und Oranienburg. Schreiben Sie uns die Adresse, wir antworten am selben Tag."
     }
    ],
-   "garantie_text": "Fällt ein vereinbarter Turnus aus, holen wir ihn binnen 48 Stunden kostenlos nach.",
-   "ortsseite_lead": "Ihre Gebäudereinigung in {ort}: Treppenhaus, Büro und Bauendreinigung aus einer Hand, mit festem Turnus und Foto-Nachweis. Wir besichtigen Ihr Objekt in {ort} kostenlos und nennen Ihnen danach einen Festpreis.",
+   "garantie_text": "Umfang und Turnus stehen schriftlich im Reinigungsplan, bei Urlaub und Krankheit springt eine Vertretung ein.",
+   "ortsseite_lead": "Ihre Gebäudereinigung in {ort}: Treppenhaus und Büro im festen Turnus, mit Foto-Nachweis. Wir besichtigen Ihr Objekt in {ort} kostenlos und nennen Ihnen danach einen Festpreis.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
    ],
-   "layout": "ueberblick"
+   "layout": "ueberblick",
+   "blocks": [
+    {
+     "id": "was-ist",
+     "h2": "Was ist Gebäudereinigung?",
+     "body": "Gebäudereinigung ist die regelmäßige Reinigung von Innen- und Außenbereichen eines Objekts, vom Treppenhaus über Büroflächen bis zu Keller und Müllplatz. Sie hält Mietobjekte, Gewerbeflächen und Gemeinschaftsbereiche sauber und sicher begehbar."
+    }
+   ],
+   "sections_h2": "Gebäudereinigung im Havelland: Treppenhaus und Büro",
+   "vorteile": [
+    {
+     "h3": "Gepflegter erster Eindruck",
+     "p": "Eingang, Treppenhaus und Flure bleiben dauerhaft gepflegt."
+    },
+    {
+     "h3": "Ein Turnus, ein Plan",
+     "p": "Wöchentlich, 14-tägig oder monatlich, nach der Besichtigung festgehalten."
+    },
+    {
+     "h3": "Vertretung bei Urlaub und Krankheit",
+     "p": "Das Objekt bleibt versorgt, ohne dass Sie nachtelefonieren."
+    },
+    {
+     "h3": "Nachweis für Eigentümer und Mieter",
+     "p": "Foto nach jedem Durchgang, zum Weiterleiten aufs Handy."
+    }
+   ],
+   "passt": [
+    {
+     "to": "fuer-hausverwaltungen",
+     "h3": "Für Hausverwaltungen",
+     "p": "Treppenhaus, Außenanlage und Räumung je Objekt, mit Nachweis.",
+     "link_text": "Zu den Hausverwaltungen"
+    },
+    {
+     "to": "fuer-firmen",
+     "h3": "Für Firmen und Gewerbe",
+     "p": "Reinigung, Hausmeister und Außenanlagen für Ihren Betrieb im Überblick.",
+     "link_text": "Zu Firmen und Gewerbe"
+    },
+    {
+     "to": "unterhaltsreinigung",
+     "h3": "Büro oder Praxis im Turnus?",
+     "p": "Laufende Reinigung mit Reinigungsplan und Foto nach jedem Termin.",
+     "link_text": "Zur Unterhaltsreinigung"
+    }
+   ]
   },
   {
    "slug": "unterhaltsreinigung",
-   "title": "Unterhaltsreinigung Havelland | Festpreis & Foto",
-   "meta": "Unterhaltsreinigung im Havelland für Gewerbe & Hausverwaltung: fester Turnus, Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Termin. Jetzt anfragen.",
+   "title": "Unterhaltsreinigung & Büroreinigung im Havelland",
+   "meta": "Unterhaltsreinigung für Büro, Praxis und Gemeinschaftsflächen in Falkensee und im Havelland: fester Turnus, Festpreis nach Besichtigung, Foto je Termin.",
    "h1": "Laufende Unterhaltsreinigung für Gewerbe und Hausverwaltung im Havelland",
    "h1_em": "Laufende",
-   "intro": "Schildern Sie uns Flächen und gewünschten Turnus. Sie erhalten eine kostenlose Besichtigung und einen schriftlichen Festpreis pro Durchgang.",
+   "intro": "Büro, Praxis oder Gemeinschaftsfläche: Schildern Sie uns Flächen und gewünschten Turnus. Sie erhalten eine kostenlose Besichtigung und einen schriftlichen Festpreis pro Durchgang.",
    "definition": "Unterhaltsreinigung ist die regelmäßige, im festen Turnus wiederkehrende Reinigung von Geschäfts- und Gemeinschaftsflächen, die den sauberen Zustand laufend hält. Sie unterscheidet sich von der einmaligen Grundreinigung: Die Grundreinigung stellt einen Ausgangszustand her, die Unterhaltsreinigung sichert ihn Termin für Termin.",
    "sections": [
     {
      "h3": "Regelmäßige Büroreinigung",
      "offer": true,
-     "body": "Die Büroreinigung hält Arbeitsplätze, Flure und Gemeinschaftsbereiche im vereinbarten Turnus sauber. Wir leeren Papierkörbe, wischen Schreibtische und Ablageflächen, reinigen Türklinken und Lichtschalter und saugen oder wischen die Böden. Auf Wunsch übernehmen wir Teeküchen und Empfangsbereiche. Den Umfang halten wir vor dem ersten Termin schriftlich fest, nach jedem Durchgang erhalten Sie eine Foto-Doku.",
-     "kurz": "Arbeitsplätze, Flure und Böden im vereinbarten Turnus, Umfang vorab schriftlich festgehalten."
+     "body": "Arbeitsplätze, Flure und Teeküchen reinigen wir im vereinbarten Turnus. Den Umfang halten wir vor dem ersten Termin schriftlich fest.",
+     "kurz": "Arbeitsplätze, Flure und Teeküchen im vereinbarten Turnus, Umfang vorab schriftlich festgehalten."
     },
     {
      "h3": "Sanitär- und Sozialräume",
      "offer": true,
-     "body": "Sanitär- und Sozialräume reinigen wir gründlich und mit Blick auf Hygiene. Dazu gehören Toiletten, Urinale, Waschbecken und Armaturen, Spiegel und Fliesen sowie das Nachfüllen von Seife, Papier und Handtüchern, wenn Sie das Material stellen. Sozialräume und Pausenküchen wischen wir feucht und desinfizieren die Kontaktflächen. Gerade in Sanitärbereichen zählt ein verlässlicher Turnus mehr als eine einmalige Aktion, deshalb arbeiten wir hier nach fester Frequenz und dokumentieren jeden Termin mit Foto.",
+     "body": "Toiletten, Waschbecken und Armaturen reinigen und desinfizieren wir mit fester Frequenz, Seife und Papier füllen wir auf, wenn Sie das Material stellen.",
      "kurz": "Toiletten, Waschbecken und Armaturen desinfiziert, Seife und Papier aufgefüllt, mit fester Frequenz."
     },
     {
      "h3": "Flächen und Böden",
      "offer": true,
-     "body": "Flächen und Böden bestimmen den ersten Eindruck Ihrer Räume. Wir wischen und saugen die Böden je nach Belag, entfernen Flecken im Eingangsbereich und reinigen Fensterbänke und Handläufe. Glatte Böden wie Fliesen, Vinyl oder Laminat behandeln wir mit dem passenden Reiniger, Teppichflächen saugen wir gründlich ab. Die Glasreinigung von Eingangstüren in Greifhöhe gehört dazu, der Turnus steht im gemeinsamen Reinigungsplan.",
+     "body": "Böden wischen oder saugen wir je nach Belag, dazu kommen Fensterbänke, Handläufe und Glastüren in Greifhöhe.",
      "kurz": "Böden je nach Belag gewischt oder gesaugt, Glasflächen in Greifhöhe inklusive."
     },
     {
      "h3": "Turnus und Qualitätssicherung",
-     "body": "Der Turnus richtet sich nach Ihrer Nutzung: täglich, mehrmals pro Woche, wöchentlich oder 14-tägig, festgehalten im Reinigungsplan. Zur Qualitätssicherung dokumentieren wir jeden Termin mit Vorher-Nachher-Fotos aufs Handy, Sie haben eine feste Ansprechperson für Rückfragen. Fällt ein Turnus aus, holen wir ihn binnen 48 Stunden kostenlos nach.",
-     "kurz": "Turnus täglich bis 14-tägig im Reinigungsplan, Foto-Doku je Termin, feste Ansprechperson."
+     "body": "Der Turnus reicht von täglich bis 14-tägig und steht im Reinigungsplan. Nach jedem Termin schicken wir Fotos, eine feste Ansprechperson beantwortet Rückfragen.",
+     "kurz": "Turnus täglich bis 14-tägig im Reinigungsplan, Foto je Termin, feste Ansprechperson."
     }
    ],
    "naehe": "Wir sitzen in Falkensee und betreuen Gewerbe und Hausverwaltungen im ganzen Havelland und Berliner Umland, etwa Nauen, Dallgow-Döberitz, Brieselang und Wustermark. Anfahrt im Festpreis, WhatsApp direkt erreichbar.",
@@ -1484,65 +1590,115 @@
    "faqs": [
     {
      "q": "Was ist der Unterschied zwischen Unterhaltsreinigung und Grundreinigung?",
-     "a": "Die Unterhaltsreinigung läuft regelmäßig im festen Turnus und hält Ihre Räume dauerhaft sauber. Die Grundreinigung ist eine einmalige, intensive Reinigung, die einen Ausgangszustand herstellt, etwa nach einem Umbau oder beim Einzug. Bei uns buchen Sie die Unterhaltsreinigung als laufende Leistung mit Reinigungsplan, fester Ansprechperson und Foto-Doku nach jedem Termin."
+     "a": "Die Unterhaltsreinigung läuft im festen Turnus und hält Ihre Räume dauerhaft sauber. Die Grundreinigung ist eine einmalige, intensive Reinigung, zum Beispiel nach dem Auszug. Wir führen sie selbst aus, das Angebot erhalten Sie nach der kostenlosen Besichtigung."
     },
     {
      "q": "Wie oft kommt die Reinigung bei einer Unterhaltsreinigung?",
-     "a": "Den Turnus legen Sie fest, passend zu Ihrer Nutzung: täglich, mehrmals pro Woche, wöchentlich oder 14-tägig. Wir halten die Frequenz in einem festen Reinigungsplan fest und kommen verlässlich zum vereinbarten Zeitfenster. Stark genutzte Bereiche wie Sanitärräume planen wir oft häufiger ein als reine Büroflächen. Den passenden Rhythmus stimmen wir bei der kostenlosen Besichtigung mit Ihnen ab."
+     "a": "Den Turnus legen Sie nach Ihrer Nutzung fest: täglich, mehrmals pro Woche, wöchentlich oder 14-tägig. Sanitärräume planen wir oft häufiger ein als reine Büroflächen. Den Rhythmus stimmen wir bei der kostenlosen Besichtigung ab und halten ihn im Reinigungsplan fest."
     },
     {
      "q": "Was kostet eine Unterhaltsreinigung im Havelland?",
-     "a": "Den Preis legen wir nach einer kostenlosen Besichtigung als Festpreis fest, pro Durchgang oder pro Monat. So wissen Sie vorher genau, was Sie zahlen. Der Festpreis ist Ihr Endpreis, ohne Aufschlag und ohne Nachforderung. Den Preis bestimmen Faktoren wie Flächengröße, Turnus, Art der Räume und gewünschter Leistungsumfang."
+     "a": "Nach der kostenlosen Besichtigung nennen wir einen Festpreis, je Durchgang oder je Monat. Er ist Ihr Endpreis, ohne Nachforderung. Fläche, Turnus, Art der Räume und Leistungsumfang bestimmen die Höhe."
     },
     {
      "q": "Wie sichern Sie die Qualität bei laufender Reinigung?",
-     "a": "Nach jedem Termin dokumentieren wir die gereinigten Bereiche mit Vorher-Nachher-Fotos, die direkt auf Ihr Handy gehen. Sie haben eine feste Ansprechperson für Rückfragen und Anpassungen, erreichbar über WhatsApp. Der vereinbarte Umfang steht schriftlich im Reinigungsplan. Fällt ein Turnus aus, holen wir ihn binnen 48 Stunden kostenlos nach, damit der Standard durchgängig bleibt."
+     "a": "Nach jedem Termin schicken wir Fotos der gereinigten Bereiche aufs Handy. Der Umfang steht schriftlich im Reinigungsplan, eine feste Ansprechperson ist per WhatsApp erreichbar. Bei Urlaub und Krankheit springt eine Vertretung ein."
     },
     {
      "q": "Für wen eignet sich die Unterhaltsreinigung?",
-     "a": "Die Unterhaltsreinigung eignet sich für Gewerbebetriebe und Hausverwaltungen, die ihre Büros, Sanitärräume, Flächen und Böden dauerhaft sauber halten wollen, ohne sich selbst darum zu kümmern. Typisch sind Büros, Praxen, Kanzleien, Ladenflächen und Gemeinschaftsbereiche in verwalteten Objekten. Sie buchen die Reinigung als festen Turnus oder Wartungsvertrag mit einer Ansprechperson für alles."
+     "a": "Für Büros, Praxen, Kanzleien, Ladenflächen und Gemeinschaftsbereiche in verwalteten Objekten. Sie buchen einen festen Turnus oder Wartungsvertrag mit einer Ansprechperson für alles."
+    },
+    {
+     "q": "Reinigen Sie auch in Berlin-Spandau, Hennigsdorf oder Oranienburg?",
+     "a": "Ja, neben Falkensee, Nauen, Dallgow-Döberitz, Brieselang und Wustermark betreuen wir Büros und Objekte in Berlin-Spandau, Hennigsdorf und Oranienburg. Schreiben Sie uns den Standort, wir antworten am selben Tag."
     }
    ],
-   "garantie_text": "Fällt ein vereinbarter Reinigungsturnus aus, holen wir ihn binnen 48 Stunden kostenlos für Sie nach.",
+   "garantie_text": "Umfang und Turnus stehen schriftlich im Reinigungsplan, bei Urlaub und Krankheit springt eine Vertretung ein.",
    "ortsseite_lead": "Ihre Unterhaltsreinigung in {ort} im festen Turnus, mit Festpreis nach kostenloser Besichtigung und Foto-Doku nach jedem Termin. Für Gewerbe und Hausverwaltungen in {ort} und Umgebung.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
    ],
-   "layout": "ueberblick"
+   "layout": "ueberblick",
+   "blocks": [
+    {
+     "id": "was-ist",
+     "h2": "Was ist Unterhaltsreinigung?",
+     "body": "Unterhaltsreinigung ist die regelmäßige, im festen Turnus wiederkehrende Reinigung von Büros, Praxen, Läden und Gemeinschaftsflächen. Sie hält den sauberen Zustand Termin für Termin, mit Reinigungsplan und fester Ansprechperson."
+    }
+   ],
+   "sections_h2": "Unterhaltsreinigung im Havelland: Büro, Sanitär und Böden",
+   "vorteile": [
+    {
+     "h3": "Saubere Räume ohne Aufsicht",
+     "p": "Der Reinigungsplan steht, Sie müssen niemanden einteilen oder kontrollieren."
+    },
+    {
+     "h3": "Termine außerhalb der Arbeitszeit",
+     "p": "Nach Absprache früh, abends oder nach Feierabend."
+    },
+    {
+     "h3": "Foto nach jedem Termin",
+     "p": "Sie sehen den Zustand auf dem Handy, auch wenn Sie nicht da sind."
+    },
+    {
+     "h3": "Vertretung bei Ausfall",
+     "p": "Bei Urlaub und Krankheit springt eine Vertretung ein, der Reinigungsplan bleibt gleich."
+    }
+   ],
+   "passt": [
+    {
+     "to": "fuer-firmen",
+     "h3": "Für Firmen und Gewerbe",
+     "p": "Reinigung, Hausmeister und Außenanlagen für Ihren Betrieb im Überblick.",
+     "link_text": "Zu Firmen und Gewerbe"
+    },
+    {
+     "to": "gebaeudereinigung",
+     "h3": "Treppenhaus im Turnus?",
+     "p": "Eingang, Treppenhaus und Gemeinschaftsflächen laufen unter Gebäudereinigung.",
+     "link_text": "Zur Gebäudereinigung"
+    },
+    {
+     "to": "hausmeisterservice",
+     "h3": "Kleiner Mangel im Haus?",
+     "p": "Kontrollgänge und kleine Reparaturen nach festem Plan.",
+     "link_text": "Zum Hausmeisterservice"
+    }
+   ]
   },
   {
    "slug": "objektbetreuung",
-   "title": "Objektbetreuung Havelland | Haus- & Gartenservice",
-   "meta": "Objektbetreuung im Havelland für Hausverwaltungen: technische Kontrolle, Außenanlagen, Kleininstandhaltung. Ein Ansprechpartner, Festpreis als Endpreis, Foto-Nachweis.",
-   "h1": "Objektbetreuung im Havelland — Ihr fester Ansprechpartner vor Ort",
-   "h1_em": "fester Ansprechpartner",
-   "intro": "Schildern Sie uns Ihr Objekt und den Betreuungsumfang. Sie erhalten eine kostenlose Besichtigung und einen schriftlichen Festpreis als Endpreis.",
-   "definition": "Objektbetreuung ist die laufende Betreuung von Wohn- und Gewerbeobjekten, bei der ein Dienstleister technische Kontrolle, Außenanlagen und kleine Reparaturen gebündelt übernimmt. Für Hausverwaltungen ersetzt sie die Koordination vieler Einzelgewerke durch einen festen Ansprechpartner, der den Zustand des Objekts kennt und dokumentiert.",
+   "title": "Objektbetreuung Falkensee & Havelland für Verwaltungen",
+   "meta": "Objektbetreuung für Hausverwaltungen, WEG und Gewerbe in Falkensee und im Havelland: Kontrollgänge, Außenanlagen, Kleinreparaturen. Festpreis, Foto-Nachweis.",
+   "h1": "Objektbetreuung im Havelland mit festem Ansprechpartner vor Ort",
+   "h1_em": "festem Ansprechpartner",
+   "intro": "Kontrollgänge, Außenanlagen und kleine Reparaturen für Hausverwaltungen, WEG und Gewerbe, mit einem Ansprechpartner für Objekt, Garten und Reparaturen. Sie schildern Objekt und Umfang, wir besichtigen kostenlos und nennen einen schriftlichen Festpreis.",
+   "definition": "Objektbetreuung, auch Immobilienpflege oder Objektpflege genannt, ist die laufende Betreuung von Wohn- und Gewerbeobjekten. Ein Dienstleister übernimmt Kontrollgänge, die Haus- und Grundstückspflege samt Außenanlagen und kleine Reparaturen und hält den Zustand mit Fotos fest. Für Hausverwaltungen ersetzt das die Koordination vieler Einzelgewerke durch einen festen Ansprechpartner.",
    "sections": [
     {
-     "h3": "Technische Kontrolle der Objekte",
+     "h3": "Kontrollgänge nach festem Plan",
      "offer": true,
-     "body": "Bei der technischen Kontrolle gehen wir Ihr Objekt nach festem Plan durch. Dazu zählen Sichtkontrolle der Gemeinschaftsflächen, Treppenhäuser und Keller, Prüfung von Beleuchtung und Notbeleuchtung, Kontrolle von Türen, Schließanlagen und Garagentoren sowie ein Blick auf Dachrinnen und Feuchtigkeitsschäden. Auf Wunsch lesen wir Zählerstände ab. Auffälligkeiten halten wir mit Foto fest, damit Sie schnell entscheiden können, ob ein Fachbetrieb nötig ist.",
-     "kurz": "Fester Kontrollplan für Gemeinschaftsflächen, Beleuchtung und Türen, Auffälligkeiten sofort mit Foto."
+     "body": "Gemeinschaftsflächen, Treppenhaus, Keller, Beleuchtung und Türen prüfen wir im vereinbarten Turnus. Auffälligkeiten halten wir mit Foto fest, damit Sie entscheiden können, ob ein Fachbetrieb nötig ist.",
+     "kurz": "Gemeinschaftsflächen, Keller, Beleuchtung und Türen im vereinbarten Turnus geprüft, Auffälligkeiten mit Foto."
     },
     {
      "h3": "Pflege der Außenanlagen",
      "offer": true,
-     "body": "Die Außenanlagen halten wir das ganze Jahr in Schuss: Rasen mähen, Hecken und Sträucher schneiden, Wege und Beete von Unkraut frei halten, Laub räumen und Bepflanzung saisonal pflegen. Den Winterdienst auf Gehwegen und Zufahrten übernimmt ein Partner-Fachbetrieb, wir koordinieren Besichtigung und Vertrag. Müllplätze und Stellflächen halten wir sauber. Für wiederkehrende Pflege bieten wir Wartungsverträge an, etwa eine 14-tägige Gartenpflege in der Saison.",
-     "kurz": "Rasen, Hecken und Wege gepflegt, Winterdienst per Partner-Fachbetrieb, 14-tägige Gartenpflege als Wartungsvertrag."
+     "body": "Rasen, Hecken, Wege und Beete pflegen wir im Turnus, im Herbst räumen wir das Laub. Müllplatz und Stellflächen halten wir sauber.",
+     "kurz": "Rasen, Hecken, Wege und Laub im Turnus, Müllplatz und Stellflächen sauber."
     },
     {
      "h3": "Kleininstandhaltung am Objekt",
      "offer": true,
-     "body": "Kleine Reparaturen erledigen wir direkt, ohne separaten Handwerker. Wir tauschen Leuchtmittel, ziehen lockere Schrauben und Beschläge nach, befestigen Handläufe, dichten kleine Fugen ab, ölen klemmende Türen und Tore und bringen Hausnummern oder Briefkästen in Ordnung. Bei Schäden, die ein zugelassener Fachbetrieb übernehmen muss, etwa an Elektrik, Heizung oder Gas, melden wir den Bedarf mit Foto.",
-     "kurz": "Leuchtmittel, Beschläge, Fugen und Türen direkt erledigt, Elektro- und Gasschäden nur gemeldet."
+     "body": "Leuchtmittel tauschen, Beschläge nachziehen, Fugen abdichten, klemmende Türen ölen. Schäden an Elektrik, Heizung oder Gas melden wir mit Foto, ein Fachbetrieb übernimmt sie.",
+     "kurz": "Leuchtmittel, Beschläge, Fugen und klemmende Türen direkt erledigt, Elektro-, Heizungs- und Gasschäden nur gemeldet."
     },
     {
-     "h3": "Fester Ansprechpartner vor Ort",
-     "body": "Sie haben eine Stelle für das gesamte Objekt statt vier Firmen für Garten, Reinigung, Winterdienst und Reparaturen zu koordinieren. Auf WhatsApp reagieren wir in Stunden, Sie sehen am Foto, dass die Arbeit erledigt ist. Weil wir das Objekt regelmäßig betreuen, kennen wir seine Besonderheiten und melden Probleme früh.",
-     "kurz": "Eine Nummer statt vier Firmen, WhatsApp-Antwort in Stunden, Arbeit per Foto belegt."
+     "h3": "Ein Ansprechpartner, ein Nachweis",
+     "body": "Eine Nummer für alle Objekte, Fotos nach jedem Einsatz, Rechnung je Objekt.",
+     "kurz": "Eine Nummer für alle Objekte, Fotos nach jedem Einsatz, Rechnung je Objekt."
     }
    ],
    "naehe": "Wir betreuen Objekte im ganzen Havelland und Berliner Umland, von Falkensee, Nauen und Rathenow bis Dallgow-Döberitz und Brieselang. Anfahrt im Festpreis, kurze Wege heißen schnelle Termine.",
@@ -1550,99 +1706,211 @@
    "faqs": [
     {
      "q": "Was umfasst die Objektbetreuung für Hausverwaltungen?",
-     "a": "Die Objektbetreuung bündelt technische Kontrolle, Pflege der Außenanlagen, Kleininstandhaltung und einen festen Ansprechpartner vor Ort. Wir kontrollieren Gemeinschaftsflächen, halten Garten und Wege in Schuss, koordinieren den Winterdienst über einen Partner-Fachbetrieb und erledigen kleine Reparaturen. Größere Schäden an Elektrik, Heizung oder Gas melden wir mit Foto, statt sie selbst anzugehen. So koordinieren Sie ein Objekt über eine Stelle statt über mehrere Firmen."
+     "a": "Objektbetreuung bündelt Kontrollgänge, die Pflege der Außenanlagen, kleine Reparaturen und einen festen Ansprechpartner. Den Winterdienst übernimmt ein Partner-Fachbetrieb, den Vertrag schließen Sie mit ihm. Größere Schäden an Elektrik, Heizung oder Gas melden wir mit Foto an Sie."
     },
     {
      "q": "Wie oft kontrollieren Sie ein betreutes Objekt?",
-     "a": "Den Kontrollrhythmus stimmen wir bei der Besichtigung auf Ihr Objekt ab. Üblich sind regelmäßige Rundgänge, etwa wöchentlich oder 14-tägig, ergänzt um saisonale Einsätze wie Laubräumung im Herbst, Winterdienst über einen Partner-Fachbetrieb. Den vereinbarten Turnus halten wir im Wartungsvertrag fest, damit Sie sich auf feste Termine verlassen können und nicht jedes Mal neu beauftragen müssen."
+     "a": "Den Turnus legen wir bei der Besichtigung mit Ihnen fest. Üblich sind wöchentliche oder 14-tägige Rundgänge, dazu saisonale Einsätze wie Laub im Herbst. Der Turnus steht im Wartungsvertrag, Sie müssen nicht jeden Einsatz neu beauftragen."
     },
     {
-     "q": "Wie reagieren Sie, wenn am Objekt ein Schaden auffällt?",
-     "a": "Auffälligkeiten halten wir sofort mit Foto fest und melden sie Ihnen über WhatsApp, meist innerhalb von Stunden. Kleine Sachen wie ein defektes Leuchtmittel oder eine lockere Schraube erledigen wir direkt im Rahmen der Kleininstandhaltung. Bei Schäden, die ein zugelassener Fachbetrieb übernehmen muss, melden wir den Bedarf klar, damit Sie als Verwaltung entscheiden und beauftragen können."
+     "q": "Was passiert, wenn am Objekt ein Schaden auffällt?",
+     "a": "Wir halten den Schaden mit Foto fest und melden ihn Ihnen per WhatsApp oder Mail. Kleine Mängel wie ein defektes Leuchtmittel beheben wir direkt. Bei Schäden für einen Fachbetrieb entscheiden Sie als Verwaltung, wer beauftragt wird."
     },
     {
-     "q": "Was kostet die Objektbetreuung im Havelland?",
-     "a": "Den Preis nennen wir nach einer kostenlosen Vor-Ort-Besichtigung als Festpreis, der als Endpreis gilt. Er hängt von der Größe des Objekts, dem Umfang der Außenanlagen und der gewünschten Kontrollhäufigkeit ab. Für laufende Betreuung vereinbaren wir Wartungsverträge mit festen monatlichen Konditionen, damit Sie sicher kalkulieren können."
+     "q": "Was kostet Objektbetreuung im Havelland?",
+     "a": "Nach der kostenlosen Besichtigung nennen wir einen schriftlichen Festpreis. Er hängt von Objektgröße, Außenanlagen und Kontrollhäufigkeit ab. Für laufende Betreuung vereinbaren wir einen Wartungsvertrag mit festen Konditionen, die Rechnung weist die Umsatzsteuer aus."
     },
     {
-     "q": "Bieten Sie auch laufende Verträge statt Einzelaufträge an?",
-     "a": "Ja, für die laufende Objektbetreuung schließen wir Wartungsverträge ab. Üblich sind eine 14-tägige Gartenpflege in der Saison, kombiniert mit regelmäßigen Kontrollrundgängen; den Winterdienst-Saisonvertrag schließen Sie mit dem Partner-Fachbetrieb. So haben Sie feste Ansprechzeiten, planbare Kosten und müssen nicht jeden Einsatz einzeln beauftragen. Den Umfang legen wir gemeinsam fest und halten ihn schriftlich fest."
+     "q": "Betreuen Sie mehrere Objekte einer Hausverwaltung?",
+     "a": "Ja. Jedes Objekt nehmen wir bei einer eigenen Begehung auf. Nachweise und Rechnung bekommen Sie je Objekt, die Fotos können Sie an die Eigentümer weiterleiten."
+    },
+    {
+     "q": "Wie schnell bekomme ich einen Termin zur Begehung?",
+     "a": "Wir antworten am selben Tag. Die Besichtigung findet meist innerhalb weniger Tage statt, danach steht der Festpreis schriftlich fest."
     }
    ],
-   "garantie_text": "Eine feste Garantie nennen wir hier nicht, dafür ein klares Preisversprechen: kostenlose Vor-Ort-Besichtigung, danach ein Festpreis, der als Endpreis gilt, ohne Aufschlag, ohne Nachforderung.",
-   "ortsseite_lead": "Ihre Objektbetreuung in {ort} aus einer Hand: technische Kontrolle, Außenanlagen und Kleininstandhaltung, betreut von einem festen Ansprechpartner aus dem Havelland. Festpreis als Endpreis, Foto-Nachweis nach jedem Einsatz.",
+   "garantie_text": "Nach der kostenlosen Besichtigung steht der Festpreis schriftlich fest, ohne Aufschlag und ohne Nachforderung.",
+   "ortsseite_lead": "Ihre Objektbetreuung in {ort}: technische Kontrolle, Außenanlagen und Kleininstandhaltung mit einem festen Ansprechpartner aus dem Havelland. Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Einsatz.",
    "skills_applied": [
     "seo-web-copy.md (Keyword-Platzierung: Objektbetreuung in Title vorn, H1, erste 100 Wörter; Struktur Title/Meta/H1/H2-Sektionen/FAQ/CTA; Scannability mit eigenständigen Subheadings)",
     "llm-optimisation.md (Antwort-zuerst in Intro und jeder Sektion; Definition-Block X-ist-Y; eigenständige 40-80-Wort-FAQs als echte Nutzerfragen; Entity-Klarheit: Firma + Falkensee/Havelland konsistent benannt)",
     "stop-slop.md (deutsch übertragen: keine Floskel-Opener, kein nicht-nur-sondern-auch, Aktiv statt Passiv, Sie statt man, konkrete Substantive, variierte Satzlängen, keine leeren Verstärker, keine Anglizismen, Umlaute korrekt)"
    ],
-   "layout": "ueberblick"
+   "layout": "ueberblick",
+   "blocks": [
+    {
+     "id": "was-ist",
+     "h2": "Was ist Objektbetreuung?",
+     "body": "Objektbetreuung, auch Immobilienpflege oder Objektpflege genannt, ist die laufende Betreuung von Wohn- und Gewerbeobjekten. Ein Dienstleister übernimmt Kontrollgänge, die Haus- und Grundstückspflege samt Außenanlagen und kleine Reparaturen und hält den Zustand mit Fotos fest. Für Hausverwaltungen ersetzt das die Koordination vieler Einzelgewerke durch einen festen Ansprechpartner."
+    },
+    {
+     "id": "einsatzgebiet",
+     "h2": "Objektbetreuung in Falkensee, Spandau und Umgebung",
+     "body": "Wir sitzen in Falkensee und sind für Objektbetreuung in der Nähe da: im Havelland und am Berliner Westrand, von Nauen und Brieselang bis Berlin-Spandau. Auf Anfrage sind wir auch in Hennigsdorf und Oranienburg vor Ort. Die Anfahrt steckt im Festpreis.",
+     "link_to": "standorte",
+     "link_text": "Alle Standorte"
+    }
+   ],
+   "sections_h2": "Objektbetreuung im Havelland: was dazugehört",
+   "vorteile": [
+    {
+     "h3": "Ein Kontakt für alle Objekte",
+     "p": "Sie rufen eine Nummer an, egal welches Haus betroffen ist."
+    },
+    {
+     "h3": "Probleme fallen früh auf",
+     "p": "Kontrollgänge zeigen Schäden, bevor daraus Folgekosten werden."
+    },
+    {
+     "h3": "Nachweis für Eigentümer",
+     "p": "Fotos je Einsatz, den Objekten einzeln zugeordnet."
+    },
+    {
+     "h3": "Planbare Kosten",
+     "p": "Festpreis nach Besichtigung, bei laufender Betreuung per Wartungsvertrag."
+    }
+   ],
+   "passt": [
+    {
+     "to": "hausmeisterservice",
+     "h3": "Hausmeisterarbeiten im festen Turnus?",
+     "p": "Grünpflege, Kleinreparaturen und Treppenhaus nach Plan, mit Foto nach jedem Einsatz.",
+     "link_text": "Zum Hausmeisterservice"
+    },
+    {
+     "to": "winterdienst",
+     "h3": "Winterdienst für Zufahrt und Gehweg",
+     "p": "Ein Partner-Fachbetrieb räumt und streut, den Saisonvertrag schließen Sie mit ihm.",
+     "link_text": "Zum Winterdienst"
+    },
+    {
+     "to": "fuer-hausverwaltungen",
+     "h3": "Mehrere Objekte einer Verwaltung",
+     "p": "Begehung je Objekt, Nachweis und Rechnung objektweise sortiert.",
+     "link_text": "Zu den Hausverwaltungen"
+    }
+   ]
   },
   {
    "slug": "ferienwohnung-reinigung",
-   "title": "Ferienwohnung-Reinigung Werder & Schwielowsee",
-   "meta": "Ferienwohnung-Reinigung in Werder & Schwielowsee: Endreinigung zwischen Gästen, Wäsche, Schlüsselübergabe. Festpreis, Foto-Nachweis aufs Handy, WhatsApp.",
-   "h1": "Ihre Ferienwohnung in Werder & Schwielowsee — sauber zum nächsten Check-in",
+   "title": "Ferienwohnung Endreinigung Werder & Schwielowsee",
+   "meta": "Endreinigung für Ferienwohnungen in Werder (Havel) und am Schwielowsee: Wäsche, Schlüsselübergabe, Foto-Nachweis aufs Handy. Festpreis nach Besichtigung.",
+   "h1": "Ferienwohnung-Reinigung in Werder und am Schwielowsee, sauber zum nächsten Check-in",
    "h1_em": "Check-in",
-   "intro": "Nennen Sie uns den Anreisetermin Ihres nächsten Gastes. Sie erhalten eine kostenlose Besichtigung und einen schriftlichen Festpreis je Wechsel.",
-   "definition": "Ferienwohnung-Reinigung ist die getaktete Aufbereitung einer Ferien- oder Airbnb-Wohnung zwischen zwei Gästen, damit die nächste Anreise pünktlich und sauber stattfindet. Sie umfasst Endreinigung, Wäschewechsel, Auffüllen der Ausstattung und die geprüfte Übergabe an den nächsten Gast.",
+   "intro": "Reinigungsservice für Ferienwohnungen und Airbnb in Werder (Havel) und am Schwielowsee: Endreinigung, Wäschewechsel und Schlüsselübergabe zwischen zwei Gästen. Nennen Sie uns den Anreisetermin, wir besichtigen kostenlos und nennen einen schriftlichen Festpreis je Wechsel.",
+   "definition": "Ferienwohnung-Reinigung, auch Endreinigung genannt, ist die getaktete Aufbereitung einer Ferien- oder Airbnb-Wohnung zwischen zwei Gästen. Sie umfasst Reinigung, Wäschewechsel, das Auffüllen der Ausstattung und die geprüfte Übergabe an den nächsten Gast.",
    "sections": [
     {
      "h3": "Endreinigung zwischen Gästen",
      "offer": true,
-     "body": "Die Endreinigung bringt Ihre Wohnung im Gästetakt wieder auf Anfang. Wir reinigen Bad, Küche und Wohnbereich, wischen Böden, leeren Müll, entkalken Armaturen und kontrollieren auf vergessene Gegenstände des Vorgängers. Bei knappen Wechseln zwischen Check-out und Check-in halten wir uns an Ihr Zeitfenster, damit der nächste Gast eine saubere Wohnung vorfindet. Sie sagen uns den Anreisetermin, wir richten den Einsatz danach aus.",
+     "body": "Bad, Küche und Wohnbereich reinigen wir im Zeitfenster zwischen Check-out und Check-in, wischen Böden, leeren den Müll und entkalken Armaturen.",
      "kurz": "Bad, Küche und Wohnbereich zwischen Check-out und Check-in im vereinbarten Zeitfenster gereinigt."
     },
     {
-     "h3": "Wäsche & Ausstattung",
+     "h3": "Wäsche und Ausstattung",
      "offer": true,
-     "body": "Wir wechseln Bettwäsche und Handtücher, beziehen die Betten frisch und füllen die Ausstattung wieder auf: Toilettenpapier, Seife, Kaffee, Spülmittel und Müllbeutel nach Ihrer Vorgabe. Beschädigte oder fehlende Teile melden wir Ihnen direkt per WhatsApp, statt sie stillschweigend zu übergehen. Auf Wunsch arbeiten wir mit Ihrem Wäsche-Set vor Ort oder mit einem festen Vorrat, den wir gemeinsam abstimmen, damit nie ein Bezug fehlt.",
-     "kurz": "Bettwäsche und Handtücher gewechselt, Verbrauchsmaterial aufgefüllt, Schäden sofort per WhatsApp gemeldet."
+     "body": "Wir wechseln Bettwäsche und Handtücher und füllen die Ausstattung nach Ihrer Vorgabe auf. Beschädigte oder fehlende Teile melden wir Ihnen per WhatsApp.",
+     "kurz": "Bettwäsche und Handtücher gewechselt, Verbrauchsmaterial nach Ihrer Vorgabe aufgefüllt, Schäden per WhatsApp gemeldet."
     },
     {
      "h3": "Schlüsselübergabe",
      "offer": true,
-     "body": "Die Schlüsselübergabe organisieren wir so, dass Ihr Gast ohne Wartezeit hineinkommt. Wir arbeiten mit Schlüsselsafe, Schlüsselbox oder fester Deponierung nach Ihrer Vorgabe und prüfen vor jedem Wechsel, dass der Zugang funktioniert. Bei persönlicher Übergabe sind wir im vereinbarten Fenster vor Ort. Liegt der Schlüssel falsch oder klemmt das Schloss, melden wir das sofort, damit Sie aus der Ferne nicht auf eine Beschwerde des Gastes warten müssen.",
+     "body": "Wir arbeiten mit Schlüsselsafe, Schlüsselbox oder fester Deponierung nach Ihrer Vorgabe und prüfen vor jedem Wechsel, dass der Zugang funktioniert.",
      "kurz": "Zugang per Schlüsselsafe, Box oder Deponierung vor jedem Wechsel geprüft, Probleme sofort gemeldet."
     },
     {
-     "h3": "Foto-Nachweis remote",
-     "body": "Nach jedem Wechsel erhalten Sie Vorher-Nachher-Fotos der Wohnung direkt aufs Handy. So sehen Sie als Remote-Eigentümer den Übergabezustand, ohne selbst nach Werder oder an den Schwielowsee zu fahren. Die Bilder zeigen das frisch bezogene Bett, das gereinigte Bad und die aufgefüllte Ausstattung. Bei Schäden oder Auffälligkeiten dokumentieren wir den Fund mit Foto, damit Sie gegenüber Ihrem Gast eine klare Grundlage haben.",
-     "kurz": "Vorher-Nachher-Fotos jedes Wechsels aufs Handy, ohne eigene Fahrt nach Werder oder Schwielowsee."
+     "h3": "Foto-Nachweis aus der Ferne",
+     "body": "Nach jedem Wechsel bekommen Sie Vorher-Nachher-Fotos aufs Handy, bei Schäden mit Foto des Fundes.",
+     "kurz": "Vorher-Nachher-Fotos jedes Wechsels aufs Handy, ohne eigene Fahrt nach Werder oder an den Schwielowsee."
     }
    ],
    "naehe": "Wir arbeiten ausschließlich in Werder (Havel) und am Schwielowsee, wo viele Ferienwohnungen liegen. Diese Nähe sichert kurze Wechsel zwischen Check-out und Check-in, auch in der Saisonspitze.",
    "ablauf": "Zuerst sehen wir uns Ihre Ferienwohnung kostenlos vor Ort an und klären Wechseltakt, Wäsche, Schlüsselweg und Ausstattung. Danach erhalten Sie einen Festpreis. Der Festpreis ist der Endpreis, ohne Aufschlag und ohne Nachforderung. Anschließend übernehmen wir die Reinigung im vereinbarten Zeitfenster vor jedem Check-in. Zum Schluss bekommen Sie den Foto-Nachweis der Übergabe direkt aufs Handy.",
    "faqs": [
     {
-     "q": "Was gehört zur Endreinigung einer Ferienwohnung dazu?",
-     "a": "Zur Endreinigung gehören Bad, Küche und Wohnbereich, das Wischen der Böden, Müll leeren, Armaturen entkalken und die Kontrolle auf vergessene Gegenstände. Dazu kommen frische Bettwäsche, gewechselte Handtücher und das Auffüllen der Ausstattung. Den genauen Umfang stimmen wir bei der kostenlosen Besichtigung auf Ihre Wohnung und Ihren Gästetakt ab."
+     "q": "Was gehört zur Endreinigung einer Ferienwohnung?",
+     "a": "Bad, Küche und Wohnbereich, gewischte Böden, geleerter Müll, entkalkte Armaturen und eine Kontrolle auf vergessene Gegenstände. Dazu kommen frische Bettwäsche, gewechselte Handtücher und aufgefüllte Ausstattung. Den Umfang klären wir bei der kostenlosen Besichtigung."
     },
     {
-     "q": "Wie sichern Sie die Übergabequalität, wenn ich nicht vor Ort wohne?",
-     "a": "Nach jedem Wechsel erhalten Sie Vorher-Nachher-Fotos direkt aufs Handy. Sie sehen das frisch bezogene Bett, das gereinigte Bad und die aufgefüllte Ausstattung, ohne selbst nach Werder oder an den Schwielowsee zu fahren. Bei Schäden dokumentieren wir den Fund per Foto, damit Sie gegenüber Ihrem Gast eine klare Grundlage haben."
+     "q": "Wie schnell schaffen Sie den Wechsel zwischen Check-out und Check-in?",
+     "a": "Das richtet sich nach Ihrem Zeitfenster und der Größe der Wohnung. Weil wir in Werder und am Schwielowsee arbeiten, sind die Wege kurz. Den machbaren Takt klären wir bei der Besichtigung."
     },
     {
      "q": "Wie läuft die Schlüsselübergabe an den nächsten Gast?",
-     "a": "Wir arbeiten mit Schlüsselsafe, Schlüsselbox oder fester Deponierung nach Ihrer Vorgabe und prüfen vor jedem Wechsel, dass der Zugang funktioniert. Bei persönlicher Übergabe sind wir im vereinbarten Fenster vor Ort. Klemmt das Schloss oder liegt der Schlüssel falsch, melden wir das sofort per WhatsApp, bevor Ihr Gast davorsteht."
+     "a": "Wir arbeiten mit Schlüsselsafe, Schlüsselbox oder fester Deponierung nach Ihrer Vorgabe und prüfen vor jedem Wechsel, dass der Zugang funktioniert. Klemmt das Schloss, melden wir das sofort per WhatsApp."
     },
     {
-     "q": "Wie schnell schaffen Sie einen Wechsel zwischen Check-out und Check-in?",
-     "a": "Das richtet sich nach Ihrem Zeitfenster und der Größe der Wohnung. Da wir nur in Werder und am Schwielowsee arbeiten, sind die Wege kurz, und enge Wechsel am selben Tag sind möglich. Den machbaren Takt klären wir bei der Besichtigung, damit der nächste Gast pünktlich eine saubere Wohnung vorfindet."
+     "q": "Wie behalte ich als Eigentümer aus der Ferne den Überblick?",
+     "a": "Nach jedem Wechsel bekommen Sie Vorher-Nachher-Fotos aufs Handy. Schäden und fehlende Teile melden wir mit Foto, bevor der nächste Gast anreist."
     },
     {
      "q": "Was kostet die Reinigung meiner Ferienwohnung?",
-     "a": "Den Preis nennen wir nach einer kostenlosen Besichtigung vor Ort als Festpreis, der von Wohnungsgröße, Wechseltakt und Umfang abhängt. Der Festpreis ist der Endpreis, ohne Aufschlag und ohne Nachforderung. Für regelmäßige Wechsel in der Saison sind feste Wartungsvereinbarungen möglich."
+     "a": "Nach der kostenlosen Besichtigung nennen wir einen schriftlichen Festpreis je Wechsel. Er hängt von Wohnungsgröße, Wechseltakt und Umfang ab. Für regelmäßige Wechsel in der Saison sind feste Vereinbarungen möglich."
+    },
+    {
+     "q": "In welchen Orten reinigen Sie Ferienwohnungen und Airbnb-Wohnungen?",
+     "a": "Wir reinigen Ferienwohnungen und Airbnb-Wohnungen in Werder (Havel) und am Schwielowsee. Sitz des Unternehmens ist Falkensee.",
+     "hub_only": true
     }
    ],
-   "garantie_text": "Sind wir nicht rechtzeitig vor Ihrem Check-in fertig, erstatten wir Ihnen den Reinigungspreis.",
-   "ortsseite_lead": "Ihre Ferienwohnung-Reinigung in {ort} aus einer Hand: Endreinigung zwischen Gästen, frische Wäsche, geprüfte Schlüsselübergabe und Foto-Nachweis aufs Handy. Festpreis nach kostenloser Besichtigung vor Ort in {ort}.",
+   "garantie_text": "Umfang und Wechseltakt stehen vorab schriftlich fest, nach jedem Wechsel bekommen Sie Fotos.",
+   "ortsseite_lead": "Ihre Ferienwohnung-Reinigung in {ort}: Endreinigung zwischen Gästen, frische Wäsche, geprüfte Schlüsselübergabe und Foto-Nachweis aufs Handy. Festpreis nach kostenloser Besichtigung vor Ort in {ort}.",
    "skills_applied": [
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/seo-web-copy.md",
     "C:/Users/mobre/.claude/skills/stop-slop/SKILL.md",
     "C:/Users/mobre/.claude/skills/copythat/.claude/skills/llm-optimisation.md"
    ],
-   "layout": "ueberblick"
+   "layout": "ueberblick",
+   "blocks": [
+    {
+     "id": "was-ist",
+     "h2": "Was ist Ferienwohnung-Reinigung?",
+     "body": "Ferienwohnung-Reinigung, auch Endreinigung genannt, ist die getaktete Aufbereitung einer Ferien- oder Airbnb-Wohnung zwischen zwei Gästen. Sie umfasst Reinigung, Wäschewechsel, das Auffüllen der Ausstattung und die geprüfte Übergabe an den nächsten Gast."
+    }
+   ],
+   "sections_h2": "Endreinigung der Ferienwohnung: was dazugehört",
+   "vorteile": [
+    {
+     "h3": "Pünktlich zum Check-in",
+     "p": "Wir richten den Einsatz nach Ihrem Anreisetermin aus."
+    },
+    {
+     "h3": "Sie müssen nicht vor Ort sein",
+     "p": "Fotos jedes Wechsels kommen aufs Handy, auch aus der Ferne."
+    },
+    {
+     "h3": "Schäden fallen sofort auf",
+     "p": "Was kaputt oder verloren ist, melden wir vor dem nächsten Gast."
+    },
+    {
+     "h3": "Fester Preis je Wechsel",
+     "p": "Festpreis nach Besichtigung, in der Saison auf Wunsch als feste Vereinbarung."
+    }
+   ],
+   "passt": [
+    {
+     "to": "hausmeisterservice",
+     "h3": "Kontrollgang zwischen den Gästen?",
+     "p": "Kleine Mängel beheben wir beim Termin, Auffälligkeiten melden wir mit Foto.",
+     "link_text": "Zum Hausmeisterservice"
+    },
+    {
+     "to": "gartenpflege",
+     "h3": "Garten und Terrasse in Schuss",
+     "p": "Rasen, Hecken und Laub im festen Turnus, damit der erste Eindruck stimmt.",
+     "link_text": "Zur Gartenpflege"
+    },
+    {
+     "to": "fensterreinigung",
+     "h3": "Klare Fenster zur Saison",
+     "p": "Scheiben innen und außen schlierenfrei, auf Wunsch zweimal im Jahr.",
+     "link_text": "Zur Fensterreinigung"
+    }
+   ],
+   "orte_foto": {
+    "src": "svc-ferienwohnung-reinigung-detail",
+    "alt": "Ferienwohnung nach der Endreinigung, frisch bezogenes Bett"
+   }
   },
   {
    "slug": "heckenentfernung",

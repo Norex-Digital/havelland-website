@@ -34,32 +34,28 @@
     ]
   },
   "standorte": {
-    "lead": "Wir sind in Falkensee zuhause und im gesamten Havelland sowie im angrenzenden Berliner Umland für Sie da. Kurze Wege bedeuten schnelle Reaktion und planbare Termine — finden Sie hier Ihren Ort und die Leistungen vor Ort.",
+    "lead": "Haus- und Gartenservice aus Falkensee: Wir arbeiten in den Nachbarorten, am Berliner Westrand, in Oberhavel sowie an Havel und Seen, ob Gartenpflege, Heckenschnitt, GaLaBau oder Entrümpelung.",
     "meta": "Im ganzen Havelland und Berliner Umland im Einsatz — finden Sie Ihren Ort von Falkensee über Nauen und Oranienburg bis Werder, Spandau und Hennigsdorf",
-    "servicegebiet": "Von Falkensee aus erreichen wir das westliche Havelland um Dallgow-Döberitz, Brieselang, Nauen und Wustermark ebenso schnell wie das nördliche Umland rund um Oranienburg, Hennigsdorf, Velten und Oberkrämer. Am Wasser sind wir in Werder (Havel) und am Schwielowsee im Einsatz, am Berliner Westrand in Kladow, Gatow, Groß Glienicke und Spandau. Suchen Sie Ihren Ort in der passenden Region — jede Ortsseite zeigt die dort verfügbaren Leistungen.",
+    "servicegebiet": "Von Falkensee aus erreichen wir das westliche Havelland um Dallgow-Döberitz, Brieselang, Nauen und Wustermark ebenso schnell wie das nördliche Umland rund um Oranienburg, Hennigsdorf, Velten und Oberkrämer. Am Wasser sind wir in Werder (Havel) und am Schwielowsee im Einsatz, am Berliner Westrand in Kladow, Gatow und Spandau sowie im angrenzenden Groß Glienicke. Suchen Sie Ihren Ort in der passenden Region — jede Ortsseite zeigt die dort verfügbaren Leistungen.",
     "regionen": {
       "west": "Unser Kerngebiet rund um den Firmensitz in Falkensee — von Dallgow-Döberitz und Brieselang bis nach Nauen, Wustermark und Ketzin an der Havel.",
       "nord": "Oberhavel und das nördliche Berliner Umland: von Oranienburg und Hennigsdorf über Velten und Oberkrämer bis Hohen Neuendorf, Birkenwerder und Glienicke/Nordbahn.",
-      "berlinrand": "Der westliche Stadtrand Berlins am Havelufer — gehobene Wohnlagen und Gewerbe in Kladow, Gatow, Groß Glienicke und Spandau.",
+      "berlinrand": "Der westliche Stadtrand Berlins am Havelufer — gehobene Wohnlagen und Gewerbe in Kladow, Gatow und Spandau, dazu das angrenzende Groß Glienicke bei Potsdam.",
       "seen": "Ferienlagen und Zweitwohnsitze am Wasser: Werder (Havel) und der Schwielowsee mit Caputh, Ferch und Geltow — inklusive Reinigung zwischen den Gästewechseln."
     },
     "ausserdem_label": "Außerdem im Einsatz in",
     "faqs": [
       {
-        "q": "Kommen Sie auch in meinen Ort, wenn er nicht aufgeführt ist?",
-        "a": "Sehr wahrscheinlich ja. Die Seiten zeigen die größeren Orte im Havelland und Berliner Umland — wir sind aber auch in den umliegenden Gemeinden und Ortsteilen unterwegs. Fragen Sie einfach kurz per WhatsApp nach."
+        "q": "Kommen Sie auch zu mir?",
+        "a": "Ja, wenn Ihr Ort im Havelland, in Oberhavel, am Berliner Westrand oder an Havel und Seen liegt. Steht er nicht auf der Liste, schreiben Sie uns per WhatsApp, wir antworten am selben Tag."
       },
       {
-        "q": "Wie schnell sind Sie vor Ort?",
-        "a": "Weil wir aus Falkensee kommen und im gesamten Havelland kurze Wege haben, lässt sich ein Termin oft schon innerhalb derselben Woche einrichten. Bei dringenden Fällen versuchen wir, früher da zu sein."
+        "q": "Kostet die Anfahrt extra?",
+        "a": "Nein, die Besichtigung ist kostenlos und die Anfahrt steckt im schriftlichen Festpreis. Nach der Besichtigung kommt nichts obendrauf."
       },
       {
-        "q": "Berechnen Sie Anfahrtskosten?",
-        "a": "Die Besichtigung vor Ort ist kostenlos. Eine etwaige Anfahrt ist im Festpreis enthalten, den wir Ihnen nach der Besichtigung nennen — es kommt nichts unerwartet obendrauf."
-      },
-      {
-        "q": "Bekomme ich auch außerhalb des Havellands Hilfe?",
-        "a": "Unser Schwerpunkt liegt im Havelland und am westlichen sowie nördlichen Berliner Rand. Ob wir Ihren Standort übernehmen, klären wir kurz vorab — schreiben Sie uns einfach Ihren Ort."
+        "q": "Wie schnell bekomme ich einen Termin?",
+        "a": "Wir antworten am selben Tag, die Besichtigung findet meist innerhalb weniger Tage statt. Schicken Sie uns dafür am besten ein Foto per WhatsApp."
       }
     ]
   }

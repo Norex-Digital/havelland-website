@@ -1,5 +1,5 @@
 {
-  "_meta": "Daten-Block für die B2B-Seite /fuer-hausverwaltungen/. Überarbeitet 2026-09-03 (Herbst/Winter-Offensive, Aufgabe C4). objektklassen/leistungen/zusagen bleiben String-Arrays, weil generate.mjs b2bPage() sie so rendert. NEU und noch ohne Generator-Anbindung: title_tag, meta, kick, h1, h1_em, lead, intro, objektklassen_detail, leistungen_detail (mit ausfuehrung eigen|partner), zusagen_detail, band_lead, ablauf, faqs, cta, partnermodell_hinweis. Partnermodell (Tippgeber, §5 UWG): Winterdienst und Dachrinne führt ein Partner-Fachbetrieb aus, Vertrag Kunde-Fachbetrieb, Preis vom Fachbetrieb nach Objekttermin, keine Reaktionszeit-Zusage, Partner nie namentlich. Laub, Grünpflege, Treppenhaus = Eigenleistung (wir). Umbau 03.09. abends: gekürzt auf Referenzmaß (alte Seite 536bf206 + Timeline + kurze FAQ); objektklassen_detail 6 Kurzlabels, leistungen_detail 6 × ≤28 W mit Chip, zusagen ≤16 W, ablauf 4 × {when,h,p}, faqs 4, cta ≤25 W, endband. Keine Fristzusage, kein Festpreis, kein Vorher/Nachher-Foto. Nachtrag 2026-09-14 (B2B-Ansprache, Owner Maurice): Treppenhaus-/Unterhaltsreinigung raus aus dem aktiven Angebot (nur auf Nachfrage, dann Partner) — ersetzt durch Entrümpelung/Wohnungsräumung als Eigenleistung (Hauptfokus der B2B-Mails); Lead/Intro/Objektklassen/Ablauf/FAQ entsprechend angepasst. Nachtrag 2026-09-15 (Owner Maurice, Entscheid C=2): Treppenhaus-/Unterhaltsreinigung bleibt Eigenleistung (Hubs unverändert), nur nicht Fokus dieser Seite; Partner ausschließlich Winterdienst, Dachreinigung, Grundreinigung. Nachtrag 2026-09-17 (W2+W3 Task 5): Seite von Winterdienst-fixiert auf Objektpflege aus einer Hand umgebaut — 6 Leistungsbausteine (Grünpflege+Laub, Winterdienst, Treppenhaus/Unterhaltsreinigung, Kleinreparaturen/Objektkontrolle, Dachrinnenreinigung, Räumung nach Auszug), 6 Objektklassen (WEG, MFH/Vermieter, Hausverwaltung mit mehreren Objekten, Gewerbehof/Autohaus, Einzelhandel/Kundenparkplatz, Praxis/Büro), Ablauf auf 5 Schritte erweitert (+Vertrag vor Foto-Reporting), FAQ auf 6 erweitert (Abrechnung mehrere Objekte, Reaktionszeit), Referenz-Satz im intro.body. KORREKTUR zum Task-Briefing: Dachrinnenreinigung bleibt ausfuehrung=partner (nicht eigen) — die Vorgabe 'eigene Ausführung, Partner nur bei Höhe' widerspricht services.json (partner_modell:true, Owner-Entscheidung 2026-07-22, Copy-Guardrail 'KEINE Eigenleistung'), data/copy/hubs.json (Dachrinne durchgängig Partner-Fachbetrieb) und dem freigegebenen Plan docs/superpowers/plans/2026-09-17-w2-w3-organisch-entruempelung.md Zeile 146 ('Winterdienst + Dachrinne über Partner-Fachbetrieb'). Bestehender Stand (schon vor diesem Umbau ausfuehrung=partner) beibehalten, siehe Bericht. Tote Felder identifiziert (b2bPage() nutzt sie NICHT, obwohl hier befüllt): gstrip, endband, title, scta_text — Copy dennoch aktualisiert für Konsistenz, falls b2bPage() sie künftig verdrahtet. scta_text UND der CTA-Button-Text ('Angebot für Ihr Objekt anfordern' statt 'Angebot per E-Mail anfordern') wurden zusätzlich in scripts/generate.mjs (b2bPage) verdrahtet/angepasst, weil sie dort hart codiert waren und sichtbar Winterdienst-fixierten bzw. abweichenden Text gerendert hätten.",
+  "_meta": "Daten-Block für die B2B-Seite /fuer-hausverwaltungen/. Überarbeitet 2026-09-03 (Herbst/Winter-Offensive, Aufgabe C4). objektklassen/leistungen/zusagen bleiben String-Arrays, weil generate.mjs b2bPage() sie so rendert. NEU und noch ohne Generator-Anbindung: title_tag, meta, kick, h1, h1_em, lead, intro, objektklassen_detail, leistungen_detail (mit ausfuehrung eigen|partner), zusagen_detail, band_lead, ablauf, faqs, cta, partnermodell_hinweis. Partnermodell (Tippgeber, §5 UWG): Winterdienst und Dachrinne führt ein Partner-Fachbetrieb aus, Vertrag Kunde-Fachbetrieb, Preis vom Fachbetrieb nach Objekttermin, keine Reaktionszeit-Zusage, Partner nie namentlich. Laub, Grünpflege, Treppenhaus = Eigenleistung (wir). Umbau 03.09. abends: gekürzt auf Referenzmaß (alte Seite 536bf206 + Timeline + kurze FAQ); objektklassen_detail 6 Kurzlabels, leistungen_detail 6 × ≤28 W mit Chip, zusagen ≤16 W, ablauf 4 × {when,h,p}, faqs 4, cta ≤25 W, endband. Keine Fristzusage, kein Festpreis, kein Vorher/Nachher-Foto. Nachtrag 2026-09-14 (B2B-Ansprache, Owner Maurice): Treppenhaus-/Unterhaltsreinigung raus aus dem aktiven Angebot (nur auf Nachfrage, dann Partner) — ersetzt durch Entrümpelung/Wohnungsräumung als Eigenleistung (Hauptfokus der B2B-Mails); Lead/Intro/Objektklassen/Ablauf/FAQ entsprechend angepasst. Nachtrag 2026-09-15 (Owner Maurice, Entscheid C=2): Treppenhaus-/Unterhaltsreinigung bleibt Eigenleistung (Hubs unverändert), nur nicht Fokus dieser Seite; Partner ausschließlich Winterdienst, Dachrinne, Dachreinigung (Grundreinigung seit 20.10.2026 abends Eigenleistung, Owner Maurice). Nachtrag 2026-09-17 (W2+W3 Task 5): Seite von Winterdienst-fixiert auf Objektpflege aus einer Hand umgebaut — 6 Leistungsbausteine (Grünpflege+Laub, Winterdienst, Treppenhaus/Unterhaltsreinigung, Kleinreparaturen/Objektkontrolle, Dachrinnenreinigung, Räumung nach Auszug), 6 Objektklassen (WEG, MFH/Vermieter, Hausverwaltung mit mehreren Objekten, Gewerbehof/Autohaus, Einzelhandel/Kundenparkplatz, Praxis/Büro), Ablauf auf 5 Schritte erweitert (+Vertrag vor Foto-Reporting), FAQ auf 6 erweitert (Abrechnung mehrere Objekte, Reaktionszeit), Referenz-Satz im intro.body. KORREKTUR zum Task-Briefing: Dachrinnenreinigung bleibt ausfuehrung=partner (nicht eigen) — die Vorgabe 'eigene Ausführung, Partner nur bei Höhe' widerspricht services.json (partner_modell:true, Owner-Entscheidung 2026-07-22, Copy-Guardrail 'KEINE Eigenleistung'), data/copy/hubs.json (Dachrinne durchgängig Partner-Fachbetrieb) und dem freigegebenen Plan docs/superpowers/plans/2026-09-17-w2-w3-organisch-entruempelung.md Zeile 146 ('Winterdienst + Dachrinne über Partner-Fachbetrieb'). Bestehender Stand (schon vor diesem Umbau ausfuehrung=partner) beibehalten, siehe Bericht. Tote Felder identifiziert (b2bPage() nutzt sie NICHT, obwohl hier befüllt): gstrip, endband, title, scta_text — Copy dennoch aktualisiert für Konsistenz, falls b2bPage() sie künftig verdrahtet. scta_text UND der CTA-Button-Text ('Angebot für Ihr Objekt anfordern' statt 'Angebot per E-Mail anfordern') wurden zusätzlich in scripts/generate.mjs (b2bPage) verdrahtet/angepasst, weil sie dort hart codiert waren und sichtbar Winterdienst-fixierten bzw. abweichenden Text gerendert hätten.",
   "title": "Objektpflege für Hausverwaltungen, WEG und Gewerbe im Havelland",
   "title_tag": "Objektpflege für Hausverwaltungen & WEG im Havelland",
   "meta": "Objektpflege für Hausverwaltungen, WEG und Gewerbe im Havelland: Grünpflege, Winterdienst, Treppenhaus, Kleinreparaturen — ein Ansprechpartner, ein Nachweis.",
@@ -9,7 +9,7 @@
   "lead": "Grünpflege, Laub, Treppenhaus und Kleinreparaturen führen wir selbst aus, Winterdienst und Dachrinne übernimmt ein Partner-Fachbetrieb. Nachweis nach jedem Einsatz, für Objekte in Falkensee, im Havelland und in Spandau.",
   "intro": {
     "h2": "Für wen wir arbeiten",
-    "body": "Wir betreuen bereits Objekte im Havelland in festen Pflegeverträgen. Sobald mehrere Gewerke an einem Objekt zusammenkommen, braucht es jemanden, der den Überblick behält. Noah Telo nimmt Ihre Objekte auf, plant Begehung und Termine und schickt Ihnen den Nachweis nach jedem Einsatz. Wer welche Leistung ausführt, steht bei jeder Leistung dabei."
+    "body": "Wir betreuen bereits Objekte im Havelland in festen Pflegeverträgen. Sobald mehrere Gewerke an einem Objekt zusammenkommen, braucht es jemanden, der den Überblick behält. Maurice Brehm und Noah Telo nehmen Ihre Objekte auf, planen Begehung und Termine und schicken Ihnen den Nachweis nach jedem Einsatz. Wer welche Leistung ausführt, steht bei jeder Leistung dabei."
   },
   "objektklassen": [
     "Wohnungseigentümergemeinschaft (WEG)",
@@ -90,7 +90,7 @@
       "h3": "Dachrinnenreinigung",
       "ausfuehrung": "partner",
       "chip": "Partner-Fachbetrieb",
-      "body": "Ein Partner-Fachbetrieb befreit Rinne und Fallrohr vor dem Winter von Laub und Moos und prüft danach die Funktion. Das Angebot stellt der ausführende Betrieb nach der Objektbegehung, wir koordinieren Termin und Ablauf und bleiben über Noah Telo Ihr fester Ansprechpartner im Havelland.",
+      "body": "Ein Partner-Fachbetrieb befreit Rinne und Fallrohr vor dem Winter von Laub und Moos und prüft danach die Funktion. Das Angebot stellt der ausführende Betrieb nach der Objektbegehung, wir koordinieren Termin und Ablauf und bleiben über Maurice Brehm und Noah Telo Ihre festen Ansprechpartner im Havelland.",
       "link_to": "dachrinnenreinigung",
       "label": "Mehr zur Dachrinnenreinigung"
     },
@@ -105,15 +105,15 @@
   ],
   "band_lead": "Ein Vertrag, ein Ansprechpartner für alle Objekte — Nachweis nach jedem Einsatz.",
   "zusagen": [
-    "Fester Ansprechpartner: Noah Telo",
+    "Feste Ansprechpartner: Maurice Brehm und Noah Telo",
     "Schriftliches Angebot nach Begehung",
     "Nachweis je Einsatz",
     "Vertrag mit dem, der ausführt"
   ],
   "zusagen_detail": [
     {
-      "h4": "Fester Ansprechpartner: Noah Telo",
-      "body": "Ein Kontakt für alle Objekte, keine Warteschleife, Vertretung steht vorab fest."
+      "h4": "Feste Ansprechpartner: Maurice Brehm und Noah Telo",
+      "body": "Beide kennen alle Objekte, keine Warteschleife, Vertretung steht vorab fest."
     },
     {
       "h4": "Schriftliches Angebot nach Begehung",
@@ -131,7 +131,7 @@
   "gstrip": [
     {
       "h3": "Ein Ansprechpartner",
-      "p": "Noah Telo nimmt alle Objekte auf und bleibt Ihr Kontakt — kein Callcenter, keine wechselnden Kräfte."
+      "p": "Maurice Brehm und Noah Telo nehmen alle Objekte auf und bleiben Ihr Kontakt, kein Callcenter, keine wechselnden Kräfte."
     },
     {
       "h3": "Nachweis je Einsatz",
@@ -152,8 +152,8 @@
       },
       {
         "when": "Kurzfristig · kostenlos",
-        "h": "Begehung mit Noah Telo",
-        "p": "Noah Telo nimmt die Objekte vor Ort auf; bei Winterdienst und Dachrinne kommt der Partner-Fachbetrieb dazu."
+        "h": "Begehung mit Maurice Brehm und Noah Telo",
+        "p": "Maurice Brehm und Noah Telo nehmen die Objekte vor Ort auf; bei Winterdienst und Dachrinne kommt der Partner-Fachbetrieb dazu."
       },
       {
         "when": "Nach der Begehung",
@@ -179,7 +179,7 @@
     },
     {
       "q": "Wer führt den Winterdienst aus?",
-      "a": "Ein Partner-Fachbetrieb mit eigener Räumtechnik. Den Saisonvertrag schließen Sie direkt mit diesem Betrieb; er regelt Flächen, Zeitfenster, Streumittel und den Einsatznachweis. Wir koordinieren Begehung, Angebot und Ablauf und bleiben über Noah Telo Ihr Ansprechpartner."
+      "a": "Ein Partner-Fachbetrieb mit eigener Räumtechnik. Den Saisonvertrag schließen Sie direkt mit diesem Betrieb; er regelt Flächen, Zeitfenster, Streumittel und den Einsatznachweis. Wir koordinieren Begehung, Angebot und Ablauf und bleiben über Maurice Brehm und Noah Telo Ihre Ansprechpartner."
     },
     {
       "q": "Übernehmen Sie unsere Räum- und Streupflicht?",
@@ -195,7 +195,7 @@
     },
     {
       "q": "Wie schnell reagieren Sie bei Meldungen?",
-      "a": "Bei Kontrollgängen und Kleinreparaturen melden wir Auffälligkeiten in der Regel am selben oder nächsten Werktag. Bei dringenden Fällen erreichen Sie Noah Telo direkt; für Winterdienst und Dachrinne gilt das Zeitfenster aus dem Saisonvertrag mit dem Fachbetrieb."
+      "a": "Bei Kontrollgängen und Kleinreparaturen melden wir Auffälligkeiten in der Regel am selben oder nächsten Werktag. Bei dringenden Fällen erreichen Sie Maurice Brehm und Noah Telo direkt; für Winterdienst und Dachrinne gilt das Zeitfenster aus dem Saisonvertrag mit dem Fachbetrieb."
     }
   ],
   "cta": {

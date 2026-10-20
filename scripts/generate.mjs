@@ -10,7 +10,9 @@ import {
   baSlider, garantienStrip, schnittkalender, heckenKompass, jahreszeiten, echtProjekt,
   karussell, archivGrid, whatsappFlow, auftragsTimeline, uspBand, faqFilter, gebietskarte,
   trustBadges, fristband, aeoKapsel, beweisMechanik, saisonTeaser, clusterKacheln, faelleBlock, tiefBlock,
-  leistungsListe, vorteileBlock, passtBlock, orteBlock, soLaeufts, galabauKarten, ergebnisPaare
+  leistungsListe, vorteileBlock, passtBlock, orteBlock, soLaeufts, galabauKarten, ergebnisPaare,
+  seitenHero, badgeSitz, ortZeile, falkenseeKasten, gruppenKopf, stufe2Band, kernKarten, anfaelltBlock, naeheZeile, faqKurz,   // Paket 3 (Standorte)
+  zielgruppenKarten, gwListe, zusagenBand4, zweiWege, anlaesseBlock, fuerWen, ablaufSektion   // Paket 3 (Gewerbe)
 } from './components.mjs';
 import { buildLp, lpAttribJS, ATTR_KEYS } from './lp.mjs';
 
@@ -83,6 +85,19 @@ const ratgeberByService = {}; for (const r of ratCopy) { if (!r.cta_service) con
 
 // Übersichtsseiten-Copy (/leistungen/ + /standorte/) — Intros/FAQ; Labels stehen in den Maps unten
 const _ueb = CP('uebersicht.json') || {}; const uebL = _ueb.leistungen || {}; const uebS = _ueb.standorte || {};
+// ---------- Gewerbe (Paket 3b, 21.10.2026): Copy data/copy/gewerbe.json + Zielgruppen-Stammdaten ----------
+// Spec: websites/havelland/website/paket3-standorte-gewerbe-2026-10/01-design-spec.md Teil B. Copy = { uebersicht, zielgruppen.<key> }; fehlende Felder fallen auf Standardwerte zurück (Seiten bleiben baubar).
+const GW_SKIP = new Set(['url', 'slug', 'key', 'to', 'link_to', 'mail_body', 'ausfuehrung', 'quellen', 'quelle', '_meta']);   // URLs, Slugs, Mailtext mit Zeilenumbrüchen: nicht durch plain() schicken
+const sanGw = (v, k) => Array.isArray(v) ? v.map(x => sanGw(x, k)) : (v && typeof v === 'object') ? Object.fromEntries(Object.entries(v).map(([kk, vv]) => [kk, sanGw(vv, kk)])) : (typeof v === 'string' && !GW_SKIP.has(k)) ? plain(v) : v;
+const GW = sanGw(CP('gewerbe.json') || {});
+const gwU = GW.uebersicht || {};
+const ZG = {   // Reihenfolge = Reihenfolge in Menü, Karten, Footer
+  hausverwaltungen: { url: '/fuer-hausverwaltungen/', nav: 'Hausverwaltungen & WEG', wer: 'Hausverwaltungen', bild: 'svc-objektbetreuung-hero', schema: 'Wohnungsräumung und Objektpflege für Hausverwaltungen und WEG', publikum: 'Hausverwaltungen und Wohnungseigentümergemeinschaften' },
+  firmen: { url: '/fuer-firmen/', nav: 'Firmen & Gewerbe', wer: 'Firmen', bild: 'svc-gebaeudereinigung-hero', schema: 'Reinigung, Hausmeister und Außenanlagen für Firmen', publikum: 'Firmen und Gewerbebetriebe' },
+  pflegeeinrichtungen: { url: '/fuer-pflegeeinrichtungen/', nav: 'Pflegeeinrichtungen', wer: 'Pflegeeinrichtungen', bildKey: 'pflege', bild: 'svc-haushaltsaufloesung-hero', schema: 'Zimmer- und Wohnungsräumung für Pflegeeinrichtungen', publikum: 'Pflegeeinrichtungen und Pflegedienste' },
+  bestatter: { url: '/fuer-bestatter/', nav: 'Bestatter', wer: 'Bestattern', bild: 'zielgruppe-bestatter', bild2: 'svc-grundreinigung-hero', schema: 'Haushaltsauflösung nach einem Todesfall für Bestatter und Angehörige', publikum: 'Bestattungshäuser und Angehörige' }
+};
+const GW_PARTNER_EXTRA = new Set();   // Owner 20.10. abends: Grundreinigung ist Eigenleistung (Partner-Angabe aufgehoben). Partner bleiben nur Winterdienst, Dachrinnen-/Dachreinigung (services.json partner_modell) und Bauendreinigung (nur Text, kein eigener Service).
 // Gruppierung: Service-Slug → Themen-Block (Portfolio-Refokus 2026-07-22: Garten & Außen · Entrümpelung & Auflösung · Dach · Für Gewerbe & Hausverwaltungen). Reihenfolge = Anzeige-Reihenfolge. b2b_only-Services (hausmeisterservice) leben im Gewerbe-Block.
 // Paket 1 (20.10., Owner-Reihenfolge): EINE Gliederung für Menü, /leistungen/, Fußzeile, Startseite.
 // kern = groß (Menü, Buttons), auf_anfrage = kleine Textlinks („Auf Anfrage auch“). Einträge: Service-Slug oder {href,label}.
@@ -95,7 +110,7 @@ const LEISTUNGEN_KATEGORIEN = [
     kern: ['pflasterarbeiten', 'terrassenbau', 'zaunbau', 'erdarbeiten', 'gartenrodung', 'rollrasen-verlegen'], auf_anfrage: ['einfahrt-pflastern', 'gartengestaltung', 'baumstumpf-entfernen', 'baumfaellung', { href: '/pflasterarbeiten/#kantensteine', label: 'Kantensteine & Hochbeete' }] },
   { key: 'aufloesung', label: 'Entrümpelung & Auflösung', href: '/entruempelung/', satz: 'Ausräumen, abfahren, besenrein übergeben.', foto: 'svc-haushaltsaufloesung-hero',
     kern: ['entruempelung', 'haushaltsaufloesung', 'grundreinigung'], auf_anfrage: [] },
-  { key: 'gewerbe', label: 'Hausverwaltungen & Gewerbe', href: '/fuer-hausverwaltungen/', satz: 'Ein Vertrag, ein Ansprechpartner für Ihre Objekte.', foto: 'svc-objektbetreuung-hero',
+  { key: 'gewerbe', label: 'Hausverwaltungen & Gewerbe', href: '/gewerbe/', satz: 'Ein Vertrag, ein Ansprechpartner für Ihre Objekte.', foto: 'svc-objektbetreuung-hero',
     kern: ['objektbetreuung', 'hausmeisterservice', 'unterhaltsreinigung', 'gebaeudereinigung'], auf_anfrage: ['ferienwohnung-reinigung'] }
 ];
 for (const k of LEISTUNGEN_KATEGORIEN) k.slugs = [...k.kern, ...k.auf_anfrage].filter(x => typeof x === 'string');   // alle Service-Slugs (ItemList, Prüfungen)
@@ -107,17 +122,11 @@ const katItem = x => { if (typeof x !== 'string') return { href: x.href, label: 
 const katKern = k => k.kern.map(katItem).filter(Boolean);
 const katAnfrage = k => k.auf_anfrage.map(katItem).filter(Boolean);
 const katServices = k => k.slugs.map(sl => services.find(s => s.slug === sl)).filter(Boolean);
-// Ort-Slug → geografische Region (nur Money-Page-Orte werden gerendert; Schnittmenge im Builder)
-const STANDORT_REGIONEN = [
-  { key: 'west', label: 'Falkensee & westliches Havelland', slugs: ['falkensee', 'dallgow-doeberitz', 'brieselang', 'schoenwalde-glien', 'wustermark', 'nauen', 'ketzin'] },
-  { key: 'nord', label: 'Oberhavel & nördliches Umland', slugs: ['oranienburg', 'hennigsdorf', 'velten', 'oberkraemer', 'kremmen', 'leegebruch', 'lehnitz', 'hohen-neuendorf', 'birkenwerder', 'glienicke-nordbahn'] },
-  { key: 'berlinrand', label: 'Berliner Westrand & Havelufer', slugs: ['berlin-kladow', 'berlin-gatow', 'gross-glienicke', 'berlin-spandau'] },
-  { key: 'seen', label: 'Havelseen & Ferienlagen', slugs: ['werder-havel', 'schwielowsee'] }
-];
 
 const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','haushaltsaufloesung','winterdienst','steinreinigung','dachrinnenreinigung','dachreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung','heckenentfernung','baumstumpf-entfernen','pflasterarbeiten','erdarbeiten','baumfaellung','galabau']);   // GaLaBau-Ausbau 20.10.: Ortsseiten nur über service.seiten_orte
-// Paket 1 (20.10.): Hubs im Grundgerüst (Spec 05-design-spec-paket1.md §3.3). Entrümpelung/Gewerbe bleiben bis Paket 2/3 im alten Aufbau.
-const GRUNDGERUEST = new Set(['gartenpflege', 'heckenschnitt', 'baumschnitt', 'heckenentfernung', 'dachrinnenreinigung', 'winterdienst', 'steinreinigung', 'fensterreinigung', 'dachreinigung', 'galabau', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'zaunbau', 'gartengestaltung', 'rollrasen-verlegen', 'erdarbeiten', 'gartenrodung', 'baumfaellung', 'baumstumpf-entfernen']);
+// Paket 1 (20.10.): Hubs im Grundgerüst (Spec 05-design-spec-paket1.md §3.3). Entrümpelung bleibt bis Paket 2 im alten Aufbau; Gewerbe-Hubs seit Paket 3 (21.10.) im Grundgerüst.
+const GW_HUBS = ['objektbetreuung', 'hausmeisterservice', 'unterhaltsreinigung', 'gebaeudereinigung', 'ferienwohnung-reinigung'];
+const GRUNDGERUEST = new Set([...GW_HUBS, 'gartenpflege', 'heckenschnitt', 'baumschnitt', 'heckenentfernung', 'dachrinnenreinigung', 'winterdienst', 'steinreinigung', 'fensterreinigung', 'dachreinigung', 'galabau', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'zaunbau', 'gartengestaltung', 'rollrasen-verlegen', 'erdarbeiten', 'gartenrodung', 'baumfaellung', 'baumstumpf-entfernen']);
 const ORTE_TOP = (() => { try { return J('orte-top.json'); } catch { return { fallback: ['falkensee'] }; } })();
 // Gewerk-Klassen fuer die Voll-Print-Komposition der Hubs/Ortsseiten:
 //  VOLL_VN   = echtes Vorher/Nachher-Material -> Slider + Heckenkompass + Schnittkalender
@@ -174,7 +183,7 @@ const primLabel = s => (s && s.slug === 'winterdienst') ? 'Winterdienst-Besichti
 const hrefOf = t => { const [p, f] = String(t || '').split('#'); return `/${p.replace(/^\/|\/$/g, '')}/${f ? '#' + f : ''}`; };
 const copyLinks = x => [x.link_to ? `<a href="${hrefOf(x.link_to)}">${esc(x.link_text || 'Mehr erfahren')}</a>` : '', x.link2_to ? `<a href="${hrefOf(x.link2_to)}">${esc(x.link2_text || 'Mehr erfahren')}</a>` : ''].filter(Boolean);
 const copyLinksHtml = x => { const l = copyLinks(x); return l.length ? ' ' + l.join(' · ') + '.' : ''; };
-const CTA_ANGEBOT = 'Angebot für Ihr Objekt anfordern';
+const CTA_ANGEBOT = 'Begehung anfragen';   // Nachbesserung 20.10.: ein Label, ein Ziel (/kontakt/#anfrage) auf allen Gewerbe-Seiten
 const isB2Bonly = seg => Array.isArray(seg) && seg.includes('B2B') && !seg.includes('B2C') && !seg.includes('Ferien');
 
 // Token-Füllung für Archetyp-/Ortsseiten-Copy
@@ -313,7 +322,11 @@ const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 // Leistungs-Dropdown (20.10.): Desktop = Panel bei Hover/Fokus (CSS .nav-dd), Mobil = aufklappbare Gruppe (<details>) im Burger-Menü. Quelle: LEISTUNGEN_KATEGORIEN.
 const navDdPanel = `<div class="nav-dd-panel">${LEISTUNGEN_KATEGORIEN.map(k => `<div class="nav-dd-col"><a class="nav-dd-h" href="${k.href}">${esc(k.label)}</a>${katKern(k).map(it => `<a href="${it.href}">${esc(it.label)}</a>`).join('')}<a class="nav-dd-more" href="${k.href}">Alle →</a></div>`).join('')}<a class="nav-dd-all" href="/leistungen/">Alle Leistungen im Überblick →</a></div>`;
 const mnavLeistungen = `<details class="mnav-dd"><summary>Leistungen</summary>${LEISTUNGEN_KATEGORIEN.map(k => `<details class="mnav-grp"><summary>${esc(k.label)}</summary>${katKern(k).map(it => `<a href="${it.href}">${esc(it.label)}</a>`).join('')}<a class="mnav-grp-h" href="${k.href}">Alle: ${esc(k.label)} →</a></details>`).join('')}<a class="mnav-grp-h" href="/leistungen/">Alle Leistungen →</a></details>`;
-const header = `<header><div class="wrap nav"><a class="logo" href="/"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-176.webp"><img src="/assets/img/logo-176.png" alt="${esc(nap.name)}" width="176" height="176"></picture></a><nav class="links nav-links" aria-label="Hauptnavigation"><div class="nav-dd"><a href="/leistungen/" aria-haspopup="true">Leistungen</a>${navDdPanel}</div><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/fuer-hausverwaltungen/">Hausverwaltungen</a><a href="/ueber-uns/">Über uns</a><a href="/kontakt/">Kontakt</a></nav><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${esc(nap.phone_display)}</span></a><a class="cta nav-cta" href="/kontakt/">Kostenlose Besichtigung</a><input type="checkbox" id="nvt" class="nvt" aria-label="Menü öffnen und schließen"><label for="nvt" class="hamb" aria-hidden="true"><span></span><span></span><span></span></label><nav class="navmenu mnav" aria-label="Hauptmenü">${mnavLeistungen}<a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/bewertungen/">Bewertungen</a><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a><a href="/kontakt/">Kontakt</a><a href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung</a></nav></div><div class="progress" id="progress" aria-hidden="true"></div></header>`;
+// Menü „Für Gewerbe“ (Paket 3b): Desktop = kleines Dropdown (CSS .nav-dd), Mobil = aufklappbare Gruppe wie „Leistungen“.
+const gwDdLinks = Object.values(ZG).map(z => `<a href="${z.url}">${esc(z.nav)}</a>`).join('');
+const navGewerbe = `<div class="nav-dd nav-dd-sm"><a href="/gewerbe/" aria-haspopup="true">Für Gewerbe</a><div class="nav-dd-panel"><div class="nav-dd-col">${gwDdLinks}</div><a class="nav-dd-all" href="/gewerbe/">Alles für Gewerbe →</a></div></div>`;
+const mnavGewerbe = `<details class="mnav-dd"><summary>Für Gewerbe</summary>${gwDdLinks}<a class="mnav-grp-h" href="/gewerbe/">Alles für Gewerbe →</a></details>`;
+const header = `<header><div class="wrap nav"><a class="logo" href="/"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-176.webp"><img src="/assets/img/logo-176.png" alt="${esc(nap.name)}" width="176" height="176"></picture></a><nav class="links nav-links" aria-label="Hauptnavigation"><div class="nav-dd"><a href="/leistungen/" aria-haspopup="true">Leistungen</a>${navDdPanel}</div><a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a>${navGewerbe}<a href="/ueber-uns/">Über uns</a><a href="/kontakt/">Kontakt</a></nav><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${esc(nap.phone_display)}</span></a><a class="cta nav-cta" href="/kontakt/">Kostenlose Besichtigung</a><input type="checkbox" id="nvt" class="nvt" aria-label="Menü öffnen und schließen"><label for="nvt" class="hamb" aria-hidden="true"><span></span><span></span><span></span></label><nav class="navmenu mnav" aria-label="Hauptmenü">${mnavLeistungen}<a href="/standorte/">Standorte</a><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über uns</a><a href="/bewertungen/">Bewertungen</a>${mnavGewerbe}<a href="/kontakt/">Kontakt</a><a href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-acc" href="/kontakt/">Kostenlose Besichtigung</a></nav></div><div class="progress" id="progress" aria-hidden="true"></div></header>`;
 const WA_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.16c-.25.69-1.45 1.32-1.99 1.36-.53.05-.53.42-3.34-.7-2.81-1.12-4.6-3.98-4.74-4.16-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.03.97-2.31.25-.28.55-.35.74-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.25.6.83 2.07.9 2.22.07.14.12.31.02.5-.09.18-.14.3-.28.46-.14.16-.29.36-.42.48-.14.14-.28.28-.12.55.16.28.71 1.18 1.53 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.18-.21.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.12.07.66-.18 1.35Z"/></svg>`;
 const sctaBar = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ Anrufen</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav><a class="wa-fab" href="${waHref(waText)}" aria-label="WhatsApp schreiben" title="WhatsApp schreiben">${WA_SVG}</a>`;   // wa-fab (Owner 18.09.): runder WhatsApp-Button mit Logo wie im Vor-Phase-3-Build (gbr-firma/websites/havelland/website/deploy-preview), Desktop-Pendant zur mobilen Sticky-Bar
 const SCTA_DEFAULT = sctaBar('Hallo, ich hätte gern eine kostenlose Besichtigung.');
@@ -321,7 +334,7 @@ const SCTA_DEFAULT = sctaBar('Hallo, ich hätte gern eine kostenlose Besichtigun
 // Fußzeile (20.10.): Spalten aus LEISTUNGEN_KATEGORIEN — gleiche Gliederung wie Menü und /leistungen/.
 const fkGroup = (k, extra = '') => `<h4><a href="${k.href}">${esc(k.label)}</a></h4><ul>${extra}${[...katKern(k), ...katAnfrage(k)].map(it => `<li><a href="${it.href}">${esc(it.label)}</a></li>`).join('')}</ul>`;
 const fkBy = key => LEISTUNGEN_KATEGORIEN.find(k => k.key === key);
-const footerCols = `<div class="fcols"><div>${fkGroup(fkBy('garten'))}<div style="margin-top:22px">${fkGroup(fkBy('haus'))}</div></div><div>${fkGroup(fkBy('galabau'))}</div><div>${fkGroup(fkBy('aufloesung'))}<div style="margin-top:22px">${fkGroup(fkBy('gewerbe'), '<li><a href="/fuer-hausverwaltungen/">Für Hausverwaltungen</a></li>')}</div></div><div><h4>Unternehmen</h4><ul><li><a href="/leistungen/">Alle Leistungen</a></li><li><a href="/standorte/">Standorte</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/bewertungen/">Bewertungen</a></li><li><a href="/kontakt/">Kontakt</a></li></ul></div></div>`;
+const footerCols = `<div class="fcols"><div>${fkGroup(fkBy('garten'))}<div style="margin-top:22px">${fkGroup(fkBy('haus'))}</div></div><div>${fkGroup(fkBy('galabau'))}</div><div>${fkGroup(fkBy('aufloesung'))}<div style="margin-top:22px">${fkGroup(fkBy('gewerbe'), Object.values(ZG).map(z => `<li><a href="${z.url}">${esc(z.nav)}</a></li>`).join(''))}</div></div><div><h4>Unternehmen</h4><ul><li><a href="/leistungen/">Alle Leistungen</a></li><li><a href="/standorte/">Standorte</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/ueber-uns/">Über uns</a></li><li><a href="/bewertungen/">Bewertungen</a></li><li><a href="/kontakt/">Kontakt</a></li></ul></div></div>`;
 const footer = `<footer><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street||'')}, ${esc(nap.zip||'')} ${esc(nap.city)} · <a href="tel:${tel}">${esc(nap.phone_display)}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a>${ohDisplay()?`<br>${esc(ohDisplay())}`:''}</p>${footerCols}<div class="legal"><span>${esc(nap.name)} (${esc(nap.rechtsform||'GbR')})</span><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="#" id="consent-reset">Cookie-Einstellungen</a></div></div></footer>`;
 const revealJS = `<script>const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));</script><script src="/assets/js/site.js?v=${ASSET_VER}" defer></script>` + CONSENT_BANNER + TRACK_EVENTS + CONSENT_RESET_JS;
 const endBand = `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, was ansteht — wir kümmern uns.</h2><p class="rv d1">Kostenlose Besichtigung, Festpreis, dann erledigt.</p><div class="cta-row rv d2">${ctaA}<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a></div></div></section>`;
@@ -383,7 +396,7 @@ const AUSHUB_BELEG_SVCS = new Set(['erdarbeiten', 'pflasterarbeiten', 'einfahrt-
 const ZUSAGE_ENTSORGUNG = { 'rollrasen-verlegen': 'Altrasen und Aushub', gartengestaltung: 'Aushub und Grünschnitt', erdarbeiten: 'des Aushubs' };
 const gstripAushubBeleg = slug => { const w = ZUSAGE_ENTSORGUNG[slug]; const ent = w === 'des Aushubs' ? 'Entsorgung des Aushubs' : `Entsorgung von ${w || 'Aushub und Altbelag'}`; return zusageVariante('Festpreis steht schriftlich', `Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest. ${ent} rechnen wir nach Beleg ab, ohne eigenen Aufschlag.`); };
 const gstripBaumfaellung = zusageVariante('Festpreis steht schriftlich', 'Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest, inklusive Abtransport. Nicht enthalten: Gebühren der Stadt für die Fällgenehmigung und Ersatzpflanzungen.');
-const OHNE_ABFUHR_SVCS = new Set(['fensterreinigung', 'steinreinigung']);
+const OHNE_ABFUHR_SVCS = new Set(['fensterreinigung', 'steinreinigung', 'unterhaltsreinigung', 'gebaeudereinigung', 'ferienwohnung-reinigung', 'objektbetreuung', 'hausmeisterservice']);   // Paket 3: Reinigungs- und Kontrollgang-Hubs ohne Abfuhr (Spec A §4.2)
 const gstripOhneAbfuhr = zusageVariante('Festpreis ist Endpreis', 'Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest, ohne Nachforderung.');
 // Zusagen-Leiste je Service: Partner > Beleg (Entrümpelung) > Hybrid (galabau) > Aushub-Beleg > Baumfällung > Reinigung ohne Abfuhr > Standard
 const gstripFor = s => s.partner_modell ? gstripPartner(s) : BELEG_SVCS.has(s.slug) ? gstripBeleg : GRUEN_BELEG_SVCS.has(s.slug) ? gstripGruenBeleg : AUSHUB_BELEG_SVCS.has(s.slug) ? gstripAushubBeleg(s.slug) : s.slug === 'baumfaellung' ? gstripBaumfaellung : OHNE_ABFUHR_SVCS.has(s.slug) ? gstripOhneAbfuhr : gstrip;
@@ -429,6 +442,7 @@ function home() {
 ${gstripHome}
 ${saisonTeaser(saisonMonat)}
 <section class="sec" id="kernleistungen"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Kernleistungen</h2><a class="rv" href="/leistungen/">Alle Leistungen →</a></div><p class="intro rv">Fünf Bereiche, ein Ansprechpartner — vom neuen Pflaster über den gepflegten Garten und die leere Garage bis zum betreuten Mehrfamilienhaus.</p>${clusterKacheln(CLUSTER)}</div></section>
+${gwHomeBand()}
 <section class="sec section-alt"><div class="wrap">${jahreszeiten()}</div></section>
 <section class="sec"><div class="wrap">${echtProjekt()}</div></section>
 <section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Echte Ergebnisse zum Durchziehen</h2></div><p class="intro rv">Ziehen Sie den Regler — jedes Bild ist ein dokumentierter Auftrag aus dem Havelland.</p>${karussell()}${archivGrid({ ctaHref: '/kontakt/#anfrage' })}</div></section>
@@ -574,7 +588,7 @@ function hub(s) {
     const partner = !!s.partner_modell;
     let z = false; const alt = () => (z = !z);   // Zonen-Parität: weiß/paper im Wechsel ab dem Leistungsteil
     const slugOfTo = to => String(to || '').split('#')[0].replace(/^\/|\/$/g, '').split('/').pop();
-    const heroOf = sl => IMG['svc-' + sl + '-hero'] ? 'svc-' + sl + '-hero' : (sl === 'fuer-hausverwaltungen' ? 'svc-objektbetreuung-hero' : null);
+    const heroOf = sl => IMG['svc-' + sl + '-hero'] ? 'svc-' + sl + '-hero' : (sl === 'gewerbe' ? gwHeroSlug() : /^fuer-/.test(sl) && ZG[sl.slice(5)] ? zgBild(sl.slice(5)) : null);   // Paket 3: Zielgruppenseiten (fuer-firmen, …) und /gewerbe/ als „Passt“-Ziel
     const fotoOf = (src, alt) => { if (!src) return ''; if (IMG[src]) return pic(src, { alt, sizes: '(max-width:900px) 92vw, 46vw' }); if (!/\.(jpe?g|png|webp)$/i.test(src)) return pic('ueber-uns', { alt: 'Noah Telo und Maurice Brehm am Einsatzfahrzeug', sizes: '(max-width:900px) 92vw, 46vw' }); return `<img src="/assets/img/${esc(src)}" alt="${esc(alt)}" width="1200" height="900" loading="lazy" decoding="async">`; };
     const h2Leist = (c && c.sections_h2) || (s.name + ' im Havelland — was dazugehört');
     const leist = (c && c.layout === 'hub-karten' && c.karten)
@@ -612,7 +626,10 @@ function hub(s) {
     const ortLink = sl => ({ href: `/${s.slug}-${sl}/`, name: (orte.find(o => o.slug === sl) || {}).name || sl });
     const topOrte = orteIdx.slice(0, 6).map(ortLink);
     const weitereOrte = orteIdx.slice(6).map(ortLink).sort((a, b) => a.name.localeCompare(b.name, 'de'));
-    const of = (c && c.orte_foto) || { src: 'ueber-uns', alt: 'Noah Telo und Maurice Brehm am Einsatzfahrzeug' };
+    // Gewerbe-Hubs (Paket 3): eigenes Orte-Motiv svc-<slug>-orte; ein orte_foto, das Hero oder Leistungsfoto der Seite doppelt, wird dadurch ersetzt.
+    const gwOrte = GW_HUBS.includes(s.slug) && IMG[`svc-${s.slug}-orte`] ? { src: `svc-${s.slug}-orte`, alt: IMG[`svc-${s.slug}-orte`].alt || `${s.name} im Havelland` } : null;
+    const ofDup = !!(c && c.orte_foto) && [`svc-${s.slug}-detail`, svcHero(s.slug)].includes(c.orte_foto.src);
+    const of = (c && c.orte_foto && !(gwOrte && ofDup)) ? c.orte_foto : (gwOrte || { src: 'ueber-uns', alt: 'Noah Telo und Maurice Brehm am Einsatzfahrzeug' });
     const orteHtml = orteBlock({ name: s.name, fotoHtml: fotoOf(of.src, of.alt), orte: topOrte, weitere: weitereOrte, partner, alt: alt() });
     if (!orteHtml) alt();
     const faqSectionGG = `<section class="sec"><div class="wrap">${faqFilter(faqData, { heading: `Häufige Fragen zu <em>${esc(h2Name(s))}</em>` })}</div></section>`;
@@ -632,7 +649,7 @@ ${ablauf}
 ${ratgeberSection}
 ${faqSectionGG}
 ${partner ? endBandPartner(s) : endBand}`;
-    write(url, head(title, meta, url, schema, { og: svcHero(s.slug) }) + header + mainGG + footer + sctaBar(`Hallo, ich interessiere mich für ${s.name} im Havelland.`) + revealJS + '</body></html>');
+    write(url, head(title, meta, url, schema, { og: svcHero(s.slug) }).replace('</head><body>', GW_HUBS.includes(s.slug) ? '</head><body class="gw-hub">' : '</head><body>') + header + mainGG + footer + sctaBar(`Hallo, ich interessiere mich für ${s.name} im Havelland.`) + revealJS + '</body></html>');
     written.hubs.push(url);
     return;
   }
@@ -750,25 +767,85 @@ ${s.partner_modell ? endBandPartner(s) : endBand}`;
   written.ortsseiten.push(url); if (!ni) written.ortsseitenIdx.push(url);
 }
 
-// ---------- ORTS-HUB ----------
+// ---------- STANDORTE (Paket 3a, 21.10.2026): /standorte/ + 22 Standortseiten ----------
+// Spec: websites/havelland/website/paket3-standorte-gewerbe-2026-10/01-design-spec.md Teil A. Daten: data/standorte.json (scripts/build-standorte.mjs) + Copy data/copy/standorte-orte.json / uebersicht.json (Schlüssel standorte).
+// Copy-Fallback: fehlt ein Eintrag, greift die bestehende Copy (orteCopy.hook, uebS.*).
+const SX = J('standorte.json');
+const _soCp = CP('standorte-orte.json') || {};
+const soCopy = (_soCp && _soCp.orte) || _soCp;   // { <ort-slug>: {title, meta, lead, anfaellt[3], faqs[3], quellen} }
+for (const k in soCopy) { const e = soCopy[k]; for (const f of ['title', 'meta', 'lead']) if (e[f] != null) e[f] = plain(e[f]); if (e.anfaellt) for (const x of e.anfaellt) { x.h3 = plain(x.h3); x.p = plain(x.p); } if (e.faqs) for (const x of e.faqs) { x.q = plain(x.q); x.a = plain(x.a); } }
+// Link-Regel (Spec §3): existiert /<leistung>-<ort>/ und ist indexierbar → dorthin, sonst auf den Hub /<leistung>/.
+const sxIsOrt = (sv, ort) => hasOrt(sv, ort) && !svcNoindexBySlug(sv);
+const sxHref = (sv, ort) => sxIsOrt(sv, ort) ? `/${sv}-${ort}/` : `/${sv}/`;
+const sxLabel = sv => (SX.kern_namen && SX.kern_namen[sv]) || navLabel(services.find(x => x.slug === sv) || { name: sv, slug: sv });
+const ortBySlug = Object.fromEntries(orte.map(o => [o.slug, o]));
+const deListe = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' und ' + a[a.length - 1];
+// Sätze eines Fließtexts (für den Fallback aus orteCopy.hook: Kopf = Sätze 1–2, Rest = Prosa unter „Was anfällt“)
+const sxSaetze = txt => { const out = []; let rest = String(txt || '').replace(/\s+/g, ' ').trim(); while (rest && out.length < 30) { const s = ersterSatz(rest); if (!s) break; out.push(s); rest = rest.slice(s.length).trim(); } return out; };
+// Kopfbild: standorte-hero (G2) wird vom Bild-Agenten geliefert; solange es nicht im Manifest steht, trägt ueber-uns das Bild.
+const SX_HERO_ALT = 'Maurice und Noah tragen Material zum Transporter, Haus- & Gartenservice Havelland';
+const sxHeroPic = (slug, { alt = '', lcp = true } = {}) => {
+  if (slug === 'standorte-hero' || !IMG[slug]) {
+    const real = !!IMG['standorte-hero'];
+    return pic(real ? 'standorte-hero' : 'ueber-uns', { cls: 'main', alt: alt || (real ? (IMG['standorte-hero'].alt || SX_HERO_ALT) : 'Noah Telo und Maurice Brehm am Einsatzfahrzeug'), sizes: '(max-width:900px) 92vw, 46vw', lcp });
+  }
+  return pic(slug, { cls: 'main', alt, sizes: '(max-width:900px) 92vw, 46vw', lcp });
+};
+// Ablauf in 4 Schritten, ortsneutral formuliert; Reaktionszeiten nur wie vom Owner bestätigt (20.10.): „am selben Tag“, „meist innerhalb weniger Tage“.
+const sxAblauf = ort => [
+  { when: 'Am selben Tag', h: 'Foto oder Anruf', p: `Schildern Sie per WhatsApp oder Telefon kurz, was in ${esc(ort)} ansteht, ein Handyfoto reicht. Wir antworten am selben Tag.` },
+  { when: 'Meist innerhalb weniger Tage', h: 'Kostenlose Besichtigung', p: `Wir kommen in ${esc(ort)} vorbei, schauen uns alles an und nennen den Festpreis. Nach der Besichtigung steht Ihr Preis schriftlich fest.` },
+  { when: 'Zum vereinbarten Termin', h: 'Erledigt', p: 'Pünktlich und gründlich, wir räumen hinter uns auf und übergeben besenrein.' },
+  { when: 'Direkt nach der Arbeit', h: 'Fotos aufs Handy', p: 'Vorher- und Nachher-Fotos, auch wenn Sie nicht zu Hause waren.' }
+];
+
+// ---------- ORTS-HUB (Standortseite) ----------
 function ortsHub(o) {
   const svcs = servicesForOrt(o);
   if (svcs.length < 3) return;
   const url = `/standorte/${o.slug}/`;
-  const oc = orteCopy[o.slug];
-  const teile = (ortsteileVon ? Object.entries(ortsteileVon).filter(([,p]) => p === o.name).map(([s]) => s) : []);
-  const cards = svcs.map((s,i) => { const tgt = hasOrt(s.slug, o.slug) ? `/${s.slug}-${o.slug}/` : `/${s.slug}/`; return `<a class="card" href="${tgt}"><span class="n">${String(i+1).padStart(2,'0')}</span><h3>${esc(s.name)}</h3><p>${esc(s.name)} in ${esc(o.name)}.</p><span class="go">Mehr →</span></a>`; }).join('');
-  const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Haus- & Gartenservice in ${esc(o.name)}","about":{"@id":"${DOMAIN}/#organization"}},${breadcrumb([{name:'Start',url:'/'},{name:'Standorte',url:'/standorte/'},{name:o.name,url}])}`;
-  const intro = oc && oc.hook ? `<p class="lead rv in d2">${esc(oc.hook)}</p>` : `<p class="lead rv in d2">Alle Leistungen rund um Haus und Garten in ${esc(o.name)}${o.plz?` (${esc(o.plz)})`:''} — von einem festen Ansprechpartner.</p>`;
+  const oc = orteCopy[o.slug] || {};
+  const sc = soCopy[o.slug] || {};
+  const teile = (ortsteileVon ? Object.entries(ortsteileVon).filter(([, p]) => p === o.name).map(([s]) => s) : []).map(sl => (ortBySlug[sl] || {}).name || sl);
+  // Kopf: lead aus der neuen Copy, sonst die ersten zwei Sätze der bestehenden Ortsbeschreibung
+  const hookS = sxSaetze(oc.hook);
+  const lead = sc.lead || hookS.slice(0, 2).join(' ') || `Alle Leistungen rund um Haus und Garten in ${o.name}${o.plz ? ` (${o.plz})` : ''}, von einem festen Ansprechpartner.`;
+  // Kopfbild (Spec §6): data/standorte.json kopfbild[ort], Standard standorte-hero
+  const kb = SX.kopfbild[o.slug] || 'standorte-hero';
+  const kbSvc = (/^svc-(.+)-hero$/.exec(kb) || [])[1];
+  const kbName = kbSvc ? ((services.find(x => x.slug === kbSvc) || {}).name || kbSvc) : '';
+  const bild = sxHeroPic(kb, { alt: kbSvc ? `${kbName} in ${o.name} — Haus- & Gartenservice Havelland` : '' });
+  // 4 Kern-Karten (feste Leistungen) + „Außerdem“ = alle übrigen indexierbaren Leistungs-Ortsseiten des Orts
+  const kernItems = SX.kern.map(sv => {
+    const s = services.find(x => x.slug === sv);
+    return { name: s.name, kurz: sxLabel(sv), href: sxHref(sv, o.slug), ortsseite: sxIsOrt(sv, o.slug), p: String((SX.kern_texte || {})[sv] || '').split('{ort}').join(o.name), img: pic(svcHero(sv), { alt: `${s.name} in ${o.name}`, sizes: '(max-width:560px) 92vw, (max-width:900px) 46vw, 23vw' }) };
+  });
+  const ausser = svcs.filter(s => !SX.kern.includes(s.slug) && sxIsOrt(s.slug, o.slug));
+  const partnerN = ausser.filter(s => s.partner_modell).map(s => navLabel(s));
+  const note = partnerN.length ? `${deListe(partnerN)} koordinieren wir über einen Partner-Fachbetrieb, das Angebot kommt vom Fachbetrieb.` : '';
+  // Nachbarorte: nur Orte mit Standortseite
+  const nah = (SX.nachbarn[o.slug] || []).filter(sl => ortsHubSlugs.has(sl) && sl !== o.slug).map(sl => ({ href: `/standorte/${sl}/`, name: ortBySlug[sl].name }));
+  // FAQ: 3 ortsbezogene aus der Copy, sonst bestätigte Standardantworten (Owner 20.10.)
+  const faqs = (sc.faqs && sc.faqs.length ? sc.faqs : [
+    { q: `Kommen Sie auch nach ${o.name}?`, a: `Ja, ${o.name} gehört zu unserem Einsatzgebiet. Schicken Sie uns kurz Ihre Adresse per WhatsApp, wir antworten am selben Tag.` },
+    { q: 'Kostet die Anfahrt extra?', a: 'Nein, die Anfahrt ist im Festpreis enthalten. Den Preis nennen wir nach der kostenlosen Besichtigung.' },
+    { q: 'Wie schnell bekomme ich einen Termin?', a: 'Die Besichtigung klappt meist innerhalb weniger Tage. Den Arbeitstermin stimmen wir danach mit Ihnen ab.' }
+  ]).slice(0, 3);
+  const items = (sc.anfaellt && sc.anfaellt.length ? sc.anfaellt : []).slice(0, 3);
+  const prose = items.length ? '' : hookS.slice(2).join(' ');
+
+  const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Haus- & Gartenservice in ${sj(o.name)}","about":{"@id":"${DOMAIN}/#organization"},"contentLocation":{"@type":"Place","name":"${sj(o.name)}"}},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Standorte', url: '/standorte/' }, { name: o.name, url }])}`;
+  const waText = `Hallo, ich brauche Hilfe in ${o.name}.`;
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/standorte/">Standorte</a><span class="sep">›</span>${esc(o.name)}</div>
-<section class="phero">${leaf('hleaf')}<div class="wrap"><span class="kick rv in" style="color:var(--green)">Standort</span><h1 class="rv in d1" style="max-width:14em">Haus- &amp; Gartenservice <em>in ${esc(o.name)}</em></h1>${intro}<div class="cta-row rv in d3">${ctaA}</div>${trustBadges()}</div></section>
-<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name, sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
-<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Leistungen in ${esc(o.name)}</h2></div><div class="cards rv">${cards}</div>${teile.length?`<p class="intro rv" style="margin-top:30px">Auch in ${esc(teile.join(', '))} und Umgebung.</p>`:''}</div></section>
-${svcs[0] && svcs[0].partner_modell ? gstripPartner(svcs[0]) : gstrip}
-<section class="sec"><div class="wrap">${whatsappFlow({ ort: o.name, gewerk: 'meinem Anliegen' })}</div></section>
-${gebietskarte({ activeSlug: o.slug, linkOrte: ortsHubSlugs })}
+${seitenHero({ kick: o.plz ? `Standort · ${o.plz} ${o.name}` : 'Standort', h1: `Haus- &amp; Gartenservice in <em>${esc(o.name)}</em>`, lead, leaf: leaf('hleaf'), bild, trust: trustLine, cta: `${ctaA}<a class="btn btn-line" href="${waHref(waText)}">WhatsApp</a>` })}
+${gstripOhneAbfuhr}
+${kernKarten({ ort: o.name, items: kernItems, weitere: ausser.map(s => ({ href: `/${s.slug}-${o.slug}/`, label: navLabel(s) })), note, lead: 'Unsere vier Hauptleistungen vor Ort. Ein Klick führt zur Seite mit allen Einzelheiten.', alt: false })}
+${anfaelltBlock({ ort: o.name, items, prose, teile, alt: true })}
+${soLaeufts({ name: `es in ${o.name}`, waText, alt: false, items: sxAblauf(o.name), reihe: true })}
+${naeheZeile({ orte: nah, alt: true })}
+${faqKurz({ h2: `Häufige Fragen zu <em>${esc(o.name)}</em>`, faqs, alt: false })}
 ${endBand}`;
-  write(url, head(clampTitle(`Haus- & Gartenservice ${o.name}`), mkMeta(`Haus- & Gartenservice in ${o.name}${o.plz?` (${o.plz})`:''}: Garten, Reinigung, Winterdienst, Entrümpelung von einem festen Ansprechpartner.`), url, schema, { noindex: (config.aktive_welle || 0) < 2 }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  write(url, head(clampTitle(sc.title || `Haus- & Gartenservice ${o.name}`), mkMeta(sc.meta || `Haus- & Gartenservice in ${o.name}${o.plz ? ` (${o.plz})` : ''}: Garten, Reinigung, Winterdienst, Entrümpelung von einem festen Ansprechpartner.`), url, schema, { noindex: (config.aktive_welle || 0) < 2, og: kb }) + header + main + footer + sctaBar(waText) + revealJS + '</body></html>');
   written.orts_hubs.push(url);
 }
 
@@ -849,50 +926,46 @@ ${endBand}`;
   written.basis.push(url);
 }
 
-// ---------- ÜBERSICHT: /standorte/ (geografische Regionen) ----------
+// ---------- ÜBERSICHT: /standorte/ (Paket 3a: Stufe 1 als Zeilen, Stufe 2 als dunkles Band) ----------
 function standortePage() {
   const url = '/standorte/';
-  const money = haupt.filter(o => servicesForOrt(o).length >= 3);
-  const bySlug = Object.fromEntries(money.map(o => [o.slug, o]));
-  const seen = new Set();
-  const ordered = [];
-  const blocks = [];
-  let n = 0;
-  const renderCards = orts => orts.map(o => {
-    ordered.push(o);
-    return `<a class="card" href="/standorte/${o.slug}/"><h3>${esc(o.name)}</h3><p>${esc(o.plz || '')}</p><span class="go">Zum Ort →</span></a>`;
+  const hat = sl => ortsHubSlugs.has(sl);   // nur Orte mit wirklich gerenderter Standortseite
+  const kernChips = sl => SX.kern.map(sv => ({ href: sxHref(sv, sl), label: sxLabel(sv) }));
+  // Stufe 1: Falkensee als Kasten, übrige Gruppen als Zeilen
+  const stufe1 = SX.stufe1.map(g => {
+    const sl = g.orte.filter(hat);
+    if (!sl.length) return '';
+    if (g.key === 'home') {
+      const fk = ortBySlug[sl[0]];
+      return falkenseeKasten({ slug: fk.slug, name: fk.name, plz: fk.plz, satz: uebS.sitz_satz || 'Unser Sitz. Hier sind wir am schnellsten vor Ort.', chips: SX.falkensee_top.map(sv => ({ href: sxHref(sv, fk.slug), label: sxLabel(sv) })) })
+        + sl.slice(1).map(x => ortZeile({ slug: x, name: ortBySlug[x].name, plz: ortBySlug[x].plz, chips: kernChips(x) })).join('');
+    }
+    return gruppenKopf(g.label) + sl.map(x => ortZeile({ slug: x, name: ortBySlug[x].name, plz: ortBySlug[x].plz, chips: kernChips(x) })).join('');
   }).join('');
-  for (const reg of STANDORT_REGIONEN) {
-    const orts = reg.slugs.map(sl => bySlug[sl]).filter(Boolean);
-    if (!orts.length) continue;
-    orts.forEach(o => seen.add(o.slug));
-    n++;
-    const intro = uebS.regionen && uebS.regionen[reg.key] ? `<p class="intro rv">${esc(uebS.regionen[reg.key])}</p>` : '';
-    blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}" style="padding:64px 0"><div class="wrap">${catHead(n, reg.label)}${intro}<div class="cards rv">${renderCards(orts)}</div></div></section>`);
-  }
-  const rest = money.filter(o => !seen.has(o.slug));   // Schutz: Money-Ort ohne Region
-  if (rest.length) { n++; blocks.push(`<section class="sec${n % 2 === 0 ? ' section-alt' : ''}" style="padding:64px 0"><div class="wrap">${catHead(n, 'Weitere Orte im Havelland')}<div class="cards rv">${renderCards(rest)}</div></div></section>`); }
-
-  // "Außerdem im Einsatz": bediente Orte/Ortsteile ohne eigene Seite (echte Orte aus locations.json)
-  const cardSlugs = new Set(ordered.map(o => o.slug));
-  const extra = launch.filter(o => !cardSlugs.has(o.slug)).map(o => o.name);
-  const ausserdem = extra.length ? `<section class="sec" style="padding:0 0 8px"><div class="wrap"><p class="intro rv" style="max-width:62em">${esc(uebS.ausserdem_label || 'Außerdem im Einsatz in')}: ${esc(extra.join(', '))} und Umgebung.</p></div></section>` : '';
-
-  const lead = uebS.lead || 'Wir sind im ganzen Havelland und Berliner Umland für Sie da.';
-  const gebiet = uebS.servicegebiet ? `<section class="sec" style="padding:44px 0 0"><div class="wrap"><div class="prose wide rv"><p>${esc(uebS.servicegebiet)}</p></div></div></section>` : '';
-  const items = ordered.map((o, i) => `{"@type":"ListItem","position":${i + 1},"name":"${sj(o.name)}","item":"${DOMAIN}/standorte/${o.slug}/"}`).join(',');
+  const nHome = SX.stufe1.flatMap(g => g.orte).filter(hat).length;
+  const zuhause = `<section class="sec" id="zuhause"><div class="wrap"><h2 class="serif rv">Hier sind wir zu <em>Hause</em></h2><p class="sx-sub rv">${esc(uebS.home_sub || `Falkensee und ${nHome - 1} Orte rund um unseren Sitz. Pro Ort führen die Leistungs-Knöpfe direkt zur passenden Seite.`)}</p>${stufe1}</div></section>`;
+  // Stufe 2: Textzeile je Region, darunter Leistungen + WhatsApp
+  const auch = stufe2Band({
+    sub: uebS.auch_sub || 'Etwas weiter weg, aber dieselben Leistungen. Schicken Sie uns Ihren Ort per WhatsApp, wir antworten am selben Tag.',
+    regionen: SX.stufe2.map(g => ({ label: g.label, orte: g.orte.filter(hat).map(sl => ({ href: `/standorte/${sl}/`, name: ortBySlug[sl].name, plz: ortBySlug[sl].plz })) })).filter(r => r.orte.length),
+    leistungen: SX.kern.map(sv => ({ href: `/${sv}/`, label: sxLabel(sv) })), mehr: { href: '/leistungen/', label: 'und mehr' },
+    waHref: waHref('Hallo, sind Sie auch in meinem Ort im Einsatz?')
+  });
+  const faqs = (uebS.faqs || []).slice(0, 3);
+  const reihe = [...SX.stufe1, ...SX.stufe2].flatMap(g => g.orte).filter(hat);
+  const items = reihe.map((sl, i) => `{"@type":"ListItem","position":${i + 1},"name":"${sj(ortBySlug[sl].name)}","item":"${DOMAIN}/standorte/${sl}/"}`).join(',');
   const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Unsere Standorte","about":{"@id":"${DOMAIN}/#organization"}},{"@type":"ItemList","@id":"${DOMAIN}${url}#standorte","name":"Standorte im Havelland","itemListElement":[${items}]},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Standorte', url }])}`;
+  const lead = uebS.lead || 'Unser Sitz ist Falkensee. Von hier fahren wir in die Nachbarorte und an den Berliner Westrand, für Garten, Hecke, Umbau und Entrümpelung.';
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Standorte</div>
-<section class="phero" style="padding-bottom:24px"><div class="wrap"><span class="kick rv in" style="color:var(--green)">Standorte</span><h1 class="rv in d1">Unsere Standorte</h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaA}<a class="btn btn-line" href="${waHref('Hallo, sind Sie auch in meinem Ort im Einsatz?')}">WhatsApp</a></div></div></section>
-<section class="sec" style="padding:28px 0 0"><div class="wrap"><div class="media-band rv">${pic('region-havelland', { alt: 'Servicegebiet Havelland und Berliner Umland — Haus- & Gartenservice Havelland', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
-${gebiet}
-${blocks.join('\n')}
-${ausserdem}
-${stepsSektion(n % 2 !== 0)}
-${valueBand}
-${faqBlock(uebS.faqs)}
+${seitenHero({ kick: 'Standorte', h1: 'Wo wir <em>unterwegs</em> sind', lead, leaf: leaf('hleaf'), trust: trustLine,
+    cta: `${ctaA}<a class="btn btn-line" href="${waHref('Hallo, sind Sie auch in meinem Ort im Einsatz?')}">WhatsApp</a>`,
+    bild: sxHeroPic('standorte-hero'), badge: badgeSitz({ titel: `Sitz in ${nap.city}`, zeile: nap.street || '' }) })}
+${gstripOhneAbfuhr}
+${zuhause}
+${auch}
+${faqKurz({ h2: 'Häufige Fragen zu unseren <em>Standorten</em>', faqs, alt: true })}
 ${endBand}`;
-  write(url, head(clampTitle(`Unsere Standorte — ${nap.name}`), mkMeta(uebS.meta || lead), url, schema) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
+  write(url, head(clampTitle(uebS.title || `Unsere Standorte — ${nap.name}`), mkMeta(uebS.meta || lead), url, schema, { og: IMG['standorte-hero'] ? 'standorte-hero' : undefined }) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push(url);
 }
 
@@ -1071,60 +1144,159 @@ ${endBand}`;
   write(url, head(`Bewertungen — ${nap.name}`, mkMeta(`Bewertungen und Erfahrungen zum Haus- & Gartenservice Havelland in ${nap.city}: Foto-Nachweis nach jedem Auftrag statt erfundener Sterne.`), url, `${orgSchema()},${breadcrumb([{name:'Start',url:'/'},{name:'Bewertungen',url}])}`) + header + main + footer + SCTA_DEFAULT + revealJS + '</body></html>');
   written.basis.push(url);
 }
-// ---------- B2B: /fuer-hausverwaltungen/ (noindex bis Welle 2) ----------
-function b2bPage() {
-  const url = '/fuer-hausverwaltungen/';
-  const b2b = J('b2b.json');
-  // 03.09.2026 (Herbst/Winter-Offensive, C4): Hero, Intro, Leistungs-/Zusagen-Details, Ablauf, FAQ und CTA kommen aus b2b.json.
-  // Partner-Framing: Winterdienst + Dachrinne = Partner-Fachbetrieb (Vertrag Kunde<->Betrieb, Preis vom Betrieb); Laub/Grün/Entrümpelung = Eigenleistung.
-  // 14.09.2026 (B2B-Ansprache): Treppenhaus/Unterhaltsreinigung nicht Fokus dieser Seite — Entrümpelung/Wohnungsräumung als Eigenleistung ergänzt (Karte, Detail-Links, Schema).
-  // 15.09.2026 (Owner C=2): Treppenhaus-/Unterhaltsreinigung bleibt EIGENLEISTUNG (Hubs /unterhaltsreinigung/, /hausmeisterservice/, /gebaeudereinigung/ unverändert); nur Winterdienst/Dachreinigung/Grundreinigung laufen über Partner.
-  // Fallbacks halten die Seite baubar, falls b2b.json wieder nur objektklassen/leistungen/zusagen trägt.
-  const h1 = (b2b.h1 && b2b.h1_em && b2b.h1.includes(b2b.h1_em))
-    ? esc(b2b.h1).replace(esc(b2b.h1_em), `<em>${esc(b2b.h1_em)}</em>`)
-    : esc(b2b.h1 || 'Ein Dienstleister für Ihre Objekte im Havelland');
-  const intro = b2b.intro || { h2: 'Für wen wir arbeiten', body: 'Wir betreuen laufende Objekte dokumentiert — mit einem festen Ansprechpartner statt wechselnder Kräfte.' };
-  const objekte = (b2b.objektklassen_detail || []).length
-    ? (b2b.objektklassen_detail || []).map(o => `<li><strong>${esc(o.name)}</strong> — ${esc(o.body)}</li>`).join('')
-    : (b2b.objektklassen || []).map(o => `<li>${esc(o)}</li>`).join('');
-  const leistDetail = b2b.leistungen_detail || [];
-  const leist = leistDetail.length
-    ? leistDetail.map((l, i) => `<a class="card" href="${hrefOf(l.link_to)}"><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(l.h3)}</h3><p>${esc(l.body)}</p><span class="go">${esc(l.label || 'Mehr erfahren')} →</span></a>`).join('')
-  // 14.09. Fix: hrefOf statt /${link_to}/ (Anker #laub landete als "#laub/"), Chip eigen/Partner aus b2b.json sichtbar (Intro verspricht ihn).
-    : (b2b.leistungen || []).map((l, i) => `<div class="card"><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${esc(l)}</h3></div>`).join('');
-  const zusList = (b2b.zusagen_detail || []).length ? b2b.zusagen_detail : (b2b.zusagen || []).map(z => ({ h4: z }));
-  const zus = zusList.map((z, i) => `<div class="v rv d${i + 1}"><h4><span class="n">0${i + 1}</span> ${esc(z.h4)}</h4>${z.body ? `<p>${esc(z.body)}</p>` : ''}</div>`).join('');
-  const partnerNote = b2b.partnermodell_hinweis ? `<p class="rv" style="max-width:60em;margin:22px auto 0;color:var(--muted);font-size:.95em">${esc(b2b.partnermodell_hinweis)}</p>` : '';
-  const ablauf = (b2b.ablauf && Array.isArray(b2b.ablauf.schritte) && b2b.ablauf.schritte.length)
-    ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(b2b.ablauf.h2 || 'So kommen Sie zum Angebot')}</h2></div><div class="tl rv">${b2b.ablauf.schritte.map((x, i) => (typeof x === 'string')
-      ? `<div class="tli"><span class="tn">${i + 1}</span><div class="tbody"><p>${esc(x)}</p></div></div>`
-      : `<div class="tli"><span class="tn">${i + 1}</span><div class="tbody"><span class="twhen">${esc(x.when || '')}</span><h3>${esc(x.h || '')}</h3><p>${esc(x.p || '')}</p></div></div>`).join('')}</div></div></section>` : '';
-  // 14.09. Fix: schritte sind seit 03.09. Objekte {when,h,p} — vorher rendert esc(x) viermal "[object Object]" (live seit 04.09.). Markup = auftragsTimeline() aus components.mjs.
-  const faqSection = (b2b.faqs && b2b.faqs.length) ? `<section class="sec section-alt"><div class="wrap">${faqFilter(b2b.faqs)}</div></section>` : '';
-  const cta = b2b.cta || {};
-  const areaServed = JSON.stringify(haupt.map(o => o.name));
-  const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Für Hausverwaltungen & Gewerbe","about":{"@id":"${DOMAIN}/#organization"}},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"Objektbetreuung für Hausverwaltungen","serviceType":"Facility Service","provider":{"@id":"${DOMAIN}/#organization"},"areaServed":${areaServed}},{"@type":"Service","@id":"${DOMAIN}${url}#laub","name":"Laubentfernung auf Parkplätzen und Außenanlagen","serviceType":"Laubentfernung","provider":{"@id":"${DOMAIN}/#organization"},"areaServed":${areaServed}},{"@type":"Service","@id":"${DOMAIN}${url}#winterdienst","name":"Winterdienst für Gewerbe und Hausverwaltungen","serviceType":"Winterdienst","description":"Koordination durch den Haus- & Gartenservice Havelland; Räumen und Streuen führt ein Partner-Fachbetrieb im Saisonvertrag aus.","areaServed":${areaServed}},{"@type":"Service","@id":"${DOMAIN}${url}#entruempelung","name":"Entrümpelung und Wohnungsräumung für Hausverwaltungen","serviceType":"Entrümpelung","provider":{"@id":"${DOMAIN}/#organization"},"areaServed":${areaServed}},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Für Hausverwaltungen', url }])}`;
-  // B2B statt WhatsApp-Foto-Flow: E-Mail-Angebot als Haupt-CTA. Fristzusage (2 Werktage) nur für Eigenleistungen — das Winterdienst-Angebot stellt der Fachbetrieb.
-  const mailtoAngebot = `mailto:${nap.email}?subject=${encodeURIComponent(cta.mail_subject || 'Angebot Objektbetreuung')}&body=${encodeURIComponent(cta.mail_body || 'Guten Tag,\n\nwir sind eine Hausverwaltung / Gewerbe und interessieren uns für Ihre Objektbetreuung.\n\nObjekt(e): \nOrt/PLZ: \nGewünschte Leistungen: \n\nBitte senden Sie uns ein schriftliches Angebot.\n\nMit freundlichen Grüßen')}`;
-  const ctaBtns = `<a class="btn btn-acc" href="${mailtoAngebot}">Angebot für Ihr Objekt anfordern</a><a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a>`;
-  // B2B-Bänder (Umbau 04.09.): kein Festpreis, kein Vorher/Nachher-Foto — Partner-Winterdienst/Dachrinne. Ein Primär-CTA-Typ (mailto), zwei Positionen.
-  const gstripB2B = `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Ein Ansprechpartner</h3><p>Noah Telo kennt Ihre Objekte — Begehung, Termine und Nachweise laufen über eine Nummer.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Nachweis je Einsatz</h3><p>Fotos bei unserer Ausführung, Einsatznachweis mit Datum und Uhrzeit beim Partner-Betrieb bei Winterdienst und Dachrinne.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Schriftliches Angebot je Objekt</h3><p>Grünpflege, Reinigung, Kleinreparaturen und Entrümpelung von uns — Winterdienst und Dachrinne vom Partner-Fachbetrieb.</p></div></div></div></div></section>`;
-  const endBandB2B = `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">Sagen Sie uns, welche Objekte anstehen — wir melden uns zur Begehung.</h2><p class="rv d1">Angebot je Objekt, Nachweis je Einsatz, ein Ansprechpartner.</p><div class="cta-row rv d2">${ctaBtns}</div></div></section>`;
-  const emailCta = `<section class="sec"><div class="wrap center"><div class="head" style="justify-content:center"><h2 class="serif rv">${esc(cta.h2 || 'Angebot per E-Mail anfordern')}</h2></div><p class="intro rv" style="max-width:44em;margin-inline:auto">${esc(cta.body || 'Senden Sie uns Ihre Objektdaten — Sie erhalten ein schriftliches Angebot per E-Mail. Ein fester Ansprechpartner, kein Callcenter.')}</p><div class="cta-row rv d1" style="justify-content:center">${ctaBtns}</div></div></section>`;
-  const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Für Hausverwaltungen</div>
-<section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(b2b.kick || 'Für Hausverwaltungen & Gewerbe')}</span><h1 class="rv in d1">${h1}</h1><p class="lead rv in d2">${esc(b2b.lead || 'Grünpflege, Reinigung und Objektkontrolle mit festem Ansprechpartner, schriftlichem Angebot und Foto-Reporting.')}</p><div class="cta-row rv in d3">${ctaBtns}</div></div>
-<div class="shot rv in d2">${pic('svc-objektbetreuung-hero', { cls: 'main', alt: 'Kontrollgang an einer Wohnanlage im Havelland — Objektbetreuung für Hausverwaltungen', sizes: '(max-width:900px) 92vw, 60vw', lcp: true })}</div></div></section>
-${gstripB2B}
-<section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(intro.h2)}</h2><p>${esc(intro.body)}</p><ul>${objekte}</ul><p>Einzelne Leistungen im Detail: <a href="/winterdienst/">Winterdienst</a>, <a href="/gartenpflege/">Gartenpflege und Laub</a>, <a href="/dachrinnenreinigung/">Dachrinnenreinigung</a>, <a href="/entruempelung/">Entrümpelung</a>, <a href="/haushaltsaufloesung/">Haushaltsauflösung</a>, <a href="/hausmeisterservice/">Hausmeisterservice</a>.</p></div></div></section>
-<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">Unsere Leistungen für Ihr Objekt</h2></div><div class="cards rv">${leist}</div>${partnerNote}</div></section>
-${emailCta}
-<section class="band">${leaf('leaf')}<div class="wrap"><p class="lead2 rv">${esc(b2b.band_lead || 'Dokumentiert, ohne Callcenter — ein Ansprechpartner für alle Objekte.')}</p><div class="vals">${zus}</div></div></section>
-${ablauf}
-${faqSection}
-${endBandB2B}`;
-  write(url, head(clampTitle(b2b.title_tag || `Für Hausverwaltungen & Gewerbe — ${nap.name}`), mkMeta(b2b.meta || 'Haus- & Gartenservice Havelland für Hausverwaltungen, WEG und Gewerbe: Grünpflege, Reinigung, Winterdienst und Objektkontrolle mit festem Ansprechpartner und Foto-Reporting.'), url, schema, { noindex: (config.aktive_welle || 0) < 2 }) + header + main + footer + sctaBar(b2b.scta_text || 'Guten Tag, wir sind eine Hausverwaltung / ein Gewerbebetrieb im Havelland und interessieren uns für Objektbetreuung.') + revealJS + '</body></html>');
+// ---------- GEWERBE (Paket 3b, 21.10.2026): /gewerbe/ + Zielgruppenseiten (Hausverwaltungen, Firmen, Pflegeeinrichtungen, Bestatter) ----------
+// Spec Teil B (B3/B4/B5). Alle Texte aus data/copy/gewerbe.json (uebersicht, zielgruppen.<key>); /fuer-hausverwaltungen/ ergänzt data/b2b.json (Objektklassen, Leistungen mit Ausführungs-Chip, Ablauf, FAQ).
+// Partner-Leistungen (Winterdienst, Dachrinne, Dachreinigung; Bauendreinigung nur im Text): nur im Beschreibungssatz, kein Label auf /gewerbe/; Schema mit broker. Grundreinigung = Eigenleistung (provider). Kein FAQPage.
+// Owner 20.10. abends: ALLE Gewerbe-Seiten (/gewerbe/ + 4 Zielgruppenseiten) sind immer indexierbar, unabhängig von aktive_welle (Sitemap + llms.txt ebenfalls ohne Wellen-Gate). Die Gewerbe-Hubs tragen nie ein noindex.
+const gwIndex = true;
+const gwSec = n => (gwU.sections && gwU.sections[n]) || {};
+const emLast = t => { const e = esc(t || ''); const m = /^(.*?)(\S+?)([?!.:]*)$/.exec(e); return m ? `${m[1]}<em>${m[2]}</em>${m[3]}` : e; };
+const h2Of = (text, em) => em ? emH1(text, em) : emLast(text);
+const gwCtaTel = `<a class="btn btn-line" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a>`;
+// Zielgruppen-Karten (Startseiten-Band + /gewerbe/): Copy uebersicht.karten, sonst Standardtexte
+const GW_KARTEN_DEF = {
+  hausverwaltungen: 'Wohnungsräumung, Grünpflege, Laub und Treppenhaus für Ihre Objekte.',
+  firmen: 'Unterhaltsreinigung, Außenanlagen und Hausmeisterarbeiten im festen Turnus.',
+  pflegeeinrichtungen: 'Zimmer und Wohnungen in Absprache räumen, wenn Bewohner ausziehen.',
+  bestatter: 'Wohnungsauflösung für die Familien, die Sie begleiten, besenrein übergeben.'
+};
+// Bild je Zielgruppe: eigenes Motiv `zielgruppe-<key>` (Task 10), sonst Fallback aus ZG; Kopf /gewerbe/: `gewerbe-hero`, sonst Objektbetreuung.
+const zgBild = key => [`zielgruppe-${key}`, `zielgruppe-${ZG[key].bildKey || key}`, ZG[key].bild, ZG[key].bild2, 'svc-objektbetreuung-hero'].find(sl => sl && IMG[sl]);
+const gwHeroSlug = () => ['gewerbe-hero', 'svc-objektbetreuung-hero'].find(sl => IMG[sl]);
+function gwKarten() {
+  return Object.entries(ZG).map(([key, m]) => {
+    const c = (gwU.karten || []).find(x => x.key === key || x.url === m.url) || {};
+    const bild = zgBild(key);
+    return { href: m.url, h3: c.h3 || m.nav, p: c.p || GW_KARTEN_DEF[key], label: c.label || 'Mehr erfahren', imgHtml: pic(bild, { alt: IMG[bild] && IMG[bild].alt ? IMG[bild].alt : `${c.h3 || m.nav} — Haus- & Gartenservice Havelland`, sizes: '(max-width:560px) 92vw, (max-width:1000px) 46vw, 23vw' }) };
+  });
+}
+// Startseiten-Band „Für Gewerbe und Einrichtungen“ (nach dem Leistungs-Cluster; übrige Startseiten-Texte bleiben unverändert)
+function gwHomeBand() {
+  const hb = gwU.home_band || {};
+  return zielgruppenKarten({ dark: true, id: 'gewerbe', h2: h2Of(hb.h2 || 'Für Gewerbe und Einrichtungen', hb.h2 ? hb.h2_em : 'Einrichtungen'), sub: hb.sub || 'Hausverwaltungen, Firmen, Pflegeeinrichtungen und Bestatter: ein Ansprechpartner, Angebot nach Begehung.', items: gwKarten(), link: { href: '/gewerbe/', label: hb.link || 'Alles für Gewerbe' } });
+}
+// Abschluss-Band: Text aus endband {h2,p}; Buttons wahlweise Begehung+Telefon (Standard) oder fertige Buttons (Hausverwaltungen: E-Mail-Angebot)
+const endBandGw = (e = {}, btns = '') => `<section class="zone-deep end">${leaf('leaf')}<div class="wrap"><h2 class="serif rv">${esc(e.h2 || 'Welche Objekte stehen an? Wir schauen sie uns an.')}</h2><p class="rv d1">${esc(e.p || 'Begehung kostenlos, schriftliches Angebot, Antwort am selben Tag.')}</p><div class="cta-row rv d2">${btns || (ctaPrim('Begehung anfragen') + gwCtaTel)}</div></div></section>`;
+// Standard-Zusagen und -Ablauf (Spec B3), falls die Copy sie nicht liefert
+const GW_ZUSAGEN_DEF = [{ h3: 'Ein Ansprechpartner', p: 'Eine feste Kontaktperson für alle Objekte und Leistungen. Wir antworten am selben Tag.' }, { h3: 'Angebot nach Begehung', p: 'Die Begehung ist kostenlos. Danach erhalten Sie ein schriftliches Angebot.' }, { h3: 'Nachweis mit Fotos', p: 'Nach jedem Einsatz bekommen Sie Fotos.' }, { h3: 'Rechnung an Sie', p: 'Unsere Rechnung weist die Umsatzsteuer aus.' }];
+const GW_ABLAUF_DEF = [{ h: 'Anfrage', p: 'Per Mail, Telefon oder WhatsApp. Wir antworten am selben Tag.' }, { h: 'Begehung', p: 'Kostenlos vor Ort. Der Termin liegt meist innerhalb weniger Tage.' }, { h: 'Angebot', p: 'Schriftlich, mit Leistungsumfang und Turnus.' }, { h: 'Start', p: 'Feste Termine und Fotos nach jedem Einsatz.' }];
+const gwServiceName = sl => (services.find(x => x.slug === sl) || {}).name || sl;
+const gwIsPartner = (sl, flag) => sl !== 'grundreinigung' && (!!flag || GW_PARTNER_EXTRA.has(sl) || !!(services.find(x => x.slug === sl) || {}).partner_modell);   // Grundreinigung nie Partner (Owner 20.10. abends)
+const gwSlugOf = to => String(to || '').split('#')[0].replace(/^\/|\/$/g, '');
+const gwWrite = (url, title, meta, schema, main, scta, ogSlug) => write(url, head(clampTitle(title), mkMeta(meta), url, schema, { noindex: !gwIndex, og: ogSlug }) + header + main + footer + sctaBar(scta) + revealJS + '</body></html>');
+
+// ---------- /gewerbe/ ----------
+function gewerbePage() {
+  const url = '/gewerbe/'; const u = gwU;
+  const h1 = h2Of(u.h1 || 'Für Verwaltungen, Firmen und Einrichtungen', u.h1 ? u.h1_em : 'Einrichtungen');
+  const lead = u.lead || 'Wir pflegen Objekte, reinigen Gebäude und räumen Wohnungen, im Havelland, in Falkensee und in Spandau. Ein Ansprechpartner, ein Angebot nach Begehung, Nachweis nach jedem Einsatz.';
+  const leist = (u.leistungen || []).filter(x => services.some(sv => sv.slug === x.slug)).map(x => ({ href: `/${x.slug}/`, h3: x.name || gwServiceName(x.slug), p: x.p }));   // KEINE Ausführungs-Labels (Owner 20.10.)
+  const sZ = gwSec('zielgruppen'), sL = gwSec('leistungen'), sU = gwSec('zusagen'), sA = gwSec('ablauf'), sF = gwSec('faq');
+  const heroSlug = gwHeroSlug();
+  const hero = seitenHero({ cls: 'gw-phero', kick: u.kick || 'Für Gewerbe', h1, lead, leaf: leaf('hleaf'), trust: trustLine,
+    cta: `${ctaPrim('Begehung anfragen')}${gwCtaTel}`,
+    bild: pic(heroSlug, { cls: 'main', alt: (IMG[heroSlug] && IMG[heroSlug].alt) || 'Mitarbeiter von Haus- & Gartenservice Havelland vor einem Mehrfamilienhaus', sizes: '(max-width:900px) 92vw, 46vw', lcp: true }) });
+  const faqs = (u.faqs || []).slice(0, 7);
+  const items = Object.values(ZG).map((m, i) => `{"@type":"ListItem","position":${i + 1},"name":"${sj(m.nav)}","item":"${DOMAIN}${m.url}"}`).join(',');
+  const schema = `${orgSchema()},{"@type":"CollectionPage","@id":"${DOMAIN}${url}#page","name":"Für Gewerbe","about":{"@id":"${DOMAIN}/#organization"}},{"@type":"ItemList","@id":"${DOMAIN}${url}#zielgruppen","name":"Leistungen für Gewerbe nach Zielgruppe","itemListElement":[${items}]},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Für Gewerbe', url }])}`;
+  const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>Für Gewerbe</div>
+${hero}
+${zielgruppenKarten({ h2: h2Of(sZ.h2 || 'Für wen wir arbeiten', sZ.h2 ? sZ.h2_em : 'arbeiten'), sub: sZ.sub || 'Vier Zielgruppen, jede mit eigener Seite: was wir übernehmen und wie es abläuft.', items: gwKarten(), alt: true })}
+${gwListe({ h2: h2Of(sL.h2 || 'Leistungen für Gewerbe', sL.h2 ? sL.h2_em : 'Gewerbe'), sub: sL.sub || '', items: leist, alt: false })}
+${zusagenBand4({ h2: h2Of(sU.h2 || 'Was bei jedem Auftrag feststeht', sU.h2 ? sU.h2_em : 'feststeht'), sub: sU.sub || '', items: (u.zusagen && u.zusagen.length) ? u.zusagen : GW_ZUSAGEN_DEF })}
+${ablaufSektion({ h2: h2Of(sA.h2 || 'So kommen Sie zum Angebot', sA.h2 ? sA.h2_em : 'Angebot'), items: (u.ablauf && u.ablauf.length) ? u.ablauf : GW_ABLAUF_DEF, cta: `${ctaPrim('Begehung anfragen')}${gwCtaTel}`, alt: false })}
+${faqKurz({ h2: h2Of(sF.h2 || 'Häufige Fragen zu Aufträgen für Gewerbe', sF.h2 ? sF.h2_em : 'Gewerbe'), faqs, alt: true })}
+${endBandGw(u.endband)}`;
+  gwWrite(url, u.title || 'Für Gewerbe: Objektpflege und Reinigung im Havelland', u.meta || lead, schema, main, u.scta_text || 'Guten Tag, wir sind eine Hausverwaltung / ein Unternehmen im Havelland und interessieren uns für Ihre Leistungen.', heroSlug);
   written.basis.push(url);
 }
+
+// ---------- Zielgruppenseiten ----------
+function zielgruppePage(key) {
+  const m = ZG[key]; const url = m.url; const hv = key === 'hausverwaltungen';
+  const z = sanGw({ ...(hv ? J('b2b.json') : {}), ...((GW.zielgruppen || {})[key] || {}) });
+  const u = gwU;
+  const bildSlug = zgBild(key);
+  // --- Kopf ---
+  const h1 = h2Of(z.h1 || `Leistungen für ${m.nav}`, z.h1 ? z.h1_em : '');
+  const lead = z.lead || 'Ein Ansprechpartner, ein Angebot nach der Begehung, Nachweis nach jedem Einsatz.';
+  const kick = z.kick || m.nav;
+  const waKopf = z.cta_wa_text || null;
+  // Hausverwaltungen: Angebot per E-Mail (Ziel der B2B-Mails); übrige: Begehung über das Formular
+  const cta = (z.cta && typeof z.cta === 'object') ? z.cta : {};
+  const mailtoAngebot = `mailto:${nap.email}?subject=${encodeURIComponent(cta.mail_subject || 'Angebot Objektbetreuung')}&body=${encodeURIComponent(cta.mail_body || 'Guten Tag,\n\nwir sind eine Hausverwaltung / Gewerbe und interessieren uns für Ihre Objektbetreuung.\n\nObjekt(e): \nOrt/PLZ: \nGewünschte Leistungen: \n\nBitte senden Sie uns ein schriftliches Angebot.\n\nMit freundlichen Grüßen')}`;
+  // Nachbesserung 20.10.: ein Hauptbutton auf allen Zielgruppenseiten (Formular /kontakt/#anfrage). Pflege/Bestatter sagen „Besichtigung“, übrige „Begehung“. Hausverwaltungen: E-Mail nur als Nebenweg.
+  const primLbl = (key === 'pflegeeinrichtungen' || key === 'bestatter') ? 'Besichtigung anfragen' : 'Begehung anfragen';
+  const ctaBtnsHv = `${ctaPrim(primLbl)}<a class="btn btn-line" href="${mailtoAngebot}">${esc(cta.mail_label || 'Objektliste per Mail senden')}</a>${gwCtaTel}`;
+  const heroCta = hv ? ctaBtnsHv : `${ctaPrim(primLbl)}${waKopf ? `<a class="btn btn-line" href="${waHref(waKopf)}">WhatsApp</a>` : ''}${gwCtaTel}`;
+  const hero = seitenHero({ cls: 'gw-phero', kick, h1, lead, leaf: leaf('hleaf'), trust: (key === 'pflegeeinrichtungen' || key === 'bestatter') ? '' : trustLine, cta: heroCta,
+    bild: pic(bildSlug, { cls: 'main', alt: z.bild_alt || (IMG[bildSlug] && IMG[bildSlug].alt) || `${m.nav} — Haus- & Gartenservice Havelland`, sizes: '(max-width:900px) 92vw, 46vw', lcp: true }) });
+
+  // --- Leistungen ---
+  let leistItems; let leistH2; let leistSub = ''; let leistNote = '';
+  if (hv) {
+    const det = z.leistungen_detail || [];
+    leistItems = det.length
+      ? det.map(l => ({ href: hrefOf(l.link_to), h3: l.h3, p: l.body, chip: l.chip || null, partner: l.ausfuehrung === 'partner', linkLabel: l.label || 'Mehr erfahren', slug: gwSlugOf(l.link_to) }))
+      : (z.leistungen || []).map(l => ({ href: null, h3: l, p: '', slug: null }));
+    leistH2 = h2Of(z.leistungen_h2 || 'Unsere Leistungen für Ihr Objekt', z.leistungen_h2 ? z.leistungen_h2_em : 'Ihr Objekt');
+    const verlinkt = new Set(leistItems.map(x => x.slug).filter(Boolean));
+    const weitere = ['winterdienst', 'gartenpflege', 'dachrinnenreinigung', 'entruempelung', 'haushaltsaufloesung', 'hausmeisterservice'].filter(sl => !verlinkt.has(sl) && services.some(sv => sv.slug === sl));
+    const hinweis = z.partnermodell_hinweis ? esc(z.partnermodell_hinweis) : '';
+    leistNote = [hinweis, weitere.length ? `Weitere Leistungen im Detail: ${weitere.map(sl => `<a href="/${sl}/">${esc(gwServiceName(sl))}</a>`).join(', ')}.` : ''].filter(Boolean).join(' ');
+  } else {
+    leistItems = (z.leistungen || []).filter(l => services.some(sv => sv.slug === l.slug)).map(l => ({ href: `/${l.slug}/`, h3: l.h3 || gwServiceName(l.slug), p: l.p, partner: gwIsPartner(l.slug, l.partner), slug: l.slug }));
+    leistH2 = h2Of(z.leistungen_h2 || 'Was wir übernehmen', z.leistungen_h2 ? z.leistungen_h2_em : 'übernehmen');
+    leistSub = z.leistungen_sub || '';
+  }
+  // --- Zusagen / Ablauf / FAQ ---
+  const zusagenSrc = hv ? ((z.zusagen_detail || []).length ? z.zusagen_detail.map(x => ({ h3: x.h4, p: x.body })) : (z.zusagen || []).map(x => ({ h3: x, p: '' }))) : (z.zusagen || []);
+  const zusagen = zusagenSrc.length ? zusagenSrc : ((u.zusagen && u.zusagen.length) ? u.zusagen : GW_ZUSAGEN_DEF);
+  const sU = gwSec('zusagen'), sA = gwSec('ablauf');
+  const ablaufSrc = hv ? ((z.ablauf && Array.isArray(z.ablauf.schritte)) ? z.ablauf.schritte.map(x => typeof x === 'string' ? { p: x } : x) : []) : (z.ablauf || []);
+  const ablauf = ablaufSrc.length ? ablaufSrc : ((u.ablauf && u.ablauf.length) ? u.ablauf : GW_ABLAUF_DEF);
+  const ablaufH2 = (hv && z.ablauf && z.ablauf.h2) ? h2Of(z.ablauf.h2, 'Angebot') : h2Of(z.ablauf_h2 || sA.h2 || 'So kommen Sie zum Angebot', z.ablauf_h2 ? z.ablauf_h2_em : (sA.h2 ? sA.h2_em : 'Angebot'));
+  const faqs = (z.faqs || []).slice(0, 7);
+  const faqH2 = z.faq_h2 ? h2Of(z.faq_h2, z.faq_h2_em) : `Häufige Fragen von <em>${esc(m.wer)}</em>`;
+  const endband = z.endband || u.endband || {};
+  const ablaufCta = `${ctaPrim(primLbl)}${gwCtaTel}`;
+
+  // --- Zielgruppen-spezifischer Block nach dem Kopf ---
+  let block = '';
+  if (hv) {
+    const intro = z.intro || { h2: 'Für wen wir arbeiten', body: 'Wir betreuen laufende Objekte dokumentiert — mit einem festen Ansprechpartner statt wechselnder Kräfte.' };
+    const obj = (z.objektklassen_detail || []).length ? z.objektklassen_detail : (z.objektklassen || []).map(x => ({ name: x }));
+    block = fuerWen({ h2: h2Of(intro.h2, intro.h2 === 'Für wen wir arbeiten' ? 'arbeiten' : ''), body: intro.body, items: obj, alt: false });
+  } else if (z.zwei_wege) {
+    const w = z.zwei_wege;
+    const weiterText = w.verweisen_wa_text || `Haus- & Gartenservice Havelland aus Falkensee. Kostenlose Besichtigung, schriftlicher Festpreis. WhatsApp und Telefon: ${nap.phone_display}.`;
+    block = zweiWege({ h2: h2Of(w.h2 || 'Zwei Wege zu uns', w.h2 ? w.h2_em : 'Wege'), lead: w.lead || '',
+      beauftragen: { h3: w.beauftragen_h3, items: w.beauftragen, button: primLbl, href: '/kontakt/#anfrage' },
+      verweisen: { h3: w.verweisen_h3, items: w.verweisen, button: w.verweisen_button || 'WhatsApp-Nummer weitergeben', hint: w.verweisen_hint || '', href: `https://wa.me/?text=${encodeURIComponent(weiterText)}` }, alt: true });   // Owner 20.10.: keine Visitenkarten, Text zum Weiterleiten per WhatsApp
+  } else if ((z.anlaesse || []).length) {
+    block = anlaesseBlock({ h2: h2Of(z.anlaesse_h2 || 'Wann Firmen uns rufen', z.anlaesse_h2 ? z.anlaesse_h2_em : 'rufen'), items: z.anlaesse, alt: false });
+  }
+  // Zonen-Wechsel hell → (alt) → hell: ohne Block folgt die Leistungsliste direkt auf den Kopf (weiß), mit „Zwei Wege“ (alt) wieder weiß, mit Anlässen (weiß) alt, bei Hausverwaltungen (Für wen, weiß) alt.
+  const leistAlt = hv ? true : (z.zwei_wege ? false : (block ? true : false));
+  const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/gewerbe/">Für Gewerbe</a><span class="sep">›</span>${esc(m.nav)}</div>
+${hero}
+${block}
+${gwListe({ h2: leistH2, sub: leistSub, items: leistItems, alt: leistAlt, note: leistNote })}
+${zusagenBand4({ h2: h2Of(z.zusagen_h2 || sU.h2 || 'Was bei jedem Auftrag feststeht', z.zusagen_h2 ? z.zusagen_h2_em : (sU.h2 ? sU.h2_em : 'feststeht')), sub: hv ? (z.band_lead || '') : '', items: zusagen })}
+${ablaufSektion({ h2: ablaufH2, items: ablauf, cta: ablaufCta, alt: false })}
+${faqKurz({ h2: faqH2, faqs, alt: true })}
+${endBandGw(endband, hv ? ctaBtnsHv : `${ctaPrim(primLbl)}${gwCtaTel}`)}`;
+
+  // --- Schema: Service + OfferCatalog (Partner-Leistungen mit broker), Breadcrumb, kein FAQPage ---
+  const areaServed = JSON.stringify(haupt.map(o => o.name));
+  const offerItems = leistItems.filter(x => x.slug && services.some(sv => sv.slug === x.slug));
+  const offers = offerItems.map(x => `{"@type":"Offer","url":"${DOMAIN}${x.href}","itemOffered":{"@type":"Service","name":"${sj(x.h3)}","serviceType":"${sj(gwServiceName(x.slug))}","${gwIsPartner(x.slug, x.partner) ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${areaServed}}}`).join(',');
+  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(m.schema)}","serviceType":"${sj(m.schema)}","provider":{"@id":"${DOMAIN}/#organization"},"audience":{"@type":"Audience","audienceType":"${sj(m.publikum)}"},"areaServed":${areaServed}${offers ? `,"hasOfferCatalog":{"@type":"OfferCatalog","name":"${sj(m.nav)} — Leistungen","itemListElement":[${offers}]}` : ''}},${breadcrumb([{ name: 'Start', url: '/' }, { name: 'Für Gewerbe', url: '/gewerbe/' }, { name: m.nav, url }])}`;
+  const titleTag = hv ? (z.title_tag || z.title) : z.title;
+  gwWrite(url, titleTag || `${m.nav} — ${nap.name}`, z.meta || lead, schema, main, z.scta_text || z.cta_wa_text || 'Guten Tag, wir sind ein Unternehmen im Havelland und interessieren uns für Ihre Leistungen.', bildSlug);
+  written.basis.push(url);
+}
+function gewerbeSeiten() { gewerbePage(); for (const k of Object.keys(ZG)) zielgruppePage(k); }
 function danke() {
   const url = '/danke/';
   const main = `<section class="phero"><div class="wrap center" style="text-align:center"><div class="mini-illu rv in">${pic('page-danke', { alt: 'Anfrage beim Haus- & Gartenservice Havelland eingegangen', sizes: '(max-width:520px) 78vw, 360px' })}</div><span class="kick rv in" style="color:var(--green);justify-content:center;display:inline-flex">Anfrage eingegangen</span><h1 class="rv in d1" style="margin:0 auto">Danke für Ihre <em>Anfrage</em></h1><p class="lead rv in d2" style="margin:20px auto 28px">Wir haben Ihre Anfrage erhalten und melden uns schnell, noch am selben Werktag. Bei dringenden Fällen erreichen Sie uns direkt.</p><div class="cta-row rv in d3" style="justify-content:center"><a class="btn btn-acc" href="tel:${tel}">☎ ${esc(nap.phone_display)}</a><a class="btn btn-line" href="${waHref('Hallo, ich hatte gerade eine Anfrage über die Website gesendet.')}">WhatsApp</a></div><p class="rv" style="margin-top:28px"><a href="/leistungen/">Alle Leistungen ansehen</a> · <a href="/ratgeber/">Zum Ratgeber</a></p></div></section>`;
@@ -1176,7 +1348,7 @@ function sitemaps() {
   const sm = (name, urls) => { const dates = urls.map(lastmodOf); const x = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u, i) => `<url><loc>${DOMAIN}${u}</loc><lastmod>${dates[i]}</lastmod></url>`).join('\n')}\n</urlset>\n`; fs.writeFileSync(`website/${name}`, x); return dates.length ? dates.reduce((a, b) => a > b ? a : b) : today; };
   // Wellen-Gate: Hubs + Kern-Basis immer indexiert. Ortsseiten/Ratgeber service-scharf (nur wenn service.wave <= aktive_welle → in *Idx gesammelt). Orts-Hubs am globalen Gate. Bei aktive_welle=0 sind *Idx leer → Output wie bisher.
   const gate = (config.aktive_welle || 0) < 2; // Orts-Hubs erst ab Welle 2 (Welle 1 = nur service-scharfe Ortsseiten via *Idx)
-  const lmServices = sm('sitemap-services.xml', [...written.basis.filter(u=>['/','/leistungen/','/ueber-uns/','/bewertungen/','/kontakt/', ...((config.aktive_welle || 0) >= 2 ? ['/fuer-hausverwaltungen/'] : [])].includes(u)), ...written.hubs, ...written.ortsseitenIdx]);  // 14.09.: B2B-Seite ab Welle 2 in die Sitemap
+  const lmServices = sm('sitemap-services.xml', [...written.basis.filter(u=>['/','/leistungen/','/ueber-uns/','/bewertungen/','/kontakt/', '/gewerbe/', ...Object.values(ZG).map(m => m.url)].includes(u)), ...written.hubs, ...written.ortsseitenIdx]);  // 14.09.: B2B-Seite ab Welle 2 in die Sitemap; Paket 3b: + /gewerbe/ und die drei neuen Zielgruppenseiten
   const lmStandorte = sm('sitemap-standorte.xml', gate ? [] : [...written.orts_hubs, '/standorte/']);
   const lmRatgeber = sm('sitemap-ratgeber.xml', written.ratgeberIdx.length ? [...written.ratgeberIdx, '/ratgeber/'] : []);
   fs.writeFileSync(LM_FILE, JSON.stringify(lm, null, 0) + '\n');
@@ -1187,7 +1359,7 @@ function sitemaps() {
   // GEO (W3-Audit 17.09.): Kurzbeschreibung je Zeile, damit ein Crawler, der nur llms.txt liest, den Kern ohne Seitenaufruf erkennt.
   const firstSentence = t => { if (!t) return ''; const m = String(t).match(/^[^.!?]*[.!?]/); let x = (m ? m[0] : String(t)).trim(); if (x.length > 160) x = x.slice(0, 157).trimEnd() + '…'; return x; };
   // B2B-Seite (17.09., Launch-Gate-Fund): fehlte in llms.txt, obwohl ab aktive_welle>=2 indexiert und in sitemap-services.xml — gleiche Gate-Bedingung wie dort.
-  const b2bLlms = (config.aktive_welle || 0) >= 2 ? (() => { const b2b = J('b2b.json'); return `\n\n## B2B\n- [${b2b.title || 'Für Hausverwaltungen, WEG und Gewerbe'}](${DOMAIN}/fuer-hausverwaltungen/)${b2b.lead ? `: ${firstSentence(b2b.lead)}` : ''}`; })() : '';
+  const b2bLlms = (() => { const b2b = J('b2b.json'); const zeile = (titel, href, lead) => `- [${titel}](${DOMAIN}${href})${lead ? `: ${firstSentence(lead)}` : ''}`; const zg = k => ({ ...(k === 'hausverwaltungen' ? b2b : {}), ...((GW.zielgruppen || {})[k] || {}) }); return `\n\n## Für Gewerbe\n${[zeile(gwU.title || 'Für Gewerbe: Objektpflege und Reinigung', '/gewerbe/', gwU.lead), ...Object.entries(ZG).map(([k, m]) => zeile(zg(k).title || m.nav, m.url, zg(k).lead))].join('\n')}`; })();   // Paket 3b: /gewerbe/ + vier Zielgruppenseiten (vorher nur B2B-Seite)
   const llms = `# ${nap.name}\n\n> Haus- & Gartenservice im Havelland und Berliner Umland. Ein fester Ansprechpartner für Garten, Reinigung, Entrümpelung und Hausmeisterdienste; Winterdienst und Dachrinnenreinigung koordiniert über Partner-Fachbetriebe. Sitz: ${nap.city}. Garten und Reinigung: Festpreis nach kostenloser Besichtigung, Foto-Nachweis nach jedem Auftrag.\n\n## Leistungen\n${services.map(s=>{ const def = hubCopy[s.slug] && hubCopy[s.slug].definition; return `- [${s.name}](${DOMAIN}/${s.slug}/)${def ? `: ${firstSentence(def)}` : ''}`; }).join('\n')}${b2bLlms}\n\n## Ratgeber\n${(ratCopy.length?ratCopy:RATGEBER_FALLBACK).map(r=>`- [${r.title}](${DOMAIN}/ratgeber/${r.slug}/)${r.lead ? `: ${r.lead}` : ''}`).join('\n')}\n\n## Kontakt\n- Telefon: ${nap.phone_display}\n- Ort: ${nap.street}, ${nap.zip} ${nap.city}\n`;
   fs.writeFileSync('website/llms.txt', llms);
   // IndexNow-Verifikationsdatei (Root) — nur bei echtem Key
@@ -1204,7 +1376,7 @@ haupt.forEach(ortsHub);
 basis();
 ueberUns();
 bewertungen();
-b2bPage();
+gewerbeSeiten();
 danke();
 // Ads-Landingpages (/lp/<slug>/ + /lp/danke/): noindex, nicht in Sitemaps — scripts/lp.mjs, Copy data/copy/lp.json (Ads-Kampagne Entrümpelung, 14.09.2026)
 buildLp({ head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema, reviews, config, CP, isReal, pic, leaf, proof, IMG });

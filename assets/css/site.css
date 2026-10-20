@@ -558,6 +558,8 @@ body{padding-bottom:76px}
   .nav-links{display:flex}
   .nav-cta{display:inline-flex;margin-left:0}
   .callpill{margin-left:0}
+}
+@media (min-width:1181px){
   .burger,.mnav{display:none}
   body.menu-open .mnav{display:none}
 }
@@ -597,11 +599,11 @@ body{padding-bottom:76px}
 .nav .links a:hover{color:var(--green)}
 .nav .cta{background:var(--green);color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14.5px}
 .nav .cta:hover{background:var(--green-d)}
-@media(max-width:900px){.nav .links{display:none}}
+@media(max-width:1180px){.nav .links{display:none}}   /* Paket 3: Umschaltung von 900 auf 1180 px — mit „Für Gewerbe“ passt die Zeile darunter nicht mehr */
 .nvt{position:absolute;opacity:0;pointer-events:none}
 .hamb{display:none}
 .navmenu{display:none}
-@media(max-width:900px){
+@media(max-width:1180px){
   .nav .cta{display:none}
   .hamb{display:flex;flex-direction:column;justify-content:center;gap:5px;width:48px;height:48px;cursor:pointer;flex:none}
   .hamb span{display:block;width:25px;height:2px;background:var(--green-d);border-radius:2px;transition:transform .25s var(--ease),opacity .2s}
@@ -810,7 +812,8 @@ h1 em{font-style:italic;font-weight:500;color:var(--green)}
 @media(max-width:900px){.proof .grid{grid-template-columns:1fr}.proof .pic{min-height:300px}.proof .txt{padding:48px 28px}}
 
 /* ---- Breadcrumb ---- */
-.breadcrumb{padding:22px 0 0;font-size:13.5px;color:var(--muted)}
+.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;padding:8px 20px 0;font-size:15px;line-height:1.3;color:var(--muted)}   /* 20 px Gutter wie .wrap, Links = 44 px Trefferfläche (Paket 3) */
+.breadcrumb a{display:inline-flex;align-items:center;min-height:44px}
 .breadcrumb a:hover{color:var(--green)}
 .breadcrumb .sep{margin:0 8px;opacity:.5}
 
@@ -938,5 +941,194 @@ body:has(.consent:not([hidden])) .scta,body:has(.consent:not([hidden])) .wa-fab{
 .cat{display:flex;align-items:baseline;gap:14px;margin-bottom:10px}
 .cat .cat-n{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:22px;color:var(--accent-d);line-height:1;flex:none}
 .cat h2{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,3.2vw,38px);color:var(--green-d);letter-spacing:-.015em}
+/* === Paket 3 === Standorte (Teil A, 21.10.2026). Nur var(--*)-Tokens, Klassen .sx-*; Quelle der Werte: temp/paket3/tools/mock-standorte-v2.mjs + mock-standort-ort.mjs */
+:root{--green-soft:#BFE0CC}
+.zone-dark{background:var(--green-d);color:var(--dark-text2)}
+.zone-dark h2,.zone-dark h3{color:var(--dark-text1);font-weight:700}
+.zone-dark h2 em{color:var(--green-soft);font-style:italic}
+.sx-phero h1{max-width:14em}
+.sx-shot .main{aspect-ratio:4/3;outline:1px solid rgba(14,46,31,.08);outline-offset:-1px}
+.sx-sub{color:var(--muted);margin:8px 0 26px;max-width:42em;text-wrap:pretty}
+/* Namen, Chips, Links */
+.sx-name{display:inline-flex;align-items:center;min-height:44px;font-family:var(--font-display);font-size:24px;font-weight:600;line-height:1.2;color:var(--green-d);text-decoration:none}
+.sx-name:hover{color:var(--green);text-decoration:none}
+.sx-nm{display:flex;align-items:baseline;gap:10px}
+.sx-row .sx-name{white-space:nowrap}
+.sx-plz{font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.sx-home .sx-plz{margin-left:10px}
+.sx-pl{display:inline-flex;align-items:center;gap:6px}
+.sx-pl small{font-size:13px;color:var(--dark-text2);opacity:.75;font-variant-numeric:tabular-nums}
+.sx-svc{display:flex;flex-wrap:wrap;gap:6px 8px}
+.sx-svc a{display:inline-flex;align-items:center;min-height:44px;padding:0 15px;border:1px solid var(--hair);border-radius:var(--r-button);background:#fff;font-size:15px;color:var(--ink);text-decoration:none;transition-property:border-color,color;transition-duration:.15s}
+.sx-svc a:hover{border-color:var(--green);color:var(--green-d);text-decoration:none}
+.sx-go,.sx-more{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;color:var(--green);white-space:nowrap}
+.sx-more{font-weight:500;color:var(--muted);margin-right:14px}
+/* Falkensee-Kasten + Zeilen (Stufe 1) */
+.sx-home{display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:center;background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:26px 28px;margin-bottom:12px;box-shadow:0 22px 44px -34px rgba(14,46,31,.4)}
+.sx-home .sx-name{font-size:34px}
+.sx-home p{margin:4px 0 0;color:var(--muted);font-size:15.5px}
+.sx-home .sx-home-go{margin:10px 0 0}
+.sx-grp{margin:30px 0 4px;font-size:var(--fs-label);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.sx-row{display:grid;grid-template-columns:280px 1fr auto;gap:20px;align-items:center;padding:10px 4px;border-top:1px solid var(--hair);transition-property:padding-left,background-color;transition-duration:.2s;transition-timing-function:var(--ease)}
+.sx-row:last-of-type{border-bottom:1px solid var(--hair)}
+.sx-row:hover{padding-left:12px;background:rgba(32,88,64,.035)}
+.sx-end{display:inline-flex;align-items:center;justify-content:flex-end}
+/* Stufe 2 (dunkles Band) */
+.sx-far .sx-sub{color:var(--dark-text2)}
+.sx-far-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:6px}
+.sx-far h3{font-family:var(--font-display);font-size:22px;margin:0 0 6px}
+.sx-places{display:flex;flex-wrap:wrap;gap:0 22px}
+.sx-places a,.sx-far-svc a{display:inline-flex;align-items:center;min-height:44px;color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:3px;transition-property:text-decoration-color;transition-duration:.15s}
+.sx-places a:hover,.sx-far-svc a:hover{text-decoration-color:#fff}
+.sx-far-svc{margin:26px 0 0;display:flex;flex-wrap:wrap;gap:0 10px;align-items:center;color:var(--dark-text2)}
+.sx-far .cta-row{margin-top:22px}
+/* Standortseite: Kern-Karten, Außerdem, Anfällt, Nähe */
+.sx-kern{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sx-kern a{display:block;background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);overflow:hidden;color:inherit;text-decoration:none;transition-property:transform,box-shadow;transition-duration:.2s;transition-timing-function:var(--ease)}
+.sx-kern a:hover{transform:translateY(-2px);box-shadow:0 18px 36px -22px rgba(14,46,31,.45);text-decoration:none}
+.sx-kern a:active{transform:scale(.98)}
+.sx-kern img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;outline:1px solid rgba(14,46,31,.08);outline-offset:-1px}
+.sx-kern a>div{padding:14px 16px 18px}
+.sx-kern h3{font-family:var(--font-display);font-size:20px;color:var(--green-d);margin:0 0 6px;text-wrap:balance}
+.sx-kern p{font-size:15px;color:var(--muted);margin:0 0 10px;text-wrap:pretty}
+.sx-kern .go{font-weight:600;font-size:15px;color:var(--green)}
+.sx-mehr{margin:22px 0 0;line-height:1.4;display:flex;flex-wrap:wrap;align-items:center;gap:0 18px}
+.sx-mehr b{color:var(--green-d);margin-right:4px}
+.sx-mehr a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:4px;transition-property:color,text-decoration-color;transition-duration:.15s}
+.sx-mehr a:hover{color:var(--green-d);text-decoration-color:currentColor}
+.sx-note{margin:4px 0 0;font-size:15px;color:var(--muted);max-width:56em;text-wrap:pretty}
+.sx-ort{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:22px}
+.sx-ort .n{font-family:var(--font-display);font-style:italic;font-size:34px;line-height:1;color:var(--green)}
+.sx-ort h3{font-family:var(--font-display);font-size:21px;color:var(--green-d);margin:8px 0 6px;text-wrap:balance}
+.sx-ort p{margin:0;font-size:16px;color:var(--ink);text-wrap:pretty}
+.sx-teile{margin:26px 0 0;color:var(--muted);font-size:16px}
+.sx-nah{display:flex;flex-wrap:wrap;align-items:center;gap:0 24px;margin-top:10px;font-size:17px}
+.sx-nah a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:var(--green-d)}
+.sx-nah .sx-alle{font-weight:400;color:var(--green);gap:6px}
+@media(max-width:1000px){.sx-kern{grid-template-columns:1fr 1fr}.sx-row{grid-template-columns:270px 1fr auto}}
+@media(max-width:860px){.sx-home,.sx-far-grid,.sx-ort{grid-template-columns:1fr}.sx-row{grid-template-columns:1fr;gap:2px;padding:12px 4px}.sx-end{justify-content:flex-start}.sx-home .sx-name{font-size:30px}.sx-ort{gap:22px}}
+@media(max-width:520px){.sx-kern{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.sx-row,.sx-kern a{transition:none}.sx-kern a:hover{transform:none}}
+/* --- Teil B: Gewerbe (21.10.2026). Klassen .gw-*; Quelle der Werte: temp/paket3/tools/mock-gewerbe.mjs --- */
+.gw-phero h1{max-width:none;font-size:clamp(32px,3.9vw,50px)}
+.gw-phero .lead{max-width:36em}
+/* Menü „Für Gewerbe“: kleines Dropdown (eine Spalte) */
+.nav-dd-sm .nav-dd-panel{grid-template-columns:1fr;gap:0;width:min(300px,92vw);padding:14px 22px 12px;left:-18px}
+.nav-dd-sm .nav-dd-col a{display:flex;align-items:center;min-height:44px;padding:4px 0;font-size:15.5px;font-weight:600;color:var(--green-d)}
+.nav-dd-sm .nav-dd-col a:hover{color:var(--green)}
+.nav-dd-sm .nav-dd-all{margin-top:6px}
+/* Zielgruppen-Karten (Startseiten-Band + /gewerbe/) */
+.gw-zg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gw-zg a{display:block;background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);overflow:hidden;color:inherit;text-decoration:none;transition-property:transform,box-shadow;transition-duration:.15s,.2s;transition-timing-function:var(--ease)}
+.gw-zg a:hover{transform:translateY(-2px);box-shadow:0 18px 36px -22px rgba(14,46,31,.45);text-decoration:none}
+.gw-zg a:active{transform:scale(.98)}
+.gw-zg img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;outline:1px solid rgba(14,46,31,.08);outline-offset:-1px}
+.gw-zg a>div{padding:14px 16px 18px}
+.gw-zg a h3{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--green-d);margin:0 0 6px;text-wrap:balance}
+.gw-zg a p{font-size:15px;color:var(--muted);margin:0 0 10px;text-wrap:pretty}
+.gw-zg .go{font-weight:600;font-size:15px;color:var(--green)}
+.gw-band .sx-sub{color:var(--dark-text2)}
+.gw-band-link{margin:22px 0 0}
+.gw-band-link a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.4);text-underline-offset:5px}
+.gw-band-link a:hover{text-decoration-color:#fff}
+/* Leistungsliste: nummeriert, zwei Spalten, Titel = Link auf den Hub */
+.gw-list{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;margin-top:10px}
+.gw-li{display:grid;grid-template-columns:48px 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--hair)}
+.gw-li .n{font-family:var(--font-display);font-style:italic;font-size:28px;line-height:1.1;color:var(--green)}
+.gw-li h3{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--green-d);margin:0 0 4px;text-wrap:balance}
+.gw-li h3 a{display:inline-block;padding:10px 0;margin:-10px 0;color:inherit;text-decoration:none}
+.gw-li h3 a:hover{color:var(--green)}
+.gw-li p{margin:0;font-size:15.5px;color:var(--ink);text-wrap:pretty}
+.gw-li .gw-go{margin:6px 0 0}
+.gw-li .gw-go a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;font-size:15px;color:var(--green)}
+.gw-chip{display:inline-block;font-family:var(--font-body);font-size:12px;font-weight:600;border-radius:var(--r-button);padding:3px 9px;margin-left:8px;vertical-align:middle;background:#E8F1EC;color:var(--green-d)}
+.gw-chip.p{background:#F3EEE2;color:#6B5A2E}
+@media(min-width:861px){.gw-li:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 22px)}}
+/* Zusagen-Band (dunkelgrün, vier Zusagen) */
+.gw-why{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:6px}
+.gw-why .n{font-family:var(--font-display);font-style:italic;font-size:30px;line-height:1;color:var(--green-soft)}
+.gw-why h3{font-family:var(--font-display);font-size:20px;margin:8px 0 6px;text-wrap:balance}
+.gw-why p{margin:0;font-size:15.5px;color:var(--dark-text2);text-wrap:pretty}
+.gw-zus .sx-sub{color:var(--dark-text2)}
+/* Zwei Wege (Pflege/Bestatter) */
+.gw-two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.gw-box{background:#fff;border:1px solid var(--hair);border-radius:var(--r-card);padding:26px 28px;display:flex;flex-direction:column;align-items:flex-start}
+.gw-box h3{font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--green-d);margin:0 0 8px;text-wrap:balance}
+.gw-box ul{margin:10px 0 22px;padding-left:20px;flex:1}
+.gw-box li{margin:6px 0;text-wrap:pretty}
+/* Hausverwaltungen: Einleitung + Objektarten */
+.gw-fw{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+.gw-fw p{color:var(--muted);max-width:34em;text-wrap:pretty}
+.gw-ob{list-style:none;margin:0;padding:0}
+.gw-ob li{padding:14px 0;border-top:1px solid var(--hair)}
+.gw-ob li:last-child{border-bottom:1px solid var(--hair)}
+.gw-ob b{display:block;font-family:var(--font-display);font-size:19px;font-weight:600;color:var(--green-d)}
+.gw-ob span{display:block;color:var(--muted);font-size:15.5px;line-height:1.55;text-wrap:pretty}
+.gw-note{max-width:60em;margin:26px 0 0;color:var(--muted);font-size:15px;text-wrap:pretty}
+.gw-hint{margin:12px 0 0;color:var(--muted);font-size:15px;text-wrap:pretty}
+@media(max-width:1000px){.gw-zg,.gw-why{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.gw-list,.gw-two,.gw-fw{grid-template-columns:1fr}.gw-fw{gap:26px}.gw-box{padding:22px 20px}}
+@media(max-width:560px){.gw-zg,.gw-why{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.gw-zg a{transition:none}.gw-zg a:hover{transform:none}}
+/* --- Nachbesserung Layout/Darstellung (21.10.2026): Standort-Ablauf, Karten, Zusagen, Tap-Ziele, Kopfzeile, Lesbarkeit --- */
+:root{--text-soft:#33392f}
+/* Standortseiten: Ablauf als 4-Spalten-Reihe mit Linie oben (Entwurf mock-standort-ort .so-tl); die Schritte bleiben .tli */
+.tl.tl-reihe{max-width:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0 26px;margin-top:22px}
+.tl-reihe::before{display:none}
+.tl-reihe .tli{display:block;padding:16px 0 0;border-top:2px solid var(--green)}
+.tl-reihe .tli:last-child{padding-bottom:0}
+.tl-reihe .tli .tn{display:block;flex:none;width:auto;height:auto;border:0;border-radius:0;background:none;font-size:30px;line-height:1;margin-bottom:10px}
+.tl-reihe .tli .tbody{display:grid;gap:6px}
+.tl-reihe .tli h3{font-size:20px;color:var(--green-d);text-wrap:balance}
+.tl-reihe .tli p{max-width:none;font-size:16px;color:var(--ink);text-wrap:pretty}
+.tl-reihe .tli .twhen{border-radius:14px;line-height:1.3}
+@media(max-width:1000px){.tl.tl-reihe{grid-template-columns:1fr 1fr;gap:30px 26px}}
+@media(max-width:700px){.tl.tl-reihe{grid-template-columns:1fr;gap:26px}}
+/* Zielgruppen-Karten: Flex-Spalte, Link am Kartenfuß, Titel ruhig */
+.gw-zg a{display:flex;flex-direction:column}
+.gw-zg a>div{display:flex;flex-direction:column;flex:1}
+.gw-zg a h3{line-height:1.25}
+.gw-zg .go{margin-top:auto;line-height:1.4}
+.gw-zg a p{font-size:16px;line-height:1.55;color:var(--text-soft)}
+.gw-zg .go{font-size:16px}
+@media(min-width:1001px){.gw-zg a h3{min-height:2.5em}.gw-zg .go{display:block;min-height:2.8em}}
+/* Passt-Karten: Link am Kartenfuß */
+.pxc{display:flex;flex-direction:column}
+.pxc>div{flex:1;display:flex;flex-direction:column}
+.pxc .go{margin-top:auto;padding-top:2px;line-height:1.4}
+/* Zusagen-Band ohne Untertitel: Abstand unter der H2 */
+.gw-zus h2+.gw-why{margin-top:30px}
+/* Zwischen-CTA („Foto schicken, Festpreis bekommen“): Abstand H2 / Satz / Buttons */
+.wrap.center>h2:first-child{margin-bottom:10px}
+.wrap.center>h2:first-child+p{margin-bottom:22px}
+/* Tap-Ziele: Standalone-Links bekommen 44 px Trefferfläche, ohne den Textfluss zu verschieben */
+.hub-trust a,.ox-alle a,p.intro a{display:inline-block;padding:14px 0;margin:-14px 0}
+.consent-in p a{display:inline-block;padding:14px 0 12px;margin:-14px 0 -12px;border-bottom:0;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+@media(max-width:900px){
+  footer li{padding:0}
+  footer li a,footer h4 a,.legal a,footer .wrap>p a{display:inline-flex;align-items:center;min-height:44px}
+  .legal{gap:0 26px}
+  .head>a{display:inline-flex;align-items:center;min-height:44px}
+}
+/* Kopfzeile: Logo schrumpft nie; Telefon-Pill rechts; Menü-Panel lässt Platz für die feste Anruf-Leiste */
+.nav .logo{flex:none}
+.nav .logo img{flex:none}
+@media(min-width:960px) and (max-width:1180px){.callpill{margin-left:auto}}
+@media(max-width:1180px){.navmenu{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}}
+@media(min-width:700px) and (max-width:1180px){.navmenu{padding-left:max(28px,calc((100vw - 640px)/2));padding-right:max(28px,calc((100vw - 640px)/2))}}
+/* Leistungs-Dropdown: lesbare Größen */
+.nav-dd-col a,.nav-dd-sm .nav-dd-col a{font-size:16px}
+.nav-dd-col a.nav-dd-more{font-size:15px}
+/* Gewerbe-Hubs (body.gw-hub): Fließtexte mindestens 16 px in dunklem Ton (Kontrast über 7:1) */
+body.gw-hub .gs p,body.gw-hub .vt-list p,body.gw-hub .tli p,body.gw-hub .pxc p,body.gw-hub .ls-list li span,body.gw-hub .card p,body.gw-hub .ox-satz,body.gw-hub .ox-weitere,body.gw-hub .it p{font-size:16px;line-height:1.55;color:var(--text-soft)}
+body.gw-hub .card p{display:block;-webkit-line-clamp:unset;overflow:visible}
+body.gw-hub .gs h3{font-size:19px}
+body.gw-hub .card .go,body.gw-hub .pxc .go{font-size:16px}
+body.gw-hub .kick{font-size:13.5px}
+body.gw-hub .hub-trust{font-size:16px}
+body.gw-hub .ox-chips a{font-size:16px}
+body.gw-hub .tli .twhen{font-size:13.5px}
+/* === /Paket 3 === */
+
 /* Audit 16.09.: Mobile-Menü erzeugte scrollWidth 780 bei 390 — horizontales Scrollen sitewide unterbinden (clip statt hidden: bricht position:sticky des Headers nicht) */
 html,body{overflow-x:clip}

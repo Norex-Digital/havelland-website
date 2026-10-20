@@ -1,0 +1,261 @@
+{
+  "_meta": {
+    "zweck": "Standorte (Paket 3a): Stufen, Falkensee-Top-8, Kopfbild und Nachbarorte. Erzeugt mit scripts/build-standorte.mjs.",
+    "quelle_gsc": "GSC 20.07.-18.10.2026 (01b-gsc-roh.csv, Zeitraum 3m, Impressionen der Ortsseiten)",
+    "hand_gepflegt": [
+      "kern",
+      "kern_namen",
+      "kern_texte",
+      "stufe1",
+      "stufe2",
+      "kasten_ausschluss"
+    ],
+    "link_regel": "Ziel je Chip: /<leistung>-<ort>/ wenn die Ortsseite gerendert und indexierbar ist, sonst /<leistung>/ (Hub). Wird im Generator aufgelöst."
+  },
+  "kern": [
+    "gartenpflege",
+    "heckenschnitt",
+    "galabau",
+    "entruempelung"
+  ],
+  "kern_namen": {
+    "gartenpflege": "Gartenpflege",
+    "heckenschnitt": "Heckenschnitt",
+    "galabau": "GaLaBau",
+    "entruempelung": "Entrümpelung"
+  },
+  "kern_texte": {
+    "gartenpflege": "Rasen, Beete und Laub in {ort}, einmalig oder im festen 14-Tage-Rhythmus.",
+    "heckenschnitt": "Thuja, Liguster und Kirschlorbeer in {ort} in Form, das Schnittgut nehmen wir mit.",
+    "galabau": "Pflaster, Terrasse, Zaun, Erdarbeiten und Rollrasen in {ort}, Festpreis nach der Besichtigung.",
+    "entruempelung": "Keller, Garage, Dachboden oder das ganze Haus in {ort} ausgeräumt und besenrein übergeben."
+  },
+  "stufe1": [
+    {
+      "key": "home",
+      "label": null,
+      "orte": [
+        "falkensee"
+      ]
+    },
+    {
+      "key": "rund",
+      "label": "Rund um Falkensee",
+      "orte": [
+        "dallgow-doeberitz",
+        "brieselang",
+        "schoenwalde-glien",
+        "wustermark",
+        "nauen"
+      ]
+    },
+    {
+      "key": "west",
+      "label": "Berliner Westrand",
+      "orte": [
+        "berlin-spandau",
+        "berlin-gatow",
+        "berlin-kladow",
+        "gross-glienicke"
+      ]
+    }
+  ],
+  "stufe2": [
+    {
+      "key": "nord",
+      "label": "Oberhavel, im Norden",
+      "orte": [
+        "hohen-neuendorf",
+        "hennigsdorf",
+        "oranienburg",
+        "velten",
+        "birkenwerder",
+        "glienicke-nordbahn",
+        "leegebruch",
+        "lehnitz",
+        "kremmen",
+        "oberkraemer"
+      ]
+    },
+    {
+      "key": "sued",
+      "label": "Havel und Seen, im Süden",
+      "orte": [
+        "werder-havel",
+        "ketzin"
+      ]
+    }
+  ],
+  "kasten_ausschluss": [
+    "winterdienst",
+    "fensterreinigung"
+  ],
+  "falkensee_top": [
+    "gartenpflege",
+    "heckenschnitt",
+    "galabau",
+    "entruempelung",
+    "haushaltsaufloesung",
+    "dachrinnenreinigung",
+    "heckenentfernung",
+    "baumstumpf-entfernen"
+  ],
+  "kopfbild": {
+    "falkensee": "standorte-hero",
+    "dallgow-doeberitz": "standorte-hero",
+    "brieselang": "standorte-hero",
+    "schoenwalde-glien": "standorte-hero",
+    "wustermark": "svc-haushaltsaufloesung-hero",
+    "nauen": "standorte-hero",
+    "berlin-spandau": "svc-baumstumpf-entfernen-hero",
+    "berlin-gatow": "standorte-hero",
+    "berlin-kladow": "standorte-hero",
+    "gross-glienicke": "standorte-hero",
+    "hohen-neuendorf": "standorte-hero",
+    "hennigsdorf": "standorte-hero",
+    "oranienburg": "standorte-hero",
+    "velten": "standorte-hero",
+    "birkenwerder": "standorte-hero",
+    "glienicke-nordbahn": "standorte-hero",
+    "leegebruch": "standorte-hero",
+    "lehnitz": "standorte-hero",
+    "kremmen": "standorte-hero",
+    "oberkraemer": "standorte-hero",
+    "werder-havel": "svc-ferienwohnung-reinigung-hero",
+    "ketzin": "standorte-hero"
+  },
+  "nachbarn": {
+    "falkensee": [
+      "dallgow-doeberitz",
+      "brieselang",
+      "berlin-spandau",
+      "schoenwalde-glien"
+    ],
+    "dallgow-doeberitz": [
+      "falkensee",
+      "wustermark",
+      "berlin-spandau",
+      "brieselang"
+    ],
+    "brieselang": [
+      "falkensee",
+      "wustermark",
+      "nauen",
+      "dallgow-doeberitz"
+    ],
+    "schoenwalde-glien": [
+      "falkensee",
+      "hennigsdorf",
+      "oberkraemer",
+      "velten"
+    ],
+    "wustermark": [
+      "dallgow-doeberitz",
+      "brieselang",
+      "nauen",
+      "falkensee"
+    ],
+    "nauen": [
+      "brieselang",
+      "wustermark",
+      "ketzin",
+      "dallgow-doeberitz"
+    ],
+    "berlin-spandau": [
+      "falkensee",
+      "berlin-kladow",
+      "berlin-gatow",
+      "schoenwalde-glien"
+    ],
+    "berlin-gatow": [
+      "berlin-kladow",
+      "berlin-spandau",
+      "gross-glienicke",
+      "falkensee"
+    ],
+    "berlin-kladow": [
+      "berlin-gatow",
+      "gross-glienicke",
+      "berlin-spandau",
+      "dallgow-doeberitz"
+    ],
+    "gross-glienicke": [
+      "berlin-kladow",
+      "falkensee",
+      "berlin-gatow",
+      "dallgow-doeberitz"
+    ],
+    "hohen-neuendorf": [
+      "birkenwerder",
+      "glienicke-nordbahn",
+      "velten",
+      "hennigsdorf"
+    ],
+    "hennigsdorf": [
+      "velten",
+      "schoenwalde-glien",
+      "berlin-spandau",
+      "hohen-neuendorf"
+    ],
+    "oranienburg": [
+      "lehnitz",
+      "leegebruch",
+      "birkenwerder",
+      "velten"
+    ],
+    "velten": [
+      "hennigsdorf",
+      "oberkraemer",
+      "hohen-neuendorf",
+      "leegebruch"
+    ],
+    "birkenwerder": [
+      "hohen-neuendorf",
+      "glienicke-nordbahn",
+      "lehnitz",
+      "velten"
+    ],
+    "glienicke-nordbahn": [
+      "hohen-neuendorf",
+      "birkenwerder",
+      "hennigsdorf",
+      "velten"
+    ],
+    "leegebruch": [
+      "oranienburg",
+      "velten",
+      "birkenwerder",
+      "oberkraemer"
+    ],
+    "lehnitz": [
+      "oranienburg",
+      "birkenwerder",
+      "leegebruch",
+      "velten"
+    ],
+    "kremmen": [
+      "oberkraemer",
+      "oranienburg",
+      "velten",
+      "leegebruch"
+    ],
+    "oberkraemer": [
+      "velten",
+      "hennigsdorf",
+      "kremmen",
+      "leegebruch"
+    ],
+    "werder-havel": [
+      "ketzin",
+      "gross-glienicke",
+      "berlin-kladow",
+      "wustermark"
+    ],
+    "ketzin": [
+      "nauen",
+      "wustermark",
+      "werder-havel",
+      "dallgow-doeberitz"
+    ]
+  }
+}
