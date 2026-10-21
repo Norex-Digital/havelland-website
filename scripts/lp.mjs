@@ -1,7 +1,7 @@
 // lp.mjs — Google-Ads-Landingpages (/lp/<slug>/) + Danke-Seite (/lp/danke/)
 // Eigenes Modul, damit generate.mjs nur wenige Zeilen Eingriff braucht (Import, extraHead in head(), buildLp()-Aufruf im RUN-Block).
-// Regeln: noindex,follow · nicht in Sitemaps (kein written.*.push) · reduzierte Navigation (Logo + Anruf, kein Menü)
-// · eigenes 2-Schritt-Formular (Web3Forms, DSGVO-Checkbox, Klick-IDs/UTM als Hidden-Felder) · Danke-Seite als Conversion-Ziel (#ok-Fragment, kein Storage)
+// Regeln: noindex,follow · nicht in Sitemaps (kein written.*.push) · reduzierte Navigation (Vertrauensleiste, Logo, „Zur Website“, Anruf; kein Menü)
+// · eigenes 1-Schritt-Formular (Web3Forms, DSGVO-Checkbox, Klick-IDs/UTM als Hidden-Felder) · Danke-Seite als Conversion-Ziel (#ok-Fragment, kein Storage)
 // · Consent-Banner + Klick-Events werden geerbt (CONSENT_BANNER/TRACK_EVENTS) · kein site.js (initBA für .ba-Slider inline, .rv → .rv.in per rvIn()).
 // Review 14.09. eingearbeitet: Klick-IDs nur mit Einwilligung im Endgerät gespeichert (sonst nur im Speicher der Seite),
 // user_data nur bei Einwilligung, Enter in Schritt 1 → Schritt 2, Nummer sichtbar in Callpill + Sticky-Bar (Anruf-Conversion),
@@ -11,9 +11,12 @@
 // (der Schnitt wird durch .gs .gn / .tli .tn / .ba-cap b ohnehin geladen; pyftsubset-Subset blieb bei 78 KB wegen gvar → Originaldatei).
 // v6 (20.10., AV-Korrekturen): einzeilige Trust-Zeile (.lp-trust1) an der Kick-Position im Handy-Hero (Zahl aus proof.google_reviews), Preiszeilen mobil als
 // 44-px-Zellen (Objekt klein, Preis fett), Aktion mobil in Kurzfassung (Sternchen + Fußzeile direkt darunter: Bedingung „ohne Entsorgungsgebühren“ sichtbar), Tipp-Ziele ≥ 44 px, eigenes Attribut-Escaping (escA), Token statt #fff.
+// v7 (20.10. spät, Spec gbr-firma 09-lp-redesign-spec.md): Ein-Schritt-Formular (Variante B), Vertrauensleiste + „Zur Website“, Preis-Kacheln über dem Formular,
+// Zitat aus echter Google-Bewertung, Aktionskarte ohne Sternchen, Häkchen-Punkte, Bewertungen aus lp.json (Bausteine: lp-bloecke.mjs), Hero-Bild Desktop fest/mittig.
 // Copy: data/copy/lp.json — hero je LP ({typ:'ba'|'foto'|'text'}), trust als [{b,t}], Fotos nur aus dem Manifest (fotos: [] → keine Galerie).
 
 import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
+import { topbar, trustZeile, preisBlock, zitat, aktionKarte, punkte, bewertungen, BLOECKE_CSS, ICON_ARROW } from './lp-bloecke.mjs';
 
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
 
@@ -50,26 +53,6 @@ main .sec .head h2{max-width:22em}
 .lp-preis{background:var(--paper);border:1px solid var(--hair);border-left:3px solid var(--green);border-radius:0 var(--r-el) var(--r-el) 0;padding:18px 20px}
 .lp-preis p{color:var(--ink);font-size:16px;line-height:1.55;margin-bottom:10px}
 .lp-preis p:last-child{margin-bottom:0}
-.lp-form{margin-top:6px}
-.lp-form fieldset{border:0;padding:0;margin:0 0 6px}
-.lp-form legend{font-weight:700;font-size:15px;color:var(--green-d);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
-.lp-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.kf .lp-chips label{margin:0;display:inline-flex;flex-direction:row;align-items:center;gap:8px;min-height:44px;border:1.5px solid var(--border-visible,var(--hair));border-radius:var(--r-button);padding:10px 16px;background:var(--lp-surface);font-weight:600;font-size:15px;color:var(--ink);cursor:pointer}
-.kf .lp-chips input[type=radio]{width:18px;height:18px;min-height:0;margin:0;padding:0;border:0;background:none;box-shadow:none;accent-color:var(--green-d);flex:0 0 auto}
-.lp-chips label:has(input:checked){border-color:var(--green-d);background:var(--paper)}
-.lp-chips label:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
-.kf .lp-chips input[type=radio]:focus-visible{outline:none}
-.lp-form .row{display:grid;gap:10px}
-.lp-form.js .step2{display:none}
-.lp-form.js.s2 .step2{display:block}
-.lp-form.js.s2 .step1{display:none}
-.lp-form:not(.js) [data-next],.lp-form:not(.js) .back,.lp-form:not(.js) .step1 .hint{display:none}
-.lp-form .hint{font-size:14px;color:var(--muted);margin-top:8px}
-.lp-form .err{display:none;color:var(--error-ink);font-size:14.5px;margin:6px 0 10px;font-weight:600}
-.lp-form .err.show{display:block}
-.lp-form .back{background:none;border:0;color:var(--green-d);font-weight:600;font-size:15px;min-height:44px;padding:10px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.lp-form .btn{width:100%}
-.lp-legal{margin-top:12px}
 .lp-foot{background:var(--cream);border-top:1px solid var(--hair);padding:34px 0 30px;font-size:14.5px;color:var(--muted)}
 .lp-foot p{margin-bottom:6px}
 .lp-foot .legal{margin-top:16px;padding-top:14px}
@@ -80,18 +63,6 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-danke .lp-cta{margin-top:24px}
 .scta .wa{background:transparent;color:var(--green-d);box-shadow:none;border:1.5px solid var(--green)}
 .lp-trust1{display:none;margin:0 0 6px;font-size:clamp(11.5px,3.5vw,13px);font-weight:600;line-height:1.3;color:var(--green-d);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.005em}
-.lp-trust1 .st{color:var(--green)}
-.lp-hero-preis{margin:14px 0 0;color:var(--ink)}
-.lp-hero-preis p{margin:0}
-.lp-hero-preis .pzs{font-size:16px;line-height:1.5;text-wrap:pretty}
-.lp-hero-preis .pn{display:block;font-size:14.5px;line-height:1.5;color:var(--muted);text-wrap:pretty}
-.lp-hero-preis b{white-space:nowrap}
-.lp-hero-preis .pk{display:none}
-.lp-hero-preis .sep{margin:0 .45em;font-style:normal;color:var(--muted)}
-.lp-aktion{margin:12px 0 0;padding:10px 14px;border-left:3px solid var(--green);background:var(--paper);border-radius:0 var(--r-el) var(--r-el) 0;font-size:15px;line-height:1.5;color:var(--ink);text-wrap:pretty}
-.lp-aktion b{color:var(--green-d)}
-.lp-aktion .kz{display:none}
-.lp-preis .lp-aktion{margin:0 0 14px}
 .lp-quick{margin:20px 0 16px}
 .lp-quick-l{font-weight:700;font-size:15px;color:var(--green-d);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
 .lp-quick-c{display:flex;flex-wrap:wrap;gap:8px}
@@ -99,7 +70,6 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-quick-c a:hover{background:var(--paper)}
 .lp-quick-c a:active{scale:.96}
 .lp-chips .qs,.lp-quick-c .qs{display:none}
-.lp-hero-preis+.lp-cta{margin-top:20px}
 .lp-preis+.lp-cta{margin-top:22px}
 .lp-preis+.lp-cta+.hint{margin-top:10px;font-size:14.5px;color:var(--muted)}
 @media(max-width:899px){body:not(:has(.consent:not([hidden]))) .lp-hero .lp-cta .btn-line{display:none}}
@@ -108,32 +78,11 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 @media(min-width:760px){
   .lp-cta{flex-direction:row;align-items:center;gap:16px}.lp-cta .btn{width:auto}
   .lp-gallery{grid-template-columns:repeat(2,1fr)}
-  .lp-form .row{grid-template-columns:1fr 1fr}
-  .lp-form .row .full{grid-column:1/-1}
-  .lp-form .btn{width:auto}
 }
 .lp-hero .hleaf{pointer-events:none}
 .lp-hero-form{margin:14px 0 6px}
-.lp-hero-form .kf{padding:14px 16px;border-radius:var(--r-card);background:var(--lp-surface);border:1px solid var(--hair)}
-.lp-hero-form .step1 .lp-chips{gap:8px;margin-bottom:8px}
-.lp-hero-form .step1 .row{margin-top:2px}
-.lp-hero-form [data-next]{margin-top:8px}
-.lp-hero-form .lp-chips .ql{display:none}
-.lp-hero-form .lp-chips .qs{display:inline}
-.lp-alt{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.lp-alt .btn{flex:1 1 140px;width:auto;justify-content:center}
-.lp-alt .btn svg{width:18px;height:18px;flex:0 0 auto}
-@media(max-width:599px){.lp-alt .btn{white-space:nowrap;padding-left:10px;padding-right:10px;font-size:15px}}
-@media(max-width:399px){.lp-alt .btn{font-size:14px;flex:1 1 auto;padding-left:8px;padding-right:8px}.lp-alt .btn svg{display:none}}
-.lp-hero-preis a.pz{display:inline;position:relative;color:inherit;text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:1.5px;text-underline-offset:3px}
-.lp-hero-preis a.pz::after{content:"";position:absolute;inset:-13px -4px}
-.lp-anker{display:flex;flex-wrap:wrap;gap:0 24px}
-.lp-anker .lp-ar{display:inline-flex;align-items:center;min-height:44px;font-size:1.15rem;line-height:1.3;color:var(--ink)}
-.lp-anker a.lp-ar{text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:1.5px;text-underline-offset:3px}
-.lp-preis .lp-anker-note{font-size:.95rem;line-height:1.5;color:var(--muted);margin:0 0 14px}
 .lp-preisverweis a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:var(--green-d)}
 #anfrage{scroll-margin-top:82px}
-.lp-form legend:focus{outline:none}
 .lp-person{display:flex;align-items:center;gap:12px;margin:14px 0 0;font-size:15px;line-height:1.4;color:var(--ink)}
 .lp-person picture{display:flex;flex:0 0 auto}
 .lp-person .av,.lp-person img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:0 0 auto}
@@ -143,37 +92,81 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-head .logo img{height:42px}
 .lp-hero:has(.lp-hero-form){padding:8px 0 36px}
 .lp-hero:has(.lp-hero-form) .kick{display:none}
-.lp-hero:has(.lp-hero-form) .lp-trust1{display:block;margin-bottom:4px}
+.lp-hero:has(.lp-hero-form) .lp-trust1{display:flex;align-items:center;gap:6px;margin-bottom:4px}
 .lp-hero[data-lead-mobil] .lead{font-size:16px;line-height:1.4;margin:6px 0 4px}
 .lp-hero[data-h1-lang]:has(.lp-hero-form) h1{font-size:clamp(19px,5.6vw,22px)}
 .lp-hero:has(.lp-hero-form) h1{font-size:clamp(21px,6.1vw,24px);line-height:1.1;margin-bottom:2px}
-.lp-hero-preis{margin-top:10px}
-.lp-hero-preis .pzs{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;font-size:16px;line-height:1.15}
-.lp-hero-preis .sep,.lp-hero-preis a.pz::after{display:none}
-.lp-hero-preis .pz{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:3px 6px;border:1.5px solid var(--hair);border-radius:var(--r-el);background:var(--lp-surface);text-decoration:none;white-space:normal}
-.lp-hero-preis a.pz{display:flex;border-color:var(--green);text-decoration:none}
-.lp-hero-preis .pz:only-child{flex-direction:row;justify-content:flex-start;gap:6px;padding:3px 12px}
-.lp-hero-preis .pl,.lp-hero-preis .pk{font-size:12px;font-weight:500;color:var(--muted);line-height:1.2}
-.lp-hero-preis .pk{display:block;order:-1}
-.lp-hero-preis .pz:has(.pk) .pl{display:none}
-.lp-hero-preis .pp{font-size:16px;font-weight:700;color:var(--ink)}
-.lp-hero-preis .pn{margin-top:6px;font-size:12.5px;line-height:1.35}
-.lp-hero .lp-aktion{margin-top:8px;padding:6px 10px;font-size:12.5px;line-height:1.35;white-space:nowrap;overflow:hidden}
-.lp-hero .lp-aktion .lg{display:none}
-.lp-hero .lp-aktion .kz{display:inline}
-.lp-hero .lp-aktion .kfn{display:block;margin-top:2px;font-size:12px;font-weight:500;color:var(--muted)}
 .lp-hero-form{margin-top:8px}
-.lp-hero-form .kf{padding:12px;gap:8px}
-.lp-hero-form .step1 .hint{display:none}
-.lp-hero-form .step1 legend{font-size:13px;letter-spacing:.04em;margin-bottom:6px}
-.lp-hero-form .step1 .lp-chips{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px}
-.lp-hero-form .step1 .lp-chips label{padding:8px 10px;font-size:14.5px}
-.lp-hero-form .step1 .row{margin-top:2px}
-.lp-alt{margin-top:8px}
-.lp-alt .btn{min-height:44px;padding-top:8px;padding-bottom:8px}
 }
-@media(min-width:900px){.lp-hero:has(.lp-hero-form) .grid{align-items:start;grid-template-columns:1.4fr .6fr;gap:40px}.lp-hero:has(.lp-hero-form) .shot{position:sticky;top:90px}.lp-hero:has(.lp-hero-form){overflow:clip;padding-top:18px}.lp-hero:has(.lp-hero-form) .kick{margin-bottom:6px}.lp-hero:has(.lp-hero-form) .lead{margin-top:8px}.lp-hero-form{margin-top:12px}.lp-hero:has(.lp-hero-form) h1{font-size:clamp(36px,3.5vw,46px);line-height:1.04}.lp-hero:has(.lp-hero-form) .lead{font-size:18px;margin-bottom:0;max-width:40em}.lp-hero-form .kf{max-width:42em;gap:10px}}
+@media(min-width:900px){.lp-hero:has(.lp-hero-form) .grid{align-items:start;grid-template-columns:1.4fr .6fr;gap:40px}.lp-hero:has(.lp-hero-form) .shot{align-self:center}.lp-hero:has(.lp-hero-form){overflow:clip;padding-top:18px}.lp-hero:has(.lp-hero-form) .kick{margin-bottom:6px}.lp-hero:has(.lp-hero-form) .lead{margin-top:8px}.lp-hero-form{margin-top:12px}.lp-hero:has(.lp-hero-form) h1{font-size:clamp(36px,3.5vw,46px);line-height:1.04}.lp-hero:has(.lp-hero-form) .lead{font-size:18px;margin-bottom:0;max-width:40em}}
 @media(min-width:900px){.lp-hero-text.lp-hero:has(.lp-hero-form) .grid{grid-template-columns:1fr;max-width:1180px}}
+/* ---- Formular v2: ein Schritt, schlank. Außen --r-image (24) = innen --r-el (12) + Innenabstand (12): konzentrisch. ---- */
+.lp-form{position:relative;z-index:1;display:grid;gap:10px;max-width:none;margin:0;padding:12px;border:0;border-radius:var(--r-image);background:var(--lp-surface);box-shadow:0 0 0 1px rgba(21,32,26,.07),0 1px 2px rgba(21,32,26,.05),0 24px 44px -28px rgba(14,46,31,.34)}
+.lp-form fieldset{border:0;padding:0;margin:0;min-width:0}
+.lp-form legend{font-weight:600;font-size:14px;line-height:1.3;color:var(--green-d);margin:2px 2px 8px;padding:0}
+.lp-form legend:focus{outline:none}
+.lp-form .seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;padding:3px;border-radius:var(--r-el);background:var(--paper);box-shadow:inset 0 0 0 1px var(--border-visible);transition:box-shadow .15s var(--ease)}
+.lp-form .seg3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lp-form .seg label{position:relative;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:0;margin:0;min-height:44px;padding:0 4px;border-radius:calc(var(--r-el) - 3px);font-weight:600;font-size:14.5px;line-height:1.15;color:var(--ink);text-align:center;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;transition:background-color .15s var(--ease),color .15s var(--ease),box-shadow .15s var(--ease),scale .12s var(--ease)}
+.lp-form .seg input{position:absolute;inset:0;width:100%;height:100%;min-height:0;margin:0;padding:0;border:0;opacity:0;cursor:pointer}
+.lp-form .seg label:has(input:checked){background:var(--green-d);color:var(--dark-text1);box-shadow:0 1px 2px rgba(14,46,31,.35)}
+.lp-form .seg label:active{scale:.96}
+.lp-form .seg label:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
+@media(hover:hover){.lp-form .seg label:hover:not(:has(input:checked)){background:rgba(22,65,45,.07)}}
+.lp-form .seg label+label::before{content:"";position:absolute;left:-2px;top:12px;bottom:12px;width:1px;background:var(--border-visible);opacity:.55;transition:opacity .15s var(--ease)}
+.lp-form .seg label:has(input:checked)::before,.lp-form .seg label:has(input:checked)+label::before{opacity:0}
+.lp-form .seg .ql{display:none}
+.lp-form .f-obj.bad .seg{box-shadow:inset 0 0 0 1.5px var(--error)}
+.lp-form .frow{display:grid;gap:10px}
+.lp-form .fld{position:relative;display:block;margin:0;font-weight:400;font-size:16px;color:var(--ink)}
+.lp-form .fld>span{position:absolute;left:14px;top:9px;z-index:1;font-size:12.5px;line-height:1;font-weight:600;color:var(--green-d);pointer-events:none}
+.lp-form .fld input,.lp-form .fld textarea{display:block;width:100%;min-height:54px;padding:25px 14px 7px;border:0;border-radius:var(--r-el);background:var(--paper);box-shadow:inset 0 0 0 1px var(--border-visible);font:400 16px/1.3 var(--font-body);color:var(--ink);transition:box-shadow .15s var(--ease),background-color .15s var(--ease)}
+.lp-form .fld textarea{min-height:96px;resize:vertical}
+.lp-form .fld input::placeholder,.lp-form .fld textarea::placeholder{color:var(--muted);opacity:.85}
+.lp-form .fld input:focus,.lp-form .fld textarea:focus{outline:3px solid var(--accent);outline-offset:2px;box-shadow:inset 0 0 0 1.5px var(--green-d);background:var(--lp-surface)}
+.lp-form .fld.bad input{box-shadow:inset 0 0 0 1.5px var(--error)}
+.lp-form .more{margin:-2px 0 0}
+.lp-form .more summary{display:flex;align-items:center;gap:9px;min-height:44px;padding:0 2px;font-weight:600;font-size:15px;color:var(--green-d);cursor:pointer;list-style:none;border-radius:var(--r-el)}
+.lp-form .more summary::-webkit-details-marker{display:none}
+.lp-form .more summary::before{content:"";flex:0 0 auto;width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--green-d);background:linear-gradient(var(--green-d),var(--green-d)) center/10px 1.5px no-repeat,linear-gradient(var(--green-d),var(--green-d)) center/1.5px 10px no-repeat;transition:background-size .2s var(--ease)}
+.lp-form .more[open] summary::before{background-size:10px 1.5px,0 0}
+.lp-form .more summary small{font-size:inherit;font-weight:400;color:var(--muted)}
+.lp-form .more-body{display:grid;gap:10px;padding:2px 0 6px}
+.lp-form .ffoot{display:grid;gap:10px}
+.lp-form .chk{display:flex;flex-direction:row;align-items:center;gap:10px;min-height:44px;margin:0;padding:2px;font-weight:400;font-size:13.5px;line-height:1.4;color:var(--muted);cursor:pointer}
+.lp-form .chk input{appearance:none;-webkit-appearance:none;flex:0 0 22px;width:22px;height:22px;min-height:0;margin:0;padding:0;border:0;border-radius:6px;background:var(--lp-surface);box-shadow:inset 0 0 0 1.5px var(--border-visible);cursor:pointer;transition:background-color .15s var(--ease),box-shadow .15s var(--ease)}
+.lp-form .chk input:checked{background:var(--green-d) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M6 11.5l3.2 3.2L16 7.8' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat;box-shadow:none}
+.lp-form .chk input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.lp-form .chk a{color:var(--green-d);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--green)}
+.lp-form .chk.bad{color:var(--error-ink)}
+.lp-form .chk.bad input{box-shadow:inset 0 0 0 2px var(--error)}
+.lp-form .err{display:none;margin:0;padding:9px 12px;border-left:3px solid var(--error);border-radius:0 var(--r-el) var(--r-el) 0;background:rgba(214,69,63,.08);color:var(--error-ink);font-size:14.5px;line-height:1.4;font-weight:600}
+.lp-form .err.show{display:block}
+.lp-form .btn{width:100%;justify-self:stretch;margin:0;min-height:54px}
+.lp-form .fine1{margin:0;text-align:center;font-size:13px;line-height:1.4;color:var(--muted)}
+.lp-form .fine{margin:0 2px;font-size:12px;line-height:1.5;color:var(--muted);text-wrap:pretty}
+.lp-alt{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;margin:0;padding-top:4px;border-top:1px solid var(--hair)}
+.lp-alt a{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 10px;border-radius:var(--r-button);font-weight:600;font-size:15px;color:var(--green-d);text-decoration:none;transition:background-color .15s var(--ease),scale .12s var(--ease)}
+.lp-alt a svg{width:17px;height:17px;flex:0 0 auto}
+.lp-alt a+a{position:relative}
+.lp-alt a+a::before{content:"";position:absolute;left:-2px;top:13px;bottom:13px;width:1px;background:var(--hair)}
+.lp-alt a:active{scale:.96}
+@media(hover:hover){.lp-alt a:hover{background:var(--paper);text-decoration:none}}
+@media(max-width:599px){.lp-form{gap:8px}.lp-form legend{margin:0 2px 6px;font-size:13.5px}.lp-form .frow{gap:8px}.lp-form .fld input{min-height:50px;padding:22px 14px 6px}.lp-form .fld>span{top:8px}.lp-form .ffoot{gap:8px}.lp-form .more{margin:-4px 0 -2px}.lp-form{padding:10px 12px 12px}.lp-form .chk{min-height:40px;padding:0 2px;font-size:13px}.lp-form .more summary{min-height:44px}}
+@media(max-width:399px){.lp-form .seg label{font-size:14px;padding:0 2px}.lp-alt a{font-size:14px;padding:0 6px;gap:5px}.lp-alt a svg{width:15px;height:15px}}
+@media(min-width:760px){
+.lp-form{padding:14px;gap:12px}
+.lp-form legend{font-size:15px}
+.lp-form .seg label{font-size:15.5px}
+.lp-form .seg .ql{display:inline}
+.lp-form .seg .qs{display:none}
+.lp-form .frow{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lp-form .ffoot{grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:20px}
+.lp-form .ffoot .err{grid-column:1/-1}
+.lp-form .btn{width:auto;padding-left:34px;padding-right:34px}
+.lp-hero-form .lp-form{max-width:44em}
+}
+${BLOECKE_CSS}
 </style>`;
 
 // Attribution beim Einstieg: Klick-IDs/UTM aus der URL in den Seiten-Speicher (window.__hg). Ins Endgerät (localStorage, 90 Tage)
@@ -184,30 +177,40 @@ export function lpAttribJS(consentKey) {
   return `<script>(function(){var K=${JSON.stringify(ATTR_KEYS)},S='hg_attrib',C='${consentKey}';function allowed(){try{var v=JSON.parse(localStorage.getItem(C)||'null');return !!(v&&v.c==='allow')}catch(e){return false}}
 function load(){try{var a=JSON.parse(localStorage.getItem(S)||'null');if(a&&a.ts&&Date.now()-a.ts>90*864e5){localStorage.removeItem(S);return null}return a}catch(e){return null}}
 var q=new URLSearchParams(location.search),n={},hit=false,click=false;K.forEach(function(k){var v=q.get(k);if(v){n[k]=v.slice(0,200);hit=true;if(k==='gclid'||k==='wbraid'||k==='gbraid')click=true}});
-var cur=load()||{};var m={};for(var k in cur)m[k]=cur[k];if(hit){for(var k2 in n){if(k2==='gclid'||k2==='wbraid'||k2==='gbraid'){if(click)m[k2]=n[k2]}else m[k2]=n[k2]}if(click){m.ts=Date.now();m.landing=location.pathname}else if(!m.landing){m.landing=location.pathname;m.ts=m.ts||Date.now()}}
+var ok0=allowed();if(!ok0){try{localStorage.removeItem(S)}catch(e){}}var cur=(ok0&&load())||{};var m={};for(var k in cur)m[k]=cur[k];if(hit){for(var k2 in n){if(k2==='gclid'||k2==='wbraid'||k2==='gbraid'){if(click)m[k2]=n[k2]}else m[k2]=n[k2]}if(click){m.ts=Date.now();m.landing=location.pathname}else if(!m.landing){m.landing=location.pathname;m.ts=m.ts||Date.now()}}
 window.__hg=m;function persist(){try{if(allowed()&&window.__hg&&Object.keys(window.__hg).length){localStorage.setItem(S,JSON.stringify(window.__hg))}}catch(e){}}persist();
-document.addEventListener('click',function(e){var b=e.target.closest('#consent [data-c=allow]');if(b){setTimeout(persist,0)}});window.__hgPersist=persist})();</script>`;
+document.addEventListener('click',function(e){var b=e.target.closest('#consent [data-c=allow]');if(b){setTimeout(persist,0)}if(e.target.closest('#consent [data-c=deny],#consent-reset')){try{localStorage.removeItem(S)}catch(x){}}});window.__hgPersist=persist})();</script>`;
 }
 
 function lpFormJS(slug, dankeUrl, consentKey) {
+  // Ein-Schritt-Formular. Events: form_start (erste Eingabe), form_quickstart (Preis-/Chip-Klick), form_step{step:2} (Objekt + Ort gültig und ein Kontaktfeld
+  // fokussiert/befüllt), form_error{field} (je Feld einmal), generate_lead (nach erfolgreichem Senden). Kein .focus() ohne Nutzeraktion:
+  // Fokus nur beim Enter-Weiter und im Fehlerfall nach dem Absenden.
   return `<script>(function(){var f=document.getElementById('anfrage');if(!f)return;f.classList.add('js');f.noValidate=true;var started=false,sent2=false,errd={},via='',sm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';function dl(o){if(window.dataLayer){window.dataLayer.push(o)}}
 function err1(k){if(errd[k])return;errd[k]=1;dl({event:'form_error',lp:'${slug}',field:k})}
 function consentState(){try{var v=JSON.parse(localStorage.getItem('${consentKey}')||'null');return v&&v.c?v.c:'none'}catch(e){return 'none'}}
-f.addEventListener('input',function(e){if(err&&err.classList.contains('show')){err.classList.remove('show');if(f.elements['ort'])f.elements['ort'].removeAttribute('aria-invalid')}if(!started){started=true;dl({event:'form_start',lp:'${slug}',start_via:via||(e.target&&e.target.name==='objekt'?'chip':'field')})}});
-var next=f.querySelector('[data-next]'),back=f.querySelector('[data-back]'),err=f.querySelector('.err'),sb=f.querySelector('button[type=submit]'),sbt=sb?sb.textContent:'';
-function foc(sel){var l=f.querySelector(sel);if(l)l.focus({preventScroll:true})}
-function req(){var w=(f.querySelector('input[name=kontaktweg]:checked')||{}).value||'Anruf';Array.prototype.forEach.call(f.querySelectorAll('[data-req-by=kontaktweg]'),function(el){var on=el.getAttribute('data-req-when').split(',').indexOf(w)>-1;el.required=on})}
-Array.prototype.forEach.call(f.querySelectorAll('input[name=kontaktweg]'),function(r){r.addEventListener('change',req)});req();
-function goStep2(){var r=f.querySelector('input[name=objekt]:checked'),ort=f.elements['ort'],ok=ort&&ort.value.trim()&&ort.checkValidity();if(!r||!ok){err.classList.add('show');if(ort&&!ok)ort.setAttribute('aria-invalid','true');err1(!r?'objekt':'ort');return}err.classList.remove('show');ort.removeAttribute('aria-invalid');f.classList.add('s2');if(!sent2){sent2=true;dl({event:'form_step',lp:'${slug}',step:2,objekt:r.value})}f.scrollIntoView({behavior:sm,block:'start'});foc('.step2 legend')}
-if(next){next.addEventListener('click',goStep2)}
-if(back){back.addEventListener('click',function(){f.classList.remove('s2');foc('.step1 legend')})}
-document.addEventListener('click',function(e){var q=e.target.closest('[data-obj]');if(!q)return;var v=q.getAttribute('data-obj'),r=Array.prototype.filter.call(f.querySelectorAll('input[name=objekt]'),function(x){return x.value===v})[0];if(!r)return;e.preventDefault();f.classList.remove('s2');r.checked=true;via=q.getAttribute('data-via')||'chip';r.dispatchEvent(new Event('input',{bubbles:true}));via='';dl({event:'form_quickstart',lp:'${slug}',objekt:v,start_via:q.getAttribute('data-via')||'chip'});var b=f.getBoundingClientRect();if(b.top<0||b.top>window.innerHeight*0.6){f.scrollIntoView({behavior:sm,block:'start'})}});
-f.addEventListener('keydown',function(e){if(e.key==='Enter'&&!f.classList.contains('s2')&&e.target.tagName==='INPUT'&&e.target.type!=='checkbox'){e.preventDefault();goStep2()}});
-window.addEventListener('pageshow',function(e){if(e.persisted&&sb){sb.disabled=false;sb.textContent=sbt}});
+var err=f.querySelector('.err'),sb=f.querySelector('button[type=submit]'),sbt=sb?sb.textContent:'',more=f.querySelector('.more');
+var MSG={objekt:'Bitte wählen Sie aus, was geräumt werden soll.',ort:'Bitte geben Sie PLZ oder Ort an.',name:'Bitte geben Sie Ihren Namen an.',tel:'Bitte geben Sie eine Telefonnummer an, damit wir Sie erreichen.',email:'Bitte geben Sie eine gültige E-Mail-Adresse an.',dsgvo:'Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.'},ORDER=['objekt','ort','name','tel','email','dsgvo'],CONTACT={name:1,tel:1,email:1,anliegen:1};
+function el1(n){return f.querySelector('[name='+n+']')}
+function box(n){var e=el1(n);return e?(n==='objekt'?e.closest('.f-obj'):n==='dsgvo'?e.closest('.chk'):e.closest('.fld')):null}
+function mark(n,on){var b=box(n),e=el1(n);if(b)b.classList.toggle('bad',on);if(e){if(on)e.setAttribute('aria-invalid','true');else e.removeAttribute('aria-invalid')}}
+function req(){var w=(f.querySelector('input[name=kontaktweg]:checked')||{}).value||'Anruf';Array.prototype.forEach.call(f.querySelectorAll('[data-req-by=kontaktweg]'),function(el){var on=el.getAttribute('data-req-when').split(',').indexOf(w)>-1;el.required=on;var l=el.parentNode.querySelector('[data-lb]');if(l){l.textContent=l.getAttribute('data-lb')+(on?'':' (optional)')}})}
+Array.prototype.forEach.call(f.querySelectorAll('input[name=kontaktweg]'),function(r){r.addEventListener('change',function(){req();mark('tel',false);mark('email',false)})});req();
+function stepOk(){var r=f.querySelector('input[name=objekt]:checked'),o=f.elements['ort'];return r&&o&&o.value.trim()&&o.checkValidity()?r.value:''}
+function touched(){var n=f.elements['name'],t=f.elements['tel'],a=document.activeElement;return !!((n&&n.value.trim())||(t&&t.value.trim())||(a&&a.name&&CONTACT[a.name]))}
+function step2(){if(sent2||!touched())return;var v=stepOk();if(v){sent2=true;dl({event:'form_step',lp:'${slug}',step:2,objekt:v})}}
+f.addEventListener('focusin',function(e){if(e.target.name&&CONTACT[e.target.name])step2()});
+f.addEventListener('input',function(e){var n=e.target.name;if(n){mark(n,false);step2()}if(err&&err.classList.contains('show')&&!f.querySelector('.bad'))err.classList.remove('show');if(!started){started=true;dl({event:'form_start',lp:'${slug}',start_via:via||(n==='objekt'?'chip':'field')})}});
+document.addEventListener('click',function(e){var q=e.target.closest('[data-obj]');if(!q)return;var v=q.getAttribute('data-obj'),r=Array.prototype.filter.call(f.querySelectorAll('input[name=objekt]'),function(x){return x.value===v})[0];if(!r)return;e.preventDefault();r.checked=true;via=q.getAttribute('data-via')||'chip';r.dispatchEvent(new Event('input',{bubbles:true}));via='';dl({event:'form_quickstart',lp:'${slug}',objekt:v,start_via:q.getAttribute('data-via')||'chip'});var b=f.getBoundingClientRect();if(b.top<0||b.top>window.innerHeight*0.6){f.scrollIntoView({behavior:sm,block:'start'})}});
+var NEXT={ort:'name',name:'tel'};
+f.addEventListener('keydown',function(e){if(e.key!=='Enter'||e.target.tagName!=='INPUT'||e.target.type==='checkbox'||e.target.type==='radio')return;var nx=NEXT[e.target.name];if(nx){e.preventDefault();var t=f.elements[nx];if(t)t.focus()}});
+window.addEventListener('pageshow',function(e){if(e.persisted&&sb){sb.disabled=false;sb.textContent=sbt;if(f.__sent){f.__sent=false;f.reset();req();started=false;sent2=false;errd={}}}});
 function fill(){try{var a=window.__hg||{};${JSON.stringify(ATTR_KEYS)}.forEach(function(k){var el=f.elements[k];if(el&&a[k])el.value=a[k]});var lu=f.elements['landing_url'];if(lu)lu.value=(a.landing||location.pathname)+(a.ts?' @'+new Date(a.ts).toISOString():'');var ac=f.elements['ads_consent'];if(ac)ac.value=consentState()}catch(e){}}
 function e164(t){t=String(t||'').replace(/\\(\\s*0\\s*\\)/,'').replace(/[^0-9+]/g,'');if(t.indexOf('00')===0)t='+'+t.slice(2);if(t.indexOf('0')===0)t='+49'+t.slice(1);if(t&&t[0]!=='+')t='+49'+t;t=t.replace(/^\\+490/,'+49');return /^\\+\\d{8,15}$/.test(t)?t:''}
-f.addEventListener('submit',function(e){e.preventDefault();if(!f.classList.contains('s2')&&f.classList.contains('js')){goStep2();return}if(!f.checkValidity()){f.reportValidity();return}fill();var b=f.querySelector('button[type=submit]'),o=b.textContent;b.disabled=true;b.textContent='Wird gesendet…';
-fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)}).then(function(r){return r.json()}).then(function(j){if(j&&j.success){var g=function(n){var el=f.elements[n];return el?String(el.value).trim():''};var r=f.querySelector('input[name=objekt]:checked');var cs=consentState();var done=false,go=function(){if(done)return;done=true;window.location.href='${dankeUrl}#ok'};var ev={event:'generate_lead',lead_source:'ads-lp',lp:'${slug}',objekt:r?r.value:'',kontaktweg:g('kontaktweg'),ads_consent:cs,eventCallback:go,eventTimeout:1200};if(cs==='allow'){ev.user_data={email:g('email')||undefined,phone_number:e164(g('tel'))||undefined}}dl(ev);setTimeout(go,1500)}else{b.disabled=false;b.textContent=o;err1('submit');alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')}}).catch(function(){b.disabled=false;b.textContent=o;err1('submit');alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')})});})();</script>`;
+function validate(){var bad=[];ORDER.forEach(function(n){var e=el1(n);if(!e)return;var ok=e.checkValidity();if(ok&&e.required&&/^(text|tel|email)$/.test(e.type)&&!e.value.trim())ok=false;if(ok&&n==='tel'&&e.value.trim()&&e.value.replace(/\\D/g,'').length<6)ok=false;mark(n,!ok);if(!ok){bad.push(n);err1(n)}});if(!bad.length){err.classList.remove('show');return true}
+err.textContent=bad.length===1?MSG[bad[0]]:'Bitte ergänzen Sie die markierten Felder.';err.classList.add('show');var first=bad[0],e=el1(first);if(first==='objekt'){var fs=e.closest('fieldset');if(fs)fs.scrollIntoView({behavior:sm,block:'center'});e.focus({preventScroll:true})}else{if(first==='email'&&more)more.open=true;e.focus()}return false}
+f.addEventListener('submit',function(e){e.preventDefault();if(!validate())return;fill();var b=f.querySelector('button[type=submit]'),o=b.textContent;b.disabled=true;b.textContent='Wird gesendet…';
+fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)}).then(function(r){return r.json()}).then(function(j){if(j&&j.success){f.__sent=true;var g=function(n){var el=f.elements[n];return el?String(el.value).trim():''};var r=f.querySelector('input[name=objekt]:checked');var cs=consentState();var done=false,go=function(){if(done)return;done=true;window.location.href='${dankeUrl}#ok'};var ev={event:'generate_lead',lead_source:'ads-lp',lp:'${slug}',objekt:r?r.value:'',kontaktweg:g('kontaktweg'),ads_consent:cs,eventCallback:go,eventTimeout:1200};if(cs==='allow'){ev.user_data={email:g('email')||undefined,phone_number:e164(g('tel'))||undefined}}dl(ev);setTimeout(go,1500)}else{b.disabled=false;b.textContent=o;err1('submit');alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')}}).catch(function(){b.disabled=false;b.textContent=o;err1('submit');alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')})});})();</script>`;
 }
 
 // Danke: lead_confirmed nur, wenn die Seite über den Formular-Redirect (#ok) erreicht wurde; Fragment wird sofort entfernt (Reload zählt nicht).
@@ -248,36 +251,21 @@ export function buildLp(d) {
   // v5 (02.10.): Aktion aus lp.json (Root „aktion“ {label,text,bis}) — Pflicht-Gegenstück zum Angebots-Asset der Kampagne (Google prüft das Angebot
   // auf der Final-URL). Nach „bis“ rendert der Generator nichts mehr; für bereits ausgelieferte Seiten blendet AKTION_JS sie clientseitig aus.
   const akt = cp.aktion && cp.aktion.bis && Date.now() <= new Date(cp.aktion.bis + 'T23:59:59+01:00').getTime() ? cp.aktion : null;
-  const aktHtml = akt ? `<p class="lp-aktion" data-bis="${escA(akt.bis)}"><b>${esc(akt.label)}</b> ${esc(akt.text)}</p>` : '';
-  // Hero-Fassung: Handy zeigt die Kurzform (akt.kurz), Desktop und der Preisblock (#preise) den vollen Wortlaut inkl. Ausnahme. Beide stehen im HTML, das CSS schaltet um.
-  const aktHero = akt ? (akt.kurz ? `<p class="lp-aktion" data-bis="${escA(akt.bis)}"><b><span class="lg">${esc(akt.label)}</span><span class="kz">${esc(akt.label_kurz || akt.label)}</span></b> <span class="lg">${esc(akt.text)}</span><span class="kz">${esc(akt.kurz)}</span>${akt.kurz_fuss ? `<span class="kz kfn">${esc(akt.kurz_fuss)}</span>` : ''}</p>` : aktHtml) : '';
+  // v7: eine Aktionskarte für Hero und #preise (badge, karte_titel, karte_bedingung), Bedingung ausgeschrieben, kein Sternchen (Spec 09 §5).
+  const aktKarte = aktionKarte(akt, { esc, escA });
   const AKTION_JS = akt ? `<script>(function(){var n=Date.now();Array.prototype.forEach.call(document.querySelectorAll('.lp-aktion[data-bis]'),function(el){if(n>new Date(el.getAttribute('data-bis')+'T23:59:59+01:00').getTime())el.remove()})})();</script>` : '';
 
-  const lpHeader = href => `<header class="lp-head"><div class="wrap nav"><a class="logo" href="${href}" aria-label="${escA(nap.name)}"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-lp-360.webp"><img src="/assets/img/logo-lp-180.png" alt="${escA(nap.name)}" width="180" height="193" decoding="async"></picture></a><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${telDisp}</span></a></div></header>`;
+  // Google-Kennzahl aus proof.google_reviews mit derselben Live-Schwelle wie trustLine in generate.mjs (Prinzip 6: keine hartcodierten Zahlen in lp.json).
+  const gr = (proof && proof.google_reviews) || {};
+  const grLive = !!(reviews && reviews.enabled) && (gr.count || 0) >= ((reviews && reviews.block_ab_count) || 5) && !!gr.rating;
+
+  // Kopf (v7): Vertrauensleiste (nur bei grLive), Logo, „Zur Website“ als einziger Ausgang (Owner 20.10., kein Menü), Telefon-Pill mit sichtbarer Nummer.
+  const lpHeader = href => `${topbar(grLive ? gr : null, esc)}<header class="lp-head"><div class="wrap nav"><a class="logo" href="${href}" aria-label="${escA(nap.name)}"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-lp-360.webp"><img src="/assets/img/logo-lp-180.png" alt="${escA(nap.name)}" width="180" height="193" decoding="async"></picture></a><a class="lp-web" href="/"><span class="lw">Zur </span>Website ${ICON_ARROW}</a><a class="callpill" href="tel:${tel}">${PHONE_SVG}<span class="num">${telDisp}</span></a></div></header>`;
 
   // Sticky-Bar mit sichtbarer Nummer (Anruf-Conversion: Google ersetzt den sichtbaren Nummerntext) und gedämpftem WhatsApp (ein Gold je Viewport)
   const lpScta = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ ${telDisp}</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav>`;
 
   const lpFooter = `<footer class="lp-foot"><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street || '')}, ${esc(nap.zip || '')} ${esc(nap.city)} · <a href="tel:${tel}">${telDisp}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a></p><p>Servicegebiet: ${GEBIET.map(esc).join(' · ')}</p><div class="legal"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><button type="button" class="linklike" id="consent-reset">Cookie-Einstellungen</button><a href="/">Zur Website</a></div></div></footer>`;
-
-  // Trust-Zeile wie Home/Hub (.trust-row > .t > b + span). Google-Kennzahl aus proof.google_reviews mit derselben Live-Schwelle wie
-  // trustLine in generate.mjs (Prinzip 6: keine hartcodierten Zahlen in lp.json).
-  const gr = (proof && proof.google_reviews) || {};
-  const grLive = !!(reviews && reviews.enabled) && (gr.count || 0) >= ((reviews && reviews.block_ab_count) || 5) && !!gr.rating;
-  const trustGoogle = grLive ? { b: `${Number(gr.rating).toFixed(1).replace('.', ',')} ★`, t: `bei Google · ${gr.count} Bewertungen` } : null;
-  const trustRow = items => {
-    const all = [trustGoogle, ...(Array.isArray(items) ? items : [])].filter(t => t && t.b && t.t);
-    return all.length ? `<div class="trust-row">${all.map(t => `<div class="t"><b>${esc(t.b)}</b><span>${esc(t.t)}</span></div>`).join('')}</div>` : '';
-  };
-
-  // Einzeilige Trust-Zeile für den Handy-Hero (Position des dort ausgeblendeten Kicks): „★ 5,0 bei Google (19) · <trust_zeile>“.
-  // Zahl und Note aus proof.google_reviews (gleiche Live-Schwelle wie trustGoogle), der Zusatz je LP aus lp.json (trust_zeile).
-  const trustLine = lp => {
-    const bits = [];
-    if (grLive) bits.push(`<span class="st" aria-hidden="true">★</span> ${esc(Number(gr.rating).toFixed(1).replace('.', ','))} bei Google (${esc(gr.count)})`);
-    if (lp.trust_zeile) bits.push(esc(lp.trust_zeile));
-    return bits.length ? `<p class="lp-trust1">${bits.join(' · ')}</p>` : '';
-  };
 
   // Vorher/Nachher-Slider aus components.mjs (WebP-768: baSlider setzt <img src>, kein <picture>; WebP statt JPG spart ~120 KB je Paar — Perf-Messung 14.09.; Hochformat 864/1036 = .ba-Aspect).
   // Der Alt-Suffix der Komponente ist heckenspezifisch („nach dem Schnitt") → für Räumungen ersetzt.
@@ -295,21 +283,19 @@ export function buildLp(d) {
     return { cls: 'lp-hero-text', shot: '', key: '' };
   };
 
-  const fmtDate = iso => { const m = String(iso || '').match(/^(\d{4})-(\d{2})(?:-(\d{2}))?/); return m ? (m[3] ? `${m[3]}.${m[2]}.${m[1]}` : `${m[2]}/${m[1]}`) : ''; };
-  const quotes = (idx, h2) => {
-    if (!reviews || !reviews.enabled || !Array.isArray(reviews.reviews)) return '';
-    const picked = (idx || []).map(i => reviews.reviews[i]).filter(Boolean);
-    if (!picked.length) return '';
-    const agg = reviews.aggregate || {};
-    const rating = Number(agg.rating || 5).toFixed(1).replace('.', ',');
-    const items = picked.map(r => {
-      const t = String(r.text || '').replace(/\s+/g, ' ').trim();
-      const cut = t.length > 260 ? t.slice(0, t.lastIndexOf(' ', 260)) + ' …' : t;
-      const stars = Math.max(1, Math.min(5, r.rating || 5));
-      return `<figure class="review-card"><div class="rc-stars" role="img" aria-label="${stars} von 5 Sternen">${'★'.repeat(stars)}</div><blockquote>${esc(cut)}</blockquote><figcaption><b>${esc(r.author)}</b><span>${r.date ? esc(fmtDate(String(r.date).slice(0, 7))) + ' · ' : ''}Google-Bewertung</span></figcaption></figure>`;
-    }).join('');
-    // .review-grid/.review-card wie /bewertungen/ (generate.mjs); 2 Karten → auto-fit statt 3-Spalten-Raster mit Leerspalte. Kein Link auf /bewertungen/ (LP ohne Ausstiegsrampen).
-    return `<section class="sec section-alt" id="bewertungen"><div class="wrap"><div class="head"><h2>${esc(h2 || 'Was Kunden über uns sagen')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${rating} von 5 Sternen bei Google · ${esc(agg.count || '')} Bewertungen (Stand ${esc(fmtDate(agg.as_of))}). Auszug, wörtlich.</p><div class="review-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));max-width:920px">${items}</div></div></section>`;
+  // Bewertungen (v7, Spec 09 §7): wörtliche GBP-Texte aus lp.json (bewertungen), Auswahl je LP (bewertungen_lp, sonst bewertungen_lp_standard).
+  // data/reviews.json bleibt Quelle der Website-Session (/bewertungen/); hier nur die Live-Schwelle (grLive).
+  const revOn = !!(reviews && reviews.enabled); // Schalter der Website-Session: aus = keine Bewertungskarten und kein Hero-Zitat
+  const revOf = lp => (lp.bewertungen_lp || cp.bewertungen_lp_standard || []).map(k => {
+    const r = (cp.bewertungen || {})[k];
+    if (!r) throw new Error(`lp ${lp.slug}: bewertungen.${k} fehlt in lp.json`);
+    return r;
+  });
+  // Hero-Zitat: zitat_hero der LP (false = keins) vor dem Standard; muss wörtlicher Teil der verknüpften Bewertung sein (keine erfundenen Zitate).
+  const zitatOf = lp => {
+    const z = lp.zitat_hero === false ? null : (lp.zitat_hero || cp.zitat_hero || null);
+    if (z && !String((((cp.bewertungen || {})[z.quelle]) || {}).t || '').includes(z.t)) throw new Error(`lp ${lp.slug}: zitat_hero ist kein wörtlicher Auszug aus bewertungen.${z.quelle}`);
+    return z;
   };
 
   // Galerie: nur echte Fotos als Vorher/Nachher-Slider ({vorher, nachher, cap, sub}); Slugs müssen im Manifest stehen, sonst wird das Paar übersprungen.
@@ -322,52 +308,39 @@ export function buildLp(d) {
   };
 
   const shortLabel = o => String(o).split(' / ')[0];
-  const objLabel = o => { const k = shortLabel(o); return k !== o ? `<span class="ql">${esc(o)}</span><span class="qs">${esc(k)}</span>` : esc(o); };
+  const objLabel = (o, lp) => { const k = ((lp && lp.objekte_kurz) || {})[o] || shortLabel(o); return k !== o ? `<span class="ql">${esc(o)}</span><span class="qs">${esc(k)}</span>` : esc(o); };
   const form = (lp, pos, wa) => {
     const hidden = W3F
       ? `<input type="hidden" name="access_key" value="${escA(config.web3forms_key)}"><input type="hidden" name="subject" value="${escA(lp.form_subject || 'Neue Anfrage (Ads-LP)')}"><input type="hidden" name="from_name" value="${escA(nap.name)}"><input type="hidden" name="redirect" value="${DOMAIN}${dankeUrl}"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">`
       : '';
     const attrib = ['quelle', 'lp', ...ATTR_KEYS, 'landing_url', 'ads_consent']
       .map(n => `<input type="hidden" name="${n}" value="${n === 'quelle' ? 'ads-lp' : n === 'lp' ? escA(lp.slug) : ''}">`).join('');
-    // Chips mit Kurzlabel („Keller / Dachboden“ → „Keller“ auf dem Handy); .qs ohne aria-hidden, damit ein zugänglicher Name bleibt
-    const chips = (lp.objekte || []).map((o, i) => `<label><input type="radio" name="objekt" value="${escA(o)}"${i === 0 ? ' required' : ''}> ${objLabel(o)}</label>`).join('');
+    // Ein Schritt (v2): Objekt als Segment-Leiste (Kurzlabel auf dem Handy, voller Wortlaut ab 760 px), PLZ/Name/Telefon mit Label im Feld,
+    // Kontaktweg (Default „Anruf“), E-Mail und Freitext hinter „Weitere Angaben“. Radio-Inputs bleiben echte Inputs (unsichtbar über dem Segment).
+    if (![3, 4].includes((lp.objekte || []).length)) throw new Error(`lp ${lp.slug}: objekte braucht 3 oder 4 Einträge (Segment-Leiste)`);
+    const chips = (lp.objekte || []).map((o, i) => `<label><input type="radio" name="objekt" value="${escA(o)}"${i === 0 ? ' required' : ''}>${objLabel(o, lp)}</label>`).join('');
     const alt = pos === 'hero'
-      ? `<p class="lp-alt"><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></p>`
+      ? `<p class="lp-alt"><a href="tel:${tel}">${PHONE_SVG} ${telDisp}</a><a href="${wa}">WhatsApp mit Foto</a></p>`
       : `<p class="kf-alt">Lieber direkt? <a href="tel:${tel}">Anrufen: ${telDisp}</a> · <a href="${wa}">WhatsApp schreiben</a></p>`;
     return `<form id="anfrage" class="kf lp-form" action="https://api.web3forms.com/submit" method="POST">${hidden}${attrib}
-<fieldset class="step1"><legend tabindex="-1">${esc(lp.form_legend || 'Was soll geräumt werden – und wo?')}</legend>
-<div class="lp-chips" role="radiogroup" aria-label="Was soll geräumt werden?">${chips}</div>
-<div class="row"><label>PLZ oder Ort<input name="ort" autocomplete="postal-code" enterkeyhint="next" required></label></div>
-<p class="err" role="alert">Bitte wählen Sie, was geräumt werden soll, und geben Sie PLZ oder Ort an.</p>
-<button class="btn btn-acc" type="button" data-next>${esc(lp.cta_step1 || 'Weiter – Preis anfragen')}</button>
-<p class="hint">Schritt 1 von 2 · Besichtigung und Angebot kostenlos</p></fieldset>
-<fieldset class="step2"><legend tabindex="-1">Wie erreichen wir Sie?</legend>
-<div class="lp-chips" role="radiogroup" aria-label="Kontakt am liebsten per"><label><input type="radio" name="kontaktweg" value="Anruf" checked> Rückruf</label><label><input type="radio" name="kontaktweg" value="WhatsApp"> WhatsApp</label><label><input type="radio" name="kontaktweg" value="E-Mail"> E-Mail</label></div>
-<div class="row"><label>Name<input name="name" autocomplete="name" required></label>
-<label>Telefon<input name="tel" type="tel" autocomplete="tel" data-req-by="kontaktweg" data-req-when="Anruf,WhatsApp" required></label>
-<p class="hint full">Damit wir Sie zur Besichtigung erreichen. Keine Werbeanrufe.</p>
-<label class="full">E-Mail<input name="email" type="email" autocomplete="email" data-req-by="kontaktweg" data-req-when="E-Mail" placeholder="für das schriftliche Angebot"></label>
-<label class="full">Kurz: Was steht an? (optional)<textarea name="anliegen" rows="2" placeholder="z. B. 3 Zimmer, 2. OG ohne Aufzug, bis Ende November"></textarea></label></div>
-<label class="chk lp-legal"><input type="checkbox" name="dsgvo" required> <span>Ich bin mit der Verarbeitung meiner Angaben zur Kontaktaufnahme und Angebotserstellung einverstanden (siehe <a href="/datenschutz/">Datenschutzerklärung</a>). Die Einwilligung kann ich jederzeit widerrufen.</span></label>
-<button class="btn btn-acc" type="submit">${esc(lp.cta || 'Anfrage absenden')}</button>
-<button class="back" type="button" data-back>← zurück</button>
-<p class="hint">Wir melden uns noch am selben Werktag. Ihre Angaben gehen über den Formulardienst Web3Forms an unser Postfach. Nur wenn Sie im Cookie-Banner zugestimmt haben, übermitteln wir E-Mail und Telefonnummer verschlüsselt (gehasht) an Google, um den Erfolg unserer Anzeigen zu messen – Details in der Datenschutzerklärung.</p></fieldset>
+<fieldset class="f-obj"><legend>${esc(lp.form_legend || 'Was soll geräumt werden – und wo?')}</legend><div class="seg${(lp.objekte || []).length === 3 ? ' seg3' : ''}">${chips}</div></fieldset>
+<div class="frow"><label class="fld"><span>PLZ oder Ort</span><input name="ort" autocomplete="postal-code" enterkeyhint="next" placeholder="z. B. 14612 Falkensee" required></label>
+<label class="fld"><span>Name</span><input name="name" autocomplete="name" enterkeyhint="next" required></label>
+<label class="fld"><span data-lb="Telefon">Telefon</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="Für Rückruf und Besichtigung" data-req-by="kontaktweg" data-req-when="Anruf,WhatsApp" required></label></div>
+<details class="more"><summary>Weitere Angaben <small>(optional)</small></summary><div class="more-body">
+<fieldset class="f-weg"><legend>Am liebsten per</legend><div class="seg seg3"><label><input type="radio" name="kontaktweg" value="Anruf" checked>Rückruf</label><label><input type="radio" name="kontaktweg" value="WhatsApp">WhatsApp</label><label><input type="radio" name="kontaktweg" value="E-Mail">E-Mail</label></div></fieldset>
+<label class="fld"><span data-lb="E-Mail">E-Mail (optional)</span><input name="email" type="email" autocomplete="email" placeholder="für das schriftliche Angebot" data-req-by="kontaktweg" data-req-when="E-Mail"></label>
+<label class="fld"><span>Was steht an? (optional)</span><textarea name="anliegen" rows="2" placeholder="z. B. 3 Zimmer, 2. OG ohne Aufzug, bis Ende November"></textarea></label></div></details>
+<p class="err" role="alert"></p>
+<div class="ffoot"><label class="chk"><input type="checkbox" name="dsgvo" required><span>Ich stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme und für das Angebot zu (<a href="/datenschutz/">Datenschutz</a>).</span></label>
+<button class="btn btn-acc" type="submit">${esc(lp.cta_form || 'Kostenlos anfragen')}</button></div>
+<p class="fine1">Besichtigung und Angebot kostenlos · Antwort noch am selben Werktag</p>
 ${alt}
+<p class="fine">Ihre Einwilligung können Sie jederzeit widerrufen. Keine Werbeanrufe. Ihre Angaben gehen über den Formulardienst Web3Forms an unser Postfach. Nur wenn Sie im Cookie-Banner zugestimmt haben, übermitteln wir E-Mail und Telefonnummer in gehashter Form an Google, um den Erfolg unserer Anzeigen zu messen – Details in der Datenschutzerklärung.</p>
 </form>`;
   };
 
   const normItem = x => typeof x === 'string' ? { t: x } : x;
-  const ankerLabel = x => `aria-label="${escA(x.t)} – Anfrage zu ${escA(x.obj)} starten"`;
-  // Preisblock (#preise): eine Zeile je Preis, jede Zeile 44 px hoch (echte Höhe, keine überlappenden Tippziele).
-  const ankerList = items => items.map(normItem).map(x => x.obj ? `<a class="lp-ar" href="#anfrage" data-obj="${escA(x.obj)}" data-via="preis" ${ankerLabel(x)}><b>${esc(x.t)}</b></a>` : `<b class="lp-ar">${esc(x.t)}</b>`).join('');
-  // Hero-Preiszeilen: Text bleibt zusammenhängend („Kellerabteil ab 99 €“), nur Label und Preis stehen in Spans. Handy: Zelle mit Kurzlabel (k) klein über dem Preis.
-  const pzParts = x => /^(.*?)\s+(ab\s+[\d.]+(?:,\d+)?\s?€)\s*$/.exec(x.t);
-  const pzHtml = x => {
-    const m = pzParts(x);
-    const inner = m ? `<span class="pl">${esc(m[1])}</span> <span class="pp">${esc(m[2])}</span>${x.k ? `<span class="pk" aria-hidden="true">${esc(x.k)}</span>` : ''}` : esc(x.t);
-    return x.obj ? `<a class="pz" href="#anfrage" data-obj="${escA(x.obj)}" data-via="preis" ${ankerLabel(x)}><b>${inner}</b></a>` : `<b class="pz">${inner}</b>`;
-  };
-  const heroPz = items => items.map(normItem).map(pzHtml).join('<i class="sep" aria-hidden="true">&middot;</i>');
 
   let n = 0;
   for (const lp of cp.lps) {
@@ -383,35 +356,35 @@ ${alt}
     const ortWrap = (html, t, form) => t && html.includes(esc(t)) ? html.replace(esc(t), `<span data-ort="${form}">${esc(t)}</span>`) : html;
     const h1o = ortWrap(h1, os.h1, 'in'), kicko = ortWrap(esc(lp.kick), os.kick, 'n');
     const ortJs = (h1o !== h1 || kicko !== esc(lp.kick)) ? ORT_JS : '';
-    // v3 (01.10., ads-check: 1 Formularstart auf 58 Klicks): Ab-Preise im Fold (Preis-Suchende, Sitelink #preise = 20 % der Klicks),
-    // Schnellstart-Chips = Formular-Schritt 1 im Fold (Tippen wählt das Objekt im Formular vor, löst form_start aus, springt zum Ort-Feld),
-    // CTA direkt unter dem Preisblock, Formular vor den FAQ. Preis-Zeile nur aus lp.preis.anker (keine Zahl doppelt pflegen).
+    // v3 (01.10., ads-check: 1 Formularstart auf 58 Klicks): Ab-Preise im Fold (Preis-Suchende, Sitelink #preise = 20 % der Klicks).
+    // v7 (Owner 20.10. „oben“): Preis-Kacheln ÜBER dem Formular; Tippen auf eine Kachel wählt das Objekt vor (form_quickstart, data-via=preis).
+    // Preise nur aus lp.preis.anker (keine Zahl doppelt pflegen), „inkl. MwSt.“ steht in der Zeile über den Kacheln.
     const anker = lp.preis && lp.preis.anker;
-    const heroPreis = anker ? `<div class="lp-hero-preis"><p class="pzs">${heroPz(anker.items)}</p><p class="pn">${esc(lp.preis.hero_note || 'inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag')}</p></div>` : '';
-    const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${escA(lp.slug)}">${esc(lp.quick_label || 'Was soll geräumt werden?')}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${escA(lp.slug)}">${lp.objekte.map(o => `<a href="#anfrage" data-obj="${escA(o)}">${objLabel(o)}</a>`).join('')}</div></div>` : '';
+    const heroPreis = preisBlock(anker, lp.preis.hero_note ?? 'Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag', { esc, escA });
+    const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${escA(lp.slug)}">${esc(lp.quick_label || 'Was soll geräumt werden?')}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${escA(lp.slug)}">${lp.objekte.map(o => `<a href="#anfrage" data-obj="${escA(o)}">${objLabel(o, lp)}</a>`).join('')}</div></div>` : '';
     const pos = lp.form_pos === 'nach-preis' ? 'nach-preis' : 'hero';
     const heroForm = pos === 'hero' ? `<div class="lp-hero-form">${form(lp, 'hero', wa)}</div>` : '';
-    const aktLp = lp.aktion === false ? '' : aktHtml, aktLpHero = lp.aktion === false ? '' : aktHero;
+    const aktLp = lp.aktion === false ? '' : aktKarte;
     const heroCta = pos === 'nach-preis' ? `<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>` : '';
     const person = lp.kontaktperson && lp.kontaktperson.zeigen && lp.kontaktperson.slug && pic(lp.kontaktperson.slug)
       ? `<p class="lp-person">${pic(lp.kontaktperson.slug, { cls: 'av', alt: altQ(lp.kontaktperson.alt || ''), sizes: '56px' })}<span>${esc(lp.kontaktperson.zeile)}</span></p>` : '';
     const preisVerweis = lp.preis && lp.preis.verweis ? `<p class="lp-preisverweis"><a href="/lp/${escA(lp.preis.verweis.slug)}/#preise">${esc(lp.preis.verweis.t || 'Preise ansehen')}</a></p>` : '';
-    const kontaktSec = pos === 'nach-preis' ? `<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>${esc(lp.kontakt_h2 || 'Kostenlose Besichtigung anfragen')}</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Zwei Schritte, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp, 'nach-preis', wa)}</div></section>` : '';
+    const kontaktSec = pos === 'nach-preis' ? `<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>${esc(lp.kontakt_h2 || 'Kostenlose Besichtigung anfragen')}</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Ein Schritt, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp, 'nach-preis', wa)}</div></section>` : '';
     // was_wir_tun {h, p, items:[{h,p}]} (optional, z. B. Allgemein-LP): Abschnitt direkt nach dem Hero. Gleiche Komponenten wie die Startseite (.sec/.head, .sec-lead, .vals/.v mit kursiver Nummer .vn),
     // Reveal-Klassen über rvIn(). Kein eigenes CSS.
     const wwtd = lp.was_wir_tun;
     const wwt = wwtd && Array.isArray(wwtd.items) && wwtd.items.length
       ? `<section class="sec" id="was-wir-tun"><div class="wrap"><div class="head"><h2>${esc(wwtd.h || 'Was wir tun')}</h2></div>${wwtd.p ? `<p class="sec-lead">${esc(wwtd.p)}</p>` : ''}${rvIn(`<div class="vals">${wwtd.items.map((x, i) => `<div class="v rv${i ? ` d${i}` : ''}"><h3><span class="vn">${String(i + 1).padStart(2, '0')}</span>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div>`)}</div></section>` : '';
     const main = `<main id="top">
-<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustLine(lp)}<h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
-${heroForm || quick}${heroPreis}${aktLpHero}${heroCta}
-${trustRow(lp.trust)}${person}</div>${H.shot}</div></section>${ortJs}
+<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
+${heroPreis}${heroForm || quick}${heroForm && revOn ? zitat(zitatOf(lp), esc) : ''}${aktLp}${heroCta}
+${punkte(lp.trust, esc)}${person}</div>${H.shot}</div></section>${ortJs}
 ${wwt}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
-<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${aktLp}${lp.preis.anker ? `<div class="lp-anker">${ankerList(lp.preis.anker.items)}</div><p class="lp-anker-note">${esc(lp.preis.anker.note)}</p>` : ''}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
-${quotes(lp.testimonials, lp.testimonials_h2)}
+<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })}${aktLp}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
+${!revOn ? '' : bewertungen({ items: revOf(lp), gr: grLive ? gr : null, h2: lp.testimonials_h2 || 'Was Kunden über uns sagen', em: lp.testimonials_h2_em || 'sagen' }, esc)}
 ${kontaktSec}
 <section class="sec section-alt" id="fragen"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
 <section class="zone-deep end"><div class="wrap"><h2>${esc(lp.end_h2 || 'Sie zeigen, wir räumen.')}</h2><p>${esc(lp.end_p || 'Kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, besenreine Übergabe – im Havelland, in Berlin-Spandau und Potsdam.')}</p><div class="cta-row"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${telDisp}</a></div></div></section>

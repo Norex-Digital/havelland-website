@@ -3,7 +3,8 @@
 # Server vorher: python -m http.server -d website 4173   (Standard-Port 4173; PORT als 3. Argument oder Umgebungsvariable)
 # Mockt Web3Forms (Antwort {"success":true}), GTM, GA4, Google Ads; alles andere ausserhalb von localhost wird abgebrochen
 # (kein echter Versand, keine echten Messpunkte). NIE gegen die Live-Domain starten (Host muss localhost sein).
-# SCENARIO=voll zusaetzlich: Fehler in Schritt 1 (form_error objekt + ort) und Kurzstart ueber den echten Preiszeilen-Link (a[data-obj], form_quickstart:preis).
+# Ein-Schritt-Formular (v7). SCENARIO=happy: E-Mail-Weg. SCENARIO=voll zusaetzlich: leeres Absenden (form_error dsgvo,name,objekt,ort,tel je 1x) und Kurzstart
+# ueber die echte Preis-Kachel (a.lp-tile[data-obj], form_quickstart:preis). SCENARIO=tel: Weg Anruf mit Telefon, ohne E-Mail (user_data.phone_number bei allow).
 # Hat die Seite keinen solchen Link (Nachlass, Messie, Gewerbe), wird KEIN synthetischer eingehaengt: form_quickstart wird dort nicht erwartet (0 Ereignisse),
 # das Protokoll sagt "Quickstart-Preiszeile: nicht vorhanden". Ein eingehaengtes Element (#__synthetisch) waere ein Fehler.
 # Der Server muss genau website/lp/<slug>/index.html ausliefern (CR/LF-Unterschiede zaehlen nicht), sonst Exit 2. form_pos != hero in lp.json: SKIP (Exit 0).
@@ -14,7 +15,7 @@ export MSYS_NO_PATHCONV=1
 SLUG="${1:?Aufruf: lp-form-test.sh <slug> <deny|allow> [PORT]}"; C="${2:?deny|allow}"; PORT="${3:-${PORT:-4173}}"
 SCENARIO="${SCENARIO:-happy}"; S="form-$C-$$"
 case "$C" in deny|allow) ;; *) echo "Consent muss deny oder allow sein" >&2; exit 2 ;; esac
-case "$SCENARIO" in happy|voll) ;; *) echo "SCENARIO muss happy oder voll sein" >&2; exit 2 ;; esac
+case "$SCENARIO" in happy|voll|tel) ;; *) echo "SCENARIO muss happy, voll oder tel sein" >&2; exit 2 ;; esac
 URL="http://localhost:$PORT/lp/$SLUG/"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 RW="$ROOT"; command -v cygpath >/dev/null 2>&1 && RW="$(cygpath -m "$ROOT")"
@@ -45,24 +46,29 @@ PW run-code "async page => { await page.addInitScript(() => { try { var k='__dl'
 PW goto "http://localhost:$PORT/lp/$SLUG/?gclid=TEST123" >/dev/null
 
 if [ "$SCENARIO" = voll ]; then
-  VOLL_A="await page.click('.lp-hero-form [data-next]');
-  await page.click('.lp-hero-form label:has(input[name=objekt]) >> nth=0');
-  await page.click('.lp-hero-form [data-next]');
-  if (await page.locator('a[data-obj]').count()) { await page.locator('a[data-obj]').first().click({ force: true }); }"
+  VOLL_A="await page.click('.lp-hero-form button[type=submit]');
+  await page.click('.lp-hero-form .seg label:has(input[name=objekt]) >> nth=0');
+  if (await page.locator('a.lp-tile[data-obj]').count()) { await page.locator('a.lp-tile[data-obj]').first().click({ force: true }); await page.evaluate(() => { const a = document.querySelector('a.lp-tile[data-obj]'), r = document.querySelector('input[name=objekt]:checked'); window.dataLayer.push({ event: 'test_quickstart_check', ok: !!(a && r && r.value === a.getAttribute('data-obj')) }); }); }"
 else
   VOLL_A=""
+fi
+if [ "$SCENARIO" = tel ]; then
+  WEG="await page.fill('.lp-hero-form input[name=name]', 'Test');
+  await page.fill('.lp-hero-form input[name=tel]', '030 1234567');"
+else
+  WEG="await page.click('.lp-hero-form .more summary');
+  await page.click('.lp-hero-form label:has(input[name=kontaktweg][value=E-Mail])');
+  await page.fill('.lp-hero-form input[name=email]', 'test@example.invalid');
+  await page.fill('.lp-hero-form input[name=name]', 'Test');"
 fi
 OUTRUN=$(PW run-code "async page => {
   await page.click('#consent [data-c=$C]');
   $VOLL_A
-  await page.click('.lp-hero-form label:has(input[name=objekt]) >> nth=0');
+  await page.click('.lp-hero-form .seg label:has(input[name=objekt]) >> nth=0');
   await page.fill('.lp-hero-form input[name=ort]', '14612');
-  await page.click('.lp-hero-form [data-next]');
-  await page.click('label:has(input[name=kontaktweg][value=E-Mail])');
-  await page.fill('input[name=email]', 'test@example.invalid');
-  await page.fill('input[name=name]', 'Test');
-  await page.check('input[name=dsgvo]');
-  await Promise.all([page.waitForURL('**/lp/danke/**', { timeout: 8000 }), page.click('button[type=submit]')]);
+  $WEG
+  await page.check('.lp-hero-form input[name=dsgvo]');
+  await Promise.all([page.waitForURL('**/lp/danke/**', { timeout: 8000 }), page.click('.lp-hero-form button[type=submit]')]);
 }" 2>&1) || true
 case "$OUTRUN" in *'### Error'*) echo "FORM ROT: Durchlauf abgebrochen:"; printf '%s\n' "$OUTRUN" | sed -n '/^### Error/,+6p' | head -12 || true; exit 1 ;; esac
 sleep 1
@@ -86,7 +92,7 @@ const s1 = js('state1.json'), s2 = js('state2.json');
 const bad = [];
 // --- Ereignisse
 const all = s1.dl;
-const ev = all.filter(e => !String(e.event).startsWith('gtm.'));
+const ev = all.filter(e => !String(e.event).startsWith('gtm.') && !String(e.event).startsWith('test_'));
 const tag = e => e.event + (e.start_via ? ':' + e.start_via : e.step ? ':' + e.step : e.field ? ':' + e.field : '');
 const n = k => ev.filter(e => e.event === k).length;
 if (s1.loc !== '/lp/danke/') bad.push('Ziel ' + s1.loc);
@@ -97,14 +103,14 @@ const fs0 = ev.find(e => e.event === 'form_start');
 if (!fs0 || fs0.start_via !== 'chip') bad.push('form_start:chip fehlt (start_via=' + (fs0 && fs0.start_via) + ')');
 const st = ev.find(e => e.event === 'form_step');
 if (!st || st.step !== 2) bad.push('form_step:2 fehlt');
-if (SCEN === 'happy') {
-  if (n('form_quickstart') !== 0) bad.push('form_quickstart ohne Preiszeilen-Tipp');
+if (SCEN !== 'voll') {
+  if (n('form_quickstart') !== 0) bad.push('form_quickstart ohne Preis-Kachel-Tipp');
   if (n('form_error') !== 0) bad.push('form_error');
 } else {
   const fe = ev.filter(e => e.event === 'form_error').map(e => e.field).sort().join(',');
-  if (fe !== 'objekt,ort') bad.push('form_error erwartet objekt,ort, war: ' + fe);
+  if (fe !== 'dsgvo,name,objekt,ort,tel') bad.push('form_error erwartet dsgvo,name,objekt,ort,tel (je 1x), war: ' + fe);
   const q = ev.filter(e => e.event === 'form_quickstart');
-  if (HASLINK === '1') { if (q.length !== 1 || q[0].start_via !== 'preis') bad.push('form_quickstart:preis x' + q.length); }
+  if (HASLINK === '1') { if (q.length !== 1 || q[0].start_via !== 'preis') bad.push('form_quickstart:preis x' + q.length); const qc = all.filter(e => e.event === 'test_quickstart_check'); if (qc.length !== 1 || !qc[0].ok) bad.push('Preis-Kachel wählt das Objekt nicht vor'); }
   else if (q.length !== 0) bad.push('form_quickstart x' + q.length + ' obwohl die Seite keinen Preiszeilen-Link hat');
 }
 // Reihenfolge: consent_choice < form_start < form_step < generate_lead < lead_confirmed
@@ -116,10 +122,15 @@ const gl = ev.find(e => e.event === 'generate_lead') || {};
 if (gl.ads_consent !== C) bad.push('generate_lead.ads_consent=' + gl.ads_consent);
 if (gl.lead_source !== 'ads-lp' || gl.lp !== SLUG) bad.push('generate_lead lead_source/lp');
 if (C === 'deny' && 'user_data' in gl) bad.push('user_data trotz deny');
-if (C === 'allow') {
+if (C === 'allow' && SCEN !== 'tel') {
   if (!gl.user_data || gl.user_data.email !== 'test@example.invalid') bad.push('user_data.email fehlt bei allow');
   if (gl.user_data && gl.user_data.phone_number) bad.push('user_data.phone_number gesetzt obwohl kein Telefon');
 }
+if (C === 'allow' && SCEN === 'tel') {
+  if (!gl.user_data || gl.user_data.phone_number !== '+49301234567') bad.push('user_data.phone_number != +49301234567 bei allow');
+  if (gl.user_data && gl.user_data.email) bad.push('user_data.email gesetzt obwohl keine E-Mail');
+}
+if (gl.kontaktweg !== (SCEN === 'tel' ? 'Anruf' : 'E-Mail')) bad.push('generate_lead.kontaktweg=' + gl.kontaktweg);
 // --- Neuladen der Danke-Seite: kein zweites lead_confirmed
 const lc2 = s2.dl.filter(e => e.event === 'lead_confirmed').length;
 if (lc2 !== 1) bad.push('lead_confirmed nach Neuladen x' + lc2);
@@ -140,7 +151,8 @@ if (f.lp !== SLUG) bad.push('lp=' + f.lp);
 if (!f.access_key) bad.push('access_key fehlt');
 if (!/\/lp\/danke\/$/.test(f.redirect || '')) bad.push('redirect=' + f.redirect);
 if (!/^\/lp\/[a-z-]+\/ @\d{4}-/.test(f.landing_url || '')) bad.push('landing_url=' + f.landing_url);
-if (f.objekt === undefined || f.ort !== '14612' || f.kontaktweg !== 'E-Mail' || f.email !== 'test@example.invalid' || f.dsgvo === undefined) bad.push('Nutzfelder im POST unvollstaendig');
+if (SCEN === 'tel') { if (!f.objekt || f.ort !== '14612' || f.kontaktweg !== 'Anruf' || f.tel !== '030 1234567' || f.email !== '' || f.name !== 'Test' || f.dsgvo === undefined) bad.push('Nutzfelder im POST unvollstaendig (tel)'); }
+else if (!f.objekt || f.ort !== '14612' || f.kontaktweg !== 'E-Mail' || f.email !== 'test@example.invalid' || f.name !== 'Test' || f.dsgvo === undefined) bad.push('Nutzfelder im POST unvollstaendig');
 for (const k of ['wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'subject', 'from_name'])
   if (!(k in f)) bad.push('hidden ' + k + ' fehlt im POST');
 // --- Netzwerk: nur Mock-Hosts ausser localhost; genau ein POST
@@ -154,7 +166,7 @@ if (posts.length !== 1) bad.push('POST-Anzahl ' + posts.length);
 else if (!/=> \[200\]/.test(posts[0])) bad.push('POST ohne 200 vom Mock: ' + posts[0]);
 // --- Protokoll
 console.log('Ereignisse (' + SCEN + ', ' + C + '): ' + ev.map(tag).join(' '));
-if (SCEN === 'voll') console.log('Quickstart-Preiszeile: ' + (HASLINK === '1' ? 'echter Link der Seite, getestet (form_quickstart:preis x1)' : 'nicht vorhanden auf dieser Seite, nicht getestet und nicht erwartet (kein synthetischer Link)'));
+if (SCEN === 'voll') console.log('Quickstart-Preis-Kachel: ' + (HASLINK === '1' ? 'echte Kachel der Seite, getestet (form_quickstart:preis x1)' : 'nicht vorhanden auf dieser Seite, nicht getestet und nicht erwartet (keine synthetische Kachel)'));
 const gp = Object.assign({}, gl); delete gp.eventTimeout;
 console.log('generate_lead: ' + JSON.stringify(gp));
 const show = Object.keys(f).map(k => k + '=' + (k === 'access_key' ? f[k].slice(0, 8) + '…' : JSON.stringify(f[k]))).join('  ');

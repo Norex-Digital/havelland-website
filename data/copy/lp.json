@@ -4,10 +4,10 @@
     "label": "Herbst-Aktion:",
     "text": "10 % auf den Festpreis für Räumung und Abtransport bei Auftragserteilung bis 30.11.2026. Entsorgungsgebühren nach Beleg sind ausgenommen.",
     "bis": "2026-11-30",
-    "label_kurz": "Aktion:",
-    "kurz": "10 % auf den Festpreis bis 30.11.*",
-    "kurz_fuss": "* Ohne Entsorgungsgebühren (nach Beleg)",
-    "_quelle": "Owner-Entscheid Maurice 02.10.2026 (Chat: 10 % auf den Festpreis, bis 30.11.2026). Gegenstück zum Angebots-Asset der Search-Kampagne. Jeder Auftrag im Zeitraum bekommt den Rabatt (UWG: kein Scheinrabatt)."
+    "_quelle": "Owner-Entscheid Maurice 02.10.2026 (Chat: 10 % auf den Festpreis, bis 30.11.2026). Gegenstück zum Angebots-Asset der Search-Kampagne. Jeder Auftrag im Zeitraum bekommt den Rabatt (UWG: kein Scheinrabatt). Redesign 20.10.2026: Karte (badge, karte_titel, karte_bedingung) mit ausgeschriebener Bedingung, keine Kurzfassung mit Sternchen mehr; label/text bleiben als Vollfassung (Quelle für das Angebots-Asset).",
+    "badge": "−10 %",
+    "karte_titel": "Herbst-Aktion: 10 % auf den Festpreis für Räumung und Abtransport",
+    "karte_bedingung": "bei Auftrag bis 30.11.2026 · Entsorgungsgebühren nach Beleg ausgenommen"
   },
   "danke": {
     "title": "Danke – Anfrage eingegangen",
@@ -21,6 +21,44 @@
     "eilig": "Wenn es eilig ist: rufen Sie direkt an oder schicken Sie ein Foto per WhatsApp.",
     "h1_em": "angekommen"
   },
+  "zitat_hero": {
+    "t": "Es ging schnell und war trotzdem qualitativ und sauber",
+    "a": "Milo Rost",
+    "tag": "Entrümpelung",
+    "quelle": "milo"
+  },
+  "bewertungen": {
+    "_quelle": "Google-Bewertungen des GBP-Profils Haus- & Gartenservice Havelland, wörtlich (GBP-API v4, Abruf 20.10.2026, Originaltext ohne Übersetzung). Nur echte Texte, nie kürzen außer im Hero-Zitat (zitat_hero.t muss wörtlicher Teil von bewertungen[quelle].t sein, lp.mjs prüft das).",
+    "milo": {
+      "a": "Milo Rost",
+      "datum": "2026-09-17",
+      "tag": "Entrümpelung",
+      "t": "Die Jungs haben eine Entrümpelung bei mir gemacht, das Ergebnis hat meine Erwartungen übertroffen. Nur weiterzuempfehlen. Es ging schnell und war trotzdem qualitativ und sauber"
+    },
+    "mark": {
+      "a": "Mark Schneider",
+      "datum": "2026-06-22",
+      "tag": "Preis",
+      "t": "Endlich mal eine angemesse Preisvorstellung. An Qualität hapert es aber nicht. Super Firma 👍"
+    },
+    "nick": {
+      "a": "Nick",
+      "datum": "2026-07-21",
+      "tag": "Garten & Entrümpelung",
+      "t": "Top Service rund um unseren Garten – von Formschnitten bis zur Entrümpelung wurde alles professionell erledigt und der Grünschnitt gleich mit entsorgt. Absprache lief unkompliziert, Preis-Leistung stimmt. Kommen definitiv wieder bei uns vorbei!"
+    },
+    "nikita": {
+      "a": "Nikita",
+      "datum": "2026-06-22",
+      "tag": "Zuverlässigkeit",
+      "t": "Ich bin sehr zufrieden mit dem Haus- & Gartenservice Havelland. Alles war perfekt von der Kommunikation bis zur Ausführung der Arbeiten. Zuverlässig, pünktlich und sehr professionell. Klare Weiterempfehlung!"
+    }
+  },
+  "bewertungen_lp_standard": [
+    "milo",
+    "mark",
+    "nick"
+  ],
   "lps": [
     {
       "slug": "haushaltsaufloesung-havelland",
@@ -31,10 +69,11 @@
       "kick": "Festpreis nach Besichtigung · Sie müssen nicht dabei sein",
       "h1": "Haushaltsauflösung & Entrümpelung im Havelland. Was Ihnen wichtig ist, bleibt bei Ihnen.",
       "h1_em": "Was Ihnen wichtig ist, bleibt bei Ihnen",
-      "ort_swap": { "h1": "im Havelland" },
+      "ort_swap": {
+        "h1": "im Havelland"
+      },
       "lead": "Nach Todesfall, Pflegeheim-Umzug oder Auszug räumen wir besenrein: im Havelland, in Berlin-Spandau und Potsdam.",
       "cta": "Kostenlose Besichtigung anfragen",
-      "cta_step1": "Weiter – kostenlos anfragen",
       "form_pos": "hero",
       "wa_text": "Hallo, ich brauche eine Haushaltsauflösung. Wann könnten Sie zur Besichtigung kommen?",
       "trust_zeile": "Festpreis nach Besichtigung",
@@ -50,6 +89,10 @@
         {
           "b": "Foto-Nachweis",
           "t": "aufs Handy nach der Räumung"
+        },
+        {
+          "b": "Kostenlos",
+          "t": "Anfahrt, Besichtigung und Angebot"
         }
       ],
       "nutzen": [
@@ -84,15 +127,27 @@
         }
       ],
       "preis": {
-        "hero_note": "Einstiegspreise für kleine, gut zugängliche Objekte · inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
+        "hero_note": "für kleine, gut zugängliche Objekte · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
         "h": "Was kostet eine Haushaltsauflösung?",
         "cta": "Festpreis für Ihr Objekt anfragen",
         "cta_hint": "Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich. Keine Vorkasse, keine Verpflichtung.",
         "anker": {
           "items": [
-            { "t": "Entrümpelung ab 99 €", "obj": "Keller / Dachboden", "k": "Entrümpelung" },
-            { "t": "Wohnungsauflösung ab 499 €", "obj": "Wohnung", "k": "Wohnung" },
-            { "t": "Komplettes Haus ab 749 €", "obj": "Haus", "k": "Ganzes Haus" }
+            {
+              "t": "Entrümpelung ab 99 €",
+              "obj": "Keller / Dachboden",
+              "k": "Entrümpelung"
+            },
+            {
+              "t": "Wohnungsauflösung ab 499 €",
+              "obj": "Wohnung",
+              "k": "Wohnung"
+            },
+            {
+              "t": "Komplettes Haus ab 749 €",
+              "obj": "Haus",
+              "k": "Ganzes Haus"
+            }
           ],
           "note": "Alle Preise inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot."
         },
@@ -143,10 +198,6 @@
         "Garage / Schuppen"
       ],
       "form_subject": "Neue Anfrage (Ads-LP Haushaltsauflösung)",
-      "testimonials": [
-        0,
-        6
-      ],
       "fotos": [
         {
           "vorher": "fall-kammer-falkensee-vorher",
@@ -182,10 +233,11 @@
       "kick": "Diskret · Festpreis nach Besichtigung · Sie müssen nicht dabei sein",
       "h1": "Messie-Wohnung räumen lassen im Havelland: gründlich und ohne Fragen",
       "h1_em": "gründlich und ohne Fragen",
-      "ort_swap": { "h1": "im Havelland" },
+      "ort_swap": {
+        "h1": "im Havelland"
+      },
       "lead": "Messie-Wohnung entrümpeln oder eine vermüllte, verwahrloste Wohnung räumen: Ob Vermieter, Angehörige oder Sie selbst, wir arbeiten ruhig und gründlich. Sie müssen weder dabei sein noch etwas erklären. Kostenlose Besichtigung im Havelland, in Berlin-Spandau und Potsdam.",
       "cta": "Vertraulich anfragen",
-      "cta_step1": "Weiter – kostenlos anfragen",
       "wa_text": "Hallo, ich brauche eine diskrete Wohnungsräumung. Können wir kurz sprechen?",
       "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
@@ -200,6 +252,10 @@
         {
           "b": "Vertraulich",
           "t": "wir reden mit niemandem darüber"
+        },
+        {
+          "b": "Kostenlos",
+          "t": "Anfahrt, Besichtigung und Angebot"
         }
       ],
       "nutzen": [
@@ -237,7 +293,12 @@
         "h": "Was kostet die Räumung?",
         "cta": "Festpreis vertraulich anfragen",
         "cta_hint": "Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich. Keine Vorkasse, keine Verpflichtung.",
-        "anker": { "items": ["Messie-Wohnung ab 1.500 €"], "note": "Inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot." },
+        "anker": {
+          "items": [
+            "Messie-Wohnung ab 1.500 €"
+          ],
+          "note": "Inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot."
+        },
         "p": [
           "Der Einstiegspreis gilt für eine kleine 1-Zimmer-Wohnung. Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert.",
           "Wertanrechnung: Gut erhaltene Möbel oder Geräte prüfen wir auf ihren Wert und rechnen sie auf den Festpreis an.",
@@ -280,17 +341,16 @@
         "Einzelne Räume"
       ],
       "form_subject": "Neue Anfrage (Ads-LP Wohnungsräumung)",
-      "testimonials": [
-        0,
-        6
-      ],
       "fotos": [],
       "hero": {
         "typ": "foto",
         "slug": "svc-entruempelung-hero",
         "alt": "Entrümpelung im Havelland – Haus- & Gartenservice Havelland"
       },
-      "testimonials_h2": "Was Kunden über uns sagen"
+      "testimonials_h2": "Was Kunden über uns sagen",
+      "objekte_kurz": {
+        "Einzelne Räume": "Räume"
+      }
     },
     {
       "slug": "gewerbe-entruempelung",
@@ -299,7 +359,9 @@
       "title": "Entrümpelung für Hausverwaltungen & Gewerbe – Havelland",
       "meta": "Entrümpelung, Wohnungsräumung und Betriebsauflösung für Hausverwaltungen, Vermieter und Gewerbe im Havelland: feste Termine, Festpreis je Objekt.",
       "kick": "Festpreis je Objekt · Sammelrechnung · Havelland",
-      "ort_swap": { "kick": "Havelland" },
+      "ort_swap": {
+        "kick": "Havelland"
+      },
       "h1": "Entrümpelung für Hausverwaltungen & Gewerbe: Wir übergeben leer, gereinigt, geruchsfrei.",
       "h1_em": "leer, gereinigt, geruchsfrei",
       "lead": "Wohnungsräumung nach Auszug, Kellerräumung im Mehrfamilienhaus, Büro- oder Betriebsauflösung: ein regionaler Ansprechpartner, feste Termine, schriftlicher Festpreis je Objekt und auf Wunsch eine Sammelrechnung.",
@@ -318,6 +380,10 @@
         {
           "b": "Falkensee",
           "t": "regionaler Betrieb vor Ort"
+        },
+        {
+          "b": "Besichtigung kostenlos",
+          "t": "Termin meist in 2–3 Werktagen"
         }
       ],
       "nutzen": [
@@ -392,17 +458,17 @@
         "Mehrere Objekte"
       ],
       "form_subject": "Neue Anfrage (Ads-LP Gewerbe)",
-      "testimonials": [
-        0,
-        6
-      ],
       "fotos": [],
       "hero": {
         "typ": "foto",
         "slug": "svc-entruempelung-hero",
         "alt": "Entrümpelung für Hausverwaltungen und Gewerbe im Havelland – Haus- & Gartenservice Havelland"
       },
-      "testimonials_h2": "Was Kunden über uns sagen"
+      "testimonials_h2": "Was Kunden über uns sagen",
+      "objekte_kurz": {
+        "Wohnung nach Auszug": "Wohnung",
+        "Mehrere Objekte": "Mehrere"
+      }
     },
     {
       "slug": "nachlass-aufloesung",
@@ -413,11 +479,12 @@
       "kick": "Haushaltsauflösung nach Todesfall · Sie müssen nicht dabei sein",
       "h1": "Nachlassauflösung im Havelland: diskret und besenrein",
       "h1_em": "diskret und besenrein",
-      "ort_swap": { "h1": "im Havelland" },
+      "ort_swap": {
+        "h1": "im Havelland"
+      },
       "lead": "Nach Todesfall: Wir lösen den Haushalt auf. Sie müssen nicht dabei sein.",
       "lead_mobil": true,
       "cta": "Besichtigung anfragen",
-      "cta_step1": "Weiter – kostenlos anfragen",
       "form_legend": "Was ist zu räumen – und wo?",
       "quick_label": "Was ist zu räumen?",
       "kontakt_h2": "Besichtigung anfragen",
@@ -436,6 +503,10 @@
         {
           "b": "Betrieb aus Falkensee",
           "t": "fester Ansprechpartner"
+        },
+        {
+          "b": "Besichtigung kostenlos",
+          "t": "Termin nach Absprache"
         }
       ],
       "nutzen": [
@@ -525,16 +596,23 @@
         "Zimmer / Keller"
       ],
       "form_subject": "Neue Anfrage (Ads-LP Nachlass)",
-      "testimonials": [
-        0
-      ],
       "fotos": [],
       "hero": {
         "typ": "text"
       },
       "testimonials_h2": "Was Kunden über uns sagen",
       "end_h2": "Melden Sie sich, wann es für Sie passt.",
-      "end_p": "Besichtigung kostenlos, Festpreis für Räumung und Abtransport schriftlich, besenreine Übergabe. Wir räumen nach Todesfall im Havelland, in Berlin-Spandau und Potsdam."
+      "end_p": "Besichtigung kostenlos, Festpreis für Räumung und Abtransport schriftlich, besenreine Übergabe. Wir räumen nach Todesfall im Havelland, in Berlin-Spandau und Potsdam.",
+      "bewertungen_lp": [
+        "milo",
+        "nikita"
+      ],
+      "zitat_hero": {
+        "t": "Zuverlässig, pünktlich und sehr professionell",
+        "a": "Nikita",
+        "tag": "",
+        "quelle": "nikita"
+      }
     },
     {
       "slug": "wohnungsaufloesung",
@@ -550,7 +628,6 @@
       },
       "lead": "Nach Auszug, Pflegeheim-Umzug oder Todesfall lösen wir die Wohnung auf: Wir räumen sie leer und übergeben sie besenrein an Vermieter oder Käufer.",
       "cta": "Kostenlose Besichtigung anfragen",
-      "cta_step1": "Weiter – kostenlos anfragen",
       "form_legend": "Wie groß ist die Wohnung – und wo?",
       "wa_text": "Hallo, ich brauche eine Wohnungsauflösung. Wann könnten Sie zur Besichtigung kommen?",
       "trust_zeile": "Festpreis nach Besichtigung",
@@ -566,6 +643,10 @@
         {
           "b": "Foto-Nachweis",
           "t": "aufs Handy nach der Räumung"
+        },
+        {
+          "b": "Kostenlos",
+          "t": "Anfahrt, Besichtigung und Angebot"
         }
       ],
       "nutzen": [
@@ -604,7 +685,7 @@
         "h": "Was kostet eine Wohnungsauflösung?",
         "cta": "Preis für Ihre Wohnung anfragen",
         "cta_hint": "Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich. Keine Vorkasse, keine Verpflichtung.",
-        "hero_note": "für eine kleine 1-Zimmer-Wohnung · inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
+        "hero_note": "für eine kleine 1-Zimmer-Wohnung · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
         "anker": {
           "items": [
             {
@@ -660,10 +741,6 @@
         "Ab 5 Zimmer"
       ],
       "form_subject": "Neue Anfrage (Ads-LP Wohnungsauflösung)",
-      "testimonials": [
-        0,
-        6
-      ],
       "fotos": [
         {
           "vorher": "fall-kammer-falkensee-vorher",
@@ -694,7 +771,6 @@
       },
       "lead": "Haus entrümpeln oder auflösen: Wir räumen das ganze Haus, von den Wohnräumen bis zu Keller, Dachboden und Garage.",
       "cta": "Kostenlose Besichtigung anfragen",
-      "cta_step1": "Weiter – kostenlos anfragen",
       "wa_text": "Hallo, ich möchte ein Haus entrümpeln lassen. Wann könnten Sie zur Besichtigung kommen?",
       "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
@@ -709,6 +785,10 @@
         {
           "b": "Foto-Nachweis",
           "t": "aufs Handy nach der Räumung"
+        },
+        {
+          "b": "Kostenlos",
+          "t": "Anfahrt, Besichtigung und Angebot"
         }
       ],
       "nutzen": [
@@ -747,7 +827,7 @@
         "h": "Was kostet es, ein Haus zu entrümpeln?",
         "cta": "Preis für Ihr Haus anfragen",
         "cta_hint": "Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich. Keine Vorkasse, keine Verpflichtung.",
-        "hero_note": "für ein kleines, gut zugängliches Haus · inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
+        "hero_note": "für ein kleines, gut zugängliches Haus · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
         "anker": {
           "items": [
             {
@@ -803,10 +883,6 @@
         "Dachboden / Keller"
       ],
       "form_subject": "Neue Anfrage (Ads-LP Haus entrümpeln)",
-      "testimonials": [
-        0,
-        6
-      ],
       "fotos": [
         {
           "vorher": "fall-kammer-falkensee-vorher",
@@ -844,7 +920,6 @@
       },
       "lead": "Wir räumen Keller, Dachboden, Garage und Schuppen in Falkensee und im Havelland, einzeln oder zusammen, mit Abtransport und Foto vom leeren Raum.",
       "cta": "Kostenlose Besichtigung anfragen",
-      "cta_step1": "Weiter – kostenlos anfragen",
       "wa_text": "Hallo, ich möchte einen Keller, Dachboden oder eine Garage entrümpeln lassen. Wann könnten Sie zur Besichtigung kommen?",
       "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
@@ -859,6 +934,10 @@
         {
           "b": "Foto-Nachweis",
           "t": "aufs Handy nach der Räumung"
+        },
+        {
+          "b": "Kostenlos",
+          "t": "Anfahrt, Besichtigung und Angebot"
         }
       ],
       "nutzen": [
@@ -896,7 +975,7 @@
         "h": "Was kostet die Entrümpelung?",
         "cta": "Preis für Ihren Raum anfragen",
         "cta_hint": "Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich. Keine Vorkasse, keine Verpflichtung.",
-        "hero_note": "für ein einzelnes Kellerabteil · inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
+        "hero_note": "für ein einzelnes Kellerabteil · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
         "anker": {
           "items": [
             {
@@ -948,10 +1027,6 @@
         "Garage / Schuppen"
       ],
       "form_subject": "Neue Anfrage (Ads-LP Keller Dachboden Garage)",
-      "testimonials": [
-        0,
-        6
-      ],
       "fotos": [
         {
           "vorher": "fall-kammer-falkensee-vorher",
@@ -994,7 +1069,6 @@
       },
       "lead": "Wohnung, Haus, Keller oder Garage: Wir räumen aus, entsorgen und übergeben besenrein, im Havelland, in Berlin-Spandau und Potsdam.",
       "cta": "Kostenlose Besichtigung anfragen",
-      "cta_step1": "Weiter – kostenlos anfragen",
       "wa_text": "Hallo, ich brauche eine Entrümpelung. Wann könnten Sie zur Besichtigung kommen?",
       "trust_zeile": "Festpreis nach Besichtigung",
       "trust": [
@@ -1009,6 +1083,10 @@
         {
           "b": "Foto-Nachweis",
           "t": "aufs Handy nach der Räumung"
+        },
+        {
+          "b": "Kostenlos",
+          "t": "Anfahrt, Besichtigung und Angebot"
         }
       ],
       "was_wir_tun": {
@@ -1068,7 +1146,7 @@
         "h": "Was kostet eine Entrümpelung?",
         "cta": "Preis für Ihr Objekt anfragen",
         "cta_hint": "Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich. Keine Vorkasse, keine Verpflichtung.",
-        "hero_note": "Einstiegspreise für kleine, gut zugängliche Objekte · inkl. MwSt. · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
+        "hero_note": "für kleine, gut zugängliche Objekte · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
         "anker": {
           "items": [
             {
@@ -1128,10 +1206,6 @@
         "Garage / Schuppen"
       ],
       "form_subject": "Neue Anfrage (Ads-LP Entrümpelung Havelland)",
-      "testimonials": [
-        0,
-        6
-      ],
       "fotos": [
         {
           "vorher": "fall-kammer-falkensee-vorher",

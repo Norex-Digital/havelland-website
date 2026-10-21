@@ -35,26 +35,6 @@ main .sec .head h2{max-width:22em}
 .lp-preis{background:var(--paper);border:1px solid var(--hair);border-left:3px solid var(--green);border-radius:0 var(--r-el) var(--r-el) 0;padding:18px 20px}
 .lp-preis p{color:var(--ink);font-size:16px;line-height:1.55;margin-bottom:10px}
 .lp-preis p:last-child{margin-bottom:0}
-.lp-form{margin-top:6px}
-.lp-form fieldset{border:0;padding:0;margin:0 0 6px}
-.lp-form legend{font-weight:700;font-size:15px;color:var(--green-d);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
-.lp-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.kf .lp-chips label{margin:0;display:inline-flex;flex-direction:row;align-items:center;gap:8px;min-height:44px;border:1.5px solid var(--border-visible,var(--hair));border-radius:var(--r-button);padding:10px 16px;background:var(--lp-surface);font-weight:600;font-size:15px;color:var(--ink);cursor:pointer}
-.kf .lp-chips input[type=radio]{width:18px;height:18px;min-height:0;margin:0;padding:0;border:0;background:none;box-shadow:none;accent-color:var(--green-d);flex:0 0 auto}
-.lp-chips label:has(input:checked){border-color:var(--green-d);background:var(--paper)}
-.lp-chips label:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
-.kf .lp-chips input[type=radio]:focus-visible{outline:none}
-.lp-form .row{display:grid;gap:10px}
-.lp-form.js .step2{display:none}
-.lp-form.js.s2 .step2{display:block}
-.lp-form.js.s2 .step1{display:none}
-.lp-form:not(.js) [data-next],.lp-form:not(.js) .back,.lp-form:not(.js) .step1 .hint{display:none}
-.lp-form .hint{font-size:14px;color:var(--muted);margin-top:8px}
-.lp-form .err{display:none;color:var(--error-ink);font-size:14.5px;margin:6px 0 10px;font-weight:600}
-.lp-form .err.show{display:block}
-.lp-form .back{background:none;border:0;color:var(--green-d);font-weight:600;font-size:15px;min-height:44px;padding:10px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.lp-form .btn{width:100%}
-.lp-legal{margin-top:12px}
 .lp-foot{background:var(--cream);border-top:1px solid var(--hair);padding:34px 0 30px;font-size:14.5px;color:var(--muted)}
 .lp-foot p{margin-bottom:6px}
 .lp-foot .legal{margin-top:16px;padding-top:14px}
@@ -65,18 +45,6 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-danke .lp-cta{margin-top:24px}
 .scta .wa{background:transparent;color:var(--green-d);box-shadow:none;border:1.5px solid var(--green)}
 .lp-trust1{display:none;margin:0 0 6px;font-size:clamp(11.5px,3.5vw,13px);font-weight:600;line-height:1.3;color:var(--green-d);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.005em}
-.lp-trust1 .st{color:var(--green)}
-.lp-hero-preis{margin:14px 0 0;color:var(--ink)}
-.lp-hero-preis p{margin:0}
-.lp-hero-preis .pzs{font-size:16px;line-height:1.5;text-wrap:pretty}
-.lp-hero-preis .pn{display:block;font-size:14.5px;line-height:1.5;color:var(--muted);text-wrap:pretty}
-.lp-hero-preis b{white-space:nowrap}
-.lp-hero-preis .pk{display:none}
-.lp-hero-preis .sep{margin:0 .45em;font-style:normal;color:var(--muted)}
-.lp-aktion{margin:12px 0 0;padding:10px 14px;border-left:3px solid var(--green);background:var(--paper);border-radius:0 var(--r-el) var(--r-el) 0;font-size:15px;line-height:1.5;color:var(--ink);text-wrap:pretty}
-.lp-aktion b{color:var(--green-d)}
-.lp-aktion .kz{display:none}
-.lp-preis .lp-aktion{margin:0 0 14px}
 .lp-quick{margin:20px 0 16px}
 .lp-quick-l{font-weight:700;font-size:15px;color:var(--green-d);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
 .lp-quick-c{display:flex;flex-wrap:wrap;gap:8px}
@@ -84,7 +52,6 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-quick-c a:hover{background:var(--paper)}
 .lp-quick-c a:active{scale:.96}
 .lp-chips .qs,.lp-quick-c .qs{display:none}
-.lp-hero-preis+.lp-cta{margin-top:20px}
 .lp-preis+.lp-cta{margin-top:22px}
 .lp-preis+.lp-cta+.hint{margin-top:10px;font-size:14.5px;color:var(--muted)}
 @media(max-width:899px){body:not(:has(.consent:not([hidden]))) .lp-hero .lp-cta .btn-line{display:none}}
@@ -93,32 +60,11 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 @media(min-width:760px){
   .lp-cta{flex-direction:row;align-items:center;gap:16px}.lp-cta .btn{width:auto}
   .lp-gallery{grid-template-columns:repeat(2,1fr)}
-  .lp-form .row{grid-template-columns:1fr 1fr}
-  .lp-form .row .full{grid-column:1/-1}
-  .lp-form .btn{width:auto}
 }
 .lp-hero .hleaf{pointer-events:none}
 .lp-hero-form{margin:14px 0 6px}
-.lp-hero-form .kf{padding:14px 16px;border-radius:var(--r-card);background:var(--lp-surface);border:1px solid var(--hair)}
-.lp-hero-form .step1 .lp-chips{gap:8px;margin-bottom:8px}
-.lp-hero-form .step1 .row{margin-top:2px}
-.lp-hero-form [data-next]{margin-top:8px}
-.lp-hero-form .lp-chips .ql{display:none}
-.lp-hero-form .lp-chips .qs{display:inline}
-.lp-alt{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.lp-alt .btn{flex:1 1 140px;width:auto;justify-content:center}
-.lp-alt .btn svg{width:18px;height:18px;flex:0 0 auto}
-@media(max-width:599px){.lp-alt .btn{white-space:nowrap;padding-left:10px;padding-right:10px;font-size:15px}}
-@media(max-width:399px){.lp-alt .btn{font-size:14px;flex:1 1 auto;padding-left:8px;padding-right:8px}.lp-alt .btn svg{display:none}}
-.lp-hero-preis a.pz{display:inline;position:relative;color:inherit;text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:1.5px;text-underline-offset:3px}
-.lp-hero-preis a.pz::after{content:"";position:absolute;inset:-13px -4px}
-.lp-anker{display:flex;flex-wrap:wrap;gap:0 24px}
-.lp-anker .lp-ar{display:inline-flex;align-items:center;min-height:44px;font-size:1.15rem;line-height:1.3;color:var(--ink)}
-.lp-anker a.lp-ar{text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:1.5px;text-underline-offset:3px}
-.lp-preis .lp-anker-note{font-size:.95rem;line-height:1.5;color:var(--muted);margin:0 0 14px}
 .lp-preisverweis a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:var(--green-d)}
 #anfrage{scroll-margin-top:82px}
-.lp-form legend:focus{outline:none}
 .lp-person{display:flex;align-items:center;gap:12px;margin:14px 0 0;font-size:15px;line-height:1.4;color:var(--ink)}
 .lp-person picture{display:flex;flex:0 0 auto}
 .lp-person .av,.lp-person img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:0 0 auto}
@@ -128,38 +74,161 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-head .logo img{height:42px}
 .lp-hero:has(.lp-hero-form){padding:8px 0 36px}
 .lp-hero:has(.lp-hero-form) .kick{display:none}
-.lp-hero:has(.lp-hero-form) .lp-trust1{display:block;margin-bottom:4px}
+.lp-hero:has(.lp-hero-form) .lp-trust1{display:flex;align-items:center;gap:6px;margin-bottom:4px}
 .lp-hero[data-lead-mobil] .lead{font-size:16px;line-height:1.4;margin:6px 0 4px}
 .lp-hero[data-h1-lang]:has(.lp-hero-form) h1{font-size:clamp(19px,5.6vw,22px)}
 .lp-hero:has(.lp-hero-form) h1{font-size:clamp(21px,6.1vw,24px);line-height:1.1;margin-bottom:2px}
-.lp-hero-preis{margin-top:10px}
-.lp-hero-preis .pzs{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;font-size:16px;line-height:1.15}
-.lp-hero-preis .sep,.lp-hero-preis a.pz::after{display:none}
-.lp-hero-preis .pz{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:3px 6px;border:1.5px solid var(--hair);border-radius:var(--r-el);background:var(--lp-surface);text-decoration:none;white-space:normal}
-.lp-hero-preis a.pz{display:flex;border-color:var(--green);text-decoration:none}
-.lp-hero-preis .pz:only-child{flex-direction:row;justify-content:flex-start;gap:6px;padding:3px 12px}
-.lp-hero-preis .pl,.lp-hero-preis .pk{font-size:12px;font-weight:500;color:var(--muted);line-height:1.2}
-.lp-hero-preis .pk{display:block;order:-1}
-.lp-hero-preis .pz:has(.pk) .pl{display:none}
-.lp-hero-preis .pp{font-size:16px;font-weight:700;color:var(--ink)}
-.lp-hero-preis .pn{margin-top:6px;font-size:12.5px;line-height:1.35}
-.lp-hero .lp-aktion{margin-top:8px;padding:6px 10px;font-size:12.5px;line-height:1.35;white-space:nowrap;overflow:hidden}
-.lp-hero .lp-aktion .lg{display:none}
-.lp-hero .lp-aktion .kz{display:inline}
-.lp-hero .lp-aktion .kfn{display:block;margin-top:2px;font-size:12px;font-weight:500;color:var(--muted)}
 .lp-hero-form{margin-top:8px}
-.lp-hero-form .kf{padding:12px;gap:8px}
-.lp-hero-form .step1 .hint{display:none}
-.lp-hero-form .step1 legend{font-size:13px;letter-spacing:.04em;margin-bottom:6px}
-.lp-hero-form .step1 .lp-chips{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px}
-.lp-hero-form .step1 .lp-chips label{padding:8px 10px;font-size:14.5px}
-.lp-hero-form .step1 .row{margin-top:2px}
-.lp-alt{margin-top:8px}
-.lp-alt .btn{min-height:44px;padding-top:8px;padding-bottom:8px}
 }
-@media(min-width:900px){.lp-hero:has(.lp-hero-form) .grid{align-items:start;grid-template-columns:1.4fr .6fr;gap:40px}.lp-hero:has(.lp-hero-form) .shot{position:sticky;top:90px}.lp-hero:has(.lp-hero-form){overflow:clip;padding-top:18px}.lp-hero:has(.lp-hero-form) .kick{margin-bottom:6px}.lp-hero:has(.lp-hero-form) .lead{margin-top:8px}.lp-hero-form{margin-top:12px}.lp-hero:has(.lp-hero-form) h1{font-size:clamp(36px,3.5vw,46px);line-height:1.04}.lp-hero:has(.lp-hero-form) .lead{font-size:18px;margin-bottom:0;max-width:40em}.lp-hero-form .kf{max-width:42em;gap:10px}}
+@media(min-width:900px){.lp-hero:has(.lp-hero-form) .grid{align-items:start;grid-template-columns:1.4fr .6fr;gap:40px}.lp-hero:has(.lp-hero-form) .shot{align-self:center}.lp-hero:has(.lp-hero-form){overflow:clip;padding-top:18px}.lp-hero:has(.lp-hero-form) .kick{margin-bottom:6px}.lp-hero:has(.lp-hero-form) .lead{margin-top:8px}.lp-hero-form{margin-top:12px}.lp-hero:has(.lp-hero-form) h1{font-size:clamp(36px,3.5vw,46px);line-height:1.04}.lp-hero:has(.lp-hero-form) .lead{font-size:18px;margin-bottom:0;max-width:40em}}
 @media(min-width:900px){.lp-hero-text.lp-hero:has(.lp-hero-form) .grid{grid-template-columns:1fr;max-width:1180px}}
+/* ---- Formular v2: ein Schritt, schlank. Außen --r-image (24) = innen --r-el (12) + Innenabstand (12): konzentrisch. ---- */
+.lp-form{position:relative;z-index:1;display:grid;gap:10px;max-width:none;margin:0;padding:12px;border:0;border-radius:var(--r-image);background:var(--lp-surface);box-shadow:0 0 0 1px rgba(21,32,26,.07),0 1px 2px rgba(21,32,26,.05),0 24px 44px -28px rgba(14,46,31,.34)}
+.lp-form fieldset{border:0;padding:0;margin:0;min-width:0}
+.lp-form legend{font-weight:600;font-size:14px;line-height:1.3;color:var(--green-d);margin:2px 2px 8px;padding:0}
+.lp-form legend:focus{outline:none}
+.lp-form .seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;padding:3px;border-radius:var(--r-el);background:var(--paper);box-shadow:inset 0 0 0 1px var(--border-visible);transition:box-shadow .15s var(--ease)}
+.lp-form .seg3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lp-form .seg label{position:relative;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:0;margin:0;min-height:44px;padding:0 4px;border-radius:calc(var(--r-el) - 3px);font-weight:600;font-size:14.5px;line-height:1.15;color:var(--ink);text-align:center;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;transition:background-color .15s var(--ease),color .15s var(--ease),box-shadow .15s var(--ease),scale .12s var(--ease)}
+.lp-form .seg input{position:absolute;inset:0;width:100%;height:100%;min-height:0;margin:0;padding:0;border:0;opacity:0;cursor:pointer}
+.lp-form .seg label:has(input:checked){background:var(--green-d);color:var(--dark-text1);box-shadow:0 1px 2px rgba(14,46,31,.35)}
+.lp-form .seg label:active{scale:.96}
+.lp-form .seg label:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
+@media(hover:hover){.lp-form .seg label:hover:not(:has(input:checked)){background:rgba(22,65,45,.07)}}
+.lp-form .seg label+label::before{content:"";position:absolute;left:-2px;top:12px;bottom:12px;width:1px;background:var(--border-visible);opacity:.55;transition:opacity .15s var(--ease)}
+.lp-form .seg label:has(input:checked)::before,.lp-form .seg label:has(input:checked)+label::before{opacity:0}
+.lp-form .seg .ql{display:none}
+.lp-form .f-obj.bad .seg{box-shadow:inset 0 0 0 1.5px var(--error)}
+.lp-form .frow{display:grid;gap:10px}
+.lp-form .fld{position:relative;display:block;margin:0;font-weight:400;font-size:16px;color:var(--ink)}
+.lp-form .fld>span{position:absolute;left:14px;top:9px;z-index:1;font-size:12.5px;line-height:1;font-weight:600;color:var(--green-d);pointer-events:none}
+.lp-form .fld input,.lp-form .fld textarea{display:block;width:100%;min-height:54px;padding:25px 14px 7px;border:0;border-radius:var(--r-el);background:var(--paper);box-shadow:inset 0 0 0 1px var(--border-visible);font:400 16px/1.3 var(--font-body);color:var(--ink);transition:box-shadow .15s var(--ease),background-color .15s var(--ease)}
+.lp-form .fld textarea{min-height:96px;resize:vertical}
+.lp-form .fld input::placeholder,.lp-form .fld textarea::placeholder{color:var(--muted);opacity:.85}
+.lp-form .fld input:focus,.lp-form .fld textarea:focus{outline:3px solid var(--accent);outline-offset:2px;box-shadow:inset 0 0 0 1.5px var(--green-d);background:var(--lp-surface)}
+.lp-form .fld.bad input{box-shadow:inset 0 0 0 1.5px var(--error)}
+.lp-form .more{margin:-2px 0 0}
+.lp-form .more summary{display:flex;align-items:center;gap:9px;min-height:44px;padding:0 2px;font-weight:600;font-size:15px;color:var(--green-d);cursor:pointer;list-style:none;border-radius:var(--r-el)}
+.lp-form .more summary::-webkit-details-marker{display:none}
+.lp-form .more summary::before{content:"";flex:0 0 auto;width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--green-d);background:linear-gradient(var(--green-d),var(--green-d)) center/10px 1.5px no-repeat,linear-gradient(var(--green-d),var(--green-d)) center/1.5px 10px no-repeat;transition:background-size .2s var(--ease)}
+.lp-form .more[open] summary::before{background-size:10px 1.5px,0 0}
+.lp-form .more summary small{font-size:inherit;font-weight:400;color:var(--muted)}
+.lp-form .more-body{display:grid;gap:10px;padding:2px 0 6px}
+.lp-form .ffoot{display:grid;gap:10px}
+.lp-form .chk{display:flex;flex-direction:row;align-items:center;gap:10px;min-height:44px;margin:0;padding:2px;font-weight:400;font-size:13.5px;line-height:1.4;color:var(--muted);cursor:pointer}
+.lp-form .chk input{appearance:none;-webkit-appearance:none;flex:0 0 22px;width:22px;height:22px;min-height:0;margin:0;padding:0;border:0;border-radius:6px;background:var(--lp-surface);box-shadow:inset 0 0 0 1.5px var(--border-visible);cursor:pointer;transition:background-color .15s var(--ease),box-shadow .15s var(--ease)}
+.lp-form .chk input:checked{background:var(--green-d) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M6 11.5l3.2 3.2L16 7.8' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat;box-shadow:none}
+.lp-form .chk input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.lp-form .chk a{color:var(--green-d);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--green)}
+.lp-form .chk.bad{color:var(--error-ink)}
+.lp-form .chk.bad input{box-shadow:inset 0 0 0 2px var(--error)}
+.lp-form .err{display:none;margin:0;padding:9px 12px;border-left:3px solid var(--error);border-radius:0 var(--r-el) var(--r-el) 0;background:rgba(214,69,63,.08);color:var(--error-ink);font-size:14.5px;line-height:1.4;font-weight:600}
+.lp-form .err.show{display:block}
+.lp-form .btn{width:100%;justify-self:stretch;margin:0;min-height:54px}
+.lp-form .fine1{margin:0;text-align:center;font-size:13px;line-height:1.4;color:var(--muted)}
+.lp-form .fine{margin:0 2px;font-size:12px;line-height:1.5;color:var(--muted);text-wrap:pretty}
+.lp-alt{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 2px;margin:0;padding-top:4px;border-top:1px solid var(--hair)}
+.lp-alt a{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 10px;border-radius:var(--r-button);font-weight:600;font-size:15px;color:var(--green-d);text-decoration:none;transition:background-color .15s var(--ease),scale .12s var(--ease)}
+.lp-alt a svg{width:17px;height:17px;flex:0 0 auto}
+.lp-alt a+a{position:relative}
+.lp-alt a+a::before{content:"";position:absolute;left:-2px;top:13px;bottom:13px;width:1px;background:var(--hair)}
+.lp-alt a:active{scale:.96}
+@media(hover:hover){.lp-alt a:hover{background:var(--paper);text-decoration:none}}
+@media(max-width:599px){.lp-form{gap:8px}.lp-form legend{margin:0 2px 6px;font-size:13.5px}.lp-form .frow{gap:8px}.lp-form .fld input{min-height:50px;padding:22px 14px 6px}.lp-form .fld>span{top:8px}.lp-form .ffoot{gap:8px}.lp-form .more{margin:-4px 0 -2px}.lp-form{padding:10px 12px 12px}.lp-form .chk{min-height:40px;padding:0 2px;font-size:13px}.lp-form .more summary{min-height:44px}}
+@media(max-width:399px){.lp-form .seg label{font-size:14px;padding:0 2px}.lp-alt a{font-size:14px;padding:0 6px;gap:5px}.lp-alt a svg{width:15px;height:15px}}
+@media(min-width:760px){
+.lp-form{padding:14px;gap:12px}
+.lp-form legend{font-size:15px}
+.lp-form .seg label{font-size:15.5px}
+.lp-form .seg .ql{display:inline}
+.lp-form .seg .qs{display:none}
+.lp-form .frow{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lp-form .ffoot{grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:20px}
+.lp-form .ffoot .err{grid-column:1/-1}
+.lp-form .btn{width:auto;padding-left:34px;padding-right:34px}
+.lp-hero-form .lp-form{max-width:44em}
+}
+/* ---- Redesign 20.10. (lp-bloecke.mjs) ---- */
+.lp-st{color:var(--accent);letter-spacing:1.5px}
+.lp-topbar{background:var(--green-deep);color:var(--dark-text2);font-size:12.5px;font-weight:600;line-height:1.2}
+.lp-topbar .wrap{display:flex;justify-content:center;align-items:center;gap:10px;min-height:32px;white-space:nowrap;overflow:hidden}
+.lp-topbar .lp-st{font-size:11.5px}
+.lp-topbar .d{opacity:.55}
+@media(max-width:460px){.lp-topbar .d,.lp-topbar .fk{display:none}}
+.lp-head .nav{justify-content:flex-start;gap:6px}
+.lp-head .callpill{margin-left:0}
+.lp-web{margin-left:auto;display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 8px;border-radius:var(--r-button);font-size:14px;font-weight:600;color:var(--green-d);text-decoration:none;white-space:nowrap}
+.lp-web svg{width:14px;height:14px;flex:0 0 auto}
+.lp-web:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media(hover:hover){.lp-web:hover{background:var(--paper)}}
+@media(max-width:374px){.lp-web .lw{display:none}}
+.lp-trust1 svg{width:16px;height:16px;flex:0 0 auto;color:var(--green)}
+.lp-trust1 span{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lp-preise{margin:14px 0 0}
+.lp-preise-l{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lp-tiles{display:grid;gap:8px}
+.lp-tiles.n2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lp-tiles.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lp-tile{display:flex;flex-direction:column;gap:1px;min-height:44px;padding:11px 12px 10px;border-radius:14px;background:var(--lp-surface);color:var(--ink);text-decoration:none;box-shadow:0 0 0 1px rgba(21,32,26,.07),0 1px 2px rgba(21,32,26,.05),0 10px 22px -14px rgba(14,46,31,.45);transition:scale var(--t-fast) var(--ease),box-shadow .2s var(--ease);-webkit-tap-highlight-color:transparent}
+a.lp-tile:active{scale:.96}
+a.lp-tile:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media(hover:hover){a.lp-tile:hover{box-shadow:0 0 0 1.5px var(--green),0 10px 22px -14px rgba(14,46,31,.45)}}
+.lp-tile .pl,.lp-tile .pk{font-size:12.5px;font-weight:600;line-height:1.2;color:var(--muted)}
+.lp-tile .pk{display:none}
+.lp-tile .pp{font-family:var(--font-display);font-size:24px;font-weight:700;line-height:1.1;color:var(--green-d);font-variant-numeric:tabular-nums;letter-spacing:-.01em;white-space:nowrap}
+.lp-tile .pp small{font-family:var(--font-body);font-size:12px;font-weight:600;color:var(--muted);margin-right:3px;letter-spacing:0}
+.lp-tile .go{display:inline-flex;align-items:center;gap:2px;margin-top:5px;font-size:12px;font-weight:700;color:var(--green)}
+.lp-tile .go svg{width:13px;height:13px}
+.lp-tiles.n1 .lp-tile{flex-direction:row;flex-wrap:wrap;align-items:baseline;column-gap:10px}
+.lp-tiles.n1 .lp-tile .pl{font-size:15px;color:var(--ink)}
+.lp-tiles.n1 .lp-tile .go{margin:0 0 0 auto}
+.lp-preise-n{margin:8px 0 0;font-size:13px;line-height:1.4;color:var(--muted);text-wrap:pretty}
+@media(max-width:599px){
+.lp-tiles:not(.n1) .lp-tile:has(.pk) .pl{display:none}
+.lp-tiles:not(.n1) .lp-tile .pk{display:block;order:-1}
+.lp-hero .lp-preise{margin-top:10px}
+.lp-hero .lp-preise-l{margin-bottom:6px}
+.lp-hero .lp-tile{padding:8px 10px}
+.lp-hero .lp-tile .go{display:none}
+.lp-hero .lp-tile .pp{font-size:21px}
+.lp-hero .lp-preise-n{margin-top:6px;font-size:12.5px}
+.lp-preis{padding:14px}
+.lp-preis .lp-tile{padding:8px}
+.lp-preis .lp-tile .go{display:none}
+.lp-preis .lp-tile .pp{font-size:19px}
+}
+.lp-zitat{margin:12px 0 0;padding:12px 14px 12px 16px;border-radius:14px;background:var(--paper);box-shadow:inset 3px 0 0 var(--green)}
+.lp-zitat blockquote{margin:0;font-family:"Fraunces LP","Fraunces",Georgia,serif;font-style:italic;font-weight:500;font-size:16.5px;line-height:1.35;color:var(--ink);text-wrap:pretty}
+.lp-zitat figcaption{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;margin-top:6px;font-size:12.5px;color:var(--muted)}
+.lp-zitat .lp-st{font-size:12px}
+.lp-aktion{margin:14px 0 0;padding:14px 16px;border-radius:16px;background:var(--green-d);color:var(--dark-text2);display:flex;align-items:center;gap:14px}
+.lp-aktion .badge{flex:0 0 54px;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--green-deep);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.18);color:var(--dark-text1);font-family:var(--font-display);font-weight:700;font-size:17px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.lp-aktion p{margin:0;display:grid;gap:3px}
+.lp-aktion b{color:var(--dark-text1);font-size:15.5px;line-height:1.3;text-wrap:balance}
+.lp-aktion p span{font-size:13.5px;line-height:1.35;color:var(--dark-text2)}
+.lp-preis .lp-preise{margin:0}
+.lp-preis .lp-aktion p{margin:0;color:var(--dark-text2);font-size:15px;line-height:1.3}
+.lp-preis .lp-preise-n{margin:8px 0 0;font-size:13px;line-height:1.4;color:var(--muted)}
+.lp-preis .lp-aktion{margin:16px 0 18px}
+.trust-row.lp-checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px;padding-top:0;border-top:0}
+.lp-checks .t{display:grid;grid-template-columns:22px 1fr;column-gap:8px;align-items:start;align-content:start;font-size:12.5px;line-height:1.3;color:var(--muted)}
+.lp-checks svg{grid-row:span 2;width:22px;height:22px;color:var(--green)}
+.lp-checks .t b{display:block;font-family:var(--font-body);font-size:14px;font-weight:700;line-height:1.25;color:var(--ink)}
+@media(min-width:760px){.lp-hero .lp-preise,.lp-hero .lp-zitat,.lp-hero .lp-aktion,.lp-hero .lp-checks{max-width:44em}}
+.lp-rsum{display:flex;align-items:center;gap:14px;margin:-6px 0 22px}
+.lp-rsum .n{font-family:var(--font-display);font-size:46px;font-weight:700;line-height:1;color:var(--green-d)}
+.lp-rsum .lp-st{display:block;font-size:17px}
+.lp-rsum b{display:block;font-size:14px;font-weight:600;line-height:1.35;color:var(--ink)}
+.lp-rsum small{display:block;font-size:12.5px;color:var(--muted)}
+.lp-rgrid{display:grid;gap:14px;max-width:920px}
+@media(min-width:760px){.lp-rgrid.n2{grid-template-columns:repeat(2,minmax(0,1fr))}.lp-rgrid.n3{grid-template-columns:1.25fr 1fr}.lp-rgrid.n3 .feat{grid-row:span 2}}
+.lp-rc{background:var(--lp-surface);padding:18px 18px 16px}
+.lp-rc .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.lp-rc .tag{font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--green-d);background:var(--paper);border-radius:999px;padding:4px 10px}
+.lp-rc blockquote{font-size:15px;line-height:1.55;text-wrap:pretty}
+.lp-rc.feat blockquote{font-family:"Fraunces LP","Fraunces",Georgia,serif;font-style:italic;font-weight:500;font-size:20px;line-height:1.35}
+@media(prefers-reduced-motion:reduce){.lp-tile{transition:none}a.lp-tile:active{scale:1}}
 </style>
-</head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TR7JVXZL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header class="lp-head"><div class="wrap nav"><a class="logo" href="/" aria-label="Haus- &amp; Gartenservice Havelland"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-lp-360.webp"><img src="/assets/img/logo-lp-180.png" alt="Haus- &amp; Gartenservice Havelland" width="180" height="193" decoding="async"></picture></a><a class="callpill" href="tel:+4915156198195"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="num">01515 6198195</span></a></div></header><main class="lp-danke"><section class="phero lp-hero lp-hero-text"><svg class="hleaf" viewBox="0 0 100 100"><path fill="currentColor" d="M90 10C38 12 10 42 10 92c32-2 52-15 63-35 2 15-3 27-3 27s20-23 20-54c0-10-2-21 0-20Z"/></svg><div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>Danke, Ihre Anfrage ist <em>angekommen</em>.</h1><p class="lead">Wir melden uns noch am selben Werktag – telefonisch oder per WhatsApp, je nachdem, was Sie angegeben haben. Der Rückruf kommt von 01515 6198195 – speichern Sie die Nummer, damit Sie ihn erkennen.</p></div></div></section>
+</head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TR7JVXZL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="lp-topbar"><div class="wrap"><span class="lp-st" role="img" aria-label="5 von 5 Sternen">★★★★★</span><span>5,0 bei Google · 21 Bewertungen</span><span class="d" aria-hidden="true">·</span><span class="fk">Betrieb aus Falkensee</span></div></div><header class="lp-head"><div class="wrap nav"><a class="logo" href="/" aria-label="Haus- &amp; Gartenservice Havelland"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/logo-lp-360.webp"><img src="/assets/img/logo-lp-180.png" alt="Haus- &amp; Gartenservice Havelland" width="180" height="193" decoding="async"></picture></a><a class="lp-web" href="/"><span class="lw">Zur </span>Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a><a class="callpill" href="tel:+4915156198195"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="num">01515 6198195</span></a></div></header><main class="lp-danke"><section class="phero lp-hero lp-hero-text"><svg class="hleaf" viewBox="0 0 100 100"><path fill="currentColor" d="M90 10C38 12 10 42 10 92c32-2 52-15 63-35 2 15-3 27-3 27s20-23 20-54c0-10-2-21 0-20Z"/></svg><div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>Danke, Ihre Anfrage ist <em>angekommen</em>.</h1><p class="lead">Wir melden uns noch am selben Werktag – telefonisch oder per WhatsApp, je nachdem, was Sie angegeben haben. Der Rückruf kommt von 01515 6198195 – speichern Sie die Nummer, damit Sie ihn erkennen.</p></div></div></section>
 <section class="sec"><div class="wrap"><div class="head"><h2>So geht es weiter</h2></div><div class="tl rv in"><div class="tli"><span class="tn">1</span><div class="tbody"><p>Wir rufen Sie an oder schreiben per WhatsApp und klären kurz, was ansteht.</p></div></div><div class="tli"><span class="tn">2</span><div class="tbody"><p>Wir vereinbaren die kostenlose Besichtigung vor Ort.</p></div></div><div class="tli"><span class="tn">3</span><div class="tbody"><p>Nach der Besichtigung bekommen Sie den schriftlichen Festpreis für Räumung und Abtransport.</p></div></div></div><p class="hint" style="margin-top:24px;color:var(--muted)">Wenn es eilig ist: rufen Sie direkt an oder schicken Sie ein Foto per WhatsApp.</p><div class="cta-row lp-cta"><a class="btn btn-acc" href="tel:+4915156198195">☎ 01515 6198195</a><a class="btn btn-line" href="https://wa.me/4915156198195?text=Hallo%2C%20ich%20habe%20gerade%20das%20Formular%20geschickt%20%E2%80%93%20hier%20noch%20ein%20Foto%20dazu.">Foto per WhatsApp nachschicken</a></div></div></section></main><footer class="lp-foot"><div class="wrap"><p class="fnap">Haus- &amp; Gartenservice Havelland</p><p>Darmstädter Str. 15, 14612 Falkensee · <a href="tel:+4915156198195">01515 6198195</a> · <a href="mailto:hausgartenservicehvl@gmail.com">hausgartenservicehvl@gmail.com</a></p><p>Servicegebiet: Falkensee · Dallgow-Döberitz · Brieselang · Schönwalde-Glien · Wustermark · Nauen · Ketzin/Havel · Rathenow · Premnitz · Berlin-Spandau · Potsdam</p><div class="legal"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><button type="button" class="linklike" id="consent-reset">Cookie-Einstellungen</button><a href="/">Zur Website</a></div></div></footer><nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:+4915156198195">☎ 01515 6198195</a><a class="wa" href="https://wa.me/4915156198195?text=Hallo%2C%20ich%20habe%20gerade%20das%20Formular%20geschickt%20%E2%80%93%20hier%20noch%20ein%20Foto%20dazu.">WhatsApp</a></nav><div id="consent" class="consent" hidden><div class="consent-in"><p>Wir nutzen Cookies für Statistik (Google Analytics) und die Erfolgsmessung unserer Google-Werbung — Daten gehen an Google, auch in die USA. Details und Widerruf in der <a href="/datenschutz/">Datenschutzerklärung</a>.</p><div class="consent-btns"><button type="button" class="btn btn-line" data-c="deny">Ablehnen</button><button type="button" class="btn btn-acc" data-c="allow">Akzeptieren</button></div></div></div>
 <script>(function(){var box=document.getElementById('consent');if(!box)return;var K='consent_v2';function gtag(){dataLayer.push(arguments)}var grant={analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'},deny={analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'};function read(){try{var v=JSON.parse(localStorage.getItem(K)||'null');if(v&&v.t&&Date.now()-v.t>365*864e5){localStorage.removeItem(K);return null}return v}catch(e){return null}}if(!read()){box.hidden=false}box.addEventListener('click',function(e){var b=e.target.closest('button[data-c]');if(!b)return;var c=b.getAttribute('data-c');try{localStorage.setItem(K,JSON.stringify({c:c,v:2,t:Date.now()}))}catch(x){}gtag('consent','update',c==='allow'?grant:deny);if(window.dataLayer){dataLayer.push({event:'consent_choice',consent_choice:c})}box.hidden=true})})();</script><script>document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a||!a.href)return;if(a.href.indexOf('tel:')===0){dataLayer.push({event:'phone_call'})}else if(a.href.indexOf('wa.me')>-1||a.href.indexOf('api.whatsapp')>-1){dataLayer.push({event:'whatsapp_click'})}});</script><script>(function(){try{if(location.hash==='#ok'){history.replaceState(null,'',location.pathname);if(window.dataLayer){window.dataLayer.push({event:'lead_confirmed'})}}}catch(e){}})();</script><script>(function(){var a=document.getElementById('consent-reset');if(!a)return;a.addEventListener('click',function(e){e.preventDefault();try{localStorage.removeItem('consent_v2')}catch(x){}var box=document.getElementById('consent');if(box){box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'end'})}})})();</script></body></html>

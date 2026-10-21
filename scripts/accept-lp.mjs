@@ -13,17 +13,14 @@ function classCount(html, token) {
 }
 const rvOhneIn = h => { const re = /class="([^"]*)"/g; let m, n = 0; while ((m = re.exec(h)) !== null) { const t = m[1].split(/\s+/); if (t.includes('rv') && !t.includes('in')) n++; } return n; };
 const lpAltKlassen = h => (h.match(/\b(lp-card|lp-steps|lp-quote|lp-ba-grid|lp-trust)\b/g) || []).length;
-// Fokus-Check (streng, AV-C 1): Der Rumpf von foc() muss EXAKT dem erwarteten Text entsprechen (nur querySelector(sel) + focus mit preventScroll).
-// Außerhalb dieses Rumpfs darf es keinen .focus(-Aufruf geben, und jeder foc(-Aufruf muss genau foc('.step1 legend') bzw. foc('.step2 legend') sein.
-// Ein foc('input[name=ort]') oder ein umgebauter Rumpf (querySelector("[name=ort]")) wird damit rot (Selbsttests unten).
-const FOC_BODY = 'function foc(sel){var l=f.querySelector(sel);if(l)l.focus({preventScroll:true})}';
-function focusOk(js) {
-  if (js.length <= 500 || js.split(FOC_BODY).length !== 2) return false;
-  const rest = js.split(FOC_BODY).join('');
-  const calls = (rest.match(/\bfoc\(/g) || []).length;
-  const erlaubt = (rest.match(/\bfoc\('\.step[12] legend'\)/g) || []).length;
-  return !/\.focus\(/.test(rest) && calls === erlaubt && js.includes("foc('.step2 legend')") && js.includes("foc('.step1 legend')");
-}
+// Fokus-Check (Ein-Schritt, v7): Das Formular-Skript setzt den Fokus nur nach einer Nutzeraktion — Enter springt ins nächste Feld (t.focus())
+// und nach einem fehlgeschlagenen Absenden geht der Fokus auf das erste fehlende Feld (e.focus(); beim Objekt ohne Scroll-Sprung). Genau diese drei .focus(-Aufrufe;
+// jeder weitere (z. B. Auto-Fokus beim Laden, der auf dem Handy die Tastatur öffnet) wird rot (Selbsttest unten).
+const focusOk = js => js.length > 500 && (js.match(/\.focus\(/g) || []).length === 3
+  && /if\(nx\)\{e\.preventDefault\(\);var t=f\.elements\[nx\];if\(t\)t\.focus\(\)\}/.test(js) && /e\.focus\(\)\}return false\}/.test(js)
+  && /block:'center'\}\);e\.focus\(\{preventScroll:true\}\)\}else\{/.test(js);
+const escH = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const textOf = s => s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 // Preisangabe irgendwo im Text (Nachlass-Hero): Ziffer + € / Euro / EUR (auch „499,- €“, „499 Euro“) oder € + Ziffer
 const PREIS_RE = /\d[\d.,-]*\s?(?:€|Euro\b|EUR\b)|€\s?\d/i;
 
@@ -52,7 +49,7 @@ const LPS = [
   ['lp/haushaltsaufloesung-havelland/index.html', 'LP haushaltsaufloesung', { reviews: true, ba: 2, mitAktion: true, einstieg: true }],
   ['lp/messie-wohnung-raeumung/index.html', 'LP messie', { reviews: true, ortSwap: true }],
   ['lp/gewerbe-entruempelung/index.html', 'LP gewerbe', { reviews: true, gewerbe: true }],
-  ['lp/nachlass-aufloesung/index.html', 'LP nachlass', { reviews: true, reviewsMin: 1, ohneAktion: true, keinAbPreis: true, ortSwap: true, nachlassFaq: true }],
+  ['lp/nachlass-aufloesung/index.html', 'LP nachlass', { reviews: true, ohneAktion: true, keinAbPreis: true, ortSwap: true, nachlassFaq: true }],
   ['lp/wohnungsaufloesung/index.html', 'LP wohnung', { reviews: true }],
   ['lp/haus-entruempeln/index.html', 'LP haus', { reviews: true, ortSwap: true }],
   ['lp/keller-dachboden-garage/index.html', 'LP keller', { reviews: true }],
@@ -67,6 +64,8 @@ const pageSlugs = LPS.filter(x => !x[2].danke).map(x => x[0].split('/')[1]).sort
 P('Slug-Menge lp.json == Prüfliste LPS  [data/copy/lp.json]');
 check('lp.json', `Slug-Menge gleich (lp.json: ${lpSlugs.join(', ')})`, JSON.stringify(lpSlugs) === JSON.stringify(pageSlugs));
 check('lp.json', 'keine doppelten Slugs in lp.json', new Set(lpSlugs).size === lpSlugs.length);
+// Aktion nur bis aktion.bis (Generator rendert danach nichts mehr): nach Ablauf erwartet die Abnahme KEINE Karte (keine Zeitbombe am 01.12.)
+const aktAktiv = !!(lpJson.aktion && lpJson.aktion.bis) && Date.now() <= new Date(lpJson.aktion.bis + 'T23:59:59+01:00').getTime();
 const PFLICHT_HIDDEN = ['quelle', 'lp', 'gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'landing_url', 'ads_consent', 'access_key', 'subject', 'from_name', 'redirect', 'botcheck'];
 const EREIGNISSE = ['form_start', 'form_step', 'form_error', 'form_quickstart', 'generate_lead', 'start_via'];
 
@@ -76,6 +75,26 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
   check(id, 'phero>=1', classCount(h, 'phero') >= 1);
   check(id, 'tl>=1', classCount(h, 'tl') >= 1);
   if (o.reviews) check(id, `review-card>=${o.reviewsMin || 2}`, classCount(h, 'review-card') >= (o.reviewsMin || 2));
+  // --- Bewertungen (v7): Karten = Auswahl aus lp.json (bewertungen_lp bzw. Standard), erste hervorgehoben, Kopf-Zahl aus data/proof.json
+  if (o.reviews) {
+    const sel = entryOf(rel).bewertungen_lp || lpJson.bewertungen_lp_standard || [];
+    const rS = h.indexOf('id="bewertungen"'), revH = rS > -1 ? h.slice(rS, h.indexOf('</section>', rS)) : '';
+    check(id, `Bewertungskarten = Auswahl (${sel.join(', ')})`, (revH.match(/class="review-card lp-rc/g) || []).length === sel.length);
+    const first = (lpJson.bewertungen || {})[sel[0]] || {};
+    const featS = revH.indexOf('class="review-card lp-rc feat"');
+    check(id, `erste Karte hervorgehoben, wörtlich ${first.a}`, featS > -1 && revH.slice(featS).includes(escH(first.t || '-').slice(0, 40)));
+    check(id, `Bewertungskopf: ${proofGR.count} Bewertungen bei Google (data/proof.json)`, has(revH, `<b>${proofGR.count} Bewertungen bei Google</b>`));
+    check(id, 'Bewertungs-H2 mit genau einem kursiven Wort', (revH.match(/<em>/g) || []).length === 1);
+  }
+  // --- Vertrauensleiste + Kopf (v7, auch Danke): Zahl/Note aus data/proof.json, „Zur Website“ als einziger Ausgang im Kopf, kein Menü
+  const tb = (h.match(/<div class="lp-topbar">([\s\S]*?)<\/div><\/div>/) || [])[1] || '';
+  const tbSoll = `★★★★★ ${Number(proofGR.rating).toFixed(1).replace('.', ',')} bei Google · ${proofGR.count} Bewertungen · Betrieb aus Falkensee`;
+  check(id, `Vertrauensleiste = „${tbSoll}“ (Zahl aus data/proof.json)`, textOf(tb) === tbSoll);
+  check(id, 'Vertrauensleiste steht vor dem Kopf', has(h, 'class="lp-topbar"') && h.indexOf('class="lp-topbar"') < h.indexOf('<header class="lp-head"'));
+  const kopf = (h.match(/<header class="lp-head">[\s\S]*?<\/header>/) || [''])[0];
+  check(id, 'Kopf: Link „Zur Website“ auf / (lp-web)', /<a class="lp-web" href="\/"><span class="lw">Zur <\/span>Website /.test(kopf));
+  check(id, 'Kopf: Telefon-Pill mit sichtbarer Nummer', /<a class="callpill" href="tel:[^"]+">[\s\S]*?<span class="num">/.test(kopf));
+  check(id, 'Kopf: kein Menü', !/class="hamb"|navmenu|<nav[\s>]/.test(kopf));
   if (o.ba) check(id, `ba>=${o.ba}`, classCount(h, 'ba') >= o.ba);
   check(id, 'kein rv ohne in', rvOhneIn(h) === 0);
   // --- Struktur (AV-C 7): keine doppelten id, genau eine h1
@@ -91,24 +110,41 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     // --- Abschnitt „Was wir tun“ nur, wenn lp.json was_wir_tun hat
     const wwtd = entryOf(rel).was_wir_tun;
     check(id, wwtd ? '#was-wir-tun vorhanden (was_wir_tun in lp.json)' : 'kein #was-wir-tun (kein was_wir_tun in lp.json)', wwtd ? has(h, 'id="was-wir-tun"') : !has(h, 'id="was-wir-tun"'));
-    // --- Trust-Zeile Handy (H2): genau eine, Zahl = proof.google_reviews, Zusatz je LP aus lp.json (Nachlass ohne Preis-/Festpreis-Werbung)
+    // --- Trust-Zeile Handy (v7): genau eine, nur trust_zeile aus lp.json mit Häkchen; die Google-Zahl steht in der Vertrauensleiste (oben geprüft)
     const t1 = [...h.matchAll(/<p class="lp-trust1">([\s\S]*?)<\/p>/g)];
     check(id, 'genau eine Trust-Zeile (.lp-trust1)', t1.length === 1);
     const t1Text = t1.length ? t1[0][1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() : '';
-    const t1Soll = `★ ${Number(proofGR.rating).toFixed(1).replace('.', ',')} bei Google (${proofGR.count}) · ${entryOf(rel).trust_zeile || ''}`;
-    check(id, `Trust-Zeile = „${t1Soll}“ (Zahl aus data/proof.json)`, t1Text === t1Soll);
-    check(id, 'Trust-Zeile: Zusatz-Text steht in lp.json (trust_zeile)', !!entryOf(rel).trust_zeile);
+    check(id, `Trust-Zeile = trust_zeile aus lp.json („${entryOf(rel).trust_zeile || ''}“)`, !!entryOf(rel).trust_zeile && t1Text === entryOf(rel).trust_zeile);
+    check(id, 'Trust-Zeile mit Häkchen-Symbol', t1.length === 1 && t1[0][1].startsWith('<svg '));
     if (o.keinAbPreis) check(id, 'Trust-Zeile ohne Preis-/Festpreis-Werbung (Nachlass)', !/Festpreis|Preis|€/i.test(t1Text));
     else check(id, 'Trust-Zeile nennt „Festpreis nach Besichtigung“', /Festpreis nach Besichtigung/.test(t1Text));
-    // --- Hero-Preiszeilen (Handy-Zellen, Tippziele): jede verlinkte Preiszeile hat aria-label + data-via=preis
+    // --- Preis-Kacheln (v7, Owner 20.10. „oben“): im Hero VOR dem Formular, Anzahl = preis.anker.items, Preis wörtlich zusammenhängend im Text,
+    //     verlinkte Kacheln (Einträge mit obj) mit data-via="preis" + aria-label
     const heroS = h.indexOf('<section class="phero lp-hero'), heroE = h.indexOf('</section>', heroS);
     const heroH = heroS > -1 && heroE > heroS ? h.slice(heroS, heroE) : '';
-    const pzLinks = [...heroH.matchAll(/<a class="pz"([^>]*)>/g)];
-    if (pzLinks.length) check(id, `Hero-Preiszeilen verlinkt (${pzLinks.length}) mit data-via="preis" und aria-label`, pzLinks.every(m => /data-via="preis"/.test(m[1]) && /aria-label="/.test(m[1])));
-    if (o.einstieg) {
-      check(id, 'Haushalt-Hero: „Entrümpelung ab 99 €“ steht im Hero', has(heroH, 'Entrümpelung</span> <span class="pp">ab 99 €'));
-      check(id, 'Haushalt-Hero: Zusatz „Einstiegspreise für kleine, gut zugängliche Objekte“ sichtbar im Hero', has(heroH, 'Einstiegspreise für kleine, gut zugängliche Objekte'));
+    const ankerItems = (((entryOf(rel).preis || {}).anker || {}).items || []).map(x => typeof x === 'string' ? { t: x } : x);
+    const tiles = [...heroH.matchAll(/<(a|div) class="lp-tile"([^>]*)>/g)];
+    check(id, `Hero-Kacheln = preis.anker.items (${ankerItems.length})`, tiles.length === ankerItems.length);
+    const tileLinks = tiles.filter(m => m[1] === 'a');
+    check(id, `verlinkte Kacheln = Einträge mit obj (${ankerItems.filter(x => x.obj).length})`, tileLinks.length === ankerItems.filter(x => x.obj).length);
+    if (tileLinks.length) check(id, 'Kachel-Links mit data-via="preis" und aria-label', tileLinks.every(m => /data-via="preis"/.test(m[2]) && /aria-label="/.test(m[2])));
+    if (tiles.length) {
+      check(id, 'Kacheln stehen vor dem Formular', heroH.indexOf('class="lp-tiles') < heroH.indexOf('id="anfrage"'));
+      check(id, 'Zeile „Einstiegspreis(e) inkl. MwSt.“ direkt über den Kacheln', /<p class="lp-preise-l">Einstiegspreise? inkl\. MwSt\.<\/p><div class="lp-tiles/.test(heroH));
+      for (const x of ankerItems) check(id, `Preis wörtlich im Hero-Text: „${x.t}“`, textOf(heroH).includes(x.t));
     }
+    if (o.einstieg) {
+      check(id, 'Haushalt-Hero: „Entrümpelung ab 99 €“ als Kachel', has(heroH, 'Entrümpelung</span> <span class="pp"><small>ab</small> 99 €'));
+      check(id, 'Haushalt-Hero: Hinweis „für kleine, gut zugängliche Objekte“ unter den Kacheln', has(heroH, '<p class="lp-preise-n">für kleine, gut zugängliche Objekte'));
+    }
+    // --- Zitat (v7): wörtlicher Auszug aus lp.json bewertungen (LP-Wert vor Standard), im Hero nach dem Formular
+    const zq = entryOf(rel).zitat_hero === false ? null : (entryOf(rel).zitat_hero || lpJson.zitat_hero);
+    if (zq) {
+      check(id, `Zitat „${zq.t}“ im Hero nach dem Formular`, has(heroH, `<figure class="lp-zitat"><blockquote>„${escH(zq.t)}“</blockquote>`) && heroH.indexOf('class="lp-zitat"') > heroH.indexOf('id="anfrage"'));
+      check(id, 'Zitat ist wörtlicher Teil der verknüpften Bewertung', String((((lpJson.bewertungen || {})[zq.quelle]) || {}).t || '').includes(zq.t));
+    }
+    // --- Vertrauenspunkte (v7): trust-row lp-checks mit 4 Einträgen im Hero
+    check(id, 'Vertrauenspunkte: 4 Einträge mit Häkchen (trust-row lp-checks)', has(heroH, '<div class="trust-row lp-checks">') && (heroH.match(/<div class="t"><svg /g) || []).length === 4);
     // --- Besichtigungsfrist (Owner 20.10.): Wortlaut der Anzeigen-Überschrift „Termin meist in 2–3 Werktagen“ steht wörtlich im Ablauf jeder Anfrage-LP;
     //     FAQ nennt „2–3 Werktagen“ (Gewerbe: FAQ unverändert). Nachlass bleibt ruhig: keine Dringlichkeitswörter im Ablauf.
     const ablaufS = h.indexOf('class="tl'), ablaufE = h.indexOf('id="preise"');
@@ -117,14 +153,17 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     if (!o.gewerbe) check(id, 'FAQ nennt „meist in 2–3 Werktagen“ (Besichtigung)', has(h.slice(h.indexOf('id="fragen"')), 'meist in 2–3 Werktagen'));
     if (o.keinAbPreis) check(id, 'Nachlass: Ablauf ohne Dringlichkeitswörter (schnell, sofort, dringend, zeitnah, kurzfristig, jetzt)', ablaufH.length > 200 && !/schnell|sofort|dringend|zeitnah|kurzfristig|jetzt/i.test(ablaufH));
     // --- „Betrieb aus Falkensee“ (Wortlaut der B-Anzeigen) sichtbar im Trust-Block (nicht Gewerbe)
-    if (!o.gewerbe) check(id, 'Trust-Block nennt wörtlich „Betrieb aus Falkensee“', /<div class="trust-row">[\s\S]*?<b>Betrieb aus Falkensee<\/b>[\s\S]*?<\/div><\/div>/.test(h) || has(t1Text, 'Betrieb aus Falkensee'));
-    // --- Aktion Kurzform (Handy): Sternchen + Fußzeile direkt darunter; Bedingung „Entsorgungsgebühren“ sichtbar, Vollfassung im Preisblock
-    const aktHero = (heroH.match(/<p class="lp-aktion"[\s\S]*?<\/p>/) || [''])[0];
-    if (aktHero) {
-      const kz = [...aktHero.matchAll(/<span class="kz">([^<]*)<\/span>/g)].map(m => m[1]);
-      check(id, 'Aktion Handy: Kurztext endet mit * (Bedingung per Fußzeile)', kz.some(t => /Festpreis bis 30\.11\.\*$/.test(t)));
-      check(id, 'Aktion Handy: Fußzeile „* Ohne Entsorgungsgebühren“ direkt darunter (kz kfn)', /<span class="kz kfn">\* Ohne Entsorgungsgebühren[^<]*<\/span><\/p>$/.test(aktHero));
-      check(id, 'Aktion Vollfassung (Desktop/#preise): „Entsorgungsgebühren nach Beleg sind ausgenommen“', has(aktHero, 'Entsorgungsgebühren nach Beleg sind ausgenommen') && has(h.slice(h.indexOf('id="preise"')), 'Entsorgungsgebühren nach Beleg sind ausgenommen'));
+    if (!o.gewerbe) check(id, 'Trust-Block nennt wörtlich „Betrieb aus Falkensee“', /<div class="trust-row lp-checks">[\s\S]*?<b>Betrieb aus Falkensee<\/b>/.test(h) || has(t1Text, 'Betrieb aus Falkensee'));
+    // --- Aktionskarte (v7): gleiche Karte im Hero (nach dem Formular) und in #preise, Texte aus lp.json, Bedingung ausgeschrieben, kein Sternchen
+    if (!o.ohneAktion && aktAktiv) {
+      const AK = lpJson.aktion || {};
+      const karteRe = /<div class="lp-aktion" data-bis="[^"]+">[\s\S]*?<\/p><\/div>/;
+      const pS = h.indexOf('id="preise"'), preiseH = pS > -1 ? h.slice(pS, h.indexOf('</section>', pS)) : '';
+      for (const [wo, k] of [['Hero', (heroH.match(karteRe) || [''])[0]], ['#preise', (preiseH.match(karteRe) || [''])[0]]]) {
+        check(id, `Aktionskarte ${wo}: Abzeichen, Titel und Bedingung aus lp.json`, !!k && has(k, `>${escH(AK.badge)}<`) && has(k, escH(AK.karte_titel)) && has(k, escH(AK.karte_bedingung)));
+        check(id, `Aktionskarte ${wo}: kein Sternchen`, !!k && !k.includes('*'));
+      }
+      check(id, 'Aktionskarte im Hero nach dem Formular', heroH.indexOf('class="lp-aktion"') > heroH.indexOf('id="anfrage"'));
     }
     if (o.nachlassFaq) check(id, 'FAQ nennt „Nachlassentrümpelung“', has(h.slice(h.indexOf('id="fragen"')), 'Nachlassentrümpelung'));
     const pos = posOf(rel);
@@ -138,13 +177,19 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     // --- Formular-Skript: kein Auto-Fokus, Ereignisse vorhanden
     const formJs = h.match(/<script>\(function\(\)\{var f=document\.getElementById\('anfrage'\)[\s\S]*?<\/script>/)?.[0] || '';
     check(id, 'Formular-Skript gefunden', formJs.length > 500);
-    // Fokus nur über foc(sel) auf die legend des Schritts (kein Tastatur-Sprung, preventScroll); jedes andere .focus( bleibt rot
-    check(id, 'kein .focus( im Formular-Skript außer auf legend (keine Tastatur-Sprünge)', focusOk(formJs));
-    // Selbsttest: ein eingefügtes Input-.focus( muss den Fokus-Check rot färben (sonst prüft er nichts)
-    check(id, 'Selbsttest Fokus-Check: eingefügtes ort.focus() → ✗', formJs.length > 500 && !focusOk(formJs + ";f.elements['ort'].focus()"));
-    check(id, "Selbsttest Fokus-Check: foc('input[name=ort]') → ✗", formJs.length > 500 && !focusOk(formJs + ";foc('input[name=ort]')"));
-    check(id, 'Selbsttest Fokus-Check: umgebauter foc-Rumpf (querySelector auf name=ort) → ✗', formJs.length > 500 && !focusOk(formJs.replace('f.querySelector(sel)', 'f.querySelector("[name=ort]")')));
-    check(id, 'beide Schritt-legends mit tabindex="-1"', (h.match(/<legend tabindex="-1">/g) || []).length === 2);
+    // Fokus nur nach Nutzeraktion (Enter-Weiter, erstes Fehlerfeld nach Absenden); jedes weitere .focus( bleibt rot
+    check(id, 'Fokus nur nach Nutzeraktion (genau Enter-Weiter + erstes Fehlerfeld, Objekt ohne Scroll)', focusOk(formJs));
+    check(id, 'Pflichtfelder: Leerzeichen zählen nicht, Telefon braucht mindestens 6 Ziffern', has(formJs, "/^(text|tel|email)$/.test(e.type)&&!e.value.trim())ok=false;") && has(formJs, "e.value.replace(/\\D/g,'').length<6"));
+    check(id, 'Zurück aus der Danke-Seite leert das Formular (kein Doppel-Lead)', has(formJs, 'if(f.__sent){f.__sent=false;f.reset();') && has(formJs, 'if(j&&j.success){f.__sent=true;'));
+    check(id, '§ 25 TDDDG: hg_attrib ohne Einwilligung nicht lesen, sondern löschen; bei Ablehnen/Cookie-Einstellungen löschen', has(h, 'var ok0=allowed();if(!ok0){try{localStorage.removeItem(S)}catch(e){}}var cur=(ok0&&load())||{};') && has(h, "#consent [data-c=deny],#consent-reset')){try{localStorage.removeItem(S)}"));
+    // Selbsttest: ein zusätzliches .focus( (z. B. Auto-Fokus beim Laden) muss den Fokus-Check rot färben (sonst prüft er nichts)
+    check(id, 'Selbsttest Fokus-Check: zusätzliches ort.focus() → ✗', formJs.length > 500 && !focusOk(formJs + ";f.elements['ort'].focus()"));
+    check(id, 'Selbsttest Fokus-Check: Enter-Weiter entfernt → ✗', formJs.length > 500 && !focusOk(formJs.replace('if(t)t.focus()', 'if(t)t.click()')));
+    // --- Ein Schritt (Owner 20.10.): keine Schritt-Logik, genau ein Absende-Knopf, Einwilligung mit beiden Zwecken, Hero-Bild fest
+    check(id, 'Ein Schritt: kein data-next/data-back/.step1/.step2', !/data-next|data-back|class="step[12]"/.test(h));
+    check(id, 'Ein Schritt: genau ein Absende-Knopf im Formular', ((((h.match(/<form id="anfrage"[\s\S]*?<\/form>/) || [''])[0]).match(/type="submit"/g)) || []).length === 1);
+    check(id, 'Einwilligung nennt „Kontaktaufnahme und für das Angebot“', has(h, 'zur Kontaktaufnahme und für das Angebot zu'));
+    check(id, 'Hero-Bild läuft auf dem Desktop nicht mit (kein position:sticky an .shot)', !/\.shot\{position:sticky/.test(h));
     for (const e of EREIGNISSE) check(id, `Formular-Skript enthält ${e}`, has(formJs, e));
     // --- Pflichtfelder, Ziele
     for (const n of PFLICHT_HIDDEN) check(id, `hidden ${n}`, has(h, `name="${n}"`));
@@ -153,6 +198,8 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     check(id, 'GTM vorhanden', has(h, 'GTM-TR7JVXZL'));
     check(id, 'Telefon-Logik je Kontaktweg', has(h, 'data-req-by="kontaktweg"'));
     check(id, '>= 3 Objekt-Chips', (h.match(/name="objekt"/g) || []).length >= 3);
+    const nObj = (entryOf(rel).objekte || []).length;
+    check(id, `Objekt-Leiste mit ${nObj} Spalten (seg3 nur bei 3 Objekten)`, nObj === 3 ? has(h, '<div class="seg seg3"><label><input type="radio" name="objekt"') : has(h, '<div class="seg"><label><input type="radio" name="objekt"'));
     // --- Zweitwege (M3): Hero-Variante Buttons, Variante A Textlinks
     if (pos === 'hero') check(id, 'Zweitwege Anruf + WhatsApp (lp-alt)', /<p class="lp-alt">[\s\S]*?href="tel:[\s\S]*?href="https:\/\/wa\.me\//.test(h));
     // --- Wording (S-urteil 12, lp.json _meta)
@@ -164,7 +211,7 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     // --- Aktion (A7) und Ansprechpartner (B5, Standard aus)
     check(id, 'kein Ansprechpartner-Block (B5, Standard aus)', !has(h, 'class="lp-person"'));
     if (o.ohneAktion) check(id, 'keine Aktion (A7)', !has(h, 'class="lp-aktion"'));
-    if (o.mitAktion) check(id, 'Aktion vorhanden (Ziel-URL des Angebots-Assets, bis 30.11.)', has(h, 'class="lp-aktion"'));
+    if (o.mitAktion) check(id, aktAktiv ? 'Aktion vorhanden (Ziel-URL des Angebots-Assets, bis 30.11.)' : 'Aktion abgelaufen: keine Aktionskarte mehr', aktAktiv ? has(h, 'class="lp-aktion"') : !has(h, 'class="lp-aktion"'));
     // --- Preise [S2]
     if (o.keinAbPreis) {
       const hero = heroStart > -1 && heroEnd > heroStart ? h.slice(heroStart, heroEnd) : '';
