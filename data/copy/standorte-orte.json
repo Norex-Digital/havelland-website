@@ -1,0 +1,867 @@
+{
+  "falkensee": {
+    "title": "Haus- und Gartenservice Falkensee | Garten, Hecke, GaLaBau",
+    "meta": "Haus- und Gartenservice mit Sitz in Falkensee (14612): Gartenpflege, Heckenschnitt, GaLaBau, Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Falkensee ist unser Sitz: Von der Darmstädter Straße 15 erreichen wir Falkenhagen, Seegefeld, Finkenkrug und die übrigen Wohngebiete auf kurzem Weg. Wir übernehmen Gartenpflege, Heckenschnitt, Garten- und Landschaftsbau (GaLaBau) und Entrümpelung.",
+    "anfaellt": [
+      {
+        "h3": "Sieben Wohngebiete, kurze Wege",
+        "p": "Falkenhagen, Seegefeld, Finkenkrug, Falkenhain, Falkenhöh, Waldheim und Alter Finkenkrug liegen alle in kurzer Fahrt von unserem Sitz."
+      },
+      {
+        "h3": "Parzellen aus der Kolonie-Zeit",
+        "p": "Viele Grundstücke gehen auf die Parzellierung von 1898 bis 1922 zurück, mit gewachsenen Gärten und Hecken an der Grundstücksgrenze."
+      },
+      {
+        "h3": "Wertstoffhof um die Ecke",
+        "p": "Bei Entrümpelungen fahren wir den Wertstoffhof in der Nauener Straße 97 an, etwa 1,4 Kilometer von unserem Sitz."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Wie schnell kommen Sie in Falkensee zur Besichtigung?",
+        "a": "Wir antworten am selben Tag, die Besichtigung findet meist innerhalb weniger Tage statt. Sie ist kostenlos, danach steht Ihr Preis schriftlich fest."
+      },
+      {
+        "q": "Machen Sie in Falkensee auch Winterdienst?",
+        "a": "Winterdienst, also Räumen und Streuen, übernimmt ein Partner-Fachbetrieb, den Vertrag schließen Sie mit ihm. Wir nehmen Ihre Anfrage für Schneedienst und Schneebeseitigung auf und koordinieren Besichtigung und Angebot."
+      },
+      {
+        "q": "Was kostet eine Entrümpelung in Falkensee?",
+        "a": "Das hängt von Menge, Etage und Zugang ab. Nach der kostenlosen Besichtigung nennen wir einen schriftlichen Festpreis inkl. MwSt., die Anfahrt ist enthalten und Gebühren des Wertstoffhofs berechnen wir nach Beleg ohne eigenen Aufschlag."
+      }
+    ],
+    "quellen": [
+      "Stadt Falkensee, Zahlen und Fakten (7 Wohngebiete, PLZ 14612): falkensee.de/seite/457886/zahlen-fakten.html",
+      "Stadtchronik Falkensee (Kolonien/Parzellierung 1898 bis 1922): geschichte-falkensee.de/chronik",
+      "data/lokalfakten.json orte.falkensee (Wertstoffhof Nauener Straße 97, 1,4 km vom Sitz, OSRM, Stand 17.09.2026)",
+      "Sitz Darmstädter Str. 15: data/nap.json / CLAUDE.md",
+      "bestehende Standortseite (Hecken an der Grundstücksgrenze)"
+    ]
+  },
+  "dallgow-doeberitz": {
+    "title": "Haus- und Gartenservice Dallgow-Döberitz | Garten, Hecke",
+    "meta": "Haus- und Gartenservice in Dallgow-Döberitz (14624): Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung aus Falkensee. Kostenlose Besichtigung, Festpreis.",
+    "lead": "Dallgow-Döberitz liegt südlich von Falkensee an der Berliner Stadtgrenze zu Spandau, wir sind aus Falkensee in kurzer Fahrt bei Ihnen. Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung erledigen wir in Dallgow, Seeburg, Rohrbeck und den Neubaugebieten.",
+    "anfaellt": [
+      {
+        "h3": "Neubaugebiete mit jungen Hecken",
+        "p": "Frisch angelegte Grundstücke brauchen einen festen Turnus aus Heckenschnitt, sauberen Beeten und gemähtem Rasen."
+      },
+      {
+        "h3": "Seeburg, Rohrbeck, Neu-Döberitz",
+        "p": "Zur Gemeinde zählen der Ortsteil Seeburg sowie die Gemeindeteile Rohrbeck, Neurohrbeck, Neu-Döberitz und Engelsfelde; wir fahren alle an."
+      },
+      {
+        "h3": "Nachbar von Falkensee und Spandau",
+        "p": "Dallgow-Döberitz grenzt im Norden an Falkensee und im Osten an Berlin, daher sind Anfahrt und Termin schnell geplant."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Gibt es Winterdienst in Dallgow-Döberitz?",
+        "a": "Den Winterdienst in Dallgow-Döberitz führt ein Partner-Fachbetrieb aus, mit dem Sie den Vertrag direkt abschließen. Wir koordinieren Besichtigung und Angebot für Sie."
+      },
+      {
+        "q": "Kommen Sie auch nach Seeburg und Rohrbeck?",
+        "a": "Ja, Seeburg, Rohrbeck und die Neubaugebiete gehören zu unserem Einsatzgebiet. Die Anfahrt steckt im Festpreis, die Besichtigung kostet nichts."
+      },
+      {
+        "q": "Wie bekomme ich in Dallgow-Döberitz einen Termin?",
+        "a": "Schicken Sie uns per WhatsApp ein Foto, wir antworten am selben Tag. Die Besichtigung findet meist innerhalb weniger Tage statt."
+      }
+    ],
+    "quellen": [
+      "Wikipedia Dallgow-Döberitz (Gemeindegliederung: Ortsteil Seeburg, Gemeindeteile Rohrbeck, Neurohrbeck, Neu-Döberitz, Engelsfelde; Nachbarn Falkensee N, Berlin O; PLZ 14624), Abruf 20.10.2026",
+      "data/locations.json (PLZ 14624, ortsteile_von seeburg/rohrbeck)",
+      "bestehende Standortseite (Neubaugebiete, junge Hecken, Turnus)"
+    ]
+  },
+  "brieselang": {
+    "title": "Haus- und Gartenservice Brieselang | Garten, Hecke, GaLaBau",
+    "meta": "Haus- und Gartenservice in Brieselang (14656), Bredow und Zeestow: Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung. Kostenlose Besichtigung, Festpreis.",
+    "lead": "Brieselang liegt westlich von Falkensee am Bredower Forst, von unserem Sitz in Falkensee sind es etwa 7 Kilometer. Für Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung kommen wir auch nach Bredow und Zeestow.",
+    "anfaellt": [
+      {
+        "h3": "Wald in der Nähe",
+        "p": "Wo der Bredower Forst nah ist, landen Laub und Äste in Beeten, Wegen und Dachrinnen."
+      },
+      {
+        "h3": "Bredow und Zeestow",
+        "p": "Neben dem Hauptort gehören die Ortsteile Bredow und Zeestow zur Gemeinde, beide fahren wir an."
+      },
+      {
+        "h3": "Wertstoffhof in Falkensee",
+        "p": "Der nächste Wertstoffhof liegt in Falkensee, vom Brieselanger Ortskern sind es etwa 6 Kilometer."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Wer macht in Brieselang Schneebeseitigung und Winterdienst?",
+        "a": "Winterdienst und Schneebeseitigung in Brieselang führt ein Partner-Fachbetrieb aus, mit dem Sie den Vertrag direkt abschließen. Wir koordinieren Besichtigung und Angebot für Sie."
+      },
+      {
+        "q": "Wie schnell sind Sie in Brieselang?",
+        "a": "Von Falkensee aus fahren wir etwa 10 Minuten. Wir antworten am selben Tag, die Besichtigung findet meist innerhalb weniger Tage statt."
+      },
+      {
+        "q": "Wie läuft eine Entrümpelung in Brieselang ab?",
+        "a": "Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis inkl. MwSt., die Anfahrt ist enthalten. Gebühren der Annahmestelle berechnen wir nach Beleg ohne eigenen Aufschlag."
+      }
+    ],
+    "quellen": [
+      "data/lokalfakten.json orte.brieselang (Ortsteile Bredow/Zeestow; Gemeinde Brieselang; Sitz zum Ortskern etwa 7 km / 10 Min OSRM; Wertstoffhof Falkensee etwa 6 km, Stand 17.09.2026)",
+      "gemeindebrieselang.de (Hauptort + Bredow + Zeestow)",
+      "bestehende Standortseite (Brieselanger Forst, Laub in Dachrinnen)"
+    ]
+  },
+  "schoenwalde-glien": {
+    "title": "Haus- und Gartenservice Schönwalde-Glien | Garten, Hecke",
+    "meta": "Haus- und Gartenservice in Schönwalde-Glien (14621): Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung aus Falkensee. Kostenlose Besichtigung, Festpreis.",
+    "lead": "Schönwalde-Glien reicht mit sieben Ortsteilen von der Spandauer Stadtgrenze bis weit ins ländliche Havelland, wir kommen aus Falkensee. Ob Gartenpflege, Heckenschnitt, GaLaBau oder Entrümpelung: Wir betreuen große und kleine Grundstücke.",
+    "anfaellt": [
+      {
+        "h3": "Große Grundstücke, lange Hecken",
+        "p": "Weite Außenflächen und viele Meter Hecke schneiden sich nicht nebenbei, dafür vereinbaren wir feste Termine."
+      },
+      {
+        "h3": "Sieben Ortsteile",
+        "p": "Schönwalde-Siedlung, Schönwalde-Dorf, Pausin, Wansdorf, Paaren im Glien, Perwenitz und Grünefeld gehören zur Gemeinde."
+      },
+      {
+        "h3": "Siedlung an der Stadtgrenze",
+        "p": "Schönwalde-Siedlung ist der größte Ortsteil und grenzt an Spandau, die Dörfer liegen weiter nördlich im Glien."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Wer räumt in Schönwalde-Glien Schnee?",
+        "a": "Räumen und Streuen in Schönwalde-Glien erledigt ein Partner-Fachbetrieb, mit dem Sie den Winterdienstvertrag schließen. Besichtigung und Angebot koordinieren wir für Sie."
+      },
+      {
+        "q": "Kommen Sie auch nach Pausin, Paaren und Wansdorf?",
+        "a": "Ja, Pausin, Paaren, Wansdorf und die übrigen Ortsteile fahren wir an. Auch dort ist die Besichtigung kostenlos und die Anfahrt im Festpreis enthalten."
+      },
+      {
+        "q": "Wie plane ich die Pflege bei einem großen Grundstück?",
+        "a": "Wir sehen uns Hecken und Außenflächen bei der kostenlosen Besichtigung an und vereinbaren feste Termine. Ihr Preis steht danach schriftlich fest."
+      }
+    ],
+    "quellen": [
+      "Wikipedia Schönwalde-Glien (7 Ortsteile, PLZ 14621, Siedlung ab 1900, grenzt an Berlin-Spandau), Abruf 20.10.2026",
+      "data/locations.json (Ortsteile Pausin, Paaren)",
+      "bestehende Standortseite (große Grundstücke, lange Hecken, ländlich)"
+    ]
+  },
+  "wustermark": {
+    "title": "Haus- und Gartenservice Wustermark | Garten, Hecke, GaLaBau",
+    "meta": "Haus- und Gartenservice in Wustermark (14641) und Elstal: Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung aus Falkensee. Kostenlose Besichtigung.",
+    "lead": "Wustermark liegt westlich von Berlin neben Dallgow-Döberitz, Brieselang und Nauen und umfasst fünf Ortsteile, darunter Elstal. Wir übernehmen dort Gartenpflege, Heckenschnitt, Garten- und Landschaftsbau (GaLaBau) und Entrümpelung.",
+    "anfaellt": [
+      {
+        "h3": "Fünf Ortsteile",
+        "p": "Wustermark, Elstal, Priort, Hoppenrade und Buchow-Karpzow bilden die Gemeinde, wir fahren alle fünf an."
+      },
+      {
+        "h3": "Elstal und das Olympische Dorf",
+        "p": "Elstal mit dem Olympischen Dorf von 1936 gehört zur Gemeinde, Garten und Hecke betreuen wir dort wie im Kernort."
+      },
+      {
+        "h3": "Weite Flächen, mehrere Ortsteile",
+        "p": "Die fünf Ortsteile liegen weit verteilt; Aufwand und Termin richten sich nach Lage und Grundstück."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Machen Sie Gartenbau und GaLaBau in Wustermark?",
+        "a": "Ja, Garten- und Landschaftsbau gehört zu unseren Kernleistungen, von Pflaster und Einfahrt bis Zaun, Terrasse und Rollrasen. Nach der kostenlosen Besichtigung bekommen Sie den schriftlichen Festpreis inkl. MwSt."
+      },
+      {
+        "q": "Gibt es Winterdienst in Wustermark und Elstal?",
+        "a": "Den Winterdienst in Wustermark und Elstal führt ein Partner-Fachbetrieb aus, den Vertrag schließen Sie mit ihm. Wir nehmen Ihre Anfrage auf und koordinieren Besichtigung und Angebot."
+      },
+      {
+        "q": "Kommen Sie auch nach Priort, Hoppenrade und Buchow-Karpzow?",
+        "a": "Ja, alle fünf Ortsteile gehören zu unserem Einsatzgebiet. Wir antworten am selben Tag, die Anfahrt steckt im Festpreis."
+      }
+    ],
+    "quellen": [
+      "Wikipedia Wustermark (5 Ortsteile, PLZ 14641, Olympisches Dorf 1936 in Elstal, Güterverkehrszentrum, Bahnhof), Abruf 20.10.2026",
+      "data/locations.json (Elstal Ortsteil von Wustermark)",
+      "bestehende Standortseite (weitläufige Flächen am Ortsrand, kompaktere Lagen an der Bahn)",
+      "data/copy/hubs.json galabau (Pflaster, Einfahrt, Zaun, Terrasse, Rollrasen)"
+    ]
+  },
+  "nauen": {
+    "title": "Haus- und Gartenservice Nauen | Garten, Hecke, GaLaBau",
+    "meta": "Haus- und Gartenservice in Nauen (14641) und den Ortsteilen: Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung. Kostenlose Besichtigung, Festpreis.",
+    "lead": "Nauen liegt im westlichen Havelland, ein gutes Stück hinter Falkensee und Brieselang, und umfasst neben der Kernstadt 14 Ortsteile. Wir übernehmen dort Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung, die Anfahrt steckt im Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Altstadt und ruhige Wohngebiete",
+        "p": "Um den alten Stadtkern liegen Wohngebiete mit Hecken, Rasen, Steinwegen und Einfahrten, die regelmäßig Pflege brauchen."
+      },
+      {
+        "h3": "Kernstadt plus 14 Ortsteile",
+        "p": "Zu Nauen gehören Ortsteile wie Ribbeck, Groß Behnitz, Börnicke, Berge und Wachow; wir fahren sie von Falkensee aus an."
+      },
+      {
+        "h3": "Größere Grundstücke am Stadtrand",
+        "p": "Weite Flächen und größere Grundstücke prägen das Umland; Hecken wollen dort zweimal im Jahr in Form."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Machen Sie Garten- und Landschaftsbau in Nauen?",
+        "a": "Ja, GaLaBau gehört zu unseren Kernleistungen, von Pflaster und Einfahrt bis Zaun, Terrasse und Rollrasen. Nach der kostenlosen Besichtigung bekommen Sie den schriftlichen Festpreis inkl. MwSt."
+      },
+      {
+        "q": "Gibt es Winterdienst in Nauen?",
+        "a": "In Nauen übernimmt ein Partner-Fachbetrieb Schneeräumen und Streuen, Ihr Winterdienstvertrag kommt mit dem Betrieb zustande. Wir koordinieren Besichtigung und Angebot."
+      },
+      {
+        "q": "Kostet die Anfahrt nach Nauen extra?",
+        "a": "Nein, die Anfahrt steckt im Festpreis, den Sie nach der kostenlosen Besichtigung schriftlich erhalten. Wir antworten am selben Tag, die Besichtigung findet meist innerhalb weniger Tage statt."
+      }
+    ],
+    "quellen": [
+      "Wikipedia Nauen (Kernstadt + 14 Ortsteile, u. a. Berge, Börnicke, Groß Behnitz, Ribbeck, Wachow; PLZ 14641; Landwirtschaft, Altstadt), Abruf 20.10.2026",
+      "bestehende Standortseite (alter Stadtkern, ruhige Wohngebiete, Hecken zweimal im Jahr, weite Wege)",
+      "data/copy/hubs.json galabau"
+    ]
+  },
+  "berlin-spandau": {
+    "title": "Gartenpflege & Entrümpelung Berlin-Spandau 13597",
+    "meta": "Haus- & Gartenservice für Berlin-Spandau (13597): Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Haus- & Gartenservice Havelland aus Falkensee betreut Wohnanlagen, Gewerbehöfe und Privatgrundstücke in Berlin-Spandau mit Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung. Spandau grenzt an den Landkreis Havelland, die Anfahrt steckt im Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Altstadt, Zentrum und Nachbarortsteile",
+        "p": "Wir betreuen Spandau mit Altstadt und Zentrum (13597) sowie weiteren Ortsteilen des Bezirks wie Wilhelmstadt, Hakenfelde und Staaken."
+      },
+      {
+        "h3": "Wohnanlagen und Gewerbehöfe",
+        "p": "Hausgemeinschaften und Verwaltungen buchen Rasen, Hecken, Laub und Wege im festen Turnus bei einem Ansprechpartner."
+      },
+      {
+        "h3": "Entrümpelung auf Höfen und in Anlagen",
+        "p": "Auf Gewerbehöfen und in Wohnanlagen räumen wir Keller, Lager und Wohnungen nach der kostenlosen Besichtigung zum schriftlichen Festpreis."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Betreuen Sie in Berlin-Spandau auch Hausverwaltungen und Gewerbehöfe?",
+        "a": "Ja, wir übernehmen für Wohnanlagen und Gewerbehöfe in Spandau Gartenpflege, Heckenschnitt und Entrümpelung. Für Verwaltungen gibt es eine eigene Seite mit Leistungen und Ablauf."
+      },
+      {
+        "q": "Bieten Sie Winterdienst in Spandau an?",
+        "a": "Räumen und Streuen führt ein Partner-Fachbetrieb aus, mit dem Sie den Vertrag direkt abschließen. Wir koordinieren Besichtigung und Ablauf für Sie."
+      },
+      {
+        "q": "Kostet die Anfahrt nach Spandau extra, und wann erreiche ich Sie?",
+        "a": "Nein, die Besichtigung ist kostenlos und die Anfahrt steckt im schriftlichen Festpreis. Wir sind Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr per Telefon und WhatsApp erreichbar."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 13597, Ortsteile Altstadt/Zentrum",
+      "data/copy/orte.json (hook berlin-spandau): Altstadt, Gewerbehöfe, größere Wohnanlagen, Hausverwaltungen",
+      "Bezirk Spandau, amtliche Gliederung (9 Ortsteile: Spandau, Haselhorst, Siemensstadt, Staaken, Gatow, Kladow, Hakenfelde, Falkenhagener Feld, Wilhelmstadt), de.wikipedia.org/wiki/Bezirk_Spandau, abgerufen 20.10.2026",
+      "Wikipedia Bezirk Spandau: grenzt an die Landkreise Oberhavel und Havelland sowie an Potsdam (Falkensee-Grenze deshalb nicht behauptet)",
+      "GSC 480 Tage: gartenpflege spandau, winterdienst spandau (Winterdienst-FAQ), Leistungen laut Live-Seite",
+      "Partner-Framing Winterdienst laut Spec B2: Vertrag Kunde-Fachbetrieb, Partner nicht namentlich, kein Festpreis in der Partner-Antwort"
+    ]
+  },
+  "berlin-gatow": {
+    "title": "Gartenpflege & Heckenschnitt Berlin-Gatow 14089",
+    "meta": "Haus- & Gartenservice in Berlin-Gatow (14089): Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Gatow ist ein Dorf in der Großstadt: Gärten und Feldflur, die Havel im Osten, Kladow im Süden. Haus- & Gartenservice Havelland aus Falkensee übernimmt hier Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung zum schriftlichen Festpreis nach kostenloser Besichtigung.",
+    "anfaellt": [
+      {
+        "h3": "Gärten rund um Alt-Gatow",
+        "p": "Rund um Alt-Gatow und den Kladower Damm (14089) liegen Gärten, dazu die Gatower Feldflur."
+      },
+      {
+        "h3": "Grundstücke nahe der Havel",
+        "p": "Die Havel begrenzt Gatow im Osten; Rasen, Hecken und Laub verlangen dort feste Pflegetermine."
+      },
+      {
+        "h3": "Nachbarn in der Nähe",
+        "p": "Kladow, die Wilhelmstadt und Dallgow-Döberitz grenzen an Gatow und gehören ebenfalls zu unserem Einsatzgebiet."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Pflegen Sie große Gartengrundstücke in Gatow regelmäßig?",
+        "a": "Ja, Gartenpflege und Heckenschnitt laufen auf Wunsch im festen Turnus, etwa für Rasen, Hecken und Laub. Den Umfang klären wir bei der kostenlosen Besichtigung und halten den Preis schriftlich fest."
+      },
+      {
+        "q": "Wie schnell kommt die Besichtigung in Gatow zustande?",
+        "a": "Schicken Sie uns ein Foto per WhatsApp oder rufen Sie an, wir antworten am selben Tag. Die Besichtigung findet meist innerhalb weniger Tage statt und kostet nichts."
+      },
+      {
+        "q": "Räumen Sie in Gatow auch Keller und Nebengebäude?",
+        "a": "Ja, Entrümpelung von Keller, Dachboden und Nebengebäuden gehört zu unseren Leistungen. Nach der Besichtigung steht der Festpreis schriftlich fest, die Anfahrt ist darin enthalten."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 14089",
+      "data/copy/orte.json (hook berlin-gatow): Lage Stadtrand Spandau, großzügige Grundstücke, Hecken, Rasen, Laub",
+      "de.wikipedia.org/wiki/Berlin-Gatow, abgerufen 20.10.2026: Ortsteil im Süden des Bezirks Spandau, grenzt an Kladow, Wilhelmstadt, Havel, Potsdam und Dallgow-Döberitz; 'Dorf in der Großstadt' mit vielen Einfamilienhäusern und Gärten; PLZ 14089; Straßenzug Alt-Gatow/Kladower Damm",
+      "Pferdehöfe aus der alten Seite bewusst NICHT übernommen (bei Wikipedia nicht belegt)",
+      "GSC 480 Tage: gartenpflege gatow (Pos. 1,0, 1 Klick) deckt Lead + FAQ 1 ab"
+    ]
+  },
+  "berlin-kladow": {
+    "title": "Gartenpflege & Heckenschnitt Berlin-Kladow 14089",
+    "meta": "Haus- & Gartenservice in Berlin-Kladow (14089): Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Kladow ist der südlichste Ortsteil von Spandau, mit Villen am Havelufer und dem Ortskern Alt-Kladow. Haus- & Gartenservice Havelland aus Falkensee übernimmt hier Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung zum schriftlichen Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Villen am Havelufer",
+        "p": "Am Havelufer stehen Villen mit großzügigen Gärten, in denen Rasen, Hecken und Terrassen gleichmäßige Pflege brauchen."
+      },
+      {
+        "h3": "Alt-Kladow und die Siedlungen",
+        "p": "Für Alt-Kladow, die Finnenhaussiedlung und die Landstadt Gatow übernehmen wir Hecken, Wege und Beete (14089)."
+      },
+      {
+        "h3": "Terrassen und Wege am Wasser",
+        "p": "In Ufernähe brauchen Steinflächen regelmäßige Reinigung; im GaLaBau erneuern wir Terrassen, Wege und Einfahrten."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Übernehmen Sie Gartenpflege auf Grundstücken nahe der Havel?",
+        "a": "Ja, Gartenpflege und Heckenschnitt übernehmen wir auch auf Grundstücken in Ufernähe. Bei der kostenlosen Besichtigung sehen wir Zugang und Umfang und nennen Ihnen danach den Preis schriftlich."
+      },
+      {
+        "q": "Wie sehe ich in Kladow, was erledigt wurde?",
+        "a": "Nach jedem Einsatz schicken wir Ihnen Fotos per WhatsApp als Nachweis. Das hilft besonders, wenn Sie tagsüber nicht vor Ort sind."
+      },
+      {
+        "q": "Muss ich für die Besichtigung in Kladow bezahlen?",
+        "a": "Nein, die Besichtigung ist kostenlos, und die Anfahrt steckt im Festpreis. Danach steht der Preis schriftlich fest, bevor wir anfangen."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 14089",
+      "data/copy/orte.json (hook berlin-kladow): westliches Havelufer, Villen, großzügige Grundstücke, Steinflächen/Fenster nah am Wasser",
+      "de.wikipedia.org/wiki/Berlin-Kladow, abgerufen 20.10.2026: südlichster Ortsteil des Bezirks Spandau, PLZ 14089, Villen am Havelufer (19. Jh.), Ortslage Alt-Kladow, Finnenhaussiedlung (1958 bis 1961), Landstadt Gatow",
+      "Fähre F10 und Strandbad bewusst nicht verwendet (für Leistung ohne Nutzen, Strandbad nicht belegt)",
+      "GSC 480 Tage: gartenpflege kladow (Pos. 10,5)",
+      "Foto-Nachweis per WhatsApp laut Spec §9 (belegte Aussagen)"
+    ]
+  },
+  "gross-glienicke": {
+    "title": "Gartenpflege & Heckenschnitt Groß Glienicke 14476",
+    "meta": "Haus- & Gartenservice in Groß Glienicke (14476): Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Groß Glienicke ist ein Potsdamer Ortsteil am Groß Glienicker See, direkt an der Berliner Stadtgrenze. Haus- & Gartenservice Havelland aus Falkensee übernimmt hier Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung zum schriftlichen Festpreis nach kostenloser Besichtigung.",
+    "anfaellt": [
+      {
+        "h3": "Zwei Seiten, ein Einsatzgebiet",
+        "p": "Wir arbeiten auf der Potsdamer Seite (14476) und in der Berliner Ortslage Groß-Glienicke im Ortsteil Kladow."
+      },
+      {
+        "h3": "Dorfkern, Gutspark, See",
+        "p": "Im Dorfkern rund um die Kirche, am Gutspark und am See brauchen Hecken und Rasen regelmäßigen Schnitt."
+      },
+      {
+        "h3": "Eigentümer auf Distanz",
+        "p": "Eigentümer, die nicht vor Ort wohnen, bekommen nach jedem Einsatz Fotos per WhatsApp."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Kommen Sie nach Groß Glienicke, obwohl es zu Potsdam gehört?",
+        "a": "Ja, wir arbeiten in Groß Glienicke (14476) und auf der Berliner Seite in Kladow. Unser Sitz in Falkensee ist etwa 16 Kilometer entfernt, die Anfahrt steckt im Festpreis."
+      },
+      {
+        "q": "Kann ich Arbeiten in Groß Glienicke aus der Ferne beauftragen?",
+        "a": "Ja, ein Foto per WhatsApp und zwei Sätze zur Aufgabe genügen für die erste Einschätzung. Wir antworten am selben Tag und vereinbaren die kostenlose Besichtigung."
+      },
+      {
+        "q": "Wann darf ich Hecken in Groß Glienicke schneiden lassen?",
+        "a": "Von März bis September verbietet § 39 BNatSchG radikale Rückschnitte, ein schonender Form- und Pflegeschnitt bleibt erlaubt. Ab Oktober sind auch kräftige Rückschnitte wieder zulässig."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 14476",
+      "data/copy/orte.json (hook gross-glienicke): Groß Glienicker See, gehobene Einfamilienhäuser, Zweitwohnsitz",
+      "de.wikipedia.org/wiki/Groß_Glienicke, abgerufen 20.10.2026: seit 26.10.2003 Stadtteil von Potsdam; Berliner Ortslage 'Groß-Glienicke' gehört zum Ortsteil Kladow; Grenze verläuft durch den See; Dorfkern, Gutspark, Seepromenade, Waldsiedlung (ehem. Kaserne)",
+      "§ 39 Abs. 5 BNatSchG (Radikalschnitt-Verbot 1.3. bis 30.9.; schonender Form- und Pflegeschnitt erlaubt)",
+      "GSC 480 Tage: ferienwohnung groß glienicke (Impr. auf /standorte/werder-havel/), grünanlagenpflege glienicke, pflasterarbeiten glienicke (Pflaster/Beete über GaLaBau im Lead abgedeckt)"
+    ]
+  },
+  "werder-havel": {
+    "title": "Gartenpflege, Hausmeister & Reinigung Werder (Havel)",
+    "meta": "Haus- & Gartenservice Werder (Havel), 14542: Gartenpflege, Hecken, Hausmeister, Gebäudereinigung, Entrümpelung. Kostenlose Besichtigung, Festpreis.",
+    "lead": "Werder (Havel) liegt mit der Kernstadt auf einer Havelinsel, dazu kommen Ortsteile wie Glindow, Petzow und Töplitz. Haus- & Gartenservice Havelland aus Falkensee übernimmt hier Gartenpflege, Heckenschnitt, GaLaBau, Entrümpelung sowie Hausmeisterservice und Reinigung für Ferienobjekte.",
+    "anfaellt": [
+      {
+        "h3": "Kernstadt und Ortsteile",
+        "p": "Die Seite gilt für die Kernstadt (14542) und Ortsteile wie Glindow, Petzow, Phöben und Töplitz."
+      },
+      {
+        "h3": "Wochenendgrundstücke an der Havel",
+        "p": "Wer auswärts wohnt, bekommt Gartenpflege, Heckenschnitt und Laubbeseitigung im Turnus und danach Fotos als Nachweis."
+      },
+      {
+        "h3": "Ferienwohnungen und Hausmeister",
+        "p": "Zwischen den Gästen reinigen wir Ferienwohnungen, und der Hausmeisterservice schaut nach dem Objekt."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Betreuen Sie in Werder auch Verwaltungen und Gewerbeobjekte?",
+        "a": "Ja, wir übernehmen Gebäudereinigung, Hausmeisterservice und Grünanlagenpflege für Verwaltungen und Gewerbeobjekte in Werder (Havel). Umfang und Turnus klären wir bei einer Begehung vor Ort."
+      },
+      {
+        "q": "Reinigen Sie Ferienwohnungen in Werder zwischen den Gästen?",
+        "a": "Ja, wir reinigen Ferienwohnungen zwischen den Gästewechseln und schicken Ihnen Fotos als Nachweis. Den Umfang klären wir vorab bei einer kostenlosen Besichtigung."
+      },
+      {
+        "q": "Kommen Sie auch nach Glindow, Petzow oder Töplitz?",
+        "a": "Ja, wir fahren auch in die Ortsteile rund um die Kernstadt, etwa nach Glindow, Petzow und Töplitz. Schreiben Sie uns Ihre Adresse per WhatsApp, wir antworten am selben Tag."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 14542, Typ Ferien/B2C",
+      "data/copy/orte.json (hook werder-havel): Havelinseln, Ferienwohnung/Wochenendgrundstück, auswärts wohnende Eigentümer, Reinigung zwischen den Gästen",
+      "de.wikipedia.org/wiki/Werder_(Havel), abgerufen 20.10.2026: Landkreis Potsdam-Mittelmark, Kernstadt auf Havelinsel, PLZ 14542, Ortsteile Bliesendorf, Derwitz, Glindow, Kemnitz, Petzow, Phöben, Plötzin, Töplitz",
+      "GSC 480 Tage: gebäudereinigung hausmeisterservice grünanlagenpflege werder havel (Pos. 7,0 auf dieser Seite), reinigung werder havel, hausmeister werder havel, werder havelland",
+      "Gartenbewässerung (GSC-Anfrage, 1 Impression) nicht abgedeckt: kein belegtes Leistungsangebot",
+      "Gebäudereinigung, Hausmeisterservice, Ferienwohnung-Reinigung = eigene Ausführung laut Spec B2"
+    ]
+  },
+  "ketzin": {
+    "title": "Gartenpflege & Heckenschnitt Ketzin/Havel 14669",
+    "meta": "Haus- & Gartenservice in Ketzin/Havel (14669): Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Ketzin/Havel ist eine Kleinstadt im Havelland am nördlichen Havelufer, zwischen Potsdam und Brandenburg an der Havel. Haus- & Gartenservice Havelland aus Falkensee übernimmt hier Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung zum schriftlichen Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Kleinstadt am Nordufer der Havel",
+        "p": "Ketzin/Havel (14669) gehört zum Landkreis Havelland und liegt am nördlichen Havelufer, wo die Fähre nach Schmergow ablegt."
+      },
+      {
+        "h3": "Hecken und Beete am Ufer",
+        "p": "Hecken zur Wasserseite und Beete am Ufer wachsen schnell zu und brauchen mehrmals im Jahr einen Schnitt."
+      },
+      {
+        "h3": "Fünf Ortsteile rund um Ketzin",
+        "p": "Wir kommen auch nach Etzin, Falkenrehde, Paretz, Tremmen und Zachow."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Übernehmen Sie Dachrinne und Winterdienst in Ketzin?",
+        "a": "Dachrinnenreinigung und Winterdienst führt ein Partner-Fachbetrieb aus, mit dem Sie den Vertrag direkt abschließen. Wir koordinieren Besichtigung und Angebot für Sie."
+      },
+      {
+        "q": "Können Sie ein ganzes Haus in Ketzin räumen?",
+        "a": "Ja, Entrümpelung und Haushaltsauflösung gehören dazu, vom Keller bis zum ganzen Haus. Nach der kostenlosen Besichtigung steht der Festpreis schriftlich fest."
+      },
+      {
+        "q": "Wie schnell kommen Sie nach Ketzin?",
+        "a": "Wir antworten am selben Tag, die Besichtigung findet meist innerhalb weniger Tage statt. Sie ist kostenlos, die Anfahrt steckt im Festpreis."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 14669",
+      "data/copy/orte.json (hook ketzin): Havelufer, Hecken zur Wasserseite, Dachrinnen/Winterdienst über Partner-Fachbetrieb",
+      "de.wikipedia.org/wiki/Ketzin/Havel, abgerufen 20.10.2026: amtsfreie Kleinstadt im Landkreis Havelland, zwischen Potsdam und Brandenburg an der Havel, nördliches Havelufer, Havelfähre Ketzin-Schmergow (L 86), Ortsteile Etzin, Falkenrehde, Paretz, Tremmen, Zachow, PLZ 14669",
+      "GSC 480 Tage: keine Anfragen mit 'ketzin' (0 Zeilen), Seite nur über Titel/Lead/H3 abgesichert",
+      "Partner-Framing Dachrinne/Winterdienst laut Spec B2: Vertrag Kunde-Fachbetrieb, Partner nicht namentlich, kein 'Festpreis' in der Partner-Antwort"
+    ]
+  },
+  "hohen-neuendorf": {
+    "title": "Haus- & Gartenservice Hohen Neuendorf | Havelland",
+    "meta": "Haus- & Gartenservice in Hohen Neuendorf (16540), Bergfelde, Borgsdorf und Stolpe: Gartenpflege, Hecken, GaLaBau, Entrümpelung. Kostenlose Besichtigung.",
+    "lead": "Wir pflegen Gärten, schneiden Hecken und räumen Haus und Keller in Hohen Neuendorf (16540) sowie in Bergfelde, Borgsdorf und Stolpe. Ihr Auftrag läuft von Falkensee aus, mit kostenloser Besichtigung und schriftlichem Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Vier Ortsteile, eine Rufnummer",
+        "p": "Ob Bergfelde, Borgsdorf, Stolpe oder Ortsmitte: Eine Besichtigung genügt, danach steht Ihr Festpreis schriftlich fest."
+      },
+      {
+        "h3": "Laub und Hecken am Baumgrundstück",
+        "p": "Wo Bäume neben dem Haus stehen, fallen im Herbst Laub und Heckenschnitt oft am selben Termin an."
+      },
+      {
+        "h3": "Pendler an der S1 und S8",
+        "p": "Pendler nach Berlin erreichen uns Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Fahren Sie auch nach Borgsdorf, Bergfelde und Stolpe?",
+        "a": "Ja, alle vier Ortsteile von Hohen Neuendorf gehören zu unserem Einsatzgebiet. Schicken Sie uns Ihre Adresse per WhatsApp, wir antworten am selben Tag."
+      },
+      {
+        "q": "Wer übernimmt den Winterdienst in Borgsdorf und Hohen Neuendorf?",
+        "a": "Räumen und Streuen führt ein Partner-Fachbetrieb aus, den wir koordinieren. Das Angebot erstellt der Fachbetrieb nach der Besichtigung."
+      },
+      {
+        "q": "Wie schnell findet die Besichtigung in Hohen Neuendorf statt?",
+        "a": "Die kostenlose Besichtigung folgt meist innerhalb weniger Tage. Danach steht der Festpreis schriftlich fest, die Anfahrt von Falkensee ist darin enthalten."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 16540",
+      "Wikipedia Hohen Neuendorf (Abruf 20.10.2026): Ortsteile Hohen Neuendorf, Bergfelde, Borgsdorf, Stolpe; S1 (Borgsdorf, Hohen Neuendorf), S8 (Bergfelde, Hohen Neuendorf)",
+      "GSC (oberhavel-q.txt): \"winterdienst borgsdorf\" 12 Impr. auf /winterdienst-hohen-neuendorf/ -> FAQ 2",
+      "Spec §9: Öffnungszeiten, Besichtigung, Festpreis, Anfahrt im Festpreis, antworten am selben Tag"
+    ]
+  },
+  "hennigsdorf": {
+    "title": "Haus- & Gartenservice Hennigsdorf: Gartenpflege, Hecke",
+    "meta": "Gartenpflege, Heckenschnitt und Entrümpelung in Hennigsdorf (16761), dazu Hausmeisterservice und Unterhaltsreinigung für Betriebe. Kostenlose Besichtigung.",
+    "lead": "Gartenpflege, Heckenschnitt und Baumschnitt am Eigenheim, Entrümpelung und Hausmeisterdienst für Wohnanlagen und Betriebe: Wir arbeiten in Hennigsdorf (16761) von Falkensee aus. Nach der kostenlosen Besichtigung erhalten Sie den Preis schriftlich.",
+    "anfaellt": [
+      {
+        "h3": "Rathenau-Viertel und Nieder Neuendorf",
+        "p": "Im Rathenau-Viertel und in Nieder Neuendorf übernehmen wir Gartenpflege, Heckenschnitt und Baumschnitt am Wohnhaus."
+      },
+      {
+        "h3": "Wohnanlagen und Betriebe",
+        "p": "Hausverwaltungen und Betriebe in Hennigsdorf bekommen Entrümpelung, Hausmeisterdienst und Unterhaltsreinigung über einen Ansprechpartner."
+      },
+      {
+        "h3": "Grenzort zu Velten und Berlin",
+        "p": "Hennigsdorf grenzt an Velten, Hohen Neuendorf, Schönwalde-Glien und Berlin, so lassen sich Termine in der Region verbinden."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Übernehmen Sie in Hennigsdorf auch Baumschnitt?",
+        "a": "Ja, Baumschnitt gehört zu unseren Leistungen. Was an Ihrem Baum möglich ist, klären wir bei der kostenlosen Besichtigung."
+      },
+      {
+        "q": "Betreuen Sie Hausverwaltungen und Betriebe in Hennigsdorf?",
+        "a": "Ja, für Wohnanlagen und Gewerbeobjekte bieten wir Hausmeisterservice, Unterhaltsreinigung und Entrümpelung an. Nach einer Begehung vor Ort erhalten Sie ein schriftliches Angebot."
+      },
+      {
+        "q": "Wer räumt und streut im Winter in Hennigsdorf?",
+        "a": "Ein Partner-Fachbetrieb führt den Winterdienst aus, wir koordinieren die Anfrage. Angebot und Vertrag kommen vom Fachbetrieb."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 16761, Typ B2B",
+      "Wikipedia Hennigsdorf (Abruf 20.10.2026): Wohnplätze Nieder Neuendorf, Stolpe-Süd, Neubrück, Gertrudenhof, Papenberge; Heimstättensiedlung (1920er), Rathenau-Viertel; Nachbarn Velten, Hohen Neuendorf, Berlin, Schönwalde-Glien, Oberkrämer",
+      "GSC: \"gartenpflege hennigsdorf\" 30 Impr. Pos. 20 auf /standorte/hennigsdorf/ -> Titel, Lead; \"baumpflege in hennigsdorf\" 10 Impr. -> Lead, FAQ 1",
+      "Bestehende Seiten gebaeudereinigung-/unterhaltsreinigung-/winterdienst-hennigsdorf; Spec B2: Winterdienst Partner, Vertrag Kunde-Fachbetrieb"
+    ]
+  },
+  "oranienburg": {
+    "title": "Haus- & Gartenservice Oranienburg: Hecken, Räumung",
+    "meta": "Hecken schneiden, Garten pflegen, entrümpeln in Oranienburg (16515), Germendorf und Sachsenhausen. Kostenlose Besichtigung, Festpreis inklusive Anfahrt.",
+    "lead": "Hecken schneiden, Garten pflegen, Haus und Wohnung entrümpeln: Wir arbeiten in Oranienburg (16515) und seinen Ortsteilen wie Germendorf, Zehlendorf und Sachsenhausen. Für Gewerbeobjekte kommen Hausmeisterservice und Unterhaltsreinigung dazu.",
+    "anfaellt": [
+      {
+        "h3": "Acht Ortsteile neben der Kernstadt",
+        "p": "Friedrichsthal, Germendorf, Lehnitz, Malz, Sachsenhausen, Schmachtenhagen, Wensickendorf und Zehlendorf gehören zu Oranienburg und zu unserem Einsatzgebiet."
+      },
+      {
+        "h3": "Eden und Weiße Stadt",
+        "p": "In Eden und in der Weißen Stadt pflegen wir Gärten und schneiden Hecken, vom schmalen Vorgarten bis zum größeren Grundstück."
+      },
+      {
+        "h3": "Kreisstadt mit Gewerbeobjekten",
+        "p": "Als Kreisstadt hat Oranienburg Gewerbe- und Mietobjekte, für die wir Hausmeisterservice, Unterhaltsreinigung und Fensterreinigung anbieten."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Fahren Sie auch nach Germendorf, Sachsenhausen und Zehlendorf?",
+        "a": "Ja, die Ortsteile von Oranienburg liegen alle in unserem Gebiet. Ein Foto und die Adresse per WhatsApp genügen, wir antworten am selben Tag."
+      },
+      {
+        "q": "Was kostet Hecken schneiden in Oranienburg?",
+        "a": "Den Preis nennen wir nach der kostenlosen Besichtigung schriftlich als Festpreis. Die Anfahrt von Falkensee ist darin enthalten."
+      },
+      {
+        "q": "Gibt es Hausmeisterservice für Gewerbeobjekte in Oranienburg?",
+        "a": "Ja, wir übernehmen Hausmeisterservice, Unterhaltsreinigung und Außenanlagen. Den Winterdienst koordinieren wir über einen Partner-Fachbetrieb, das Angebot folgt nach der Begehung."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 16515, Typ B2C/B2B",
+      "Wikipedia Oranienburg (Abruf 20.10.2026): Kernstadt + 8 Ortsteile Friedrichsthal, Germendorf, Lehnitz, Malz, Sachsenhausen, Schmachtenhagen, Wensickendorf, Zehlendorf; Kreisstadt/Mittelzentrum Oberhavel; Eden (Siedlung 1893), Weiße Stadt",
+      "GSC: \"hecken schneiden oranienburg\" 36+5 Impr., \"winterdienst oranienburg\", \"hausmeisterservice oranienburg\" 8+4+1, \"fensterputzer oranienburg\", \"büroreinigung/unterhaltsreinigung in oranienburg\" -> Lead, Karten, FAQ 2/3",
+      "Preis-Aussage nur \"Festpreis nach Besichtigung\" (kein Betrag)"
+    ]
+  },
+  "velten": {
+    "title": "Haus- & Gartenservice Velten | Havelland",
+    "meta": "Haus- & Gartenservice in Velten (16727), der Ofenstadt: Gartenpflege, Hecke, GaLaBau, Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Velten, die Ofenstadt (16727), liegt zwischen Hennigsdorf und Oranienburg. Wir pflegen hier Gärten, schneiden Hecken, übernehmen GaLaBau-Arbeiten und räumen Haushalte, nach kostenloser Besichtigung zum schriftlichen Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Kernstadt und Hohenschöpping",
+        "p": "Neben der Kernstadt gehört Hohenschöpping zum Stadtgebiet, auch dort übernehmen wir Garten und Hecke."
+      },
+      {
+        "h3": "Haus und Betrieb nebeneinander",
+        "p": "Wohnhäuser und Gewerbeflächen wie der Businesspark Velten liegen dicht beieinander, für Betriebe kommen Unterhaltsreinigung und Hausmeisterdienst infrage."
+      },
+      {
+        "h3": "GaLaBau vom Altbau bis Neubau",
+        "p": "Ob Ofenstadt-Altbau oder Neubau: Für Pflaster, Zaun und Terrasse erstellen wir nach der Besichtigung ein schriftliches Angebot."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Kommen Sie nach Hohenschöpping?",
+        "a": "Ja, Hohenschöpping zählt zum Veltener Stadtgebiet und zu unserem Einsatzgebiet. Schreiben Sie uns kurz, wir antworten am selben Tag."
+      },
+      {
+        "q": "Räumen Sie auch Wohnungen und Haushalte in Velten?",
+        "a": "Ja, Entrümpelung und Haushaltsauflösung gehören zu unseren Leistungen. Die kostenlose Besichtigung findet meist innerhalb weniger Tage statt, danach steht der Festpreis fest."
+      },
+      {
+        "q": "Ist die Anfahrt nach Velten im Preis enthalten?",
+        "a": "Ja, die Anfahrt von Falkensee steckt im schriftlichen Festpreis. Für den Weg entsteht kein zusätzlicher Posten."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 16727",
+      "Wikipedia Velten (Abruf 20.10.2026): Beiname Ofenstadt; Wohnplätze Hohenschöpping (am Oder-Havel-Kanal), Heidekrug; Businesspark Velten; Nachbarn Leegebruch, Oranienburg, Hohen Neuendorf, Hennigsdorf, Oberkrämer",
+      "GSC: keine Anfragen mit Velten (oberhavel-q.txt, 0 Zeilen)",
+      "Live-Hook data/copy/orte.json: Ofenstadt, Mischung Wohn/Gewerbe"
+    ]
+  },
+  "birkenwerder": {
+    "title": "Haus- & Gartenservice Birkenwerder | Havelland",
+    "meta": "Haus- & Gartenservice Birkenwerder (16547) an der Briese: Gartenpflege, Hecken, GaLaBau, Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Haus und Garten in Birkenwerder (16547) betreuen wir von Falkensee aus: Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung. Auf den Villen- und Einfamilienhausgrundstücken rund um die Briese bekommen Sie nach der Besichtigung einen schriftlichen Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Villen und Landhäuser mit Hecken",
+        "p": "In Birkenwerder entstanden Villen und Landhäuser, die Hecken und Gärten dieser Grundstücke schneiden und pflegen wir."
+      },
+      {
+        "h3": "Grundstücke an Briese und Seen",
+        "p": "Rund um Briese, Boddensee, Briesesee und Mönchsee pflegen wir Gärten, Hecken, Terrassen und Wege."
+      },
+      {
+        "h3": "Lindenhof und Kolonie Briese",
+        "p": "Auch in Birkenwerder Nord, am Lindenhof und in der Kolonie Briese erledigen wir Gartenarbeit und Entrümpelungen."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Wer übernimmt den Winterdienst in Birkenwerder?",
+        "a": "Räumen und Streuen führt ein Partner-Fachbetrieb aus, den wir koordinieren. Ihr Angebot erstellt der Fachbetrieb nach der Besichtigung."
+      },
+      {
+        "q": "Schneiden Sie auch hohe Hecken in Birkenwerder?",
+        "a": "Ja, Heckenschnitt gehört zu unseren Kernleistungen, auch bei langen und hohen Hecken. Die Höhe klären wir bei der kostenlosen Besichtigung."
+      },
+      {
+        "q": "Wie erreiche ich Sie von Birkenwerder aus am schnellsten?",
+        "a": "Per WhatsApp oder Telefon, Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr. Wir antworten am selben Tag."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 16547",
+      "Wikipedia Birkenwerder (Abruf 20.10.2026): Wohnplätze Birkenwerder Nord, Kolonie Briese, Lindenhof; Briese, Boddensee, Briesesee, Mönchsee; Bahnhof 1877, Villenvorort",
+      "GSC: \"winterdienst birkenwerder\" 24+8+1+1 Impr. -> FAQ 1",
+      "Hinweis: \"Briesetal\" nicht als eigener Landschaftsname belegt, daher nur \"Briese\""
+    ]
+  },
+  "glienicke-nordbahn": {
+    "title": "Haus- & Gartenservice Glienicke/Nordbahn | Havelland",
+    "meta": "Haus- & Gartenservice Glienicke/Nordbahn (16548): Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Glienicke/Nordbahn (16548) grenzt an Berlin-Frohnau und Hermsdorf. Wir pflegen hier Gärten, schneiden Hecken, übernehmen GaLaBau und Entrümpelungen, mit kostenloser Besichtigung und schriftlichem Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Ort an der Landesgrenze",
+        "p": "Glienicke/Nordbahn grenzt an Frohnau, Hermsdorf und Lübars, Gartenpflege und Heckenschnitt führen wir auf der Brandenburger Seite aus."
+      },
+      {
+        "h3": "Jungbornstraße bis Alte Schildower Straße",
+        "p": "Von der Jungbornstraße bis zur Alten Schildower Straße betreuen wir Gärten, Hecken, Pflaster und Wege."
+      },
+      {
+        "h3": "Entrümpelung im Einfamilienhaus",
+        "p": "Bei Nachlass, Verkauf oder Umzug räumen wir Keller, Dachboden und Haus nach der Besichtigung zum Festpreis."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Gibt es Winterdienst in Glienicke/Nordbahn?",
+        "a": "Ja, über einen Partner-Fachbetrieb, den wir koordinieren. Zum Angebot kommt es nach der kostenlosen Besichtigung."
+      },
+      {
+        "q": "Gehört Glienicke/Nordbahn zu Ihrem Einsatzgebiet?",
+        "a": "Ja, die Gemeinde in Oberhavel liegt in unserem Einsatzgebiet, die Anfahrt von Falkensee steckt im Festpreis. Adressen in Berlin-Frohnau oder Hermsdorf fragen Sie bitte vorab an."
+      },
+      {
+        "q": "Wann bekomme ich in Glienicke/Nordbahn einen Termin?",
+        "a": "Wir antworten am selben Tag. Die Besichtigung folgt meist innerhalb weniger Tage, danach steht Ihr Preis schriftlich fest."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 16548",
+      "Wikipedia Glienicke/Nordbahn (Abruf 20.10.2026): keine amtlichen Ortsteile; Nachbarn Berlin-Frohnau, Hermsdorf, Lübars, Hohen Neuendorf, Schildow; Parzellierung ab ca. 1880; Neubereiche Jungbornstraße, Alte Schildower Straße, Ortsteil West",
+      "GSC: \"winterdienst glienicke/nordbahn\" 13+6+5+1 Impr. -> FAQ 1",
+      "FAQ 2: Berliner Adressen ausdrücklich nicht zugesagt"
+    ]
+  },
+  "leegebruch": {
+    "title": "Haus- & Gartenservice Leegebruch | Havelland",
+    "meta": "Haus- & Gartenservice Leegebruch (16767): Gartenpflege, Heckenschnitt, GaLaBau und Entrümpelung für Siedlungshäuser. Kostenlose Besichtigung, Festpreis.",
+    "lead": "Leegebruch (16767) wuchs ab 1936 mit den Wohnhäusern für die Heinkel-Werke. Heute pflegen wir dort Gärten, schneiden Hecken und übernehmen GaLaBau und Entrümpelungen, nach kostenloser Besichtigung zum schriftlichen Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Siedlung seit 1936",
+        "p": "Die Wohnhäuser entstanden ab 1936 für Arbeiter der Heinkel-Werke, nach Jahrzehnten fallen dort Gartenumbau und Entrümpelungen an."
+      },
+      {
+        "h3": "Eichenallee und die Nebenstraßen",
+        "p": "Von der Eichenallee bis in die Nebenstraßen schneiden wir Hecken, pflegen Rasen und Beete."
+      },
+      {
+        "h3": "Zwischen Oranienburg und Velten",
+        "p": "Leegebruch liegt zwischen Oranienburg und Velten, die Anfahrt von Falkensee ist im Festpreis enthalten."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Betreuen Sie auch kleine Gärten in Leegebruch?",
+        "a": "Ja, Gartenpflege und Heckenschnitt führen wir auch auf kleinen Grundstücken aus. Die Besichtigung ist kostenlos, danach steht Ihr Festpreis fest."
+      },
+      {
+        "q": "Räumen Sie Keller und Dachböden in Leegebruch?",
+        "a": "Ja, Entrümpelung gehört zu unseren Leistungen. Nach der Besichtigung bekommen Sie einen schriftlichen Festpreis mit Anfahrt."
+      },
+      {
+        "q": "Wie erreiche ich Sie aus Leegebruch?",
+        "a": "Unter 01515 6198195 per Anruf oder WhatsApp, Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr. Unser Sitz ist Falkensee."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 16767",
+      "Wikipedia Leegebruch (Abruf 20.10.2026): keine amtlichen Ortsteile; Wohnhäuser für Heinkel-Arbeiter ab 1936, Ladenzeile Eichenallee 1939, Querstraßen",
+      "Wikipedia Velten/Hohen Neuendorf/Oranienburg: Nachbarschaft zu Leegebruch",
+      "GSC: keine Anfragen mit Leegebruch",
+      "data/nap.json / Spec §9: Telefon, Sitz, Öffnungszeiten"
+    ]
+  },
+  "lehnitz": {
+    "title": "Haus- & Gartenservice Lehnitz | Havelland",
+    "meta": "Haus- & Gartenservice Lehnitz (16515) am Lehnitzsee: Gartenpflege, Heckenschnitt, GaLaBau, Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Lehnitz (16515) gehört seit 2003 zu Oranienburg und liegt am Lehnitzsee. Wir pflegen hier Gärten, schneiden Hecken, übernehmen GaLaBau und Entrümpelungen, mit kostenloser Besichtigung und schriftlichem Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Einfamilienhäuser am S-Bahnhof",
+        "p": "Rund um den S-Bahnhof Lehnitz übernehmen wir Gartenpflege und Heckenschnitt am Einfamilienhaus."
+      },
+      {
+        "h3": "Grundstücke am Lehnitzsee",
+        "p": "Am Lehnitzsee pflegen wir Gärten, Hecken, Terrassen und Wege am Einfamilienhaus."
+      },
+      {
+        "h3": "Entrümpelung bei Verkauf und Umzug",
+        "p": "Keller, Dachboden und Haushalt räumen wir nach der Besichtigung zum schriftlichen Festpreis aus, auch bei Haushaltsauflösungen."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Ist Lehnitz bei Ihnen eigener Ort oder Teil von Oranienburg?",
+        "a": "Lehnitz gehört zu Oranienburg und trägt dieselbe Postleitzahl 16515. Wir fahren beide Lagen an, nennen Sie uns einfach Ihre Adresse."
+      },
+      {
+        "q": "Pflegen Sie auch Gärten am Lehnitzsee?",
+        "a": "Ja, Gartenpflege, Heckenschnitt und GaLaBau gehören zu unseren Leistungen. Wie viel Arbeit anfällt, sehen wir bei der kostenlosen Besichtigung."
+      },
+      {
+        "q": "Kostet die Fahrt nach Lehnitz extra?",
+        "a": "Nein, die Anfahrt von Falkensee ist im schriftlichen Festpreis enthalten. Einen Preis nennen wir erst nach der Besichtigung."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 16515",
+      "Wikipedia Lehnitz (Abruf 20.10.2026): Ortsteil von Oranienburg seit 26.10.2003, PLZ 16515, Lehnitzsee, Waldsiedlung Lehnitz-Nord (Backsteinhäuser 1941, Baudenkmal seit 1990)",
+      "Wikipedia Oranienburg: Lehnitz Ortsteil, S1",
+      "GSC: keine Anfragen mit Lehnitz"
+    ]
+  },
+  "kremmen": {
+    "title": "Haus- & Gartenservice Kremmen | Havelland",
+    "meta": "Haus- & Gartenservice in Kremmen (16766) mit Ortsteilen: Gartenpflege, Hecken, GaLaBau, Entrümpelung. Kostenlose Besichtigung, schriftlicher Festpreis.",
+    "lead": "Kremmen (16766) und seine Ortsteile Beetz, Flatow, Groß-Ziethen, Hohenbruch, Sommerfeld und Staffelde liegen in unserem Einsatzgebiet. Wir pflegen Gärten und lange Hecken, übernehmen GaLaBau und Entrümpelungen, zum schriftlichen Festpreis nach kostenloser Besichtigung.",
+    "anfaellt": [
+      {
+        "h3": "Sieben Ortsteile, weite Wege",
+        "p": "Kremmen besteht aus sieben Ortsteilen, die Anfahrt von Falkensee ist in jedem davon im Festpreis enthalten."
+      },
+      {
+        "h3": "Größere Grundstücke rund um die Stadt",
+        "p": "Bei Grundstücken mit Hof, langen Hecken und weitem Rasen schätzen wir den Aufwand bei der kostenlosen Besichtigung ein."
+      },
+      {
+        "h3": "Kernstadt und Scheunenviertel",
+        "p": "Im historischen Scheunenviertel und in der Kernstadt pflegen wir Hecken, Pflaster und Höfe und führen Entrümpelungen nach Absprache aus."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Fahren Sie auch nach Beetz, Staffelde und Hohenbruch?",
+        "a": "Ja, alle sieben Kremmener Ortsteile liegen in unserem Einsatzgebiet. Schicken Sie Adresse und ein Foto per WhatsApp, wir antworten am selben Tag."
+      },
+      {
+        "q": "Pflegen Sie auch große Grundstücke in Kremmen?",
+        "a": "Ja, Gartenpflege und Heckenschnitt führen wir auch auf größeren Anwesen aus. Den Umfang klären wir bei der kostenlosen Besichtigung, danach steht der Festpreis schriftlich fest."
+      },
+      {
+        "q": "Kostet die Fahrt nach Kremmen extra?",
+        "a": "Nein, die Anfahrt von Falkensee ist im Festpreis enthalten. Die Besichtigung findet meist innerhalb weniger Tage statt."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 16766",
+      "Wikipedia Kremmen (Abruf 20.10.2026): 7 Ortsteile laut Hauptsatzung Beetz, Flatow, Groß-Ziethen, Hohenbruch, Kremmen (mit Amalienfelde, Linumhorst, Orion), Sommerfeld, Staffelde; historisches Scheunenviertel",
+      "data/copy/orte.json: Hook (größere Grundstücke) nur als Aufwand-Einschätzung formuliert, keine Tatsachenbehauptung",
+      "GSC: keine Anfragen mit Kremmen"
+    ]
+  },
+  "oberkraemer": {
+    "title": "Haus- & Gartenservice Oberkrämer | Havelland",
+    "meta": "Haus- & Gartenservice Oberkrämer (16727), Bötzow, Schwante, Vehlefanz und Eichstädt: Gartenpflege, Hecken, GaLaBau, Entrümpelung. Kostenlose Besichtigung.",
+    "lead": "Oberkrämer (16727) besteht aus sieben Ortsteilen von Bärenklau bis Vehlefanz. Wir pflegen dort Gärten, schneiden Hecken, übernehmen GaLaBau und Entrümpelungen und fahren alle Ortsteile an, mit kostenloser Besichtigung und schriftlichem Festpreis.",
+    "anfaellt": [
+      {
+        "h3": "Sieben Ortsteile, eine Anfahrt",
+        "p": "Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz liegen verstreut, die Anfahrt von Falkensee steckt im Festpreis."
+      },
+      {
+        "h3": "Grundstücke am Mühlensee",
+        "p": "Zwischen Vehlefanz und Schwante liegt der Mühlensee, rund um solche Lagen pflegen wir Gärten und Hecken."
+      },
+      {
+        "h3": "Gartenpflege über das Jahr",
+        "p": "In Bötzow, Marwitz oder Eichstädt planen wir Rasen, Hecken und Laub über das Jahr als feste Termine."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "In welchen Ortsteilen von Oberkrämer sind Sie tätig?",
+        "a": "In Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz. Nennen Sie uns Ihre Adresse, wir antworten am selben Tag."
+      },
+      {
+        "q": "Wer räumt in Oberkrämer Haus und Keller?",
+        "a": "Das übernehmen wir als Entrümpelung zum schriftlichen Festpreis. Zuerst kommen wir zur kostenlosen Besichtigung, meist innerhalb weniger Tage."
+      },
+      {
+        "q": "Bekomme ich nach dem Auftrag einen Foto-Nachweis?",
+        "a": "Ja, Vorher-Nachher-Fotos senden wir nach jedem Auftrag aufs Handy. So sehen Sie auch aus der Ferne, was erledigt ist."
+      }
+    ],
+    "quellen": [
+      "data/locations.json: PLZ 16727, Ortsteile Boetzow, Schwante, Vehlefanz, Eichstaedt",
+      "Wikipedia Oberkrämer (Abruf 20.10.2026): 7 Ortsteile laut Hauptsatzung Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante, Vehlefanz; Mühlensee zwischen Vehlefanz, Schwante, Neu-Vehlefanz",
+      "GSC: keine Anfragen mit Oberkrämer",
+      "Live-Seite: Foto-Nachweis (Zusage 02)"
+    ]
+  }
+}

@@ -367,18 +367,6 @@
 "fb_ext": "jpg",
 "fb_w": 800
 },
-"svc-winterdienst-detail": {
-"w": 1200,
-"h": 896,
-"widths": [
-480,
-800,
-1200
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 800
-},
 "svc-steinreinigung-detail": {
 "w": 1200,
 "h": 896,
@@ -912,8 +900,8 @@
 "fb_w": 1280
 },
 "svc-baumstumpf-entfernen-hero": {
-"w": 5504,
-"h": 3072,
+"w": 1920,
+"h": 1080,
 "widths": [
 480,
 768,
@@ -942,8 +930,8 @@
 "fb_w": 1280
 },
 "svc-galabau-hero": {
-"w": 5504,
-"h": 3072,
+"w": 1920,
+"h": 1080,
 "widths": [
 480,
 768,
@@ -972,8 +960,8 @@
 "fb_w": 1280
 },
 "svc-gartenrodung-hero": {
-"w": 5504,
-"h": 3072,
+"w": 2752,
+"h": 1536,
 "widths": [
 480,
 768,
@@ -984,7 +972,8 @@
 ],
 "avif": true,
 "fb_ext": "jpg",
-"fb_w": 1280
+"fb_w": 1280,
+"alt": "Gartenrodung: Strauch mit Wurzelballen wird ausgegraben"
 },
 "svc-heckenentfernung-detail": {
 "w": 5504,
@@ -1067,21 +1056,6 @@
 "svc-zaunbau-hero": {
 "w": 2752,
 "h": 1536,
-"widths": [
-480,
-768,
-1024,
-1376,
-1600,
-1920
-],
-"avif": true,
-"fb_ext": "jpg",
-"fb_w": 1280
-},
-"svc-zaunbau-detail": {
-"w": 2400,
-"h": 1792,
 "widths": [
 480,
 768,
@@ -1235,5 +1209,466 @@
 "avif": true,
 "fb_ext": "jpg",
 "fb_w": 768
+},
+"svc-pflasterarbeiten-hero": {
+"w": 2752,
+"h": 1536,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Maurice-und-Noah-Team: Pflaster verlegen in Falkensee"
+},
+"svc-einfahrt-pflastern-hero": {
+"w": 2752,
+"h": 1536,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-terrassenbau-hero": {
+"w": 2752,
+"h": 1536,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-rollrasen-verlegen-hero": {
+"w": 2752,
+"h": 1536,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Rollrasen verlegen vor einem Einfamilienhaus im Havelland"
+},
+"svc-gartengestaltung-hero": {
+"w": 2752,
+"h": 1536,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280
+},
+"svc-erdarbeiten-hero": {
+"w": 2752,
+"h": 1536,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Erdarbeiten mit dem Minibagger auf einem Grundstück im Havelland"
+},
+"svc-baumfaellung-hero": {
+"w": 2752,
+"h": 1536,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Baumfällung: Stamm wird am Boden mit der Motorsäge zerlegt"
+},
+"svc-gartenpflege-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Rasen mähen und Schnittgut aufnehmen im Vorgarten"
+},
+"svc-dachrinnenreinigung-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Dachrinne von Laub befreien, Leiter wird gesichert"
+},
+"svc-winterdienst-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Schnee räumen auf dem Gehweg vor einem Einfamilienhaus"
+},
+"svc-fensterreinigung-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Fenster reinigen an einer Terrassentür"
+},
+"svc-dachreinigung-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Dach mit Moosbewuchs wird vor dem Auftrag begutachtet"
+},
+"svc-galabau-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Grundstück vermessen und Pflasterbett prüfen"
+},
+"svc-pflasterarbeiten-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Pflastersteine mit der Schubkarre zur Einfahrt fahren"
+},
+"svc-erdarbeiten-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Grube ausheben, Mutterboden mit der Schubkarre abfahren"
+},
+"svc-baumfaellung-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Holz und Äste in den Transporter laden"
+},
+"svc-baumstumpf-entfernen-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Baumstumpf mit der Stubbenfräse entfernen"
+},
+"svc-winterdienst-orte-neutral": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Geräumter und gestreuter Gehweg vor einem Einfamilienhaus im Winter"
+},
+"svc-dachrinnenreinigung-orte-neutral": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Leiter an der Dachrinne, Laubhaufen auf dem Rasen"
+},
+"svc-dachreinigung-orte-neutral": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Einfamilienhaus mit moosbewachsenem Dach"
+},
+"standorte-hero": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter von Haus- & Gartenservice Havelland gehen mit Karton und Gartentasche zum Transporter vor einem Einfamilienhaus"
+},
+"gewerbe-hero": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter von Haus- & Gartenservice Havelland mit Werkzeugkoffer und Laubbläser auf dem Weg zu einem Mehrfamilienhaus"
+},
+"zielgruppe-bestatter": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Leer geräumtes, helles Wohnzimmer mit gestapelten Umzugskartons und einer Decke"
+},
+"zielgruppe-firmen": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter von Haus- & Gartenservice Havelland schieben einen Reinigungswagen zum Eingang eines Bürogebäudes im Gewerbegebiet"
+},
+"zielgruppe-pflege": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Helles, leer geräumtes Bewohnerzimmer mit Pflegebett, offenem Schrank und Tisch mit zwei Stühlen"
+},
+"zielgruppe-hausverwaltungen": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter von Haus- & Gartenservice Havelland gehen mit Werkzeugkoffer und Gartensack über den Innenhof eines Mehrfamilienhauses mit Müllplatz"
+},
+"svc-unterhaltsreinigung-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter mit Wischwagen und Staubsauger im Treppenhaus eines Mehrfamilienhauses"
+},
+"svc-gebaeudereinigung-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Zwei Mitarbeiter mit Reinigungswagen und Wischmopp auf einem hellen Büroflur"
+},
+"svc-ferienwohnung-reinigung-orte": {
+"w": 2400,
+"h": 1792,
+"widths": [
+480,
+768,
+1024,
+1376,
+1600,
+1920
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1280,
+"alt": "Frisch bezogenes Bett mit zwei gefalteten Handtüchern und Wäschekorb in einer hellen Ferienwohnung"
 }
 }
