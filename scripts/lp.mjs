@@ -21,6 +21,9 @@ import { topbar, trustZeile, preisBlock, zitat, aktionKarte, punkte, bewertungen
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
 
 // Servicegebiet laut Report Kap. 3.4 / GBP-Servicegebiet (A0 #8), Rathenow + Premnitz seit Maßnahme M8 (Quelle data/locations.json)
+// Umbau 11/2026 (Prüfung 29.10.: 63 % der Klicker sitzen in Berlin/Potsdam): fester Ortssatz unter der H1, zusätzlich zur dynamischen Ortsersetzung (data-ort/ORT_JS bleibt unverändert, keine JS-Logik).
+const ORT_SATZ = 'Im Havelland, in Berlin-Spandau und Potsdam';
+const ORT_PHRASE = 'im Havelland, in Berlin-Spandau und Potsdam';
 const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Rathenow', 'Premnitz', 'Berlin-Spandau', 'Potsdam'];
 export const ATTR_KEYS = ['gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']; // auch /kontakt/ (generate.mjs basis())
 // Kursiv-Schnitt (H1-Akzent wght 500; .gs .gn/.tli .tn/.ba-cap b wght 600): statt der variablen fraunces-italic-latin.woff2 (81 KB, gvar) zwei statische
@@ -32,6 +35,39 @@ const ITALIC_500 = '/assets/fonts/fraunces-italic-500-lp.woff2';
 const ITALIC_600 = '/assets/fonts/fraunces-italic-600-lp.woff2';
 const FONT_PRELOAD = `<link rel="preload" href="${ITALIC_500}" as="font" type="font/woff2" crossorigin>`;
 const FONT_FACE = `@font-face{font-family:"Fraunces LP";font-style:italic;font-weight:500;font-display:swap;src:url(${ITALIC_500}) format("woff2")}@font-face{font-family:"Fraunces LP";font-style:italic;font-weight:600;font-display:swap;src:url(${ITALIC_600}) format("woff2")}\n.lp-hero h1 em,.gs .gn,.tli .tn,.ba-cap b{font-family:"Fraunces LP","Fraunces",Georgia,serif}`;
+
+// Umbau 11/2026 (Prüfung 29.10., B6: 84 % der Klicks mobil, Haupt-Button lag auf 390x844 hinter dem Cookie-Banner [Oberkante y 688]):
+// Der Banner bleibt unangetastet (Text/Verhalten rechtlich geprüft). Der erste Bildschirm wird dichter gesetzt, damit der Absende-Knopf des Hero-Formulars
+// über der Banner-Oberkante endet, obwohl der feste Ortssatz (.lp-ort) dazukommt: engere Kopf-/Hero-/Formular-Abstände, Name und Telefon nebeneinander
+// (Telefon-Platzhalter entfällt dort, das Label „Telefon“ bleibt). Die Preis-Fußnote (.lp-preise-n) behält Text, Größe und Platz direkt unter den Kacheln.
+// Steht NACH BLOECKE_CSS, weil dessen @media(max-width:599px) dieselben Selektoren setzt (gleiche Spezifität, spätere Regel gewinnt).
+const FIT_CSS = `/* ---- Umbau 11/2026: Ortssatz, Hero-Fit, Preis-CTA ---- */
+.lp-ort{margin:6px 0 0;font-size:15px;line-height:1.35;font-weight:600;color:var(--green-d)}
+.lp-preis-cta{margin-top:16px}
+.lp-preis-cta+.lp-preis-cta-h{margin:8px 0 0;font-size:14px;line-height:1.4;color:var(--muted)}
+.lp-preis-cta+.lp-preis-cta-h+.lp-aktion{margin-top:16px}
+@media(min-width:900px){.lp-ort-dup{display:none}}
+@media(max-width:599px){
+.lp-ort{margin:2px 0 0;font-size:clamp(12px,3.4vw,13.5px);line-height:1.3;font-weight:600}
+.lp-ort+.lead{margin-top:4px}
+.lp-topbar .wrap{min-height:28px}
+.lp-head .nav{min-height:50px}
+.lp-head .logo img{height:38px}
+.lp-head .callpill{padding:8px 14px}
+.lp-hero:has(.lp-hero-form){padding-top:8px}
+.lp-hero .lp-preise{margin-top:8px}
+.lp-hero .lp-preise-l{margin-bottom:4px}
+.lp-hero .lp-tile{padding:6px 10px}
+.lp-hero .lp-preise-n{margin-top:4px}
+.lp-hero-form{margin-top:8px}
+.lp-form{padding:10px;gap:6px}
+.lp-form legend{margin-bottom:4px}
+.lp-form .frow{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.lp-form .frow .fld:first-child{grid-column:1/-1}
+.lp-form .fld input[name=tel]::placeholder{color:transparent}
+.lp-form .more summary{min-height:40px}
+.lp-form .ffoot{gap:4px}
+}`;
 
 // LP-eigenes CSS (mobile-first). Nutzt die Tokens/Klassen aus site.css (.btn, .kf, .faq, .scta, .consent, footer, .zone-deep).
 const LP_CSS = `<style>
@@ -167,6 +203,7 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-hero-form .lp-form{max-width:44em}
 }
 ${BLOECKE_CSS}
+${FIT_CSS}
 </style>`;
 
 // Attribution beim Einstieg: Klick-IDs/UTM aus der URL in den Seiten-Speicher (window.__hg). Ins Endgerät (localStorage, 90 Tage)
@@ -265,7 +302,9 @@ export function buildLp(d) {
   // Sticky-Bar mit sichtbarer Nummer (Anruf-Conversion: Google ersetzt den sichtbaren Nummerntext) und gedämpftem WhatsApp (ein Gold je Viewport)
   const lpScta = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ ${telDisp}</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav>`;
 
-  const lpFooter = `<footer class="lp-foot"><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street || '')}, ${esc(nap.zip || '')} ${esc(nap.city)} · <a href="tel:${tel}">${telDisp}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a></p><p>Servicegebiet: ${GEBIET.map(esc).join(' · ')}</p><div class="legal"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><button type="button" class="linklike" id="consent-reset">Cookie-Einstellungen</button><a href="/">Zur Website</a></div></div></footer>`;
+  // Fußzeile (Umbau 11/2026): Rechtsform + Gesellschafter im Wortlaut des Impressums (generate.mjs impressumBody: „Haus- & Gartenservice Havelland GbR“ / „Vertreten durch die Gesellschafter: …“), beides aus data/nap.json.
+  const gesellschafter = esc((nap.gesellschafter_impressum || nap.gesellschafter || [nap.inhaber]).join(' und '));
+  const lpFooter = `<footer class="lp-foot"><div class="wrap"><p class="fnap">${esc(nap.name)} ${esc(nap.rechtsform || 'GbR')}</p><p>Vertreten durch die Gesellschafter: ${gesellschafter}.</p><p>${esc(nap.street || '')}, ${esc(nap.zip || '')} ${esc(nap.city)} · <a href="tel:${tel}">${telDisp}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a></p><p>Servicegebiet: ${GEBIET.map(esc).join(' · ')}</p><div class="legal"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><button type="button" class="linklike" id="consent-reset">Cookie-Einstellungen</button><a href="/">Zur Website</a></div></div></footer>`;
 
   // Vorher/Nachher-Slider aus components.mjs (WebP-768: baSlider setzt <img src>, kein <picture>; WebP statt JPG spart ~120 KB je Paar — Perf-Messung 14.09.; Hochformat 864/1036 = .ba-Aspect).
   // Der Alt-Suffix der Komponente ist heckenspezifisch („nach dem Schnitt") → für Räumungen ersetzt.
@@ -368,22 +407,28 @@ ${alt}
     const heroCta = pos === 'nach-preis' ? `<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>` : '';
     const person = lp.kontaktperson && lp.kontaktperson.zeigen && lp.kontaktperson.slug && pic(lp.kontaktperson.slug)
       ? `<p class="lp-person">${pic(lp.kontaktperson.slug, { cls: 'av', alt: altQ(lp.kontaktperson.alt || ''), sizes: '56px' })}<span>${esc(lp.kontaktperson.zeile)}</span></p>` : '';
+    // Umbau 11/2026 (Prüfung B3: Preis-Sitelink landet auf #preise, Formular 4.200 px darüber): CTA direkt unter den Kacheln samt Fußnote, vor dem langen Text.
+    // Der Button heißt „Festpreis anfragen“ (Owner-Vorgabe); der Erklärtext darunter trägt den vollen Wortlaut „Festpreis für Räumung und Abtransport“. Nur mit Kacheln (preis.anker).
+    const preisCta = preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })
+      ? `<div class="cta-row lp-cta lp-preis-cta"><a class="btn btn-acc" href="#anfrage">Festpreis anfragen</a></div><p class="hint lp-preis-cta-h">Festpreis für Räumung und Abtransport, schriftlich nach der kostenlosen Besichtigung.</p>` : '';
     const preisVerweis = lp.preis && lp.preis.verweis ? `<p class="lp-preisverweis"><a href="/lp/${escA(lp.preis.verweis.slug)}/#preise">${esc(lp.preis.verweis.t || 'Preise ansehen')}</a></p>` : '';
     const kontaktSec = pos === 'nach-preis' ? `<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>${esc(lp.kontakt_h2 || 'Kostenlose Besichtigung anfragen')}</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Ein Schritt, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp, 'nach-preis', wa)}</div></section>` : '';
     // was_wir_tun {h, p, items:[{h,p}]} (optional, z. B. Allgemein-LP): Abschnitt direkt nach dem Hero. Gleiche Komponenten wie die Startseite (.sec/.head, .sec-lead, .vals/.v mit kursiver Nummer .vn),
     // Reveal-Klassen über rvIn(). Kein eigenes CSS.
-    const wwtd = lp.was_wir_tun;
-    const wwt = wwtd && Array.isArray(wwtd.items) && wwtd.items.length
-      ? `<section class="sec" id="was-wir-tun"><div class="wrap"><div class="head"><h2>${esc(wwtd.h || 'Was wir tun')}</h2></div>${wwtd.p ? `<p class="sec-lead">${esc(wwtd.p)}</p>` : ''}${rvIn(`<div class="vals">${wwtd.items.map((x, i) => `<div class="v rv${i ? ` d${i}` : ''}"><h3><span class="vn">${String(i + 1).padStart(2, '0')}</span>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div>`)}</div></section>` : '';
+    const valsSec = (id, d, hDefault) => d && Array.isArray(d.items) && d.items.length
+      ? `<section class="sec" id="${id}"><div class="wrap"><div class="head"><h2>${esc(d.h || hDefault)}</h2></div>${d.p ? `<p class="sec-lead">${esc(d.p)}</p>` : ''}${rvIn(`<div class="vals">${d.items.map((x, i) => `<div class="v rv${i ? ` d${i}` : ''}"><h3><span class="vn">${String(i + 1).padStart(2, '0')}</span>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div>`)}</div></section>` : '';
+    const wwt = valsSec('was-wir-tun', lp.was_wir_tun, 'Was wir tun');
+    // preis_faktoren {h, p, items:[{h,p}]} (Kosten-LP, Umbau 11/2026): Einflussfaktoren auf den Preis, direkt nach dem Hero, nur Aussagen aus den bestehenden LPs, keine Beträge.
+    const pfk = valsSec('preisfaktoren', lp.preis_faktoren, 'Was den Preis bestimmt');
     const main = `<main id="top">
-<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
+<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lp-ort${String(lp.lead || '').includes(ORT_PHRASE) ? ' lp-ort-dup' : ''}">${esc(ORT_SATZ)}</p><p class="lead">${esc(lp.lead)}</p>
 ${heroPreis}${heroForm || quick}${heroForm && revOn ? zitat(zitatOf(lp), esc) : ''}${aktLp}${heroCta}
 ${punkte(lp.trust, esc)}${person}</div>${H.shot}</div></section>${ortJs}
-${wwt}
+${wwt}${pfk}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
-<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })}${aktLp}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
+<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })}${preisCta}${aktLp}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
 ${!revOn ? '' : bewertungen({ items: revOf(lp), gr: grLive ? gr : null, h2: lp.testimonials_h2 || 'Was Kunden über uns sagen', em: lp.testimonials_h2_em || 'sagen' }, esc)}
 ${kontaktSec}
 <section class="sec section-alt" id="fragen"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>

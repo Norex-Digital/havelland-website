@@ -54,6 +54,7 @@ const LPS = [
   ['lp/haus-entruempeln/index.html', 'LP haus', { reviews: true, ortSwap: true }],
   ['lp/keller-dachboden-garage/index.html', 'LP keller', { reviews: true }],
   ['lp/entruempelung-havelland/index.html', 'LP entruempelung', { reviews: true, ortSwap: true }],
+  ['lp/entruempelung-kosten-havelland/index.html', 'LP entruempelung-kosten', { reviews: true, ortSwap: true, kosten: true }],
   ['lp/danke/index.html', 'LP danke', { danke: true }],
 ];
 // Bewertungszahl der Trust-Zeile kommt aus data/proof.json (nie hart codiert, Prinzip 6): die Seite muss genau diese Zahl zeigen.
@@ -203,7 +204,31 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     // --- Zweitwege (M3): Hero-Variante Buttons, Variante A Textlinks
     if (pos === 'hero') check(id, 'Zweitwege Anruf + WhatsApp (lp-alt)', /<p class="lp-alt">[\s\S]*?href="tel:[\s\S]*?href="https:\/\/wa\.me\//.test(h));
     // --- Wording (S-urteil 12, lp.json _meta)
-    check(id, 'kein „Festpreis anfragen“ (nur „Festpreis für Räumung und Abtransport“)', !has(h, 'Festpreis anfragen'));
+    // Wording (Umbau 11/2026, Owner): „Festpreis anfragen“ gilt NUR als Button-Text des Preis-CTA direkt unter den Kacheln (#preise); jeder Fließtext trägt „Festpreis für Räumung und Abtransport“.
+    const FPA = '<a class="btn btn-acc" href="#anfrage">Festpreis anfragen</a>';
+    const hatKacheln = ankerItems.length > 0;
+    check(id, '„Festpreis anfragen“ nur als Preis-CTA-Button (kein Fließtext)', (h.match(/Festpreis anfragen/g) || []).length === (hatKacheln ? 1 : 0) && (!hatKacheln || has(h, FPA)));
+    if (hatKacheln) {
+      const pS2 = h.indexOf('id="preise"'), preiseH2 = pS2 > -1 ? h.slice(pS2, h.indexOf('</section>', pS2)) : '';
+      const iT = preiseH2.indexOf('class="lp-tiles'), iN = preiseH2.indexOf('class="lp-preise-n"'), iC = preiseH2.indexOf(FPA);
+      const iP = preiseH2.indexOf('<p>', iC);
+      check(id, 'Preis-CTA: Fußnote (lp-preise-n) bleibt direkt unter den Kacheln, CTA folgt darauf und steht vor dem Langtext', iT > -1 && iN > iT && iC > iN && iP > iC && !/<p>/.test(preiseH2.slice(iN, iC)));
+      check(id, 'Preis-CTA: Erklärtext direkt darunter mit „Festpreis für Räumung und Abtransport“', has(preiseH2, FPA + '</div><p class="hint lp-preis-cta-h">Festpreis für Räumung und Abtransport, schriftlich nach der kostenlosen Besichtigung.</p>'));
+      check(id, 'Preis-CTA führt auf das Formular (#anfrage) wie der Haupt-CTA', preiseH2.includes('href="#anfrage">Festpreis anfragen'));
+    }
+    // --- Fester Ortssatz (Umbau 11/2026): direkt unter der H1, zusätzlich zur dynamischen Ortsersetzung; Duplikat-Klasse nur, wenn der Lead denselben Wortlaut trägt
+    const ORT_S = 'Im Havelland, in Berlin-Spandau und Potsdam';
+    check(id, 'Ortssatz direkt unter der H1 (statisch, „im Havelland, in Berlin-Spandau und Potsdam“)', new RegExp('</h1><p class="lp-ort[ "][^>]*>' + ORT_S + '</p><p class="lead">').test(h));
+    check(id, 'Ortssatz ohne data-ort (statisch, keine neue JS-Tauschlogik)', !/class="lp-ort[^"]*"[^>]*data-ort/.test(h) && !/lp-ort[^<]*<span data-ort/.test(h));
+    check(id, 'lp-ort-dup nur, wenn der Lead den Ortssatz selbst nennt', has(h, 'class="lp-ort lp-ort-dup"') === String(entryOf(rel).lead || '').includes('im Havelland, in Berlin-Spandau und Potsdam'));
+    if (o.kosten) {
+      check(id, 'Kosten-LP: H1 „Was kostet eine Entrümpelung im Havelland?“ (Ortsteil per data-ort)', /<h1>Was kostet eine <em>Entrümpelung<\/em> <span data-ort="in">im Havelland<\/span>\?<\/h1>/.test(h));
+      const fS = h.indexOf('id="preisfaktoren"'), fH = fS > -1 ? h.slice(fS, h.indexOf('</section>', fS)) : '';
+      check(id, 'Kosten-LP: Abschnitt #preisfaktoren direkt nach dem Hero mit 4 Faktoren', fH.length > 200 && (fH.match(/class="v rv/g) || []).length === 4 && h.indexOf('</section>', h.indexOf('<section class="phero lp-hero')) < fS && !/<section/.test(h.slice(h.indexOf('</section>', h.indexOf('<section class="phero lp-hero')) + 10, h.lastIndexOf('<section', fS)).replace(/<script[\s\S]*?<\/script>/g, '')));
+      check(id, 'Kosten-LP: Preisfaktoren nennen Menge, Zugang, Entsorgung nach Beleg ohne eigenen Aufschlag, Wertanrechnung', /Menge/.test(fH) && /Zugang/.test(fH) && /ohne eigenen Aufschlag/.test(fH) && /Wertanrechnung/.test(fH));
+      check(id, 'Kosten-LP: keine Beträge/Beispielrechnung im Faktoren-Abschnitt (kein €/Euro/Ziffernpreis)', fH.length > 200 && !PREIS_RE.test(textOf(fH)));
+      check(id, 'Kosten-LP: noindex', /name="robots" content="noindex/.test(h));
+    }
     check(id, 'Hinweis „Besichtigung und Angebot kostenlos“', has(h, 'Besichtigung und Angebot kostenlos'));
     check(id, 'Telefon-Hinweis „Keine Werbeanrufe“', has(h, 'Keine Werbeanrufe'));
     check(id, 'Kurz-Chips ohne aria-hidden', !has(h, 'class="qs" aria-hidden'));
@@ -221,6 +246,13 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
       check(id, '[S2] kein Preis-Anker (data-via="preis") und keine Hero-Preiszeile', !has(h, 'data-via="preis"') && !has(h, 'class="lp-hero-preis"'));
     }
     if (o.ortSwap) check(id, 'ort_swap gesetzt (data-ort im Hero)', has(h, 'data-ort="'));
+    // --- Fußzeile (Umbau 11/2026): Rechtsform + Gesellschafter im Wortlaut des Impressums (website/impressum)
+    const imp = read('impressum/index.html') || '';
+    const impName = (imp.match(/<p>(Haus- &amp; Gartenservice Havelland GbR)<br>/) || [])[1];
+    const impGes = (imp.match(/<p>(Vertreten durch die Gesellschafter: [^<]+\.)<\/p>/) || [])[1];
+    const foot = (h.match(/<footer class="lp-foot">[\s\S]*?<\/footer>/) || [''])[0];
+    check(id, 'Fußzeile: Rechtsform wie Impressum („Haus- & Gartenservice Havelland GbR“)', !!impName && has(foot, `<p class="fnap">${impName}</p>`));
+    check(id, 'Fußzeile: „Vertreten durch die Gesellschafter: …“ wortgleich zum Impressum', !!impGes && has(foot, `<p>${impGes}</p>`));
     // --- Nachlass-Lead auf dem Handy (Attribut an der Hero-Section prüfen, nicht das CSS-Selektor-Vorkommen im <head>)
     check(id, 'data-lead-mobil gleich lead_mobil in lp.json', (entryOf(rel).lead_mobil === true) === /<section class="phero lp-hero[^"]*"[^>]*data-lead-mobil/.test(h));
   } else {

@@ -1228,6 +1228,180 @@
         "typ": "text"
       },
       "testimonials_h2": "Was Kunden über uns sagen"
+    },
+    {
+      "slug": "entruempelung-kosten-havelland",
+      "ag": "G6 Kosten",
+      "name": "Entrümpelung",
+      "title": "Was kostet eine Entrümpelung im Havelland? Festpreis nach Besichtigung",
+      "meta": "Was kostet eine Entrümpelung im Havelland? Menge, Zugang und Entsorgung bestimmen den Preis. Festpreis für Räumung und Abtransport nach kostenloser Besichtigung.",
+      "kick": "Wohnung · Haus · Keller · Garage",
+      "h1": "Was kostet eine Entrümpelung im Havelland?",
+      "h1_em": "Entrümpelung",
+      "ort_swap": {
+        "h1": "im Havelland"
+      },
+      "lead": "Menge, Zugang und Entsorgung bestimmen den Preis. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.",
+      "cta": "Kostenlose Besichtigung anfragen",
+      "wa_text": "Hallo, ich brauche eine Entrümpelung. Wann könnten Sie zur Besichtigung kommen?",
+      "trust_zeile": "Festpreis nach Besichtigung",
+      "trust": [
+        {
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
+        },
+        {
+          "b": "Schriftlich",
+          "t": "Festpreis für Räumung und Abtransport"
+        },
+        {
+          "b": "Foto-Nachweis",
+          "t": "aufs Handy nach der Räumung"
+        },
+        {
+          "b": "Kostenlos",
+          "t": "Anfahrt, Besichtigung und Angebot"
+        }
+      ],
+      "preis_faktoren": {
+        "h": "Diese vier Punkte bestimmen den Preis",
+        "p": "Die Einstiegspreise gelten für kleine, gut zugängliche Objekte. Was Ihr Objekt kostet, hängt von diesen Punkten ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.",
+        "items": [
+          {
+            "h": "Menge",
+            "p": "Die Menge bestimmt den Aufwand, vom einzelnen Kellerabteil über die kleine 1-Zimmer-Wohnung bis zum ganzen Haus."
+          },
+          {
+            "h": "Zugang",
+            "p": "Etage, Aufzug und der Weg zum Fahrzeug. Den Zugang sehen wir uns bei der Besichtigung an."
+          },
+          {
+            "h": "Entsorgung nach Beleg",
+            "p": "Die Gebühren der Annahmestellen rechnen wir nach tatsächlicher Menge gegen Beleg ab, ohne eigenen Aufschlag. Sie sehen jeden Posten."
+          },
+          {
+            "h": "Wertanrechnung",
+            "p": "Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis."
+          }
+        ]
+      },
+      "nutzen": [
+        {
+          "h": "Festpreis für Räumung und Abtransport",
+          "p": "Wir schauen uns Räume, Mengen und Zugang vor Ort an. Danach steht Ihr Preis schriftlich fest, auch wenn es am Tag selbst länger dauert. Entsorgungsgebühren weisen wir nach Beleg aus."
+        },
+        {
+          "h": "Sie müssen nicht dabei sein",
+          "p": "Sie übergeben uns den Schlüssel, wir halten Sie per WhatsApp oder Telefon auf dem Laufenden. Wir schicken Vorher-Nachher-Fotos direkt aufs Handy."
+        },
+        {
+          "h": "Besenrein mit Foto-Nachweis",
+          "p": "Am Ende sind die Räume leer und gefegt. Die Vorher-Nachher-Fotos schicken wir Ihnen direkt aufs Handy."
+        }
+      ],
+      "ablauf": [
+        {
+          "h": "Anfrage in zwei Minuten",
+          "p": "Formular, Anruf oder ein Handy-Foto per WhatsApp. Wir melden uns noch am selben Werktag.",
+          "when": "Tag 1 · Antwort am selben Werktag"
+        },
+        {
+          "h": "Besichtigung und schriftliches Angebot",
+          "p": "Wir kommen vorbei, besprechen, was bleiben soll, und nennen Ihnen einen schriftlichen Festpreis für Räumung und Abtransport.",
+          "when": "Termin meist in 2–3 Werktagen · kostenlos"
+        },
+        {
+          "h": "Räumung, Entsorgung, besenreine Übergabe",
+          "p": "Zum vereinbarten Termin räumen wir aus, trennen Verwertbares, entsorgen den Rest über zugelassene Annahmestellen und übergeben besenrein.",
+          "when": "Zum vereinbarten Termin"
+        }
+      ],
+      "preis": {
+        "h": "Was kostet eine Entrümpelung?",
+        "cta": "Preis für Ihr Objekt anfragen",
+        "cta_hint": "Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich. Keine Vorkasse, keine Verpflichtung.",
+        "hero_note": "für kleine, gut zugängliche Objekte · Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag",
+        "anker": {
+          "items": [
+            {
+              "t": "Kellerabteil ab 99 €",
+              "obj": "Keller / Dachboden",
+              "k": "Keller"
+            },
+            {
+              "t": "Wohnungsauflösung ab 499 €",
+              "obj": "Wohnung",
+              "k": "Wohnung"
+            },
+            {
+              "t": "Komplettes Haus ab 749 €",
+              "obj": "Haus",
+              "k": "Ganzes Haus"
+            }
+          ],
+          "note": "Alle Preise inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot."
+        },
+        "p": [
+          "Die Einstiegspreise gelten für kleine, gut zugängliche Objekte: ein einzelnes Kellerabteil, eine kleine 1-Zimmer-Wohnung, ein kleines Haus. Was Ihr Objekt kostet, hängt von Menge, Zugang und Entsorgungsaufwand ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.",
+          "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
+          "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus. Sie sehen jeden Posten, ohne eigenen Aufschlag."
+        ]
+      },
+      "faqs": [
+        {
+          "q": "Wovon hängen die Kosten einer Entrümpelung ab?",
+          "a": "Von Menge, Zugang (Etage, Aufzug, Weg zum Fahrzeug) und Entsorgungsaufwand. Die Einstiegspreise gelten für kleine, gut zugängliche Objekte. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich."
+        },
+        {
+          "q": "Wo räumen Sie?",
+          "a": "Entrümpelung in Falkensee und in der Nähe: im Havelland (Falkensee, Dallgow-Döberitz, Brieselang, Schönwalde-Glien, Wustermark, Nauen, Ketzin/Havel, Rathenow, Premnitz) sowie in Berlin-Spandau und Potsdam. Wir sind Entrümpler aus Falkensee."
+        },
+        {
+          "q": "Muss ich bei der Räumung dabei sein?",
+          "a": "Nein. Sie übergeben uns den Schlüssel, wir halten Sie per WhatsApp oder Telefon auf dem Laufenden und schicken zum Schluss den Foto-Nachweis der leeren Räume."
+        },
+        {
+          "q": "Wie wird die Entsorgung abgerechnet?",
+          "a": "Der Festpreis für Räumung und Abtransport steht schriftlich im Angebot. Die Gebühren der Annahmestellen für Sperrmüll, Altholz oder Elektroschrott rechnen wir nach tatsächlicher Menge gegen Beleg ab, ohne eigenen Aufschlag. Bei Schadstoffen wie Farben, Chemikalien oder Asbest stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab. Das gehört nicht zum Festpreis für Räumung und Abtransport."
+        },
+        {
+          "q": "Wie schnell bekomme ich einen Termin?",
+          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Frist ein Datum vorgibt, nennen Sie es uns. Wir planen danach."
+        },
+        {
+          "q": "Können Sie nach der Räumung auch renovieren?",
+          "a": "Zum Teil. Bohrlöcher schließen, Haken und Klebereste entfernen: ja. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region. Für die Räumung bleiben wir Ihr Ansprechpartner."
+        }
+      ],
+      "objekte": [
+        "Wohnung",
+        "Haus",
+        "Keller / Dachboden",
+        "Garage / Schuppen"
+      ],
+      "form_subject": "Neue Anfrage (Ads-LP Entrümpelung Kosten Havelland)",
+      "fotos": [
+        {
+          "vorher": "fall-kammer-falkensee-vorher",
+          "nachher": "fall-kammer-falkensee-nachher",
+          "cap": "Abstellkammer unter der Treppe",
+          "sub": "ausgeräumt und besenrein",
+          "alt": "Abstellkammer unter der Treppe – Entrümpelung im Havelland"
+        },
+        {
+          "vorher": "fall-schuppen-falkensee-vorher",
+          "nachher": "fall-schuppen-falkensee-nachher",
+          "cap": "Gartenschuppen",
+          "sub": "leer, Regale frei, bereit für die neue Nutzung",
+          "alt": "Gartenschuppen – Entrümpelung im Havelland"
+        }
+      ],
+      "fotos_h2": "So sieht unsere Arbeit aus",
+      "fotos_hint": "Echte Fotos aus einem Auftrag im Havelland, September 2026: eine Abstellkammer und ein Gartenschuppen, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.",
+      "hero": {
+        "typ": "text"
+      },
+      "testimonials_h2": "Was Kunden über uns sagen"
     }
   ]
 }
