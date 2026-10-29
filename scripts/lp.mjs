@@ -355,7 +355,7 @@ export function buildLp(d) {
     const attrib = ['quelle', 'lp', ...ATTR_KEYS, 'landing_url', 'ads_consent']
       .map(n => `<input type="hidden" name="${n}" value="${n === 'quelle' ? 'ads-lp' : n === 'lp' ? escA(lp.slug) : ''}">`).join('');
     // Ein Schritt (v2): Objekt als Segment-Leiste (Kurzlabel auf dem Handy, voller Wortlaut ab 760 px), PLZ/Name/Telefon mit Label im Feld,
-    // Kontaktweg (Default „Anruf“), E-Mail und Freitext hinter „Weitere Angaben“. Radio-Inputs bleiben echte Inputs (unsichtbar über dem Segment).
+    // Kontaktweg fest „Anruf“ (versteckt). „Weitere Angaben“ (E-Mail, Freitext, Kontaktweg-Wahl) auf Owner-Wunsch 29.10.2026 entfernt. Radio-Inputs bleiben echte Inputs (unsichtbar über dem Segment).
     if (![3, 4].includes((lp.objekte || []).length)) throw new Error(`lp ${lp.slug}: objekte braucht 3 oder 4 Einträge (Segment-Leiste)`);
     const chips = (lp.objekte || []).map((o, i) => `<label><input type="radio" name="objekt" value="${escA(o)}"${i === 0 ? ' required' : ''}>${objLabel(o, lp)}</label>`).join('');
     const alt = pos === 'hero'
@@ -366,10 +366,7 @@ export function buildLp(d) {
 <div class="frow"><label class="fld"><span>PLZ oder Ort</span><input name="ort" autocomplete="postal-code" enterkeyhint="next" placeholder="z. B. 14612 Falkensee" required></label>
 <label class="fld"><span>Name</span><input name="name" autocomplete="name" enterkeyhint="next" required></label>
 <label class="fld"><span data-lb="Telefon">Telefon</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="Für Rückruf und Besichtigung" data-req-by="kontaktweg" data-req-when="Anruf,WhatsApp" required></label></div>
-<details class="more"><summary>Weitere Angaben <small>(optional)</small></summary><div class="more-body">
-<fieldset class="f-weg"><legend>Am liebsten per</legend><div class="seg seg3"><label><input type="radio" name="kontaktweg" value="Anruf" checked>Rückruf</label><label><input type="radio" name="kontaktweg" value="WhatsApp">WhatsApp</label><label><input type="radio" name="kontaktweg" value="E-Mail">E-Mail</label></div></fieldset>
-<label class="fld"><span data-lb="E-Mail">E-Mail (optional)</span><input name="email" type="email" autocomplete="email" placeholder="für das schriftliche Angebot" data-req-by="kontaktweg" data-req-when="E-Mail"></label>
-<label class="fld"><span>Was steht an? (optional)</span><textarea name="anliegen" rows="2" placeholder="z. B. 3 Zimmer, 2. OG ohne Aufzug, bis Ende November"></textarea></label></div></details>
+<input type="hidden" name="kontaktweg" value="Anruf">
 <p class="err" role="alert"></p>
 <div class="ffoot"><label class="chk"><input type="checkbox" name="dsgvo" required><span>Ich stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme und für das Angebot zu (<a href="/datenschutz/">Datenschutz</a>).</span></label>
 <button class="btn btn-acc" type="submit">${esc(lp.cta_form || 'Kostenlos anfragen')}</button></div>

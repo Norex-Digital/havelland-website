@@ -56,10 +56,9 @@ if [ "$SCENARIO" = tel ]; then
   WEG="await page.fill('.lp-hero-form input[name=name]', 'Test');
   await page.fill('.lp-hero-form input[name=tel]', '030 1234567');"
 else
-  WEG="await page.click('.lp-hero-form .more summary');
-  await page.click('.lp-hero-form label:has(input[name=kontaktweg][value=E-Mail])');
-  await page.fill('.lp-hero-form input[name=email]', 'test@example.invalid');
-  await page.fill('.lp-hero-form input[name=name]', 'Test');"
+  # seit 29.10.2026 ohne „Weitere Angaben“: jeder Weg geht über Name + Telefon
+  WEG="await page.fill('.lp-hero-form input[name=name]', 'Test');
+  await page.fill('.lp-hero-form input[name=tel]', '030 1234567');"
 fi
 OUTRUN=$(PW run-code "async page => {
   await page.click('#consent [data-c=$C]');
@@ -122,15 +121,11 @@ const gl = ev.find(e => e.event === 'generate_lead') || {};
 if (gl.ads_consent !== C) bad.push('generate_lead.ads_consent=' + gl.ads_consent);
 if (gl.lead_source !== 'ads-lp' || gl.lp !== SLUG) bad.push('generate_lead lead_source/lp');
 if (C === 'deny' && 'user_data' in gl) bad.push('user_data trotz deny');
-if (C === 'allow' && SCEN !== 'tel') {
-  if (!gl.user_data || gl.user_data.email !== 'test@example.invalid') bad.push('user_data.email fehlt bei allow');
-  if (gl.user_data && gl.user_data.phone_number) bad.push('user_data.phone_number gesetzt obwohl kein Telefon');
-}
-if (C === 'allow' && SCEN === 'tel') {
+if (C === 'allow') {
   if (!gl.user_data || gl.user_data.phone_number !== '+49301234567') bad.push('user_data.phone_number != +49301234567 bei allow');
   if (gl.user_data && gl.user_data.email) bad.push('user_data.email gesetzt obwohl keine E-Mail');
 }
-if (gl.kontaktweg !== (SCEN === 'tel' ? 'Anruf' : 'E-Mail')) bad.push('generate_lead.kontaktweg=' + gl.kontaktweg);
+if (gl.kontaktweg !== 'Anruf') bad.push('generate_lead.kontaktweg=' + gl.kontaktweg);
 // --- Neuladen der Danke-Seite: kein zweites lead_confirmed
 const lc2 = s2.dl.filter(e => e.event === 'lead_confirmed').length;
 if (lc2 !== 1) bad.push('lead_confirmed nach Neuladen x' + lc2);
@@ -151,8 +146,7 @@ if (f.lp !== SLUG) bad.push('lp=' + f.lp);
 if (!f.access_key) bad.push('access_key fehlt');
 if (!/\/lp\/danke\/$/.test(f.redirect || '')) bad.push('redirect=' + f.redirect);
 if (!/^\/lp\/[a-z-]+\/ @\d{4}-/.test(f.landing_url || '')) bad.push('landing_url=' + f.landing_url);
-if (SCEN === 'tel') { if (!f.objekt || f.ort !== '14612' || f.kontaktweg !== 'Anruf' || f.tel !== '030 1234567' || f.email !== '' || f.name !== 'Test' || f.dsgvo === undefined) bad.push('Nutzfelder im POST unvollstaendig (tel)'); }
-else if (!f.objekt || f.ort !== '14612' || f.kontaktweg !== 'E-Mail' || f.email !== 'test@example.invalid' || f.name !== 'Test' || f.dsgvo === undefined) bad.push('Nutzfelder im POST unvollstaendig');
+if (!f.objekt || f.ort !== '14612' || f.kontaktweg !== 'Anruf' || f.tel !== '030 1234567' || f.email || f.name !== 'Test' || f.dsgvo === undefined) bad.push('Nutzfelder im POST unvollstaendig');
 for (const k of ['wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'subject', 'from_name'])
   if (!(k in f)) bad.push('hidden ' + k + ' fehlt im POST');
 // --- Netzwerk: nur Mock-Hosts ausser localhost; genau ein POST
