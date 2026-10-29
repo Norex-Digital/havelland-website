@@ -28,7 +28,7 @@
     "quelle": "milo"
   },
   "bewertungen": {
-    "_quelle": "Google-Bewertungen des GBP-Profils Haus- & Gartenservice Havelland, wörtlich (GBP-API v4, Abruf 20.10.2026, Originaltext ohne Übersetzung). Nur echte Texte, nie kürzen außer im Hero-Zitat (zitat_hero.t muss wörtlicher Teil von bewertungen[quelle].t sein, lp.mjs prüft das).",
+    "_quelle": "Google-Bewertungen des GBP-Profils Haus- & Gartenservice Havelland, wörtlich (GBP-API v4, Abruf 20.10.2026, Originaltext ohne Übersetzung). Nur echte Texte, nie kürzen außer im Hero-Zitat (zitat_hero.t muss wörtlicher Teil von bewertungen[quelle].t sein, lp.mjs prüft das). daniel: echte Google-Bewertung, vom Owner am 29.10.2026 mit Wortlaut geliefert und freigegeben (Zeilenumbrüche durch Leerzeichen ersetzt, sonst unverändert); Datum nur Monat bekannt (Oktober 2026), Tag im Feld datum ist ein Platzhalter und wird nicht angezeigt.",
     "milo": {
       "a": "Milo Rost",
       "datum": "2026-09-17",
@@ -52,6 +52,12 @@
       "datum": "2026-06-22",
       "tag": "Zuverlässigkeit",
       "t": "Ich bin sehr zufrieden mit dem Haus- & Gartenservice Havelland. Alles war perfekt von der Kommunikation bis zur Ausführung der Arbeiten. Zuverlässig, pünktlich und sehr professionell. Klare Weiterempfehlung!"
+    },
+    "daniel": {
+      "a": "Daniel Hussock",
+      "datum": "2026-10-01",
+      "tag": "Nach Todesfall",
+      "t": "Ich kann dieses junge Team nur weiterempfehlen sie sind schnell, unkompliziert sowie eine hervorragende Fachkompetenz in so einem jungen Alter Hut ab Die Jungs haben mir super unter die Arme geholfen nach dem Tod meiner Oma mit der Haus Entrümpelung. Um ehrlich zu sein, hatte ich dafür keinen Kopf und habe die Aufgabe komplett an diese Firma übergeben und muss sagen, dass ich sehr begeistert war. Es lief alles unkompliziert, schnell und Sympathie Wird bei den Jungs groß geschrieben !!!! Weiter sooo !!!!"
     }
   },
   "bewertungen_lp_standard": [
@@ -604,6 +610,7 @@
       "end_h2": "Melden Sie sich, wann es für Sie passt.",
       "end_p": "Besichtigung kostenlos, Festpreis für Räumung und Abtransport schriftlich, besenreine Übergabe. Wir räumen nach Todesfall im Havelland, in Berlin-Spandau und Potsdam.",
       "bewertungen_lp": [
+        "daniel",
         "milo",
         "nikita"
       ],
@@ -904,7 +911,12 @@
       "hero": {
         "typ": "text"
       },
-      "testimonials_h2": "Was Kunden über uns sagen"
+      "testimonials_h2": "Was Kunden über uns sagen",
+      "bewertungen_lp": [
+        "daniel",
+        "milo",
+        "mark"
+      ]
     },
     {
       "slug": "keller-dachboden-garage",

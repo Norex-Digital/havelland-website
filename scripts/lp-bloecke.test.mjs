@@ -122,3 +122,10 @@ test('CSS: nur Tokens, kein #fff, keine verbotenen Klassen, kein transition:all'
   assert.ok(!VERBOTEN.test(BLOECKE_CSS));
   assert.ok(!/transition:all/.test(BLOECKE_CSS));
 });
+
+test('bewertungen: langes Zitat (> 320 Zeichen) bekommt class="lang", kurzes nicht', () => {
+  const lang = 'Wort '.repeat(70).trim();
+  const h = bewertungen({ items: [{ a: 'A', datum: '2026-10-01', t: lang }, { a: 'B', datum: '2026-10-01', t: 'kurz' }], gr: null, h2: 'x', em: '' }, esc);
+  assert.equal((h.match(/<blockquote class="lang">/g) || []).length, 1);
+  assert.equal((h.match(/<blockquote>/g) || []).length, 1);
+});

@@ -77,7 +77,7 @@ export function bewertungen({ items, gr, h2, em }, esc) {
   if (!xs.length) return '';
   const titel = em && h2.includes(em) ? esc(h2).replace(esc(em), `<em>${esc(em)}</em>`) : esc(h2);
   const kopf = gr ? `<div class="lp-rsum"><span class="n">${esc(note5(gr.rating))}</span><span class="c">${sterne()}<b>${esc(gr.count)} Bewertungen bei Google</b><small>Stand ${esc(datumDE(gr.as_of))} · Auszug, wörtlich</small></span></div>` : '';
-  const karte = (r, i) => `<figure class="review-card lp-rc${i === 0 ? ' feat' : ''}"><div class="top">${sterne()}${r.tag ? `<span class="tag">${esc(r.tag)}</span>` : ''}</div><blockquote>${esc(r.t)}</blockquote><figcaption><b>${esc(r.a)}</b>${esc(monatDE(r.datum))} · Google-Bewertung</figcaption></figure>`;
+  const karte = (r, i) => `<figure class="review-card lp-rc${i === 0 ? ' feat' : ''}"><div class="top">${sterne()}${r.tag ? `<span class="tag">${esc(r.tag)}</span>` : ''}</div><blockquote${r.t.length > 320 ? ' class="lang"' : ''}>${esc(r.t)}</blockquote><figcaption><b>${esc(r.a)}</b>${esc(monatDE(r.datum))} · Google-Bewertung</figcaption></figure>`;
   return `<section class="sec section-alt" id="bewertungen"><div class="wrap"><div class="head"><h2>${titel}</h2></div>${kopf}<div class="lp-rgrid n${xs.length}">${xs.map(karte).join('')}</div></div></section>`;
 }
 
@@ -161,4 +161,6 @@ a.lp-tile:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .lp-rc .tag{font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--green-d);background:var(--paper);border-radius:999px;padding:4px 10px}
 .lp-rc blockquote{font-size:15px;line-height:1.55;text-wrap:pretty}
 .lp-rc.feat blockquote{font-family:"Fraunces LP","Fraunces",Georgia,serif;font-style:italic;font-weight:500;font-size:20px;line-height:1.35}
+/* lange Zitate (> 320 Zeichen, z. B. Nachlass): kleinere Schrift in der hervorgehobenen Karte */
+.lp-rc.feat blockquote.lang{font-size:17px;line-height:1.45}
 @media(prefers-reduced-motion:reduce){.lp-tile{transition:none}a.lp-tile:active{scale:1}}`;
