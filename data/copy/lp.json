@@ -12,9 +12,9 @@
   "danke": {
     "title": "Danke – Anfrage eingegangen",
     "h1": "Danke, Ihre Anfrage ist angekommen.",
-    "lead": "Wir melden uns noch am selben Werktag – telefonisch oder per WhatsApp, je nachdem, was Sie angegeben haben. Der Rückruf kommt von 01515 6198195 – speichern Sie die Nummer, damit Sie ihn erkennen.",
+    "lead": "Wir melden uns noch am selben Werktag, je nachdem, was Sie angegeben haben, per Anruf, WhatsApp oder E-Mail. Anrufe kommen von {tel}. Speichern Sie die Nummer, damit Sie uns erkennen.",
     "next": [
-      "Wir rufen Sie an oder schreiben per WhatsApp und klären kurz, was ansteht.",
+      "Wir melden uns per Anruf, WhatsApp oder E-Mail und klären kurz, was ansteht.",
       "Wir vereinbaren die kostenlose Besichtigung vor Ort.",
       "Nach der Besichtigung bekommen Sie den schriftlichen Festpreis für Räumung und Abtransport."
     ],
@@ -77,7 +77,7 @@
       "ort_swap": {
         "h1": "im Havelland"
       },
-      "lead": "Nach Todesfall, Pflegeheim-Umzug oder Auszug räumen wir besenrein: im Havelland, in Berlin-Spandau und Potsdam.",
+      "lead": "Nach Todesfall, Pflegeheim-Umzug oder Auszug räumen wir besenrein.",
       "cta": "Kostenlose Besichtigung anfragen",
       "form_pos": "hero",
       "wa_text": "Hallo, ich brauche eine Haushaltsauflösung. Wann könnten Sie zur Besichtigung kommen?",
@@ -103,7 +103,7 @@
       "nutzen": [
         {
           "h": "Festpreis nach Besichtigung",
-          "p": "Wir schauen uns Räume, Mengen und Zugang vor Ort an. Danach steht Ihr Festpreis für Räumung und Abtransport schriftlich fest – der bleibt, auch wenn es am Tag selbst länger dauert. Entsorgungsgebühren weisen wir nach Beleg aus."
+          "p": "Wir schauen uns Räume, Mengen und Zugang vor Ort an. Danach steht Ihr Festpreis für Räumung und Abtransport schriftlich fest, auch wenn es am Tag selbst länger dauert. Entsorgungsgebühren weisen wir nach Beleg aus."
         },
         {
           "h": "Erst sichern, dann räumen",
@@ -118,7 +118,7 @@
       "ablauf": [
         {
           "h": "Anfrage in zwei Minuten",
-          "p": "Formular, Anruf oder ein Handy-Foto per WhatsApp – wir melden uns noch am selben Werktag.",
+          "p": "Formular, Anruf oder ein Handy-Foto per WhatsApp. Wir melden uns noch am selben Werktag.",
           "when": "Tag 1 · Antwort am selben Werktag"
         },
         {
@@ -158,9 +158,9 @@
           "note": "Alle Preise inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot."
         },
         "p": [
-          "Die Einstiegspreise gelten für kleine, gut zugängliche Objekte – etwa ein einzelnes Kellerabteil oder einen Raum mit wenig Inhalt, der Wohnungspreis für eine kleine 1-Zimmer-Wohnung. Was Ihr Objekt kostet, hängt von Menge, Zugang und Entsorgungsaufwand ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung – schriftlich.",
+          "Die Einstiegspreise gelten für kleine, gut zugängliche Objekte, etwa ein einzelnes Kellerabteil oder einen Raum mit wenig Inhalt; der Wohnungspreis gilt für eine kleine 1-Zimmer-Wohnung. Was Ihr Objekt kostet, hängt von Menge, Zugang und Entsorgungsaufwand ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.",
           "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihre Kosten.",
-          "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus – Sie sehen jeden Posten, ohne eigenen Aufschlag."
+          "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus. Sie sehen jeden Posten, ohne eigenen Aufschlag."
         ]
       },
       "faqs": [
@@ -170,7 +170,7 @@
         },
         {
           "q": "Wie schnell bekomme ich einen Termin?",
-          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Kündigungsfrist drückt, sagen Sie es uns – wir planen danach."
+          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen, den Räumungstermin oft in derselben oder der folgenden Woche. Wenn eine Kündigungsfrist drückt, sagen Sie es uns. Wir planen danach."
         },
         {
           "q": "Was passiert mit Wertgegenständen und Dokumenten?",
@@ -182,15 +182,15 @@
         },
         {
           "q": "Wie wird die Entsorgung abgerechnet?",
-          "a": "Räumung und Abtransport stehen als Festpreis im Angebot. Die Gebühren der Annahmestellen für Sperrmüll, Altholz oder Elektroschrott rechnen wir nach tatsächlicher Menge gegen Beleg ab – ohne eigenen Aufschlag. Bei Schadstoffen wie Farben, Chemikalien oder Asbest stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab; das gehört nicht in den Festpreis."
+          "a": "Räumung und Abtransport stehen als Festpreis im Angebot. Die Gebühren der Annahmestellen für Sperrmüll, Altholz oder Elektroschrott rechnen wir nach tatsächlicher Menge gegen Beleg ab, ohne eigenen Aufschlag. Bei Schadstoffen wie Farben, Chemikalien oder Asbest stoppen wir und stimmen das weitere Vorgehen mit einem Fachbetrieb ab; das gehört nicht in den Festpreis."
         },
         {
           "q": "Riecht die Wohnung nach der Räumung noch?",
-          "a": "In der Regel nicht. Gerüche und oberflächlichen Schimmel behandeln wir auf Wunsch im Zuge der Räumung mit – als eigene Position im Angebot, damit Sie vorher wissen, was es kostet. Bei tieferliegenden Schäden in der Wandsubstanz stimmen wir das weitere Vorgehen mit einem Fachbetrieb ab."
+          "a": "In der Regel nicht. Gerüche und oberflächlichen Schimmel behandeln wir auf Wunsch im Zuge der Räumung mit. Sie stehen als eigene Position im Angebot, damit Sie vorher wissen, was es kostet. Bei tieferliegenden Schäden in der Wandsubstanz stimmen wir das weitere Vorgehen mit einem Fachbetrieb ab."
         },
         {
           "q": "Können Sie nach der Räumung auch renovieren?",
-          "a": "Zum Teil. Bohrlöcher schließen, Haken und Klebereste entfernen: ja. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region – für die Räumung bleiben wir Ihr Ansprechpartner."
+          "a": "Zum Teil. Bohrlöcher schließen, Haken und Klebereste entfernen: ja. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region. Für die Räumung bleiben wir Ihr Ansprechpartner."
         },
         {
           "q": "Wo bieten Sie die Haushaltsauflösung an?",
@@ -241,7 +241,7 @@
       "ort_swap": {
         "h1": "im Havelland"
       },
-      "lead": "Messie-Wohnung entrümpeln oder eine vermüllte, verwahrloste Wohnung räumen: Ob Vermieter, Angehörige oder Sie selbst, wir arbeiten ruhig und gründlich. Sie müssen weder dabei sein noch etwas erklären. Kostenlose Besichtigung im Havelland, in Berlin-Spandau und Potsdam.",
+      "lead": "Messie-Wohnung entrümpeln oder eine vermüllte, verwahrloste Wohnung räumen: Ob Vermieter, Angehörige oder Sie selbst, wir arbeiten ruhig und gründlich. Sie müssen weder dabei sein noch etwas erklären. Die Besichtigung ist kostenlos.",
       "cta": "Vertraulich anfragen",
       "wa_text": "Hallo, ich brauche eine diskrete Wohnungsräumung. Können wir kurz sprechen?",
       "trust_zeile": "Festpreis nach Besichtigung",
@@ -266,21 +266,21 @@
       "nutzen": [
         {
           "h": "Wir helfen, ohne zu urteilen",
-          "p": "Jede Wohnung hat eine Geschichte. Wir müssen sie nicht kennen, klären nur Größe und Termin und sprechen im Haus mit niemandem über den Auftrag."
+          "p": "Wir müssen Ihre Geschichte nicht kennen. Wir klären nur Größe und Termin und sprechen im Haus mit niemandem über den Auftrag."
         },
         {
           "h": "Festpreis nach Besichtigung",
-          "p": "Wir sehen uns die Wohnung an und nennen danach einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert. Entsorgungsgebühren weisen wir nach Beleg aus."
+          "p": "Wir sehen uns die Wohnung an und nennen danach einen schriftlichen Festpreis für Räumung und Abtransport. Der bleibt, auch wenn es am Tag selbst länger dauert. Entsorgungsgebühren weisen wir nach Beleg aus."
         },
         {
           "h": "Gründlich bis zur Übergabe",
-          "p": "Wir räumen vollständig, trennen Wertstoffe, entsorgen über zugelassene Annahmestellen und übergeben besenrein – mit Foto-Nachweis, falls Sie nicht vor Ort sind. Gerüche und Schimmel behandeln wir auf Wunsch gleich mit. Mit Grundreinigung auf Wunsch ist die Wohnung danach wieder bewohnbar."
+          "p": "Wir räumen vollständig, trennen Wertstoffe, entsorgen über zugelassene Annahmestellen und übergeben besenrein, mit Foto-Nachweis, falls Sie nicht vor Ort sind. Gerüche und Schimmel behandeln wir auf Wunsch gleich mit. Mit Grundreinigung auf Wunsch ist die Wohnung danach wieder bewohnbar."
         }
       ],
       "ablauf": [
         {
           "h": "Kurz melden",
-          "p": "Ein Satz per Formular oder WhatsApp genügt. Sie müssen nichts beschreiben, was Ihnen unangenehm ist – wir klären nur Größe und Termin.",
+          "p": "Ein Satz per Formular oder WhatsApp genügt. Sie müssen nichts beschreiben, was Ihnen unangenehm ist. Wir klären nur Größe und Termin.",
           "when": "Tag 1 · vertraulich"
         },
         {
@@ -305,9 +305,9 @@
           "note": "Inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot."
         },
         "p": [
-          "Der Einstiegspreis gilt für eine kleine 1-Zimmer-Wohnung. Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport – der bleibt, auch wenn es am Tag selbst länger dauert.",
+          "Der Einstiegspreis gilt für eine kleine 1-Zimmer-Wohnung. Menge, Zugang und Entsorgungsart bestimmen den Aufwand. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport. Der bleibt, auch wenn es am Tag selbst länger dauert.",
           "Wertanrechnung: Gut erhaltene Möbel oder Geräte prüfen wir auf ihren Wert und rechnen sie auf den Festpreis an.",
-          "Entsorgungsgebühren der Annahmestellen rechnen wir nach Beleg ab – ohne eigenen Aufschlag."
+          "Entsorgungsgebühren der Annahmestellen rechnen wir nach Beleg ab, ohne eigenen Aufschlag."
         ]
       },
       "faqs": [
@@ -321,23 +321,23 @@
         },
         {
           "q": "Räumen Sie auch eine verwahrloste oder vermüllte Wohnung, auch im Extremfall?",
-          "a": "Ja. Eine Entrümpelung im Extremfall ist möglich: Wir räumen vollständig aus und übergeben besenrein. Geruch und oberflächlichen Schimmel behandeln wir auf Wunsch im Zuge der Räumung mit – als eigene Position im Angebot, damit Sie vorher wissen, was es kostet. Wo eine Gesundheitsgefahr besteht, etwa durch Chemikalien oder starke hygienische Belastung, stimmen wir das Vorgehen vorher mit einem Fachbetrieb ab."
+          "a": "Ja. Eine Entrümpelung im Extremfall ist möglich: Wir räumen vollständig aus und übergeben besenrein. Geruch und oberflächlichen Schimmel behandeln wir auf Wunsch im Zuge der Räumung mit. Sie stehen als eigene Position im Angebot, damit Sie vorher wissen, was es kostet. Wo eine Gesundheitsgefahr besteht, etwa durch Chemikalien oder starke hygienische Belastung, stimmen wir das Vorgehen vorher mit einem Fachbetrieb ab."
         },
         {
           "q": "Wie schnell können Sie kommen?",
-          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen. Wenn ein Vermieter oder eine Behörde eine Frist gesetzt hat, sagen Sie uns das Datum – wir planen danach."
+          "a": "Die Besichtigung schaffen wir meist in 2–3 Werktagen. Wenn ein Vermieter oder eine Behörde eine Frist gesetzt hat, sagen Sie uns das Datum. Wir planen danach."
         },
         {
           "q": "Muss ich vorher etwas aussortieren?",
-          "a": "Nein. Sie müssen nichts vorsortieren. Sagen Sie uns, was bleiben soll – den Rest übernehmen wir."
+          "a": "Nein. Sie müssen nichts vorsortieren. Sagen Sie uns, was bleiben soll. Den Rest übernehmen wir."
         },
         {
           "q": "Zeigen Sie Fotos von anderen Messie-Wohnungen?",
-          "a": "Nein. Diskretion gilt auch für frühere Kunden – aus solchen Aufträgen veröffentlichen wir keine Fotos."
+          "a": "Nein. Diskretion gilt auch für frühere Kunden: Aus solchen Aufträgen veröffentlichen wir keine Fotos."
         },
         {
           "q": "Können Sie nach der Räumung auch renovieren?",
-          "a": "Zum Teil. Bohrlöcher schließen, Haken und Klebereste entfernen: ja. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region – für die Räumung bleiben wir Ihr Ansprechpartner."
+          "a": "Zum Teil. Bohrlöcher schließen, Haken und Klebereste entfernen: ja. Malerarbeiten und neue Böden vermitteln wir auf Wunsch an Partnerbetriebe aus der Region. Für die Räumung bleiben wir Ihr Ansprechpartner."
         }
       ],
       "objekte": [
@@ -393,7 +393,7 @@
       "nutzen": [
         {
           "h": "Feste Termine, dokumentierte Ergebnisse",
-          "p": "Sie bekommen einen Termin, der hält, und nach jedem Einsatz Fotos vom leeren, besenreinen Objekt – direkt für Ihre Akte oder den Eigentümer."
+          "p": "Sie bekommen einen Termin, der hält, und nach jedem Einsatz Fotos vom leeren, besenreinen Objekt, direkt für Ihre Akte oder den Eigentümer."
         },
         {
           "h": "Festpreis und Sammelrechnung",
@@ -408,7 +408,7 @@
       "ablauf": [
         {
           "h": "Objekt nennen",
-          "p": "Adresse, Art des Objekts und ungefähre Menge – per Formular oder kurzer Mail. Wir melden uns noch am selben Werktag.",
+          "p": "Adresse, Art des Objekts und ungefähre Menge, per Formular oder kurzer Mail. Wir melden uns noch am selben Werktag.",
           "when": "Tag 1 · Antwort am selben Werktag"
         },
         {
@@ -433,7 +433,7 @@
       "faqs": [
         {
           "q": "Räumen Sie auch einzelne Keller oder Abstellräume im Mehrfamilienhaus?",
-          "a": "Ja. Kellerräumungen nach Mieterwechsel, verwaiste Abstellräume oder Fahrradkeller übernehmen wir für Verwaltungen und Eigentümer – auch einzelne Räume."
+          "a": "Ja. Kellerräumungen nach Mieterwechsel, verwaiste Abstellräume oder Fahrradkeller übernehmen wir für Verwaltungen und Eigentümer, auch einzelne Räume."
         },
         {
           "q": "Bekommen wir Entsorgungsnachweise?",
@@ -441,7 +441,7 @@
         },
         {
           "q": "Können Sie kurzfristig räumen, etwa vor einer Neuvermietung?",
-          "a": "Meist ja. Nennen Sie uns das Übergabedatum – wir planen den Termin danach und bestätigen ihn schriftlich."
+          "a": "Meist ja. Nennen Sie uns das Übergabedatum. Wir planen den Termin danach und bestätigen ihn schriftlich."
         },
         {
           "q": "Übernehmen Sie auch Büro- und Betriebsauflösungen?",
@@ -449,7 +449,7 @@
         },
         {
           "q": "Übernehmen Sie auch Grundreinigung oder Geruchsbehandlung vor der Neuvermietung?",
-          "a": "Ja, auf Wunsch. Grundreinigung und Geruchsbehandlung, auch bei oberflächlichem Schimmel, stehen dann als eigene Positionen im Angebot, damit Sie den Preis vorher kennen – und das Objekt direkt neu vermietet werden kann."
+          "a": "Ja, auf Wunsch. Grundreinigung und Geruchsbehandlung, auch bei oberflächlichem Schimmel, stehen dann als eigene Positionen im Angebot, damit Sie den Preis vorher kennen. So kann das Objekt direkt neu vermietet werden."
         },
         {
           "q": "Machen Sie auch Malerarbeiten und Böden?",
@@ -614,10 +614,10 @@
         "nikita"
       ],
       "zitat_hero": {
-        "t": "Zuverlässig, pünktlich und sehr professionell",
-        "a": "Nikita",
-        "tag": "",
-        "quelle": "nikita"
+        "t": "Die Jungs haben mir super unter die Arme geholfen nach dem Tod meiner Oma mit der Haus Entrümpelung.",
+        "a": "Daniel H.",
+        "tag": "Nach Todesfall",
+        "quelle": "daniel"
       }
     },
     {
@@ -913,7 +913,8 @@
         "daniel",
         "milo",
         "mark"
-      ]
+      ],
+      "aktion": false
     },
     {
       "slug": "keller-dachboden-garage",
@@ -1075,7 +1076,7 @@
       "ort_swap": {
         "h1": "im Havelland"
       },
-      "lead": "Wohnung, Haus, Keller oder Garage: Wir räumen aus, entsorgen und übergeben besenrein, im Havelland, in Berlin-Spandau und Potsdam.",
+      "lead": "Wohnung, Haus, Keller oder Garage: Wir räumen aus, entsorgen und übergeben besenrein.",
       "cta": "Kostenlose Besichtigung anfragen",
       "wa_text": "Hallo, ich brauche eine Entrümpelung. Wann könnten Sie zur Besichtigung kommen?",
       "trust_zeile": "Festpreis nach Besichtigung",
@@ -1160,7 +1161,7 @@
             {
               "t": "Kellerabteil ab 99 €",
               "obj": "Keller / Dachboden",
-              "k": "Keller"
+              "k": "Kellerabteil"
             },
             {
               "t": "Wohnungsauflösung ab 499 €",
@@ -1300,7 +1301,7 @@
         },
         {
           "h": "Sie müssen nicht dabei sein",
-          "p": "Sie übergeben uns den Schlüssel, wir halten Sie per WhatsApp oder Telefon auf dem Laufenden. Wir schicken Vorher-Nachher-Fotos direkt aufs Handy."
+          "p": "Sie übergeben uns den Schlüssel, wir halten Sie per WhatsApp oder Telefon auf dem Laufenden."
         },
         {
           "h": "Besenrein mit Foto-Nachweis",
@@ -1334,7 +1335,7 @@
             {
               "t": "Kellerabteil ab 99 €",
               "obj": "Keller / Dachboden",
-              "k": "Keller"
+              "k": "Kellerabteil"
             },
             {
               "t": "Wohnungsauflösung ab 499 €",
@@ -1350,7 +1351,6 @@
           "note": "Alle Preise inkl. MwSt. Kostenfrei: Anfahrt, Besichtigung und Angebot."
         },
         "p": [
-          "Die Einstiegspreise gelten für kleine, gut zugängliche Objekte: ein einzelnes Kellerabteil, eine kleine 1-Zimmer-Wohnung, ein kleines Haus. Was Ihr Objekt kostet, hängt von Menge, Zugang und Entsorgungsaufwand ab. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.",
           "Wertanrechnung: Gut erhaltene Möbel, Geräte oder Sammlerstücke prüfen wir auf ihren Wert und rechnen sie an. Das senkt Ihren Preis.",
           "Entsorgungsgebühren der Annahmestellen weisen wir nach Beleg aus. Sie sehen jeden Posten, ohne eigenen Aufschlag."
         ]

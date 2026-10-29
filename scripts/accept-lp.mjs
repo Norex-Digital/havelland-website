@@ -39,7 +39,7 @@ const lpJson = JSON.parse(fs.readFileSync('data/copy/lp.json', 'utf8'));
 const entryOf = rel => (lpJson.lps || []).find(x => x.slug === rel.split('/')[1]) || {};
 const posOf = rel => entryOf(rel).form_pos || 'hero';
 
-// Optionen: reviews/ba wie bisher · mitAktion = Ziel-URL des Angebots-Assets (bis 30.11.) · ohneAktion = Nachlass (A7)
+// Optionen: reviews/ba wie bisher · mitAktion = Ziel-URL des Angebots-Assets (bis 30.11.) · ohneAktion = Nachlass (A7) und Haus (Todesfall-Bewertung im Bewertungsblock, Launch-Gate S6 29.10.)
 // · keinAbPreis = [S2] JE_LP: Nachlass ohne „ab …€“ im Hero (Bereich bis Ende der lp-hero-Section) und ohne Preis-Anker (data-via="preis");
 //   der Abschnitt #preise darf die sachliche Preis-Orientierung tragen (Owner Maurice 20.10.). Haus/Keller/Wohnung/Entrümpelung zeigen ihren Ab-Preis selbst
 // · ortSwap = ort_swap Pflicht (data-ort im Hero)
@@ -51,7 +51,7 @@ const LPS = [
   ['lp/gewerbe-entruempelung/index.html', 'LP gewerbe', { reviews: true, gewerbe: true }],
   ['lp/nachlass-aufloesung/index.html', 'LP nachlass', { reviews: true, ohneAktion: true, keinAbPreis: true, ortSwap: true, nachlassFaq: true }],
   ['lp/wohnungsaufloesung/index.html', 'LP wohnung', { reviews: true }],
-  ['lp/haus-entruempeln/index.html', 'LP haus', { reviews: true, ortSwap: true }],
+  ['lp/haus-entruempeln/index.html', 'LP haus', { reviews: true, ortSwap: true, ohneAktion: true }],
   ['lp/keller-dachboden-garage/index.html', 'LP keller', { reviews: true }],
   ['lp/entruempelung-havelland/index.html', 'LP entruempelung', { reviews: true, ortSwap: true }],
   ['lp/entruempelung-kosten-havelland/index.html', 'LP entruempelung-kosten', { reviews: true, ortSwap: true, kosten: true }],
@@ -262,7 +262,8 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     check(id, 'data-lead-mobil gleich lead_mobil in lp.json', (entryOf(rel).lead_mobil === true) === /<section class="phero lp-hero[^"]*"[^>]*data-lead-mobil/.test(h));
   } else {
     // Danke-Seite: der Lead mit der Rückruf-Nummer darf nie ausgeblendet werden (P2 H1)
-    check(id, 'Rückruf-Nummer im Lead vorhanden', has(h, 'Der Rückruf kommt von'));
+    check(id, 'Anruf-Nummer im Lead vorhanden', has(h, 'Anrufe kommen von'));
+    check(id, 'Lead verspricht Anruf, WhatsApp oder E-Mail (Kontaktfeld „Telefon oder E-Mail“), keine Platzhalter-Reste', has(h, 'per Anruf, WhatsApp oder E-Mail') && !has(h, '{tel}') && has(h, 'Anrufe kommen von 01515 6198195'));
     const versteckt = [...h.matchAll(/([^{}]*)\.lead\{display:none\}/g)].filter(m => !/lp-hero-form/.test(m[1]));
     check(id, 'keine unbeschränkte Regel .lead{display:none}', versteckt.length === 0);
   }
