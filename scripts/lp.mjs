@@ -17,6 +17,7 @@
 
 import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
 import { topbar, trustZeile, preisBlock, zitat, aktionKarte, punkte, bewertungen, BLOECKE_CSS, ICON_ARROW } from './lp-bloecke.mjs';
+import { VARIANTE, VARIANT_CSS } from './lp-varianten.mjs'; // LP_VARIANTE=a|b: ruhigere Varianten des ersten Bildschirms (ohne Variable: Ist-Stand)
 
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
 
@@ -203,7 +204,7 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-hero-form .lp-form{max-width:44em}
 }
 ${BLOECKE_CSS}
-${FIT_CSS}
+${FIT_CSS}${VARIANT_CSS ? '\n' + VARIANT_CSS : ''}
 </style>`;
 
 // Attribution beim Einstieg: Klick-IDs/UTM aus der URL in den Seiten-Speicher (window.__hg). Ins Endgerät (localStorage, 90 Tage)
@@ -383,9 +384,14 @@ ${alt}
     for (const x of ((lp.preis && lp.preis.anker && lp.preis.anker.items) || []).map(normItem)) if (x.obj && !(lp.objekte || []).includes(x.obj)) throw new Error(`lp ${lp.slug}: preis.anker obj "${x.obj}" steht nicht in objekte`);
     if (lp.lead_mobil && String(lp.lead || '').length > 90) throw new Error(`lp ${lp.slug}: lead_mobil verlangt lead <= 90 Zeichen`);
     const url = `/lp/${lp.slug}/`;
-    const h1 = lp.h1_em && lp.h1.includes(lp.h1_em)
-      ? esc(lp.h1).replace(esc(lp.h1_em), `<em>${esc(lp.h1_em)}</em>`)
-      : esc(lp.h1);
+    // Variante B: steht der kursive Zusatz am Ende der H1 (nach einem ersten Satz), wird er samt Schlusspunkt zur leisen Unterzeile (em.tail, CSS in lp-varianten.mjs).
+    const emAt = lp.h1_em ? lp.h1.indexOf(lp.h1_em) : -1;
+    const h1Tail = VARIANTE === 'b' && emAt > 0 && ['', '.'].includes(lp.h1.slice(emAt + lp.h1_em.length));
+    const h1 = h1Tail
+      ? `${esc(lp.h1.slice(0, emAt))}<em class="tail">${esc(lp.h1.slice(emAt))}</em>`
+      : lp.h1_em && lp.h1.includes(lp.h1_em)
+        ? esc(lp.h1).replace(esc(lp.h1_em), `<em>${esc(lp.h1_em)}</em>`)
+        : esc(lp.h1);
     const wa = waHref(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.');
     const H = heroOf(lp);
     const os = lp.ort_swap || {};
@@ -418,7 +424,7 @@ ${alt}
     // preis_faktoren {h, p, items:[{h,p}]} (Kosten-LP, Umbau 11/2026): Einflussfaktoren auf den Preis, direkt nach dem Hero, nur Aussagen aus den bestehenden LPs, keine Beträge.
     const pfk = valsSec('preisfaktoren', lp.preis_faktoren, 'Was den Preis bestimmt');
     const main = `<main id="top">
-<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lp-ort${String(lp.lead || '').includes(ORT_PHRASE) ? ' lp-ort-dup' : ''}">${esc(ORT_SATZ)}</p><p class="lead">${esc(lp.lead)}</p>
+<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}${h1Tail ? ' data-h1-tail' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lp-ort${String(lp.lead || '').includes(ORT_PHRASE) ? ' lp-ort-dup' : ''}">${esc(ORT_SATZ)}</p><p class="lead">${esc(lp.lead)}</p>
 ${heroPreis}${heroForm || quick}${heroForm && revOn ? zitat(zitatOf(lp), esc) : ''}${aktLp}${heroCta}
 ${punkte(lp.trust, esc)}${person}</div>${H.shot}</div></section>${ortJs}
 ${wwt}${pfk}
