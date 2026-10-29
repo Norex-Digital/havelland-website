@@ -365,14 +365,14 @@ export function buildLp(d) {
 <fieldset class="f-obj"><legend>${esc(lp.form_legend || 'Was soll geräumt werden – und wo?')}</legend><div class="seg${(lp.objekte || []).length === 3 ? ' seg3' : ''}">${chips}</div></fieldset>
 <div class="frow"><label class="fld"><span>PLZ oder Ort</span><input name="ort" autocomplete="postal-code" enterkeyhint="next" placeholder="z. B. 14612 Falkensee" required></label>
 <label class="fld"><span>Name</span><input name="name" autocomplete="name" enterkeyhint="next" required></label>
-<label class="fld"><span data-lb="Telefon">Telefon</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="Für Rückruf und Besichtigung" data-req-by="kontaktweg" data-req-when="Anruf,WhatsApp" required></label></div>
+<label class="fld"><span data-lb="Telefon (für Rückruf)">Telefon (für Rückruf)</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="Für Rückruf und Besichtigung" data-req-by="kontaktweg" data-req-when="Anruf,WhatsApp" required></label></div>
 <input type="hidden" name="kontaktweg" value="Anruf">
 <p class="err" role="alert"></p>
 <div class="ffoot"><label class="chk"><input type="checkbox" name="dsgvo" required><span>Ich stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme und für das Angebot zu (<a href="/datenschutz/">Datenschutz</a>).</span></label>
 <button class="btn btn-acc" type="submit">${esc(lp.cta_form || 'Kostenlos anfragen')}</button></div>
 <p class="fine1">Besichtigung und Angebot kostenlos · Antwort noch am selben Werktag</p>
 ${alt}
-<p class="fine">Ihre Einwilligung können Sie jederzeit widerrufen. Keine Werbeanrufe. Ihre Angaben gehen über den Formulardienst Web3Forms an unser Postfach. Nur wenn Sie im Cookie-Banner zugestimmt haben, übermitteln wir E-Mail und Telefonnummer in gehashter Form an Google, um den Erfolg unserer Anzeigen zu messen – Details in der Datenschutzerklärung.</p>
+<p class="fine">Ihre Einwilligung können Sie jederzeit widerrufen. Keine Werbeanrufe. Ihre Angaben gehen über den Formulardienst Web3Forms an unser Postfach. Nur wenn Sie im Cookie-Banner zugestimmt haben, übermitteln wir Ihre Telefonnummer in gehashter Form an Google, um den Erfolg unserer Anzeigen zu messen – Details in der Datenschutzerklärung.</p>
 </form>`;
   };
 
