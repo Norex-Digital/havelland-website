@@ -73,8 +73,7 @@
       "title": "Haushaltsauflösung & Entrümpelung im Havelland – Festpreis",
       "meta": "Haushaltsauflösung und Entrümpelung im Havelland: diskret, besenrein, Festpreis für Räumung und Abtransport nach kostenloser Besichtigung. Falkensee, Nauen.",
       "kick": "Festpreis nach Besichtigung · Sie müssen nicht dabei sein",
-      "h1": "Haushaltsauflösung & Entrümpelung im Havelland. Was Ihnen wichtig ist, bleibt bei Ihnen.",
-      "h1_em": "Was Ihnen wichtig ist, bleibt bei Ihnen",
+      "h1": "Haushaltsauflösung & Entrümpelung im Havelland",
       "ort_swap": {
         "h1": "im Havelland"
       },
@@ -115,6 +114,7 @@
           "p": "Am Ende ist die Wohnung leer und gefegt, bereit für Vermieter oder Käufer. Die Vorher-Nachher-Fotos schicken wir Ihnen direkt aufs Handy."
         }
       ],
+      "ablauf_lead": "Was Ihnen wichtig ist, bleibt bei Ihnen.",
       "ablauf": [
         {
           "h": "Anfrage in zwei Minuten",
@@ -237,8 +237,7 @@
       "title": "Messie-Wohnung räumen lassen – diskret, Havelland/Spandau",
       "meta": "Messie-Wohnung oder vermüllte Wohnung räumen lassen: diskret, ohne Vorwürfe, Festpreis für Räumung und Abtransport nach Besichtigung. Havelland und Spandau.",
       "kick": "Diskret · Festpreis nach Besichtigung · Sie müssen nicht dabei sein",
-      "h1": "Messie-Wohnung räumen lassen im Havelland: gründlich und ohne Fragen",
-      "h1_em": "gründlich und ohne Fragen",
+      "h1": "Messie-Wohnung räumen lassen im Havelland",
       "ort_swap": {
         "h1": "im Havelland"
       },
@@ -368,8 +367,7 @@
       "ort_swap": {
         "kick": "Havelland"
       },
-      "h1": "Entrümpelung für Hausverwaltungen & Gewerbe: Wir übergeben leer, gereinigt, geruchsfrei.",
-      "h1_em": "leer, gereinigt, geruchsfrei",
+      "h1": "Entrümpelung für Hausverwaltungen & Gewerbe",
       "lead": "Wohnungsräumung nach Auszug, Kellerräumung im Mehrfamilienhaus, Büro- oder Betriebsauflösung: ein regionaler Ansprechpartner, feste Termine, schriftlicher Festpreis je Objekt und auf Wunsch eine Sammelrechnung.",
       "cta": "Angebot für Ihr Objekt anfordern",
       "wa_text": "Hallo, ich brauche ein Angebot für die Räumung eines Objekts. Adresse und Fotos schicke ich gleich mit.",
@@ -406,6 +404,7 @@
           "p": "Neben der Räumung übernehmen wir Grünpflege, Laub und Treppenhausreinigung. Winterdienst koordinieren wir über einen regionalen Partner-Fachbetrieb."
         }
       ],
+      "ablauf_lead": "Wir übergeben leer, gereinigt, geruchsfrei.",
       "ablauf": [
         {
           "h": "Objekt nennen",
@@ -483,8 +482,7 @@
       "title": "Nachlassauflösung im Havelland – Haushalt diskret räumen",
       "meta": "Haushaltsauflösung nach Todesfall: diskret, besenrein, mit Foto-Nachweis. Sie müssen nicht dabei sein. Besichtigung kostenlos. Havelland, Spandau, Potsdam.",
       "kick": "Haushaltsauflösung nach Todesfall · Sie müssen nicht dabei sein",
-      "h1": "Nachlassauflösung im Havelland: diskret und besenrein",
-      "h1_em": "diskret und besenrein",
+      "h1": "Nachlassauflösung im Havelland",
       "ort_swap": {
         "h1": "im Havelland"
       },
@@ -530,6 +528,7 @@
         }
       ],
       "abschnitt_ablauf": "So läuft eine Nachlassauflösung ab",
+      "ablauf_lead": "Wir arbeiten diskret und übergeben besenrein.",
       "ablauf": [
         {
           "h": "Kurze Anfrage",
@@ -628,8 +627,7 @@
       "title": "Wohnungsauflösung im Havelland – besenrein übergeben",
       "meta": "Wohnungsauflösung im Havelland: besenrein übergeben, mit Foto-Nachweis. Festpreis für Räumung und Abtransport nach kostenloser Besichtigung.",
       "kick": "Besenrein übergeben · Sie müssen nicht dabei sein",
-      "h1": "Wohnungsauflösung im Havelland: besenrein übergeben",
-      "h1_em": "besenrein übergeben",
+      "h1": "Wohnungsauflösung im Havelland",
       "ort_swap": {
         "h1": "im Havelland"
       },
@@ -771,8 +769,7 @@
       "title": "Haus entrümpeln im Havelland – leer und besenrein",
       "meta": "Haus entrümpeln im Havelland: Wohnräume, Keller, Dachboden, Garage. Festpreis für Räumung und Abtransport nach kostenloser Besichtigung.",
       "kick": "Vom Keller bis zum Dachboden · Sie müssen nicht dabei sein",
-      "h1": "Haus entrümpeln im Havelland: leer und besenrein",
-      "h1_em": "leer und besenrein",
+      "h1": "Haus entrümpeln im Havelland",
       "ort_swap": {
         "h1": "im Havelland"
       },
@@ -1074,8 +1071,7 @@
       "title": "Entrümpelung im Havelland – besenrein, mit Foto-Nachweis",
       "meta": "Entrümpelung im Havelland: Wohnung, Haus, Keller, Garage. Festpreis für Räumung und Abtransport nach kostenloser Besichtigung. Besenrein.",
       "kick": "Wohnung · Haus · Keller · Garage",
-      "h1": "Entrümpelung im Havelland: besenrein, mit Foto-Nachweis",
-      "h1_em": "mit Foto-Nachweis",
+      "h1": "Entrümpelung im Havelland",
       "ort_swap": {
         "h1": "im Havelland"
       },

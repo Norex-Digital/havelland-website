@@ -67,7 +67,7 @@ check('lp.json', `Slug-Menge gleich (lp.json: ${lpSlugs.join(', ')})`, JSON.stri
 check('lp.json', 'keine doppelten Slugs in lp.json', new Set(lpSlugs).size === lpSlugs.length);
 // Aktion nur bis aktion.bis (Generator rendert danach nichts mehr): nach Ablauf erwartet die Abnahme KEINE Karte (keine Zeitbombe am 01.12.)
 const aktAktiv = !!(lpJson.aktion && lpJson.aktion.bis) && Date.now() <= new Date(lpJson.aktion.bis + 'T23:59:59+01:00').getTime();
-const PFLICHT_HIDDEN = ['quelle', 'lp', 'gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'landing_url', 'ads_consent', 'access_key', 'subject', 'from_name', 'redirect', 'botcheck'];
+const PFLICHT_HIDDEN = ['quelle', 'lp', 'tel', 'email', 'kontaktweg', 'gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'landing_url', 'ads_consent', 'access_key', 'subject', 'from_name', 'redirect', 'botcheck'];
 const EREIGNISSE = ['form_start', 'form_step', 'form_error', 'form_quickstart', 'generate_lead', 'start_via'];
 
 for (const [rel, label, o] of LPS) page(rel, label, h => {
@@ -180,7 +180,7 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     check(id, 'Formular-Skript gefunden', formJs.length > 500);
     // Fokus nur nach Nutzeraktion (Enter-Weiter, erstes Fehlerfeld nach Absenden); jedes weitere .focus( bleibt rot
     check(id, 'Fokus nur nach Nutzeraktion (genau Enter-Weiter + erstes Fehlerfeld, Objekt ohne Scroll)', focusOk(formJs));
-    check(id, 'Pflichtfelder: Leerzeichen zählen nicht, Telefon braucht mindestens 6 Ziffern', has(formJs, "/^(text|tel|email)$/.test(e.type)&&!e.value.trim())ok=false;") && has(formJs, "e.value.replace(/\\D/g,'').length<6"));
+    check(id, 'Pflichtfelder: Leerzeichen zählen nicht; Kontaktfeld: mit @ gültige E-Mail, sonst Telefon mit mindestens 6 Ziffern', has(formJs, "/^(text|tel|email)$/.test(e.type)&&!e.value.trim())ok=false;") && has(formJs, "n==='kontakt'") && has(formJs, "v.replace(/\\D/g,'').length>=6") && has(formJs, "v.indexOf('@')>-1?/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(v)"));
     check(id, 'Zurück aus der Danke-Seite leert das Formular (kein Doppel-Lead)', has(formJs, 'if(f.__sent){f.__sent=false;f.reset();') && has(formJs, 'if(j&&j.success){f.__sent=true;'));
     check(id, '§ 25 TDDDG: hg_attrib ohne Einwilligung nicht lesen, sondern löschen; bei Ablehnen/Cookie-Einstellungen löschen', has(h, 'var ok0=allowed();if(!ok0){try{localStorage.removeItem(S)}catch(e){}}var cur=(ok0&&load())||{};') && has(h, "#consent [data-c=deny],#consent-reset')){try{localStorage.removeItem(S)}"));
     // Selbsttest: ein zusätzliches .focus( (z. B. Auto-Fokus beim Laden) muss den Fokus-Check rot färben (sonst prüft er nichts)
@@ -197,7 +197,12 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     check(id, 'Web3Forms-Ziel', has(h, 'action="https://api.web3forms.com/submit"'));
     check(id, 'Redirect /lp/danke/', has(h, '/lp/danke/'));
     check(id, 'GTM vorhanden', has(h, 'GTM-TR7JVXZL'));
-    check(id, 'Telefon-Logik je Kontaktweg', has(h, 'data-req-by="kontaktweg"'));
+    // Ein Feld „Telefon oder E-Mail“ (Owner 29.10.): Sichtfeld name=kontakt (Pflicht), Hidden tel/email/kontaktweg füllt das Skript; das Sichtfeld wird nicht mitgesendet (fdata)
+    check(id, 'Kontaktfeld „Telefon oder E-Mail“ (name=kontakt, Pflicht, kein type=tel/email)', /<span>Telefon oder E-Mail<\/span><input name="kontakt" type="text"[^>]*\brequired>/.test(h) && !/<input name="tel" type="tel"/.test(h));
+    check(id, 'Hidden tel/email/kontaktweg im Formular (kontaktweg-Vorgabe „Anruf“)', has(h, '<input type="hidden" name="tel" value=""><input type="hidden" name="email" value=""><input type="hidden" name="kontaktweg" value="Anruf">'));
+    check(id, 'Formular-Skript: Kontaktfeld → tel/email/kontaktweg (Anruf/E-Mail), Sichtfeld nicht im POST, Fehlermeldung „Telefonnummer oder E-Mail-Adresse“', has(formJs, "f.elements['kontaktweg'].value=mail?'E-Mail':'Anruf'") && has(formJs, "d.delete('kontakt')") && has(formJs, 'Bitte geben Sie eine Telefonnummer oder E-Mail-Adresse an.'));
+    check(id, 'Kleingedrucktes: „E-Mail-Adresse oder Telefonnummer in gehashter Form“', has(h, 'E-Mail-Adresse oder Telefonnummer in gehashter Form'));
+    check(id, 'Klebende Leiste erst nach Scroll (Skript setzt scta-wait, entfernt ab ca. 0,6 Bildschirmhöhen)', has(h, "s.classList.add('scta-wait')") && has(h, 'window.innerHeight*.6'));
     check(id, '>= 3 Objekt-Chips', (h.match(/name="objekt"/g) || []).length >= 3);
     const nObj = (entryOf(rel).objekte || []).length;
     check(id, `Objekt-Leiste mit ${nObj} Spalten (seg3 nur bei 3 Objekten)`, nObj === 3 ? has(h, '<div class="seg seg3"><label><input type="radio" name="objekt"') : has(h, '<div class="seg"><label><input type="radio" name="objekt"'));

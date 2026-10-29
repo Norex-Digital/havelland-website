@@ -2,8 +2,8 @@
 # Hero-Fit-Gate (v7, Ein-Schritt-Formular, Spec gbr-firma 09-lp-redesign-spec.md §10.3).
 # Pass 1 mit offenem Consent-Banner: Anruf (Kopf), Vertrauensleiste (.lp-topbar), Häkchen-Zeile (.lp-trust1, nur < 600 px, einzeilig),
 #   Preis-Kacheln (.lp-hero .lp-tiles, Muss nur für die Slugs in FIT_PREIS_MUSS), Objekt-Leiste (.f-obj .seg) und PLZ-Feld komplett über der Banner-Oberkante.
-# Pass 2 ohne Banner (Einwilligung „deny“ gesetzt): Absende-Knopf über der Oberkante der klebenden Leiste (.scta) bzw. im Bildschirm (Desktop),
-#   WhatsApp in der klebenden Leiste sichtbar (Handy). Kachel-Tippziel ≥ 44 px ist immer Muss.
+# Pass 2 ohne Banner (Einwilligung „deny“ gesetzt): Absende-Knopf im Bildschirm (die klebende Leiste .scta ist im ersten Bildschirm ausgeblendet, Owner 29.10.: erst nach ca. 0,6 Bildschirmhöhen Scroll,
+#   Gate: scShown muss falsch sein), WhatsApp in der klebenden Leiste nach Scroll (0,9 Bildschirmhöhen) sichtbar (Handy). Kachel-Tippziel ≥ 44 px ist immer Muss.
 # Aufruf: scripts/lp-fit.sh <slug>   (Server vorher: python -m http.server -d website 4173 ; PORT=… überschreibt)
 # Exit 0 = grün oder SKIP (nur wenn form_pos in lp.json != hero), 1 = rot, 2 = Server/Browser-Fehler, ungültige Messung,
 # ausgelieferte Seite != website/lp/<slug>/index.html oder fehlendes Hero-Formular bei form_pos=hero.
@@ -54,11 +54,17 @@ JS='async () => {
     preis = {bottom: Math.round(Math.max(...rs.map(r => r.bottom))), ok: rs.every(r => r.height > 0 && r.top >= 0 && r.bottom <= lim), n: tl.length, tap: Math.round(Math.min(...rs.map(r => r.height)))};
   }
   // WhatsApp liegt IN der klebenden Leiste: Grenze ist hier der Bildschirmrand, nicht die Leisten-Oberkante.
-  const waE = document.querySelector(".scta .wa"), waR = vis(sc) && vis(waE) ? waE.getBoundingClientRect() : null;
-  const wa = waR ? {top: Math.round(waR.top), bottom: Math.round(waR.bottom), ok: waR.top >= 0 && waR.bottom <= innerHeight} : null;
-  return JSON.stringify({vh: innerHeight, limit: lim, banner: !!c, bannerH: c ? Math.round(c.getBoundingClientRect().height) : 0, scta: vis(sc),
+  // Klebende Leiste (Owner 29.10.): im ersten Bildschirm NICHT sichtbar (scShown), WhatsApp darin erst nach ~0,9 Bildschirmhöhen Scroll sichtbar.
+  const scShown = vis(sc) && getComputedStyle(sc).visibility !== "hidden" && sc.getBoundingClientRect().top < innerHeight - 1;
+  const out = {vh: innerHeight, limit: lim, banner: !!c, bannerH: c ? Math.round(c.getBoundingClientRect().height) : 0, scta: vis(sc), scShown,
     tel: m("header a[href^=\"tel:\"]"), topbar: m(".lp-topbar"), trust, preis, seg: m(".lp-hero-form .f-obj .seg"), ort: m(".lp-hero-form input[name=ort]"),
-    submit: m(".lp-hero-form button[type=submit]"), wa, hscroll: document.documentElement.scrollWidth > innerWidth});
+    submit: m(".lp-hero-form button[type=submit]"), wa: null, hscroll: document.documentElement.scrollWidth > innerWidth};
+  if (vis(sc)) {
+    scrollTo(0, Math.round(innerHeight * 0.9)); await new Promise(r => setTimeout(r, 800));
+    const waE = document.querySelector(".scta .wa"), waR = vis(waE) && getComputedStyle(sc).visibility !== "hidden" ? waE.getBoundingClientRect() : null;
+    out.wa = waR ? {top: Math.round(waR.top), bottom: Math.round(waR.bottom), ok: waR.top >= 0 && waR.bottom <= innerHeight} : null;
+  }
+  return JSON.stringify(out);
 }'
 PWQ open about:blank
 # Alles ausserhalb von localhost abbrechen: GTM/GA4/Ads duerfen vom Test nie echte Aufrufe bekommen (Seiten laden GTM beim Start).
@@ -68,6 +74,7 @@ RC=0
 for VP in "360 732 muss banner" "390 844 muss banner" "412 915 muss banner" "390 844 muss frei" "412 915 muss frei" "360 732 warn frei" "360 640 warn banner" "1280 800 warn frei"; do
   set -- $VP
   PWQ resize "$1" "$2"
+  PWQ eval "scrollTo(0, 0)"   # sonst stellt reload die Scrollposition des Vorlaufs wieder her und die klebende Leiste wäre schon eingeblendet
   PWQ eval "localStorage.clear()"
   if [ "$4" = frei ]; then PWQ eval "localStorage.setItem('consent_v2', JSON.stringify({c:'deny',v:2,t:Date.now()}))"; fi
   PWQ reload
@@ -92,6 +99,7 @@ for VP in "360 732 muss banner" "390 844 muss banner" "412 915 muss banner" "390
     const bad = [], hint = [];
     if (r.hscroll) bad.push("horizontaler Scroll");
     if (r.preis && r.preis.tap < 44) bad.push("Kachel-Tippziel " + r.preis.tap + " px < 44");
+    if (r.scShown) bad.push("klebende Leiste (.scta) schon im ersten Bildschirm sichtbar (soll erst nach ca. 0,6 Bildschirmhöhen Scroll kommen)");
     if (pass === "banner") {
       if (!r.tel || !r.tel.ok) bad.push("Anruf nicht sichtbar");
       if (!r.topbar || !r.topbar.ok) bad.push("Vertrauensleiste verdeckt/fehlt");
@@ -102,7 +110,7 @@ for VP in "360 732 muss banner" "390 844 muss banner" "412 915 muss banner" "390
       if (!r.ort || !r.ort.ok) bad.push("PLZ-Feld verdeckt");
     } else {
       if (!r.submit || !r.submit.ok) bad.push("Absende-Knopf nicht im ersten Bildschirm (bis " + (r.submit ? r.submit.bottom : "-") + ", Grenze " + r.limit + ")");
-      if (parseInt(process.argv[4], 10) < 600 && (!r.wa || !r.wa.ok) && process.env.FIT_WA_PFLICHT !== "0") bad.push("WhatsApp (klebende Leiste) nicht sichtbar");
+      if (parseInt(process.argv[4], 10) < 600 && (!r.wa || !r.wa.ok) && process.env.FIT_WA_PFLICHT !== "0") bad.push("WhatsApp (klebende Leiste) nach Scroll nicht sichtbar");
     }
     if (hint.length) console.error("HINWEIS: " + id + ": " + hint.join(", "));
     if (bad.length) { console.error((muss ? "FIT ROT: " : "WARNUNG: ") + id + ": " + bad.join(", ")); process.exit(muss ? 1 : 0); }
