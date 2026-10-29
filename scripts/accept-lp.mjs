@@ -39,7 +39,7 @@ const lpJson = JSON.parse(fs.readFileSync('data/copy/lp.json', 'utf8'));
 const entryOf = rel => (lpJson.lps || []).find(x => x.slug === rel.split('/')[1]) || {};
 const posOf = rel => entryOf(rel).form_pos || 'hero';
 
-// Optionen: reviews/ba wie bisher · mitAktion = Ziel-URL des Angebots-Assets (bis 30.11.) · ohneAktion = Nachlass (A7)
+// Optionen: reviews/ba wie bisher · mitAktion = Ziel-URL des Angebots-Assets (bis 30.11.) · ohneAktion = Nachlass (A7) und Haus (Todesfall-Bewertung im Bewertungsblock, Launch-Gate S6 29.10.)
 // · keinAbPreis = [S2] JE_LP: Nachlass ohne „ab …€“ im Hero (Bereich bis Ende der lp-hero-Section) und ohne Preis-Anker (data-via="preis");
 //   der Abschnitt #preise darf die sachliche Preis-Orientierung tragen (Owner Maurice 20.10.). Haus/Keller/Wohnung/Entrümpelung zeigen ihren Ab-Preis selbst
 // · ortSwap = ort_swap Pflicht (data-ort im Hero)
@@ -51,9 +51,10 @@ const LPS = [
   ['lp/gewerbe-entruempelung/index.html', 'LP gewerbe', { reviews: true, gewerbe: true }],
   ['lp/nachlass-aufloesung/index.html', 'LP nachlass', { reviews: true, ohneAktion: true, keinAbPreis: true, ortSwap: true, nachlassFaq: true }],
   ['lp/wohnungsaufloesung/index.html', 'LP wohnung', { reviews: true }],
-  ['lp/haus-entruempeln/index.html', 'LP haus', { reviews: true, ortSwap: true }],
+  ['lp/haus-entruempeln/index.html', 'LP haus', { reviews: true, ortSwap: true, ohneAktion: true }],
   ['lp/keller-dachboden-garage/index.html', 'LP keller', { reviews: true }],
   ['lp/entruempelung-havelland/index.html', 'LP entruempelung', { reviews: true, ortSwap: true }],
+  ['lp/entruempelung-kosten-havelland/index.html', 'LP entruempelung-kosten', { reviews: true, ortSwap: true, kosten: true }],
   ['lp/danke/index.html', 'LP danke', { danke: true }],
 ];
 // Bewertungszahl der Trust-Zeile kommt aus data/proof.json (nie hart codiert, Prinzip 6): die Seite muss genau diese Zahl zeigen.
@@ -66,7 +67,7 @@ check('lp.json', `Slug-Menge gleich (lp.json: ${lpSlugs.join(', ')})`, JSON.stri
 check('lp.json', 'keine doppelten Slugs in lp.json', new Set(lpSlugs).size === lpSlugs.length);
 // Aktion nur bis aktion.bis (Generator rendert danach nichts mehr): nach Ablauf erwartet die Abnahme KEINE Karte (keine Zeitbombe am 01.12.)
 const aktAktiv = !!(lpJson.aktion && lpJson.aktion.bis) && Date.now() <= new Date(lpJson.aktion.bis + 'T23:59:59+01:00').getTime();
-const PFLICHT_HIDDEN = ['quelle', 'lp', 'gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'landing_url', 'ads_consent', 'access_key', 'subject', 'from_name', 'redirect', 'botcheck'];
+const PFLICHT_HIDDEN = ['quelle', 'lp', 'tel', 'email', 'kontaktweg', 'gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'landing_url', 'ads_consent', 'access_key', 'subject', 'from_name', 'redirect', 'botcheck'];
 const EREIGNISSE = ['form_start', 'form_step', 'form_error', 'form_quickstart', 'generate_lead', 'start_via'];
 
 for (const [rel, label, o] of LPS) page(rel, label, h => {
@@ -179,7 +180,7 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     check(id, 'Formular-Skript gefunden', formJs.length > 500);
     // Fokus nur nach Nutzeraktion (Enter-Weiter, erstes Fehlerfeld nach Absenden); jedes weitere .focus( bleibt rot
     check(id, 'Fokus nur nach Nutzeraktion (genau Enter-Weiter + erstes Fehlerfeld, Objekt ohne Scroll)', focusOk(formJs));
-    check(id, 'Pflichtfelder: Leerzeichen zählen nicht, Telefon braucht mindestens 6 Ziffern', has(formJs, "/^(text|tel|email)$/.test(e.type)&&!e.value.trim())ok=false;") && has(formJs, "e.value.replace(/\\D/g,'').length<6"));
+    check(id, 'Pflichtfelder: Leerzeichen zählen nicht; Kontaktfeld: mit @ gültige E-Mail, sonst Telefon mit mindestens 6 Ziffern', has(formJs, "/^(text|tel|email)$/.test(e.type)&&!e.value.trim())ok=false;") && has(formJs, "n==='kontakt'") && has(formJs, "v.replace(/\\D/g,'').length>=6") && has(formJs, "v.indexOf('@')>-1?/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(v)"));
     check(id, 'Zurück aus der Danke-Seite leert das Formular (kein Doppel-Lead)', has(formJs, 'if(f.__sent){f.__sent=false;f.reset();') && has(formJs, 'if(j&&j.success){f.__sent=true;'));
     check(id, '§ 25 TDDDG: hg_attrib ohne Einwilligung nicht lesen, sondern löschen; bei Ablehnen/Cookie-Einstellungen löschen', has(h, 'var ok0=allowed();if(!ok0){try{localStorage.removeItem(S)}catch(e){}}var cur=(ok0&&load())||{};') && has(h, "#consent [data-c=deny],#consent-reset')){try{localStorage.removeItem(S)}"));
     // Selbsttest: ein zusätzliches .focus( (z. B. Auto-Fokus beim Laden) muss den Fokus-Check rot färben (sonst prüft er nichts)
@@ -196,14 +197,43 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     check(id, 'Web3Forms-Ziel', has(h, 'action="https://api.web3forms.com/submit"'));
     check(id, 'Redirect /lp/danke/', has(h, '/lp/danke/'));
     check(id, 'GTM vorhanden', has(h, 'GTM-TR7JVXZL'));
-    check(id, 'Telefon-Logik je Kontaktweg', has(h, 'data-req-by="kontaktweg"'));
+    // Ein Feld „Telefon oder E-Mail“ (Owner 29.10.): Sichtfeld name=kontakt (Pflicht), Hidden tel/email/kontaktweg füllt das Skript; das Sichtfeld wird nicht mitgesendet (fdata)
+    check(id, 'Kontaktfeld „Telefon oder E-Mail“ (name=kontakt, Pflicht, kein type=tel/email)', /<span>Telefon oder E-Mail<\/span><input name="kontakt" type="text"[^>]*\brequired>/.test(h) && !/<input name="tel" type="tel"/.test(h));
+    check(id, 'Hidden tel/email/kontaktweg im Formular (kontaktweg-Vorgabe „Anruf“)', has(h, '<input type="hidden" name="tel" value=""><input type="hidden" name="email" value=""><input type="hidden" name="kontaktweg" value="Anruf">'));
+    check(id, 'Formular-Skript: Kontaktfeld → tel/email/kontaktweg (Anruf/E-Mail), Sichtfeld nicht im POST, Fehlermeldung „Telefonnummer oder E-Mail-Adresse“', has(formJs, "f.elements['kontaktweg'].value=mail?'E-Mail':'Anruf'") && has(formJs, "d.delete('kontakt')") && has(formJs, 'Bitte geben Sie eine Telefonnummer oder E-Mail-Adresse an.'));
+    check(id, 'Kleingedrucktes: „E-Mail-Adresse oder Telefonnummer in gehashter Form“', has(h, 'E-Mail-Adresse oder Telefonnummer in gehashter Form'));
+    check(id, 'Klebende Leiste erst nach Scroll (Skript setzt scta-wait, entfernt ab ca. 0,6 Bildschirmhöhen)', has(h, "s.classList.add('scta-wait')") && has(h, 'window.innerHeight*.6'));
     check(id, '>= 3 Objekt-Chips', (h.match(/name="objekt"/g) || []).length >= 3);
     const nObj = (entryOf(rel).objekte || []).length;
     check(id, `Objekt-Leiste mit ${nObj} Spalten (seg3 nur bei 3 Objekten)`, nObj === 3 ? has(h, '<div class="seg seg3"><label><input type="radio" name="objekt"') : has(h, '<div class="seg"><label><input type="radio" name="objekt"'));
     // --- Zweitwege (M3): Hero-Variante Buttons, Variante A Textlinks
     if (pos === 'hero') check(id, 'Zweitwege Anruf + WhatsApp (lp-alt)', /<p class="lp-alt">[\s\S]*?href="tel:[\s\S]*?href="https:\/\/wa\.me\//.test(h));
     // --- Wording (S-urteil 12, lp.json _meta)
-    check(id, 'kein „Festpreis anfragen“ (nur „Festpreis für Räumung und Abtransport“)', !has(h, 'Festpreis anfragen'));
+    // Wording (Umbau 11/2026, Owner): „Festpreis anfragen“ gilt NUR als Button-Text des Preis-CTA direkt unter den Kacheln (#preise); jeder Fließtext trägt „Festpreis für Räumung und Abtransport“.
+    const FPA = '<a class="btn btn-acc" href="#anfrage">Festpreis anfragen</a>';
+    const hatKacheln = ankerItems.length > 0;
+    check(id, '„Festpreis anfragen“ nur als Preis-CTA-Button (kein Fließtext)', (h.match(/Festpreis anfragen/g) || []).length === (hatKacheln ? 1 : 0) && (!hatKacheln || has(h, FPA)));
+    if (hatKacheln) {
+      const pS2 = h.indexOf('id="preise"'), preiseH2 = pS2 > -1 ? h.slice(pS2, h.indexOf('</section>', pS2)) : '';
+      const iT = preiseH2.indexOf('class="lp-tiles'), iN = preiseH2.indexOf('class="lp-preise-n"'), iC = preiseH2.indexOf(FPA);
+      const iP = preiseH2.indexOf('<p>', iC);
+      check(id, 'Preis-CTA: Fußnote (lp-preise-n) bleibt direkt unter den Kacheln, CTA folgt darauf und steht vor dem Langtext', iT > -1 && iN > iT && iC > iN && iP > iC && !/<p>/.test(preiseH2.slice(iN, iC)));
+      check(id, 'Preis-CTA: Erklärtext direkt darunter mit „Festpreis für Räumung und Abtransport“', has(preiseH2, FPA + '</div><p class="hint lp-preis-cta-h">Festpreis für Räumung und Abtransport, schriftlich nach der kostenlosen Besichtigung.</p>'));
+      check(id, 'Preis-CTA führt auf das Formular (#anfrage) wie der Haupt-CTA', preiseH2.includes('href="#anfrage">Festpreis anfragen'));
+    }
+    // --- Fester Ortssatz (Umbau 11/2026): direkt unter der H1, zusätzlich zur dynamischen Ortsersetzung; Duplikat-Klasse nur, wenn der Lead denselben Wortlaut trägt
+    const ORT_S = 'Im Havelland, in Berlin-Spandau und Potsdam';
+    check(id, 'Ortssatz direkt unter der H1 (statisch, „im Havelland, in Berlin-Spandau und Potsdam“)', new RegExp('</h1><p class="lp-ort[ "][^>]*>' + ORT_S + '</p><p class="lead">').test(h));
+    check(id, 'Ortssatz ohne data-ort (statisch, keine neue JS-Tauschlogik)', !/class="lp-ort[^"]*"[^>]*data-ort/.test(h) && !/lp-ort[^<]*<span data-ort/.test(h));
+    check(id, 'lp-ort-dup nur, wenn der Lead den Ortssatz selbst nennt', has(h, 'class="lp-ort lp-ort-dup"') === String(entryOf(rel).lead || '').includes('im Havelland, in Berlin-Spandau und Potsdam'));
+    if (o.kosten) {
+      check(id, 'Kosten-LP: H1 „Was kostet eine Entrümpelung im Havelland?“ (Ortsteil per data-ort)', /<h1>Was kostet eine <em>Entrümpelung<\/em> <span data-ort="in">im Havelland<\/span>\?<\/h1>/.test(h));
+      const fS = h.indexOf('id="preisfaktoren"'), fH = fS > -1 ? h.slice(fS, h.indexOf('</section>', fS)) : '';
+      check(id, 'Kosten-LP: Abschnitt #preisfaktoren direkt nach dem Hero mit 4 Faktoren', fH.length > 200 && (fH.match(/class="v rv/g) || []).length === 4 && h.indexOf('</section>', h.indexOf('<section class="phero lp-hero')) < fS && !/<section/.test(h.slice(h.indexOf('</section>', h.indexOf('<section class="phero lp-hero')) + 10, h.lastIndexOf('<section', fS)).replace(/<script[\s\S]*?<\/script>/g, '')));
+      check(id, 'Kosten-LP: Preisfaktoren nennen Menge, Zugang, Entsorgung nach Beleg ohne eigenen Aufschlag, Wertanrechnung', /Menge/.test(fH) && /Zugang/.test(fH) && /ohne eigenen Aufschlag/.test(fH) && /Wertanrechnung/.test(fH));
+      check(id, 'Kosten-LP: keine Beträge/Beispielrechnung im Faktoren-Abschnitt (kein €/Euro/Ziffernpreis)', fH.length > 200 && !PREIS_RE.test(textOf(fH)));
+      check(id, 'Kosten-LP: noindex', /name="robots" content="noindex/.test(h));
+    }
     check(id, 'Hinweis „Besichtigung und Angebot kostenlos“', has(h, 'Besichtigung und Angebot kostenlos'));
     check(id, 'Telefon-Hinweis „Keine Werbeanrufe“', has(h, 'Keine Werbeanrufe'));
     check(id, 'Kurz-Chips ohne aria-hidden', !has(h, 'class="qs" aria-hidden'));
@@ -221,11 +251,19 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
       check(id, '[S2] kein Preis-Anker (data-via="preis") und keine Hero-Preiszeile', !has(h, 'data-via="preis"') && !has(h, 'class="lp-hero-preis"'));
     }
     if (o.ortSwap) check(id, 'ort_swap gesetzt (data-ort im Hero)', has(h, 'data-ort="'));
+    // --- Fußzeile (Umbau 11/2026): Rechtsform + Gesellschafter im Wortlaut des Impressums (website/impressum)
+    const imp = read('impressum/index.html') || '';
+    const impName = (imp.match(/<p>(Haus- &amp; Gartenservice Havelland GbR)<br>/) || [])[1];
+    const impGes = (imp.match(/<p>(Vertreten durch die Gesellschafter: [^<]+\.)<\/p>/) || [])[1];
+    const foot = (h.match(/<footer class="lp-foot">[\s\S]*?<\/footer>/) || [''])[0];
+    check(id, 'Fußzeile: Rechtsform wie Impressum („Haus- & Gartenservice Havelland GbR“)', !!impName && has(foot, `<p class="fnap">${impName}</p>`));
+    check(id, 'Fußzeile: „Vertreten durch die Gesellschafter: …“ wortgleich zum Impressum', !!impGes && has(foot, `<p>${impGes}</p>`));
     // --- Nachlass-Lead auf dem Handy (Attribut an der Hero-Section prüfen, nicht das CSS-Selektor-Vorkommen im <head>)
     check(id, 'data-lead-mobil gleich lead_mobil in lp.json', (entryOf(rel).lead_mobil === true) === /<section class="phero lp-hero[^"]*"[^>]*data-lead-mobil/.test(h));
   } else {
     // Danke-Seite: der Lead mit der Rückruf-Nummer darf nie ausgeblendet werden (P2 H1)
-    check(id, 'Rückruf-Nummer im Lead vorhanden', has(h, 'Der Rückruf kommt von'));
+    check(id, 'Anruf-Nummer im Lead vorhanden', has(h, 'Anrufe kommen von'));
+    check(id, 'Lead verspricht Anruf, WhatsApp oder E-Mail (Kontaktfeld „Telefon oder E-Mail“), keine Platzhalter-Reste', has(h, 'per Anruf, WhatsApp oder E-Mail') && !has(h, '{tel}') && has(h, 'Anrufe kommen von 01515 6198195'));
     const versteckt = [...h.matchAll(/([^{}]*)\.lead\{display:none\}/g)].filter(m => !/lp-hero-form/.test(m[1]));
     check(id, 'keine unbeschränkte Regel .lead{display:none}', versteckt.length === 0);
   }

@@ -17,10 +17,14 @@
 
 import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
 import { topbar, trustZeile, preisBlock, zitat, aktionKarte, punkte, bewertungen, BLOECKE_CSS, ICON_ARROW } from './lp-bloecke.mjs';
+import { VARIANTE, VARIANT_CSS } from './lp-varianten.mjs'; // LP_VARIANTE=a|b: ruhigere Varianten des ersten Bildschirms (ohne Variable: Ist-Stand)
 
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
 
 // Servicegebiet laut Report Kap. 3.4 / GBP-Servicegebiet (A0 #8), Rathenow + Premnitz seit Maßnahme M8 (Quelle data/locations.json)
+// Umbau 11/2026 (Prüfung 29.10.: 63 % der Klicker sitzen in Berlin/Potsdam): fester Ortssatz unter der H1, zusätzlich zur dynamischen Ortsersetzung (data-ort/ORT_JS bleibt unverändert, keine JS-Logik).
+const ORT_SATZ = 'Im Havelland, in Berlin-Spandau und Potsdam';
+const ORT_PHRASE = 'im Havelland, in Berlin-Spandau und Potsdam';
 const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Rathenow', 'Premnitz', 'Berlin-Spandau', 'Potsdam'];
 export const ATTR_KEYS = ['gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']; // auch /kontakt/ (generate.mjs basis())
 // Kursiv-Schnitt (H1-Akzent wght 500; .gs .gn/.tli .tn/.ba-cap b wght 600): statt der variablen fraunces-italic-latin.woff2 (81 KB, gvar) zwei statische
@@ -32,6 +36,39 @@ const ITALIC_500 = '/assets/fonts/fraunces-italic-500-lp.woff2';
 const ITALIC_600 = '/assets/fonts/fraunces-italic-600-lp.woff2';
 const FONT_PRELOAD = `<link rel="preload" href="${ITALIC_500}" as="font" type="font/woff2" crossorigin>`;
 const FONT_FACE = `@font-face{font-family:"Fraunces LP";font-style:italic;font-weight:500;font-display:swap;src:url(${ITALIC_500}) format("woff2")}@font-face{font-family:"Fraunces LP";font-style:italic;font-weight:600;font-display:swap;src:url(${ITALIC_600}) format("woff2")}\n.lp-hero h1 em,.gs .gn,.tli .tn,.ba-cap b{font-family:"Fraunces LP","Fraunces",Georgia,serif}`;
+
+// Umbau 11/2026 (Prüfung 29.10., B6: 84 % der Klicks mobil, Haupt-Button lag auf 390x844 hinter dem Cookie-Banner [Oberkante y 688]):
+// Der Banner bleibt unangetastet (Text/Verhalten rechtlich geprüft). Der erste Bildschirm wird dichter gesetzt, damit der Absende-Knopf des Hero-Formulars
+// über der Banner-Oberkante endet, obwohl der feste Ortssatz (.lp-ort) dazukommt: engere Kopf-/Hero-/Formular-Abstände, Name und Telefon nebeneinander
+// (Telefon-Platzhalter entfällt dort, das Label „Telefon“ bleibt). Die Preis-Fußnote (.lp-preise-n) behält Text, Größe und Platz direkt unter den Kacheln.
+// Steht NACH BLOECKE_CSS, weil dessen @media(max-width:599px) dieselben Selektoren setzt (gleiche Spezifität, spätere Regel gewinnt).
+const FIT_CSS = `/* ---- Umbau 11/2026: Ortssatz, Hero-Fit, Preis-CTA ---- */
+.lp-ort{margin:6px 0 0;font-size:15px;line-height:1.35;font-weight:600;color:var(--green-d)}
+.lp-preis-cta{margin-top:16px}
+.lp-preis-cta+.lp-preis-cta-h{margin:8px 0 0;font-size:14px;line-height:1.4;color:var(--muted)}
+.lp-preis-cta+.lp-preis-cta-h+.lp-aktion{margin-top:16px}
+@media(min-width:900px){.lp-ort-dup{display:none}}
+@media(max-width:599px){
+.lp-ort{margin:2px 0 0;font-size:clamp(12px,3.4vw,13.5px);line-height:1.3;font-weight:600}
+.lp-ort+.lead{margin-top:4px}
+.lp-topbar .wrap{min-height:28px}
+.lp-head .nav{min-height:50px}
+.lp-head .logo img{height:38px}
+.lp-head .callpill{padding:8px 14px}
+.lp-hero:has(.lp-hero-form){padding-top:8px}
+.lp-hero .lp-preise{margin-top:8px}
+.lp-hero .lp-preise-l{margin-bottom:4px}
+.lp-hero .lp-tile{padding:6px 10px}
+.lp-hero .lp-preise-n{margin-top:4px}
+.lp-hero-form{margin-top:8px}
+.lp-form{padding:10px;gap:6px}
+.lp-form legend{margin-bottom:4px}
+.lp-form .frow{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.lp-form .frow .fld:first-child{grid-column:1/-1}
+.lp-form .fld input[name=kontakt]::placeholder{color:transparent}
+.lp-form .more summary{min-height:40px}
+.lp-form .ffoot{gap:4px}
+}`;
 
 // LP-eigenes CSS (mobile-first). Nutzt die Tokens/Klassen aus site.css (.btn, .kf, .faq, .scta, .consent, footer, .zone-deep).
 const LP_CSS = `<style>
@@ -167,6 +204,7 @@ body:has(.consent:not([hidden])) .lp-foot{padding-bottom:210px}
 .lp-hero-form .lp-form{max-width:44em}
 }
 ${BLOECKE_CSS}
+${FIT_CSS}${VARIANT_CSS ? '\n' + VARIANT_CSS : ''}
 </style>`;
 
 // Attribution beim Einstieg: Klick-IDs/UTM aus der URL in den Seiten-Speicher (window.__hg). Ins Endgerät (localStorage, 90 Tage)
@@ -187,31 +225,36 @@ function lpFormJS(slug, dankeUrl, consentKey) {
   // fokussiert/befüllt), form_error{field} (je Feld einmal), generate_lead (nach erfolgreichem Senden). Kein .focus() ohne Nutzeraktion:
   // Fokus nur beim Enter-Weiter und im Fehlerfall nach dem Absenden.
   return `<script>(function(){var f=document.getElementById('anfrage');if(!f)return;f.classList.add('js');f.noValidate=true;var started=false,sent2=false,errd={},via='',sm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';function dl(o){if(window.dataLayer){window.dataLayer.push(o)}}
-function err1(k){if(errd[k])return;errd[k]=1;dl({event:'form_error',lp:'${slug}',field:k})}
+function err1(k){if(errd[k])return;errd[k]=1;dl({event:'form_error',lp:'${slug}',field:k==='kontakt'?'tel':k})}
 function consentState(){try{var v=JSON.parse(localStorage.getItem('${consentKey}')||'null');return v&&v.c?v.c:'none'}catch(e){return 'none'}}
 var err=f.querySelector('.err'),sb=f.querySelector('button[type=submit]'),sbt=sb?sb.textContent:'',more=f.querySelector('.more');
-var MSG={objekt:'Bitte wählen Sie aus, was geräumt werden soll.',ort:'Bitte geben Sie PLZ oder Ort an.',name:'Bitte geben Sie Ihren Namen an.',tel:'Bitte geben Sie eine Telefonnummer an, damit wir Sie erreichen.',email:'Bitte geben Sie eine gültige E-Mail-Adresse an.',dsgvo:'Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.'},ORDER=['objekt','ort','name','tel','email','dsgvo'],CONTACT={name:1,tel:1,email:1,anliegen:1};
+var MSG={objekt:'Bitte wählen Sie aus, was geräumt werden soll.',ort:'Bitte geben Sie PLZ oder Ort an.',name:'Bitte geben Sie Ihren Namen an.',kontakt:'Bitte geben Sie eine Telefonnummer oder E-Mail-Adresse an.',email:'Bitte geben Sie eine gültige E-Mail-Adresse an.',dsgvo:'Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.'},ORDER=['objekt','ort','name','kontakt','dsgvo'],CONTACT={name:1,kontakt:1,anliegen:1};
 function el1(n){return f.querySelector('[name='+n+']')}
 function box(n){var e=el1(n);return e?(n==='objekt'?e.closest('.f-obj'):n==='dsgvo'?e.closest('.chk'):e.closest('.fld')):null}
 function mark(n,on){var b=box(n),e=el1(n);if(b)b.classList.toggle('bad',on);if(e){if(on)e.setAttribute('aria-invalid','true');else e.removeAttribute('aria-invalid')}}
-function req(){var w=(f.querySelector('input[name=kontaktweg]:checked')||{}).value||'Anruf';Array.prototype.forEach.call(f.querySelectorAll('[data-req-by=kontaktweg]'),function(el){var on=el.getAttribute('data-req-when').split(',').indexOf(w)>-1;el.required=on;var l=el.parentNode.querySelector('[data-lb]');if(l){l.textContent=l.getAttribute('data-lb')+(on?'':' (optional)')}})}
-Array.prototype.forEach.call(f.querySelectorAll('input[name=kontaktweg]'),function(r){r.addEventListener('change',function(){req();mark('tel',false);mark('email',false)})});req();
+function kv(){var e=f.elements['kontakt'];return e?e.value.trim():''}
+function fdata(){var d=new FormData(f);d.delete('kontakt');return d}
 function stepOk(){var r=f.querySelector('input[name=objekt]:checked'),o=f.elements['ort'];return r&&o&&o.value.trim()&&o.checkValidity()?r.value:''}
-function touched(){var n=f.elements['name'],t=f.elements['tel'],a=document.activeElement;return !!((n&&n.value.trim())||(t&&t.value.trim())||(a&&a.name&&CONTACT[a.name]))}
+function touched(){var n=f.elements['name'],t=f.elements['kontakt'],a=document.activeElement;return !!((n&&n.value.trim())||(t&&t.value.trim())||(a&&a.name&&CONTACT[a.name]))}
 function step2(){if(sent2||!touched())return;var v=stepOk();if(v){sent2=true;dl({event:'form_step',lp:'${slug}',step:2,objekt:v})}}
 f.addEventListener('focusin',function(e){if(e.target.name&&CONTACT[e.target.name])step2()});
 f.addEventListener('input',function(e){var n=e.target.name;if(n){mark(n,false);step2()}if(err&&err.classList.contains('show')&&!f.querySelector('.bad'))err.classList.remove('show');if(!started){started=true;dl({event:'form_start',lp:'${slug}',start_via:via||(n==='objekt'?'chip':'field')})}});
 document.addEventListener('click',function(e){var q=e.target.closest('[data-obj]');if(!q)return;var v=q.getAttribute('data-obj'),r=Array.prototype.filter.call(f.querySelectorAll('input[name=objekt]'),function(x){return x.value===v})[0];if(!r)return;e.preventDefault();r.checked=true;via=q.getAttribute('data-via')||'chip';r.dispatchEvent(new Event('input',{bubbles:true}));via='';dl({event:'form_quickstart',lp:'${slug}',objekt:v,start_via:q.getAttribute('data-via')||'chip'});var b=f.getBoundingClientRect();if(b.top<0||b.top>window.innerHeight*0.6){f.scrollIntoView({behavior:sm,block:'start'})}});
-var NEXT={ort:'name',name:'tel'};
+var NEXT={ort:'name',name:'kontakt'};
 f.addEventListener('keydown',function(e){if(e.key!=='Enter'||e.target.tagName!=='INPUT'||e.target.type==='checkbox'||e.target.type==='radio')return;var nx=NEXT[e.target.name];if(nx){e.preventDefault();var t=f.elements[nx];if(t)t.focus()}});
-window.addEventListener('pageshow',function(e){if(e.persisted&&sb){sb.disabled=false;sb.textContent=sbt;if(f.__sent){f.__sent=false;f.reset();req();started=false;sent2=false;errd={}}}});
-function fill(){try{var a=window.__hg||{};${JSON.stringify(ATTR_KEYS)}.forEach(function(k){var el=f.elements[k];if(el&&a[k])el.value=a[k]});var lu=f.elements['landing_url'];if(lu)lu.value=(a.landing||location.pathname)+(a.ts?' @'+new Date(a.ts).toISOString():'');var ac=f.elements['ads_consent'];if(ac)ac.value=consentState()}catch(e){}}
+window.addEventListener('pageshow',function(e){if(e.persisted&&sb){sb.disabled=false;sb.textContent=sbt;if(f.__sent){f.__sent=false;f.reset();started=false;sent2=false;errd={}}}});
+function fill(){try{var k=kv(),mail=k.indexOf('@')>-1;f.elements['tel'].value=mail?'':k;f.elements['email'].value=mail?k:'';f.elements['kontaktweg'].value=mail?'E-Mail':'Anruf'}catch(e){}try{var a=window.__hg||{};${JSON.stringify(ATTR_KEYS)}.forEach(function(k){var el=f.elements[k];if(el&&a[k])el.value=a[k]});var lu=f.elements['landing_url'];if(lu)lu.value=(a.landing||location.pathname)+(a.ts?' @'+new Date(a.ts).toISOString():'');var ac=f.elements['ads_consent'];if(ac)ac.value=consentState()}catch(e){}}
 function e164(t){t=String(t||'').replace(/\\(\\s*0\\s*\\)/,'').replace(/[^0-9+]/g,'');if(t.indexOf('00')===0)t='+'+t.slice(2);if(t.indexOf('0')===0)t='+49'+t.slice(1);if(t&&t[0]!=='+')t='+49'+t;t=t.replace(/^\\+490/,'+49');return /^\\+\\d{8,15}$/.test(t)?t:''}
-function validate(){var bad=[];ORDER.forEach(function(n){var e=el1(n);if(!e)return;var ok=e.checkValidity();if(ok&&e.required&&/^(text|tel|email)$/.test(e.type)&&!e.value.trim())ok=false;if(ok&&n==='tel'&&e.value.trim()&&e.value.replace(/\\D/g,'').length<6)ok=false;mark(n,!ok);if(!ok){bad.push(n);err1(n)}});if(!bad.length){err.classList.remove('show');return true}
-err.textContent=bad.length===1?MSG[bad[0]]:'Bitte ergänzen Sie die markierten Felder.';err.classList.add('show');var first=bad[0],e=el1(first);if(first==='objekt'){var fs=e.closest('fieldset');if(fs)fs.scrollIntoView({behavior:sm,block:'center'});e.focus({preventScroll:true})}else{if(first==='email'&&more)more.open=true;e.focus()}return false}
+function validate(){var bad=[];ORDER.forEach(function(n){var e=el1(n);if(!e)return;var ok=e.checkValidity();if(ok&&e.required&&/^(text|tel|email)$/.test(e.type)&&!e.value.trim())ok=false;if(ok&&n==='kontakt'){var v=e.value.trim();ok=v.indexOf('@')>-1?/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(v):/^[+()\\d\\s\\/.-]+$/.test(v)&&v.replace(/\\D/g,'').length>=6}mark(n,!ok);if(!ok){bad.push(n);err1(n)}});if(!bad.length){err.classList.remove('show');return true}
+err.textContent=bad.length===1?(bad[0]==='kontakt'&&kv().indexOf('@')>-1?MSG.email:MSG[bad[0]]):'Bitte ergänzen Sie die markierten Felder.';err.classList.add('show');var first=bad[0],e=el1(first);if(first==='objekt'){var fs=e.closest('fieldset');if(fs)fs.scrollIntoView({behavior:sm,block:'center'});e.focus({preventScroll:true})}else{if(first==='email'&&more)more.open=true;e.focus()}return false}
 f.addEventListener('submit',function(e){e.preventDefault();if(!validate())return;fill();var b=f.querySelector('button[type=submit]'),o=b.textContent;b.disabled=true;b.textContent='Wird gesendet…';
-fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)}).then(function(r){return r.json()}).then(function(j){if(j&&j.success){f.__sent=true;var g=function(n){var el=f.elements[n];return el?String(el.value).trim():''};var r=f.querySelector('input[name=objekt]:checked');var cs=consentState();var done=false,go=function(){if(done)return;done=true;window.location.href='${dankeUrl}#ok'};var ev={event:'generate_lead',lead_source:'ads-lp',lp:'${slug}',objekt:r?r.value:'',kontaktweg:g('kontaktweg'),ads_consent:cs,eventCallback:go,eventTimeout:1200};if(cs==='allow'){ev.user_data={email:g('email')||undefined,phone_number:e164(g('tel'))||undefined}}dl(ev);setTimeout(go,1500)}else{b.disabled=false;b.textContent=o;err1('submit');alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')}}).catch(function(){b.disabled=false;b.textContent=o;err1('submit');alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')})});})();</script>`;
+fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:fdata()}).then(function(r){return r.json()}).then(function(j){if(j&&j.success){f.__sent=true;var g=function(n){var el=f.elements[n];return el?String(el.value).trim():''};var r=f.querySelector('input[name=objekt]:checked');var cs=consentState();var done=false,go=function(){if(done)return;done=true;window.location.href='${dankeUrl}#ok'};var ev={event:'generate_lead',lead_source:'ads-lp',lp:'${slug}',objekt:r?r.value:'',kontaktweg:g('kontaktweg'),ads_consent:cs,eventCallback:go,eventTimeout:1200};if(cs==='allow'){ev.user_data={email:g('email')||undefined,phone_number:e164(g('tel'))||undefined}}dl(ev);setTimeout(go,1500)}else{b.disabled=false;b.textContent=o;err1('submit');alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')}}).catch(function(){b.disabled=false;b.textContent=o;err1('submit');alert('Es gab ein Problem beim Senden. Bitte rufen Sie uns kurz an oder schreiben Sie per WhatsApp.')})});})();</script>`;
 }
+
+// Klebende Kontaktleiste (.scta) erst einblenden, wenn ca. 0,6 Bildschirmhöhen gescrollt wurden (Owner 29.10.: nicht im ersten Bildschirm).
+// Nur auf den LPs (nicht auf /lp/danke/). .scta-wait + Transition (transform/visibility, .25 s; reduced-motion: keine Transition) stehen in site.css; die Leiste ist
+// position:fixed, es gibt also keinen Layout-Sprung (CLS 0). Einmal sichtbar bleibt sie sichtbar (kein Flackern). Ohne JS bleibt sie sichtbar (Klasse setzt erst das Skript).
+const SCTA_WAIT_JS = `<script>(function(){var s=document.querySelector('.scta');if(!s)return;function t(){return Math.round(window.innerHeight*.6)}function on(){if((window.pageYOffset||document.documentElement.scrollTop||0)>=t()){s.classList.remove('scta-wait');window.removeEventListener('scroll',on)}}s.classList.add('scta-wait');window.addEventListener('scroll',on,{passive:true});on()})();</script>`;
 
 // Danke: lead_confirmed nur, wenn die Seite über den Formular-Redirect (#ok) erreicht wurde; Fragment wird sofort entfernt (Reload zählt nicht).
 const DANKE_JS = `<script>(function(){try{if(location.hash==='#ok'){history.replaceState(null,'',location.pathname);if(window.dataLayer){window.dataLayer.push({event:'lead_confirmed'})}}}catch(e){}})();</script>`;
@@ -265,7 +308,9 @@ export function buildLp(d) {
   // Sticky-Bar mit sichtbarer Nummer (Anruf-Conversion: Google ersetzt den sichtbaren Nummerntext) und gedämpftem WhatsApp (ein Gold je Viewport)
   const lpScta = waText => `<nav class="scta" aria-label="Schnellkontakt"><a class="call" href="tel:${tel}">☎ ${telDisp}</a><a class="wa" href="${waHref(waText)}">WhatsApp</a></nav>`;
 
-  const lpFooter = `<footer class="lp-foot"><div class="wrap"><p class="fnap">${esc(nap.name)}</p><p>${esc(nap.street || '')}, ${esc(nap.zip || '')} ${esc(nap.city)} · <a href="tel:${tel}">${telDisp}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a></p><p>Servicegebiet: ${GEBIET.map(esc).join(' · ')}</p><div class="legal"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><button type="button" class="linklike" id="consent-reset">Cookie-Einstellungen</button><a href="/">Zur Website</a></div></div></footer>`;
+  // Fußzeile (Umbau 11/2026): Rechtsform + Gesellschafter im Wortlaut des Impressums (generate.mjs impressumBody: „Haus- & Gartenservice Havelland GbR“ / „Vertreten durch die Gesellschafter: …“), beides aus data/nap.json.
+  const gesellschafter = esc((nap.gesellschafter_impressum || nap.gesellschafter || [nap.inhaber]).join(' und '));
+  const lpFooter = `<footer class="lp-foot"><div class="wrap"><p class="fnap">${esc(nap.name)} ${esc(nap.rechtsform || 'GbR')}</p><p>Vertreten durch die Gesellschafter: ${gesellschafter}.</p><p>${esc(nap.street || '')}, ${esc(nap.zip || '')} ${esc(nap.city)} · <a href="tel:${tel}">${telDisp}</a> · <a href="mailto:${esc(nap.email)}">${esc(nap.email)}</a></p><p>Servicegebiet: ${GEBIET.map(esc).join(' · ')}</p><div class="legal"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><button type="button" class="linklike" id="consent-reset">Cookie-Einstellungen</button><a href="/">Zur Website</a></div></div></footer>`;
 
   // Vorher/Nachher-Slider aus components.mjs (WebP-768: baSlider setzt <img src>, kein <picture>; WebP statt JPG spart ~120 KB je Paar — Perf-Messung 14.09.; Hochformat 864/1036 = .ba-Aspect).
   // Der Alt-Suffix der Komponente ist heckenspezifisch („nach dem Schnitt") → für Räumungen ersetzt.
@@ -316,7 +361,7 @@ export function buildLp(d) {
     const attrib = ['quelle', 'lp', ...ATTR_KEYS, 'landing_url', 'ads_consent']
       .map(n => `<input type="hidden" name="${n}" value="${n === 'quelle' ? 'ads-lp' : n === 'lp' ? escA(lp.slug) : ''}">`).join('');
     // Ein Schritt (v2): Objekt als Segment-Leiste (Kurzlabel auf dem Handy, voller Wortlaut ab 760 px), PLZ/Name/Telefon mit Label im Feld,
-    // Kontaktweg (Default „Anruf“), E-Mail und Freitext hinter „Weitere Angaben“. Radio-Inputs bleiben echte Inputs (unsichtbar über dem Segment).
+    // Kontaktweg fest „Anruf“ (versteckt). „Weitere Angaben“ (E-Mail, Freitext, Kontaktweg-Wahl) auf Owner-Wunsch 29.10.2026 entfernt. Radio-Inputs bleiben echte Inputs (unsichtbar über dem Segment).
     if (![3, 4].includes((lp.objekte || []).length)) throw new Error(`lp ${lp.slug}: objekte braucht 3 oder 4 Einträge (Segment-Leiste)`);
     const chips = (lp.objekte || []).map((o, i) => `<label><input type="radio" name="objekt" value="${escA(o)}"${i === 0 ? ' required' : ''}>${objLabel(o, lp)}</label>`).join('');
     const alt = pos === 'hero'
@@ -326,17 +371,14 @@ export function buildLp(d) {
 <fieldset class="f-obj"><legend>${esc(lp.form_legend || 'Was soll geräumt werden – und wo?')}</legend><div class="seg${(lp.objekte || []).length === 3 ? ' seg3' : ''}">${chips}</div></fieldset>
 <div class="frow"><label class="fld"><span>PLZ oder Ort</span><input name="ort" autocomplete="postal-code" enterkeyhint="next" placeholder="z. B. 14612 Falkensee" required></label>
 <label class="fld"><span>Name</span><input name="name" autocomplete="name" enterkeyhint="next" required></label>
-<label class="fld"><span data-lb="Telefon">Telefon</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="Für Rückruf und Besichtigung" data-req-by="kontaktweg" data-req-when="Anruf,WhatsApp" required></label></div>
-<details class="more"><summary>Weitere Angaben <small>(optional)</small></summary><div class="more-body">
-<fieldset class="f-weg"><legend>Am liebsten per</legend><div class="seg seg3"><label><input type="radio" name="kontaktweg" value="Anruf" checked>Rückruf</label><label><input type="radio" name="kontaktweg" value="WhatsApp">WhatsApp</label><label><input type="radio" name="kontaktweg" value="E-Mail">E-Mail</label></div></fieldset>
-<label class="fld"><span data-lb="E-Mail">E-Mail (optional)</span><input name="email" type="email" autocomplete="email" placeholder="für das schriftliche Angebot" data-req-by="kontaktweg" data-req-when="E-Mail"></label>
-<label class="fld"><span>Was steht an? (optional)</span><textarea name="anliegen" rows="2" placeholder="z. B. 3 Zimmer, 2. OG ohne Aufzug, bis Ende November"></textarea></label></div></details>
+<label class="fld"><span>Telefon oder E-Mail</span><input name="kontakt" type="text" autocomplete="tel" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="für Rückruf oder Angebot" required></label></div>
+<input type="hidden" name="tel" value=""><input type="hidden" name="email" value=""><input type="hidden" name="kontaktweg" value="Anruf">
 <p class="err" role="alert"></p>
 <div class="ffoot"><label class="chk"><input type="checkbox" name="dsgvo" required><span>Ich stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme und für das Angebot zu (<a href="/datenschutz/">Datenschutz</a>).</span></label>
 <button class="btn btn-acc" type="submit">${esc(lp.cta_form || 'Kostenlos anfragen')}</button></div>
 <p class="fine1">Besichtigung und Angebot kostenlos · Antwort noch am selben Werktag</p>
 ${alt}
-<p class="fine">Ihre Einwilligung können Sie jederzeit widerrufen. Keine Werbeanrufe. Ihre Angaben gehen über den Formulardienst Web3Forms an unser Postfach. Nur wenn Sie im Cookie-Banner zugestimmt haben, übermitteln wir E-Mail und Telefonnummer in gehashter Form an Google, um den Erfolg unserer Anzeigen zu messen – Details in der Datenschutzerklärung.</p>
+<p class="fine">Ihre Einwilligung können Sie jederzeit widerrufen. Keine Werbeanrufe. Ihre Angaben gehen über den Formulardienst Web3Forms an unser Postfach. Nur wenn Sie im Cookie-Banner zugestimmt haben, übermitteln wir Ihre E-Mail-Adresse oder Telefonnummer in gehashter Form an Google, um den Erfolg unserer Anzeigen zu messen – Details in der Datenschutzerklärung.</p>
 </form>`;
   };
 
@@ -347,9 +389,14 @@ ${alt}
     for (const x of ((lp.preis && lp.preis.anker && lp.preis.anker.items) || []).map(normItem)) if (x.obj && !(lp.objekte || []).includes(x.obj)) throw new Error(`lp ${lp.slug}: preis.anker obj "${x.obj}" steht nicht in objekte`);
     if (lp.lead_mobil && String(lp.lead || '').length > 90) throw new Error(`lp ${lp.slug}: lead_mobil verlangt lead <= 90 Zeichen`);
     const url = `/lp/${lp.slug}/`;
-    const h1 = lp.h1_em && lp.h1.includes(lp.h1_em)
-      ? esc(lp.h1).replace(esc(lp.h1_em), `<em>${esc(lp.h1_em)}</em>`)
-      : esc(lp.h1);
+    // Variante B: steht der kursive Zusatz am Ende der H1 (nach einem ersten Satz), wird er samt Schlusspunkt zur leisen Unterzeile (em.tail, CSS in lp-varianten.mjs).
+    const emAt = lp.h1_em ? lp.h1.indexOf(lp.h1_em) : -1;
+    const h1Tail = VARIANTE === 'b' && emAt > 0 && ['', '.'].includes(lp.h1.slice(emAt + lp.h1_em.length));
+    const h1 = h1Tail
+      ? `${esc(lp.h1.slice(0, emAt))}<em class="tail">${esc(lp.h1.slice(emAt))}</em>`
+      : lp.h1_em && lp.h1.includes(lp.h1_em)
+        ? esc(lp.h1).replace(esc(lp.h1_em), `<em>${esc(lp.h1_em)}</em>`)
+        : esc(lp.h1);
     const wa = waHref(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.');
     const H = heroOf(lp);
     const os = lp.ort_swap || {};
@@ -368,22 +415,28 @@ ${alt}
     const heroCta = pos === 'nach-preis' ? `<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>` : '';
     const person = lp.kontaktperson && lp.kontaktperson.zeigen && lp.kontaktperson.slug && pic(lp.kontaktperson.slug)
       ? `<p class="lp-person">${pic(lp.kontaktperson.slug, { cls: 'av', alt: altQ(lp.kontaktperson.alt || ''), sizes: '56px' })}<span>${esc(lp.kontaktperson.zeile)}</span></p>` : '';
+    // Umbau 11/2026 (Prüfung B3: Preis-Sitelink landet auf #preise, Formular 4.200 px darüber): CTA direkt unter den Kacheln samt Fußnote, vor dem langen Text.
+    // Der Button heißt „Festpreis anfragen“ (Owner-Vorgabe); der Erklärtext darunter trägt den vollen Wortlaut „Festpreis für Räumung und Abtransport“. Nur mit Kacheln (preis.anker).
+    const preisCta = preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })
+      ? `<div class="cta-row lp-cta lp-preis-cta"><a class="btn btn-acc" href="#anfrage">Festpreis anfragen</a></div><p class="hint lp-preis-cta-h">Festpreis für Räumung und Abtransport, schriftlich nach der kostenlosen Besichtigung.</p>` : '';
     const preisVerweis = lp.preis && lp.preis.verweis ? `<p class="lp-preisverweis"><a href="/lp/${escA(lp.preis.verweis.slug)}/#preise">${esc(lp.preis.verweis.t || 'Preise ansehen')}</a></p>` : '';
     const kontaktSec = pos === 'nach-preis' ? `<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>${esc(lp.kontakt_h2 || 'Kostenlose Besichtigung anfragen')}</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Ein Schritt, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp, 'nach-preis', wa)}</div></section>` : '';
     // was_wir_tun {h, p, items:[{h,p}]} (optional, z. B. Allgemein-LP): Abschnitt direkt nach dem Hero. Gleiche Komponenten wie die Startseite (.sec/.head, .sec-lead, .vals/.v mit kursiver Nummer .vn),
     // Reveal-Klassen über rvIn(). Kein eigenes CSS.
-    const wwtd = lp.was_wir_tun;
-    const wwt = wwtd && Array.isArray(wwtd.items) && wwtd.items.length
-      ? `<section class="sec" id="was-wir-tun"><div class="wrap"><div class="head"><h2>${esc(wwtd.h || 'Was wir tun')}</h2></div>${wwtd.p ? `<p class="sec-lead">${esc(wwtd.p)}</p>` : ''}${rvIn(`<div class="vals">${wwtd.items.map((x, i) => `<div class="v rv${i ? ` d${i}` : ''}"><h3><span class="vn">${String(i + 1).padStart(2, '0')}</span>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div>`)}</div></section>` : '';
+    const valsSec = (id, d, hDefault) => d && Array.isArray(d.items) && d.items.length
+      ? `<section class="sec" id="${id}"><div class="wrap"><div class="head"><h2>${esc(d.h || hDefault)}</h2></div>${d.p ? `<p class="sec-lead">${esc(d.p)}</p>` : ''}${rvIn(`<div class="vals">${d.items.map((x, i) => `<div class="v rv${i ? ` d${i}` : ''}"><h3><span class="vn">${String(i + 1).padStart(2, '0')}</span>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div>`)}</div></section>` : '';
+    const wwt = valsSec('was-wir-tun', lp.was_wir_tun, 'Was wir tun');
+    // preis_faktoren {h, p, items:[{h,p}]} (Kosten-LP, Umbau 11/2026): Einflussfaktoren auf den Preis, direkt nach dem Hero, nur Aussagen aus den bestehenden LPs, keine Beträge.
+    const pfk = valsSec('preisfaktoren', lp.preis_faktoren, 'Was den Preis bestimmt');
     const main = `<main id="top">
-<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lead">${esc(lp.lead)}</p>
+<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}${h1Tail ? ' data-h1-tail' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lp-ort${String(lp.lead || '').includes(ORT_PHRASE) ? ' lp-ort-dup' : ''}">${esc(ORT_SATZ)}</p><p class="lead">${esc(lp.lead)}</p>
 ${heroPreis}${heroForm || quick}${heroForm && revOn ? zitat(zitatOf(lp), esc) : ''}${aktLp}${heroCta}
 ${punkte(lp.trust, esc)}${person}</div>${H.shot}</div></section>${ortJs}
-${wwt}
+${wwt}${pfk}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
-<section class="sec section-alt"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
+<section class="sec section-alt"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${lp.ablauf_lead ? `<p class="sec-lead">${esc(lp.ablauf_lead)}</p>` : ''}${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
-<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })}${aktLp}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
+<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })}${preisCta}${aktLp}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
 ${!revOn ? '' : bewertungen({ items: revOf(lp), gr: grLive ? gr : null, h2: lp.testimonials_h2 || 'Was Kunden über uns sagen', em: lp.testimonials_h2_em || 'sagen' }, esc)}
 ${kontaktSec}
 <section class="sec section-alt" id="fragen"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
@@ -391,7 +444,7 @@ ${kontaktSec}
 </main>`;
     const baJs = /class="ba[ "]/.test(main) ? LP_BA_JS : '';
     const html = head(lp.title, lp.meta, url, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS + lpAttribJS(consentKey) })
-      + lpHeader('/') + main + lpFooter + lpScta(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.')
+      + lpHeader('/') + main + lpFooter + lpScta(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.') + SCTA_WAIT_JS
       + CONSENT_BANNER + TRACK_EVENTS + lpFormJS(lp.slug, dankeUrl, consentKey) + resetJS + baJs + AKTION_JS + '</body></html>';
     write(url, html);
     n++;
@@ -403,7 +456,7 @@ ${kontaktSec}
   const dkSteps = (dk.next || []).map(t => typeof t === 'string' ? { h: '', p: esc(t) } : { when: t.when ? esc(t.when) : '', h: esc(t.h || ''), p: esc(t.p || '') });
   const dkH1Raw = dk.h1 || 'Danke für Ihre Anfrage.';
   const dkH1 = dk.h1_em && dkH1Raw.includes(dk.h1_em) ? esc(dkH1Raw).replace(esc(dk.h1_em), `<em>${esc(dk.h1_em)}</em>`) : esc(dkH1Raw);
-  const main = `<main class="lp-danke"><section class="phero lp-hero lp-hero-text">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>${dkH1}</h1><p class="lead">${esc(dk.lead || '')}</p></div></div></section>
+  const main = `<main class="lp-danke"><section class="phero lp-hero lp-hero-text">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>${dkH1}</h1><p class="lead">${esc(dk.lead || '').replace('{tel}', telDisp)}</p></div></div></section>
 <section class="sec"><div class="wrap"><div class="head"><h2>So geht es weiter</h2></div>${rvIn(timelineFrom(dkSteps))}<p class="hint" style="margin-top:24px;color:var(--muted)">${esc(dk.eilig || '')}</p><div class="cta-row lp-cta"><a class="btn btn-acc" href="tel:${tel}">☎ ${telDisp}</a><a class="btn btn-line" href="${waHref('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')}">Foto per WhatsApp nachschicken</a></div></div></section></main>`;
   write(dankeUrl, head(`${dk.title || 'Danke'} – Havelland`, 'Ihre Anfrage ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns noch am selben Werktag.', dankeUrl, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS })
     + lpHeader('/') + main + lpFooter + lpScta('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')

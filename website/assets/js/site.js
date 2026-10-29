@@ -18,7 +18,7 @@
      Lightbox ............ V/N-Vergleich im Overlay (#lightbox)
      FAQ ................. Accordion (nur eins offen) + Sofort-Filter
      Gebietskarte ........ Karte (.map-dot) + Ortsliste (.ortbtn) synchron
-     [D3] Erreichbarkeits-Chip .. [data-erreichbar], Mo–Fr 8–18 · Sa 8–14 · So zu
+     [D3] Erreichbarkeits-Chip .. [data-erreichbar], Mo–So 7–22 Uhr
      [D8] Gold-Dedup ..... .btn-acc sichtbar → .scta bekommt .scta-muted
      Reveal .............. IntersectionObserver, GUARD .rv:not(.in) —
                            doppelt NICHT mit dem Inline-Reveal des Generators.
@@ -242,15 +242,13 @@
   }
 
   /* ===== [D3] Öffnungszeiten-Erreichbarkeits-Chip =====
-     Mo–Fr 8–18 · Sa 8–14 · So geschlossen. new Date() im Browser ok. */
+     Mo–So 7–22 Uhr (Stand 29.10.2026, wie Google-Profil und data/nap.json). new Date() im Browser ok. */
   (function () {
     var chips = $$('[data-erreichbar]');
     if (!chips.length) return;
-    var d = new Date(), day = d.getDay(), h = d.getHours() + d.getMinutes() / 60;
+    var d = new Date(), h = d.getHours() + d.getMinutes() / 60;
     var open = false;
-    if (day >= 1 && day <= 5) open = (h >= 8 && h < 18);        // Mo–Fr
-    else if (day === 6)      open = (h >= 8 && h < 14);         // Sa
-    // So: geschlossen
+    open = (h >= 7 && h < 22);                                  // Mo–So
     var txt = open
       ? 'Jetzt erreichbar'
       : 'Gerade geschlossen — schreiben Sie uns jetzt per WhatsApp';

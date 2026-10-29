@@ -12,8 +12,7 @@
   "domain": "https://haus-und-gartenservice-havelland.de",
   "kleinunternehmer_19": false,
   "openingHours": [
-    { "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "19:00" },
-    { "dayOfWeek": ["Saturday"], "opens": "08:00", "closes": "16:00" }
+    { "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "07:00", "closes": "22:00" }
   ],
   "geo": {
     "lat": 52.585035,

@@ -3,8 +3,10 @@
 # Server vorher: python -m http.server -d website 4173   (Standard-Port 4173; PORT als 3. Argument oder Umgebungsvariable)
 # Mockt Web3Forms (Antwort {"success":true}), GTM, GA4, Google Ads; alles andere ausserhalb von localhost wird abgebrochen
 # (kein echter Versand, keine echten Messpunkte). NIE gegen die Live-Domain starten (Host muss localhost sein).
-# Ein-Schritt-Formular (v7). SCENARIO=happy: E-Mail-Weg. SCENARIO=voll zusaetzlich: leeres Absenden (form_error dsgvo,name,objekt,ort,tel je 1x) und Kurzstart
-# ueber die echte Preis-Kachel (a.lp-tile[data-obj], form_quickstart:preis). SCENARIO=tel: Weg Anruf mit Telefon, ohne E-Mail (user_data.phone_number bei allow).
+# Ein-Schritt-Formular (v7), ein Feld "Telefon oder E-Mail" (name=kontakt; seit 29.10.2026, JS teilt in die Hidden-Felder tel/email/kontaktweg).
+# SCENARIO=happy (Standard): E-Mail-Eingabe → POST email=…, tel leer, kontaktweg=E-Mail, user_data.email bei allow. SCENARIO=voll zusaetzlich: leeres Absenden
+# (form_error dsgvo,name,objekt,ort,tel je 1x; das Kontaktfeld meldet weiter field=tel) und Kurzstart ueber die echte Preis-Kachel (a.lp-tile[data-obj], form_quickstart:preis).
+# SCENARIO=tel: Telefon-Eingabe → POST tel=…, email leer, kontaktweg=Anruf, user_data.phone_number bei allow.
 # Hat die Seite keinen solchen Link (Nachlass, Messie, Gewerbe), wird KEIN synthetischer eingehaengt: form_quickstart wird dort nicht erwartet (0 Ereignisse),
 # das Protokoll sagt "Quickstart-Preiszeile: nicht vorhanden". Ein eingehaengtes Element (#__synthetisch) waere ein Fehler.
 # Der Server muss genau website/lp/<slug>/index.html ausliefern (CR/LF-Unterschiede zaehlen nicht), sonst Exit 2. form_pos != hero in lp.json: SKIP (Exit 0).
@@ -54,12 +56,10 @@ else
 fi
 if [ "$SCENARIO" = tel ]; then
   WEG="await page.fill('.lp-hero-form input[name=name]', 'Test');
-  await page.fill('.lp-hero-form input[name=tel]', '030 1234567');"
+  await page.fill('.lp-hero-form input[name=kontakt]', '030 1234567');"
 else
-  WEG="await page.click('.lp-hero-form .more summary');
-  await page.click('.lp-hero-form label:has(input[name=kontaktweg][value=E-Mail])');
-  await page.fill('.lp-hero-form input[name=email]', 'test@example.invalid');
-  await page.fill('.lp-hero-form input[name=name]', 'Test');"
+  WEG="await page.fill('.lp-hero-form input[name=name]', 'Test');
+  await page.fill('.lp-hero-form input[name=kontakt]', 'test@example.invalid');"
 fi
 OUTRUN=$(PW run-code "async page => {
   await page.click('#consent [data-c=$C]');
@@ -86,6 +86,7 @@ PW request-body "$N" | tr -d '\r' > "$T/post.txt"
 cat > "$T/check.js" <<'EOF'
 const fs = require('fs');
 const [T, C, SLUG, SCEN, HASLINK] = process.argv.slice(2);
+const TEL = SCEN === 'tel';
 const rd = f => fs.readFileSync(T + '/' + f, 'utf8');
 const js = f => { let r = JSON.parse(rd(f)); if (typeof r === 'string') r = JSON.parse(r); return r; };
 const s1 = js('state1.json'), s2 = js('state2.json');
@@ -122,15 +123,16 @@ const gl = ev.find(e => e.event === 'generate_lead') || {};
 if (gl.ads_consent !== C) bad.push('generate_lead.ads_consent=' + gl.ads_consent);
 if (gl.lead_source !== 'ads-lp' || gl.lp !== SLUG) bad.push('generate_lead lead_source/lp');
 if (C === 'deny' && 'user_data' in gl) bad.push('user_data trotz deny');
-if (C === 'allow' && SCEN !== 'tel') {
-  if (!gl.user_data || gl.user_data.email !== 'test@example.invalid') bad.push('user_data.email fehlt bei allow');
-  if (gl.user_data && gl.user_data.phone_number) bad.push('user_data.phone_number gesetzt obwohl kein Telefon');
+if (C === 'allow') {
+  if (TEL) {
+    if (!gl.user_data || gl.user_data.phone_number !== '+49301234567') bad.push('user_data.phone_number != +49301234567 bei allow');
+    if (gl.user_data && gl.user_data.email) bad.push('user_data.email gesetzt obwohl keine E-Mail');
+  } else {
+    if (!gl.user_data || gl.user_data.email !== 'test@example.invalid') bad.push('user_data.email != test@example.invalid bei allow');
+    if (gl.user_data && gl.user_data.phone_number) bad.push('user_data.phone_number gesetzt obwohl keine Telefonnummer');
+  }
 }
-if (C === 'allow' && SCEN === 'tel') {
-  if (!gl.user_data || gl.user_data.phone_number !== '+49301234567') bad.push('user_data.phone_number != +49301234567 bei allow');
-  if (gl.user_data && gl.user_data.email) bad.push('user_data.email gesetzt obwohl keine E-Mail');
-}
-if (gl.kontaktweg !== (SCEN === 'tel' ? 'Anruf' : 'E-Mail')) bad.push('generate_lead.kontaktweg=' + gl.kontaktweg);
+if (gl.kontaktweg !== (TEL ? 'Anruf' : 'E-Mail')) bad.push('generate_lead.kontaktweg=' + gl.kontaktweg);
 // --- Neuladen der Danke-Seite: kein zweites lead_confirmed
 const lc2 = s2.dl.filter(e => e.event === 'lead_confirmed').length;
 if (lc2 !== 1) bad.push('lead_confirmed nach Neuladen x' + lc2);
@@ -151,8 +153,10 @@ if (f.lp !== SLUG) bad.push('lp=' + f.lp);
 if (!f.access_key) bad.push('access_key fehlt');
 if (!/\/lp\/danke\/$/.test(f.redirect || '')) bad.push('redirect=' + f.redirect);
 if (!/^\/lp\/[a-z-]+\/ @\d{4}-/.test(f.landing_url || '')) bad.push('landing_url=' + f.landing_url);
-if (SCEN === 'tel') { if (!f.objekt || f.ort !== '14612' || f.kontaktweg !== 'Anruf' || f.tel !== '030 1234567' || f.email !== '' || f.name !== 'Test' || f.dsgvo === undefined) bad.push('Nutzfelder im POST unvollstaendig (tel)'); }
-else if (!f.objekt || f.ort !== '14612' || f.kontaktweg !== 'E-Mail' || f.email !== 'test@example.invalid' || f.name !== 'Test' || f.dsgvo === undefined) bad.push('Nutzfelder im POST unvollstaendig');
+const wegOk = TEL ? (f.kontaktweg === 'Anruf' && f.tel === '030 1234567' && f.email === '') : (f.kontaktweg === 'E-Mail' && f.email === 'test@example.invalid' && f.tel === '');
+if (!f.objekt || f.ort !== '14612' || !wegOk || f.name !== 'Test' || f.dsgvo === undefined) bad.push('Nutzfelder im POST unvollstaendig (kontaktweg/tel/email: ' + JSON.stringify([f.kontaktweg, f.tel, f.email]) + ')');
+if ('kontakt' in f) bad.push('Sichtfeld kontakt im POST (soll nur tel/email/kontaktweg enthalten)');
+for (const k of ['tel', 'email', 'kontaktweg']) if (!(k in f)) bad.push('POST-Feld ' + k + ' fehlt');
 for (const k of ['wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'subject', 'from_name'])
   if (!(k in f)) bad.push('hidden ' + k + ' fehlt im POST');
 // --- Netzwerk: nur Mock-Hosts ausser localhost; genau ein POST
