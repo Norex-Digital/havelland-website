@@ -364,6 +364,11 @@
      "q": "Lässt sich Winterdienst mit Laub und Dachrinne verbinden?",
      "a": "Ja. Unsere eigene Leistung ist das Laub von Rasen, Wegen und Terrasse im Oktober, danach reinigt der Partner-Fachbetrieb die Dachrinne. Statt fünf Betriebe zu sortieren, haben Sie einen Ansprechpartner, der die Termine verbindet und das schriftliche Angebot des ausführenden Betriebs einholt.",
      "hub_only": true
+    },
+    {
+     "q": "Kann ich die Räumpflicht auf einen Winterdienst übertragen, und was sagt meine Gemeinde dazu?",
+     "a": "Die Durchführung können Sie beauftragen; ob damit auch die Pflicht gegenüber der Gemeinde wechselt, regelt jede Satzung anders. Falkensee lässt die Übertragung auf Dritte nach Zustimmung der Stadt zu, Nauen verlangt dafür die Zustimmung der Stadt und den Haftpflichtnachweis des Beauftragten. In der Satzung von Dallgow-Döberitz haben wir keine Übertragungsregel gefunden, dort bleibt im Zweifel der Eigentümer verpflichtet. Klären Sie das vor dem Vertragsschluss mit Ihrer Gemeinde.",
+     "hub_only": true
     }
    ],
    "garantie_text": "Besichtigung, Angebot und Saison koordinieren wir, Räumen und Streuen übernimmt der Partner-Fachbetrieb.",
@@ -377,7 +382,7 @@
     {
      "id": "streupflicht",
      "h2": "Räum- und Streupflicht im Havelland: Was Ihre Satzung verlangt",
-     "body": "Die Pflicht liegt beim Eigentümer. Tagsüber, zwischen 7 und 20 Uhr, sind Schnee und Glätte unverzüglich zu beseitigen. Nachtschnee muss werktags bis 7 Uhr und an Sonn- und Feiertagen bis 9 Uhr weg sein, gestreut wird abstumpfend mit Sand oder Granulat. Uhrzeiten, Räumbreiten und Bußgelder unterscheiden sich je Gemeinde.",
+     "body": "Wo die Gemeinde es per Satzung bestimmt, liegen Räum- und Streupflicht für den Gehweg beim Grundstückseigentümer. Grundlage ist § 49a Abs. 4 BbgStrG: Die Gemeinden dürfen den Winterdienst auf dem Gehweg per Satzung den Eigentümern der erschlossenen Grundstücke auferlegen. Falkensee (je nach Reinigungsklasse der Straße), Dallgow-Döberitz und Brieselang haben das getan. An Werktagen sind Schnee und Glätte zwischen 7 und 20 Uhr unverzüglich nach Ende des Schneefalls zu beseitigen. In Brieselang gilt sonn- und feiertags 9 bis 20 Uhr. Nach 20 Uhr gefallener Schnee muss werktags bis 7 Uhr und sonn- und feiertags bis 9 Uhr weg sein. Gestreut wird mit Sand, Splitt oder Granulat, Salz ist nur in Ausnahmen erlaubt. Die Räumbreite beträgt 1,00 m in Falkensee, 1,20 m in Brieselang und 1,50 m in Dallgow-Döberitz. Stürzt jemand auf einem ungeräumten Gehweg, kann der Eigentümer nach § 823 Abs. 1 BGB schadensersatzpflichtig sein. Die Satzung von Dallgow-Döberitz sieht bei Verstößen Bußgelder von 5 bis 2.500 Euro vor (§ 7 Abs. 2). Uhrzeiten, Räumbreiten und Bußgelder unterscheiden sich je Gemeinde.",
      "link_to": "ratgeber/raeumpflicht-havelland-uhrzeiten",
      "link_text": "Uhrzeiten je Gemeinde",
      "link2_to": "ratgeber/streusalz-brandenburg-verboten",
@@ -1236,7 +1241,7 @@
     },
     {
      "q": "Was kostet eine Wohnungsauflösung — Erfahrungen aus dem Havelland?",
-     "a": "Für Falkensee und das Havelland nennen wir keinen Pauschalpreis, weil jede Wohnungsauflösung anders ausfällt. Auf Google stehen wir mit 5,0 Sternen bei 27 Bewertungen; wie eine Wohnungsauflösung bei Ihnen konkret abläuft, klärt die kostenlose Besichtigung vor Ort. Danach bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport, Entsorgungsgebühren weisen wir nach Beleg aus. Wie bei jeder Auflösung gilt: Verwertbares senkt den Preis, ein schwieriger Zugang wie eine hohe Etage ohne Aufzug erhöht ihn."
+     "a": "Für Falkensee und das Havelland nennen wir keinen Pauschalpreis, weil jede Wohnungsauflösung anders ausfällt. Auf Google stehen wir mit {google_rating} Sternen bei {google_bewertungen} Bewertungen; wie eine Wohnungsauflösung bei Ihnen konkret abläuft, klärt die kostenlose Besichtigung vor Ort. Danach bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport, Entsorgungsgebühren weisen wir nach Beleg aus. Wie bei jeder Auflösung gilt: Verwertbares senkt den Preis, ein schwieriger Zugang wie eine hohe Etage ohne Aufzug erhöht ihn."
     },
     {
      "q": "Was ist der Unterschied zwischen Haushaltsauflösung und Entrümpelung?",
@@ -2943,7 +2948,9 @@
       "Besichtigung mit Spatenprobe: Der Boden entscheidet über Hülse oder Beton. Auf gewachsenem Sand, wie im Havelland verbreitet, reichen bei den meisten Pfosten Hülsen, bei Bauschutt oder aufgeschüttetem Boden betonieren wir stattdessen. Eck-, End- und Torpfosten stehen immer in Beton, dort wirken die größten Kräfte",
       "Vor jedem Pfostenloch holen wir die Leitungsauskunft BIL ein, eine Nachfrage beim Bauamt allein reicht nicht: Wer ohne diese Sorgfalt gräbt und eine Leitung beschädigt, haftet in aller Regel voll",
       "Wir bestellen das Material nach Zahlungseingang, weil wir größere Materialmengen nicht auf eigenes Risiko vorstrecken; die Montage zahlen Sie erst nach der Abnahme mit Foto, der Materialanteil steht offen im Angebot"
-     ]
+     ],
+     "link_to": "galabau-potsdam",
+     "link_text": "Zaunbau in Potsdam-Nord: Fahrland, Neu Fahrland, Groß Glienicke"
     },
     {
      "id": "preise",
@@ -3046,7 +3053,11 @@
    "layout": "ueberblick",
    "sections_h2": "Zaunbau Falkensee: Doppelstab, Sichtschutz, Staketen, Tore und Rückbau",
    "passt": [],
-   "vorteile": []
+   "vorteile": [],
+   "orte_foto": {
+    "src": "ratgeber-zaun-genehmigung-brandenburg",
+    "alt": "Doppelstabmattenzaun an der Grundstücksgrenze mit Grenzstein und Maßband"
+   }
   },
   {
    "slug": "terrassenbau",
@@ -3150,7 +3161,9 @@
       "Mehrkosten: Stufen, Randeinfassung, Lehmboden mit Drainage, enger Zugang"
      ],
      "link_to": "galabau",
-     "link_text": "Alle GaLaBau-Leistungen im Überblick"
+     "link_text": "Alle GaLaBau-Leistungen im Überblick",
+     "link2_to": "galabau-potsdam",
+     "link2_text": "Terrassenbau in Potsdam-Nord: Groß Glienicke, Neu Fahrland"
     }
    ],
    "ortsseite_lead": "Terrasse bauen lassen in {ort}: Unterbau, Gefälle und Belag aus einer Hand, ob Platten, Naturstein, Holz oder WPC. Kostenlose Besichtigung vor Ort in {ort}, danach ein schriftlicher Festpreis für die Arbeit, Entsorgung nach Beleg.",
@@ -3305,7 +3318,9 @@
       "Erdaushub mit Minibagger: 35 bis 60 Euro je Kubikmeter",
       "Rasenkante aus Kantensteinen: 25 bis 45 Euro je laufendem Meter",
       "Entsorgung von Altrasen und Aushub: nach Beleg, ohne eigenen Aufschlag"
-     ]
+     ],
+     "link_to": "galabau-potsdam",
+     "link_text": "Rollrasen in Potsdam: Golm, Satzkorn, Bornstedt"
     }
    ],
    "ortsseite_lead": "Rollrasen verlegen lassen in {ort}: Boden gefräst, planiert, Rollrasen verlegt und angewalzt. Kostenlose Besichtigung vor Ort in {ort}, danach ein schriftlicher Festpreis für die Arbeit, Entsorgung nach Beleg.",
@@ -3627,7 +3642,9 @@
       "Pflaster ausbessern, kleine Stelle: ab 250 Euro pauschal"
      ],
      "link_to": "ratgeber/pflasterarbeiten-kosten",
-     "link_text": "Rechenbeispiele im Kosten-Ratgeber"
+     "link_text": "Rechenbeispiele im Kosten-Ratgeber",
+     "link2_to": "galabau-potsdam",
+     "link2_text": "Pflaster in Potsdam-Nord: Marquardt, Bornstedt, Eiche"
     }
    ],
    "ortsseite_lead": "Pflasterarbeiten in {ort}: Hof, Gartenweg oder Einfahrt mit Aushub, tragfähigem Unterbau und sauberer Randeinfassung. Kostenlose Besichtigung in {ort}, danach ein schriftlicher Festpreis inkl. MwSt. und Foto-Nachweis nach dem Auftrag.",

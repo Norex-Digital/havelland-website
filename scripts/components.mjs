@@ -340,6 +340,7 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
   heading = 'Ein Handy-Foto <em>reicht.</em>', partner = false, fotoNeutral = false, winter = false,
   // foto (Zaunbau 16.09.): optionales Service-eigenes Motiv statt Heckenschnitt-Default — { src, alt, cap, sub, w, h }
   foto = null , legacy = false } = {}) {
+  const solo = foto === false;   // M09: Leistung ohne passendes echtes Foto -> kein Bild, einspaltig
   const f = foto || { src: `${ARB}/hecke-hinten-schere-noah.jpg`, alt: fotoNeutral ? 'Sorgfältige Handarbeit im Grünen — Haus- &amp; Gartenservice Havelland' : 'Heckenschnitt mit der Heckenschere an einer Hecke', cap: 'Handarbeit, wo es drauf ankommt', sub: fotoNeutral ? 'Sorgfalt im Detail' : 'Kanten &amp; Ecken', w: 2400, h: 2979 };
   // winter (Umbau 04.09.): Winterdienst = Partnermodell ohne Foto-Zusage — Adresse und Flächen statt Handy-Foto, Saisonvertrag vom Betrieb.
   if (winter) heading = 'Adresse und Flächenbeschreibung <em>reichen.</em>';
@@ -349,7 +350,7 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
   const step3 = partner
     ? `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort am selben Tag</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung durch den Partner-Fachbetrieb — das verbindliche Angebot kommt vom ausführenden Betrieb.</p></div></li>`
     : `<li class="wa-step"><span class="wn">3</span><div><h3>Antwort am selben Tag</h3><p>Erste Einschätzung und Termin für die kostenlose Besichtigung — danach steht Ihr Festpreis.</p></div></li>`;
-  return `<div class="wa-grid"><div>` +
+  return `<div class="wa-grid${solo ? ' wa-solo' : ''}"${solo ? ' style="grid-template-columns:minmax(0,720px)"' : ''}><div>` +
     `<span class="kick rv"><span class="dot"></span> Der schnellste Weg</span>` +
     `<div class="head" style="margin-top:14px"><h2 class="rv">${heading}</h2></div>` +
     `<p class="intro rv" style="margin-bottom:30px">Sie müssen nichts ausmessen und kein Formular ausfüllen. Drei Schritte, dann kümmern wir uns.</p>` +
@@ -364,11 +365,11 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
     `</ol>` +
     `<div class="wa-cta rv d2"><a class="btn btn-acc" href="${waHref(text)}">${winter ? 'Flächen per WhatsApp schicken' : 'Foto per WhatsApp senden'}</a>` +
     `<a class="tel-quiet" href="tel:${TEL}">lieber anrufen: ${TEL_DISP}</a></div></div>` +
-    `<div class="wa-stage rv d2"><div class="pframe" style="box-shadow:var(--sh-photo)">` +
+    (solo ? `</div>` : `<div class="wa-stage rv d2"><div class="pframe" style="box-shadow:var(--sh-photo)">` +
     // fotoNeutral (Audit 2026-08, P2-b): auf Services ohne Hecken-Bezug (baumstumpf-entfernen) Alt/Untertitel
     // neutral auf Sorgfalt/Handarbeit — das Foto zeigt Heckenschnitt, darf dort nicht als Service-Beweis wirken.
     `<img src="${f.src}" alt="${f.alt}" loading="lazy" decoding="async" width="${f.w}" height="${f.h}"></div>` +
-    `<p class="ba-cap"><b>${f.cap}</b><span>${f.sub}</span></p></div></div>`;
+    `<p class="ba-cap"><b>${f.cap}</b><span>${f.sub}</span></p></div></div>`);
 }
 
 // ---------------------------------------------------------------------------

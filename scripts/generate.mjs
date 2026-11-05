@@ -41,7 +41,13 @@ const TRACK_EVENTS = TRACK ? `<script>document.addEventListener('click',function
 // ---------- Copy-Schicht (P4) — inkl. Sanitizer gegen Agenten-Encoding-Artefakte ----------
 // decEnt: dekodiert HTML-Entities (auch mehrfach geschachtelt) -> Klartext; plain: + Tags strippen; fixHtml: body_html reparieren
 const decEnt = s => { let p = String(s == null ? '' : s), c; do { c = p; p = p.replace(/&amp;/gi, '&').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&quot;/gi, '"').replace(/&#0*39;/gi, "'").replace(/&apos;/gi, "'").replace(/&nbsp;/gi, ' '); } while (p !== c); return p; };
-const plain = s => decEnt(s).replace(/<\/?[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+// M11 (11/2026): Bewertungszahl hat EINE Quelle: data/proof.json google_reviews. Copy darf nur die Platzhalter
+// {google_bewertungen} (Anzahl) und {google_rating} (z. B. 5,0) verwenden; hier werden sie beim Sanitizen gefüllt.
+// /lp/** liest proof.json selbst (scripts/lp.mjs) und bleibt unberührt.
+const fillProof = t => String(t == null ? '' : t)
+  .split('{google_bewertungen}').join(String((proof.google_reviews || {}).count))
+  .split('{google_rating}').join(Number((proof.google_reviews || {}).rating).toFixed(1).replace('.', ','));
+const plain = s => decEnt(fillProof(s)).replace(/<\/?[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const fixHtml = s => {
   let p = String(s == null ? '' : s), c;
   do { c = p; p = p.replace(/&amp;(amp;|lt;|gt;|quot;|#0*39;|nbsp;)/gi, '&$1'); } while (p !== c);
@@ -51,7 +57,7 @@ const fixHtml = s => {
 };
 const _pa = v => Array.isArray(v) ? v.map(plain) : (v != null ? plain(v) : v);
 function sanHub(h) { for (const k of ['title','meta','h1','h1_em','intro','definition','naehe','ablauf','garantie_text','ortsseite_lead','sections_h2']) if (h[k] != null) h[k] = plain(h[k]); if (h.sections) for (const s of h.sections) { s.h3 = plain(s.h3); s.body = plain(s.body); } if (h.faqs) for (const f of h.faqs) { f.q = plain(f.q); f.a = plain(f.a); } if (h.faelle) for (const f of h.faelle) { for (const k of ['h3','meta','body','zitat','zitat_von']) if (f[k] != null) f[k] = plain(f[k]); } if (h.blocks) for (const b of h.blocks) { for (const k of ['h2','lead','body','img_alt']) if (b[k] != null) b[k] = plain(b[k]); } return h; }   // faelle/blocks[].lead|img_alt (Pillar-Hub 17.09.)
-function sanArch(a) { a.rahmen = _pa(a.rahmen); a.trust = _pa(a.trust); if (a.faqs) for (const f of a.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return a; }
+function sanArch(a) { a.hooks = _pa(a.hooks); a.rahmen = _pa(a.rahmen); a.trust = _pa(a.trust); if (a.faqs) for (const f of a.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return a; }
 function sanRat(r) { for (const k of ['title','meta','lead','intro','cta_text']) if (r[k] != null) r[k] = plain(r[k]); if (r.sections) for (const s of r.sections) { s.h2 = plain(s.h2); s.body_html = fixHtml(s.body_html); } if (r.faqs) for (const f of r.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return r; }
 function sanOrt(o) { if (o.hook) o.hook = plain(o.hook); if (o.nachbarorte) o.nachbarorte = o.nachbarorte.map(plain); return o; }
 
@@ -123,7 +129,7 @@ const katKern = k => k.kern.map(katItem).filter(Boolean);
 const katAnfrage = k => k.auf_anfrage.map(katItem).filter(Boolean);
 const katServices = k => k.slugs.map(sl => services.find(s => s.slug === sl)).filter(Boolean);
 
-const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','haushaltsaufloesung','winterdienst','steinreinigung','dachrinnenreinigung','dachreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung','heckenentfernung','baumstumpf-entfernen','pflasterarbeiten','erdarbeiten','baumfaellung','galabau']);   // GaLaBau-Ausbau 20.10.: Ortsseiten nur über service.seiten_orte
+const PAGE_SVC = new Set(['heckenschnitt','gartenpflege','fensterreinigung','entruempelung','haushaltsaufloesung','winterdienst','steinreinigung','dachrinnenreinigung','dachreinigung','hausmeisterservice','gebaeudereinigung','unterhaltsreinigung','ferienwohnung-reinigung','heckenentfernung','baumstumpf-entfernen','pflasterarbeiten','erdarbeiten','baumfaellung','galabau','zaunbau']);   // GaLaBau-Ausbau 20.10.: Ortsseiten nur über service.seiten_orte; zaunbau 06.11.2026 (E2b/M27): 9 Ortsseiten über orte_fix
 // Paket 1 (20.10.): Hubs im Grundgerüst (Spec 05-design-spec-paket1.md §3.3). Entrümpelung bleibt bis Paket 2 im alten Aufbau; Gewerbe-Hubs seit Paket 3 (21.10.) im Grundgerüst.
 const GW_HUBS = ['objektbetreuung', 'hausmeisterservice', 'unterhaltsreinigung', 'gebaeudereinigung', 'ferienwohnung-reinigung'];
 const GRUNDGERUEST = new Set([...GW_HUBS, 'gartenpflege', 'heckenschnitt', 'baumschnitt', 'heckenentfernung', 'dachrinnenreinigung', 'winterdienst', 'steinreinigung', 'fensterreinigung', 'dachreinigung', 'galabau', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'zaunbau', 'gartengestaltung', 'rollrasen-verlegen', 'erdarbeiten', 'gartenrodung', 'baumfaellung', 'baumstumpf-entfernen']);
@@ -139,6 +145,11 @@ const REINIGUNG = new Set(['fensterreinigung', 'steinreinigung', 'dachrinnenrein
 const BEWEIS_KEY = { fensterreinigung: 'fensterreinigung', steinreinigung: 'steinreinigung', dachrinnenreinigung: 'dachrinnenreinigung' }; // eigene Beweis-Copy vorhanden
 const gewerkClass = slug => VOLL_VN.has(slug) ? 'voll' : GARTEN.has(slug) ? 'garten' : REINIGUNG.has(slug) ? 'reinigung' : 'generisch';
 // WhatsApp-Block: das Foto zeigt Heckenschnitt — auf Services ohne Hecken-Bezug neutrale Alt-/Unterzeile (Audit 2026-08 P2-b; 15.09. + Entrümpelung/Haushaltsauflösung, Review 14.09.)
+const OHNE_FLOWFOTO = new Set(['fensterreinigung']);   // M09: kein echtes Fenster-Motiv, Heckenfoto raus (nur Ortsseiten)
+// Review 06.11. (W2 R2): Heckenfoto passt nicht zu Entrümpelung/Haushaltsauflösung -> auf Ortsseiten kein Bild (wie M09). Ausnahme Falkensee bis 20.11. (Messfenster-Freeze, byteidentisch zu master).
+const OHNE_FLOWFOTO_ORT = new Set(['entruempelung', 'haushaltsaufloesung']);
+// Zaunbau: eigenes Flow-Motiv (16.09., Hub) jetzt auch auf den 9 Ortsseiten (Review 06.11.)
+const ZAUN_FLOW_FOTO = { src: '/assets/img/arbeit/zaun-hinten-matte-noah.jpg', alt: 'Doppelstabmatte am Pfosten ausrichten — Haus- &amp; Gartenservice Havelland', cap: 'Handarbeit, wo es drauf ankommt', sub: 'Pfosten &amp; Matten', w: 1856, h: 2304 };
 const FOTO_NEUTRAL = new Set(['baumstumpf-entfernen', 'winterdienst', 'entruempelung', 'haushaltsaufloesung', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'rollrasen-verlegen', 'gartengestaltung', 'erdarbeiten', 'baumfaellung']);
 const waGewerk = s => VOLL_VN.has(s.slug) ? 'meiner Hecke' : REINIGUNG.has(s.slug) ? `meiner Fläche für ${s.name}` : GARTEN.has(s.slug) ? 'meinem Garten' : `meinem Anliegen (${s.name})`;
 const PREMIUM = new Set(['gross-glienicke','berlin-kladow','berlin-gatow']);
@@ -190,7 +201,8 @@ const isB2Bonly = seg => Array.isArray(seg) && seg.includes('B2B') && !seg.inclu
 const fillTok = (t, o, oc) => (t == null ? '' : String(t))
   .split('{ort}').join(o.name)
   .split('{plz}').join(o.plz || '')
-  .split('{nachbarorte}').join(((oc && oc.nachbarorte) || []).join(', '));
+  .split('{nachbarorte}').join(((oc && oc.nachbarorte) || []).join(', '))
+  .split('{ortsatz}').join(((oc && oc.hook) || '').split(/(?<=[.!?])\s+(?=[A-ZÄÖÜ])/)[0]);   // M09: erster Satz des Orts-Hooks (nur Lage, data/copy/orte.json)
 // H1 mit genau einem kursiven Akzentwort
 function emH1(h1, em) {
   const e = esc(h1 || '');
@@ -278,13 +290,13 @@ function ohDisplay() {
   if (!spec.some(s => s.dayOfWeek.includes('Sunday'))) parts.push('So geschlossen');
   return parts.join(' · ');
 }
-function orgSchema() {
+function orgSchema(legacy = false) {   // legacy=true: alter Stand (ohne legalName, areaServed = Seitenliste) nur für /lp/ — Ads-Messfenster, LP bleibt byteidentisch
   const addr = nap.street ? `,"address":{"@type":"PostalAddress","streetAddress":"${sj(nap.street)}","postalCode":"${sj(nap.zip)}","addressLocality":"${sj(nap.city)}","addressCountry":"DE"}` : '';
   const geo = (nap.geo && nap.geo.lat != null) ? `,"geo":{"@type":"GeoCoordinates","latitude":${nap.geo.lat},"longitude":${nap.geo.lng}}` : '';
   const oh = ohSpecJson ? `,"openingHoursSpecification":[${ohSpecJson}]` : '';
   // GEO (W3-Audit 17.09.): sameAs verankert die Organization am Google-Unternehmensprofil (nap.same_as) — nur rendern, wenn das Array nicht leer ist.
   const sameAs = (Array.isArray(nap.same_as) && nap.same_as.length) ? `,"sameAs":${JSON.stringify(nap.same_as)}` : '';
-  return `{"@type":"HomeAndConstructionBusiness","@id":"${DOMAIN}/#organization","name":"${sj(nap.name)}","telephone":"${tel}","url":"${DOMAIN}/","image":"${imgAbs('og-default')}","logo":"${DOMAIN}/assets/img/logo.png"${addr}${geo}${oh}${sameAs},"areaServed":${JSON.stringify(haupt.map(o => o.name))}}`;
+  return `{"@type":"HomeAndConstructionBusiness","@id":"${DOMAIN}/#organization","name":"${sj(nap.name)}"${(!legacy && nap.legal_name) ? `,"legalName":"${sj(nap.legal_name)}"` : ''},"telephone":"${tel}","url":"${DOMAIN}/","image":"${imgAbs('og-default')}","logo":"${DOMAIN}/assets/img/logo.png"${addr}${geo}${oh}${sameAs},"areaServed":${JSON.stringify(!legacy && Array.isArray(nap.schema_area_served) && nap.schema_area_served.length ? nap.schema_area_served : haupt.map(o => o.name))}}`;   // M18 (11/2026, E7): areaServed = Profil-Servicegebiet (nap.schema_area_served), legalName mit GbR; name unverändert
 }
 function breadcrumb(items) { // [{name,url}]
   const li = items.map((it,i)=>`{"@type":"ListItem","position":${i+1},"name":"${sj(it.name)}"${it.url?`,"item":"${DOMAIN}${it.url}"`:''}}`).join(',');
@@ -530,12 +542,14 @@ function hub(s) {
   // Default ist kein Offer: Prozessschritte/Rechtslage/USP/Disclaimer/Preis-Erklärung/Referenzen/Verweise sind KEINE buchbaren Leistungen.
   // SEO H-5 (20.10.): Hub-Karten-Layout (galabau) leitet die Offers aus den sichtbaren Kern-Karten ab (eine Quelle, keine zweite Liste); sonst offer:true-Sektionen wie bisher.
   const offerSrc = (c && c.layout === 'hub-karten' && c.karten && Array.isArray(c.karten.kern)) ? c.karten.kern.map(k => ({ h3: k.h3, link_to: k.to, seite: true })) : (c && Array.isArray(c.sections) ? c.sections : []).filter(x => x.offer === true);
-  const offers = offerSrc.slice(0, 6).map(x => `{"@type":"Offer"${(x.link_to && x.seite) ? `,"url":"${DOMAIN}${hrefOf(x.link_to)}"` : ''},"itemOffered":{"@type":"Service","name":"${sj(x.h3)}","serviceType":"${sj(s.name)}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}}}`).join(',');
+  // M17 (11/2026): Service-Knoten nennt auch die Orte mit eigener Seite (service.seiten_orte, z. B. galabau: Berlin-Spandau, Potsdam) — sonst fehlen sie im Schema, obwohl die Seiten existieren.
+  const schemaOrte = [...orteList, ...seitenOrte(s).filter(o => !orteList.includes(o))].map(o => o.name);
+  const offers = offerSrc.slice(0, 6).map(x => `{"@type":"Offer"${(x.link_to && x.seite) ? `,"url":"${DOMAIN}${hrefOf(x.link_to)}"` : ''},"itemOffered":{"@type":"Service","name":"${sj(x.h3)}","serviceType":"${sj(s.name)}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(schemaOrte)}}}`).join(',');
   const catalog = offers ? `,"hasOfferCatalog":{"@type":"OfferCatalog","name":"${sj(s.name)} — Leistungen","itemListElement":[${offers}]}` : '';
   // GEO (W3-Audit 17.09.): Person-Schema für den textlich genannten Ansprechpartner — Opt-in über hubs.json (c.person:true), Daten aus nap.ansprechpartner (Single-Source).
   // Owner 20.10.: beide Inhaber als Ansprechpartner (gesellschafter = Rufnamen aus nap.json)
   const personSchema = (c && c.person && nap.ansprechpartner) ? (nap.gesellschafter || [nap.ansprechpartner.name]).map(n => `,{"@type":"Person","@id":"${DOMAIN}/#${n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}","name":"${sj(n)}","jobTitle":"${sj(nap.ansprechpartner.rolle)}","worksFor":{"@id":"${DOMAIN}/#organization"}}`).join('') : '';
-  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}${catalog}}${personSchema},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
+  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(schemaOrte)}${catalog}}${personSchema},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
 
   // ---- Gewerk-abhaengige Voll-Print-Komposition ----
   const gk = gewerkClass(s.slug);
@@ -545,7 +559,7 @@ function hub(s) {
   const faqData = (c && c.faqs && c.faqs.length) ? c.faqs : null;   // sonst faqFilter-Default
   // Winterdienst: WA-Flow ohne Foto-Zusage (Partner) — "Adresse und Flächenbeschreibung reichen" (Umbau 03.09.)
   // Zaunbau (16.09.): eigenes Flow-Motiv statt Heckenschnitt-Default (KI-Szene mit Element, Logo per logo-composite.py — Foto Assets §0: Szene erlaubt, kein Beweis).
-  const flowFoto = s.slug === 'zaunbau' ? { src: '/assets/img/arbeit/zaun-hinten-matte-noah.jpg', alt: 'Doppelstabmatte am Pfosten ausrichten — Haus- &amp; Gartenservice Havelland', cap: 'Handarbeit, wo es drauf ankommt', sub: 'Pfosten &amp; Matten', w: 1856, h: 2304 } : null;
+  const flowFoto = s.slug === 'zaunbau' ? ZAUN_FLOW_FOTO : null;
   const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug), winter: s.slug === 'winterdienst', foto: flowFoto })}</div></section>`;
   const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline(!!s.partner_modell, s.slug)}</div></section>`;
   const faqSection = `<section class="sec"><div class="wrap">${faqFilter(faqData)}</div></section>`;
@@ -736,25 +750,30 @@ function ortsseite(s, o) {
   // Guard (03.09., C5 Nr. 60): Partner-Service ohne bespoke Copy rendert keine Orts-Hooks/Archetyp-Pools — die tragen Festpreis-/Foto-/Eigenleistungs-Zusagen.
   const partnerNoCopy = !!s.partner_modell && !soOrt;
   const arch = oc ? (partnerNoCopy ? (archCopy['partner-winterdienst'] || null) : archCopy[oc.archetype]) : null; // Partner-Pool statt Festpreis-Pools
+  const svcArch = archCopy['svc-' + s.slug] || null;   // M09: leistungseigener Archetyp-Text (hooks/rahmen) statt Garten-Hook
   const seed = seedOf(url);
   const nachbarn = seitenOrte(s).filter(x => x.slug !== o.slug && hasOrt(s.slug, x.slug));
-  const nahCards = rotate(nachbarn, seed, 4);
+  // M07-Freeze (bis 20.11.2026, Ads-Messfenster): Falkensee-Seiten in entruempelung/haushaltsaufloesung bleiben byteidentisch zu master -> Nachbar-Pool ohne die 8 neuen Orte. Danach entfernen.
+  const FREEZE_NEUE_ORTE = new Set(['nauen', 'ketzin', 'gross-glienicke', 'berlin-kladow', 'berlin-gatow', 'velten', 'oberkraemer', 'hohen-neuendorf']);
+  const nahPool = (o.slug === 'falkensee' && (s.slug === 'entruempelung' || s.slug === 'haushaltsaufloesung')) ? nachbarn.filter(x => !FREEZE_NEUE_ORTE.has(x.slug)) : nachbarn;
+  const nahCards = rotate(nahPool, seed, 4);
+  const flowFotoO = OHNE_FLOWFOTO.has(s.slug) ? false : s.slug === 'zaunbau' ? ZAUN_FLOW_FOTO : (OHNE_FLOWFOTO_ORT.has(s.slug) && o.slug !== 'falkensee') ? false : null;
 
   const place = `{"@type":"Place","name":"${sj(o.name)}"${o.plz?`,"address":{"@type":"PostalAddress","postalCode":"${sj(o.plz)}","addressLocality":"${sj(o.name)}","addressCountry":"DE"}`:''}}`;
   const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)} ${sj(o.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${place}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url:`/${s.slug}/`},{name:o.name,url}])}`;
 
   // Body aus Copy-Schicht (mit Fallback) — Archetyp-Bausteine aus POOLS per Seed (Near-Duplicate-Reduktion)
   const pickPool = (arr, i) => Array.isArray(arr) && arr.length ? arr[((i % arr.length) + arr.length) % arr.length] : (typeof arr === 'string' ? arr : '');
-  const idx = (archOrtIdx[o.slug] || 0) + (svcPoolIdx[s.slug] || 0); // Ort + Service, sonst teilen sich alle Services eines Ortes den Text
+  const idx = svcArch ? Math.max(0, seitenOrte(s).findIndex(x => x.slug === o.slug)) : (archOrtIdx[o.slug] || 0) + (svcPoolIdx[s.slug] || 0);   // M09: Leistungen mit eigenem Archetyp-Text rotieren nach Rang in der Leistungsfamilie (coprime Pools -> jede Ortsseite eine eigene hook/rahmen-Kombination) // Ort + Service, sonst teilen sich alle Services eines Ortes den Text
   // Partner-Pool (03.09.): Index global über alle Orte, sonst teilen sich Orte verschiedener Archetypen dasselbe (rahmen,trust)-Tupel (NearDup).
   const idxP = s.partner_modell ? haupt.findIndex(x => x.slug === o.slug) : idx; // 04.09.: global für alle Partner-Ortsseiten (bespoke + Pool), sonst kollidieren Rotationen
   const rLen = arch && Array.isArray(arch.rahmen) ? arch.rahmen.length : 1;
   // Welle-1a: bespoke Service×Ort-Copy (falls vorhanden) hat Vorrang vor Archetyp/Ort-Hook
   const lead = c && c.ortsseite_lead ? fillTok(c.ortsseite_lead, o, oc) : `Ihr ${s.name} in ${o.name} — vom Haus- & Gartenservice Havelland.`;
   // Reihenfolge (Umbau 03.09.): bespoke Hook → bei Partner-Services der Partner-Pool-Hook (nie oc.hook: der trägt "Anfahrt steckt im Festpreis") → sonst Orts-Hook
-  const hookSrc = soOrt && soOrt.hook ? soOrt.hook : (s.partner_modell ? (arch && arch.hooks ? pickPool(arch.hooks, idxP + 1) : '') : (oc && oc.hook ? oc.hook : ''));
+  const hookSrc = soOrt && soOrt.hook ? soOrt.hook : (svcArch && svcArch.hooks ? pickPool(svcArch.hooks, idx) : s.partner_modell ? (arch && arch.hooks ? pickPool(arch.hooks, idxP + 1) : '') : (oc && oc.hook ? oc.hook : ''));
   const hook = hookSrc ? `<p>${esc(fillTok(hookSrc, o, oc))}</p>` : '';
-  const rahmenTxt = soOrt && soOrt.rahmen ? soOrt.rahmen : pickPool(arch && arch.rahmen, idxP);   // eindeutige Verteilung
+  const rahmenTxt = soOrt && soOrt.rahmen ? soOrt.rahmen : pickPool((svcArch && svcArch.rahmen) || (arch && arch.rahmen), idxP);   // eindeutige Verteilung
   const trustTxt = soOrt && soOrt.trust ? soOrt.trust : pickPool(arch && arch.trust, Math.floor(idxP / rLen));  // -> (rahmen,trust)-Tupel eindeutig je Archetyp-Ort
   // W3b (Review #9): rahmen eingeklappt — Intro nach dem Hero wird halb so lang, Text bleibt im DOM (NearDup-Gate misst den Block weiterhin).
   const rahmen = rahmenTxt ? `<details class="mehr"><summary>Mehr über unsere Arbeit in ${esc(o.name)}</summary><div><p>${esc(fillTok(rahmenTxt, o, oc))}</p></div></details>` : '';
@@ -809,7 +828,7 @@ ${gstripFor(s)}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
 ${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml, hrefOf, ctaAfterGrid: tief.cta_grid ? ctaZwischen(s, { ...tief.cta_grid }) : '' }) : ''}${tief ? ctaZwischen(s, { ...(tief.cta_after || tiefCtaDefault), alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.', alt: tiefPaper }) : ''}${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
-<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst' })}</div></section>
+<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst', foto: flowFotoO })}</div></section>
 ${nachbarSection}
 <section class="sec"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
 ${s.partner_modell ? endBandPartner(s) : endBand}`;
@@ -1442,7 +1461,7 @@ bewertungen();
 gewerbeSeiten();
 danke();
 // Ads-Landingpages (/lp/<slug>/ + /lp/danke/): noindex, nicht in Sitemaps — scripts/lp.mjs, Copy data/copy/lp.json (Ads-Kampagne Entrümpelung, 14.09.2026)
-buildLp({ head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema, reviews, config, CP, isReal, pic, leaf, proof, IMG });
+buildLp({ head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema: () => orgSchema(true), reviews, config, CP, isReal, pic, leaf, proof, IMG });
 notFound();
 if (FULL) {
   for (const s of services) if (PAGE_SVC.has(s.slug)) for (const o of seitenOrte(s)) ortsseite(s, o);
