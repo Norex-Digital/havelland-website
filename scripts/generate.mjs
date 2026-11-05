@@ -227,6 +227,28 @@ const DANGLE = /\s+(per|und|mit|nach|für|im|in|zu|von|der|die|das|ein|eine|eine
 // Article-Schema (Audit Zaunbau 16.09.): datePublished/dateModified fehlten sitewide. Copy-Feld date_published/date_modified je Ratgeber, sonst Default = Launch der Ratgeber-Welle.
 const RATGEBER_DEFAULT_DATE = '2026-07-01';
 const META_CLAUSES = ['Ein fester Ansprechpartner im Havelland und Berliner Umland', 'telefonisch oder per WhatsApp erreichbar', 'mit kostenloser Vor-Ort-Besichtigung'];
+// B6 (Abnahme 06.11.): Überlänge an einer Grenze kürzen statt mitten im Satz („… Foto-Nachweis nach jedem.“).
+// Stufe 1: letztes Satzende (Abkürzungen wie „z. B.“, „inkl.“ zählen nicht), Länge >= META_CUT_MIN.
+// Stufe 2: letzte Satz-/Klauselgrenze (Komma, Doppelpunkt, „ und “, „ sowie “, Gedankenstrich), >= META_CUT_MIN.
+// Stufe 3: wie Stufe 2, aber >= META_CUT_NOT (kürzere Meta statt Mitten-im-Satz-Schnitt; MetaLen-Warnung erlaubt).
+// Sonst unverändert (Wortgrenze, DANGLE-Bereinigung in finish()). Schnitt VOR dem Trenner, finish() setzt den Punkt.
+const META_CUT_MIN = 115, META_CUT_NOT = 60;
+const META_ABBR = /(?:^|[\s(])(?:[A-Za-zÄÖÜäöü]|inkl|zzgl|ca|bzw|ggf|evtl|Nr|St|Str|Dr|max|min|usw|etc|vs)$/;
+function cutAtBoundary(s, fallback) {
+  const sent = [], clause = [];
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (c === '.' && (s[i + 1] === ' ' || i === s.length - 1) && !META_ABBR.test(s.slice(0, i))) { sent.push(i); clause.push(i); }
+    else if ((c === ',' || c === ':') && s[i + 1] === ' ') clause.push(i);
+    else if (c === ' ' && /^ (?:und|sowie|—) /.test(s.slice(i, i + 8))) clause.push(i);
+  }
+  const L = i => rlen(s.slice(0, i));
+  const last = (arr, min) => arr.filter(i => L(i) <= 157 && L(i) >= min).pop();
+  let best = last(sent, META_CUT_MIN);
+  if (best === undefined) best = last(clause, META_CUT_MIN);
+  if (best === undefined) best = last(clause, META_CUT_NOT);
+  return best === undefined ? fallback : s.slice(0, best);
+}
 function mkMeta(s) {
   s = (s || '').replace(/\s+/g, ' ').trim();
   const finish = t => { t = t.replace(/[ ,;:.–-]+$/, ''); while (DANGLE.test(t)) t = t.replace(DANGLE, '').replace(/[ ,;:.–-]+$/, ''); return t + '.'; };
@@ -235,6 +257,7 @@ function mkMeta(s) {
     while (rlen(t) > 158) { const sp = t.lastIndexOf(' '); if (sp < 110) break; t = t.slice(0, sp); }
     const cl = Math.max(t.lastIndexOf(', '), t.lastIndexOf('. '));
     if (cl >= 150) t = t.slice(0, cl);
+    else if (rlen(s) > 158) t = cutAtBoundary(s, t);       // B6 (Abnahme 06.11.): Überlänge am Satzende bzw. Komma/Doppelpunkt kürzen statt mitten im Satz („… nach jedem.“)
     return finish(t);
   }
   let t = s.replace(/[ ,;:.–-]+$/, '');                    // zu kurz → Tail-Klauseln anhängen, solange sie ganz passen
