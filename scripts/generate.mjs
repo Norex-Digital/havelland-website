@@ -1394,8 +1394,20 @@ function sitemaps() {
   const LM_FILE = 'data/lastmod.json';
   const lm = fs.existsSync(LM_FILE) ? JSON.parse(fs.readFileSync(LM_FILE, 'utf8')) : {};
   const today = new Date().toISOString().slice(0, 10);
-  const hashOf = u => { const p = `website${u}index.html`; if (!fs.existsSync(p)) return null; const h = fs.readFileSync(p, 'utf8').replace(/\?v=[a-f0-9]+/g, '').replace(/\r\n/g, '\n'); return crypto.createHash('sha1').update(h).digest('hex'); };
-  const lastmodOf = u => { const h = hashOf(u); if (!h) return today; const e = lm[u]; if (!e || e.hash !== h) lm[u] = { hash: h, date: today }; return lm[u].date; };
+  // E4 (06.11.): Hash nur über den Hauptinhalt — <title>, meta description/robots, canonical und den Body zwischen </header> und <footer>,
+  // ohne <script>-Blöcke (JSON-LD, Consent, Tracking) und ohne Asset-Version. Site-weite Footer-/Schema-/Nav-Änderungen setzen damit
+  // kein Datum mehr neu (Vorfälle 20.10. und 29.10.: alle 228 Daten zurückgesetzt). Migration: Einträge ohne v:2 bekommen den neuen Hash,
+  // behalten aber ihr Datum (kein Reset).
+  const contentOf = h => {
+    const pick = re => (h.match(re) || [''])[0];
+    const head = pick(/<title>[\s\S]*?<\/title>/) + pick(/<meta name="description"[^>]*>/) + pick(/<meta name="robots"[^>]*>/) + pick(/<link rel="canonical"[^>]*>/);
+    const a = h.indexOf('</header>'), b = h.lastIndexOf('<footer');
+    let body = (a > -1 && b > a) ? h.slice(a + 9, b) : (h.includes('<body') ? h.slice(h.indexOf('<body')) : h);
+    body = body.replace(/<script[\s\S]*?<\/script>/g, '');
+    return (head + body).replace(/\?v=[a-f0-9]+/g, '').replace(/\r\n/g, '\n');
+  };
+  const hashOf = u => { const p = `website${u}index.html`; if (!fs.existsSync(p)) return null; return crypto.createHash('sha1').update(contentOf(fs.readFileSync(p, 'utf8'))).digest('hex'); };
+  const lastmodOf = u => { const h = hashOf(u); if (!h) return today; const e = lm[u]; if (!e) lm[u] = { v: 2, hash: h, date: today }; else if (e.v !== 2) lm[u] = { v: 2, hash: h, date: e.date }; else if (e.hash !== h) lm[u] = { v: 2, hash: h, date: today }; return lm[u].date; };
   const sm = (name, urls) => { const dates = urls.map(lastmodOf); const x = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u, i) => `<url><loc>${DOMAIN}${u}</loc><lastmod>${dates[i]}</lastmod></url>`).join('\n')}\n</urlset>\n`; fs.writeFileSync(`website/${name}`, x); return dates.length ? dates.reduce((a, b) => a > b ? a : b) : today; };
   // Wellen-Gate: Hubs + Kern-Basis immer indexiert. Ortsseiten/Ratgeber service-scharf (nur wenn service.wave <= aktive_welle → in *Idx gesammelt). Orts-Hubs am globalen Gate. Bei aktive_welle=0 sind *Idx leer → Output wie bisher.
   const gate = (config.aktive_welle || 0) < 2; // Orts-Hubs erst ab Welle 2 (Welle 1 = nur service-scharfe Ortsseiten via *Idx)
