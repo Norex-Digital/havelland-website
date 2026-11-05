@@ -25,7 +25,7 @@ const exists = u => { // interner Link → Datei?
 const visibleText = h => h.replace(/<script[^>]*>[\s\S]*?<\/script>/g,' ').replace(/<style[^>]*>[\s\S]*?<\/style>/g,' ').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&[a-z]+;/g,' ').replace(/\s+/g,' ').trim();
 
 // ---- Pro-Datei-Checks ----
-let brokenLinks=0; const brokenSamples=[];
+let brokenLinks=0; const brokenSamples=[]; const standortBodies=[];
 let imgNoAlt=0, imgNoDim=0, noScta=0, noHamb=0, noOg=0; const titles=new Map(); const metas=new Map();
 const transRe = /\b(fuer|ueber|koennen|koennt|muessen|moechten?|moeglich|schoen|groesse|groesser|qualitaet|taetig|naehe|naehere|haeufig|haeufige|gruen|gruenflaeche|natuerlich|persoenlich|zuverlaessig|regelmaessig|raeumen|geraeumt|fruehjahr|fruehling|gebaeude|aufloesung|entruempelung|haushaltsaufloesung|oberflaeche|baeume|straeucher|waehrend|gemaess|spaeter|draussen|fuehren|massnahmen|grundstuecke?|doeberitz|schoenwalde|oberkraemer|muehlenberge|phoeben)\b/i;
 const bodyByService = {}; // service -> [{url,shingles}]
@@ -103,6 +103,17 @@ for(const f of files){
     const sh=new Set(); for(let i=0;i<words.length-2;i++) sh.add(words[i]+' '+words[i+1]+' '+words[i+2]);
     if(sh.size>5) (bodyByService[svc]=bodyByService[svc]||[]).push({url, sh});
   }
+
+  // Near-Duplicate Standort-Seiten (M21): eigene Familie /standorte/<ort>/ — Body = phero bis Abschluss-Band ohne die für alle Orte gleiche Zusagen-Leiste (.gstrip), analog zum Prose+FAQ-Maß der Ortsseiten (Chrome zählt nicht).
+  if(/^\/standorte\/[a-z0-9-]+\/$/.test(url)){
+    const s0=h.indexOf('<section class="phero sx-phero"'), e0=h.indexOf('<section class="zone-deep end"');
+    if(s0>=0 && e0>s0){
+      const sxText=h.slice(s0,e0).replace(/<section class="gstrip"[\s\S]*?<\/section>/,'').replace(/<script[\s\S]*?<\/script>/g,' ').replace(/<[^>]+>/g,' ');
+      const sxWords=sxText.toLowerCase().replace(/[^a-zäöüß ]/g,' ').split(/\s+/).filter(w=>w.length>2);
+      const sxSh=new Set(); for(let i=0;i<sxWords.length-2;i++) sxSh.add(sxWords[i]+' '+sxWords[i+1]+' '+sxWords[i+2]);
+      if(sxSh.size>5) standortBodies.push({url, sh:sxSh});
+    }
+  }
 }
 
 // ---- Aggregat-Gates ----
@@ -130,6 +141,15 @@ for(const svc in bodyByService){ const arr=bodyByService[svc]; if(arr.length<2) 
 if(comparedFamilies===0) WARN('NearDup', 'keine Service-Familie mit ≥2 Ortsseiten im Output (Sample?)');
 else if(dupPairs===0) OK(`Near-Duplicate <40% (max ${(maxSim*100).toFixed(0)}% Ähnlichkeit, ${comparedFamilies} Familien)`);
 else FAIL('NearDup', `${dupPairs} Ortsseiten-Paare ≥40% ähnlich (max ${(maxSim*100).toFixed(0)}%), z.B. ${dupSamples.join(' | ')}`);
+
+// Near-Duplicate Standort-Seiten (M21): FAIL ab 40 %, WARN ab 35 % (Zielwert)
+{ let sxMax=0, sxFail=0, sxWarn=0; const sxS=[];
+  for(let i=0;i<standortBodies.length;i++) for(let j=i+1;j<standortBodies.length;j++){ const sc=jac(standortBodies[i].sh,standortBodies[j].sh); if(sc>sxMax) sxMax=sc; if(sc>0.40) sxFail++; else if(sc>0.35) sxWarn++; if(sc>0.35 && sxS.length<6) sxS.push(`${standortBodies[i].url}~${standortBodies[j].url}=${(sc*100).toFixed(0)}%`); }
+  if(standortBodies.length<2) WARN('NearDupStandorte', 'weniger als 2 /standorte/<ort>/-Seiten im Output (Sample?)');
+  else if(sxFail>0) FAIL('NearDupStandorte', `${sxFail} Standort-Paare ≥40% ähnlich (max ${(sxMax*100).toFixed(0)}%), z.B. ${sxS.join(' | ')}`);
+  else if(sxWarn>0) WARN('NearDupStandorte', `${sxWarn} Standort-Paare >35% (Zielwert), max ${(sxMax*100).toFixed(0)}%, z.B. ${sxS.join(' | ')}`);
+  else OK(`Near-Duplicate Standorte <35% (max ${(sxMax*100).toFixed(0)}%, ${standortBodies.length} Seiten /standorte/<ort>/)`);
+}
 
 // ---- Report ----
 console.log(`\n=== GATES (${files.length} Seiten) ===`);
