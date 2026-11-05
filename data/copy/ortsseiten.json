@@ -1250,6 +1250,699 @@
           "rahmen": "Eine Wohnungs- oder Haushaltsauflösung in Wustermark und Elstal nehmen wir Ihnen vollständig ab. Sie behalten, was zählt; wir legen Unterlagen, Fotos und Erinnerungsstücke beiseite und lösen den übrigen Hausstand auf. Möbel, Küche, Elektro und Hausrat trennen wir nach Entsorgungsweg, Wiederverwendbares und Wertgegenstände rechnen wir offen an. Container, Abtransport und Entsorgung liegen bei uns. Ob geerbtes Elternhaus oder gekündigte Mietwohnung, am Ende sind die Räume leer und besenrein, bereit zur Übergabe.",
           "trust": "Nach der kostenlosen Besichtigung in Wustermark steht ein Festpreis für Räumung und Abtransport der gesamten Auflösung; Entsorgungsgebühren weisen wir nach Beleg aus. Wir übergeben besenrein zur vereinbarten Zeit und arbeiten diskret. Auf Wunsch erhalten Sie Vorher-Nachher-Fotos, hilfreich bei Verkauf, Vermietung oder Nachlassregelung.",
           "fakt": "Wustermark und Elstal erreichen wir aus Falkensee auf kurzem Weg; Besichtigung und Übergabe legen wir nach Ihrer Frist bei Vermieter oder Notar."
+        },
+        "nauen": {
+          "hook": "Nauen besteht aus der Kernstadt und 14 Ortsteilen, von der Altstadt bis Ribbeck, Groß Behnitz oder Wachow liegen mehrere Kilometer. Muss die Mietwohnung am Stadtkern nach einem Todesfall leer werden, oder wird das Haus am Dorfrand verkauft? Wir lösen den gesamten Haushalt auf, von der ersten Sichtung bis zur besenreinen Schlüsselübergabe. Für die weiten Wege im Westhavelland gibt es keinen Aufschlag, die Anfahrt steckt im Festpreis.",
+          "rahmen": "Eine Haushaltsauflösung in Nauen nimmt alles aus dem Haus, was zu einem Haushalt gehört: Wohnzimmerschrank, Küche, Betten, Kleiderschränke, Wäsche und Geschirr. Vorher gehen wir mit Ihnen durch die Räume, Sie markieren, was bleibt. Sparbücher, Versicherungsordner, Schmuck und Fotoalben sichern wir getrennt, bevor das erste Möbelstück bewegt wird. Der Rest wird nach Holz, Metall, Elektro und Restmüll sortiert abgefahren, Gut erhaltenes rechnen wir offen an. Zurück bleibt eine besenreine Wohnung oder ein leeres Haus für Makler, Käufer oder Vermieter.",
+          "trust": "Nach der kostenlosen Besichtigung in {ort} erhalten Sie den Festpreis für Räumung und Abtransport schriftlich, inkl. MwSt. Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag. Fotos der leeren Räume schicken wir auf Wunsch per WhatsApp; Käufern, Vermietern und Miterben genügt das als Nachweis.",
+          "fakt": "Nauen besteht aus Kernstadt und 14 Ortsteilen; wir lösen Haushalte von der Altstadt bis Ribbeck und Wachow auf, die Anfahrt steckt im Festpreis.",
+          "tief": {
+            "h2": "Haushaltsauflösung in Nauen: von der Altstadt bis in die Ortsteile",
+            "sections": [
+              {
+                "h3": "Wohnung im Stadtkern oder Haus im Ortsteil",
+                "kurz": "Etage, Zugang und Fahrstrecke bestimmen den Aufwand. Beides sehen wir bei der Besichtigung und rechnen es in den Festpreis ein.",
+                "body": "Zu Nauen gehören neben der Kernstadt 14 Ortsteile, darunter Ribbeck, Groß Behnitz, Börnicke, Berge und Wachow. Eine Dreizimmerwohnung im dritten Stock braucht einen anderen Plan als ein Wohnhaus mit Nebengebäuden am Ortsrand. Bei der Besichtigung zählen wir Räume, Etagen und Treppen, schauen uns die Zufahrt an und legen die Zahl der Fahrten fest. Daraus entsteht der schriftliche Festpreis, ohne späteres Nachfordern für Wege oder Treppenhäuser."
+              },
+              {
+                "h3": "Erst sichten, dann räumen",
+                "kurz": "Vor dem Räumungstag kommt der Rundgang: Was bleibt in der Familie, was hat Wert, was kann weg?",
+                "body": "Beim Rundgang kennzeichnen Sie, was Angehörige behalten möchten. Wichtige Papiere, Schmuck und Fotos kommen in eine verschlossene Kiste, die bei Ihnen oder einer Vertrauensperson bleibt. Sind mehrere Erben beteiligt, holen wir die Zustimmung aller ein, bevor ein Räumungstermin feststeht. Möbel, Uhren, Geschirr oder Gemälde mit erkennbarem Wert bewerten wir offen und ziehen den Betrag vom Festpreis ab."
+              },
+              {
+                "h3": "Erben, die weit weg wohnen",
+                "kurz": "Wer nicht in Nauen lebt, braucht nur eine Vertrauensperson mit Schlüssel und eine kurze Vollmacht.",
+                "body": "Viele Angehörige wohnen weit weg und reisen nur zur Beerdigung an. Dann reicht es, wenn jemand vor Ort den Schlüssel übergibt, etwa Nachbarn oder die Hausverwaltung. Mit einer schriftlichen Vollmacht übernehmen wir den Termin. Fundstücke fotografieren wir und fragen per WhatsApp nach, bevor etwas auf dem Anhänger landet; nach jedem Räumungstag kommen Fotos, am Ende Rechnung und Entsorgungsbelege per Mail."
+              },
+              {
+                "h3": "Besenrein übergeben, auch zum Notartermin",
+                "kurz": "Der Übergabetag steht fest, sobald der Festpreis angenommen ist. Wir halten ihn.",
+                "body": "Steht ein Termin beim Notar oder die Wohnungsübergabe an, planen wir rückwärts vom Stichtag: Besichtigung, Festpreis, Räumungstage, ein Puffer für die Nachkontrolle. Am Ende sind alle Räume leer und gefegt, auch Keller und Abstellraum. Verpassen wir den vereinbarten Zeitpunkt, ist der nächste Tag für Sie kostenlos."
+              }
+            ],
+            "ortsblock": {
+              "h2": "Haushaltsauflösung in Nauen: Gebiet, Gericht, Erreichbarkeit",
+              "items": [
+                {
+                  "k": "Gebiet",
+                  "v": "Nauen (PLZ 14641) besteht aus der Kernstadt und 14 Ortsteilen, unter anderem Berge, Börnicke, Groß Behnitz, Ribbeck und Wachow. Wir fahren alle Ortsteile von Falkensee aus an."
+                },
+                {
+                  "k": "Amtsgericht",
+                  "v": "Der Gerichtsbezirk des Amtsgerichts Nauen umfasst sieben Gemeinden: Brieselang, Dallgow-Döberitz, Falkensee, Ketzin/Havel, Nauen, Schönwalde-Glien und Wustermark."
+                },
+                {
+                  "k": "Nachlass",
+                  "v": "Örtlich zuständig ist das Gericht, in dessen Bezirk die verstorbene Person zuletzt ihren gewöhnlichen Aufenthalt hatte (§ 343 FamFG). Fragen zu Erbschein, Ausschlagung und Haftung beantworten Nachlassgericht oder Rechtsanwalt, dazu geben wir keine Auskunft."
+                },
+                {
+                  "k": "Erreichbarkeit",
+                  "v": "Wir antworten am selben Tag, die kostenlose Besichtigung in Nauen findet meist innerhalb weniger Tage statt."
+                }
+              ],
+              "quelle": "data/copy/standorte-orte.json (Nauen, Wikipedia Nauen, Abruf 20.10.2026); https://de.wikipedia.org/wiki/Amtsgericht_Nauen, Abruf 06.11.2026; § 343 Abs. 1 FamFG, https://www.gesetze-im-internet.de/famfg/__343.html, Abruf 06.11.2026"
+            },
+            "blocks": [
+              {
+                "id": "ganzes-haus-nauen",
+                "h2": "Ganzes Haus oder nur ein Raum? Der Unterschied in Nauen",
+                "lead": "Eine Haushaltsauflösung räumt den kompletten Hausstand, eine Entrümpelung nur einzelne Bereiche.",
+                "body": "Wer in Nauen nur Keller, Dachboden oder Garage leeren lassen will, braucht eine Entrümpelung. Steht dagegen eine Wohnung oder ein Haus komplett zur Übergabe an, nach Auszug, Erbfall oder Umzug ins Heim, ist es eine Haushaltsauflösung mit besenreiner Übergabe.",
+                "bullets": [
+                  "Komplette Wohnung oder komplettes Haus: Haushaltsauflösung",
+                  "Einzelne Räume oder Bereiche: Entrümpelung",
+                  "Beides startet mit der kostenlosen Besichtigung"
+                ],
+                "link_to": "entruempelung",
+                "link_text": "Nur einzelne Räume? Zur Entrümpelung"
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Lösen Sie in Nauen auch Haushalte in Ortsteilen wie Ribbeck oder Wachow auf?",
+                "a": "Ja. Der Haus- & Gartenservice Havelland fährt alle 14 Ortsteile von Nauen an, darunter Ribbeck, Groß Behnitz, Börnicke, Berge und Wachow. Die Anfahrt steckt im Festpreis, es gibt keinen Zuschlag für die längere Strecke. Nennen Sie uns die Adresse per WhatsApp, wir antworten am selben Tag und vereinbaren die kostenlose Besichtigung."
+              },
+              {
+                "q": "Wie läuft eine Wohnungsauflösung in Nauen ab, wenn mehrere Erben beteiligt sind?",
+                "a": "Zuerst besichtigen wir die Wohnung kostenlos und nennen den Festpreis schriftlich. Vor dem Räumungstermin holen wir die Zustimmung aller Erben ein und halten Fundstücke per Foto fest. Wer behalten will, was bleibt, markiert es vorher. Danach lösen wir den Haushalt auf und übergeben besenrein; Rechnung und Belege kommen per Mail an alle."
+              },
+              {
+                "q": "Welches Nachlassgericht ist für einen Todesfall in Nauen zuständig?",
+                "a": "Maßgeblich ist der letzte gewöhnliche Aufenthalt der verstorbenen Person (§ 343 FamFG). Der Gerichtsbezirk des Amtsgerichts Nauen umfasst Nauen, Brieselang, Dallgow-Döberitz, Falkensee, Ketzin/Havel, Schönwalde-Glien und Wustermark. Welche Stelle im Einzelfall zuständig ist, klärt das Gericht; rechtliche Fragen zu Erbschein oder Haftung beantworten wir nicht."
+              },
+              {
+                "q": "Wovon hängt der Festpreis einer Haushaltsauflösung in Nauen ab?",
+                "a": "Von Menge, Etage, Zugang und der Zahl der Fahrten, nicht von der Wohnfläche allein. Nach der kostenlosen Besichtigung steht der Festpreis inkl. MwSt. schriftlich fest. Wertvolles ziehen wir offen ab. Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag; die Anfahrt nach Nauen ist im Festpreis enthalten."
+              }
+            ]
+          }
+        },
+        "ketzin": {
+          "hook": "Ketzin/Havel liegt am nördlichen Havelufer zwischen Potsdam und Brandenburg an der Havel, die Havelfähre nach Schmergow legt hier ab, ringsum folgen Etzin, Falkenrehde, Paretz, Tremmen und Zachow. Wird in dieser Kleinstadt eine Wohnung oder ein Haus leer, wohnen die Angehörigen oft anderswo. Wir lösen den gesamten Haushalt in Ketzin auf, melden uns am selben Tag zurück und übergeben besenrein. Anreisen müssen Sie dafür nicht.",
+          "rahmen": "Bei einer Haus- oder Wohnungsauflösung in Ketzin kommt der ganze Hausstand heraus: Möbel, Küche, Wäsche, Geschirr und all die Dinge, die niemand nachzählt. Finden wir beim Sichten etwas Besonderes, fotografieren wir es und Sie entscheiden per WhatsApp, ob es bleibt. Briefe, Fotoalben und Urkunden legen wir beiseite. Den Rest trennen wir nach Verwertung und Entsorgung; gut erhaltene Stücke gehen mit ihrem Wert in die Rechnung ein. Übrig bleiben leere, besenreine Räume.",
+          "trust": "Der Festpreis für Räumung und Abtransport steht nach der kostenlosen Besichtigung in {ort} schriftlich fest, die Anfahrt ist enthalten. Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag. Den vereinbarten Übergabetag halten wir ein; verpassen wir ihn, ist der nächste Tag für Sie kostenlos.",
+          "fakt": "In Ketzin/Havel lösen wir Haushalte auch in Etzin, Falkenrehde, Paretz, Tremmen und Zachow auf; Schlüssel und Vollmacht genügen, wenn Sie nicht vor Ort sind.",
+          "tief": {
+            "h2": "Haushaltsauflösung in Ketzin/Havel: auch ohne Ihre Anreise",
+            "sections": [
+              {
+                "h3": "Der Rundgang zuerst",
+                "kurz": "Vor der Räumung gehen wir alle Zimmer durch und legen Wichtiges beiseite, mit Ihnen oder mit einer Vertrauensperson.",
+                "body": "Bei der kostenlosen Besichtigung sehen wir Zimmer, Treppen und Zugang und notieren, was in welche Richtung geht: Behalten, Verwerten, Entsorgen. Persönliches wie Briefe, Urkunden und Fotoalben kommt in eine Kiste, die an Sie geht. Möbel und Geräte, für die es noch Abnehmer gibt, bewerten wir und rechnen den Betrag offen auf den Festpreis an. Erst danach steht der Räumungstermin fest."
+              },
+              {
+                "h3": "Fern-Erben: Foto und WhatsApp statt Anreise",
+                "kurz": "Ein Schlüssel bei einer Vertrauensperson und eine kurze Vollmacht reichen aus.",
+                "body": "Ketzin liegt für viele Familien nicht auf dem täglichen Weg. Deshalb arbeiten wir so, dass Sie nicht fahren müssen: Der Schlüssel liegt bei Nachbarn, Hausverwaltung oder Verwandten, die Vollmacht genügt schriftlich. Fundstücke schicken wir als Foto, Sie antworten mit Ja oder Nein. Nach jedem Räumungstag bekommen Sie Bilder, am Ende Rechnung und Belege per Mail."
+              },
+              {
+                "h3": "Fünf Ortsteile, eine Anfahrt",
+                "kurz": "Etzin, Falkenrehde, Paretz, Tremmen und Zachow fahren wir wie die Kernstadt an.",
+                "body": "Die Anfahrt von Falkensee steckt im Festpreis, unabhängig davon, ob das Haus in der Kernstadt am Wasser oder in einem der fünf Ortsteile liegt. Ein ganzer Haushalt braucht mehrere Fahrten; wie viele es werden, legen wir bei der Besichtigung fest und schreiben sie ins Angebot."
+              },
+              {
+                "h3": "Übergabe an Vermieter, Käufer oder Miterben",
+                "kurz": "Leer, gefegt, fotografiert: Der Zustand wird dokumentiert, damit später nichts strittig bleibt.",
+                "body": "Am Übergabetag sind alle Räume leer und besenrein, auch Keller und Boden. Wir fotografieren jeden Raum und schicken die Bilder aufs Handy. Auf Wunsch nehmen wir den Termin mit dem Vermieter oder Käufer mit Ihrer Vollmacht wahr und lassen das Übergabeprotokoll unterschreiben."
+              }
+            ],
+            "ortsblock": {
+              "h2": "Haushaltsauflösung in Ketzin/Havel: Lage, Gericht, Ortsteile",
+              "items": [
+                {
+                  "k": "Lage",
+                  "v": "Ketzin/Havel (PLZ 14669) ist eine amtsfreie Kleinstadt im Landkreis Havelland am nördlichen Havelufer, zwischen Potsdam und Brandenburg an der Havel. Die Havelfähre Ketzin–Schmergow (L 86) legt hier ab."
+                },
+                {
+                  "k": "Ortsteile",
+                  "v": "Zu Ketzin/Havel gehören Etzin, Falkenrehde, Paretz, Tremmen und Zachow. Wir lösen Haushalte in allen fünf und in der Kernstadt auf."
+                },
+                {
+                  "k": "Amtsgericht",
+                  "v": "Ketzin/Havel liegt im Gerichtsbezirk des Amtsgerichts Nauen. Welches Nachlassgericht im Einzelfall zuständig ist, richtet sich nach dem letzten gewöhnlichen Aufenthalt der verstorbenen Person (§ 343 FamFG); verbindlich klärt das das Gericht."
+                },
+                {
+                  "k": "Entfernung",
+                  "v": "Wir kommen von Falkensee, die Anfahrt ist im Festpreis enthalten. Antwort am selben Tag, Besichtigung meist innerhalb weniger Tage."
+                }
+              ],
+              "quelle": "data/copy/standorte-orte.json (Ketzin, Wikipedia Ketzin/Havel, Abruf 20.10.2026); https://de.wikipedia.org/wiki/Amtsgericht_Nauen, Abruf 06.11.2026; § 343 Abs. 1 FamFG, https://www.gesetze-im-internet.de/famfg/__343.html, Abruf 06.11.2026"
+            },
+            "blocks": [
+              {
+                "id": "fern-erben-ketzin",
+                "h2": "Haus in Ketzin geerbt, Sie wohnen anderswo",
+                "lead": "Eine Haushaltsauflösung in Ketzin funktioniert ohne Ihre Anwesenheit.",
+                "body": "Sie brauchen einen Schlüssel bei einer Vertrauensperson und eine kurze Vollmacht. Alles Weitere klären wir per Foto und WhatsApp.",
+                "bullets": [
+                  "Schlüssel bei Nachbarn, Hausverwaltung oder Verwandten",
+                  "Fundstücke per Foto klären, bevor etwas weggeht",
+                  "Bilder nach jedem Räumungstag, Rechnung und Belege per Mail",
+                  "Mehrere Erben: Bilder gehen an alle"
+                ],
+                "link_to": "ratgeber/haushaltsaufloesung-kosten",
+                "link_text": "Was den Preis einer Haushaltsauflösung bestimmt"
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Muss ich für die Haushaltsauflösung in Ketzin selbst vor Ort sein?",
+                "a": "Nein. Für die kostenlose Besichtigung genügt eine Vertrauensperson mit Schlüssel, für die Auflösung eine kurze schriftliche Vollmacht. Fundstücke klären wir per Foto und WhatsApp, jede Etappe dokumentieren wir mit Bildern. Rechnung und Entsorgungsbelege schicken wir per Mail. So lässt sich eine Auflösung in Ketzin auch aus der Ferne begleiten."
+              },
+              {
+                "q": "Fahren Sie auch nach Paretz, Tremmen oder Zachow?",
+                "a": "Ja. Der Haus- & Gartenservice Havelland löst Haushalte in der Kernstadt Ketzin und in den Ortsteilen Etzin, Falkenrehde, Paretz, Tremmen und Zachow auf. Die Anfahrt von Falkensee ist im schriftlichen Festpreis enthalten. Schreiben Sie uns die Adresse, wir antworten am selben Tag."
+              },
+              {
+                "q": "Wie lange dauert es von der Anfrage bis zur leeren Wohnung in Ketzin?",
+                "a": "Wir antworten am selben Tag, die kostenlose Besichtigung folgt meist innerhalb weniger Tage. Danach steht der Festpreis schriftlich fest. Den Räumungstermin legen wir nach Ihrer Frist, etwa dem Kündigungsende oder dem Notartermin. Die Dauer der Räumung selbst hängt von Menge, Etage und Zugang ab und wird bei der Besichtigung festgelegt."
+              },
+              {
+                "q": "Was passiert mit Möbeln und Hausrat aus Ketzin?",
+                "a": "Gut erhaltene Möbel und Geräte bewerten wir bei der Besichtigung und ziehen ihren Wert vom Festpreis ab. Auf Wunsch fahren wir einzelne Stücke zu einer Spendenstelle. Was Familienmitglieder behalten wollen, bleibt stehen. Der Rest wird nach Holz, Metall, Elektro und Restmüll getrennt entsorgt, die Gebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag."
+              }
+            ]
+          }
+        },
+        "gross-glienicke": {
+          "hook": "Durch den Groß Glienicker See verläuft die Grenze zwischen Potsdam und Berlin. Auf der Potsdamer Seite (14476) liegen Dorfkern, Gutspark und die Waldsiedlung, auf der Berliner Seite die Ortslage Groß-Glienicke im Ortsteil Kladow. Manche Häuser hier sind Zweitwohnsitz, die Eigentümer leben oft anderswo. Wenn ein solches Haus verkauft oder der Haushalt eines Verstorbenen aufgelöst werden soll, übernehmen wir die komplette Haushaltsauflösung, auf beiden Seiten des Sees.",
+          "rahmen": "Eine Haushalts- oder Wohnungsauflösung in Groß Glienicke läuft meist ohne Sie vor Ort. Zur kostenlosen Besichtigung genügt eine Vertrauensperson mit Schlüssel, vorab schicken Sie Fotos. Möbel, Küche, Garderobe, Gartenmöbel und Hausrat nehmen wir komplett mit. Dokumente, Schmuck und Erinnerungsstücke bleiben in einer verschlossenen Kiste für Sie. Verwertbares rechnen wir offen an, den Rest verwerten oder entsorgen wir getrennt nach Material.",
+          "trust": "Nach der kostenlosen Besichtigung in {ort} steht der Festpreis für Räumung und Abtransport schriftlich fest, inkl. MwSt.; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag. Nach jedem Abschnitt kommen Fotos aufs Handy, am Ende Rechnung und Belege per Mail.",
+          "fakt": "Groß Glienicke liegt auf Potsdamer (14476) und Berliner Seite (Ortsteil Kladow); wir lösen Haushalte auf beiden Seiten des Sees auf, etwa 16 Kilometer von Falkensee.",
+          "tief": {
+            "h2": "Haushaltsauflösung in Groß Glienicke: zwei Seiten, ein Ansprechpartner",
+            "sections": [
+              {
+                "h3": "Potsdamer und Berliner Seite",
+                "kurz": "Für uns ein Einsatzgebiet: Wir lösen Haushalte in Groß Glienicke (14476) und in der Berliner Ortslage auf.",
+                "body": "Der See trennt zwei Länder, die Anfahrt bleibt dieselbe. Ob das Haus im Dorfkern, nahe dem Gutspark oder in der Waldsiedlung steht, oder auf der Berliner Seite im Ortsteil Kladow: Ein Termin, ein Festpreis, ein Ansprechpartner. Unser Sitz in Falkensee ist etwa 16 Kilometer entfernt, die Anfahrt steckt im Festpreis."
+              },
+              {
+                "h3": "Zweitwohnsitz auflösen",
+                "kurz": "Steht ein Haus die meiste Zeit leer, sichten wir erst, was überhaupt noch drin ist.",
+                "body": "Bei einem Zweitwohnsitz weiß oft niemand genau, was im Haus liegt. Wir gehen Raum für Raum durch, fotografieren und schicken Ihnen den Überblick, bevor ein Festpreis entsteht. Was Sie behalten wollen, markieren Sie auf den Fotos. Mehr als eine Vertrauensperson mit Schlüssel und eine kurze Vollmacht brauchen wir nicht."
+              },
+              {
+                "h3": "Verkaufstermin im Blick",
+                "kurz": "Maklerbesichtigung oder Notartermin legen den Räumungstag fest, wir planen rückwärts.",
+                "body": "Wird das Haus verkauft, zählt der Stichtag. Wir legen Besichtigung, Festpreis und Räumungstage so, dass bis zur Übergabe ein Puffer bleibt. Am Ende sind die Räume leer und besenrein; Fotos jedes Raums erhalten Käufer, Makler oder Miterben auf Wunsch von Ihnen weitergeleitet."
+              },
+              {
+                "h3": "Mehrere Erben, mehrere Wohnorte",
+                "kurz": "Alle Beteiligten sehen dieselben Fotos und stimmen vor dem Räumungstag zu.",
+                "body": "Sind mehrere Erben beteiligt, holen wir die Zustimmung aller ein, bevor geräumt wird. Fotos von Fundstücken und vom Ergebnis gehen an jeden. Rechtliche Fragen zu Erbschein oder Haftung klären Nachlassgericht oder Anwalt, dazu geben wir keine Auskunft."
+              }
+            ],
+            "ortsblock": {
+              "h2": "Haushaltsauflösung in Groß Glienicke: Lage, Seeufer, Anfahrt",
+              "items": [
+                {
+                  "k": "Zwei Länder",
+                  "v": "Groß Glienicke ist seit dem 26. Oktober 2003 ein Stadtteil von Potsdam (Brandenburg); die Berliner Ortslage Groß-Glienicke gehört zum Ortsteil Kladow. Die Grenze verläuft durch den See."
+                },
+                {
+                  "k": "Orte im Ort",
+                  "v": "Dorfkern, Gutspark, Seepromenade und die Waldsiedlung auf dem Gelände einer früheren Kaserne. PLZ der Potsdamer Seite: 14476."
+                },
+                {
+                  "k": "Nachlass",
+                  "v": "Zuständig ist das Gericht, in dessen Bezirk die verstorbene Person zuletzt ihren gewöhnlichen Aufenthalt hatte (§ 343 FamFG). Weil das Dorf an zwei Länder grenzt, entscheidet der letzte Wohnsitz; Auskunft gibt das Nachlassgericht."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Von Falkensee sind es etwa 16 Kilometer. Die Anfahrt steckt im schriftlichen Festpreis, Antwort am selben Tag."
+                }
+              ],
+              "quelle": "data/copy/standorte-orte.json (Groß Glienicke, Wikipedia Groß Glienicke, Abruf 20.10.2026; Entfernung 16 km aus FAQ der Standortseite); § 343 Abs. 1 FamFG, https://www.gesetze-im-internet.de/famfg/__343.html, Abruf 06.11.2026"
+            },
+            "blocks": [
+              {
+                "id": "zweitwohnsitz-gross-glienicke",
+                "h2": "Haus mit Seeblick leer geräumt, ohne dass Sie anreisen",
+                "lead": "Zweitwohnsitz oder Elternhaus am See: Der Ablauf bleibt gleich.",
+                "body": "Erst Fotos und Besichtigung, dann Festpreis, dann die Räumungstage mit Foto-Nachweis. Persönliches bleibt in der Kiste für Sie.",
+                "bullets": [
+                  "Fotos vorab, kostenlose Besichtigung vor Ort",
+                  "Festpreis schriftlich, Anfahrt enthalten",
+                  "Fundstücke per WhatsApp klären",
+                  "Übergabe leer und besenrein"
+                ]
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Lösen Sie auch Haushalte auf der Berliner Seite von Groß Glienicke auf?",
+                "a": "Ja. Der Haus- & Gartenservice Havelland arbeitet auf der Potsdamer Seite (14476) und in der Berliner Ortslage Groß-Glienicke, die zum Ortsteil Kladow gehört. Beide liegen am selben See, der Ablauf ist gleich: kostenlose Besichtigung, schriftlicher Festpreis inkl. MwSt., Räumung, besenreine Übergabe."
+              },
+              {
+                "q": "Wir nutzen das Haus in Groß Glienicke als Zweitwohnsitz. Wie läuft die Auflösung?",
+                "a": "Sie schicken Fotos oder einen Schlüssel an eine Vertrauensperson, wir besichtigen kostenlos und senden Ihnen einen Foto-Überblick. Danach steht der Festpreis fest. Sie markieren, was bleibt, wir räumen den Rest, trennen nach Material und entsorgen. Nach jedem Abschnitt kommen Fotos, am Ende Rechnung und Belege per Mail."
+              },
+              {
+                "q": "Kann ich eine Haushaltsauflösung in Groß Glienicke zum Hausverkauf planen?",
+                "a": "Ja. Nennen Sie uns den Termin von Notar, Makler oder Übergabe, wir planen die Räumung rückwärts davon. Bis zum Stichtag bleibt ein Puffer für die Nachkontrolle. Wir übergeben leer und besenrein; wird der vereinbarte Termin verpasst, ist der nächste Tag für Sie kostenlos."
+              },
+              {
+                "q": "Wie weit ist es von Falkensee nach Groß Glienicke, und kostet die Anfahrt extra?",
+                "a": "Es sind etwa 16 Kilometer. Die Anfahrt kostet nichts extra, sie steckt im schriftlichen Festpreis, den Sie nach der kostenlosen Besichtigung erhalten. Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag."
+              }
+            ]
+          }
+        },
+        "berlin-kladow": {
+          "hook": "Kladow ist der südlichste Ortsteil von Spandau: Villen aus dem 19. Jahrhundert am Havelufer, der Ortskern Alt-Kladow, die Finnenhaussiedlung von 1958 bis 1961 und im Süden die Landstadt Gatow. In Häusern dieser Größe und Lage hat sich über Jahrzehnte ein umfangreicher Hausstand angesammelt. Wird so ein Haus verkauft oder ein Nachlass geregelt, übernehmen wir die gesamte Haushaltsauflösung, diskret und mit Zeit zum Sichten.",
+          "rahmen": "Eine Haushalts- oder Wohnungsauflösung in Kladow beginnt mit dem Rundgang. Große Hausstände über mehrere Etagen räumen wir Raum für Raum und planen dafür mehr Räumungstage ein, damit nichts Wertvolles im Abfall landet. Gut erhaltene Möbel, Antiquitäten, Sammlungen und Bücher prüfen wir und rechnen ihren Wert offen auf den Festpreis an. Briefe, Urkunden und Fotoalben gehen in eine verschlossene Kiste für die Familie. Übrig bleibt ein leeres, besenreines Haus.",
+          "trust": "Nach der kostenlosen Besichtigung in {ort} bekommen Sie den Festpreis für Räumung und Abtransport schriftlich, inkl. MwSt.; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag. Wir arbeiten diskret, halten den Übergabetermin und dokumentieren jeden Raum auf Wunsch mit Fotos.",
+          "fakt": "In Kladow, Alt-Kladow, der Finnenhaussiedlung und Gatow lösen wir Haushalte auf; die Anfahrt von Falkensee steckt im Festpreis.",
+          "tief": {
+            "h2": "Haushaltsauflösung in Berlin-Kladow: Villa, Siedlungshaus, Etagenwohnung",
+            "sections": [
+              {
+                "h3": "Großer Hausstand, mehrere Etagen",
+                "kurz": "Je mehr Etagen und Räume, desto wichtiger der Plan: Wir teilen das Haus in Abschnitte auf.",
+                "body": "Bei Villen und größeren Wohnhäusern räumen wir etagenweise. Vor jedem Abschnitt sichten wir, was bleibt, was Wert hat, was gehen kann. Treppen, Keller und Dachräume zählen wir bei der Besichtigung mit und nennen danach einen Festpreis, der den gesamten Haushalt abdeckt, nicht nur das Erdgeschoss."
+              },
+              {
+                "h3": "Wertvolles erkennen statt wegwerfen",
+                "kurz": "Antiquitäten, Bilder, Bücher und Sammlungen prüfen wir, bevor irgendetwas auf den Anhänger kommt.",
+                "body": "In älteren Häusern finden sich Stücke, die mehr wert sind, als man ihnen ansieht. Wir bewerten sie bei der Besichtigung und ziehen den Betrag offen vom Festpreis ab. Auf Wunsch fahren wir einzelne Stücke zu einer Spendenstelle, statt sie zu entsorgen. Eine förmliche Schätzung durch einen Gutachter ersetzt das nicht."
+              },
+              {
+                "h3": "Alt-Kladow, Finnenhaussiedlung, Gatow",
+                "kurz": "Wir kommen in alle Lagen des Ortsteils und nach Gatow, die Anfahrt ist im Festpreis.",
+                "body": "Ob Villa am Havelufer, Haus in der Finnenhaussiedlung oder Wohnung im Ortskern: Der Ablauf ist derselbe, die Anfahrt von Falkensee steckt im Festpreis. Einen Aufschlag für die Fahrt gibt es nicht."
+              },
+              {
+                "h3": "Diskret bis zur Schlüsselübergabe",
+                "kurz": "Wir sprechen nicht über das, was wir sehen. Fotos vom Ergebnis gehen nur an Sie.",
+                "body": "Eine Auflösung betrifft private Dinge. Wir arbeiten ohne Publikum, halten uns an Absprachen und geben Fotos nur an die Personen weiter, die Sie nennen. Am Ende übergeben wir leer und besenrein an Sie, Käufer oder Hausverwaltung."
+              }
+            ],
+            "ortsblock": {
+              "h2": "Haushaltsauflösung in Berlin-Kladow: Ortsteil, Bezirk, Gericht",
+              "items": [
+                {
+                  "k": "Ortsteil",
+                  "v": "Kladow (PLZ 14089) ist der südlichste Ortsteil des Bezirks Spandau, mit Villen am Havelufer aus dem 19. Jahrhundert, dem Ortskern Alt-Kladow, der Finnenhaussiedlung (1958 bis 1961) und der Landstadt Gatow."
+                },
+                {
+                  "k": "Amtsgericht",
+                  "v": "Der Gerichtsbezirk des Amtsgerichts Spandau ist deckungsgleich mit dem Bezirk Spandau. Das Gericht sitzt am Altstädter Ring 7, 13597 Berlin, Nachlasssachen gehören zu seinen Zuständigkeiten."
+                },
+                {
+                  "k": "Nachlass",
+                  "v": "Maßgeblich ist der letzte gewöhnliche Aufenthalt der verstorbenen Person (§ 343 FamFG). Fragen zu Erbschein und Haftung klären Nachlassgericht oder Rechtsanwalt, dazu geben wir keine Auskunft."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Von Falkensee, ohne Aufschlag. Antwort am selben Tag, Besichtigung meist innerhalb weniger Tage und kostenlos."
+                }
+              ],
+              "quelle": "data/copy/standorte-orte.json (Kladow, Wikipedia Berlin-Kladow, Abruf 20.10.2026); https://de.wikipedia.org/wiki/Amtsgericht_Spandau, Abruf 06.11.2026; https://www.berlin.de/gerichte/amtsgericht-spandau/das-gericht/zustaendigkeiten/allgemeine-zustaendigkeit/, Abruf 06.11.2026; § 343 Abs. 1 FamFG, https://www.gesetze-im-internet.de/famfg/__343.html, Abruf 06.11.2026"
+            },
+            "blocks": [
+              {
+                "id": "nachlass-kladow",
+                "h2": "Nachlass in Kladow: erst sichten, dann räumen",
+                "lead": "Nach dem Todesfall beginnt die Auflösung mit dem Rundgang ohne Anhänger.",
+                "body": "Sie entscheiden, was Bedeutung hat und was Wert hat. Wir sichern Papiere und Erinnerungsstücke, bewerten Verwertbares und räumen erst danach.",
+                "bullets": [
+                  "Rundgang vor dem Räumungstag, Sie entscheiden",
+                  "Papiere, Schmuck, Fotos getrennt gesichert",
+                  "Verwertbares offen angerechnet",
+                  "Schriftlicher Festpreis nach Besichtigung"
+                ],
+                "link_to": "ratgeber/haushaltsaufloesung-kosten",
+                "link_text": "Wovon der Preis einer Haushaltsauflösung abhängt"
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Lösen Sie in Kladow auch ganze Villen mit mehreren Etagen auf?",
+                "a": "Ja. Der Haus- & Gartenservice Havelland räumt etagenweise, plant bei großen Hausständen mehr Räumungstage ein und nennt nach der kostenlosen Besichtigung einen Festpreis für den gesamten Haushalt inkl. MwSt. Antiquitäten, Bilder und Sammlungen werden vorher geprüft, ihren Wert rechnet es offen an. Übergeben wird das Haus leer und besenrein."
+              },
+              {
+                "q": "Wer ist für einen Nachlass in Kladow zuständig, das Amtsgericht Spandau?",
+                "a": "Kladow gehört zum Bezirk Spandau, der Gerichtsbezirk des Amtsgerichts Spandau ist mit dem Bezirk deckungsgleich. Maßgeblich bleibt der letzte gewöhnliche Aufenthalt der verstorbenen Person (§ 343 FamFG). Welche Stelle im Einzelfall zuständig ist, klärt das Gericht; rechtliche Auskünfte zum Erbe geben wir nicht."
+              },
+              {
+                "q": "Was gilt für Haushalte in der Finnenhaussiedlung oder in Gatow?",
+                "a": "Wir lösen Haushalte in allen Lagen von Kladow auf, auch in der Finnenhaussiedlung, in Alt-Kladow und in Gatow. Der Ablauf bleibt derselbe: kostenlose Besichtigung, schriftlicher Festpreis, Räumung, besenreine Übergabe. Die Anfahrt von Falkensee steckt im Festpreis."
+              },
+              {
+                "q": "Wie diskret arbeiten Sie bei einer Haushaltsauflösung in Kladow?",
+                "a": "Wir sprechen mit niemandem über das, was wir finden. Persönliche Papiere, Schmuck und Fotos kommen in eine verschlossene Kiste, die an Sie geht. Fotos vom Ergebnis erhalten nur die Personen, die Sie nennen. Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag."
+              }
+            ]
+          }
+        },
+        "berlin-gatow": {
+          "hook": "Gatow gilt als Dorf in der Großstadt: Einfamilienhäuser mit Gärten rund um Alt-Gatow und den Kladower Damm, die Gatower Feldflur, im Osten die Havel. Wo Häuser lange in einer Familie bleiben, wird irgendwann eines leer: nach dem Tod der Eltern, bei einem Umzug ins Heim oder vor dem Verkauf. Wir lösen den gesamten Haushalt in Gatow auf, vom Schlafzimmer bis zum Nebengebäude, und übergeben besenrein.",
+          "rahmen": "Eine Haushalts- oder Wohnungsauflösung in Gatow umfasst das Wohnhaus mit allem, was dazugehört: Möbel, Küche, Kleidung, Hausrat, dazu Gartenhaus oder Schuppen, wenn Sie das wünschen. Sie sagen uns, was bleibt. Fotos, Urkunden und Schmuck legen wir beiseite. Alles andere verwerten oder entsorgen wir getrennt nach Material; Brauchbares rechnen wir offen an. Am Schluss stehen leere, gefegte Räume, bereit für den Käufer oder die Hausverwaltung.",
+          "trust": "In {ort} steht nach der kostenlosen Besichtigung ein schriftlicher Festpreis für Räumung und Abtransport des gesamten Haushalts, inkl. MwSt.; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag. Wir halten den vereinbarten Übergabetag und schicken Fotos der leeren Räume, wenn Sie das möchten.",
+          "fakt": "Gatow grenzt an Kladow, die Wilhelmstadt und Dallgow-Döberitz; wir lösen Haushalte rund um Alt-Gatow und den Kladower Damm auf.",
+          "tief": {
+            "h2": "Haushaltsauflösung in Berlin-Gatow: Haus, Garten, Nachlass",
+            "sections": [
+              {
+                "h3": "Wohnhaus samt Nebengebäuden",
+                "kurz": "Zur Auflösung gehört das ganze Anwesen, wenn Sie das wollen: Haus, Gartenhaus, Schuppen.",
+                "body": "Gatows Gärten sind groß, daher steht oft mehr auf dem Grundstück als nur das Wohnhaus. Bei der Besichtigung klären wir, welche Gebäude zur Auflösung gehören. Alles, was dazugehört, steht als eigene Position im Festpreis, damit Sie sehen, wofür Sie zahlen. Reine Teilräumungen, etwa nur der Schuppen, laufen als Entrümpelung."
+              },
+              {
+                "h3": "Generationenwechsel im Eigenheim",
+                "kurz": "Wenn Eltern ausziehen oder versterben, sichten wir mit den Kindern, was in der Familie bleibt.",
+                "body": "Bei einem Elternhaus entscheiden oft mehrere Geschwister. Wir stimmen die Termine mit allen ab, holen vor dem Räumungstag die Zustimmung ein und schicken die Fotos an alle Beteiligten. Wer weit weg lebt, nimmt per WhatsApp teil."
+              },
+              {
+                "h3": "Kladow, Wilhelmstadt, Dallgow-Döberitz: kurze Wege",
+                "kurz": "Gatow grenzt an Kladow, die Wilhelmstadt und Dallgow-Döberitz, alle drei gehören zu unserem Einsatzgebiet.",
+                "body": "Dallgow-Döberitz gehört ebenso zu unserem Einsatzgebiet wie Kladow. Die Zahl der Fahrten legen wir bei der Besichtigung fest und nennen sie im Festpreis. Einen Aufschlag für die Anfahrt gibt es nicht."
+              },
+              {
+                "h3": "Leer übergeben, mit Nachweis",
+                "kurz": "Fotos von jedem Raum, Rechnung und Entsorgungsbelege gehen an Sie.",
+                "body": "Am Übergabetag sind alle Räume leer und gefegt. Wir fotografieren jeden Raum und senden die Bilder aufs Handy. Rechnung und Entsorgungsbelege kommen per Mail. Damit haben Sie einen Nachweis gegenüber Käufer, Vermieter oder Miterben."
+              }
+            ],
+            "ortsblock": {
+              "h2": "Haushaltsauflösung in Berlin-Gatow: Lage, Nachbarn, Gericht",
+              "items": [
+                {
+                  "k": "Lage",
+                  "v": "Gatow (PLZ 14089) ist ein Ortsteil im Süden des Bezirks Spandau und grenzt an Kladow, die Wilhelmstadt, die Havel, Potsdam und Dallgow-Döberitz. Prägend sind Einfamilienhäuser und Gärten, die Straße Alt-Gatow und der Kladower Damm."
+                },
+                {
+                  "k": "Amtsgericht",
+                  "v": "Der Gerichtsbezirk des Amtsgerichts Spandau ist deckungsgleich mit dem Bezirk Spandau; Nachlasssachen gehören zu den Zuständigkeiten des Gerichts am Altstädter Ring 7, 13597 Berlin."
+                },
+                {
+                  "k": "Nachlass",
+                  "v": "Maßgeblich ist der letzte gewöhnliche Aufenthalt der verstorbenen Person (§ 343 FamFG). Rechtliche Fragen zu Erbschein und Haftung klären Nachlassgericht oder Anwalt."
+                },
+                {
+                  "k": "Erreichbarkeit",
+                  "v": "Antwort am selben Tag, kostenlose Besichtigung meist innerhalb weniger Tage, Anfahrt im Festpreis."
+                }
+              ],
+              "quelle": "data/copy/standorte-orte.json (Gatow, Wikipedia Berlin-Gatow, Abruf 20.10.2026); https://de.wikipedia.org/wiki/Amtsgericht_Spandau, Abruf 06.11.2026; https://www.berlin.de/gerichte/amtsgericht-spandau/das-gericht/zustaendigkeiten/allgemeine-zustaendigkeit/, Abruf 06.11.2026; § 343 Abs. 1 FamFG, https://www.gesetze-im-internet.de/famfg/__343.html, Abruf 06.11.2026"
+            },
+            "blocks": [
+              {
+                "id": "elternhaus-gatow",
+                "h2": "Elternhaus in Gatow auflösen: der Ablauf in vier Schritten",
+                "lead": "Besichtigung, Festpreis, Räumung, Übergabe: Mehr braucht eine Haushaltsauflösung nicht.",
+                "body": "Sie müssen keinen Container bestellen und nicht selbst fahren. Wir sortieren, räumen, entsorgen und übergeben.",
+                "bullets": [
+                  "Kostenlose Besichtigung, Antwort am selben Tag",
+                  "Schriftlicher Festpreis inkl. MwSt.",
+                  "Räumung mit Foto-Nachweis",
+                  "Besenreine Übergabe zum vereinbarten Termin"
+                ],
+                "link_to": "entruempelung",
+                "link_text": "Nur Schuppen oder Keller? Zur Entrümpelung"
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Gehören Gartenhaus und Schuppen in Gatow zur Haushaltsauflösung?",
+                "a": "Auf Wunsch ja. Der Haus- & Gartenservice Havelland klärt bei der kostenlosen Besichtigung, welche Gebäude zum Anwesen gehören, und führt jedes als eigene Position im schriftlichen Festpreis. Geht es nur um Schuppen oder Keller und nicht um den ganzen Haushalt, ist das eine Entrümpelung, die wir getrennt anbieten."
+              },
+              {
+                "q": "Wie läuft die Auflösung eines Elternhauses in Gatow mit mehreren Geschwistern?",
+                "a": "Wir stimmen Besichtigung und Termine mit allen Beteiligten ab und holen vor dem Räumungstag die Zustimmung aller ein. Fotos von Fundstücken und vom Ergebnis gehen an jeden. Was Geschwister behalten wollen, markieren sie vorher. Rechtliche Fragen zum Erbe klären Nachlassgericht oder Anwalt."
+              },
+              {
+                "q": "Wie schnell findet die Besichtigung in Gatow statt?",
+                "a": "Wir antworten am selben Tag, die Besichtigung ist kostenlos und findet meist innerhalb weniger Tage statt. Danach liegt der Festpreis schriftlich vor. Den Räumungstermin legen wir nach Ihrer Frist, etwa dem Notartermin oder der Schlüsselübergabe an die Hausverwaltung."
+              },
+              {
+                "q": "Was kostet die Anfahrt nach Gatow?",
+                "a": "Nichts extra. Die Anfahrt von Falkensee steckt im schriftlichen Festpreis inkl. MwSt. Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag. Wertvolle Stücke aus dem Haushalt ziehen wir offen vom Preis ab."
+              }
+            ]
+          }
+        },
+        "velten": {
+          "hook": "Velten, die Ofenstadt (16727) zwischen Hennigsdorf und Oranienburg, besteht aus der Kernstadt und Hohenschöpping; Altbau und Neubau stehen nebeneinander, nahe dem Businesspark Velten. Muss hier eine Mietwohnung nach Kündigung oder Todesfall leer werden, entscheidet der Termin. Wir lösen den kompletten Haushalt auf, übergeben besenrein und stimmen die Übergabe auf Wunsch direkt mit Vermieter oder Hausverwaltung ab.",
+          "rahmen": "Bei einer Wohnungsauflösung in Velten zählt der Weg durchs Treppenhaus ebenso wie der Hausrat: Wir tragen aus Etagen und Kellerabteilen heraus, ohne dass Sie Hilfe organisieren. Möbel, Küchenzeile, Betten, Wäsche und Geschirr gehen komplett mit. Briefe, Urkunden und Fotoalben legen wir beiseite. Gut erhaltene Stücke rechnen wir offen an. Am Ende steht die Wohnung leer und gefegt, bereit für das Übergabeprotokoll.",
+          "trust": "Nach der kostenlosen Besichtigung in {ort} steht der Festpreis für Räumung und Abtransport schriftlich fest, inkl. MwSt.; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag. Wir planen rückwärts vom Ende der Kündigungsfrist und halten den vereinbarten Übergabetag.",
+          "fakt": "Velten besteht aus Kernstadt und Hohenschöpping; wir lösen Wohnungen und Häuser zum Fristende auf und stimmen die Übergabe mit Vermieter oder Hausverwaltung ab.",
+          "tief": {
+            "h2": "Haushaltsauflösung in Velten: Wohnung, Frist, Übergabe",
+            "sections": [
+              {
+                "h3": "Die Kündigungsfrist gibt den Takt vor",
+                "kurz": "Wir planen rückwärts: Besichtigung, Festpreis, Räumungstage, Puffer, Übergabe.",
+                "body": "Am letzten Tag der Frist will der Vermieter die Wohnung leer und besenrein sehen. Deshalb legen wir den Räumungstermin nicht nach unserem Kalender, sondern nach Ihrem Stichtag fest. Einen Puffer für die Nachkontrolle bauen wir ein. Welche Fristen für Sie gelten, klärt der Mietvertrag oder ein Anwalt, dazu geben wir keine Auskunft."
+              },
+              {
+                "h3": "Etagenwohnung, Treppenhaus, Kellerabteil",
+                "kurz": "Zugang bestimmt den Aufwand: Wir zählen Stockwerke und Treppen bei der Besichtigung mit.",
+                "body": "In Mehrfamilienhäusern ohne Aufzug sind Treppen der größte Posten. Bei der Besichtigung sehen wir uns Stockwerk, Treppenhaus, Hofzufahrt und das zugehörige Kellerabteil an. Danach steht fest, wie viele Fahrten nötig sind, und der Festpreis deckt alles ab, ohne Nachforderung."
+              },
+              {
+                "h3": "Kernstadt und Hohenschöpping",
+                "kurz": "Beide Teile des Stadtgebiets fahren wir an, die Anfahrt ist im Festpreis.",
+                "body": "Zu Velten gehört neben der Kernstadt Hohenschöpping am Oder-Havel-Kanal. Wir lösen Haushalte in beiden auf, Wohnungen ebenso wie Einfamilienhäuser. Von Falkensee kommen wir ohne Aufschlag."
+              },
+              {
+                "h3": "Übergabeprotokoll und Kaution",
+                "kurz": "Fotos jedes Raums belegen den Zustand, falls es später um die Kaution geht.",
+                "body": "Vor dem Übergabetermin fotografieren wir jeden Raum. Auf Wunsch gehen wir mit dem Vermieter oder der Hausverwaltung durch die leere Wohnung, Keller eingeschlossen, und lassen das Protokoll unterschreiben. Mit Ihrer Vollmacht übernehmen wir den Termin, wenn Sie nicht dabei sein können."
+              }
+            ],
+            "ortsblock": {
+              "h2": "Haushaltsauflösung in Velten: Stadt, Ortsteile, Gericht",
+              "items": [
+                {
+                  "k": "Stadt",
+                  "v": "Velten (PLZ 16727) trägt den Beinamen Ofenstadt. Zum Stadtgebiet gehören die Kernstadt und Hohenschöpping, ein Wohnplatz am Oder-Havel-Kanal, dazu Heidekrug. Der Businesspark Velten liegt im Stadtgebiet."
+                },
+                {
+                  "k": "Nachbarn",
+                  "v": "Velten grenzt an Leegebruch, Oranienburg, Hohen Neuendorf, Hennigsdorf und Oberkrämer."
+                },
+                {
+                  "k": "Amtsgericht",
+                  "v": "Velten liegt im Gerichtsbezirk des Amtsgerichts Oranienburg. Das zuständige Nachlassgericht richtet sich nach dem letzten gewöhnlichen Aufenthalt der verstorbenen Person (§ 343 FamFG); verbindlich klärt das das Gericht."
+                },
+                {
+                  "k": "Erreichbarkeit",
+                  "v": "Antwort am selben Tag, Besichtigung kostenlos und meist innerhalb weniger Tage, Anfahrt von Falkensee im Festpreis."
+                }
+              ],
+              "quelle": "data/copy/standorte-orte.json (Velten, Wikipedia Velten, Abruf 20.10.2026); https://de.wikipedia.org/wiki/Amtsgericht_Oranienburg, Abruf 06.11.2026; § 343 Abs. 1 FamFG, https://www.gesetze-im-internet.de/famfg/__343.html, Abruf 06.11.2026"
+            },
+            "blocks": [
+              {
+                "id": "mietwohnung-velten",
+                "h2": "Mietwohnung in Velten räumen: was der Vermieter erwartet",
+                "lead": "Leer, besenrein, zum Stichtag: So lautet die Erwartung bei jeder Übergabe.",
+                "body": "Wir halten uns an den Stichtag, entsorgen und fegen und dokumentieren das Ergebnis.",
+                "bullets": [
+                  "Räumung nach Ihrer Kündigungsfrist geplant",
+                  "Besenrein, Keller und Boden eingeschlossen",
+                  "Fotos jedes Raums für die Kaution",
+                  "Übergabe mit Vollmacht, wenn Sie verhindert sind"
+                ],
+                "link_to": "entruempelung",
+                "link_text": "Nur einzelne Räume? Zur Entrümpelung"
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Wie schnell räumen Sie eine Mietwohnung in Velten vor Ablauf der Kündigungsfrist?",
+                "a": "Wir antworten am selben Tag und besichtigen meist innerhalb weniger Tage kostenlos. Danach steht der Festpreis fest und der Räumungstermin richtet sich nach Ihrem Fristende. Mit Puffer für die Nachkontrolle übergeben wir leer und besenrein; verpassen wir den vereinbarten Tag, ist der nächste für Sie kostenlos."
+              },
+              {
+                "q": "Übernehmen Sie die Übergabe an die Hausverwaltung in Velten?",
+                "a": "Ja, wenn Sie das wünschen und uns eine schriftliche Vollmacht geben. Wir stimmen den Termin mit der Hausverwaltung ab, gehen mit durch die leeren Räume und lassen das Übergabeprotokoll unterschreiben. Fotos von jedem Raum machen wir vorher, damit der Zustand belegt ist."
+              },
+              {
+                "q": "Gehört Hohenschöpping zu Ihrem Einsatzgebiet?",
+                "a": "Ja. Hohenschöpping zählt zum Stadtgebiet von Velten und zu unserem Einsatzgebiet. Der Haus- & Gartenservice Havelland löst dort Wohnungen und Häuser auf. Die Anfahrt von Falkensee steckt im schriftlichen Festpreis, den Sie nach der kostenlosen Besichtigung erhalten."
+              },
+              {
+                "q": "Wer trägt die Entsorgungskosten bei einer Wohnungsauflösung in Velten?",
+                "a": "Die Entsorgungsgebühren der Annahmestellen geben wir nach Beleg an Sie weiter, ohne eigenen Aufschlag. Für Räumung und Abtransport vereinbaren wir vorab einen schriftlichen Festpreis inkl. MwSt. Wertvolle Möbel oder Geräte ziehen wir offen davon ab."
+              }
+            ]
+          }
+        },
+        "oberkraemer": {
+          "hook": "Oberkrämer ist eine Gemeinde aus sieben Ortsteilen: Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz, mit dem Mühlensee zwischen Vehlefanz, Schwante und Neu-Vehlefanz. Wird hier ein Haus geerbt, wohnen die Erben selten alle nebenan. Wir lösen den gesamten Haushalt in jedem der sieben Orte auf, klären Schlüssel und Vollmacht ohne Ihre Anreise und übergeben besenrein.",
+          "rahmen": "Eine Haushalts- oder Wohnungsauflösung in Oberkrämer beginnt mit einer Frage: Wer entscheidet? Bei Erbengemeinschaften holen wir vor der Räumung die Zustimmung aller Beteiligten ein und schicken allen dieselben Fotos. Danach nehmen wir das Haus komplett aus, Möbel, Küche, Kleidung, Hausrat, und legen Briefe, Urkunden und Erinnerungsstücke beiseite. Brauchbares rechnen wir offen an, den Rest verwerten oder entsorgen wir getrennt. Übrig bleibt ein leeres, besenreines Haus.",
+          "trust": "Nach der kostenlosen Besichtigung in {ort} steht der Festpreis für Räumung und Abtransport schriftlich fest, inkl. MwSt.; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag. Rechnung und Belege gehen auf Wunsch per Mail an alle Erben.",
+          "fakt": "Oberkrämer besteht aus sieben Ortsteilen von Bärenklau bis Vehlefanz; wir lösen in allen Haushalte auf, die Anfahrt von Falkensee steckt im Festpreis.",
+          "tief": {
+            "h2": "Haushaltsauflösung in Oberkrämer: sieben Ortsteile, ein Ablauf",
+            "sections": [
+              {
+                "h3": "Erbengemeinschaft: erst Einigkeit, dann Räumung",
+                "kurz": "Wir räumen erst, wenn alle Beteiligten zugestimmt haben.",
+                "body": "Sind mehrere Erben beteiligt, klären wir vorab, wer welchen Schlüssel hat und wer welche Entscheidungen trifft. Alle erhalten dieselben Fotos der Fundstücke. Was einzelne behalten wollen, wird markiert und bleibt stehen. Streit um das Erbe können wir nicht schlichten, dafür sind Nachlassgericht oder Anwalt zuständig."
+              },
+              {
+                "h3": "Sieben Ortsteile, eine Anfahrt",
+                "kurz": "Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz fahren wir an.",
+                "body": "Die Ortsteile liegen verstreut. Egal in welchem Ort das Haus steht, die Anfahrt von Falkensee steckt im schriftlichen Festpreis. Wie viele Fahrten für einen ganzen Haushalt nötig sind, legen wir bei der Besichtigung fest."
+              },
+              {
+                "h3": "Schlüssel und Vollmacht aus der Ferne",
+                "kurz": "Wer nicht vor Ort wohnt, gibt den Schlüssel an eine Vertrauensperson und eine kurze Vollmacht an uns.",
+                "body": "Besichtigung und Räumungstermin klären wir mit der Vertrauensperson. Fundstücke fotografieren wir und fragen per WhatsApp nach, bevor sie auf den Anhänger gehen. Nach jedem Räumungstag schicken wir Bilder, am Ende Rechnung und Belege per Mail."
+              },
+              {
+                "h3": "Verkauf oder Vermietung danach",
+                "kurz": "Leer und besenrein übergeben wir an Käufer, Mieter oder Hausverwaltung.",
+                "body": "Wer das Haus nach der Auflösung verkaufen oder vermieten will, bekommt es leer und gefegt zurück. Fotos jedes Raums dokumentieren den Zustand. Den Übergabetermin legen wir nach Ihrem Stichtag."
+              }
+            ],
+            "ortsblock": {
+              "h2": "Haushaltsauflösung in Oberkrämer: Ortsteile, Gericht, Anfahrt",
+              "items": [
+                {
+                  "k": "Ortsteile",
+                  "v": "Laut Hauptsatzung hat Oberkrämer sieben Ortsteile: Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz. PLZ 16727. Der Mühlensee liegt zwischen Vehlefanz, Schwante und Neu-Vehlefanz."
+                },
+                {
+                  "k": "Amtsgericht",
+                  "v": "Oberkrämer gehört zum Gerichtsbezirk des Amtsgerichts Oranienburg."
+                },
+                {
+                  "k": "Nachlass",
+                  "v": "Örtlich zuständig ist das Gericht, in dessen Bezirk die verstorbene Person zuletzt ihren gewöhnlichen Aufenthalt hatte (§ 343 FamFG). Fragen zu Erbschein und Haftung klären Nachlassgericht oder Rechtsanwalt, dazu geben wir keine Auskunft."
+                },
+                {
+                  "k": "Erreichbarkeit",
+                  "v": "Wir antworten am selben Tag, die kostenlose Besichtigung folgt meist innerhalb weniger Tage."
+                }
+              ],
+              "quelle": "data/copy/standorte-orte.json (Oberkrämer, Wikipedia Oberkrämer, Abruf 20.10.2026); https://de.wikipedia.org/wiki/Amtsgericht_Oranienburg, Abruf 06.11.2026; § 343 Abs. 1 FamFG, https://www.gesetze-im-internet.de/famfg/__343.html, Abruf 06.11.2026"
+            },
+            "blocks": [
+              {
+                "id": "erben-oberkraemer",
+                "h2": "Mehrere Erben in Oberkrämer: so bleibt jeder informiert",
+                "lead": "Ein Haus, mehrere Wohnorte: Wir halten alle auf demselben Stand.",
+                "body": "Alle Beteiligten sehen dieselben Fotos und stimmen vor dem Räumungstag zu. Rechnung und Belege gehen an die Personen, die Sie nennen.",
+                "bullets": [
+                  "Zustimmung aller Erben vor der Räumung",
+                  "Dieselben Fotos für jeden Beteiligten",
+                  "Schlüssel über eine Vertrauensperson",
+                  "Rechnung und Belege per Mail"
+                ],
+                "link_to": "ratgeber/haushaltsaufloesung-kosten",
+                "link_text": "Was den Preis einer Haushaltsauflösung bestimmt"
+              }
+            ],
+            "faqs": [
+              {
+                "q": "In welchen Ortsteilen von Oberkrämer lösen Sie Haushalte auf?",
+                "a": "In allen sieben: Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz. Der Haus- & Gartenservice Havelland kommt aus Falkensee, die Anfahrt steckt im schriftlichen Festpreis. Nennen Sie uns die Adresse per WhatsApp, wir antworten am selben Tag und vereinbaren die kostenlose Besichtigung."
+              },
+              {
+                "q": "Wir sind drei Erben an verschiedenen Orten. Wie läuft die Auflösung in Oberkrämer?",
+                "a": "Wir holen vor dem Räumungstermin die Zustimmung aller drei ein und schicken allen dieselben Fotos. Wer etwas behalten will, markiert es vorher. Der Schlüssel liegt bei einer Vertrauensperson vor Ort. Nach der Räumung gehen Rechnung und Belege per Mail an alle, die Sie nennen."
+              },
+              {
+                "q": "Welches Amtsgericht gehört zu Oberkrämer?",
+                "a": "Oberkrämer liegt im Gerichtsbezirk des Amtsgerichts Oranienburg. Für Nachlasssachen ist das Gericht des letzten gewöhnlichen Aufenthalts der verstorbenen Person örtlich zuständig (§ 343 FamFG). Den konkreten Fall klärt das Gericht, rechtliche Auskünfte geben wir nicht."
+              },
+              {
+                "q": "Bleibt bei einer Haushaltsauflösung in Oberkrämer etwas für die Familie übrig?",
+                "a": "Ja. Briefe, Urkunden, Fotoalben und Schmuck legen wir in eine verschlossene Kiste; gut erhaltenes bewerten wir und ziehen den Wert offen vom Festpreis ab. Was Familienmitglieder behalten wollen, bleibt stehen. Den Rest sortieren wir nach Material und entsorgen ihn, Gebühren nach Beleg, ohne eigenen Aufschlag."
+              }
+            ]
+          }
+        },
+        "hohen-neuendorf": {
+          "hook": "Hohen Neuendorf (16540) besteht aus vier Ortsteilen: Hohen Neuendorf, Bergfelde, Borgsdorf und Stolpe; die S1 und die S8 verbinden den Ort mit Berlin. Für Angehörige, die in Berlin arbeiten, bleibt neben dem Beruf wenig Zeit für eine Auflösung. Wir übernehmen die komplette Haushaltsauflösung, sind Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr erreichbar und übergeben besenrein.",
+          "rahmen": "Bei einer Haushalts- oder Wohnungsauflösung in Hohen Neuendorf nehmen wir Ihnen den ganzen Ablauf ab: Sichten, Räumen, Entsorgen, Übergeben. Sie kommen zum Rundgang, zeigen, was bleibt, und müssen danach nichts mehr organisieren. Möbel, Küche, Kleidung und Hausrat gehen komplett mit, Briefe, Urkunden und Fotos legen wir beiseite. Gut erhaltene Stücke rechnen wir offen an. Am Ende sind alle Räume leer und besenrein, auch wenn Sie die Tage dazwischen im Büro verbringen.",
+          "trust": "Nach der kostenlosen Besichtigung in {ort} steht der Festpreis für Räumung und Abtransport schriftlich fest, inkl. MwSt.; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag. Besichtigung und Übergabe legen wir auf Ihre Arbeitszeiten, Fotos von jedem Raum bekommen Sie aufs Handy.",
+          "fakt": "In Hohen Neuendorf, Bergfelde, Borgsdorf und Stolpe lösen wir Haushalte auf; für Berliner Pendler legen wir Termine um den Arbeitstag.",
+          "tief": {
+            "h2": "Haushaltsauflösung in Hohen Neuendorf: Termine um Ihren Arbeitstag",
+            "sections": [
+              {
+                "h3": "Besichtigung nach Feierabend oder am Samstag",
+                "kurz": "Wir sind Montag bis Freitag 7 bis 19 Uhr und samstags 8 bis 16 Uhr erreichbar.",
+                "body": "Wer in Berlin arbeitet, kann nicht vormittags zur Besichtigung. Schreiben Sie uns per WhatsApp, wir antworten am selben Tag und suchen einen Termin, der zu Ihrem Arbeitstag passt. Die Besichtigung ist kostenlos, danach steht der Festpreis schriftlich fest."
+              },
+              {
+                "h3": "Vier Ortsteile, ein Festpreis",
+                "kurz": "Bergfelde, Borgsdorf, Stolpe und die Ortsmitte: Die Anfahrt von Falkensee ist enthalten.",
+                "body": "Ob Haus in Borgsdorf, Wohnung in Bergfelde oder Elternhaus in Stolpe: Der Ablauf ist derselbe. Die Zahl der Fahrten legen wir bei der Besichtigung fest und schreiben sie in den Festpreis, ohne Zuschlag für den Ortsteil."
+              },
+              {
+                "h3": "Räumungstage, an denen Sie nicht da sein müssen",
+                "kurz": "Schlüssel und Vollmacht genügen, wir melden uns per Foto.",
+                "body": "Wenn Sie an den Räumungstagen arbeiten, geben Sie den Schlüssel einer Vertrauensperson oder übergeben ihn uns und erteilen eine kurze schriftliche Vollmacht. Fundstücke fotografieren wir und fragen per WhatsApp nach. Nach jedem Tag kommen Bilder, am Ende Rechnung und Belege per Mail."
+              },
+              {
+                "h3": "Übergabe an Käufer, Vermieter oder Miterben",
+                "kurz": "Leer, gefegt, mit Fotos jedes Raums als Nachweis.",
+                "body": "Am Übergabetag sind alle Räume leer und besenrein. Auf Wunsch nehmen wir den Termin mit der Hausverwaltung oder dem Käufer mit Ihrer Vollmacht wahr. Wird der vereinbarte Tag verpasst, ist der nächste für Sie kostenlos."
+              }
+            ],
+            "ortsblock": {
+              "h2": "Haushaltsauflösung in Hohen Neuendorf: Ortsteile, S-Bahn, Gericht",
+              "items": [
+                {
+                  "k": "Ortsteile",
+                  "v": "Hohen Neuendorf (PLZ 16540) hat vier Ortsteile: Hohen Neuendorf, Bergfelde, Borgsdorf und Stolpe."
+                },
+                {
+                  "k": "S-Bahn",
+                  "v": "Die S1 fährt über Borgsdorf und Hohen Neuendorf, die S8 über Bergfelde und Hohen Neuendorf."
+                },
+                {
+                  "k": "Amtsgericht",
+                  "v": "Hohen Neuendorf gehört zum Gerichtsbezirk des Amtsgerichts Oranienburg. Das Nachlassgericht richtet sich nach dem letzten gewöhnlichen Aufenthalt der verstorbenen Person (§ 343 FamFG); verbindlich klärt das das Gericht."
+                },
+                {
+                  "k": "Erreichbarkeit",
+                  "v": "Montag bis Freitag 7 bis 19 Uhr, samstags 8 bis 16 Uhr. Antwort am selben Tag."
+                }
+              ],
+              "quelle": "data/copy/standorte-orte.json (Hohen Neuendorf, Wikipedia Hohen Neuendorf, Abruf 20.10.2026; Erreichbarkeit laut Standortseite); https://de.wikipedia.org/wiki/Amtsgericht_Oranienburg, Abruf 06.11.2026; § 343 Abs. 1 FamFG, https://www.gesetze-im-internet.de/famfg/__343.html, Abruf 06.11.2026"
+            },
+            "blocks": [
+              {
+                "id": "berufstaetige-hohen-neuendorf",
+                "h2": "Haus in Hohen Neuendorf auflösen, während Sie arbeiten",
+                "lead": "Sie zeigen einmal, was bleibt, den Rest übernehmen wir.",
+                "body": "Ein Rundgang, ein Festpreis, dann die Räumungstage ohne Sie. Fotos und Belege kommen digital.",
+                "bullets": [
+                  "Rundgang nach Feierabend oder samstags",
+                  "Festpreis schriftlich, Anfahrt enthalten",
+                  "Schlüssel und Vollmacht statt Urlaubstage",
+                  "Fotos nach jedem Räumungstag"
+                ],
+                "link_to": "entruempelung",
+                "link_text": "Nur Keller oder Dachboden? Zur Entrümpelung"
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Kann ich die Haushaltsauflösung in Hohen Neuendorf abends oder samstags besprechen?",
+                "a": "Ja. Wir sind Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr erreichbar. Schreiben Sie per WhatsApp, wir antworten am selben Tag. Die Besichtigung ist kostenlos und lässt sich auf einen Termin nach Feierabend oder am Wochenende legen; danach steht der Festpreis schriftlich fest."
+              },
+              {
+                "q": "Fahren Sie auch nach Bergfelde, Borgsdorf und Stolpe?",
+                "a": "Ja, alle vier Ortsteile von Hohen Neuendorf gehören zum Einsatzgebiet des Haus- & Gartenservice Havelland. Die Anfahrt von Falkensee steckt im schriftlichen Festpreis, es gibt keinen Zuschlag für den Ortsteil."
+              },
+              {
+                "q": "Müssen wir bei den Räumungstagen in Hohen Neuendorf selbst dabei sein?",
+                "a": "Nein. Mit Schlüssel bei einer Vertrauensperson und einer kurzen Vollmacht räumen wir ohne Sie. Fundstücke klären wir per Foto und WhatsApp, nach jedem Tag schicken wir Bilder. Rechnung und Entsorgungsbelege kommen am Ende per Mail, Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag."
+              },
+              {
+                "q": "Welches Amtsgericht ist für Hohen Neuendorf zuständig?",
+                "a": "Hohen Neuendorf liegt im Gerichtsbezirk des Amtsgerichts Oranienburg. Welches Gericht als Nachlassgericht zuständig ist, richtet sich nach dem letzten gewöhnlichen Aufenthalt der verstorbenen Person (§ 343 FamFG). Rechtliche Auskünfte zum Erbe geben wir nicht, das klärt das Gericht oder ein Anwalt."
+              }
+            ]
+          }
         }
       }
     },
