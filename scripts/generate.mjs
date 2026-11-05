@@ -41,7 +41,13 @@ const TRACK_EVENTS = TRACK ? `<script>document.addEventListener('click',function
 // ---------- Copy-Schicht (P4) — inkl. Sanitizer gegen Agenten-Encoding-Artefakte ----------
 // decEnt: dekodiert HTML-Entities (auch mehrfach geschachtelt) -> Klartext; plain: + Tags strippen; fixHtml: body_html reparieren
 const decEnt = s => { let p = String(s == null ? '' : s), c; do { c = p; p = p.replace(/&amp;/gi, '&').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&quot;/gi, '"').replace(/&#0*39;/gi, "'").replace(/&apos;/gi, "'").replace(/&nbsp;/gi, ' '); } while (p !== c); return p; };
-const plain = s => decEnt(s).replace(/<\/?[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+// M11 (11/2026): Bewertungszahl hat EINE Quelle: data/proof.json google_reviews. Copy darf nur die Platzhalter
+// {google_bewertungen} (Anzahl) und {google_rating} (z. B. 5,0) verwenden; hier werden sie beim Sanitizen gefüllt.
+// /lp/** liest proof.json selbst (scripts/lp.mjs) und bleibt unberührt.
+const fillProof = t => String(t == null ? '' : t)
+  .split('{google_bewertungen}').join(String((proof.google_reviews || {}).count))
+  .split('{google_rating}').join(Number((proof.google_reviews || {}).rating).toFixed(1).replace('.', ','));
+const plain = s => decEnt(fillProof(s)).replace(/<\/?[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const fixHtml = s => {
   let p = String(s == null ? '' : s), c;
   do { c = p; p = p.replace(/&amp;(amp;|lt;|gt;|quot;|#0*39;|nbsp;)/gi, '&$1'); } while (p !== c);
