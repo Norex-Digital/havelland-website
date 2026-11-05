@@ -263,7 +263,7 @@
           "fakt": "Für Wustermark und Elstal fahren wir je nach Ladung zum Wertstoffhof Nauen/Schwanebeck oder nach Falkensee; die Wiegescheine bekommen Sie zur Rechnung."
         },
         "nauen": {
-          "hook": "Nauen ist mit knapp 20.000 Einwohnern eine Kleinstadt im westlichen Havelland: ein Altstadtkern mit Gebäuden aus dem 17. bis 20. Jahrhundert, drumherum 14 Ortsteile mit weiten Wegen und größeren Grundstücken. Wo ein Haus über Generationen in einer Familie bleibt, füllt sich der Keller. Wir räumen aus, wenn verkauft, geerbt oder umgezogen wird.",
+          "hook": "Nauen ist mit rund 20.000 Einwohnern eine Kleinstadt im westlichen Havelland: ein Altstadtkern mit Gebäuden aus dem 17. bis 20. Jahrhundert, drumherum 14 Ortsteile mit weiten Wegen und größeren Grundstücken. Wo ein Haus über Generationen in einer Familie bleibt, füllt sich der Keller. Wir räumen aus, wenn verkauft, geerbt oder umgezogen wird.",
           "rahmen": "In Nauen räumen wir den Altbaukeller ebenso wie die Wohnung im ersten Stock, den Dachboden, die Garage und die Nebengebäude auf den großen Grundstücken der Ortsteile. Brauchbares sortieren wir vor Ort aus und rechnen es offen an, den Rest trennen wir beim Beladen nach Sorten. Elektroaltgeräte, Schrott und Altholz gehen getrennt zur Annahme; Farbreste, Öl, Batterien und Gasflaschen lassen wir stehen und nennen die passende Annahmestelle.",
           "trust": "Zur kostenlosen Besichtigung kommen wir nach Nauen, danach steht der Festpreis für Räumung und Abtransport schriftlich fest. Was der Wertstoffhof Schwanebeck wiegt und abrechnet, reichen wir nach Beleg weiter, ohne eigenen Aufschlag. Auf Wunsch gehen Fotos vom leeren Raum aufs Handy.",
           "fakt": "Der Wertstoffhof des Landkreises liegt auf Nauener Gebiet, Schwanebecker Weg 25: Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
@@ -474,13 +474,13 @@
           "hook": "Groß Glienicke liegt am gleichnamigen See, und die Stadtgrenze verläuft mittendurch: Der Potsdamer Teil mit etwa 5.000 Einwohnern hat die Postleitzahl 14476, die Berliner Ortslage gehört zu Kladow. Dorfkern, Gutspark und die Waldsiedlung auf dem Gelände einer früheren Kaserne prägen den Ort. Wir räumen auf beiden Seiten, auch wenn die Immobilie nur Zweitwohnsitz war.",
           "rahmen": "Ob Einfamilienhaus im Dorfkern, Haus in der Waldsiedlung oder Grundstück mit Seezugang: Wir räumen Keller, Dachboden, Garage und Nebengebäude und tragen alles heraus. Brauchbares sortieren wir aus und rechnen es offen an, den Rest laden wir nach Sorten getrennt. Farbreste, Öl, Batterien und Gasflaschen lassen wir stehen und nennen die zuständige Annahmestelle, denn je nach Seite der Stadtgrenze ist das eine andere.",
           "trust": "Nach der kostenlosen Besichtigung in Groß Glienicke steht der Festpreis für Räumung und Abtransport schriftlich fest. Die Gebühren der Annahmestelle, ob auf Potsdamer oder Berliner Seite, geben wir nach Beleg weiter, ohne eigenen Aufschlag. Wer nicht vor Ort wohnt, bekommt nach der Räumung Fotos aufs Handy.",
-          "fakt": "Groß Glienicke gehört zu Potsdam, die Berliner Ortslage zu Kladow: Je nach Seite fahren wir den Wertstoffhof Drewitz oder den Recyclinghof Spandau an.",
+          "fakt": "Groß Glienicke gehört zu Potsdam, die Berliner Ortslage zu Kladow: Räumungsgut entsorgen wir über eine zugelassene gewerbliche Annahmestelle, Gebühren nach Beleg.",
           "tief": {
             "h2": "Entrümpelung in Groß Glienicke: Dorfkern, Waldsiedlung, Seegrundstück",
             "sections": [
               {
                 "h3": "Zwei Seiten, eine Besichtigung",
-                "kurz": "Potsdamer Seite (14476) oder Berliner Ortslage: Wir klären bei der Besichtigung, welche Annahmestelle zuständig ist.",
+                "kurz": "Potsdamer Seite (14476) oder Berliner Ortslage: Wir klären bei der Besichtigung, welche Sperrmüllregeln für Ihre Adresse gelten.",
                 "body": "Seit 1945 ist der Ort geteilt: Der westliche Teil gehört seit 2003 als Stadtteil zu Potsdam, der östliche, Groß-Glienicke mit Bindestrich, liegt im Berliner Ortsteil Kladow. Für Sie ändert das wenig, für die Entsorgung aber einiges: Je nach Seite kommen andere Annahmestellen und Regeln infrage. Wir fragen bei der Besichtigung nach der Adresse und planen danach die Fahrten."
               },
               {
@@ -508,11 +508,11 @@
               "items": [
                 {
                   "k": "Annahmestelle",
-                  "v": "Potsdamer Seite: Wertstoffhof Drewitz der STEP, Zum Heizwerk 18, 14478 Potsdam, Montag bis Freitag 7–17 Uhr, Samstag 8–14 Uhr, rund 19 km oder 28 Minuten Fahrt von Groß Glienicke. Berliner Seite: BSR-Recyclinghof Spandau, Brunsbütteler Damm 47, 13581 Berlin, rund 10 km oder 17 Minuten Fahrt. Welche Stelle für Ihre Adresse zuständig ist, klären wir vor dem Termin."
+                  "v": "Für Privathaushalte auf der Potsdamer Seite: Wertstoffhof Drewitz der STEP, Zum Heizwerk 18, 14478 Potsdam (größere Mengen; Kleinmengen auch Neuendorfer Anger 9), Montag bis Freitag 7–17 Uhr, Samstag 8–14 Uhr, rund 19 km oder 28 Minuten Fahrt von Groß Glienicke. Berliner Seite: BSR-Recyclinghof Spandau, Brunsbütteler Damm 47, 13581 Berlin, rund 10 km oder 17 Minuten Fahrt. Räumungsgut durch uns geht an eine zugelassene gewerbliche Annahmestelle; welche Regeln für Ihre Adresse gelten, klären wir vor dem Termin."
                 },
                 {
                   "k": "Sperrmüll",
-                  "v": "Potsdamer Seite: Die Stadt Potsdam holt haushaltsüblichen Sperrmüll kostenfrei ab; die Abholung muss vorab angemeldet werden, der Termin liegt voraussichtlich etwa zwei Wochen danach, und unangemeldet oder zu früh bereitgestellter Sperrmüll ist eine Ordnungswidrigkeit. Berliner Seite: Die BSR-Abholung kostet Gebühr; Privathaushalte können dafür bis 3 m³ je täglicher Anlieferung gebührenfrei am Recyclinghof abgeben."
+                  "v": "Potsdamer Seite: Die STEP holt haushaltsüblichen Sperrmüll kostenfrei ab; die Abholung muss vorab angemeldet werden (Telefon 0331 661-7166), bereitgestellt wird frühestens am Vorabend ab 18 Uhr, unangemeldeter oder zu früh bereitgestellter Sperrmüll wird mit Bußgeld geahndet. Berliner Seite: Die BSR-Abholung kostet Gebühr; Privathaushalte können dafür bis 3 m³ je täglicher Anlieferung gebührenfrei am Recyclinghof abgeben."
                 },
                 {
                   "k": "Anfahrt",
@@ -523,7 +523,7 @@
                   "v": "Potsdamer Stadtteil seit 26.10.2003, PLZ 14476, rund 5.000 Einwohner auf 10,25 km² (Stadtteilkatalog 2022); die Berliner Ortslage Groß-Glienicke hat gut 3.000 Einwohner und gehört zu Kladow. Der See wird von der Stadtgrenze der Länge nach geteilt."
                 }
               ],
-              "quelle": "de.wikipedia.org/wiki/Groß_Glienicke (Abruf 06.11.2026), potsdam.de (Wertstoffhof Drewitz, Abruf 06.11.2026), bsr.de (Recyclinghof Spandau), berlin.de/stadtsauberkeit, Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
+              "quelle": "de.wikipedia.org/wiki/Groß_Glienicke (Abruf 06.11.2026), swp-potsdam.de/de/entsorgung/wertstoffhöfe und /sperrmüllabholung (Abruf 06.11.2026), potsdam.de Abfallratgeber 2025 (Abruf 06.11.2026), bsr.de (Recyclinghof Spandau, Annahmebedingungen Recyclinghöfe Stand 01/2025, Abfallgebührensatzung), berlin.de/stadtsauberkeit, Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
             },
             "blocks": [
               {
@@ -558,7 +558,7 @@
               },
               {
                 "q": "Welche Annahmestelle gilt für meinen Sperrmüll in Groß Glienicke?",
-                "a": "Das hängt von der Seite der Grenze ab. Im Potsdamer Teil ist der Wertstoffhof Drewitz der STEP zuständig, in der Berliner Ortslage der BSR-Recyclinghof in Spandau. Wir fragen Sie bei der Besichtigung nach der Adresse und fahren die richtige Stelle an; die Gebühren dort geben wir nach Beleg weiter."
+                "a": "Räumungsgut bringen wir zu einer zugelassenen gewerblichen Annahmestelle, die Gebühren dort geben wir nach Beleg weiter. Für Privathaushalte hängt es von der Seite der Grenze ab: Auf der Potsdamer Seite nehmen die STEP-Wertstoffhöfe Drewitz und Neuendorfer Anger Sperrmüll an, in der Berliner Ortslage der BSR-Recyclinghof Spandau. Bei der Besichtigung fragen wir nach der Adresse und erklären, was für Sie kostenfrei geht."
               },
               {
                 "q": "Kann ich meinen Zweitwohnsitz in Groß Glienicke aus der Ferne räumen lassen?",
@@ -578,8 +578,8 @@
         "berlin-kladow": {
           "hook": "Kladow, der südlichste Ortsteil von Spandau mit gut 16.500 Einwohnern, hat Villen am Havelufer, die Finnenhaussiedlung von 1959/60 und die Landstadt Gatow auf einem Teil des früheren Flugplatzes. So verschieden die Häuser, so ähnlich der Anlass: Nach Auszug, Verkauf oder Erbfall muss alles raus. Wir räumen Keller, Dachboden und Garage und übergeben besenrein.",
           "rahmen": "In Kladow räumen wir vom Keller der Villa bis zum Dachgeschoss des Siedlungshauses. Wir tragen heraus, trennen beim Beladen nach Holz, Metall, Elektrogeräten und Restabfall und rechnen Brauchbares offen an. Schadstoffe, Öl, Batterien und Gasflaschen fassen wir nicht an; für sie nennen wir Ihnen die Annahmestelle. Geräte mit Akku nehmen wir getrennt, damit sie sicher zur Annahme kommen.",
-          "trust": "Die Besichtigung in Kladow ist kostenlos, danach steht der Festpreis für Räumung und Abtransport schriftlich fest. Gebühren am Recyclinghof geben wir nach Beleg weiter, ohne eigenen Aufschlag. Fotos von vorher und nachher gehen auf Wunsch aufs Handy, sodass Sie tagsüber nicht dabei sein müssen.",
-          "fakt": "Für Kladow ist der BSR-Recyclinghof in Spandau am Brunsbütteler Damm die Anlaufstelle; Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
+          "trust": "Die Besichtigung in Kladow ist kostenlos, danach steht der Festpreis für Räumung und Abtransport schriftlich fest. Entsorgungsgebühren der Annahmestelle geben wir nach Beleg weiter, ohne eigenen Aufschlag. Fotos von vorher und nachher gehen auf Wunsch aufs Handy, sodass Sie tagsüber nicht dabei sein müssen.",
+          "fakt": "Räumungsgut aus Kladow entsorgen wir über eine zugelassene gewerbliche Annahmestelle, Privathaushalte nutzen den BSR-Recyclinghof am Brunsbütteler Damm; Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
           "tief": {
             "h2": "Entrümpelung in Kladow: Villa, Siedlungshaus, Keller, Garage",
             "sections": [
@@ -596,7 +596,7 @@
               {
                 "h3": "Garage und Nebengebäude in Kladow",
                 "kurz": "Foto per WhatsApp genügt, Festpreis nach der Besichtigung; Gasflaschen und Öl bleiben draußen.",
-                "body": "Schuppen, Garage und Gartenhaus füllen sich über die Jahre mit Gartengeräten, Brettern und Hausrat. Ein Foto vom Inhalt reicht für die erste Einschätzung. Beim Beladen trennen wir Altholz, Schrott und Restabfall, weil der Recyclinghof die Sorten getrennt annimmt. Ist das Gartenhaus selbst reif für den Abriss, kalkulieren wir Rückbau und Entsorgung als eigene Position.",
+                "body": "Schuppen, Garage und Gartenhaus füllen sich über die Jahre mit Gartengeräten, Brettern und Hausrat. Ein Foto vom Inhalt reicht für die erste Einschätzung. Beim Beladen trennen wir Altholz, Schrott und Restabfall, weil die Annahmestelle die Sorten getrennt abrechnet. Ist das Gartenhaus selbst reif für den Abriss, kalkulieren wir Rückbau und Entsorgung als eigene Position.",
                 "link_to": "entruempelung#nebengebaeude",
                 "link_text": "Mehr zu Garage und Nebengebäuden"
               },
@@ -613,7 +613,7 @@
               "items": [
                 {
                   "k": "Recyclinghof",
-                  "v": "Der BSR-Recyclinghof Spandau liegt am Brunsbütteler Damm 47, 13581 Berlin, rund 11 km oder 19 Minuten Fahrt von Alt-Kladow. Die BSR betreibt in Berlin 14 Recyclinghöfe; Privathaushalte können haushaltsübliche Mengen bis 3 m³ je täglicher Anlieferung gebührenfrei abgeben. Aktuelle Öffnungszeiten stehen auf bsr.de."
+                  "v": "Der BSR-Recyclinghof Spandau liegt am Brunsbütteler Damm 47, 13581 Berlin, rund 11 km oder 19 Minuten Fahrt von Alt-Kladow. Die BSR betreibt in Berlin 14 Recyclinghöfe; Privathaushalte können haushaltsübliche Mengen bis 3 m³ je täglicher Anlieferung gebührenfrei abgeben. Aktuelle Öffnungszeiten stehen auf bsr.de. Gewerbliche Anlieferungen, also auch Räumungsgut durch uns, nehmen die BSR-Recyclinghöfe nach ihren Annahmebedingungen nicht an; wir fahren eine zugelassene gewerbliche Annahmestelle an."
                 },
                 {
                   "k": "Sperrmüll",
@@ -640,14 +640,14 @@
                   "Villa mit Keller, Dachgeschoss und Nebengebäude",
                   "Siedlungshaus mit Keller, Kammer und Garage",
                   "Haus, das nach dem Verkauf leer übergeben wird",
-                  "Recyclinghof Spandau als gemeinsame Annahmestelle"
+                  "Zugelassene gewerbliche Annahmestelle für Räumungsgut, Gebühren nach Beleg"
                 ]
               },
               {
                 "id": "ablauf-kladow",
                 "h2": "So läuft eine Entrümpelung in Kladow ab",
                 "lead": "Von Ihrem Foto bis zur besenreinen Übergabe, auch ohne Ihre Anwesenheit.",
-                "body": "Auf Ihre Nachricht antworten wir am selben Werktag. Nach der kostenlosen Besichtigung bekommen Sie den schriftlichen Festpreis, danach räumen wir. Entsorgungsgebühren am Recyclinghof geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
+                "body": "Auf Ihre Nachricht antworten wir am selben Werktag. Nach der kostenlosen Besichtigung bekommen Sie den schriftlichen Festpreis, danach räumen wir. Entsorgungsgebühren der Annahmestelle geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
                 "bullets": [
                   "Foto oder Anruf, Rückmeldung am selben Werktag",
                   "Besichtigung nach Absprache, auch nach Feierabend",
@@ -659,11 +659,11 @@
             "faqs": [
               {
                 "q": "Räumen Sie in Kladow auch große Villen mit mehreren Etagen?",
-                "a": "Ja. Bei der kostenlosen Besichtigung gehen wir alle Räume durch, schätzen die Menge und planen die Zahl der Fahrten. Je mehr Etagen und Nebengebäude, desto mehr Ladungen; den Festpreis für Räumung und Abtransport nennen wir danach schriftlich, die Gebühren am Recyclinghof kommen nach Beleg dazu."
+                "a": "Ja. Bei der kostenlosen Besichtigung gehen wir alle Räume durch, schätzen die Menge und planen die Zahl der Fahrten. Je mehr Etagen und Nebengebäude, desto mehr Ladungen; den Festpreis für Räumung und Abtransport nennen wir danach schriftlich, die Gebühren der Annahmestelle kommen nach Beleg dazu."
               },
               {
                 "q": "Wohin bringen Sie den Sperrmüll aus Kladow?",
-                "a": "Zum BSR-Recyclinghof Spandau am Brunsbütteler Damm 47, rund 19 Minuten von Alt-Kladow. Wir laden sortiert, damit die Sorten dort getrennt angenommen werden. Wie viel der Hof berechnet, steht auf den Belegen, die Sie zur Rechnung erhalten; einen eigenen Aufschlag gibt es nicht."
+                "a": "Zu einer zugelassenen gewerblichen Annahmestelle; die BSR-Recyclinghöfe nehmen Anlieferungen durch Betriebe nach ihren Annahmebedingungen nicht an. Wir laden sortiert, damit die Sorten dort getrennt angenommen werden. Wie viel der Hof berechnet, steht auf den Belegen, die Sie zur Rechnung erhalten; einen eigenen Aufschlag gibt es nicht."
               },
               {
                 "q": "BSR-Abholung oder Entrümpelung: Was lohnt sich in Kladow?",
@@ -681,17 +681,17 @@
           }
         },
         "berlin-gatow": {
-          "hook": "Gatow gilt als Dorf in der Großstadt: gut 3.500 Einwohner, viele Einfamilienhäuser mit Gärten, wenige Mehrfamilienhäuser und Feldflur rund um Alt-Gatow. Wo Haus und Garten über Jahrzehnte gewachsen sind, stehen Keller, Dachboden, Schuppen und Garage voll. Wir räumen aus und fahren ab, wenn das Grundstück frei werden soll.",
+          "hook": "Gatow gilt als Dorf in der Großstadt: gut 3.500 Einwohner, viele Einfamilienhäuser mit Gärten, wenige Mehrfamilienhäuser rund um Alt-Gatow und den Kladower Damm. Wo Haus und Garten über Jahrzehnte gewachsen sind, stehen Keller, Dachboden, Schuppen und Garage voll. Wir räumen aus und fahren ab, wenn das Grundstück frei werden soll.",
           "rahmen": "In Gatow räumen wir das Einfamilienhaus samt Keller und Dachboden ebenso wie Garage, Gartenhaus und Schuppen. Wir tragen heraus, trennen beim Beladen nach Sorten und rechnen Brauchbares offen an. Elektrogeräte und Schrott bringen wir getrennt zur Annahme; Farben, Lösungsmittel, Öl und Gasflaschen lassen wir stehen und nennen die richtige Stelle. Übergeben wird besenrein.",
-          "trust": "Nach der kostenlosen Besichtigung in Gatow bekommen Sie den Festpreis für Räumung und Abtransport schriftlich. Gebühren am Recyclinghof rechnen wir nach Beleg ab, ohne eigenen Aufschlag. Auf Wunsch zeigen Fotos vom leeren Haus, dass alles erledigt ist.",
-          "fakt": "Von Gatow bis zum BSR-Recyclinghof Spandau sind es rund 6 km; Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
+          "trust": "Nach der kostenlosen Besichtigung in Gatow bekommen Sie den Festpreis für Räumung und Abtransport schriftlich. Gebühren der Annahmestelle rechnen wir nach Beleg ab, ohne eigenen Aufschlag. Auf Wunsch zeigen Fotos vom leeren Haus, dass alles erledigt ist.",
+          "fakt": "Räumungsgut aus Gatow entsorgen wir über eine zugelassene gewerbliche Annahmestelle; Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
           "tief": {
             "h2": "Entrümpelung in Gatow: Einfamilienhaus, Garten, Schuppen, Garage",
             "sections": [
               {
                 "h3": "Einfamilienhaus in Gatow: Keller bis Dachboden",
                 "kurz": "Viele Einfamilienhäuser, wenig Geschosswohnungsbau: meist Treppen und Keller statt Aufzug.",
-                "body": "In Gatow dominieren Einfamilienhäuser mit Garten, Mehrfamilienhäuser sind selten. Das heißt für uns: Treppen, Kellerabgänge und Dachbodenluken statt Aufzug. Wir tragen zu zweit, zerlegen sperrige Möbel und laden vor dem Haus auf. Einmachgläser, Koffer, Werkzeug, Kinderspielzeug: Alles wird sortiert, Brauchbares angerechnet, der Rest getrennt nach Sorten zum Recyclinghof gefahren."
+                "body": "In Gatow dominieren Einfamilienhäuser mit Garten, Mehrfamilienhäuser sind selten. Das heißt für uns: Treppen, Kellerabgänge und Dachbodenluken statt Aufzug. Wir tragen zu zweit, zerlegen sperrige Möbel und laden vor dem Haus auf. Einmachgläser, Koffer, Werkzeug, Kinderspielzeug: Alles wird sortiert, Brauchbares angerechnet, der Rest getrennt nach Sorten zur Annahmestelle gefahren."
               },
               {
                 "h3": "Garten, Schuppen und Gartenhaus",
@@ -702,8 +702,8 @@
               },
               {
                 "h3": "Alt-Gatow und der Stadtrand: kurze Wege nach Spandau",
-                "kurz": "Rund 18 km von Falkensee, rund 6 km bis zum Recyclinghof: jede Zusatzfahrt kostet wenig Zeit.",
-                "body": "Von unserem Sitz in Falkensee bis Alt-Gatow sind es rund 18 km, etwa 26 Minuten Fahrt, vom Ortskern bis zum BSR-Recyclinghof am Brunsbütteler Damm noch einmal rund 6 km. Bei einem größeren Haus lohnt sich deshalb eine zweite oder dritte Fahrt, ohne dass der Preis aus dem Ruder läuft. Die Strecke selbst berechnen wir nicht extra."
+                "kurz": "Rund 18 km von Falkensee, etwa 26 Minuten: Die Anfahrt steckt im Festpreis.",
+                "body": "Von unserem Sitz in Falkensee bis Alt-Gatow sind es rund 18 km, etwa 26 Minuten Fahrt. Bei einem größeren Haus lohnt sich deshalb eine zweite oder dritte Fahrt, ohne dass der Preis aus dem Ruder läuft. Die Strecke selbst berechnen wir nicht extra."
               },
               {
                 "h3": "Hausverkauf, Erbfall, Auszug",
@@ -718,7 +718,7 @@
               "items": [
                 {
                   "k": "Recyclinghof",
-                  "v": "BSR-Recyclinghof Spandau, Brunsbütteler Damm 47, 13581 Berlin: von Alt-Gatow rund 6 km, etwa 12 Minuten Fahrt. Privathaushalte geben haushaltsübliche Mengen bis 3 m³ je täglicher Anlieferung gebührenfrei ab; Öffnungszeiten und Annahmeregeln stehen auf bsr.de."
+                  "v": "BSR-Recyclinghof Spandau, Brunsbütteler Damm 47, 13581 Berlin: von Alt-Gatow rund 6 km, etwa 12 Minuten Fahrt. Privathaushalte geben haushaltsübliche Mengen bis 3 m³ je täglicher Anlieferung gebührenfrei ab; Öffnungszeiten und Annahmeregeln stehen auf bsr.de. Gewerbliche Anlieferungen, also auch Räumungsgut durch uns, nehmen die BSR-Recyclinghöfe nach ihren Annahmebedingungen nicht an; wir fahren eine zugelassene gewerbliche Annahmestelle an."
                 },
                 {
                   "k": "Sperrmüll",
@@ -730,7 +730,7 @@
                 },
                 {
                   "k": "Ortsteil",
-                  "v": "Gatow im Süden des Bezirks Spandau, PLZ 14089, 3.519 Einwohner (31.12.2025) auf rund 10,1 km²; Bundesstraße 2 am Nordwestrand, Kladow im Süden, ehemaliger Flugplatz bis 1994."
+                  "v": "Gatow im Süden des Bezirks Spandau, PLZ 14089, 3.519 Einwohner (31.12.2025) auf rund 10,1 km²; Bundesstraße 2 am Nordwestrand, Kladow im Süden, der frühere Flugplatz Gatow (Flugbetrieb bis 1994, Gelände heute in Kladow)."
                 }
               ],
               "quelle": "bsr.de (Recyclinghöfe, Laub und Gartenabfälle, Abruf 06.11.2026), berlin.de/stadtsauberkeit (Abruf 06.11.2026), de.wikipedia.org/wiki/Berlin-Gatow (Abruf 06.11.2026), Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
@@ -745,14 +745,14 @@
                   "Haus mit Keller und Dachboden, Jahrzehnte nicht ausgeräumt",
                   "Schuppen und Geräteunterstand im großen Garten",
                   "Garage, in der nur noch Reifen und Regale stehen",
-                  "Recyclinghof Spandau in rund 12 Minuten erreichbar"
+                  "Zugelassene gewerbliche Annahmestelle für Räumungsgut, Gebühren nach Beleg"
                 ]
               },
               {
                 "id": "ablauf-gatow",
                 "h2": "So läuft eine Entrümpelung in Gatow ab",
                 "lead": "Foto, Besichtigung, Festpreis, Räumung, besenreine Übergabe.",
-                "body": "Sie schreiben uns per WhatsApp oder rufen an, wir antworten am selben Werktag und vereinbaren die kostenlose Besichtigung. Danach steht der Festpreis schriftlich fest. Gebühren am Recyclinghof geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
+                "body": "Sie schreiben uns per WhatsApp oder rufen an, wir antworten am selben Werktag und vereinbaren die kostenlose Besichtigung. Danach steht der Festpreis schriftlich fest. Gebühren der Annahmestelle geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
                 "bullets": [
                   "Foto vom Haus, Keller oder Schuppen",
                   "Besichtigung nach Absprache, auch am Samstag",
@@ -768,7 +768,7 @@
               },
               {
                 "q": "Wohin kommt der Müll aus Gatow?",
-                "a": "Zum BSR-Recyclinghof Spandau am Brunsbütteler Damm 47, von Alt-Gatow etwa 12 Minuten Fahrt. Wir laden nach Sorten getrennt, damit der Hof jede Fraktion einzeln annehmen kann. Die Gebühren stehen auf den Belegen, die Sie mit der Rechnung erhalten, ohne eigenen Aufschlag von uns."
+                "a": "Zu einer zugelassenen gewerblichen Annahmestelle; die BSR-Recyclinghöfe nehmen Anlieferungen durch Betriebe nach ihren Annahmebedingungen nicht an. Wir laden nach Sorten getrennt, damit der Hof jede Fraktion einzeln annehmen kann. Die Gebühren stehen auf den Belegen, die Sie mit der Rechnung erhalten, ohne eigenen Aufschlag von uns."
               },
               {
                 "q": "Wie schnell können Sie in Gatow einen Termin machen?",
@@ -788,7 +788,7 @@
         "velten": {
           "hook": "Velten, die Ofenstadt mit knapp 12.700 Einwohnern, wuchs als Angerdorf, dann mit Wohnblöcken nach 1961, dem Plattenbaugebiet Velten-Süd ab 1984 und neuen Siedlungen der 1990er Jahre. Dazu kommt der Businesspark als Gewerbestandort. Diese Mischung heißt für uns: Wohnungen auf Etagen, Einfamilienhäuser, Keller und Lager. Wir räumen alles, vom Kellerabteil bis zum ganzen Haus.",
           "rahmen": "In Velten räumen wir Wohnungen in Mehrfamilienhäusern mit Treppenhaus und Kellerabteil ebenso wie Einfamilienhäuser mit Garage und Schuppen. Wir tragen zu zweit heraus, sortieren Brauchbares aus und trennen den Rest beim Beladen nach Sorten. Elektrogeräte und Schrott bringen wir getrennt zur Annahme, Farben, Öl, Batterien und Gasflaschen lassen wir stehen und nennen die zuständige Stelle. Zum Schluss wird gefegt.",
-          "trust": "Nach der kostenlosen Besichtigung in Velten steht der Festpreis für Räumung und Abtransport schriftlich fest. Die Gebühren der Annahmestelle in Germendorf geben wir nach Beleg weiter, ohne eigenen Aufschlag. Auf Wunsch zeigen Fotos von der geräumten Wohnung, dass alles erledigt ist.",
+          "trust": "Nach der kostenlosen Besichtigung in Velten steht der Festpreis für Räumung und Abtransport schriftlich fest. Die Gebühren der jeweiligen Annahmestelle geben wir nach Beleg weiter, ohne eigenen Aufschlag. Auf Wunsch zeigen Fotos von der geräumten Wohnung, dass alles erledigt ist.",
           "fakt": "Der Recyclinghof des Landkreises Oberhavel liegt in Germendorf, rund 9 km von Velten: Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
           "tief": {
             "h2": "Entrümpelung in Velten: Wohnung, Haus, Keller, Gewerbe",
@@ -825,7 +825,7 @@
               "items": [
                 {
                   "k": "Recyclinghof",
-                  "v": "Recyclinghof Germendorf (AWU Oberhavel), Hohenbrucher Straße 32 in Oranienburg-Germendorf: von Velten rund 9 km, etwa 13 Minuten Fahrt. Geöffnet Montag und Freitag 9–16:30 Uhr, Mittwoch 9–18 Uhr, Samstag 9–15 Uhr. Elektroaltgeräte, Schrott, Papier, Textilien und Sperrmüll nimmt er aus Privathaushalten kostenfrei an, nur Abfall aus Oberhavel."
+                  "v": "Recyclinghof Germendorf (AWU Oberhavel), Hohenbrucher Straße 32 in Oranienburg-Germendorf: von Velten rund 9 km, etwa 13 Minuten Fahrt. Geöffnet Montag und Freitag 9–16:30 Uhr, Mittwoch 9–18 Uhr, Samstag 9–15 Uhr. Elektroaltgeräte, Schrott, Papier und Sperrmüll nimmt er aus Privathaushalten kostenfrei an, nur Abfall aus Oberhavel."
                 },
                 {
                   "k": "Sperrmüll",
@@ -875,7 +875,7 @@
               },
               {
                 "q": "Wohin bringen Sie den Sperrmüll aus Velten?",
-                "a": "Zum Recyclinghof Germendorf an der Hohenbrucher Straße, etwa 13 Minuten von Velten. Wie viel der Hof für gewogene Lieferungen berechnet, steht auf den Belegen. Diese Gebühren geben wir weiter, ohne eigenen Aufschlag; für die Lieferung selbst gilt der Festpreis."
+                "a": "Zu einer zugelassenen Annahmestelle in der Region; der Recyclinghof Germendorf an der Hohenbrucher Straße liegt etwa 13 Minuten von Velten. Was die Annahmestelle für gewogene Lieferungen berechnet, steht auf den Belegen. Diese Gebühren geben wir weiter, ohne eigenen Aufschlag; für die Lieferung selbst gilt der Festpreis."
               },
               {
                 "q": "Kann ich Sperrmüll in Velten kostenlos loswerden?",
@@ -893,17 +893,17 @@
           }
         },
         "oberkraemer": {
-          "hook": "Oberkrämer ist keine geschlossene Stadt, sondern eine Gemeinde aus sieben Ortsteilen: Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz, zusammen rund 12.100 Einwohner auf über 100 km². Wer hier ein Haus räumen lassen will, braucht jemanden, der die Wege zwischen den Ortsteilen kennt. Von unserem Sitz in Falkensee sind es nur gut 11 km.",
+          "hook": "Oberkrämer ist keine geschlossene Stadt, sondern eine Gemeinde aus sieben Ortsteilen: Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz, zusammen rund 12.100 Einwohner auf über 100 km². Wer hier ein Haus räumen lassen will, braucht jemanden, der die Wege zwischen den Ortsteilen kennt. Von unserem Sitz in Falkensee sind es bis Bötzow gut 11 km, bis Schwante knapp 30 km.",
           "rahmen": "In allen sieben Ortsteilen räumen wir Keller, Dachboden, Garage, Scheune oder das ganze Haus. Wir tragen heraus, sortieren Brauchbares aus und trennen den Rest beim Beladen nach Holz, Metall, Elektro und Restabfall. Was eine eigene Annahme verlangt, etwa Farben, Öl, Batterien oder Gasflaschen, lassen wir stehen und nennen die zuständige Stelle. Zum Schluss fegen wir aus und übergeben besenrein.",
-          "trust": "Nach der kostenlosen Besichtigung in Oberkrämer nennen wir den Festpreis für Räumung und Abtransport schriftlich. Was der Recyclinghof in Germendorf berechnet, geben wir nach Beleg weiter, ohne eigenen Aufschlag. Fotos von vorher und nachher gehen auf Wunsch aufs Handy.",
-          "fakt": "Oberkrämer liegt rund 11 km von unserem Sitz in Falkensee; der Recyclinghof Germendorf ist etwa 19 Minuten entfernt, Gebühren nach Beleg.",
+          "trust": "Nach der kostenlosen Besichtigung in Oberkrämer nennen wir den Festpreis für Räumung und Abtransport schriftlich. Was die Annahmestelle berechnet, geben wir nach Beleg weiter, ohne eigenen Aufschlag. Fotos von vorher und nachher gehen auf Wunsch aufs Handy.",
+          "fakt": "Oberkrämer beginnt mit Bötzow rund 11 km von unserem Sitz in Falkensee; der Recyclinghof Germendorf ist etwa 19 Minuten entfernt, Gebühren nach Beleg.",
           "tief": {
             "h2": "Entrümpelung in Oberkrämer: sieben Ortsteile, ein Ansprechpartner",
             "sections": [
               {
                 "h3": "Bärenklau, Bötzow, Schwante, Vehlefanz: jeder Ortsteil für sich",
                 "kurz": "Sieben Ortsteile, kurze Anfahrt aus Falkensee: Sie nennen die Adresse, wir kommen zur Besichtigung.",
-                "body": "Oberkrämer besteht aus Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz. Von Falkensee bis in die Gemeinde sind es rund 11 km, etwa 16 Minuten Fahrt, in die einzelnen Ortsteile kommt wenig dazu. Die Strecke berechnen wir nicht gesondert. Weil sich die Orte über mehr als 100 km² verteilen, nennen Sie uns am besten die genaue Adresse, dann planen wir Besichtigung und Räumung ohne Umwege."
+                "body": "Oberkrämer besteht aus Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz. Von Falkensee sind es je nach Ortsteil rund 11 bis 29 km, etwa 16 bis 29 Minuten Fahrt; Bötzow liegt am nächsten, Schwante am weitesten. Die Strecke berechnen wir nicht gesondert. Weil sich die Orte über mehr als 100 km² verteilen, nennen Sie uns am besten die genaue Adresse, dann planen wir Besichtigung und Räumung ohne Umwege."
               },
               {
                 "h3": "Haus mit großem Grundstück: Garage, Schuppen, Nebengebäude",
@@ -980,7 +980,7 @@
               },
               {
                 "q": "Wie schnell sind Sie in Oberkrämer?",
-                "a": "Von Falkensee sind es gut 11 km, etwa 16 Minuten Fahrt. Die kostenlose Besichtigung legen wir meist in die folgenden Tage, auf Wunsch abends oder samstags. Wie schnell geräumt wird, hängt vom Umfang und von unserer Auslastung ab; einen Keller oder eine Garage schaffen wir meist an einem Tag."
+                "a": "Von Falkensee sind es je nach Ortsteil 11 bis 29 km, etwa 16 bis 29 Minuten Fahrt. Die kostenlose Besichtigung legen wir meist in die folgenden Tage, auf Wunsch abends oder samstags. Wie schnell geräumt wird, hängt vom Umfang und von unserer Auslastung ab; einen Keller oder eine Garage schaffen wir meist an einem Tag."
               },
               {
                 "q": "Wo gebe ich in Oberkrämer Sperrmüll ab?",
@@ -1013,7 +1013,7 @@
               {
                 "h3": "Siedlungshaus und Einfamilienhaus: Keller, Dachboden, Garage",
                 "kurz": "Haus aus der Siedlungszeit oder Neubau: Wir räumen Keller und Dachboden und trennen für den Recyclinghof.",
-                "body": "Hohen Neuendorf blieb bis zum Bahnbau ein kleines Dorf, seit 1919 entstand eine Siedlung für Kriegsteilnehmer, später kamen die Häuser der Pendlerjahre dazu. In solchen Häusern sammeln sich in Keller, Dachboden und Garage Jahrzehnte an Hausrat. Wir räumen zu zweit, zerlegen sperrige Möbel und laden sortiert auf: Holz, Metall, Elektro, Restabfall.",
+                "body": "Hohen Neuendorf blieb bis zum Bahnbau ein kleines Dorf, seit 1919 entstand eine Siedlung für Kriegsbeschädigte, später kamen die Häuser der Pendlerjahre dazu. In solchen Häusern sammeln sich in Keller, Dachboden und Garage Jahrzehnte an Hausrat. Wir räumen zu zweit, zerlegen sperrige Möbel und laden sortiert auf: Holz, Metall, Elektro, Restabfall.",
                 "link_to": "entruempelung#nebengebaeude",
                 "link_text": "Mehr zu Garage und Nebengebäuden"
               },
@@ -1089,7 +1089,7 @@
               },
               {
                 "q": "Wohin bringen Sie den Sperrmüll aus Hohen Neuendorf?",
-                "a": "Zum Recyclinghof Germendorf des Landkreises Oberhavel, etwa 20 Minuten von Hohen Neuendorf. Wir laden getrennt nach Sorten und geben die Gebühren, die auf den Belegen stehen, ohne eigenen Aufschlag weiter. Gasflaschen und Schadstoffe nehmen wir nicht selbst mit."
+                "a": "Zu einer zugelassenen Annahmestelle in der Region; der Recyclinghof Germendorf des Landkreises Oberhavel liegt etwa 20 Minuten von Hohen Neuendorf. Wir laden getrennt nach Sorten und geben die Gebühren, die auf den Belegen stehen, ohne eigenen Aufschlag weiter. Gasflaschen und Schadstoffe nehmen wir nicht selbst mit."
               },
               {
                 "q": "Kann ich Sperrmüll in Hohen Neuendorf selbst kostenlos abgeben?",
@@ -1293,7 +1293,7 @@
                 },
                 {
                   "k": "Nachlass",
-                  "v": "Örtlich zuständig ist das Gericht, in dessen Bezirk die verstorbene Person zuletzt ihren gewöhnlichen Aufenthalt hatte (§ 343 FamFG). Fragen zu Erbschein, Ausschlagung und Haftung beantworten Nachlassgericht oder Rechtsanwalt, dazu geben wir keine Auskunft."
+                  "v": "Örtlich zuständig ist das Gericht, in dessen Bezirk die verstorbene Person zum Todeszeitpunkt ihren gewöhnlichen Aufenthalt hatte (§ 343 FamFG). Fragen zu Erbschein, Ausschlagung und Haftung beantworten Nachlassgericht oder Rechtsanwalt, dazu geben wir keine Auskunft."
                 },
                 {
                   "k": "Erreichbarkeit",
@@ -1379,7 +1379,7 @@
                 },
                 {
                   "k": "Amtsgericht",
-                  "v": "Ketzin/Havel liegt im Gerichtsbezirk des Amtsgerichts Nauen. Welches Nachlassgericht im Einzelfall zuständig ist, richtet sich nach dem letzten gewöhnlichen Aufenthalt der verstorbenen Person (§ 343 FamFG); verbindlich klärt das das Gericht."
+                  "v": "Ketzin/Havel liegt im Gerichtsbezirk des Amtsgerichts Nauen. Welches Nachlassgericht im Einzelfall zuständig ist, richtet sich nach dem gewöhnlichen Aufenthalt der verstorbenen Person zum Todeszeitpunkt (§ 343 FamFG); verbindlich klärt das das Gericht."
                 },
                 {
                   "k": "Entfernung",
@@ -1510,7 +1510,7 @@
           }
         },
         "berlin-kladow": {
-          "hook": "Kladow ist der südlichste Ortsteil von Spandau: Villen aus dem 19. Jahrhundert am Havelufer, der Ortskern Alt-Kladow, die Finnenhaussiedlung von 1958 bis 1961 und im Süden die Landstadt Gatow. In Häusern dieser Größe und Lage hat sich über Jahrzehnte ein umfangreicher Hausstand angesammelt. Wird so ein Haus verkauft oder ein Nachlass geregelt, übernehmen wir die gesamte Haushaltsauflösung, diskret und mit Zeit zum Sichten.",
+          "hook": "Kladow ist der südlichste Ortsteil von Spandau: Villen aus dem 19. Jahrhundert am Havelufer, der Ortskern Alt-Kladow, die Finnenhaussiedlung von 1959/60 und im Süden die Landstadt Gatow. In Häusern dieser Größe und Lage hat sich über Jahrzehnte ein umfangreicher Hausstand angesammelt. Wird so ein Haus verkauft oder ein Nachlass geregelt, übernehmen wir die gesamte Haushaltsauflösung, diskret und mit Zeit zum Sichten.",
           "rahmen": "Eine Haushalts- oder Wohnungsauflösung in Kladow beginnt mit dem Rundgang. Große Hausstände über mehrere Etagen räumen wir Raum für Raum und planen dafür mehr Räumungstage ein, damit nichts Wertvolles im Abfall landet. Gut erhaltene Möbel, Antiquitäten, Sammlungen und Bücher prüfen wir und rechnen ihren Wert offen auf den Festpreis an. Briefe, Urkunden und Fotoalben gehen in eine verschlossene Kiste für die Familie. Übrig bleibt ein leeres, besenreines Haus.",
           "trust": "Nach der kostenlosen Besichtigung in {ort} bekommen Sie den Festpreis für Räumung und Abtransport schriftlich, inkl. MwSt.; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag. Wir arbeiten diskret, halten den Übergabetermin und dokumentieren jeden Raum auf Wunsch mit Fotos.",
           "fakt": "In Kladow, Alt-Kladow, der Finnenhaussiedlung und Gatow lösen wir Haushalte auf; die Anfahrt von Falkensee steckt im Festpreis.",
@@ -1543,7 +1543,7 @@
               "items": [
                 {
                   "k": "Ortsteil",
-                  "v": "Kladow (PLZ 14089) ist der südlichste Ortsteil des Bezirks Spandau, mit Villen am Havelufer aus dem 19. Jahrhundert, dem Ortskern Alt-Kladow, der Finnenhaussiedlung (1958 bis 1961) und der Landstadt Gatow."
+                  "v": "Kladow (PLZ 14089) ist der südlichste Ortsteil des Bezirks Spandau, mit Villen am Havelufer aus dem 19. Jahrhundert, dem Ortskern Alt-Kladow, der Finnenhaussiedlung (1959/60) und der Landstadt Gatow."
                 },
                 {
                   "k": "Amtsgericht",
@@ -1597,7 +1597,7 @@
           }
         },
         "berlin-gatow": {
-          "hook": "Gatow gilt als Dorf in der Großstadt: Einfamilienhäuser mit Gärten rund um Alt-Gatow und den Kladower Damm, die Gatower Feldflur, im Osten die Havel. Wo Häuser lange in einer Familie bleiben, wird irgendwann eines leer: nach dem Tod der Eltern, bei einem Umzug ins Heim oder vor dem Verkauf. Wir lösen den gesamten Haushalt in Gatow auf, vom Schlafzimmer bis zum Nebengebäude, und übergeben besenrein.",
+          "hook": "Gatow gilt als Dorf in der Großstadt: Einfamilienhäuser mit Gärten rund um Alt-Gatow und den Kladower Damm, im Osten die Havel. Wo Häuser lange in einer Familie bleiben, wird irgendwann eines leer: nach dem Tod der Eltern, bei einem Umzug ins Heim oder vor dem Verkauf. Wir lösen den gesamten Haushalt in Gatow auf, vom Schlafzimmer bis zum Nebengebäude, und übergeben besenrein.",
           "rahmen": "Eine Haushalts- oder Wohnungsauflösung in Gatow umfasst das Wohnhaus mit allem, was dazugehört: Möbel, Küche, Kleidung, Hausrat, dazu Gartenhaus oder Schuppen, wenn Sie das wünschen. Sie sagen uns, was bleibt. Fotos, Urkunden und Schmuck legen wir beiseite. Alles andere verwerten oder entsorgen wir getrennt nach Material; Brauchbares rechnen wir offen an. Am Schluss stehen leere, gefegte Räume, bereit für den Käufer oder die Hausverwaltung.",
           "trust": "In {ort} steht nach der kostenlosen Besichtigung ein schriftlicher Festpreis für Räumung und Abtransport des gesamten Haushalts, inkl. MwSt.; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag. Wir halten den vereinbarten Übergabetag und schicken Fotos der leeren Räume, wenn Sie das möchten.",
           "fakt": "Gatow grenzt an Kladow, die Wilhelmstadt und Dallgow-Döberitz; wir lösen Haushalte rund um Alt-Gatow und den Kladower Damm auf.",
@@ -1684,10 +1684,10 @@
           }
         },
         "velten": {
-          "hook": "Velten, die Ofenstadt (16727) zwischen Hennigsdorf und Oranienburg, besteht aus der Kernstadt und Hohenschöpping; Altbau und Neubau stehen nebeneinander, nahe dem Businesspark Velten. Muss hier eine Mietwohnung nach Kündigung oder Todesfall leer werden, entscheidet der Termin. Wir lösen den kompletten Haushalt auf, übergeben besenrein und stimmen die Übergabe auf Wunsch direkt mit Vermieter oder Hausverwaltung ab.",
+          "hook": "Velten, die Ofenstadt (16727) zwischen Hennigsdorf und Oranienburg, besteht aus der Kernstadt und Wohnplätzen wie Hohenschöpping und Heidekrug; Altbau und Neubau stehen nebeneinander, nahe dem Businesspark Velten. Muss hier eine Mietwohnung nach Kündigung oder Todesfall leer werden, entscheidet der Termin. Wir lösen den kompletten Haushalt auf, übergeben besenrein und stimmen die Übergabe auf Wunsch direkt mit Vermieter oder Hausverwaltung ab.",
           "rahmen": "Bei einer Wohnungsauflösung in Velten zählt der Weg durchs Treppenhaus ebenso wie der Hausrat: Wir tragen aus Etagen und Kellerabteilen heraus, ohne dass Sie Hilfe organisieren. Möbel, Küchenzeile, Betten, Wäsche und Geschirr gehen komplett mit. Briefe, Urkunden und Fotoalben legen wir beiseite. Gut erhaltene Stücke rechnen wir offen an. Am Ende steht die Wohnung leer und gefegt, bereit für das Übergabeprotokoll.",
           "trust": "Nach der kostenlosen Besichtigung in {ort} steht der Festpreis für Räumung und Abtransport schriftlich fest, inkl. MwSt.; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag. Wir planen rückwärts vom Ende der Kündigungsfrist und halten den vereinbarten Übergabetag.",
-          "fakt": "Velten besteht aus Kernstadt und Hohenschöpping; wir lösen Wohnungen und Häuser zum Fristende auf und stimmen die Übergabe mit Vermieter oder Hausverwaltung ab.",
+          "fakt": "Velten besteht aus der Kernstadt und den Wohnplätzen Hohenschöpping, Heidekrug, An der Marwitzer Trift und Siedlung am Bärenklauer Weg; wir lösen Wohnungen und Häuser zum Fristende auf und stimmen die Übergabe mit Vermieter oder Hausverwaltung ab.",
           "tief": {
             "h2": "Haushaltsauflösung in Velten: Wohnung, Frist, Übergabe",
             "sections": [
@@ -1702,7 +1702,7 @@
                 "body": "In Mehrfamilienhäusern ohne Aufzug sind Treppen der größte Posten. Bei der Besichtigung sehen wir uns Stockwerk, Treppenhaus, Hofzufahrt und das zugehörige Kellerabteil an. Danach steht fest, wie viele Fahrten nötig sind, und der Festpreis deckt alles ab, ohne Nachforderung."
               },
               {
-                "h3": "Kernstadt und Hohenschöpping",
+                "h3": "Kernstadt und Wohnplätze",
                 "kurz": "Beide Teile des Stadtgebiets fahren wir an, die Anfahrt ist im Festpreis.",
                 "body": "Zu Velten gehört neben der Kernstadt Hohenschöpping am Oder-Havel-Kanal. Wir lösen Haushalte in beiden auf, Wohnungen ebenso wie Einfamilienhäuser. Von Falkensee kommen wir ohne Aufschlag."
               },
@@ -1717,7 +1717,7 @@
               "items": [
                 {
                   "k": "Stadt",
-                  "v": "Velten (PLZ 16727) trägt den Beinamen Ofenstadt. Zum Stadtgebiet gehören die Kernstadt und Hohenschöpping, ein Wohnplatz am Oder-Havel-Kanal, dazu Heidekrug. Der Businesspark Velten liegt im Stadtgebiet."
+                  "v": "Velten (PLZ 16727) trägt den Beinamen Ofenstadt. Zum Stadtgebiet gehören die Kernstadt und die Wohnplätze Hohenschöpping am Oder-Havel-Kanal, Heidekrug, An der Marwitzer Trift und Siedlung am Bärenklauer Weg. Der Businesspark Velten liegt im Stadtgebiet."
                 },
                 {
                   "k": "Nachbarn",
@@ -1725,7 +1725,7 @@
                 },
                 {
                   "k": "Amtsgericht",
-                  "v": "Velten liegt im Gerichtsbezirk des Amtsgerichts Oranienburg. Das zuständige Nachlassgericht richtet sich nach dem letzten gewöhnlichen Aufenthalt der verstorbenen Person (§ 343 FamFG); verbindlich klärt das das Gericht."
+                  "v": "Velten liegt im Gerichtsbezirk des Amtsgerichts Oranienburg. Das zuständige Nachlassgericht richtet sich nach dem gewöhnlichen Aufenthalt der verstorbenen Person zum Todeszeitpunkt (§ 343 FamFG); verbindlich klärt das das Gericht."
                 },
                 {
                   "k": "Erreichbarkeit",
@@ -1848,7 +1848,7 @@
               },
               {
                 "q": "Welches Amtsgericht gehört zu Oberkrämer?",
-                "a": "Oberkrämer liegt im Gerichtsbezirk des Amtsgerichts Oranienburg. Für Nachlasssachen ist das Gericht des letzten gewöhnlichen Aufenthalts der verstorbenen Person örtlich zuständig (§ 343 FamFG). Den konkreten Fall klärt das Gericht, rechtliche Auskünfte geben wir nicht."
+                "a": "Oberkrämer liegt im Gerichtsbezirk des Amtsgerichts Oranienburg. Für Nachlasssachen ist das Gericht örtlich zuständig, in dessen Bezirk die verstorbene Person zum Todeszeitpunkt ihren gewöhnlichen Aufenthalt hatte (§ 343 FamFG). Den konkreten Fall klärt das Gericht, rechtliche Auskünfte geben wir nicht."
               },
               {
                 "q": "Bleibt bei einer Haushaltsauflösung in Oberkrämer etwas für die Familie übrig?",
@@ -1899,7 +1899,7 @@
                 },
                 {
                   "k": "Amtsgericht",
-                  "v": "Hohen Neuendorf gehört zum Gerichtsbezirk des Amtsgerichts Oranienburg. Das Nachlassgericht richtet sich nach dem letzten gewöhnlichen Aufenthalt der verstorbenen Person (§ 343 FamFG); verbindlich klärt das das Gericht."
+                  "v": "Hohen Neuendorf gehört zum Gerichtsbezirk des Amtsgerichts Oranienburg. Das Nachlassgericht richtet sich nach dem gewöhnlichen Aufenthalt der verstorbenen Person zum Todeszeitpunkt (§ 343 FamFG); verbindlich klärt das das Gericht."
                 },
                 {
                   "k": "Erreichbarkeit",
@@ -1939,7 +1939,7 @@
               },
               {
                 "q": "Welches Amtsgericht ist für Hohen Neuendorf zuständig?",
-                "a": "Hohen Neuendorf liegt im Gerichtsbezirk des Amtsgerichts Oranienburg. Welches Gericht als Nachlassgericht zuständig ist, richtet sich nach dem letzten gewöhnlichen Aufenthalt der verstorbenen Person (§ 343 FamFG). Rechtliche Auskünfte zum Erbe geben wir nicht, das klärt das Gericht oder ein Anwalt."
+                "a": "Hohen Neuendorf liegt im Gerichtsbezirk des Amtsgerichts Oranienburg. Welches Gericht als Nachlassgericht zuständig ist, richtet sich nach dem gewöhnlichen Aufenthalt der verstorbenen Person zum Todeszeitpunkt (§ 343 FamFG). Rechtliche Auskünfte zum Erbe geben wir nicht, das klärt das Gericht oder ein Anwalt."
               }
             ]
           }
@@ -3086,7 +3086,7 @@
     "zaunbau": {
       "orte": {
         "falkensee": {
-          "hook": "Viele Grundstücke in Falkensee gehen auf die Parzellierung von 1898 bis 1922 zurück, mit gewachsenen Hecken an der Grenze. Der Haus- & Gartenservice Havelland sitzt an der Darmstädter Straße 15 und montiert Zäune in allen sieben Wohngebieten, von Finkenkrug bis Falkenhagen.",
+          "hook": "Viele Grundstücke in Falkensee gehen auf die Parzellierung von 1898 bis 1922 zurück, mit gewachsenen Hecken an der Grenze. Der Haus- & Gartenservice Havelland sitzt an der Darmstädter Straße 15 und montiert Zäune in allen Ortsteilen und Wohnplätzen, von Finkenkrug bis Falkenhagen.",
           "rahmen": "Bei der Besichtigung stechen wir mit dem Spaten in den Boden, messen die Linie aus und klären, auf wessen Grund der Zaun steht. Danach wählen wir das System: Doppelstabmatten für Vorgarten und Grenze, Sichtschutz aus WPC oder Holz für die Terrasse, Staketenzaun aus Kastanie als günstigster Einstieg. Ein alter Zaun wird abgebaut und entsorgt, auf Wunsch zusammen mit der Hecke dahinter.",
           "trust": "Nach der Besichtigung in Falkensee steht ein schriftlicher Festpreis, der Materialanteil ist im Angebot offen ausgewiesen. Die Montage zahlen Sie erst nach der Abnahme; Fotos von der fertigen Zaunlinie gehen aufs Handy, auch wenn Sie beim Aufbau nicht zu Hause waren.",
           "fakt": "Angerdorf Falkenhagen: Die Gestaltungssatzung von 1992 lässt zur Straße Mauern, Holzlattenzäune, Staketenzäune bis 1,30 m und lebende Hecken zu (§ 14).",
@@ -3101,7 +3101,7 @@
               {
                 "h3": "Falkenhagen: Angerdorf mit eigener Satzung",
                 "kurz": "Im historischen Angerdorf gilt seit 1992 eine Gestaltungssatzung: zur Straße Mauern, senkrechte Holzlattenzäune, Staketenzäune bis 1,30 m und lebende Hecken.",
-                "body": "Nach § 14 sind Grundstücke dort zur öffentlichen Verkehrsfläche hin einzufrieden; in Hecken eingelegte Maschendrahtzäune dürfen bis 0,80 m hoch sein, Zugänge und Einfahrten lassen sich mit Holztoren schließen. Doppelstabmatten und WPC-Elemente stehen in dieser Aufzählung nicht. Ob Ihr Grundstück im Geltungsbereich liegt, zeigt die Karte zur Satzung; wir prüfen das bei der Besichtigung, bevor Material bestellt wird.",
+                "body": "Nach § 14 Abs. 1 sind Grundstücke dort zur öffentlichen Verkehrsfläche hin einzufrieden; in Hecken eingelegte Maschendrahtzäune dürfen bis 0,80 m hoch sein, Zugänge und Einfahrten lassen sich mit Holztoren schließen. Doppelstabmatten und WPC-Elemente stehen in dieser Aufzählung nicht. Ob Ihr Grundstück im Geltungsbereich liegt, zeigt die Karte zur Satzung; wir prüfen das bei der Besichtigung, bevor Material bestellt wird.",
                 "link_to": "ratgeber/zaun-genehmigung-brandenburg",
                 "link_text": "Zaun-Genehmigung in Brandenburg"
               },
@@ -3115,7 +3115,7 @@
               {
                 "h3": "Zaun an der Grenze: Nachbar zwei Wochen vorher informieren",
                 "kurz": "Bau, Abbau oder Ersatz einer Einfriedung ist dem Nachbarn mindestens zwei Wochen vorher anzuzeigen (§ 29 BbgNRG).",
-                "body": "Die Anzeigepflicht besteht auch dann, wenn der Nachbar nichts zahlt. Liegen Grundstücke an derselben Straße nebeneinander, friedet jeder an der Grenze zum von der Straße aus rechten Nachbarn ein; an rückwärtigen Grenzen sind beide gemeinsam verpflichtet (§ 28 BbgNRG)."
+                "body": "Die Anzeigepflicht besteht auch dann, wenn der Nachbar nichts zahlt. Eine Einfriedung schuldet niemand von selbst: Nach § 28 BbgNRG entsteht die Pflicht erst, wenn der Nachbar sie verlangt, und zwar an der Seitengrenze zum von der Straße aus rechten Nachbargrundstück (Nr. 1), an rückwärtigen Grenzen gemeinsam (Nr. 5). Zur Straße besteht keine Einfriedungspflicht (§ 30 Abs. 2)."
               }
             ],
             "ortsblock": {
@@ -3172,7 +3172,7 @@
               },
               {
                 "q": "Muss ich in Falkensee meinen Nachbarn über den Zaunbau informieren?",
-                "a": "Ja, mindestens zwei Wochen vor Beginn der Arbeiten (§ 29 BbgNRG), auch bei Abbau oder Ersatz. Wer zu welcher Grenze einfrieden muss, regelt § 28: an derselben Straße jeweils zum rechten Nachbarn, an rückwärtigen Grenzen beide gemeinsam. Legen Sie die Anzeige vor unseren Montagetermin."
+                "a": "Ja, mindestens zwei Wochen vor Beginn der Arbeiten (§ 29 BbgNRG), auch bei Abbau oder Ersatz. Wer zu welcher Grenze einfrieden muss, regelt § 28, und zwar erst auf Verlangen des Nachbarn: an derselben Straße jeweils zum rechten Nachbarn, an rückwärtigen Grenzen beide gemeinsam. Legen Sie die Anzeige vor unseren Montagetermin."
               },
               {
                 "q": "Was kostet Zaunbau in Falkensee?",
@@ -3196,7 +3196,7 @@
               {
                 "h3": "Neubaugebiet: der erste Zaun nach dem Hausbau",
                 "kurz": "Wer neu gebaut hat, braucht Einfriedung, Sichtschutz und Tor oft in einem Zug; die Linie planen wir vorab mit Ihnen.",
-                "body": "Bevor Pfosten stehen, klären wir, an welche Grenzen Straße und Nachbarn stoßen und wer zu welcher Grenze einfrieden muss. Zur Straße friedet jeder an der Grenze zum von der Straße aus rechten Nachbarn ein. An rückwärtigen Grenzen sind beide gemeinsam verpflichtet, dann steht der Zaun auf der gemeinsamen Grenze und beide tragen die Kosten je zur Hälfte (§§ 28, 33, 34 BbgNRG)."
+                "body": "Bevor Pfosten stehen, klären wir, an welche Grenzen Straße und Nachbarn stoßen und wer zu welcher Grenze einfrieden muss. Die Pflicht entsteht erst, wenn der Nachbar die Einfriedung verlangt: An der Seitengrenze friedet ein, wer den Nachbarn von der Straße aus gesehen rechts liegen hat; zur Straße selbst besteht keine Pflicht (§ 30 Abs. 2 BbgNRG). An rückwärtigen Grenzen wird gemeinsam eingefriedet, dann steht der Zaun auf der gemeinsamen Grenze und beide tragen die Kosten je zur Hälfte (§§ 28, 33, 34 BbgNRG)."
               },
               {
                 "h3": "Neu-Döberitz: alter Baumbestand, früheres Lager",
@@ -3261,8 +3261,8 @@
                 "a": "Eine gemeindeweite Einfriedungssatzung kennen wir nicht. In Baugebieten kann der Bebauungsplan Höhe und Art festlegen (§ 87 Abs. 1 BbgBO); die Plannummer erfragen Sie beim Bauamt. Ohne solche Festsetzung sind Zäune bis 2 Meter verfahrensfrei, außer im Außenbereich (§ 61 Abs. 2 Nr. 7 BbgBO)."
               },
               {
-                "q": "Wer friedet an der Straße und zum Nachbarn ein?",
-                "a": "An derselben Straße friedet nach § 28 BbgNRG jeder Eigentümer an der Grenze zum von der Straße aus rechten Nachbarn ein; an rückwärtigen Grenzen sind beide gemeinsam verpflichtet. Haben beide einzufrieden, tragen sie die Kosten je zur Hälfte (§ 34 BbgNRG). Den Bau zeigen Sie dem Nachbarn zwei Wochen vorher an."
+                "q": "Wer friedet zum Nachbarn ein, und gilt das auch zur Straße?",
+                "a": "Nach § 28 BbgNRG entsteht die Pflicht erst, wenn der Nachbar die Einfriedung verlangt: an derselben Straße an der Grenze zum von der Straße aus rechten Nachbarn, an rückwärtigen Grenzen gemeinsam. Zur Straße selbst besteht keine Einfriedungspflicht (§ 30 Abs. 2). Haben beide einzufrieden, tragen sie die Kosten je zur Hälfte (§ 34 BbgNRG). Den Bau zeigen Sie dem Nachbarn zwei Wochen vorher an."
               },
               {
                 "q": "Kommen Sie auch nach Seeburg und Rohrbeck?",
@@ -3351,7 +3351,7 @@
               },
               {
                 "q": "Muss ich am Waldrand in Brieselang überhaupt einen Zaun bauen?",
-                "a": "An der Grenze zu Flächen der Land- und Forstwirtschaft nicht: Dort besteht keine Einfriedungspflicht (§ 30 Abs. 2 BbgNRG). Zu Nachbargrundstücken gilt die Pflicht nach § 28 BbgNRG. Wollen Sie freiwillig einfrieden, sind Zäune bis 2 Meter verfahrensfrei, außer im Außenbereich (§ 61 Abs. 2 Nr. 7 BbgBO)."
+                "a": "An der Grenze zu Flächen der Land- und Forstwirtschaft nicht: Dort besteht keine Einfriedungspflicht (§ 30 Abs. 2 BbgNRG). Zu Nachbargrundstücken kann der Nachbar die Einfriedung nach § 28 BbgNRG verlangen. Wollen Sie freiwillig einfrieden, sind Zäune bis 2 Meter verfahrensfrei, außer im Außenbereich (§ 61 Abs. 2 Nr. 7 BbgBO)."
               },
               {
                 "q": "Fahren Sie auch nach Bredow und Zeestow?",
@@ -3372,7 +3372,7 @@
           "hook": "Mit gut 97 km² ist Schönwalde-Glien weit gestreckt: von der Siedlung an der Spandauer Grenze bis in die Straßenangerdörfer des Glien. Lange Grundstücksgrenzen sind hier normal, und der Haus- & Gartenservice Havelland baut Zäune für Siedlungshaus und Dorfgrundstück gleichermaßen.",
           "rahmen": "Auf großen Grundstücken geht es um Meter: lange Linien, mehrere Ecken, oft ein breites Einfahrtstor und zusätzlich ein Gehtor. Bei der Besichtigung messen wir die Linie ab und legen Pfostenabstand, Höhe und Torbreite fest. Aus unseren Systemen passt der Staketenzaun als günstigster Einstieg für lange Strecken, Doppelstabmatten für die Straßenseite, Sichtschutz für den Sitzplatz.",
           "trust": "Auch auf weiten Wegen gilt: Festpreis nach der kostenlosen Besichtigung in Schönwalde-Glien, schriftlich, Anfahrt eingeschlossen. Die Montage zahlen Sie nach der Abnahme; Fotos von der fertigen Zaunlinie gehen aufs Handy.",
-          "fakt": "Der Name Glien bedeutet Lehm, das Havelländische Luch nimmt den größten Teil der Gemeinde ein: Der Boden wechselt, die Spatenprobe entscheidet.",
+          "fakt": "Der Name Glien bedeutet Lehm, die Gemeinde liegt am Rand des Ländchens Glien zum Havelländischen Luch: Der Boden wechselt, die Spatenprobe entscheidet.",
           "tief": {
             "h2": "Zaunbau in Schönwalde-Glien: Außenbereich, lange Linien, Boden",
             "sections": [
@@ -3390,7 +3390,7 @@
               },
               {
                 "h3": "Luch und Glien: zwei Böden, eine Spatenprobe",
-                "kurz": "Das Havelländische Luch nimmt den größten Teil der Gemeinde ein, die Grundmoränenplatte Glien trägt ihren Namen nach dem Lehm.",
+                "kurz": "Die Gemeinde liegt am Rand der Grundmoränenplatte Ländchen Glien zum Havelländischen Luch; Glien bedeutet Lehm.",
                 "body": "Luch und Grundmoräne sind verschiedene Böden; welcher unter Ihrem Zaun liegt, zeigt die Spatenprobe. Sie entscheidet, ob Einschlaghülsen tragen oder betoniert wird. Eck-, End- und Torpfosten stehen ohnehin immer in Beton."
               },
               {
@@ -3414,7 +3414,7 @@
                 },
                 {
                   "k": "Boden",
-                  "v": "Das Havelländische Luch nimmt den größten Teil der Gemeinde ein; Schönwalde liegt am Rand der Grundmoränenplatte Ländchen Glien (Glien = Lehm)."
+                  "v": "Schönwalde liegt am Rand der Grundmoränenplatte Ländchen Glien (Glien = Lehm), westlich schließt das Havelländische Luch an; das Wappen verweist auf die Lage im wasserreichen Luch."
                 },
                 {
                   "k": "Anfahrt",
@@ -3477,7 +3477,7 @@
               {
                 "h3": "Altstadt: Gestaltungssatzung seit 2020",
                 "kurz": "Für Gärten am öffentlichen Raum nennt § 13 Holz- oder Metallzäune mit senkrechter, offener Verlattung oder Verstäbung, geschlossene Bretterzäune und Mauern bis 1,50 m.",
-                "body": "Mauern müssen verputzt oder aus Vollklinkern sein. Bei Staketen-, Bretterzäunen und Metallverstäbung ist ein bis zu 0,30 m hoher Sockel aus Naturstein oder gemauert zulässig; Türen und Tore in Einfriedungen sind als geschlossene Flächen in Holz auszuführen. Doppelstabmatten und WPC-Elemente stehen in dieser Aufzählung nicht.",
+                "body": "Mauern müssen verputzt oder aus Vollklinkern sein. Bei Staketen-, Bretterzäunen und Metallverstäbung ist ein bis zu 0,30 m hoher Sockel aus Naturstein oder gemauert zulässig; Türen und Tore in Einfriedungen sind als geschlossene Flächen in Holz auszuführen. Doppelstabmatten und WPC-Elemente stehen in dieser Aufzählung nicht; ob Doppelstabmatten als Metallverstäbung gelten, entscheidet die Stadt Nauen im Erlaubnisverfahren.",
                 "link_to": "ratgeber/zaun-genehmigung-brandenburg",
                 "link_text": "Zaun-Genehmigung in Brandenburg"
               },
@@ -3494,7 +3494,7 @@
               {
                 "h3": "Grundmoräne, Luch und Behnitzer See: Boden prüfen",
                 "kurz": "Nauen liegt am nördlichen Rand der Nauener Platte, einer Grundmoräne; am Groß Behnitzer See sind die Böden moorig-sumpfig.",
-                "body": "Die Nauener Platte ist eine bis zu 15 m dicke, weitgehend geschlossene Grundmoräne, die Stadt liegt im Havelländischen Luch. Welcher Boden unter Ihrem Zaun liegt, zeigt die Spatenprobe; sie entscheidet über Hülse oder Beton."
+                "body": "Die Nauener Platte ist eine bis zu 15 m dicke, weitgehend geschlossene Grundmoräne, die Kernstadt liegt an ihrem nördlichen Rand, das Havelländische Luch schließt südlich an die Platte an. Welcher Boden unter Ihrem Zaun liegt, zeigt die Spatenprobe; sie entscheidet über Hülse oder Beton."
               }
             ],
             "ortsblock": {
@@ -3514,7 +3514,7 @@
                 },
                 {
                   "k": "Boden",
-                  "v": "Nördlicher Rand der Nauener Platte (Grundmoräne), Lage im Havelländischen Luch; moorig-sumpfige Böden am Behnitzer See."
+                  "v": "Nördlicher Rand der Nauener Platte (Grundmoräne), das Havelländische Luch schließt südlich an; moorig-sumpfige Böden am Behnitzer See."
                 }
               ],
               "quelle": "nauen.de, Gestaltungssatzung für die Altstadt Nauen vom 15.06.2020 (PDF), de.wikipedia.org/wiki/Nauen, bravors.brandenburg.de, Abruf 06.11.2026"
@@ -3572,8 +3572,8 @@
               {
                 "id": "elstal",
                 "h3": "Elstal: Zaun in der Eisenbahnersiedlung",
-                "kurz": "Gewachsene Siedlung aus den 1920er-Jahren: Was der Nachbar verlangen kann, richtet sich nach dem Ortsüblichen.",
-                "body": "Die Eisenbahnersiedlung Elstal entstand für die Beschäftigten des Verschiebebahnhofs, 1920 wurden die ersten Wohnungen bezogen, 1930 zählte der Ort 86 Häuserblöcke mit 376 Haushalten. In einer gewachsenen Siedlung zählt, was vor Ort üblich ist. Ein Nachbar kann nach § 32 Abs. 1 BbgNRG nur eine ortsübliche Einfriedung verlangen, ersatzweise einen etwa 1,25 Meter hohen Maschendrahtzaun. Wer hochwertiger bauen will, spricht die Mehrkosten vorher mit dem Nachbarn ab. Wie an Ihrer Straße eingefriedet wird, sehen wir bei der Besichtigung.",
+                "kurz": "Gewachsene Siedlung aus den 1920er-Jahren: Was der Nachbar verlangen kann, richtet sich nach dem Ortsüblichen; in Teilen von Elstal gilt zudem eine Gestaltungssatzung.",
+                "body": "Die Eisenbahnersiedlung Elstal entstand für die Beschäftigten des Verschiebebahnhofs, 1920 wurden die ersten Wohnungen bezogen, 1930 zählte der Ort 86 Häuserblöcke mit 376 Haushalten. In einer gewachsenen Siedlung zählt, was vor Ort üblich ist. Ein Nachbar kann nach § 32 Abs. 1 BbgNRG nur eine ortsübliche Einfriedung verlangen, ersatzweise einen etwa 1,25 Meter hohen Maschendrahtzaun. Wer hochwertiger bauen will, spricht die Mehrkosten vorher mit dem Nachbarn ab. Für Teile von Elstal, Priort und die Alte Siedlung Wustermark gibt es außerdem eine Gestaltungssatzung der Gemeinde (Dezember 2010, § 10) mit Höhenvorgaben für Zäune an öffentlichen Flächen; ob Ihr Grundstück im Geltungsbereich liegt, prüfen wir vor der Montage. Wie an Ihrer Straße eingefriedet wird, sehen wir bei der Besichtigung.",
                 "link_to": "standorte/wustermark",
                 "link_text": "Alle Leistungen in Wustermark"
               },
@@ -3605,11 +3605,11 @@
               "items": [
                 {
                   "k": "Genehmigung",
-                  "v": "§ 61 Abs. 2 BbgBO: Mauern und Einfriedungen bis 2 Meter Höhe sind verfahrensfrei, außer im Außenbereich. Die Verfahrensfreiheit entbindet nicht von anderen öffentlich-rechtlichen Vorschriften (Abs. 1). Ein Gesetz vom 29.06.2026 ändert § 61 zum 01.01.2027; für Termine im neuen Jahr prüfen wir die dann geltende Fassung."
+                  "v": "§ 61 Abs. 2 BbgBO: Mauern und Einfriedungen bis 2 Meter Höhe sind verfahrensfrei, außer im Außenbereich. Die Verfahrensfreiheit entbindet nicht von anderen öffentlich-rechtlichen Vorschriften (Abs. 1). § 61 wurde zum 30.06.2026 neu gefasst; zum 01.01.2027 folgen weitere Änderungen, die die 2-Meter-Regel für Einfriedungen nicht berühren."
                 },
                 {
                   "k": "Nachbarrecht",
-                  "v": "BbgNRG: Einfriedung zum rechten Nachbarn oder gemeinsam (§ 28), Anzeige zwei Wochen vorher (§ 29), ortsüblich oder etwa 1,25 Meter Maschendraht (§ 32 Abs. 1), Kosten bei gemeinsamer Einfriedung je zur Hälfte (§ 34 Abs. 2)."
+                  "v": "BbgNRG: Einfriedung auf Verlangen des Nachbarn, zum rechten Nachbarn oder gemeinsam (§ 28), Anzeige zwei Wochen vorher (§ 29), ortsüblich oder etwa 1,25 Meter Maschendraht (§ 32 Abs. 1), Kosten bei gemeinsamer Einfriedung je zur Hälfte (§ 34 Abs. 2)."
                 },
                 {
                   "k": "Ortsteile",
@@ -3634,7 +3634,7 @@
         },
         "berlin-spandau": {
           "hook": "Spandau liegt am Berliner Stadtrand und grenzt an das Havelland. Der Bezirk hat neun Ortsteile, und jeder bringt andere Grundstücke mit: Siedlungsgärten in Hakenfelde und Staaken, Grundstücke in der Wilhelmstadt, Wohnanlagen mit gemeinsamen Außenflächen. Wir kommen aus Falkensee über die Landesgrenze und montieren Zäune für Eigentümer ebenso wie für Hausverwaltungen: Doppelstab, Sichtschutz, Staketen und Tore, Festpreis nach der Besichtigung.",
-          "rahmen": "Berlin regelt Zäune über die Bauordnung. Mauern und Einfriedungen bis 2 Meter Höhe sind verfahrensfrei, solange das Grundstück nicht im Außenbereich liegt (§ 61 Abs. 1 Nr. 7 Buchstabe a BauO Bln). In Denkmalbereichen kommt eine Genehmigung der Denkmalbehörde dazu. Zwischen Nachbarn gilt das Berliner Nachbarrechtsgesetz: Zur Straße friedet jeder an der Grenze zum rechten Nachbarn ein, an rückwärtigen Grenzen gemeinsam (§ 21 NachbG Bln). Wir gehen die Zaunlinie mit Ihnen ab und klären, welche Regel an welcher Grenze greift.",
+          "rahmen": "Berlin regelt Zäune über die Bauordnung. Mauern und Einfriedungen bis 2 Meter Höhe sind verfahrensfrei, solange das Grundstück nicht im Außenbereich liegt (§ 61 Abs. 1 Nr. 7 Buchstabe a BauO Bln). In Denkmalbereichen kommt eine Genehmigung der Denkmalbehörde dazu. Zwischen Nachbarn gilt das Berliner Nachbarrechtsgesetz: Die Einfriedungspflicht entsteht erst auf Verlangen des Nachbarn, an der Seitengrenze zum von der Straße aus rechten Nachbargrundstück, an rückwärtigen Grenzen gemeinsam (§ 21 NachbG Bln); zur Straße besteht keine Pflicht (§ 22 Abs. 2). Wir gehen die Zaunlinie mit Ihnen ab und klären, welche Regel an welcher Grenze greift.",
           "trust": "Für Eigentümer und Verwaltungen in Spandau läuft es gleich: kostenlose Besichtigung, schriftlicher Festpreis inkl. MwSt., Bestellung nach Zahlungseingang, Montage nach Abnahme mit Foto bezahlt. Der Materialanteil steht offen im Angebot, so lässt es sich auch in einer Eigentümerversammlung vorlegen.",
           "fakt": "Spandau hat neun Ortsteile von Staaken bis Kladow; wir besichtigen Zaunlinie und Boden vor Ort, der Festpreis steht danach schriftlich.",
           "tief": {
@@ -3652,7 +3652,7 @@
                 "id": "hakenfelde",
                 "h3": "Hakenfelde und Wilhelmstadt: Siedlungsgärten",
                 "kurz": "Gemeinsame Nachbargrenzen: Wer wo einfriedet und wer zahlt, regelt das Berliner Nachbarrecht.",
-                "body": "In der Waldsiedlung Hakenfelde, der Siedlung Aalemannufer oder auf der Weinmeisterhöhe grenzen Gärten aneinander. Nach § 21 NachbG Bln friedet jeder zum rechten Nachbargrundstück hin ein, von der Straße aus gesehen, an rückwärtigen Grenzen gemeinsam. Bei gemeinsamer Einfriedung tragen beide die Errichtungskosten je zur Hälfte (§ 25 Abs. 2). Verlangen lässt sich nur eine ortsübliche Einfriedung oder ersatzweise ein etwa 1,25 Meter hoher Maschendrahtzaun (§ 23 Abs. 1); alles darüber hinaus ist Absprache.",
+                "body": "In der Waldsiedlung Hakenfelde, deren ältester Kern unter Denkmalschutz steht, oder auf der Weinmeisterhöhe grenzen Gärten aneinander. Nach § 21 NachbG Bln kann der Nachbar die Einfriedung verlangen: zum rechten Nachbargrundstück hin, von der Straße aus gesehen, an rückwärtigen Grenzen gemeinsam. Bei gemeinsamer Einfriedung tragen beide die Errichtungskosten je zur Hälfte (§ 25 Abs. 2). Verlangen lässt sich nur eine ortsübliche Einfriedung oder ersatzweise ein etwa 1,25 Meter hoher Maschendrahtzaun (§ 23 Abs. 1); alles darüber hinaus ist Absprache.",
                 "link_to": "zaunbau",
                 "link_text": "Zaunarten und Spannen im Überblick"
               },
@@ -3710,7 +3710,7 @@
               },
               {
                 "q": "Wer friedet in Spandau zum Nachbarn ein, und wer zahlt?",
-                "a": "Zur Straße friedet jeder an der Grenze zum von der Straße aus rechten Nachbargrundstück ein, an rückwärtigen Grenzen wird gemeinsam eingefriedet (§ 21 NachbG Bln). Müssen beide einfrieden, tragen sie die Errichtungskosten je zur Hälfte (§ 25 Abs. 2). Verlangen lässt sich nur eine ortsübliche Einfriedung oder ersatzweise ein etwa 1,25 Meter hoher Maschendrahtzaun (§ 23 Abs. 1)."
+                "a": "Die Pflicht entsteht erst, wenn der Nachbar die Einfriedung verlangt: an der Seitengrenze zum von der Straße aus rechten Nachbargrundstück, an rückwärtigen Grenzen gemeinsam (§ 21 NachbG Bln); zur Straße selbst besteht keine Pflicht (§ 22 Abs. 2). Müssen beide einfrieden, tragen sie die Errichtungskosten je zur Hälfte (§ 25 Abs. 2). Verlangen lässt sich nur eine ortsübliche Einfriedung oder ersatzweise ein etwa 1,25 Meter hoher Maschendrahtzaun (§ 23 Abs. 1)."
               },
               {
                 "q": "Erstellen Sie für Hausverwaltungen in Spandau ein Angebot für die Eigentümerversammlung?",
@@ -3741,17 +3741,17 @@
               },
               {
                 "id": "gutspark",
-                "h3": "Neukladow und Gutspark: Welterbe in der Nachbarschaft",
+                "h3": "Neukladow und Gutspark: Denkmal in der Nachbarschaft",
                 "kurz": "Neben einem Denkmal darf die Umgebung dessen Erscheinungsbild nicht wesentlich beeinträchtigen.",
-                "body": "Der Gutspark Neukladow gehört zum UNESCO-Welterbe Schlösser und Parks von Potsdam und Berlin. Die unmittelbare Umgebung eines Denkmals darf nicht so verändert werden, dass sein Erscheinungsbild wesentlich leidet (§ 10 Abs. 1 DSchG Bln). Wirkt sich eine Veränderung der Umgebung darauf aus, braucht sie eine Genehmigung (§ 11 Abs. 2). Ob Ihr Grundstück als unmittelbare Umgebung zählt, entscheidet die untere Denkmalschutzbehörde des Bezirks. Bei Adressen nahe dem Gutspark sprechen wir die Frage vor dem Angebot an.",
+                "body": "Der Gutspark Neukladow ist ein denkmalgeschützter Park am Havelufer. Die unmittelbare Umgebung eines Denkmals darf nicht so verändert werden, dass sein Erscheinungsbild wesentlich leidet (§ 10 Abs. 1 DSchG Bln). Wirkt sich eine Veränderung der Umgebung darauf aus, braucht sie eine Genehmigung (§ 11 Abs. 2). Ob Ihr Grundstück als unmittelbare Umgebung zählt, entscheidet die untere Denkmalschutzbehörde des Bezirks. Bei Adressen nahe dem Gutspark sprechen wir die Frage vor dem Angebot an.",
                 "link_to": "standorte/berlin-kladow",
                 "link_text": "Alle Leistungen in Kladow"
               },
               {
                 "id": "finnenhaeuser",
                 "h3": "Finnenhaussiedlung: alter Zaun raus, neuer rein",
-                "kurz": "Siedlung von 1958 bis 1961: Wo ein Zaun schon steht, geht es um Ersatz und um den richtigen Grenzverlauf.",
-                "body": "Die Finnenhaussiedlung wurde 1958 bis 1961 errichtet. Steht hier schon ein Zaun, geht es um Ersatz: Der alte kommt raus, ein neuer rein. Vorher klären wir den Grenzverlauf, denn wer allein einfrieden muss, baut auf dem eigenen Grundstück, wer gemeinsam einfriedet, auf der Grenze (§ 24 NachbG Bln). Rückbau und Entsorgung des alten Zauns übernehmen wir im selben Auftrag, die Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag.",
+                "kurz": "Siedlung von 1959/60: Wo ein Zaun schon steht, geht es um Ersatz und um den richtigen Grenzverlauf.",
+                "body": "Die Finnenhaussiedlung entstand 1959/60. Steht hier schon ein Zaun, geht es um Ersatz: Der alte kommt raus, ein neuer rein. Vorher klären wir den Grenzverlauf, denn wer allein einfrieden muss, baut auf dem eigenen Grundstück, wer gemeinsam einfriedet, auf der Grenze (§ 24 NachbG Bln). Rückbau und Entsorgung des alten Zauns übernehmen wir im selben Auftrag, die Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag.",
                 "link_to": "ratgeber/zaun-kosten",
                 "link_text": "Zaun-Kosten im Detail"
               },
@@ -3777,7 +3777,7 @@
                 },
                 {
                   "k": "Siedlungen",
-                  "v": "Alt-Kladow, Finnenhaussiedlung (1958 bis 1961), Landstadt Gatow auf dem früheren Flugplatzgelände."
+                  "v": "Alt-Kladow, Finnenhaussiedlung (1959/60), Landstadt Gatow auf dem früheren Flugplatzgelände."
                 },
                 {
                   "k": "Anfahrt",
@@ -3801,7 +3801,7 @@
               },
               {
                 "q": "Brauche ich in Kladow nahe dem Gutspark Neukladow eine Genehmigung?",
-                "a": "Der Gutspark Neukladow gehört zum UNESCO-Welterbe Schlösser und Parks von Potsdam und Berlin. Verändert ein Vorhaben die unmittelbare Umgebung eines Denkmals und wirkt sich auf dessen Erscheinungsbild aus, braucht es eine Genehmigung der Denkmalbehörde (§ 11 Abs. 2 DSchG Bln). Ob Ihre Adresse dazu zählt, entscheidet die untere Denkmalschutzbehörde; wir sprechen die Frage vor dem Angebot an."
+                "a": "Der Gutspark Neukladow ist ein denkmalgeschützter Park am Havelufer. Verändert ein Vorhaben die unmittelbare Umgebung eines Denkmals und wirkt sich auf dessen Erscheinungsbild aus, braucht es eine Genehmigung der Denkmalbehörde (§ 11 Abs. 2 DSchG Bln). Ob Ihre Adresse dazu zählt, entscheidet die untere Denkmalschutzbehörde; wir sprechen die Frage vor dem Angebot an."
               },
               {
                 "q": "Wie läuft Zaunbau in Kladow ab, wenn ich nicht ständig vor Ort bin?",

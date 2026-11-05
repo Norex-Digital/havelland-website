@@ -146,6 +146,10 @@ const BEWEIS_KEY = { fensterreinigung: 'fensterreinigung', steinreinigung: 'stei
 const gewerkClass = slug => VOLL_VN.has(slug) ? 'voll' : GARTEN.has(slug) ? 'garten' : REINIGUNG.has(slug) ? 'reinigung' : 'generisch';
 // WhatsApp-Block: das Foto zeigt Heckenschnitt — auf Services ohne Hecken-Bezug neutrale Alt-/Unterzeile (Audit 2026-08 P2-b; 15.09. + Entrümpelung/Haushaltsauflösung, Review 14.09.)
 const OHNE_FLOWFOTO = new Set(['fensterreinigung']);   // M09: kein echtes Fenster-Motiv, Heckenfoto raus (nur Ortsseiten)
+// Review 06.11. (W2 R2): Heckenfoto passt nicht zu Entrümpelung/Haushaltsauflösung -> auf Ortsseiten kein Bild (wie M09). Ausnahme Falkensee bis 20.11. (Messfenster-Freeze, byteidentisch zu master).
+const OHNE_FLOWFOTO_ORT = new Set(['entruempelung', 'haushaltsaufloesung']);
+// Zaunbau: eigenes Flow-Motiv (16.09., Hub) jetzt auch auf den 9 Ortsseiten (Review 06.11.)
+const ZAUN_FLOW_FOTO = { src: '/assets/img/arbeit/zaun-hinten-matte-noah.jpg', alt: 'Doppelstabmatte am Pfosten ausrichten — Haus- &amp; Gartenservice Havelland', cap: 'Handarbeit, wo es drauf ankommt', sub: 'Pfosten &amp; Matten', w: 1856, h: 2304 };
 const FOTO_NEUTRAL = new Set(['baumstumpf-entfernen', 'winterdienst', 'entruempelung', 'haushaltsaufloesung', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'rollrasen-verlegen', 'gartengestaltung', 'erdarbeiten', 'baumfaellung']);
 const waGewerk = s => VOLL_VN.has(s.slug) ? 'meiner Hecke' : REINIGUNG.has(s.slug) ? `meiner Fläche für ${s.name}` : GARTEN.has(s.slug) ? 'meinem Garten' : `meinem Anliegen (${s.name})`;
 const PREMIUM = new Set(['gross-glienicke','berlin-kladow','berlin-gatow']);
@@ -555,7 +559,7 @@ function hub(s) {
   const faqData = (c && c.faqs && c.faqs.length) ? c.faqs : null;   // sonst faqFilter-Default
   // Winterdienst: WA-Flow ohne Foto-Zusage (Partner) — "Adresse und Flächenbeschreibung reichen" (Umbau 03.09.)
   // Zaunbau (16.09.): eigenes Flow-Motiv statt Heckenschnitt-Default (KI-Szene mit Element, Logo per logo-composite.py — Foto Assets §0: Szene erlaubt, kein Beweis).
-  const flowFoto = s.slug === 'zaunbau' ? { src: '/assets/img/arbeit/zaun-hinten-matte-noah.jpg', alt: 'Doppelstabmatte am Pfosten ausrichten — Haus- &amp; Gartenservice Havelland', cap: 'Handarbeit, wo es drauf ankommt', sub: 'Pfosten &amp; Matten', w: 1856, h: 2304 } : null;
+  const flowFoto = s.slug === 'zaunbau' ? ZAUN_FLOW_FOTO : null;
   const flowBlock = `<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug), winter: s.slug === 'winterdienst', foto: flowFoto })}</div></section>`;
   const timelineBlock = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">So läuft ein Auftrag</h2></div>${auftragsTimeline(!!s.partner_modell, s.slug)}</div></section>`;
   const faqSection = `<section class="sec"><div class="wrap">${faqFilter(faqData)}</div></section>`;
@@ -753,6 +757,7 @@ function ortsseite(s, o) {
   const FREEZE_NEUE_ORTE = new Set(['nauen', 'ketzin', 'gross-glienicke', 'berlin-kladow', 'berlin-gatow', 'velten', 'oberkraemer', 'hohen-neuendorf']);
   const nahPool = (o.slug === 'falkensee' && (s.slug === 'entruempelung' || s.slug === 'haushaltsaufloesung')) ? nachbarn.filter(x => !FREEZE_NEUE_ORTE.has(x.slug)) : nachbarn;
   const nahCards = rotate(nahPool, seed, 4);
+  const flowFotoO = OHNE_FLOWFOTO.has(s.slug) ? false : s.slug === 'zaunbau' ? ZAUN_FLOW_FOTO : (OHNE_FLOWFOTO_ORT.has(s.slug) && o.slug !== 'falkensee') ? false : null;
 
   const place = `{"@type":"Place","name":"${sj(o.name)}"${o.plz?`,"address":{"@type":"PostalAddress","postalCode":"${sj(o.plz)}","addressLocality":"${sj(o.name)}","addressCountry":"DE"}`:''}}`;
   const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)} ${sj(o.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${place}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url:`/${s.slug}/`},{name:o.name,url}])}`;
@@ -823,7 +828,7 @@ ${gstripFor(s)}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
 ${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml, hrefOf, ctaAfterGrid: tief.cta_grid ? ctaZwischen(s, { ...tief.cta_grid }) : '' }) : ''}${tief ? ctaZwischen(s, { ...(tief.cta_after || tiefCtaDefault), alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.', alt: tiefPaper }) : ''}${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
-<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst', foto: OHNE_FLOWFOTO.has(s.slug) ? false : null })}</div></section>
+<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst', foto: flowFotoO })}</div></section>
 ${nachbarSection}
 <section class="sec"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
 ${s.partner_modell ? endBandPartner(s) : endBand}`;
