@@ -2943,7 +2943,9 @@
       "Besichtigung mit Spatenprobe: Der Boden entscheidet über Hülse oder Beton. Auf gewachsenem Sand, wie im Havelland verbreitet, reichen bei den meisten Pfosten Hülsen, bei Bauschutt oder aufgeschüttetem Boden betonieren wir stattdessen. Eck-, End- und Torpfosten stehen immer in Beton, dort wirken die größten Kräfte",
       "Vor jedem Pfostenloch holen wir die Leitungsauskunft BIL ein, eine Nachfrage beim Bauamt allein reicht nicht: Wer ohne diese Sorgfalt gräbt und eine Leitung beschädigt, haftet in aller Regel voll",
       "Wir bestellen das Material nach Zahlungseingang, weil wir größere Materialmengen nicht auf eigenes Risiko vorstrecken; die Montage zahlen Sie erst nach der Abnahme mit Foto, der Materialanteil steht offen im Angebot"
-     ]
+     ],
+     "link_to": "galabau-potsdam",
+     "link_text": "Zaunbau in Potsdam-Nord: Fahrland, Neu Fahrland, Groß Glienicke"
     },
     {
      "id": "preise",
@@ -3150,7 +3152,9 @@
       "Mehrkosten: Stufen, Randeinfassung, Lehmboden mit Drainage, enger Zugang"
      ],
      "link_to": "galabau",
-     "link_text": "Alle GaLaBau-Leistungen im Überblick"
+     "link_text": "Alle GaLaBau-Leistungen im Überblick",
+     "link2_to": "galabau-potsdam",
+     "link2_text": "Terrassenbau in Potsdam-Nord: Groß Glienicke, Neu Fahrland"
     }
    ],
    "ortsseite_lead": "Terrasse bauen lassen in {ort}: Unterbau, Gefälle und Belag aus einer Hand, ob Platten, Naturstein, Holz oder WPC. Kostenlose Besichtigung vor Ort in {ort}, danach ein schriftlicher Festpreis für die Arbeit, Entsorgung nach Beleg.",
@@ -3305,7 +3309,9 @@
       "Erdaushub mit Minibagger: 35 bis 60 Euro je Kubikmeter",
       "Rasenkante aus Kantensteinen: 25 bis 45 Euro je laufendem Meter",
       "Entsorgung von Altrasen und Aushub: nach Beleg, ohne eigenen Aufschlag"
-     ]
+     ],
+     "link_to": "galabau-potsdam",
+     "link_text": "Rollrasen in Potsdam: Golm, Satzkorn, Bornstedt"
     }
    ],
    "ortsseite_lead": "Rollrasen verlegen lassen in {ort}: Boden gefräst, planiert, Rollrasen verlegt und angewalzt. Kostenlose Besichtigung vor Ort in {ort}, danach ein schriftlicher Festpreis für die Arbeit, Entsorgung nach Beleg.",
@@ -3627,7 +3633,9 @@
       "Pflaster ausbessern, kleine Stelle: ab 250 Euro pauschal"
      ],
      "link_to": "ratgeber/pflasterarbeiten-kosten",
-     "link_text": "Rechenbeispiele im Kosten-Ratgeber"
+     "link_text": "Rechenbeispiele im Kosten-Ratgeber",
+     "link2_to": "galabau-potsdam",
+     "link2_text": "Pflaster in Potsdam-Nord: Marquardt, Bornstedt, Eiche"
     }
    ],
    "ortsseite_lead": "Pflasterarbeiten in {ort}: Hof, Gartenweg oder Einfahrt mit Aushub, tragfähigem Unterbau und sauberer Randeinfassung. Kostenlose Besichtigung in {ort}, danach ein schriftlicher Festpreis inkl. MwSt. und Foto-Nachweis nach dem Auftrag.",

@@ -536,12 +536,14 @@ function hub(s) {
   // Default ist kein Offer: Prozessschritte/Rechtslage/USP/Disclaimer/Preis-Erklärung/Referenzen/Verweise sind KEINE buchbaren Leistungen.
   // SEO H-5 (20.10.): Hub-Karten-Layout (galabau) leitet die Offers aus den sichtbaren Kern-Karten ab (eine Quelle, keine zweite Liste); sonst offer:true-Sektionen wie bisher.
   const offerSrc = (c && c.layout === 'hub-karten' && c.karten && Array.isArray(c.karten.kern)) ? c.karten.kern.map(k => ({ h3: k.h3, link_to: k.to, seite: true })) : (c && Array.isArray(c.sections) ? c.sections : []).filter(x => x.offer === true);
-  const offers = offerSrc.slice(0, 6).map(x => `{"@type":"Offer"${(x.link_to && x.seite) ? `,"url":"${DOMAIN}${hrefOf(x.link_to)}"` : ''},"itemOffered":{"@type":"Service","name":"${sj(x.h3)}","serviceType":"${sj(s.name)}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}}}`).join(',');
+  // M17 (11/2026): Service-Knoten nennt auch die Orte mit eigener Seite (service.seiten_orte, z. B. galabau: Berlin-Spandau, Potsdam) — sonst fehlen sie im Schema, obwohl die Seiten existieren.
+  const schemaOrte = [...orteList, ...seitenOrte(s).filter(o => !orteList.includes(o))].map(o => o.name);
+  const offers = offerSrc.slice(0, 6).map(x => `{"@type":"Offer"${(x.link_to && x.seite) ? `,"url":"${DOMAIN}${hrefOf(x.link_to)}"` : ''},"itemOffered":{"@type":"Service","name":"${sj(x.h3)}","serviceType":"${sj(s.name)}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(schemaOrte)}}}`).join(',');
   const catalog = offers ? `,"hasOfferCatalog":{"@type":"OfferCatalog","name":"${sj(s.name)} — Leistungen","itemListElement":[${offers}]}` : '';
   // GEO (W3-Audit 17.09.): Person-Schema für den textlich genannten Ansprechpartner — Opt-in über hubs.json (c.person:true), Daten aus nap.ansprechpartner (Single-Source).
   // Owner 20.10.: beide Inhaber als Ansprechpartner (gesellschafter = Rufnamen aus nap.json)
   const personSchema = (c && c.person && nap.ansprechpartner) ? (nap.gesellschafter || [nap.ansprechpartner.name]).map(n => `,{"@type":"Person","@id":"${DOMAIN}/#${n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}","name":"${sj(n)}","jobTitle":"${sj(nap.ansprechpartner.rolle)}","worksFor":{"@id":"${DOMAIN}/#organization"}}`).join('') : '';
-  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(orteList.map(o=>o.name))}${catalog}}${personSchema},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
+  const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${JSON.stringify(schemaOrte)}${catalog}}${personSchema},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url}])}`;
 
   // ---- Gewerk-abhaengige Voll-Print-Komposition ----
   const gk = gewerkClass(s.slug);
