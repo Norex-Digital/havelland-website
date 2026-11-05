@@ -3048,7 +3048,11 @@
    "layout": "ueberblick",
    "sections_h2": "Zaunbau Falkensee: Doppelstab, Sichtschutz, Staketen, Tore und Rückbau",
    "passt": [],
-   "vorteile": []
+   "vorteile": [],
+   "orte_foto": {
+    "src": "ratgeber-zaun-genehmigung-brandenburg",
+    "alt": "Doppelstabmattenzaun an der Grundstücksgrenze mit Grenzstein und Maßband"
+   }
   },
   {
    "slug": "terrassenbau",
