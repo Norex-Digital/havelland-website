@@ -22,6 +22,9 @@
   "service_radius_km": 30,
   "areaServed_pattern": "PostalAddress IMMER Falkensee-Zentrale; je Ortsseite nur areaServed{name + amtlich verifizierte PLZ}",
   "rechtsform": "GbR",
+  "legal_name": "Haus- & Gartenservice Havelland GbR",
+  "schema_area_served_quelle": "M18/E7 (06.11.2026): Organization-areaServed = Servicegebiet des Unternehmensprofils (gbp_get_location locations/13372088234041114193, serviceArea.places, nur lesend gelesen 2026-11-06, 20 Eintraege). Bei Aenderung des Profil-Servicegebiets hier nachziehen.",
+  "schema_area_served": ["Falkensee", "Dallgow-Döberitz", "Dallgow-Döberitz-Rohrbeck", "Dallgow-Döberitz-Seeburg", "Brieselang", "Schönwalde-Glien", "Wustermark", "Wustermark-Elstal", "Nauen", "Ketzin/Havel", "Oberkrämer", "Velten", "Hennigsdorf", "Hohen Neuendorf", "Berlin-Spandau", "Berlin-Kladow", "Berlin-Gatow", "Berlin-Staaken", "Groß Glienicke", "Potsdam-Fahrland"],
   "gesellschafter": [
     "Noah Telo",
     "Maurice Brehm"

@@ -284,13 +284,13 @@ function ohDisplay() {
   if (!spec.some(s => s.dayOfWeek.includes('Sunday'))) parts.push('So geschlossen');
   return parts.join(' · ');
 }
-function orgSchema() {
+function orgSchema(legacy = false) {   // legacy=true: alter Stand (ohne legalName, areaServed = Seitenliste) nur für /lp/ — Ads-Messfenster, LP bleibt byteidentisch
   const addr = nap.street ? `,"address":{"@type":"PostalAddress","streetAddress":"${sj(nap.street)}","postalCode":"${sj(nap.zip)}","addressLocality":"${sj(nap.city)}","addressCountry":"DE"}` : '';
   const geo = (nap.geo && nap.geo.lat != null) ? `,"geo":{"@type":"GeoCoordinates","latitude":${nap.geo.lat},"longitude":${nap.geo.lng}}` : '';
   const oh = ohSpecJson ? `,"openingHoursSpecification":[${ohSpecJson}]` : '';
   // GEO (W3-Audit 17.09.): sameAs verankert die Organization am Google-Unternehmensprofil (nap.same_as) — nur rendern, wenn das Array nicht leer ist.
   const sameAs = (Array.isArray(nap.same_as) && nap.same_as.length) ? `,"sameAs":${JSON.stringify(nap.same_as)}` : '';
-  return `{"@type":"HomeAndConstructionBusiness","@id":"${DOMAIN}/#organization","name":"${sj(nap.name)}","telephone":"${tel}","url":"${DOMAIN}/","image":"${imgAbs('og-default')}","logo":"${DOMAIN}/assets/img/logo.png"${addr}${geo}${oh}${sameAs},"areaServed":${JSON.stringify(haupt.map(o => o.name))}}`;
+  return `{"@type":"HomeAndConstructionBusiness","@id":"${DOMAIN}/#organization","name":"${sj(nap.name)}"${(!legacy && nap.legal_name) ? `,"legalName":"${sj(nap.legal_name)}"` : ''},"telephone":"${tel}","url":"${DOMAIN}/","image":"${imgAbs('og-default')}","logo":"${DOMAIN}/assets/img/logo.png"${addr}${geo}${oh}${sameAs},"areaServed":${JSON.stringify(!legacy && Array.isArray(nap.schema_area_served) && nap.schema_area_served.length ? nap.schema_area_served : haupt.map(o => o.name))}}`;   // M18 (11/2026, E7): areaServed = Profil-Servicegebiet (nap.schema_area_served), legalName mit GbR; name unverändert
 }
 function breadcrumb(items) { // [{name,url}]
   const li = items.map((it,i)=>`{"@type":"ListItem","position":${i+1},"name":"${sj(it.name)}"${it.url?`,"item":"${DOMAIN}${it.url}"`:''}}`).join(',');
@@ -1450,7 +1450,7 @@ bewertungen();
 gewerbeSeiten();
 danke();
 // Ads-Landingpages (/lp/<slug>/ + /lp/danke/): noindex, nicht in Sitemaps — scripts/lp.mjs, Copy data/copy/lp.json (Ads-Kampagne Entrümpelung, 14.09.2026)
-buildLp({ head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema, reviews, config, CP, isReal, pic, leaf, proof, IMG });
+buildLp({ head, write, esc, tel, waHref, nap, DOMAIN, CONSENT_BANNER, TRACK_EVENTS, CONSENT_RESET_JS, CONSENT_KEY, orgSchema: () => orgSchema(true), reviews, config, CP, isReal, pic, leaf, proof, IMG });
 notFound();
 if (FULL) {
   for (const s of services) if (PAGE_SVC.has(s.slug)) for (const o of seitenOrte(s)) ortsseite(s, o);
