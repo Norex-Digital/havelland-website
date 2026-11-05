@@ -3938,11 +3938,11 @@
       "faqs": [
         {
           "q": "Was gehört zu einer Fensterreinigung in {ort}?",
-          "a": "Fensterreinigung ist die Reinigung von Glasflächen, Rahmen und Fensterbänken, damit Tageslicht ungehindert hereinkommt und das Glas streifenfrei bleibt. In {ort} reinigen wir Scheiben innen und außen von Hand mit Wasser, Wischer und Abzieher. Rahmenprofile, Dichtungen und Fensterbänke gehören dazu. Der Haus- & Gartenservice Havelland kommt dafür aus Falkensee."
+          "a": "Fensterreinigung ist die Reinigung von Glasflächen, Rahmen und Fensterbänken, damit Tageslicht ungehindert hereinkommt und das Glas streifenfrei bleibt. In {ort} reinigen wir Scheiben innen und außen von Hand mit Wasser, Einwascher und Abzieher. Rahmenprofile, Dichtungen und Fensterbänke gehören dazu. Der Haus- & Gartenservice Havelland kommt dafür aus Falkensee."
         },
         {
           "q": "Reinigen Sie in {ort} auch Rahmen, Dichtungen und Fensterbänke?",
-          "a": "Ja, die gehören bei uns zur Fensterreinigung. Wir wischen Rahmenprofile, Gummidichtungen und Falze aus, wo sich Staub, Spinnweben und Insekten festsetzen, und reinigen Fensterbänke innen und außen samt Ablaufrillen. Das hält die Dichtungen länger in Form, und Sie öffnen das Fenster wieder ohne Krümel auf der Bank."
+          "a": "Ja, die gehören bei uns zur Fensterreinigung. Wir wischen Rahmenprofile, Gummidichtungen und Falze aus, wo sich Staub, Spinnweben und Insekten festsetzen, und reinigen Fensterbänke innen und außen samt Ablaufrillen. Das pflegt die Dichtungen, und Sie öffnen das Fenster wieder ohne Krümel auf der Bank."
         },
         {
           "q": "Können Sie in {ort} auch Wintergarten, Terrassentür und Glasdach reinigen?",
@@ -3958,18 +3958,18 @@
         },
         {
           "q": "Kostet die Anfahrt für eine Fensterreinigung in {ort} extra?",
-          "a": "Nein. Unser Sitz ist Falkensee, wir reinigen Fenster im ganzen Havelland und im Berliner Umland, auch in {nachbarorte}. Die Anfahrt ist im Festpreis enthalten. Der Festpreis steht nach der kostenlosen Besichtigung fest und ist der Endpreis, ohne Aufschlag und ohne Nachforderung."
+          "a": "Nein. Unser Sitz ist Falkensee, wir reinigen Fenster im Havelland und im Berliner Umland, auch in {nachbarorte}. Die Anfahrt ist im Festpreis enthalten. Der Festpreis steht nach der kostenlosen Besichtigung fest und ist der Endpreis, ohne Aufschlag und ohne Nachforderung."
         },
         {
           "q": "Womit reinigen Sie die Fenster in {ort}?",
-          "a": "Wir arbeiten klassisch von Hand: Scheibe für Scheibe mit klarem Wasser, Wischer, Abzieher und fusselfreiem Tuch. Zum Schluss prüfen wir jede Scheibe im Gegenlicht, denn dort werden Schlieren sichtbar. Bleibt etwas zurück, ziehen wir die betroffenen Scheiben am selben Tag kostenlos nach."
+          "a": "Wir arbeiten klassisch von Hand: Scheibe für Scheibe mit klarem Wasser, Einwascher, Abzieher und fusselfreiem Tuch. Zum Schluss prüfen wir jede Scheibe im Gegenlicht, denn dort werden Schlieren sichtbar. Bleibt etwas zurück, ziehen wir die betroffenen Scheiben am selben Tag kostenlos nach."
         },
         {
           "q": "Bekomme ich nach der Fensterreinigung in {ort} einen Nachweis?",
           "a": "Ja. Nach jedem Auftrag schicken wir Ihnen den Vorher-Nachher-Nachweis als Foto direkt aufs Handy. So sehen Sie schwarz auf weiß, was erledigt wurde. Fällt Ihnen später etwas auf, schreiben Sie uns per WhatsApp. Das gilt für jeden Termin, auch im Halbjahres-Abo."
         },
         {
-          "q": "Was machen Sie in {ort} anders als beim eigenen Fensterputzen, damit keine Schlieren bleiben?",
+          "q": "Wie vermeiden Sie in {ort} Schlieren auf den Scheiben?",
           "a": "Schlieren, die nach dem eigenen Putzen zurückbleiben, holen wir Scheibe für Scheibe heraus, mit klarem Wasser, Abzieher und fusselfreiem Tuch. Vor dem Abschied prüfen wir jede Scheibe im Gegenlicht, denn schräg gegen das Licht werden Schlieren sichtbar. Bleibt trotzdem etwas zurück, ziehen wir am selben Tag nach."
         },
         {

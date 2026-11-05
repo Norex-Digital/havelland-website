@@ -36,7 +36,7 @@
     },
     "schoenwalde-glien": {
       "archetype": "brandenburg",
-      "hook": "Schönwalde-Glien reicht mit den Ortsteilen Pausin und Paaren nordöstlich von Falkensee weit ins ländliche Havelland, zwischen Hennigsdorf im Osten und Oberkrämer im Norden. Die Grundstücke sind groß: lange Hecken, weite Außenflächen, die übers Jahr Arbeit machen. Eine Hecke über mehrere Meter schneidet sich nicht nebenbei, und bei weiten Wegen aufs Grundstück zählt, dass jemand aus der Gegend kommt statt aus der Stadt anzurücken. Von Falkensee aus sind die Wege kurz, die Anfahrt steckt im Festpreis. Ob laufende Gartenpflege oder der Heckenschnitt vor dem Sommer – wir kommen aus der Nachbarschaft, nicht von weit her; den Winterdienst koordinieren wir über einen Partner-Fachbetrieb. Ein Anruf genügt.",
+      "hook": "Schönwalde-Glien reicht mit den Ortsteilen Pausin und Paaren nördlich von Falkensee weit ins ländliche Havelland, zwischen Hennigsdorf im Osten und Oberkrämer im Norden. Die Grundstücke sind groß: lange Hecken, weite Außenflächen, die übers Jahr Arbeit machen. Eine Hecke über mehrere Meter schneidet sich nicht nebenbei, und bei weiten Wegen aufs Grundstück zählt, dass jemand aus der Gegend kommt statt aus der Stadt anzurücken. Von Falkensee aus sind die Wege kurz, die Anfahrt steckt im Festpreis. Ob laufende Gartenpflege oder der Heckenschnitt vor dem Sommer – wir kommen aus der Nachbarschaft, nicht von weit her; den Winterdienst koordinieren wir über einen Partner-Fachbetrieb. Ein Anruf genügt.",
       "nachbarorte": [
         "Falkensee",
         "Hennigsdorf",
@@ -117,7 +117,7 @@
     },
     "kremmen": {
       "archetype": "brandenburg",
-      "hook": "Kremmen liegt nordöstlich von Falkensee, jenseits von Oranienburg und Velten, am ländlichen Rand des Berliner Umlands. Bekannt ist die Stadt für ihr historisches Scheunenviertel. Ringsum offenes Land, und die Wohnlage besteht oft aus größeren Grundstücken mit Haus, Hof und reichlich Grünfläche. Wer hier wohnt, hat meist mehr Garten zu betreuen, als sich nebenbei erledigt: lange Hecken, weitläufiger Rasen, Bäume und Sträucher, die im Frühjahr und Herbst Arbeit machen. Auch Dachrinnen und Steinflächen sammeln auf solchen Anwesen schnell Laub und Schmutz. Weil Kremmen mit Oberkrämer und den Nachbarorten abseits der größeren Zentren liegt, zählt jemand, der die Strecken kennt und die Anfahrt im Festpreis mitbringt, statt von weit her anzurücken. Ein Anruf reicht, und wir sehen es uns an.",
+      "hook": "Kremmen liegt nördlich von Falkensee, westlich von Oranienburg und Velten, am ländlichen Rand des Berliner Umlands. Bekannt ist die Stadt für ihr historisches Scheunenviertel. Ringsum offenes Land, und die Wohnlage besteht oft aus größeren Grundstücken mit Haus, Hof und reichlich Grünfläche. Wer hier wohnt, hat meist mehr Garten zu betreuen, als sich nebenbei erledigt: lange Hecken, weitläufiger Rasen, Bäume und Sträucher, die im Frühjahr und Herbst Arbeit machen. Auch Dachrinnen und Steinflächen sammeln auf solchen Anwesen schnell Laub und Schmutz. Weil Kremmen mit Oberkrämer und den Nachbarorten abseits der größeren Zentren liegt, zählt jemand, der die Strecken kennt und die Anfahrt im Festpreis mitbringt, statt von weit her anzurücken. Ein Anruf reicht, und wir sehen es uns an.",
       "nachbarorte": [
         "Oberkrämer",
         "Oranienburg",
@@ -198,7 +198,7 @@
     },
     "werder-havel": {
       "archetype": "ferien",
-      "hook": "Werder (Havel) liegt auf den Havelinseln westlich von Berlin, südwestlich von Falkensee und gleich neben Potsdam, Schwielowsee und Ketzin/Havel. Die Blütenstadt am Wasser zieht viele an, die hier eine Ferienwohnung oder ein Wochenendgrundstück an der Havel besitzen, selbst aber auswärts wohnen. Wer nicht jedes Wochenende vor Ort ist, braucht jemanden auf kurzem Weg, der nach dem Rechten sieht, bevor etwas aufläuft – die Anfahrt liegt im Festpreis. Grundstücke am Wasser fordern regelmäßige Gartenpflege, einen sauberen Heckenschnitt und im Herbst laubfreie Wege und Terrassen. Für vermietete Ferienwohnungen kommt die Reinigung zwischen den Gästen hinzu. So bleibt das Haus auch aus der Ferne in geregelten Händen, ohne dass Sie ständig selbst anreisen. Ein Foto reicht als Statusbericht.",
+      "hook": "Werder (Havel) liegt auf den Havelinseln westlich von Berlin, südwestlich von Falkensee und gleich neben Potsdam und Schwielowsee, ein Stück südlich von Ketzin/Havel. Die Blütenstadt am Wasser zieht viele an, die hier eine Ferienwohnung oder ein Wochenendgrundstück an der Havel besitzen, selbst aber auswärts wohnen. Wer nicht jedes Wochenende vor Ort ist, braucht jemanden auf kurzem Weg, der nach dem Rechten sieht, bevor etwas aufläuft – die Anfahrt liegt im Festpreis. Grundstücke am Wasser fordern regelmäßige Gartenpflege, einen sauberen Heckenschnitt und im Herbst laubfreie Wege und Terrassen. Für vermietete Ferienwohnungen kommt die Reinigung zwischen den Gästen hinzu. So bleibt das Haus auch aus der Ferne in geregelten Händen, ohne dass Sie ständig selbst anreisen. Ein Foto reicht als Statusbericht.",
       "nachbarorte": [
         "Schwielowsee",
         "Ketzin/Havel",
