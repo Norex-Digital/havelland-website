@@ -808,8 +808,8 @@ function ortsseite(s, o) {
   // Heckenschnitt-Ort: Vorher/Nachher-Slider im Hero; andere Gewerke: Standard-Bild (kein Slider)
   const ortVoll = VOLL_VN.has(s.slug);
   const heroShotO = ortVoll
-    ? baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' in ' + o.name, cap: 'Thuja', sub: 'in ' + o.name + ' geschnitten', hint: true, lcp: true })
-    : pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' in ' + o.name + ' — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true });
+    ? baSlider({ slug: '06-02-thuja-grenze', alt: 'Heckenschnitt, Beispiel: Thuja-Hecke', cap: 'Thuja', sub: 'Beispielbild, an der Grundstücksgrenze', hint: true, lcp: true })
+    : pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' im Havelland, Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true });   // B3 (Abnahme 06.11.): generisches Leistungsbild, keine Ortsbehauptung im Alt-Text
   // Herbst-Paket Deploy 1/2: Cross-Sektion nach dem prose-Container — bewusst AUSSERHALB des ersten
   // <div class="prose wide">-Blocks (NearDup-Gate misst prose+faq). heckenschnitt-Ortsseiten verlinken
   // auf den Entfernungs-Hub; heckenentfernung↔baumstumpf-entfernen verlinken den Schwester-Hub (Deploy 2).
@@ -827,7 +827,7 @@ function ortsseite(s, o) {
 ${gstripFor(s)}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
 ${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml, hrefOf, ctaAfterGrid: tief.cta_grid ? ctaZwischen(s, { ...tief.cta_grid }) : '' }) : ''}${tief ? ctaZwischen(s, { ...(tief.cta_after || tiefCtaDefault), alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.', alt: tiefPaper }) : ''}${crossSection}
-<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice Havelland, Einsatzgebiet Havelland und Berliner Westen', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 <section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst', foto: flowFotoO })}</div></section>
 ${nachbarSection}
 <section class="sec"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
