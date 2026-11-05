@@ -749,7 +749,10 @@ function ortsseite(s, o) {
   const svcArch = archCopy['svc-' + s.slug] || null;   // M09: leistungseigener Archetyp-Text (hooks/rahmen) statt Garten-Hook
   const seed = seedOf(url);
   const nachbarn = seitenOrte(s).filter(x => x.slug !== o.slug && hasOrt(s.slug, x.slug));
-  const nahCards = rotate(nachbarn, seed, 4);
+  // M07-Freeze (bis 20.11.2026, Ads-Messfenster): Falkensee-Seiten in entruempelung/haushaltsaufloesung bleiben byteidentisch zu master -> Nachbar-Pool ohne die 8 neuen Orte. Danach entfernen.
+  const FREEZE_NEUE_ORTE = new Set(['nauen', 'ketzin', 'gross-glienicke', 'berlin-kladow', 'berlin-gatow', 'velten', 'oberkraemer', 'hohen-neuendorf']);
+  const nahPool = (o.slug === 'falkensee' && (s.slug === 'entruempelung' || s.slug === 'haushaltsaufloesung')) ? nachbarn.filter(x => !FREEZE_NEUE_ORTE.has(x.slug)) : nachbarn;
+  const nahCards = rotate(nahPool, seed, 4);
 
   const place = `{"@type":"Place","name":"${sj(o.name)}"${o.plz?`,"address":{"@type":"PostalAddress","postalCode":"${sj(o.plz)}","addressLocality":"${sj(o.name)}","addressCountry":"DE"}`:''}}`;
   const schema = `${orgSchema()},{"@type":"Service","@id":"${DOMAIN}${url}#service","name":"${sj(s.name)} ${sj(o.name)}","serviceType":"${sj(s.name)}","image":"${imgAbs(svcHero(s.slug))}","${s.partner_modell ? 'broker' : 'provider'}":{"@id":"${DOMAIN}/#organization"},"areaServed":${place}},${breadcrumb([{name:'Start',url:'/'},{name:s.name,url:`/${s.slug}/`},{name:o.name,url}])}`;
