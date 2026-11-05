@@ -261,6 +261,846 @@
           "rahmen": "In Wustermark und Elstal räumen wir vom einzelnen Kellerabteil bis zum ganzen Haus. Wir tragen selbst heraus, auch aus oberen Etagen und engen Treppenhäusern, und laden alles auf. Möbel, Elektrogeräte, Sperrmüll, Metall und Problemstoffe trennen wir und führen sie der jeweils richtigen Entsorgung zu. Brauchbares sortieren wir aus, Wertgegenstände rechnen wir offen vom Preis ab. Container und Transport sind dabei, Sie müssen nichts organisieren. Übergeben wird besenrein.",
           "trust": "Nach der kostenlosen Besichtigung in Wustermark steht der Festpreis für Räumung und Abtransport fest; Entsorgungsgebühren rechnen wir nach Beleg ab. Den Vorher- und Nachher-Zustand dokumentieren wir auf Wunsch per Foto — praktisch bei Verkauf, Vermietung oder Übergabe an Angehörige.",
           "fakt": "Für Wustermark und Elstal fahren wir je nach Ladung zum Wertstoffhof Nauen/Schwanebeck oder nach Falkensee; die Wiegescheine bekommen Sie zur Rechnung."
+        },
+        "nauen": {
+          "hook": "Nauen ist mit knapp 20.000 Einwohnern eine Kleinstadt im westlichen Havelland: ein Altstadtkern mit Gebäuden aus dem 17. bis 20. Jahrhundert, drumherum 14 Ortsteile mit weiten Wegen und größeren Grundstücken. Wo ein Haus über Generationen in einer Familie bleibt, füllt sich der Keller. Wir räumen aus, wenn verkauft, geerbt oder umgezogen wird.",
+          "rahmen": "In Nauen räumen wir den Altbaukeller ebenso wie die Wohnung im ersten Stock, den Dachboden, die Garage und die Nebengebäude auf den großen Grundstücken der Ortsteile. Brauchbares sortieren wir vor Ort aus und rechnen es offen an, den Rest trennen wir beim Beladen nach Sorten. Elektroaltgeräte, Schrott und Altholz gehen getrennt zur Annahme; Farbreste, Öl, Batterien und Gasflaschen lassen wir stehen und nennen die passende Annahmestelle.",
+          "trust": "Zur kostenlosen Besichtigung kommen wir nach Nauen, danach steht der Festpreis für Räumung und Abtransport schriftlich fest. Was der Wertstoffhof Schwanebeck wiegt und abrechnet, reichen wir nach Beleg weiter, ohne eigenen Aufschlag. Auf Wunsch gehen Fotos vom leeren Raum aufs Handy.",
+          "fakt": "Der Wertstoffhof des Landkreises liegt auf Nauener Gebiet, Schwanebecker Weg 25: Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
+          "tief": {
+            "h2": "Entrümpelung in Nauen: Altstadt, Ortsteile, Nebengebäude",
+            "sections": [
+              {
+                "h3": "Altstadtwohnung und Siedlungshaus in Nauen",
+                "kurz": "Enges Treppenhaus in der Altstadt oder Einfamilienhaus am Stadtrand: Wir planen Zugang und Fahrzeug bei der Besichtigung.",
+                "body": "Bei Altbauten aus dem 17. bis 20. Jahrhundert rechnen wir mit schmalen Treppen und Dachbodenluken. Bei der Besichtigung messen wir Türen und Treppen aus, klären, wo der Anhänger stehen kann, und nennen danach den Festpreis. Sperrige Schränke zerlegen wir, damit sie durch das Treppenhaus passen. Ob eine Wohnung im ersten Stock oder ein ganzes Haus: Sie müssen vorher nichts sortieren."
+              },
+              {
+                "h3": "Ribbeck, Groß Behnitz, Börnicke: die Ortsteile",
+                "kurz": "Vierzehn Ortsteile, weite Wege: Die Strecke von Falkensee berechnen wir nicht extra, auch nicht bis Groß Behnitz oder Wachow.",
+                "body": "Zu Nauen gehören 14 Ortsteile, darunter Ribbeck, Groß Behnitz, Börnicke, Berge und Wachow. Von unserem Sitz in Falkensee sind es bis zum Nauener Stadtkern rund 20 km, etwa 22 Minuten Fahrt; in die Ortsteile kommt ein Stück dazu. Die Strecke berechnen wir nicht gesondert, sie steckt im Festpreis. Wohnen Sie nicht vor Ort, genügen Schlüssel für uns oder eine Vertrauensperson, eine kurze Vollmacht und anschließend Fotos."
+              },
+              {
+                "h3": "Garage, Schuppen und Werkstatt auf großen Grundstücken",
+                "kurz": "Ein Foto vom Schuppen genügt für die erste Einschätzung; Altholz, Schrott und Restabfall trennen wir für Schwanebeck.",
+                "body": "Auf größeren Grundstücken sammeln sich in Garage, Schuppen und Werkstatt Bretter, Reifen, Gartengeräte und alte Regale. Ein Foto per WhatsApp reicht für die erste Einschätzung, den Festpreis nennen wir nach der kostenlosen Besichtigung. Beim Beladen trennen wir Altholz, Schrott und gemischten Restabfall, weil der Hof jede Sorte einzeln wiegt. Öl, Autobatterien und Gasflaschen nehmen wir nicht mit.",
+                "link_to": "entruempelung#nebengebaeude",
+                "link_text": "Mehr zu Garage und Nebengebäuden"
+              },
+              {
+                "h3": "Hausverkauf und Erbfall: Räumung mit Vollmacht",
+                "kurz": "Haus geerbt, Erben wohnen weit weg: Wir räumen mit Vollmacht, Fotos und Belege kommen per Mail.",
+                "body": "Wird ein Haus verkauft oder geerbt, räumen wir Zimmer für Zimmer und übergeben besenrein, damit der Termin beim Notar nicht an einem vollen Keller hängt. Dokumente und Wertsachen legen Sie vorher beiseite, Verwertbares rechnen wir offen an. Geht es um die Sichtung eines ganzen Nachlasses mit Unterlagen und Schmuck, ist das eine Haushaltsauflösung mit eigenem Ablauf.",
+                "link_to": "haushaltsaufloesung",
+                "link_text": "Zur Haushaltsauflösung"
+              }
+            ],
+            "ortsblock": {
+              "h2": "Entsorgung in Nauen: Wertstoffhof, Sperrmüll, Anfahrt",
+              "items": [
+                {
+                  "k": "Wertstoffhof",
+                  "v": "Wertstoffhof Nauen/Schwanebeck, Schwanebecker Weg 25, 14641 Nauen: vom Stadtkern rund 6 km, etwa 16 Minuten Fahrt. Geöffnet Montag, Mittwoch, Donnerstag und Freitag 9–17 Uhr, Dienstag 9–18 Uhr, Samstag 8–13 Uhr. Der Hof nimmt unter anderem Sperrmüll, Schrott, Elektroaltgeräte und Schadstoffe an, Gasflaschen und andere Druckbehälter nicht; gewogene Anlieferungen rechnet er nach der Gebührensatzung 2026 ab."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Privathaushalte im Landkreis Havelland lassen zweimal im Jahr kostenlos Sperrmüll abholen, angemeldet bei der HAW mbH, mit bis zu vier Wochen Wartezeit. Bauabfälle, Fenster, Türen, Laminat, Gartenbretter und größere Mengen aus Haushaltsauflösungen nimmt die Abfuhr nicht mit."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Der Haus- & Gartenservice Havelland sitzt in Falkensee, Darmstädter Straße: bis zum Nauener Stadtkern sind es rund 20 km, etwa 22 Minuten Fahrt. Die Anfahrt steckt im Festpreis, einen Posten dafür gibt es nicht."
+                },
+                {
+                  "k": "Ortsteile",
+                  "v": "Kernstadt und 14 Ortsteile: Berge, Bergerdamm, Börnicke, Groß Behnitz, Kienberg, Klein Behnitz, Lietzow, Markee, Neukammer, Ribbeck, Schwanebeck, Tietzow, Wachow und Waldsiedlung; 19.854 Einwohner (31.12.2025), PLZ 14641."
+                }
+              ],
+              "quelle": "abfall-havelland.de (Seite Wertstoffhof Schwanebeck, Abruf 06.11.2026), Abfallgebührensatzung Landkreis Havelland 2026, haw-mbh.de (Sperrmüll), de.wikipedia.org/wiki/Nauen (Abruf 06.11.2026), Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
+            },
+            "blocks": [
+              {
+                "id": "typisch-nauen",
+                "h2": "Was wir in Nauen typischerweise vorfinden",
+                "lead": "Noch kein eigener Fall aus Nauen, aber ein belegtes Beispiel aus dem Havelland.",
+                "body": "Ein Beispiel aus Falkensee: Abstellkammer und Gartenschuppen, 1.190 € Festpreis inkl. MwSt., auf den Wertstoffhof-Belegen standen 458 € Entsorgung. In Nauen erwarten wir ähnliche Aufträge: Keller im Altbau, Garagen auf großen Grundstücken, Häuser nach einem Erbfall.",
+                "bullets": [
+                  "Altbaukeller mit Einmachgläsern, Kartons und Regalen",
+                  "Garage oder Werkstatt, in der seit Jahren kein Auto mehr steht",
+                  "Haus im Ortsteil, das nach dem Erbfall leer übergeben wird",
+                  "Wertstoffhof auf Nauener Gebiet: jede Zusatzfahrt kostet wenig Zeit"
+                ]
+              },
+              {
+                "id": "fahrten-nauen",
+                "h2": "Nauen und die Ortsteile: so legen wir die Fahrten",
+                "lead": "Weite Wege zwischen den Ortsteilen, ein Wertstoffhof in der Nähe: Das entscheidet über die Zahl der Fahrten.",
+                "body": "Bei der Besichtigung schätzen wir ab, wie viele Ladungen anfallen, und planen die Route so, dass der Anhänger nicht leer durch den Landkreis fährt. Im Festpreis stehen Räumung und Abtransport; die Gebühren am Wertstoffhof geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Besichtigung mit Maßband: Türen, Treppen, Stellplatz",
+                  "Ladungen vorab abgeschätzt, getrennt nach Sorten",
+                  "Schriftlicher Festpreis vor dem Räumungstermin",
+                  "Rechnung mit allen Belegen per Mail"
+                ]
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Was kostet eine Entrümpelung in Nauen?",
+                "a": "Einen Pauschalpreis für Nauen nennen wir nicht, weil Menge, Etage, Zugang und die Zahl der Fahrten den Betrag bestimmen. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis inkl. MwSt. für Räumung und Abtransport; Entsorgungsgebühren des Wertstoffhofs kommen nach Beleg hinzu, ohne eigenen Aufschlag. Ein belegtes Beispiel aus Falkensee steht weiter oben."
+              },
+              {
+                "q": "Kommen Sie auch nach Ribbeck, Groß Behnitz oder Wachow?",
+                "a": "Ja, alle 14 Ortsteile von Nauen gehören zu unserem Einsatzgebiet. Schicken Sie uns Adresse und ein Foto per WhatsApp, wir melden uns am selben Werktag und vereinbaren die Besichtigung. Für die längere Strecke aus Falkensee zahlen Sie nichts zusätzlich."
+              },
+              {
+                "q": "Wohin bringen Sie den Sperrmüll aus Nauen?",
+                "a": "Zum Wertstoffhof Nauen/Schwanebeck am Schwanebecker Weg 25, der auf Nauener Gebiet liegt. Der Hof wiegt jede Ladung und rechnet nach der Gebührensatzung des Landkreises ab. Wir laden schon sortiert, Sie erhalten die Wiegescheine und zahlen die Gebühren, wie sie auf dem Beleg stehen."
+              },
+              {
+                "q": "Reicht in Nauen nicht die Sperrmüllabfuhr des Landkreises?",
+                "a": "Für ein paar Möbel schon: Die HAW mbH holt zweimal im Jahr kostenlos ab, nach Anmeldung und mit bis zu vier Wochen Wartezeit. Nicht mit nimmt sie Bauabfälle, Fenster, Türen, Laminat, Gartenbretter und größere Mengen aus Haushaltsauflösungen. Sobald ein Keller oder Haus leer werden soll, ist die Räumung mit Abtransport der bessere Weg."
+              },
+              {
+                "q": "Schaffen Sie es auch in eine Altstadtwohnung mit schmalem Treppenhaus?",
+                "a": "Ja. Wir kommen zu zweit, tragen alles über die Treppe nach unten und zerlegen sperrige Möbel, wenn sie sonst nicht durch die Tür passen. Bei der Besichtigung klären wir, wo der Anhänger vor dem Haus stehen kann. Aufzug, Etage und Weg zum Fahrzeug fließen in den Festpreis ein."
+              }
+            ]
+          }
+        },
+        "ketzin": {
+          "hook": "Ketzin/Havel liegt am nördlichen Havelufer, hat gut 6.600 Einwohner und besteht aus der Kernstadt und den Ortsteilen Etzin, Falkenrehde, Paretz, Tremmen und Zachow, dazu kommen Wohnplätze wie die Kliemsiedlung und die Schumachersiedlung. Wenn ein Haus hier leer werden soll und die Erben anderswo wohnen, übernehmen wir die Räumung aus der Ferne.",
+          "rahmen": "Wir räumen in Ketzin und den fünf Ortsteilen Keller, Dachboden, Garage, Schuppen oder das ganze Haus. Beim Räumen trennen wir Holz, Metall, Elektrogeräte und Restabfall, Brauchbares rechnen wir an. Was eine Annahmestelle verlangt, packen wir nicht an: Farbe, Lösungsmittel, Öl und Gasflaschen brauchen eine eigene Annahme, die wir Ihnen vorab nennen. Zum Schluss fegen wir aus.",
+          "trust": "Die Besichtigung in Ketzin kostet nichts. Danach liegt der Festpreis für Räumung und Abtransport schriftlich vor, die Gebühren der Annahmestelle rechnen wir nach Beleg ab, ohne eigenen Aufschlag. Fotos von vorher und nachher schicken wir auf Wunsch aufs Handy, Rechnung und Belege per Mail.",
+          "fakt": "Für Ketzin ist Nauen/Schwanebeck der nächste Wertstoffhof des Landkreises, rund 20 km entfernt; Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
+          "tief": {
+            "h2": "Entrümpelung in Ketzin/Havel: Haus, Keller, Schuppen, Ortsteile",
+            "sections": [
+              {
+                "h3": "Häuser in Ketzin nach Verkauf oder Erbfall",
+                "kurz": "Erben in Berlin, Potsdam oder weiter weg: Schlüsselübergabe, Vollmacht, Räumung ohne Ihre Anreise.",
+                "body": "Ketzin hat keinen Personenverkehr auf der Schiene mehr; der nächste Haltepunkt der Regionalbahn liegt in Marquardt. Für Erben, die von weiter her kommen müssten, ist das ein Grund mehr, die Räumung aus der Hand zu geben: Schlüssel an uns oder eine Vertrauensperson, kurze Vollmacht, Besichtigung nach Absprache. Danach räumen wir Zimmer für Zimmer und übergeben besenrein."
+              },
+              {
+                "h3": "Etzin, Paretz, Tremmen, Zachow: die Ortsteile",
+                "kurz": "Fünf Ortsteile rund um Ketzin: Die Anfahrt aus Falkensee steckt im Festpreis.",
+                "body": "Neben der Kernstadt kommen wir nach Etzin, Falkenrehde, Paretz, Tremmen und Zachow. Von unserem Sitz in Falkensee sind es bis Ketzin rund 30 km, etwa 29 Minuten Fahrt. Diese Strecke berechnen wir nicht zusätzlich; sie steckt im schriftlichen Festpreis. Weil die Wege länger sind, bündeln wir Besichtigung und Räumung so, dass wenige Fahrten reichen."
+              },
+              {
+                "h3": "Schuppen, Garage und Gartenhaus",
+                "kurz": "Foto per WhatsApp genügt, den Festpreis nennen wir nach der kostenlosen Besichtigung.",
+                "body": "Zu vielen Grundstücken gehören Schuppen, Garage oder Gartenhaus. Schicken Sie ein Foto vom Inhalt, wir geben eine erste Einschätzung ab. Alles, was drinliegt, sortieren wir beim Beladen: Altholz, Schrott, Restabfall. Ist das Gartenhaus selbst reif für den Abriss, fragen Sie danach, wir kalkulieren Rückbau und Entsorgung getrennt.",
+                "link_to": "entruempelung#gartenhaus",
+                "link_text": "Gartenhaus abreißen und entsorgen"
+              },
+              {
+                "h3": "Wohnung in Ketzin räumen und besenrein übergeben",
+                "kurz": "Mietende oder Eigentümer: leer, gefegt und mit Fotos dokumentiert zur Wohnungsübergabe.",
+                "body": "Für die Rückgabe an Vermieter oder Käufer räumen wir die Wohnung komplett, auch Keller und Abstellraum. Den leeren Zustand halten wir auf Wunsch mit Fotos fest. Zusatzleistungen wie eine Grundreinigung oder die Beseitigung von Geruch sind eine eigene Position, die wir bei der Besichtigung getrennt anbieten."
+              }
+            ],
+            "ortsblock": {
+              "h2": "Entsorgung in Ketzin: Wertstoffhof, Sperrmüll, Anfahrt",
+              "items": [
+                {
+                  "k": "Wertstoffhof",
+                  "v": "Der nächste Wertstoffhof des Landkreises Havelland ist Nauen/Schwanebeck, Schwanebecker Weg 25: vom Ketzin-Zentrum rund 20 km, etwa 29 Minuten Fahrt. Geöffnet Montag, Mittwoch, Donnerstag und Freitag 9–17 Uhr, Dienstag 9–18 Uhr, Samstag 8–13 Uhr. Der Hof in Falkensee, Nauener Straße 97, ist rund 29 km entfernt."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Zweimal im Jahr kostenlos für Privathaushalte, angemeldet bei der HAW mbH, Wartezeit bis zu vier Wochen, Bereitstellung frühestens am Vorabend vor dem Grundstück. Bauabfälle, Fenster, Türen, Laminat, Gartenbretter und größere Mengen aus Haushaltsauflösungen bleiben stehen."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Der Haus- & Gartenservice Havelland sitzt in Falkensee: bis Ketzin/Havel sind es rund 30 km, etwa 29 Minuten Fahrt. Die Anfahrt steckt im Festpreis; für den Weg entsteht kein eigener Posten."
+                },
+                {
+                  "k": "Ortsteile",
+                  "v": "Etzin, Falkenrehde, Paretz, Tremmen und Zachow; 6.636 Einwohner (31.12.2025), 93,64 km², PLZ 14669; die Havelfähre Ketzin–Schmergow verbindet das Nordufer mit der Gegenseite."
+                }
+              ],
+              "quelle": "abfall-havelland.de (Seite Wertstoffhof Schwanebeck, Abruf 06.11.2026), Abfallgebührensatzung Landkreis Havelland 2026, haw-mbh.de, de.wikipedia.org/wiki/Ketzin/Havel (Abruf 06.11.2026), Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
+            },
+            "blocks": [
+              {
+                "id": "typisch-ketzin",
+                "h2": "Was wir in Ketzin typischerweise vorfinden",
+                "lead": "Noch kein eigener Fall aus Ketzin, aber ein belegtes Beispiel aus dem Havelland.",
+                "body": "Ein Beispiel aus Falkensee: Abstellkammer und Gartenschuppen, 1.190 € Festpreis inkl. MwSt., auf den Wertstoffhof-Belegen standen 458 € Entsorgung. In Ketzin erwarten wir ähnliche Aufgaben, nur mit längerem Weg zum Wertstoffhof.",
+                "bullets": [
+                  "Haus in einem der fünf Ortsteile, nach dem Tod der Eltern zu räumen",
+                  "Schuppen und Gartenhaus nahe am Wasser",
+                  "Keller mit Hausrat aus mehreren Jahrzehnten",
+                  "Zwei bis drei Fahrten nach Schwanebeck, vorab im Festpreis eingeplant"
+                ]
+              },
+              {
+                "id": "ablauf-ketzin",
+                "h2": "So läuft eine Entrümpelung in Ketzin ab",
+                "lead": "Foto, Besichtigung, Festpreis, Räumung, Fotos zum Abschluss.",
+                "body": "Auf Ihre Nachricht antworten wir am selben Werktag und vereinbaren die kostenlose Besichtigung. Danach steht der Festpreis schriftlich fest; Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Foto oder Anruf, Rückmeldung am selben Werktag",
+                  "Kostenlose Besichtigung, auch ohne Ihre Anwesenheit mit Vollmacht",
+                  "Schriftlicher Festpreis für Räumung und Abtransport",
+                  "Besenreine Übergabe, Fotos aufs Handy"
+                ]
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Wie weit ist es von Falkensee nach Ketzin, und kostet die Anfahrt extra?",
+                "a": "Rund 30 km, etwa 29 Minuten Fahrt. Die Anfahrt kostet nichts extra, sie steckt im Festpreis, den Sie nach der kostenlosen Besichtigung schriftlich bekommen. Damit die Strecke sich nicht aufsummiert, planen wir Räumung und Fahrten zum Wertstoffhof so, dass wenige Touren reichen."
+              },
+              {
+                "q": "Muss ich nach Ketzin anreisen, wenn ich weit weg wohne?",
+                "a": "Nein. Sie geben uns den Schlüssel oder hinterlegen ihn bei einer Vertrauensperson und schreiben in einer kurzen Vollmacht, was weg darf und was bleibt. Fotos vor und nach der Räumung gehen aufs Handy, Rechnung und Belege per Mail. Wer vor Ort sein möchte, legt den Termin auf einen Samstag."
+              },
+              {
+                "q": "Wo gebe ich in Ketzin Sperrmüll und Schrott ab?",
+                "a": "Der nächste Wertstoffhof des Landkreises Havelland ist Nauen/Schwanebeck, etwa 29 Minuten Fahrt von Ketzin. Dort werden Sperrmüll, Schrott und Elektroaltgeräte angenommen, Gasflaschen nicht. Wer kein Fahrzeug hat oder viel loswerden will, lässt uns fahren: Wir bringen die Ladung hin und geben die Gebühren nach Beleg weiter."
+              },
+              {
+                "q": "Was passiert in Ketzin mit Möbeln und Hausrat, die noch gut sind?",
+                "a": "Brauchbares trennen wir vor dem Entsorgen aus. Was sich weitergeben lässt, rechnen wir offen vom Preis ab oder geben es einer Weiterverwendung. Der Rest wird nach Sorten getrennt: Holz, Metall, Elektro, Restabfall. Sie erhalten die Belege der Annahmestelle zur Rechnung."
+              },
+              {
+                "q": "Räumen Sie in Ketzin auch eine Mietwohnung vor der Übergabe?",
+                "a": "Ja, ob Wohnung, Keller oder Abstellraum. Wir räumen leer und fegen aus; auf Wunsch dokumentieren wir den Zustand mit Fotos für die Übergabe. Eine Grundreinigung oder die Beseitigung von Schimmel und Geruch sind eigene Positionen, die wir bei der Besichtigung separat anbieten."
+              }
+            ]
+          }
+        },
+        "gross-glienicke": {
+          "hook": "Groß Glienicke liegt am gleichnamigen See, und die Stadtgrenze verläuft mittendurch: Der Potsdamer Teil mit etwa 5.000 Einwohnern hat die Postleitzahl 14476, die Berliner Ortslage gehört zu Kladow. Dorfkern, Gutspark und die Waldsiedlung auf dem Gelände einer früheren Kaserne prägen den Ort. Wir räumen auf beiden Seiten, auch wenn die Immobilie nur Zweitwohnsitz war.",
+          "rahmen": "Ob Einfamilienhaus im Dorfkern, Haus in der Waldsiedlung oder Grundstück mit Seezugang: Wir räumen Keller, Dachboden, Garage und Nebengebäude und tragen alles heraus. Brauchbares sortieren wir aus und rechnen es offen an, den Rest laden wir nach Sorten getrennt. Farbreste, Öl, Batterien und Gasflaschen lassen wir stehen und nennen die zuständige Annahmestelle, denn je nach Seite der Stadtgrenze ist das eine andere.",
+          "trust": "Nach der kostenlosen Besichtigung in Groß Glienicke steht der Festpreis für Räumung und Abtransport schriftlich fest. Die Gebühren der Annahmestelle, ob auf Potsdamer oder Berliner Seite, geben wir nach Beleg weiter, ohne eigenen Aufschlag. Wer nicht vor Ort wohnt, bekommt nach der Räumung Fotos aufs Handy.",
+          "fakt": "Groß Glienicke gehört zu Potsdam, die Berliner Ortslage zu Kladow: Je nach Seite fahren wir den Wertstoffhof Drewitz oder den Recyclinghof Spandau an.",
+          "tief": {
+            "h2": "Entrümpelung in Groß Glienicke: Dorfkern, Waldsiedlung, Seegrundstück",
+            "sections": [
+              {
+                "h3": "Zwei Seiten, eine Besichtigung",
+                "kurz": "Potsdamer Seite (14476) oder Berliner Ortslage: Wir klären bei der Besichtigung, welche Annahmestelle zuständig ist.",
+                "body": "Seit 1945 ist der Ort geteilt: Der westliche Teil gehört seit 2003 als Stadtteil zu Potsdam, der östliche, Groß-Glienicke mit Bindestrich, liegt im Berliner Ortsteil Kladow. Für Sie ändert das wenig, für die Entsorgung aber einiges: Je nach Seite kommen andere Annahmestellen und Regeln infrage. Wir fragen bei der Besichtigung nach der Adresse und planen danach die Fahrten."
+              },
+              {
+                "h3": "Haus in der Waldsiedlung oder im Dorfkern",
+                "kurz": "Gewachsenes Einfamilienhaus im Ortskern oder Haus in der Waldsiedlung: Keller, Dachboden und Garage, ohne dass Sie vorsortieren.",
+                "body": "Die Waldsiedlung entstand auf dem Gelände einer 1937 gebauten Kaserne, im Dorfkern stehen Häuser rund um die Kirche mit ihrem Kern aus dem 13. Jahrhundert. Wir räumen beides gleich: Zimmer für Zimmer, sortiert aufgeladen, besenrein übergeben. Auf Wunsch gehen Fotos der leeren Räume noch am selben Abend aufs Handy, damit Sie nicht anreisen müssen."
+              },
+              {
+                "h3": "Grundstück am See: Zweitwohnsitz und Wochenendhaus",
+                "kurz": "Zweitwohnsitz leer räumen, ohne zu kommen: Schlüssel, Vollmacht, Foto-Nachweis.",
+                "body": "Wo die Immobilie nur zeitweise genutzt wurde, sammeln sich Gartenmöbel, Liegen und Hausrat in Schuppen und Garage. Schlüssel an uns oder eine Vertrauensperson, eine kurze Vollmacht, danach räumen wir. Was bleiben soll und was weg darf, klären wir vorab per Foto.",
+                "link_to": "entruempelung#gartenhaus",
+                "link_text": "Gartenhaus abreißen und entsorgen"
+              },
+              {
+                "h3": "Nachlass und Haushaltsauflösung in Groß Glienicke",
+                "kurz": "Bei einem Todesfall mit Sichtung von Unterlagen und Wertsachen gilt eine eigene Seite zur Haushaltsauflösung.",
+                "body": "Eine Entrümpelung räumt aus und fährt ab. Geht es um einen ganzen Haushalt mit Dokumenten, Schmuck und Erinnerungsstücken, ist das eine Haushaltsauflösung mit eigenem Ablauf und Abstimmung mit Erben. Ob das eine oder das andere zu Ihrem Fall passt, sehen wir bei der Besichtigung; sie kostet nichts.",
+                "link_to": "haushaltsaufloesung",
+                "link_text": "Zur Haushaltsauflösung"
+              }
+            ],
+            "ortsblock": {
+              "h2": "Entsorgung in Groß Glienicke: Annahmestelle, Sperrmüll, Anfahrt",
+              "items": [
+                {
+                  "k": "Annahmestelle",
+                  "v": "Potsdamer Seite: Wertstoffhof Drewitz der STEP, Zum Heizwerk 18, 14478 Potsdam, Montag bis Freitag 7–17 Uhr, Samstag 8–14 Uhr, rund 19 km oder 28 Minuten Fahrt von Groß Glienicke. Berliner Seite: BSR-Recyclinghof Spandau, Brunsbütteler Damm 47, 13581 Berlin, rund 10 km oder 17 Minuten Fahrt. Welche Stelle für Ihre Adresse zuständig ist, klären wir vor dem Termin."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Potsdamer Seite: Die Stadt Potsdam holt haushaltsüblichen Sperrmüll kostenfrei ab; die Abholung muss vorab angemeldet werden, der Termin liegt voraussichtlich etwa zwei Wochen danach, und unangemeldet oder zu früh bereitgestellter Sperrmüll ist eine Ordnungswidrigkeit. Berliner Seite: Die BSR-Abholung kostet Gebühr; Privathaushalte können dafür bis 3 m³ je täglicher Anlieferung gebührenfrei am Recyclinghof abgeben."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Der Haus- & Gartenservice Havelland sitzt in Falkensee, Darmstädter Straße: bis Groß Glienicke sind es rund 16 km, etwa 19 Minuten Fahrt. Die Anfahrt steckt im Festpreis, für den Weg berechnen wir nichts."
+                },
+                {
+                  "k": "Ortsteile",
+                  "v": "Potsdamer Stadtteil seit 26.10.2003, PLZ 14476, rund 5.000 Einwohner auf 10,25 km² (Stadtteilkatalog 2022); die Berliner Ortslage Groß-Glienicke hat gut 3.000 Einwohner und gehört zu Kladow. Der See wird von der Stadtgrenze der Länge nach geteilt."
+                }
+              ],
+              "quelle": "de.wikipedia.org/wiki/Groß_Glienicke (Abruf 06.11.2026), potsdam.de (Wertstoffhof Drewitz, Abruf 06.11.2026), bsr.de (Recyclinghof Spandau), berlin.de/stadtsauberkeit, Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
+            },
+            "blocks": [
+              {
+                "id": "typisch-gross-glienicke",
+                "h2": "Was wir in Groß Glienicke typischerweise vorfinden",
+                "lead": "Noch kein eigener Fall aus Groß Glienicke, aber ein belegtes Beispiel aus dem Havelland.",
+                "body": "Ein Beispiel aus Falkensee: Abstellkammer und Gartenschuppen, 1.190 € Festpreis inkl. MwSt., auf den Wertstoffhof-Belegen standen 458 € Entsorgung. In Groß Glienicke erwarten wir andere Schwerpunkte: Zweitwohnsitze, Häuser mit Seezugang, Nachlässe.",
+                "bullets": [
+                  "Zweitwohnsitz, der nach Jahren leer übergeben werden soll",
+                  "Schuppen mit Gartenmöbeln und Zubehör für den Sommer",
+                  "Haus im Dorfkern nach Verkauf oder Erbfall",
+                  "Zwei mögliche Annahmestellen, je nach Seite der Stadtgrenze"
+                ]
+              },
+              {
+                "id": "ablauf-gross-glienicke",
+                "h2": "So läuft eine Entrümpelung in Groß Glienicke ab",
+                "lead": "Adresse klären, besichtigen, Festpreis, räumen, Fotos: auch für Eigentümer, die nicht vor Ort sind.",
+                "body": "Wir fragen zuerst nach der Adresse, weil davon die Annahmestelle abhängt. Danach folgt die kostenlose Besichtigung, der schriftliche Festpreis und der Räumungstermin. Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Adresse und Foto per WhatsApp",
+                  "Besichtigung, auch mit Vollmacht ohne Ihre Anwesenheit",
+                  "Festpreis schriftlich vor dem Termin",
+                  "Fotos vom leeren Haus, Rechnung und Belege per Mail"
+                ]
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Kommen Sie nach Groß Glienicke, obwohl der Ort zu Potsdam gehört?",
+                "a": "Ja, auf beiden Seiten der Stadtgrenze: im Potsdamer Teil mit der Postleitzahl 14476 und in der Berliner Ortslage, die zu Kladow gehört. Von unserem Sitz in Falkensee sind es rund 16 km. Die Anfahrt steckt im Festpreis, den Sie nach der kostenlosen Besichtigung schriftlich bekommen."
+              },
+              {
+                "q": "Welche Annahmestelle gilt für meinen Sperrmüll in Groß Glienicke?",
+                "a": "Das hängt von der Seite der Grenze ab. Im Potsdamer Teil ist der Wertstoffhof Drewitz der STEP zuständig, in der Berliner Ortslage der BSR-Recyclinghof in Spandau. Wir fragen Sie bei der Besichtigung nach der Adresse und fahren die richtige Stelle an; die Gebühren dort geben wir nach Beleg weiter."
+              },
+              {
+                "q": "Kann ich meinen Zweitwohnsitz in Groß Glienicke aus der Ferne räumen lassen?",
+                "a": "Ja. Sie übergeben den Schlüssel oder hinterlegen ihn bei einer Vertrauensperson und halten in einer kurzen Vollmacht fest, was bleiben soll. Vorher legen wir im Gespräch fest, was Wertgegenstand ist. Nach der Räumung gehen Fotos aufs Handy, Rechnung und Belege per Mail."
+              },
+              {
+                "q": "Lohnt sich in Groß Glienicke die Sperrmüll-Abholung der Stadt statt einer Entrümpelung?",
+                "a": "Für einzelne Möbel ja: In Potsdam melden Sie die kostenfreie Abholung vorab an, in Berlin kostet die BSR-Abholung Gebühr. Für einen vollen Keller, ein Haus oder Sachen aus mehreren Räumen ist das zu klein. Dann räumen wir aus und fahren ab; Sie müssen nichts selbst an die Straße stellen."
+              },
+              {
+                "q": "Was passiert bei einem Todesfall: Entrümpelung oder Haushaltsauflösung?",
+                "a": "Wird nur ausgeräumt und abgefahren, genügt eine Entrümpelung. Sollen Unterlagen, Schmuck und Erinnerungsstücke gesichtet und mit den Erben abgestimmt werden, ist das eine Haushaltsauflösung. Wir klären bei der kostenlosen Besichtigung, welche Leistung zu Ihrem Fall passt."
+              }
+            ]
+          }
+        },
+        "berlin-kladow": {
+          "hook": "Kladow, der südlichste Ortsteil von Spandau mit gut 16.500 Einwohnern, hat Villen am Havelufer, die Finnenhaussiedlung von 1959/60 und die Landstadt Gatow auf einem Teil des früheren Flugplatzes. So verschieden die Häuser, so ähnlich der Anlass: Nach Auszug, Verkauf oder Erbfall muss alles raus. Wir räumen Keller, Dachboden und Garage und übergeben besenrein.",
+          "rahmen": "In Kladow räumen wir vom Keller der Villa bis zum Dachgeschoss des Siedlungshauses. Wir tragen heraus, trennen beim Beladen nach Holz, Metall, Elektrogeräten und Restabfall und rechnen Brauchbares offen an. Schadstoffe, Öl, Batterien und Gasflaschen fassen wir nicht an; für sie nennen wir Ihnen die Annahmestelle. Geräte mit Akku nehmen wir getrennt, damit sie sicher zur Annahme kommen.",
+          "trust": "Die Besichtigung in Kladow ist kostenlos, danach steht der Festpreis für Räumung und Abtransport schriftlich fest. Gebühren am Recyclinghof geben wir nach Beleg weiter, ohne eigenen Aufschlag. Fotos von vorher und nachher gehen auf Wunsch aufs Handy, sodass Sie tagsüber nicht dabei sein müssen.",
+          "fakt": "Für Kladow ist der BSR-Recyclinghof in Spandau am Brunsbütteler Damm die Anlaufstelle; Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
+          "tief": {
+            "h2": "Entrümpelung in Kladow: Villa, Siedlungshaus, Keller, Garage",
+            "sections": [
+              {
+                "h3": "Villen am Havelufer: mehrere Etagen, viele Räume",
+                "kurz": "Große Häuser mit mehreren Etagen, Dachgeschoss und Nebengebäuden: Wir planen Räume und Wege bei der Besichtigung.",
+                "body": "Am Havelufer entstanden im 19. Jahrhundert zahlreiche Villen. Solche Häuser haben oft mehrere Etagen, Nebenräume und Dachböden mit viel Inhalt. Bei der Besichtigung gehen wir alle Räume durch, schätzen die Menge ab und klären Zufahrt und Stellplatz für den Anhänger. Der Festpreis steht danach schriftlich fest; was wertvoll ist, rechnen wir offen an."
+              },
+              {
+                "h3": "Finnenhaussiedlung und Landstadt Gatow",
+                "kurz": "Reihen- und Einfamilienhäuser mit Keller, Kammer und Garage: oft ein Tag Arbeit, wenn sich alles sortieren lässt.",
+                "body": "In der Finnenhaussiedlung von 1959/60 und in der Landstadt Gatow stehen kleinere Häuser mit Keller, Abstellkammer und Garage. Wir kommen zu zweit, räumen Zimmer für Zimmer und laden sortiert auf. Möbel zerlegen wir, wenn sie sonst nicht durch Flur oder Tür passen. Zum Schluss fegen wir aus und schicken Fotos der leeren Räume."
+              },
+              {
+                "h3": "Garage und Nebengebäude in Kladow",
+                "kurz": "Foto per WhatsApp genügt, Festpreis nach der Besichtigung; Gasflaschen und Öl bleiben draußen.",
+                "body": "Schuppen, Garage und Gartenhaus füllen sich über die Jahre mit Gartengeräten, Brettern und Hausrat. Ein Foto vom Inhalt reicht für die erste Einschätzung. Beim Beladen trennen wir Altholz, Schrott und Restabfall, weil der Recyclinghof die Sorten getrennt annimmt. Ist das Gartenhaus selbst reif für den Abriss, kalkulieren wir Rückbau und Entsorgung als eigene Position.",
+                "link_to": "entruempelung#nebengebaeude",
+                "link_text": "Mehr zu Garage und Nebengebäuden"
+              },
+              {
+                "h3": "Übergabe nach Verkauf oder Auszug",
+                "kurz": "Verkauf, Vermietung, Erbfall: leer, gefegt und mit Fotos dokumentiert übergeben.",
+                "body": "Für Käufer oder Vermieter räumen wir Haus oder Wohnung komplett und halten den leeren Zustand auf Wunsch mit Fotos fest. Soll zuerst ein Nachlass mit Dokumenten und Schmuck gesichtet werden, ist das eine Haushaltsauflösung mit eigenem Ablauf. Grundreinigung oder Geruchsbeseitigung bieten wir als getrennte Position an.",
+                "link_to": "haushaltsaufloesung",
+                "link_text": "Zur Haushaltsauflösung"
+              }
+            ],
+            "ortsblock": {
+              "h2": "Entsorgung in Kladow: Recyclinghof, Sperrmüll, Anfahrt",
+              "items": [
+                {
+                  "k": "Recyclinghof",
+                  "v": "Der BSR-Recyclinghof Spandau liegt am Brunsbütteler Damm 47, 13581 Berlin, rund 11 km oder 19 Minuten Fahrt von Alt-Kladow. Die BSR betreibt in Berlin 14 Recyclinghöfe; Privathaushalte können haushaltsübliche Mengen bis 3 m³ je täglicher Anlieferung gebührenfrei abgeben. Aktuelle Öffnungszeiten stehen auf bsr.de."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Die Abholung durch die BSR kostet Gebühr, nach Wunschtermin gestaffelt. Die kostenlose Alternative ist die eigene Anlieferung am Recyclinghof bis 3 m³ je Tag. Wer weder Fahrzeug noch Zeit hat oder mehr als Sperrmüll loswerden will, lässt uns räumen und fahren."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Der Haus- & Gartenservice Havelland sitzt in Falkensee, Darmstädter Straße: bis Alt-Kladow sind es rund 18 km, etwa 25 Minuten Fahrt. Die Anfahrt steckt im Festpreis, für den Weg gibt es keinen eigenen Posten."
+                },
+                {
+                  "k": "Ortsteil",
+                  "v": "Kladow ist der südlichste Ortsteil des Bezirks Spandau, PLZ 14089, 16.518 Einwohner (31.12.2025) auf 14,8 km²; im Westen und Südwesten grenzen die Potsdamer Ortsteile Sacrow und Groß Glienicke an."
+                }
+              ],
+              "quelle": "bsr.de (Recyclinghöfe, Laub und Gartenabfälle, Abruf 06.11.2026), berlin.de/stadtsauberkeit (Abruf 06.11.2026), de.wikipedia.org/wiki/Berlin-Kladow (Abruf 06.11.2026), Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
+            },
+            "blocks": [
+              {
+                "id": "typisch-kladow",
+                "h2": "Was wir in Kladow typischerweise vorfinden",
+                "lead": "Noch kein eigener Fall aus Kladow, aber ein belegtes Beispiel aus dem Havelland.",
+                "body": "Ein Beispiel aus Falkensee: Abstellkammer und Gartenschuppen, 1.190 € Festpreis inkl. MwSt., auf den Wertstoffhof-Belegen standen 458 € Entsorgung. In Kladow rechnen wir mit größeren Häusern und mehr Räumen je Auftrag, entsprechend mehr Ladungen.",
+                "bullets": [
+                  "Villa mit Keller, Dachgeschoss und Nebengebäude",
+                  "Siedlungshaus mit Keller, Kammer und Garage",
+                  "Haus, das nach dem Verkauf leer übergeben wird",
+                  "Recyclinghof Spandau als gemeinsame Annahmestelle"
+                ]
+              },
+              {
+                "id": "ablauf-kladow",
+                "h2": "So läuft eine Entrümpelung in Kladow ab",
+                "lead": "Von Ihrem Foto bis zur besenreinen Übergabe, auch ohne Ihre Anwesenheit.",
+                "body": "Auf Ihre Nachricht antworten wir am selben Werktag. Nach der kostenlosen Besichtigung bekommen Sie den schriftlichen Festpreis, danach räumen wir. Entsorgungsgebühren am Recyclinghof geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Foto oder Anruf, Rückmeldung am selben Werktag",
+                  "Besichtigung nach Absprache, auch nach Feierabend",
+                  "Schriftlicher Festpreis für Räumung und Abtransport",
+                  "Fotos vom Ergebnis, Rechnung und Belege per Mail"
+                ]
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Räumen Sie in Kladow auch große Villen mit mehreren Etagen?",
+                "a": "Ja. Bei der kostenlosen Besichtigung gehen wir alle Räume durch, schätzen die Menge und planen die Zahl der Fahrten. Je mehr Etagen und Nebengebäude, desto mehr Ladungen; den Festpreis für Räumung und Abtransport nennen wir danach schriftlich, die Gebühren am Recyclinghof kommen nach Beleg dazu."
+              },
+              {
+                "q": "Wohin bringen Sie den Sperrmüll aus Kladow?",
+                "a": "Zum BSR-Recyclinghof Spandau am Brunsbütteler Damm 47, rund 19 Minuten von Alt-Kladow. Wir laden sortiert, damit die Sorten dort getrennt angenommen werden. Wie viel der Hof berechnet, steht auf den Belegen, die Sie zur Rechnung erhalten; einen eigenen Aufschlag gibt es nicht."
+              },
+              {
+                "q": "BSR-Abholung oder Entrümpelung: Was lohnt sich in Kladow?",
+                "a": "Für ein paar Möbel kann die BSR abholen, gegen Gebühr und nach Terminwahl; wer selbst fährt, gibt bis 3 m³ je Tag am Recyclinghof gebührenfrei ab. Für einen vollen Keller, Dachboden oder ein ganzes Haus ist beides zu klein. Dann räumen wir aus und fahren ab, Sie müssen nichts selbst nach unten tragen."
+              },
+              {
+                "q": "Wie kommen die Kosten für eine Entrümpelung in Kladow zustande?",
+                "a": "Vier Faktoren zählen: Menge, Zugang, Zahl der Fahrten und der Anteil an Brauchbarem, den wir anrechnen. Den Betrag nennen wir erst nach der Besichtigung als Festpreis inkl. MwSt. für Räumung und Abtransport. Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag."
+              },
+              {
+                "q": "Räumen Sie in Kladow auch nur Garage oder Gartenhaus?",
+                "a": "Ja, einzelne Räume und Nebengebäude sind ein normaler Auftrag, ohne Mindestumfang. Ein Foto per WhatsApp genügt für die erste Einschätzung, danach folgt die kostenlose Besichtigung. Öl, Batterien und Gasflaschen nehmen wir nicht mit, die Annahmestelle dafür nennen wir Ihnen."
+              }
+            ]
+          }
+        },
+        "berlin-gatow": {
+          "hook": "Gatow gilt als Dorf in der Großstadt: gut 3.500 Einwohner, viele Einfamilienhäuser mit Gärten, wenige Mehrfamilienhäuser und Feldflur rund um Alt-Gatow. Wo Haus und Garten über Jahrzehnte gewachsen sind, stehen Keller, Dachboden, Schuppen und Garage voll. Wir räumen aus und fahren ab, wenn das Grundstück frei werden soll.",
+          "rahmen": "In Gatow räumen wir das Einfamilienhaus samt Keller und Dachboden ebenso wie Garage, Gartenhaus und Schuppen. Wir tragen heraus, trennen beim Beladen nach Sorten und rechnen Brauchbares offen an. Elektrogeräte und Schrott bringen wir getrennt zur Annahme; Farben, Lösungsmittel, Öl und Gasflaschen lassen wir stehen und nennen die richtige Stelle. Übergeben wird besenrein.",
+          "trust": "Nach der kostenlosen Besichtigung in Gatow bekommen Sie den Festpreis für Räumung und Abtransport schriftlich. Gebühren am Recyclinghof rechnen wir nach Beleg ab, ohne eigenen Aufschlag. Auf Wunsch zeigen Fotos vom leeren Haus, dass alles erledigt ist.",
+          "fakt": "Von Gatow bis zum BSR-Recyclinghof Spandau sind es rund 6 km; Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
+          "tief": {
+            "h2": "Entrümpelung in Gatow: Einfamilienhaus, Garten, Schuppen, Garage",
+            "sections": [
+              {
+                "h3": "Einfamilienhaus in Gatow: Keller bis Dachboden",
+                "kurz": "Viele Einfamilienhäuser, wenig Geschosswohnungsbau: meist Treppen und Keller statt Aufzug.",
+                "body": "In Gatow dominieren Einfamilienhäuser mit Garten, Mehrfamilienhäuser sind selten. Das heißt für uns: Treppen, Kellerabgänge und Dachbodenluken statt Aufzug. Wir tragen zu zweit, zerlegen sperrige Möbel und laden vor dem Haus auf. Einmachgläser, Koffer, Werkzeug, Kinderspielzeug: Alles wird sortiert, Brauchbares angerechnet, der Rest getrennt nach Sorten zum Recyclinghof gefahren."
+              },
+              {
+                "h3": "Garten, Schuppen und Gartenhaus",
+                "kurz": "Wo Gärten groß sind, ist der Schuppen groß: Wir trennen Holz, Metall und Restabfall beim Beladen.",
+                "body": "Große Gärten bringen Schuppen, Geräteunterstände und Gartenhäuser mit. Darin lagern Bretter, Zaunreste, Töpfe, Gartengeräte und Reifen. Ein Foto vom Inhalt genügt, den Festpreis legen wir nach der kostenlosen Besichtigung fest. Farbreste, Öl und Gasflaschen bleiben stehen, wir nennen die zuständige Annahmestelle. Soll das Gartenhaus ganz weg, kalkulieren wir Rückbau und Entsorgung getrennt.",
+                "link_to": "entruempelung#gartenhaus",
+                "link_text": "Gartenhaus abreißen und entsorgen"
+              },
+              {
+                "h3": "Alt-Gatow und der Stadtrand: kurze Wege nach Spandau",
+                "kurz": "Rund 18 km von Falkensee, rund 6 km bis zum Recyclinghof: jede Zusatzfahrt kostet wenig Zeit.",
+                "body": "Von unserem Sitz in Falkensee bis Alt-Gatow sind es rund 18 km, etwa 26 Minuten Fahrt, vom Ortskern bis zum BSR-Recyclinghof am Brunsbütteler Damm noch einmal rund 6 km. Bei einem größeren Haus lohnt sich deshalb eine zweite oder dritte Fahrt, ohne dass der Preis aus dem Ruder läuft. Die Strecke selbst berechnen wir nicht extra."
+              },
+              {
+                "h3": "Hausverkauf, Erbfall, Auszug",
+                "kurz": "Leer übergeben, Fotos als Nachweis, Rechnung mit allen Belegen: auch ohne Ihre Anwesenheit.",
+                "body": "Wird ein Haus verkauft oder vererbt, räumen wir komplett und übergeben besenrein. Den Schlüssel übernehmen wir von Ihnen oder einer Vertrauensperson, eine kurze Vollmacht regelt, was weg darf. Geht es um die Sichtung eines ganzen Nachlasses, ist das eine Haushaltsauflösung mit eigenem Ablauf.",
+                "link_to": "haushaltsaufloesung",
+                "link_text": "Zur Haushaltsauflösung"
+              }
+            ],
+            "ortsblock": {
+              "h2": "Entsorgung in Gatow: Recyclinghof, Sperrmüll, Anfahrt",
+              "items": [
+                {
+                  "k": "Recyclinghof",
+                  "v": "BSR-Recyclinghof Spandau, Brunsbütteler Damm 47, 13581 Berlin: von Alt-Gatow rund 6 km, etwa 12 Minuten Fahrt. Privathaushalte geben haushaltsübliche Mengen bis 3 m³ je täglicher Anlieferung gebührenfrei ab; Öffnungszeiten und Annahmeregeln stehen auf bsr.de."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Die BSR holt Sperrmüll gegen Gebühr ab, gestaffelt nach Wunschtermin; die Anlieferung am Recyclinghof ist für Privathaushalte bis 3 m³ je Tag gebührenfrei. Wer größere Mengen räumen lassen will, braucht eine Entrümpelung statt Abholung."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Der Haus- & Gartenservice Havelland sitzt in Falkensee: bis Alt-Gatow sind es rund 18 km, etwa 26 Minuten Fahrt. Die Anfahrt steckt im Festpreis, für den Weg entsteht kein Aufpreis."
+                },
+                {
+                  "k": "Ortsteil",
+                  "v": "Gatow im Süden des Bezirks Spandau, PLZ 14089, 3.519 Einwohner (31.12.2025) auf rund 10,1 km²; Bundesstraße 2 am Nordwestrand, Kladow im Süden, ehemaliger Flugplatz bis 1994."
+                }
+              ],
+              "quelle": "bsr.de (Recyclinghöfe, Laub und Gartenabfälle, Abruf 06.11.2026), berlin.de/stadtsauberkeit (Abruf 06.11.2026), de.wikipedia.org/wiki/Berlin-Gatow (Abruf 06.11.2026), Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
+            },
+            "blocks": [
+              {
+                "id": "typisch-gatow",
+                "h2": "Was wir in Gatow typischerweise vorfinden",
+                "lead": "Noch kein eigener Fall aus Gatow, aber ein belegtes Beispiel aus dem Havelland.",
+                "body": "Ein Beispiel aus Falkensee: Abstellkammer und Gartenschuppen, 1.190 € Festpreis inkl. MwSt., auf den Wertstoffhof-Belegen standen 458 € Entsorgung. In Gatow erwarten wir Einfamilienhäuser mit großem Garten und entsprechend vielen Nebengebäuden.",
+                "bullets": [
+                  "Haus mit Keller und Dachboden, Jahrzehnte nicht ausgeräumt",
+                  "Schuppen und Geräteunterstand im großen Garten",
+                  "Garage, in der nur noch Reifen und Regale stehen",
+                  "Recyclinghof Spandau in rund 12 Minuten erreichbar"
+                ]
+              },
+              {
+                "id": "ablauf-gatow",
+                "h2": "So läuft eine Entrümpelung in Gatow ab",
+                "lead": "Foto, Besichtigung, Festpreis, Räumung, besenreine Übergabe.",
+                "body": "Sie schreiben uns per WhatsApp oder rufen an, wir antworten am selben Werktag und vereinbaren die kostenlose Besichtigung. Danach steht der Festpreis schriftlich fest. Gebühren am Recyclinghof geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Foto vom Haus, Keller oder Schuppen",
+                  "Besichtigung nach Absprache, auch am Samstag",
+                  "Festpreis schriftlich vor dem Termin",
+                  "Vorher-Nachher-Fotos aufs Handy"
+                ]
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Räumen Sie in Gatow auch das ganze Einfamilienhaus samt Garten?",
+                "a": "Ja. Wir räumen Keller, Dachboden, Zimmer, Garage und die Nebengebäude im Garten und übergeben besenrein. Den Umfang klären wir bei der kostenlosen Besichtigung, danach steht der Festpreis für Räumung und Abtransport schriftlich fest. Was nicht mehr gebraucht wird, sortieren wir selbst, Sie müssen nichts vorbereiten."
+              },
+              {
+                "q": "Wohin kommt der Müll aus Gatow?",
+                "a": "Zum BSR-Recyclinghof Spandau am Brunsbütteler Damm 47, von Alt-Gatow etwa 12 Minuten Fahrt. Wir laden nach Sorten getrennt, damit der Hof jede Fraktion einzeln annehmen kann. Die Gebühren stehen auf den Belegen, die Sie mit der Rechnung erhalten, ohne eigenen Aufschlag von uns."
+              },
+              {
+                "q": "Wie schnell können Sie in Gatow einen Termin machen?",
+                "a": "Auf Ihr Foto antworten wir am selben Werktag, die kostenlose Besichtigung legen wir auf einen Termin der folgenden Tage, auch nach Feierabend oder samstags. Der Räumungstermin hängt von Umfang und Auslastung ab; Garage oder Keller schaffen wir meist an einem Tag, ein ganzes Haus braucht mehr."
+              },
+              {
+                "q": "Bekomme ich für die Entrümpelung in Gatow einen Festpreis?",
+                "a": "Ja. Nach der Besichtigung nennen wir einen schriftlichen Festpreis inkl. MwSt. für Räumung und Abtransport. Menge, Zugang, Zahl der Fahrten und anrechenbare Wertgegenstände bestimmen die Höhe. Entsorgungsgebühren kommen nach Beleg dazu, ohne eigenen Aufschlag. Ein belegtes Beispiel aus Falkensee steht weiter oben."
+              },
+              {
+                "q": "Reicht in Gatow die Abholung durch die BSR?",
+                "a": "Für einzelne Möbel kann die BSR abholen, gegen Gebühr. Wer selbst fährt, gibt bis 3 m³ je Tag gebührenfrei am Recyclinghof ab. Für Haushalte, Keller oder Dachboden ist das zu wenig, dann räumen wir aus, laden auf und fahren ab."
+              }
+            ]
+          }
+        },
+        "velten": {
+          "hook": "Velten, die Ofenstadt mit knapp 12.700 Einwohnern, wuchs als Angerdorf, dann mit Wohnblöcken nach 1961, dem Plattenbaugebiet Velten-Süd ab 1984 und neuen Siedlungen der 1990er Jahre. Dazu kommt der Businesspark als Gewerbestandort. Diese Mischung heißt für uns: Wohnungen auf Etagen, Einfamilienhäuser, Keller und Lager. Wir räumen alles, vom Kellerabteil bis zum ganzen Haus.",
+          "rahmen": "In Velten räumen wir Wohnungen in Mehrfamilienhäusern mit Treppenhaus und Kellerabteil ebenso wie Einfamilienhäuser mit Garage und Schuppen. Wir tragen zu zweit heraus, sortieren Brauchbares aus und trennen den Rest beim Beladen nach Sorten. Elektrogeräte und Schrott bringen wir getrennt zur Annahme, Farben, Öl, Batterien und Gasflaschen lassen wir stehen und nennen die zuständige Stelle. Zum Schluss wird gefegt.",
+          "trust": "Nach der kostenlosen Besichtigung in Velten steht der Festpreis für Räumung und Abtransport schriftlich fest. Die Gebühren der Annahmestelle in Germendorf geben wir nach Beleg weiter, ohne eigenen Aufschlag. Auf Wunsch zeigen Fotos von der geräumten Wohnung, dass alles erledigt ist.",
+          "fakt": "Der Recyclinghof des Landkreises Oberhavel liegt in Germendorf, rund 9 km von Velten: Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
+          "tief": {
+            "h2": "Entrümpelung in Velten: Wohnung, Haus, Keller, Gewerbe",
+            "sections": [
+              {
+                "h3": "Wohnung im Mehrfamilienhaus: Etage, Treppenhaus, Keller",
+                "kurz": "Nach 1961 und in Velten-Süd entstanden viele Wohnungen auf mehreren Etagen: Wir klären Treppen, Aufzug und Stellplatz vorab.",
+                "body": "Nach 1961 entstanden in Velten Wohnblöcke, ab 1984 das Plattenbaugebiet Velten-Süd. In solchen Häusern entscheidet der Weg vom Keller oder der Wohnung bis zum Fahrzeug über den Aufwand. Bei der Besichtigung prüfen wir Etage, Aufzug und Platz vor dem Haus, danach nennen wir den Festpreis. Wohnung, Balkon und Kellerabteil räumen wir in einem Termin."
+              },
+              {
+                "h3": "Einfamilienhaus, Garage und Schuppen in Velten",
+                "kurz": "Siedlungshaus aus den 1990ern oder Haus nahe dem Anger: Keller, Dachboden und Nebengebäude in einem Auftrag.",
+                "body": "In den 1990er Jahren kamen neue Siedlungen dazu, am Anger steht die Kirche von 1750. Ob älteres Haus oder Siedlungshaus aus den 1990ern: Wir räumen Keller, Dachboden, Garage und Schuppen und trennen beim Beladen Altholz, Schrott und Restabfall. Öl, Batterien und Gasflaschen nehmen wir nicht mit, wir nennen Ihnen die Annahmestelle.",
+                "link_to": "entruempelung#nebengebaeude",
+                "link_text": "Mehr zu Garage und Nebengebäuden"
+              },
+              {
+                "h3": "Businesspark und Gewerbe: Lager, Büro, Praxis",
+                "kurz": "Betriebe räumen wir außerhalb der Öffnungszeiten; Sammelrechnung und Entsorgungsbeleg für die Buchhaltung.",
+                "body": "Velten ist auch Gewerbestandort mit dem Businesspark. Für Lager, Büros und Praxen räumen wir nach Feierabend oder am Samstag, nehmen Büromöbel und Regale sortiert mit und liefern die Entsorgungsbelege für Ihre Buchhaltung. Aktenordner mit personenbezogenen Daten vernichten wir nicht selbst, dafür nennen wir einen Fachbetrieb. Ablauf: Besichtigung, schriftlicher Festpreis, Entsorgung nach Beleg.",
+                "link_to": "entruempelung#gewerbe",
+                "link_text": "Mehr zur Gewerbe-Entrümpelung"
+              },
+              {
+                "h3": "Erbfall und Hausverkauf in Velten",
+                "kurz": "Räumung mit Vollmacht, Fotos und Belege per Mail; für ganze Nachlässe eine eigene Seite zur Haushaltsauflösung.",
+                "body": "Wer ein Haus oder eine Wohnung erbt, möchte sie meist schnell und sauber übergeben. Wir übernehmen den Schlüssel von Ihnen oder einer Vertrauensperson, räumen Zimmer für Zimmer und schicken Fotos. Geht es um Dokumente, Schmuck und Erinnerungsstücke, ist das eine Haushaltsauflösung mit eigenem Ablauf.",
+                "link_to": "haushaltsaufloesung",
+                "link_text": "Zur Haushaltsauflösung"
+              }
+            ],
+            "ortsblock": {
+              "h2": "Entsorgung in Velten: Recyclinghof, Sperrmüll, Anfahrt",
+              "items": [
+                {
+                  "k": "Recyclinghof",
+                  "v": "Recyclinghof Germendorf (AWU Oberhavel), Hohenbrucher Straße 32 in Oranienburg-Germendorf: von Velten rund 9 km, etwa 13 Minuten Fahrt. Geöffnet Montag und Freitag 9–16:30 Uhr, Mittwoch 9–18 Uhr, Samstag 9–15 Uhr. Elektroaltgeräte, Schrott, Papier, Textilien und Sperrmüll nimmt er aus Privathaushalten kostenfrei an, nur Abfall aus Oberhavel."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Seit 2026 geben Privathaushalte haushaltsüblichen Sperrmüll bis 2 m³ je Anlieferung kostenfrei in Germendorf oder Gransee ab, befristet als Modellversuch bis Dezember 2027. Die Abholung vor der Haustür bleibt möglich, Anmeldung vorab über die Sperrmüllkarte der AWU Oberhavel."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Der Haus- & Gartenservice Havelland sitzt in Falkensee, Darmstädter Straße: bis Velten sind es rund 16 km, etwa 22 Minuten Fahrt. Die Anfahrt steckt im Festpreis, ein Posten für den Weg wird nicht berechnet."
+                },
+                {
+                  "k": "Ortsteile",
+                  "v": "Kernstadt mit Wohnplätzen Hohenschöpping, Heidekrug, An der Marwitzer Trift und Siedlung am Bärenklauer Weg; 12.674 Einwohner (31.12.2025) auf 23,37 km², PLZ 16727; Bahnhof Velten (Mark) mit RE 6 und RB 55."
+                }
+              ],
+              "quelle": "oberhavel.de/Abfall (Abruf 06.11.2026), OpenStreetMap/Nominatim (Adresse Recyclinghof Germendorf, Abruf 06.11.2026), de.wikipedia.org/wiki/Velten (Abruf 06.11.2026), Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
+            },
+            "blocks": [
+              {
+                "id": "typisch-velten",
+                "h2": "Was wir in Velten typischerweise vorfinden",
+                "lead": "Noch kein eigener Fall aus Velten, aber ein belegtes Beispiel aus dem Havelland.",
+                "body": "Ein Beispiel aus Falkensee: Abstellkammer und Gartenschuppen, 1.190 € Festpreis inkl. MwSt., auf den Wertstoffhof-Belegen standen 458 € Entsorgung. In Velten erwarten wir einen höheren Anteil an Wohnungen auf Etagen und an Gewerbeflächen.",
+                "bullets": [
+                  "Wohnung im Mehrfamilienhaus mit Kellerabteil und Balkon",
+                  "Einfamilienhaus mit Garage und Schuppen",
+                  "Lager oder Büro im Businesspark, das geräumt zurückgegeben wird",
+                  "Recyclinghof Germendorf als nächste Annahmestelle"
+                ]
+              },
+              {
+                "id": "ablauf-velten",
+                "h2": "So läuft eine Entrümpelung in Velten ab",
+                "lead": "Foto, Besichtigung, Festpreis, Räumung: bei Etagenwohnungen mit Blick auf Treppe und Aufzug.",
+                "body": "Auf Ihre Nachricht antworten wir am selben Werktag. Bei der kostenlosen Besichtigung klären wir Zugang, Etage und Platz für den Anhänger. Danach steht der schriftliche Festpreis fest; Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Foto oder Anruf, Rückmeldung am selben Werktag",
+                  "Besichtigung mit Blick auf Etage, Aufzug und Stellplatz",
+                  "Schriftlicher Festpreis für Räumung und Abtransport",
+                  "Besenreine Übergabe, Fotos aufs Handy"
+                ]
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Räumen Sie in Velten auch Wohnungen im Mehrfamilienhaus?",
+                "a": "Ja, vom Kellerabteil bis zur Wohnung auf der dritten Etage. Bei der kostenlosen Besichtigung sehen wir Treppenhaus, Aufzug und Parkmöglichkeit vor dem Haus und planen danach den Festpreis. Wir tragen zu zweit, zerlegen Möbel bei Bedarf und übergeben besenrein."
+              },
+              {
+                "q": "Wohin bringen Sie den Sperrmüll aus Velten?",
+                "a": "Zum Recyclinghof Germendorf an der Hohenbrucher Straße, etwa 13 Minuten von Velten. Wie viel der Hof für gewogene Lieferungen berechnet, steht auf den Belegen. Diese Gebühren geben wir weiter, ohne eigenen Aufschlag; für die Lieferung selbst gilt der Festpreis."
+              },
+              {
+                "q": "Kann ich Sperrmüll in Velten kostenlos loswerden?",
+                "a": "Bis zu 2 m³ haushaltsüblicher Sperrmüll aus Privathaushalten kosten im Recyclinghof Germendorf nichts; der Modellversuch des Landkreises läuft bis Dezember 2027. Die Abholung vor der Tür melden Sie vorab bei der AWU Oberhavel an. Wer mehr loswerden will als einzelne Möbel, ist bei einer Entrümpelung besser aufgehoben."
+              },
+              {
+                "q": "Wie viel kostet eine Entrümpelung in Velten?",
+                "a": "Das hängt von Menge, Etage, Zugang und Fahrten ab. Nach der kostenlosen Besichtigung nennen wir einen schriftlichen Festpreis inkl. MwSt. für Räumung und Abtransport, Entsorgungsgebühren kommen nach Beleg dazu. Ein belegtes Beispiel aus Falkensee finden Sie weiter oben auf dieser Seite."
+              },
+              {
+                "q": "Räumen Sie im Businesspark Velten auch Büros und Lager?",
+                "a": "Ja. Wir räumen außerhalb Ihrer Öffnungszeiten, nach Feierabend oder samstags, und liefern die Entsorgungsbelege für die Buchhaltung. Aktenordner mit Kundendaten vernichten wir nicht selbst. Bei der Rückgabe an den Vermieter halten wir den leeren Zustand mit Fotos fest."
+              }
+            ]
+          }
+        },
+        "oberkraemer": {
+          "hook": "Oberkrämer ist keine geschlossene Stadt, sondern eine Gemeinde aus sieben Ortsteilen: Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz, zusammen rund 12.100 Einwohner auf über 100 km². Wer hier ein Haus räumen lassen will, braucht jemanden, der die Wege zwischen den Ortsteilen kennt. Von unserem Sitz in Falkensee sind es nur gut 11 km.",
+          "rahmen": "In allen sieben Ortsteilen räumen wir Keller, Dachboden, Garage, Scheune oder das ganze Haus. Wir tragen heraus, sortieren Brauchbares aus und trennen den Rest beim Beladen nach Holz, Metall, Elektro und Restabfall. Was eine eigene Annahme verlangt, etwa Farben, Öl, Batterien oder Gasflaschen, lassen wir stehen und nennen die zuständige Stelle. Zum Schluss fegen wir aus und übergeben besenrein.",
+          "trust": "Nach der kostenlosen Besichtigung in Oberkrämer nennen wir den Festpreis für Räumung und Abtransport schriftlich. Was der Recyclinghof in Germendorf berechnet, geben wir nach Beleg weiter, ohne eigenen Aufschlag. Fotos von vorher und nachher gehen auf Wunsch aufs Handy.",
+          "fakt": "Oberkrämer liegt rund 11 km von unserem Sitz in Falkensee; der Recyclinghof Germendorf ist etwa 19 Minuten entfernt, Gebühren nach Beleg.",
+          "tief": {
+            "h2": "Entrümpelung in Oberkrämer: sieben Ortsteile, ein Ansprechpartner",
+            "sections": [
+              {
+                "h3": "Bärenklau, Bötzow, Schwante, Vehlefanz: jeder Ortsteil für sich",
+                "kurz": "Sieben Ortsteile, kurze Anfahrt aus Falkensee: Sie nennen die Adresse, wir kommen zur Besichtigung.",
+                "body": "Oberkrämer besteht aus Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz. Von Falkensee bis in die Gemeinde sind es rund 11 km, etwa 16 Minuten Fahrt, in die einzelnen Ortsteile kommt wenig dazu. Die Strecke berechnen wir nicht gesondert. Weil sich die Orte über mehr als 100 km² verteilen, nennen Sie uns am besten die genaue Adresse, dann planen wir Besichtigung und Räumung ohne Umwege."
+              },
+              {
+                "h3": "Haus mit großem Grundstück: Garage, Schuppen, Nebengebäude",
+                "kurz": "Größere Grundstücke, mehrere Gebäude: Wir räumen Haus und Nebengebäude in einem Auftrag.",
+                "body": "Auf einem Grundstück in dieser Größe stehen oft Garage, Schuppen und Werkstatt neben dem Wohnhaus. Ein Foto per WhatsApp genügt für die erste Einschätzung, den Festpreis nennen wir nach der kostenlosen Besichtigung. Beim Beladen trennen wir Altholz, Schrott und gemischten Abfall, weil der Hof jede Sorte einzeln wiegt. Ist ein Nebengebäude ganz reif für den Abriss, kalkulieren wir Rückbau und Entsorgung getrennt.",
+                "link_to": "entruempelung#gartenhaus",
+                "link_text": "Gartenhaus abreißen und entsorgen"
+              },
+              {
+                "h3": "Pendler an der Kremmener Bahn und an der A 10",
+                "kurz": "Tagsüber unterwegs: Schlüssel, Vollmacht, Fotos nach der Räumung, Termine nach Feierabend.",
+                "body": "Über Bärenklau, Vehlefanz und Schwante läuft die Regionalbahn RB 55 zwischen Hennigsdorf und Kremmen, dazu hat die A 10 eine Ausfahrt Oberkrämer. Wer pendelt, ist tagsüber nicht da. Deshalb arbeiten wir mit Schlüssel und kurzer Vollmacht, legen die Besichtigung auf den Abend oder Samstag und schicken nach der Räumung Fotos."
+              },
+              {
+                "h3": "Erbfall und Hausverkauf in Oberkrämer",
+                "kurz": "Haus nach dem Verkauf leer übergeben; für ganze Nachlässe eine eigene Seite zur Haushaltsauflösung.",
+                "body": "Wird ein Haus verkauft oder vererbt, räumen wir Zimmer für Zimmer und übergeben besenrein. Wertgegenstände und Dokumente legen Sie vorher beiseite, Verwertbares rechnen wir offen an. Sollen Unterlagen und Erinnerungsstücke gesichtet werden, ist das eine Haushaltsauflösung mit eigenem Ablauf.",
+                "link_to": "haushaltsaufloesung",
+                "link_text": "Zur Haushaltsauflösung"
+              }
+            ],
+            "ortsblock": {
+              "h2": "Entsorgung in Oberkrämer: Recyclinghof, Sperrmüll, Anfahrt",
+              "items": [
+                {
+                  "k": "Recyclinghof",
+                  "v": "Recyclinghof Germendorf (AWU Oberhavel), Hohenbrucher Straße 32 in Oranienburg-Germendorf: von Bötzow rund 13 km, etwa 19 Minuten Fahrt. Geöffnet Montag und Freitag 9–16:30 Uhr, Mittwoch 9–18 Uhr, Samstag 9–15 Uhr. Privathaushalte geben dort Elektroaltgeräte, Schrott, Papier und Sperrmüll kostenfrei ab, nur Abfall aus Oberhavel."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Haushaltsüblicher Sperrmüll aus Privathaushalten bis 2 m³ je Anlieferung ist in Germendorf und Gransee seit 2026 kostenfrei, als Modellversuch bis Dezember 2027. Die Abholung vor der Haustür bleibt möglich, Anmeldung vorab über die Sperrmüllkarte der AWU Oberhavel."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Der Haus- & Gartenservice Havelland sitzt in Falkensee, Darmstädter Straße: bis Bötzow sind es rund 11 km, etwa 16 Minuten Fahrt. Die Anfahrt steckt im Festpreis, einen eigenen Posten dafür gibt es nicht."
+                },
+                {
+                  "k": "Ortsteile",
+                  "v": "Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz; 12.112 Einwohner (31.12.2025) auf 103,66 km², PLZ 16727; Mühlensee zwischen Vehlefanz, Schwante und Neu-Vehlefanz."
+                }
+              ],
+              "quelle": "oberhavel.de/Abfall (Abruf 06.11.2026), OpenStreetMap/Nominatim (Adresse Recyclinghof Germendorf, Abruf 06.11.2026), de.wikipedia.org/wiki/Oberkrämer (Abruf 06.11.2026), Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
+            },
+            "blocks": [
+              {
+                "id": "typisch-oberkraemer",
+                "h2": "Was wir in Oberkrämer typischerweise vorfinden",
+                "lead": "Noch kein eigener Fall aus Oberkrämer, aber ein belegtes Beispiel aus dem Havelland.",
+                "body": "Ein Beispiel aus Falkensee: Abstellkammer und Gartenschuppen, 1.190 € Festpreis inkl. MwSt., auf den Wertstoffhof-Belegen standen 458 € Entsorgung. In Oberkrämer erwarten wir Häuser mit großem Grundstück und mehreren Nebengebäuden.",
+                "bullets": [
+                  "Haus mit Garage, Schuppen und Werkstatt auf einem Grundstück",
+                  "Keller mit Hausrat aus mehreren Jahrzehnten",
+                  "Haus, das nach dem Verkauf leer übergeben wird",
+                  "Recyclinghof Germendorf mit Sperrmüll-Annahme für Privathaushalte"
+                ]
+              },
+              {
+                "id": "ablauf-oberkraemer",
+                "h2": "So läuft eine Entrümpelung in Oberkrämer ab",
+                "lead": "Adresse nennen, besichtigen, Festpreis bekommen, räumen lassen.",
+                "body": "Auf Ihre Nachricht antworten wir am selben Werktag. Die Besichtigung ist kostenlos, danach steht der Festpreis schriftlich fest. Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Adresse des Ortsteils und ein Foto per WhatsApp",
+                  "Besichtigung nach Feierabend oder am Samstag",
+                  "Festpreis schriftlich vor dem Termin",
+                  "Fotos vom Ergebnis, Rechnung und Belege per Mail"
+                ]
+              }
+            ],
+            "faqs": [
+              {
+                "q": "In welchen Ortsteilen von Oberkrämer räumen Sie?",
+                "a": "In allen sieben: Bärenklau, Bötzow, Eichstädt, Marwitz, Neu-Vehlefanz, Schwante und Vehlefanz. Nennen Sie uns die Adresse und ein Foto vom Raum per WhatsApp, wir antworten am selben Werktag und vereinbaren die kostenlose Besichtigung."
+              },
+              {
+                "q": "Wie schnell sind Sie in Oberkrämer?",
+                "a": "Von Falkensee sind es gut 11 km, etwa 16 Minuten Fahrt. Die kostenlose Besichtigung legen wir meist in die folgenden Tage, auf Wunsch abends oder samstags. Wie schnell geräumt wird, hängt vom Umfang und von unserer Auslastung ab; einen Keller oder eine Garage schaffen wir meist an einem Tag."
+              },
+              {
+                "q": "Wo gebe ich in Oberkrämer Sperrmüll ab?",
+                "a": "Im Recyclinghof Germendorf an der Hohenbrucher Straße oder in Gransee. Privathaushalte geben dort seit 2026 bis zu 2 m³ haushaltsüblichen Sperrmüll kostenfrei ab; der Modellversuch läuft bis Dezember 2027. Alternativ holt die AWU Oberhavel nach Anmeldung vor der Haustür ab."
+              },
+              {
+                "q": "Was kostet eine Entrümpelung in Oberkrämer?",
+                "a": "Das bestimmen Menge, Zugang, Zahl der Fahrten und der Anteil an Brauchbarem. Den schriftlichen Festpreis inkl. MwSt. für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung. Gebühren am Recyclinghof kommen nach Beleg dazu, ohne eigenen Aufschlag. Ein belegtes Beispiel aus Falkensee steht weiter oben."
+              },
+              {
+                "q": "Räumen Sie in Oberkrämer auch Garage, Scheune oder Schuppen allein?",
+                "a": "Ja, einzelne Gebäude sind ein normaler Auftrag, ohne Mindestumfang. Schicken Sie ein Foto vom Inhalt, wir geben eine erste Einschätzung und kommen zur Besichtigung. Öl, Batterien und Gasflaschen nehmen wir nicht mit, die Annahmestelle dafür nennen wir Ihnen."
+              }
+            ]
+          }
+        },
+        "hohen-neuendorf": {
+          "hook": "Hohen Neuendorf liegt direkt an der Berliner Stadtgrenze, hat knapp 27.000 Einwohner und wuchs mit der Bahn vom kleinen Dorf zur Pendlerstadt: Siedlungshäuser seit 1919, Wald am Naturpark Barnim, S-Bahn nach Berlin. Wer hier ein Haus oder eine Wohnung leer übergeben will, hat unter der Woche selten Zeit dafür. Wir übernehmen die Räumung und fahren ab.",
+          "rahmen": "In Hohen Neuendorf und den Stadtteilen Bergfelde, Borgsdorf und Stolpe räumen wir Wohnung, Haus, Keller, Dachboden, Garage und Schuppen. Wir tragen heraus, sortieren Brauchbares aus und trennen beim Beladen nach Holz, Metall, Elektro und Restabfall. Farbreste, Öl, Batterien und Gasflaschen lassen wir stehen und nennen die zuständige Annahmestelle. Übergeben wird besenrein, auf Wunsch mit Fotos.",
+          "trust": "Nach der kostenlosen Besichtigung in Hohen Neuendorf steht der Festpreis für Räumung und Abtransport schriftlich fest. Die Gebühren der Annahmestelle geben wir nach Beleg weiter, ohne eigenen Aufschlag. Sie müssen für den Termin nicht freinehmen: Schlüssel und Vollmacht genügen.",
+          "fakt": "Der Recyclinghof des Landkreises Oberhavel liegt in Germendorf, rund 18 km von Hohen Neuendorf; Gebühren nach Beleg, Festpreis für Räumung und Abtransport.",
+          "tief": {
+            "h2": "Entrümpelung in Hohen Neuendorf: Haus, Wohnung, Keller, Pendler",
+            "sections": [
+              {
+                "h3": "Pendlerstadt an der S 1 und S 8: Termine nach Feierabend",
+                "kurz": "Tagsüber in Berlin: Wir kommen abends oder samstags und arbeiten auf Wunsch mit Schlüssel und Vollmacht.",
+                "body": "Hohen Neuendorf hat S-Bahnhöfe in Hohen Neuendorf (S 1 und S 8), Borgsdorf (S 1) und Bergfelde (S 8), viele Bewohner pendeln nach Berlin. Wir legen die kostenlose Besichtigung auf einen Termin nach Feierabend oder auf den Samstag. Wer gar nicht kommen kann, übergibt den Schlüssel an uns oder eine Vertrauensperson und unterschreibt eine kurze Vollmacht."
+              },
+              {
+                "h3": "Siedlungshaus und Einfamilienhaus: Keller, Dachboden, Garage",
+                "kurz": "Haus aus der Siedlungszeit oder Neubau: Wir räumen Keller und Dachboden und trennen für den Recyclinghof.",
+                "body": "Hohen Neuendorf blieb bis zum Bahnbau ein kleines Dorf, seit 1919 entstand eine Siedlung für Kriegsteilnehmer, später kamen die Häuser der Pendlerjahre dazu. In solchen Häusern sammeln sich in Keller, Dachboden und Garage Jahrzehnte an Hausrat. Wir räumen zu zweit, zerlegen sperrige Möbel und laden sortiert auf: Holz, Metall, Elektro, Restabfall.",
+                "link_to": "entruempelung#nebengebaeude",
+                "link_text": "Mehr zu Garage und Nebengebäuden"
+              },
+              {
+                "h3": "Bergfelde, Borgsdorf und Stolpe",
+                "kurz": "Vier Stadtteile, eine Besichtigung: Die Anfahrt aus Falkensee steckt im Festpreis.",
+                "body": "Zur Stadt gehören die Kernstadt, Bergfelde, Borgsdorf und Stolpe, dazu kleinere Siedlungen wie Niederheide. Von unserem Sitz in Falkensee sind es bis Hohen Neuendorf rund 25 km, etwa 34 Minuten Fahrt. Diese Strecke berechnen wir nicht gesondert; sie steckt im schriftlichen Festpreis, den Sie nach der Besichtigung erhalten."
+              },
+              {
+                "h3": "Wohnungsübergabe und Erbfall in Hohen Neuendorf",
+                "kurz": "Leer, gefegt und fotografiert übergeben; für ganze Nachlässe eine eigene Seite zur Haushaltsauflösung.",
+                "body": "Bei Auszug, Verkauf oder Erbfall räumen wir die Wohnung oder das Haus komplett und halten den leeren Zustand auf Wunsch mit Fotos fest. Zusatzleistungen wie Grundreinigung oder Geruchsbeseitigung sind eine eigene Position, die wir bei der Besichtigung getrennt anbieten. Soll ein Nachlass mit Dokumenten und Schmuck gesichtet werden, ist das eine Haushaltsauflösung.",
+                "link_to": "haushaltsaufloesung",
+                "link_text": "Zur Haushaltsauflösung"
+              }
+            ],
+            "ortsblock": {
+              "h2": "Entsorgung in Hohen Neuendorf: Recyclinghof, Sperrmüll, Anfahrt",
+              "items": [
+                {
+                  "k": "Recyclinghof",
+                  "v": "Recyclinghof Germendorf (AWU Oberhavel), Hohenbrucher Straße 32 in Oranienburg-Germendorf: von Hohen Neuendorf rund 18 km, etwa 20 Minuten Fahrt. Geöffnet Montag und Freitag 9–16:30 Uhr, Mittwoch 9–18 Uhr, Samstag 9–15 Uhr. Privathaushalte geben dort Elektroaltgeräte, Schrott, Papier und Sperrmüll kostenfrei ab, nur Abfall aus Oberhavel."
+                },
+                {
+                  "k": "Sperrmüll",
+                  "v": "Haushaltsüblicher Sperrmüll aus Privathaushalten bis 2 m³ je Anlieferung ist in Germendorf und Gransee seit 2026 kostenfrei, als Modellversuch bis Dezember 2027. Die Abholung vor der Haustür bleibt möglich, Anmeldung vorab über die Sperrmüllkarte der AWU Oberhavel."
+                },
+                {
+                  "k": "Anfahrt",
+                  "v": "Der Haus- & Gartenservice Havelland sitzt in Falkensee, Darmstädter Straße: bis Hohen Neuendorf sind es rund 25 km, etwa 34 Minuten Fahrt. Die Anfahrt steckt im Festpreis, ein Posten für den Weg entsteht nicht."
+                },
+                {
+                  "k": "Stadtteile",
+                  "v": "Hohen Neuendorf, Bergfelde, Borgsdorf, Stolpe; 26.819 Einwohner (31.12.2025) auf 48,56 km², PLZ 16540; grenzt an die Berliner Ortsteile Frohnau und Heiligensee, am Westrand des Naturparks Barnim."
+                }
+              ],
+              "quelle": "oberhavel.de/Abfall (Abruf 06.11.2026), OpenStreetMap/Nominatim (Adresse Recyclinghof Germendorf, Abruf 06.11.2026), de.wikipedia.org/wiki/Hohen_Neuendorf (Abruf 06.11.2026), Fahrzeiten per OSRM-Routing auf OpenStreetMap-Daten (ca.-Werte), Stand 11/2026"
+            },
+            "blocks": [
+              {
+                "id": "typisch-hohen-neuendorf",
+                "h2": "Was wir in Hohen Neuendorf typischerweise vorfinden",
+                "lead": "Noch kein eigener Fall aus Hohen Neuendorf, aber ein belegtes Beispiel aus dem Havelland.",
+                "body": "Ein Beispiel aus Falkensee: Abstellkammer und Gartenschuppen, 1.190 € Festpreis inkl. MwSt., auf den Wertstoffhof-Belegen standen 458 € Entsorgung. In Hohen Neuendorf erwarten wir Häuser und Wohnungen von Pendlern, bei denen vor allem die Termine passen müssen.",
+                "bullets": [
+                  "Haus mit Keller, Dachboden und Garage nach dem Verkauf",
+                  "Wohnung, die zum Monatsende leer übergeben werden muss",
+                  "Schuppen und Gartenhaus auf dem Waldgrundstück",
+                  "Termine abends oder samstags, Schlüssel per Vollmacht"
+                ]
+              },
+              {
+                "id": "ablauf-hohen-neuendorf",
+                "h2": "So läuft eine Entrümpelung in Hohen Neuendorf ab",
+                "lead": "Foto, Besichtigung nach Feierabend, Festpreis, Räumung, Fotos zum Abschluss.",
+                "body": "Auf Ihre Nachricht antworten wir am selben Werktag, erreichbar sind wir Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr. Nach der Besichtigung steht der Festpreis schriftlich fest, Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Foto per WhatsApp, Rückmeldung am selben Werktag",
+                  "Kostenlose Besichtigung abends oder samstags",
+                  "Schriftlicher Festpreis vor dem Räumungstermin",
+                  "Fotos aufs Handy, Rechnung und Belege per Mail"
+                ]
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Fahren Sie auch nach Bergfelde, Borgsdorf und Stolpe?",
+                "a": "Ja, alle vier Stadtteile von Hohen Neuendorf gehören zu unserem Einsatzgebiet. Schicken Sie Adresse und ein Foto per WhatsApp, wir antworten am selben Werktag und vereinbaren die kostenlose Besichtigung. Die Anfahrt aus Falkensee steckt im Festpreis."
+              },
+              {
+                "q": "Muss ich für die Entrümpelung in Hohen Neuendorf freinehmen?",
+                "a": "Nicht unbedingt. Die Besichtigung legen wir auf den Abend oder den Samstag; für die Räumung selbst genügen Schlüssel und eine kurze Vollmacht. Wir schicken Fotos vor und nach der Räumung aufs Handy, Rechnung und Belege per Mail."
+              },
+              {
+                "q": "Wohin bringen Sie den Sperrmüll aus Hohen Neuendorf?",
+                "a": "Zum Recyclinghof Germendorf des Landkreises Oberhavel, etwa 20 Minuten von Hohen Neuendorf. Wir laden getrennt nach Sorten und geben die Gebühren, die auf den Belegen stehen, ohne eigenen Aufschlag weiter. Gasflaschen und Schadstoffe nehmen wir nicht selbst mit."
+              },
+              {
+                "q": "Kann ich Sperrmüll in Hohen Neuendorf selbst kostenlos abgeben?",
+                "a": "Ja, bis zu 2 m³ haushaltsüblicher Sperrmüll aus Privathaushalten sind im Recyclinghof Germendorf kostenfrei. Der Modellversuch des Landkreises läuft bis Dezember 2027; Abfall muss aus Oberhavel stammen. Für mehr als einzelne Möbel lohnt eine Entrümpelung."
+              },
+              {
+                "q": "Wie setzt sich der Festpreis für eine Räumung in Hohen Neuendorf zusammen?",
+                "a": "Aus Menge, Zugang, Zahl der Fahrten und dem Anteil an Brauchbarem, den wir anrechnen. Den Festpreis inkl. MwSt. für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung schriftlich; Entsorgungsgebühren kommen nach Beleg dazu. Ein belegtes Beispiel aus Falkensee steht weiter oben."
+              }
+            ]
+          }
         }
       }
     },
