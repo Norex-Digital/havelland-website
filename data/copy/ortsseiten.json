@@ -3932,6 +3932,56 @@
           "a": "Vor jedem Pfostenloch holen wir die Leitungsauskunft BIL ein; eine Nachfrage beim Bauamt allein reicht dafür nicht. Wer ohne diese Sorgfalt gräbt und eine Leitung beschädigt, haftet in aller Regel voll. Das gehört bei jedem Zaunprojekt in {ort} vor den ersten Spatenstich."
         }
       ]
+    },
+    "fensterreinigung": {
+      "hub_faq_fill": 4,
+      "faqs": [
+        {
+          "q": "Was gehört zu einer Fensterreinigung in {ort}?",
+          "a": "Fensterreinigung ist die Reinigung von Glasflächen, Rahmen und Fensterbänken, damit Tageslicht ungehindert hereinkommt und das Glas streifenfrei bleibt. In {ort} reinigen wir Scheiben innen und außen von Hand mit Wasser, Wischer und Abzieher. Rahmenprofile, Dichtungen und Fensterbänke gehören dazu. Der Haus- & Gartenservice Havelland kommt dafür aus Falkensee."
+        },
+        {
+          "q": "Reinigen Sie in {ort} auch Rahmen, Dichtungen und Fensterbänke?",
+          "a": "Ja, die gehören bei uns zur Fensterreinigung. Wir wischen Rahmenprofile, Gummidichtungen und Falze aus, wo sich Staub, Spinnweben und Insekten festsetzen, und reinigen Fensterbänke innen und außen samt Ablaufrillen. Das hält die Dichtungen länger in Form, und Sie öffnen das Fenster wieder ohne Krümel auf der Bank."
+        },
+        {
+          "q": "Können Sie in {ort} auch Wintergarten, Terrassentür und Glasdach reinigen?",
+          "a": "Ja. Wintergärten, Terrassentüren und Glasdächer reinigen wir streifenfrei bis in die Ecken, von oben nach unten, einschließlich Sprossen und Profilen. Auf Dachglas sitzen oft Kalkschleier und Algen, die Licht und Wärme schlucken. Hohe oder schräge Glasflächen schauen wir uns vorab bei der kostenlosen Besichtigung an, damit der Festpreis von Anfang an feststeht."
+        },
+        {
+          "q": "Wie läuft eine Fensterreinigung in {ort} von der Anfrage bis zum Termin ab?",
+          "a": "Sie schreiben uns per WhatsApp Anzahl und Größe Ihrer Fenster und bekommen am selben Tag eine Rückmeldung. Dann kommen wir kostenlos zur Besichtigung nach {ort} und nennen einen schriftlichen Festpreis. Zum vereinbarten Termin reinigen wir Glas, Rahmen und Bänke. Danach erhalten Sie den Vorher-Nachher-Nachweis als Foto aufs Handy."
+        },
+        {
+          "q": "Gibt es in {ort} ein Halbjahres-Abo für die Fensterreinigung?",
+          "a": "Ja. Mit dem Halbjahres-Abo buchen Sie zwei feste Reinigungen im Jahr, eine nach dem Winter und eine vor dem Herbst. Den ersten Termin stimmen wir mit Ihnen ab, Sie melden sich einmal, der Rest läuft von selbst. Nach jedem Termin schicken wir den Foto-Nachweis aufs Handy. Die Besichtigung vorab ist kostenlos."
+        },
+        {
+          "q": "Kostet die Anfahrt für eine Fensterreinigung in {ort} extra?",
+          "a": "Nein. Unser Sitz ist Falkensee, wir reinigen Fenster im ganzen Havelland und im Berliner Umland, auch in {nachbarorte}. Die Anfahrt ist im Festpreis enthalten. Der Festpreis steht nach der kostenlosen Besichtigung fest und ist der Endpreis, ohne Aufschlag und ohne Nachforderung."
+        },
+        {
+          "q": "Womit reinigen Sie die Fenster in {ort}?",
+          "a": "Wir arbeiten klassisch von Hand: Scheibe für Scheibe mit klarem Wasser, Wischer, Abzieher und fusselfreiem Tuch. Zum Schluss prüfen wir jede Scheibe im Gegenlicht, denn dort werden Schlieren sichtbar. Bleibt etwas zurück, ziehen wir die betroffenen Scheiben am selben Tag kostenlos nach."
+        },
+        {
+          "q": "Bekomme ich nach der Fensterreinigung in {ort} einen Nachweis?",
+          "a": "Ja. Nach jedem Auftrag schicken wir Ihnen den Vorher-Nachher-Nachweis als Foto direkt aufs Handy. So sehen Sie schwarz auf weiß, was erledigt wurde. Fällt Ihnen später etwas auf, schreiben Sie uns per WhatsApp. Das gilt für jeden Termin, auch im Halbjahres-Abo."
+        },
+        {
+          "q": "Was machen Sie in {ort} anders als beim eigenen Fensterputzen, damit keine Schlieren bleiben?",
+          "a": "Schlieren, die nach dem eigenen Putzen zurückbleiben, holen wir Scheibe für Scheibe heraus, mit klarem Wasser, Abzieher und fusselfreiem Tuch. Vor dem Abschied prüfen wir jede Scheibe im Gegenlicht, denn schräg gegen das Licht werden Schlieren sichtbar. Bleibt trotzdem etwas zurück, ziehen wir am selben Tag nach."
+        },
+        {
+          "q": "Was passiert in {ort}, wenn schwer erreichbare oder sehr hohe Fenster dabei sind?",
+          "a": "Die besprechen wir bei der kostenlosen Besichtigung, bevor der Festpreis feststeht. Dabei schauen wir uns Anzahl, Größe und Erreichbarkeit aller Fenster an. Außenscheiben, Wintergartendächer und hoch gelegene Fenster gehören zum Standard. Der Festpreis ist der Endpreis, es gibt keinen Aufschlag und keine Nachforderung."
+        }
+      ],
+      "orte": {
+        "falkensee": {
+          "hook": "Fensterreinigung in Falkensee umfasst Glas, Rahmen und Fensterbänke, innen und außen, von Hand mit Wasser, Wischer und Abzieher. Falkensee ist unser Sitz. Von der Darmstädter Straße aus erreichen wir Falkenhagen, Seegefeld, Finkenkrug und die übrigen Wohngebiete auf kurzem Weg. Die Anfahrt steckt im Festpreis. Schlieren, die nach dem eigenen Putzen bleiben, holen wir Scheibe für Scheibe heraus, geprüft im Gegenlicht. Schicken Sie uns per WhatsApp Anzahl und Größe Ihrer Fenster. Wir antworten am selben Tag und vereinbaren die kostenlose Besichtigung."
+        }
+      }
     }
   }
 }

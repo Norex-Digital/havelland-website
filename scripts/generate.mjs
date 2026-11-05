@@ -57,7 +57,7 @@ const fixHtml = s => {
 };
 const _pa = v => Array.isArray(v) ? v.map(plain) : (v != null ? plain(v) : v);
 function sanHub(h) { for (const k of ['title','meta','h1','h1_em','intro','definition','naehe','ablauf','garantie_text','ortsseite_lead','sections_h2']) if (h[k] != null) h[k] = plain(h[k]); if (h.sections) for (const s of h.sections) { s.h3 = plain(s.h3); s.body = plain(s.body); } if (h.faqs) for (const f of h.faqs) { f.q = plain(f.q); f.a = plain(f.a); } if (h.faelle) for (const f of h.faelle) { for (const k of ['h3','meta','body','zitat','zitat_von']) if (f[k] != null) f[k] = plain(f[k]); } if (h.blocks) for (const b of h.blocks) { for (const k of ['h2','lead','body','img_alt']) if (b[k] != null) b[k] = plain(b[k]); } return h; }   // faelle/blocks[].lead|img_alt (Pillar-Hub 17.09.)
-function sanArch(a) { a.rahmen = _pa(a.rahmen); a.trust = _pa(a.trust); if (a.faqs) for (const f of a.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return a; }
+function sanArch(a) { a.hooks = _pa(a.hooks); a.rahmen = _pa(a.rahmen); a.trust = _pa(a.trust); if (a.faqs) for (const f of a.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return a; }
 function sanRat(r) { for (const k of ['title','meta','lead','intro','cta_text']) if (r[k] != null) r[k] = plain(r[k]); if (r.sections) for (const s of r.sections) { s.h2 = plain(s.h2); s.body_html = fixHtml(s.body_html); } if (r.faqs) for (const f of r.faqs) { f.q = plain(f.q); f.a = plain(f.a); } return r; }
 function sanOrt(o) { if (o.hook) o.hook = plain(o.hook); if (o.nachbarorte) o.nachbarorte = o.nachbarorte.map(plain); return o; }
 
@@ -145,6 +145,7 @@ const REINIGUNG = new Set(['fensterreinigung', 'steinreinigung', 'dachrinnenrein
 const BEWEIS_KEY = { fensterreinigung: 'fensterreinigung', steinreinigung: 'steinreinigung', dachrinnenreinigung: 'dachrinnenreinigung' }; // eigene Beweis-Copy vorhanden
 const gewerkClass = slug => VOLL_VN.has(slug) ? 'voll' : GARTEN.has(slug) ? 'garten' : REINIGUNG.has(slug) ? 'reinigung' : 'generisch';
 // WhatsApp-Block: das Foto zeigt Heckenschnitt — auf Services ohne Hecken-Bezug neutrale Alt-/Unterzeile (Audit 2026-08 P2-b; 15.09. + Entrümpelung/Haushaltsauflösung, Review 14.09.)
+const OHNE_FLOWFOTO = new Set(['fensterreinigung']);   // M09: kein echtes Fenster-Motiv, Heckenfoto raus (nur Ortsseiten)
 const FOTO_NEUTRAL = new Set(['baumstumpf-entfernen', 'winterdienst', 'entruempelung', 'haushaltsaufloesung', 'pflasterarbeiten', 'einfahrt-pflastern', 'terrassenbau', 'rollrasen-verlegen', 'gartengestaltung', 'erdarbeiten', 'baumfaellung']);
 const waGewerk = s => VOLL_VN.has(s.slug) ? 'meiner Hecke' : REINIGUNG.has(s.slug) ? `meiner Fläche für ${s.name}` : GARTEN.has(s.slug) ? 'meinem Garten' : `meinem Anliegen (${s.name})`;
 const PREMIUM = new Set(['gross-glienicke','berlin-kladow','berlin-gatow']);
@@ -196,7 +197,8 @@ const isB2Bonly = seg => Array.isArray(seg) && seg.includes('B2B') && !seg.inclu
 const fillTok = (t, o, oc) => (t == null ? '' : String(t))
   .split('{ort}').join(o.name)
   .split('{plz}').join(o.plz || '')
-  .split('{nachbarorte}').join(((oc && oc.nachbarorte) || []).join(', '));
+  .split('{nachbarorte}').join(((oc && oc.nachbarorte) || []).join(', '))
+  .split('{ortsatz}').join(((oc && oc.hook) || '').split(/(?<=[.!?])\s+(?=[A-ZÄÖÜ])/)[0]);   // M09: erster Satz des Orts-Hooks (nur Lage, data/copy/orte.json)
 // H1 mit genau einem kursiven Akzentwort
 function emH1(h1, em) {
   const e = esc(h1 || '');
@@ -744,6 +746,7 @@ function ortsseite(s, o) {
   // Guard (03.09., C5 Nr. 60): Partner-Service ohne bespoke Copy rendert keine Orts-Hooks/Archetyp-Pools — die tragen Festpreis-/Foto-/Eigenleistungs-Zusagen.
   const partnerNoCopy = !!s.partner_modell && !soOrt;
   const arch = oc ? (partnerNoCopy ? (archCopy['partner-winterdienst'] || null) : archCopy[oc.archetype]) : null; // Partner-Pool statt Festpreis-Pools
+  const svcArch = archCopy['svc-' + s.slug] || null;   // M09: leistungseigener Archetyp-Text (hooks/rahmen) statt Garten-Hook
   const seed = seedOf(url);
   const nachbarn = seitenOrte(s).filter(x => x.slug !== o.slug && hasOrt(s.slug, x.slug));
   const nahCards = rotate(nachbarn, seed, 4);
@@ -753,16 +756,16 @@ function ortsseite(s, o) {
 
   // Body aus Copy-Schicht (mit Fallback) — Archetyp-Bausteine aus POOLS per Seed (Near-Duplicate-Reduktion)
   const pickPool = (arr, i) => Array.isArray(arr) && arr.length ? arr[((i % arr.length) + arr.length) % arr.length] : (typeof arr === 'string' ? arr : '');
-  const idx = (archOrtIdx[o.slug] || 0) + (svcPoolIdx[s.slug] || 0); // Ort + Service, sonst teilen sich alle Services eines Ortes den Text
+  const idx = svcArch ? Math.max(0, seitenOrte(s).findIndex(x => x.slug === o.slug)) : (archOrtIdx[o.slug] || 0) + (svcPoolIdx[s.slug] || 0);   // M09: Leistungen mit eigenem Archetyp-Text rotieren nach Rang in der Leistungsfamilie (coprime Pools -> jede Ortsseite eine eigene hook/rahmen-Kombination) // Ort + Service, sonst teilen sich alle Services eines Ortes den Text
   // Partner-Pool (03.09.): Index global über alle Orte, sonst teilen sich Orte verschiedener Archetypen dasselbe (rahmen,trust)-Tupel (NearDup).
   const idxP = s.partner_modell ? haupt.findIndex(x => x.slug === o.slug) : idx; // 04.09.: global für alle Partner-Ortsseiten (bespoke + Pool), sonst kollidieren Rotationen
   const rLen = arch && Array.isArray(arch.rahmen) ? arch.rahmen.length : 1;
   // Welle-1a: bespoke Service×Ort-Copy (falls vorhanden) hat Vorrang vor Archetyp/Ort-Hook
   const lead = c && c.ortsseite_lead ? fillTok(c.ortsseite_lead, o, oc) : `Ihr ${s.name} in ${o.name} — vom Haus- & Gartenservice Havelland.`;
   // Reihenfolge (Umbau 03.09.): bespoke Hook → bei Partner-Services der Partner-Pool-Hook (nie oc.hook: der trägt "Anfahrt steckt im Festpreis") → sonst Orts-Hook
-  const hookSrc = soOrt && soOrt.hook ? soOrt.hook : (s.partner_modell ? (arch && arch.hooks ? pickPool(arch.hooks, idxP + 1) : '') : (oc && oc.hook ? oc.hook : ''));
+  const hookSrc = soOrt && soOrt.hook ? soOrt.hook : (svcArch && svcArch.hooks ? pickPool(svcArch.hooks, idx) : s.partner_modell ? (arch && arch.hooks ? pickPool(arch.hooks, idxP + 1) : '') : (oc && oc.hook ? oc.hook : ''));
   const hook = hookSrc ? `<p>${esc(fillTok(hookSrc, o, oc))}</p>` : '';
-  const rahmenTxt = soOrt && soOrt.rahmen ? soOrt.rahmen : pickPool(arch && arch.rahmen, idxP);   // eindeutige Verteilung
+  const rahmenTxt = soOrt && soOrt.rahmen ? soOrt.rahmen : pickPool((svcArch && svcArch.rahmen) || (arch && arch.rahmen), idxP);   // eindeutige Verteilung
   const trustTxt = soOrt && soOrt.trust ? soOrt.trust : pickPool(arch && arch.trust, Math.floor(idxP / rLen));  // -> (rahmen,trust)-Tupel eindeutig je Archetyp-Ort
   // W3b (Review #9): rahmen eingeklappt — Intro nach dem Hero wird halb so lang, Text bleibt im DOM (NearDup-Gate misst den Block weiterhin).
   const rahmen = rahmenTxt ? `<details class="mehr"><summary>Mehr über unsere Arbeit in ${esc(o.name)}</summary><div><p>${esc(fillTok(rahmenTxt, o, oc))}</p></div></details>` : '';
@@ -817,7 +820,7 @@ ${gstripFor(s)}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
 ${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml, hrefOf, ctaAfterGrid: tief.cta_grid ? ctaZwischen(s, { ...tief.cta_grid }) : '' }) : ''}${tief ? ctaZwischen(s, { ...(tief.cta_after || tiefCtaDefault), alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.', alt: tiefPaper }) : ''}${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
-<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst' })}</div></section>
+<section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst', foto: OHNE_FLOWFOTO.has(s.slug) ? false : null })}</div></section>
 ${nachbarSection}
 <section class="sec"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
 ${s.partner_modell ? endBandPartner(s) : endBand}`;
