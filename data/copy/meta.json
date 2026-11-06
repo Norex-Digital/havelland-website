@@ -2,7 +2,7 @@
   "_meta": {
     "zweck": "Handgeschriebene Meta-Descriptions je URL. Vorrang vor allen Vorlagen in generate.mjs (head()). Regeln: 150 bis 158 Zeichen gerendert (& zählt als 5), vollständige Sätze mit Punkt, keine Gedankenstriche, keine Preise, Partner-Hinweis bei Dachreinigung/Dachrinnenreinigung, keine Bild-Labels. Prüfung: scripts/validate-data.mjs. Herkunft: Abnahme 06.11. B6, Owner-Freigabe 07.11.; Liste in gbr-firma websites/havelland/analyse-2026-11-ranking/21-meta-descriptions-2026-11-07.md",
     "stand": "2026-11-07",
-    "anzahl": 75
+    "anzahl": 76
   },
   "metas": {
     "/baumstumpf-entfernen-berlin-spandau/": "Baumstumpf entfernen in Berlin-Spandau: Stubben samt Hauptwurzeln fräsen. Die kompakte Fräse passt durch Gartentore, Festpreis nach kostenloser Besichtigung.",
@@ -55,6 +55,7 @@
     "/heckenentfernung-falkensee/": "Hecke entfernen in Falkensee mit Wurzel, erlaubt vom 1. Oktober bis 28. Februar. Verkahlte Thuja treibt nicht aus, Festpreis nach kostenloser Besichtigung.",
     "/heckenentfernung-schoenwalde-glien/": "Hecke entfernen in Schönwalde-Glien mit Wurzel, erlaubt vom 1. Oktober bis 28. Februar. Technik passt durchs Tor, Festpreis nach kostenloser Besichtigung.",
     "/heckenschnitt-dallgow-doeberitz/": "Heckenschnitt in Dallgow-Döberitz (14624) für junge Pflanzungen im Neubaugebiet. Wir übernehmen Schnitt und Abfuhr, Festpreis nach kostenloser Besichtigung.",
+    "/heckenschnitt-falkensee/": "Heckenschnitt in Falkensee: Formschnitt, Rückschnitt und Grünschnitt-Abfuhr. Starker Rückschnitt von Oktober bis Februar, Festpreis nach Besichtigung.",
     "/heckenschnitt-glienicke-nordbahn/": "Heckenschnitt in Glienicke/Nordbahn (16548), auch für Grenzhecken. Es gibt einen Festpreis nach kostenloser Besichtigung und Fotos vom Vorher und Nachher.",
     "/heckenschnitt-hohen-neuendorf/": "Heckenschnitt in Hohen Neuendorf (16540) für große Grundstücke. Mehrere Aufgaben fassen wir in einem Termin zusammen, Festpreis nach kostenloser Besichtigung.",
     "/heckenschnitt-schoenwalde-glien/": "Heckenschnitt in Schönwalde-Glien (14621) mit Pausin und Paaren. Eine feste Kontaktperson von der Anfrage bis zur Abnahme, Festpreis nach Besichtigung.",

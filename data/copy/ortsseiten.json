@@ -3982,6 +3982,114 @@
           "hook": "Fensterreinigung in Falkensee umfasst Glas, Rahmen und Fensterbänke, innen und außen, von Hand mit Wasser, Wischer und Abzieher. Falkensee ist unser Sitz. Von der Darmstädter Straße aus erreichen wir Falkenhagen, Seegefeld, Finkenkrug und die übrigen Wohngebiete auf kurzem Weg. Die Anfahrt steckt im Festpreis. Schlieren, die nach dem eigenen Putzen bleiben, holen wir Scheibe für Scheibe heraus, geprüft im Gegenlicht. Schicken Sie uns per WhatsApp Anzahl und Größe Ihrer Fenster. Wir antworten am selben Tag und vereinbaren die kostenlose Besichtigung."
         }
       }
+    },
+    "heckenschnitt": {
+      "orte": {
+        "falkensee": {
+          "title": "Heckenschnitt Falkensee: Rückschnitt, Formschnitt, Abfuhr",
+          "tief": {
+            "h2": "Heckenschnitt in Falkensee: Rückschnitt, Formschnitt und Abfuhr",
+            "sections": [
+              {
+                "h3": "Grenzhecken in Falkensee: erst messen, dann schneiden",
+                "body": "In den Einfamilienhaus-Siedlungen von Falkensee trennen Hecken die Grundstücke. Wächst eine Grenzhecke über Jahre ungeschnitten, nimmt sie Breite weg und schattet den Garten ab. Bei der kostenlosen Besichtigung messen wir Höhe und Breite und klären mit Ihnen, wie weit die Hecke zurück soll. Danach steht fest, ob ein Formschnitt reicht oder ein Rückschnitt nötig ist. Welche Abstände zum Nachbarn gelten, steht im Ratgeber.",
+                "link_to": "ratgeber/hecke-schneiden-erlaubt",
+                "link_text": "Hecke schneiden erlaubt: was gilt im Havelland"
+              },
+              {
+                "h3": "Verkahlte Thuja: Rückschnitt oder Entfernung",
+                "body": "Thuja wächst aus altem, braunem Holz nicht nach. Eine Thuja, die unten kahl geworden ist, lässt sich deshalb mit einem Radikalschnitt nicht retten. Dann entfernen wir die Hecke samt Wurzel, fräsen die Stubben und fahren alles ab. Das ist ebenfalls nur vom 1. Oktober bis 28. Februar zulässig.",
+                "link_to": "heckenentfernung",
+                "link_text": "Hecke entfernen lassen"
+              },
+              {
+                "h3": "Formschnitt und Grünschnitt-Abfuhr",
+                "body": "Den schonenden Formschnitt führen wir das ganze Jahr aus. Wir kürzen Höhe und Breite gleichmäßig, leicht trapezförmig, damit auch die unteren Triebe Licht bekommen. Äste und Laub laden wir auf, die Fläche kehren wir besenrein. Die Abfuhr und Entsorgung des Grünschnitts gehört zum Festpreis."
+              }
+            ],
+            "blocks": [
+              {
+                "id": "rueckschnitt",
+                "variant": "band",
+                "kick": "Gesetzliches Zeitfenster",
+                "h2": "Starker Rückschnitt ist nur vom 1. Oktober bis 28. Februar erlaubt.",
+                "h2_em": "1. Oktober bis 28. Februar",
+                "body": "Vom 1. März bis 30. September schützt § 39 BNatSchG brütende Vögel, dann sind nur Form- und Pflegeschnitte erlaubt. Vor jedem Schnitt sehen wir in die Hecke, besetzte Nester bleiben unberührt.",
+                "cta": "Kostenlose Besichtigung anfragen",
+                "cta_href": "/kontakt/#anfrage",
+                "items_h2": "Welche Hecke verträgt was",
+                "items": [
+                  {
+                    "h3": "Liguster",
+                    "p": "Verträgt den starken Rückschnitt und treibt im Frühjahr kräftig neu aus."
+                  },
+                  {
+                    "h3": "Kirschlorbeer",
+                    "p": "Lässt sich im Winter kräftig zurücknehmen, angeschnittene Blätter schneiden wir mit der Handschere nach."
+                  },
+                  {
+                    "h3": "Thuja",
+                    "p": "Kein Schnitt ins alte, braune Holz, dort treibt sie nicht mehr aus. Verkahlte Reihen nehmen wir auf Wunsch ganz heraus."
+                  },
+                  {
+                    "h3": "Hecke komplett weg?",
+                    "p": "Die Entfernung mit Wurzel ist im selben Zeitfenster erlaubt, Abfuhr inklusive."
+                  }
+                ],
+                "link_to": "ratgeber/wann-hecke-schneiden",
+                "link_text": "Wann Hecke schneiden: Termine und Regeln",
+                "link2_to": "ratgeber/hecke-schneiden-erlaubt",
+                "link2_text": "Hecke schneiden erlaubt: was gilt im Havelland"
+              }
+            ],
+            "cta_after": {
+              "h2": "Foto der Hecke schicken, Festpreis bekommen.",
+              "txt": "Antwort am selben Tag, kostenlose Besichtigung in Falkensee, schriftlicher Festpreis inklusive Abfuhr."
+            },
+            "faelle_heading": "Das schreiben Kunden nach dem Heckenschnitt.",
+            "faelle_intro": "Zwei Kundenstimmen aus unserem Google-Unternehmensprofil, im Wortlaut.",
+            "faelle": [
+              {
+                "h3": "Gartenhecken, die überfällig waren",
+                "meta": "Google-Bewertung, Oktober 2026",
+                "body": "Die Gartenhecken waren überfällig und sehen jetzt wieder gut aus.",
+                "zitat": "Wir haben unsere Gartenhecken schneiden lassen, die waren wirklich schon überfällig. Jetzt sehen sie wieder super aus! Ging wirklich schnell und unkompliziert. Wir werden mit absoluter Sicherheit nochmal hier anfragen.",
+                "zitat_von": "Amélie N., Google-Bewertung, Oktober 2026"
+              },
+              {
+                "h3": "Verwuchert, Hecken über 3 Meter",
+                "meta": "Google-Bewertung, Juli 2026",
+                "body": "Ein verwucherter Garten mit Hecken von mindestens 3 Metern Höhe sieht wieder hübsch aus.",
+                "zitat": "Unser Garten war so verwuchert und die Hecken mindestens 3 Meter hoch. Jetzt sieht alles wieder hübsch aus. Gute Arbeit Männers",
+                "zitat_von": "Alq, Google-Bewertung, Juli 2026"
+              }
+            ],
+            "faqs": [
+              {
+                "q": "Darf die Hecke im November noch stark zurückgeschnitten werden?",
+                "a": "Ja. Starker Rückschnitt und das Auf-den-Stock-Setzen sind nach § 39 Abs. 5 Nr. 2 BNatSchG vom 1. Oktober bis 28. Februar erlaubt. Vom 1. März bis 30. September sind beide verboten, schonende Form- und Pflegeschnitte bleiben ganzjährig zulässig. Vor dem Schnitt prüfen wir die Hecke auf besetzte Nester. Wer in Falkensee eine verwachsene Grenzhecke zurücknehmen will, legt den Termin deshalb vor Ende Februar."
+              },
+              {
+                "q": "Was passiert mit dem Schnittgut?",
+                "a": "Wir laden Äste und Laub auf, kehren die Fläche besenrein und fahren alles ab. Die Abfuhr und Entsorgung des gesamten Grünschnitts gehört zum Festpreis."
+              },
+              {
+                "q": "Wie schnell bekomme ich in Falkensee einen Termin?",
+                "a": "Da wir aus Falkensee kommen, lässt sich ein Termin oft schon innerhalb derselben Woche einrichten. Schreiben Sie uns Ihr Anliegen per WhatsApp an 01515 6198195, wir melden uns am selben Tag mit einem Vorschlag zurück. Bei der kostenlosen Besichtigung schauen wir uns Länge, Höhe und Zugang an, danach steht der schriftliche Festpreis. Nach dem Schnitt bekommen Sie Vorher-Nachher-Fotos aufs Handy."
+              },
+              {
+                "q": "Welche Hecken vertragen den Radikalschnitt?",
+                "a": "Liguster, Hainbuche und Rotbuche treiben nach dem starken Rückschnitt im Frühjahr neu aus. Thuja nicht: Aus altem, braunem Holz wächst sie nicht nach. Bei einer verkahlten Thuja ist die Entfernung im selben Winterfenster oft die bessere Lösung."
+              },
+              {
+                "q": "Was kostet ein Heckenschnitt in Falkensee?",
+                "a": "Länge, Höhe, Heckenart, Zustand und Abtransport bestimmen den Preis. Den Festpreis erhalten Sie nach der kostenlosen Besichtigung, er bleibt Ihr Endpreis."
+              }
+            ],
+            "media": false
+          }
+        }
+      }
     }
   }
 }

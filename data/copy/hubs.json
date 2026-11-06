@@ -229,6 +229,15 @@
    "garantie_text": "Geradlinien-Garantie: Bleiben Grünschnitt-Reste liegen, kommen wir kostenlos nach und räumen sie weg.",
    "blocks": [
     {
+     "id": "rueckschnitt",
+     "h2": "Rückschnitt vom 1. Oktober bis Ende Februar",
+     "body": "Starker Rückschnitt und das Auf-den-Stock-Setzen sind nach § 39 BNatSchG vom 1. Oktober bis 28. Februar erlaubt. Vom 1. März bis 30. September gilt die Schonzeit, in der nur schonende Form- und Pflegeschnitte zulässig sind. Wer eine verwachsene Hecke zurücknehmen will, plant den Termin im Winterfenster, wir prüfen die Hecke vorher auf besetzte Nester. In Falkensee, wo wir sitzen, übernehmen wir Rückschnitt, Formschnitt und Abfuhr.",
+     "link_to": "heckenschnitt-falkensee",
+     "link_text": "Heckenschnitt in Falkensee",
+     "link2_to": "ratgeber/wann-hecke-schneiden",
+     "link2_text": "Wann Hecke schneiden: Termine und Regeln"
+    },
+    {
      "id": "definition",
      "h2": "Was ist Heckenschnitt?",
      "body": "Heckenschnitt ist das fachgerechte Kürzen und Formen von Gartenhecken, das die Pflanze dicht und gesund hält und die Grundstücksgrenze sauber abgrenzt. Dazu zählen der regelmäßige Formschnitt, der starke Verjüngungsschnitt im Winterhalbjahr und das Abfahren des anfallenden Grünschnitts.",
@@ -284,7 +293,18 @@
     "src": "gbp/heckenrueckschnitt-2026-10.jpg",
     "alt": "Heckenschnitt an einer Thuja-Hecke im Havelland"
    },
-   "ergebnisse": "karussell"
+   "ergebnisse": "karussell",
+   "faelle_heading": "Das schreiben Kunden nach dem Heckenschnitt.",
+   "faelle_intro": "Eine Kundenstimme aus unserem Google-Unternehmensprofil, im Wortlaut.",
+   "faelle": [
+    {
+     "h3": "Hecke in Form geschnitten",
+     "meta": "Google-Bewertung, Juni 2026",
+     "body": "Eine Hecke wurde in Form gebracht und der Arbeitsplatz sauber hinterlassen.",
+     "zitat": "Meine Hecke war noch nie so schön geformt. Sauber wurde der Arbeitsplatz auch hinterlassen. Gerne wieder!",
+     "zitat_von": "Hanan K., Google-Bewertung, Juni 2026"
+    }
+   ]
   },
   {
    "slug": "winterdienst",

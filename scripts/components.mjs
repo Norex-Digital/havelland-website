@@ -236,10 +236,10 @@ export function clusterKacheln(items) {
 // img = Manifest-Basis-Slug eines Vorher/Nachher-Paars ('fall-schuppen-falkensee' -> -vorher-768.jpg/-nachher-768.jpg) oder ''.
 // zitat/zitat_von rendern nur, wenn gefüllt (17.09.: leer, bis eine echte Entrümpelungs-Bewertung vorliegt — kein Zitat erfinden).
 // ---------------------------------------------------------------------------
-export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.', alt = true } = {}) {
+export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.', alt = true, intro = 'Echte Aufträge aus dem Havelland, ohne Namen und Adresse. Wo wir Fotos oder Zahlen zeigen, liegt die Einwilligung der Kunden vor. Genau so bekommen Sie Ihren Foto-Nachweis.' } = {}) {   // intro (07.11.): nur für Seiten mit Kundenstimmen statt Auftragsfällen
   if (!Array.isArray(faelle) || !faelle.length) return '';
   // alt (W3b Review #2): Zonen-Parität vom Aufrufer — paper (default) oder weiß, damit kein paper-auf-paper entsteht.
-  return `<section class="sec${alt ? ' section-alt' : ''}" id="faelle"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(heading)}</h2></div><p class="intro rv">Echte Aufträge aus dem Havelland, ohne Namen und Adresse. Wo wir Fotos oder Zahlen zeigen, liegt die Einwilligung der Kunden vor. Genau so bekommen Sie Ihren Foto-Nachweis.</p><div class="faelle">` +
+  return `<section class="sec${alt ? ' section-alt' : ''}" id="faelle"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(heading)}</h2></div><p class="intro rv">${esc(intro)}</p><div class="faelle">` +
     faelle.map((f, i) => `<div class="fall rv d${i + 1}"><div class="fbody"><h3>${esc(f.h3)}</h3><p class="fmeta">${esc(f.meta || '')}</p><p>${esc(f.body)}</p>${f.zitat ? `<blockquote class="fzitat"><p>${esc(f.zitat)}</p>${f.zitat_von ? `<cite>${esc(f.zitat_von)}</cite>` : ''}</blockquote>` : ''}</div>${f.img ? `<div>${baSlider({ vorher: `/assets/img/${f.img}-vorher-768.jpg`, nachher: `/assets/img/${f.img}-nachher-768.jpg`, w: 768, h: 1024, alt: f.h3 + ' — vorher und nachher', cap: f.h3.split(',')[0], sub: 'vorher / nachher', vorTxt: 'vor der Räumung', nachTxt: 'nach der Räumung' })}</div>` : ''}</div>`).join('') +
     `</div></div></section>`;
 }
@@ -249,6 +249,16 @@ export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.', alt =
 // Blocks mit Anker/Link. Fallbeispiele (faelleBlock) und bespoke FAQs setzt der Aufrufer ein. Nur wenn
 // ortsseiten.json → services.<svc>.orte.<ort>.tief existiert. Eigene Sections → NearDup-Gate (erster Prose-Block) bleibt unberührt.
 // ---------------------------------------------------------------------------
+// bandBlock (07.11.2026, Owner Maurice: „zu viel Text untereinander, lieber ein grüner Streifen dazwischen“): Block-Variante `variant: "band"` für tief.blocks —
+// dunkelgrüner Kasten links (.fx-band, wie vorteileBlock mit frist), nummerierte Liste rechts (.vt-list). Felder: kick, h2, h2_em (Teilsatz der H2 als <em>),
+// body (Kurztext im Kasten), cta + cta_href, items_h2, items[{h3,p}], link_to/link_text/link2_to/link2_text (über linkHtml). Ohne variant bleibt das Prose-Layout.
+export function bandBlock(b, linkHtml = () => '') {
+  const h2 = (b.h2_em && String(b.h2 || '').includes(b.h2_em)) ? esc(b.h2).replace(esc(b.h2_em), `<em>${esc(b.h2_em)}</em>`) : esc(b.h2 || '');
+  const items = arr(b.items).map((x, i) => `<div class="it"><span class="nr">0${i + 1}</span><div><h3>${esc(x.h3)}</h3><p>${esc(x.p)}</p></div></div>`).join('');
+  const links = linkHtml(b).trim();
+  return `<section class="sec"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="fx rv"><div class="fx-band">${b.kick ? `<span class="kick">${esc(b.kick)}</span>` : ''}<h2>${h2}</h2><p>${esc(b.body || '')}</p>${b.cta ? `<a class="btn btn-acc" href="${esc(b.cta_href || '/kontakt/#anfrage')}">${esc(b.cta)}</a>` : ''}</div><div>${b.items_h2 ? `<h2 class="serif">${esc(b.items_h2)}</h2>` : ''}<div class="vt-list">${items}</div>${links ? `<p class="oq">${links}</p>` : ''}</div></div></div></section>`;
+}
+
 export function tiefBlock(t, { linkHtml = () => '', hrefOf = null, ctaAfterGrid = '' } = {}) {
   if (!t) return '';
   // W3b (17.09.): Kachel-Grid, sobald eine Section ein `kurz` hat — sonst bisheriges Prose-Layout.
@@ -257,7 +267,7 @@ export function tiefBlock(t, { linkHtml = () => '', hrefOf = null, ctaAfterGrid 
     ? `<div class="cards leist rv">${(t.sections || []).map(x => { const href = (x.link_to && hrefOf) ? hrefOf(x.link_to) : ''; return `<div class="card"${x.id ? ` id="${esc(x.id)}"` : ''}><h3>${(href && x.seite) ? `<a href="${href}">${esc(x.h3)}</a>` : esc(x.h3)}</h3><p>${esc(x.kurz)}</p>${href ? `<a class="go" href="${href}">${esc(x.link_text || 'Zur Seite')} →</a>` : ''}${x.body ? `<details class="mehr"><summary>Mehr dazu</summary><div><p>${esc(x.body)}${href ? '' : linkHtml(x)}</p></div></details>` : ''}</div>`; }).join('')}</div>`
     : (t.sections || []).map(x => `<h3>${esc(x.h3)}</h3><p>${esc(x.body)}${linkHtml(x)}</p>`).join('');
   const ob = t.ortsblock ? `<section class="sec section-alt"><div class="wrap"><div class="ortsblock rv"><h2>${esc(t.ortsblock.h2)}</h2><dl>${(t.ortsblock.items || []).map(i => `<div><dt>${esc(i.k)}</dt><dd>${esc(i.v)}</dd></div>`).join('')}</dl>${t.ortsblock.quelle ? `<p class="oq">Quelle: ${esc(t.ortsblock.quelle)}</p>` : ''}</div></div></section>` : '';
-  const blocks = (t.blocks || []).map((b, i) => `<section class="sec${i % 2 ? ' section-alt' : ''}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2>${b.lead ? `<p class="lead-p"><strong>${esc(b.lead)}</strong></p>` : ''}<p>${esc(b.body)}${(Array.isArray(b.bullets) && b.bullets.length) ? '' : linkHtml(b)}</p>${Array.isArray(b.bullets) && b.bullets.length ? `<ul class="bl">${b.bullets.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${linkHtml(b).trim() ? `<p>${linkHtml(b).trim()}</p>` : ''}` : ''}${b.mehr ? `<details class="mehr"><summary>Mehr dazu</summary><div><p>${esc(b.mehr)}</p></div></details>` : ''}</div></div></section>`).join('');
+  const blocks = (t.blocks || []).map((b, i) => b.variant === 'band' ? bandBlock(b, linkHtml) : `<section class="sec${i % 2 ? ' section-alt' : ''}"${b.id ? ` id="${esc(b.id)}"` : ''}><div class="wrap"><div class="prose wide rv"><h2>${esc(b.h2)}</h2>${b.lead ? `<p class="lead-p"><strong>${esc(b.lead)}</strong></p>` : ''}<p>${esc(b.body)}${(Array.isArray(b.bullets) && b.bullets.length) ? '' : linkHtml(b)}</p>${Array.isArray(b.bullets) && b.bullets.length ? `<ul class="bl">${b.bullets.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${linkHtml(b).trim() ? `<p>${linkHtml(b).trim()}</p>` : ''}` : ''}${b.mehr ? `<details class="mehr"><summary>Mehr dazu</summary><div><p>${esc(b.mehr)}</p></div></details>` : ''}</div></div></section>`).join('');
   const head = kacheln
     ? `<section class="sec tief"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(t.h2)}</h2></div>${secs}</div></section>`
     : `<section class="sec tief"><div class="wrap"><div class="prose wide rv"><h2>${esc(t.h2)}</h2>${secs}</div></div></section>`;
