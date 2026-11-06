@@ -23,6 +23,22 @@ const escH = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').r
 const textOf = s => s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 // Preisangabe irgendwo im Text (Nachlass-Hero): Ziffer + € / Euro / EUR (auch „499,- €“, „499 Euro“) oder € + Ziffer
 const PREIS_RE = /\d[\d.,-]*\s?(?:€|Euro\b|EUR\b)|€\s?\d/i;
+// --- Modus hecke (06.11.2026, Hecken-LPs, Owner-Regeln: keine Preise, keine Meterpreise, kein Räum-/Entrümpelungs-Wort, kein Personenbild, nur echtes Paar im Slider) ---
+// Meterpreis: je/pro (laufender) Meter, lfm, laufende Meter, Meterpreis, Quadratmeterpreis, „12 €/m“. „3 Meter hoch“ (Kundenzitat) ist kein Meterpreis.
+const METER_RE = /\b(?:je|pro)\s+(?:laufende[nr]?\s+)?(?:Meter\b|m\b|lfm\b|qm\b|Quadratmeter\b)|\blfm\b|laufende[rn]?\s+Meter|Meterpreis|Quadratmeter-?preis|[€]\s?\/\s?(?:lfm|m|qm)\b/i;
+const RAEUM_RE = /räum|entrümpel|Festpreis für Räumung/i;
+const PERSON_RE = /-noah\b|hecke-hinten|zaun-hinten|ansprechpartner|team-|person/i;
+const LABEL_RE = /Beispielbild|Beispielfoto|Symbolbild|echtes Foto|echtes Bild|Beispielhafte Darstellung/i;
+const stripCode = h => h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ');
+const sichtText = h => textOf(stripCode(h));
+const metaOf = h => ((h.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '');
+const titleOf = h => ((h.match(/<title>([^<]*)<\/title>/) || [])[1] || '');
+const jsStrings = h => [...h.matchAll(/<script(?![^>]*ld\+json)[^>]*>([\s\S]*?)<\/script>/g)].map(m => m[1]).join('\n');
+// Gate-Funktionen (true = in Ordnung). Sichttext, title, meta UND JS-Strings (Skripte gehören nicht zum Sichttext, könnten aber Varianten-Strings tragen).
+const betragFrei = h => ![sichtText(h), titleOf(h), metaOf(h), jsStrings(h)].some(t => PREIS_RE.test(t));
+const meterFrei = h => ![sichtText(h), titleOf(h), metaOf(h), jsStrings(h)].some(t => METER_RE.test(t));
+const raeumFrei = h => ![sichtText(h), titleOf(h), metaOf(h)].some(t => RAEUM_RE.test(t));
+const lowerFirst = t => String(t).charAt(0).toLowerCase() + String(t).slice(1);
 
 const fails = []; const lines = [];
 const P = label => lines.push(`\n${label}`);
@@ -56,6 +72,13 @@ const LPS = [
   ['lp/entruempelung-havelland/index.html', 'LP entruempelung', { reviews: true, ortSwap: true }],
   ['lp/entruempelung-kosten-havelland/index.html', 'LP entruempelung-kosten', { reviews: true, ortSwap: true, kosten: true }],
   ['lp/danke/index.html', 'LP danke', { danke: true }],
+  // Hecken-LPs (Modus hecke): kein Aktions-/Festpreis-/Kachel-/Räumungs-Ablauf-Zwang, eigene Pflicht-Gates unten
+  ['lp/heckenschnitt/index.html', 'LP heckenschnitt', { reviews: true, hecke: true }],
+  ['lp/hecke-zurueckschneiden/index.html', 'LP hecke-zurueckschneiden', { reviews: true, hecke: true }],
+  ['lp/hecke-radikalschnitt/index.html', 'LP hecke-radikalschnitt', { reviews: true, hecke: true }],
+  ['lp/hecke-auf-den-stock-setzen/index.html', 'LP hecke-auf-den-stock-setzen', { reviews: true, hecke: true }],
+  ['lp/heckenentfernung/index.html', 'LP heckenentfernung', { reviews: true, hecke: true }],
+  ['lp/danke-hecke/index.html', 'LP danke-hecke', { danke: true, hecke: true }],
 ];
 // Bewertungszahl der Trust-Zeile kommt aus data/proof.json (nie hart codiert, Prinzip 6): die Seite muss genau diese Zahl zeigen.
 const proofGR = JSON.parse(fs.readFileSync('data/proof.json', 'utf8')).google_reviews || {};
@@ -118,6 +141,7 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     check(id, `Trust-Zeile = trust_zeile aus lp.json („${entryOf(rel).trust_zeile || ''}“)`, !!entryOf(rel).trust_zeile && t1Text === entryOf(rel).trust_zeile);
     check(id, 'Trust-Zeile mit Häkchen-Symbol', t1.length === 1 && t1[0][1].startsWith('<svg '));
     if (o.keinAbPreis) check(id, 'Trust-Zeile ohne Preis-/Festpreis-Werbung (Nachlass)', !/Festpreis|Preis|€/i.test(t1Text));
+    else if (o.hecke) check(id, 'Trust-Zeile nennt „Pauschalpreis“ und „Betrieb aus Falkensee“ (Hecke, Wording O19)', /Pauschalpreis/.test(t1Text) && /Betrieb aus Falkensee/.test(t1Text));
     else check(id, 'Trust-Zeile nennt „Festpreis nach Besichtigung“', /Festpreis nach Besichtigung/.test(t1Text));
     // --- Preis-Kacheln (v7, Owner 20.10. „oben“): im Hero VOR dem Formular, Anzahl = preis.anker.items, Preis wörtlich zusammenhängend im Text,
     //     verlinkte Kacheln (Einträge mit obj) mit data-via="preis" + aria-label
@@ -150,13 +174,14 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     //     FAQ nennt „2–3 Werktagen“ (Gewerbe: FAQ unverändert). Nachlass bleibt ruhig: keine Dringlichkeitswörter im Ablauf.
     const ablaufS = h.indexOf('class="tl'), ablaufE = h.indexOf('id="preise"');
     const ablaufH = ablaufS > -1 && ablaufE > ablaufS ? h.slice(ablaufS, ablaufE) : '';
-    check(id, 'Ablauf nennt wörtlich „Termin meist in 2–3 Werktagen“ (Besichtigung, Anzeigen-Überschrift)', has(ablaufH, 'Termin meist in 2–3 Werktagen'));
-    if (!o.gewerbe) check(id, 'FAQ nennt „meist in 2–3 Werktagen“ (Besichtigung)', has(h.slice(h.indexOf('id="fragen"')), 'meist in 2–3 Werktagen'));
+    if (!o.hecke) check(id, 'Ablauf nennt wörtlich „Termin meist in 2–3 Werktagen“ (Besichtigung, Anzeigen-Überschrift)', has(ablaufH, 'Termin meist in 2–3 Werktagen'));
+    if (!o.gewerbe && !o.hecke) check(id, 'FAQ nennt „meist in 2–3 Werktagen“ (Besichtigung)', has(h.slice(h.indexOf('id="fragen"')), 'meist in 2–3 Werktagen'));
     if (o.keinAbPreis) check(id, 'Nachlass: Ablauf ohne Dringlichkeitswörter (schnell, sofort, dringend, zeitnah, kurzfristig, jetzt)', ablaufH.length > 200 && !/schnell|sofort|dringend|zeitnah|kurzfristig|jetzt/i.test(ablaufH));
     // --- „Betrieb aus Falkensee“ (Wortlaut der B-Anzeigen) sichtbar im Trust-Block (nicht Gewerbe)
     if (!o.gewerbe) check(id, 'Trust-Block nennt wörtlich „Betrieb aus Falkensee“', /<div class="trust-row lp-checks">[\s\S]*?<b>Betrieb aus Falkensee<\/b>/.test(h) || has(t1Text, 'Betrieb aus Falkensee'));
     // --- Aktionskarte (v7): gleiche Karte im Hero (nach dem Formular) und in #preise, Texte aus lp.json, Bedingung ausgeschrieben, kein Sternchen
-    if (!o.ohneAktion && aktAktiv) {
+    if (o.hecke) check(id, 'keine Aktionskarte (Hecke: aktion false, kein Aktions-Zwang)', !has(h, 'class="lp-aktion"'));
+    if (!o.ohneAktion && !o.hecke && aktAktiv) {
       const AK = lpJson.aktion || {};
       const karteRe = /<div class="lp-aktion" data-bis="[^"]+">[\s\S]*?<\/p><\/div>/;
       const pS = h.indexOf('id="preise"'), preiseH = pS > -1 ? h.slice(pS, h.indexOf('</section>', pS)) : '';
@@ -195,7 +220,8 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     // --- Pflichtfelder, Ziele
     for (const n of PFLICHT_HIDDEN) check(id, `hidden ${n}`, has(h, `name="${n}"`));
     check(id, 'Web3Forms-Ziel', has(h, 'action="https://api.web3forms.com/submit"'));
-    check(id, 'Redirect /lp/danke/', has(h, '/lp/danke/'));
+    const dSlug = entryOf(rel).danke_slug || 'danke';
+    check(id, `Redirect /lp/${dSlug}/${o.hecke ? ' (Hecke: danke-hecke)' : ''}`, has(h, `name="redirect" value="https://`) && has(h, `/lp/${dSlug}/"`) && (!o.hecke || dSlug === 'danke-hecke'));
     check(id, 'GTM vorhanden', has(h, 'GTM-TR7JVXZL'));
     // Ein Feld „Telefon oder E-Mail“ (Owner 29.10.): Sichtfeld name=kontakt (Pflicht), Hidden tel/email/kontaktweg füllt das Skript; das Sichtfeld wird nicht mitgesendet (fdata)
     check(id, 'Kontaktfeld „Telefon oder E-Mail“ (name=kontakt, Pflicht, kein type=tel/email)', /<span>Telefon oder E-Mail<\/span><input name="kontakt" type="text"[^>]*\brequired>/.test(h) && !/<input name="tel" type="tel"/.test(h));
@@ -222,10 +248,10 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
       check(id, 'Preis-CTA führt auf das Formular (#anfrage) wie der Haupt-CTA', preiseH2.includes('href="#anfrage">Festpreis anfragen'));
     }
     // --- Fester Ortssatz (Umbau 11/2026): direkt unter der H1, zusätzlich zur dynamischen Ortsersetzung; Duplikat-Klasse nur, wenn der Lead denselben Wortlaut trägt
-    const ORT_S = 'Im Havelland, in Berlin-Spandau und Potsdam';
-    check(id, 'Ortssatz direkt unter der H1 (statisch, „im Havelland, in Berlin-Spandau und Potsdam“)', new RegExp('</h1><p class="lp-ort[ "][^>]*>' + ORT_S + '</p><p class="lead">').test(h));
+    const ORT_S = escH(entryOf(rel).ort_satz || 'Im Havelland, in Berlin-Spandau und Potsdam'); // je LP überschreibbar (ort_satz), Standard unverändert
+    check(id, `Ortssatz direkt unter der H1 (statisch, „${ORT_S}“)`, new RegExp('</h1><p class="lp-ort[ "][^>]*>' + ORT_S + '</p><p class="lead">').test(h));
     check(id, 'Ortssatz ohne data-ort (statisch, keine neue JS-Tauschlogik)', !/class="lp-ort[^"]*"[^>]*data-ort/.test(h) && !/lp-ort[^<]*<span data-ort/.test(h));
-    check(id, 'lp-ort-dup nur, wenn der Lead den Ortssatz selbst nennt', has(h, 'class="lp-ort lp-ort-dup"') === String(entryOf(rel).lead || '').includes('im Havelland, in Berlin-Spandau und Potsdam'));
+    check(id, 'lp-ort-dup nur, wenn der Lead den Ortssatz selbst nennt', has(h, 'class="lp-ort lp-ort-dup"') === String(entryOf(rel).lead || '').includes(lowerFirst(entryOf(rel).ort_satz || 'Im Havelland, in Berlin-Spandau und Potsdam')));
     if (o.kosten) {
       check(id, 'Kosten-LP: H1 „Was kostet eine Entrümpelung im Havelland?“ (Ortsteil per data-ort)', /<h1>Was kostet eine <em>Entrümpelung<\/em> <span data-ort="in">im Havelland<\/span>\?<\/h1>/.test(h));
       const fS = h.indexOf('id="preisfaktoren"'), fH = fS > -1 ? h.slice(fS, h.indexOf('</section>', fS)) : '';
@@ -260,15 +286,78 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     check(id, 'Fußzeile: „Vertreten durch die Gesellschafter: …“ wortgleich zum Impressum', !!impGes && has(foot, `<p>${impGes}</p>`));
     // --- Nachlass-Lead auf dem Handy (Attribut an der Hero-Section prüfen, nicht das CSS-Selektor-Vorkommen im <head>)
     check(id, 'data-lead-mobil gleich lead_mobil in lp.json', (entryOf(rel).lead_mobil === true) === /<section class="phero lp-hero[^"]*"[^>]*data-lead-mobil/.test(h));
+
+    // ===== Modus hecke: Pflicht-Gates der Hecken-LPs (lp-architektur.md §3, §6 Schritt 2; Owner 06.11.) =====
+    if (o.hecke) {
+      const en = entryOf(rel);
+      // Preise: kein €-Betrag, kein Meterpreis in Sichttext, Title, Meta und JS-Strings; Selbsttest mit Testbetrag (muss rot werden)
+      check(id, 'Hecke: kein €-/Euro-Betrag in Sichttext, Title, Meta und JS-Strings', betragFrei(h));
+      check(id, 'Hecke: kein Meterpreis (je/pro Meter, lfm, laufende Meter, Meterpreis, Quadratmeterpreis) in Sichttext, Title, Meta und JS-Strings', meterFrei(h));
+      check(id, 'Selbsttest: „99 €“ im Sichttext → Betrags-Gate rot', !betragFrei(h.replace('</main>', ' 99 €</main>')));
+      check(id, 'Selbsttest: „99 €“ im Title → Betrags-Gate rot', !betragFrei(h.replace('</title>', ' 99 €</title>')));
+      check(id, 'Selbsttest: „99 €“ in einem JS-String → Betrags-Gate rot', !betragFrei(h.replace('</body>', "<script>var v='99 €';</script></body>")));
+      check(id, 'Selbsttest: „12 € pro Meter“ → Meterpreis-Gate rot', !meterFrei(h.replace('</main>', ' 12 pro Meter</main>')) && !meterFrei(h.replace('</main>', ' Meterpreis</main>')));
+      check(id, 'Selbsttest: „3 Meter hoch“ (Kundenzitat) → Meterpreis-Gate bleibt grün', meterFrei(h.replace('</main>', ' Hecken mindestens 3 Meter hoch</main>')));
+      // Wording: Pauschalpreis (O19), nie Festpreis; kein Räum-/Entrümpelungs-Wort
+      check(id, 'Hecke: kein Räum-/Entrümpelungs-Wort (räum, Entrümpel, Festpreis für Räumung) in Sichttext, Title, Meta', raeumFrei(h));
+      check(id, 'Selbsttest: „Räumung“ im Sichttext → Räum-Gate rot', !raeumFrei(h.replace('</main>', ' Räumung</main>')));
+      check(id, 'Hecke: Wording „Pauschalpreis“, nie „Festpreis“', !/Festpreis/.test(sichtText(h) + titleOf(h) + metaOf(h)));
+      check(id, 'Hecke: keine Bild-Labels (Beispielbild, Symbolbild, echtes Foto …)', !LABEL_RE.test(sichtText(h)));
+      // Bewertungen: keine Entrümpelungs-Karte (Tag/Text), Zitat und Auswahl je LP gesetzt (kein Fallback auf milo/mark/nick)
+      check(id, 'Hecke: bewertungen_lp je LP gesetzt (kein Standard-Fallback auf die Entrümpelungs-Karten)', Array.isArray(en.bewertungen_lp) && en.bewertungen_lp.length >= 1);
+      check(id, 'Hecke: zitat_hero je LP gesetzt (Objekt oder false, kein Fallback auf das Entrümpelungs-Zitat)', en.zitat_hero === false || (en.zitat_hero && typeof en.zitat_hero === 'object'));
+      const kartenKeys = [...(en.bewertungen_lp || []), ...(en.zitat_hero && en.zitat_hero.quelle ? [en.zitat_hero.quelle] : [])];
+      check(id, 'Hecke: keine Bewertungskarte/Zitat mit Entrümpelungs-Bezug (Tag oder Text) und kein Standard-Key milo/mark/nick', kartenKeys.every(k => { const r = (lpJson.bewertungen || {})[k]; return r && !/entrümpel/i.test(`${r.tag} ${r.t}`) && !['milo', 'mark', 'nick'].includes(k); }));
+      // Bilder: ba nur mit dem echten Paar echt-* (kein KI im Slider), foto nur generisches Stimmungsbild; nie ein Bild mit Person
+      const hero = en.hero || { typ: 'text' };
+      check(id, `Hecke: Hero-Typ ${hero.typ} ∈ {text, ba, foto}`, ['text', 'ba', 'foto'].includes(hero.typ));
+      if (hero.typ === 'ba') check(id, 'Hecke: Hero ba nur mit echtem Paar echt-* (Foto-Beleg, kein KI im Slider)', /^echt-/.test(hero.vorher || '') && /^echt-/.test(hero.nachher || ''));
+      const manifestIMG = JSON.parse(fs.readFileSync('assets/img/manifest.json', 'utf8'));
+      if (hero.typ === 'foto') check(id, 'Hecke: Hero foto = generisches Stimmungsbild aus dem Manifest, nie ein Bild mit Person (hecke-hinten-*-noah, zaun-hinten-* …)', !!hero.slug && !!manifestIMG[hero.slug] && !PERSON_RE.test(hero.slug));
+      check(id, `Hecke: Hero im Output = lp.json (lp-hero-${hero.typ}), kein stiller Rückfall auf Text`, new RegExp(`<section class="phero lp-hero lp-hero-${hero.typ}[ "]`).test(h));
+      check(id, 'Hecke: Galerie-Paare (fotos) nur echt-*', (en.fotos || []).every(f => /^echt-/.test(f.vorher || '') && /^echt-/.test(f.nachher || '')));
+      const baImgs = [...h.matchAll(/<div class="ba[ "][^>]*>\s*<img src="([^"]+)"[^>]*><img class="ba-top" src="([^"]+)"/g)].flatMap(m => [m[1], m[2]]);
+      check(id, `Hecke: alle Slider-Bilder (${baImgs.length}) aus echt-* (kein KI-Bild als Vorher/Nachher oder Auftragsfoto)`, baImgs.every(u => /\/assets\/img\/echt-/.test(u)));
+      const imgSlugs = [...h.matchAll(/\/assets\/img\/([a-z0-9_-]+?)(?:-\d+)?\.(?:webp|avif|jpg|png)/g)].map(m => m[1]);
+      check(id, 'Hecke: kein Bild mit Person (hecke-hinten-*-noah, zaun-hinten-*, Ansprechpartner) im Output', !imgSlugs.some(x => PERSON_RE.test(x)) && !has(h, 'class="lp-person"'));
+      // Überschrift: genau ein kursives Akzentwort in der H1
+      const h1H = (h.match(/<h1>([\s\S]*?)<\/h1>/) || [, ''])[1];
+      check(id, 'Hecke: H1 mit genau einem <em>', (h1H.match(/<em[\s>]/g) || []).length === 1);
+      // Preisfaktoren: vier, direkt nach dem Hero, keine Beträge
+      const pfS = h.indexOf('id="preisfaktoren"'), pfH = pfS > -1 ? h.slice(pfS, h.indexOf('</section>', pfS)) : '';
+      check(id, 'Hecke: Abschnitt #preisfaktoren mit genau 4 Faktoren', pfH.length > 200 && (pfH.match(/class="v rv/g) || []).length === 4);
+      const heroEnd2 = h.indexOf('</section>', h.indexOf('<section class="phero lp-hero'));
+      // zwischen Hero und #preisfaktoren darf höchstens #was-wir-tun stehen (Spec: „Was wir tun“ + Preisfaktoren direkt nach dem Hero)
+      const zw = pfS > -1 ? h.slice(heroEnd2 + 10, h.lastIndexOf('<section', pfS)).replace(/<script[\s\S]*?<\/script>/g, '') : 'x<section';
+      const zwSecs = (zw.match(/<section/g) || []).length;
+      check(id, 'Hecke: #preisfaktoren steht direkt nach dem Hero (nur #was-wir-tun darf dazwischen)', pfS > -1 && (zwSecs === 0 || (zwSecs === 1 && /<section class="sec" id="was-wir-tun"/.test(zw))));
+      check(id, 'Hecke: Preisfaktoren ohne Beträge', pfH.length > 200 && !PREIS_RE.test(textOf(pfH)));
+      // Formular, noindex
+      check(id, 'Hecke: Formular mit gclid-Feld (hidden)', has(h, '<form id="anfrage"') && /<input type="hidden" name="gclid"/.test(h));
+      check(id, 'Hecke: noindex,follow', /name="robots" content="noindex, ?follow/.test(h));
+      check(id, 'Hecke: danke_slug = danke-hecke (keine Räumungs-Danke-Seite)', en.danke_slug === 'danke-hecke');
+      check(id, 'Hecke: msg_objekt ohne Räumungs-Wort', !!en.msg_objekt && !RAEUM_RE.test(en.msg_objekt) && has(h, `objekt:'${String(en.msg_objekt).replace(/'/g, "\\'")}'`));
+      // Copy fertig? (Platzhalter [[COPY: …]] aus dem Skelett machen dieses Gate rot, bis die Copy-Agenten fertig sind)
+      check(id, `Hecke: Copy fertig, keine Platzhalter [[COPY …]] im Output (${(h.match(/\[\[COPY/g) || []).length} Reste)`, !/\[\[COPY/.test(h));
+    }
   } else {
     // Danke-Seite: der Lead mit der Rückruf-Nummer darf nie ausgeblendet werden (P2 H1)
     check(id, 'Anruf-Nummer im Lead vorhanden', has(h, 'Anrufe kommen von'));
     check(id, 'Lead verspricht Anruf, WhatsApp oder E-Mail (Kontaktfeld „Telefon oder E-Mail“), keine Platzhalter-Reste', has(h, 'per Anruf, WhatsApp oder E-Mail') && !has(h, '{tel}') && has(h, 'Anrufe kommen von 01515 6198195'));
     const versteckt = [...h.matchAll(/([^{}]*)\.lead\{display:none\}/g)].filter(m => !/lp-hero-form/.test(m[1]));
     check(id, 'keine unbeschränkte Regel .lead{display:none}', versteckt.length === 0);
+    if (o.hecke) {
+      check(id, 'Hecke-Danke: kein €-Betrag, kein Meterpreis, kein Räum-/Entrümpelungs-Wort, kein „Festpreis“', betragFrei(h) && meterFrei(h) && raeumFrei(h) && !/Festpreis/.test(sichtText(h)));
+      check(id, 'Hecke-Danke: noindex, DANKE_JS (#ok → lead_confirmed), kein Formular', /name="robots" content="noindex/.test(h) && has(h, "location.hash==='#ok'") && has(h, "event:'lead_confirmed'") && !has(h, '<form'));
+      check(id, 'Hecke-Danke: Copy fertig (keine Platzhalter)', !/\[\[COPY/.test(h));
+    }
   }
 });
 
+// Nicht in Sitemaps (alle Sitemap-Dateien des Wurzelverzeichnisses): keine /lp/-URL
+P('Sitemaps  [website/sitemap*.xml]');
+{ const sm = fs.readdirSync('website').filter(f => /^sitemap.*\.xml$/.test(f)).map(f => fs.readFileSync(`website/${f}`, 'utf8')).join('');
+  check('sitemap', 'keine /lp/-URL in einer Sitemap (Hecken-LPs und danke-hecke nicht enthalten)', sm.length > 100 && !/\/lp\//.test(sm)); }
 console.log(lines.join('\n'));
 if (fails.length) { console.log(`\nACCEPT-LP ROT: ${fails.length} fehlend — ${fails.join(', ')}`); process.exit(1); }
 console.log('\nACCEPT-LP GRÜN');

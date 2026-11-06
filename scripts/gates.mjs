@@ -69,7 +69,7 @@ for(const f of files){
   if(/&lt;\/?em&gt;/.test(h)) FAIL('EscapedEm', `${url} escaptes <em> als sichtbarer Text`);
   if(!/class="scta"/.test(h)) noScta++;
   if(!/class="hamb"/.test(h) && !url.startsWith('/lp/')) noHamb++; // Ads-LPs (/lp/) bewusst ohne Menü/Hamburger (reduzierte Navigation)
-  if(url.startsWith('/lp/')){ if(!/name="robots" content="noindex/.test(h)) FAIL('LpNoindex', `${url} ohne noindex`); if(url!=='/lp/danke/' && !/<form id="anfrage"/.test(h)) FAIL('LpForm', `${url} ohne Anfrage-Formular`); if(url!=='/lp/danke/' && !/name="gclid"/.test(h)) FAIL('LpGclid', `${url} ohne gclid-Feld`); }
+  if(url.startsWith('/lp/')){ const isDanke=/^\/lp\/danke(-[a-z-]+)?\/$/.test(url); if(!/name="robots" content="noindex/.test(h)) FAIL('LpNoindex', `${url} ohne noindex`); if(!isDanke && !/<form id="anfrage"/.test(h)) FAIL('LpForm', `${url} ohne Anfrage-Formular`); if(!isDanke && !/name="gclid"/.test(h)) FAIL('LpGclid', `${url} ohne gclid-Feld`); }
   if(!/property="og:image"/.test(h)) noOg++;
   if(/hero-garten\.png|terrasse\.png/.test(h)) FAIL('AltPlatzhalter', `${url} referenziert Mockup-Platzhalter (hero-garten/terrasse)`);
   if(/srcset="\s*"/.test(h)) FAIL('LeeresSrcset', `${url} hat leeres srcset (Bild fehlt im Manifest)`);

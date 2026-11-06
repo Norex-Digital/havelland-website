@@ -627,6 +627,13 @@ const LPS = [
   ['lp/messie-wohnung-raeumung/index.html', 'LP messie', { reviews: true }],
   ['lp/gewerbe-entruempelung/index.html', 'LP gewerbe', { reviews: true }],
   ['lp/danke/index.html', 'LP danke', { danke: true }],
+  // Hecken-LPs (06.11.2026): Grundchecks; die Hecken-Gates stehen in accept-lp.mjs (Modus hecke)
+  ['lp/heckenschnitt/index.html', 'LP heckenschnitt', { reviews: true }],
+  ['lp/hecke-zurueckschneiden/index.html', 'LP hecke-zurueckschneiden', { reviews: true }],
+  ['lp/hecke-radikalschnitt/index.html', 'LP hecke-radikalschnitt', { reviews: true }],
+  ['lp/hecke-auf-den-stock-setzen/index.html', 'LP hecke-auf-den-stock-setzen', { reviews: true }],
+  ['lp/heckenentfernung/index.html', 'LP heckenentfernung', { reviews: true }],
+  ['lp/danke-hecke/index.html', 'LP danke-hecke', { danke: true }],
 ];
 for (const [rel, label, o] of LPS) page(rel, label, h => {
   const id = label.replace(/\s+/g, '-').toLowerCase();

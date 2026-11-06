@@ -23,6 +23,8 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 RW="$ROOT"; command -v cygpath >/dev/null 2>&1 && RW="$(cygpath -m "$ROOT")"
 FP="$(node -e 'const l=(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).lps||[]).find(x=>x.slug===process.argv[2]);process.stdout.write(l?(l.form_pos||"hero"):"")' "$RW/data/copy/lp.json" "$SLUG")"
 [ -n "$FP" ] || { echo "Slug $SLUG steht nicht in data/copy/lp.json" >&2; exit 2; }
+# Danke-Ziel je LP (danke_slug in lp.json, Standard danke)
+DANKE="$(node -e 'const l=(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).lps||[]).find(x=>x.slug===process.argv[2]);process.stdout.write((l&&l.danke_slug)||"danke")' "$RW/data/copy/lp.json" "$SLUG")"
 SERVED="$(curl -sf -m 5 "$URL" | tr -d '\r')" || { echo "Server nicht erreichbar: $URL" >&2; exit 2; }
 [ -f "$ROOT/website/lp/$SLUG/index.html" ] || { echo "website/lp/$SLUG/index.html fehlt (erst FULL=1 node scripts/generate.mjs)" >&2; exit 2; }
 FILE="$(tr -d '\r' < "$ROOT/website/lp/$SLUG/index.html")"
@@ -68,7 +70,7 @@ OUTRUN=$(PW run-code "async page => {
   await page.fill('.lp-hero-form input[name=ort]', '14612');
   $WEG
   await page.check('.lp-hero-form input[name=dsgvo]');
-  await Promise.all([page.waitForURL('**/lp/danke/**', { timeout: 8000 }), page.click('.lp-hero-form button[type=submit]')]);
+  await Promise.all([page.waitForURL('**/lp/$DANKE/**', { timeout: 8000 }), page.click('.lp-hero-form button[type=submit]')]);
 }" 2>&1) || true
 case "$OUTRUN" in *'### Error'*) echo "FORM ROT: Durchlauf abgebrochen:"; printf '%s\n' "$OUTRUN" | sed -n '/^### Error/,+6p' | head -12 || true; exit 1 ;; esac
 sleep 1
@@ -85,7 +87,7 @@ PW request-body "$N" | tr -d '\r' > "$T/post.txt"
 
 cat > "$T/check.js" <<'EOF'
 const fs = require('fs');
-const [T, C, SLUG, SCEN, HASLINK] = process.argv.slice(2);
+const [T, C, SLUG, SCEN, HASLINK, DANKE] = process.argv.slice(2);
 const TEL = SCEN === 'tel';
 const rd = f => fs.readFileSync(T + '/' + f, 'utf8');
 const js = f => { let r = JSON.parse(rd(f)); if (typeof r === 'string') r = JSON.parse(r); return r; };
@@ -96,7 +98,7 @@ const all = s1.dl;
 const ev = all.filter(e => !String(e.event).startsWith('gtm.') && !String(e.event).startsWith('test_'));
 const tag = e => e.event + (e.start_via ? ':' + e.start_via : e.step ? ':' + e.step : e.field ? ':' + e.field : '');
 const n = k => ev.filter(e => e.event === k).length;
-if (s1.loc !== '/lp/danke/') bad.push('Ziel ' + s1.loc);
+if (s1.loc !== '/lp/' + DANKE + '/') bad.push('Ziel ' + s1.loc);
 ['form_start', 'form_step', 'generate_lead', 'lead_confirmed'].forEach(k => { if (n(k) !== 1) bad.push(k + ' x' + n(k)); });
 const cc = ev.filter(e => e.event === 'consent_choice');
 if (cc.length !== 1 || cc[0].consent_choice !== C) bad.push('consent_choice != ' + C);
@@ -151,7 +153,7 @@ if (f.ads_consent !== C) bad.push('ads_consent=' + f.ads_consent + ' im POST');
 if (f.quelle !== 'ads-lp') bad.push('quelle=' + f.quelle);
 if (f.lp !== SLUG) bad.push('lp=' + f.lp);
 if (!f.access_key) bad.push('access_key fehlt');
-if (!/\/lp\/danke\/$/.test(f.redirect || '')) bad.push('redirect=' + f.redirect);
+if (!(f.redirect || '').endsWith('/lp/' + DANKE + '/')) bad.push('redirect=' + f.redirect);
 if (!/^\/lp\/[a-z-]+\/ @\d{4}-/.test(f.landing_url || '')) bad.push('landing_url=' + f.landing_url);
 const wegOk = TEL ? (f.kontaktweg === 'Anruf' && f.tel === '030 1234567' && f.email === '') : (f.kontaktweg === 'E-Mail' && f.email === 'test@example.invalid' && f.tel === '');
 if (!f.objekt || f.ort !== '14612' || !wegOk || f.name !== 'Test' || f.dsgvo === undefined) bad.push('Nutzfelder im POST unvollstaendig (kontaktweg/tel/email: ' + JSON.stringify([f.kontaktweg, f.tel, f.email]) + ')');
@@ -181,5 +183,5 @@ if (bad.length) { console.error('FORM ROT: ' + bad.join(' | ')); process.exit(1)
 EOF
 # Windows: node ist nativ und versteht /tmp/… nicht, daher Pfad umwandeln (auf dem Mac gibt es kein cygpath)
 TW="$T"; command -v cygpath >/dev/null 2>&1 && TW="$(cygpath -m "$T")"
-node "$TW/check.js" "$TW" "$C" "$SLUG" "$SCENARIO" "$HASLINK"
+node "$TW/check.js" "$TW" "$C" "$SLUG" "$SCENARIO" "$HASLINK" "$DANKE"
 echo "FORM GRÜN $SLUG $C ($SCENARIO; POST gemockt, gclid=TEST123, ads_consent=$C)"

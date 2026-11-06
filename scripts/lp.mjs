@@ -13,6 +13,9 @@
 // 44-px-Zellen (Objekt klein, Preis fett), Aktion mobil in Kurzfassung (Sternchen + Fußzeile direkt darunter: Bedingung „ohne Entsorgungsgebühren“ sichtbar), Tipp-Ziele ≥ 44 px, eigenes Attribut-Escaping (escA), Token statt #fff.
 // v7 (20.10. spät, Spec gbr-firma 09-lp-redesign-spec.md): Ein-Schritt-Formular (Variante B), Vertrauensleiste + „Zur Website“, Preis-Kacheln über dem Formular,
 // Zitat aus echter Google-Bewertung, Aktionskarte ohne Sternchen, Häkchen-Punkte, Bewertungen aus lp.json (Bausteine: lp-bloecke.mjs), Hero-Bild Desktop fest/mittig.
+// v8 (06.11.2026, Hecken-LPs, Owner-Freigabe): Modul verallgemeinert, ALLE neuen Felder optional, Default = bisheriges Räumungs-Verhalten (Snapshot-Diff: scripts/lp-snapshot-diff.sh).
+//   Je LP überschreibbar: msg_objekt, ort_satz, danke_slug (Text in lp.json danke_<rest>), form_legend, quick_label, end_h2, end_p, kontakt_h2, kontakt_hint, preis.cta_hint, zitat_hero, bewertungen_lp,
+//   raeumung:false (Nicht-Räumungs-LP: kein „nach der Räumung“ im Slider-Alt, Räumungs-Defaults entfallen und fehlende Pflichtfelder werfen einen Fehler statt still „räumen“ zu zeigen, keine Preis-Kacheln).
 // Copy: data/copy/lp.json — hero je LP ({typ:'ba'|'foto'|'text'}), trust als [{b,t}], Fotos nur aus dem Manifest (fotos: [] → keine Galerie).
 
 import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
@@ -24,7 +27,8 @@ const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 // Servicegebiet laut Report Kap. 3.4 / GBP-Servicegebiet (A0 #8), Rathenow + Premnitz seit Maßnahme M8 (Quelle data/locations.json)
 // Umbau 11/2026 (Prüfung 29.10.: 63 % der Klicker sitzen in Berlin/Potsdam): fester Ortssatz unter der H1, zusätzlich zur dynamischen Ortsersetzung (data-ort/ORT_JS bleibt unverändert, keine JS-Logik).
 const ORT_SATZ = 'Im Havelland, in Berlin-Spandau und Potsdam';
-const ORT_PHRASE = 'im Havelland, in Berlin-Spandau und Potsdam';
+const lowerFirst = t => String(t).charAt(0).toLowerCase() + String(t).slice(1);
+const ORT_PHRASE = lowerFirst(ORT_SATZ); // 'im Havelland, in Berlin-Spandau und Potsdam'
 const GEBIET = ['Falkensee', 'Dallgow-Döberitz', 'Brieselang', 'Schönwalde-Glien', 'Wustermark', 'Nauen', 'Ketzin/Havel', 'Rathenow', 'Premnitz', 'Berlin-Spandau', 'Potsdam'];
 export const ATTR_KEYS = ['gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']; // auch /kontakt/ (generate.mjs basis())
 // Kursiv-Schnitt (H1-Akzent wght 500; .gs .gn/.tli .tn/.ba-cap b wght 600): statt der variablen fraunces-italic-latin.woff2 (81 KB, gvar) zwei statische
@@ -220,7 +224,8 @@ window.__hg=m;function persist(){try{if(allowed()&&window.__hg&&Object.keys(wind
 document.addEventListener('click',function(e){var b=e.target.closest('#consent [data-c=allow]');if(b){setTimeout(persist,0)}if(e.target.closest('#consent [data-c=deny],#consent-reset')){try{localStorage.removeItem(S)}catch(x){}}});window.__hgPersist=persist})();</script>`;
 }
 
-function lpFormJS(slug, dankeUrl, consentKey) {
+const jsStr = t => String(t).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/</g, '\\u003c').replace(/[\r\n]+/g, ' ');
+function lpFormJS(slug, dankeUrl, consentKey, msgObjekt = 'Bitte wählen Sie aus, was geräumt werden soll.') {
   // Ein-Schritt-Formular. Events: form_start (erste Eingabe), form_quickstart (Preis-/Chip-Klick), form_step{step:2} (Objekt + Ort gültig und ein Kontaktfeld
   // fokussiert/befüllt), form_error{field} (je Feld einmal), generate_lead (nach erfolgreichem Senden). Kein .focus() ohne Nutzeraktion:
   // Fokus nur beim Enter-Weiter und im Fehlerfall nach dem Absenden.
@@ -228,7 +233,7 @@ function lpFormJS(slug, dankeUrl, consentKey) {
 function err1(k){if(errd[k])return;errd[k]=1;dl({event:'form_error',lp:'${slug}',field:k==='kontakt'?'tel':k})}
 function consentState(){try{var v=JSON.parse(localStorage.getItem('${consentKey}')||'null');return v&&v.c?v.c:'none'}catch(e){return 'none'}}
 var err=f.querySelector('.err'),sb=f.querySelector('button[type=submit]'),sbt=sb?sb.textContent:'',more=f.querySelector('.more');
-var MSG={objekt:'Bitte wählen Sie aus, was geräumt werden soll.',ort:'Bitte geben Sie PLZ oder Ort an.',name:'Bitte geben Sie Ihren Namen an.',kontakt:'Bitte geben Sie eine Telefonnummer oder E-Mail-Adresse an.',email:'Bitte geben Sie eine gültige E-Mail-Adresse an.',dsgvo:'Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.'},ORDER=['objekt','ort','name','kontakt','dsgvo'],CONTACT={name:1,kontakt:1,anliegen:1};
+var MSG={objekt:'${jsStr(msgObjekt)}',ort:'Bitte geben Sie PLZ oder Ort an.',name:'Bitte geben Sie Ihren Namen an.',kontakt:'Bitte geben Sie eine Telefonnummer oder E-Mail-Adresse an.',email:'Bitte geben Sie eine gültige E-Mail-Adresse an.',dsgvo:'Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.'},ORDER=['objekt','ort','name','kontakt','dsgvo'],CONTACT={name:1,kontakt:1,anliegen:1};
 function el1(n){return f.querySelector('[name='+n+']')}
 function box(n){var e=el1(n);return e?(n==='objekt'?e.closest('.f-obj'):n==='dsgvo'?e.closest('.chk'):e.closest('.fld')):null}
 function mark(n,on){var b=box(n),e=el1(n);if(b)b.classList.toggle('bad',on);if(e){if(on)e.setAttribute('aria-invalid','true');else e.removeAttribute('aria-invalid')}}
@@ -289,6 +294,9 @@ export function buildLp(d) {
   if (!cp || !Array.isArray(cp.lps)) return 0;
   const W3F = isReal(config.web3forms_key);
   const dankeUrl = '/lp/danke/';
+  const dankeOf = lp => `/lp/${lp.danke_slug || 'danke'}/`; // je LP überschreibbar (Hecken-LPs: danke-hecke)
+  // raeumung:false (Hecken-LPs): Räumungs-Defaults gelten nicht; ein fehlendes Pflichtfeld wirft, statt still „räumen“ zu zeigen.
+  const txt = (lp, key, def) => { const v = key.split('.').reduce((o, k) => (o == null ? o : o[k]), lp); if (v) return v; if (lp.raeumung === false) throw new Error(`lp ${lp.slug}: ${key} ist bei raeumung:false Pflicht (kein Räumungs-Default)`); return def; };
   const telDisp = esc(nap.phone_display);
   const resetJS = CONSENT_RESET_JS || '';
   // v5 (02.10.): Aktion aus lp.json (Root „aktion“ {label,text,bis}) — Pflicht-Gegenstück zum Angebots-Asset der Kampagne (Google prüft das Angebot
@@ -315,15 +323,15 @@ export function buildLp(d) {
   // Vorher/Nachher-Slider aus components.mjs (WebP-768: baSlider setzt <img src>, kein <picture>; WebP statt JPG spart ~120 KB je Paar — Perf-Messung 14.09.; Hochformat 864/1036 = .ba-Aspect).
   // Der Alt-Suffix der Komponente ist heckenspezifisch („nach dem Schnitt") → für Räumungen ersetzt.
   const imgSrc = slug => `/assets/img/${slug}-768.webp`;
-  const baLp = o => baSlider(o).replace(/ — nach dem Schnitt"/g, ' — nach der Räumung"').replace(/ — vor dem Schnitt"/g, ' — vor der Räumung"');
+  const baLp = (o, raum = true) => raum ? baSlider(o).replace(/ — nach dem Schnitt"/g, ' — nach der Räumung"').replace(/ — vor dem Schnitt"/g, ' — vor der Räumung"') : baSlider(o); // Hecken-LPs: Alt-Suffix „nach dem Schnitt“ bleibt
   // Aspect-Ratio aus dem Manifest (Fall-Fotos sind 768/1024 = 3:4, nicht 864/1036) — sonst wird das Bild in der falschen Box beschnitten.
-  const baPair = (f, { lcp = false } = {}) => { const m = (IMG && IMG[f.vorher]) || {}; return baLp({ vorher: imgSrc(f.vorher), nachher: imgSrc(f.nachher), alt: f.alt || f.cap || 'Entrümpelung', cap: f.cap || '', sub: f.sub || '', hint: true, lcp, w: m.w || 864, h: m.h || 1036 }); };
+  const baPair = (f, { lcp = false, raum = true, name = 'Entrümpelung' } = {}) => { const m = (IMG && IMG[f.vorher]) || {}; return baLp({ vorher: imgSrc(f.vorher), nachher: imgSrc(f.nachher), alt: f.alt || f.cap || name, cap: f.cap || '', sub: f.sub || '', hint: true, lcp, w: m.w || 864, h: m.h || 1036 }, raum); };
   const pairOk = f => !!(f && f.vorher && f.nachher && pic(f.vorher) && pic(f.nachher));
   // Hero-Schalter je LP (lp.json hero.typ): ba = echte Vorher/Nachher-Fotos als Slider, foto = Manifest-Bild als Fotokarte (.shot .main),
   // text = einspaltig ohne Karte. Fallback ohne hero-Feld: erstes fotos-Paar → ba, sonst text.
   const heroOf = lp => {
     const h = lp.hero || (Array.isArray(lp.fotos) && lp.fotos[0] ? { typ: 'ba', ...lp.fotos[0] } : { typ: 'text' });
-    if (h.typ === 'ba' && pairOk(h)) return { cls: 'lp-hero-ba', shot: `<div class="shot">${baPair(h, { lcp: true })}</div>`, key: `${h.vorher}|${h.nachher}` };
+    if (h.typ === 'ba' && pairOk(h)) return { cls: 'lp-hero-ba', shot: `<div class="shot">${baPair(h, { lcp: true, raum: lp.raeumung !== false, name: lp.name || 'Entrümpelung' })}</div>`, key: `${h.vorher}|${h.nachher}` };
     if (h.typ === 'foto' && h.slug && pic(h.slug)) return { cls: 'lp-hero-foto', shot: `<div class="shot">${pic(h.slug, { cls: 'main', alt: altQ(h.alt || `${lp.name} im Havelland – ${nap.name}`), sizes: '(max-width:900px) 92vw, 46vw', lcp: true })}</div>`, key: '' };
     return { cls: 'lp-hero-text', shot: '', key: '' };
   };
@@ -331,13 +339,15 @@ export function buildLp(d) {
   // Bewertungen (v7, Spec 09 §7): wörtliche GBP-Texte aus lp.json (bewertungen), Auswahl je LP (bewertungen_lp, sonst bewertungen_lp_standard).
   // data/reviews.json bleibt Quelle der Website-Session (/bewertungen/); hier nur die Live-Schwelle (grLive).
   const revOn = !!(reviews && reviews.enabled); // Schalter der Website-Session: aus = keine Bewertungskarten und kein Hero-Zitat
-  const revOf = lp => (lp.bewertungen_lp || cp.bewertungen_lp_standard || []).map(k => {
+  const revOf = lp => { if (lp.raeumung === false && !Array.isArray(lp.bewertungen_lp)) throw new Error(`lp ${lp.slug}: bewertungen_lp ist bei raeumung:false Pflicht (sonst erscheinen die Entrümpelungs-Karten)`); return (lp.bewertungen_lp || cp.bewertungen_lp_standard || []); };
+  const revItems = lp => revOf(lp).map(k => {
     const r = (cp.bewertungen || {})[k];
     if (!r) throw new Error(`lp ${lp.slug}: bewertungen.${k} fehlt in lp.json`);
     return r;
   });
   // Hero-Zitat: zitat_hero der LP (false = keins) vor dem Standard; muss wörtlicher Teil der verknüpften Bewertung sein (keine erfundenen Zitate).
   const zitatOf = lp => {
+    if (lp.raeumung === false && lp.zitat_hero === undefined) throw new Error(`lp ${lp.slug}: zitat_hero ist bei raeumung:false Pflicht (false = keins), sonst erscheint das Entrümpelungs-Zitat`);
     const z = lp.zitat_hero === false ? null : (lp.zitat_hero || cp.zitat_hero || null);
     if (z && !String((((cp.bewertungen || {})[z.quelle]) || {}).t || '').includes(z.t)) throw new Error(`lp ${lp.slug}: zitat_hero ist kein wörtlicher Auszug aus bewertungen.${z.quelle}`);
     return z;
@@ -348,7 +358,7 @@ export function buildLp(d) {
   const gallery = (lp, skipKey) => {
     const pairs = (Array.isArray(lp.fotos) ? lp.fotos : []).filter(f => pairOk(f) && `${f.vorher}|${f.nachher}` !== skipKey);
     if (!pairs.length) return '';
-    const items = pairs.map(f => `<div>${baPair(f)}</div>`).join('');
+    const items = pairs.map(f => `<div>${baPair(f, { raum: lp.raeumung !== false, name: lp.name || 'Entrümpelung' })}</div>`).join('');
     return `<section class="sec" id="fotos"><div class="wrap"><div class="head"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery"${pairs.length === 1 ? ' style="grid-template-columns:1fr;max-width:560px;margin:0 auto"' : ''}>${items}</div></div></section>`;
   };
 
@@ -356,7 +366,7 @@ export function buildLp(d) {
   const objLabel = (o, lp) => { const k = ((lp && lp.objekte_kurz) || {})[o] || shortLabel(o); return k !== o ? `<span class="ql">${esc(o)}</span><span class="qs">${esc(k)}</span>` : esc(o); };
   const form = (lp, pos, wa) => {
     const hidden = W3F
-      ? `<input type="hidden" name="access_key" value="${escA(config.web3forms_key)}"><input type="hidden" name="subject" value="${escA(lp.form_subject || 'Neue Anfrage (Ads-LP)')}"><input type="hidden" name="from_name" value="${escA(nap.name)}"><input type="hidden" name="redirect" value="${DOMAIN}${dankeUrl}"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">`
+      ? `<input type="hidden" name="access_key" value="${escA(config.web3forms_key)}"><input type="hidden" name="subject" value="${escA(lp.form_subject || 'Neue Anfrage (Ads-LP)')}"><input type="hidden" name="from_name" value="${escA(nap.name)}"><input type="hidden" name="redirect" value="${DOMAIN}${dankeOf(lp)}"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">`
       : '';
     const attrib = ['quelle', 'lp', ...ATTR_KEYS, 'landing_url', 'ads_consent']
       .map(n => `<input type="hidden" name="${n}" value="${n === 'quelle' ? 'ads-lp' : n === 'lp' ? escA(lp.slug) : ''}">`).join('');
@@ -368,7 +378,7 @@ export function buildLp(d) {
       ? `<p class="lp-alt"><a href="tel:${tel}">${PHONE_SVG} ${telDisp}</a><a href="${wa}">WhatsApp mit Foto</a></p>`
       : `<p class="kf-alt">Lieber direkt? <a href="tel:${tel}">Anrufen: ${telDisp}</a> · <a href="${wa}">WhatsApp schreiben</a></p>`;
     return `<form id="anfrage" class="kf lp-form" action="https://api.web3forms.com/submit" method="POST">${hidden}${attrib}
-<fieldset class="f-obj"><legend>${esc(lp.form_legend || 'Was soll geräumt werden – und wo?')}</legend><div class="seg${(lp.objekte || []).length === 3 ? ' seg3' : ''}">${chips}</div></fieldset>
+<fieldset class="f-obj"><legend>${esc(txt(lp, 'form_legend', 'Was soll geräumt werden – und wo?'))}</legend><div class="seg${(lp.objekte || []).length === 3 ? ' seg3' : ''}">${chips}</div></fieldset>
 <div class="frow"><label class="fld"><span>PLZ oder Ort</span><input name="ort" autocomplete="postal-code" enterkeyhint="next" placeholder="z. B. 14612 Falkensee" required></label>
 <label class="fld"><span>Name</span><input name="name" autocomplete="name" enterkeyhint="next" required></label>
 <label class="fld"><span>Telefon oder E-Mail</span><input name="kontakt" type="text" autocomplete="tel" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="für Rückruf oder Angebot" required></label></div>
@@ -407,8 +417,9 @@ ${alt}
     // v7 (Owner 20.10. „oben“): Preis-Kacheln ÜBER dem Formular; Tippen auf eine Kachel wählt das Objekt vor (form_quickstart, data-via=preis).
     // Preise nur aus lp.preis.anker (keine Zahl doppelt pflegen), „inkl. MwSt.“ steht in der Zeile über den Kacheln.
     const anker = lp.preis && lp.preis.anker;
+    if (lp.raeumung === false && anker) throw new Error(`lp ${lp.slug}: preis.anker (Preis-Kacheln, Räumungs-Wortlaut im Preis-CTA) wird bei raeumung:false nicht unterstützt`);
     const heroPreis = preisBlock(anker, lp.preis.hero_note ?? 'Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag', { esc, escA });
-    const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${escA(lp.slug)}">${esc(lp.quick_label || 'Was soll geräumt werden?')}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${escA(lp.slug)}">${lp.objekte.map(o => `<a href="#anfrage" data-obj="${escA(o)}">${objLabel(o, lp)}</a>`).join('')}</div></div>` : '';
+    const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${escA(lp.slug)}">${esc(txt(lp, 'quick_label', 'Was soll geräumt werden?'))}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${escA(lp.slug)}">${lp.objekte.map(o => `<a href="#anfrage" data-obj="${escA(o)}">${objLabel(o, lp)}</a>`).join('')}</div></div>` : '';
     const pos = lp.form_pos === 'nach-preis' ? 'nach-preis' : 'hero';
     const heroForm = pos === 'hero' ? `<div class="lp-hero-form">${form(lp, 'hero', wa)}</div>` : '';
     const aktLp = lp.aktion === false ? '' : aktKarte;
@@ -420,7 +431,7 @@ ${alt}
     const preisCta = preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })
       ? `<div class="cta-row lp-cta lp-preis-cta"><a class="btn btn-acc" href="#anfrage">Festpreis anfragen</a></div><p class="hint lp-preis-cta-h">Festpreis für Räumung und Abtransport, schriftlich nach der kostenlosen Besichtigung.</p>` : '';
     const preisVerweis = lp.preis && lp.preis.verweis ? `<p class="lp-preisverweis"><a href="/lp/${escA(lp.preis.verweis.slug)}/#preise">${esc(lp.preis.verweis.t || 'Preise ansehen')}</a></p>` : '';
-    const kontaktSec = pos === 'nach-preis' ? `<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>${esc(lp.kontakt_h2 || 'Kostenlose Besichtigung anfragen')}</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">Ein Schritt, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.</p>${form(lp, 'nach-preis', wa)}</div></section>` : '';
+    const kontaktSec = pos === 'nach-preis' ? `<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>${esc(lp.kontakt_h2 || 'Kostenlose Besichtigung anfragen')}</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">${esc(txt(lp, 'kontakt_hint', 'Ein Schritt, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.'))}</p>${form(lp, 'nach-preis', wa)}</div></section>` : '';
     // was_wir_tun {h, p, items:[{h,p}]} (optional, z. B. Allgemein-LP): Abschnitt direkt nach dem Hero. Gleiche Komponenten wie die Startseite (.sec/.head, .sec-lead, .vals/.v mit kursiver Nummer .vn),
     // Reveal-Klassen über rvIn(). Kein eigenes CSS.
     const valsSec = (id, d, hDefault) => d && Array.isArray(d.items) && d.items.length
@@ -429,37 +440,50 @@ ${alt}
     // preis_faktoren {h, p, items:[{h,p}]} (Kosten-LP, Umbau 11/2026): Einflussfaktoren auf den Preis, direkt nach dem Hero, nur Aussagen aus den bestehenden LPs, keine Beträge.
     const pfk = valsSec('preisfaktoren', lp.preis_faktoren, 'Was den Preis bestimmt');
     const main = `<main id="top">
-<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}${h1Tail ? ' data-h1-tail' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lp-ort${String(lp.lead || '').includes(ORT_PHRASE) ? ' lp-ort-dup' : ''}">${esc(ORT_SATZ)}</p><p class="lead">${esc(lp.lead)}</p>
+<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}${h1Tail ? ' data-h1-tail' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lp-ort${String(lp.lead || '').includes(lowerFirst(lp.ort_satz || ORT_SATZ)) ? ' lp-ort-dup' : ''}">${esc(lp.ort_satz || ORT_SATZ)}</p><p class="lead">${esc(lp.lead)}</p>
 ${heroPreis}${heroForm || quick}${heroForm && revOn ? zitat(zitatOf(lp), esc) : ''}${aktLp}${heroCta}
 ${punkte(lp.trust, esc)}${person}</div>${H.shot}</div></section>${ortJs}
 ${wwt}${pfk}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
 <section class="sec section-alt"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${lp.ablauf_lead ? `<p class="sec-lead">${esc(lp.ablauf_lead)}</p>` : ''}${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
 ${gallery(lp, H.key)}
-<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })}${preisCta}${aktLp}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(lp.preis.cta_hint || 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.')}</p></div></section>
-${!revOn ? '' : bewertungen({ items: revOf(lp), gr: grLive ? gr : null, h2: lp.testimonials_h2 || 'Was Kunden über uns sagen', em: lp.testimonials_h2_em || 'sagen' }, esc)}
+<section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })}${preisCta}${aktLp}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(txt(lp, 'preis.cta_hint', 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.'))}</p></div></section>
+${!revOn ? '' : bewertungen({ items: revItems(lp), gr: grLive ? gr : null, h2: lp.testimonials_h2 || 'Was Kunden über uns sagen', em: lp.testimonials_h2_em || 'sagen' }, esc)}
 ${kontaktSec}
 <section class="sec section-alt" id="fragen"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
-<section class="zone-deep end"><div class="wrap"><h2>${esc(lp.end_h2 || 'Sie zeigen, wir räumen.')}</h2><p>${esc(lp.end_p || 'Kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, besenreine Übergabe – im Havelland, in Berlin-Spandau und Potsdam.')}</p><div class="cta-row"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${telDisp}</a></div></div></section>
+<section class="zone-deep end"><div class="wrap"><h2>${esc(txt(lp, 'end_h2', 'Sie zeigen, wir räumen.'))}</h2><p>${esc(txt(lp, 'end_p', 'Kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, besenreine Übergabe – im Havelland, in Berlin-Spandau und Potsdam.'))}</p><div class="cta-row"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${telDisp}</a></div></div></section>
 </main>`;
     const baJs = /class="ba[ "]/.test(main) ? LP_BA_JS : '';
     const html = head(lp.title, lp.meta, url, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS + lpAttribJS(consentKey) })
       + lpHeader('/') + main + lpFooter + lpScta(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.') + SCTA_WAIT_JS
-      + CONSENT_BANNER + TRACK_EVENTS + lpFormJS(lp.slug, dankeUrl, consentKey) + resetJS + baJs + AKTION_JS + '</body></html>';
+      + CONSENT_BANNER + TRACK_EVENTS + lpFormJS(lp.slug, dankeOf(lp), consentKey, txt(lp, 'msg_objekt', 'Bitte wählen Sie aus, was geräumt werden soll.')) + resetJS + baJs + AKTION_JS + '</body></html>';
     write(url, html);
     n++;
   }
 
-  // Danke-Seite (Conversion-Ziel der LPs; noindex; lead_confirmed nur über #ok-Fragment)
-  const dk = cp.danke || {};
-  // Schritte als Timeline (gleiche Komponente wie der Ablauf; Sätze ohne Titel/Zeitchip). Text-Hero ohne Fotokarte.
-  const dkSteps = (dk.next || []).map(t => typeof t === 'string' ? { h: '', p: esc(t) } : { when: t.when ? esc(t.when) : '', h: esc(t.h || ''), p: esc(t.p || '') });
-  const dkH1Raw = dk.h1 || 'Danke für Ihre Anfrage.';
-  const dkH1 = dk.h1_em && dkH1Raw.includes(dk.h1_em) ? esc(dkH1Raw).replace(esc(dk.h1_em), `<em>${esc(dk.h1_em)}</em>`) : esc(dkH1Raw);
-  const main = `<main class="lp-danke"><section class="phero lp-hero lp-hero-text">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>${dkH1}</h1><p class="lead">${esc(dk.lead || '').replace('{tel}', telDisp)}</p></div></div></section>
-<section class="sec"><div class="wrap"><div class="head"><h2>So geht es weiter</h2></div>${rvIn(timelineFrom(dkSteps))}<p class="hint" style="margin-top:24px;color:var(--muted)">${esc(dk.eilig || '')}</p><div class="cta-row lp-cta"><a class="btn btn-acc" href="tel:${tel}">☎ ${telDisp}</a><a class="btn btn-line" href="${waHref('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')}">Foto per WhatsApp nachschicken</a></div></div></section></main>`;
-  write(dankeUrl, head(`${dk.title || 'Danke'} – Havelland`, 'Ihre Anfrage ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns noch am selben Werktag.', dankeUrl, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS })
-    + lpHeader('/') + main + lpFooter + lpScta('Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.')
-    + CONSENT_BANNER + TRACK_EVENTS + DANKE_JS + resetJS + '</body></html>');
-  return n + 1;
+  // Danke-Seiten (Conversion-Ziel der LPs; noindex; lead_confirmed nur über #ok-Fragment). /lp/danke/ (Text: lp.json danke) immer; weitere je danke_slug einer LP
+  // (z. B. danke-hecke, Text: lp.json danke_hecke). Die Standard-Seite bleibt byteidentisch.
+  const dankeSeiten = new Map([['danke', cp.danke || {}]]);
+  for (const lp of cp.lps) {
+    const sl = lp.danke_slug || 'danke';
+    if (dankeSeiten.has(sl)) continue;
+    const key = 'danke_' + sl.replace(/^danke-?/, '').replace(/-/g, '_');
+    if (!sl.startsWith('danke-') || !cp[key]) throw new Error(`lp ${lp.slug}: danke_slug "${sl}" braucht einen Text in lp.json unter "${key}"`);
+    dankeSeiten.set(sl, cp[key]);
+  }
+  for (const [dsl, dk] of dankeSeiten) {
+    const dUrl = `/lp/${dsl}/`;
+    // Schritte als Timeline (gleiche Komponente wie der Ablauf; Sätze ohne Titel/Zeitchip). Text-Hero ohne Fotokarte.
+    const dkSteps = (dk.next || []).map(t => typeof t === 'string' ? { h: '', p: esc(t) } : { when: t.when ? esc(t.when) : '', h: esc(t.h || ''), p: esc(t.p || '') });
+    const dkH1Raw = dk.h1 || 'Danke für Ihre Anfrage.';
+    const dkH1 = dk.h1_em && dkH1Raw.includes(dk.h1_em) ? esc(dkH1Raw).replace(esc(dk.h1_em), `<em>${esc(dk.h1_em)}</em>`) : esc(dkH1Raw);
+    const dkWa = dk.wa_text || 'Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.';
+    const main = `<main class="lp-danke"><section class="phero lp-hero lp-hero-text">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>${dkH1}</h1><p class="lead">${esc(dk.lead || '').replace('{tel}', telDisp)}</p></div></div></section>
+<section class="sec"><div class="wrap"><div class="head"><h2>So geht es weiter</h2></div>${rvIn(timelineFrom(dkSteps))}<p class="hint" style="margin-top:24px;color:var(--muted)">${esc(dk.eilig || '')}</p><div class="cta-row lp-cta"><a class="btn btn-acc" href="tel:${tel}">☎ ${telDisp}</a><a class="btn btn-line" href="${waHref(dkWa)}">Foto per WhatsApp nachschicken</a></div></div></section></main>`;
+    write(dUrl, head(`${dk.title || 'Danke'} – Havelland`, dk.meta || 'Ihre Anfrage ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns noch am selben Werktag.', dUrl, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS })
+      + lpHeader('/') + main + lpFooter + lpScta(dkWa)
+      + CONSENT_BANNER + TRACK_EVENTS + DANKE_JS + resetJS + '</body></html>');
+    n++;
+  }
+  return n;
 }

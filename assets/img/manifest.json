@@ -1670,5 +1670,27 @@
 "fb_ext": "jpg",
 "fb_w": 1280,
 "alt": "Frisch bezogenes Bett mit zwei gefalteten Handtüchern und Wäschekorb in einer hellen Ferienwohnung"
+},
+"echt-heckenschnitt-vorher": {
+"w": 768,
+"h": 1024,
+"widths": [
+480,
+768
+],
+"avif": false,
+"fb_ext": "jpg",
+"fb_w": 768
+},
+"echt-heckenschnitt-nachher": {
+"w": 768,
+"h": 1024,
+"widths": [
+480,
+768
+],
+"avif": false,
+"fb_ext": "jpg",
+"fb_w": 768
 }
 }

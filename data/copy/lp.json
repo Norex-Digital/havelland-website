@@ -58,6 +58,42 @@
       "datum": "2026-10-26",
       "tag": "Nach Todesfall",
       "t": "Ich kann dieses junge Team nur weiterempfehlen sie sind schnell, unkompliziert sowie eine hervorragende Fachkompetenz in so einem jungen Alter Hut ab Die Jungs haben mir super unter die Arme geholfen nach dem Tod meiner Oma mit der Haus Entrümpelung. Um ehrlich zu sein, hatte ich dafür keinen Kopf und habe die Aufgabe komplett an diese Firma übergeben und muss sagen, dass ich sehr begeistert war. Es lief alles unkompliziert, schnell und Sympathie Wird bei den Jungs groß geschrieben !!!! Weiter sooo !!!!"
+    },
+    "natho": {
+      "a": "Amélie N.",
+      "datum": "2026-10-26",
+      "tag": "Heckenschnitt",
+      "t": "Wir haben unsere Gartenhecken schneiden lassen, die waren wirklich schon überfällig. Jetzt sehen sie wieder super aus! Ging wirklich schnell und unkompliziert. Wir werden mit absoluter Sicherheit nochmal hier anfragen:D"
+    },
+    "zoras": {
+      "a": "Luis Z.",
+      "datum": "2026-07-02",
+      "tag": "Heckenschnitt",
+      "t": "Meine Hecken sehen wieder aus wie in einem 5 Sterne Hotel, ohne zu übertreiben. Super Arbeit."
+    },
+    "hanan": {
+      "a": "Hanan K.",
+      "datum": "2026-06-18",
+      "tag": "Heckenschnitt",
+      "t": "Meine hecke war noch nie so schön geformt..  Sauber wurde der Arbeitsplatz auch hinterlassen. Gerne wieder!"
+    },
+    "raoul": {
+      "a": "Raoul S.",
+      "datum": "2026-06-22",
+      "tag": "Heckenschnitt",
+      "t": "Die Jungs haben die Hecke bei uns geschnitten, schneller Termin gute Arbeit, gerne wieder 👍"
+    },
+    "alq": {
+      "a": "Alq",
+      "datum": "2026-07-01",
+      "tag": "Heckenschnitt bei Überwuchs",
+      "t": "Unser Garten war so verwuchert und die Hecken mindestens 3 Meter hoch. Jetz sieht alles wieder hübsch aus. Gute Arbeit Männers"
+    },
+    "adis": {
+      "a": "Adis S.",
+      "datum": "2026-07-02",
+      "tag": "Garten und Hecken",
+      "t": "Mein Garten ist jetz für den Sommer wieder betretbar, und die Hecken wieder in Form. Gerne wieder 👍"
     }
   },
   "bewertungen_lp_standard": [
@@ -1410,6 +1446,871 @@
         "typ": "text"
       },
       "testimonials_h2": "Was Kunden über uns sagen"
+    },
+    {
+      "slug": "heckenschnitt",
+      "ag": "G1 AG_Heckenschnitt_Service_Ort",
+      "name": "Hecke",
+      "title": "[[COPY: Title heckenschnitt, siehe _copy_hinweis]]",
+      "meta": "[[COPY: Meta heckenschnitt, 150-158 Zeichen, keine Gedankenstriche]]",
+      "kick": "Formschnitt · Pflegeschnitt · Abfuhr inklusive",
+      "h1": "Heckenschnitt [[COPY: Ort/Akzent]]",
+      "h1_em": "[[COPY: Ort/Akzent]]",
+      "lead": "[[COPY: Lead heckenschnitt, max. 90 Zeichen mobil]]",
+      "cta": "Kostenlose Besichtigung anfragen",
+      "wa_text": "Hallo, ich möchte meine Hecke schneiden lassen. Ich schicke Ihnen ein Foto.",
+      "trust_zeile": "Betrieb aus Falkensee · Pauschalpreis nach Besichtigung",
+      "trust": [
+        {
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
+        },
+        {
+          "b": "Kostenlose Besichtigung",
+          "t": "und Angebot"
+        },
+        {
+          "b": "Pauschalpreis schriftlich",
+          "t": "Abfuhr inklusive"
+        },
+        {
+          "b": "Foto-Nachweis",
+          "t": "nach dem Einsatz"
+        }
+      ],
+      "raeumung": false,
+      "aktion": false,
+      "ort_satz": "In Falkensee, im Havelland, in Potsdam und Berlin-Spandau",
+      "danke_slug": "danke-hecke",
+      "msg_objekt": "Bitte wählen Sie, was an der Hecke ansteht.",
+      "form_legend": "Was soll an der Hecke gemacht werden – und wo?",
+      "quick_label": "Was soll an der Hecke gemacht werden?",
+      "end_h2": "[[COPY: Schluss-Headline]]",
+      "end_p": "[[COPY: Schluss-Text ohne Preis, mit Pauschalpreis-Wording]]",
+      "was_wir_tun": {
+        "h": "[[COPY: Was wir tun]]",
+        "p": "[[COPY: Einleitung (optional)]]",
+        "items": [
+          {
+            "h": "[[COPY: Kachel 1]]",
+            "p": "[[COPY: Kachel 1 Text]]"
+          },
+          {
+            "h": "[[COPY: Kachel 2]]",
+            "p": "[[COPY: Kachel 2 Text]]"
+          },
+          {
+            "h": "[[COPY: Kachel 3]]",
+            "p": "[[COPY: Kachel 3 Text]]"
+          }
+        ]
+      },
+      "preis_faktoren": {
+        "h": "[[COPY: Was den Preis bestimmt]]",
+        "p": "[[COPY: Einleitung ohne Betrag]]",
+        "items": [
+          {
+            "h": "Länge und Höhe der Hecke",
+            "p": "[[COPY: Text zu \"Länge und Höhe der Hecke\" ohne Betrag]]"
+          },
+          {
+            "h": "Zeit seit dem letzten Schnitt",
+            "p": "[[COPY: Text zu \"Zeit seit dem letzten Schnitt\" ohne Betrag]]"
+          },
+          {
+            "h": "Heckenart (Thuja, Kirschlorbeer, Hainbuche …)",
+            "p": "[[COPY: Text zu \"Heckenart (Thuja, Kirschlorbeer, Hainbuche …)\" ohne Betrag]]"
+          },
+          {
+            "h": "Zugang (Gartenseite, Nachbargrenze, Hanglage)",
+            "p": "[[COPY: Text zu \"Zugang (Gartenseite, Nachbargrenze, Hanglage)\" ohne Betrag]]"
+          }
+        ]
+      },
+      "nutzen": [
+        {
+          "h": "[[COPY: Nutzen 1]]",
+          "p": "[[COPY: Nutzen 1 Text]]"
+        },
+        {
+          "h": "[[COPY: Nutzen 2]]",
+          "p": "[[COPY: Nutzen 2 Text]]"
+        },
+        {
+          "h": "[[COPY: Nutzen 3]]",
+          "p": "[[COPY: Nutzen 3 Text]]"
+        }
+      ],
+      "ablauf": [
+        {
+          "h": "[[COPY: Ablauf 1]]",
+          "p": "[[COPY: Ablauf 1 Text]]"
+        },
+        {
+          "h": "[[COPY: Ablauf 2]]",
+          "p": "[[COPY: Ablauf 2 Text]]"
+        },
+        {
+          "h": "[[COPY: Ablauf 3]]",
+          "p": "[[COPY: Ablauf 3 Text]]"
+        }
+      ],
+      "preis": {
+        "h": "[[COPY: H2 des Preisabschnitts #preise, ohne Betrag]]",
+        "cta": "Pauschalpreis anfragen",
+        "cta_hint": "[[COPY: Hinweis unter dem Button ohne Betrag]]",
+        "p": [
+          "[[COPY: Absatz ohne Betrag, z. B. Schnittgut und Abfuhr im Pauschalpreis]]"
+        ]
+      },
+      "faqs": [
+        {
+          "q": "[[COPY: FAQ 1 Frage: Was kostet ein Heckenschnitt? (Faktoren, keine Zahl)]]",
+          "a": "[[COPY: FAQ 1 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 2 Frage: Wann darf ich schneiden? (Formschnitt ganzjährig, starker Rückschnitt nur Okt-Feb)]]",
+          "a": "[[COPY: FAQ 2 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 3 Frage: Kommen Sie auch nach Potsdam und Spandau?]]",
+          "a": "[[COPY: FAQ 3 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 4 Frage: Muss ich dabei sein?]]",
+          "a": "[[COPY: FAQ 4 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 5 Frage: Was passiert mit dem Schnittgut?]]",
+          "a": "[[COPY: FAQ 5 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 6 Frage: Schneiden Sie auch zum Nachbarn hin?]]",
+          "a": "[[COPY: FAQ 6 Antwort]]"
+        }
+      ],
+      "objekte": [
+        "Hecke schneiden",
+        "Hecke stark zurückschneiden",
+        "Hecke entfernen",
+        "Mehrere Arbeiten"
+      ],
+      "objekte_kurz": {
+        "Hecke schneiden": "Schnitt",
+        "Hecke stark zurückschneiden": "Rückschnitt",
+        "Hecke entfernen": "Entfernen",
+        "Mehrere Arbeiten": "Mehrere"
+      },
+      "form_subject": "Neue Anfrage (Ads-LP Hecke heckenschnitt)",
+      "fotos": [],
+      "hero": {
+        "typ": "ba",
+        "vorher": "echt-heckenschnitt-vorher",
+        "nachher": "echt-heckenschnitt-nachher",
+        "alt": "Thuja-Hecke vor und nach dem Formschnitt",
+        "cap": "Thuja-Hecke",
+        "sub": "Formschnitt, vorher und nachher"
+      },
+      "testimonials_h2": "Was Kundinnen und Kunden schreiben",
+      "testimonials_h2_em": "schreiben",
+      "bewertungen_lp": [
+        "hanan",
+        "raoul",
+        "zoras"
+      ],
+      "zitat_hero": {
+        "t": "Jetzt sehen sie wieder super aus! Ging wirklich schnell und unkompliziert",
+        "a": "Amélie N.",
+        "tag": "Heckenschnitt",
+        "quelle": "natho"
+      },
+      "_copy_hinweis": "Keywords: hecke schneiden lassen, heckenschnitt firma, hecke schneiden in der nähe, heckenschnitt/hecke schneiden kosten und preise, heckenschnitt/hecke schneiden falkensee, potsdam, spandau, berlin. Title-Idee: Heckenschnitt Havelland, Falkensee, Potsdam: Pauschalpreis. H1: Heckenschnitt + kursiver Ort-Teil (h1_em), alle Begriffe/Orte statisch auf der Seite. Lead: Wir schneiden Ihre Hecke in Form und nehmen das Schnittgut mit. Pauschalpreis nach kostenloser Besichtigung. Nutzen: sauber in Form, Schnittgut ist weg, ein Termin ein Preis. Ablauf: Foto oder Anfrage, Besichtigung/Einschätzung nach Foto, Schnitt, Abfuhr, Foto-Nachweis (keine Terminzusage ohne Noah, O21). Was wir tun: Formschnitt, Pflegeschnitt überfälliger Hecken, Abfuhr. Hero: ba mit echtem Thuja-Paar (freigegeben). Zitat Hero: Natho. Karten: hanan, Raoul, Luis."
+    },
+    {
+      "slug": "hecke-zurueckschneiden",
+      "ag": "G2 AG_Rueckschnitt_Radikalschnitt",
+      "name": "Hecke",
+      "title": "[[COPY: Title hecke-zurueckschneiden, siehe _copy_hinweis]]",
+      "meta": "[[COPY: Meta hecke-zurueckschneiden, 150-158 Zeichen, keine Gedankenstriche]]",
+      "kick": "Rückschnitt · Radikalschnitt · auf den Stock setzen",
+      "h1": "Hecke [[COPY: Ort/Akzent]]",
+      "h1_em": "[[COPY: Ort/Akzent]]",
+      "lead": "[[COPY: Lead hecke-zurueckschneiden, max. 90 Zeichen mobil]]",
+      "cta": "Kostenlose Besichtigung anfragen",
+      "wa_text": "Hallo, meine Hecke soll stark zurückgeschnitten werden. Ich schicke Ihnen ein Foto.",
+      "trust_zeile": "Betrieb aus Falkensee · Pauschalpreis nach Besichtigung",
+      "trust": [
+        {
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
+        },
+        {
+          "b": "Kostenlose Besichtigung",
+          "t": "und Angebot"
+        },
+        {
+          "b": "Pauschalpreis schriftlich",
+          "t": "Abfuhr inklusive"
+        },
+        {
+          "b": "Foto-Nachweis",
+          "t": "nach dem Einsatz"
+        }
+      ],
+      "raeumung": false,
+      "aktion": false,
+      "ort_satz": "In Falkensee, im Havelland, in Potsdam und Berlin-Spandau",
+      "danke_slug": "danke-hecke",
+      "msg_objekt": "Bitte wählen Sie, was an der Hecke ansteht.",
+      "form_legend": "Was soll an der Hecke gemacht werden – und wo?",
+      "quick_label": "Was soll an der Hecke gemacht werden?",
+      "end_h2": "[[COPY: Schluss-Headline]]",
+      "end_p": "[[COPY: Schluss-Text ohne Preis, mit Pauschalpreis-Wording]]",
+      "was_wir_tun": {
+        "h": "[[COPY: Was wir tun]]",
+        "p": "[[COPY: Einleitung (optional)]]",
+        "items": [
+          {
+            "h": "[[COPY: Kachel 1]]",
+            "p": "[[COPY: Kachel 1 Text]]"
+          },
+          {
+            "h": "[[COPY: Kachel 2]]",
+            "p": "[[COPY: Kachel 2 Text]]"
+          },
+          {
+            "h": "[[COPY: Kachel 3]]",
+            "p": "[[COPY: Kachel 3 Text]]"
+          }
+        ]
+      },
+      "preis_faktoren": {
+        "h": "[[COPY: Was den Preis bestimmt]]",
+        "p": "[[COPY: Einleitung ohne Betrag]]",
+        "items": [
+          {
+            "h": "Wie viel runter (30 cm oder 2 m)",
+            "p": "[[COPY: Text zu \"Wie viel runter (30 cm oder 2 m)\" ohne Betrag]]"
+          },
+          {
+            "h": "Länge und Höhe der Hecke",
+            "p": "[[COPY: Text zu \"Länge und Höhe der Hecke\" ohne Betrag]]"
+          },
+          {
+            "h": "Schnittgutmenge",
+            "p": "[[COPY: Text zu \"Schnittgutmenge\" ohne Betrag]]"
+          },
+          {
+            "h": "Zugang (Gartenseite, Nachbargrenze, Hanglage)",
+            "p": "[[COPY: Text zu \"Zugang (Gartenseite, Nachbargrenze, Hanglage)\" ohne Betrag]]"
+          }
+        ]
+      },
+      "nutzen": [
+        {
+          "h": "[[COPY: Nutzen 1]]",
+          "p": "[[COPY: Nutzen 1 Text]]"
+        },
+        {
+          "h": "[[COPY: Nutzen 2]]",
+          "p": "[[COPY: Nutzen 2 Text]]"
+        },
+        {
+          "h": "[[COPY: Nutzen 3]]",
+          "p": "[[COPY: Nutzen 3 Text]]"
+        }
+      ],
+      "ablauf": [
+        {
+          "h": "[[COPY: Ablauf 1]]",
+          "p": "[[COPY: Ablauf 1 Text]]"
+        },
+        {
+          "h": "[[COPY: Ablauf 2]]",
+          "p": "[[COPY: Ablauf 2 Text]]"
+        },
+        {
+          "h": "[[COPY: Ablauf 3]]",
+          "p": "[[COPY: Ablauf 3 Text]]"
+        }
+      ],
+      "preis": {
+        "h": "[[COPY: H2 des Preisabschnitts #preise, ohne Betrag]]",
+        "cta": "Pauschalpreis anfragen",
+        "cta_hint": "[[COPY: Hinweis unter dem Button ohne Betrag]]",
+        "p": [
+          "[[COPY: Absatz ohne Betrag, z. B. Schnittgut und Abfuhr im Pauschalpreis]]"
+        ]
+      },
+      "faqs": [
+        {
+          "q": "[[COPY: FAQ 1 Frage: Darf ich jetzt stark zurückschneiden? (Fenster 01.10. bis 28./29.02., keine Rechtsberatung)]]",
+          "a": "[[COPY: FAQ 1 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 2 Frage: Treibt meine Hecke wieder aus? (je Heckenart, Noah bestätigt O22)]]",
+          "a": "[[COPY: FAQ 2 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 3 Frage: Unterschied Rückschnitt, Radikalschnitt, auf den Stock setzen?]]",
+          "a": "[[COPY: FAQ 3 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 4 Frage: Thuja unten kahl: zurückschneiden oder entfernen?]]",
+          "a": "[[COPY: FAQ 4 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 5 Frage: Was kostet ein Rückschnitt? (Faktoren)]]",
+          "a": "[[COPY: FAQ 5 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 6 Frage: Was passiert mit dem Schnittgut?]]",
+          "a": "[[COPY: FAQ 6 Antwort]]"
+        }
+      ],
+      "objekte": [
+        "Hecke stark zurückschneiden",
+        "Hecke schneiden",
+        "Hecke entfernen",
+        "Mehrere Arbeiten"
+      ],
+      "objekte_kurz": {
+        "Hecke schneiden": "Schnitt",
+        "Hecke stark zurückschneiden": "Rückschnitt",
+        "Hecke entfernen": "Entfernen",
+        "Mehrere Arbeiten": "Mehrere"
+      },
+      "form_subject": "Neue Anfrage (Ads-LP Hecke hecke-zurueckschneiden)",
+      "fotos": [],
+      "hero": {
+        "typ": "text"
+      },
+      "testimonials_h2": "Was Kundinnen und Kunden schreiben",
+      "testimonials_h2_em": "schreiben",
+      "bewertungen_lp": [
+        "alq",
+        "natho"
+      ],
+      "zitat_hero": false,
+      "_copy_hinweis": "Keywords (Rückschnitt): hecke zurückschneiden lassen, hecke rückschnitt kosten, hecke kürzen lassen, überwachsene hecke schneiden lassen, thuja zurückschneiden lassen. H1: Hecke zurückschneiden lassen (kursiv: zurückschneiden). Lead: Frist bis 28. Februar nur im Lead, nicht in der H1. Was wir tun (statisch, alle drei Begriffe): starker Rückschnitt, Radikalschnitt, auf den Stock setzen. Hero: text (Thuja-Paar zeigt Formschnitt, wäre hier Mismatch); foto nur als generisches Stimmungsbild. Karten: Alq, Natho, nicht als Radikalschnitt-Beleg einordnen. Fenster 01.10. bis 28.02. (§ 39 BNatSchG), keine Rechtsberatung. Fachaussage Stock/Thuja erst nach Noah (O22)."
+    },
+    {
+      "slug": "hecke-radikalschnitt",
+      "ag": "G2 AG_Rueckschnitt_Radikalschnitt",
+      "name": "Hecke",
+      "title": "[[COPY: Title hecke-radikalschnitt, siehe _copy_hinweis]]",
+      "meta": "[[COPY: Meta hecke-radikalschnitt, 150-158 Zeichen, keine Gedankenstriche]]",
+      "kick": "[[COPY: Kicker]]",
+      "h1": "Radikalschnitt [[COPY: Ort/Akzent]]",
+      "h1_em": "[[COPY: Ort/Akzent]]",
+      "lead": "[[COPY: Lead hecke-radikalschnitt, max. 90 Zeichen mobil]]",
+      "cta": "Kostenlose Besichtigung anfragen",
+      "wa_text": "Hallo, meine Hecke braucht einen Radikalschnitt. Ich schicke Ihnen ein Foto.",
+      "trust_zeile": "Betrieb aus Falkensee · Pauschalpreis nach Besichtigung",
+      "trust": [
+        {
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
+        },
+        {
+          "b": "Kostenlose Besichtigung",
+          "t": "und Angebot"
+        },
+        {
+          "b": "Pauschalpreis schriftlich",
+          "t": "Abfuhr inklusive"
+        },
+        {
+          "b": "Foto-Nachweis",
+          "t": "nach dem Einsatz"
+        }
+      ],
+      "raeumung": false,
+      "aktion": false,
+      "ort_satz": "In Falkensee, im Havelland, in Potsdam und Berlin-Spandau",
+      "danke_slug": "danke-hecke",
+      "msg_objekt": "Bitte wählen Sie, was an der Hecke ansteht.",
+      "form_legend": "Was soll an der Hecke gemacht werden – und wo?",
+      "quick_label": "Was soll an der Hecke gemacht werden?",
+      "end_h2": "[[COPY: Schluss-Headline]]",
+      "end_p": "[[COPY: Schluss-Text ohne Preis, mit Pauschalpreis-Wording]]",
+      "was_wir_tun": {
+        "h": "[[COPY: Was wir tun]]",
+        "p": "[[COPY: Einleitung (optional)]]",
+        "items": [
+          {
+            "h": "[[COPY: Kachel 1]]",
+            "p": "[[COPY: Kachel 1 Text]]"
+          },
+          {
+            "h": "[[COPY: Kachel 2]]",
+            "p": "[[COPY: Kachel 2 Text]]"
+          },
+          {
+            "h": "[[COPY: Kachel 3]]",
+            "p": "[[COPY: Kachel 3 Text]]"
+          }
+        ]
+      },
+      "preis_faktoren": {
+        "h": "[[COPY: Was den Preis bestimmt]]",
+        "p": "[[COPY: Einleitung ohne Betrag]]",
+        "items": [
+          {
+            "h": "Wie viel runter (30 cm oder 2 m)",
+            "p": "[[COPY: Text zu \"Wie viel runter (30 cm oder 2 m)\" ohne Betrag]]"
+          },
+          {
+            "h": "Länge und Höhe der Hecke",
+            "p": "[[COPY: Text zu \"Länge und Höhe der Hecke\" ohne Betrag]]"
+          },
+          {
+            "h": "Schnittgutmenge",
+            "p": "[[COPY: Text zu \"Schnittgutmenge\" ohne Betrag]]"
+          },
+          {
+            "h": "Zugang (Gartenseite, Nachbargrenze, Hanglage)",
+            "p": "[[COPY: Text zu \"Zugang (Gartenseite, Nachbargrenze, Hanglage)\" ohne Betrag]]"
+          }
+        ]
+      },
+      "nutzen": [
+        {
+          "h": "[[COPY: Nutzen 1]]",
+          "p": "[[COPY: Nutzen 1 Text]]"
+        },
+        {
+          "h": "[[COPY: Nutzen 2]]",
+          "p": "[[COPY: Nutzen 2 Text]]"
+        },
+        {
+          "h": "[[COPY: Nutzen 3]]",
+          "p": "[[COPY: Nutzen 3 Text]]"
+        }
+      ],
+      "ablauf": [
+        {
+          "h": "[[COPY: Ablauf 1]]",
+          "p": "[[COPY: Ablauf 1 Text]]"
+        },
+        {
+          "h": "[[COPY: Ablauf 2]]",
+          "p": "[[COPY: Ablauf 2 Text]]"
+        },
+        {
+          "h": "[[COPY: Ablauf 3]]",
+          "p": "[[COPY: Ablauf 3 Text]]"
+        }
+      ],
+      "preis": {
+        "h": "[[COPY: H2 des Preisabschnitts #preise, ohne Betrag]]",
+        "cta": "Pauschalpreis anfragen",
+        "cta_hint": "[[COPY: Hinweis unter dem Button ohne Betrag]]",
+        "p": [
+          "[[COPY: Absatz ohne Betrag, z. B. Schnittgut und Abfuhr im Pauschalpreis]]"
+        ]
+      },
+      "faqs": [
+        {
+          "q": "[[COPY: FAQ 1 Frage: Darf ich jetzt radikal schneiden? (Fenster 01.10. bis 28./29.02., keine Rechtsberatung)]]",
+          "a": "[[COPY: FAQ 1 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 2 Frage: Verträgt meine Hecke den Radikalschnitt? (je Heckenart, Noah bestätigt O22)]]",
+          "a": "[[COPY: FAQ 2 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 3 Frage: Unterschied Rückschnitt, Radikalschnitt, auf den Stock setzen?]]",
+          "a": "[[COPY: FAQ 3 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 4 Frage: Thuja radikal schneiden oder entfernen?]]",
+          "a": "[[COPY: FAQ 4 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 5 Frage: Was kostet ein Radikalschnitt? (Faktoren)]]",
+          "a": "[[COPY: FAQ 5 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 6 Frage: Was passiert mit dem Schnittgut?]]",
+          "a": "[[COPY: FAQ 6 Antwort]]"
+        }
+      ],
+      "objekte": [
+        "Hecke stark zurückschneiden",
+        "Hecke schneiden",
+        "Hecke entfernen",
+        "Mehrere Arbeiten"
+      ],
+      "objekte_kurz": {
+        "Hecke schneiden": "Schnitt",
+        "Hecke stark zurückschneiden": "Rückschnitt",
+        "Hecke entfernen": "Entfernen",
+        "Mehrere Arbeiten": "Mehrere"
+      },
+      "form_subject": "Neue Anfrage (Ads-LP Hecke hecke-radikalschnitt)",
+      "fotos": [],
+      "hero": {
+        "typ": "text"
+      },
+      "testimonials_h2": "Was Kundinnen und Kunden schreiben",
+      "testimonials_h2_em": "schreiben",
+      "bewertungen_lp": [
+        "alq",
+        "natho"
+      ],
+      "zitat_hero": false,
+      "_copy_hinweis": "Keyword: hecke radikal schneiden lassen (laut lp-architektur.md §2.2 Radikalschnitt). H1-Idee: Radikalschnitt für Ihre Hecke (kursiv: Radikalschnitt). Statisch auf der Seite: radikal schneiden, Radikalschnitt, Abgrenzung zu Rückschnitt und Stock. Fenster 01.10. bis 28.02., keine Rechtsberatung. Verwilderte Hecke neu aufbauen. Hero text. Keine Behauptung, die kein Kundenzitat trägt."
+    },
+    {
+      "slug": "hecke-auf-den-stock-setzen",
+      "ag": "G2 AG_Rueckschnitt_Radikalschnitt",
+      "name": "Hecke",
+      "title": "[[COPY: Title hecke-auf-den-stock-setzen, siehe _copy_hinweis]]",
+      "meta": "[[COPY: Meta hecke-auf-den-stock-setzen, 150-158 Zeichen, keine Gedankenstriche]]",
+      "kick": "[[COPY: Kicker]]",
+      "h1": "Hecke auf den [[COPY: Ort/Akzent]]",
+      "h1_em": "[[COPY: Ort/Akzent]]",
+      "lead": "[[COPY: Lead hecke-auf-den-stock-setzen, max. 90 Zeichen mobil]]",
+      "cta": "Kostenlose Besichtigung anfragen",
+      "wa_text": "Hallo, meine Hecke soll auf den Stock gesetzt werden. Ich schicke Ihnen ein Foto.",
+      "trust_zeile": "Betrieb aus Falkensee · Pauschalpreis nach Besichtigung",
+      "trust": [
+        {
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
+        },
+        {
+          "b": "Kostenlose Besichtigung",
+          "t": "und Angebot"
+        },
+        {
+          "b": "Pauschalpreis schriftlich",
+          "t": "Abfuhr inklusive"
+        },
+        {
+          "b": "Foto-Nachweis",
+          "t": "nach dem Einsatz"
+        }
+      ],
+      "raeumung": false,
+      "aktion": false,
+      "ort_satz": "In Falkensee, im Havelland, in Potsdam und Berlin-Spandau",
+      "danke_slug": "danke-hecke",
+      "msg_objekt": "Bitte wählen Sie, was an der Hecke ansteht.",
+      "form_legend": "Was soll an der Hecke gemacht werden – und wo?",
+      "quick_label": "Was soll an der Hecke gemacht werden?",
+      "end_h2": "[[COPY: Schluss-Headline]]",
+      "end_p": "[[COPY: Schluss-Text ohne Preis, mit Pauschalpreis-Wording]]",
+      "was_wir_tun": {
+        "h": "[[COPY: Was wir tun]]",
+        "p": "[[COPY: Einleitung (optional)]]",
+        "items": [
+          {
+            "h": "[[COPY: Kachel 1]]",
+            "p": "[[COPY: Kachel 1 Text]]"
+          },
+          {
+            "h": "[[COPY: Kachel 2]]",
+            "p": "[[COPY: Kachel 2 Text]]"
+          },
+          {
+            "h": "[[COPY: Kachel 3]]",
+            "p": "[[COPY: Kachel 3 Text]]"
+          }
+        ]
+      },
+      "preis_faktoren": {
+        "h": "[[COPY: Was den Preis bestimmt]]",
+        "p": "[[COPY: Einleitung ohne Betrag]]",
+        "items": [
+          {
+            "h": "Wie viel runter (30 cm oder 2 m)",
+            "p": "[[COPY: Text zu \"Wie viel runter (30 cm oder 2 m)\" ohne Betrag]]"
+          },
+          {
+            "h": "Länge und Höhe der Hecke",
+            "p": "[[COPY: Text zu \"Länge und Höhe der Hecke\" ohne Betrag]]"
+          },
+          {
+            "h": "Schnittgutmenge",
+            "p": "[[COPY: Text zu \"Schnittgutmenge\" ohne Betrag]]"
+          },
+          {
+            "h": "Zugang (Gartenseite, Nachbargrenze, Hanglage)",
+            "p": "[[COPY: Text zu \"Zugang (Gartenseite, Nachbargrenze, Hanglage)\" ohne Betrag]]"
+          }
+        ]
+      },
+      "nutzen": [
+        {
+          "h": "[[COPY: Nutzen 1]]",
+          "p": "[[COPY: Nutzen 1 Text]]"
+        },
+        {
+          "h": "[[COPY: Nutzen 2]]",
+          "p": "[[COPY: Nutzen 2 Text]]"
+        },
+        {
+          "h": "[[COPY: Nutzen 3]]",
+          "p": "[[COPY: Nutzen 3 Text]]"
+        }
+      ],
+      "ablauf": [
+        {
+          "h": "[[COPY: Ablauf 1]]",
+          "p": "[[COPY: Ablauf 1 Text]]"
+        },
+        {
+          "h": "[[COPY: Ablauf 2]]",
+          "p": "[[COPY: Ablauf 2 Text]]"
+        },
+        {
+          "h": "[[COPY: Ablauf 3]]",
+          "p": "[[COPY: Ablauf 3 Text]]"
+        }
+      ],
+      "preis": {
+        "h": "[[COPY: H2 des Preisabschnitts #preise, ohne Betrag]]",
+        "cta": "Pauschalpreis anfragen",
+        "cta_hint": "[[COPY: Hinweis unter dem Button ohne Betrag]]",
+        "p": [
+          "[[COPY: Absatz ohne Betrag, z. B. Schnittgut und Abfuhr im Pauschalpreis]]"
+        ]
+      },
+      "faqs": [
+        {
+          "q": "[[COPY: FAQ 1 Frage: Darf ich jetzt auf den Stock setzen? (Fenster 01.10. bis 28./29.02., keine Rechtsberatung)]]",
+          "a": "[[COPY: FAQ 1 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 2 Frage: Treibt meine Hecke wieder aus? (je Heckenart, Noah bestätigt O22, Thuja nicht ohne Bestätigung behaupten)]]",
+          "a": "[[COPY: FAQ 2 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 3 Frage: Was heißt auf den Stock setzen?]]",
+          "a": "[[COPY: FAQ 3 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 4 Frage: Thuja unten kahl: Stock setzen oder entfernen?]]",
+          "a": "[[COPY: FAQ 4 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 5 Frage: Was kostet das? (Faktoren)]]",
+          "a": "[[COPY: FAQ 5 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 6 Frage: Was passiert mit dem Schnittgut?]]",
+          "a": "[[COPY: FAQ 6 Antwort]]"
+        }
+      ],
+      "objekte": [
+        "Hecke stark zurückschneiden",
+        "Hecke schneiden",
+        "Hecke entfernen",
+        "Mehrere Arbeiten"
+      ],
+      "objekte_kurz": {
+        "Hecke schneiden": "Schnitt",
+        "Hecke stark zurückschneiden": "Rückschnitt",
+        "Hecke entfernen": "Entfernen",
+        "Mehrere Arbeiten": "Mehrere"
+      },
+      "form_subject": "Neue Anfrage (Ads-LP Hecke hecke-auf-den-stock-setzen)",
+      "fotos": [],
+      "hero": {
+        "typ": "text"
+      },
+      "testimonials_h2": "Was Kundinnen und Kunden schreiben",
+      "testimonials_h2_em": "schreiben",
+      "bewertungen_lp": [
+        "alq",
+        "natho"
+      ],
+      "zitat_hero": false,
+      "_copy_hinweis": "Keyword: hecke auf den stock setzen lassen (laut §2.2). H1-Idee: Hecke auf den Stock setzen lassen (kursiv: Stock). Statisch: auf den Stock setzen, bodennah zurück, Austrieb je Heckenart. Fachaussage Laubhecke treibt aus, Thuja nicht: erst nach Noah (O22), sonst FAQ ohne Artenaussage. Fenster 01.10. bis 28.02., keine Rechtsberatung. Hero text."
+    },
+    {
+      "slug": "heckenentfernung",
+      "ag": "G3 AG_Heckenentfernung",
+      "name": "Hecke",
+      "title": "[[COPY: Title heckenentfernung, siehe _copy_hinweis]]",
+      "meta": "[[COPY: Meta heckenentfernung, 150-158 Zeichen, keine Gedankenstriche]]",
+      "kick": "Entfernen · Roden · Wurzel raus · Abfuhr",
+      "h1": "Hecke [[COPY: Ort/Akzent]]",
+      "h1_em": "[[COPY: Ort/Akzent]]",
+      "lead": "[[COPY: Lead heckenentfernung, max. 90 Zeichen mobil]]",
+      "cta": "Kostenlose Besichtigung anfragen",
+      "wa_text": "Hallo, ich möchte eine Hecke entfernen lassen. Ich schicke Ihnen ein Foto.",
+      "trust_zeile": "Betrieb aus Falkensee · Pauschalpreis nach Besichtigung",
+      "trust": [
+        {
+          "b": "Betrieb aus Falkensee",
+          "t": "fester Ansprechpartner"
+        },
+        {
+          "b": "Kostenlose Besichtigung",
+          "t": "und Angebot"
+        },
+        {
+          "b": "Pauschalpreis schriftlich",
+          "t": "Abfuhr inklusive"
+        },
+        {
+          "b": "Foto-Nachweis",
+          "t": "nach dem Einsatz"
+        }
+      ],
+      "raeumung": false,
+      "aktion": false,
+      "ort_satz": "In Falkensee, im Havelland, in Potsdam und Berlin-Spandau",
+      "danke_slug": "danke-hecke",
+      "msg_objekt": "Bitte wählen Sie, was an der Hecke ansteht.",
+      "form_legend": "Was soll an der Hecke gemacht werden – und wo?",
+      "quick_label": "Was soll an der Hecke gemacht werden?",
+      "end_h2": "[[COPY: Schluss-Headline]]",
+      "end_p": "[[COPY: Schluss-Text ohne Preis, mit Pauschalpreis-Wording]]",
+      "was_wir_tun": {
+        "h": "[[COPY: Was wir tun]]",
+        "p": "[[COPY: Einleitung (optional)]]",
+        "items": [
+          {
+            "h": "[[COPY: Kachel 1]]",
+            "p": "[[COPY: Kachel 1 Text]]"
+          },
+          {
+            "h": "[[COPY: Kachel 2]]",
+            "p": "[[COPY: Kachel 2 Text]]"
+          },
+          {
+            "h": "[[COPY: Kachel 3]]",
+            "p": "[[COPY: Kachel 3 Text]]"
+          }
+        ]
+      },
+      "preis_faktoren": {
+        "h": "[[COPY: Was den Preis bestimmt]]",
+        "p": "[[COPY: Einleitung ohne Betrag]]",
+        "items": [
+          {
+            "h": "Länge und Höhe der Hecke",
+            "p": "[[COPY: Text zu \"Länge und Höhe der Hecke\" ohne Betrag]]"
+          },
+          {
+            "h": "Wurzel mit raus: ja oder nein",
+            "p": "[[COPY: Text zu \"Wurzel mit raus: ja oder nein\" ohne Betrag]]"
+          },
+          {
+            "h": "Schnittgut- und Wurzelmenge",
+            "p": "[[COPY: Text zu \"Schnittgut- und Wurzelmenge\" ohne Betrag]]"
+          },
+          {
+            "h": "Zugang (Fahrzeug, Durchgang)",
+            "p": "[[COPY: Text zu \"Zugang (Fahrzeug, Durchgang)\" ohne Betrag]]"
+          }
+        ]
+      },
+      "nutzen": [
+        {
+          "h": "[[COPY: Nutzen 1]]",
+          "p": "[[COPY: Nutzen 1 Text]]"
+        },
+        {
+          "h": "[[COPY: Nutzen 2]]",
+          "p": "[[COPY: Nutzen 2 Text]]"
+        },
+        {
+          "h": "[[COPY: Nutzen 3]]",
+          "p": "[[COPY: Nutzen 3 Text]]"
+        }
+      ],
+      "ablauf": [
+        {
+          "h": "[[COPY: Ablauf 1]]",
+          "p": "[[COPY: Ablauf 1 Text]]"
+        },
+        {
+          "h": "[[COPY: Ablauf 2]]",
+          "p": "[[COPY: Ablauf 2 Text]]"
+        },
+        {
+          "h": "[[COPY: Ablauf 3]]",
+          "p": "[[COPY: Ablauf 3 Text]]"
+        }
+      ],
+      "preis": {
+        "h": "[[COPY: H2 des Preisabschnitts #preise, ohne Betrag]]",
+        "cta": "Pauschalpreis anfragen",
+        "cta_hint": "[[COPY: Hinweis unter dem Button ohne Betrag]]",
+        "p": [
+          "[[COPY: Absatz ohne Betrag, z. B. Schnittgut und Abfuhr im Pauschalpreis]]"
+        ]
+      },
+      "faqs": [
+        {
+          "q": "[[COPY: FAQ 1 Frage: Was kostet eine Heckenentfernung? (Faktoren)]]",
+          "a": "[[COPY: FAQ 1 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 2 Frage: Darf ich meine Hecke jetzt entfernen? (Fenster, keine Rechtsberatung)]]",
+          "a": "[[COPY: FAQ 2 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 3 Frage: Braune Thuja: retten oder entfernen?]]",
+          "a": "[[COPY: FAQ 3 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 4 Frage: Was passiert mit den Wurzeln?]]",
+          "a": "[[COPY: FAQ 4 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 5 Frage: Können Sie danach neu pflanzen oder einen Zaun setzen? (nur wenn Noah es anbietet, sonst streichen)]]",
+          "a": "[[COPY: FAQ 5 Antwort]]"
+        },
+        {
+          "q": "[[COPY: FAQ 6 Frage: Muss ich dabei sein?]]",
+          "a": "[[COPY: FAQ 6 Antwort]]"
+        }
+      ],
+      "objekte": [
+        "Hecke entfernen",
+        "Hecke schneiden",
+        "Hecke stark zurückschneiden",
+        "Mehrere Arbeiten"
+      ],
+      "objekte_kurz": {
+        "Hecke schneiden": "Schnitt",
+        "Hecke stark zurückschneiden": "Rückschnitt",
+        "Hecke entfernen": "Entfernen",
+        "Mehrere Arbeiten": "Mehrere"
+      },
+      "form_subject": "Neue Anfrage (Ads-LP Hecke heckenentfernung)",
+      "fotos": [],
+      "hero": {
+        "typ": "text"
+      },
+      "testimonials_h2": "Was Kundinnen und Kunden schreiben",
+      "testimonials_h2_em": "schreiben",
+      "bewertungen_lp": [
+        "adis",
+        "hanan"
+      ],
+      "zitat_hero": false,
+      "_copy_hinweis": "Keywords: hecke entfernen lassen, heckenentfernung, hecke entfernen firma, hecke entfernen kosten, thuja entfernen (kosten/lassen), hecke roden lassen, heckenrodung, hecke entfernen falkensee. H1-Idee: Hecke entfernen lassen, mit Wurzel (kursiv: entfernen). Lead: Wir roden die Hecke samt Wurzel, fahren alles ab und hinterlassen eine freie Fläche. Pauschalpreis nach kostenloser Besichtigung. Fenster bis 28.02. im Ablauf nennen. KEIN Entfernungs-Zitat vorhanden: allgemeine Stimmen, nichts in fremde Worte legen. Hero text (kein echtes Rodungsfoto; Wegner-Fotos zeigen Terrasse/Weg)."
     }
-  ]
+  ],
+  "danke_hecke": {
+    "title": "Danke – Hecken-Anfrage eingegangen",
+    "h1": "Danke, Ihre Anfrage ist angekommen.",
+    "h1_em": "angekommen",
+    "lead": "Wir melden uns noch am selben Werktag, je nachdem, was Sie angegeben haben, per Anruf, WhatsApp oder E-Mail. Anrufe kommen von {tel}. Speichern Sie die Nummer, damit Sie uns erkennen.",
+    "next": [
+      "Wir melden uns und klären kurz, was an der Hecke ansteht.",
+      "Sie schicken uns ein Foto per WhatsApp oder wir kommen zur kostenlosen Besichtigung.",
+      "Danach bekommen Sie den schriftlichen Pauschalpreis, Abfuhr inklusive."
+    ],
+    "eilig": "Wenn es eilig ist: rufen Sie direkt an oder schicken Sie ein Foto per WhatsApp.",
+    "meta": "Ihre Anfrage zur Hecke ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns noch am selben Werktag.",
+    "wa_text": "Hallo, ich habe gerade das Formular zur Hecke geschickt, hier noch ein Foto dazu."
+  }
 }
