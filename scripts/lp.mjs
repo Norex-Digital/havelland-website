@@ -18,8 +18,9 @@
 //   raeumung:false (Nicht-Räumungs-LP: kein „nach der Räumung“ im Slider-Alt, Räumungs-Defaults entfallen und fehlende Pflichtfelder werfen einen Fehler statt still „räumen“ zu zeigen, keine Preis-Kacheln).
 // Copy: data/copy/lp.json — hero je LP ({typ:'ba'|'foto'|'text'}), trust als [{b,t}], Fotos nur aus dem Manifest (fotos: [] → keine Galerie).
 
+import fs from 'fs';
 import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
-import { topbar, trustZeile, preisBlock, zitat, aktionKarte, punkte, bewertungen, BLOECKE_CSS, ICON_ARROW } from './lp-bloecke.mjs';
+import { topbar, trustZeile, preisBlock, zitat, aktionKarte, punkte, bewertungen, BLOECKE_CSS, ICON_ARROW, leistungsKacheln, fristKarte, FOTO_BADGE, HECKE_CSS } from './lp-bloecke.mjs';
 import { VARIANTE, VARIANT_CSS } from './lp-varianten.mjs'; // LP_VARIANTE=a|b: ruhigere Varianten des ersten Bildschirms (ohne Variable: Ist-Stand)
 
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
@@ -325,14 +326,18 @@ export function buildLp(d) {
   const imgSrc = slug => `/assets/img/${slug}-768.webp`;
   const baLp = (o, raum = true) => raum ? baSlider(o).replace(/ — nach dem Schnitt"/g, ' — nach der Räumung"').replace(/ — vor dem Schnitt"/g, ' — vor der Räumung"') : baSlider(o).replace(/ — (nach|vor) dem Schnitt"/g, ', $1 dem Schnitt"'); // Hecken: Korrektur 06.11., kein Gedankenstrich im Alt-Text // Hecken-LPs: Alt-Suffix „nach dem Schnitt“ bleibt
   // Aspect-Ratio aus dem Manifest (Fall-Fotos sind 768/1024 = 3:4, nicht 864/1036) — sonst wird das Bild in der falschen Box beschnitten.
-  const baPair = (f, { lcp = false, raum = true, name = 'Entrümpelung' } = {}) => { const m = (IMG && IMG[f.vorher]) || {}; return baLp({ vorher: imgSrc(f.vorher), nachher: imgSrc(f.nachher), alt: f.alt || f.cap || name, cap: f.cap || '', sub: f.sub || '', hint: true, lcp, w: m.w || 864, h: m.h || 1036 }, raum); };
-  const pairOk = f => !!(f && f.vorher && f.nachher && pic(f.vorher) && pic(f.nachher));
+  // Hecken-LPs (Owner-Freigabe 06.11.2026): Paar aus assets/img/vn/ (Feld vn = Slug, WebP-768 neben den Original-JPGs), gleiche Praxis wie Hub und Ortsseiten.
+  const vnSrc = (s, k) => `/assets/img/vn/${s}_${k}-768.webp`;
+  const vnOk = s => !!s && ['vorher', 'nachher'].every(k => fs.existsSync(`assets/img/vn/${s}_${k}-768.webp`)); // Quelle assets/img/ (website/assets/img wird erst nach den Seiten synchronisiert)
+  const pairKey = f => f.vn ? `vn:${f.vn}` : `${f.vorher}|${f.nachher}`;
+  const baPair = (f, { lcp = false, raum = true, name = 'Entrümpelung' } = {}) => { if (f.vn) return baLp({ vorher: vnSrc(f.vn, 'vorher'), nachher: vnSrc(f.vn, 'nachher'), alt: f.alt || f.cap || name, cap: f.cap || '', sub: f.sub || '', hint: true, lcp, w: 768, h: 921 }, raum); const m = (IMG && IMG[f.vorher]) || {}; return baLp({ vorher: imgSrc(f.vorher), nachher: imgSrc(f.nachher), alt: f.alt || f.cap || name, cap: f.cap || '', sub: f.sub || '', hint: true, lcp, w: m.w || 864, h: m.h || 1036 }, raum); };
+  const pairOk = f => !!(f && (f.vn ? vnOk(f.vn) : (f.vorher && f.nachher && pic(f.vorher) && pic(f.nachher))));
   // Hero-Schalter je LP (lp.json hero.typ): ba = echte Vorher/Nachher-Fotos als Slider, foto = Manifest-Bild als Fotokarte (.shot .main),
   // text = einspaltig ohne Karte. Fallback ohne hero-Feld: erstes fotos-Paar → ba, sonst text.
   const heroOf = lp => {
     const h = lp.hero || (Array.isArray(lp.fotos) && lp.fotos[0] ? { typ: 'ba', ...lp.fotos[0] } : { typ: 'text' });
-    if (h.typ === 'ba' && pairOk(h)) return { cls: 'lp-hero-ba', shot: `<div class="shot">${baPair(h, { lcp: true, raum: lp.raeumung !== false, name: lp.name || 'Entrümpelung' })}</div>`, key: `${h.vorher}|${h.nachher}` };
-    if (h.typ === 'foto' && h.slug && pic(h.slug)) return { cls: 'lp-hero-foto', shot: `<div class="shot">${pic(h.slug, { cls: 'main', alt: altQ(h.alt || `${lp.name} im Havelland – ${nap.name}`), sizes: '(max-width:900px) 92vw, 46vw', lcp: true })}</div>`, key: '' };
+    if (h.typ === 'ba' && pairOk(h)) return { cls: 'lp-hero-ba', shot: `<div class="shot">${baPair(h, { lcp: true, raum: lp.raeumung !== false, name: lp.name || 'Entrümpelung' })}</div>`, key: pairKey(h) };
+    if (h.typ === 'foto' && h.slug && pic(h.slug)) return { cls: 'lp-hero-foto', shot: `<div class="shot">${pic(h.slug, { cls: 'main', alt: altQ(h.alt || `${lp.name} im Havelland – ${nap.name}`), sizes: '(max-width:900px) 92vw, 46vw', lcp: true })}${lp.raeumung === false ? FOTO_BADGE : ''}</div>`, key: '' };
     return { cls: 'lp-hero-text', shot: '', key: '' };
   };
 
@@ -356,10 +361,10 @@ export function buildLp(d) {
   // Galerie: nur echte Fotos als Vorher/Nachher-Slider ({vorher, nachher, cap, sub}); Slugs müssen im Manifest stehen, sonst wird das Paar übersprungen.
   // Das Hero-Paar wird nicht wiederholt (skipKey). Ein einzelnes Paar bleibt einspaltig und begrenzt.
   const gallery = (lp, skipKey) => {
-    const pairs = (Array.isArray(lp.fotos) ? lp.fotos : []).filter(f => pairOk(f) && `${f.vorher}|${f.nachher}` !== skipKey);
+    const pairs = (Array.isArray(lp.fotos) ? lp.fotos : []).filter(f => pairOk(f) && pairKey(f) !== skipKey);
     if (!pairs.length) return '';
     const items = pairs.map(f => `<div>${baPair(f, { raum: lp.raeumung !== false, name: lp.name || 'Entrümpelung' })}</div>`).join('');
-    return `<section class="sec" id="fotos"><div class="wrap"><div class="head"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery"${pairs.length === 1 ? ' style="grid-template-columns:1fr;max-width:560px;margin:0 auto"' : ''}>${items}</div></div></section>`;
+    return `<section class="sec" id="fotos"><div class="wrap"><div class="head"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery${lp.raeumung === false ? ` n${pairs.length}` : ''}"${pairs.length === 1 ? ' style="grid-template-columns:1fr;max-width:560px;margin:0 auto"' : ''}>${items}</div></div></section>`;
   };
 
   const shortLabel = o => String(o).split(' / ')[0];
@@ -378,7 +383,7 @@ export function buildLp(d) {
       ? `<p class="lp-alt"><a href="tel:${tel}">${PHONE_SVG} ${telDisp}</a><a href="${wa}">WhatsApp mit Foto</a></p>`
       : `<p class="kf-alt">Lieber direkt? <a href="tel:${tel}">Anrufen: ${telDisp}</a> · <a href="${wa}">WhatsApp schreiben</a></p>`;
     return `<form id="anfrage" class="kf lp-form" action="https://api.web3forms.com/submit" method="POST">${hidden}${attrib}
-<fieldset class="f-obj"><legend>${esc(txt(lp, 'form_legend', 'Was soll geräumt werden – und wo?'))}</legend><div class="seg${(lp.objekte || []).length === 3 ? ' seg3' : ''}">${chips}</div></fieldset>
+<fieldset class="f-obj"><legend>${esc(txt(lp, 'form_legend', 'Was soll geräumt werden – und wo?'))}</legend><div class="seg${(lp.objekte || []).length === 3 ? ' seg3' : ''}${lp.raeumung === false ? ' seg-soft' : ''}">${chips}</div></fieldset>
 <div class="frow"><label class="fld"><span>PLZ oder Ort</span><input name="ort" autocomplete="postal-code" enterkeyhint="next" placeholder="z. B. 14612 Falkensee" required></label>
 <label class="fld"><span>Name</span><input name="name" autocomplete="name" enterkeyhint="next" required></label>
 <label class="fld"><span>Telefon oder E-Mail</span><input name="kontakt" type="text" autocomplete="tel" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="für Rückruf oder Angebot" required></label></div>
@@ -418,11 +423,13 @@ ${alt}
     // Preise nur aus lp.preis.anker (keine Zahl doppelt pflegen), „inkl. MwSt.“ steht in der Zeile über den Kacheln.
     const anker = lp.preis && lp.preis.anker;
     if (lp.raeumung === false && anker) throw new Error(`lp ${lp.slug}: preis.anker (Preis-Kacheln, Räumungs-Wortlaut im Preis-CTA) wird bei raeumung:false nicht unterstützt`);
-    const heroPreis = preisBlock(anker, lp.preis.hero_note ?? 'Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag', { esc, escA });
+    if (lp.raeumung === false && (!lp.kacheln || !lp.frist)) throw new Error(`lp ${lp.slug}: kacheln und frist sind bei raeumung:false Pflicht (Leistungs-Kacheln, Frist-Karte)`);
+    const heroPreis = lp.raeumung === false ? leistungsKacheln(lp.kacheln, { esc, escA }) : preisBlock(anker, lp.preis.hero_note ?? 'Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag', { esc, escA });
     const quick = (lp.objekte || []).length ? `<div class="lp-quick"><p class="lp-quick-l" id="q-${escA(lp.slug)}">${esc(txt(lp, 'quick_label', 'Was soll geräumt werden?'))}</p><div class="lp-quick-c" role="group" aria-labelledby="q-${escA(lp.slug)}">${lp.objekte.map(o => `<a href="#anfrage" data-obj="${escA(o)}">${objLabel(o, lp)}</a>`).join('')}</div></div>` : '';
     const pos = lp.form_pos === 'nach-preis' ? 'nach-preis' : 'hero';
     const heroForm = pos === 'hero' ? `<div class="lp-hero-form">${form(lp, 'hero', wa)}</div>` : '';
     const aktLp = lp.aktion === false ? '' : aktKarte;
+    const aktHero = lp.raeumung === false ? fristKarte(lp.frist, { esc }) : aktLp; // Hecke: Frist-Karte statt Aktion (nur im Hero)
     const heroCta = pos === 'nach-preis' ? `<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">${PHONE_SVG} Anrufen: ${telDisp}</a><a class="btn btn-line" href="${wa}">WhatsApp mit Foto</a></div>` : '';
     const person = lp.kontaktperson && lp.kontaktperson.zeigen && lp.kontaktperson.slug && pic(lp.kontaktperson.slug)
       ? `<p class="lp-person">${pic(lp.kontaktperson.slug, { cls: 'av', alt: altQ(lp.kontaktperson.alt || ''), sizes: '56px' })}<span>${esc(lp.kontaktperson.zeile)}</span></p>` : '';
@@ -434,14 +441,14 @@ ${alt}
     const kontaktSec = pos === 'nach-preis' ? `<section class="sec" id="kontakt"><div class="wrap"><div class="head"><h2>${esc(lp.kontakt_h2 || 'Kostenlose Besichtigung anfragen')}</h2></div><p class="hint" style="margin:-4px 0 18px;color:var(--muted)">${esc(txt(lp, 'kontakt_hint', 'Ein Schritt, keine Vorkasse, keine Verpflichtung. Der Festpreis für Räumung und Abtransport kommt nach der Besichtigung, Entsorgungsgebühren weisen wir nach Beleg aus.'))}</p>${form(lp, 'nach-preis', wa)}</div></section>` : '';
     // was_wir_tun {h, p, items:[{h,p}]} (optional, z. B. Allgemein-LP): Abschnitt direkt nach dem Hero. Gleiche Komponenten wie die Startseite (.sec/.head, .sec-lead, .vals/.v mit kursiver Nummer .vn),
     // Reveal-Klassen über rvIn(). Kein eigenes CSS.
-    const valsSec = (id, d, hDefault) => d && Array.isArray(d.items) && d.items.length
-      ? `<section class="sec" id="${id}"><div class="wrap"><div class="head"><h2>${esc(d.h || hDefault)}</h2></div>${d.p ? `<p class="sec-lead">${esc(d.p)}</p>` : ''}${rvIn(`<div class="vals">${d.items.map((x, i) => `<div class="v rv${i ? ` d${i}` : ''}"><h3><span class="vn">${String(i + 1).padStart(2, '0')}</span>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div>`)}</div></section>` : '';
-    const wwt = valsSec('was-wir-tun', lp.was_wir_tun, 'Was wir tun');
+    const valsSec = (id, d, hDefault, alt = false) => d && Array.isArray(d.items) && d.items.length
+      ? `<section class="sec${alt ? ' section-alt' : ''}" id="${id}"><div class="wrap"><div class="head"><h2>${esc(d.h || hDefault)}</h2></div>${d.p ? `<p class="sec-lead">${esc(d.p)}</p>` : ''}${rvIn(`<div class="vals">${d.items.map((x, i) => `<div class="v rv${i ? ` d${i}` : ''}"><h3><span class="vn">${String(i + 1).padStart(2, '0')}</span>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('')}</div>`)}</div></section>` : '';
+    const wwt = valsSec('was-wir-tun', lp.was_wir_tun, 'Was wir tun', lp.raeumung === false); // Hecke: Zonenwechsel paper → hell → paper (Referenz Entrümpelung)
     // preis_faktoren {h, p, items:[{h,p}]} (Kosten-LP, Umbau 11/2026): Einflussfaktoren auf den Preis, direkt nach dem Hero, nur Aussagen aus den bestehenden LPs, keine Beträge.
     const pfk = valsSec('preisfaktoren', lp.preis_faktoren, 'Was den Preis bestimmt');
     const main = `<main id="top">
-<section class="phero lp-hero ${H.cls}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}${h1Tail ? ' data-h1-tail' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lp-ort${String(lp.lead || '').includes(lowerFirst(lp.ort_satz || ORT_SATZ)) ? ' lp-ort-dup' : ''}">${esc(lp.ort_satz || ORT_SATZ)}</p><p class="lead">${esc(lp.lead)}</p>
-${heroPreis}${heroForm || quick}${heroForm && revOn ? zitat(zitatOf(lp), esc) : ''}${aktLp}${heroCta}
+<section class="phero lp-hero ${H.cls}${lp.raeumung === false ? ' lp-hecke' : ''}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}${h1Tail ? ' data-h1-tail' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lp-ort${String(lp.lead || '').includes(lowerFirst(lp.ort_satz || ORT_SATZ)) ? ' lp-ort-dup' : ''}">${esc(lp.ort_satz || ORT_SATZ)}</p><p class="lead">${esc(lp.lead)}</p>
+${heroPreis}${heroForm || quick}${heroForm && revOn ? zitat(zitatOf(lp), esc) : ''}${aktHero}${heroCta}
 ${punkte(lp.trust, esc)}${person}</div>${H.shot}</div></section>${ortJs}
 ${wwt}${pfk}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
@@ -454,7 +461,7 @@ ${kontaktSec}
 <section class="zone-deep end"><div class="wrap"><h2>${esc(txt(lp, 'end_h2', 'Sie zeigen, wir räumen.'))}</h2><p>${esc(txt(lp, 'end_p', 'Kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, besenreine Übergabe – im Havelland, in Berlin-Spandau und Potsdam.'))}</p><div class="cta-row"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${telDisp}</a></div></div></section>
 </main>`;
     const baJs = /class="ba[ "]/.test(main) ? LP_BA_JS : '';
-    const html = head(lp.title, lp.meta, url, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS + lpAttribJS(consentKey) })
+    const html = head(lp.title, lp.meta, url, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS + (lp.raeumung === false ? HECKE_CSS : '') + lpAttribJS(consentKey) })
       + lpHeader('/') + main + lpFooter + lpScta(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.') + SCTA_WAIT_JS
       + CONSENT_BANNER + TRACK_EVENTS + lpFormJS(lp.slug, dankeOf(lp), consentKey, txt(lp, 'msg_objekt', 'Bitte wählen Sie aus, was geräumt werden soll.')) + resetJS + baJs + AKTION_JS + '</body></html>';
     write(url, html);

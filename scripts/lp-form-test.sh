@@ -30,7 +30,8 @@ SERVED="$(curl -sf -m 5 "$URL" | tr -d '\r')" || { echo "Server nicht erreichbar
 FILE="$(tr -d '\r' < "$ROOT/website/lp/$SLUG/index.html")"
 [ "$SERVED" = "$FILE" ] || { echo "Server liefert nicht website/lp/$SLUG/index.html aus (anderer Stand/anderes Verzeichnis auf Port $PORT)" >&2; exit 2; }
 # Echter Preiszeilen-Link vorhanden? (aus der ausgelieferten Seite; nur dann wird form_quickstart:preis getestet und erwartet)
-case "$FILE" in *'data-via="preis"'*) HASLINK=1 ;; *) HASLINK=0 ;; esac
+# Hecken-LPs (Designdurchgang 06.11.): Leistungs-Kacheln mit data-via="leistung" statt Preis-Kacheln, gleicher Test (form_quickstart mit start_via leistung)
+case "$FILE" in *'data-via="preis"'*) HASLINK=1; VIA=preis ;; *'data-via="leistung"'*) HASLINK=1; VIA=leistung ;; *) HASLINK=0; VIA=preis ;; esac
 if [ "$FP" != hero ]; then echo "SKIP $SLUG (Variante A, form_pos=$FP: kein Hero-Formular, der Hero-Durchlauf gilt nicht)"; exit 0; fi
 T="$(mktemp -d)"
 trap 'playwright-cli -s="$S" close >/dev/null 2>&1 || true; rm -rf "$T"' EXIT
@@ -89,7 +90,7 @@ PW request-body "$N" | tr -d '\r' > "$T/post.txt"
 
 cat > "$T/check.js" <<'EOF'
 const fs = require('fs');
-const [T, C, SLUG, SCEN, HASLINK, DANKE] = process.argv.slice(2);
+const [T, C, SLUG, SCEN, HASLINK, DANKE, VIA] = process.argv.slice(2);
 const TEL = SCEN === 'tel';
 const rd = f => fs.readFileSync(T + '/' + f, 'utf8');
 const js = f => { let r = JSON.parse(rd(f)); if (typeof r === 'string') r = JSON.parse(r); return r; };
@@ -116,7 +117,7 @@ if (SCEN !== 'voll') {
   const feSoll = '$PRE' === '1' ? 'dsgvo,name,ort,tel' : 'dsgvo,name,objekt,ort,tel';
   if (fe !== feSoll) bad.push('form_error erwartet ' + feSoll + ' (je 1x), war: ' + fe);
   const q = ev.filter(e => e.event === 'form_quickstart');
-  if (HASLINK === '1') { if (q.length !== 1 || q[0].start_via !== 'preis') bad.push('form_quickstart:preis x' + q.length); const qc = all.filter(e => e.event === 'test_quickstart_check'); if (qc.length !== 1 || !qc[0].ok) bad.push('Preis-Kachel wählt das Objekt nicht vor'); }
+  if (HASLINK === '1') { if (q.length !== 1 || q[0].start_via !== VIA) bad.push('form_quickstart:' + VIA + ' x' + q.length); const qc = all.filter(e => e.event === 'test_quickstart_check'); if (qc.length !== 1 || !qc[0].ok) bad.push('Preis-Kachel wählt das Objekt nicht vor'); }
   else if (q.length !== 0) bad.push('form_quickstart x' + q.length + ' obwohl die Seite keinen Preiszeilen-Link hat');
 }
 // Reihenfolge: consent_choice < form_start < form_step < generate_lead < lead_confirmed
@@ -175,7 +176,7 @@ if (posts.length !== 1) bad.push('POST-Anzahl ' + posts.length);
 else if (!/=> \[200\]/.test(posts[0])) bad.push('POST ohne 200 vom Mock: ' + posts[0]);
 // --- Protokoll
 console.log('Ereignisse (' + SCEN + ', ' + C + '): ' + ev.map(tag).join(' '));
-if (SCEN === 'voll') console.log('Quickstart-Preis-Kachel: ' + (HASLINK === '1' ? 'echte Kachel der Seite, getestet (form_quickstart:preis x1)' : 'nicht vorhanden auf dieser Seite, nicht getestet und nicht erwartet (keine synthetische Kachel)'));
+if (SCEN === 'voll') console.log('Quickstart-Preis-Kachel: ' + (HASLINK === '1' ? 'echte Kachel der Seite, getestet (form_quickstart:' + VIA + ' x1)' : 'nicht vorhanden auf dieser Seite, nicht getestet und nicht erwartet (keine synthetische Kachel)'));
 const gp = Object.assign({}, gl); delete gp.eventTimeout;
 console.log('generate_lead: ' + JSON.stringify(gp));
 const show = Object.keys(f).map(k => k + '=' + (k === 'access_key' ? f[k].slice(0, 8) + '…' : JSON.stringify(f[k]))).join('  ');
@@ -186,5 +187,5 @@ if (bad.length) { console.error('FORM ROT: ' + bad.join(' | ')); process.exit(1)
 EOF
 # Windows: node ist nativ und versteht /tmp/… nicht, daher Pfad umwandeln (auf dem Mac gibt es kein cygpath)
 TW="$T"; command -v cygpath >/dev/null 2>&1 && TW="$(cygpath -m "$T")"
-node "$TW/check.js" "$TW" "$C" "$SLUG" "$SCENARIO" "$HASLINK" "$DANKE"
+node "$TW/check.js" "$TW" "$C" "$SLUG" "$SCENARIO" "$HASLINK" "$DANKE" "$VIA"
 echo "FORM GRÜN $SLUG $C ($SCENARIO; POST gemockt, gclid=TEST123, ads_consent=$C)"

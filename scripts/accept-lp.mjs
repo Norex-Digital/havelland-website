@@ -231,7 +231,8 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     check(id, 'Klebende Leiste erst nach Scroll (Skript setzt scta-wait, entfernt ab ca. 0,6 Bildschirmhöhen)', has(h, "s.classList.add('scta-wait')") && has(h, 'window.innerHeight*.6'));
     check(id, '>= 3 Objekt-Chips', (h.match(/name="objekt"/g) || []).length >= 3);
     const nObj = (entryOf(rel).objekte || []).length;
-    check(id, `Objekt-Leiste mit ${nObj} Spalten (seg3 nur bei 3 Objekten)`, nObj === 3 ? has(h, '<div class="seg seg3"><label><input type="radio" name="objekt"') : has(h, '<div class="seg"><label><input type="radio" name="objekt"'));
+    const segSoft = o.hecke ? ' seg-soft' : ''; // Hecke (Designdurchgang 06.11.): dezenter Chip-Zustand, kurze Labels auf jeder Breite
+    check(id, `Objekt-Leiste mit ${nObj} Spalten (seg3 nur bei 3 Objekten${o.hecke ? ', Hecke: seg-soft' : ''})`, nObj === 3 ? has(h, `<div class="seg seg3${segSoft}"><label><input type="radio" name="objekt"`) : has(h, `<div class="seg${segSoft}"><label><input type="radio" name="objekt"`));
     // --- Zweitwege (M3): Hero-Variante Buttons, Variante A Textlinks
     if (pos === 'hero') check(id, 'Zweitwege Anruf + WhatsApp (lp-alt)', /<p class="lp-alt">[\s\S]*?href="tel:[\s\S]*?href="https:\/\/wa\.me\//.test(h));
     // --- Wording (S-urteil 12, lp.json _meta)
@@ -316,13 +317,36 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
       // Bilder: ba nur mit dem echten Paar echt-* (kein KI im Slider), foto nur generisches Stimmungsbild; nie ein Bild mit Person
       const hero = en.hero || { typ: 'text' };
       check(id, `Hecke: Hero-Typ ${hero.typ} ∈ {text, ba, foto}`, ['text', 'ba', 'foto'].includes(hero.typ));
-      if (hero.typ === 'ba') check(id, 'Hecke: Hero ba nur mit echtem Paar echt-* (Foto-Beleg, kein KI im Slider)', /^echt-/.test(hero.vorher || '') && /^echt-/.test(hero.nachher || ''));
+      // Abweichung von Prinzip 4 (Owner Maurice 06.11.2026: „Owner hat alle vorhandenen Fotos freigegeben“, gleiche Praxis wie Hub und Ortsseiten, Entscheid E5 vom 20.10./06.11.): im Hecke-Modus sind vn/-Paare in Hero und Galerie erlaubt.
+      // Verboten bleiben Personenbilder und jede „echt“/„Kunde“/„Auftrag“-Behauptung zu diesen KI-Paaren (siehe Galerie-Gate unten).
+      const paarOk = f => (f.vn && /^[0-9a-z-]+$/.test(f.vn) && fs.existsSync(`assets/img/vn/${f.vn}_vorher-768.webp`) && fs.existsSync(`assets/img/vn/${f.vn}_nachher-768.webp`)) || (/^echt-/.test(f.vorher || '') && /^echt-/.test(f.nachher || ''));
+      if (hero.typ === 'ba') check(id, 'Hecke: Hero ba mit vn/-Paar (Owner-Freigabe 06.11.) oder echtem Paar echt-*, WebP-Dateien vorhanden', paarOk(hero) && !PERSON_RE.test(hero.vn || hero.vorher || ''));
       const manifestIMG = JSON.parse(fs.readFileSync('assets/img/manifest.json', 'utf8'));
       if (hero.typ === 'foto') check(id, 'Hecke: Hero foto = generisches Stimmungsbild aus dem Manifest, nie ein Bild mit Person (hecke-hinten-*-noah, zaun-hinten-* …)', !!hero.slug && !!manifestIMG[hero.slug] && !PERSON_RE.test(hero.slug));
       check(id, `Hecke: Hero im Output = lp.json (lp-hero-${hero.typ}), kein stiller Rückfall auf Text`, new RegExp(`<section class="phero lp-hero lp-hero-${hero.typ}[ "]`).test(h));
-      check(id, 'Hecke: Galerie-Paare (fotos) nur echt-*', (en.fotos || []).every(f => /^echt-/.test(f.vorher || '') && /^echt-/.test(f.nachher || '')));
+      check(id, 'Hecke: Galerie-Paare (fotos) nur vn/-Paare (Owner-Freigabe 06.11.) oder echt-*, ohne Personenbild', (en.fotos || []).every(f => paarOk(f) && !PERSON_RE.test(f.vn || f.vorher || '')));
       const baImgs = [...h.matchAll(/<div class="ba[ "][^>]*>\s*<img src="([^"]+)"[^>]*><img class="ba-top" src="([^"]+)"/g)].flatMap(m => [m[1], m[2]]);
-      check(id, `Hecke: alle Slider-Bilder (${baImgs.length}) aus echt-* (kein KI-Bild als Vorher/Nachher oder Auftragsfoto)`, baImgs.every(u => /\/assets\/img\/echt-/.test(u)));
+      check(id, `Hecke: alle Slider-Bilder (${baImgs.length}) aus vn/ oder echt-* (keine Personenbilder)`, baImgs.every(u => /\/assets\/img\/(vn\/[0-9a-z-]+_(vorher|nachher)-768\.webp|echt-)/.test(u)));
+      // Galerie (#fotos): Vorhandensein je Seite (Entfernung ohne passendes Paar: keine Galerie), neutrale Überschrift/Hinweiszeile ohne „echt“/„Kunde“/„Auftrag“/Ort, keine Bild-Labels
+      const fS = h.indexOf('id="fotos"'), fH = fS > -1 ? h.slice(fS, h.indexOf('</section>', fS)) : '';
+      check(id, (en.fotos || []).length ? `Hecke: Galerie #fotos mit ${(en.fotos || []).length} Paaren (lp.json fotos)` : 'Hecke: keine Galerie (fotos leer, kein passendes Paar)', (en.fotos || []).length ? (fH.match(/<div class="ba"/g) || []).length === en.fotos.length : fS === -1);
+      if ((en.fotos || []).length) {
+        check(id, 'Hecke: Galerie-Überschrift und -Hinweis neutral (kein „echt/Kunde/Auftrag/Einsatz/Falkensee“, keine Bild-Labels)', !!en.fotos_h2 && !!en.fotos_hint && !/echt|kund|auftrag|einsatz|falkensee|potsdam|spandau|dokumentiert/i.test(`${en.fotos_h2} ${en.fotos_hint}`) && !LABEL_RE.test(textOf(fH)));
+        check(id, 'Hecke: Galerie ohne Meterangabe und ohne Ortsangabe in Unterschriften/Alt-Texten', !METER_RE.test(fH) && !/falkensee|potsdam|spandau|havelland/i.test(fH));
+      }
+      // Designdurchgang 06.11.: Leistungs-Kacheln vor dem Formular (kein Preis), Frist-Karte nach dem Formular, vier Vertrauens-Badges, Ablauf-Kicker, Chips dezent
+      const hS = h.indexOf('<section class="phero lp-hero'), hH = h.slice(hS, h.indexOf('</section>', hS));
+      const lt = [...hH.matchAll(/<a class="lp-tile lp-ltile( own)?" href="#anfrage" data-obj="([^"]+)" data-via="leistung"/g)];
+      check(id, `Hecke: 3 Leistungs-Kacheln vor dem Formular, erste = eigene Leistung (lp.json kacheln), je mit data-obj aus objekte`, lt.length === 3 && !!lt[0][1] && !lt[1][1] && lt.every((m, i) => m[2] === en.kacheln.items[i].obj && en.objekte.includes(m[2])) && hH.indexOf('class="lp-tiles') < hH.indexOf('id="anfrage"'));
+      check(id, 'Hecke: Kacheln ohne Preis, ohne Betrag, ohne „ab“-Zeile', !/class="pp"><small>ab<\/small>/.test(hH) && !PREIS_RE.test(textOf(hH)));
+      check(id, 'Hecke: Frist-Karte (.lp-frist) nach dem Formular, Titel und Bedingung aus lp.json, kein Prozent, kein Dringlichkeitswort', hH.indexOf('class="lp-frist"') > hH.indexOf('id="anfrage"') && has(hH, escH(en.frist.titel)) && has(hH, escH(en.frist.bedingung)) && !/%|nur noch|letzte|schnell sichern|jetzt sichern|begrenzt/i.test(textOf(hH.slice(hH.indexOf('class="lp-frist"'), hH.indexOf('class="lp-frist"') + 700))));
+      check(id, 'Hecke: Frist-Karte nennt § 39 BNatSchG und 28. Februar', /39 BNatSchG/.test(en.frist.titel + en.frist.bedingung) && /28\. Februar/.test(en.frist.titel + en.frist.bedingung));
+      check(id, 'Hecke: vier Vertrauens-Badges mit Icon (trust-row lp-checks, 4 Einträge)', (h.match(/<div class="t"><svg/g) || []).length === 4 && ['Betrieb aus Falkensee', 'Festpreis nach Besichtigung', 'Foto-Nachweis aufs Handy', 'Kostenlose Besichtigung'].every((t, i) => (en.trust || [])[i] && en.trust[i].b === t));
+      const ablS = h.indexOf('class="tl '), ablH = ablS > -1 ? h.slice(ablS, h.indexOf('</section>', ablS)) : '';
+      check(id, 'Hecke: Ablauf-Kicker „Foto per WhatsApp oder Anruf“ · „Kostenlos · vor Ort“ · „Schriftlich · Abfuhr inklusive“, Lead unter der Überschrift', ['Foto per WhatsApp oder Anruf', 'Kostenlos · vor Ort', 'Schriftlich · Abfuhr inklusive'].every(t => has(ablH, t)) && has(h, `<p class="sec-lead">${escH(en.ablauf_lead || '-')}</p>`));
+      const kick = [...ablH.matchAll(/<span class="twhen">([^<]*)<\/span>/g)].map(m => m[1]);
+      check(id, 'Hecke: Ablauf-Kicker ohne Tages-/Terminzusage (3 Kicker, keine Ziffer, kein Tag/Werktag/Woche/Stunde)', kick.length === 3 && kick.every(t => !/\d|tag|woche|stunde|sofort|binnen|innerhalb/i.test(t)));
+      check(id, 'Hecke: Hero-Klasse lp-hecke (Foto-Karte, Badge) und HECKE_CSS im Kopf, Chips seg-soft', has(h, ' lp-hecke"') && has(h, '.lp-form .seg.seg-soft label:has(input:checked)'));
       const imgSlugs = [...h.matchAll(/\/assets\/img\/([a-z0-9_-]+?)(?:-\d+)?\.(?:webp|avif|jpg|png)/g)].map(m => m[1]);
       check(id, 'Hecke: kein Bild mit Person (hecke-hinten-*-noah, zaun-hinten-*, Ansprechpartner) im Output', !imgSlugs.some(x => PERSON_RE.test(x)) && !has(h, 'class="lp-person"'));
       // Überschrift: genau ein kursives Akzentwort in der H1
@@ -335,7 +359,7 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
       // zwischen Hero und #preisfaktoren darf höchstens #was-wir-tun stehen (Spec: „Was wir tun“ + Preisfaktoren direkt nach dem Hero)
       const zw = pfS > -1 ? h.slice(heroEnd2 + 10, h.lastIndexOf('<section', pfS)).replace(/<script[\s\S]*?<\/script>/g, '') : 'x<section';
       const zwSecs = (zw.match(/<section/g) || []).length;
-      check(id, 'Hecke: #preisfaktoren steht direkt nach dem Hero (nur #was-wir-tun darf dazwischen)', pfS > -1 && (zwSecs === 0 || (zwSecs === 1 && /<section class="sec" id="was-wir-tun"/.test(zw))));
+      check(id, 'Hecke: #preisfaktoren steht direkt nach dem Hero (nur #was-wir-tun darf dazwischen)', pfS > -1 && (zwSecs === 0 || (zwSecs === 1 && /<section class="sec( section-alt)?" id="was-wir-tun"/.test(zw))));
       check(id, 'Hecke: Preisfaktoren ohne Beträge', pfH.length > 200 && !PREIS_RE.test(textOf(pfH)));
       // Formular, noindex
       check(id, 'Hecke: Formular mit gclid-Feld (hidden)', has(h, '<form id="anfrage"') && /<input type="hidden" name="gclid"/.test(h));

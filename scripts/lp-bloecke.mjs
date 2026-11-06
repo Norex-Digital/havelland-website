@@ -164,3 +164,61 @@ a.lp-tile:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 /* lange Zitate (> 320 Zeichen, z. B. Nachlass): kleinere Schrift in der hervorgehobenen Karte */
 .lp-rc.feat blockquote.lang{font-size:17px;line-height:1.45}
 @media(prefers-reduced-motion:reduce){.lp-tile{transition:none}a.lp-tile:active{scale:1}}`;
+
+// ===================== Hecken-LPs: Designdurchgang 06.11.2026 (nur raeumung:false, die Entrümpelungs-Seiten bleiben byteidentisch) =====================
+export const ICON_CAL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/><path d="m9 15 2 2 4-4"/></svg>';
+
+// Leistungs-Kacheln über dem Formular (Gegenstück zu den Preis-Kacheln der Entrümpelung, ohne Preis): Leistung klein, Zeitfenster als Serifen-Zeile,
+// die eigene Leistung der Seite (erste Kachel) hervorgehoben. Tippen wählt die Leistung im Formular vor (data-via="leistung").
+// Klassen: lp-tile bleibt (Tipp-Ziel-Messung in lp-fit.sh), lp-ltile als Hecken-Zusatz (accept-lp zählt nur class="lp-tile" exakt = Preis-Kacheln).
+export function leistungsKacheln(k, { esc, escA }) {
+  const xs = ((k && k.items) || []).filter(x => x && x.obj && x.k && x.v);
+  if (!xs.length) return '';
+  if (xs.length > 3) throw new Error(`kacheln: höchstens 3 Einträge, gefunden ${xs.length}`);
+  const zelle = (x, i) => `<a class="lp-tile lp-ltile${i === 0 ? ' own' : ''}" href="#anfrage" data-obj="${escA(x.obj)}" data-via="leistung" aria-label="${escA(x.k)}: ${escA(x.v)} – Anfrage dazu starten"><span class="pl">${esc(x.k)}</span><span class="pp">${esc(x.v)}</span><span class="go" aria-hidden="true">Anfragen ${ICON_CHEV}</span></a>`;
+  return `<div class="lp-preise lp-leist">${k.label ? `<p class="lp-preise-l">${esc(k.label)}</p>` : ''}<div class="lp-tiles n${xs.length}">${xs.map(zelle).join('')}</div>${k.note ? `<p class="lp-preise-n">${esc(k.note)}</p>` : ''}</div>`;
+}
+
+// Frist-/Saison-Karte (Gegenstück zur Aktionskarte): dunkle Karte, Kalender-Symbol statt Prozent-Abzeichen, kein Dringlichkeitswort, keine Zahl außer den gesetzlichen Daten.
+export function fristKarte(f, { esc }) {
+  if (!f) return '';
+  for (const k of ['titel', 'bedingung']) if (!f[k]) throw new Error(`lp.json frist.${k} fehlt`);
+  return `<div class="lp-frist"><span class="badge" aria-hidden="true">${ICON_CAL}</span><p><b>${esc(f.titel)}</b><span>${esc(f.bedingung)}</span></p></div>`;
+}
+
+// Hero-Foto-Karte (Hecke, ohne Vorher/Nachher): überlappendes Info-Badge aus den Zusagen der Seite (kein Bild-Label, keine Behauptung zum Foto).
+export const FOTO_BADGE = `<span class="badge"><span class="ic">${ICON_CHECK}</span><span class="t">Festpreis nach Besichtigung<span>Abfuhr inklusive</span></span></span>`;
+
+// CSS nur für Hecken-LPs (eigener <style>-Block hinter LP_CSS, damit die Entrümpelungs-Seiten byteidentisch bleiben).
+export const HECKE_CSS = `<style>
+/* ---- Hecken-LPs: Designdurchgang 06.11.2026 ---- */
+/* Leistungs-Kacheln: gleicher Rhythmus wie die Preis-Kacheln, eigene Leistung mit Linie und leichter Grünfüllung */
+.lp-ltile .pp{font-size:22px;letter-spacing:-.005em}
+.lp-ltile.own{background:color-mix(in srgb,var(--green) 7%,var(--lp-surface));box-shadow:0 0 0 1.5px var(--green),0 10px 22px -14px rgba(14,46,31,.45)}
+.lp-ltile.own .pl{color:var(--green-d)}
+.lp-ltile .pl{font-weight:700}
+@media(max-width:599px){.lp-hero .lp-ltile{padding:8px 9px}.lp-hero .lp-ltile .pp{font-size:16px}.lp-hero .lp-ltile .pl{font-size:12px}}
+@media(max-width:374px){.lp-hero .lp-ltile .pp{font-size:14.5px}}
+/* Formular-Chips: dezenter Zustand (weiße Fläche, grüne Linie, fette Schrift) statt schwerem Vollblock; kurze Labels auf jeder Breite */
+.lp-form .seg.seg-soft .ql{display:none}
+.lp-form .seg.seg-soft .qs{display:inline}
+.lp-form .seg.seg-soft label{font-size:15px}
+.lp-form .seg.seg-soft label:has(input:checked){background:var(--lp-surface);color:var(--green-d);font-weight:700;box-shadow:0 0 0 1.5px var(--green),0 2px 6px -2px rgba(14,46,31,.22)}
+@media(min-width:760px){.lp-form .seg.seg-soft label{font-size:15.5px}}
+@media(max-width:399px){.lp-form .seg.seg-soft label{font-size:14px}}
+/* Frist-Karte */
+.lp-frist{margin:14px 0 0;padding:14px 16px;border-radius:16px;background:var(--green-d);color:var(--dark-text2);display:flex;align-items:center;gap:14px}
+.lp-frist .badge{flex:0 0 54px;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--green-deep);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.18);color:var(--dark-text1)}
+.lp-frist .badge svg{width:26px;height:26px}
+.lp-frist p{margin:0;display:grid;gap:3px}
+.lp-frist b{color:var(--dark-text1);font-size:15.5px;line-height:1.3;text-wrap:balance}
+.lp-frist p span{font-size:13.5px;line-height:1.35;color:var(--dark-text2)}
+@media(min-width:760px){.lp-hero .lp-leist,.lp-hero .lp-frist{max-width:44em}}
+/* Hero-Foto (ohne Vorher/Nachher): Karte im Format des Sliders, Info-Badge überlappt */
+.lp-hecke.lp-hero-foto .shot .main{aspect-ratio:864/1036;object-fit:cover}
+.lp-hecke .shot .badge{background:var(--lp-surface)}
+@media(min-width:900px){.lp-hecke .shot .badge{left:-26px}}
+@media(max-width:899px){.lp-hecke.lp-hero-foto .shot{max-width:420px}.lp-hecke .shot .badge{left:14px;bottom:20px}}
+/* Galerie: drei Paare nebeneinander ab Desktop */
+@media(min-width:900px){.lp-gallery.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>`;
