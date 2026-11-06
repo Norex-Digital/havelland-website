@@ -1,5 +1,5 @@
 {
-  "_meta": "Echte Google-Reviews via GBP-API (v4) 2026-07-10 gezogen. Kuratiert (8 von 16), verbatim. Inhaber-Review (Mo Br) bewusst ausgeschlossen. Rating/Count aus GBP-API — aggregate 2026-10-29 via GBP-API aktualisiert (27 Reviews, 5,0; Owner-Freigabe 29.10.; vorher 2026-10-20: 21). Kein self-serving aggregateRating-Schema im Output.",
+  "_meta": "Echte Google-Reviews via GBP-API (v4), verbatim (nur Zeilenumbrüche zu Leerzeichen). 2026-07-10: 8 kuratiert von 16. 2026-11-06 (Owner-Entscheid Maurice 07.11., Kundenstimmen je Leistung): 11 weitere kuratiert von 28 (API-Abruf 06.11., 28 Reviews, 5,0); Feld services = Leistungs-Slugs, für die der Text passt, 'allgemein' = ohne Leistungsbezug; generate.mjs kundenstimmen() zeigt je Hub/Ortsseite bis zu 3 (erst getaggte, dann allgemeine, Rotation je URL). Nicht zitiert: siehe ausgeschlossen. Kein self-serving aggregateRating-Schema im Output. Zahl/Rating einzige Quelle: data/proof.json google_reviews.",
   "enabled": true,
   "block_ab_count": 5,
   "place_id": "ChIJR7QuOPz_qEcR5fzAJn2cSPY",
@@ -7,57 +7,230 @@
   "write_review_url": "https://g.page/r/CeX8wCZ9nEj2EAE/review",
   "aggregate": {
     "rating": 5.0,
-    "count": 27,
-    "as_of": "2026-10-29"
+    "count": 28,
+    "as_of": "2026-11-06"
   },
   "reviews": [
     {
-      "author": "Nikita",
+      "author": "Ayk Reiter",
       "rating": 5,
-      "date": "2026-06-22",
-      "text": "Ich bin sehr zufrieden mit dem Haus- & Gartenservice Havelland. Alles war perfekt von der Kommunikation bis zur Ausführung der Arbeiten. Zuverlässig, pünktlich und sehr professionell. Klare Weiterempfehlung!"
+      "date": "2026-10-30",
+      "text": "Die jungen männer haben bei unseren Neuen grundstück einen wpc sichtschutz zauen gebaut. Super arbeit geleistet; super freundlich und zuverlässig. Immer wieder gerne",
+      "services": [
+        "zaunbau"
+      ]
     },
     {
-      "author": "Abdullah Bayraktar",
+      "author": "Daniel Hussock",
       "rating": 5,
-      "date": "2026-06-16",
-      "text": "Super Service Meine Terrasse sieht wie neu aus\nIch bin wirklich begeistert! Meine Terrasse sah seit 20 Jahren nicht gepflegt aus  völlig verwildert, Unkraut überall, die Holzbohlen waren morsch. Die Jungs von Haus-Gartenservice Havelland haben das in zwei Tagen komplett transformiert.\nSie haben alles abgeräumt, neue Bretter verlegt, Unkraut entfernt und die Fläche perfekt hergerichtet. Sehr zuverlässig, freundlich und das beste: das Preis Leistungs Verhältnis ist top\nWürde ich jederzeit wieder buchen. Absolute Empfehlung 👍"
+      "date": "2026-10-26",
+      "text": "Ich kann dieses junge Team nur weiterempfehlen sie sind schnell, unkompliziert sowie eine hervorragende Fachkompetenz in so einem jungen Alter Hut ab Die Jungs haben mir super unter die Arme geholfen nach dem Tod meiner Oma mit der Haus Entrümpelung. Um ehrlich zu sein, hatte ich dafür keinen Kopf und habe die Aufgabe komplett an diese Firma übergeben und muss sagen, dass ich sehr begeistert war. Es lief alles unkompliziert, schnell und Sympathie Wird bei den Jungs groß geschrieben !!!! Weiter sooo !!!!",
+      "services": [
+        "haushaltsaufloesung",
+        "entruempelung"
+      ]
     },
     {
-      "author": "hanan k",
+      "author": "Amélie Natho",
       "rating": 5,
-      "date": "2026-06-18",
-      "text": "Meine hecke war noch nie so schön geformt..  Sauber wurde der Arbeitsplatz auch hinterlassen. Gerne wieder!"
+      "date": "2026-10-26",
+      "text": "Wir haben unsere Gartenhecken schneiden lassen, die waren wirklich schon überfällig. Jetzt sehen sie wieder super aus! Ging wirklich schnell und unkompliziert. Wir werden mit absoluter Sicherheit nochmal hier anfragen:D",
+      "services": [
+        "heckenschnitt"
+      ]
     },
     {
-      "author": "Alq",
+      "author": "Phillip Hans",
       "rating": 5,
-      "date": "2026-07-01",
-      "text": "Unser Garten war so verwuchert und die Hecken mindestens 3 Meter hoch. Jetz sieht alles wieder hübsch aus. Gute Arbeit Männers"
+      "date": "2026-10-26",
+      "text": "Hat alles super geklappt! Sehr nette zuverlässige Mitarbeiter und mit dem Ergebnis bin ich mehr als zufrieden. Ich bedanke mich nochmal herzlich bei euch. Auf jeden Fall weiter zu empfehlen👍🏼",
+      "services": [
+        "allgemein"
+      ]
+    },
+    {
+      "author": "Lorenor Lila",
+      "rating": 5,
+      "date": "2026-10-25",
+      "text": "Ich war sehr zufrieden mit der Dienstleistung. Mein Garten sah noch nie so gepflegt aus. Sehr zu empfehlen und immer wieder gerne bei euch.",
+      "services": [
+        "gartenpflege",
+        "gartenrodung"
+      ]
+    },
+    {
+      "author": "Lio",
+      "rating": 5,
+      "date": "2026-07-24",
+      "text": "Sehr professionell und effizient top Service",
+      "services": [
+        "allgemein"
+      ]
+    },
+    {
+      "author": "Lukas Schröder",
+      "rating": 5,
+      "date": "2026-07-22",
+      "text": "Ich bin mit dem Haus- und Gartenservice sehr zufrieden. Die Arbeiten wurden sorgfältig, zuverlässig und termingerecht erledigt. Das Ergebnis ist top und der Kontakt war freundlich und professionell. Klare Empfehlung!",
+      "services": [
+        "allgemein"
+      ]
+    },
+    {
+      "author": "Nick",
+      "rating": 5,
+      "date": "2026-07-21",
+      "text": "Top Service rund um unseren Garten – von Formschnitten bis zur Entrümpelung wurde alles professionell erledigt und der Grünschnitt gleich mit entsorgt. Absprache lief unkompliziert, Preis-Leistung stimmt. Kommen definitiv wieder bei uns vorbei!",
+      "services": [
+        "gartenpflege",
+        "heckenschnitt",
+        "entruempelung"
+      ]
     },
     {
       "author": "Luis Zoras",
       "rating": 5,
       "date": "2026-07-02",
-      "text": "Meine Hecken sehen wieder aus wie in einem 5 Sterne Hotel, ohne zu übertreiben. Super Arbeit."
+      "text": "Meine Hecken sehen wieder aus wie in einem 5 Sterne Hotel, ohne zu übertreiben. Super Arbeit.",
+      "services": [
+        "heckenschnitt"
+      ]
     },
     {
       "author": "Adis Skrijelj",
       "rating": 5,
       "date": "2026-07-02",
-      "text": "Mein Garten ist jetz für den Sommer wieder betretbar, und die Hecken wieder in Form. Gerne wieder 👍"
+      "text": "Mein Garten ist jetz für den Sommer wieder betretbar, und die Hecken wieder in Form. Gerne wieder 👍",
+      "services": [
+        "heckenschnitt",
+        "gartenpflege",
+        "gartenrodung"
+      ]
+    },
+    {
+      "author": "Alq",
+      "rating": 5,
+      "date": "2026-07-01",
+      "text": "Unser Garten war so verwuchert und die Hecken mindestens 3 Meter hoch. Jetz sieht alles wieder hübsch aus. Gute Arbeit Männers",
+      "services": [
+        "heckenschnitt",
+        "heckenentfernung",
+        "gartenrodung"
+      ]
+    },
+    {
+      "author": "Nikita",
+      "rating": 5,
+      "date": "2026-06-22",
+      "text": "Ich bin sehr zufrieden mit dem Haus- & Gartenservice Havelland. Alles war perfekt von der Kommunikation bis zur Ausführung der Arbeiten. Zuverlässig, pünktlich und sehr professionell. Klare Weiterempfehlung!",
+      "services": [
+        "allgemein"
+      ]
     },
     {
       "author": "Mark Schneider",
       "rating": 5,
       "date": "2026-06-22",
-      "text": "Endlich mal eine angemesse Preisvorstellung. An Qualität hapert es aber nicht. Super Firma 👍"
+      "text": "Endlich mal eine angemesse Preisvorstellung. An Qualität hapert es aber nicht. Super Firma 👍",
+      "services": [
+        "allgemein"
+      ]
+    },
+    {
+      "author": "uur sabri",
+      "rating": 5,
+      "date": "2026-06-22",
+      "text": "Ich bin super zufrieden und habe nichts auszusetzen. Nächstes Jahr wieder",
+      "services": [
+        "gartenpflege",
+        "allgemein"
+      ]
+    },
+    {
+      "author": "Raoul Schnegula",
+      "rating": 5,
+      "date": "2026-06-22",
+      "text": "Die Jungs haben die Hecke bei uns geschnitten, schneller Termin gute Arbeit, gerne wieder 👍",
+      "services": [
+        "heckenschnitt"
+      ]
     },
     {
       "author": "Qusai 21",
       "rating": 5,
       "date": "2026-06-19",
-      "text": "Die Jungs haben echt eine super Arbeit geleistet, meine Hecke sieht aus wie Neu.\nKann ich nur empfehlen 👍🏼"
+      "text": "Die Jungs haben echt eine super Arbeit geleistet, meine Hecke sieht aus wie Neu.\nKann ich nur empfehlen 👍🏼",
+      "services": [
+        "heckenschnitt"
+      ]
+    },
+    {
+      "author": "Liam",
+      "rating": 5,
+      "date": "2026-06-19",
+      "text": "Ich bin mit dem Hecken schnitt sehr zufrieden",
+      "services": [
+        "heckenschnitt"
+      ]
+    },
+    {
+      "author": "hanan k",
+      "rating": 5,
+      "date": "2026-06-18",
+      "text": "Meine hecke war noch nie so schön geformt..  Sauber wurde der Arbeitsplatz auch hinterlassen. Gerne wieder!",
+      "services": [
+        "heckenschnitt"
+      ]
+    },
+    {
+      "author": "Abdullah Bayraktar",
+      "rating": 5,
+      "date": "2026-06-16",
+      "text": "Super Service Meine Terrasse sieht wie neu aus\nIch bin wirklich begeistert! Meine Terrasse sah seit 20 Jahren nicht gepflegt aus  völlig verwildert, Unkraut überall, die Holzbohlen waren morsch. Die Jungs von Haus-Gartenservice Havelland haben das in zwei Tagen komplett transformiert.\nSie haben alles abgeräumt, neue Bretter verlegt, Unkraut entfernt und die Fläche perfekt hergerichtet. Sehr zuverlässig, freundlich und das beste: das Preis Leistungs Verhältnis ist top\nWürde ich jederzeit wieder buchen. Absolute Empfehlung 👍",
+      "services": [
+        "galabau",
+        "pflasterarbeiten",
+        "erdarbeiten",
+        "gartenrodung"
+      ]
+    }
+  ],
+  "ausgeschlossen": [
+    {
+      "author": "Mo Br",
+      "grund": "Inhaber Maurice Brehm. Owner-Entscheid 07.11.2026: Bewertung bleibt bei Google, wird auf der Website nicht zitiert."
+    },
+    {
+      "author": "Renate Brehm",
+      "grund": "Angehörige des Inhabers, nicht zitieren."
+    },
+    {
+      "author": "Julien Ranft",
+      "grund": "Geschäftspartner von Noah (JR GbR), nicht zitieren."
+    },
+    {
+      "author": "Milo Rost",
+      "grund": "Bis Klärung, ob identisch mit Mitarbeiter Milo (seit 02.11.2026)."
+    },
+    {
+      "author": "Christian Alexander Zoder",
+      "grund": "Ohne Text."
+    },
+    {
+      "author": "elias 37",
+      "grund": "Ohne Text."
+    },
+    {
+      "author": "45",
+      "grund": "Anzeigename unklar."
+    },
+    {
+      "author": "laurin '",
+      "grund": "Anzeigename unklar."
+    },
+    {
+      "author": "Lienne",
+      "grund": "Inhalt bezieht sich nicht auf die Leistung."
     }
   ]
 }

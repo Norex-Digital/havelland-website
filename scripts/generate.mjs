@@ -419,6 +419,31 @@ const trustLine = (() => {
   return live ? `<p class="hub-trust rv in d4"><a href="/bewertungen/">${Number(gr.rating).toFixed(1).replace('.', ',')}&nbsp;★ bei Google · ${esc(gr.count)} Bewertungen</a></p>` : '';
 })();
 
+// Kundenstimmen je Leistung (Owner-Entscheid Maurice 07.11.2026): wörtliche Google-Bewertungen aus data/reviews.json, je Hub und
+// Ortsseite bis zu 3 Karten: erst die zur Leistung getaggten (services), dann allgemeine; Rotation je URL (seedOf), damit Nachbarorte
+// verschiedene Stimmen zeigen. Kein Ortsbezug behauptet, KEIN aggregateRating-Schema (Google-Policy: self-serving), Zahl/Rating aus proof.json.
+// KUNDENSTIMMEN_SKIP: Startseite und Mess-/Freeze-Seiten bis 20.11.2026 sowie die Seiten des parallelen Branches feat/heckenschnitt-falkensee-2026-11-07
+// (dort eigene Kundenstimmen). Nach dem 20.11. bzw. dem Merge die Einträge entfernen.
+const KUNDENSTIMMEN_SKIP = new Set(['/', '/entruempelung/', '/entruempelung-falkensee/', '/haushaltsaufloesung-falkensee/', '/heckenschnitt/', '/heckenschnitt-falkensee/']);
+const GBP_VIEW = (reviews.place_id && !/TBD|XXXX|null/i.test(String(reviews.place_id))) ? `https://search.google.com/local/reviews?placeid=${reviews.place_id}` : `https://www.google.com/search?q=${encodeURIComponent(nap.name + ' ' + nap.city)}`;
+const MONATE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+const fmtMonat = d => { const m = /^(\d{4})-(\d{2})/.exec(d || ''); return m ? `${MONATE[+m[2] - 1]} ${m[1]}` : ''; };
+function kundenstimmen(svcSlug, url, n = 3, zone = null) {   // zone: Funktion (alt()) für die Zonen-Parität der Copy-Hubs, sonst null
+  const gr = proof.google_reviews || {};
+  const live = !!reviews.enabled && (gr.count || 0) >= (reviews.block_ab_count || 5) && gr.rating;
+  if (!live || KUNDENSTIMMEN_SKIP.has(url)) return '';
+  const all = Array.isArray(reviews.reviews) ? reviews.reviews.filter(r => r && r.text && r.author) : [];
+  const tagged = all.filter(r => (r.services || []).includes(svcSlug));
+  const generic = all.filter(r => (r.services || []).includes('allgemein') && !tagged.includes(r));
+  const seed = seedOf(url);
+  const pick = rotate(tagged, seed, n);
+  for (const r of rotate(generic, seed, n)) { if (pick.length >= n) break; pick.push(r); }
+  if (pick.length < 2) return '';
+  const cards = pick.map(t => `<figure class="review-card"><div class="rc-stars" aria-label="${t.rating} von 5 Sternen">${'★'.repeat(Math.max(0, Math.min(5, t.rating | 0)))}</div><blockquote>${esc(t.text)}</blockquote><figcaption><b>${esc(t.author)}</b><span>${fmtMonat(t.date)} · Google</span></figcaption></figure>`).join('');
+  const cls = 'sec' + (typeof zone === 'function' ? (zone() ? ' section-alt' : '') : '');
+  return `<section class="${cls}" id="kundenstimmen"><div class="wrap"><div class="head"><h2 class="serif rv">Das sagen Kunden über uns</h2><a class="rv" href="${GBP_VIEW}" rel="nofollow" target="_blank">${Number(gr.rating).toFixed(1).replace('.', ',')}&nbsp;★ · alle ${esc(gr.count)} Google-Bewertungen →</a></div><div class="review-grid rv">${cards}</div></div></section>`;
+}
+
 // Garantie-Strip (lock-v2 .gstrip) — feste 3-Zusagen-Leiste, markenübergreifend (Home + Hubs). Ohne Bild/Overlay-Label.
 const gstrip = `<section class="gstrip" aria-label="Unsere drei Zusagen"><div class="wrap"><div class="gstrip-grid"><div class="gs rv"><span class="gn">01</span><div><h3>Festpreis ist Endpreis</h3><p>Nach der kostenlosen Besichtigung steht Ihr Preis — inklusive Abfuhr, ohne Nachforderung.</p></div></div><div class="gs rv d1"><span class="gn">02</span><div><h3>Foto-Nachweis</h3><p>Vorher-/Nachher-Fotos nach jedem Auftrag, direkt aufs Handy — auch wenn Sie nicht da waren.</p></div></div><div class="gs rv d2"><span class="gn">03</span><div><h3>Ein Ansprechpartner</h3><p>Vom ersten Anruf bis zur Abnahme feste Gesichter — kein Callcenter, keine Warteschleife.</p></div></div></div></div></section>`;
 // Beleg-Variante (Owner 14.09.): Entrümpelung/Haushaltsauflösung — Entsorgungsgebühren nach Beleg, nicht im Festpreis
@@ -577,14 +602,14 @@ function hub(s) {
       heckenKompass() +
       `<section class="sec"><div class="wrap">${echtProjekt({ nur: 'thuja' })}</div></section>` +
       `<section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Ergebnisse zum Durchziehen</h2></div>${karussell()}${archivGrid(undefined, { ctaHref: '/kontakt/#anfrage', compact: true })}</div></section>` +
-      flowBlock + timelineBlock + cardOrteSection + gebietskarte({ linkOrte: ortsHubSlugs }) + ratgeberSection + faqSection;   // Owner 18.09.: FAQ ganz unten, nach den Orten
+      flowBlock + timelineBlock + kundenstimmen(s.slug, url) + cardOrteSection + gebietskarte({ linkOrte: ortsHubSlugs }) + ratgeberSection + faqSection;   // Owner 18.09.: FAQ ganz unten, nach den Orten; 07.11.: Kundenstimmen nach dem Ablauf
   } else {
     // Beweis-Mechanik (eigene Vorher/Nachher-Doku) NICHT bei Partner-/Tippgeber-Services (Dach) — wäre Eigenleistungs-Beweis (Design §3).
     const beweis = (gk === 'reinigung' && BEWEIS_KEY[s.slug] && !s.partner_modell)
       ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Woran Sie ein sauberes Ergebnis erkennen</h2></div>${beweisMechanik(BEWEIS_KEY[s.slug])}</div></section>`
       : '';
     // Garten/Generisch: mit Ortskarten; Reinigung: ohne Gebietskarte, Ortskarten bleiben (interne Links)
-    rich = beweis + flowBlock + timelineBlock + cardOrteSection + ratgeberSection + faqSection;   // Owner 18.09.: FAQ ganz unten, nach den Orten
+    rich = beweis + flowBlock + timelineBlock + kundenstimmen(s.slug, url) + cardOrteSection + ratgeberSection + faqSection;   // Owner 18.09.: FAQ ganz unten, nach den Orten; 07.11.: Kundenstimmen nach dem Ablauf
   }
 
   // b2b_only-Hub (hausmeisterservice): Querverlinkung zu /fuer-hausverwaltungen/ (Design §2 — beide Richtungen)
@@ -699,6 +724,7 @@ function hub(s) {
     if (!orteHtml) alt();
     const ablaufHint = GW_HUBS.includes(s.slug) ? '' : (s.slug === 'winterdienst' ? 'Der schnellste Weg in drei Schritten: Adresse und Flächen nennen (Gehweg, Zufahrt, Hauseingang oder Hof), per WhatsApp senden, in einem Satz schreiben, welche Flächen bis wann frei sein sollen. Ungefähre Meter genügen, ausmessen müssen Sie nichts. Lieber anrufen? Auch das geht.' : 'Der schnellste Weg in drei Schritten: Fläche fotografieren (einmal längs, einmal von vorn), das Foto per WhatsApp senden, in zwei Sätzen schreiben, was passieren soll und wo Sie stehen. Sie müssen nichts ausmessen und kein Formular ausfüllen. Lieber anrufen? Auch das geht.');
     const ablauf = soLaeufts({ partner, slug: s.slug, name: h2Name(s), waText: `Hallo, ich interessiere mich für ${s.name}.`, alt: alt(), hint: esc(ablaufHint) });
+    const ksGG = kundenstimmen(s.slug, url, 3, () => alt());   // 07.11.: Kundenstimmen nach dem Ablauf, in der Zonen-Folge
     const ratgeberGG = ratgeberSection ? ratgeberSection.replace('<section class="sec section-alt">', `<section class="sec${alt() ? ' section-alt' : ''}">`) : '';   // Zonen-Parität bis zum Ende (Ablauf, Ratgeber, FAQ im Wechsel)
     const faqSectionGG = `<section class="sec${alt() ? ' section-alt' : ''}"><div class="wrap">${faqFilter(faqData, { heading: `Häufige Fragen zu <em>${esc(h2Name(s))}</em>` })}</div></section>`;
     const mainGG = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
@@ -713,7 +739,7 @@ ${restBlocks}${faelle}
 ${passt}
 ${orteHtml}
 ${ablauf}
-${ratgeberGG}
+${ksGG ? ksGG + '\n' : ''}${ratgeberGG}
 ${faqSectionGG}
 ${partner ? endBandPartner(s) : endBandHub(s)}`;
     write(url, head(title, meta, url, schema, { og: svcHero(s.slug) }).replace('</head><body>', GW_HUBS.includes(s.slug) ? '</head><body class="gw-hub">' : '</head><body>') + header + mainGG + footer + sctaBar(`Hallo, ich interessiere mich für ${s.name} im Havelland.`) + revealJS + '</body></html>');
@@ -831,7 +857,7 @@ ${gstripFor(s)}
 ${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml, hrefOf, ctaAfterGrid: tief.cta_grid ? ctaZwischen(s, { ...tief.cta_grid }) : '' }) : ''}${tief ? ctaZwischen(s, { ...(tief.cta_after || tiefCtaDefault), alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: 'So sah das zuletzt in ' + o.name + ' aus.', alt: tiefPaper }) : ''}${crossSection}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>
 <section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst', foto: flowFotoO })}</div></section>
-${nachbarSection}
+${kundenstimmen(s.slug, url)}${nachbarSection}
 <section class="sec"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
 ${s.partner_modell ? endBandPartner(s) : endBand}`;
   const ni = svcWaveNoindex(s);
