@@ -1602,6 +1602,483 @@
     "status": 200,
     "notifyTime": null
    }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-wustermark/": [
+   {
+    "at": "2026-11-06T08:12:21.142Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-wustermark/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/unterhaltsreinigung-hennigsdorf/": [
+   {
+    "at": "2026-11-06T08:12:21.569Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/unterhaltsreinigung-hennigsdorf/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/unterhaltsreinigung-oranienburg/": [
+   {
+    "at": "2026-11-06T08:12:22.556Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/unterhaltsreinigung-oranienburg/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/unterhaltsreinigung-berlin-spandau/": [
+   {
+    "at": "2026-11-06T08:12:23.020Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/unterhaltsreinigung-berlin-spandau/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ferienwohnung-reinigung-werder-havel/": [
+   {
+    "at": "2026-11-06T08:12:23.624Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ferienwohnung-reinigung-werder-havel/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ferienwohnung-reinigung-schwielowsee/": [
+   {
+    "at": "2026-11-06T08:12:24.040Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ferienwohnung-reinigung-schwielowsee/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenentfernung-falkensee/": [
+   {
+    "at": "2026-11-06T08:12:24.440Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/heckenentfernung-falkensee/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenentfernung-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T08:12:24.870Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/heckenentfernung-dallgow-doeberitz/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenentfernung-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T08:12:25.294Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/heckenentfernung-schoenwalde-glien/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenentfernung-berlin-spandau/": [
+   {
+    "at": "2026-11-06T08:12:25.715Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/heckenentfernung-berlin-spandau/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-falkensee/": [
+   {
+    "at": "2026-11-06T08:12:26.117Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-falkensee/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T08:12:26.543Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-dallgow-doeberitz/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-brieselang/": [
+   {
+    "at": "2026-11-06T08:12:26.963Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-brieselang/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T08:12:27.368Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-schoenwalde-glien/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-nauen/": [
+   {
+    "at": "2026-11-06T08:12:27.814Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-nauen/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-berlin-spandau/": [
+   {
+    "at": "2026-11-06T08:12:28.234Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen-berlin-spandau/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/falkensee/": [
+   {
+    "at": "2026-11-06T08:12:28.754Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/falkensee/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T08:12:29.183Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/dallgow-doeberitz/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/brieselang/": [
+   {
+    "at": "2026-11-06T08:12:29.639Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/brieselang/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/wustermark/": [
+   {
+    "at": "2026-11-06T08:12:30.086Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/wustermark/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/nauen/": [
+   {
+    "at": "2026-11-06T08:12:30.493Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/nauen/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/ketzin/": [
+   {
+    "at": "2026-11-06T08:12:30.929Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/ketzin/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/hennigsdorf/": [
+   {
+    "at": "2026-11-06T08:12:31.524Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/hennigsdorf/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/velten/": [
+   {
+    "at": "2026-11-06T08:12:31.969Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/velten/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/hohen-neuendorf/": [
+   {
+    "at": "2026-11-06T08:12:32.405Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/hohen-neuendorf/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/werder-havel/": [
+   {
+    "at": "2026-11-06T08:12:32.827Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/werder-havel/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/": [
+   {
+    "at": "2026-11-06T08:12:33.273Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/standorte/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/wertstoffhof-falkensee/": [
+   {
+    "at": "2026-11-06T08:12:33.722Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/wertstoffhof-falkensee/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/sperrmuell-havelland-anmelden/": [
+   {
+    "at": "2026-11-06T08:12:34.179Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/sperrmuell-havelland-anmelden/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/keller-garage-dachboden-entruempeln/": [
+   {
+    "at": "2026-11-06T08:12:34.604Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/keller-garage-dachboden-entruempeln/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/gartenhaus-abreissen-entsorgen/": [
+   {
+    "at": "2026-11-06T08:12:35.043Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/gartenhaus-abreissen-entsorgen/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/hecke-schneiden-erlaubt/": [
+   {
+    "at": "2026-11-06T08:12:35.477Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/hecke-schneiden-erlaubt/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/entruempelung-kosten/": [
+   {
+    "at": "2026-11-06T08:12:35.915Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/entruempelung-kosten/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/haushaltsaufloesung-kosten/": [
+   {
+    "at": "2026-11-06T08:12:36.352Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/haushaltsaufloesung-kosten/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/haushaltsaufloesung-checkliste/": [
+   {
+    "at": "2026-11-06T08:12:36.813Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/haushaltsaufloesung-checkliste/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/fensterreinigung-preise/": [
+   {
+    "at": "2026-11-06T08:12:37.224Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/fensterreinigung-preise/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/fenster-putzen-streifenfrei/": [
+   {
+    "at": "2026-11-06T08:12:37.665Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/fenster-putzen-streifenfrei/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/winterdienst-streupflicht-brandenburg/": [
+   {
+    "at": "2026-11-06T08:12:38.093Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/winterdienst-streupflicht-brandenburg/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/winterdienst-kosten/": [
+   {
+    "at": "2026-11-06T08:12:38.528Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/winterdienst-kosten/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/dachrinne-reinigen-kosten/": [
+   {
+    "at": "2026-11-06T08:12:38.955Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/dachrinne-reinigen-kosten/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/dachrinne-reinigen-wie-oft/": [
+   {
+    "at": "2026-11-06T08:12:39.361Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/dachrinne-reinigen-wie-oft/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/rasen-maehen-wie-oft/": [
+   {
+    "at": "2026-11-06T08:12:39.797Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/rasen-maehen-wie-oft/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/rasen-vertikutieren-wann/": [
+   {
+    "at": "2026-11-06T08:12:40.247Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/rasen-vertikutieren-wann/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/laub-entfernen-pflicht/": [
+   {
+    "at": "2026-11-06T08:12:40.679Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/laub-entfernen-pflicht/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/gebaeudereinigung-kosten/": [
+   {
+    "at": "2026-11-06T08:12:41.099Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/gebaeudereinigung-kosten/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/auszugsreinigung-checkliste/": [
+   {
+    "at": "2026-11-06T08:12:41.519Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/auszugsreinigung-checkliste/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/gartenpflege-kosten/": [
+   {
+    "at": "2026-11-06T08:12:41.950Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/gartenpflege-kosten/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/garten-winterfest-machen/": [
+   {
+    "at": "2026-11-06T08:12:42.371Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/garten-winterfest-machen/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/hecke-entfernen-erlaubt/": [
+   {
+    "at": "2026-11-06T08:12:42.808Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/hecke-entfernen-erlaubt/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/hecke-entfernen-kosten/": [
+   {
+    "at": "2026-11-06T08:12:43.236Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/hecke-entfernen-kosten/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/baumstumpf-entfernen-kosten/": [
+   {
+    "at": "2026-11-06T08:12:43.649Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/baumstumpf-entfernen-kosten/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/verwilderten-garten-roden/": [
+   {
+    "at": "2026-11-06T08:12:44.086Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/verwilderten-garten-roden/\" } } "
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/": [
+   {
+    "at": "2026-11-06T08:12:44.522Z",
+    "day": "2026-11-06",
+    "status": 200,
+    "notifyTime": null,
+    "body": "{ \"urlNotificationMetadata\": { \"url\": \"https://haus-und-gartenservice-havelland.de/ratgeber/\" } } "
+   }
   ]
  }
 }
