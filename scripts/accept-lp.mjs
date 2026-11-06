@@ -314,23 +314,23 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
       check(id, 'Hecke: zitat_hero je LP gesetzt (Objekt oder false, kein Fallback auf das Entrümpelungs-Zitat)', en.zitat_hero === false || (en.zitat_hero && typeof en.zitat_hero === 'object'));
       const kartenKeys = [...(en.bewertungen_lp || []), ...(en.zitat_hero && en.zitat_hero.quelle ? [en.zitat_hero.quelle] : [])];
       check(id, 'Hecke: keine Bewertungskarte/Zitat mit Entrümpelungs-Bezug (Tag oder Text) und kein Standard-Key milo/mark/nick', kartenKeys.every(k => { const r = (lpJson.bewertungen || {})[k]; return r && !/entrümpel/i.test(`${r.tag} ${r.t}`) && !['milo', 'mark', 'nick'].includes(k); }));
-      // Bilder (Owner 06.11. abends: nur echte Fotos aus dem Google-Unternehmensprofil, keine KI-Paare vn/, kein KI-Stimmungsbild): Hero ba nur mit dem echten Paar arbeit/gbp-hecke-05-*, Hero foto nur arbeit/gbp-hecke-06-einfahrt (echter Mitarbeiter von hinten), Galerie aus Paar 05 und den Einzelfotos 06/08.
+      // Bilder (Owner 06.11. abends: nur echte Fotos aus dem Google-Unternehmensprofil, keine KI-Paare vn/, kein KI-Stimmungsbild): Hero ba nur mit dem echten Paar arbeit/gbp-hecke-05-*, Hero foto nur arbeit/gbp-hecke-06-einfahrt (echter Mitarbeiter von hinten), Galerie aus Paar 05 und den Einzelfotos 06 (Einfahrt) und 10 (Leiter, Thuja-Rückschnitt 10/2026); 08 Kirschlorbeer auf Owner-Wunsch raus. Paar 05 = echte Hälften des Profil-Komposits (Korrektur 06.11. abends).
       const hero = en.hero || { typ: 'text' };
       check(id, `Hecke: Hero-Typ ${hero.typ} ∈ {text, ba, foto}`, ['text', 'ba', 'foto'].includes(hero.typ));
       const manifestIMG = JSON.parse(fs.readFileSync('assets/img/manifest.json', 'utf8'));
       const ECHT_PAAR = ['arbeit/gbp-hecke-05-vorher', 'arbeit/gbp-hecke-05-nachher'];
-      const ECHT_EINZEL = ['arbeit/gbp-hecke-06-einfahrt', 'arbeit/gbp-hecke-08-kirschlorbeer'];
+      const ECHT_EINZEL = ['arbeit/gbp-hecke-06-einfahrt', 'arbeit/gbp-hecke-10-leiter']; // 06.11. abends: 08 Kirschlorbeer raus (Owner), Leiter-Foto (Thuja-Rückschnitt 10/2026) rein
       const paarEcht = f => !f.vn && f.vorher === ECHT_PAAR[0] && f.nachher === ECHT_PAAR[1] && ECHT_PAAR.every(k => manifestIMG[k]);
       const einzelEcht = f => !f.vn && !f.vorher && ECHT_EINZEL.includes(f.slug) && !!manifestIMG[f.slug];
       if (hero.typ === 'ba') check(id, 'Hecke: Hero ba nur mit dem echten Paar arbeit/gbp-hecke-05-vorher/-nachher', paarEcht(hero));
       if (hero.typ === 'foto') check(id, 'Hecke: Hero foto nur arbeit/gbp-hecke-06-einfahrt (echtes Foto, Mitarbeiter von hinten, kein KI-Bild)', hero.slug === 'arbeit/gbp-hecke-06-einfahrt' && !!manifestIMG[hero.slug]);
       check(id, `Hecke: Hero im Output = lp.json (lp-hero-${hero.typ}), kein stiller Rückfall auf Text`, new RegExp(`<section class="phero lp-hero lp-hero-${hero.typ}[ "]`).test(h));
-      check(id, 'Hecke: Galerie-Einträge (fotos) nur echtes Paar 05 oder Einzelfotos 06/08, kein vn/-Paar', (en.fotos || []).every(f => paarEcht(f) || einzelEcht(f)));
+      check(id, 'Hecke: Galerie-Einträge (fotos) nur echtes Paar 05 oder Einzelfotos 06/Leiter, kein vn/-Paar', (en.fotos || []).every(f => paarEcht(f) || einzelEcht(f)));
       check(id, 'Hecke: kein Bild aus vn/ und kein KI-Stimmungsbild (bg-hecke, svc-*-hero) im Output', !/\/assets\/img\/vn\//.test(h) && !/\/assets\/img\/(bg-hecke|svc-[a-z-]+-hero)-/.test(h));
       const baImgs = [...h.matchAll(/<div class="ba[ "][^>]*>\s*<img src="([^"]+)"[^>]*><img class="ba-top" src="([^"]+)"/g)].flatMap(m => [m[1], m[2]]);
       check(id, `Hecke: alle Slider-Bilder (${baImgs.length}) = echtes Paar arbeit/gbp-hecke-05-*`, baImgs.every(u => /\/assets\/img\/arbeit\/gbp-hecke-05-(vorher|nachher)-\d+\.webp$/.test(u)));
       const bilder = [...h.matchAll(/\/assets\/img\/([a-z0-9\/_-]+?)(?:-\d+)?\.(?:webp|avif|jpg|png)/g)].map(m => m[1]).filter(x => x.startsWith('arbeit/') || x.startsWith('vn/'));
-      check(id, 'Hecke: alle Arbeitsfotos im Output sind arbeit/gbp-hecke-*', bilder.every(x => /^arbeit\/gbp-hecke-0[568]-/.test(x)));
+      check(id, 'Hecke: alle Arbeitsfotos im Output sind arbeit/gbp-hecke-*', bilder.every(x => /^arbeit\/gbp-hecke-(05|06|10)-/.test(x)));
       // Galerie (#fotos): Vorhandensein je Seite (Entfernung: keine Galerie), Überschrift „So sieht unsere Arbeit aus“, Hinweis „Fotos von unseren Einsätzen im Havelland“, keine Bild-Labels, keine Ortsnamen je Bild
       const fS = h.indexOf('id="fotos"'), fH = fS > -1 ? h.slice(fS, h.indexOf('</section>', fS)) : '';
       const nKarten = (fH.match(/<div class="ba"|<div class="lp-fotokarte"/g) || []).length;
@@ -362,7 +362,7 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
       check(id, 'Hecke: Zusagen-Band im CSS dunkel (--green-d, Text --dark-text2, Headline 700, kein Grain/Hintergrundbild, keine Hex-Werte)', has(h, '.gstrip.gstrip-dark{background:var(--green-d)') && has(h, 'color:var(--dark-text2)') && /\.gstrip-dark h2\{[^}]*font-weight:700/.test(h) && !/\.gstrip-dark[^{]*\{[^}]*(url\(|#[0-9a-f]{3,6}\b|grain)/i.test(h));
       check(id, 'Hecke: Hero-Klasse lp-hecke (Foto-Karte, Badge) und HECKE_CSS im Kopf, Chips seg-soft', has(h, ' lp-hecke"') && has(h, '.lp-form .seg.seg-soft label:has(input:checked)'));
       const imgSlugs = [...h.matchAll(/\/assets\/img\/([a-z0-9_-]+?)(?:-\d+)?\.(?:webp|avif|jpg|png)/g)].map(m => m[1]);
-      check(id, 'Hecke: Personenbild nur gbp-hecke-06-einfahrt (echter Mitarbeiter von hinten), kein hecke-hinten-*-noah/zaun-hinten-*/Ansprechpartner/KI-Avatar', !imgSlugs.some(x => PERSON_RE.test(x)) && !has(h, 'class="lp-person"'));
+      check(id, 'Hecke: Personenbilder nur gbp-hecke-06-einfahrt und gbp-hecke-10-leiter (echte Mitarbeiter von hinten), kein hecke-hinten-*-noah/zaun-hinten-*/Ansprechpartner/KI-Avatar', !imgSlugs.some(x => PERSON_RE.test(x)) && !has(h, 'class="lp-person"'));
       // Überschrift: genau ein kursives Akzentwort in der H1
       const h1H = (h.match(/<h1>([\s\S]*?)<\/h1>/) || [, ''])[1];
       check(id, 'Hecke: H1 mit genau einem <em>', (h1H.match(/<em[\s>]/g) || []).length === 1);

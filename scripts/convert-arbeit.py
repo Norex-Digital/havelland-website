@@ -11,10 +11,13 @@ DST = os.path.join(ROOT, "assets", "img", "arbeit")
 MAN = os.path.join(ROOT, "assets", "img", "manifest.json")
 # name -> (Quelldatei, Breiten, Fallback-JPG-Breite, Beschnitt 4:5 mit oberer Kante in Px der Quelle oder None)
 JOBS = {
+    # Paar 05 = linke/rechte Hälfte des Profil-Komposits "Vorher | Nachher" (GBP #05, 1362x900), oberer Rand 110 px mit den eingebrannten Labels abgeschnitten -> je 675x790.
+    # Korrektur 06.11. abends: die erste Fassung hatte zweimal die Nachher-Hälfte geschnitten (Owner: "kein Vorherbild dabei").
     "gbp-hecke-05-vorher":      ("gbp-hecke-05-vorher.jpg",  [480, 675], 675, None),
     "gbp-hecke-05-nachher":     ("gbp-hecke-05-nachher.jpg", [480, 675], 675, None),
     "gbp-hecke-06-einfahrt":    ("gbp-06.jpg",               [480, 768, 1024], 1024, 160),
-    "gbp-hecke-08-kirschlorbeer": ("gbp-08.jpg",             [480, 768, 1024], 1024, 252),
+    # Leiter-Foto (Thuja-Rückschnitt Oktober 2026, Quelle assets/img/gbp/heckenrueckschnitt-2026-10.jpg 1200x900, vorab auf 4:5 = 720x900 um x=300..1020 beschnitten)
+    "gbp-hecke-10-leiter":      ("gbp-hecke-leiter-2026-10.jpg", [480, 720], 720, None),
 }
 manifest = json.load(open(MAN, encoding="utf-8"))
 os.makedirs(DST, exist_ok=True)
