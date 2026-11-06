@@ -1,0 +1,1607 @@
+{
+ "_meta": {
+  "zweck": "Sendungen an die Google Indexing API (urlNotifications:publish). Keine Geheimnisse."
+ },
+ "sent": {
+  "https://haus-und-gartenservice-havelland.de/entruempelung-wustermark/": [
+   {
+    "at": "2026-11-06T06:30:32.368Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/baumfaellung-falkensee/": [
+   {
+    "at": "2026-11-06T06:30:34.567Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/galabau-potsdam/": [
+   {
+    "at": "2026-11-06T06:30:34.998Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gebaeudereinigung-berlin-spandau/": [
+   {
+    "at": "2026-11-06T06:30:35.931Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gebaeudereinigung-hennigsdorf/": [
+   {
+    "at": "2026-11-06T06:30:36.438Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/galabau-berlin-spandau/": [
+   {
+    "at": "2026-11-06T06:30:37.016Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/pflasterarbeiten-falkensee/": [
+   {
+    "at": "2026-11-06T06:30:37.445Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/erdarbeiten-falkensee/": [
+   {
+    "at": "2026-11-06T06:30:37.866Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-falkensee/": [
+   {
+    "at": "2026-11-06T06:30:38.290Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T06:30:38.714Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-brieselang/": [
+   {
+    "at": "2026-11-06T06:30:39.136Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T06:30:39.537Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-wustermark/": [
+   {
+    "at": "2026-11-06T06:30:40.007Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-nauen/": [
+   {
+    "at": "2026-11-06T06:30:40.404Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-ketzin/": [
+   {
+    "at": "2026-11-06T06:30:40.820Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-gross-glienicke/": [
+   {
+    "at": "2026-11-06T06:30:41.222Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-berlin-kladow/": [
+   {
+    "at": "2026-11-06T06:30:41.634Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-berlin-gatow/": [
+   {
+    "at": "2026-11-06T06:30:42.037Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-velten/": [
+   {
+    "at": "2026-11-06T06:30:42.442Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-oberkraemer/": [
+   {
+    "at": "2026-11-06T06:30:42.849Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-hohen-neuendorf/": [
+   {
+    "at": "2026-11-06T06:30:43.250Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenentfernung-brieselang/": [
+   {
+    "at": "2026-11-06T06:30:43.679Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenentfernung-nauen/": [
+   {
+    "at": "2026-11-06T06:30:44.137Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-ketzin/": [
+   {
+    "at": "2026-11-06T06:30:44.580Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-velten/": [
+   {
+    "at": "2026-11-06T06:30:45.023Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-hohen-neuendorf/": [
+   {
+    "at": "2026-11-06T06:30:45.453Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-oberkraemer/": [
+   {
+    "at": "2026-11-06T06:30:45.898Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T06:30:46.328Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachreinigung-falkensee/": [
+   {
+    "at": "2026-11-06T06:30:46.782Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachreinigung-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T06:30:47.208Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachreinigung-brieselang/": [
+   {
+    "at": "2026-11-06T06:30:47.654Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachreinigung-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T06:30:48.100Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachreinigung-wustermark/": [
+   {
+    "at": "2026-11-06T06:30:48.574Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/berlin-spandau/": [
+   {
+    "at": "2026-11-06T06:30:48.995Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T06:30:49.424Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/gross-glienicke/": [
+   {
+    "at": "2026-11-06T06:30:49.878Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/oberkraemer/": [
+   {
+    "at": "2026-11-06T06:30:50.309Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/berlin-kladow/": [
+   {
+    "at": "2026-11-06T06:30:50.764Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/berlin-gatow/": [
+   {
+    "at": "2026-11-06T06:30:51.191Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/pflasterarbeiten-kosten/": [
+   {
+    "at": "2026-11-06T06:30:51.614Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/zaun-kosten/": [
+   {
+    "at": "2026-11-06T06:30:52.068Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/was-kostet-entruempelung/": [
+   {
+    "at": "2026-11-06T06:30:52.509Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/hausmeisterservice-kosten/": [
+   {
+    "at": "2026-11-06T06:30:52.966Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/doppelstabmattenzaun-montage-kosten/": [
+   {
+    "at": "2026-11-06T06:30:53.387Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gebaeudereinigung-oranienburg/": [
+   {
+    "at": "2026-11-06T06:30:53.809Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/grundreinigung-vs-unterhaltsreinigung/": [
+   {
+    "at": "2026-11-06T06:30:54.364Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/zaun-genehmigung-brandenburg/": [
+   {
+    "at": "2026-11-06T06:30:54.804Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/wann-hecke-schneiden/": [
+   {
+    "at": "2026-11-06T06:30:55.262Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/dachreinigung-kosten/": [
+   {
+    "at": "2026-11-06T06:30:55.686Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/moos-vom-dach-entfernen/": [
+   {
+    "at": "2026-11-06T06:30:56.107Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/heckenschnitt-kosten/": [
+   {
+    "at": "2026-11-06T06:30:56.630Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-oranienburg/": [
+   {
+    "at": "2026-11-06T06:30:57.073Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-werder-havel/": [
+   {
+    "at": "2026-11-06T06:30:57.531Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/ferienwohnung-endreinigung-kosten/": [
+   {
+    "at": "2026-11-06T06:30:57.955Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/raeumpflicht-havelland-uhrzeiten/": [
+   {
+    "at": "2026-11-06T06:30:58.408Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ratgeber/streusalz-brandenburg-verboten/": [
+   {
+    "at": "2026-11-06T06:30:58.867Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-kremmen/": [
+   {
+    "at": "2026-11-06T06:30:59.298Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-birkenwerder/": [
+   {
+    "at": "2026-11-06T06:30:59.767Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-kremmen/": [
+   {
+    "at": "2026-11-06T06:31:00.191Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-lehnitz/": [
+   {
+    "at": "2026-11-06T06:31:00.628Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-birkenwerder/": [
+   {
+    "at": "2026-11-06T06:31:01.062Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-glienicke-nordbahn/": [
+   {
+    "at": "2026-11-06T06:31:01.491Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-kremmen/": [
+   {
+    "at": "2026-11-06T06:31:01.948Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-leegebruch/": [
+   {
+    "at": "2026-11-06T06:31:02.375Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-lehnitz/": [
+   {
+    "at": "2026-11-06T06:31:02.812Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-oranienburg/": [
+   {
+    "at": "2026-11-06T06:31:03.240Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt-werder-havel/": [
+   {
+    "at": "2026-11-06T06:31:03.669Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/birkenwerder/": [
+   {
+    "at": "2026-11-06T06:31:04.125Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/glienicke-nordbahn/": [
+   {
+    "at": "2026-11-06T06:31:04.546Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/kremmen/": [
+   {
+    "at": "2026-11-06T06:31:04.977Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/leegebruch/": [
+   {
+    "at": "2026-11-06T06:31:05.407Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/lehnitz/": [
+   {
+    "at": "2026-11-06T06:31:05.836Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/standorte/oranienburg/": [
+   {
+    "at": "2026-11-06T06:31:06.269Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-berlin-gatow/": [
+   {
+    "at": "2026-11-06T06:31:06.696Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-berlin-kladow/": [
+   {
+    "at": "2026-11-06T06:31:07.124Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-gross-glienicke/": [
+   {
+    "at": "2026-11-06T06:31:07.557Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-hohen-neuendorf/": [
+   {
+    "at": "2026-11-06T06:31:07.995Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-ketzin/": [
+   {
+    "at": "2026-11-06T06:31:08.431Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-nauen/": [
+   {
+    "at": "2026-11-06T06:31:08.856Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-oberkraemer/": [
+   {
+    "at": "2026-11-06T06:31:09.286Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-velten/": [
+   {
+    "at": "2026-11-06T06:31:09.717Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-berlin-gatow/": [
+   {
+    "at": "2026-11-06T06:31:10.151Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-berlin-kladow/": [
+   {
+    "at": "2026-11-06T06:31:10.573Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-gross-glienicke/": [
+   {
+    "at": "2026-11-06T06:31:10.996Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-hohen-neuendorf/": [
+   {
+    "at": "2026-11-06T06:31:11.438Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-ketzin/": [
+   {
+    "at": "2026-11-06T06:31:11.875Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-nauen/": [
+   {
+    "at": "2026-11-06T06:31:12.322Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-oberkraemer/": [
+   {
+    "at": "2026-11-06T06:31:12.748Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-velten/": [
+   {
+    "at": "2026-11-06T06:31:13.173Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/zaunbau-berlin-gatow/": [
+   {
+    "at": "2026-11-06T06:31:13.599Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/zaunbau-berlin-kladow/": [
+   {
+    "at": "2026-11-06T06:31:14.032Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/zaunbau-berlin-spandau/": [
+   {
+    "at": "2026-11-06T06:31:14.466Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/zaunbau-brieselang/": [
+   {
+    "at": "2026-11-06T06:31:14.898Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/zaunbau-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T06:31:15.344Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/zaunbau-falkensee/": [
+   {
+    "at": "2026-11-06T06:31:15.770Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/zaunbau-nauen/": [
+   {
+    "at": "2026-11-06T06:31:16.203Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/zaunbau-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T06:31:16.643Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/zaunbau-wustermark/": [
+   {
+    "at": "2026-11-06T06:31:17.065Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/": [
+   {
+    "at": "2026-11-06T06:31:17.520Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/leistungen/": [
+   {
+    "at": "2026-11-06T06:31:17.949Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/kontakt/": [
+   {
+    "at": "2026-11-06T06:31:18.384Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ueber-uns/": [
+   {
+    "at": "2026-11-06T06:31:18.819Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/bewertungen/": [
+   {
+    "at": "2026-11-06T06:31:19.248Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gewerbe/": [
+   {
+    "at": "2026-11-06T06:31:19.685Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fuer-hausverwaltungen/": [
+   {
+    "at": "2026-11-06T06:31:20.125Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fuer-firmen/": [
+   {
+    "at": "2026-11-06T06:31:20.563Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fuer-pflegeeinrichtungen/": [
+   {
+    "at": "2026-11-06T06:31:21.024Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fuer-bestatter/": [
+   {
+    "at": "2026-11-06T06:31:21.484Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege/": [
+   {
+    "at": "2026-11-06T06:31:21.912Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenschnitt/": [
+   {
+    "at": "2026-11-06T06:31:22.351Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst/": [
+   {
+    "at": "2026-11-06T06:31:22.785Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/steinreinigung/": [
+   {
+    "at": "2026-11-06T06:31:23.218Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung/": [
+   {
+    "at": "2026-11-06T06:31:23.678Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachrinnenreinigung/": [
+   {
+    "at": "2026-11-06T06:31:24.101Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachreinigung/": [
+   {
+    "at": "2026-11-06T06:31:24.544Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung/": [
+   {
+    "at": "2026-11-06T06:31:24.977Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung/": [
+   {
+    "at": "2026-11-06T06:31:25.411Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/grundreinigung/": [
+   {
+    "at": "2026-11-06T06:31:25.878Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/hausmeisterservice/": [
+   {
+    "at": "2026-11-06T06:31:26.320Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gebaeudereinigung/": [
+   {
+    "at": "2026-11-06T06:31:26.755Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/unterhaltsreinigung/": [
+   {
+    "at": "2026-11-06T06:31:27.189Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/objektbetreuung/": [
+   {
+    "at": "2026-11-06T06:31:27.628Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/ferienwohnung-reinigung/": [
+   {
+    "at": "2026-11-06T06:31:28.090Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/heckenentfernung/": [
+   {
+    "at": "2026-11-06T06:31:28.517Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/baumstumpf-entfernen/": [
+   {
+    "at": "2026-11-06T06:31:28.976Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenrodung/": [
+   {
+    "at": "2026-11-06T06:31:29.413Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/baumschnitt/": [
+   {
+    "at": "2026-11-06T06:31:29.847Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/galabau/": [
+   {
+    "at": "2026-11-06T06:31:30.324Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/zaunbau/": [
+   {
+    "at": "2026-11-06T06:31:30.822Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/pflasterarbeiten/": [
+   {
+    "at": "2026-11-06T06:31:31.250Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/einfahrt-pflastern/": [
+   {
+    "at": "2026-11-06T06:31:31.681Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/terrassenbau/": [
+   {
+    "at": "2026-11-06T06:31:32.117Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/rollrasen-verlegen/": [
+   {
+    "at": "2026-11-06T06:31:32.555Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartengestaltung/": [
+   {
+    "at": "2026-11-06T06:31:32.980Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/erdarbeiten/": [
+   {
+    "at": "2026-11-06T06:31:33.414Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/baumfaellung/": [
+   {
+    "at": "2026-11-06T06:31:33.856Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-falkensee/": [
+   {
+    "at": "2026-11-06T06:31:34.287Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T06:31:34.715Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-brieselang/": [
+   {
+    "at": "2026-11-06T06:31:35.141Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T06:31:35.576Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-wustermark/": [
+   {
+    "at": "2026-11-06T06:31:36.010Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-berlin-kladow/": [
+   {
+    "at": "2026-11-06T06:31:36.455Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-berlin-gatow/": [
+   {
+    "at": "2026-11-06T06:31:36.886Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-gross-glienicke/": [
+   {
+    "at": "2026-11-06T06:31:37.322Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-nauen/": [
+   {
+    "at": "2026-11-06T06:31:37.756Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-glienicke-nordbahn/": [
+   {
+    "at": "2026-11-06T06:31:38.196Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/gartenpflege-leegebruch/": [
+   {
+    "at": "2026-11-06T06:31:38.633Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-falkensee/": [
+   {
+    "at": "2026-11-06T06:31:39.059Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T06:31:39.485Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-brieselang/": [
+   {
+    "at": "2026-11-06T06:31:39.930Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T06:31:40.370Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-wustermark/": [
+   {
+    "at": "2026-11-06T06:31:40.808Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-berlin-kladow/": [
+   {
+    "at": "2026-11-06T06:31:41.267Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-berlin-gatow/": [
+   {
+    "at": "2026-11-06T06:31:41.697Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-gross-glienicke/": [
+   {
+    "at": "2026-11-06T06:31:42.142Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-nauen/": [
+   {
+    "at": "2026-11-06T06:31:42.581Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-ketzin/": [
+   {
+    "at": "2026-11-06T06:31:43.014Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-oberkraemer/": [
+   {
+    "at": "2026-11-06T06:31:43.440Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-hennigsdorf/": [
+   {
+    "at": "2026-11-06T06:31:43.867Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-velten/": [
+   {
+    "at": "2026-11-06T06:31:44.307Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-hohen-neuendorf/": [
+   {
+    "at": "2026-11-06T06:31:44.739Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-birkenwerder/": [
+   {
+    "at": "2026-11-06T06:31:45.173Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-glienicke-nordbahn/": [
+   {
+    "at": "2026-11-06T06:31:45.600Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-lehnitz/": [
+   {
+    "at": "2026-11-06T06:31:46.027Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-leegebruch/": [
+   {
+    "at": "2026-11-06T06:31:46.470Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-kremmen/": [
+   {
+    "at": "2026-11-06T06:31:46.902Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-oranienburg/": [
+   {
+    "at": "2026-11-06T06:31:47.336Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-berlin-spandau/": [
+   {
+    "at": "2026-11-06T06:31:47.769Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/winterdienst-werder-havel/": [
+   {
+    "at": "2026-11-06T06:31:48.195Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-falkensee/": [
+   {
+    "at": "2026-11-06T06:31:48.626Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-brieselang/": [
+   {
+    "at": "2026-11-06T06:31:49.059Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T06:31:49.528Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-wustermark/": [
+   {
+    "at": "2026-11-06T06:31:49.964Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-berlin-kladow/": [
+   {
+    "at": "2026-11-06T06:31:50.390Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-berlin-gatow/": [
+   {
+    "at": "2026-11-06T06:31:50.828Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-gross-glienicke/": [
+   {
+    "at": "2026-11-06T06:31:51.262Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-nauen/": [
+   {
+    "at": "2026-11-06T06:31:51.701Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-ketzin/": [
+   {
+    "at": "2026-11-06T06:31:52.133Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-oberkraemer/": [
+   {
+    "at": "2026-11-06T06:31:52.567Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-velten/": [
+   {
+    "at": "2026-11-06T06:31:52.998Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-hohen-neuendorf/": [
+   {
+    "at": "2026-11-06T06:31:53.430Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-birkenwerder/": [
+   {
+    "at": "2026-11-06T06:31:53.871Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-glienicke-nordbahn/": [
+   {
+    "at": "2026-11-06T06:31:54.297Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-lehnitz/": [
+   {
+    "at": "2026-11-06T06:31:54.720Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-leegebruch/": [
+   {
+    "at": "2026-11-06T06:31:55.151Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-oranienburg/": [
+   {
+    "at": "2026-11-06T06:31:55.584Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/fensterreinigung-werder-havel/": [
+   {
+    "at": "2026-11-06T06:31:56.016Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachrinnenreinigung-falkensee/": [
+   {
+    "at": "2026-11-06T06:31:56.449Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachrinnenreinigung-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T06:31:56.876Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachrinnenreinigung-brieselang/": [
+   {
+    "at": "2026-11-06T06:31:57.307Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachrinnenreinigung-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T06:31:57.740Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/dachrinnenreinigung-wustermark/": [
+   {
+    "at": "2026-11-06T06:31:58.172Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-falkensee/": [
+   {
+    "at": "2026-11-06T06:31:58.599Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T06:31:59.023Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-brieselang/": [
+   {
+    "at": "2026-11-06T06:31:59.456Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/entruempelung-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T06:31:59.891Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-falkensee/": [
+   {
+    "at": "2026-11-06T06:32:00.326Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-dallgow-doeberitz/": [
+   {
+    "at": "2026-11-06T06:32:00.790Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-brieselang/": [
+   {
+    "at": "2026-11-06T06:32:01.243Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ],
+  "https://haus-und-gartenservice-havelland.de/haushaltsaufloesung-schoenwalde-glien/": [
+   {
+    "at": "2026-11-06T06:32:01.685Z",
+    "day": "2026-11-05",
+    "status": 200,
+    "notifyTime": null
+   }
+  ]
+ }
+}
