@@ -1,5 +1,5 @@
 {
-  "_meta": "Echte Google-Reviews via GBP-API (v4), verbatim (nur Zeilenumbrüche zu Leerzeichen). 2026-07-10: 8 kuratiert von 16. 2026-11-06 (Owner-Entscheid Maurice 07.11., Kundenstimmen je Leistung): 11 weitere kuratiert von 28 (API-Abruf 06.11., 28 Reviews, 5,0); Feld services = Leistungs-Slugs, für die der Text passt, 'allgemein' = ohne Leistungsbezug; generate.mjs kundenstimmen() zeigt je Hub/Ortsseite bis zu 3 (erst getaggte, dann allgemeine, Rotation je URL). Nicht zitiert: siehe ausgeschlossen. Kein self-serving aggregateRating-Schema im Output. Zahl/Rating einzige Quelle: data/proof.json google_reviews. 07.11. Tag-Korrektur nach Prüfung (Workflow verify-kundenstimmen): Bayraktar = Holzterrasse (terrassenbau, galabau, gartenrodung), Lila nur gartenpflege, Adis ohne gartenrodung, Alq ohne heckenentfernung, uur sabri nur allgemein. 07.11. Owner: Hussock (Klarname plus Todesfall in der Familie) wird mit author_anzeige 'Daniel H.' gezeigt, Text bleibt wörtlich; author bleibt der Google-Anzeigename für die API-Prüfung. 07.11. Owner Maurice: Milo Rost freigegeben (kein Ausschlussgrund), aufgenommen mit entruempelung/haushaltsaufloesung; auf den /lp/-Seiten stand er bereits (lp.json).",
+  "_meta": "Echte Google-Reviews via GBP-API (v4), verbatim (nur Zeilenumbrüche zu Leerzeichen). 2026-07-10: 8 kuratiert von 16. 2026-11-06 (Owner-Entscheid Maurice 06.11., Kundenstimmen je Leistung): 11 weitere kuratiert von 28 (API-Abruf 06.11., 28 Reviews, 5,0); Feld services = Leistungs-Slugs, für die der Text passt, 'allgemein' = ohne Leistungsbezug; generate.mjs kundenstimmen() zeigt je Hub/Ortsseite bis zu 3 (erst getaggte, dann allgemeine, Rotation je URL). Nicht zitiert: siehe ausgeschlossen. Kein self-serving aggregateRating-Schema im Output. Zahl/Rating einzige Quelle: data/proof.json google_reviews. 06.11. Tag-Korrektur nach Prüfung (Workflow verify-kundenstimmen): Bayraktar = Holzterrasse (terrassenbau, galabau, gartenrodung), Lila nur gartenpflege, Adis ohne gartenrodung, Alq ohne heckenentfernung, uur sabri nur allgemein. 06.11. Owner: Hussock (Klarname plus Todesfall in der Familie) wird mit author_anzeige 'Daniel H.' gezeigt, Text bleibt wörtlich; author bleibt der Google-Anzeigename für die API-Prüfung. 06.11. Owner Maurice: Milo Rost freigegeben (kein Ausschlussgrund), aufgenommen mit entruempelung/haushaltsaufloesung; auf den /lp/-Seiten stand er bereits (lp.json).",
   "enabled": true,
   "block_ab_count": 5,
   "place_id": "ChIJR7QuOPz_qEcR5fzAJn2cSPY",
@@ -204,7 +204,7 @@
   "ausgeschlossen": [
     {
       "author": "Mo Br",
-      "grund": "Inhaber Maurice Brehm. Owner-Entscheid 07.11.2026: Bewertung bleibt bei Google, wird auf der Website nicht zitiert."
+      "grund": "Inhaber Maurice Brehm. Owner-Entscheid 06.11.2026: Bewertung bleibt bei Google, wird auf der Website nicht zitiert."
     },
     {
       "author": "Renate Brehm",

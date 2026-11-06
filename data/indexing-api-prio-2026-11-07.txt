@@ -1,4 +1,4 @@
-# Prioritätsliste Indexing API, Stand 07.11.2026 (Owner-Entscheid). Winterdienst-Seiten nicht in der Priorität (Owner: „ohne Winterdienst“), sie kommen mit dem Sitemap-Rest am zweiten Tag. Reihenfolge: offene Kern-Orte nach prio_rang, offene übrige, dann neue Seiten vom 06.11. (nicht im Inventar).
+# Prioritätsliste Indexing API, Stand 06.11.2026 (Owner-Entscheid). Winterdienst-Seiten nicht in der Priorität (Owner: „ohne Winterdienst“), sie kommen mit dem Sitemap-Rest am zweiten Tag. Reihenfolge: offene Kern-Orte nach prio_rang, offene übrige, dann neue Seiten vom 06.11. (nicht im Inventar).
 # Quelle: gbr-firma websites/havelland/analyse-2026-11-ranking/01-index-inventar.csv (indexiert_seit leer) + Sitemap-Differenz.
 /entruempelung-wustermark/
 /baumfaellung-falkensee/

@@ -677,7 +677,7 @@ P('SITEWEIT (alle Seiten)');
 { const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(`${d}/${e.name}`) : e.name === 'index.html' ? [`${d}/${e.name}`] : []);
   const hits = walk('website').filter(f => !f.includes('/lp/')).filter(f => { const h = fs.readFileSync(f, 'utf8'); return classCount(h, 'gw-chip') > 0 || />Eigene Ausführung</.test(h) || /<h3>Partner-Fachbetrieb<\/h3>/.test(h) || /<span[^>]*>Partner-Fachbetrieb<\/span>/.test(h); });
   P('SITEWEIT Ausführungs-Etiketten'); check('siteweit', `keine Etiketten Eigene Ausführung / Partner-Fachbetrieb (${hits.length} Seiten${hits.length ? ': ' + hits.slice(0, 3).join(', ') : ''})`, hits.length === 0); }
-// ---- SITEWEIT: keine Bild-Labels (Owner 20.10., bekräftigt 07.11.: weder Beispielbild/Beispielfoto/Symbolbild noch echtes Foto/Bild, nirgendwo, auch /lp/) ----
+// ---- SITEWEIT: keine Bild-Labels (Owner 20.10., bekräftigt 06.11.: weder Beispielbild/Beispielfoto/Symbolbild noch echtes Foto/Bild, nirgendwo, auch /lp/) ----
 { const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(`${d}/${e.name}`) : e.name === 'index.html' ? [`${d}/${e.name}`] : []);
   const LABEL = /Beispielfoto|Beispielbild|Beispielaufnahme|Symbolbild|Symbolfoto|[Ee]chtes (Foto|Bild)|[Ee]chte (Auftrags)?[Ff]otos|Originalfoto|Referenzfoto/;
   // /lp/ vorerst ausgenommen: dort stehen 6 Seiten mit 'Echte …'-Wortlaut, /lp/ ist bis zum Owner-Entscheid byteidentisch eingefroren (Messfenster). Nach Entscheid die Ausnahme entfernen.

@@ -2,7 +2,7 @@
 // ZERO deps, ESM, jede Funktion null-safe. Klassen-Hooks 1:1 aus
 //   previews/assets/css/preview-kit.css + previews/assets/js/preview-kit.js
 // (im Worktree als assets/css/site.css + assets/js/site.js verdrahtet).
-// Owner-Regel (20.10., bekräftigt 07.11.): KEINE Bild-Labels, nirgendwo. Weder "Beispielfoto"/"Beispielbild"/"Symbolbild"
+// Owner-Regel (20.10., bekräftigt 06.11.): KEINE Bild-Labels, nirgendwo. Weder "Beispielfoto"/"Beispielbild"/"Symbolbild"
 // noch "echtes Foto"/"echtes Bild"/"Echte Auftragsfotos", kein .ba-proof / .pbadge. Jedes Bild ist einfach Bild (Gate: accept.mjs).
 // KEINE Preise. GbR-Gruender-Duo (kein Ich/Inhaber). Echte Umlaute.
 //
@@ -236,7 +236,7 @@ export function clusterKacheln(items) {
 // img = Manifest-Basis-Slug eines Vorher/Nachher-Paars ('fall-schuppen-falkensee' -> -vorher-768.jpg/-nachher-768.jpg) oder ''.
 // zitat/zitat_von rendern nur, wenn gefüllt (17.09.: leer, bis eine echte Entrümpelungs-Bewertung vorliegt — kein Zitat erfinden).
 // ---------------------------------------------------------------------------
-export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.', alt = true, intro = 'Echte Aufträge aus dem Havelland, ohne Namen und Adresse. Wo wir Fotos oder Zahlen zeigen, liegt die Einwilligung der Kunden vor. Genau so bekommen Sie Ihren Foto-Nachweis.' } = {}) {   // intro (07.11.): nur für Seiten mit Kundenstimmen statt Auftragsfällen
+export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.', alt = true, intro = 'Echte Aufträge aus dem Havelland, ohne Namen und Adresse. Wo wir Fotos oder Zahlen zeigen, liegt die Einwilligung der Kunden vor. Genau so bekommen Sie Ihren Foto-Nachweis.' } = {}) {   // intro (06.11.): nur für Seiten mit Kundenstimmen statt Auftragsfällen
   if (!Array.isArray(faelle) || !faelle.length) return '';
   // alt (W3b Review #2): Zonen-Parität vom Aufrufer — paper (default) oder weiß, damit kein paper-auf-paper entsteht.
   return `<section class="sec${alt ? ' section-alt' : ''}" id="faelle"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(heading)}</h2></div><p class="intro rv">${esc(intro)}</p><div class="faelle">` +
@@ -249,7 +249,7 @@ export function faelleBlock(faelle, { heading = 'So sah das zuletzt aus.', alt =
 // Blocks mit Anker/Link. Fallbeispiele (faelleBlock) und bespoke FAQs setzt der Aufrufer ein. Nur wenn
 // ortsseiten.json → services.<svc>.orte.<ort>.tief existiert. Eigene Sections → NearDup-Gate (erster Prose-Block) bleibt unberührt.
 // ---------------------------------------------------------------------------
-// bandBlock (07.11.2026, Owner Maurice: „zu viel Text untereinander, lieber ein grüner Streifen dazwischen“): Block-Variante `variant: "band"` für tief.blocks —
+// bandBlock (06.11.2026, Owner Maurice: „zu viel Text untereinander, lieber ein grüner Streifen dazwischen“): Block-Variante `variant: "band"` für tief.blocks —
 // dunkelgrüner Kasten links (.fx-band, wie vorteileBlock mit frist), nummerierte Liste rechts (.vt-list). Felder: kick, h2, h2_em (Teilsatz der H2 als <em>),
 // body (Kurztext im Kasten), cta + cta_href, items_h2, items[{h3,p}], link_to/link_text/link2_to/link2_text (über linkHtml). Ohne variant bleibt das Prose-Layout.
 export function bandBlock(b, linkHtml = () => '') {

@@ -1,5 +1,5 @@
 // Google Indexing API: URL_UPDATED für Sitemap-URLs, Prioritätsliste zuerst. Kein npm-Paket, nur fetch.
-// Owner-Entscheid Maurice 07.11.2026, zusätzlich zur Handeinreichung in der Search Console. Googles Doku erlaubt die
+// Owner-Entscheid Maurice 06.11.2026, zusätzlich zur Handeinreichung in der Search Console. Googles Doku erlaubt die
 // API nur für JobPosting- und BroadcastEvent-Seiten; Einreichungen laufen durch Googles Spam-Prüfung, Zugang kann
 // entzogen werden. Doku: gbr-firma 04-Firma-und-Recht/wissen/integrationen/google-indexing-api.md
 //

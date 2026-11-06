@@ -66,7 +66,7 @@ for (const [name, data] of [['hubs', hubs], ['archetypes', arch], ['ratgeber', r
 // --- Report ---
 console.log(`\n=== validate-data (${svcSlugs.size} Services · ${locSlugs.size} Orte) ===`);
 if (warn.length) { console.log(`WARN (${warn.length}):`); warn.forEach(w => console.log('  ! ' + w)); }
-// --- copy/meta.json: handgeschriebene Meta-Descriptions (07.11.) ---
+// --- copy/meta.json: handgeschriebene Meta-Descriptions (06.11.) ---
 { const mj = fs.existsSync('data/copy/meta.json') ? J('data/copy/meta.json') : null;
   if (mj) {
     const metas = mj.metas || {}; const seen = new Map();

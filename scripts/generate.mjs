@@ -70,7 +70,7 @@ function sanOrtsSvc(o) { if (o.meta != null) o.meta = plain(o.meta); if (o.faqs)
   // tief (W2): Tiefen-Block für Tier-1-Ortsseiten — h2/sections/ortsblock/blocks/faelle/faqs sanitizen.
   if (e.tief) { const t = e.tief; if (t.h2 != null) t.h2 = plain(t.h2); for (const x of (t.sections || [])) { x.h3 = plain(x.h3); x.body = plain(x.body); if (x.link_text != null) x.link_text = plain(x.link_text); } if (t.ortsblock) { t.ortsblock.h2 = plain(t.ortsblock.h2); for (const i of (t.ortsblock.items || [])) { i.k = plain(i.k); i.v = plain(i.v); } if (t.ortsblock.quelle != null) t.ortsblock.quelle = plain(t.ortsblock.quelle); } for (const b of (t.blocks || [])) { b.h2 = plain(b.h2); b.body = plain(b.body); if (b.link_text != null) b.link_text = plain(b.link_text); } for (const f of (t.faelle || [])) for (const k of ['h3','meta','body','zitat','zitat_von']) if (f[k] != null) f[k] = plain(f[k]); for (const f of (t.faqs || [])) { f.q = plain(f.q); f.a = plain(f.a); } for (const k of ['cta_grid', 'cta_after']) if (t[k]) { if (t[k].h2 != null) t[k].h2 = plain(t[k].h2); if (t[k].txt != null) t[k].txt = plain(t[k].txt); } for (const k of ['faelle_heading', 'faelle_intro']) if (t[k] != null) t[k] = plain(t[k]); }
 } return o; }   // fakt (17.09.): Ein-Satz-Ortsfakt für die Hub-Ortskarten
-const META_OVR = ((CP('meta.json') || {}).metas) || {};   // 07.11.: handgeschriebene Meta-Descriptions je URL (data/copy/meta.json), Vorrang vor allen Vorlagen; validate-data prüft Länge 150–158
+const META_OVR = ((CP('meta.json') || {}).metas) || {};   // 06.11.: handgeschriebene Meta-Descriptions je URL (data/copy/meta.json), Vorrang vor allen Vorlagen; validate-data prüft Länge 150–158
 const _ortsSvcCp = CP('ortsseiten.json'); const ortsSvcCopy = (_ortsSvcCp && _ortsSvcCp.services) || {}; for (const k in ortsSvcCopy) sanOrtsSvc(ortsSvcCopy[k]);
 // Reverse-Index Service → Ratgeber (interne Verlinkung, seiten-architektur §7)
 // Erster Satz eines Fließtexts; Abkürzungen (ca., z. B., inkl., bzw., Nr. …) und Ordnungszahlen vor Monatsnamen (1. Oktober) zählen nicht als Satzende.
@@ -222,7 +222,7 @@ function faqBlock(faqs, alt) {
 const rlen = s => (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').length;
 function clampTitle(s) { s = (s || '').replace(/\s+/g, ' ').trim(); while (rlen(s) > 60) { const sp = s.lastIndexOf(' '); if (sp < 30) { s = s.slice(0, s.length - 1); continue; } s = s.slice(0, sp); } s = s.replace(/[ ,;:–-]+$/, ''); while (DANGLE.test(s)) s = s.replace(DANGLE, '').replace(/[ ,;:–-]+$/, ''); return s; } // kein hängendes "im/und" nach dem Kürzen (Umbau 03.09.)
 const META_TAIL = ' Ein fester Ansprechpartner im Havelland und Berliner Umland, telefonisch oder per WhatsApp erreichbar, mit kostenloser Vor-Ort-Besichtigung.';
-const DANGLE = /\s+(per|und|mit|nach|für|im|in|zu|von|der|die|das|ein|eine|einen|einem|einer|eines|am|an|auf|bei|als|wie|oder|aus|über|unter|vor|jetzt|noch|so|dem|den|selben|selbe|selber|selbem|jedem|jeder|jedes|jeden|festen|fester|feste|kostenlose|kostenloser|kostenlosen|unsere|unserem|unseren|unserer|ihre|ihrem|ihren|ihrer|alle|allen|sowie|ins|zum|zur|vom|durch|ohne|statt|plus|gegen|seit|bis|ab|pro)$/i;   // 07.11.: auch „nach jedem“, „über einen festen“ sind Abbrüche   // „am selben“ (ohne „Tag“) ist ein Abbruch, kein Satzende
+const DANGLE = /\s+(per|und|mit|nach|für|im|in|zu|von|der|die|das|ein|eine|einen|einem|einer|eines|am|an|auf|bei|als|wie|oder|aus|über|unter|vor|jetzt|noch|so|dem|den|selben|selbe|selber|selbem|jedem|jeder|jedes|jeden|festen|fester|feste|kostenlose|kostenloser|kostenlosen|unsere|unserem|unseren|unserer|ihre|ihrem|ihren|ihrer|alle|allen|sowie|ins|zum|zur|vom|durch|ohne|statt|plus|gegen|seit|bis|ab|pro)$/i;   // 06.11.: auch „nach jedem“, „über einen festen“ sind Abbrüche   // „am selben“ (ohne „Tag“) ist ein Abbruch, kein Satzende
 // Tail klauselweise (16.09., Audit Zaunbau): vorher wurde der ganze META_TAIL angehängt und hart bei 158 gekürzt →
 // bei Copy-Metas um 140–150 Zeichen blieb „… Ein fester." als Rest (19 Seiten betroffen). Jetzt nur ganze Klauseln, die passen.
 // Article-Schema (Audit Zaunbau 16.09.): datePublished/dateModified fehlten sitewide. Copy-Feld date_published/date_modified je Ratgeber, sonst Default = Launch der Ratgeber-Welle.
@@ -419,7 +419,7 @@ const trustLine = (() => {
   return live ? `<p class="hub-trust rv in d4"><a href="/bewertungen/">${Number(gr.rating).toFixed(1).replace('.', ',')}&nbsp;★ bei Google · ${esc(gr.count)} Bewertungen</a></p>` : '';
 })();
 
-// Kundenstimmen je Leistung (Owner-Entscheid Maurice 07.11.2026): wörtliche Google-Bewertungen aus data/reviews.json, je Hub und
+// Kundenstimmen je Leistung (Owner-Entscheid Maurice 06.11.2026): wörtliche Google-Bewertungen aus data/reviews.json, je Hub und
 // Ortsseite bis zu 3 Karten: erst die zur Leistung getaggten (services), dann allgemeine; Rotation je URL (seedOf), damit Nachbarorte
 // verschiedene Stimmen zeigen. Kein Ortsbezug behauptet, KEIN aggregateRating-Schema (Google-Policy: self-serving), Zahl/Rating aus proof.json.
 // KUNDENSTIMMEN_SKIP: Startseite und Mess-/Freeze-Seiten bis 20.11.2026 sowie die Seiten des parallelen Branches feat/heckenschnitt-falkensee-2026-11-07
@@ -435,7 +435,7 @@ function kundenstimmen(svcSlug, url, n = 3, zone = null) {   // zone: Funktion (
   const live = !!reviews.enabled && (gr.count || 0) >= (reviews.block_ab_count || 5) && gr.rating;
   if (!live || KUNDENSTIMMEN_SKIP.has(url)) return '';
   // Partner-Leistungen (Ausführung durch Partner-Fachbetrieb): kein Block. Stimmen über das eigene Team direkt unter einer
-  // Partnerleistung könnten als Qualitätsaussage über die Partnerarbeit gelesen werden (Prüfbefund 07.11., § 5 UWG).
+  // Partnerleistung könnten als Qualitätsaussage über die Partnerarbeit gelesen werden (Prüfbefund 06.11., § 5 UWG).
   const svcDef = services.find(x => x.slug === svcSlug);
   if (svcDef && svcDef.partner_modell) return '';
   const all = Array.isArray(reviews.reviews) ? reviews.reviews.filter(r => r && r.text && r.author) : [];
@@ -608,14 +608,14 @@ function hub(s) {
       heckenKompass() +
       `<section class="sec"><div class="wrap">${echtProjekt({ nur: 'thuja' })}</div></section>` +
       `<section class="sec section-alt" id="galerie"><div class="wrap"><div class="head"><h2 class="serif rv">Ergebnisse zum Durchziehen</h2></div>${karussell()}${archivGrid(undefined, { ctaHref: '/kontakt/#anfrage', compact: true })}</div></section>` +
-      flowBlock + timelineBlock + kundenstimmen(s.slug, url) + cardOrteSection + gebietskarte({ linkOrte: ortsHubSlugs }) + ratgeberSection + faqSection;   // Owner 18.09.: FAQ ganz unten, nach den Orten; 07.11.: Kundenstimmen nach dem Ablauf
+      flowBlock + timelineBlock + kundenstimmen(s.slug, url) + cardOrteSection + gebietskarte({ linkOrte: ortsHubSlugs }) + ratgeberSection + faqSection;   // Owner 18.09.: FAQ ganz unten, nach den Orten; 06.11.: Kundenstimmen nach dem Ablauf
   } else {
     // Beweis-Mechanik (eigene Vorher/Nachher-Doku) NICHT bei Partner-/Tippgeber-Services (Dach) — wäre Eigenleistungs-Beweis (Design §3).
     const beweis = (gk === 'reinigung' && BEWEIS_KEY[s.slug] && !s.partner_modell)
       ? `<section class="sec"><div class="wrap"><div class="head"><h2 class="serif rv">Woran Sie ein sauberes Ergebnis erkennen</h2></div>${beweisMechanik(BEWEIS_KEY[s.slug])}</div></section>`
       : '';
     // Garten/Generisch: mit Ortskarten; Reinigung: ohne Gebietskarte, Ortskarten bleiben (interne Links)
-    rich = beweis + flowBlock + timelineBlock + kundenstimmen(s.slug, url) + cardOrteSection + ratgeberSection + faqSection;   // Owner 18.09.: FAQ ganz unten, nach den Orten; 07.11.: Kundenstimmen nach dem Ablauf
+    rich = beweis + flowBlock + timelineBlock + kundenstimmen(s.slug, url) + cardOrteSection + ratgeberSection + faqSection;   // Owner 18.09.: FAQ ganz unten, nach den Orten; 06.11.: Kundenstimmen nach dem Ablauf
   }
 
   // b2b_only-Hub (hausmeisterservice): Querverlinkung zu /fuer-hausverwaltungen/ (Design §2 — beide Richtungen)
@@ -730,7 +730,7 @@ function hub(s) {
     if (!orteHtml) alt();
     const ablaufHint = GW_HUBS.includes(s.slug) ? '' : (s.slug === 'winterdienst' ? 'Der schnellste Weg in drei Schritten: Adresse und Flächen nennen (Gehweg, Zufahrt, Hauseingang oder Hof), per WhatsApp senden, in einem Satz schreiben, welche Flächen bis wann frei sein sollen. Ungefähre Meter genügen, ausmessen müssen Sie nichts. Lieber anrufen? Auch das geht.' : 'Der schnellste Weg in drei Schritten: Fläche fotografieren (einmal längs, einmal von vorn), das Foto per WhatsApp senden, in zwei Sätzen schreiben, was passieren soll und wo Sie stehen. Sie müssen nichts ausmessen und kein Formular ausfüllen. Lieber anrufen? Auch das geht.');
     const ablauf = soLaeufts({ partner, slug: s.slug, name: h2Name(s), waText: `Hallo, ich interessiere mich für ${s.name}.`, alt: alt(), hint: esc(ablaufHint) });
-    const ksGG = kundenstimmen(s.slug, url, 3, () => alt());   // 07.11.: Kundenstimmen nach dem Ablauf, in der Zonen-Folge
+    const ksGG = kundenstimmen(s.slug, url, 3, () => alt());   // 06.11.: Kundenstimmen nach dem Ablauf, in der Zonen-Folge
     const ratgeberGG = ratgeberSection ? ratgeberSection.replace('<section class="sec section-alt">', `<section class="sec${alt() ? ' section-alt' : ''}">`) : '';   // Zonen-Parität bis zum Ende (Ablauf, Ratgeber, FAQ im Wechsel)
     const faqSectionGG = `<section class="sec${alt() ? ' section-alt' : ''}"><div class="wrap">${faqFilter(faqData, { heading: `Häufige Fragen zu <em>${esc(h2Name(s))}</em>` })}</div></section>`;
     const mainGG = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span>${esc(s.name)}</div>
@@ -780,7 +780,7 @@ function ortsseite(s, o) {
   const tiefCtaDefault = (s.slug === 'winterdienst') ? { h2: 'Flächen nennen, Saisonangebot bekommen.', txt: 'Kostenlose Besichtigung in ' + o.name + ' durch den Partner-Fachbetrieb, Saisonpreis vor der Zusage, Einsatznachweis nach jeder Räumung.' } : s.partner_modell ? {} : { h2: 'Foto schicken, Festpreis bekommen.', txt: 'Rückmeldung am selben Werktag, kostenlose Besichtigung in ' + o.name + ', schriftlicher Festpreis für Räumung und Abtransport.' };
   // W4 (21.09.): Tier-1 auch für Partner-Services (winterdienst/falkensee) — CTA nach dem Tiefen-Block dann ohne Festpreis-Text (Partner-Default aus ctaZwischen), UWG-Framing.
   // Zonen-Parität nach tiefBlock (Kopf weiß -> ortsblock paper -> blocks i%2): letzte Zone paper? (Review #2)
-  // 07.11.: tief.faelle_heading/faelle_intro nur, wenn die Fälle Kundenstimmen statt Ortsaufträge sind (Google-Bewertungen, kein Ortsbezug behauptet)
+  // 06.11.: tief.faelle_heading/faelle_intro nur, wenn die Fälle Kundenstimmen statt Ortsaufträge sind (Google-Bewertungen, kein Ortsbezug behauptet)
   const tiefPaper = tief ? ((tief.blocks && tief.blocks.length) ? ((tief.blocks.length - 1) % 2 === 1) : !!tief.ortsblock) : false;
   // Guard (03.09., C5 Nr. 60): Partner-Service ohne bespoke Copy rendert keine Orts-Hooks/Archetyp-Pools — die tragen Festpreis-/Foto-/Eigenleistungs-Zusagen.
   const partnerNoCopy = !!s.partner_modell && !soOrt;
@@ -843,7 +843,7 @@ function ortsseite(s, o) {
   // Heckenschnitt-Ort: Vorher/Nachher-Slider im Hero; andere Gewerke: Standard-Bild (kein Slider)
   const ortVoll = VOLL_VN.has(s.slug);
   const heroShotO = ortVoll
-    ? baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' im Havelland', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })   // 07.11. (Owner): ein Foto, ein Ort; keine Ortsbehauptung unter dem Bild, kein Label
+    ? baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' im Havelland', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })   // 06.11. (Owner): ein Foto, ein Ort; keine Ortsbehauptung unter dem Bild, kein Label
     : pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' in ' + o.name + ' — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true });
   // Herbst-Paket Deploy 1/2: Cross-Sektion nach dem prose-Container — bewusst AUSSERHALB des ersten
   // <div class="prose wide">-Blocks (NearDup-Gate misst prose+faq). heckenschnitt-Ortsseiten verlinken
@@ -856,7 +856,7 @@ function ortsseite(s, o) {
   const cx = ORT_CROSS[s.slug];
   const crossSection = cx ? `<section class="sec section-alt"><div class="wrap"><div class="prose wide rv"><h2>${esc(cx.h2)}</h2><p>${esc(cx.p)} <a href="${cx.href}">${esc(cx.a)}</a>.</p></div></div></section>` : '';
   const nachbarSection = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}${ortsHubSlugs.has(o.slug)?`<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a>`:`<a class="card" href="/${s.slug}/"><h3>Mehr zu ${esc(s.name)}</h3><span class="go">Zur Leistung →</span></a>`}</div></div></section>`;
-  // 07.11.2026 (Owner Maurice, Heckenschnitt Falkensee): `tief.media: false` in ortsseiten.json lässt das generische Regions-Bild (media-band) der Ortsseite weg — kein passendes echtes Foto, kein KI-Bild als Ersatz (havelland-design Prinzip 4).
+  // 06.11.2026 (Owner Maurice, Heckenschnitt Falkensee): `tief.media: false` in ortsseiten.json lässt das generische Regions-Bild (media-band) der Ortsseite weg — kein passendes echtes Foto, kein KI-Bild als Ersatz (havelland-design Prinzip 4).
   const main = `<div class="wrap breadcrumb"><a href="/">Start</a><span class="sep">›</span><a href="/${s.slug}/">${esc(s.name)}</a><span class="sep">›</span>${esc(o.name)}</div>
 <section class="phero">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick rv in" style="color:var(--green)">${esc(o.name)}${o.plz?` · ${esc(o.plz)}`:''}</span><h1 class="rv in d1">${esc(s.name)} <em>in ${esc(o.name)}</em></h1><p class="lead rv in d2">${esc(lead)}</p><div class="cta-row rv in d3">${ctaPrim((isB2Bonly(s.segment) || (isB2Bonly(o.typ) && !s.seiten_orte)) ? CTA_ANGEBOT : 'Kostenlose Besichtigung anfragen')}<a class="btn btn-line" href="${waHref(`Hallo, ich brauche ${s.name} in ${o.name}.`)}">WhatsApp</a></div></div>
 <div class="shot rv in d2">${heroShotO}</div></div></section>
