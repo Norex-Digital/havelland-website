@@ -66,5 +66,25 @@ for (const [name, data] of [['hubs', hubs], ['archetypes', arch], ['ratgeber', r
 // --- Report ---
 console.log(`\n=== validate-data (${svcSlugs.size} Services · ${locSlugs.size} Orte) ===`);
 if (warn.length) { console.log(`WARN (${warn.length}):`); warn.forEach(w => console.log('  ! ' + w)); }
+// --- copy/meta.json: handgeschriebene Meta-Descriptions (07.11.) ---
+{ const mj = fs.existsSync('data/copy/meta.json') ? J('data/copy/meta.json') : null;
+  if (mj) {
+    const metas = mj.metas || {}; const seen = new Map();
+    const rlen = v => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').length;
+    for (const [url, v] of Object.entries(metas)) {
+      if (!/^\/([a-z0-9-]+\/)*$/.test(url)) FAIL(`copy/meta: Schlüssel "${url}" ist keine Pfad-URL (/…/)`);
+      if (typeof v !== 'string' || !v.trim()) { FAIL(`copy/meta ${url}: leer`); continue; }
+      const L = rlen(v.trim());
+      if (L < 150 || L > 158) FAIL(`copy/meta ${url}: Länge ${L} (Soll 150–158, & zählt 5)`);
+      if (!/\.$/.test(v.trim())) FAIL(`copy/meta ${url}: endet nicht mit Punkt`);
+      if (/[–—!]/.test(v)) FAIL(`copy/meta ${url}: Gedankenstrich oder Ausrufezeichen`);
+      if (/\s(per|und|mit|nach|für|im|in|zu|von|der|die|das|ein|eine|einen|einem|einer|eines|dem|den|jedem|jeder|jedes|jeden|festen|kostenloser|kostenlosen)\.$/i.test(v)) FAIL(`copy/meta ${url}: endet auf abgebrochenes Wort`);
+      if (/Kleinunternehmer|zzgl\.|Beispielbild|Beispielfoto|[Ee]chte Fotos|am selben Tag/.test(v)) FAIL(`copy/meta ${url}: verbotener Wortlaut`);
+      if (seen.has(v.trim())) FAIL(`copy/meta ${url}: identisch mit ${seen.get(v.trim())}`); seen.set(v.trim(), url);
+      if (!fs.existsSync(`website${url}index.html`)) WARN(`copy/meta ${url}: keine gebaute Seite unter website${url}index.html (Tippfehler?)`);
+    }
+  }
+}
+
 if (hard.length) { console.log(`\nROT (${hard.length}):`); hard.forEach(h => console.log('  ✗ ' + h)); console.log('\nERGEBNIS: ROT — Build blockiert'); process.exit(1); }
 console.log('\nERGEBNIS: GRÜN (Daten valide, Build freigegeben)');

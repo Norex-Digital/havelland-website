@@ -1,0 +1,7 @@
+{
+  "_meta": {
+    "zweck": "Handgeschriebene Meta-Descriptions je URL. Vorrang vor allen Vorlagen in generate.mjs (head()). Regeln: 150 bis 158 Zeichen gerendert (& zählt als 5), vollständige Sätze mit Punkt, keine Gedankenstriche, keine Preise, Partner-Hinweis bei Dachreinigung/Dachrinnenreinigung, keine Bild-Labels. Prüfung: scripts/validate-data.mjs. Herkunft: Abnahme 06.11. B6, Owner-Freigabe 07.11.; Liste in gbr-firma websites/havelland/analyse-2026-11-ranking/21-meta-descriptions-2026-11-07.md",
+    "stand": "2026-11-07"
+  },
+  "metas": {}
+}

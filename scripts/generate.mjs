@@ -70,6 +70,7 @@ function sanOrtsSvc(o) { if (o.meta != null) o.meta = plain(o.meta); if (o.faqs)
   // tief (W2): Tiefen-Block für Tier-1-Ortsseiten — h2/sections/ortsblock/blocks/faelle/faqs sanitizen.
   if (e.tief) { const t = e.tief; if (t.h2 != null) t.h2 = plain(t.h2); for (const x of (t.sections || [])) { x.h3 = plain(x.h3); x.body = plain(x.body); if (x.link_text != null) x.link_text = plain(x.link_text); } if (t.ortsblock) { t.ortsblock.h2 = plain(t.ortsblock.h2); for (const i of (t.ortsblock.items || [])) { i.k = plain(i.k); i.v = plain(i.v); } if (t.ortsblock.quelle != null) t.ortsblock.quelle = plain(t.ortsblock.quelle); } for (const b of (t.blocks || [])) { b.h2 = plain(b.h2); b.body = plain(b.body); if (b.link_text != null) b.link_text = plain(b.link_text); } for (const f of (t.faelle || [])) for (const k of ['h3','meta','body','zitat','zitat_von']) if (f[k] != null) f[k] = plain(f[k]); for (const f of (t.faqs || [])) { f.q = plain(f.q); f.a = plain(f.a); } for (const k of ['cta_grid', 'cta_after']) if (t[k]) { if (t[k].h2 != null) t[k].h2 = plain(t[k].h2); if (t[k].txt != null) t[k].txt = plain(t[k].txt); } }
 } return o; }   // fakt (17.09.): Ein-Satz-Ortsfakt für die Hub-Ortskarten
+const META_OVR = ((CP('meta.json') || {}).metas) || {};   // 07.11.: handgeschriebene Meta-Descriptions je URL (data/copy/meta.json), Vorrang vor allen Vorlagen; validate-data prüft Länge 150–158
 const _ortsSvcCp = CP('ortsseiten.json'); const ortsSvcCopy = (_ortsSvcCp && _ortsSvcCp.services) || {}; for (const k in ortsSvcCopy) sanOrtsSvc(ortsSvcCopy[k]);
 // Reverse-Index Service → Ratgeber (interne Verlinkung, seiten-architektur §7)
 // Erster Satz eines Fließtexts; Abkürzungen (ca., z. B., inkl., bzw., Nr. …) und Ordnungszahlen vor Monatsnamen (1. Oktober) zählen nicht als Satzende.
@@ -221,7 +222,7 @@ function faqBlock(faqs, alt) {
 const rlen = s => (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').length;
 function clampTitle(s) { s = (s || '').replace(/\s+/g, ' ').trim(); while (rlen(s) > 60) { const sp = s.lastIndexOf(' '); if (sp < 30) { s = s.slice(0, s.length - 1); continue; } s = s.slice(0, sp); } s = s.replace(/[ ,;:–-]+$/, ''); while (DANGLE.test(s)) s = s.replace(DANGLE, '').replace(/[ ,;:–-]+$/, ''); return s; } // kein hängendes "im/und" nach dem Kürzen (Umbau 03.09.)
 const META_TAIL = ' Ein fester Ansprechpartner im Havelland und Berliner Umland, telefonisch oder per WhatsApp erreichbar, mit kostenloser Vor-Ort-Besichtigung.';
-const DANGLE = /\s+(per|und|mit|nach|für|im|in|zu|von|der|die|das|ein|eine|einen|am|an|auf|bei|als|wie|oder|aus|über|unter|vor|jetzt|noch|so|dem|den|selben|selbe|selber|selbem)$/i;   // „am selben“ (ohne „Tag“) ist ein Abbruch, kein Satzende
+const DANGLE = /\s+(per|und|mit|nach|für|im|in|zu|von|der|die|das|ein|eine|einen|einem|einer|eines|am|an|auf|bei|als|wie|oder|aus|über|unter|vor|jetzt|noch|so|dem|den|selben|selbe|selber|selbem|jedem|jeder|jedes|jeden|festen|fester|feste|kostenlose|kostenloser|kostenlosen|unsere|unserem|unseren|unserer|ihre|ihrem|ihren|ihrer|alle|allen|sowie|ins|zum|zur|vom|durch|ohne|statt|plus|gegen|seit|bis|ab|pro)$/i;   // 07.11.: auch „nach jedem“, „über einen festen“ sind Abbrüche   // „am selben“ (ohne „Tag“) ist ein Abbruch, kein Satzende
 // Tail klauselweise (16.09., Audit Zaunbau): vorher wurde der ganze META_TAIL angehängt und hart bei 158 gekürzt →
 // bei Copy-Metas um 140–150 Zeichen blieb „… Ein fester." als Rest (19 Seiten betroffen). Jetzt nur ganze Klauseln, die passen.
 // Article-Schema (Audit Zaunbau 16.09.): datePublished/dateModified fehlten sitewide. Copy-Feld date_published/date_modified je Ratgeber, sonst Default = Launch der Ratgeber-Welle.
@@ -309,6 +310,7 @@ function websiteSchema() {
 }
 
 function head(title, desc, canonical, schemaGraph, opts = {}) {
+  if (META_OVR[canonical]) desc = META_OVR[canonical];   // handgeschriebene Meta hat Vorrang (data/copy/meta.json)
   const ogSlug = (opts.og && IMG[opts.og]) ? opts.og : 'og-default';
   const om = IMG[ogSlug];
   const ogImg = om ? `<meta property="og:image" content="${DOMAIN}/assets/img/${ogSlug}-${om.fb_w}.${om.fb_ext}"><meta property="og:image:width" content="${om.w}"><meta property="og:image:height" content="${om.h}"><meta property="og:image:alt" content="${esc(title)}"><meta name="twitter:card" content="summary_large_image">` : '';
