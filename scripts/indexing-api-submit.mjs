@@ -77,8 +77,8 @@ let ok = 0, fail = 0, stop = null;
 for (const u of batch) {
   const at = await accessToken();
   const res = await fetch('https://indexing.googleapis.com/v3/urlNotifications:publish', { method: 'POST', headers: { Authorization: `Bearer ${at}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ url: u, type: 'URL_UPDATED' }) });
-  let j = {}; try { j = await res.json(); } catch {}
-  (log.sent[u] ||= []).push({ at: new Date().toISOString(), day: pacificDay(), status: res.status, notifyTime: j.urlNotificationMetadata?.latestUpdate?.notifyTime || null, error: res.ok ? undefined : (j.error?.message || '').slice(0, 160) });
+  const text = await res.text(); let j = {}; try { j = JSON.parse(text); } catch {}
+  (log.sent[u] ||= []).push({ at: new Date().toISOString(), day: pacificDay(), status: res.status, notifyTime: j.urlNotificationMetadata?.latestUpdate?.notifyTime || null, body: text.replace(/\s+/g, ' ').slice(0, 160), error: res.ok ? undefined : (j.error?.message || '').slice(0, 160) });
   if (res.ok) ok++; else fail++;
   if (res.status === 429) { stop = 'Kontingent erschöpft (429). Rest morgen nach Mitternacht Pacific.'; break; }
   if (res.status === 403) { stop = `403: ${j.error?.message || ''} (API im Projekt nicht aktiviert oder Konto kein Property-Inhaber).`; break; }
