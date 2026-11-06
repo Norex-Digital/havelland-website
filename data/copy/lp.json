@@ -1527,35 +1527,26 @@
           }
         ]
       },
-      "nutzen": [
-        {
-          "h": "Sauber in Form",
-          "p": "Gerade Kanten, ebene Oberseite und eine Hecke, die dicht bleibt, weil wir nach Art und Jahreszeit schneiden."
-        },
-        {
-          "h": "Schnittgut ist weg",
-          "p": "Abfuhr und Entsorgung stecken im Festpreis. Die Fläche hinterlassen wir besenrein."
-        },
-        {
-          "h": "Ein Termin, ein Preis",
-          "p": "Den Festpreis bekommen Sie vorab schriftlich, pauschal für Ihre Hecke."
-        }
-      ],
       "ablauf": [
         {
-          "h": "Foto schicken oder anrufen",
-          "p": "Ein Foto per WhatsApp, ein Anruf oder das Formular genügt. Wir antworten am selben Tag.",
-          "when": "Foto per WhatsApp oder Anruf"
+          "when": "Antwort am selben Tag",
+          "h": "Anfrage mit Foto oder Anruf",
+          "p": "Ein Foto per WhatsApp, ein Anruf oder das Formular genügt. Wir antworten am selben Tag."
         },
         {
-          "h": "Kostenlose Besichtigung",
-          "p": "Wir sehen uns Hecke und Zugang an, auch in Potsdam und Berlin-Spandau. Die Besichtigung kostet nichts.",
-          "when": "Kostenlos · vor Ort"
+          "when": "Kostenlos · vor Ort",
+          "h": "Kostenlose Besichtigung und Festpreis",
+          "p": "Wir sehen uns Hecke und Zugang an, auch in Potsdam und Berlin-Spandau, und nennen Ihnen den Festpreis schriftlich. Die Besichtigung kostet nichts."
         },
         {
-          "h": "Schriftlicher Festpreis, Schnitt und Abfuhr",
-          "p": "Sie bekommen den Festpreis schriftlich, Abfuhr inklusive. Nach dem Einsatz schicken wir Ihnen Fotos aufs Handy.",
-          "when": "Schriftlich · Abfuhr inklusive"
+          "when": "Zum vereinbarten Termin",
+          "h": "Saubere Ausführung, Abfuhr inklusive",
+          "p": "Pünktlich und gründlich, fristgerecht nach § 39 BNatSchG geplant. Wir fahren das Schnittgut ab, die Fläche bleibt besenrein."
+        },
+        {
+          "when": "Direkt nach der Arbeit",
+          "h": "Foto-Nachweis aufs Handy",
+          "p": "Fotos von vorher und nachher gehen direkt aufs Handy, auch wenn Sie nicht vor Ort waren."
         }
       ],
       "preis": {
@@ -1605,24 +1596,25 @@
       "form_subject": "Neue Anfrage (Ads-LP Hecke heckenschnitt)",
       "fotos": [
         {
-          "vn": "10-03-liguster-23m",
-          "cap": "Liguster",
-          "sub": "klare Kontur",
-          "alt": "Liguster-Hecke vor und nach dem Schnitt"
+          "slug": "arbeit/gbp-hecke-06-einfahrt",
+          "cap": "Hohe Hecke",
+          "sub": "an einer Einfahrt",
+          "alt": "Mitarbeiter im Firmenshirt von hinten vor einer hohen, überwachsenen Hecke an einer Einfahrt"
         },
         {
-          "vn": "02-02-kirschlorbeer",
+          "slug": "arbeit/gbp-hecke-08-kirschlorbeer",
           "cap": "Kirschlorbeer",
-          "sub": "wieder auf Kante",
-          "alt": "Kirschlorbeer-Hecke vor und nach dem Schnitt"
+          "sub": "frisch geschnitten",
+          "alt": "Frisch geschnittener Kirschlorbeer mit Schnittgutsack im Vorgarten"
         }
       ],
       "hero": {
         "typ": "ba",
-        "vn": "06-02-thuja-grenze",
-        "alt": "Thuja-Hecke an der Grundstücksgrenze",
-        "cap": "Thuja",
-        "sub": "an der Grundstücksgrenze"
+        "vorher": "arbeit/gbp-hecke-05-vorher",
+        "nachher": "arbeit/gbp-hecke-05-nachher",
+        "cap": "Heckenschnitt",
+        "sub": "Vorher und Nachher",
+        "alt": "Hecke mit Rasen im Garten"
       },
       "testimonials_h2": "Was Kundinnen und Kunden schreiben",
       "testimonials_h2_em": "schreiben",
@@ -1662,9 +1654,8 @@
         "titel": "Pflege- und Formschnitt das ganze Jahr",
         "bedingung": "Starker Rückschnitt nur bis 28. Februar (§ 39 BNatSchG)"
       },
-      "ablauf_lead": "Vom ersten Foto bis zur sauberen Hecke in drei Schritten.",
-      "fotos_h2": "So sieht ein sauberer Heckenschnitt aus",
-      "fotos_hint": "Thuja, Liguster, Kirschlorbeer: Regler ziehen, um Vorher und Nachher zu vergleichen."
+      "fotos_h2": "So sieht unsere Arbeit aus",
+      "fotos_hint": "Fotos von unseren Einsätzen im Havelland"
     },
     {
       "slug": "hecke-zurueckschneiden",
@@ -1746,35 +1737,26 @@
           }
         ]
       },
-      "nutzen": [
-        {
-          "h": "Hecke wieder in nutzbarer Höhe",
-          "p": "Wieder Licht im Garten, die Kante gerade und die Hecke im Rahmen, den Sie wollen."
-        },
-        {
-          "h": "Ehrliche Einschätzung vorab",
-          "p": "Wir prüfen die Heckenart und sagen Ihnen, ob sie den Schnitt verträgt. Wenn nicht, hören Sie es vor dem Auftrag."
-        },
-        {
-          "h": "Schnittgut weg, Abfuhr inklusive",
-          "p": "Wir fahren den Grünschnitt ab und entsorgen ihn ordnungsgemäß. Die Fläche hinterlassen wir besenrein, Fotos gehen aufs Handy."
-        }
-      ],
       "ablauf": [
         {
-          "h": "Foto per WhatsApp oder Anruf",
-          "p": "Schicken Sie ein Foto der Hecke oder rufen Sie an. Wir antworten am selben Tag und klären, was an der Hecke ansteht.",
-          "when": "Foto per WhatsApp oder Anruf"
+          "when": "Antwort am selben Tag",
+          "h": "Anfrage mit Foto oder Anruf",
+          "p": "Ein Foto per WhatsApp, ein Anruf oder das Formular genügt. Wir antworten am selben Tag."
         },
         {
-          "h": "Kostenlose Besichtigung",
-          "p": "Wir sehen uns Heckenart, Höhe und Zugang an und prüfen die Hecke auf besetzte Nester.",
-          "when": "Kostenlos · vor Ort"
+          "when": "Kostenlos · vor Ort",
+          "h": "Kostenlose Besichtigung und Festpreis",
+          "p": "Wir sehen uns Heckenart, Höhe und Zugang an und prüfen die Hecke auf besetzte Nester. Danach bekommen Sie den Festpreis schriftlich."
         },
         {
-          "h": "Schriftlicher Festpreis, dann Rückschnitt",
-          "p": "Sie bekommen den Festpreis schriftlich vor dem Start. Danach schneiden wir zurück und fahren das Schnittgut ab, im erlaubten Winterfenster.",
-          "when": "Schriftlich · Abfuhr inklusive"
+          "when": "Zum vereinbarten Termin",
+          "h": "Saubere Ausführung, Abfuhr inklusive",
+          "p": "Wir schneiden im erlaubten Winterfenster nach § 39 BNatSchG zurück, fahren das Schnittgut ab und lassen die Fläche besenrein zurück."
+        },
+        {
+          "when": "Direkt nach der Arbeit",
+          "h": "Foto-Nachweis aufs Handy",
+          "p": "Fotos von vorher und nachher gehen direkt aufs Handy, auch wenn Sie nicht vor Ort waren."
         }
       ],
       "preis": {
@@ -1824,30 +1806,23 @@
       "form_subject": "Neue Anfrage (Ads-LP Hecke hecke-zurueckschneiden)",
       "fotos": [
         {
-          "vn": "04-04-hainbuche",
-          "cap": "Hainbuche",
-          "sub": "gerade Flanken",
-          "alt": "Hainbuchen-Hecke vor und nach dem Schnitt"
+          "slug": "arbeit/gbp-hecke-08-kirschlorbeer",
+          "cap": "Kirschlorbeer",
+          "sub": "frisch geschnitten",
+          "alt": "Frisch geschnittener Kirschlorbeer mit Schnittgutsack im Vorgarten"
         },
         {
-          "vn": "10-03-liguster-23m",
-          "cap": "Liguster",
-          "sub": "klare Kontur",
-          "alt": "Liguster-Hecke vor und nach dem Schnitt"
-        },
-        {
-          "vn": "15-12-rotbuche",
-          "cap": "Rotbuche",
-          "sub": "saubere Deckelung",
-          "alt": "Rotbuchen-Hecke vor und nach dem Schnitt"
+          "vorher": "arbeit/gbp-hecke-05-vorher",
+          "nachher": "arbeit/gbp-hecke-05-nachher",
+          "cap": "Heckenschnitt",
+          "sub": "Vorher und Nachher",
+          "alt": "Hecke mit Rasen im Garten"
         }
       ],
       "hero": {
-        "typ": "ba",
-        "vn": "08-04-kirschlorbeer",
-        "alt": "Kirschlorbeer-Hecke vor und nach dem Rückschnitt",
-        "cap": "Kirschlorbeer",
-        "sub": "Rückschnitt auf Form"
+        "typ": "foto",
+        "slug": "arbeit/gbp-hecke-06-einfahrt",
+        "alt": "Mitarbeiter im Firmenshirt von hinten vor einer hohen, überwachsenen Hecke an einer Einfahrt"
       },
       "testimonials_h2": "Was Kundinnen und Kunden schreiben",
       "testimonials_h2_em": "schreiben",
@@ -1882,9 +1857,8 @@
         "titel": "Starker Rückschnitt und Entfernung nur vom 1. Oktober bis 28. Februar",
         "bedingung": "§ 39 BNatSchG · Form- und Pflegeschnitt das ganze Jahr"
       },
-      "ablauf_lead": "Vom ersten Foto bis zur sauberen Hecke in drei Schritten.",
-      "fotos_h2": "So sieht ein sauberer Rückschnitt aus",
-      "fotos_hint": "Kirschlorbeer, Hainbuche, Liguster, Rotbuche: Regler ziehen, um Vorher und Nachher zu vergleichen."
+      "fotos_h2": "So sieht unsere Arbeit aus",
+      "fotos_hint": "Fotos von unseren Einsätzen im Havelland"
     },
     {
       "slug": "hecke-radikalschnitt",
@@ -1966,39 +1940,26 @@
           }
         ]
       },
-      "nutzen": [
-        {
-          "h": "Hecke wieder in nutzbarer Größe",
-          "p": "Zu hohe und zu breite Hecken gehen deutlich zurück. Licht und Platz im Garten kommen wieder."
-        },
-        {
-          "h": "Ehrliche Einschätzung vorab",
-          "p": "Wir prüfen die Heckenart. Verträgt sie den Schnitt nicht, sagen wir es Ihnen vorher."
-        },
-        {
-          "h": "Schnittgut weg, Abfuhr inklusive",
-          "p": "Wir fahren alles ab und kehren die Fläche besenrein. Die Fotos nach dem Einsatz schicken wir aufs Handy."
-        },
-        {
-          "h": "Nester-Check vor dem Schnitt",
-          "p": "Wir prüfen die Hecke vorher auf besetzte Nester und planen den Termin im erlaubten Fenster."
-        }
-      ],
       "ablauf": [
         {
-          "h": "Foto oder Anruf",
-          "p": "Schicken Sie uns ein Foto der Hecke per WhatsApp oder rufen Sie an. Wir antworten am selben Tag.",
-          "when": "Foto per WhatsApp oder Anruf"
+          "when": "Antwort am selben Tag",
+          "h": "Anfrage mit Foto oder Anruf",
+          "p": "Ein Foto per WhatsApp, ein Anruf oder das Formular genügt. Wir antworten am selben Tag."
         },
         {
-          "h": "Kostenlose Besichtigung",
-          "p": "Wir kommen vorbei, prüfen Heckenart, Zustand und Nester und sagen Ihnen, wie weit die Hecke zurückgehen kann.",
-          "when": "Kostenlos · vor Ort"
+          "when": "Kostenlos · vor Ort",
+          "h": "Kostenlose Besichtigung und Festpreis",
+          "p": "Wir prüfen Heckenart, Zustand und Nester und sagen Ihnen, wie weit die Hecke zurückgehen kann. Den Festpreis bekommen Sie schriftlich."
         },
         {
-          "h": "Schriftlicher Festpreis, Schnitt, Abfuhr",
-          "p": "Sie bekommen den Festpreis schriftlich. Dann schneiden wir im erlaubten Fenster, fahren alles ab und schicken Ihnen die Fotos.",
-          "when": "Schriftlich · Abfuhr inklusive"
+          "when": "Zum vereinbarten Termin",
+          "h": "Saubere Ausführung, Abfuhr inklusive",
+          "p": "Wir schneiden im erlaubten Fenster nach § 39 BNatSchG, fahren alles ab und lassen die Fläche besenrein zurück."
+        },
+        {
+          "when": "Direkt nach der Arbeit",
+          "h": "Foto-Nachweis aufs Handy",
+          "p": "Fotos von vorher und nachher gehen direkt aufs Handy, auch wenn Sie nicht vor Ort waren."
         }
       ],
       "preis": {
@@ -2048,28 +2009,23 @@
       "form_subject": "Neue Anfrage (Ads-LP Hecke hecke-radikalschnitt)",
       "fotos": [
         {
-          "vn": "04-04-hainbuche",
-          "cap": "Hainbuche",
-          "sub": "gerade Flanken",
-          "alt": "Hainbuchen-Hecke vor und nach dem Schnitt"
+          "slug": "arbeit/gbp-hecke-08-kirschlorbeer",
+          "cap": "Kirschlorbeer",
+          "sub": "frisch geschnitten",
+          "alt": "Frisch geschnittener Kirschlorbeer mit Schnittgutsack im Vorgarten"
         },
         {
-          "vn": "10-03-liguster-23m",
-          "cap": "Liguster",
-          "sub": "klare Kontur",
-          "alt": "Liguster-Hecke vor und nach dem Schnitt"
-        },
-        {
-          "vn": "15-12-rotbuche",
-          "cap": "Rotbuche",
-          "sub": "saubere Deckelung",
-          "alt": "Rotbuchen-Hecke vor und nach dem Schnitt"
+          "vorher": "arbeit/gbp-hecke-05-vorher",
+          "nachher": "arbeit/gbp-hecke-05-nachher",
+          "cap": "Heckenschnitt",
+          "sub": "Vorher und Nachher",
+          "alt": "Hecke mit Rasen im Garten"
         }
       ],
       "hero": {
         "typ": "foto",
-        "slug": "bg-hecke",
-        "alt": "Dichte grüne Hecke aus der Nähe"
+        "slug": "arbeit/gbp-hecke-06-einfahrt",
+        "alt": "Mitarbeiter im Firmenshirt von hinten vor einer hohen, überwachsenen Hecke an einer Einfahrt"
       },
       "testimonials_h2": "Was Kundinnen und Kunden schreiben",
       "testimonials_h2_em": "schreiben",
@@ -2103,9 +2059,8 @@
         "titel": "Starker Rückschnitt und Entfernung nur vom 1. Oktober bis 28. Februar",
         "bedingung": "§ 39 BNatSchG · Form- und Pflegeschnitt das ganze Jahr"
       },
-      "ablauf_lead": "Vom ersten Foto bis zur sauberen Hecke in drei Schritten.",
-      "fotos_h2": "So sieht eine saubere Hecke aus",
-      "fotos_hint": "Hainbuche, Liguster, Rotbuche: Regler ziehen, um Vorher und Nachher zu vergleichen."
+      "fotos_h2": "So sieht unsere Arbeit aus",
+      "fotos_hint": "Fotos von unseren Einsätzen im Havelland"
     },
     {
       "slug": "hecke-auf-den-stock-setzen",
@@ -2187,39 +2142,26 @@
           }
         ]
       },
-      "nutzen": [
-        {
-          "h": "Die Hecke baut sich neu auf",
-          "p": "Bei austriebsfähigen Laubhecken kommen im Frühjahr frische Triebe aus dem Stock. So wächst eine kahle oder durchgewachsene Hecke von unten wieder dicht."
-        },
-        {
-          "h": "Ehrliche Einschätzung vorher",
-          "p": "Wir prüfen bei der Besichtigung, ob Ihre Heckenart den Schnitt verträgt. Bei Thuja sagen wir es Ihnen vorher und nennen die Alternative."
-        },
-        {
-          "h": "Schnittgut ist weg",
-          "p": "Abfuhr und Entsorgung stehen im Festpreis. Sie müssen nichts selbst wegbringen."
-        },
-        {
-          "h": "Im erlaubten Zeitfenster",
-          "p": "Wir planen den Einsatz nach § 39 BNatSchG und prüfen die Hecke vorher auf Nester."
-        }
-      ],
       "ablauf": [
         {
-          "h": "Foto schicken oder anrufen",
-          "p": "Per WhatsApp, Anruf oder Formular. Ein Foto längs der Hecke reicht für die erste Einschätzung.",
-          "when": "Foto per WhatsApp oder Anruf"
+          "when": "Antwort am selben Tag",
+          "h": "Anfrage mit Foto oder Anruf",
+          "p": "Ein Foto per WhatsApp, ein Anruf oder das Formular genügt. Wir antworten am selben Tag."
         },
         {
-          "h": "Kostenlose Besichtigung",
-          "p": "Wir sehen uns Heckenart, Höhe, Zugang und mögliche Nester an und sagen Ihnen, ob Auf-den-Stock-Setzen für Ihre Hecke passt.",
-          "when": "Kostenlos · vor Ort"
+          "when": "Kostenlos · vor Ort",
+          "h": "Kostenlose Besichtigung und Festpreis",
+          "p": "Wir sehen uns Heckenart, Höhe, Zugang und mögliche Nester an und sagen Ihnen, ob Auf-den-Stock-Setzen für Ihre Hecke passt. Der Festpreis steht schriftlich."
         },
         {
-          "h": "Schriftlicher Festpreis, dann Einsatz",
-          "p": "Sie bekommen den Festpreis schriftlich, Abfuhr und Entsorgung inklusive. Danach setzen wir die Hecke im erlaubten Zeitfenster auf den Stock.",
-          "when": "Schriftlich · Abfuhr inklusive"
+          "when": "Zum vereinbarten Termin",
+          "h": "Saubere Ausführung, Abfuhr inklusive",
+          "p": "Wir setzen die Hecke im erlaubten Zeitfenster nach § 39 BNatSchG auf den Stock, fahren alles ab und lassen die Fläche besenrein zurück."
+        },
+        {
+          "when": "Direkt nach der Arbeit",
+          "h": "Foto-Nachweis aufs Handy",
+          "p": "Fotos von vorher und nachher gehen direkt aufs Handy, auch wenn Sie nicht vor Ort waren."
         }
       ],
       "preis": {
@@ -2269,28 +2211,23 @@
       "form_subject": "Neue Anfrage (Ads-LP Hecke hecke-auf-den-stock-setzen)",
       "fotos": [
         {
-          "vn": "04-04-hainbuche",
-          "cap": "Hainbuche",
-          "sub": "gerade Flanken",
-          "alt": "Hainbuchen-Hecke vor und nach dem Schnitt"
+          "slug": "arbeit/gbp-hecke-08-kirschlorbeer",
+          "cap": "Kirschlorbeer",
+          "sub": "frisch geschnitten",
+          "alt": "Frisch geschnittener Kirschlorbeer mit Schnittgutsack im Vorgarten"
         },
         {
-          "vn": "10-03-liguster-23m",
-          "cap": "Liguster",
-          "sub": "klare Kontur",
-          "alt": "Liguster-Hecke vor und nach dem Schnitt"
-        },
-        {
-          "vn": "15-12-rotbuche",
-          "cap": "Rotbuche",
-          "sub": "saubere Deckelung",
-          "alt": "Rotbuchen-Hecke vor und nach dem Schnitt"
+          "vorher": "arbeit/gbp-hecke-05-vorher",
+          "nachher": "arbeit/gbp-hecke-05-nachher",
+          "cap": "Heckenschnitt",
+          "sub": "Vorher und Nachher",
+          "alt": "Hecke mit Rasen im Garten"
         }
       ],
       "hero": {
         "typ": "foto",
-        "slug": "bg-hecke",
-        "alt": "Dichte grüne Laubhecke"
+        "slug": "arbeit/gbp-hecke-06-einfahrt",
+        "alt": "Mitarbeiter im Firmenshirt von hinten vor einer hohen, überwachsenen Hecke an einer Einfahrt"
       },
       "testimonials_h2": "Was Kundinnen und Kunden schreiben",
       "testimonials_h2_em": "schreiben",
@@ -2324,9 +2261,8 @@
         "titel": "Starker Rückschnitt und Entfernung nur vom 1. Oktober bis 28. Februar",
         "bedingung": "§ 39 BNatSchG · Form- und Pflegeschnitt das ganze Jahr"
       },
-      "ablauf_lead": "Vom ersten Foto bis zur sauberen Hecke in drei Schritten.",
-      "fotos_h2": "So sieht eine saubere Hecke aus",
-      "fotos_hint": "Hainbuche, Liguster, Rotbuche: Regler ziehen, um Vorher und Nachher zu vergleichen."
+      "fotos_h2": "So sieht unsere Arbeit aus",
+      "fotos_hint": "Fotos von unseren Einsätzen im Havelland"
     },
     {
       "slug": "heckenentfernung",
@@ -2408,35 +2344,26 @@
           }
         ]
       },
-      "nutzen": [
-        {
-          "h": "Fläche frei",
-          "p": "Zaun, Sichtschutz, Rasen oder Beet: Auf der freien Fläche geht, was die Hecke vorher im Weg hatte."
-        },
-        {
-          "h": "Wurzel raus statt Stummel",
-          "p": "Wir fräsen oder baggern die Stubben aus, damit keine Stummel im Boden zurückbleiben."
-        },
-        {
-          "h": "Ein Einsatz, Abfuhr inklusive",
-          "p": "Roden, Wurzeln und Abfuhr in einem Einsatz. Den Festpreis haben Sie vorher schriftlich."
-        }
-      ],
       "ablauf": [
         {
-          "h": "Foto schicken oder anrufen",
-          "p": "Ein Foto der Hecke per WhatsApp, ein Anruf oder das Formular genügt. Wir antworten am selben Tag.",
-          "when": "Foto per WhatsApp oder Anruf"
+          "when": "Antwort am selben Tag",
+          "h": "Anfrage mit Foto oder Anruf",
+          "p": "Ein Foto per WhatsApp, ein Anruf oder das Formular genügt. Wir antworten am selben Tag."
         },
         {
-          "h": "Kostenlose Besichtigung",
-          "p": "Wir prüfen Länge, Wurzel und Zugang vor Ort, auch in Potsdam und Berlin-Spandau. Die Besichtigung kostet nichts.",
-          "when": "Kostenlos · vor Ort"
+          "when": "Kostenlos · vor Ort",
+          "h": "Kostenlose Besichtigung und Festpreis",
+          "p": "Wir prüfen Länge, Wurzel und Zugang vor Ort, auch in Potsdam und Berlin-Spandau. Sie bekommen den Festpreis schriftlich. Die Besichtigung kostet nichts."
         },
         {
-          "h": "Schriftlicher Festpreis, Rodung und Abfuhr",
-          "p": "Sie bekommen den Festpreis schriftlich, Abfuhr inklusive. Gerodet wird im gesetzlichen Fenster vom 1. Oktober bis 28. Februar. Danach schicken wir Ihnen Fotos aufs Handy.",
-          "when": "Schriftlich · Abfuhr inklusive"
+          "when": "Zum vereinbarten Termin",
+          "h": "Saubere Ausführung, Abfuhr inklusive",
+          "p": "Gerodet wird im gesetzlichen Fenster nach § 39 BNatSchG vom 1. Oktober bis 28. Februar. Wurzeln und Abfuhr gehören zum Einsatz, die Fläche bleibt besenrein."
+        },
+        {
+          "when": "Direkt nach der Arbeit",
+          "h": "Foto-Nachweis aufs Handy",
+          "p": "Fotos von vorher und nachher gehen direkt aufs Handy, auch wenn Sie nicht vor Ort waren."
         }
       ],
       "preis": {
@@ -2487,8 +2414,8 @@
       "fotos": [],
       "hero": {
         "typ": "foto",
-        "slug": "svc-heckenentfernung-hero",
-        "alt": "Abgeschnittenes Schnittgut, Astschere und Säge auf einer Plane vor einer Hecke im Garten"
+        "slug": "arbeit/gbp-hecke-06-einfahrt",
+        "alt": "Mitarbeiter im Firmenshirt von hinten vor einer hohen, überwachsenen Hecke an einer Einfahrt"
       },
       "testimonials_h2": "Was Kundinnen und Kunden schreiben",
       "testimonials_h2_em": "schreiben",
@@ -2522,8 +2449,7 @@
       "frist": {
         "titel": "Starker Rückschnitt und Entfernung nur vom 1. Oktober bis 28. Februar",
         "bedingung": "§ 39 BNatSchG · Form- und Pflegeschnitt das ganze Jahr"
-      },
-      "ablauf_lead": "Vom ersten Foto bis zur sauberen Hecke in drei Schritten."
+      }
     }
   ],
   "danke_hecke": {
@@ -2540,5 +2466,28 @@
     "meta": "Ihre Anfrage zur Hecke ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns am selben Tag.",
     "wa_text": "Hallo, ich habe gerade das Formular zur Hecke geschickt, hier noch ein Foto dazu.",
     "title_voll": "Danke, Hecken-Anfrage eingegangen | Havelland"
+  },
+  "zusagen_hecke": {
+    "h": "Vier Zusagen, auf die Sie sich verlassen können",
+    "em": "verlassen",
+    "label": "Unsere vier Zusagen",
+    "items": [
+      {
+        "h": "Festpreis ist Endpreis",
+        "p": "Nach der kostenlosen Besichtigung steht Ihr Preis schriftlich fest, ohne Nachforderung."
+      },
+      {
+        "h": "Abfuhr und Entsorgung inklusive",
+        "p": "Schnittgut und Grünabfall fahren wir ab und entsorgen sie ordnungsgemäß. Die Fläche bleibt besenrein."
+      },
+      {
+        "h": "Foto-Nachweis aufs Handy",
+        "p": "Nach dem Einsatz schicken wir Ihnen Fotos direkt aufs Handy, auch wenn Sie nicht vor Ort waren."
+      },
+      {
+        "h": "Antwort am selben Tag",
+        "p": "Ein Foto per WhatsApp oder ein Anruf genügt, wir melden uns noch am selben Tag."
+      }
+    ]
   }
 }

@@ -20,7 +20,7 @@
 
 import fs from 'fs';
 import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
-import { topbar, trustZeile, preisBlock, zitat, aktionKarte, punkte, bewertungen, BLOECKE_CSS, ICON_ARROW, leistungsKacheln, fristKarte, FOTO_BADGE, HECKE_CSS, HECKE_JS } from './lp-bloecke.mjs';
+import { topbar, trustZeile, preisBlock, zitat, aktionKarte, punkte, bewertungen, BLOECKE_CSS, ICON_ARROW, leistungsKacheln, fristKarte, FOTO_BADGE, HECKE_CSS, HECKE_JS, zusagenBand } from './lp-bloecke.mjs';
 import { VARIANTE, VARIANT_CSS } from './lp-varianten.mjs'; // LP_VARIANTE=a|b: ruhigere Varianten des ersten Bildschirms (ohne Variable: Ist-Stand)
 
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
@@ -323,7 +323,7 @@ export function buildLp(d) {
 
   // Vorher/Nachher-Slider aus components.mjs (WebP-768: baSlider setzt <img src>, kein <picture>; WebP statt JPG spart ~120 KB je Paar — Perf-Messung 14.09.; Hochformat 864/1036 = .ba-Aspect).
   // Der Alt-Suffix der Komponente ist heckenspezifisch („nach dem Schnitt") → für Räumungen ersetzt.
-  const imgSrc = slug => `/assets/img/${slug}-768.webp`;
+  const imgSrc = slug => { const ws = ((IMG && IMG[slug]) || {}).widths || []; return `/assets/img/${slug}-${ws.length && !ws.includes(768) ? Math.max(...ws) : 768}.webp`; }; // echtes Hecken-Paar (Profil-Foto) hat nur 480/675 px
   const baLp = (o, raum = true) => raum ? baSlider(o).replace(/ — nach dem Schnitt"/g, ' — nach der Räumung"').replace(/ — vor dem Schnitt"/g, ' — vor der Räumung"') : baSlider(o).replace(/ — (nach|vor) dem Schnitt"/g, ', $1 dem Schnitt"'); // Hecken: Korrektur 06.11., kein Gedankenstrich im Alt-Text // Hecken-LPs: Alt-Suffix „nach dem Schnitt“ bleibt
   // Aspect-Ratio aus dem Manifest (Fall-Fotos sind 768/1024 = 3:4, nicht 864/1036) — sonst wird das Bild in der falschen Box beschnitten.
   // Hecken-LPs (Owner-Freigabe 06.11.2026): Paar aus assets/img/vn/ (Feld vn = Slug, WebP-768 neben den Original-JPGs), gleiche Praxis wie Hub und Ortsseiten.
@@ -360,12 +360,18 @@ export function buildLp(d) {
 
   // Galerie: nur echte Fotos als Vorher/Nachher-Slider ({vorher, nachher, cap, sub}); Slugs müssen im Manifest stehen, sonst wird das Paar übersprungen.
   // Das Hero-Paar wird nicht wiederholt (skipKey). Ein einzelnes Paar bleibt einspaltig und begrenzt.
+  // Einzelfoto-Karte (Hecke, fotos-Eintrag mit slug statt vorher/nachher): gleiche Karte wie der Slider (Radius, Schatten, Unterschrift kursiv + Zusatz), ohne Regler und ohne Vorher/Nachher-Badges.
+  const fotoOk = f => !!(f && f.slug && !f.vorher && !f.nachher && !f.vn && pic(f.slug));
+  const fotoKarte = f => { const m = IMG[f.slug]; return `<figure class="lp-fotokarte-w"><div class="lp-fotokarte">${pic(f.slug, { alt: altQ(f.alt || f.cap || ''), sizes: '(max-width:759px) 92vw, 440px' })}</div>${f.cap ? `<p class="ba-cap"><b>${esc(f.cap)}</b>${f.sub ? `<span>${esc(f.sub)}</span>` : ''}</p>` : ''}</figure>`; };
   const gallery = (lp, skipKey) => {
-    const pairs = (Array.isArray(lp.fotos) ? lp.fotos : []).filter(f => pairOk(f) && pairKey(f) !== skipKey);
+    const pairs = (Array.isArray(lp.fotos) ? lp.fotos : []).filter(f => fotoOk(f) || (pairOk(f) && pairKey(f) !== skipKey));
     if (!pairs.length) return '';
-    const items = pairs.map(f => `<div>${baPair(f, { raum: lp.raeumung !== false, name: lp.name || 'Entrümpelung' })}</div>`).join('');
+    const items = pairs.map(f => fotoOk(f) ? `<div>${fotoKarte(f)}</div>` : `<div>${baPair(f, { raum: lp.raeumung !== false, name: lp.name || 'Entrümpelung' })}</div>`).join('');
     return `<section class="sec${lp.raeumung === false ? ' section-alt' : ''}" id="fotos"><div class="wrap"><div class="head"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery${lp.raeumung === false ? ` n${pairs.length}` : ''}"${pairs.length === 1 ? ' style="grid-template-columns:1fr;max-width:560px;margin:0 auto"' : ''}>${items}</div></div></section>`;
   };
+
+  // Ablauf (Hecke): wie der Hub /heckenschnitt/ (section.sec.tl-row, vier Schritte nebeneinander ab 900 px, .twhen-Kicker der Website); Entrümpelungs-LPs behalten die vertikale Zeitleiste.
+  const ablaufRow = (lp, galHtml) => `<section class="sec tl-row${galHtml ? '' : ' section-alt'}" id="ablauf"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>`;
 
   const shortLabel = o => String(o).split(' / ')[0];
   const objLabel = (o, lp) => { const k = ((lp && lp.objekte_kurz) || {})[o] || shortLabel(o); return k !== o ? `<span class="ql">${esc(o)}</span><span class="qs">${esc(k)}</span>` : esc(o); };
@@ -452,8 +458,8 @@ ${alt}
 ${heroPreis}${heroForm || quick}${heroForm && revOn ? zitat(zitatOf(lp), esc) : ''}${aktHero}${heroCta}
 ${punkte(lp.trust, esc)}${person}</div>${H.shot}</div></section>${ortJs}
 ${wwt}${pfk}
-${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
-<section class="sec${lp.raeumung === false && galHtml ? '' : ' section-alt'}"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${lp.ablauf_lead ? `<p class="sec-lead">${esc(lp.ablauf_lead)}</p>` : ''}${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
+${lp.raeumung === false ? rvIn(zusagenBand(cp.zusagen_hecke, esc)) : rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
+${lp.raeumung === false ? ablaufRow(lp, galHtml) : `<section class="sec${lp.raeumung === false && galHtml ? '' : ' section-alt'}"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${lp.ablauf_lead ? `<p class="sec-lead">${esc(lp.ablauf_lead)}</p>` : ''}${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>`}
 ${galHtml}
 <section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })}${preisCta}${aktLp}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(txt(lp, 'preis.cta_hint', 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.'))}</p></div></section>
 ${!revOn ? '' : bewertungen({ items: revItems(lp), gr: grLive ? gr : null, h2: lp.testimonials_h2 || 'Was Kunden über uns sagen', em: lp.testimonials_h2_em || 'sagen' }, esc)}

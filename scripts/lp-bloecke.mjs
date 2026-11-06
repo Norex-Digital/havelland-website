@@ -189,6 +189,15 @@ export function fristKarte(f, { esc }) {
 // Hero-Foto-Karte (Hecke, ohne Vorher/Nachher): überlappendes Info-Badge aus den Zusagen der Seite (kein Bild-Label, keine Behauptung zum Foto).
 export const FOTO_BADGE = `<span class="badge"><span class="ic">${ICON_CHECK}</span><span class="t">Festpreis nach Besichtigung<span>Abfuhr inklusive</span></span></span>`;
 
+// Zusagen-Band (Hecke, Owner 06.11.): dunkelgrüne Zone wie das Wert-Band der Website (.band / .zone-dark): Serifen-Headline 700 weiß, Text --dark-text2, kein Grain.
+// Markup bleibt .gstrip > .gstrip-grid > .gs (accept-Gate gstrip), vier Zusagen aus lp.json zusagen_hecke {h, em, label, items:[{h,p}]}.
+export function zusagenBand(z, esc) {
+  if (!z || !Array.isArray(z.items) || z.items.length !== 4) throw new Error('lp.json zusagen_hecke braucht genau 4 items');
+  const h = z.em && z.h.includes(z.em) ? esc(z.h).replace(esc(z.em), `<em>${esc(z.em)}</em>`) : esc(z.h);
+  const rows = z.items.map((x, i) => `<div class="gs rv${i ? ` d${i}` : ''}"><span class="gn">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(x.h)}</h3><p>${esc(x.p)}</p></div></div>`).join('');
+  return `<section class="gstrip gstrip-dark zone-dark" aria-label="${esc(z.label || 'Unsere vier Zusagen')}"><div class="wrap"><h2 class="serif rv">${h}</h2><div class="gstrip-grid">${rows}</div></div></section>`;
+}
+
 // CSS nur für Hecken-LPs (eigener <style>-Block hinter LP_CSS, damit die Entrümpelungs-Seiten byteidentisch bleiben).
 export const HECKE_CSS = `<style>
 /* ---- Hecken-LPs: Designdurchgang 06.11.2026 ---- */
@@ -221,6 +230,20 @@ export const HECKE_CSS = `<style>
 @media(max-width:899px){.lp-hecke.lp-hero-foto .shot{max-width:420px}.lp-hecke .shot .badge{left:14px;bottom:20px}}
 /* Galerie: drei Paare nebeneinander ab Desktop; zwei Paare begrenzt, damit ein Paar samt Unterschrift in einen 900-px-Bildschirm passt */
 @media(min-width:900px){.lp-gallery.n3{grid-template-columns:repeat(3,minmax(0,1fr))}.lp-gallery.n2{max-width:880px}}
+/* Einzelfoto-Karte in der Galerie: Format, Radius und Schatten wie der Slider (.ba), ohne Regler und Badges; Unterschrift = .ba-cap */
+.lp-fotokarte-w{margin:0}
+.lp-fotokarte{position:relative;border-radius:var(--r-image);overflow:hidden;box-shadow:var(--sh-photo);aspect-ratio:675/774;background:var(--surface2)}
+.lp-fotokarte img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* Zusagen-Band dunkelgrün wie das Wert-Band der Website: weiße Serifen-Headline 700, Text --dark-text2, Nummern in --green-soft, kein Grain */
+.gstrip.gstrip-dark{background:var(--green-d);border:0;padding:60px 0 56px}
+.gstrip-dark h2{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.4vw,40px);line-height:1.16;letter-spacing:-.018em;color:var(--dark-text1);max-width:19em;margin:0 0 34px;text-wrap:balance}
+.gstrip-dark h2 em{font-style:italic;font-weight:700;color:var(--green-soft)}
+.gstrip-dark .gstrip-grid{gap:26px 32px}
+.gstrip-dark .gs{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:7px;align-items:baseline;align-content:start}
+.gstrip-dark .gs>div{display:contents}
+.gstrip-dark .gs .gn{flex:none;font-size:16px;color:var(--green-soft)}
+.gstrip-dark .gs h3{grid-column:2;margin:0;font:700 16px/1.3 "Inter",system-ui,sans-serif;color:var(--dark-text1)}
+.gstrip-dark .gs p{grid-column:1/-1;margin:0;font-size:16px;line-height:1.5;font-weight:500;color:var(--dark-text2);text-wrap:pretty}
 /* Design-Review 06.11.: ungerades letztes Item der Listen über beide Spalten zentriert (Prinzip 5), vier Zusagen als 2x2 bzw. 4 Spalten statt 3+1 */
 @media(min-width:640px){#was-wir-tun .v:last-child:nth-child(odd),#preisfaktoren .v:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 20px)}.gstrip-grid:has(>.gs:nth-child(4):last-child){grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1000px){.gstrip-grid:has(>.gs:nth-child(4):last-child){grid-template-columns:repeat(4,1fr)}}

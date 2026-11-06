@@ -314,25 +314,31 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
       check(id, 'Hecke: zitat_hero je LP gesetzt (Objekt oder false, kein Fallback auf das Entrümpelungs-Zitat)', en.zitat_hero === false || (en.zitat_hero && typeof en.zitat_hero === 'object'));
       const kartenKeys = [...(en.bewertungen_lp || []), ...(en.zitat_hero && en.zitat_hero.quelle ? [en.zitat_hero.quelle] : [])];
       check(id, 'Hecke: keine Bewertungskarte/Zitat mit Entrümpelungs-Bezug (Tag oder Text) und kein Standard-Key milo/mark/nick', kartenKeys.every(k => { const r = (lpJson.bewertungen || {})[k]; return r && !/entrümpel/i.test(`${r.tag} ${r.t}`) && !['milo', 'mark', 'nick'].includes(k); }));
-      // Bilder: ba nur mit dem echten Paar echt-* (kein KI im Slider), foto nur generisches Stimmungsbild; nie ein Bild mit Person
+      // Bilder (Owner 06.11. abends: nur echte Fotos aus dem Google-Unternehmensprofil, keine KI-Paare vn/, kein KI-Stimmungsbild): Hero ba nur mit dem echten Paar arbeit/gbp-hecke-05-*, Hero foto nur arbeit/gbp-hecke-06-einfahrt (echter Mitarbeiter von hinten), Galerie aus Paar 05 und den Einzelfotos 06/08.
       const hero = en.hero || { typ: 'text' };
       check(id, `Hecke: Hero-Typ ${hero.typ} ∈ {text, ba, foto}`, ['text', 'ba', 'foto'].includes(hero.typ));
-      // Abweichung von Prinzip 4 (Owner Maurice 06.11.2026: „Owner hat alle vorhandenen Fotos freigegeben“, gleiche Praxis wie Hub und Ortsseiten, Entscheid E5 vom 20.10./06.11.): im Hecke-Modus sind vn/-Paare in Hero und Galerie erlaubt.
-      // Verboten bleiben Personenbilder und jede „echt“/„Kunde“/„Auftrag“-Behauptung zu diesen KI-Paaren (siehe Galerie-Gate unten).
-      const paarOk = f => (f.vn && /^[0-9a-z-]+$/.test(f.vn) && fs.existsSync(`assets/img/vn/${f.vn}_vorher-768.webp`) && fs.existsSync(`assets/img/vn/${f.vn}_nachher-768.webp`)) || (/^echt-/.test(f.vorher || '') && /^echt-/.test(f.nachher || ''));
-      if (hero.typ === 'ba') check(id, 'Hecke: Hero ba mit vn/-Paar (Owner-Freigabe 06.11.) oder echtem Paar echt-*, WebP-Dateien vorhanden', paarOk(hero) && !PERSON_RE.test(hero.vn || hero.vorher || ''));
       const manifestIMG = JSON.parse(fs.readFileSync('assets/img/manifest.json', 'utf8'));
-      if (hero.typ === 'foto') check(id, 'Hecke: Hero foto = generisches Stimmungsbild aus dem Manifest, nie ein Bild mit Person (hecke-hinten-*-noah, zaun-hinten-* …)', !!hero.slug && !!manifestIMG[hero.slug] && !PERSON_RE.test(hero.slug));
+      const ECHT_PAAR = ['arbeit/gbp-hecke-05-vorher', 'arbeit/gbp-hecke-05-nachher'];
+      const ECHT_EINZEL = ['arbeit/gbp-hecke-06-einfahrt', 'arbeit/gbp-hecke-08-kirschlorbeer'];
+      const paarEcht = f => !f.vn && f.vorher === ECHT_PAAR[0] && f.nachher === ECHT_PAAR[1] && ECHT_PAAR.every(k => manifestIMG[k]);
+      const einzelEcht = f => !f.vn && !f.vorher && ECHT_EINZEL.includes(f.slug) && !!manifestIMG[f.slug];
+      if (hero.typ === 'ba') check(id, 'Hecke: Hero ba nur mit dem echten Paar arbeit/gbp-hecke-05-vorher/-nachher', paarEcht(hero));
+      if (hero.typ === 'foto') check(id, 'Hecke: Hero foto nur arbeit/gbp-hecke-06-einfahrt (echtes Foto, Mitarbeiter von hinten, kein KI-Bild)', hero.slug === 'arbeit/gbp-hecke-06-einfahrt' && !!manifestIMG[hero.slug]);
       check(id, `Hecke: Hero im Output = lp.json (lp-hero-${hero.typ}), kein stiller Rückfall auf Text`, new RegExp(`<section class="phero lp-hero lp-hero-${hero.typ}[ "]`).test(h));
-      check(id, 'Hecke: Galerie-Paare (fotos) nur vn/-Paare (Owner-Freigabe 06.11.) oder echt-*, ohne Personenbild', (en.fotos || []).every(f => paarOk(f) && !PERSON_RE.test(f.vn || f.vorher || '')));
+      check(id, 'Hecke: Galerie-Einträge (fotos) nur echtes Paar 05 oder Einzelfotos 06/08, kein vn/-Paar', (en.fotos || []).every(f => paarEcht(f) || einzelEcht(f)));
+      check(id, 'Hecke: kein Bild aus vn/ und kein KI-Stimmungsbild (bg-hecke, svc-*-hero) im Output', !/\/assets\/img\/vn\//.test(h) && !/\/assets\/img\/(bg-hecke|svc-[a-z-]+-hero)-/.test(h));
       const baImgs = [...h.matchAll(/<div class="ba[ "][^>]*>\s*<img src="([^"]+)"[^>]*><img class="ba-top" src="([^"]+)"/g)].flatMap(m => [m[1], m[2]]);
-      check(id, `Hecke: alle Slider-Bilder (${baImgs.length}) aus vn/ oder echt-* (keine Personenbilder)`, baImgs.every(u => /\/assets\/img\/(vn\/[0-9a-z-]+_(vorher|nachher)-768\.webp|echt-)/.test(u)));
-      // Galerie (#fotos): Vorhandensein je Seite (Entfernung ohne passendes Paar: keine Galerie), neutrale Überschrift/Hinweiszeile ohne „echt“/„Kunde“/„Auftrag“/Ort, keine Bild-Labels
+      check(id, `Hecke: alle Slider-Bilder (${baImgs.length}) = echtes Paar arbeit/gbp-hecke-05-*`, baImgs.every(u => /\/assets\/img\/arbeit\/gbp-hecke-05-(vorher|nachher)-\d+\.webp$/.test(u)));
+      const bilder = [...h.matchAll(/\/assets\/img\/([a-z0-9\/_-]+?)(?:-\d+)?\.(?:webp|avif|jpg|png)/g)].map(m => m[1]).filter(x => x.startsWith('arbeit/') || x.startsWith('vn/'));
+      check(id, 'Hecke: alle Arbeitsfotos im Output sind arbeit/gbp-hecke-*', bilder.every(x => /^arbeit\/gbp-hecke-0[568]-/.test(x)));
+      // Galerie (#fotos): Vorhandensein je Seite (Entfernung: keine Galerie), Überschrift „So sieht unsere Arbeit aus“, Hinweis „Fotos von unseren Einsätzen im Havelland“, keine Bild-Labels, keine Ortsnamen je Bild
       const fS = h.indexOf('id="fotos"'), fH = fS > -1 ? h.slice(fS, h.indexOf('</section>', fS)) : '';
-      check(id, (en.fotos || []).length ? `Hecke: Galerie #fotos mit ${(en.fotos || []).length} Paaren (lp.json fotos)` : 'Hecke: keine Galerie (fotos leer, kein passendes Paar)', (en.fotos || []).length ? (fH.match(/<div class="ba"/g) || []).length === en.fotos.length : fS === -1);
+      const nKarten = (fH.match(/<div class="ba"|<div class="lp-fotokarte"/g) || []).length;
+      check(id, (en.fotos || []).length ? `Hecke: Galerie #fotos mit ${(en.fotos || []).length} Karten (lp.json fotos)` : 'Hecke: keine Galerie (fotos leer)', (en.fotos || []).length ? nKarten === en.fotos.length : fS === -1);
       if ((en.fotos || []).length) {
-        check(id, 'Hecke: Galerie-Überschrift und -Hinweis neutral (kein „echt/Kunde/Auftrag/Einsatz/Falkensee“, keine Bild-Labels)', !!en.fotos_h2 && !!en.fotos_hint && !/echt|kund|auftrag|einsatz|falkensee|potsdam|spandau|dokumentiert/i.test(`${en.fotos_h2} ${en.fotos_hint}`) && !LABEL_RE.test(textOf(fH)));
-        check(id, 'Hecke: Galerie ohne Meterangabe und ohne Ortsangabe in Unterschriften/Alt-Texten', !METER_RE.test(fH) && !/falkensee|potsdam|spandau|havelland/i.test(fH));
+        check(id, 'Hecke: Galerie-Überschrift „So sieht unsere Arbeit aus“, Hinweis „Fotos von unseren Einsätzen im Havelland“', en.fotos_h2 === 'So sieht unsere Arbeit aus' && en.fotos_hint === 'Fotos von unseren Einsätzen im Havelland' && has(fH, '<h2>So sieht unsere Arbeit aus</h2>') && has(fH, 'Fotos von unseren Einsätzen im Havelland') && !LABEL_RE.test(textOf(fH)));
+        check(id, 'Hecke: Galerie-Karten ohne Meterangabe, ohne Orts- und Kundennamen in Unterschriften/Alt-Texten', !METER_RE.test(fH.replace('im Havelland', '')) && !/falkensee|potsdam|spandau|kunde/i.test(fH.replace(/<h2>[\s\S]*?<\/p>/, '')));
+        check(id, 'Hecke: Einzelfoto-Karten ohne Regler und ohne Vorher/Nachher-Badges', ((fH.match(/class="lp-fotokarte"/g) || []).length === (en.fotos || []).filter(einzelEcht).length) && !/<figure class="lp-fotokarte-w">(?:(?!<\/figure>)[\s\S])*(ba-tag|type="range")/.test(fH));
       }
       // Designdurchgang 06.11.: Leistungs-Kacheln vor dem Formular (kein Preis), Frist-Karte nach dem Formular, vier Vertrauens-Badges, Ablauf-Kicker, Chips dezent
       const hS = h.indexOf('<section class="phero lp-hero'), hH = h.slice(hS, h.indexOf('</section>', hS));
@@ -342,13 +348,21 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
       check(id, 'Hecke: Frist-Karte (.lp-frist) nach dem Formular, Titel und Bedingung aus lp.json, kein Prozent, kein Dringlichkeitswort', hH.indexOf('class="lp-frist"') > hH.indexOf('id="anfrage"') && has(hH, escH(en.frist.titel)) && has(hH, escH(en.frist.bedingung)) && !/%|nur noch|letzte|schnell sichern|jetzt sichern|begrenzt/i.test(textOf(hH.slice(hH.indexOf('class="lp-frist"'), hH.indexOf('class="lp-frist"') + 700))));
       check(id, 'Hecke: Frist-Karte nennt § 39 BNatSchG und 28. Februar', /39 BNatSchG/.test(en.frist.titel + en.frist.bedingung) && /28\. Februar/.test(en.frist.titel + en.frist.bedingung));
       check(id, 'Hecke: vier Vertrauens-Badges mit Icon (trust-row lp-checks, 4 Einträge)', (h.match(/<div class="t"><svg/g) || []).length === 4 && ['Betrieb aus Falkensee', 'Festpreis nach Besichtigung', 'Foto-Nachweis aufs Handy', 'Kostenlose Besichtigung'].every((t, i) => (en.trust || [])[i] && en.trust[i].b === t));
-      const ablS = h.indexOf('class="tl '), ablH = ablS > -1 ? h.slice(ablS, h.indexOf('</section>', ablS)) : '';
-      check(id, 'Hecke: Ablauf-Kicker „Foto per WhatsApp oder Anruf“ · „Kostenlos · vor Ort“ · „Schriftlich · Abfuhr inklusive“, Lead unter der Überschrift', ['Foto per WhatsApp oder Anruf', 'Kostenlos · vor Ort', 'Schriftlich · Abfuhr inklusive'].every(t => has(ablH, t)) && has(h, `<p class="sec-lead">${escH(en.ablauf_lead || '-')}</p>`));
+      // Ablauf (Owner 06.11. abends): wie der Hub, section.sec.tl-row#ablauf, vier Schritte, .twhen-Kicker der Website; einzige Zusage „Antwort am selben Tag“ (freigegeben), keine Tages-/Terminzusage sonst
+      const ablS = h.indexOf('id="ablauf"'), ablH = ablS > -1 ? h.slice(h.lastIndexOf('<section', ablS), h.indexOf('</section>', ablS)) : '';
+      check(id, 'Hecke: Ablauf als section.sec.tl-row#ablauf mit 4 Schritten (.tli), Titel wie lp.json', /<section class="sec tl-row[ "]/.test(ablH) && (ablH.match(/<div class="tli">/g) || []).length === 4 && (en.ablauf || []).length === 4 && en.ablauf.every(x => has(ablH, `<h3>${escH(x.h)}</h3>`)));
+      check(id, 'Hecke: Ablauf-Schritte = Anfrage mit Foto oder Anruf · Kostenlose Besichtigung und Festpreis · Saubere Ausführung, Abfuhr inklusive · Foto-Nachweis aufs Handy', ['Anfrage mit Foto oder Anruf', 'Kostenlose Besichtigung und Festpreis', 'Saubere Ausführung, Abfuhr inklusive', 'Foto-Nachweis aufs Handy'].every((t, i) => (en.ablauf || [])[i] && en.ablauf[i].h === t) && /§ 39/.test(ablH));
       const kick = [...ablH.matchAll(/<span class="twhen">([^<]*)<\/span>/g)].map(m => m[1]);
-      check(id, 'Hecke: Ablauf-Kicker ohne Tages-/Terminzusage (3 Kicker, keine Ziffer, kein Tag/Werktag/Woche/Stunde)', kick.length === 3 && kick.every(t => !/\d|tag|woche|stunde|sofort|binnen|innerhalb/i.test(t)));
+      check(id, 'Hecke: Ablauf-Kicker „Antwort am selben Tag“ · „Kostenlos · vor Ort“ · „Zum vereinbarten Termin“ · „Direkt nach der Arbeit“', JSON.stringify(kick) === JSON.stringify(['Antwort am selben Tag', 'Kostenlos · vor Ort', 'Zum vereinbarten Termin', 'Direkt nach der Arbeit']));
+      check(id, 'Hecke: Ablauf-Kicker ohne Tages-/Terminzusage außer „Antwort am selben Tag“ (keine Ziffer, kein Werktag/Woche/Stunde/sofort/binnen/innerhalb)', kick.length === 4 && kick.every(t => t === 'Antwort am selben Tag' || !/\d|tag|woche|stunde|sofort|binnen|innerhalb/i.test(t)) && !/\d\s*(Werk)?tage|Werktag|binnen|innerhalb von|24 Stunden|48 Stunden/i.test(textOf(ablH)));
+      // Zusagen-Band (Owner 06.11. abends): dunkelgrün wie das Wert-Band der Website, vier Zusagen, Serifen-Headline, kein Grain
+      const gsS = h.indexOf('class="gstrip gstrip-dark zone-dark"'), gsH = gsS > -1 ? h.slice(gsS, h.indexOf('</section>', gsS)) : '';
+      check(id, 'Hecke: Zusagen-Band dunkelgrün (gstrip gstrip-dark zone-dark) mit Serifen-Headline und genau 4 Zusagen', gsH.length > 100 && /<h2 class="serif rv in">/.test(gsH) && (gsH.match(/class="gs rv/g) || []).length === 4);
+      check(id, 'Hecke: Zusagen wörtlich aus lp.json zusagen_hecke (Festpreis ist Endpreis · Abfuhr und Entsorgung inklusive · Foto-Nachweis aufs Handy · Antwort am selben Tag)', (lpJson.zusagen_hecke || {}).items && ['Festpreis ist Endpreis', 'Abfuhr und Entsorgung inklusive', 'Foto-Nachweis aufs Handy', 'Antwort am selben Tag'].every((t, i) => lpJson.zusagen_hecke.items[i].h === t && has(gsH, `<h3>${escH(t)}</h3>`)));
+      check(id, 'Hecke: Zusagen-Band im CSS dunkel (--green-d, Text --dark-text2, Headline 700, kein Grain/Hintergrundbild, keine Hex-Werte)', has(h, '.gstrip.gstrip-dark{background:var(--green-d)') && has(h, 'color:var(--dark-text2)') && /\.gstrip-dark h2\{[^}]*font-weight:700/.test(h) && !/\.gstrip-dark[^{]*\{[^}]*(url\(|#[0-9a-f]{3,6}\b|grain)/i.test(h));
       check(id, 'Hecke: Hero-Klasse lp-hecke (Foto-Karte, Badge) und HECKE_CSS im Kopf, Chips seg-soft', has(h, ' lp-hecke"') && has(h, '.lp-form .seg.seg-soft label:has(input:checked)'));
       const imgSlugs = [...h.matchAll(/\/assets\/img\/([a-z0-9_-]+?)(?:-\d+)?\.(?:webp|avif|jpg|png)/g)].map(m => m[1]);
-      check(id, 'Hecke: kein Bild mit Person (hecke-hinten-*-noah, zaun-hinten-*, Ansprechpartner) im Output', !imgSlugs.some(x => PERSON_RE.test(x)) && !has(h, 'class="lp-person"'));
+      check(id, 'Hecke: Personenbild nur gbp-hecke-06-einfahrt (echter Mitarbeiter von hinten), kein hecke-hinten-*-noah/zaun-hinten-*/Ansprechpartner/KI-Avatar', !imgSlugs.some(x => PERSON_RE.test(x)) && !has(h, 'class="lp-person"'));
       // Überschrift: genau ein kursives Akzentwort in der H1
       const h1H = (h.match(/<h1>([\s\S]*?)<\/h1>/) || [, ''])[1];
       check(id, 'Hecke: H1 mit genau einem <em>', (h1H.match(/<em[\s>]/g) || []).length === 1);

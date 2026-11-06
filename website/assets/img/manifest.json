@@ -1692,5 +1692,51 @@
 "avif": false,
 "fb_ext": "jpg",
 "fb_w": 768
+},
+"arbeit/gbp-hecke-05-vorher": {
+"w": 675,
+"h": 774,
+"widths": [
+480,
+675
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 675
+},
+"arbeit/gbp-hecke-05-nachher": {
+"w": 675,
+"h": 774,
+"widths": [
+480,
+675
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 675
+},
+"arbeit/gbp-hecke-06-einfahrt": {
+"w": 3024,
+"h": 3780,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
+},
+"arbeit/gbp-hecke-08-kirschlorbeer": {
+"w": 3024,
+"h": 3780,
+"widths": [
+480,
+768,
+1024
+],
+"avif": true,
+"fb_ext": "jpg",
+"fb_w": 1024
 }
 }
