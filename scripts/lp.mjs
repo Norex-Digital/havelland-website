@@ -20,7 +20,7 @@
 
 import fs from 'fs';
 import { baSlider, gstripFrom, timelineFrom } from './components.mjs';
-import { topbar, trustZeile, preisBlock, zitat, aktionKarte, punkte, bewertungen, BLOECKE_CSS, ICON_ARROW, leistungsKacheln, fristKarte, FOTO_BADGE, HECKE_CSS } from './lp-bloecke.mjs';
+import { topbar, trustZeile, preisBlock, zitat, aktionKarte, punkte, bewertungen, BLOECKE_CSS, ICON_ARROW, leistungsKacheln, fristKarte, FOTO_BADGE, HECKE_CSS, HECKE_JS } from './lp-bloecke.mjs';
 import { VARIANTE, VARIANT_CSS } from './lp-varianten.mjs'; // LP_VARIANTE=a|b: ruhigere Varianten des ersten Bildschirms (ohne Variable: Ist-Stand)
 
 const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
@@ -364,7 +364,7 @@ export function buildLp(d) {
     const pairs = (Array.isArray(lp.fotos) ? lp.fotos : []).filter(f => pairOk(f) && pairKey(f) !== skipKey);
     if (!pairs.length) return '';
     const items = pairs.map(f => `<div>${baPair(f, { raum: lp.raeumung !== false, name: lp.name || 'Entrümpelung' })}</div>`).join('');
-    return `<section class="sec" id="fotos"><div class="wrap"><div class="head"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery${lp.raeumung === false ? ` n${pairs.length}` : ''}"${pairs.length === 1 ? ' style="grid-template-columns:1fr;max-width:560px;margin:0 auto"' : ''}>${items}</div></div></section>`;
+    return `<section class="sec${lp.raeumung === false ? ' section-alt' : ''}" id="fotos"><div class="wrap"><div class="head"><h2>${esc(lp.fotos_h2 || 'So sieht unsere Arbeit aus')}</h2></div><p class="hint" style="margin:-4px 0 22px;color:var(--muted)">${esc(lp.fotos_hint || 'Echte Fotos aus einem dokumentierten Auftrag, nur zugeschnitten. Genau so bekommen Sie Ihren Foto-Nachweis aufs Handy.')}</p><div class="lp-gallery${lp.raeumung === false ? ` n${pairs.length}` : ''}"${pairs.length === 1 ? ' style="grid-template-columns:1fr;max-width:560px;margin:0 auto"' : ''}>${items}</div></div></section>`;
   };
 
   const shortLabel = o => String(o).split(' / ')[0];
@@ -446,24 +446,25 @@ ${alt}
     const wwt = valsSec('was-wir-tun', lp.was_wir_tun, 'Was wir tun', lp.raeumung === false); // Hecke: Zonenwechsel paper → hell → paper (Referenz Entrümpelung)
     // preis_faktoren {h, p, items:[{h,p}]} (Kosten-LP, Umbau 11/2026): Einflussfaktoren auf den Preis, direkt nach dem Hero, nur Aussagen aus den bestehenden LPs, keine Beträge.
     const pfk = valsSec('preisfaktoren', lp.preis_faktoren, 'Was den Preis bestimmt');
+    const galHtml = gallery(lp, H.key); // Hecke-Zonenfolge: Ablauf und Galerie wechseln hell/paper (Design-Review 06.11.)
     const main = `<main id="top">
 <section class="phero lp-hero ${H.cls}${lp.raeumung === false ? ' lp-hecke' : ''}"${lp.lead_mobil ? ' data-lead-mobil' : ''}${lp.h1.length > 80 ? ' data-h1-lang' : ''}${h1Tail ? ' data-h1-tail' : ''}>${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> ${kicko}</span>${trustZeile(lp.trust_zeile, esc)}<h1>${h1o}</h1><p class="lp-ort${String(lp.lead || '').includes(lowerFirst(lp.ort_satz || ORT_SATZ)) ? ' lp-ort-dup' : ''}">${esc(lp.ort_satz || ORT_SATZ)}</p><p class="lead">${esc(lp.lead)}</p>
 ${heroPreis}${heroForm || quick}${heroForm && revOn ? zitat(zitatOf(lp), esc) : ''}${aktHero}${heroCta}
 ${punkte(lp.trust, esc)}${person}</div>${H.shot}</div></section>${ortJs}
 ${wwt}${pfk}
 ${rvIn(gstripFrom((lp.nutzen || []).map(x => ({ h: esc(x.h), p: esc(x.p) }))))}
-<section class="sec section-alt"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${lp.ablauf_lead ? `<p class="sec-lead">${esc(lp.ablauf_lead)}</p>` : ''}${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
-${gallery(lp, H.key)}
+<section class="sec${lp.raeumung === false && galHtml ? '' : ' section-alt'}"><div class="wrap"><div class="head"><h2>${esc(lp.abschnitt_ablauf || 'So läuft es ab')}</h2></div>${lp.ablauf_lead ? `<p class="sec-lead">${esc(lp.ablauf_lead)}</p>` : ''}${rvIn(timelineFrom((lp.ablauf || []).map(x => ({ when: x.when ? esc(x.when) : '', h: esc(x.h), p: esc(x.p) }))))}<div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a></div></div></section>
+${galHtml}
 <section class="sec" id="preise"><div class="wrap"><div class="head"><h2>${esc(lp.preis.h)}</h2></div><div class="lp-preis">${preisBlock(anker, anker && anker.note, { esc, escA }, { label: false })}${preisCta}${aktLp}${preisVerweis}${(lp.preis.p || []).map(t => `<p>${esc(t)}</p>`).join('')}</div><div class="cta-row lp-cta"><a class="btn btn-acc" href="#anfrage">${esc(lp.preis.cta || lp.cta)}</a><a class="btn btn-line" href="${wa}">Foto per WhatsApp schicken</a></div><p class="hint">${esc(txt(lp, 'preis.cta_hint', 'Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich.'))}</p></div></section>
 ${!revOn ? '' : bewertungen({ items: revItems(lp), gr: grLive ? gr : null, h2: lp.testimonials_h2 || 'Was Kunden über uns sagen', em: lp.testimonials_h2_em || 'sagen' }, esc)}
 ${kontaktSec}
-<section class="sec section-alt" id="fragen"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
+<section class="sec${lp.raeumung === false ? '' : ' section-alt'}" id="fragen"><div class="wrap"><div class="head"><h2>Häufige Fragen</h2></div><div class="faq">${(lp.faqs || []).map(f => `<details><summary>${esc(f.q)}<span class="pm" aria-hidden="true"></span></summary><p>${esc(f.a)}</p></details>`).join('')}</div></div></section>
 <section class="zone-deep end"><div class="wrap"><h2>${esc(txt(lp, 'end_h2', 'Sie zeigen, wir räumen.'))}</h2><p>${esc(txt(lp, 'end_p', 'Kostenlose Besichtigung, schriftlicher Festpreis für Räumung und Abtransport, besenreine Übergabe – im Havelland, in Berlin-Spandau und Potsdam.'))}</p><div class="cta-row"><a class="btn btn-acc" href="#anfrage">${esc(lp.cta)}</a><a class="btn btn-line" href="tel:${tel}">☎ ${telDisp}</a></div></div></section>
 </main>`;
     const baJs = /class="ba[ "]/.test(main) ? LP_BA_JS : '';
     const html = head(lp.title, lp.meta, url, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS + (lp.raeumung === false ? HECKE_CSS : '') + lpAttribJS(consentKey) })
       + lpHeader('/') + main + lpFooter + lpScta(lp.wa_text || 'Hallo, ich hätte gern eine kostenlose Besichtigung.') + SCTA_WAIT_JS
-      + CONSENT_BANNER + TRACK_EVENTS + lpFormJS(lp.slug, dankeOf(lp), consentKey, txt(lp, 'msg_objekt', 'Bitte wählen Sie aus, was geräumt werden soll.')) + resetJS + baJs + AKTION_JS + '</body></html>';
+      + CONSENT_BANNER + TRACK_EVENTS + lpFormJS(lp.slug, dankeOf(lp), consentKey, txt(lp, 'msg_objekt', 'Bitte wählen Sie aus, was geräumt werden soll.')) + resetJS + baJs + (lp.raeumung === false ? HECKE_JS : '') + AKTION_JS + '</body></html>';
     write(url, html);
     n++;
   }

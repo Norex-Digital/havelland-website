@@ -219,6 +219,14 @@ export const HECKE_CSS = `<style>
 .lp-hecke .shot .badge{background:var(--lp-surface)}
 @media(min-width:900px){.lp-hecke .shot .badge{left:-26px}}
 @media(max-width:899px){.lp-hecke.lp-hero-foto .shot{max-width:420px}.lp-hecke .shot .badge{left:14px;bottom:20px}}
-/* Galerie: drei Paare nebeneinander ab Desktop */
-@media(min-width:900px){.lp-gallery.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* Galerie: drei Paare nebeneinander ab Desktop; zwei Paare begrenzt, damit ein Paar samt Unterschrift in einen 900-px-Bildschirm passt */
+@media(min-width:900px){.lp-gallery.n3{grid-template-columns:repeat(3,minmax(0,1fr))}.lp-gallery.n2{max-width:880px}}
+/* Design-Review 06.11.: ungerades letztes Item der Listen über beide Spalten zentriert (Prinzip 5), vier Zusagen als 2x2 bzw. 4 Spalten statt 3+1 */
+@media(min-width:640px){#was-wir-tun .v:last-child:nth-child(odd),#preisfaktoren .v:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 20px)}.gstrip-grid:has(>.gs:nth-child(4):last-child){grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.gstrip-grid:has(>.gs:nth-child(4):last-child){grid-template-columns:repeat(4,1fr)}}
+/* Leistungs-Kacheln: Leistungsname auf dem Desktop 13.5 px (Zielgruppe 50 bis 70) */
+@media(min-width:600px){.lp-hero .lp-ltile .pl{font-size:13.5px}}
 </style>`;
+
+// Kachel-Hervorhebung folgt der Chip-Auswahl (sonst zeigt die Kachel „Formschnitt“, während der Chip „Rückschnitt“ gewählt ist). Nur Hecke.
+export const HECKE_JS = `<script>(function(){var f=document.getElementById('anfrage');var t=[].slice.call(document.querySelectorAll('.lp-ltile'));if(!f||!t.length)return;function s(){var c=f.querySelector('input[name=objekt]:checked');if(!c)return;t.forEach(function(a){a.classList.toggle('own',a.getAttribute('data-obj')===c.value)})}f.addEventListener('change',s);document.addEventListener('click',function(e){if(e.target.closest('.lp-ltile'))setTimeout(s,0)});s()})();</script>`;
