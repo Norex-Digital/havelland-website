@@ -1451,15 +1451,15 @@
       "slug": "heckenschnitt",
       "ag": "G1 AG_Heckenschnitt_Service_Ort",
       "name": "Hecke",
-      "title": "Heckenschnitt Havelland, Falkensee, Potsdam: Pauschalpreis",
-      "meta": "Heckenschnitt in Falkensee, Potsdam und Spandau: Wir bringen Ihre Hecke in Form und fahren das Schnittgut ab. Pauschalpreis nach kostenloser Besichtigung.",
+      "title": "Heckenschnitt Havelland, Falkensee, Potsdam: Festpreis",
+      "meta": "Heckenschnitt in Falkensee, Potsdam und Spandau: Wir bringen Ihre Hecke in Form und fahren das Schnittgut ab. Festpreis nach kostenloser Besichtigung.",
       "kick": "Formschnitt · Pflegeschnitt · Abfuhr inklusive",
       "h1": "Heckenschnitt im Havelland",
       "h1_em": "im Havelland",
-      "lead": "Wir bringen Ihre Hecke in Form und fahren alles ab. Pauschalpreis nach Besichtigung.",
+      "lead": "Wir bringen Ihre Hecke in Form und fahren alles ab. Festpreis nach Besichtigung.",
       "cta": "Kostenlose Besichtigung anfragen",
       "wa_text": "Hallo, ich möchte meine Hecke schneiden lassen. Ich schicke Ihnen ein Foto.",
-      "trust_zeile": "Betrieb aus Falkensee · Pauschalpreis",
+      "trust_zeile": "Betrieb aus Falkensee · Festpreis",
       "trust": [
         {
           "b": "Betrieb aus Falkensee",
@@ -1470,7 +1470,7 @@
           "t": "und Angebot"
         },
         {
-          "b": "Pauschalpreis schriftlich",
+          "b": "Festpreis schriftlich",
           "t": "Abfuhr inklusive"
         },
         {
@@ -1483,10 +1483,10 @@
       "ort_satz": "In Falkensee, im Havelland, in Potsdam und Berlin-Spandau",
       "danke_slug": "danke-hecke",
       "msg_objekt": "Bitte wählen Sie, was an der Hecke ansteht.",
-      "form_legend": "Was soll an der Hecke gemacht werden – und wo?",
+      "form_legend": "Was soll an der Hecke gemacht werden, und wo?",
       "quick_label": "Was soll an der Hecke gemacht werden?",
       "end_h2": "Ihre Hecke, wieder in Form.",
-      "end_p": "Schicken Sie uns ein Foto per WhatsApp oder fragen Sie die kostenlose Besichtigung an. Wir antworten am selben Tag und nennen Ihnen danach den Pauschalpreis, Abfuhr inklusive.",
+      "end_p": "Schicken Sie uns ein Foto per WhatsApp oder fragen Sie die kostenlose Besichtigung an. Wir antworten am selben Tag und nennen Ihnen danach den Festpreis, Abfuhr inklusive.",
       "was_wir_tun": {
         "h": "Was wir an Ihrer Hecke tun",
         "p": "Formschnitt, Pflegeschnitt und Abfuhr erledigen wir in einem Einsatz.",
@@ -1501,13 +1501,13 @@
           },
           {
             "h": "Abfuhr des Schnittguts",
-            "p": "Wir laden den Grünschnitt auf und nehmen ihn mit. Die Fläche kehren wir besenrein, die Entsorgung steckt im Pauschalpreis."
+            "p": "Wir laden den Grünschnitt auf und nehmen ihn mit. Die Fläche kehren wir besenrein, die Entsorgung steckt im Festpreis."
           }
         ]
       },
       "preis_faktoren": {
-        "h": "Was den Pauschalpreis bestimmt",
-        "p": "Eine Zahl ohne Blick auf Ihre Hecke wäre geraten. Vier Punkte entscheiden, danach steht Ihr Pauschalpreis schriftlich fest, Schnittgut und Abfuhr inklusive.",
+        "h": "Was den Festpreis bestimmt",
+        "p": "Eine Zahl ohne Blick auf Ihre Hecke wäre geraten. Vier Punkte entscheiden, danach steht Ihr Festpreis schriftlich fest, Schnittgut und Abfuhr inklusive.",
         "items": [
           {
             "h": "Länge und Höhe der Hecke",
@@ -1534,11 +1534,11 @@
         },
         {
           "h": "Schnittgut ist weg",
-          "p": "Abfuhr und Entsorgung stecken im Pauschalpreis. Die Fläche hinterlassen wir besenrein."
+          "p": "Abfuhr und Entsorgung stecken im Festpreis. Die Fläche hinterlassen wir besenrein."
         },
         {
           "h": "Ein Termin, ein Preis",
-          "p": "Den Pauschalpreis bekommen Sie vorab schriftlich, ohne Nachforderung."
+          "p": "Den Festpreis bekommen Sie vorab schriftlich, pauschal für Ihre Hecke."
         }
       ],
       "ablauf": [
@@ -1551,22 +1551,22 @@
           "p": "Wir sehen uns Hecke und Zugang an, auch in Potsdam und Berlin-Spandau. Die Besichtigung kostet nichts."
         },
         {
-          "h": "Schriftlicher Pauschalpreis, Schnitt und Abfuhr",
-          "p": "Sie bekommen den Pauschalpreis schriftlich, Abfuhr inklusive. Nach dem Einsatz schicken wir Ihnen Fotos aufs Handy."
+          "h": "Schriftlicher Festpreis, Schnitt und Abfuhr",
+          "p": "Sie bekommen den Festpreis schriftlich, Abfuhr inklusive. Nach dem Einsatz schicken wir Ihnen Fotos aufs Handy."
         }
       ],
       "preis": {
         "h": "Was kostet ein Heckenschnitt? Pauschal, nach Besichtigung",
-        "cta": "Pauschalpreis anfragen",
-        "cta_hint": "Den Pauschalpreis für Schnitt und Abfuhr nennen wir nach der kostenlosen Besichtigung, schriftlich. Die Besichtigung verpflichtet Sie zu nichts.",
+        "cta": "Festpreis anfragen",
+        "cta_hint": "Den Festpreis für Schnitt und Abfuhr nennen wir nach der kostenlosen Besichtigung, schriftlich. Die Besichtigung verpflichtet Sie zu nichts.",
         "p": [
-          "Schnittgut und Abfuhr sind im Pauschalpreis enthalten. Eine Zahl nennen wir erst, wenn wir Ihre Hecke gesehen haben, denn Länge, Höhe, Heckenart und Zugang unterscheiden sich von Garten zu Garten."
+          "Schnittgut und Abfuhr sind im Festpreis enthalten. Eine Zahl nennen wir erst, wenn wir Ihre Hecke gesehen haben, denn Länge, Höhe, Heckenart und Zugang unterscheiden sich von Garten zu Garten."
         ]
       },
       "faqs": [
         {
           "q": "Was kostet ein Heckenschnitt?",
-          "a": "Der Preis hängt an vier Dingen: Länge und Höhe der Hecke, Zeit seit dem letzten Schnitt, Heckenart und Zugang. Schicken Sie uns ein Foto per WhatsApp oder lassen Sie uns kostenlos vorbeikommen. Danach nennen wir Ihnen einen schriftlichen Pauschalpreis für Ihre Hecke, Schnittgut und Abfuhr inklusive."
+          "a": "Der Preis hängt an vier Dingen: Länge und Höhe der Hecke, Zeit seit dem letzten Schnitt, Heckenart und Zugang. Schicken Sie uns ein Foto per WhatsApp oder lassen Sie uns kostenlos vorbeikommen. Danach nennen wir Ihnen einen schriftlichen Festpreis für Ihre Hecke, Schnittgut und Abfuhr inklusive."
         },
         {
           "q": "Wann darf ich meine Hecke schneiden?",
@@ -1582,7 +1582,7 @@
         },
         {
           "q": "Was passiert mit dem Schnittgut?",
-          "a": "Wir laden es auf und fahren es ab. Die Entsorgung ist im Pauschalpreis enthalten, die Fläche kehren wir besenrein."
+          "a": "Wir laden es auf und fahren es ab. Die Entsorgung ist im Festpreis enthalten, die Fläche kehren wir besenrein."
         },
         {
           "q": "Was ist mit Vogelnestern in der Hecke?",
@@ -1592,14 +1592,12 @@
       "objekte": [
         "Hecke schneiden",
         "Hecke stark zurückschneiden",
-        "Hecke entfernen",
-        "Mehrere Arbeiten"
+        "Hecke entfernen"
       ],
       "objekte_kurz": {
         "Hecke schneiden": "Schnitt",
         "Hecke stark zurückschneiden": "Rückschnitt",
-        "Hecke entfernen": "Entfernen",
-        "Mehrere Arbeiten": "Mehrere"
+        "Hecke entfernen": "Entfernen"
       },
       "form_subject": "Neue Anfrage (Ads-LP Hecke heckenschnitt)",
       "fotos": [],
@@ -1623,22 +1621,21 @@
         "a": "Amélie N.",
         "tag": "Heckenschnitt",
         "quelle": "natho"
-      },
-      "lead_mobil": true
+      }
     },
     {
       "slug": "hecke-zurueckschneiden",
       "ag": "G2 AG_Rueckschnitt_Radikalschnitt",
       "name": "Hecke",
-      "title": "Hecke zurückschneiden lassen: Pauschalpreis, Abfuhr inkl.",
-      "meta": "Hecke zurückschneiden lassen im Havelland: Rückschnitt bis 28. Februar, Schnittgut-Abfuhr inklusive. Pauschalpreis nach kostenloser Besichtigung, Foto genügt.",
+      "title": "Hecke zurückschneiden lassen: Festpreis, Abfuhr inkl.",
+      "meta": "Hecke zurückschneiden lassen im Havelland: kräftiger Rückschnitt im erlaubten Winterfenster, Abfuhr inklusive. Festpreis nach kostenloser Besichtigung.",
       "kick": "Rückschnitt · überwachsene Hecke · Thuja kürzen",
       "h1": "Hecke zurückschneiden lassen im Havelland",
       "h1_em": "zurückschneiden",
-      "lead": "Zu hoch, zu breit, unten kahl? Wir kürzen Ihre Hecke kräftig, möglich bis 28. Februar.",
+      "lead": "Zu hoch, zu breit, unten kahl? Wir kürzen Ihre Hecke kräftig, im erlaubten Winterfenster.",
       "cta": "Kostenlose Besichtigung anfragen",
       "wa_text": "Hallo, meine Hecke soll stark zurückgeschnitten werden. Ich schicke Ihnen ein Foto.",
-      "trust_zeile": "Betrieb aus Falkensee · Pauschalpreis",
+      "trust_zeile": "Betrieb aus Falkensee · Festpreis",
       "trust": [
         {
           "b": "Betrieb aus Falkensee",
@@ -1649,7 +1646,7 @@
           "t": "und Angebot"
         },
         {
-          "b": "Pauschalpreis schriftlich",
+          "b": "Festpreis schriftlich",
           "t": "Abfuhr inklusive"
         },
         {
@@ -1662,10 +1659,10 @@
       "ort_satz": "In Falkensee, im Havelland, in Potsdam und Berlin-Spandau",
       "danke_slug": "danke-hecke",
       "msg_objekt": "Bitte wählen Sie, was an der Hecke ansteht.",
-      "form_legend": "Was soll an der Hecke gemacht werden – und wo?",
+      "form_legend": "Was soll an der Hecke gemacht werden, und wo?",
       "quick_label": "Was soll an der Hecke gemacht werden?",
       "end_h2": "Schicken Sie uns ein Foto Ihrer Hecke.",
-      "end_p": "Wir melden uns am selben Tag und sagen Ihnen, wie weit die Hecke zurück kann. Pauschalpreis für Ihre Hecke nach der kostenlosen Besichtigung, Abfuhr inklusive.",
+      "end_p": "Wir melden uns am selben Tag und sagen Ihnen, wie weit die Hecke zurück kann. Festpreis für Ihre Hecke nach der kostenlosen Besichtigung, Abfuhr inklusive.",
       "was_wir_tun": {
         "h": "Rückschnitt, Radikalschnitt, auf den Stock setzen",
         "p": "Ihre Hecke ist überwachsen, zu breit oder an der Basis licht geworden? Je nach Heckenart und Zustand wählen wir eine von drei Stufen und sagen Ihnen vorher, welche passt.",
@@ -1686,7 +1683,7 @@
       },
       "preis_faktoren": {
         "h": "Was den Preis bestimmt",
-        "p": "Eine Zahl ohne Blick auf Ihre Hecke wäre geraten. Diese vier Punkte entscheiden. Den Pauschalpreis für Ihre Hecke nennen wir nach der kostenlosen Besichtigung, schriftlich.",
+        "p": "Eine Zahl ohne Blick auf Ihre Hecke wäre geraten. Diese vier Punkte entscheiden. Den Festpreis für Ihre Hecke nennen wir nach der kostenlosen Besichtigung, schriftlich.",
         "items": [
           {
             "h": "Wie viel runter (30 cm oder 2 m)",
@@ -1698,7 +1695,7 @@
           },
           {
             "h": "Schnittgutmenge",
-            "p": "Je mehr abfällt, desto länger dauert das Zerkleinern und Abfahren. Die Abfuhr ist im Pauschalpreis enthalten."
+            "p": "Je mehr abfällt, desto länger dauert das Zerkleinern und Abfahren. Die Abfuhr ist im Festpreis enthalten."
           },
           {
             "h": "Zugang (Gartenseite, Nachbargrenze, Hanglage)",
@@ -1732,14 +1729,14 @@
           "when": "kostenlos"
         },
         {
-          "h": "Schriftlicher Pauschalpreis, dann Rückschnitt",
-          "p": "Sie bekommen den Pauschalpreis schriftlich vor dem Start. Danach schneiden wir zurück und fahren das Schnittgut ab, innerhalb des Fensters bis 28. Februar."
+          "h": "Schriftlicher Festpreis, dann Rückschnitt",
+          "p": "Sie bekommen den Festpreis schriftlich vor dem Start. Danach schneiden wir zurück und fahren das Schnittgut ab, im erlaubten Winterfenster."
         }
       ],
       "preis": {
         "h": "Was kostet der Rückschnitt Ihrer Hecke?",
-        "cta": "Pauschalpreis anfragen",
-        "cta_hint": "Pauschalpreis schriftlich nach der kostenlosen Besichtigung. Keine Vorkasse, keine Verpflichtung.",
+        "cta": "Festpreis anfragen",
+        "cta_hint": "Festpreis schriftlich nach der kostenlosen Besichtigung. Er steht vor dem Einsatz fest.",
         "p": [
           "Der Preis gilt pauschal für Ihre Hecke. Schnittgut und Abfuhr sind darin enthalten."
         ]
@@ -1763,24 +1760,22 @@
         },
         {
           "q": "Was kostet es, eine Hecke zurückschneiden zu lassen?",
-          "a": "Eine Zahl ohne Blick auf die Hecke wäre geraten. Vier Punkte bestimmen den Preis: wie viel die Hecke runter soll (30 cm oder 2 m), Länge und Höhe, die Schnittgutmenge und der Zugang. Schicken Sie ein Foto per WhatsApp, wir sagen Ihnen, was wir daran sehen. Den Pauschalpreis für Ihre Hecke nennen wir nach der kostenlosen Besichtigung, schriftlich."
+          "a": "Ohne Blick auf die Hecke lässt sich das nicht seriös sagen. Vier Punkte bestimmen den Preis: wie viel die Hecke runter soll (30 cm oder 2 m), Länge und Höhe, die Schnittgutmenge und der Zugang. Schicken Sie ein Foto per WhatsApp, wir sagen Ihnen, was wir daran sehen. Den Festpreis für Ihre Hecke nennen wir nach der kostenlosen Besichtigung, schriftlich."
         },
         {
           "q": "Was passiert mit dem Schnittgut?",
-          "a": "Wir fahren den gesamten Grünschnitt ab und entsorgen ihn ordnungsgemäß. Die Abfuhr ist im Pauschalpreis enthalten, die Fläche hinterlassen wir besenrein."
+          "a": "Wir fahren den gesamten Grünschnitt ab und entsorgen ihn ordnungsgemäß. Die Abfuhr ist im Festpreis enthalten, die Fläche hinterlassen wir besenrein."
         }
       ],
       "objekte": [
         "Hecke stark zurückschneiden",
         "Hecke schneiden",
-        "Hecke entfernen",
-        "Mehrere Arbeiten"
+        "Hecke entfernen"
       ],
       "objekte_kurz": {
-        "Hecke schneiden": "Schnitt",
         "Hecke stark zurückschneiden": "Rückschnitt",
-        "Hecke entfernen": "Entfernen",
-        "Mehrere Arbeiten": "Mehrere"
+        "Hecke schneiden": "Schnitt",
+        "Hecke entfernen": "Entfernen"
       },
       "form_subject": "Neue Anfrage (Ads-LP Hecke hecke-zurueckschneiden)",
       "fotos": [],
@@ -1792,26 +1787,25 @@
       "testimonials_h2": "Was Kundinnen und Kunden schreiben",
       "testimonials_h2_em": "schreiben",
       "bewertungen_lp": [
-        "alq",
-        "natho"
+        "natho",
+        "zoras"
       ],
       "zitat_hero": false,
-      "lead_mobil": true,
-      "kontakt_hint": "Ein Schritt, keine Vorkasse, keine Verpflichtung. Den Pauschalpreis für Ihre Hecke nennen wir nach der kostenlosen Besichtigung, schriftlich."
+      "kontakt_hint": "Ein Schritt, die Besichtigung ist kostenlos. Den Festpreis für Ihre Hecke nennen wir danach, schriftlich."
     },
     {
       "slug": "hecke-radikalschnitt",
       "ag": "G2 AG_Rueckschnitt_Radikalschnitt",
       "name": "Hecke",
-      "title": "Hecke radikal schneiden lassen: Pauschalpreis, Abfuhr",
-      "meta": "Hecke radikal schneiden lassen im Havelland: Radikalschnitt für verwilderte Hecken, Abfuhr inklusive. Kostenlose Besichtigung, Pauschalpreis schriftlich.",
+      "title": "Hecke radikal schneiden lassen: Festpreis, Abfuhr",
+      "meta": "Hecke radikal schneiden lassen im Havelland: Radikalschnitt für verwilderte Hecken, Abfuhr inklusive. Kostenlose Besichtigung, Festpreis, Foto genügt.",
       "kick": "Radikalschnitt · Verjüngung · Abfuhr inklusive",
       "h1": "Hecke radikal schneiden lassen",
       "h1_em": "radikal",
-      "lead": "Wir nehmen Ihre verwilderte Hecke bis ins alte Holz zurück, wo die Art es verträgt, und fahren das Schnittgut ab. Den Pauschalpreis nennen wir nach der kostenlosen Besichtigung.",
+      "lead": "Wir nehmen Ihre verwilderte Hecke kräftig zurück und fahren alles ab. Festpreis nach kostenloser Besichtigung.",
       "cta": "Kostenlose Besichtigung anfragen",
       "wa_text": "Hallo, meine Hecke braucht einen Radikalschnitt. Ich schicke Ihnen ein Foto und schreibe die Heckenart dazu.",
-      "trust_zeile": "Betrieb aus Falkensee · Pauschalpreis",
+      "trust_zeile": "Betrieb aus Falkensee · Festpreis",
       "trust": [
         {
           "b": "Betrieb aus Falkensee",
@@ -1822,7 +1816,7 @@
           "t": "für alle Orte"
         },
         {
-          "b": "Pauschalpreis schriftlich",
+          "b": "Festpreis schriftlich",
           "t": "Abfuhr inklusive"
         },
         {
@@ -1835,10 +1829,10 @@
       "ort_satz": "In Falkensee, im Havelland, in Potsdam und Berlin-Spandau",
       "danke_slug": "danke-hecke",
       "msg_objekt": "Bitte wählen Sie, was an der Hecke ansteht.",
-      "form_legend": "Was soll an der Hecke gemacht werden – und wo?",
+      "form_legend": "Was soll an der Hecke gemacht werden, und wo?",
       "quick_label": "Was soll an der Hecke gemacht werden?",
-      "end_h2": "Foto schicken, Pauschalpreis bekommen",
-      "end_p": "Schicken Sie uns ein Foto Ihrer Hecke oder fragen Sie die kostenlose Besichtigung an. Wir sagen Ihnen, was die Hecke verträgt, und nennen den Pauschalpreis inklusive Abfuhr.",
+      "end_h2": "Foto schicken, Festpreis bekommen",
+      "end_p": "Schicken Sie uns ein Foto Ihrer Hecke oder fragen Sie die kostenlose Besichtigung an. Wir sagen Ihnen, was die Hecke verträgt, und nennen den Festpreis inklusive Abfuhr.",
       "was_wir_tun": {
         "h": "Was wir beim Radikalschnitt tun",
         "p": "Ein Radikalschnitt verjüngt eine Hecke, die zu hoch, zu breit oder unten kahl geworden ist.",
@@ -1858,8 +1852,8 @@
         ]
       },
       "preis_faktoren": {
-        "h": "Was den Pauschalpreis bestimmt",
-        "p": "Sie bekommen einen Pauschalpreis für Ihre Hecke als Ganzes. Diese vier Punkte entscheiden darüber. Schnittgut und Abfuhr sind enthalten.",
+        "h": "Was den Festpreis bestimmt",
+        "p": "Der Festpreis gilt pauschal für Ihre Hecke als Ganzes. Diese vier Punkte entscheiden darüber. Schnittgut und Abfuhr sind enthalten.",
         "items": [
           {
             "h": "Wie viel runter (30 cm oder 2 m)",
@@ -1867,11 +1861,11 @@
           },
           {
             "h": "Länge und Höhe der Hecke",
-            "p": "Beides zusammen ergibt die Fläche, die wir bearbeiten. Lange und hohe Hecken brauchen mehr Zeit."
+            "p": "Beides zusammen ergibt die Fläche, die wir bearbeiten. Lange und hohe Hecken brauchen beim Radikalschnitt deutlich mehr Zeit."
           },
           {
             "h": "Schnittgutmenge",
-            "p": "Je kräftiger der Rückschnitt, desto mehr Grünschnitt fällt an. Die Menge bestimmt, wie viel wir laden und abfahren. Abfuhr und Entsorgung stecken im Pauschalpreis."
+            "p": "Je kräftiger der Rückschnitt, desto mehr Grünschnitt fällt an. Die Menge bestimmt, wie viel wir laden und abfahren. Abfuhr und Entsorgung stecken im Festpreis."
           },
           {
             "h": "Zugang (Gartenseite, Nachbargrenze, Hanglage)",
@@ -1909,17 +1903,17 @@
           "when": "Kostenlos, für alle Orte"
         },
         {
-          "h": "Schriftlicher Pauschalpreis, Schnitt, Abfuhr",
-          "p": "Sie bekommen den Pauschalpreis schriftlich. Dann schneiden wir im erlaubten Fenster, fahren alles ab und schicken Ihnen die Fotos.",
+          "h": "Schriftlicher Festpreis, Schnitt, Abfuhr",
+          "p": "Sie bekommen den Festpreis schriftlich. Dann schneiden wir im erlaubten Fenster, fahren alles ab und schicken Ihnen die Fotos.",
           "when": "Zum vereinbarten Termin"
         }
       ],
       "preis": {
-        "h": "Pauschalpreis für Ihre Hecke, Abfuhr inklusive",
-        "cta": "Pauschalpreis anfragen",
-        "cta_hint": "Den Pauschalpreis nennen wir nach der kostenlosen Besichtigung, schriftlich und ohne Nachforderung.",
+        "h": "Festpreis für Ihre Hecke, Abfuhr inklusive",
+        "cta": "Festpreis anfragen",
+        "cta_hint": "Den Festpreis nennen wir nach der kostenlosen Besichtigung, schriftlich.",
         "p": [
-          "Schnittgut, Abfuhr und Entsorgung sind im Pauschalpreis enthalten. Er steht fest, bevor wir anfangen."
+          "Schnittgut, Abfuhr und Entsorgung sind im Festpreis enthalten. Er gilt pauschal für Ihre Hecke und steht schriftlich vor dem Einsatz fest."
         ]
       },
       "faqs": [
@@ -1929,7 +1923,7 @@
         },
         {
           "q": "Was ist mit Vogelnestern in der Hecke?",
-          "a": "Wir prüfen die Hecke vor dem Schnitt auf besetzte Nester. Genau dafür gibt es die Schonzeit vom 1. März bis 30. September. Ist ein Nest besetzt, schneiden wir an der Stelle erst weiter, wenn wir das mit Ihnen geklärt haben."
+          "a": "Wir prüfen die Hecke vor dem Schnitt auf besetzte Nester. Genau dafür gibt es die Schonzeit vom 1. März bis 30. September. Ist ein Nest besetzt, schneiden wir diesen Bereich nicht."
         },
         {
           "q": "Verträgt meine Hecke einen Radikalschnitt?",
@@ -1941,24 +1935,22 @@
         },
         {
           "q": "Was kostet ein Radikalschnitt?",
-          "a": "Vier Punkte bestimmen den Preis: wie viel die Hecke zurückgenommen wird, Länge und Höhe, die Menge an Schnittgut und der Zugang. Ein Foto per WhatsApp hilft uns bei der ersten Einschätzung. Den Pauschalpreis für Ihre Hecke nennen wir nach der kostenlosen Besichtigung, schriftlich. Schnittgut, Abfuhr und Entsorgung sind enthalten."
+          "a": "Vier Punkte bestimmen den Preis: wie viel die Hecke zurückgenommen wird, Länge und Höhe, die Menge an Schnittgut und der Zugang. Ein Foto per WhatsApp hilft uns bei der ersten Einschätzung. Den Festpreis für Ihre Hecke nennen wir nach der kostenlosen Besichtigung, schriftlich. Schnittgut, Abfuhr und Entsorgung sind enthalten."
         },
         {
           "q": "Was passiert mit dem Schnittgut?",
-          "a": "Ein Radikalschnitt bringt viel Grünschnitt, auch große Mengen. Wir laden alles auf, fahren es ab und entsorgen es ordnungsgemäß. Das ist im Pauschalpreis enthalten, ohne Nachforderung. Die Fläche kehren wir besenrein."
+          "a": "Ein Radikalschnitt bringt viel Grünschnitt, auch große Mengen. Wir laden alles auf, fahren es ab und entsorgen es ordnungsgemäß. Das ist im Festpreis enthalten. Die Fläche kehren wir besenrein."
         }
       ],
       "objekte": [
         "Hecke stark zurückschneiden",
         "Hecke schneiden",
-        "Hecke entfernen",
-        "Mehrere Arbeiten"
+        "Hecke entfernen"
       ],
       "objekte_kurz": {
-        "Hecke schneiden": "Schnitt",
         "Hecke stark zurückschneiden": "Rückschnitt",
-        "Hecke entfernen": "Entfernen",
-        "Mehrere Arbeiten": "Mehrere"
+        "Hecke schneiden": "Schnitt",
+        "Hecke entfernen": "Entfernen"
       },
       "form_subject": "Neue Anfrage (Ads-LP Hecke hecke-radikalschnitt)",
       "fotos": [],
@@ -1970,8 +1962,8 @@
       "testimonials_h2": "Was Kundinnen und Kunden schreiben",
       "testimonials_h2_em": "schreiben",
       "bewertungen_lp": [
-        "alq",
-        "natho"
+        "adis",
+        "raoul"
       ],
       "zitat_hero": false
     },
@@ -1979,15 +1971,15 @@
       "slug": "hecke-auf-den-stock-setzen",
       "ag": "G2 AG_Rueckschnitt_Radikalschnitt",
       "name": "Hecke",
-      "title": "Hecke auf den Stock setzen lassen: Pauschalpreis, Abfuhr",
-      "meta": "Hecke auf den Stock setzen lassen im Havelland: bodennah zurück, Abfuhr inklusive. Kostenlose Besichtigung, Pauschalpreis, Antwort am selben Tag. Falkensee.",
+      "title": "Hecke auf den Stock setzen lassen: Festpreis, Abfuhr",
+      "meta": "Hecke auf den Stock setzen lassen im Havelland: bodennah zurück, Abfuhr inklusive. Kostenlose Besichtigung, Festpreis. Antwort am selben Tag aus Falkensee.",
       "kick": "Laubhecke bodennah zurück · Austrieb im Frühjahr · Abfuhr inklusive",
       "h1": "Hecke auf den Stock setzen lassen",
       "h1_em": "Stock",
-      "lead": "Wir setzen Ihre Laubhecke bodennah zurück. Pauschalpreis mit Abfuhr nach Besichtigung.",
+      "lead": "Wir setzen Ihre Laubhecke bodennah zurück. Festpreis mit Abfuhr nach Besichtigung.",
       "cta": "Kostenlose Besichtigung anfragen",
       "wa_text": "Hallo, meine Hecke soll auf den Stock gesetzt werden. Ich schicke Ihnen ein Foto.",
-      "trust_zeile": "Betrieb aus Falkensee · Pauschalpreis",
+      "trust_zeile": "Betrieb aus Falkensee · Festpreis",
       "trust": [
         {
           "b": "Betrieb aus Falkensee",
@@ -1998,7 +1990,7 @@
           "t": "und Angebot"
         },
         {
-          "b": "Pauschalpreis schriftlich",
+          "b": "Festpreis schriftlich",
           "t": "Abfuhr inklusive"
         },
         {
@@ -2011,10 +2003,10 @@
       "ort_satz": "In Falkensee, im Havelland, in Potsdam und Berlin-Spandau",
       "danke_slug": "danke-hecke",
       "msg_objekt": "Bitte wählen Sie, was an der Hecke ansteht.",
-      "form_legend": "Was soll an der Hecke gemacht werden – und wo?",
+      "form_legend": "Was soll an der Hecke gemacht werden, und wo?",
       "quick_label": "Was soll an der Hecke gemacht werden?",
-      "end_h2": "Foto Ihrer Hecke schicken, Pauschalpreis bekommen.",
-      "end_p": "Kostenlose Besichtigung, schriftlicher Pauschalpreis mit Abfuhr, Einsatz im erlaubten Zeitfenster bis 28. Februar. Im Havelland, in Berlin-Spandau und Potsdam.",
+      "end_h2": "Foto Ihrer Hecke schicken, Festpreis bekommen.",
+      "end_p": "Kostenlose Besichtigung, schriftlicher Festpreis mit Abfuhr, Einsatz im erlaubten Zeitfenster. Im Havelland, in Berlin-Spandau und Potsdam.",
       "was_wir_tun": {
         "h": "Was wir bei Ihrer Hecke tun",
         "p": "Auf den Stock setzen heißt: Wir schneiden die Hecke bis kurz über den Boden zurück, damit sie von unten neu aufbaut.",
@@ -2029,13 +2021,13 @@
           },
           {
             "h": "Abfuhr und Entsorgung",
-            "p": "Wir fahren das gesamte Schnittgut ab, auch Äste und Stämme. Beides steht im Pauschalpreis."
+            "p": "Wir fahren das gesamte Schnittgut ab, auch Äste und Stämme. Beides steht im Festpreis."
           }
         ]
       },
       "preis_faktoren": {
         "h": "Was den Preis bestimmt",
-        "p": "Wir arbeiten mit einem Pauschalpreis für Ihre Hecke. Diese vier Punkte bestimmen ihn. Nennen können wir ihn nach der kostenlosen Besichtigung, schriftlich und mit Abfuhr.",
+        "p": "Wir arbeiten mit einem Festpreis für Ihre Hecke. Diese vier Punkte bestimmen ihn. Nennen können wir ihn nach der kostenlosen Besichtigung, schriftlich und mit Abfuhr.",
         "items": [
           {
             "h": "Wie viel runter (30 cm oder 2 m)",
@@ -2043,15 +2035,15 @@
           },
           {
             "h": "Länge und Höhe der Hecke",
-            "p": "Beides zusammen ergibt die Masse, die wir schneiden und abfahren. Eine lange, hohe Hecke braucht mehr Zeit als eine kurze, niedrige."
+            "p": "Beides zusammen ergibt die Masse, die wir auf den Stock setzen und abfahren. Eine lange, hohe Hecke braucht mehr Zeit als eine kurze, niedrige."
           },
           {
             "h": "Schnittgutmenge",
-            "p": "Eine Hecke auf den Stock zu setzen bringt viel Schnittgut, auch dicke Äste. Abfuhr und Entsorgung sind im Pauschalpreis enthalten."
+            "p": "Eine Hecke auf den Stock zu setzen bringt viel Schnittgut, auch dicke Äste. Abfuhr und Entsorgung sind im Festpreis enthalten."
           },
           {
             "h": "Zugang (Gartenseite, Nachbargrenze, Hanglage)",
-            "p": "Fahrzeug nah an der Hecke oder alles durch den Garten tragen: Gartenseite, Nachbargrenze und Hanglage sehen wir bei der Besichtigung an."
+            "p": "Fahrzeug nah an der Hecke oder alles durch den Garten tragen: Das gilt bei Stämmen und dicken Ästen besonders. Wir sehen es bei der Besichtigung an."
           }
         ]
       },
@@ -2066,7 +2058,7 @@
         },
         {
           "h": "Schnittgut ist weg",
-          "p": "Abfuhr und Entsorgung stehen im Pauschalpreis. Sie müssen nichts selbst wegbringen."
+          "p": "Abfuhr und Entsorgung stehen im Festpreis. Sie müssen nichts selbst wegbringen."
         },
         {
           "h": "Im erlaubten Zeitfenster",
@@ -2085,17 +2077,17 @@
           "when": "Kostenlos, auch in Potsdam und Spandau"
         },
         {
-          "h": "Schriftlicher Pauschalpreis, dann Einsatz",
-          "p": "Sie bekommen den Pauschalpreis schriftlich, Abfuhr und Entsorgung inklusive. Danach setzen wir die Hecke im erlaubten Zeitfenster auf den Stock.",
-          "when": "Einsatz im Fenster bis 28. Februar"
+          "h": "Schriftlicher Festpreis, dann Einsatz",
+          "p": "Sie bekommen den Festpreis schriftlich, Abfuhr und Entsorgung inklusive. Danach setzen wir die Hecke im erlaubten Zeitfenster auf den Stock.",
+          "when": "Einsatz im erlaubten Fenster"
         }
       ],
       "preis": {
         "h": "Was kostet es, eine Hecke auf den Stock zu setzen?",
-        "cta": "Pauschalpreis anfragen",
-        "cta_hint": "Den Pauschalpreis nennen wir nach der kostenlosen Besichtigung, schriftlich. Kostenlos und unverbindlich.",
+        "cta": "Festpreis anfragen",
+        "cta_hint": "Den Festpreis nennen wir nach der kostenlosen Besichtigung, schriftlich. Die Besichtigung ist kostenlos.",
         "p": [
-          "Der Pauschalpreis gilt für Ihre Hecke als Ganzes. Schnittgut und Abfuhr sind darin enthalten."
+          "Der Festpreis gilt für Ihre Hecke als Ganzes. Schnittgut und Abfuhr sind darin enthalten."
         ]
       },
       "faqs": [
@@ -2117,24 +2109,22 @@
         },
         {
           "q": "Was kostet es, eine Hecke auf den Stock zu setzen?",
-          "a": "Wir arbeiten mit einem Pauschalpreis für Ihre Hecke. Er hängt an vier Punkten: wie weit die Hecke zurückgenommen wird, Länge und Höhe, Schnittgutmenge und Zugang. Schicken Sie uns ein Foto per WhatsApp oder lassen Sie kostenlos besichtigen. Den Pauschalpreis bekommen Sie schriftlich, Abfuhr und Entsorgung sind enthalten."
+          "a": "Wir arbeiten mit einem Festpreis für Ihre Hecke. Er hängt an vier Punkten: wie weit die Hecke zurückgenommen wird, Länge und Höhe, Schnittgutmenge und Zugang. Schicken Sie uns ein Foto per WhatsApp oder lassen Sie kostenlos besichtigen. Den Festpreis bekommen Sie schriftlich, Abfuhr und Entsorgung sind enthalten."
         },
         {
           "q": "Was passiert mit dem Schnittgut?",
-          "a": "Wir fahren alles ab. Bei einer Hecke, die auf den Stock gesetzt wird, fällt viel an, auch Äste und Stämme. Abfuhr und Entsorgung stehen im Pauschalpreis, die Fläche kehren wir besenrein."
+          "a": "Wir fahren alles ab. Bei einer Hecke, die auf den Stock gesetzt wird, fällt viel an, auch Äste und Stämme. Abfuhr und Entsorgung stehen im Festpreis, die Fläche kehren wir besenrein."
         }
       ],
       "objekte": [
-        "Hecke stark zurückschneiden",
+        "Hecke auf den Stock setzen",
         "Hecke schneiden",
-        "Hecke entfernen",
-        "Mehrere Arbeiten"
+        "Hecke entfernen"
       ],
       "objekte_kurz": {
+        "Hecke auf den Stock setzen": "Auf den Stock",
         "Hecke schneiden": "Schnitt",
-        "Hecke stark zurückschneiden": "Rückschnitt",
-        "Hecke entfernen": "Entfernen",
-        "Mehrere Arbeiten": "Mehrere"
+        "Hecke entfernen": "Entfernen"
       },
       "form_subject": "Neue Anfrage (Ads-LP Hecke hecke-auf-den-stock-setzen)",
       "fotos": [],
@@ -2146,25 +2136,24 @@
       "testimonials_h2": "Was Kundinnen und Kunden schreiben",
       "testimonials_h2_em": "schreiben",
       "bewertungen_lp": [
-        "alq",
-        "natho"
+        "hanan",
+        "nikita"
       ],
-      "zitat_hero": false,
-      "lead_mobil": true
+      "zitat_hero": false
     },
     {
       "slug": "heckenentfernung",
       "ag": "G3 AG_Heckenentfernung",
       "name": "Hecke",
-      "title": "Hecke entfernen lassen mit Wurzel: Pauschalpreis, Abfuhr",
-      "meta": "Hecke entfernen lassen im Havelland: Wir roden mit Wurzel, fahren alles ab und hinterlassen eine freie Fläche. Kostenlose Besichtigung, Pauschalpreis, Abfuhr.",
+      "title": "Hecke entfernen lassen mit Wurzel: Festpreis, Abfuhr",
+      "meta": "Hecke entfernen lassen im Havelland: Wir roden mit Wurzel, fahren alles ab und hinterlassen eine freie Fläche. Kostenlose Besichtigung, Festpreis, Abfuhr.",
       "kick": "Entfernen · Roden · Wurzel raus · Abfuhr",
       "h1": "Hecke entfernen lassen, mit Wurzel",
       "h1_em": "entfernen",
-      "lead": "Wir roden mit Wurzel und fahren alles ab. Pauschalpreis nach kostenloser Besichtigung.",
+      "lead": "Wir roden mit Wurzel und fahren alles ab. Festpreis nach kostenloser Besichtigung.",
       "cta": "Kostenlose Besichtigung anfragen",
       "wa_text": "Hallo, ich möchte eine Hecke entfernen lassen. Ich schicke Ihnen ein Foto.",
-      "trust_zeile": "Betrieb aus Falkensee · Pauschalpreis",
+      "trust_zeile": "Betrieb aus Falkensee · Festpreis",
       "trust": [
         {
           "b": "Betrieb aus Falkensee",
@@ -2175,7 +2164,7 @@
           "t": "und Angebot"
         },
         {
-          "b": "Pauschalpreis schriftlich",
+          "b": "Festpreis schriftlich",
           "t": "Abfuhr inklusive"
         },
         {
@@ -2188,10 +2177,10 @@
       "ort_satz": "In Falkensee, im Havelland, in Potsdam und Berlin-Spandau",
       "danke_slug": "danke-hecke",
       "msg_objekt": "Bitte wählen Sie, was an der Hecke ansteht.",
-      "form_legend": "Was soll an der Hecke gemacht werden – und wo?",
+      "form_legend": "Was soll an der Hecke gemacht werden, und wo?",
       "quick_label": "Was soll an der Hecke gemacht werden?",
       "end_h2": "Hecke weg, Fläche frei.",
-      "end_p": "Ein Foto der Hecke per WhatsApp reicht für den Anfang. Wir antworten am selben Tag, schauen sie uns kostenlos an und nennen Ihnen danach den Pauschalpreis für Rodung, Wurzel und Abfuhr.",
+      "end_p": "Ein Foto der Hecke per WhatsApp reicht für den Anfang. Wir antworten am selben Tag, schauen sie uns kostenlos an und nennen Ihnen danach den Festpreis für Rodung, Wurzel und Abfuhr.",
       "was_wir_tun": {
         "h": "Was wir bei der Heckenentfernung tun",
         "p": "Die Hecke kommt ganz weg, nicht nur auf Höhe gekürzt. Das gilt für Thuja, Kirschlorbeer, Liguster und Hainbuche.",
@@ -2211,7 +2200,7 @@
         ]
       },
       "preis_faktoren": {
-        "h": "Was den Pauschalpreis bestimmt",
+        "h": "Was den Festpreis bestimmt",
         "p": "Jede Hecke ist anders. Diese vier Punkte entscheiden, was Ihre Hecke pauschal kostet. Eine Zahl nennen wir erst nach der kostenlosen Besichtigung.",
         "items": [
           {
@@ -2224,7 +2213,7 @@
           },
           {
             "h": "Schnittgut- und Wurzelmenge",
-            "p": "Thuja und Eibe haben dichtes Holz und kompakte Wurzelteller, Liguster und Hainbuche sind schneller gerodet. Die Abfuhr steckt im Pauschalpreis."
+            "p": "Thuja und Eibe haben dichtes Holz und kompakte Wurzelteller, Liguster und Hainbuche sind schneller gerodet. Die Abfuhr steckt im Festpreis."
           },
           {
             "h": "Zugang (Fahrzeug, Durchgang)",
@@ -2243,7 +2232,7 @@
         },
         {
           "h": "Ein Einsatz, Abfuhr inklusive",
-          "p": "Roden, Wurzeln und Abfuhr in einem Einsatz. Den Pauschalpreis haben Sie vorher schriftlich."
+          "p": "Roden, Wurzeln und Abfuhr in einem Einsatz. Den Festpreis haben Sie vorher schriftlich."
         }
       ],
       "ablauf": [
@@ -2256,34 +2245,34 @@
           "p": "Wir prüfen Länge, Wurzel und Zugang vor Ort, auch in Potsdam und Berlin-Spandau. Die Besichtigung kostet nichts."
         },
         {
-          "h": "Schriftlicher Pauschalpreis, Rodung und Abfuhr",
-          "p": "Sie bekommen den Pauschalpreis schriftlich, Abfuhr inklusive. Gerodet wird im gesetzlichen Fenster vom 1. Oktober bis 28. Februar. Danach schicken wir Ihnen Fotos aufs Handy."
+          "h": "Schriftlicher Festpreis, Rodung und Abfuhr",
+          "p": "Sie bekommen den Festpreis schriftlich, Abfuhr inklusive. Gerodet wird im gesetzlichen Fenster vom 1. Oktober bis 28. Februar. Danach schicken wir Ihnen Fotos aufs Handy."
         }
       ],
       "preis": {
         "h": "Was kostet eine Heckenentfernung? Pauschal, nach Besichtigung",
-        "cta": "Pauschalpreis anfragen",
-        "cta_hint": "Den Pauschalpreis für Rodung, Wurzel und Abfuhr nennen wir nach der kostenlosen Besichtigung, schriftlich. Die Besichtigung verpflichtet Sie zu nichts.",
+        "cta": "Festpreis anfragen",
+        "cta_hint": "Den Festpreis für Rodung, Wurzel und Abfuhr nennen wir nach der kostenlosen Besichtigung, schriftlich. Die Besichtigung verpflichtet Sie zu nichts.",
         "p": [
-          "Rodung, Abfuhr und Entsorgung sind im Pauschalpreis enthalten. Eine Zahl nennen wir erst, wenn wir Ihre Hecke gesehen haben, denn Länge, Höhe, Heckenart, Wurzel und Zugang unterscheiden sich von Garten zu Garten."
+          "Rodung, Abfuhr und Entsorgung sind im Festpreis enthalten. Eine Zahl nennen wir erst, wenn wir Ihre Hecke gesehen haben, denn Länge, Höhe, Heckenart, Wurzel und Zugang unterscheiden sich von Garten zu Garten."
         ]
       },
       "faqs": [
         {
           "q": "Was kostet eine Heckenentfernung?",
-          "a": "Vier Dinge bestimmen den Preis: Länge und Höhe der Hecke, ob die Wurzel mit raus soll, wie viel Schnittgut und Wurzelholz anfällt und wie wir an die Hecke kommen. Nach der kostenlosen Besichtigung nennen wir Ihnen den Pauschalpreis schriftlich. Rodung, Abfuhr und Entsorgung sind darin enthalten."
+          "a": "Vier Dinge bestimmen den Preis: Länge und Höhe der Hecke, ob die Wurzel mit raus soll, wie viel Schnittgut und Wurzelholz anfällt und wie wir an die Hecke kommen. Nach der kostenlosen Besichtigung nennen wir Ihnen den Festpreis schriftlich. Rodung, Abfuhr und Entsorgung sind darin enthalten."
         },
         {
           "q": "Darf ich meine Hecke entfernen lassen? Was gilt nach § 39 BNatSchG?",
-          "a": "Vom 1. März bis 30. September gilt die Schonzeit für Hecken. Entfernen und starkes Zurückschneiden sind vom 1. Oktober bis 28. Februar erlaubt. Auf dem eigenen Grundstück brauchen Sie dafür in der Regel keine Genehmigung. Das ist keine Rechtsberatung. Bei Ausnahmen fragen Sie die Untere Naturschutzbehörde. Besichtigung und Angebot bekommen Sie das ganze Jahr."
+          "a": "Vom 1. März bis 30. September gilt die Schonzeit für Hecken. Entfernen und starkes Zurückschneiden sind vom 1. Oktober bis 28. Februar erlaubt. Das ist keine Rechtsberatung. Ob für Ihr Grundstück zusätzliche Vorgaben gelten, etwa im Bebauungsplan oder in einer Satzung, und bei Ausnahmen klärt die Untere Naturschutzbehörde. Besichtigung und Angebot bekommen Sie das ganze Jahr."
         },
         {
           "q": "Was ist mit Vogelnestern in der Hecke?",
-          "a": "Wir prüfen die Hecke vor dem Einsatz auf besetzte Nester. Finden wir eines, sprechen wir mit Ihnen ab, wie es weitergeht."
+          "a": "Wir prüfen die Hecke vor dem Einsatz auf besetzte Nester. Finden wir eines, schneiden und roden wir diesen Bereich nicht."
         },
         {
           "q": "Was passiert mit Wurzeln und Schnittgut?",
-          "a": "Je nach Hecke fräsen wir Stubben samt Hauptwurzeln bis unter das Bodenniveau oder holen sie mit dem Minibagger heraus. Grünschnitt, Stammholz, Wurzelholz und Fräsgut fahren wir ab und entsorgen alles ordnungsgemäß. Die Abfuhr steckt im Pauschalpreis."
+          "a": "Je nach Hecke fräsen wir Stubben samt Hauptwurzeln bis unter das Bodenniveau oder holen sie mit dem Minibagger heraus. Grünschnitt, Stammholz, Wurzelholz und Fräsgut fahren wir ab und entsorgen alles ordnungsgemäß. Die Abfuhr steckt im Festpreis."
         },
         {
           "q": "Braune Thuja: retten oder entfernen?",
@@ -2297,14 +2286,12 @@
       "objekte": [
         "Hecke entfernen",
         "Hecke schneiden",
-        "Hecke stark zurückschneiden",
-        "Mehrere Arbeiten"
+        "Hecke stark zurückschneiden"
       ],
       "objekte_kurz": {
-        "Hecke schneiden": "Schnitt",
-        "Hecke stark zurückschneiden": "Rückschnitt",
         "Hecke entfernen": "Entfernen",
-        "Mehrere Arbeiten": "Mehrere"
+        "Hecke schneiden": "Schnitt",
+        "Hecke stark zurückschneiden": "Rückschnitt"
       },
       "form_subject": "Neue Anfrage (Ads-LP Hecke heckenentfernung)",
       "fotos": [],
@@ -2314,26 +2301,26 @@
       "testimonials_h2": "Was Kundinnen und Kunden schreiben",
       "testimonials_h2_em": "schreiben",
       "bewertungen_lp": [
-        "adis",
-        "nikita"
+        "nikita",
+        "raoul"
       ],
       "zitat_hero": false,
-      "lead_mobil": true,
-      "kontakt_hint": "Ein Schritt, keine Verpflichtung. Den Pauschalpreis für Rodung, Wurzel und Abfuhr nennen wir nach der kostenlosen Besichtigung."
+      "kontakt_hint": "Ein Schritt, keine Verpflichtung. Den Festpreis für Rodung, Wurzel und Abfuhr nennen wir nach der kostenlosen Besichtigung."
     }
   ],
   "danke_hecke": {
-    "title": "Danke – Hecken-Anfrage eingegangen",
+    "title": "Danke, Hecken-Anfrage eingegangen",
     "h1": "Danke, Ihre Anfrage ist angekommen.",
     "h1_em": "angekommen",
-    "lead": "Wir melden uns noch am selben Werktag, je nachdem, was Sie angegeben haben, per Anruf, WhatsApp oder E-Mail. Anrufe kommen von {tel}. Speichern Sie die Nummer, damit Sie uns erkennen.",
+    "lead": "Wir melden uns am selben Tag, je nachdem, was Sie angegeben haben, per Anruf, WhatsApp oder E-Mail. Anrufe kommen von {tel}. Speichern Sie die Nummer, damit Sie uns erkennen.",
     "next": [
       "Wir melden uns und klären kurz, was an der Hecke ansteht.",
       "Sie schicken uns ein Foto per WhatsApp oder wir kommen zur kostenlosen Besichtigung.",
-      "Danach bekommen Sie den schriftlichen Pauschalpreis, Abfuhr inklusive."
+      "Danach bekommen Sie den schriftlichen Festpreis, Abfuhr inklusive."
     ],
     "eilig": "Wenn es eilig ist: rufen Sie direkt an oder schicken Sie ein Foto per WhatsApp.",
-    "meta": "Ihre Anfrage zur Hecke ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns noch am selben Werktag.",
-    "wa_text": "Hallo, ich habe gerade das Formular zur Hecke geschickt, hier noch ein Foto dazu."
+    "meta": "Ihre Anfrage zur Hecke ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns am selben Tag.",
+    "wa_text": "Hallo, ich habe gerade das Formular zur Hecke geschickt, hier noch ein Foto dazu.",
+    "title_voll": "Danke, Hecken-Anfrage eingegangen | Havelland"
   }
 }

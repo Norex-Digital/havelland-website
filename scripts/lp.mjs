@@ -323,7 +323,7 @@ export function buildLp(d) {
   // Vorher/Nachher-Slider aus components.mjs (WebP-768: baSlider setzt <img src>, kein <picture>; WebP statt JPG spart ~120 KB je Paar — Perf-Messung 14.09.; Hochformat 864/1036 = .ba-Aspect).
   // Der Alt-Suffix der Komponente ist heckenspezifisch („nach dem Schnitt") → für Räumungen ersetzt.
   const imgSrc = slug => `/assets/img/${slug}-768.webp`;
-  const baLp = (o, raum = true) => raum ? baSlider(o).replace(/ — nach dem Schnitt"/g, ' — nach der Räumung"').replace(/ — vor dem Schnitt"/g, ' — vor der Räumung"') : baSlider(o); // Hecken-LPs: Alt-Suffix „nach dem Schnitt“ bleibt
+  const baLp = (o, raum = true) => raum ? baSlider(o).replace(/ — nach dem Schnitt"/g, ' — nach der Räumung"').replace(/ — vor dem Schnitt"/g, ' — vor der Räumung"') : baSlider(o).replace(/ — (nach|vor) dem Schnitt"/g, ', $1 dem Schnitt"'); // Hecken: Korrektur 06.11., kein Gedankenstrich im Alt-Text // Hecken-LPs: Alt-Suffix „nach dem Schnitt“ bleibt
   // Aspect-Ratio aus dem Manifest (Fall-Fotos sind 768/1024 = 3:4, nicht 864/1036) — sonst wird das Bild in der falschen Box beschnitten.
   const baPair = (f, { lcp = false, raum = true, name = 'Entrümpelung' } = {}) => { const m = (IMG && IMG[f.vorher]) || {}; return baLp({ vorher: imgSrc(f.vorher), nachher: imgSrc(f.nachher), alt: f.alt || f.cap || name, cap: f.cap || '', sub: f.sub || '', hint: true, lcp, w: m.w || 864, h: m.h || 1036 }, raum); };
   const pairOk = f => !!(f && f.vorher && f.nachher && pic(f.vorher) && pic(f.nachher));
@@ -373,7 +373,7 @@ export function buildLp(d) {
     // Ein Schritt (v2): Objekt als Segment-Leiste (Kurzlabel auf dem Handy, voller Wortlaut ab 760 px), PLZ/Name/Telefon mit Label im Feld,
     // Kontaktweg fest „Anruf“ (versteckt). „Weitere Angaben“ (E-Mail, Freitext, Kontaktweg-Wahl) auf Owner-Wunsch 29.10.2026 entfernt. Radio-Inputs bleiben echte Inputs (unsichtbar über dem Segment).
     if (![3, 4].includes((lp.objekte || []).length)) throw new Error(`lp ${lp.slug}: objekte braucht 3 oder 4 Einträge (Segment-Leiste)`);
-    const chips = (lp.objekte || []).map((o, i) => `<label><input type="radio" name="objekt" value="${escA(o)}"${i === 0 ? ' required' : ''}>${objLabel(o, lp)}</label>`).join('');
+    const chips = (lp.objekte || []).map((o, i) => `<label><input type="radio" name="objekt" value="${escA(o)}"${i === 0 ? ' required' : ''}${i === 0 && lp.raeumung === false ? ' checked' : ''}>${objLabel(o, lp)}</label>`).join('');
     const alt = pos === 'hero'
       ? `<p class="lp-alt"><a href="tel:${tel}">${PHONE_SVG} ${telDisp}</a><a href="${wa}">WhatsApp mit Foto</a></p>`
       : `<p class="kf-alt">Lieber direkt? <a href="tel:${tel}">Anrufen: ${telDisp}</a> · <a href="${wa}">WhatsApp schreiben</a></p>`;
@@ -386,7 +386,7 @@ export function buildLp(d) {
 <p class="err" role="alert"></p>
 <div class="ffoot"><label class="chk"><input type="checkbox" name="dsgvo" required><span>Ich stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme und für das Angebot zu (<a href="/datenschutz/">Datenschutz</a>).</span></label>
 <button class="btn btn-acc" type="submit">${esc(lp.cta_form || 'Kostenlos anfragen')}</button></div>
-<p class="fine1">Besichtigung und Angebot kostenlos · Antwort noch am selben Werktag</p>
+<p class="fine1">Besichtigung und Angebot kostenlos · Antwort ${lp.raeumung === false ? 'am selben Tag' : 'noch am selben Werktag'}</p>
 ${alt}
 <p class="fine">Ihre Einwilligung können Sie jederzeit widerrufen. Keine Werbeanrufe. Ihre Angaben gehen über den Formulardienst Web3Forms an unser Postfach. Nur wenn Sie im Cookie-Banner zugestimmt haben, übermitteln wir Ihre E-Mail-Adresse oder Telefonnummer in gehashter Form an Google, um den Erfolg unserer Anzeigen zu messen – Details in der Datenschutzerklärung.</p>
 </form>`;
@@ -477,10 +477,11 @@ ${kontaktSec}
     const dkSteps = (dk.next || []).map(t => typeof t === 'string' ? { h: '', p: esc(t) } : { when: t.when ? esc(t.when) : '', h: esc(t.h || ''), p: esc(t.p || '') });
     const dkH1Raw = dk.h1 || 'Danke für Ihre Anfrage.';
     const dkH1 = dk.h1_em && dkH1Raw.includes(dk.h1_em) ? esc(dkH1Raw).replace(esc(dk.h1_em), `<em>${esc(dk.h1_em)}</em>`) : esc(dkH1Raw);
+    // Korrektur 06.11.: title_voll (optional) = kompletter Title ohne Gedankenstrich (Hecke-Danke); Standard unverändert
     const dkWa = dk.wa_text || 'Hallo, ich habe gerade das Formular geschickt – hier noch ein Foto dazu.';
     const main = `<main class="lp-danke"><section class="phero lp-hero lp-hero-text">${leaf('hleaf')}<div class="wrap grid"><div><span class="kick"><span class="dot"></span> Anfrage eingegangen</span><h1>${dkH1}</h1><p class="lead">${esc(dk.lead || '').replace('{tel}', telDisp)}</p></div></div></section>
 <section class="sec"><div class="wrap"><div class="head"><h2>So geht es weiter</h2></div>${rvIn(timelineFrom(dkSteps))}<p class="hint" style="margin-top:24px;color:var(--muted)">${esc(dk.eilig || '')}</p><div class="cta-row lp-cta"><a class="btn btn-acc" href="tel:${tel}">☎ ${telDisp}</a><a class="btn btn-line" href="${waHref(dkWa)}">Foto per WhatsApp nachschicken</a></div></div></section></main>`;
-    write(dUrl, head(`${dk.title || 'Danke'} – Havelland`, dk.meta || 'Ihre Anfrage ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns noch am selben Werktag.', dUrl, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS })
+    write(dUrl, head(dk.title_voll || `${dk.title || 'Danke'} – Havelland`, dk.meta || 'Ihre Anfrage ist beim Haus- & Gartenservice Havelland eingegangen. Wir melden uns noch am selben Werktag.', dUrl, orgSchema(), { noindex: true, extraHead: FONT_PRELOAD + LP_CSS })
       + lpHeader('/') + main + lpFooter + lpScta(dkWa)
       + CONSENT_BANNER + TRACK_EVENTS + DANKE_JS + resetJS + '</body></html>');
     n++;

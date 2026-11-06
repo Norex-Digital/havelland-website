@@ -141,7 +141,7 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     check(id, `Trust-Zeile = trust_zeile aus lp.json („${entryOf(rel).trust_zeile || ''}“)`, !!entryOf(rel).trust_zeile && t1Text === entryOf(rel).trust_zeile);
     check(id, 'Trust-Zeile mit Häkchen-Symbol', t1.length === 1 && t1[0][1].startsWith('<svg '));
     if (o.keinAbPreis) check(id, 'Trust-Zeile ohne Preis-/Festpreis-Werbung (Nachlass)', !/Festpreis|Preis|€/i.test(t1Text));
-    else if (o.hecke) check(id, 'Trust-Zeile nennt „Pauschalpreis“ und „Betrieb aus Falkensee“ (Hecke, Wording O19)', /Pauschalpreis/.test(t1Text) && /Betrieb aus Falkensee/.test(t1Text));
+    else if (o.hecke) check(id, 'Trust-Zeile nennt „Festpreis“ und „Betrieb aus Falkensee“ (Hecke, Wording O19, Owner-Korrektur 06.11.)', /Festpreis/.test(t1Text) && /Betrieb aus Falkensee/.test(t1Text));
     else check(id, 'Trust-Zeile nennt „Festpreis nach Besichtigung“', /Festpreis nach Besichtigung/.test(t1Text));
     // --- Preis-Kacheln (v7, Owner 20.10. „oben“): im Hero VOR dem Formular, Anzahl = preis.anker.items, Preis wörtlich zusammenhängend im Text,
     //     verlinkte Kacheln (Einträge mit obj) mit data-via="preis" + aria-label
@@ -238,6 +238,11 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     // Wording (Umbau 11/2026, Owner): „Festpreis anfragen“ gilt NUR als Button-Text des Preis-CTA direkt unter den Kacheln (#preise); jeder Fließtext trägt „Festpreis für Räumung und Abtransport“.
     const FPA = '<a class="btn btn-acc" href="#anfrage">Festpreis anfragen</a>';
     const hatKacheln = ankerItems.length > 0;
+    if (o.hecke) { // Korrektur 06.11.: Hecken-LPs tragen „Festpreis anfragen“ als preis.cta (Button in #preise), nirgends im Fließtext
+      const pH = h.indexOf('id="preise"'), preiseSec = pH > -1 ? h.slice(pH, h.indexOf('</section>', pH)) : '';
+      const nBtn = (preiseSec.match(/>Festpreis anfragen<\/a>/g) || []).length;
+      check(id, 'Hecke: „Festpreis anfragen“ nur als Button in #preise (kein Fließtext)', (h.match(/Festpreis anfragen/g) || []).length === nBtn && nBtn <= 1);
+    } else
     check(id, '„Festpreis anfragen“ nur als Preis-CTA-Button (kein Fließtext)', (h.match(/Festpreis anfragen/g) || []).length === (hatKacheln ? 1 : 0) && (!hatKacheln || has(h, FPA)));
     if (hatKacheln) {
       const pS2 = h.indexOf('id="preise"'), preiseH2 = pS2 > -1 ? h.slice(pS2, h.indexOf('</section>', pS2)) : '';
@@ -298,10 +303,10 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
       check(id, 'Selbsttest: „99 €“ in einem JS-String → Betrags-Gate rot', !betragFrei(h.replace('</body>', "<script>var v='99 €';</script></body>")));
       check(id, 'Selbsttest: „12 € pro Meter“ → Meterpreis-Gate rot', !meterFrei(h.replace('</main>', ' 12 pro Meter</main>')) && !meterFrei(h.replace('</main>', ' Meterpreis</main>')));
       check(id, 'Selbsttest: „3 Meter hoch“ (Kundenzitat) → Meterpreis-Gate bleibt grün', meterFrei(h.replace('</main>', ' Hecken mindestens 3 Meter hoch</main>')));
-      // Wording: Pauschalpreis (O19), nie Festpreis; kein Räum-/Entrümpelungs-Wort
+      // Wording (Korrektur 06.11.): „Festpreis nach kostenloser Besichtigung“ in Title und Meta, „pauschal für Ihre Hecke“ im Text, nie „Pauschalpreis“; kein Räum-/Entrümpelungs-Wort
       check(id, 'Hecke: kein Räum-/Entrümpelungs-Wort (räum, Entrümpel, Festpreis für Räumung) in Sichttext, Title, Meta', raeumFrei(h));
       check(id, 'Selbsttest: „Räumung“ im Sichttext → Räum-Gate rot', !raeumFrei(h.replace('</main>', ' Räumung</main>')));
-      check(id, 'Hecke: Wording „Pauschalpreis“, nie „Festpreis“', !/Festpreis/.test(sichtText(h) + titleOf(h) + metaOf(h)));
+      check(id, 'Hecke: Wording „Festpreis“ in Title und Meta, nie „Pauschalpreis“', /Festpreis/.test(titleOf(h)) && /Festpreis/.test(metaOf(h)) && !/Pauschalpreis/.test(sichtText(h) + titleOf(h) + metaOf(h)));
       check(id, 'Hecke: keine Bild-Labels (Beispielbild, Symbolbild, echtes Foto …)', !LABEL_RE.test(sichtText(h)));
       // Bewertungen: keine Entrümpelungs-Karte (Tag/Text), Zitat und Auswahl je LP gesetzt (kein Fallback auf milo/mark/nick)
       check(id, 'Hecke: bewertungen_lp je LP gesetzt (kein Standard-Fallback auf die Entrümpelungs-Karten)', Array.isArray(en.bewertungen_lp) && en.bewertungen_lp.length >= 1);
@@ -347,7 +352,7 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
     const versteckt = [...h.matchAll(/([^{}]*)\.lead\{display:none\}/g)].filter(m => !/lp-hero-form/.test(m[1]));
     check(id, 'keine unbeschränkte Regel .lead{display:none}', versteckt.length === 0);
     if (o.hecke) {
-      check(id, 'Hecke-Danke: kein €-Betrag, kein Meterpreis, kein Räum-/Entrümpelungs-Wort, kein „Festpreis“', betragFrei(h) && meterFrei(h) && raeumFrei(h) && !/Festpreis/.test(sichtText(h)));
+      check(id, 'Hecke-Danke: kein €-Betrag, kein Meterpreis, kein Räum-/Entrümpelungs-Wort, kein „Pauschalpreis“', betragFrei(h) && meterFrei(h) && raeumFrei(h) && !/Pauschalpreis/.test(sichtText(h)));
       check(id, 'Hecke-Danke: noindex, DANKE_JS (#ok → lead_confirmed), kein Formular', /name="robots" content="noindex/.test(h) && has(h, "location.hash==='#ok'") && has(h, "event:'lead_confirmed'") && !has(h, '<form'));
       check(id, 'Hecke-Danke: Copy fertig (keine Platzhalter)', !/\[\[COPY/.test(h));
     }

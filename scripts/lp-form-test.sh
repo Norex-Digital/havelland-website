@@ -49,9 +49,11 @@ case "$RL" in *web3forms*) ;; *) echo "ABBRUCH: Web3Forms nicht gemockt"; exit 1
 PW run-code "async page => { await page.addInitScript(() => { try { var k='__dl'; var dl = window.dataLayer = window.dataLayer || []; var p = dl.push.bind(dl); dl.push = function(){ for (var i=0;i<arguments.length;i++){ var a=arguments[i]; if(a && a.event){ var s=JSON.parse(sessionStorage.getItem(k)||'[]'); s.push(a); sessionStorage.setItem(k,JSON.stringify(s)); } } return p.apply(null, arguments); }; } catch(e){} }); }" >/dev/null
 PW goto "http://localhost:$PORT/lp/$SLUG/?gclid=TEST123" >/dev/null
 
+# Korrektur 06.11.: Hecken-LPs wählen den ersten Chip vor (checked). Dann wird Chip 2 getippt (input-Ereignis), form_error erwartet kein objekt.
+CHIP=0; PRE=0; if grep -q 'name="objekt" value="[^"]*" required checked' "$ROOT/website/lp/$SLUG/index.html" 2>/dev/null; then CHIP=1; PRE=1; fi
 if [ "$SCENARIO" = voll ]; then
   VOLL_A="await page.click('.lp-hero-form button[type=submit]');
-  await page.click('.lp-hero-form .seg label:has(input[name=objekt]) >> nth=0');
+  await page.click('.lp-hero-form .seg label:has(input[name=objekt]) >> nth=$CHIP');
   if (await page.locator('a.lp-tile[data-obj]').count()) { await page.locator('a.lp-tile[data-obj]').first().click({ force: true }); await page.evaluate(() => { const a = document.querySelector('a.lp-tile[data-obj]'), r = document.querySelector('input[name=objekt]:checked'); window.dataLayer.push({ event: 'test_quickstart_check', ok: !!(a && r && r.value === a.getAttribute('data-obj')) }); }); }"
 else
   VOLL_A=""
@@ -66,7 +68,7 @@ fi
 OUTRUN=$(PW run-code "async page => {
   await page.click('#consent [data-c=$C]');
   $VOLL_A
-  await page.click('.lp-hero-form .seg label:has(input[name=objekt]) >> nth=0');
+  await page.click('.lp-hero-form .seg label:has(input[name=objekt]) >> nth=$CHIP');
   await page.fill('.lp-hero-form input[name=ort]', '14612');
   $WEG
   await page.check('.lp-hero-form input[name=dsgvo]');
@@ -111,7 +113,8 @@ if (SCEN !== 'voll') {
   if (n('form_error') !== 0) bad.push('form_error');
 } else {
   const fe = ev.filter(e => e.event === 'form_error').map(e => e.field).sort().join(',');
-  if (fe !== 'dsgvo,name,objekt,ort,tel') bad.push('form_error erwartet dsgvo,name,objekt,ort,tel (je 1x), war: ' + fe);
+  const feSoll = '$PRE' === '1' ? 'dsgvo,name,ort,tel' : 'dsgvo,name,objekt,ort,tel';
+  if (fe !== feSoll) bad.push('form_error erwartet ' + feSoll + ' (je 1x), war: ' + fe);
   const q = ev.filter(e => e.event === 'form_quickstart');
   if (HASLINK === '1') { if (q.length !== 1 || q[0].start_via !== 'preis') bad.push('form_quickstart:preis x' + q.length); const qc = all.filter(e => e.event === 'test_quickstart_check'); if (qc.length !== 1 || !qc[0].ok) bad.push('Preis-Kachel wählt das Objekt nicht vor'); }
   else if (q.length !== 0) bad.push('form_quickstart x' + q.length + ' obwohl die Seite keinen Preiszeilen-Link hat');
