@@ -808,7 +808,7 @@ function ortsseite(s, o) {
   // Heckenschnitt-Ort: Vorher/Nachher-Slider im Hero; andere Gewerke: Standard-Bild (kein Slider)
   const ortVoll = VOLL_VN.has(s.slug);
   const heroShotO = ortVoll
-    ? baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' in ' + o.name, cap: 'Thuja', sub: 'in ' + o.name + ' geschnitten', hint: true, lcp: true })
+    ? baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' im Havelland', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })   // 07.11. (Owner): ein Foto, ein Ort; keine Ortsbehauptung unter dem Bild, kein Label
     : pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' in ' + o.name + ' — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true });
   // Herbst-Paket Deploy 1/2: Cross-Sektion nach dem prose-Container — bewusst AUSSERHALB des ersten
   // <div class="prose wide">-Blocks (NearDup-Gate misst prose+faq). heckenschnitt-Ortsseiten verlinken

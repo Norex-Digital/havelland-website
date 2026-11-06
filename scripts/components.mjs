@@ -2,7 +2,8 @@
 // ZERO deps, ESM, jede Funktion null-safe. Klassen-Hooks 1:1 aus
 //   previews/assets/css/preview-kit.css + previews/assets/js/preview-kit.js
 // (im Worktree als assets/css/site.css + assets/js/site.js verdrahtet).
-// Owner-Regel: KEINE Bild-Labels — kein .ba-proof / .pbadge / "Beispielfoto" / "Echte Auftragsfotos".
+// Owner-Regel (20.10., bekräftigt 07.11.): KEINE Bild-Labels, nirgendwo. Weder "Beispielfoto"/"Beispielbild"/"Symbolbild"
+// noch "echtes Foto"/"echtes Bild"/"Echte Auftragsfotos", kein .ba-proof / .pbadge. Jedes Bild ist einfach Bild (Gate: accept.mjs).
 // KEINE Preise. GbR-Gruender-Duo (kein Ich/Inhaber). Echte Umlaute.
 //
 // Daten-Quelle je Funktion:
