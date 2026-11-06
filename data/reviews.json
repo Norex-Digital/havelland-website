@@ -1,5 +1,5 @@
 {
-  "_meta": "Echte Google-Reviews via GBP-API (v4), verbatim (nur Zeilenumbrüche zu Leerzeichen). 2026-07-10: 8 kuratiert von 16. 2026-11-06 (Owner-Entscheid Maurice 07.11., Kundenstimmen je Leistung): 11 weitere kuratiert von 28 (API-Abruf 06.11., 28 Reviews, 5,0); Feld services = Leistungs-Slugs, für die der Text passt, 'allgemein' = ohne Leistungsbezug; generate.mjs kundenstimmen() zeigt je Hub/Ortsseite bis zu 3 (erst getaggte, dann allgemeine, Rotation je URL). Nicht zitiert: siehe ausgeschlossen. Kein self-serving aggregateRating-Schema im Output. Zahl/Rating einzige Quelle: data/proof.json google_reviews.",
+  "_meta": "Echte Google-Reviews via GBP-API (v4), verbatim (nur Zeilenumbrüche zu Leerzeichen). 2026-07-10: 8 kuratiert von 16. 2026-11-06 (Owner-Entscheid Maurice 07.11., Kundenstimmen je Leistung): 11 weitere kuratiert von 28 (API-Abruf 06.11., 28 Reviews, 5,0); Feld services = Leistungs-Slugs, für die der Text passt, 'allgemein' = ohne Leistungsbezug; generate.mjs kundenstimmen() zeigt je Hub/Ortsseite bis zu 3 (erst getaggte, dann allgemeine, Rotation je URL). Nicht zitiert: siehe ausgeschlossen. Kein self-serving aggregateRating-Schema im Output. Zahl/Rating einzige Quelle: data/proof.json google_reviews. 07.11. Tag-Korrektur nach Prüfung (Workflow verify-kundenstimmen): Bayraktar = Holzterrasse (terrassenbau, galabau, gartenrodung), Lila nur gartenpflege, Adis ohne gartenrodung, Alq ohne heckenentfernung, uur sabri nur allgemein. 07.11. Owner: Hussock (Klarname plus Todesfall in der Familie) wird mit author_anzeige 'Daniel H.' gezeigt, Text bleibt wörtlich; author bleibt der Google-Anzeigename für die API-Prüfung.",
   "enabled": true,
   "block_ab_count": 5,
   "place_id": "ChIJR7QuOPz_qEcR5fzAJn2cSPY",
@@ -28,7 +28,8 @@
       "services": [
         "haushaltsaufloesung",
         "entruempelung"
-      ]
+      ],
+      "author_anzeige": "Daniel H."
     },
     {
       "author": "Amélie Natho",
@@ -54,8 +55,7 @@
       "date": "2026-10-25",
       "text": "Ich war sehr zufrieden mit der Dienstleistung. Mein Garten sah noch nie so gepflegt aus. Sehr zu empfehlen und immer wieder gerne bei euch.",
       "services": [
-        "gartenpflege",
-        "gartenrodung"
+        "gartenpflege"
       ]
     },
     {
@@ -103,8 +103,7 @@
       "text": "Mein Garten ist jetz für den Sommer wieder betretbar, und die Hecken wieder in Form. Gerne wieder 👍",
       "services": [
         "heckenschnitt",
-        "gartenpflege",
-        "gartenrodung"
+        "gartenpflege"
       ]
     },
     {
@@ -114,7 +113,6 @@
       "text": "Unser Garten war so verwuchert und die Hecken mindestens 3 Meter hoch. Jetz sieht alles wieder hübsch aus. Gute Arbeit Männers",
       "services": [
         "heckenschnitt",
-        "heckenentfernung",
         "gartenrodung"
       ]
     },
@@ -142,7 +140,6 @@
       "date": "2026-06-22",
       "text": "Ich bin super zufrieden und habe nichts auszusetzen. Nächstes Jahr wieder",
       "services": [
-        "gartenpflege",
         "allgemein"
       ]
     },
@@ -188,9 +185,8 @@
       "date": "2026-06-16",
       "text": "Super Service Meine Terrasse sieht wie neu aus\nIch bin wirklich begeistert! Meine Terrasse sah seit 20 Jahren nicht gepflegt aus  völlig verwildert, Unkraut überall, die Holzbohlen waren morsch. Die Jungs von Haus-Gartenservice Havelland haben das in zwei Tagen komplett transformiert.\nSie haben alles abgeräumt, neue Bretter verlegt, Unkraut entfernt und die Fläche perfekt hergerichtet. Sehr zuverlässig, freundlich und das beste: das Preis Leistungs Verhältnis ist top\nWürde ich jederzeit wieder buchen. Absolute Empfehlung 👍",
       "services": [
+        "terrassenbau",
         "galabau",
-        "pflasterarbeiten",
-        "erdarbeiten",
         "gartenrodung"
       ]
     }
