@@ -51,6 +51,8 @@ if (loc && loc.orte) {
     if (/\b(doeberitz|schoenwalde|oberkraemer|gross |muehlen|phoeben)\b/i.test(o.name)) WARN(`ort ${o.slug}: name evtl. ASCII-transliteriert: "${o.name}"`);
   }
 } else FAIL('locations.json: orte[] fehlt');
+// --- services.orte_extra (09.11.2026): zusätzliche Ortsseiten je Service, Slugs müssen in locations.json stehen ---
+if (svc && svc.services) for (const s of svc.services) for (const sl of (s.orte_extra || [])) if (!locSlugs.has(sl)) FAIL(`service ${s.slug}: orte_extra "${sl}" nicht in locations.json`);
 // --- Copy-Drift ---
 const arr = x => Array.isArray(x) ? x : (x ? (x.hubs || x.archetypes || x.ratgeber || []) : []);
 if (hubs) for (const h of arr(hubs)) if (!svcSlugs.has(h.slug)) FAIL(`copy/hubs: Slug "${h.slug}" nicht in services`);

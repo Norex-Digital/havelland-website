@@ -56,6 +56,25 @@
       "peak": "Februar"
     },
     {
+      "slug": "hecke-zurueckschneiden",
+      "name": "Heckenrückschnitt",
+      "strang": "A",
+      "segment": [
+        "B2C"
+      ],
+      "farbe": "gruen",
+      "tier_global": null,
+      "tier_lokal": null,
+      "vol_lokal": null,
+      "wave": 1,
+      "price": null,
+      "offer_ref": "G1.1",
+      "garantie": "Geradlinien-Garantie — Schnittreste bleiben liegen? Wir kommen kostenlos nach",
+      "element_status": "vorhanden",
+      "faq": null,
+      "peak": "Februar"
+    },
+    {
       "slug": "winterdienst",
       "name": "Winterdienst",
       "title_suffix": "Räumen und Streuen im Saisonvertrag",

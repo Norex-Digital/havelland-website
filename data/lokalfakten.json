@@ -153,5 +153,71 @@
    "quelle": "https://bravors.brandenburg.de/verordnungen/bbgbauvorlv (§ 6 Beseitigung von Anlagen, Volltext) · https://bravors.brandenburg.de/gesetze/bbgbo (§ 61 Genehmigungsfreie Vorhaben Abs. 1 Nr. 1 Buchstabe a; § 3, § 52, § 59, § 66, § 86 Abs. 3 Nr. 8 zur Systematik Beseitigung/Anzeigepflicht, Volltext-PDF mil.brandenburg.de/sixcms/media.php/9/BbgBO_Aenderungen_markiert-b.pdf, Bearbeitungsstand 19.10.2023)",
    "stand": "2026-09-17"
   }
+ },
+ "fachlich_hecke": {
+  "_hinweis": "Belege für die Fachaussagen auf /hecke-zurueckschneiden/ (Recherche 09.11.2026, Primärquellen per Abruf gelesen). Nicht belegte Aussagen wurden aus der Copy gestrichen: Leyland-Zypresse, Glanzmispel, Feldahorn, Spanne 10–30 cm, Staffelung Seite/Seite/Höhe über 2–3 Jahre, 'nach 2–3 Jahren wieder dicht', Eibe als 'einzige' Nadelhecke.",
+  "belege": [
+   {
+    "id": "A1",
+    "aussage": "§ 39 Abs. 5 Nr. 2 BNatSchG: 1.3.–30.9. Hecken nicht abschneiden, auf den Stock setzen oder beseitigen; schonende Form- und Pflegeschnitte zulässig",
+    "quelle": "https://www.gesetze-im-internet.de/bnatschg_2009/__39.html",
+    "herausgeber": "Bundesministerium der Justiz",
+    "geprueft": "2026-11-09",
+    "hinweis": "Geltung im Hausgarten wird unterschiedlich ausgelegt (LWK NRW 2007/2015: nur freie Landschaft; Naturschutzverbände: auch Privatgärten). Copy nennt das erlaubte Winterfenster und verweist für Ausnahmen an die Naturschutzbehörde."
+   },
+   {
+    "id": "A2",
+    "aussage": "Thuja und Scheinzypresse nur bis ins grüne Holz; aus altem Holz kaum bis gar kein Austrieb",
+    "quelle": "https://www.lwg.bayern.de/mam/cms06/gartenakademie/dateien/thuja_lebensbaum_infoschrift_4256.pdf ; https://www.lwg.bayern.de/gartenakademie/gartendokumente/gartencast/322017/",
+    "herausgeber": "Bayerische Landesanstalt für Weinbau und Gartenbau (LWG)",
+    "zitat": "allerdings darf nicht ins alte Holz geschnitten werden, denn hier entstehen neue Triebe nur sehr zögerlich - wenn überhaupt",
+    "geprueft": "2026-11-09"
+   },
+   {
+    "id": "A3",
+    "aussage": "Eibe verträgt starken Rückschnitt, anders als die meisten Nadelgehölze",
+    "quelle": "Hessische Gartenakademie, Aufbaukurs Schnitt (2001), über gartenakademie.rlp.de; LWG-Gartencast 32/2017",
+    "herausgeber": "Hessische Gartenakademie; Bayerische LWG",
+    "zitat": "bei Eiben geht dies gut, was jedoch andere buschartig wachsende Nadelgehölze nur schrittweise vertragen",
+    "geprueft": "2026-11-09"
+   },
+   {
+    "id": "A4",
+    "aussage": "Hainbuche, Liguster, Rotbuche, Kirschlorbeer vertragen kräftigen Rückschnitt; Rotbuche treibt im Folgejahr verzögert und unregelmäßig aus",
+    "quelle": "https://www.lwg.bayern.de/gartenakademie/gartendokumente/gartencast/322017/ ; https://www.landwirtschaftskammer.de/verbraucher/garten/gartentipp047.htm ; https://www.landwirtschaftskammer.de/verbraucher/garten/gartentipp050.htm",
+    "herausgeber": "Bayerische LWG; Landwirtschaftskammer NRW; Hessische Gartenakademie",
+    "geprueft": "2026-11-09"
+   },
+   {
+    "id": "A5",
+    "aussage": "Auf den Stock setzen = etwa 10 cm über dem Boden abschneiden",
+    "quelle": "https://www.lwg.bayern.de/gartenakademie/gartendokumente/gartencast/322017/ ; DLR Rheinpfalz, Das Grüne Blatt 3/2009",
+    "herausgeber": "Bayerische LWG; DLR Rheinpfalz",
+    "zitat": "bis etwa zehn Zentimeter über dem Boden abgeschnitten werden. Dieser Stock treibt wieder aus",
+    "geprueft": "2026-11-09"
+   },
+   {
+    "id": "A6",
+    "aussage": "Empfindlichere Gehölze etappenweise zurücknehmen (ohne Jahres- und Seitenangabe)",
+    "quelle": "Hessische Gartenakademie, Aufbaukurs Schnitt (2001)",
+    "herausgeber": "Hessische Gartenakademie",
+    "zitat": "hier muss man etappenweise Rückschnitte vornehmen",
+    "geprueft": "2026-11-09"
+   },
+   {
+    "id": "A7",
+    "aussage": "Blühsträucher: älteste Triebe direkt über dem Boden herausschneiden, kein generelles Einkürzen",
+    "quelle": "https://www.lwg.bayern.de/gartenakademie/gartendokumente/gartencast/322017/",
+    "herausgeber": "Bayerische LWG",
+    "geprueft": "2026-11-09"
+   },
+   {
+    "id": "A8",
+    "aussage": "Sommerschnitt (Johannis-Schnitt) hält Laubhecken in Form; Lücken schließen sich ab dem Folgejahr (Rotbuche)",
+    "quelle": "https://www.landwirtschaftskammer.de/presse/archiv/2015/aa-2015-19-03.htm ; https://www.landwirtschaftskammer.de/verbraucher/garten/gartentipp047.htm",
+    "herausgeber": "Landwirtschaftskammer NRW",
+    "geprueft": "2026-11-09"
+   }
+  ]
  }
 }

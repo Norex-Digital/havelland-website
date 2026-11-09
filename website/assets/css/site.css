@@ -1337,3 +1337,13 @@ footer:not(.lp-foot) h4{color:var(--ink);font-weight:500}
   footer:not(.lp-foot) .legal>span{flex:0 0 100%;padding-bottom:2px}
   footer:not(.lp-foot) .legal a{white-space:nowrap}
 }
+
+@media(max-width:600px){
+  /* 09.11.2026 Hecken-Seiten (Owner 06.11.): CTA-Zeile vor dem Einleitungstext, damit der Primär-Button bei offenem Cookie-Banner im ersten Bildschirm bleibt. Nur body.hecke; /lp/ hat eigene Hero-Klasse (lp-hero) und bleibt unberührt. */
+  body.hecke .phero:not(.lp-hero) .grid>div:first-child{display:flex;flex-direction:column}
+  body.hecke .phero:not(.lp-hero) .grid>div:first-child>.kick{order:1}
+  body.hecke .phero:not(.lp-hero) .grid>div:first-child>h1{order:2}
+  body.hecke .phero:not(.lp-hero) .grid>div:first-child>.cta-row{order:3;margin-top:18px}
+  body.hecke .phero:not(.lp-hero) .grid>div:first-child>.lead{order:4;margin:18px 0 0}
+  body.hecke .phero:not(.lp-hero) .grid>div:first-child>.hub-trust{order:5}
+}
