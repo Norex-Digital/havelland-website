@@ -4142,7 +4142,8 @@
                 "a": "Ja. Der BSR-Recyclinghof nimmt Gartenabfälle nur von Privathaushalten in Laubsäcken an, deshalb fahren wir das Schnittgut selbst ab. Abfuhr und Entsorgung sind im Festpreis enthalten."
               }
             ],
-            "media": false
+            "media": false,
+            "kundenstimmen_nach_cta": true
           },
           "hero_vn": {
             "vorher": "/assets/img/arbeit/gbp-hecke-05-vorher-675.jpg",
@@ -4201,7 +4202,8 @@
                 "a": "Ja. Die Wertstoffhöfe der Stadt nehmen Strauchschnitt nur in kleinen Mengen an, deshalb fahren wir das Schnittgut selbst ab. Abfuhr und Entsorgung sind im Festpreis enthalten."
               }
             ],
-            "media": false
+            "media": false,
+            "kundenstimmen_nach_cta": true
           },
           "hero_vn": {
             "vorher": "/assets/img/arbeit/gbp-hecke-05-vorher-675.jpg",

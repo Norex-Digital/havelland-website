@@ -869,6 +869,9 @@ function ortsseite(s, o) {
     'baumstumpf-entfernen': { h2: 'Ganze Hecke weg statt einzelner Stumpf?', p: `Wenn nicht nur ein Stumpf stört, sondern eine komplette Hecke verschwinden soll, übernehmen wir auch das: Rückschnitt, Rodung samt Wurzel und Entsorgung — im gesetzlichen Fenster vom 1. Oktober bis 28. Februar.`, href: '/heckenentfernung/', a: 'Mehr zur Heckenentfernung im Havelland' }
   };
   const cx = ORT_CROSS[s.slug];
+  // 09.11.2026 (Owner, Screenshot Potsdam): bespoke Seiten ohne eigene `faelle` können die Kundenstimmen direkt nach dem Kontakt-Band zeigen (tief.kundenstimmen_nach_cta) — sonst stoßen das beige Band und der beige Querverweis aneinander. Zonenfolge dann wie Falkensee: Band beige, Stimmen weiß, Querverweis beige.
+  const ksFrueh = !!(tief && tief.kundenstimmen_nach_cta);
+  const ksOrt = kundenstimmen(s.slug, url);
   const crossSection = cx ? `<section class="sec section-alt"><div class="wrap"><div class="prose wide rv"><h2>${esc(cx.h2)}</h2><p>${esc(cx.p)} <a href="${cx.href}">${esc(cx.a)}</a>.</p></div></div></section>` : '';
   const nachbarSection = `<section class="sec section-alt"><div class="wrap"><div class="head"><h2 class="serif rv">${esc(s.name)} in der Nähe</h2></div><div class="cards rv">${nahCards.map(n=>`<a class="card" href="/${s.slug}-${n.slug}/"><h3>${esc(s.name)} ${esc(n.name)}</h3><span class="go">Mehr →</span></a>`).join('')}${ortsHubSlugs.has(o.slug)?`<a class="card" href="/standorte/${o.slug}/"><h3>Alle Leistungen in ${esc(o.name)}</h3><span class="go">Zum Ort →</span></a>`:`<a class="card" href="/${s.slug}/"><h3>Mehr zu ${esc(s.name)}</h3><span class="go">Zur Leistung →</span></a>`}</div></div></section>`;
   // 06.11.2026 (Owner Maurice, Heckenschnitt Falkensee): `tief.media: false` in ortsseiten.json lässt das generische Regions-Bild (media-band) der Ortsseite weg — kein passendes echtes Foto, kein KI-Bild als Ersatz (havelland-design Prinzip 4).
@@ -877,10 +880,10 @@ function ortsseite(s, o) {
 <div class="shot rv in d2">${heroShotO}</div></div></section>
 ${gstripFor(s)}
 <section class="sec"><div class="wrap"><div class="prose wide rv"><h2>${esc(s.name)} in ${esc(o.name)} — zuverlässig &amp; lokal</h2>${hook}${rahmen}${sektionen?`<h3>Was dazugehört</h3><ul>${sektionen}</ul>`:''}${ortsteile}<h3>${s.partner_modell ? 'Ein Ansprechpartner, ein koordinierter Ablauf' : 'Festpreis &amp; Foto-Nachweis'}</h3>${trust}${ortRatLink}</div></div></section>
-${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml, hrefOf, ctaAfterGrid: tief.cta_grid ? ctaZwischen(s, { ...tief.cta_grid }) : '' }) : ''}${tief ? ctaZwischen(s, { ...(tief.cta_after || tiefCtaDefault), alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: tief.faelle_heading || ('So sah das zuletzt in ' + o.name + ' aus.'), alt: tiefPaper, intro: tief.faelle_intro }) : ''}${crossSection}
+${tief ? tiefBlock(tief, { linkHtml: copyLinksHtml, hrefOf, ctaAfterGrid: tief.cta_grid ? ctaZwischen(s, { ...tief.cta_grid }) : '' }) : ''}${tief ? ctaZwischen(s, { ...(tief.cta_after || tiefCtaDefault), alt: !tiefPaper }) : ''}${tief && tief.faelle && tief.faelle.length ? faelleBlock(tief.faelle, { heading: tief.faelle_heading || ('So sah das zuletzt in ' + o.name + ' aus.'), alt: tiefPaper, intro: tief.faelle_intro }) : ''}${ksFrueh ? ksOrt : ''}${crossSection}
 ${(tief && tief.media === false) ? '' : `<section class="sec" style="padding-top:0"><div class="wrap"><div class="media-band rv">${pic(ortArchImg(o), { alt: 'Haus- & Gartenservice in ' + o.name + ' und Umgebung', sizes: '(max-width:1100px) 92vw, 1040px' })}</div></div></section>`}
 <section class="sec"><div class="wrap">${whatsappFlow({ gewerk: waGewerk(s), ort: o.name, partner: !!s.partner_modell, fotoNeutral: FOTO_NEUTRAL.has(s.slug) || s.slug === 'winterdienst', winter: s.slug === 'winterdienst', foto: flowFotoO })}</div></section>
-${kundenstimmen(s.slug, url)}${nachbarSection}
+${ksFrueh ? '' : ksOrt}${nachbarSection}
 <section class="sec"><div class="wrap">${faqFilter(faqs.length ? faqs : null)}</div></section>
 ${s.partner_modell ? endBandPartner(s) : endBand}`;
   const ni = svcWaveNoindex(s);
