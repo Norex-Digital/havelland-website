@@ -1,5 +1,9 @@
 # Prioritätsliste Indexing API, Stand 06.11.2026 (Owner-Entscheid). Winterdienst-Seiten nicht in der Priorität (Owner: „ohne Winterdienst“), sie kommen mit dem Sitemap-Rest am zweiten Tag. Reihenfolge: offene Kern-Orte nach prio_rang, offene übrige, dann neue Seiten vom 06.11. (nicht im Inventar).
 # Quelle: gbr-firma websites/havelland/analyse-2026-11-ranking/01-index-inventar.csv (indexiert_seit leer) + Sitemap-Differenz.
+# 09.11.2026 Schiene 2 Hecke (Plan 26): drei neue Seiten zuerst — /hecke-zurueckschneiden/, /heckenschnitt-berlin-spandau/, /heckenschnitt-potsdam/.
+/hecke-zurueckschneiden/
+/heckenschnitt-berlin-spandau/
+/heckenschnitt-potsdam/
 /entruempelung-wustermark/
 /baumfaellung-falkensee/
 /galabau-potsdam/
