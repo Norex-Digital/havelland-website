@@ -53,7 +53,11 @@
       "garantie": "Geradlinien-Garantie — Schnittreste bleiben liegen? Wir kommen kostenlos nach",
       "element_status": "vorhanden",
       "faq": null,
-      "peak": "Februar"
+      "peak": "Februar",
+      "orte_extra": [
+        "berlin-spandau",
+        "potsdam"
+      ]
     },
     {
       "slug": "hecke-zurueckschneiden",

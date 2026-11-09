@@ -4090,6 +4090,126 @@
             ],
             "media": false
           }
+        },
+        "berlin-spandau": {
+          "title": "Heckenschnitt Spandau: Rückschnitt, Formschnitt, Abfuhr",
+          "meta": "Heckenschnitt in Berlin-Spandau: Rückschnitt, Formschnitt und Abfuhr in Staaken, Hakenfelde und Wilhelmstadt. Festpreis nach kostenloser Besichtigung.",
+          "hook": "Spandau beginnt für uns hinter der Stadtgrenze: Das Falkenhagener Feld und Staaken grenzen direkt an Falkensee, bis Spandau-Mitte sind es rund zehn Kilometer. In den Siedlungen von Staaken, Hakenfelde, Wilhelmstadt und Haselhorst trennen Hecken aus Thuja, Liguster und Hainbuche die Grundstücke. Wo sie zu hoch oder zu breit geworden sind, nehmen wir sie zurück.",
+          "rahmen": "In Berlin regelt § 28 des Nachbarrechtsgesetzes den Abstand zur Grenze: Hecken bis zwei Meter Höhe brauchen 50 Zentimeter, höhere Hecken einen Meter, gemessen ab der Mitte der Pflanzreihe. Ist die Hecke über dieses Maß hinausgewachsen, bringt der Rückschnitt sie zurück. Starker Rückschnitt und Auf-den-Stock-Setzen sind nur vom 1. Oktober bis 28. Februar erlaubt (§ 39 BNatSchG), der schonende Formschnitt ganzjährig. Das ist keine Rechtsberatung.",
+          "trust": "Nach der kostenlosen Besichtigung in Spandau steht Ihr Festpreis schriftlich fest, die Abfuhr des Grünschnitts ist enthalten. Fotos von vorher und nachher schicken wir aufs Handy.",
+          "fakt": "Spandau von Staaken bis Haselhorst: kostenlose Besichtigung, Festpreis, Grünschnitt-Abfuhr inklusive.",
+          "tief": {
+            "h2": "Heckenschnitt in Spandau: Rückschnitt, Formschnitt und Abfuhr",
+            "sections": [
+              {
+                "h3": "Grünschnitt: Wir fahren ab, der Recyclinghof nimmt nur Laubsäcke",
+                "body": "Der BSR-Recyclinghof am Brunsbütteler Damm nimmt Gartenabfälle nur von Privathaushalten an, und nur in den Laubsäcken der BSR. Für das Schnittgut einer ganzen Hecke reicht das nicht. Wir laden den Grünschnitt am Einsatztag auf und fahren ihn zur Annahmestelle. Die Entsorgung steht im Festpreis, die Fläche bleibt besenrein."
+              },
+              {
+                "h3": "Starker Rückschnitt: nur im Winterfenster",
+                "body": "Vom 1. März bis 30. September schützt § 39 BNatSchG brütende Vögel, dann sind nur schonende Form- und Pflegeschnitte zulässig. Die Berliner Baumschutzverordnung betrifft Bäume ab einem bestimmten Stammumfang, Hecken erfasst sie nicht. Ausnahmen vom Schnittverbot klärt das Umwelt- und Naturschutzamt des Bezirks Spandau. Vor jedem Schnitt prüfen wir die Hecke auf besetzte Nester.",
+                "link_to": "hecke-zurueckschneiden",
+                "link_text": "Rückschnitt, Radikalschnitt oder auf den Stock: was passt"
+              },
+              {
+                "h3": "Kladow und Gatow haben eigene Seiten",
+                "body": "Für die Ortsteile im Spandauer Süden gibt es eigene Seiten. Diese Seite gilt für Staaken, das Falkenhagener Feld, Hakenfelde, Wilhelmstadt, Haselhorst und Siemensstadt.",
+                "link_to": "heckenschnitt-berlin-kladow",
+                "link_text": "Heckenschnitt in Kladow",
+                "link2_to": "heckenschnitt-berlin-gatow",
+                "link2_text": "Heckenschnitt in Gatow"
+              }
+            ],
+            "cta_after": {
+              "h2": "Foto der Hecke schicken, Festpreis bekommen.",
+              "txt": "Antwort am selben Tag, kostenlose Besichtigung in Spandau, schriftlicher Festpreis inklusive Abfuhr."
+            },
+            "faqs": [
+              {
+                "q": "Schneiden Sie in ganz Spandau?",
+                "a": "Ja: in Staaken, im Falkenhagener Feld, in Hakenfelde, Wilhelmstadt, Haselhorst und Siemensstadt. Kladow und Gatow haben eigene Seiten. Ein Foto der Hecke per WhatsApp reicht für die erste Einschätzung, danach kommen wir zur kostenlosen Besichtigung."
+              },
+              {
+                "q": "Brauche ich in Berlin eine Genehmigung für den Rückschnitt?",
+                "a": "Für Hecken in der Regel nicht. Die Berliner Baumschutzverordnung schützt Bäume, Hecken erfasst sie nicht. Es gilt das Bundesnaturschutzgesetz: Starker Rückschnitt ist vom 1. Oktober bis 28. Februar erlaubt. Ausnahmen klärt das Umwelt- und Naturschutzamt Spandau. Das ist keine Rechtsberatung."
+              },
+              {
+                "q": "Welchen Abstand muss eine Hecke in Berlin zur Grundstücksgrenze haben?",
+                "a": "Nach § 28 des Berliner Nachbarrechtsgesetzes 50 Zentimeter bei Hecken bis zwei Meter Höhe und einen Meter bei höheren Hecken. Gemessen wird ab der Mitte der Pflanzreihe. Bei der Besichtigung messen wir Höhe und Breite und sagen, wie weit die Hecke zurück sollte."
+              },
+              {
+                "q": "Nehmen Sie den Grünschnitt mit?",
+                "a": "Ja. Der BSR-Recyclinghof nimmt Gartenabfälle nur von Privathaushalten in Laubsäcken an, deshalb fahren wir das Schnittgut selbst ab. Abfuhr und Entsorgung sind im Festpreis enthalten."
+              }
+            ],
+            "media": false
+          },
+          "hero_vn": {
+            "vorher": "/assets/img/arbeit/gbp-hecke-05-vorher-675.jpg",
+            "nachher": "/assets/img/arbeit/gbp-hecke-05-nachher-675.jpg",
+            "w": 675,
+            "h": 790,
+            "alt": "Hecke beim Rückschnitt"
+          }
+        },
+        "potsdam": {
+          "title": "Heckenschnitt Potsdam: Rückschnitt, Formschnitt, Abfuhr",
+          "meta": "Heckenschnitt in Potsdam: Rückschnitt, Formschnitt und Abfuhr in Fahrland, Marquardt, Golm, Bornstedt und Eiche. Festpreis nach kostenloser Besichtigung.",
+          "hook": "Der Potsdamer Norden liegt für uns hinter Groß Glienicke: Fahrland, Neu Fahrland, Marquardt, Satzkorn, Golm, Bornstedt und Eiche erreichen wir von Falkensee in rund 25 Minuten. In den Ortsteilen stehen Einfamilienhäuser mit Grenzhecken aus Thuja, Liguster und Hainbuche. Wo sie zu hoch oder zu breit geworden sind, nehmen wir sie zurück.",
+          "rahmen": "In Brandenburg zählt für den Abstand zur Grenze die Höhe: Wächst eine Hecke über zwei Meter, muss sie nach § 37 des Brandenburgischen Nachbarrechtsgesetzes mindestens ein Drittel ihrer Höhe von der Grenze entfernt stehen. Eine drei Meter hohe Hecke braucht also einen Meter Abstand. Für Hecken bis zwei Meter nennt das Gesetz keinen Mindestabstand. Starker Rückschnitt ist nur vom 1. Oktober bis 28. Februar erlaubt (§ 39 BNatSchG). Das ist keine Rechtsberatung.",
+          "trust": "Nach der kostenlosen Besichtigung in Potsdam steht Ihr Festpreis schriftlich fest, die Abfuhr des Grünschnitts ist enthalten. Fotos von vorher und nachher schicken wir aufs Handy.",
+          "fakt": "Potsdamer Norden von Fahrland bis Eiche: kostenlose Besichtigung, Festpreis, Grünschnitt-Abfuhr inklusive.",
+          "tief": {
+            "h2": "Heckenschnitt in Potsdam: Rückschnitt, Formschnitt und Abfuhr",
+            "sections": [
+              {
+                "h3": "Grünschnitt: mehr als ein Kubikmeter",
+                "body": "Die Potsdamer Wertstoffhöfe in Drewitz und am Neuendorfer Anger nehmen Baum- und Strauchschnitt nur in kleinen Mengen an, in Drewitz höchstens einen Kubikmeter. Eine kräftig zurückgeschnittene Hecke ergibt schnell ein Mehrfaches. Wir laden das Schnittgut am Einsatztag auf und fahren es ab. Die Entsorgung steht im Festpreis, die Fläche bleibt besenrein."
+              },
+              {
+                "h3": "Starker Rückschnitt: nur im Winterfenster",
+                "body": "Vom 1. März bis 30. September schützt § 39 BNatSchG brütende Vögel, dann sind nur schonende Form- und Pflegeschnitte zulässig. Die Potsdamer Baumschutzverordnung schützt Bäume ab einem bestimmten Stammumfang, Hecken nennt sie nicht. Ausnahmen vom Schnittverbot klärt die Untere Naturschutzbehörde der Landeshauptstadt Potsdam. Vor jedem Schnitt prüfen wir die Hecke auf besetzte Nester.",
+                "link_to": "hecke-zurueckschneiden",
+                "link_text": "Rückschnitt, Radikalschnitt oder auf den Stock: was passt"
+              },
+              {
+                "h3": "Groß Glienicke hat eine eigene Seite",
+                "body": "Groß Glienicke gehört seit 2003 zu Potsdam und hat eine eigene Seite. Von dort fahren wir weiter nach Fahrland, Neu Fahrland, Marquardt und Satzkorn, nach Golm, Bornstedt und Eiche.",
+                "link_to": "heckenschnitt-gross-glienicke",
+                "link_text": "Heckenschnitt in Groß Glienicke"
+              }
+            ],
+            "cta_after": {
+              "h2": "Foto der Hecke schicken, Festpreis bekommen.",
+              "txt": "Antwort am selben Tag, kostenlose Besichtigung in Potsdam, schriftlicher Festpreis inklusive Abfuhr."
+            },
+            "faqs": [
+              {
+                "q": "In welchen Potsdamer Ortsteilen schneiden Sie Hecken?",
+                "a": "Im Potsdamer Norden: Fahrland, Neu Fahrland, Marquardt, Satzkorn, Golm, Bornstedt und Eiche, dazu Groß Glienicke mit eigener Seite. Weitere Ortsteile auf Anfrage. Ein Foto der Hecke per WhatsApp reicht für die erste Einschätzung."
+              },
+              {
+                "q": "Brauche ich in Potsdam eine Genehmigung für den Rückschnitt?",
+                "a": "Für Hecken in der Regel nicht. Die Potsdamer Baumschutzverordnung schützt Bäume, Hecken nennt sie nicht. Es gilt das Bundesnaturschutzgesetz: Starker Rückschnitt ist vom 1. Oktober bis 28. Februar erlaubt. Ausnahmen klärt die Untere Naturschutzbehörde der Stadt. Das ist keine Rechtsberatung."
+              },
+              {
+                "q": "Welchen Abstand muss eine Hecke in Brandenburg zur Grenze haben?",
+                "a": "Das Brandenburgische Nachbarrechtsgesetz (§ 37) verlangt für Hecken über zwei Meter Höhe mindestens ein Drittel der Höhe als Abstand. Für Hecken bis zwei Meter nennt es keinen Mindestabstand. Bei der Besichtigung messen wir Höhe und Breite und sagen, wie weit die Hecke zurück sollte."
+              },
+              {
+                "q": "Nehmen Sie den Grünschnitt mit?",
+                "a": "Ja. Die Wertstoffhöfe der Stadt nehmen Strauchschnitt nur in kleinen Mengen an, deshalb fahren wir das Schnittgut selbst ab. Abfuhr und Entsorgung sind im Festpreis enthalten."
+              }
+            ],
+            "media": false
+          },
+          "hero_vn": {
+            "vorher": "/assets/img/arbeit/gbp-hecke-05-vorher-675.jpg",
+            "nachher": "/assets/img/arbeit/gbp-hecke-05-nachher-675.jpg",
+            "w": 675,
+            "h": 790,
+            "alt": "Hecke beim Rückschnitt"
+          }
         }
       }
     }

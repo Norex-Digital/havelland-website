@@ -314,7 +314,7 @@
       "h1_em": "zurückschneiden",
       "intro": "Zu hoch, zu breit, unten kahl? Wir nehmen Ihre Hecke kräftig zurück, verjüngen sie mit dem Radikalschnitt oder setzen austriebsfähige Hecken auf den Stock. Erlaubt ist das vom 1. Oktober bis Ende Februar. Nach der kostenlosen Besichtigung erhalten Sie einen schriftlichen Festpreis, die Grünschnitt-Abfuhr ist enthalten.",
       "definition": "Eine Hecke zurückschneiden heißt, sie deutlich in Höhe und Breite zu kürzen, bis ins ältere Holz. Je nach Zustand reicht ein starker Rückschnitt, oder wir verjüngen die Hecke in Etappen (Radikalschnitt) oder setzen sie bodennah auf den Stock. Anders als der Formschnitt ist das nur im Winterhalbjahr erlaubt.",
-      "sections_h2": "Rückschnitt, Radikalschnitt oder auf den Stock: drei Stufen",
+      "sections_h2": "Drei Stufen: Rückschnitt, Radikalschnitt, auf den Stock",
       "hero_vn": {
         "vorher": "/assets/img/arbeit/gbp-hecke-05-vorher-675.jpg",
         "nachher": "/assets/img/arbeit/gbp-hecke-05-nachher-675.jpg",
@@ -347,8 +347,7 @@
           "body": "Auf den Stock setzen heißt: Wir kappen die Hecke etwa zehn Zentimeter über dem Boden. Die Wurzeln bleiben, der Stock treibt im Frühjahr neu aus und baut eine neue Hecke auf. Das funktioniert bei austriebsfähigen Gehölzen wie Hainbuche, Liguster und Eibe. Thuja und Scheinzypresse treiben aus altem Holz kaum bis gar nicht wieder aus und wären danach kahl. Für solche Hecken ist die Entfernung die ehrlichere Lösung."
         }
       ],
-      "naehe": "Wir sitzen in Falkensee und fahren das Havelland und den Berliner Westen an, von Nauen über Dallgow-Döberitz und Brieselang bis Spandau und Kladow. Die Anfahrt steckt im Festpreis.",
-      "ablauf": "Schicken Sie ein Foto der Hecke per WhatsApp oder rufen Sie an, wir antworten am selben Tag. Bei der kostenlosen Besichtigung sehen wir uns Heckenart, Höhe und Zugang an und prüfen auf besetzte Nester. Danach erhalten Sie den Festpreis schriftlich, Abfuhr inklusive. Zum Termin im Winterfenster schneiden wir, fahren das Schnittgut ab und schicken Ihnen Fotos von vorher und nachher aufs Handy.",
+      "naehe": "Der Haus- & Gartenservice Havelland sitzt in Falkensee und fährt das Havelland und den Berliner Westen an, von Nauen über Dallgow-Döberitz und Brieselang bis Spandau und Kladow. Die Anfahrt steckt im Festpreis.",
       "faqs": [
         {
           "q": "Wie stark darf man eine Hecke zurückschneiden?",
@@ -441,6 +440,28 @@
         "headline-writer",
         "stop-slop",
         "copy-editing"
+      ],
+      "ablauf_schritte": [
+        {
+          "when": "Am selben Tag",
+          "h": "Foto oder Anruf",
+          "p": "Schicken Sie ein Foto der Hecke per WhatsApp oder rufen Sie an. Wir antworten am selben Tag."
+        },
+        {
+          "when": "Kostenlos · vor Ort",
+          "h": "Besichtigung und Festpreis",
+          "p": "Wir sehen uns Heckenart, Höhe und Zugang an und prüfen auf besetzte Nester. Danach steht Ihr Festpreis schriftlich fest, Abfuhr inklusive."
+        },
+        {
+          "when": "Im Winterfenster",
+          "h": "Schnitt und Abfuhr",
+          "p": "Zum vereinbarten Termin zwischen Oktober und Februar schneiden wir zurück, fahren das Schnittgut ab und übergeben besenrein."
+        },
+        {
+          "when": "Direkt nach der Arbeit",
+          "h": "Fotos aufs Handy",
+          "p": "Vorher- und Nachher-Fotos, auch wenn Sie nicht zu Hause waren."
+        }
       ]
     },
     {

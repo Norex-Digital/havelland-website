@@ -737,7 +737,11 @@ function hub(s) {
     const orteHtml = orteBlock({ name: s.name, fotoHtml: fotoOf(of.src, of.alt), orte: topOrte, weitere: weitereOrte, partner, alt: alt(), ankerPrefix: h2Name(s) + ' ' });
     if (!orteHtml) alt();
     const ablaufHint = GW_HUBS.includes(s.slug) ? '' : (s.slug === 'winterdienst' ? 'Der schnellste Weg in drei Schritten: Adresse und Flächen nennen (Gehweg, Zufahrt, Hauseingang oder Hof), per WhatsApp senden, in einem Satz schreiben, welche Flächen bis wann frei sein sollen. Ungefähre Meter genügen, ausmessen müssen Sie nichts. Lieber anrufen? Auch das geht.' : 'Der schnellste Weg in drei Schritten: Fläche fotografieren (einmal längs, einmal von vorn), das Foto per WhatsApp senden, in zwei Sätzen schreiben, was passieren soll und wo Sie stehen. Sie müssen nichts ausmessen und kein Formular ausfüllen. Lieber anrufen? Auch das geht.');
-    const ablauf = soLaeufts({ partner, slug: s.slug, name: h2Name(s), waText: `Hallo, ich interessiere mich für ${s.name}.`, alt: alt(), hint: esc(ablaufHint) });
+    // 09.11.2026 (Owner): ablauf_schritte in der Hub-Copy -> Ablauf als 4-Spalten-Reihe wie auf den Standort-Seiten (tl-reihe), eigene Schritte statt der allgemeinen Timeline.
+    const ablaufItems = (c && Array.isArray(c.ablauf_schritte) && c.ablauf_schritte.length) ? c.ablauf_schritte.map(x => ({ when: x.when ? esc(x.when) : '', h: x.h ? esc(x.h) : '', p: esc(x.p || '') })) : null;
+    const ablauf = ablaufItems
+      ? soLaeufts({ name: h2Name(s), waText: `Hallo, ich interessiere mich für ${s.name}.`, alt: alt(), items: ablaufItems, reihe: true })
+      : soLaeufts({ partner, slug: s.slug, name: h2Name(s), waText: `Hallo, ich interessiere mich für ${s.name}.`, alt: alt(), hint: esc(ablaufHint) });
     const ksGG = kundenstimmen(s.slug, url, 3, () => alt());   // 06.11.: Kundenstimmen nach dem Ablauf, in der Zonen-Folge
     const ratgeberGG = ratgeberSection ? ratgeberSection.replace('<section class="sec section-alt">', `<section class="sec${alt() ? ' section-alt' : ''}">`) : '';   // Zonen-Parität bis zum Ende (Ablauf, Ratgeber, FAQ im Wechsel)
     const faqSectionGG = `<section class="sec${alt() ? ' section-alt' : ''}"><div class="wrap">${faqFilter(faqData, { heading: `Häufige Fragen zu <em>${esc(h2Name(s))}</em>` })}</div></section>`;
@@ -850,8 +854,11 @@ function ortsseite(s, o) {
 
   // Heckenschnitt-Ort: Vorher/Nachher-Slider im Hero; andere Gewerke: Standard-Bild (kein Slider)
   const ortVoll = VOLL_VN.has(s.slug);
+  // 09.11.2026: bespoke Ortsseiten dürfen ein echtes Vorher/Nachher-Paar vorgeben (ortsseiten.json … hero_vn) — neue Seiten ohne KI-Paar (CLAUDE.md §4).
   const heroShotO = ortVoll
-    ? baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' im Havelland', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true })   // 06.11. (Owner): ein Foto, ein Ort; keine Ortsbehauptung unter dem Bild, kein Label
+    ? (soOrt && soOrt.hero_vn
+        ? baSlider({ vorher: soOrt.hero_vn.vorher, nachher: soOrt.hero_vn.nachher, w: soOrt.hero_vn.w, h: soOrt.hero_vn.h, alt: soOrt.hero_vn.alt || s.name, cap: soOrt.hero_vn.cap || '', sub: soOrt.hero_vn.sub || '', hint: true, lcp: true })
+        : baSlider({ slug: '06-02-thuja-grenze', alt: s.name + ' im Havelland', cap: 'Thuja', sub: 'an der Grundstücksgrenze', hint: true, lcp: true }))   // 06.11. (Owner): ein Foto, ein Ort; keine Ortsbehauptung unter dem Bild, kein Label
     : pic(svcHero(s.slug), { cls: 'main', alt: s.name + ' in ' + o.name + ' — Haus- & Gartenservice Havelland', sizes: '(max-width:900px) 92vw, 60vw', lcp: true });
   // Herbst-Paket Deploy 1/2: Cross-Sektion nach dem prose-Container — bewusst AUSSERHALB des ersten
   // <div class="prose wide">-Blocks (NearDup-Gate misst prose+faq). heckenschnitt-Ortsseiten verlinken

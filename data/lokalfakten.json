@@ -139,6 +139,77 @@
    "anfahrt_min_aus_falkensee": 10,
    "quelle": "https://www.gemeindebrieselang.de/Seiten/Unsere-Gemeinde.html (Einwohner ca. 13.500 Stand Mai 2024, Fläche 44,39 km², Hauptort + 2 Ortsteile) · https://www.gemeindebrieselang.de/Seiten/Geschichte-zu-den-drei-Ortsteilen-Brieselang-Bredow-und-Zeestow.html (Gründung 14.01.1925, Gemarkungen, Bredow 1208, Zeestow 1346, Reform 2003, Siedlungsgesellschaften ab 1920) · https://www.gemeindebrieselang.de/ (Startseite: Ortsteile Brieselang/Bredow/Zeestow, Anschrift Am Markt 3, 14656, 100 Jahre Brieselang) · https://www.bahnhof.de/brieselang (Bahnhof Brieselang, Wustermarker Str.) · Fahrzeiten: OSRM-Routing (router.project-osrm.org) auf OpenStreetMap-Daten, Geokodierung Nominatim",
    "stand": "2026-09-17"
+  },
+  "berlin-spandau": {
+   "name": "Berlin-Spandau",
+   "plz": "13597",
+   "geprueft": "2026-11-09",
+   "fakten": [
+    {
+     "id": "S1",
+     "fakt": "§ 28 NachbG Bln: Hecken bis 2 m Höhe 0,50 m, über 2 m Höhe 1,00 m Grenzabstand; Messung ab Mitte der Pflanzreihe (§ 30)",
+     "quelle": "lexaris.de (Gesetzestext NachbG Bln, Sekundärquelle; gesetze.berlin.de nur per JavaScript abrufbar)",
+     "hinweis": "Wortlaut bei Gelegenheit gegen gesetze.berlin.de gegenprüfen"
+    },
+    {
+     "id": "S2",
+     "fakt": "Berliner Baumschutzverordnung schützt Bäume ab einem Stammumfang (Stand Abruf: 80 cm in 1,30 m Höhe), Hecken nicht erfasst",
+     "quelle": "https://www.berlin.de/umwelt/themen/natur-pflanzen-artenschutz/artikel.163584.php",
+     "hinweis": "Zahl nicht in der Copy (mögliche Änderung auf 70 cm ungeprüft)"
+    },
+    {
+     "id": "S3",
+     "fakt": "BSR-Recyclinghof Brunsbütteler Damm 47, 13581 Berlin: nur Haushaltsabfälle, kein Gewerbe; Gartenabfälle nur in BSR-Laubsäcken (max. 5 je Fahrzeug)",
+     "quelle": "https://www.bsr.de/recyclinghoefe-berlin ; https://www.bsr.de/assets/downloads/BSR-annahmebedingungen-rc-hof.pdf (Stand 01/2025)",
+     "hinweis": "Öffnungszeiten widersprüchlich, nicht in der Copy"
+    },
+    {
+     "id": "S4",
+     "fakt": "Falkenhagener Feld und Staaken grenzen an Falkensee; Falkensee bis Spandau-Mitte ca. 9,6 km (OSRM-Schätzung)",
+     "quelle": "Bezirksamt Spandau, Bezirksregionenprofil Falkenhagener Feld; Routing-Schätzung",
+     "hinweis": "Copy sagt 'rund zehn Kilometer'"
+    },
+    {
+     "id": "S5",
+     "fakt": "Umwelt- und Naturschutzamt Spandau, Carl-Schurz-Str. 8, 13597 Berlin",
+     "quelle": "https://www.berlin.de/ba-spandau/politik-und-verwaltung/aemter/umwelt-und-naturschutzamt/"
+    }
+   ]
+  },
+  "potsdam": {
+   "name": "Potsdam",
+   "plz": "14467",
+   "geprueft": "2026-11-09",
+   "fakten": [
+    {
+     "id": "P1",
+     "fakt": "§ 37 BbgNRG: Abstand nur für Anpflanzungen über 2 m regelmäßiger Wuchshöhe, mindestens ein Drittel der Höhe; doppelter Abstand zu landwirtschaftlich/erwerbsgärtnerisch genutzten Grundstücken; § 38 Ausnahmen",
+     "quelle": "https://bravors.brandenburg.de/de/gesetze-213764",
+     "hinweis": "Wortlaut am 09.11.2026 direkt gelesen. Der Ratgeber hecke-schneiden-erlaubt nannte bis dahin falsche Werte (25/50/75 cm), korrigiert."
+    },
+    {
+     "id": "P2",
+     "fakt": "Potsdamer Baumschutzverordnung: Bäume ab 45 cm Stammumfang innerorts, 60 cm außerorts; Hecken nicht genannt",
+     "quelle": "https://www.potsdam.de/system/files/documents/anl1_pbaumschvo.pdf",
+     "hinweis": "Neufassung in Beteiligung, Zahl nicht in der Copy"
+    },
+    {
+     "id": "P3",
+     "fakt": "STEP-Wertstoffhöfe Drewitz (Zum Heizwerk 18) und Neuendorfer Anger 9: Baum- und Strauchschnitt max. 1 m³ (Anger 0,5 m³), kostenpflichtig; größere Mengen Kompostieranlage Nedlitz",
+     "quelle": "https://www.swp-potsdam.de/de/entsorgung/wertstoffhöfe/"
+    },
+    {
+     "id": "P4",
+     "fakt": "Marquardt, Fahrland, Neu Fahrland, Satzkorn, Golm, Groß Glienicke seit 2003 Potsdam, Eiche seit 1993; Falkensee bis Fahrland ca. 20 km, ca. 24 min (OSRM-Schätzung)",
+     "quelle": "https://www.potsdam.de/de/ortsteile ; Routing-Schätzung",
+     "hinweis": "Copy sagt 'rund 25 Minuten'"
+    },
+    {
+     "id": "P5",
+     "fakt": "Untere Naturschutzbehörde der Landeshauptstadt Potsdam, Friedrich-Ebert-Straße 79/81, 14469 Potsdam",
+     "quelle": "https://www.potsdam.de/system/files/documents/anl1_pbaumschvo.pdf"
+    }
+   ]
   }
  },
  "recht": {
