@@ -29,8 +29,9 @@ const VN  = '/assets/img/vn';       // Original-JPG-Splits (NICHT im AVIF-Manife
 const ARB = '/assets/img/arbeit';   // echtes Paar + Noah-Arbeitsbilder
 const IMG = '/assets/img';          // hero-home-* Jahreszeitenbilder
 const WA_NUM = '4915156198195';
-const TEL = '+4915156198195';
-const TEL_DISP = '01515 6198195';
+const TEL = '+4933225078450';
+const TEL_DISP = '03322 5078450';
+const WA_DISP = '01515 6198195';   // WhatsApp bleibt auf der Mobilnummer (19.11.2026)
 
 const esc = t => (t == null ? '' : String(t))
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -370,8 +371,8 @@ export function whatsappFlow({ gewerk = 'meiner Hecke', ort = '',
       ? `<li class="wa-step"><span class="wn">1</span><div><h3>Adresse und Flächen nennen</h3><p>Gehweg, Zufahrt, Hauseingang oder Hof — ungefähre Meter genügen, ausmessen müssen Sie nichts.</p></div></li>`
       : `<li class="wa-step"><span class="wn">1</span><div><h3>Fotografieren</h3><p>Einmal längs, einmal von vorn — so sehen wir Höhe, Länge und Zugang.</p></div></li>`) +
     (winter
-      ? `<li class="wa-step"><span class="wn">2</span><div><h3>Per WhatsApp senden</h3><p>An ${TEL_DISP}, gern mit einem Satz dazu: Welche Flächen müssen bis wann frei sein?</p></div></li>`
-      : `<li class="wa-step"><span class="wn">2</span><div><h3>Per WhatsApp senden</h3><p>An ${TEL_DISP}, gern mit zwei Sätzen dazu: Was soll passieren, wo stehen Sie?</p></div></li>`) +
+      ? `<li class="wa-step"><span class="wn">2</span><div><h3>Per WhatsApp senden</h3><p>An ${WA_DISP}, gern mit einem Satz dazu: Welche Flächen müssen bis wann frei sein?</p></div></li>`
+      : `<li class="wa-step"><span class="wn">2</span><div><h3>Per WhatsApp senden</h3><p>An ${WA_DISP}, gern mit zwei Sätzen dazu: Was soll passieren, wo stehen Sie?</p></div></li>`) +
     step3 +
     `</ol>` +
     `<div class="wa-cta rv d2"><a class="btn btn-acc" href="${waHref(text)}">${winter ? 'Flächen per WhatsApp schicken' : 'Foto per WhatsApp senden'}</a>` +

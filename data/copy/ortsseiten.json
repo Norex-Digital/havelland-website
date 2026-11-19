@@ -2585,7 +2585,7 @@
         },
         {
           "q": "Wann und wie erreiche ich Sie für eine Anfrage in {ort}?",
-          "a": "Per WhatsApp oder Telefon unter 01515 6198195, täglich von 7 bis 22 Uhr. Wir melden uns am selben Tag zurück."
+          "a": "Per Telefon unter 03322 5078450 oder per WhatsApp an 01515 6198195, täglich von 7 bis 22 Uhr. Wir melden uns am selben Tag zurück."
         }
       ],
       "orte": {
@@ -2661,7 +2661,7 @@
               {
                 "id": "ablauf-spandau",
                 "h2": "So läuft Gartenbau in Spandau ab",
-                "body": "WhatsApp oder Anruf: 01515 6198195.",
+                "body": "Anruf: 03322 5078450, WhatsApp: 01515 6198195.",
                 "bullets": [
                   "Foto per WhatsApp, Antwort am selben Tag",
                   "Kostenlose Besichtigung, schriftlicher Festpreis",
@@ -2890,7 +2890,7 @@
         },
         {
           "q": "Wer macht Erdarbeiten in {ort}?",
-          "a": "Wir sitzen in der Darmstädter Straße 15 in {ort}. Auf Ihre Anfrage per WhatsApp oder Telefon 01515 6198195 melden wir uns am selben Tag."
+          "a": "Wir sitzen in der Darmstädter Straße 15 in {ort}. Auf Ihre Anfrage per Telefon 03322 5078450 oder WhatsApp 01515 6198195 melden wir uns am selben Tag."
         }
       ],
       "orte": {
@@ -2984,7 +2984,7 @@
               },
               {
                 "q": "Wer macht Erdarbeiten in Falkensee?",
-                "a": "Wir sitzen in der Darmstädter Straße 15 in Falkensee. Auf Ihre Anfrage per WhatsApp oder Telefon 01515 6198195 melden wir uns am selben Tag."
+                "a": "Wir sitzen in der Darmstädter Straße 15 in Falkensee. Auf Ihre Anfrage per Telefon 03322 5078450 oder WhatsApp 01515 6198195 melden wir uns am selben Tag."
               }
             ]
           },
@@ -3018,7 +3018,7 @@
         },
         {
           "q": "Wer fällt Bäume in {ort}?",
-          "a": "Wir, der Haus- & Gartenservice Havelland, Darmstädter Straße 15 in {ort}; bei Klettertechnik oder sehr hohen Bäumen arbeitet ein fester Fachpartner mit. Anfragen per WhatsApp oder Telefon 01515 6198195, die Besichtigung ist kostenlos."
+          "a": "Wir, der Haus- & Gartenservice Havelland, Darmstädter Straße 15 in {ort}; bei Klettertechnik oder sehr hohen Bäumen arbeitet ein fester Fachpartner mit. Anfragen per Telefon 03322 5078450 oder WhatsApp 01515 6198195, die Besichtigung ist kostenlos."
         }
       ],
       "orte": {
@@ -3112,7 +3112,7 @@
               },
               {
                 "q": "Wer fällt Bäume in Falkensee?",
-                "a": "Wir, der Haus- & Gartenservice Havelland, Darmstädter Straße 15 in Falkensee; bei Klettertechnik oder sehr hohen Bäumen arbeitet ein fester Fachpartner mit. Anfragen per WhatsApp oder Telefon 01515 6198195, die Besichtigung ist kostenlos."
+                "a": "Wir, der Haus- & Gartenservice Havelland, Darmstädter Straße 15 in Falkensee; bei Klettertechnik oder sehr hohen Bäumen arbeitet ein fester Fachpartner mit. Anfragen per Telefon 03322 5078450 oder WhatsApp 01515 6198195, die Besichtigung ist kostenlos."
               }
             ]
           },

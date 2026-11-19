@@ -191,7 +191,7 @@ const esc = t => (t == null ? '' : String(t)).replace(/&/g,'&amp;').replace(/</g
 // sj: JSON-LD-String-Wert — rohes & (kein HTML-Escape), aber < -> < (kein </script>-Ausbruch) + JSON-escape
 const sj = v => String(v == null ? '' : decEnt(v)).replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/</g, '\\u003c').replace(/[\r\n\t]+/g, ' ');
 const leaf = cls => `<svg class="${cls}" viewBox="0 0 100 100"><path fill="currentColor" d="M90 10C38 12 10 42 10 92c32-2 52-15 63-35 2 15-3 27-3 27s20-23 20-54c0-10-2-21 0-20Z"/></svg>`;
-const tel = nap.phone_e164; const waHref = q => `https://wa.me/${tel.replace('+','')}?text=${encodeURIComponent(q)}`;
+const tel = nap.phone_e164; const waNum = (nap.whatsapp_e164 || nap.phone_e164).replace('+',''); const waHref = q => `https://wa.me/${waNum}?text=${encodeURIComponent(q)}`;
 const ctaA = '<a class="btn btn-acc" href="/kontakt/#anfrage">Kostenlose Besichtigung anfragen</a>';
 const ctaPrim = label => `<a class="btn btn-acc" href="/kontakt/#anfrage">${label}</a>`;
 // Primär-CTA-Label je Service (Umbau 03.09.): Winterdienst bekommt ein sprechendes Label, sonst Standard.
@@ -1395,7 +1395,7 @@ function zielgruppePage(key) {
     block = fuerWen({ h2: h2Of(intro.h2, intro.h2 === 'Für wen wir arbeiten' ? 'arbeiten' : ''), body: intro.body, items: obj, alt: false });
   } else if (z.zwei_wege) {
     const w = z.zwei_wege;
-    const weiterText = w.verweisen_wa_text || `Haus- & Gartenservice Havelland aus Falkensee. Kostenlose Besichtigung, schriftlicher Festpreis. WhatsApp und Telefon: ${nap.phone_display}.`;
+    const weiterText = w.verweisen_wa_text || `Haus- & Gartenservice Havelland aus Falkensee. Kostenlose Besichtigung, schriftlicher Festpreis. Telefon: ${nap.phone_display}, WhatsApp: ${nap.whatsapp_display || nap.phone_display}.`;
     block = zweiWege({ h2: h2Of(w.h2 || 'Zwei Wege zu uns', w.h2 ? w.h2_em : 'Wege'), lead: w.lead || '',
       beauftragen: { h3: w.beauftragen_h3, items: w.beauftragen, button: primLbl, href: '/kontakt/#anfrage' },
       verweisen: { h3: w.verweisen_h3, items: w.verweisen, button: w.verweisen_button || 'WhatsApp-Nummer weitergeben', hint: w.verweisen_hint || '', href: `https://wa.me/?text=${encodeURIComponent(weiterText)}` }, alt: true });   // Owner 20.10.: keine Visitenkarten, Text zum Weiterleiten per WhatsApp

@@ -523,7 +523,7 @@ page('kontakt/index.html', 'KONTAKT', h => {
       check(T, 'alle internen Links haben ein Ziel' + (d.length ? ' (' + d.slice(0, 4).join(', ') + ')' : ''), d.length === 0);
       check(T, 'keine verbotenen Formulierungen' + (verboten(h).length ? ' (' + verboten(h).join(', ') + ')' : ''), verboten(h).length === 0);
       check(T, 'Partner-Leistungen ohne „Festpreis“/„wir machen“', PARTNER.every(sl => { const li = (ls.match(new RegExp('<div class="gw-li[^"]*"><span class="n">\\d+</span><div><h3><a href="/' + sl + '/[^"]*">[\\s\\S]*?</div></div>')) || [''])[0]; return !/Festpreis|wir machen/i.test(li); }));
-      check(T, 'keine Preise, keine Stunden-Zusage zur Reaktion', !/\d+ ?€/.test(text(h).replace(/01515 6198195/g, '')) && !/(antworten|Rückmeldung|melden)[^.]{0,60}(binnen|innerhalb)[^.]{0,20}\d+ (Stunden|Minuten)/i.test(text(h)));
+      check(T, 'keine Preise, keine Stunden-Zusage zur Reaktion', !/\d+ ?€/.test(text(h).replace(/01515 6198195|03322 5078450/g, '')) && !/(antworten|Rückmeldung|melden)[^.]{0,60}(binnen|innerhalb)[^.]{0,20}\d+ (Stunden|Minuten)/i.test(text(h)));
       if (zw) {
         const z = sectionOf(h, 'zwei-wege');
         check(T, '„Zwei Wege zu uns“ (.zwei-wege): 2 Boxen, Button „WhatsApp-Nummer weitergeben“ mit WhatsApp-Weiterleitungstext', has(z, 'zwei-wege') && (z.match(/<div class="gw-box">/g) || []).length === 2 && /<a class="btn btn-line" href="https:\/\/wa\.me\/\?text=[^"]+">WhatsApp-Nummer weitergeben<\/a>/.test(z));

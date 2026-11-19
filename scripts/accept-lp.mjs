@@ -386,7 +386,7 @@ for (const [rel, label, o] of LPS) page(rel, label, h => {
   } else {
     // Danke-Seite: der Lead mit der Rückruf-Nummer darf nie ausgeblendet werden (P2 H1)
     check(id, 'Anruf-Nummer im Lead vorhanden', has(h, 'Anrufe kommen von'));
-    check(id, 'Lead verspricht Anruf, WhatsApp oder E-Mail (Kontaktfeld „Telefon oder E-Mail“), keine Platzhalter-Reste', has(h, 'per Anruf, WhatsApp oder E-Mail') && !has(h, '{tel}') && has(h, 'Anrufe kommen von 01515 6198195'));
+    check(id, 'Lead verspricht Anruf, WhatsApp oder E-Mail (Kontaktfeld „Telefon oder E-Mail“), keine Platzhalter-Reste', has(h, 'per Anruf, WhatsApp oder E-Mail') && !has(h, '{tel}') && has(h, 'Anrufe kommen von 03322 5078450'));
     const versteckt = [...h.matchAll(/([^{}]*)\.lead\{display:none\}/g)].filter(m => !/lp-hero-form/.test(m[1]));
     check(id, 'keine unbeschränkte Regel .lead{display:none}', versteckt.length === 0);
     if (o.hecke) {
