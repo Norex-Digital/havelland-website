@@ -93,10 +93,11 @@
               {
                 "id": "preise-falkensee",
                 "h2": "Was eine Entrümpelung in Falkensee kostet",
-                "lead": "Ein echtes Beispiel aus Falkensee: 1.190 € Festpreis inkl. MwSt., Entsorgungsgebühren nach Beleg.",
-                "body": "Abstellkammer und Gartenschuppen, September 2026, ein Tag Arbeit, zwei Fahrten zum Wertstoffhof Falkensee. Die Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag. Bei Ihnen entscheiden Menge, Zugang, Zahl der Fahrten und der Anteil an Brauchbarem über den Betrag.",
+                "lead": "Eine Entrümpelung beginnt bei uns ab 99 € inkl. MwSt. für ein einzelnes Kellerabteil, eine Wohnungsauflösung ab 499 € inkl. MwSt. für eine kleine 1-Zimmer-Wohnung und ein komplettes Haus ab 749 € inkl. MwSt. für ein kleines, gut zugängliches Haus.",
+                "body": "Das sind Einstiegspreise für kleine, gut zugängliche Objekte; Menge, Etage, Zugang und Entsorgungsaufwand entscheiden, was Ihr Objekt kostet. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich; Anfahrt, Besichtigung und Angebot kosten nichts. Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag. Ein echtes Beispiel aus Falkensee, September 2026: Abstellkammer und Gartenschuppen, ein Tag Arbeit, zwei Fahrten zum Wertstoffhof Falkensee, 1.190 € inkl. MwSt. für Räumung und Abtransport. Bei Ihnen entscheiden Menge, Zugang, Zahl der Fahrten und der Anteil an Brauchbarem über den Betrag.",
                 "bullets": [
-                  "1.190 € Festpreis inkl. MwSt. für Räumung und Abtransport",
+                  "Ab 99 € Kellerabteil, ab 499 € kleine 1-Zimmer-Wohnung, ab 749 € kleines Haus, jeweils inkl. MwSt.",
+                  "Beispiel: 1.190 € Festpreis inkl. MwSt. für Abstellkammer und Gartenschuppen",
                   "Entsorgungsgebühren nach Beleg, getrennt vom Festpreis ausgewiesen",
                   "Vier Faktoren: Menge, Zugang, Fahrten, anrechenbare Brauchbarkeit",
                   "Wertstoffhof in Falkensee: dritte Fahrt kostet kaum Zeit"
@@ -118,7 +119,7 @@
             "faqs": [
               {
                 "q": "Was kostet eine Entrümpelung in Falkensee?",
-                "a": "In Falkensee haben wir zuletzt eine Abstellkammer und einen Gartenschuppen für 1.190 € inkl. MwSt. geräumt, Festpreis für Räumung und Abtransport, dazu die Wertstoffhof-Gebühren nach Beleg. Ihr Preis kann darunter oder darüber liegen, je nach Menge, Zugang und Zahl der Fahrten; brauchbare Stücke rechnen wir an. Nach der kostenlosen Besichtigung steht die Zahl schriftlich fest."
+                "a": "Eine Entrümpelung beginnt bei uns ab 99 € inkl. MwSt. für ein einzelnes Kellerabteil, eine Wohnungsauflösung ab 499 € inkl. MwSt. für eine kleine 1-Zimmer-Wohnung und ein komplettes Haus ab 749 € inkl. MwSt. für ein kleines, gut zugängliches Haus. Zuletzt haben wir in Falkensee eine Abstellkammer und einen Gartenschuppen für 1.190 € inkl. MwSt. geräumt, Festpreis für Räumung und Abtransport, dazu die Wertstoffhof-Gebühren nach Beleg. Ihr Preis kann darunter oder darüber liegen, je nach Menge, Zugang und Zahl der Fahrten; brauchbare Stücke rechnen wir an. Nach der kostenlosen Besichtigung steht die Zahl schriftlich fest."
               },
               {
                 "q": "Wie schnell können Sie in Falkensee entrümpeln?",
@@ -319,6 +320,18 @@
             },
             "blocks": [
               {
+                "id": "preise-nauen",
+                "h2": "Was eine Entrümpelung in Nauen kostet",
+                "lead": "Eine Entrümpelung beginnt bei uns ab 99 € inkl. MwSt. für ein einzelnes Kellerabteil, eine Wohnungsauflösung ab 499 € inkl. MwSt. für eine kleine 1-Zimmer-Wohnung und ein komplettes Haus ab 749 € inkl. MwSt. für ein kleines, gut zugängliches Haus.",
+                "body": "Das sind Einstiegspreise für kleine, gut zugängliche Objekte; Menge, Etage, Zugang und Entsorgungsaufwand entscheiden, was Ihr Objekt kostet. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich; Anfahrt, Besichtigung und Angebot kosten nichts. Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Ab 99 € inkl. MwSt.: einzelnes Kellerabteil",
+                  "Ab 499 € inkl. MwSt.: kleine 1-Zimmer-Wohnung",
+                  "Ab 749 € inkl. MwSt.: kleines, gut zugängliches Haus",
+                  "Festpreis nach kostenloser Besichtigung, Entsorgung nach Beleg ohne Aufschlag"
+                ]
+              },
+              {
                 "id": "typisch-nauen",
                 "h2": "Was wir in Nauen typischerweise vorfinden",
                 "lead": "Noch kein eigener Fall aus Nauen, aber ein belegtes Beispiel aus dem Havelland.",
@@ -346,7 +359,7 @@
             "faqs": [
               {
                 "q": "Was kostet eine Entrümpelung in Nauen?",
-                "a": "Einen Pauschalpreis für Nauen nennen wir nicht, weil Menge, Etage, Zugang und die Zahl der Fahrten den Betrag bestimmen. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis inkl. MwSt. für Räumung und Abtransport; Entsorgungsgebühren des Wertstoffhofs kommen nach Beleg hinzu, ohne eigenen Aufschlag. Ein belegtes Beispiel aus Falkensee steht weiter oben."
+                "a": "Eine Entrümpelung beginnt bei uns ab 99 € inkl. MwSt. für ein einzelnes Kellerabteil, eine Wohnungsauflösung ab 499 € inkl. MwSt. für eine kleine 1-Zimmer-Wohnung und ein komplettes Haus ab 749 € inkl. MwSt. für ein kleines, gut zugängliches Haus. Was Ihre Entrümpelung in Nauen kostet, bestimmen Menge, Etage, Zugang und die Zahl der Fahrten. Nach der kostenlosen Besichtigung bekommen Sie einen schriftlichen Festpreis inkl. MwSt. für Räumung und Abtransport; Entsorgungsgebühren des Wertstoffhofs kommen nach Beleg hinzu, ohne eigenen Aufschlag. Ein belegtes Beispiel aus Falkensee steht weiter oben."
               },
               {
                 "q": "Kommen Sie auch nach Ribbeck, Groß Behnitz oder Wachow?",
@@ -1069,7 +1082,7 @@
                 "id": "ablauf-hohen-neuendorf",
                 "h2": "So läuft eine Entrümpelung in Hohen Neuendorf ab",
                 "lead": "Foto, Besichtigung nach Feierabend, Festpreis, Räumung, Fotos zum Abschluss.",
-                "body": "Auf Ihre Nachricht antworten wir am selben Werktag, erreichbar sind wir Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr. Nach der Besichtigung steht der Festpreis schriftlich fest, Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
+                "body": "Auf Ihre Nachricht antworten wir am selben Werktag, erreichbar sind wir täglich von 7 bis 22 Uhr. Nach der Besichtigung steht der Festpreis schriftlich fest, Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag.",
                 "bullets": [
                   "Foto per WhatsApp, Rückmeldung am selben Werktag",
                   "Kostenlose Besichtigung abends oder samstags",
@@ -1177,6 +1190,18 @@
             },
             "blocks": [
               {
+                "id": "preise-falkensee",
+                "h2": "Was eine Haushaltsauflösung in Falkensee kostet",
+                "lead": "Eine Haushaltsauflösung beginnt bei uns ab 499 € inkl. MwSt. für eine kleine 1-Zimmer-Wohnung und ab 749 € inkl. MwSt. für ein kleines, gut zugängliches Haus; ein einzelnes Kellerabteil räumen wir ab 99 € inkl. MwSt.",
+                "body": "Das sind Einstiegspreise für kleine, gut zugängliche Objekte; Menge, Etage, Zugang und Entsorgungsaufwand entscheiden, was Ihr Objekt kostet. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich; Anfahrt, Besichtigung und Angebot kosten nichts. Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Ab 99 € inkl. MwSt.: einzelnes Kellerabteil",
+                  "Ab 499 € inkl. MwSt.: kleine 1-Zimmer-Wohnung",
+                  "Ab 749 € inkl. MwSt.: kleines, gut zugängliches Haus",
+                  "Festpreis nach kostenloser Besichtigung, Entsorgung nach Beleg ohne Aufschlag"
+                ]
+              },
+              {
                 "id": "aus-der-ferne",
                 "h2": "Sie wohnen nicht in Falkensee? Auflösung ohne Anwesenheit",
                 "lead": "Elternhaus in Falkensee, Sie selbst weit weg: Der Ablauf funktioniert ohne Ihre Anreise.",
@@ -1206,7 +1231,7 @@
             "faqs": [
               {
                 "q": "Was kostet eine Haushaltsauflösung in Falkensee?",
-                "a": "Einen Preis pro Quadratmeter nennen wir nicht, weil zwei Wohnungen mit gleicher Fläche völlig verschieden voll sein können. Zur Orientierung: Eine Räumung von Abstellkammer und Gartenschuppen in Falkensee lag zuletzt bei 1.190 € inkl. MwSt. plus Entsorgungsgebühren nach Beleg; bei einem ganzen Haushalt kommen mehr Fahrten und die Sichtung dazu. Nach der kostenlosen Besichtigung steht Ihr Festpreis für Räumung und Abtransport schriftlich fest, Verwertbares rechnen wir an."
+                "a": "Eine Haushaltsauflösung beginnt bei uns ab 499 € inkl. MwSt. (kleine 1-Zimmer-Wohnung) und ab 749 € inkl. MwSt. (kleines, gut zugängliches Haus). Einen Preis pro Quadratmeter nennen wir nicht, weil zwei Wohnungen mit gleicher Fläche völlig verschieden voll sein können. Zur Orientierung: Eine Räumung von Abstellkammer und Gartenschuppen in Falkensee lag zuletzt bei 1.190 € inkl. MwSt. plus Entsorgungsgebühren nach Beleg; bei einem ganzen Haushalt kommen mehr Fahrten und die Sichtung dazu. Nach der kostenlosen Besichtigung steht Ihr Festpreis für Räumung und Abtransport schriftlich fest, Verwertbares rechnen wir an."
               },
               {
                 "q": "Muss ich bei der Haushaltsauflösung in Falkensee dabei sein?",
@@ -1304,6 +1329,18 @@
             },
             "blocks": [
               {
+                "id": "preise-nauen",
+                "h2": "Was eine Haushaltsauflösung in Nauen kostet",
+                "lead": "Eine Haushaltsauflösung beginnt bei uns ab 499 € inkl. MwSt. für eine kleine 1-Zimmer-Wohnung und ab 749 € inkl. MwSt. für ein kleines, gut zugängliches Haus; ein einzelnes Kellerabteil räumen wir ab 99 € inkl. MwSt.",
+                "body": "Das sind Einstiegspreise für kleine, gut zugängliche Objekte; Menge, Etage, Zugang und Entsorgungsaufwand entscheiden, was Ihr Objekt kostet. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich; Anfahrt, Besichtigung und Angebot kosten nichts. Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag.",
+                "bullets": [
+                  "Ab 99 € inkl. MwSt.: einzelnes Kellerabteil",
+                  "Ab 499 € inkl. MwSt.: kleine 1-Zimmer-Wohnung",
+                  "Ab 749 € inkl. MwSt.: kleines, gut zugängliches Haus",
+                  "Festpreis nach kostenloser Besichtigung, Entsorgung nach Beleg ohne Aufschlag"
+                ]
+              },
+              {
                 "id": "ganzes-haus-nauen",
                 "h2": "Ganzes Haus oder nur ein Raum? Der Unterschied in Nauen",
                 "lead": "Eine Haushaltsauflösung räumt den kompletten Hausstand, eine Entrümpelung nur einzelne Bereiche.",
@@ -1332,7 +1369,7 @@
               },
               {
                 "q": "Wovon hängt der Festpreis einer Haushaltsauflösung in Nauen ab?",
-                "a": "Von Menge, Etage, Zugang und der Zahl der Fahrten, nicht von der Wohnfläche allein. Nach der kostenlosen Besichtigung steht der Festpreis inkl. MwSt. schriftlich fest. Wertvolles ziehen wir offen ab. Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag; die Anfahrt nach Nauen ist im Festpreis enthalten."
+                "a": "Von Menge, Etage, Zugang und der Zahl der Fahrten, nicht von der Wohnfläche allein; eine kleine 1-Zimmer-Wohnung beginnt ab 499 € inkl. MwSt., ein kleines, gut zugängliches Haus ab 749 € inkl. MwSt. Nach der kostenlosen Besichtigung steht der Festpreis inkl. MwSt. schriftlich fest. Wertvolles ziehen wir offen ab. Entsorgungsgebühren geben wir nach Beleg weiter, ohne eigenen Aufschlag; die Anfahrt nach Nauen ist im Festpreis enthalten."
               }
             ]
           }
@@ -1858,7 +1895,7 @@
           }
         },
         "hohen-neuendorf": {
-          "hook": "Hohen Neuendorf (16540) besteht aus vier Ortsteilen: Hohen Neuendorf, Bergfelde, Borgsdorf und Stolpe; die S1 und die S8 verbinden den Ort mit Berlin. Für Angehörige, die in Berlin arbeiten, bleibt neben dem Beruf wenig Zeit für eine Auflösung. Wir übernehmen die komplette Haushaltsauflösung, sind Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr erreichbar und übergeben besenrein.",
+          "hook": "Hohen Neuendorf (16540) besteht aus vier Ortsteilen: Hohen Neuendorf, Bergfelde, Borgsdorf und Stolpe; die S1 und die S8 verbinden den Ort mit Berlin. Für Angehörige, die in Berlin arbeiten, bleibt neben dem Beruf wenig Zeit für eine Auflösung. Wir übernehmen die komplette Haushaltsauflösung, sind täglich von 7 bis 22 Uhr erreichbar und übergeben besenrein.",
           "rahmen": "Bei einer Haushalts- oder Wohnungsauflösung in Hohen Neuendorf nehmen wir Ihnen den ganzen Ablauf ab: Sichten, Räumen, Entsorgen, Übergeben. Sie kommen zum Rundgang, zeigen, was bleibt, und müssen danach nichts mehr organisieren. Möbel, Küche, Kleidung und Hausrat gehen komplett mit, Briefe, Urkunden und Fotos legen wir beiseite. Gut erhaltene Stücke rechnen wir offen an. Am Ende sind alle Räume leer und besenrein, auch wenn Sie die Tage dazwischen im Büro verbringen.",
           "trust": "Nach der kostenlosen Besichtigung in {ort} steht der Festpreis für Räumung und Abtransport schriftlich fest, inkl. MwSt.; Entsorgungsgebühren nach Beleg, ohne eigenen Aufschlag. Besichtigung und Übergabe legen wir auf Ihre Arbeitszeiten, Fotos von jedem Raum bekommen Sie aufs Handy.",
           "fakt": "In Hohen Neuendorf, Bergfelde, Borgsdorf und Stolpe lösen wir Haushalte auf; für Berliner Pendler legen wir Termine um den Arbeitstag.",
@@ -1867,7 +1904,7 @@
             "sections": [
               {
                 "h3": "Besichtigung nach Feierabend oder am Samstag",
-                "kurz": "Wir sind Montag bis Freitag 7 bis 19 Uhr und samstags 8 bis 16 Uhr erreichbar.",
+                "kurz": "Wir sind täglich von 7 bis 22 Uhr erreichbar.",
                 "body": "Wer in Berlin arbeitet, kann nicht vormittags zur Besichtigung. Schreiben Sie uns per WhatsApp, wir antworten am selben Tag und suchen einen Termin, der zu Ihrem Arbeitstag passt. Die Besichtigung ist kostenlos, danach steht der Festpreis schriftlich fest."
               },
               {
@@ -1903,7 +1940,7 @@
                 },
                 {
                   "k": "Erreichbarkeit",
-                  "v": "Montag bis Freitag 7 bis 19 Uhr, samstags 8 bis 16 Uhr. Antwort am selben Tag."
+                  "v": "Täglich 7 bis 22 Uhr. Antwort am selben Tag."
                 }
               ],
               "quelle": "Wikipedia Hohen Neuendorf (Abruf 20.10.2026; Erreichbarkeit laut Standortseite); https://de.wikipedia.org/wiki/Amtsgericht_Oranienburg, Abruf 06.11.2026; § 343 Abs. 1 FamFG, https://www.gesetze-im-internet.de/famfg/__343.html, Abruf 06.11.2026"
@@ -1927,7 +1964,7 @@
             "faqs": [
               {
                 "q": "Kann ich die Haushaltsauflösung in Hohen Neuendorf abends oder samstags besprechen?",
-                "a": "Ja. Wir sind Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr erreichbar. Schreiben Sie per WhatsApp, wir antworten am selben Tag. Die Besichtigung ist kostenlos und lässt sich auf einen Termin nach Feierabend oder am Wochenende legen; danach steht der Festpreis schriftlich fest."
+                "a": "Ja. Wir sind täglich von 7 bis 22 Uhr erreichbar. Schreiben Sie per WhatsApp, wir antworten am selben Tag. Die Besichtigung ist kostenlos und lässt sich auf einen Termin nach Feierabend oder am Wochenende legen; danach steht der Festpreis schriftlich fest."
               },
               {
                 "q": "Fahren Sie auch nach Bergfelde, Borgsdorf und Stolpe?",
@@ -2548,7 +2585,7 @@
         },
         {
           "q": "Wann und wie erreiche ich Sie für eine Anfrage in {ort}?",
-          "a": "Per WhatsApp oder Telefon unter 01515 6198195, Montag bis Freitag von 7 bis 19 Uhr und samstags von 8 bis 16 Uhr. Wir melden uns am selben Tag zurück."
+          "a": "Per WhatsApp oder Telefon unter 01515 6198195, täglich von 7 bis 22 Uhr. Wir melden uns am selben Tag zurück."
         }
       ],
       "orte": {

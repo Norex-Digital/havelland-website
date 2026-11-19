@@ -1220,6 +1220,18 @@
           }
         },
         {
+          "id": "einstiegspreise",
+          "h2": "Was kostet eine Entrümpelung? Einstiegspreise inkl. MwSt.",
+          "lead": "Eine Entrümpelung beginnt bei uns ab 99 € inkl. MwSt. für ein einzelnes Kellerabteil, eine Wohnungsauflösung ab 499 € inkl. MwSt. für eine kleine 1-Zimmer-Wohnung und ein komplettes Haus ab 749 € inkl. MwSt. für ein kleines, gut zugängliches Haus.",
+          "body": "Das sind Einstiegspreise für kleine, gut zugängliche Objekte; Menge, Etage, Zugang und Entsorgungsaufwand entscheiden, was Ihr Objekt kostet. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich; Anfahrt, Besichtigung und Angebot kosten nichts. Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag. Umfangreichere Räumungen liegen darüber: In Falkensee lag eine Abstellkammer samt Gartenschuppen (ein Tag, zwei Fahrten zum Wertstoffhof) bei 1.190 € inkl. MwSt. für Räumung und Abtransport.",
+          "bullets": [
+            "Ab 99 € inkl. MwSt.: einzelnes Kellerabteil",
+            "Ab 499 € inkl. MwSt.: kleine 1-Zimmer-Wohnung",
+            "Ab 749 € inkl. MwSt.: kleines, gut zugängliches Haus",
+            "Festpreis nach kostenloser Besichtigung, Entsorgung nach Beleg ohne Aufschlag"
+          ]
+        },
+        {
           "id": "gartenhaus",
           "h2": "Gartenhaus abreißen und entsorgen",
           "lead": "Steht das Gartenhaus nicht mehr sicher, reißen wir es zurück und entsorgen sortenrein.",
@@ -1283,7 +1295,7 @@
         },
         {
           "q": "Was kostet eine Haushaltsauflösung 70 qm?",
-          "a": "Für eine 70-qm-Wohnung nennen wir keinen Preis ohne Besichtigung, weil zwei gleich große Wohnungen im Aufwand weit auseinanderliegen können. Den Preis treiben die Menge (kommen Keller und Dachboden dazu?), der Zugang (Etage, Aufzug, Parkplatz für den Anhänger), die Anzahl der Fahrten und der Anteil an Verwertbarem, der den Festpreis senkt. Nach der kostenlosen Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, die Entsorgung kommt nach Beleg dazu. Den Ablauf im Erb- oder Pflegefall beschreibt unsere Seite zur Haushaltsauflösung."
+          "a": "Eine kleine 1-Zimmer-Wohnung räumen wir ab 499 € inkl. MwSt.; für eine 70-qm-Wohnung nennen wir den Festpreis erst nach der Besichtigung, weil zwei gleich große Wohnungen im Aufwand weit auseinanderliegen können. Den Preis treiben die Menge (kommen Keller und Dachboden dazu?), der Zugang (Etage, Aufzug, Parkplatz für den Anhänger), die Anzahl der Fahrten und der Anteil an Verwertbarem, der den Festpreis senkt. Nach der kostenlosen Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, die Entsorgung kommt nach Beleg dazu. Den Ablauf im Erb- oder Pflegefall beschreibt unsere Seite zur Haushaltsauflösung."
         },
         {
           "q": "Wie entsorgt man eine Haushaltsauflösung?",
@@ -1299,7 +1311,7 @@
         },
         {
           "q": "Was kostet eine Entrümpelung im Havelland?",
-          "a": "Als Orientierung ein echter Auftrag aus Falkensee, September 2026: Abstellkammer und Gartenschuppen, ein Tag, zwei Fahrten zum Wertstoffhof. Festpreis für Räumung und Abtransport: 1.190 € inkl. MwSt., die Entsorgungsgebühren des Wertstoffhofs kommen nach Beleg dazu. Das ist ein Beispiel aus einem Auftrag, kein Pauschalpreis: Ihr Preis hängt von Menge, Zugang und Abfallart ab und steht nach der kostenlosen Besichtigung schriftlich fest."
+          "a": "Eine Entrümpelung beginnt bei uns ab 99 € inkl. MwSt. für ein einzelnes Kellerabteil, eine Wohnungsauflösung ab 499 € inkl. MwSt. für eine kleine 1-Zimmer-Wohnung und ein komplettes Haus ab 749 € inkl. MwSt. für ein kleines, gut zugängliches Haus. Das sind Einstiegspreise für kleine, gut zugängliche Objekte; Menge, Etage, Zugang und Entsorgungsaufwand entscheiden, was Ihr Objekt kostet. Den Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich; Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag. Als Beispiel aus einem echten Auftrag in Falkensee, September 2026: Abstellkammer und Gartenschuppen, ein Tag, zwei Fahrten zum Wertstoffhof, 1.190 € inkl. MwSt. für Räumung und Abtransport."
         },
         {
           "q": "Übernehmen Sie auch den Sperrmüll und die Entsorgung?",
@@ -1405,6 +1417,18 @@
           }
         },
         {
+          "id": "einstiegspreise",
+          "h2": "Was kostet eine Haushaltsauflösung? Einstiegspreise inkl. MwSt.",
+          "lead": "Eine Haushaltsauflösung beginnt bei uns ab 499 € inkl. MwSt. für eine kleine 1-Zimmer-Wohnung und ab 749 € inkl. MwSt. für ein kleines, gut zugängliches Haus; ein einzelnes Kellerabteil räumen wir ab 99 € inkl. MwSt.",
+          "body": "Das sind Einstiegspreise für kleine, gut zugängliche Objekte; Menge, Etage, Zugang und Entsorgungsaufwand entscheiden, was Ihr Objekt kostet. Den verbindlichen Festpreis für Räumung und Abtransport nennen wir nach der kostenlosen Besichtigung, schriftlich; Anfahrt, Besichtigung und Angebot kosten nichts. Entsorgungsgebühren weisen wir nach Beleg aus, ohne eigenen Aufschlag.",
+          "bullets": [
+            "Ab 99 € inkl. MwSt.: einzelnes Kellerabteil",
+            "Ab 499 € inkl. MwSt.: kleine 1-Zimmer-Wohnung",
+            "Ab 749 € inkl. MwSt.: kleines, gut zugängliches Haus",
+            "Festpreis nach kostenloser Besichtigung, Entsorgung nach Beleg ohne Aufschlag"
+          ]
+        },
+        {
           "id": "unterschied",
           "h2": "Unterschied Haushaltsauflösung und Entrümpelung",
           "body": "Bleibt ein Zuhause bewohnt und nur der Keller wird leer, ist das eine Entrümpelung. Wird die ganze Wohnung gekündigt und an den Vermieter übergeben, ist das eine Haushaltsauflösung, mit demselben Festpreis-Rahmen für Räumung und Abtransport.",
@@ -1415,11 +1439,11 @@
       "faqs": [
         {
           "q": "Was kostet in der Regel eine Haushaltsauflösung?",
-          "a": "Ohne Besichtigung nennen wir keine feste Zahl, weil zwei gleich große Wohnungen im Aufwand weit auseinanderliegen können. Den Preis treiben vor allem die Wohnfläche, die Menge an Hausrat, die Etage mit oder ohne Aufzug, nötige Demontagen und der Zugang zur Wohnung. Verwertbare Möbel und Geräte rechnen wir an und senken damit den Preis. Nach der kostenlosen Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, Entsorgungsgebühren kommen nach Beleg dazu, ohne eigenen Aufschlag."
+          "a": "Eine Haushaltsauflösung beginnt bei uns ab 499 € inkl. MwSt. für eine kleine 1-Zimmer-Wohnung und ab 749 € inkl. MwSt. für ein kleines, gut zugängliches Haus; ein einzelnes Kellerabteil räumen wir ab 99 € inkl. MwSt. Die Einstiegspreise gelten für kleine, gut zugängliche Objekte; bei größeren Wohnungen nennen wir den Festpreis erst nach der Besichtigung, weil zwei gleich große Wohnungen im Aufwand weit auseinanderliegen können. Den Preis treiben vor allem die Wohnfläche, die Menge an Hausrat, die Etage mit oder ohne Aufzug, nötige Demontagen und der Zugang zur Wohnung. Verwertbare Möbel und Geräte rechnen wir an und senken damit den Preis. Nach der kostenlosen Besichtigung steht der Festpreis für Räumung und Abtransport schriftlich fest, Entsorgungsgebühren kommen nach Beleg dazu, ohne eigenen Aufschlag."
         },
         {
           "q": "Was kostet eine Wohnungsauflösung — Erfahrungen aus dem Havelland?",
-          "a": "Für Falkensee und das Havelland nennen wir keinen Pauschalpreis, weil jede Wohnungsauflösung anders ausfällt. Auf Google stehen wir mit {google_rating} Sternen bei {google_bewertungen} Bewertungen; wie eine Wohnungsauflösung bei Ihnen konkret abläuft, klärt die kostenlose Besichtigung vor Ort. Danach bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport, Entsorgungsgebühren weisen wir nach Beleg aus. Wie bei jeder Auflösung gilt: Verwertbares senkt den Preis, ein schwieriger Zugang wie eine hohe Etage ohne Aufzug erhöht ihn."
+          "a": "Eine Wohnungsauflösung beginnt bei uns ab 499 € inkl. MwSt. (kleine 1-Zimmer-Wohnung), ein komplettes Haus ab 749 € inkl. MwSt. (kleines, gut zugängliches Haus); wie viel Ihre Wohnung kostet, hängt von Menge, Etage und Zugang ab. Auf Google stehen wir mit {google_rating} Sternen bei {google_bewertungen} Bewertungen; wie eine Wohnungsauflösung bei Ihnen konkret abläuft, klärt die kostenlose Besichtigung vor Ort. Danach bekommen Sie einen schriftlichen Festpreis für Räumung und Abtransport, Entsorgungsgebühren weisen wir nach Beleg aus. Wie bei jeder Auflösung gilt: Verwertbares senkt den Preis, ein schwieriger Zugang wie eine hohe Etage ohne Aufzug erhöht ihn."
         },
         {
           "q": "Was ist der Unterschied zwischen Haushaltsauflösung und Entrümpelung?",
